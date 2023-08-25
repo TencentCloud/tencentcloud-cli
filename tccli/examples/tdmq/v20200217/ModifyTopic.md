@@ -6,10 +6,12 @@ Input:
 
 ```
 tccli tdmq ModifyTopic --cli-unfold-argument  \
-    --EnvironmentId default \
-    --TopicName test_topic \
-    --Partitions 3 \
-    --Remark 修改分区为3
+    --EnvironmentId abc \
+    --TopicName abc \
+    --Partitions 1 \
+    --Remark abc \
+    --ClusterId abc \
+    --MsgTTL 1
 ```
 
 Output: 

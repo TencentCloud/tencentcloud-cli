@@ -18,10 +18,10 @@
     ],
     "AddInstances": [
       {
-        "document": "新增只读实例",
+        "document": "购买实例",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddInstances\n<公共请求参数>\n\n{\n    \"ReadOnlyCount\": \"1\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"ClusterId\": \"cynosdbmysql-6gtlgm5l\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ResourceIds\": [\n            \"abc\"\n        ],\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "新增实例"
+        "title": "购买实例"
       }
     ],
     "AssociateSecurityGroups": [
@@ -35,8 +35,8 @@
     "BindClusterResourcePackages": [
       {
         "document": "为集群绑定资源包",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterResourcePackages\n<公共请求参数>\n\n{\n    \"PackageIds\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindClusterResourcePackages\n<公共请求参数>\n\n{\n    \"PackageIds\": [\n        \"package- abcd1234\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-1234abcd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456789-123456-123456789\"\n    }\n}",
         "title": "为集群绑定资源包"
       }
     ],
@@ -122,10 +122,10 @@
     ],
     "CreateClusters": [
       {
-        "document": "创建集群",
+        "document": "购买新集群",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusters\n<公共请求参数>\n\n{\n    \"Count\": \"1\",\n    \"StoragePayMode\": \"0\",\n    \"VpcId\": \"vpc-1ptuei0b\",\n    \"Zone\": \"ap-guangzhou-3\",\n    \"AdminPassword\": \"passwd@admin\",\n    \"DbType\": \"MYSQL\",\n    \"ProjectId\": \"0\",\n    \"DbVersion\": \"10.0\",\n    \"Storage\": \"100\",\n    \"PayMode\": \"0\",\n    \"ClusterName\": \"newInstance\",\n    \"StorageLimit\": \"100\",\n    \"RollbackStrategy\": \"noneRollback\",\n    \"Memory\": \"4\",\n    \"SubnetId\": \"subnet-1tmw9t4o\",\n    \"Cpu\": \"2\",\n    \"HaCount\": \"1\"\n}",
         "output": "{\n    \"Response\": {\n        \"ResourceIds\": [\n            \"cynosdbmysql-ins-67rmucgk\"\n        ],\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"ClusterIds\": [\n            \"cynosdbmysql-sls-9nts65r2\"\n        ],\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
-        "title": "创建集群"
+        "title": "购买新集群"
       }
     ],
     "CreateParamTemplate": [
@@ -153,8 +153,8 @@
     "CreateProxyEndPoint": [
       {
         "document": "创建数据库代理连接点",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyEndPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"UniqueVpcId\": \"abc\",\n    \"UniqueSubnetId\": \"abc\",\n    \"ConnectionPoolType\": \"abc\",\n    \"OpenConnectionPool\": \"abc\",\n    \"ConnectionPoolTimeOut\": 0,\n    \"SecurityGroupIds\": [\n        \"abc\"\n    ],\n    \"Description\": \"abc\",\n    \"Vip\": \"abc\",\n    \"WeightMode\": \"abc\",\n    \"AutoAddRo\": \"abc\",\n    \"FailOver\": \"abc\",\n    \"ConsistencyType\": \"abc\",\n    \"RwType\": \"abc\",\n    \"ConsistencyTimeOut\": 0,\n    \"TransSplit\": true,\n    \"AccessMode\": \"abc\",\n    \"InstanceWeights\": [\n        {\n            \"InstanceId\": \"abc\",\n            \"Weight\": 0\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"ProxyGroupId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProxyEndPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"UniqueVpcId\": \"vpc-azx\",\n    \"UniqueSubnetId\": \"subnet-qwe\",\n    \"ConnectionPoolType\": \"SessionConnectionPool\",\n    \"OpenConnectionPool\": \"yes\",\n    \"ConnectionPoolTimeOut\": 0,\n    \"SecurityGroupIds\": [\n        \"sg-dtwhs6\"\n    ],\n    \"Description\": \"abc\",\n    \"Vip\": \"1.1.1.1\",\n    \"WeightMode\": \"system\",\n    \"AutoAddRo\": \"yes\",\n    \"FailOver\": \"\",\n    \"ConsistencyType\": \"eventual\",\n    \"RwType\": \"READWRITE\",\n    \"ConsistencyTimeOut\": 0,\n    \"TransSplit\": true,\n    \"AccessMode\": \"nearby\",\n    \"InstanceWeights\": [\n        {\n            \"InstanceId\": \"cynosdbmysql-ins-qwe\",\n            \"Weight\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"TaskId\": 0,\n        \"ProxyGroupId\": \"cynosdbmysql-proxy-asd\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建数据库代理连接点"
       }
     ],
@@ -332,10 +332,10 @@
     ],
     "DescribeClusterDetail": [
       {
-        "document": "",
+        "document": "集群信息描述",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbpg-5804k48e\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"ClusterId\": \"abc\",\n            \"ClusterName\": \"abc\",\n            \"Region\": \"abc\",\n            \"Zone\": \"abc\",\n            \"PhysicalZone\": \"abc\",\n            \"Status\": \"abc\",\n            \"StatusDesc\": \"abc\",\n            \"ServerlessStatus\": \"abc\",\n            \"StorageId\": \"abc\",\n            \"Storage\": 0,\n            \"MaxStorageSize\": 0,\n            \"MinStorageSize\": 0,\n            \"StoragePayMode\": 0,\n            \"VpcName\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"SubnetName\": \"abc\",\n            \"SubnetId\": \"abc\",\n            \"Charset\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"DbType\": \"abc\",\n            \"DbMode\": \"abc\",\n            \"DbVersion\": \"abc\",\n            \"StorageLimit\": 0,\n            \"UsedStorage\": 0,\n            \"Vip\": \"abc\",\n            \"Vport\": 0,\n            \"RoAddr\": [\n                {\n                    \"IP\": \"abc\",\n                    \"Port\": 0\n                }\n            ],\n            \"Ability\": {\n                \"IsSupportSlaveZone\": \"abc\",\n                \"NonsupportSlaveZoneReason\": \"abc\",\n                \"IsSupportRo\": \"abc\",\n                \"NonsupportRoReason\": \"abc\"\n            },\n            \"CynosVersion\": \"abc\",\n            \"BusinessType\": \"abc\",\n            \"HasSlaveZone\": \"abc\",\n            \"IsFreeze\": \"abc\",\n            \"Tasks\": [\n                {\n                    \"TaskId\": 0,\n                    \"TaskType\": \"abc\",\n                    \"TaskStatus\": \"abc\",\n                    \"ObjectId\": \"abc\",\n                    \"ObjectType\": \"abc\"\n                }\n            ],\n            \"MasterZone\": \"abc\",\n            \"SlaveZones\": [\n                \"abc\"\n            ],\n            \"InstanceSet\": [\n                {\n                    \"InstanceId\": \"abc\",\n                    \"InstanceName\": \"abc\",\n                    \"InstanceType\": \"abc\",\n                    \"InstanceStatus\": \"abc\",\n                    \"InstanceStatusDesc\": \"abc\",\n                    \"InstanceCpu\": 0,\n                    \"InstanceMemory\": 0,\n                    \"InstanceStorage\": 0,\n                    \"InstanceRole\": \"abc\",\n                    \"ServerlessStatus\": \"abc\",\n                    \"MaintainStartTime\": 0,\n                    \"MaintainDuration\": 0,\n                    \"MaintainWeekDays\": [\n                        \"abc\"\n                    ]\n                }\n            ],\n            \"PayMode\": 0,\n            \"PeriodEndTime\": \"abc\",\n            \"ProjectID\": 0,\n            \"ResourceTags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"ProxyStatus\": \"abc\",\n            \"LogBin\": \"abc\",\n            \"IsSkipTrade\": \"abc\",\n            \"PitrType\": \"abc\",\n            \"IsOpenPasswordComplexity\": \"abc\",\n            \"NetworkStatus\": \"abc\",\n            \"ResourcePackages\": [\n                {\n                    \"PackageId\": \"abc\",\n                    \"PackageType\": \"abc\"\n                }\n            ],\n            \"RenewFlag\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询集群详情"
+        "output": "{\n    \"Response\": {\n        \"Detail\": {\n            \"ClusterId\": \"abc\",\n            \"ClusterName\": \"abc\",\n            \"Region\": \"abc\",\n            \"Zone\": \"abc\",\n            \"PhysicalZone\": \"abc\",\n            \"Status\": \"abc\",\n            \"StatusDesc\": \"abc\",\n            \"ServerlessStatus\": \"abc\",\n            \"StorageId\": \"abc\",\n            \"Storage\": 0,\n            \"MaxStorageSize\": 0,\n            \"MinStorageSize\": 0,\n            \"StoragePayMode\": 0,\n            \"VpcName\": \"abc\",\n            \"VpcId\": \"abc\",\n            \"SubnetName\": \"abc\",\n            \"SubnetId\": \"abc\",\n            \"Charset\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"DbType\": \"abc\",\n            \"DbMode\": \"abc\",\n            \"DbVersion\": \"abc\",\n            \"StorageLimit\": 0,\n            \"UsedStorage\": 0,\n            \"Vip\": \"abc\",\n            \"Vport\": 0,\n            \"RoAddr\": [\n                {\n                    \"IP\": \"abc\",\n                    \"Port\": 0\n                }\n            ],\n            \"Ability\": {\n                \"IsSupportSlaveZone\": \"abc\",\n                \"NonsupportSlaveZoneReason\": \"abc\",\n                \"IsSupportRo\": \"abc\",\n                \"NonsupportRoReason\": \"abc\"\n            },\n            \"CynosVersion\": \"abc\",\n            \"BusinessType\": \"abc\",\n            \"HasSlaveZone\": \"abc\",\n            \"IsFreeze\": \"abc\",\n            \"Tasks\": [\n                {\n                    \"TaskId\": 0,\n                    \"TaskType\": \"abc\",\n                    \"TaskStatus\": \"abc\",\n                    \"ObjectId\": \"abc\",\n                    \"ObjectType\": \"abc\"\n                }\n            ],\n            \"MasterZone\": \"abc\",\n            \"SlaveZones\": [\n                \"abc\"\n            ],\n            \"InstanceSet\": [\n                {\n                    \"InstanceId\": \"abc\",\n                    \"InstanceName\": \"abc\",\n                    \"InstanceType\": \"abc\",\n                    \"InstanceStatus\": \"abc\",\n                    \"InstanceStatusDesc\": \"abc\",\n                    \"InstanceCpu\": 0,\n                    \"InstanceMemory\": 0,\n                    \"InstanceStorage\": 0,\n                    \"InstanceRole\": \"abc\",\n                    \"MaintainStartTime\": 0,\n                    \"MaintainDuration\": 0,\n                    \"MaintainWeekDays\": [\n                        \"abc\"\n                    ],\n                    \"ServerlessStatus\": \"abc\"\n                }\n            ],\n            \"PayMode\": 0,\n            \"PeriodEndTime\": \"abc\",\n            \"ProjectID\": 0,\n            \"ResourceTags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"ProxyStatus\": \"abc\",\n            \"LogBin\": \"abc\",\n            \"IsSkipTrade\": \"abc\",\n            \"PitrType\": \"abc\",\n            \"IsOpenPasswordComplexity\": \"abc\",\n            \"NetworkStatus\": \"abc\",\n            \"ResourcePackages\": [\n                {\n                    \"PackageId\": \"abc\",\n                    \"PackageType\": \"abc\"\n                }\n            ],\n            \"RenewFlag\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "集群信息描述"
       }
     ],
     "DescribeClusterDetailDatabases": [
@@ -486,7 +486,7 @@
       {
         "document": "查询数据库代理",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProxies\n<公共请求参数>\n\n{\n    \"OrderBy\": \"createTime\",\n    \"ClusterId\": \"cynosdbmysql-xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"proxyGroupId\"\n            ],\n            \"Names\": [\n                \"cynosdbmysql-proxy-xx\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 0,\n    \"OrderByType\": \"desc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProxyGroupInfos\": [\n            {\n                \"ProxyGroup\": {\n                    \"ProxyGroupId\": \"abc\",\n                    \"ProxyNodeCount\": 0,\n                    \"Status\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"CurrentProxyVersion\": \"abc\",\n                    \"ClusterId\": \"abc\",\n                    \"AppId\": 0,\n                    \"OpenRw\": \"abc\"\n                },\n                \"ProxyGroupRwInfo\": {\n                    \"ConsistencyType\": \"abc\",\n                    \"ConsistencyTimeOut\": 0,\n                    \"WeightMode\": \"abc\",\n                    \"FailOver\": \"abc\",\n                    \"AutoAddRo\": \"abc\",\n                    \"InstanceWeights\": [\n                        {\n                            \"InstanceId\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"OpenRw\": \"abc\"\n                },\n                \"ProxyNodes\": [\n                    {\n                        \"ProxyNodeId\": \"abc\",\n                        \"ProxyNodeConnections\": 0,\n                        \"Cpu\": 0,\n                        \"Mem\": 0,\n                        \"Status\": \"abc\",\n                        \"ProxyGroupId\": \"abc\",\n                        \"ClusterId\": \"abc\",\n                        \"AppId\": 0,\n                        \"Region\": \"abc\",\n                        \"Zone\": \"abc\"\n                    }\n                ],\n                \"ConnectionPool\": {\n                    \"OpenConnectionPool\": \"abc\",\n                    \"ConnectionPoolType\": \"abc\",\n                    \"ConnectionPoolTimeOut\": 0\n                },\n                \"NetAddrInfos\": [\n                    {\n                        \"Vip\": \"abc\",\n                        \"Vport\": 0,\n                        \"WanDomain\": \"abc\",\n                        \"WanPort\": 0,\n                        \"NetType\": \"abc\",\n                        \"UniqSubnetId\": \"abc\",\n                        \"UniqVpcId\": \"abc\",\n                        \"Description\": \"abc\",\n                        \"WanIP\": \"abc\",\n                        \"WanStatus\": \"abc\"\n                    }\n                ],\n                \"Tasks\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskType\": \"abc\",\n                        \"TaskStatus\": \"abc\",\n                        \"ObjectId\": \"abc\",\n                        \"ObjectType\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"ProxyNodeInfos\": [\n            {\n                \"ProxyNodeId\": \"abc\",\n                \"ProxyNodeConnections\": 0,\n                \"Cpu\": 0,\n                \"Mem\": 0,\n                \"Status\": \"abc\",\n                \"ProxyGroupId\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"AppId\": 0,\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ProxyGroupInfos\": [\n            {\n                \"ProxyGroup\": {\n                    \"ProxyGroupId\": \"abc\",\n                    \"ProxyNodeCount\": 0,\n                    \"Status\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Zone\": \"abc\",\n                    \"CurrentProxyVersion\": \"abc\",\n                    \"ClusterId\": \"abc\",\n                    \"AppId\": 0,\n                    \"OpenRw\": \"abc\"\n                },\n                \"ProxyGroupRwInfo\": {\n                    \"ConsistencyType\": \"abc\",\n                    \"ConsistencyTimeOut\": 0,\n                    \"WeightMode\": \"abc\",\n                    \"FailOver\": \"abc\",\n                    \"AutoAddRo\": \"abc\",\n                    \"InstanceWeights\": [\n                        {\n                            \"InstanceId\": \"abc\",\n                            \"Weight\": 0\n                        }\n                    ],\n                    \"OpenRw\": \"abc\",\n                    \"RwType\": \"abc\",\n                    \"TransSplit\": true,\n                    \"AccessMode\": \"abc\"\n                },\n                \"ProxyNodes\": [\n                    {\n                        \"ProxyNodeId\": \"abc\",\n                        \"ProxyNodeConnections\": 0,\n                        \"Cpu\": 0,\n                        \"Mem\": 0,\n                        \"Status\": \"abc\",\n                        \"ProxyGroupId\": \"abc\",\n                        \"ClusterId\": \"abc\",\n                        \"AppId\": 0,\n                        \"Region\": \"abc\",\n                        \"Zone\": \"abc\",\n                        \"OssProxyNodeName\": \"abc\"\n                    }\n                ],\n                \"ConnectionPool\": {\n                    \"OpenConnectionPool\": \"abc\",\n                    \"ConnectionPoolType\": \"abc\",\n                    \"ConnectionPoolTimeOut\": 0\n                },\n                \"NetAddrInfos\": [\n                    {\n                        \"Vip\": \"abc\",\n                        \"Vport\": 0,\n                        \"WanDomain\": \"abc\",\n                        \"WanPort\": 0,\n                        \"NetType\": \"abc\",\n                        \"UniqSubnetId\": \"abc\",\n                        \"UniqVpcId\": \"abc\",\n                        \"Description\": \"abc\",\n                        \"WanIP\": \"abc\",\n                        \"WanStatus\": \"abc\",\n                        \"InstanceGroupId\": \"abc\"\n                    }\n                ],\n                \"Tasks\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskType\": \"abc\",\n                        \"TaskStatus\": \"abc\",\n                        \"ObjectId\": \"abc\",\n                        \"ObjectType\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"ProxyNodeInfos\": [\n            {\n                \"ProxyNodeId\": \"abc\",\n                \"ProxyNodeConnections\": 0,\n                \"Cpu\": 0,\n                \"Mem\": 0,\n                \"Status\": \"abc\",\n                \"ProxyGroupId\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"AppId\": 0,\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\",\n                \"OssProxyNodeName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询数据库代理列表"
       }
     ],
@@ -523,7 +523,7 @@
     "DescribeResourcePackageList": [
       {
         "document": "查询资源包列表\n",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourcePackageList\n<公共请求参数>\n\n{\n    \"PackageId\": [\n        \"abc\"\n    ],\n    \"PackageName\": [\n        \"abc\"\n    ],\n    \"PackageType\": [\n        \"abc\"\n    ],\n    \"PackageRegion\": [\n        \"abc\"\n    ],\n    \"Status\": [\n        \"abc\"\n    ],\n    \"OrderBy\": [\n        \"abc\"\n    ],\n    \"OrderDirection\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSourcePackageList\n<公共请求参数>\n\n{\n    \"PackageId\": [\n        \"package-abcd1234\"\n    ],\n    \"PackageName\": [\n        \"自定义资源包名称-1\"\n    ],\n    \"PackageType\": [\n        \"CCU\"\n    ],\n    \"PackageRegion\": [\n        \"china\"\n    ],\n    \"Status\": [\n        \"using\"\n    ],\n    \"OrderBy\": [\n        \"createTime\"\n    ],\n    \"OrderDirection\": \"desc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Detail\": [\n            {\n                \"AppId\": 0,\n                \"PackageId\": \"abc\",\n                \"PackageName\": \"abc\",\n                \"PackageType\": \"abc\",\n                \"PackageRegion\": \"abc\",\n                \"Status\": \"abc\",\n                \"PackageTotalSpec\": 0,\n                \"PackageUsedSpec\": 0,\n                \"HasQuota\": true,\n                \"BindInstanceInfos\": [\n                    {\n                        \"InstanceId\": \"abc\",\n                        \"InstanceRegion\": \"abc\",\n                        \"InstanceType\": \"abc\"\n                    }\n                ],\n                \"StartTime\": \"abc\",\n                \"ExpireTime\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询资源包列表"
       }
@@ -754,10 +754,10 @@
     ],
     "ModifyClusterStorage": [
       {
-        "document": "",
+        "document": "调整包年包月存储容量",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=ModifyClusterStorage\n&ClusterId=cynosdbmysql-xxxxxxxx\n&NewStorageLimit=20\n&OldStorageLimit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"132075\",\n        \"TranId\": \"20190522160000003106844584180998\",\n        \"BigDealIds\": [\n            \"xxx\"\n        ],\n        \"DealNames\": [\n            \"20190522112283\"\n        ]\n    }\n}",
-        "title": "升级预付费存储"
+        "title": "调整包年包月存储容量"
       }
     ],
     "ModifyDBInstanceSecurityGroups": [
@@ -819,7 +819,7 @@
     "ModifyResourcePackageClusters": [
       {
         "document": "给资源包绑定集群",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackageClusters\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\",\n    \"BindClusterIds\": [\n        \"abc\"\n    ],\n    \"UnbindClusterIds\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcePackageClusters\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"BindClusterIds\": [\n        \"cynosdbmysql-1234abcd\"\n    ],\n    \"UnbindClusterIds\": [\n        \"cynosdbmysql-1122aabb\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "给资源包绑定集群"
       }
@@ -827,7 +827,7 @@
     "ModifyResourcePackageName": [
       {
         "document": "修改资源包名称",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySourcePackageName\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\",\n    \"PackageName\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySourcePackageName\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\",\n    \"PackageName\": \"自定义资源包名称-1\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改资源包名称"
       }
@@ -842,18 +842,18 @@
     ],
     "OfflineCluster": [
       {
-        "document": "",
+        "document": "销毁集群",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineCluster\n&ClusterId=cynosdbmysql-bzxxrmtq\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
-        "title": "下线集群"
+        "title": "销毁集群"
       }
     ],
     "OfflineInstance": [
       {
-        "document": "",
+        "document": "销毁实例",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=OfflineInstance\n&ClusterId=cynosdbmysql-bzxxrmtq\n&InstanceIdList.0=cynosdbmysql-ins-7upukfpw\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
-        "title": "隔离实例"
+        "title": "销毁实例"
       }
     ],
     "OpenAuditService": [
@@ -869,7 +869,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenClusterPasswordComplexity\n<公共请求参数>\n\n{\n    \"ValidatePasswordLength\": 0,\n    \"ValidatePasswordMixedCaseCount\": 0,\n    \"ValidatePasswordDictionary\": [\n        \"admin\"\n    ],\n    \"ClusterId\": \"cynosdbmysql-abcdxxxx\",\n    \"ValidatePasswordNumberCount\": 0,\n    \"ValidatePasswordSpecialCharCount\": 0,\n    \"ValidatePasswordPolicy\": \"MEDIUM\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
-        "title": "用于开启集群密码复杂度"
+        "title": "用于开启自定义密码复杂度功能"
       }
     ],
     "OpenClusterReadOnlyInstanceGroupAccess": [
@@ -907,7 +907,7 @@
     "RefundResourcePackage": [
       {
         "document": "退款资源包\n",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundSourcePackage\n<公共请求参数>\n\n{\n    \"PackageId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RefundSourcePackage\n<公共请求参数>\n\n{\n    \"PackageId\": \"package-abcd1234\"\n}",
         "output": "{\n    \"Response\": {\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "退款资源包"
       }
@@ -971,7 +971,7 @@
     "SearchClusterDatabases": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\",\n    \"Database\": \"xxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwer\",\n    \"Database\": \"testDb\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Databases\": []\n    }\n}",
         "title": "搜索集群database列表"
       }
@@ -1019,7 +1019,7 @@
     "UnbindClusterResourcePackages": [
       {
         "document": "cynos解绑资源包",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindSourcePackageCynos\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"PackageIds\": [\n        \"abc\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindSourcePackageCynos\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"PackageIds\": [\n        \"package-abcd1234\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "cynos解绑资源包"
       }
@@ -1029,15 +1029,15 @@
         "document": "",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=UpgradeClusterVersion\n&ClusterId=cynosdbmysql-qwerasd\n&CynosVersion=2.0.0\n&UpgradeType=upgradeImmediate\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"128046\",\n        \"FlowId\": \"123\"\n    }\n}",
-        "title": "升级Cynos内核版本"
+        "title": "更新内核小版本"
       }
     ],
     "UpgradeInstance": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-n7ocdslw\",\n    \"UpgradeType\": \"upgradeImmediate\",\n    \"Cpu\": \"2\",\n    \"Memory\": \"4\"\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"165202\",\n        \"TranId\": \"xx\",\n        \"DealNames\": [\n            \"xx\"\n        ]\n    }\n}",
-        "title": "升级实例"
+        "output": "{\n    \"Response\": {\n        \"TranId\": \"abc\",\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例变配"
       }
     ],
     "UpgradeProxy": [

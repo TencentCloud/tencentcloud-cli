@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cynosdb BindClusterResourcePackages --cli-unfold-argument  \
-    --PackageIds abc \
-    --ClusterId abc
+    --PackageIds 'package- abcd1234' \
+    --ClusterId cynosdbmysql-1234abcd
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "123456789-123456-123456789"
     }
 }
 ```

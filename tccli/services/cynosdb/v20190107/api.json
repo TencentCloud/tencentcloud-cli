@@ -17,7 +17,7 @@
     "AddInstances": {
       "document": "本接口（AddInstances）用于集群添加实例",
       "input": "AddInstancesRequest",
-      "name": "集群添加实例",
+      "name": "购买实例",
       "output": "AddInstancesResponse",
       "status": "online"
     },
@@ -106,9 +106,9 @@
       "status": "online"
     },
     "CreateClusters": {
-      "document": "创建集群",
+      "document": "购买新集群",
       "input": "CreateClustersRequest",
-      "name": "创建集群",
+      "name": "购买新集群",
       "output": "CreateClustersResponse",
       "status": "online"
     },
@@ -276,7 +276,7 @@
     "DescribeClusterDetail": {
       "document": "该接口（DescribeClusterDetail）显示集群详情",
       "input": "DescribeClusterDetailRequest",
-      "name": "集群详情",
+      "name": "集群信息描述",
       "output": "DescribeClusterDetailResponse",
       "status": "online"
     },
@@ -638,9 +638,9 @@
       "status": "online"
     },
     "ModifyClusterStorage": {
-      "document": "升级预付费存储",
+      "document": "调整包年包月存储容量",
       "input": "ModifyClusterStorageRequest",
-      "name": "升级预付费存储",
+      "name": "调整包年包月存储容量",
       "output": "ModifyClusterStorageResponse",
       "status": "online"
     },
@@ -715,16 +715,16 @@
       "status": "online"
     },
     "OfflineCluster": {
-      "document": "下线集群",
+      "document": "销毁集群",
       "input": "OfflineClusterRequest",
-      "name": "下线集群",
+      "name": "销毁集群",
       "output": "OfflineClusterResponse",
       "status": "online"
     },
     "OfflineInstance": {
-      "document": "下线实例",
+      "document": "销毁实例",
       "input": "OfflineInstanceRequest",
-      "name": "下线实例",
+      "name": "销毁实例",
       "output": "OfflineInstanceResponse",
       "status": "online"
     },
@@ -736,9 +736,9 @@
       "status": "online"
     },
     "OpenClusterPasswordComplexity": {
-      "document": "本接口（OpenClusterPasswordComplexity）用于开启集群密码复杂度",
+      "document": "本接口（OpenClusterPasswordComplexity）用于开启自定义密码复杂度功能",
       "input": "OpenClusterPasswordComplexityRequest",
-      "name": "开启集群密码复杂度",
+      "name": "开启自定义密码复杂度功能",
       "output": "OpenClusterPasswordComplexityResponse",
       "status": "online"
     },
@@ -876,16 +876,16 @@
       "status": "online"
     },
     "UpgradeClusterVersion": {
-      "document": "更新集群Cynos内核版本",
+      "document": "更新内核小版本",
       "input": "UpgradeClusterVersionRequest",
-      "name": "更新集群Cynos内核版本",
+      "name": "更新内核小版本",
       "output": "UpgradeClusterVersionResponse",
       "status": "online"
     },
     "UpgradeInstance": {
-      "document": "升级实例",
+      "document": "实例变配",
       "input": "UpgradeInstanceRequest",
-      "name": "升级实例",
+      "name": "实例变配",
       "output": "UpgradeInstanceResponse",
       "status": "online"
     },
@@ -8836,7 +8836,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群ID",
+          "document": "集群ID（该参数必传，例如cynosdbmysql-xxxxxx）",
           "example": "cynosdbmysql-xxxxxx",
           "member": "string",
           "name": "ClusterId",
@@ -8900,6 +8900,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8909,6 +8910,7 @@
           "example": "无",
           "member": "ProxyGroupInfo",
           "name": "ProxyGroupInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8918,6 +8920,7 @@
           "example": "无",
           "member": "ProxyNodeInfo",
           "name": "ProxyNodeInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9233,10 +9236,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "总配置数",
+          "document": "资源包总数",
           "example": "10",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9246,6 +9250,7 @@
           "example": "无",
           "member": "Package",
           "name": "Detail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11610,7 +11615,7 @@
           "example": "123456",
           "member": "string",
           "name": "TranId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11620,7 +11625,7 @@
           "example": "123456",
           "member": "string",
           "name": "BigDealIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11630,7 +11635,7 @@
           "example": "123456",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12600,7 +12605,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12646,7 +12651,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12836,7 +12841,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12993,7 +12998,7 @@
           "example": "1234567",
           "member": "int64",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13003,7 +13008,7 @@
           "example": "pkg-qwerty",
           "member": "string",
           "name": "PackageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13013,7 +13018,7 @@
           "example": "资源包_2",
           "member": "string",
           "name": "PackageName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13023,7 +13028,7 @@
           "example": "CCU",
           "member": "string",
           "name": "PackageType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13033,7 +13038,7 @@
           "example": "china",
           "member": "string",
           "name": "PackageRegion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13043,7 +13048,7 @@
           "example": "using",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13053,7 +13058,7 @@
           "example": "100",
           "member": "float",
           "name": "PackageTotalSpec",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -13063,17 +13068,17 @@
           "example": "29",
           "member": "float",
           "name": "PackageUsedSpec",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源包已使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否还有库存余量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "HasQuota",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -13083,7 +13088,7 @@
           "example": "无",
           "member": "BindInstanceInfo",
           "name": "BindInstanceInfos",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13093,7 +13098,7 @@
           "example": "2022-07-01 00:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13103,7 +13108,7 @@
           "example": "2022-08-01 00:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -14495,6 +14500,7 @@
           "example": "3164723785123674",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15321,7 +15327,7 @@
           "example": "[]",
           "member": "string",
           "name": "Databases",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16248,7 +16254,7 @@
           "example": "MyTranId",
           "member": "string",
           "name": "TranId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16258,7 +16264,7 @@
           "example": "[123456]",
           "member": "string",
           "name": "BigDealIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16268,7 +16274,7 @@
           "example": "[234567]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

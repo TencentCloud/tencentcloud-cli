@@ -1,4 +1,4 @@
-**Example 1: 升级Cynos内核版本**
+**Example 1: 更新内核小版本**
 
 
 

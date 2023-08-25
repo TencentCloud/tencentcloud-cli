@@ -2811,7 +2811,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -3597,19 +3597,19 @@
         },
         {
           "disabled": false,
-          "document": "备注，128个字符以内。",
-          "example": "创建订阅关系",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxx",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注，128个字符以内。",
+          "example": "创建订阅关系",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         },
@@ -3643,7 +3643,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3688,6 +3688,15 @@
         },
         {
           "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "备注，128字符以内。",
           "example": "2个分区的普通消息队列",
           "member": "string",
@@ -3703,15 +3712,6 @@
           "name": "TopicType",
           "required": false,
           "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "Pulsar 集群的ID",
-          "example": "pulsar-xxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": false,
@@ -3950,7 +3950,7 @@
           "example": "rocketmq-xxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -3986,7 +3986,7 @@
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -4001,7 +4001,7 @@
           "example": "[test1,test2]",
           "member": "string",
           "name": "EnvironmentIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4331,7 +4331,7 @@
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -4346,7 +4346,7 @@
           "example": "[\"test_role_1\",\"test_role_2\"]",
           "member": "string",
           "name": "RoleNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4441,7 +4441,7 @@
           "example": "test",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -4474,7 +4474,7 @@
           "example": "无",
           "member": "TopicRecord",
           "name": "TopicSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5359,7 +5359,7 @@
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -5374,7 +5374,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5384,7 +5384,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RateInByte",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5394,7 +5394,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RateInSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5404,7 +5404,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RetentionHours",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5414,7 +5414,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RetentionSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5424,7 +5424,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5434,7 +5434,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Replicas",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5444,7 +5444,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5554,6 +5554,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-ge3n43v3wj",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "命名空间名称，模糊搜索。",
           "example": "default",
           "member": "string",
@@ -5581,15 +5590,6 @@
         },
         {
           "disabled": false,
-          "document": "Pulsar 集群的ID",
-          "example": "pulsar-ge3n43v3wj",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "* EnvironmentId\n按照名称空间进行过滤，精确查询。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
@@ -5609,7 +5609,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5619,7 +5619,7 @@
           "example": "[]",
           "member": "Environment",
           "name": "EnvironmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7314,6 +7314,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "必填字段，集群Id",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "角色名称，模糊查询",
           "example": "test",
           "member": "string",
@@ -7341,15 +7350,6 @@
         },
         {
           "disabled": false,
-          "document": "必填字段，集群Id",
-          "example": "test",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "* RoleName\n按照角色名进行过滤，精确查询。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
@@ -7369,7 +7369,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7379,7 +7379,7 @@
           "example": "无",
           "member": "Role",
           "name": "RoleSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7410,6 +7410,15 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
           "required": true,
           "type": "string"
         },
@@ -7448,15 +7457,6 @@
           "name": "Filters",
           "required": false,
           "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "Pulsar 集群的ID",
-          "example": "pulsar-xxxx",
-          "member": "string",
-          "name": "ClusterId",
-          "required": false,
-          "type": "string"
         }
       ],
       "type": "object"
@@ -7470,7 +7470,7 @@
           "example": "无",
           "member": "Subscription",
           "name": "SubscriptionSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7480,7 +7480,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8579,19 +8579,19 @@
         },
         {
           "disabled": false,
-          "document": "备注，字符串最长不超过128。",
-          "example": "demo",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "集群ID",
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注，字符串最长不超过128。",
+          "example": "demo",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         },
@@ -8625,6 +8625,7 @@
           "example": "default",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8634,6 +8635,7 @@
           "example": "60",
           "member": "uint64",
           "name": "MsgTTL",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8643,6 +8645,7 @@
           "example": "demo",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8652,6 +8655,7 @@
           "example": "namespace-ak27qjs68x",
           "member": "string",
           "name": "NamespaceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8700,7 +8704,7 @@
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -9254,6 +9258,15 @@
         },
         {
           "disabled": false,
+          "document": "必填字段，集群Id",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "备注说明，长度必须大等于0且小等于128。",
           "example": "更新角色",
           "member": "string",
@@ -9263,12 +9276,21 @@
         },
         {
           "disabled": false,
-          "document": "必填字段，集群Id",
-          "example": "pulsar-xxxx",
-          "member": "string",
-          "name": "ClusterId",
+          "document": "批量绑定名字空间信息",
+          "example": "无",
+          "member": "EnvironmentRoleSet",
+          "name": "EnvironmentRoleSets",
           "required": false,
-          "type": "string"
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "全部解绑名字空间，设置为 true",
+          "example": "无",
+          "member": "bool",
+          "name": "UnbindAllEnvironment",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -9282,7 +9304,7 @@
           "example": "test_role",
           "member": "string",
           "name": "RoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9292,7 +9314,7 @@
           "example": "Remark1",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9337,19 +9359,19 @@
         },
         {
           "disabled": false,
-          "document": "备注，128字符以内。",
-          "example": "修改分区为3",
-          "member": "string",
-          "name": "Remark",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "Pulsar 集群的ID",
           "example": "pulsar-xxxxx",
           "member": "string",
           "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注，128字符以内。",
+          "example": "修改分区为3",
+          "member": "string",
+          "name": "Remark",
           "required": false,
           "type": "string"
         },

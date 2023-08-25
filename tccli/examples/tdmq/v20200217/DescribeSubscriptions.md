@@ -6,8 +6,16 @@ Input:
 
 ```
 tccli tdmq DescribeSubscriptions --cli-unfold-argument  \
-    --EnvironmentId test1 \
-    --TopicName test
+    --EnvironmentId abc \
+    --TopicName abc \
+    --Offset 1 \
+    --Limit 1 \
+    --SubscriptionName abc \
+    --Filters.0.ConsumerHasCount True \
+    --Filters.0.ConsumerHasBacklog True \
+    --Filters.0.ConsumerHasExpired True \
+    --Filters.0.SubscriptionNames abc \
+    --ClusterId abc
 ```
 
 Output: 
@@ -26,7 +34,7 @@ Output:
                 "MsgBacklog": "1087",
                 "MsgRateExpired": "0.0",
                 "MsgRateOut": "0.0",
-                "SubType": "xx",
+                "SubType": "abc",
                 "MsgThroughputOut": "0.0",
                 "SubscriptionName": "test",
                 "BlockedSubscriptionOnUnackedMsgs": true,

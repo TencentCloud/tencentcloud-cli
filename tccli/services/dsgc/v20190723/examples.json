@@ -1,11 +1,1183 @@
 {
   "actions": {
+    "AuthorizeDSPAMetaResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AuthorizeDSPAMetaResources\n<公共请求参数>\n\n{\n    \"AuthType\": \"automatic\",\n    \"DspaId\": \"dspa-6fb60936\",\n    \"MetaType\": \"cdb\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourcesAccount\": [\n        {\n            \"ResourceId\": \"cdb-9loqa8ed\",\n            \"UserName\": \"\",\n            \"Password\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1b55d08-d956-447e-9852-a93bbb6f5d55\",\n        \"DspaId\": \"dspa-6fb60936\",\n        \"Results\": [\n            {\n                \"Result\": \"success\",\n                \"ResultDescription\": \"auth resource success\",\n                \"ResourceId\": \"cdb-9loqa8ed\",\n                \"MetaType\": \"cdb\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "BindDSPAResourceCosBuckets": [
+      {
+        "document": "绑定桶",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDSPAResourceCosBuckets\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"BindCosResourceItems\": [\n        {\n            \"ResourceId\": \"abc\",\n            \"ResourceRegion\": \"abc\",\n            \"ResourceName\": \"abc\"\n        }\n    ],\n    \"UnbindCosResourceItems\": [\n        {\n            \"ResourceId\": \"abc\",\n            \"ResourceRegion\": \"abc\",\n            \"ResourceName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CosTaskResults\": [\n            {\n                \"Result\": \"abc\",\n                \"ResultDescription\": \"abc\",\n                \"ErrDescription\": {\n                    \"ErrCode\": \"abc\",\n                    \"ErrMessage\": \"abc\"\n                },\n                \"ResourceId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "BindDSPAResourceDatabases": [
+      {
+        "document": "批量绑定数据库实例db",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindDSPAResourceDatabases\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ResourceId\": \"abc\",\n    \"MetaType\": \"abc\",\n    \"BindDbItems\": [\n        {\n            \"DbName\": \"abc\"\n        }\n    ],\n    \"UnbindDbItems\": [\n        {\n            \"DbName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DbTaskResults\": [\n            {\n                \"Result\": \"abc\",\n                \"ResultDescription\": \"abc\",\n                \"ErrDescription\": {\n                    \"ErrCode\": \"abc\",\n                    \"ErrMessage\": \"abc\"\n                },\n                \"ResourceId\": \"abc\",\n                \"DbName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CopyDSPATemplate": [
+      {
+        "document": "复制合规组模版",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyDSPATemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "CreateAssetSortingReportRetryTask": [
+      {
+        "document": "创建资产梳理报告导出重试任务",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetSortingReportRetryTask\n<公共请求参数>\n\n{\n    \"ReportTaskId\": 1,\n    \"DspaId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportTaskId\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建资产梳理报告导出重试任务"
+      }
+    ],
+    "CreateAssetSortingReportTask": [
+      {
+        "document": "创建资产梳理报表导出任务",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetSortingReportTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 1,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ReportTaskId\": 3\n    }\n}",
+        "title": "创建资产梳理报表导出任务"
+      }
+    ],
+    "CreateClassificationRule": [
+      {
+        "document": "创建识别规则",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateClassificationRule\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "创建识别规则"
+      }
+    ],
+    "CreateDSPAAssessmentRiskLevel": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAAssessmentRiskLevel\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskLevelName\": \"abc\",\n    \"RiskLevelDescription\": \"abc\",\n    \"IdentifyComplianceId\": 0,\n    \"RiskLevelRule\": [\n        {\n            \"Id\": 0,\n            \"SensitiveLevelId\": 0,\n            \"SensitiveLevelName\": \"abc\",\n            \"VulnerabilityLevel\": \"abc\",\n            \"RiskLevel\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "CreateDSPAAssessmentRiskTemplate": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAAssessmentRiskTemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateName\": \"abc\",\n    \"TemplateDescription\": \"abc\",\n    \"RiskLevelId\": 0,\n    \"RiskIdList\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "CreateDSPAAssessmentTask": [
+      {
+        "document": "新创建dspa风险任务",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAAssessmentTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"Name\": \"test\",\n    \"BusinessName\": \"tx\",\n    \"BusinessDept\": \"tx\",\n    \"BusinessOwner\": \"tx\",\n    \"TemplateId\": \"template-00000000\",\n    \"DiscoveryCondition\": {\n        \"RDBInstances\": [\n            {\n                \"DataSourceId\": \"cdb-5vskvzvn\",\n                \"DataSourceType\": \"cdb\",\n                \"ResourceRegion\": \"ap-guangzhou\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"task-mdfmnme4\",\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "新建DSPA风险评估任务"
+      }
+    ],
+    "CreateDSPACOSDiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPACOSDiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"Enable\": 0,\n    \"Name\": \"测试任务\",\n    \"ComplianceGroupIds\": [\n        1\n    ],\n    \"Bucket\": \"bucket_1\",\n    \"GeneralRuleSetEnable\": 0,\n    \"Period\": 0,\n    \"TimingStartTime\": \"xx\",\n    \"FileSizeLimit\": 0,\n    \"Plan\": 0,\n    \"FileTypes\": [\n        \".csv\",\n        \".txt\"\n    ],\n    \"DataSourceId\": \"xx\",\n    \"Description\": \"xx\",\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TaskId\": 1,\n        \"ResultId\": 1\n    }\n}",
+        "title": "新增COS分类分级扫描任务"
+      }
+    ],
+    "CreateDSPACategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPACategory\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"CategoryId\": 1\n    }\n}",
+        "title": "新增分类"
+      }
+    ],
+    "CreateDSPACategoryRelation": [
+      {
+        "document": "创建分类关联关系",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPACategoryRelation\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"CategoryId\": 172,\n    \"ParentCategoryId\": 167,\n    \"ComplianceId\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "创建分类关联关系"
+      }
+    ],
+    "CreateDSPAComplianceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAComplianceGroup\n<公共请求参数>\n\n{\n    \"LevelGroupId\": \"1\",\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceGroupRules\": [],\n    \"Name\": \"task\",\n    \"Description\": \"扫描任务\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"ComplianceGroupId\": 1\n    }\n}",
+        "title": "新增分类分级模板"
+      }
+    ],
+    "CreateDSPAComplianceRules": [
+      {
+        "document": "创建合规组分类规则关联关系",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAComplianceRules\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"CategoryId\": 1,\n    \"ComplianceId\": 1,\n    \"Rules\": [\n        {\n            \"RuleId\": 1,\n            \"LevelId\": 5\n        },\n        {\n            \"RuleId\": 2,\n            \"LevelId\": 6\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "创建合规组分类规则关联关系"
+      }
+    ],
+    "CreateDSPACosMetaResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPACosMetaResources\n<公共请求参数>\n\n{\n    \"Buckets\": [\n        \"123-251007922\",\n        \"bowen-1234567890-251007922\",\n        \"bowen1test-251007922\",\n        \"dfdd-251007922\",\n        \"dspa-automated-251007922\",\n        \"dspa-test-xs-251007922\",\n        \"test-dspa-251007922\",\n        \"testgz-251007922\"\n    ],\n    \"DspaId\": \"dspa-6fb60936\",\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"36444cd8-e5b0-458f-a18b-75deef13e2bd\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "CreateDSPADbMetaResources": [
       {
         "document": "添加用户云上数据库类型资源",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPADbMetaResources\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"MetaType\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"UpdateStatus\": \"abc\",\n    \"UpdateId\": \"abc\",\n    \"Items\": [\n        {\n            \"ResourceId\": \"abc\",\n            \"ResourceName\": \"abc\",\n            \"ResourceVip\": \"abc\",\n            \"ResourceVPort\": 1,\n            \"ResourceCreateTime\": \"abc\",\n            \"ResourceUniqueVpcId\": \"abc\",\n            \"ResourceUniqueSubnetId\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"UpdateId\": \"abc\",\n        \"MetaType\": \"abc\",\n        \"DspaId\": \"abc\",\n        \"ResourceRegion\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "CreateDSPADiscoveryRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPADiscoveryRule\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Name\": \"xx\",\n    \"RDBRules\": {\n        \"Status\": 0,\n        \"MatchOperator\": \"xx\",\n        \"MetaRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"ContentRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"COSRules\": {\n        \"Status\": 0,\n        \"RegexRule\": {\n            \"Operator\": \"or\",\n            \"Contents\": [\n                {\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"KeywordRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": true,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"MaxMatch\": 0,\n        \"IgnoreStringRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": false,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"RuleId\": 1\n    }\n}",
+        "title": "新增分类分级规则"
+      }
+    ],
+    "CreateDSPADiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPADiscoveryTask\n<公共请求参数>\n\n{\n    \"Enable\": \"1\",\n    \"Name\": \"task\",\n    \"ComplianceGroupIds\": [\n        \"0\"\n    ],\n    \"DataSourceType\": \"1\",\n    \"GeneralRuleSetEnable\": \"1\",\n    \"Period\": \"0\",\n    \"TimingStartTime\": \"2021/4/2 10:46:18\",\n    \"DspaId\": \"dspa-0001\",\n    \"DataSourceId\": \"123\",\n    \"Plan\": \"0\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"Condition\": \"db1,db_2\",\n    \"Description\": \"扫描任务\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TaskId\": 1,\n        \"ResultId\": 1\n    }\n}",
+        "title": "新增分类分级任务"
+      }
+    ],
+    "CreateDSPALevelGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPALevelGroup\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-00000000\",\n    \"Name\": \"系统-高中低\",\n    \"Description\": \"系统默认分级\",\n    \"ItemLevels\": [\n        {\n            \"LevelRiskName\": \"高\",\n            \"LevelRiskScore\": 10\n        },\n        {\n            \"LevelRiskName\": \"中\",\n            \"LevelRiskScore\": 5\n        },\n        {\n            \"LevelRiskName\": \"低\",\n            \"LevelRiskScore\": 1\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"LevelGroupId\": 1\n    }\n}",
+        "title": "新增分级"
+      }
+    ],
+    "CreateDSPAMetaResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAMetaResources\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-ed415837\",\n    \"UpdateId\": \"49f060ba-c12d-4643-98da-aa8bcc382091\",\n    \"UpdateStatus\": \"finished\",\n    \"Items\": [\n        {\n            \"BuildType\": \"xx\",\n            \"ResourceSyncTime\": \"xx\",\n            \"ResourceRegion\": \"xx\",\n            \"ResourceVip\": \"xx\",\n            \"MetaType\": \"xx\",\n            \"ResourceId\": \"xx\",\n            \"ResourceCreateTime\": \"xx\",\n            \"ResourceUniqueSubnetId\": \"xx\",\n            \"ResourceUniqueVpcId\": \"xx\",\n            \"ResourceName\": \"xx\",\n            \"AuthStatus\": \"xx\",\n            \"ResourceVPort\": 1\n        }\n    ],\n    \"MetaType\": \"mariadb\",\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6542ea46-5974-42b2-8876-f1ca946a92ce\",\n        \"DspaId\": \"dspa-ed415837\",\n        \"MetaType\": \"mariadb\",\n        \"ResourceRegion\": \"ap-guangzhou\",\n        \"UpdateId\": \"49f060ba-c12d-4643-98da-aa8bcc382091\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateDSPASelfBuildMetaResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPASelfBuildMetaResource\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-6fb60936\",\n    \"MetaType\": \"postgre_like_proto\",\n    \"Password\": \"casb2020\",\n    \"ResourceAccessType\": \"cvm\",\n    \"ResourceId\": \"ins-xd48jxyk\",\n    \"ResourceName\": \"元数据管理自动化使用勿删-永久勿删\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceUniqueSubnetId\": \"subnet-n488vg8m\",\n    \"ResourceUniqueVpcId\": \"vpc-7vv1q6x9\",\n    \"ResourceVPort\": 5432,\n    \"ResourceVip\": \"172.16.0.45\",\n    \"UserName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"61e47c12-c480-424d-967d-353684c66c8a\",\n        \"ConnectivityStatus\": \"success\",\n        \"ConnectivityDescription\": \"success\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "CreateIdentifyRuleAnotherName": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIdentifyRuleAnotherName\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"CategoryId\": 0,\n    \"RuleId\": 0,\n    \"RuleName\": \"abc\",\n    \"AnotherName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "CreateNewClassification": [
+      {
+        "document": "创建新分类",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateNewClassification\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "创建新分类"
+      }
+    ],
+    "CreateOrCopyStandard": [
+      {
+        "document": "创建或复制分级分类模板",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:CreateOrCopyStandard\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "创建或复制分级分类模板"
+      }
+    ],
+    "DecribeSuggestRiskLevelMatrix": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DecribeSuggestRiskLevelMatrix\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"SensitiveLevelList\": [\n        {\n            \"Name\": \"abc\",\n            \"Id\": 0,\n            \"Score\": 0\n        }\n    ],\n    \"VulnerabilityLevelList\": [\n        {\n            \"Name\": \"abc\",\n            \"Id\": 0,\n            \"Score\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuggestRiskLevelMatrix\": [\n            {\n                \"RiskLevelMatrix\": [\n                    {\n                        \"SensitiveLevel\": {\n                            \"Name\": \"abc\",\n                            \"Id\": 0,\n                            \"Score\": 0\n                        },\n                        \"VulnerabilityLevel\": {\n                            \"Name\": \"abc\",\n                            \"Id\": 0,\n                            \"Score\": 0\n                        },\n                        \"RiskName\": \"abc\",\n                        \"RiskScore\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DeleteCosMetaResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCosMetaResource\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-ed415837\",\n    \"ResourceIds\": [\n        \"cos-5bd77f43edb397a96ab556945368c3533c4b535b\"\n    ],\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cf765de0-c417-4c7d-a39c-5551d4bc95ff\",\n        \"DspaId\": \"dspa-ed415837\",\n        \"Results\": [\n            {\n                \"Result\": \"success\",\n                \"ResultDescription\": \"resource delete success,bucket name:test-dspa-251007922\",\n                \"ResourceId\": \"cos-5bd77f43edb397a96ab556945368c3533c4b535b\",\n                \"MetaType\": \"cos\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DeleteDSPAAssessmentTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPAAssessmentTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"TaskId\": \"task-mdfmnme4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "删除DSPA风险评估任务"
+      }
+    ],
+    "DeleteDSPACOSDiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPACOSDiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"casb-001\",\n    \"TaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "删除COS分类分级任务"
+      }
+    ],
+    "DeleteDSPACOSDiscoveryTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPACOSDiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"BucketResultId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "删除COS分类分级任务结果"
+      }
+    ],
+    "DeleteDSPADiscoveryTask": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPADiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "删除分类分级识别任务"
+      }
+    ],
+    "DeleteDSPADiscoveryTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPADiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DbResultId\": \"1\",\n    \"DspaId\": \"dspa-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "删除分类分级识别任务结果"
+      }
+    ],
+    "DeleteDSPAMetaResource": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDSPAMetaResource\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-6fb60936\",\n    \"ResourceIDs\": [\n        \"ins-xd48jxyk-8587a43d\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f767c836-43b4-4165-b48e-76c4dea71325\",\n        \"DspaId\": \"dspa-6fb60936\",\n        \"Results\": [\n            {\n                \"Result\": \"success\",\n                \"ResultDescription\": \"resource delete success\",\n                \"ResourceId\": \"ins-xd48jxyk-8587a43d\",\n                \"MetaType\": \"mysql_like_proto\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeAssetDetailDataExportResult": [
+      {
+        "document": "查询敏感数据导出结果URL",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetDetailDataExportResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"ExportTaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ExportResult\": \"Success\",\n        \"ExportFileUrl\": \"https://datagov-test-cd-1258344699.cos.ap-chengdu.myqcloud.com/xxx.csv\"\n    }\n}",
+        "title": "查询敏感数据导出结果"
+      }
+    ],
+    "DescribeAssetOverview": [
+      {
+        "document": "资产报告 - 查询数据资产概览接口",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DBInstanceNums\": 0,\n        \"DBNums\": 0,\n        \"TableNums\": 0,\n        \"FieldNums\": 0,\n        \"DBInstanceDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"DBDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"BucketNums\": 0,\n        \"FileNums\": 0,\n        \"Remark\": \"abc\",\n        \"EsInstanceNums\": 1,\n        \"EsIndexNums\": 1,\n        \"EsFieldNums\": 1,\n        \"MongoInstanceNums\": 1,\n        \"MongoDbNums\": 1,\n        \"MongoColNums\": 1,\n        \"MongoFieldNums\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询数据资产概览接口"
+      }
+    ],
+    "DescribeBindDBList": [
+      {
+        "document": "示例",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBindDBList\n<公共请求参数>\n\n{\n    \"DataSourceType\": \"abc\",\n    \"DataSourceId\": \"abc\",\n    \"DspaId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindDBList\": [\n            \"abc\"\n        ],\n        \"BindList\": [\n            {\n                \"ResourceId\": \"abc\",\n                \"DbInfos\": [\n                    {\n                        \"DbName\": \"abc\",\n                        \"ValidStatus\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeCOSAssetSensitiveDistribution": [
+      {
+        "document": "示例描述",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCOSAssetSensitiveDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CosAsset\": {\n            \"BucketNums\": 0,\n            \"SensitiveBucketNums\": 0,\n            \"FileNums\": 0,\n            \"SensitiveFileNums\": 0\n        },\n        \"TopAsset\": [\n            {\n                \"LevelName\": \"abc\",\n                \"TopStat\": [\n                    {\n                        \"DataSourceId\": \"abc\",\n                        \"SubData\": \"abc\",\n                        \"SensitiveCnt\": 0\n                    }\n                ]\n            }\n        ],\n        \"CosDetail\": [\n            {\n                \"Bucket\": \"abc\",\n                \"DataType\": \"abc\",\n                \"FileNums\": 0,\n                \"SensitiveFileNums\": 0,\n                \"DistributionData\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ],\n                \"MatchedNum\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeClassificationInfo": [
+      {
+        "document": "查询分类信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeClassificationInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351be6a8-0d0b-471d-b66f-c36f13698e03\"\n    }\n}",
+        "title": "查询分类信息"
+      }
+    ],
+    "DescribeClassificationRuleCount": [
+      {
+        "document": "查询标准下所有分类的识别规则数量(不算子分类下的识别规则)",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeClassificationRuleCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "查询标准下所有分类的识别规则数量(不算子分类下的识别规则)"
+      }
+    ],
+    "DescribeDSPAAssessmentHighRiskTop10Overview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentHighRiskTop10Overview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AssetsList\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"AssetsName\": \"abc\",\n                \"HighRiskCount\": 0,\n                \"RiskType\": \"abc\",\n                \"TotalRiskCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentLatestRiskDetailInfo": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskDetailInfo\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"RiskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DataSourceId\": \"abc\",\n        \"DataSourceName\": \"abc\",\n        \"AssetName\": \"abc\",\n        \"AssessmentTemplateId\": 0,\n        \"IdentifyTemplateId\": 0,\n        \"RiskType\": \"abc\",\n        \"RiskName\": \"abc\",\n        \"RiskDescription\": \"abc\",\n        \"RiskLevel\": \"abc\",\n        \"SuggestAction\": \"abc\",\n        \"Status\": 0,\n        \"Remark\": \"abc\",\n        \"SecurityProduct\": [\n            {\n                \"ProductName\": \"abc\",\n                \"ReferUrl\": \"abc\"\n            }\n        ],\n        \"RiskDimension\": \"abc\",\n        \"RelationAsset\": [\n            \"abc\"\n        ],\n        \"AccountRiskDetail\": [\n            {\n                \"Id\": \"abc\",\n                \"RiskAccount\": \"abc\"\n            }\n        ],\n        \"PrivilegeRiskDetail\": [\n            {\n                \"AccountName\": [\n                    \"abc\"\n                ],\n                \"TableName\": \"abc\",\n                \"Description\": \"abc\"\n            }\n        ],\n        \"PolicyRiskCosFileList\": [\n            \"abc\"\n        ],\n        \"AKSKLeak\": [\n            {\n                \"AK\": \"abc\",\n                \"SK\": \"abc\",\n                \"URL\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentLatestRiskList": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"Limit\": 0,\n    \"Offset\": \"abc\",\n    \"DataSourceId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"ControlItemId\": \"abc\",\n    \"Status\": 0,\n    \"BeginTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"RiskLevel\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LatestRiskList\": [\n            {\n                \"Id\": 0,\n                \"DataSourceId\": \"abc\",\n                \"DataSourceName\": \"abc\",\n                \"DataSourceType\": \"abc\",\n                \"AssetName\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"RiskName\": \"abc\",\n                \"RiskLevel\": \"abc\",\n                \"RiskDescription\": \"abc\",\n                \"SuggestAction\": \"abc\",\n                \"SecurityProduct\": [\n                    {\n                        \"ProductName\": \"abc\",\n                        \"ReferUrl\": \"abc\"\n                    }\n                ],\n                \"Status\": 0,\n                \"ScanTime\": \"abc\",\n                \"LastProcessTime\": \"abc\",\n                \"IdentifyComplianceId\": 0,\n                \"ItemSubType\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentNewDiscoveredRiskOverview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentNewDiscoveredRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"NewDiscoveredRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentPendingRiskOverview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentPendingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"PendingRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentProcessingRiskOverview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentProcessingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessingRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskAmountOverview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskAmountOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalRiskCount\": 0,\n        \"TotalAffectedAssetCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskDatasourceTop5": [
+      {
+        "document": "受影响资产TOP5统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDatasourceTop5\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"RiskNum\": 22,\n                \"ItemName\": \"ins-xezz0kz5-aae7c346\"\n            },\n            {\n                \"RiskNum\": 20,\n                \"ItemName\": \"cynosdbmysql-9lo12zih\"\n            },\n            {\n                \"RiskNum\": 4,\n                \"ItemName\": \"ins-xezz0kz5-ae30f65e\"\n            },\n            {\n                \"RiskNum\": 4,\n                \"ItemName\": \"lb-05q58vty-b0bcba42\"\n            },\n            {\n                \"RiskNum\": 2,\n                \"ItemName\": \"lb-05q58vty-a38da60b\"\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "受影响资产TOP5统计"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskDealedOverview": [
+      {
+        "document": "遗留待处理&昨日完成风险处置概览统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDealedOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"YesterdayDealedCount\": 1,\n        \"UnDealedRiskWeekRatio\": 0,\n        \"UnDealedRiskDayRatio\": 0,\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "遗留待处理概览统计"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskDealedTrend": [
+      {
+        "document": "风险项处理趋势统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDealedTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-97538993\",\n    \"StartTime\": \"2022-09-01\",\n    \"EndTime\": \"2022-09-03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"09-01\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            },\n            {\n                \"Date\": \"09-02\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            },\n            {\n                \"Date\": \"09-03\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "风险项处理趋势统计"
+      },
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDealedTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"TemplateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"abc\",\n                \"Unhandled\": 1,\n                \"Handled\": 1,\n                \"NewDiscoveryHandled\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskDistributionOverview": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDistributionOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskTypeDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RiskDetailDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RiskAssetsDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskItemTop5": [
+      {
+        "document": "风险分类TOP5统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskItemTop5\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"RiskNum\": 38,\n                \"ItemName\": \"数据库账号和权限评估\"\n            },\n            {\n                \"RiskNum\": 9,\n                \"ItemName\": \"数据库风险配置\"\n            },\n            {\n                \"RiskNum\": 5,\n                \"ItemName\": \"数据库明文存储敏感信息\"\n            },\n            {\n                \"RiskNum\": 1,\n                \"ItemName\": \"aksk泄露风险\"\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "风险分类TOP5统计"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskLevelDetail": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskLevelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskLevelName\": \"abc\",\n        \"RiskLevelDescription\": \"abc\",\n        \"IdentifyComplianceId\": 0,\n        \"IdentifyComplianceName\": \"abc\",\n        \"RiskLevelMatrix\": [\n            {\n                \"Id\": 0,\n                \"SensitiveLevelId\": 0,\n                \"SensitiveLevelName\": \"abc\",\n                \"VulnerabilityLevel\": \"abc\",\n                \"RiskLevel\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskLevelList": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RiskLevelList\": [\n            {\n                \"Id\": 0,\n                \"RiskLevelName\": \"abc\",\n                \"RiskLevelDescription\": \"abc\",\n                \"IdentifyComplianceName\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskLevelTrend": [
+      {
+        "document": "风险级别趋势统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"StartTime\": \"2022-09-01\",\n    \"EndTime\": \"2022-09-03\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"09-01\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            },\n            {\n                \"Date\": \"09-02\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            },\n            {\n                \"Date\": \"09-03\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "风险级别趋势统计"
+      },
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"TemplateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"abc\",\n                \"High\": 1,\n                \"Medium\": 1,\n                \"Low\": 1,\n                \"Total\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskOverview": [
+      {
+        "document": "风险数量概览统计",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 6,\n        \"HighRiskCount\": 1,\n        \"HighRiskWeekRatio\": 0,\n        \"HighRiskDayRatio\": 0,\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "风险数量概览统计"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskProcessHistory": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskProcessHistory\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ProcessHistory\": [\n            {\n                \"Time\": \"abc\",\n                \"Status\": 0,\n                \"Handler\": \"abc\",\n                \"Note\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskTemplateDetail": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskTemplateDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"TemplateName\": \"abc\",\n        \"TemplateDescription\": \"abc\",\n        \"RiskLevelId\": 0,\n        \"RiskLevelName\": \"abc\",\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"TaskCitations\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskTemplateVulnerableList": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskTemplateVulnerableList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"RiskName\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRisks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRisks\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"TaskId\": \"task-mdfmnme4\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"RiskId\": \"risk-nzmxxxrm\",\n                \"RiskDescription\": \"cdb-5vsxxzvn中存在密码为空的账号\",\n                \"TemplateId\": \"template-00000000\",\n                \"TemplateName\": \"系统基础自动化评估模板\",\n                \"ControlItemId\": \"control-00000002\",\n                \"ControlItemName\": \"数据库风险配置\",\n                \"ControlItemDesc\": \"数据库风险配置\",\n                \"RiskLevel\": \"medium\",\n                \"RelatedAsset\": \"cdb-5vsxxzvn\",\n                \"RiskMitigation\": \"建议不允许密码为空的账号存在\",\n                \"Status\": \"waiting\",\n                \"CreatedTime\": \"2022-06-28 21:27:53\",\n                \"RiskOwner\": \"\"\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "获取DSPA评估风险项列表"
+      }
+    ],
+    "DescribeDSPAAssessmentTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentTasks\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TaskId\": \"task-otxxxwu3\",\n                \"TaskName\": \"test_03\",\n                \"BusinessName\": \"tx\",\n                \"BusinessDept\": \"tx\",\n                \"BusinessOwner\": \"tx\",\n                \"TemplateId\": \"template-00000000\",\n                \"TemplateName\": \"系统基础自动化评估模板\",\n                \"ComplianceGroupId\": 1,\n                \"ComplianceGroupName\": \"通用规则集\",\n                \"ControlItemCount\": 0,\n                \"RiskCount\": 1,\n                \"RiskCountInfoList\": [\n                    {\n                        \"RiskLevel\": \"高\",\n                        \"Count\": 0\n                    },\n                    {\n                        \"RiskLevel\": \"中\",\n                        \"Count\": 1\n                    },\n                    {\n                        \"RiskLevel\": \"低\",\n                        \"Count\": 0\n                    }\n                ],\n                \"FinishedTime\": \"2022-06-27 20:34:07\",\n                \"CreatedTime\": \"2022-06-27 20:33:45\",\n                \"Status\": \"finished\",\n                \"DiscoveryCondition\": {\n                    \"RDBInstances\": null,\n                    \"COSInstances\": [\n                        {\n                            \"DataSourceId\": \"cos-af8bd626a70111239f744bb623a19aba82ff29e7\",\n                            \"BucketName\": \"casb-1265441191\",\n                            \"ResourceRegion\": \"ap-guangzhou\"\n                        },\n                        {\n                            \"DataSourceId\": \"cos-68437d4a123451387fa35fb72d931d97763f076f\",\n                            \"BucketName\": \"casb-automated-1654641191\",\n                            \"ResourceRegion\": \"ap-guangzhou\"\n                        }\n                    ]\n                },\n                \"ErrorInfo\": \"DiscoveryTask Error,DiscoveryTaskName:COS-NDkxMzYy-对应评估任务-test_03\"\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "获取DSPA评估任务列表"
+      }
+    ],
+    "DescribeDSPAAssessmentTemplateControlItems": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentTemplateControlItems\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"TemplateId\": \"template-00000000\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"ItemId\": \"control-00000004\",\n                \"ItemName\": \"数据库账号和权限评估\",\n                \"Description\": \"数据库账号和权限评估\",\n                \"Source\": \"system\",\n                \"ItemType\": \"auto\",\n                \"ItemSubType\": \"application.database.accountAndprivilege\",\n                \"CreatedTime\": \"2022-05-30 09:31:22\",\n                \"Status\": \"launched\",\n                \"TemplateCount\": 0\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "获取DSPA评估模版关联的评估控制项列表"
+      }
+    ],
+    "DescribeDSPAAssessmentTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentTemplates\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TemplateId\": \"template-00000000\",\n                \"TemplateName\": \"系统基础自动化评估模板\",\n                \"Description\": \"系统基础自动化评估模板\",\n                \"Source\": \"system\",\n                \"UseType\": \"auto\",\n                \"CreatedTime\": \"2022-04-14 18:52:43\",\n                \"ControlItemCount\": 4,\n                \"AppliedItemCount\": 4,\n                \"Status\": \"launched\"\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "获取DSPA评估模板列表"
+      }
+    ],
+    "DescribeDSPACOSDataAssetBuckets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDataAssetBuckets\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Buckets\": [\n            \"bucket_1\",\n            \"bucket_2\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取COS敏感数据资产桶列表"
+      }
+    ],
+    "DescribeDSPACOSDataAssetByComplianceId": [
+      {
+        "document": "分类分级的",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDataAssetByComplianceId\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-00001\",\n    \"ComplianceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Stats\": {\n            \"DataAssetType\": 0,\n            \"TotalBucketCnt\": 0,\n            \"TotalObjectCnt\": 0,\n            \"SensitiveCategoryCnt\": 0,\n            \"SensitiveDataCnt\": 0,\n            \"SensitiveLevel\": [\n                {\n                    \"LevelId\": 0,\n                    \"LevelCnt\": 0,\n                    \"LevelRiskName\": \"abc\",\n                    \"LevelRiskScore\": 0\n                }\n            ],\n            \"SensitiveBucketCnt\": 0,\n            \"SensitiveObjectCnt\": 0,\n            \"CategoryDistributed\": [\n                {\n                    \"CategoryId\": 0,\n                    \"CategoryName\": \"abc\",\n                    \"Count\": 1,\n                    \"CategoryFullPath\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取COS单个模板下的敏感数据资产"
+      }
+    ],
+    "DescribeDSPACOSDataAssetDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDataAssetDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Details\": [\n            {\n                \"BucketName\": \"bucket-xxxx\",\n                \"FileName\": \"test.txt\",\n                \"RuleName\": \"住址\",\n                \"CategoryName\": \"个人基本信息\",\n                \"LevelRiskName\": \"中\",\n                \"KMSEncrypted\": true,\n                \"FileType\": \"text\",\n                \"FileSize\": \"32B\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取COS分类分级数据资产详情"
+      }
+    ],
+    "DescribeDSPACOSDiscoveryTaskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTaskDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-01\",\n    \"TaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"Task\": {\n            \"Name\": \"敏感数据测试\",\n            \"Description\": \"test\",\n            \"Period\": 0,\n            \"Plan\": 0,\n            \"Enable\": 1,\n            \"TimingStartTime\": null,\n            \"GeneralRuleSetEnable\": 1,\n            \"CustomComplianceInfo\": null,\n            \"DefaultComplianceInfo\": [\n                {\n                    \"ComplianceGroupId\": 1,\n                    \"ComplianceGroupName\": \"default\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取COS分类分级任务详情"
+      }
+    ],
+    "DescribeDSPACOSDiscoveryTaskFiles": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTaskFiles\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"BucketResultId\": 123,\n    \"TaskId\": 123\n}",
+        "output": "{\n    \"Response\": {\n        \"Files\": [\n            \"file_1\",\n            \"file_2\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取COS分类分级任务结果详情文件列表"
+      }
+    ],
+    "DescribeDSPACOSDiscoveryTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"BucketName\",\n            \"Values\": [\n                \"bucket_1\"\n            ]\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"BucketResultId\": 3,\n                \"TaskId\": 28,\n                \"TaskName\": \"898111\",\n                \"BucketName\": \"bucket_1\",\n                \"TotalFiles\": 2,\n                \"SensitiveDataNums\": 6\n            }\n        ]\n    }\n}",
+        "title": "DescribeCOSTaskResult"
+      }
+    ],
+    "DescribeDSPACOSDiscoveryTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSDiscoveryTasks\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-01\",\n    \"Limit\": 0,\n    \"TaskId\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Enable\": 0,\n                \"Name\": \"xx\",\n                \"GeneralRuleSetEnable\": 0,\n                \"Period\": 0,\n                \"TimingStartTime\": \"20201-08-20 09:20:20\",\n                \"Result\": {\n                    \"Status\": 0,\n                    \"EndTime\": \"2021-08-20 09:30:00\",\n                    \"Id\": 0,\n                    \"Result\": \"123\"\n                },\n                \"Plan\": 0,\n                \"Description\": \"test_result\"\n            }\n        ],\n        \"RequestId\": \"request_1\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取COS分类分级任务列表"
+      }
+    ],
+    "DescribeDSPACOSTaskResultDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACOSTaskResultDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"TaskId\": 0,\n    \"LevelId\": 10000,\n    \"FileName\": \"test.txt\",\n    \"Limit\": 0,\n    \"ComplianceId\": 0,\n    \"Offset\": 0,\n    \"BucketResultId\": 1,\n    \"BucketName\": \"bucket_1\",\n    \"CategoryId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"CategoryName\": \"身份证\",\n                \"RuleId\": 0,\n                \"LevelName\": \"高\",\n                \"FileType\": \".csv\",\n                \"SensitiveDataCount\": 0,\n                \"LevelId\": 10000,\n                \"FileName\": \"test.txt\",\n                \"LevelRiskScore\": 0,\n                \"BucketName\": \"bucket_01\",\n                \"TaskId\": 0,\n                \"RuleName\": \"rule_01\",\n                \"KMSEncrypted\": true,\n                \"CategoryId\": 0,\n                \"FileSize\": 0\n            }\n        ],\n        \"RequestId\": \"request_001\"\n    }\n}",
+        "title": "获取COS分类分级任务结果详情"
+      }
+    ],
+    "DescribeDSPACategories": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACategories\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"Limit\": \"1\",\n    \"Name\": \"财务信息\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Source\": 1,\n                \"CategoryId\": 1,\n                \"Name\": \"财务信息\"\n            }\n        ]\n    }\n}",
+        "title": "获取分类列表"
+      }
+    ],
+    "DescribeDSPACategoryRuleStatistic": [
+      {
+        "document": "获取分类规则统计信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACategoryRuleStatistic\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"StatisticSet\": [\n            {\n                \"CategoryId\": 165,\n                \"RuleCount\": 2\n            }\n        ]\n    }\n}",
+        "title": "获取分类规则统计信息"
+      }
+    ],
+    "DescribeDSPACategoryRules": [
+      {
+        "document": "获取合规组分类规则信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACategoryRules\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"CategoryId\": 1,\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"CategoryRules\": [\n            {\n                \"Id\": 1,\n                \"CategoryId\": 165,\n                \"RuleId\": 1,\n                \"RuleName\": \"银行卡\",\n                \"LevelId\": 5,\n                \"LevelName\": \"S3\"\n            },\n            {\n                \"Id\": 2,\n                \"CategoryId\": 165,\n                \"RuleId\": 2,\n                \"RuleName\": \"信用卡\",\n                \"LevelId\": 6,\n                \"LevelName\": \"S2\"\n            }\n        ]\n    }\n}",
+        "title": "获取合规组分类规则信息"
+      }
+    ],
+    "DescribeDSPACategoryTree": [
+      {
+        "document": "获取分类树信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACategoryTree\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ResultJson\": \"[{\\\"Id\\\":163,\\\"Name\\\":\\\"一级分类\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":-1,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":1,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":164,\\\"Name\\\":\\\"二级分类\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":163,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":2,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":165,\\\"Name\\\":\\\"三级分类1\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":null},{\\\"Id\\\":166,\\\"Name\\\":\\\"三级分类2\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":168,\\\"Name\\\":\\\"四级分类1\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":166,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":null},{\\\"Id\\\":169,\\\"Name\\\":\\\"四级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":166,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":170,\\\"Name\\\":\\\"五级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":169,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":5,\\\"Rules\\\":null,\\\"Children\\\":null}]}]},{\\\"Id\\\":167,\\\"Name\\\":\\\"三级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":172,\\\"Name\\\":\\\"四级分类5\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":167,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":null}]},{\\\"Id\\\":171,\\\"Name\\\":\\\"五级分类2\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":null}]}]}]\"\n    }\n}",
+        "title": "获取分类树信息"
+      }
+    ],
+    "DescribeDSPACategoryTreeWithRules": [
+      {
+        "document": "获取分类规则树信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPACategoryTreeWithRules\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ResultJson\": \"[{\\\"Id\\\":163,\\\"Name\\\":\\\"一级分类\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":-1,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":1,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":164,\\\"Name\\\":\\\"二级分类\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":163,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":2,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":165,\\\"Name\\\":\\\"三级分类1\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":[{\\\"RuleId\\\":1,\\\"RuleName\\\":\\\"银行卡\\\",\\\"LevelId\\\":5,\\\"LevelName\\\":\\\"S3\\\"},{\\\"RuleId\\\":2,\\\"RuleName\\\":\\\"信用卡\\\",\\\"LevelId\\\":6,\\\"LevelName\\\":\\\"S2\\\"}],\\\"Children\\\":null},{\\\"Id\\\":166,\\\"Name\\\":\\\"三级分类2\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":168,\\\"Name\\\":\\\"四级分类1\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":166,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":null},{\\\"Id\\\":169,\\\"Name\\\":\\\"四级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":166,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":170,\\\"Name\\\":\\\"五级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":169,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":5,\\\"Rules\\\":null,\\\"Children\\\":null}]}]},{\\\"Id\\\":167,\\\"Name\\\":\\\"三级分类3\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":0,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":[{\\\"Id\\\":172,\\\"Name\\\":\\\"四级分类5\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":167,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":4,\\\"Rules\\\":null,\\\"Children\\\":null}]},{\\\"Id\\\":171,\\\"Name\\\":\\\"五级分类2\\\",\\\"ComplianceId\\\":5,\\\"ParentId\\\":164,\\\"IsLeaf\\\":1,\\\"Source\\\":1,\\\"Grade\\\":3,\\\"Rules\\\":null,\\\"Children\\\":null}]}]}]\"\n    }\n}",
+        "title": "获取分类规则树信息"
+      }
+    ],
+    "DescribeDSPAComplianceGroupDetail": [
+      {
+        "document": "获取模板详情信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAComplianceGroupDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"Detail\": {\n            \"Id\": 5,\n            \"Name\": \"开发模板\",\n            \"Description\": \"\",\n            \"ComplianceGroupType\": 2,\n            \"CreateTime\": \"2022-10-16 16:42:16\",\n            \"ModifyTime\": \"2022-10-16 16:42:16\",\n            \"LevelGroupId\": 1,\n            \"LevelGroupName\": \"系统-高中低\"\n        }\n    }\n}",
+        "title": "获取模板详情信息"
+      }
+    ],
+    "DescribeDSPAComplianceGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAComplianceGroups\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"Name\": \"task\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d722c0ba-ad06-4e10-9941-e1eeb044fbf8\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"ComplianceGroupId\": 3,\n                \"Name\": \"aaaq\",\n                \"Description\": \"ddd\",\n                \"ComplianceGroupType\": 1\n            }\n        ]\n    }\n}",
+        "title": "获取分类分级模板列表"
+      }
+    ],
+    "DescribeDSPAComplianceUpdateNotification": [
+      {
+        "document": "获取模板更新提示信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAComplianceUpdateNotification\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"IsUpdated\": true,\n        \"TaskNameSet\": [\n            \"aaa\"\n        ]\n    }\n}",
+        "title": "获取模板更新提示信息"
+      }
+    ],
+    "DescribeDSPADataSourceDbInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADataSourceDbInfo\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"DataSourceId\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"Items\": [\n            {\n                \"DbName\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "获取数据源的数据库信息"
+      }
+    ],
+    "DescribeDSPADiscoveryRules": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryRules\n<公共请求参数>\n\n{\n    \"DspaId\": \"casb_1\",\n    \"RuleId\": 1,\n    \"Limit\": 10,\n    \"Name\": \"test_rule\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"RuleId\": 0,\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"Source\": 0,\n                \"RDBRules\": {\n                    \"Status\": 0,\n                    \"MatchOperator\": \"abc\",\n                    \"MetaRule\": {\n                        \"Operator\": \"abc\",\n                        \"Contents\": [\n                            {\n                                \"RuleType\": \"abc\",\n                                \"RuleContent\": \"abc\",\n                                \"ExtendParameters\": [\n                                    {\n                                        \"Name\": \"abc\",\n                                        \"Value\": \"abc\"\n                                    }\n                                ]\n                            }\n                        ]\n                    },\n                    \"ContentRule\": {\n                        \"Operator\": \"abc\",\n                        \"Contents\": [\n                            {\n                                \"RuleType\": \"abc\",\n                                \"RuleContent\": \"abc\",\n                                \"ExtendParameters\": [\n                                    {\n                                        \"Name\": \"abc\",\n                                        \"Value\": \"abc\"\n                                    }\n                                ]\n                            }\n                        ]\n                    }\n                },\n                \"COSRules\": {\n                    \"Status\": 0,\n                    \"RegexRule\": {\n                        \"Operator\": \"abc\",\n                        \"Contents\": [\n                            {\n                                \"RuleContent\": \"abc\",\n                                \"IsIgnoreCase\": true\n                            }\n                        ]\n                    },\n                    \"KeywordRule\": {\n                        \"Operator\": \"abc\",\n                        \"Contents\": [\n                            {\n                                \"RuleContent\": \"abc\",\n                                \"IsIgnoreCase\": true\n                            }\n                        ]\n                    },\n                    \"IgnoreStringRule\": {\n                        \"Operator\": \"abc\",\n                        \"Contents\": [\n                            {\n                                \"RuleContent\": \"abc\",\n                                \"IsIgnoreCase\": true\n                            }\n                        ]\n                    },\n                    \"MaxMatch\": 0\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取分类分级规则列表"
+      }
+    ],
+    "DescribeDSPADiscoveryServiceStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryServiceStatus\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"ServiceEnabled\": true\n    }\n}",
+        "title": "获取分类分级服务状态"
+      }
+    ],
+    "DescribeDSPADiscoveryTaskDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryTaskDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-0001\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"Task\": {\n            \"Name\": \"敏感数据测试\",\n            \"Description\": \"test\",\n            \"Period\": 0,\n            \"Plan\": 0,\n            \"Enable\": 1,\n            \"TimingStartTime\": null,\n            \"GeneralRuleSetEnable\": 1,\n            \"CustomComplianceInfo\": null,\n            \"DefaultComplianceInfo\": [\n                {\n                    \"ComplianceGroupId\": 1,\n                    \"ComplianceGroupName\": \"default\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取分类分级任务详情"
+      }
+    ],
+    "DescribeDSPADiscoveryTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryTaskResult\n<公共请求参数>\n\n{\n    \"DataSourceType\": \"cdb\",\n    \"DspaId\": \"dspa-001\",\n    \"Limit\": \"1\",\n    \"TaskId\": \"1\",\n    \"Offset\": \"0\",\n    \"TaskName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"DbResultId\": 3,\n                \"TaskId\": 28,\n                \"TaskName\": \"898111\",\n                \"DbName\": \"testdb\",\n                \"TotalTables\": 2\n            }\n        ]\n    }\n}",
+        "title": "获取分类分级任务结果"
+      }
+    ],
+    "DescribeDSPADiscoveryTaskResultDetail": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryTaskResultDetail\n<公共请求参数>\n\n{\n    \"DbResultId\": \"1\",\n    \"ComplianceId\": \"1\",\n    \"TableName\": \"test\",\n    \"DspaId\": \"dspa-001\",\n    \"Limit\": \"1\",\n    \"TaskId\": \"1\",\n    \"Offset\": \"0\",\n    \"DbName\": \"db1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskId\": 0,\n                \"FieldResultId\": 0,\n                \"TableName\": \"abc\",\n                \"FieldName\": \"abc\",\n                \"CategoryId\": 0,\n                \"CategoryName\": \"abc\",\n                \"LevelId\": 0,\n                \"LevelName\": \"abc\",\n                \"RuleName\": \"abc\",\n                \"RuleId\": 0,\n                \"LevelRiskScore\": 0,\n                \"SafeGuard\": {\n                    \"Encrypt\": \"abc\",\n                    \"Desensitization\": \"abc\"\n                },\n                \"CategoryFullPath\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取分类分级任务结果详情"
+      }
+    ],
+    "DescribeDSPADiscoveryTaskTables": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPADiscoveryTaskTables\n<公共请求参数>\n\n{\n    \"DbResultId\": \"1\",\n    \"DspaId\": \"dspa-001\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"Items\": [\n            {\n                \"TableName\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "获取分级分级扫描的表集合"
+      }
+    ],
+    "DescribeDSPAESDataAssetByComplianceId": [
+      {
+        "document": "概览页",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAESDataAssetByComplianceId\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Stats\": {\n            \"DataAssetType\": 0,\n            \"SensitiveIndexCnt\": 0,\n            \"TotalIndexCnt\": 0,\n            \"SensitiveFieldCnt\": 0,\n            \"TotalFieldCnt\": 0,\n            \"SensitiveCategoryCnt\": 0,\n            \"SensitiveLevel\": [\n                {\n                    \"LevelId\": 0,\n                    \"LevelCnt\": 0,\n                    \"LevelRiskName\": \"abc\",\n                    \"LevelRiskScore\": 0\n                }\n            ],\n            \"CategoryDistributed\": [\n                {\n                    \"CategoryId\": 0,\n                    \"CategoryName\": \"abc\",\n                    \"Count\": 1,\n                    \"CategoryFullPath\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAESDataAssetDetail": [
+      {
+        "document": "查询es概览页列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAESDataAssetDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Details\": [\n            {\n                \"DataSourceId\": \"abc\",\n                \"DataSourceName\": \"abc\",\n                \"DataSourceType\": \"abc\",\n                \"ResourceRegion\": \"abc\",\n                \"IndexName\": \"abc\",\n                \"FieldName\": \"abc\",\n                \"CategoryId\": 0,\n                \"CategoryArr\": [\n                    \"abc\"\n                ],\n                \"LevelRiskName\": \"abc\",\n                \"LevelRiskScore\": 0,\n                \"TrustedScore\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAESDataSample": [
+      {
+        "document": "查看ES的样本数据",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAESDataSample\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"FieldResultId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看ES的样本"
+      }
+    ],
+    "DescribeDSPAESDiscoveryTaskResultDetail": [
+      {
+        "document": "查询es的分类分级扫描任务结果详情",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAESDiscoveryTaskResultDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TaskId\": 0,\n    \"ComplianceId\": 0,\n    \"CategoryIdList\": [\n        0\n    ],\n    \"LevelId\": 0,\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskId\": \"abc\",\n                \"FieldName\": \"abc\",\n                \"RuleId\": 0,\n                \"RuleName\": \"abc\",\n                \"CategoryId\": 0,\n                \"CategoryName\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPALevelDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPALevelDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-00001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"LevelGroupId\": 1,\n                \"LevelRiskScore\": 1,\n                \"LevelId\": 1,\n                \"LevelRiskName\": \"xx\"\n            },\n            {\n                \"LevelGroupId\": 1,\n                \"LevelRiskScore\": 1,\n                \"LevelId\": 1,\n                \"LevelRiskName\": \"xx\"\n            },\n            {\n                \"LevelGroupId\": 1,\n                \"LevelRiskScore\": 1,\n                \"LevelId\": 1,\n                \"LevelRiskName\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取分级详情"
+      }
+    ],
+    "DescribeDSPALevelGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPALevelGroups\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-00000000\",\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"LevelGroupDesc\": \"xx\",\n                \"RefComplianceCnt\": 1,\n                \"LevelDetail\": [\n                    {\n                        \"LevelGroupId\": 1,\n                        \"LevelRiskScore\": 1,\n                        \"LevelId\": 1,\n                        \"LevelRiskName\": \"xx\"\n                    }\n                ],\n                \"LevelGroupName\": \"xx\",\n                \"Source\": 1,\n                \"LevelGroupId\": 1,\n                \"RefCompliance\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"LevelGroupId\": 1,\n                        \"ComplianceGroupRules\": [\n                            {\n                                \"RuleId\": 0,\n                                \"RuleName\": \"xx\",\n                                \"LevelId\": 0,\n                                \"CategoryId\": 0\n                            }\n                        ],\n                        \"ComplianceGroupId\": 3,\n                        \"ComplianceGroupType\": 1,\n                        \"Description\": \"xx\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "获取分级列表"
+      }
+    ],
+    "DescribeDSPARDBDataAssetByComplianceId": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPARDBDataAssetByComplianceId\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-00001\",\n    \"ComplianceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Stats\": {\n            \"SensitiveDbCnt\": 3,\n            \"SensitiveLevel\": [\n                {\n                    \"LevelCnt\": 10,\n                    \"LevelRiskName\": \"S2\",\n                    \"LevelRiskScore\": 10,\n                    \"LevelId\": 1\n                }\n            ],\n            \"CategoryDistributed\": [\n                {\n                    \"Count\": 1,\n                    \"CategoryId\": 0,\n                    \"CategoryName\": \"xx\"\n                }\n            ],\n            \"TotalFieldCnt\": 50,\n            \"SensitiveCategoryCnt\": 6,\n            \"TotalTableCnt\": 20,\n            \"TotalDbCnt\": 5,\n            \"SensitiveFieldCnt\": 20,\n            \"SensitiveTableCnt\": 10,\n            \"DataAssetType\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取单个合规组下的RDB关系数据库分类分级数据资产"
+      }
+    ],
+    "DescribeDSPARDBDataAssetDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPARDBDataAssetDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Details\": [\n            {\n                \"CategoryName\": \"个人基本信息\",\n                \"DataSourceId\": \"datasource-xxxx\",\n                \"DbType\": \"MySQL\",\n                \"LevelRiskName\": \"中\",\n                \"LevelRiskScore\": 2,\n                \"TableName\": \"beijing_01\",\n                \"FieldName\": \"address\",\n                \"RuleName\": \"住址\",\n                \"FieldResultId\": 123,\n                \"DbName\": \"db-1\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取RDB关系数据库分类分级资产详情"
+      }
+    ],
+    "DescribeDSPASupportedMetas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPASupportedMetas\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c7af630e-81c2-4340-9535-5afa8b8e88b1\",\n        \"Metas\": [\n            {\n                \"MetaType\": \"cdb\",\n                \"Regions\": [\n                    \"ap-chengdu\",\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\",\n                    \"automatic\"\n                ]\n            },\n            {\n                \"MetaType\": \"dcdb\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\",\n                    \"automatic\"\n                ]\n            },\n            {\n                \"MetaType\": \"mariadb\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\",\n                    \"automatic\"\n                ]\n            },\n            {\n                \"MetaType\": \"postgres\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\"\n                ]\n            },\n            {\n                \"MetaType\": \"cynosdbmysql\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\"\n                ]\n            },\n            {\n                \"MetaType\": \"cos\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": null\n            },\n            {\n                \"MetaType\": \"mysql_like_proto\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\"\n                ]\n            },\n            {\n                \"MetaType\": \"postgre_like_proto\",\n                \"Regions\": [\n                    \"ap-guangzhou\"\n                ],\n                \"SupportedAuthTypes\": [\n                    \"account\"\n                ]\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeDSPATaskResultDataSample": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPATaskResultDataSample\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"FieldResultId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"Items\": [\n            {\n                \"DataSample\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "获取扫描结果数据样本"
+      }
+    ],
+    "DescribeESAssetSensitiveDistribution": [
+      {
+        "document": "查询es的敏感资产分布",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeESAssetSensitiveDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ESAsset\": {\n            \"IndexNums\": 0,\n            \"SensitiveIndexNums\": 0,\n            \"FieldNums\": 0,\n            \"SensitiveFieldNums\": 0\n        },\n        \"TopAsset\": [\n            {\n                \"LevelName\": \"abc\",\n                \"TopStat\": [\n                    {\n                        \"DataSourceId\": \"abc\",\n                        \"SubData\": \"abc\",\n                        \"SensitiveCnt\": 0\n                    }\n                ]\n            }\n        ],\n        \"ESDetail\": [\n            {\n                \"DataSourceId\": \"abc\",\n                \"IndexName\": \"abc\",\n                \"DataType\": \"abc\",\n                \"FieldNums\": 0,\n                \"SensitiveFieldNums\": 0,\n                \"DistributionData\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询es的敏感资产分布"
+      }
+    ],
+    "DescribeExportTaskResult": [
+      {
+        "document": "获取导出任务结果",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExportTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-xxx\",\n    \"ExportTaskId\": 460\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ExportResult\": \"Success\",\n        \"ExportFileUrl\": \"https://xxx\"\n    }\n}",
+        "title": "获取导出任务结果"
+      }
+    ],
+    "DescribeLeafClassification": [
+      {
+        "document": "查询标准下所有叶子节点分类",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeLeafClassification\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "查询标准下所有叶子节点分类"
+      }
+    ],
+    "DescribeMongoAssetSensitiveDistribution": [
+      {
+        "document": "查询mongo的敏感资产分布",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMongoAssetSensitiveDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MongoAsset\": {\n            \"DbNums\": 0,\n            \"SensitiveDbNums\": 0,\n            \"ColNums\": 0,\n            \"SensitiveColNums\": 0,\n            \"FieldNums\": 0,\n            \"SensitiveFieldNums\": 0\n        },\n        \"TopAsset\": [\n            {\n                \"LevelName\": \"abc\",\n                \"TopStat\": [\n                    {\n                        \"DataSourceId\": \"abc\",\n                        \"SubData\": \"abc\",\n                        \"SensitiveCnt\": 0\n                    }\n                ]\n            }\n        ],\n        \"MongoDetail\": [\n            {\n                \"DataSourceId\": \"abc\",\n                \"DdName\": \"abc\",\n                \"DataType\": \"abc\",\n                \"ColNums\": 0,\n                \"SensitiveColNums\": 0,\n                \"FieldNums\": 0,\n                \"SensitiveFieldNums\": 0,\n                \"DistributionData\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询mongo的敏感资产分布"
+      }
+    ],
+    "DescribeRDBAssetSensitiveDistribution": [
+      {
+        "document": "示例描述",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRDBAssetSensitiveDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RDBAsset\": {\n            \"DbNums\": 0,\n            \"SensitiveDbNums\": 0,\n            \"TableNums\": 0,\n            \"SensitiveTableNums\": 0,\n            \"FieldNums\": 0,\n            \"SensitiveFieldNums\": 0\n        },\n        \"TopAsset\": [\n            {\n                \"LevelName\": \"abc\",\n                \"TopStat\": [\n                    {\n                        \"DataSourceId\": \"abc\",\n                        \"SubData\": \"abc\",\n                        \"SensitiveCnt\": 0\n                    }\n                ]\n            }\n        ],\n        \"RDBDetail\": [\n            {\n                \"DataSourceId\": \"abc\",\n                \"DdName\": \"abc\",\n                \"DataType\": \"abc\",\n                \"TableNums\": 0,\n                \"SensitiveTableNums\": 0,\n                \"FieldNums\": 0,\n                \"SensitiveFieldNums\": 0,\n                \"DistributionData\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeReportTaskDownloadUrl": [
+      {
+        "document": "获取资产报告下载链接",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReportTaskDownloadUrl\n<公共请求参数>\n\n{\n    \"ReportTaskId\": 1,\n    \"IsWithSensitiveDetailReport\": true,\n    \"DspaId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DownloadUrlSet\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取资产报告下载链接"
+      }
+    ],
+    "DescribeReportTasks": [
+      {
+        "document": "获取资产报表任务列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReportTasks\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ReportName\": \"abc\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ItemSet\": [\n            {\n                \"Id\": 1,\n                \"ReportName\": \"abc\",\n                \"ReportType\": \"abc\",\n                \"ReportPeriod\": 1,\n                \"ReportPlan\": 1,\n                \"ReportStatus\": \"abc\",\n                \"TimingStartTime\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"FinishedTime\": \"abc\",\n                \"SubUin\": \"abc\",\n                \"FailedMessage\": \"abc\",\n                \"Enable\": 1,\n                \"ComplianceName\": \"abc\",\n                \"ProgressPercent\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取资产报表任务列表"
+      }
+    ],
+    "DescribeRuleDetail": [
+      {
+        "document": "查询分类规则详情",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeRuleDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351be6a8-0d0b-471d-b66f-c36f13698e03\"\n    }\n}",
+        "title": "查询分类规则详情"
+      }
+    ],
+    "DescribeRuleList": [
+      {
+        "document": "查询分类下规则列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"351be6a8-0d0b-471d-b66f-c36f13698e03\"\n    }\n}",
+        "title": "查询分类下规则列表"
+      }
+    ],
+    "DescribeSensitiveCOSDataDistribution": [
+      {
+        "document": "描述",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveCOSDataDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LevelDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"CategoryDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RuleDistribution\": [\n            {\n                \"RuleId\": 0,\n                \"RuleName\": \"abc\",\n                \"LevelId\": 0,\n                \"LevelName\": \"abc\",\n                \"RuleCnt\": 0\n            }\n        ],\n        \"SensitiveDataNum\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeSensitiveRDBDataDistribution": [
+      {
+        "document": "接口调用示例",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSensitiveRDBDataDistribution\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ComplianceId\": 0,\n    \"AssetList\": [\n        {\n            \"DataSourceType\": \"abc\",\n            \"DataSourceInfo\": [\n                {\n                    \"DataSourceId\": \"abc\",\n                    \"BindList\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LevelDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"CategoryDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RuleDistribution\": [\n            {\n                \"RuleId\": 0,\n                \"RuleName\": \"abc\",\n                \"LevelId\": 0,\n                \"LevelName\": \"abc\",\n                \"RuleCnt\": 0\n            }\n        ],\n        \"SensitiveDataNum\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DisableDSPAMetaResourceAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DisableDSPAMetaResourceAuth\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-42202e98\",\n    \"MetaType\": \"cdb\",\n    \"ResourceIDs\": [\n        \"cdb-9z29e6xx\"\n    ],\n    \"ResourceRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1e73efb3-354e-4d44-8b48-369446c9c33a\",\n        \"DspaId\": \"dspa-42202e98\",\n        \"Results\": [\n            {\n                \"Result\": \"failed\",\n                \"ResultDescription\": \"{\\\"Code\\\":\\\"ResourceNotFound\\\",\\\"Message\\\":\\\"resource not exists\\\"}\",\n                \"ResourceId\": \"cdb-9z29e6xx\",\n                \"MetaType\": \"cdb\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "EnableDSPADiscoveryRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableDSPADiscoveryRule\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"Enable\": true,\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "打开或者关闭分类分级规则"
+      }
+    ],
+    "EnableTrialVersion": [
+      {
+        "document": "开启标准版体验",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EnableTrialVersion\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-xxxxx\",\n    \"TrialVersion\": \"standard\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ExportAssetDetailData": [
+      {
+        "document": "创建敏感数据导出任务",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetDetailData\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"ComplianceId\": \"1\",\n    \"MetaDataType\": \"cos\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\",\n        \"ExportTaskId\": 44\n    }\n}",
+        "title": "敏感数据导出"
+      }
+    ],
+    "GetResourceConnectionStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetResourceConnectionStatus\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-6fb60936\",\n    \"MetaType\": \"cdb\",\n    \"ResourceRegion\": \"ap-guangzhou\",\n    \"ResourceId\": \"cdb-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1b55d08-d956-447e-9852-a93bbb6f5d55\",\n        \"ConnectionStatus\": \"success\",\n        \"ConnectionDesc\": \"\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetTrialVersion": [
+      {
+        "document": "获取DSPA实例的版本体验信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTrialVersion\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TrialVersion\": \"abc\",\n        \"TrialEndAt\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "GetUserQuotaInfo": [
+      {
+        "document": "获取用户配额信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserQuotaInfo\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DspaId\": \"abc\",\n        \"DbTotalQuota\": 0,\n        \"CosTotalQuota\": 0,\n        \"DbRemainQuota\": 0,\n        \"CosRemainQuota\": 0,\n        \"CosQuotaUnit\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ListDSPAClusters": [
+      {
+        "document": "拉取DSPA实例列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDSPAClusters\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceList\": [\n            {\n                \"DspaId\": \"abc\",\n                \"DspaName\": \"abc\",\n                \"DspaDescription\": \"abc\",\n                \"DBAuthCount\": 1,\n                \"CosBindCount\": 1,\n                \"InstanceVersion\": \"abc\",\n                \"Status\": \"abc\",\n                \"ExpiredAt\": 1,\n                \"AppId\": 1,\n                \"TrialVersion\": \"abc\",\n                \"TrialEndAt\": 1,\n                \"DbTotalQuota\": 0,\n                \"CosTotalQuota\": 0,\n                \"RenewFlag\": 1\n            }\n        ],\n        \"DenyAll\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "拉取DSPA实例列表"
+      }
+    ],
+    "ListDSPACosMetaResources": [
+      {
+        "document": "获取dspa实例下的cos资源列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDSPACosMetaResources\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"BindType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"Bucket\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Valid\": 0,\n                \"ResourceId\": \"abc\",\n                \"ResourceRegion\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"Storage\": 1\n            }\n        ],\n        \"DspaId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ListDSPAMetaResources": [
+      {
+        "document": "获取Dspa实例下的指定cdb资源信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListDSPAMetaResources\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-6fb60936\",\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceId\",\n            \"Values\": [\n                \"cdb-9loqa8ed\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0b727eb5-5759-40c2-adeb-bb238e0259db\",\n        \"TotalCount\": 1,\n        \"DspaId\": \"dspa-6fb60936\",\n        \"Resources\": [\n            {\n                \"BuildType\": \"cloud\",\n                \"MetaType\": \"cdb\",\n                \"ResourceId\": \"cdb-9loqa8ed\",\n                \"ResourceName\": \"永久勿删-分类分级自动化测试使用\",\n                \"ResourceRegion\": \"ap-guangzhou\",\n                \"ResourceVip\": \"172.16.0.24\",\n                \"ResourceVPort\": 3306,\n                \"ResourceSyncTime\": \"2022-06-27 10:22:51\",\n                \"ResourceCreateTime\": \"2022-06-08 10:48:20\",\n                \"AuthStatus\": \"authorized\",\n                \"ResourceUniqueVpcId\": \"vpc-7vv1q6x9\",\n                \"ResourceUniqueSubnetId\": \"subnet-n488vg8m\",\n                \"ResourceSubnetId\": 0,\n                \"ResourceVpcId\": 0,\n                \"MasterInsId\": \"cdb-9loqa8ed\",\n                \"Protocol\": \"mysql\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "ModifyClassificationRule": [
+      {
+        "document": "编辑识别规则",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyClassificationRule\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "编辑识别规则"
+      }
+    ],
+    "ModifyClassificationRuleState": [
+      {
+        "document": "修改识别规则状态",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyClassificationRuleState\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "修改识别规则状态"
+      }
+    ],
+    "ModifyDSPAAssessmentRisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAAssessmentRisk\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-9xxxbacd\",\n    \"TaskId\": \"task-mdfxxxe4\",\n    \"RiskId\": \"risk-yxxxmtyy\",\n    \"Status\": \"processing\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "修改DSPA评估风险项"
+      }
+    ],
+    "ModifyDSPAAssessmentRiskLatest": [
+      {
+        "document": "修改最新评估风险项状态",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAAssessmentRiskLatest\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"RiskLatestTableId\": 1,\n    \"Status\": \"finished\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
+        "title": "修改最新评估风险项状态"
+      }
+    ],
+    "ModifyDSPAAssessmentRiskLevel": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAAssessmentRiskLevel\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ModifyRiskItem\": [\n        {\n            \"Id\": 0,\n            \"SensitiveLevelId\": 0,\n            \"SensitiveLevelName\": \"abc\",\n            \"VulnerabilityLevel\": \"abc\",\n            \"RiskLevel\": \"abc\"\n        }\n    ],\n    \"RiskLevelName\": \"abc\",\n    \"RiskLevelDescription\": \"abc\",\n    \"RiskId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "ModifyDSPAAssessmentRiskTemplate": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAAssessmentRiskTemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateName\": \"abc\",\n    \"TemplateDescription\": \"abc\",\n    \"RiskIdList\": [\n        0\n    ],\n    \"TemplateId\": 0,\n    \"RiskLevelId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "ModifyDSPACOSDiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPACOSDiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Enable\": 0,\n    \"Name\": \"xx\",\n    \"ComplianceGroupIds\": [\n        1\n    ],\n    \"GeneralRuleSetEnable\": 0,\n    \"Period\": 0,\n    \"TimingStartTime\": \"xx\",\n    \"FileSizeLimit\": 1000,\n    \"TaskId\": 1,\n    \"Plan\": 0,\n    \"FileTypes\": [\n        \".csv\",\n        \".txt\"\n    ],\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改COS分类分级任务"
+      }
+    ],
+    "ModifyDSPACOSTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPACOSTaskResult\n<公共请求参数>\n\n{\n    \"IsSetNonSensitiveFile\": \"true\",\n    \"FileResultId\": \"1\",\n    \"DspaId\": \"1\",\n    \"ComplianceId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "调整COS任务扫描结果"
+      }
+    ],
+    "ModifyDSPACategory": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPACategory\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"CategoryId\": \"1\",\n    \"Name\": \"财务信息\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改分类"
+      }
+    ],
+    "ModifyDSPACategoryRelation": [
+      {
+        "document": "修改分类分级关系",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPACategoryRelation\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"ComplianceId\": 1,\n    \"CategoryId\": 169,\n    \"MergedCategoryId\": 166\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改分类分级关系"
+      }
+    ],
+    "ModifyDSPAClusterInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAClusterInfo\n<公共请求参数>\n\n{\n    \"DspaName\": \"test_name\",\n    \"DspaDescription\": \"描述信息Description\",\n    \"DspaId\": \"dspa-6b4fc010\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"517b4f4f-d970-42ba-a3a4-b71a8df944dd\"\n    }\n}",
+        "title": "修改DSPA实例信息"
+      }
+    ],
+    "ModifyDSPAComplianceGroup": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAComplianceGroup\n<公共请求参数>\n\n{\n    \"Name\": \"task\",\n    \"DspaId\": \"dspa-001\",\n    \"LevelGroupId\": 1,\n    \"ComplianceGroupRules\": [],\n    \"ComplianceGroupId\": 1,\n    \"Description\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改分类分级模板"
+      }
+    ],
+    "ModifyDSPADiscoveryRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPADiscoveryRule\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Name\": \"xx\",\n    \"RuleId\": 123,\n    \"RDBRules\": {\n        \"Status\": 0,\n        \"MatchOperator\": \"xx\",\n        \"MetaRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"ContentRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"RuleType\": \"xx\",\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"COSRules\": {\n        \"Status\": 0,\n        \"RegexRule\": {\n            \"Operator\": \"or\",\n            \"Contents\": [\n                {\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"KeywordRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": false,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"MaxMatch\": 0,\n        \"IgnoreStringRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": false,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        }\n    },\n    \"Description\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改分类分级规则"
+      }
+    ],
+    "ModifyDSPADiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPADiscoveryTask\n<公共请求参数>\n\n{\n    \"Enable\": \"1\",\n    \"Name\": \"task\",\n    \"ComplianceGroupIds\": [\n        \"0\"\n    ],\n    \"GeneralRuleSetEnable\": \"1\",\n    \"Period\": \"0\",\n    \"TimingStartTime\": \"2021/4/2 10:46:18\",\n    \"DspaId\": \"dspa-0001\",\n    \"DataSourceId\": \"123\",\n    \"Plan\": \"0\",\n    \"TaskId\": \"1\",\n    \"Condition\": \"db1,db_2\",\n    \"Description\": \"扫描任务\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "修改分类分级任务"
+      }
+    ],
+    "ModifyDSPAESTaskResult": [
+      {
+        "document": "xx",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPAESTaskResult\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"FieldResultId\": 0,\n    \"IsSetNonSensitiveField\": true,\n    \"DestRuleId\": 0,\n    \"DestCategoryId\": 0,\n    \"DestLevelId\": 0,\n    \"ComplianceId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "ModifyDSPATaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDSPATaskResult\n<公共请求参数>\n\n{\n    \"ComplianceId\": \"1\",\n    \"DestRuleId\": \"1\",\n    \"FieldResultId\": \"1\",\n    \"DspaId\": \"1\",\n    \"DestCategoryId\": \"1\",\n    \"DestLevelId\": \"1\",\n    \"IsSetNonSensitiveField\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "调整任务扫描结果"
+      }
+    ],
+    "ModifyLevelInfo": [
+      {
+        "document": "修改敏感级别信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyLevelInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af308\"\n    }\n}",
+        "title": "修改敏感级别信息"
+      }
+    ],
+    "ModifyLevelName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyLevelName\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "修改级别名称"
+      }
+    ],
+    "ModifyLevelState": [
+      {
+        "document": "级别开启或者关闭",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyLevelState\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "修改级别状态"
+      }
+    ],
+    "ModifyMergeClassification": [
+      {
+        "document": "一个分类合并到另一个分类中（分类拖拽功能）",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyMergeClassification\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "一个分类合并到另一个分类中（分类拖拽功能）"
+      }
+    ],
+    "ModifyNewClassification": [
+      {
+        "document": "修改分类信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyNewClassification\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "修改分类信息"
+      }
+    ],
+    "ModifyStandardInfo": [
+      {
+        "document": "修改分级分类模板信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyStandardInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2dbfa627-8c65-43eb-af2a-2e2e114af999\"\n    }\n}",
+        "title": "修改分级分类模板信息"
+      }
+    ],
+    "QueryDSPAMetaResourceDbList": [
+      {
+        "document": "获取数据库实例的全部非系统内置的DB列表。",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryDSPAMetaResourceDbList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ResourceId\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"MetaType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DbRelationStatusItems\": [\n            {\n                \"DbName\": \"abc\",\n                \"BindStatus\": \"abc\",\n                \"ValidStatus\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "QueryResourceDbBindStatus": [
+      {
+        "document": "获取资源绑定DB状态",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryResourceDbBindStatus\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"ResourceId\": \"abc\",\n    \"ResourceRegion\": \"abc\",\n    \"MetaType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindDbNums\": 1,\n        \"UnbindDbNums\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RestartDSPAAssessmentTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDSPAAssessmentTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"TaskId\": \"task-mdfmnme4\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "title": "重新启动DSPA评估任务"
+      }
+    ],
+    "StartDSPADiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartDSPADiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultId\": 1,\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "立即启动分类分级任务"
+      }
+    ],
+    "StopDSPADiscoveryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopDSPADiscoveryTask\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-001\",\n    \"TaskId\": \"1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultId\": 1,\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\"\n    }\n}",
+        "title": "停止分类分级任务"
+      }
+    ],
+    "UpdateDSPASelfBuildResource": [
+      {
+        "document": "更新自建数据库的账号信息",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDSPASelfBuildResource\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-eb951fce\",\n    \"Password\": \"casb2020\",\n    \"ResourceId\": \"ins-pzqrmy2u-014a825b\",\n    \"ResourceVPort\": 3306,\n    \"UserName\": \"root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26632386-fe00-45a8-a168-6d5e2da0b888\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "VerifyDSPACOSRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDSPACOSRule\n<公共请求参数>\n\n{\n    \"DspaId\": \"xx\",\n    \"Data\": \"xx\",\n    \"COSRules\": {\n        \"Status\": 0,\n        \"RegexRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": true,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"KeywordRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": true,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        },\n        \"MaxMatch\": 0,\n        \"IgnoreStringRule\": {\n            \"Operator\": \"xx\",\n            \"Contents\": [\n                {\n                    \"IsIgnoreCase\": true,\n                    \"RuleContent\": \"xx\"\n                }\n            ]\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"VerifyResult\": \"Success\",\n        \"DetailInfo\": \"\"\n    }\n}",
+        "title": "验证COS分类分级规则"
+      }
+    ],
+    "VerifyDSPADiscoveryRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDSPADiscoveryRule\n<公共请求参数>\n\n{\n    \"VerifyContent\": \"test\",\n    \"DspaId\": \"dspa-001\",\n    \"MetaRule\": {\n        \"Operator\": \"and\",\n        \"Contents\": [\n            {\n                \"RuleType\": \"keyword\",\n                \"RuleContent\": \"test\"\n            }\n        ]\n    },\n    \"ContentRule\": {\n        \"Operator\": \"and\",\n        \"Contents\": [\n            {\n                \"RuleType\": \"keyword\",\n                \"RuleContent\": \"test\"\n            }\n        ]\n    },\n    \"VerifyMeta\": \"test\",\n    \"MatchOperator\": \"and\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20569756-56ba-4a13-b545-e1528d5cb239\",\n        \"VerifyResult\": \"Success\",\n        \"DetailInfo\": \"\"\n    }\n}",
+        "title": "验证分类分级规则"
       }
     ]
   },

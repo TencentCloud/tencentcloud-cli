@@ -648,6 +648,14 @@
         "title": "重试失败的投递任务"
       }
     ],
+    "SearchCosRechargeInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchCosRechargeInfo\n<公共请求参数>\n\n{\n    \"TopicId\": \"xxx-xxx-xxx-xxx\",\n    \"LogsetId\": \"xxx-xxx-xxx-xxx\",\n    \"Name\": \"test_name\",\n    \"Bucket\": \"test_bucket\",\n    \"BucketRegion\": \"gz_open\",\n    \"Prefix\": \"text_prefix\",\n    \"Compress\": \"gzip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"\",\n        \"Status\": 0,\n        \"Data\": [\n            \"2021-11-09 20:16:29.038 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.039 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.040 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.041 INFO    apis/report.go:108      report data success, size 1\",\n            \"2021-11-09 20:16:29.042 INFO    apis/report.go:108      report data success, size 1\"\n        ],\n        \"Sum\": 10000,\n        \"Path\": \"https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz\",\n        \"RequestId\": \"e6a94ed2-8191-49ac-ab67-90e33d2f3974\"\n    }\n}",
+        "title": "预览cos导入信息"
+      }
+    ],
     "SearchLog": [
       {
         "document": "查询http响应状态码（http_code）为200的日志",

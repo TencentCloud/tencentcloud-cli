@@ -1,6 +1,6 @@
-**Example 1: 下线集群**
+**Example 1: 销毁集群**
 
-
+销毁集群
 
 Input: 
 

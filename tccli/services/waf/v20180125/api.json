@@ -385,11 +385,25 @@
       "output": "ModifyAccessPeriodResponse",
       "status": "online"
     },
+    "ModifyApiAnalyzeStatus": {
+      "document": "api分析页面开关",
+      "input": "ModifyApiAnalyzeStatusRequest",
+      "name": "api分析页面开关",
+      "output": "ModifyApiAnalyzeStatusResponse",
+      "status": "online"
+    },
     "ModifyAreaBanStatus": {
       "document": "修改防护域名的地域封禁状态",
       "input": "ModifyAreaBanStatusRequest",
       "name": "修改地域封禁状态",
       "output": "ModifyAreaBanStatusResponse",
+      "status": "online"
+    },
+    "ModifyBotStatus": {
+      "document": "Bot_V2 bot总开关更新",
+      "input": "ModifyBotStatusRequest",
+      "name": "Bot_V2 bot总开关更新",
+      "output": "ModifyBotStatusResponse",
       "status": "online"
     },
     "ModifyCustomRuleStatus": {
@@ -2571,6 +2585,7 @@
           "example": "无",
           "member": "string",
           "name": "FailedItems",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2580,6 +2595,7 @@
           "example": "无",
           "member": "int64",
           "name": "FailedCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3017,6 +3033,7 @@
           "example": "99",
           "member": "uint64",
           "name": "AccessCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3026,6 +3043,7 @@
           "example": "99",
           "member": "uint64",
           "name": "AttackCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3035,6 +3053,7 @@
           "example": "99",
           "member": "uint64",
           "name": "ACLCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3044,6 +3063,7 @@
           "example": "99",
           "member": "uint64",
           "name": "CCCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3053,6 +3073,7 @@
           "example": "99",
           "member": "uint64",
           "name": "BotCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3062,8 +3083,19 @@
           "example": "10",
           "member": "uint64",
           "name": "ApiAssetsCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api风险事件数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "ApiRiskEventCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3715,8 +3747,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据偏移量，从1开始。",
-          "example": "1",
+          "document": "分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -3752,6 +3784,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3761,6 +3794,7 @@
           "example": "无",
           "member": "DomainInfo",
           "name": "Domains",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5063,6 +5097,7 @@
           "example": "qcloud",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5073,6 +5108,7 @@
           "example": "123",
           "member": "string",
           "name": "DomainId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5083,6 +5119,7 @@
           "example": "123",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5093,6 +5130,7 @@
           "example": "213",
           "member": "string",
           "name": "Cname",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5103,6 +5141,7 @@
           "example": "\"sparta_waf\"",
           "member": "string",
           "name": "Edition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5113,6 +5152,7 @@
           "example": "213",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5123,6 +5163,7 @@
           "example": "213",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5133,6 +5174,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ClsStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5143,6 +5185,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5153,6 +5196,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5163,6 +5207,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5173,6 +5218,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Engine",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5183,6 +5229,7 @@
           "example": "[\"1\",\"2\"]",
           "member": "string",
           "name": "CCList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5193,6 +5240,7 @@
           "example": "[\"1\",\"2\"]",
           "member": "string",
           "name": "RsList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5203,6 +5251,7 @@
           "example": "11",
           "member": "PortInfo",
           "name": "Ports",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5213,6 +5262,7 @@
           "example": "11",
           "member": "LoadBalancerPackageNew",
           "name": "LoadBalancerSet",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -5223,6 +5273,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AppId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5233,6 +5284,7 @@
           "example": "-2",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5243,6 +5295,7 @@
           "example": "13",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5253,6 +5306,7 @@
           "example": "1",
           "member": "int64",
           "name": "Ipv6Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5263,6 +5317,7 @@
           "example": "1",
           "member": "int64",
           "name": "BotStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5273,6 +5328,7 @@
           "example": "1",
           "member": "int64",
           "name": "Level",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5283,6 +5339,7 @@
           "example": "1",
           "member": "int64",
           "name": "PostCLSStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5293,6 +5350,7 @@
           "example": "1",
           "member": "int64",
           "name": "PostCKafkaStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5303,6 +5361,7 @@
           "example": "\"cluster-asdfas\"",
           "member": "string",
           "name": "CdcClusters",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5313,6 +5372,7 @@
           "example": "1",
           "member": "int64",
           "name": "ApiStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5323,6 +5383,7 @@
           "example": "\"clb\"",
           "member": "string",
           "name": "AlbType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5333,6 +5394,7 @@
           "example": "1",
           "member": "int64",
           "name": "SgState",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5343,6 +5405,7 @@
           "example": "“因为超出安全组数量，添加失败”",
           "member": "string",
           "name": "SgDetail",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7495,6 +7558,87 @@
       ],
       "type": "object"
     },
+    "ModifyApiAnalyzeStatusRequest": {
+      "document": "ModifyApiAnalyzeStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开关状态",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要批量开启的实体列表",
+          "example": "无",
+          "member": "TargetEntity",
+          "name": "TargetList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApiAnalyzeStatusResponse": {
+      "document": "ModifyApiAnalyzeStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已经开启的数量,如果返回值为3（大于支持的域名开启数量），则表示开启失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不支持开启的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnSupportedList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启/关闭失败的域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailDomainList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAreaBanStatusRequest": {
       "document": "ModifyAreaBanStatus请求参数结构体",
       "members": [
@@ -7522,6 +7666,88 @@
     "ModifyAreaBanStatusResponse": {
       "document": "ModifyAreaBanStatus返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotStatusRequest": {
+      "document": "ModifyBotStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类别",
+          "example": "bot",
+          "member": "string",
+          "name": "Category",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否是bot4.0版本",
+          "example": "无",
+          "member": "bool",
+          "name": "IsVersionFour",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "传入Bot版本号，场景化版本为\"4.1.0\"",
+          "example": "4.1.0",
+          "member": "string",
+          "name": "BotVersion",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBotStatusResponse": {
+      "document": "ModifyBotStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -9728,6 +9954,30 @@
       ],
       "usage": "out"
     },
+    "TargetEntity": {
+      "document": "需要开启/关闭API安全的 实例+域名 组合实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_xasda",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "testwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "UpsertIpAccessControlRequest": {
       "document": "UpsertIpAccessControl请求参数结构体",
       "members": [
@@ -9779,6 +10029,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "FailedItems",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9788,6 +10039,7 @@
           "example": "0",
           "member": "int64",
           "name": "FailedCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

@@ -567,6 +567,13 @@
       "output": "RetryShipperTaskResponse",
       "status": "online"
     },
+    "SearchCosRechargeInfo": {
+      "document": "本接口用于预览cos导入信息",
+      "input": "SearchCosRechargeInfoRequest",
+      "name": "预览cos导入信息",
+      "output": "SearchCosRechargeInfoResponse",
+      "status": "online"
+    },
     "SearchLog": {
       "document": "本接口用于检索分析日志, 该接口除受默认接口请求频率限制外，针对单个日志主题，查询并发数不能超过15。\n\nAPI返回数据包最大49MB，建议启用 gzip 压缩（HTTP Request Header Accept-Encoding:gzip）。",
       "input": "SearchLogRequest",
@@ -10882,6 +10889,137 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchCosRechargeInfoRequest": {
+      "document": "SearchCosRechargeInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题 ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递任务名称",
+          "example": "cos导入任务",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶",
+          "example": "bucket1",
+          "member": "string",
+          "name": "Bucket",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储桶所在地域",
+          "example": "ap-guangzhou-open",
+          "member": "string",
+          "name": "BucketRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cos文件所在文件夹的前缀",
+          "example": "var/xxx",
+          "member": "string",
+          "name": "Prefix",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "压缩模式:   \"\", \"gzip\", \"lzop\", \"snappy”;   默认\"\"",
+          "example": "gzip",
+          "member": "string",
+          "name": "Compress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchCosRechargeInfoResponse": {
+      "document": "SearchCosRechargeInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配到的存储桶下的某个文件的前几行数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"xxxxx\",\"xxxxx\"]",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "匹配到的存储桶下的文件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Sum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前预览文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预览获取数据失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Msg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SearchLogErrors": {
       "document": "多日志主题检索错误信息",

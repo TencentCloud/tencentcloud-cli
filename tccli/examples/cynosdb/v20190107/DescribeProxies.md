@@ -46,7 +46,10 @@ Output:
                             "Weight": 0
                         }
                     ],
-                    "OpenRw": "abc"
+                    "OpenRw": "abc",
+                    "RwType": "abc",
+                    "TransSplit": true,
+                    "AccessMode": "abc"
                 },
                 "ProxyNodes": [
                     {
@@ -59,7 +62,8 @@ Output:
                         "ClusterId": "abc",
                         "AppId": 0,
                         "Region": "abc",
-                        "Zone": "abc"
+                        "Zone": "abc",
+                        "OssProxyNodeName": "abc"
                     }
                 ],
                 "ConnectionPool": {
@@ -78,7 +82,8 @@ Output:
                         "UniqVpcId": "abc",
                         "Description": "abc",
                         "WanIP": "abc",
-                        "WanStatus": "abc"
+                        "WanStatus": "abc",
+                        "InstanceGroupId": "abc"
                     }
                 ],
                 "Tasks": [
@@ -103,7 +108,8 @@ Output:
                 "ClusterId": "abc",
                 "AppId": 0,
                 "Region": "abc",
-                "Zone": "abc"
+                "Zone": "abc",
+                "OssProxyNodeName": "abc"
             }
         ],
         "RequestId": "abc"

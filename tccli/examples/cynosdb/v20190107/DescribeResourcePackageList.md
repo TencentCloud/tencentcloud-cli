@@ -7,13 +7,13 @@ Input:
 
 ```
 tccli cynosdb DescribeResourcePackageList --cli-unfold-argument  \
-    --PackageId abc \
-    --PackageName abc \
-    --PackageType abc \
-    --PackageRegion abc \
-    --Status abc \
-    --OrderBy abc \
-    --OrderDirection abc \
+    --PackageId package-abcd1234 \
+    --PackageName 自定义资源包名称-1 \
+    --PackageType CCU \
+    --PackageRegion china \
+    --Status using \
+    --OrderBy createTime \
+    --OrderDirection desc \
     --Offset 0 \
     --Limit 0
 ```

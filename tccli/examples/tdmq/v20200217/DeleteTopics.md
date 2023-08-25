@@ -6,8 +6,11 @@ Input:
 
 ```
 tccli tdmq DeleteTopics --cli-unfold-argument  \
-    --TopicSets.0.EnvironmentId default \
-    --TopicSets.0.TopicName cloud_test_1
+    --TopicSets.0.EnvironmentId abc \
+    --TopicSets.0.TopicName abc \
+    --ClusterId abc \
+    --EnvironmentId abc \
+    --Force True
 ```
 
 Output: 

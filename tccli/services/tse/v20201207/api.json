@@ -189,6 +189,13 @@
       "output": "DescribeNacosServerInterfacesResponse",
       "status": "online"
     },
+    "DescribeNativeGatewayServerGroups": {
+      "document": "查询云原生网关分组信息",
+      "input": "DescribeNativeGatewayServerGroupsRequest",
+      "name": "查询云原生网关分组信息",
+      "output": "DescribeNativeGatewayServerGroupsResponse",
+      "status": "online"
+    },
     "DescribeOneCloudNativeAPIGatewayService": {
       "document": "获取云原生网关服务详情",
       "input": "DescribeOneCloudNativeAPIGatewayServiceRequest",
@@ -861,6 +868,330 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayStrategy": {
+      "document": "网关实例策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "strategy-7bb4fcb0",
+          "member": "string",
+          "name": "StrategyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "StrategyName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-09 11:52:3",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-09 11:52:3",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性伸缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyAutoScalerConfig",
+          "name": "Config",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-4a34cf5f",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
+          "name": "CronConfig",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudNativeAPIGatewayStrategyAutoScalerConfig": {
+      "document": "弹性伸缩策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyAutoScalerConfigMetric",
+          "name": "Metrics",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启指标伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-08 16:57:18",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-08 16:57:18",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "strategy-448e24f7",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "autoscaler-92aaca7b",
+          "member": "string",
+          "name": "AutoScalerId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayStrategyAutoScalerConfigMetric": {
+      "document": "弹性伸缩配置指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Resource",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cpu",
+          "member": "string",
+          "name": "ResourceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标目标类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Utilization",
+          "member": "string",
+          "name": "TargetType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标目标值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "int64",
+          "name": "TargetValue",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayStrategyCronScalerConfig": {
+      "document": "定时伸缩策略配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启定时伸缩\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩配置参数列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategyCronScalerConfigParam",
+          "name": "Params",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-08 16:57:18",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-08 16:57:18",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "strategy-448e24f7",
+          "member": "string",
+          "name": "StrategyId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CloudNativeAPIGatewayStrategyCronScalerConfigParam": {
+      "document": "定时伸缩配置参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "定时伸缩周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1 * *",
+          "member": "string",
+          "name": "Period",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "17:00",
+          "member": "string",
+          "name": "StartAt",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩目标节点数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "TargetReplicas",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时伸缩cron表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0 00 00 * * *",
+          "member": "string",
+          "name": "Crontab",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -3105,6 +3436,70 @@
           "name": "Content",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeGatewayServerGroupsRequest": {
+      "document": "DescribeNativeGatewayServerGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-test1234",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "翻页从第几个开始获取",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页获取多少个",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤参数",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNativeGatewayServerGroupsResponse": {
+      "document": "DescribeNativeGatewayServerGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组列表信息",
+          "example": "无",
+          "member": "NativeGatewayServerGroups",
+          "name": "Result",
+          "required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -5404,6 +5799,158 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NativeGatewayServerGroup": {
+      "document": "云原生网关分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生网关分组唯一id",
+          "example": "group-xxaaa",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组名",
+          "example": "prod",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "现网",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点规格、节点数信息",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayNodeConfig",
+          "name": "NodeConfig",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关分组状态。",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是默认分组。\n0：否。\n1：是。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsFirstGroup",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联策略信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayStrategy",
+          "name": "BindingStrategy",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关实例 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "gateway-xxxx1234",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "InternetMaxBandwidthOut",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-09 11:52:30",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxx1234",
+          "member": "string",
+          "name": "SubnetIds",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "NativeGatewayServerGroups": {
+      "document": "网关分组列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组信息数组。",
+          "example": "无",
+          "member": "NativeGatewayServerGroup",
+          "name": "GatewayGroupList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

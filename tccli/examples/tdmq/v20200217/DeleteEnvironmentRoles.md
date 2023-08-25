@@ -6,8 +6,9 @@ Input:
 
 ```
 tccli tdmq DeleteEnvironmentRoles --cli-unfold-argument  \
-    --EnvironmentId default \
-    --RoleNames test_role
+    --EnvironmentId abc \
+    --RoleNames abc \
+    --ClusterId abc
 ```
 
 Output: 

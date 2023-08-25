@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cynosdb ModifyResourcePackageClusters --cli-unfold-argument  \
-    --PackageId abc \
-    --BindClusterIds abc \
-    --UnbindClusterIds abc
+    --PackageId package-abcd1234 \
+    --BindClusterIds cynosdbmysql-1234abcd \
+    --UnbindClusterIds cynosdbmysql-1122aabb
 ```
 
 Output: 

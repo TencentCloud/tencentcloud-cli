@@ -6,8 +6,12 @@ Input:
 
 ```
 tccli tdmq DescribeRoles --cli-unfold-argument  \
+    --RoleName abc \
     --Offset 0 \
-    --Limit 10
+    --Limit 0 \
+    --ClusterId abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 

@@ -216,6 +216,14 @@
         "title": "查询nacos服务接口列表"
       }
     ],
+    "DescribeNativeGatewayServerGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNativeGatewayServerGroups\n<公共请求参数>\n\n{\n    \"GatewayId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"GatewayGroupList\": [\n                {\n                    \"Status\": \"xx\",\n                    \"Description\": \"xx\",\n                    \"GroupId\": \"xx\",\n                    \"NodeConfig\": {\n                        \"Specification\": \"xx\",\n                        \"Number\": 0\n                    },\n                    \"IsFirstGroup\": 0,\n                    \"CreateTime\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询云原生网关分组信息"
+      }
+    ],
     "DescribeOneCloudNativeAPIGatewayService": [
       {
         "document": "获取云原生网关服务详情",

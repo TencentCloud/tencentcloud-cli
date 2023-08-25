@@ -7,7 +7,7 @@ Input:
 ```
 tccli cynosdb UnbindClusterResourcePackages --cli-unfold-argument  \
     --ClusterId abc \
-    --PackageIds abc
+    --PackageIds package-abcd1234
 ```
 
 Output: 

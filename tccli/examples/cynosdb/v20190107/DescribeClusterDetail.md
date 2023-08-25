@@ -1,6 +1,6 @@
-**Example 1: 查询集群详情**
+**Example 1: 集群信息描述**
 
-
+集群信息描述
 
 Input: 
 
@@ -80,12 +80,12 @@ Output:
                     "InstanceMemory": 0,
                     "InstanceStorage": 0,
                     "InstanceRole": "abc",
-                    "ServerlessStatus": "abc",
                     "MaintainStartTime": 0,
                     "MaintainDuration": 0,
                     "MaintainWeekDays": [
                         "abc"
-                    ]
+                    ],
+                    "ServerlessStatus": "abc"
                 }
             ],
             "PayMode": 0,
