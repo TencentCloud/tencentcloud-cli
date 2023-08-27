@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "文件系统标签",
-          "example": "[\"TagKey\":\"a\",\"TagValue\":1]",
+          "example": "[{\"TagKey\":\"a\",\"TagValue\":1}]",
           "member": "TagInfo",
           "name": "ResourceTags",
           "required": false,

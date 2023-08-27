@@ -112,7 +112,7 @@
         "title": "删除一个镜像"
       },
       {
-        "document": "",
+        "document": "检测镜像是否允许删除",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImages\n<公共请求参数>\n\n{\n    \"ImageIds\": [\n        \"img-mfih409y\"\n    ],\n    \"DryRun\": \"True\",\n    \"DeleteBindedSnap\": \"True\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f24aca43-5135-4c9b-81fb-734969ce4c78\"\n    }\n}",
         "title": "检测镜像是否允许删除"

@@ -1,4 +1,4 @@
-**Example 1: 删除从可用区**
+**Example 1: 关闭多可用区部署**
 
 
 
@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli cynosdb RemoveClusterSlaveZone --cli-unfold-argument  \
-    --ClusterId xx \
-    --SlaveZone xx
+    --ClusterId cynosdmysql-asd \
+    --SlaveZone ap-guangzhou-3
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FlowId": "123",
+        "FlowId": 123,
         "RequestId": "128046"
     }
 }

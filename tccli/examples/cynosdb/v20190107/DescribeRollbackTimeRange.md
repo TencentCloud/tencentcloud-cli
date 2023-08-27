@@ -1,4 +1,4 @@
-**Example 1: 查询有效回归时间范围**
+**Example 1: 查询回档时间范围**
 
 
 
@@ -19,8 +19,8 @@ Output:
                 "TimeRangeEnd": "2019-01-20 02:10:12"
             }
         ],
-        "TimeRangeStart": "xx",
-        "TimeRangeEnd": "xx",
+        "TimeRangeStart": "",
+        "TimeRangeEnd": "",
         "RequestId": "6EF60BEC-0242-43AF-BB20-270359FB54A7"
     }
 }

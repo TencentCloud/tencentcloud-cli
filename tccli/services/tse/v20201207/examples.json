@@ -144,6 +144,14 @@
         "title": "查询云原生网关灰度规则列表"
       }
     ],
+    "DescribeCloudNativeAPIGatewayLatestTaskPhases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayLatestTaskPhases\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-10aeff54\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Phases\": [\n            {\n                \"Phase\": \"KongPhaseDeleteAll\",\n                \"Status\": \"success\",\n                \"Reason\": \"success\",\n                \"Message\": \"\",\n                \"StartTime\": 1663579655000,\n                \"EndTime\": 1663579708000\n            }\n        ],\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "查询云原生网关实例最新任务执行阶段信息"
+      }
+    ],
     "DescribeCloudNativeAPIGatewayNodes": [
       {
         "document": "",

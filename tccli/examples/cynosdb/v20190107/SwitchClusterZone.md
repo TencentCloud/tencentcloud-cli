@@ -1,4 +1,4 @@
-**Example 1: 切换到从可用区**
+**Example 1: 主备可用区切换**
 
 
 
@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cynosdb SwitchClusterZone --cli-unfold-argument  \
-    --ClusterId xx \
-    --OldZone xx \
-    --NewZone xx \
+    --ClusterId cynosdbmysql-asd \
+    --OldZone ap-guangzhou-2 \
+    --NewZone ap-guangzhou-3 \
     --IsInMaintainPeriod yes
 ```
 
@@ -16,7 +16,7 @@ Output:
 ```
 {
     "Response": {
-        "FlowId": "123",
+        "FlowId": 123,
         "RequestId": "128046"
     }
 }

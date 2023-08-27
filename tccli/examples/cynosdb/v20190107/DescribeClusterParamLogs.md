@@ -1,4 +1,4 @@
-**Example 1: 查询参数修改日志**
+**Example 1: 查询参数修改记录**
 
 
 
@@ -18,14 +18,18 @@ Output:
 ```
 {
     "Response": {
-        "ClusterParamLogs": {
-            "Status": "success",
-            "CurrentValue": "1024",
-            "UpdateTime": "2020-09-22T00:00:00+00:00",
-            "UpdateValue": "1025",
-            "ParamName": "back_log",
-            "CreateTime": "2020-09-22T00:00:00+00:00"
-        },
+        "ClusterParamLogs": [
+            {
+                "Status": "success",
+                "CurrentValue": "1024",
+                "UpdateTime": "2020-09-22T00:00:00+00:00",
+                "UpdateValue": "1025",
+                "ParamName": "back_log",
+                "CreateTime": "2020-09-22T00:00:00+00:00",
+                "ClusterId": "abc",
+                "InstanceId": "abc"
+            }
+        ],
         "TotalCount": 1,
         "RequestId": "651fadd0-7daa-11ec-ae84-e3726d36ffa8"
     }

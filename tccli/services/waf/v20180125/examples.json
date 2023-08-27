@@ -114,6 +114,14 @@
         "title": "DeleteTsRegion"
       }
     ],
+    "DeleteCustomRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DeleteCustomRule\r\n&Domain=www.test.com\r\n&Edition=clb-waf\r\n&RuleId=501\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"26b0ac84-cb08-49d2-9899-4206d1849a41\"\n    }\n}",
+        "title": "删除指定的自定义规则"
+      }
+    ],
     "DeleteCustomWhiteRule": [
       {
         "document": "",
@@ -256,6 +264,20 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCiphersDetail\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"767bb64b-0c26-4797-b77d-3242a63199b9\",\n        \"Ciphers\": [\n            {\n                \"VersionId\": 0,\n                \"CipherId\": 0,\n                \"CipherName\": \"DES-CBC3-SHA（支持版本：TLS 1.0,TLS 1.1,TLS 1.2）\"\n            }\n        ]\n    }\n}",
         "title": "describecipher"
+      }
+    ],
+    "DescribeCustomRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1234567890\"\n            ],\n            \"Name\": \"RuleID\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d207f4f-0d41-4f5d-bce2-0320090c98d8\",\n        \"RuleList\": [\n            {\n                \"ActionType\": \"2\",\n                \"Bypass\": \"geoip,cc,owasp,ai,antileakage\",\n                \"CreateTime\": \"2020-02-20 14:00:12\",\n                \"ExpireTime\": \"0\",\n                \"Name\": \"test\",\n                \"Redirect\": \"/\",\n                \"RuleId\": \"17958569\",\n                \"SortId\": \"100\",\n                \"Status\": \"1\",\n                \"Strategies\": [\n                    {\n                        \"Arg\": \"\",\n                        \"CompareFunc\": \"ipmatch\",\n                        \"Content\": \"1.1.1.2\",\n                        \"Field\": \"IP\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "获取访问控制规则列表"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Limit\": \"10\",\n    \"Offset\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"89d3f512-674f-4ecf-b766-90d2600fa498\",\n        \"RuleList\": [],\n        \"TotalCount\": \"1\"\n    }\n}",
+        "title": "test1"
       }
     ],
     "DescribeCustomWhiteRule": [
@@ -638,6 +660,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdcResource\n<公共请求参数>\n\n{\n    \"Id\": 0,\n    \"OpAppId\": 1,\n    \"ClusterId\": \"1\",\n    \"Ip\": \"192.168.1.1\",\n    \"Port\": 6379,\n    \"Auth\": \"passwd\",\n    \"Type\": \"redis\",\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "ModifyCdcResource"
+      }
+    ],
+    "ModifyCustomRule": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=ModifyCustomRuleStatus\r\n&Edition=clb-waf\r\n&Domain=hfut.qcloud.com\r\n&RuleId=17958569\r\n&RuleName=test\r\n&RuleAction=1\r\n&Redirect=/\r\n&Bypass=geoip,cc,owasp,ai,antileakage\r\n&SortId=100\r\n&ExpireTime=0\r\n&Strategies.0.Field=IP\r\n&Strategies.0.CompareFunc=ipmatch\r\n&Strategies.0.Content=1.1.1.2\r\n&Strategies.0.Arg=\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a713f4cf-51ef-437f-8467-d4fdec061b78\"\n    }\n}",
+        "title": "编辑自定义规则"
       }
     ],
     "ModifyCustomRuleStatus": [

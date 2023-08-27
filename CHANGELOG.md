@@ -1,3 +1,146 @@
+# Release 3.0.838.1
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 5 次发布
+
+发布时间：2023-08-28 01:18:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchOperateDevice](http://document.tencentcloudapi.woa.com/document/product/1740/81712)
+* [DescribeTask](http://document.tencentcloudapi.woa.com/document/product/1740/81716)
+* [ListSubTasks](http://document.tencentcloudapi.woa.com/document/product/1740/81715)
+* [ListTasks](http://document.tencentcloudapi.woa.com/document/product/1740/81714)
+
+修改接口：
+
+* [ListGatewayDevices](http://document.tencentcloudapi.woa.com/document/product/1740/81709)
+
+	* 新增入参：PageNumber, PageSize
+
+
+新增数据结构：
+
+* [BatchOperateDeviceData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#BatchOperateDeviceData)
+* [ListSubTasksData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListSubTasksData)
+* [ListTasksData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#ListTasksData)
+* [SubTaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#SubTaskData)
+* [TaskData](http://document.tencentcloudapi.woa.com/document/product/1740/81572#TaskData)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 33 次发布
+
+发布时间：2023-08-28 01:24:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：Command
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：Command
+
+
+新增数据结构：
+
+* [InferCodeInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#InferCodeInfo)
+
+修改数据结构：
+
+* [ServiceInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceInfo)
+
+	* 新增成员：VolumeMount, InferCodeInfo, Command
+
+* [StatefulSetCondition](http://document.tencentcloudapi.woa.com/document/product/851/74915#StatefulSetCondition)
+
+	* 新增成员：LastUpdateTime
+
+* [WorkloadStatus](http://document.tencentcloudapi.woa.com/document/product/851/74915#WorkloadStatus)
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 33 次发布
+
+发布时间：2023-08-28 01:26:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTRTCMarketQualityData](http://document.tencentcloudapi.woa.com/document/product/647/81720)
+* [DescribeTRTCMarketScaleData](http://document.tencentcloudapi.woa.com/document/product/647/81719)
+* [DescribeTRTCRealTimeQualityData](http://document.tencentcloudapi.woa.com/document/product/647/81718)
+* [DescribeTRTCRealTimeScaleData](http://document.tencentcloudapi.woa.com/document/product/647/81717)
+
+新增数据结构：
+
+* [RowValues](http://document.tencentcloudapi.woa.com/document/product/647/44055#RowValues)
+* [SeriesInfos](http://document.tencentcloudapi.woa.com/document/product/647/44055#SeriesInfos)
+* [TRTCDataResult](http://document.tencentcloudapi.woa.com/document/product/647/44055#TRTCDataResult)
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 33 次发布
+
+发布时间：2023-08-28 01:26:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudNativeAPIGatewayLatestTaskPhases](http://document.tencentcloudapi.woa.com/document/product/1364/81721)
+
+新增数据结构：
+
+* [CloudNativeAPIGatewayTaskPhase](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CloudNativeAPIGatewayTaskPhase)
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 50 次发布
+
+发布时间：2023-08-28 01:28:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/81724)
+* [DescribeCustomRuleList](http://document.tencentcloudapi.woa.com/document/product/627/81723)
+* [ModifyCustomRule](http://document.tencentcloudapi.woa.com/document/product/627/81722)
+
+
+
 # Release 3.0.837.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

@@ -126,6 +126,13 @@
       "output": "DescribeCloudNativeAPIGatewayCanaryRulesResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayLatestTaskPhases": {
+      "document": "当执行部分流程较长的任务时，任务会被拆分为多个阶段进行异步执行。此接口用于查询最新提交的任务的执行状态。",
+      "input": "DescribeCloudNativeAPIGatewayLatestTaskPhasesRequest",
+      "name": "查询云原生网关实例最新任务执行阶段信息",
+      "output": "DescribeCloudNativeAPIGatewayLatestTaskPhasesResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayNodes": {
       "document": "获取云原生网关节点列表",
       "input": "DescribeCloudNativeAPIGatewayNodesRequest",
@@ -1216,6 +1223,72 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudNativeAPIGatewayTaskPhase": {
+      "document": "云原生网关实例任务执行阶段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行的阶段",
+          "example": "KongPhaseDeleteAll",
+          "member": "string",
+          "name": "Phase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务所处阶段执行的状态",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处于当前状态的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "处于当前状态的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1663579655000",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1663579708000",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloudNativeAPIGatewayVpcConfig": {
       "document": "云原生API网关vpc配置。",
@@ -2553,6 +2626,43 @@
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLatestTaskPhasesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayLatestTaskPhases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生网关实例ID",
+          "example": "gateway-10aeff54",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayLatestTaskPhasesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayLatestTaskPhases返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务执行阶段列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayTaskPhase",
+          "name": "Phases",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
