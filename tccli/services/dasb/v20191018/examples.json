@@ -176,6 +176,28 @@
         "title": "开通服务"
       }
     ],
+    "DescribeAccessEntry": [
+      {
+        "document": "查询运维人员WEB访问入口",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessEntry\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"AccessEntrySet\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询运维人员WEB访问入口"
+      }
+    ],
+    "DescribeAccessWhiteListRules": [
+      {
+        "document": "查询用户组列表，未放开全部来源IP且开启自动添加IP",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccessWhiteListRuleSet\": [\n            {\n                \"Source\": \"xx\",\n                \"Remark\": \"xx\",\n                \"Id\": 1,\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"AllowAny\": false,\n        \"AllowAuto\": true\n    }\n}",
+        "title": "查询用户组列表，未放开全部来源IP"
+      },
+      {
+        "document": "查询用户组列表，放开全部来源IP",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccessWhiteListRules\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"AccessWhiteListRuleSet\": [],\n        \"RequestId\": \"xx\",\n        \"AllowAny\": true,\n        \"AllowAuto\": false\n    }\n}",
+        "title": "查询用户组列表，放开全部来源IP"
+      }
+    ],
     "DescribeAcls": [
       {
         "document": "",
@@ -274,6 +296,14 @@
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"RenewFlag\": 1,\n                \"Zone\": \"xx\",\n                \"SubnetName\": \"xx\",\n                \"Nodes\": 1,\n                \"Status\": 1,\n                \"VpcId\": \"xx\",\n                \"SubProductCode\": \"xx\",\n                \"ResourceId\": \"xx\",\n                \"PackageBandwidth\": 1,\n                \"VpcName\": \"xx\",\n                \"ApCode\": \"xx\",\n                \"SubnetId\": \"xx\",\n                \"ResourceName\": \"xx\",\n                \"Expired\": true,\n                \"Deployed\": true,\n                \"ProductCode\": \"xx\",\n                \"PublicIpSet\": [\n                    \"xx\"\n                ],\n                \"ModuleSet\": [\n                    \"xx\"\n                ],\n                \"ExtendPoints\": 1,\n                \"UsedNodes\": 1,\n                \"PrivateIpSet\": [\n                    \"xx\"\n                ],\n                \"Pid\": 1,\n                \"VpcCidrBlock\": \"xx\",\n                \"PackageNode\": 1,\n                \"ExpireTime\": \"2020-09-22T00:00:00+00:00\",\n                \"SvArgs\": \"xx\",\n                \"CidrBlock\": \"xx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ]\n    }\n}",
         "title": "查询资源信息"
+      }
+    ],
+    "DescribeSecuritySetting": [
+      {
+        "document": "查询安全配置信息",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecuritySetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"SecuritySetting\": {\n            \"Login\": {\n                \"LockTime\": 1,\n                \"LockThreshold\": 1,\n                \"TimeOut\": 1\n            },\n            \"Password\": {\n                \"MinLength\": 1,\n                \"Complexity\": 1,\n                \"CheckHistory\": 1,\n                \"ValidTerm\": 1\n            },\n            \"LDAP\": {\n                \"Enable\": true,\n                \"AdminAccount\": \"xx\",\n                \"AttributeEmail\": \"xx\",\n                \"AutoSync\": true,\n                \"Ip\": \"xx\",\n                \"BaseDN\": \"xx\",\n                \"SyncPeriod\": 1,\n                \"SyncAll\": true,\n                \"EnableSSL\": true,\n                \"AttributeRealName\": \"xx\",\n                \"SyncUnitSet\": [\n                    \"xx\"\n                ],\n                \"IpBackup\": \"xx\",\n                \"AttributeUser\": \"xx\",\n                \"AttributeUserName\": \"xx\",\n                \"AttributePhone\": \"xx\",\n                \"AttributeUnit\": \"xx\",\n                \"Port\": 1,\n                \"Overwrite\": true\n            },\n            \"AuthMode\": {\n                \"AuthMode\": 1\n            }\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询安全配置信息"
       }
     ],
     "DescribeUserGroupMembers": [

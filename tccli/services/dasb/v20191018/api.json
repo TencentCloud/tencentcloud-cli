@@ -154,6 +154,20 @@
       "output": "DeployResourceResponse",
       "status": "online"
     },
+    "DescribeAccessEntry": {
+      "document": "查询运维人员WEB访问入口",
+      "input": "DescribeAccessEntryRequest",
+      "name": "查询运维人员WEB访问入口",
+      "output": "DescribeAccessEntryResponse",
+      "status": "online"
+    },
+    "DescribeAccessWhiteListRules": {
+      "document": "查询访问白名单规则列表",
+      "input": "DescribeAccessWhiteListRulesRequest",
+      "name": "查询访问白名单规则列表",
+      "output": "DescribeAccessWhiteListRulesResponse",
+      "status": "online"
+    },
     "DescribeAcls": {
       "document": "查询访问权限列表",
       "input": "DescribeAclsRequest",
@@ -229,6 +243,13 @@
       "input": "DescribeResourcesRequest",
       "name": "查询堡垒机服务信息",
       "output": "DescribeResourcesResponse",
+      "status": "online"
+    },
+    "DescribeSecuritySetting": {
+      "document": "查询安全配置信息",
+      "input": "DescribeSecuritySettingRequest",
+      "name": "查询安全配置信息",
+      "output": "DescribeSecuritySettingResponse",
       "status": "online"
     },
     "DescribeUserGroupMembers": {
@@ -400,6 +421,52 @@
         }
       ],
       "usage": "both"
+    },
+    "AccessWhiteListRule": {
+      "document": "访问白名单规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "10",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP或者网段",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "规则1",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2021-01-01T08:00:01+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Acl": {
       "document": "访问权限",
@@ -916,6 +983,22 @@
           "name": "SubAccountUin",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AuthModeSetting": {
+      "document": "认证方式设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "双因子认证，0-不开启，1-OTP，2-短信",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthMode",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2268,6 +2351,127 @@
       ],
       "type": "object"
     },
+    "DescribeAccessEntryRequest": {
+      "document": "DescribeAccessEntry请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAccessEntryResponse": {
+      "document": "DescribeAccessEntry返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "运维人员WEB访问入口",
+          "example": "无",
+          "member": "string",
+          "name": "AccessEntrySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessWhiteListRulesRequest": {
+      "document": "DescribeAccessWhiteListRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID集合，非必需，如果使用IdSet参数则忽略Name参数",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "IdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "来源IP或网段，模糊查询，最大长度64字符",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移位置，默认0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条目数量，默认20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAccessWhiteListRulesResponse": {
+      "document": "DescribeAccessWhiteListRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录总数",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问白名单规则列表",
+          "example": "[]",
+          "member": "AccessWhiteListRule",
+          "name": "AccessWhiteListRuleSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否放开全部来源IP，如果为true，TotalCount为0，AccessWhiteListRuleSet为空",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAny",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动添加来源IP, 如果为true, 在开启访问白名单的情况下将自动添加来源IP",
+          "example": "true",
+          "member": "bool",
+          "name": "AllowAuto",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAclsRequest": {
       "document": "DescribeAcls请求参数结构体",
       "members": [
@@ -3266,6 +3470,33 @@
       ],
       "type": "object"
     },
+    "DescribeSecuritySettingRequest": {
+      "document": "DescribeSecuritySetting请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSecuritySettingResponse": {
+      "document": "DescribeSecuritySetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "{}",
+          "member": "SecuritySetting",
+          "name": "SecuritySetting",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserGroupMembersRequest": {
       "document": "DescribeUserGroupMembers请求参数结构体",
       "members": [
@@ -3959,6 +4190,192 @@
       ],
       "type": "object"
     },
+    "LDAPSetting": {
+      "document": "LDAP配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启LDAP认证，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务器地址",
+          "example": "10.10.10.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备用服务器地址",
+          "example": "10.10.10.2",
+          "member": "string",
+          "name": "IpBackup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务端口",
+          "example": "389",
+          "member": "uint64",
+          "name": "Port",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSL，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableSSL",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Base DN",
+          "example": "true",
+          "member": "string",
+          "name": "BaseDN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员账号",
+          "example": "xxx",
+          "member": "string",
+          "name": "AdminAccount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributeUser",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户名属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributeUserName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动同步，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoSync",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "覆盖用户信息，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "Overwrite",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步周期，30～60000之间的整数",
+          "example": "true",
+          "member": "uint64",
+          "name": "SyncPeriod",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否同步全部，false-不开启，true-开启",
+          "example": "true",
+          "member": "bool",
+          "name": "SyncAll",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同步OU列表",
+          "example": "无",
+          "member": "string",
+          "name": "SyncUnitSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组织单元属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户姓名属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributeRealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手机号属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributePhone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "邮箱属性",
+          "example": "xxx",
+          "member": "string",
+          "name": "AttributeEmail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LoginEvent": {
       "document": "登录日志",
       "members": [
@@ -4024,6 +4441,42 @@
         }
       ],
       "usage": "out"
+    },
+    "LoginSetting": {
+      "document": "登录安全设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "登录会话超时，10分钟，20分钟，30分钟，默认20分钟",
+          "example": "20",
+          "member": "uint64",
+          "name": "TimeOut",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连续密码错误次数，超过锁定账号，3-5",
+          "example": "3",
+          "member": "uint64",
+          "name": "LockThreshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账号锁定时长，10分钟，20分钟，30分钟",
+          "example": "10",
+          "member": "uint64",
+          "name": "LockTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAclRequest": {
       "document": "ModifyAcl请求参数结构体",
@@ -4571,6 +5024,52 @@
           "example": "1",
           "member": "uint64",
           "name": "Result",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PasswordSetting": {
+      "document": "密码要求设置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "密码最小长度，8-20，默认8。",
+          "example": "10",
+          "member": "uint64",
+          "name": "MinLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码复杂度，0不限制，1包含字母和数字，2至少包括大写字母、小写字母、数字、特殊符号，默认2。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Complexity",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码有效期，0不限制，30天，90天，180天。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ValidTerm",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检查最近n次密码设置是否存在相同密码，2-10，默认5。",
+          "example": "5",
+          "member": "uint64",
+          "name": "CheckHistory",
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6195,6 +6694,52 @@
         }
       ],
       "type": "object"
+    },
+    "SecuritySetting": {
+      "document": "系统安全设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证方式设置",
+          "example": "{}",
+          "member": "AuthModeSetting",
+          "name": "AuthMode",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码安全设置",
+          "example": "{}",
+          "member": "PasswordSetting",
+          "name": "Password",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "登录安全设置",
+          "example": "{}",
+          "member": "LoginSetting",
+          "name": "Login",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "LDAP配置信息",
+          "example": "无",
+          "member": "LDAPSetting",
+          "name": "LDAP",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SessionCommand": {
       "document": "命令和所属会话",

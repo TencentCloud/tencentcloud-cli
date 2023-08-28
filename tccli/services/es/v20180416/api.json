@@ -646,7 +646,7 @@
         {
           "disabled": false,
           "document": "是否开启cos自动备份",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "IsAutoBackup",
           "required": true,
@@ -656,7 +656,7 @@
         {
           "disabled": false,
           "document": "自动备份执行时间（精确到小时）, e.g. \"22:00\"",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "BackupTime",
           "required": true,
@@ -664,7 +664,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateIndexRequest": {
       "document": "CreateIndex请求参数结构体",
@@ -842,7 +842,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高硬能云硬盘</li>默认值CLOUD_SSD",
+          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -1046,6 +1046,15 @@
           "name": "EnableDiagnose",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "cdcId，使用cdc子网时传递",
+          "example": "cluster-xxxxxx\t",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1059,7 +1068,7 @@
           "example": "es-xxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1069,7 +1078,7 @@
           "example": "123",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1295,6 +1304,15 @@
         },
         {
           "disabled": false,
+          "document": "数据源描述信息",
+          "example": "无",
+          "member": "DiSourceInfo",
+          "name": "DiSourceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "cvm数据源",
           "example": "无",
           "member": "DiSourceCvm",
@@ -1341,6 +1359,7 @@
           "example": "sdi-xxxx",
           "member": "string",
           "name": "DiId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2429,7 +2448,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2439,7 +2458,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3266,7 +3285,7 @@
           "example": "sdi-xxxx",
           "member": "string",
           "name": "DiId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3276,7 +3295,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3286,7 +3305,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3296,7 +3315,7 @@
           "example": "无",
           "member": "DiDataSourceCvm",
           "name": "DiDataSourceCvm",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3306,7 +3325,7 @@
           "example": "无",
           "member": "DiDataSourceTke",
           "name": "DiDataSourceTke",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3316,7 +3335,7 @@
           "example": "无",
           "member": "DiDataSinkServerless",
           "name": "DiDataSinkServerless",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3326,8 +3345,18 @@
           "example": "cvm_collector",
           "member": "string",
           "name": "DiDataSourceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源辅助描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiSourceInfo",
+          "name": "DiSourceInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -3663,6 +3692,56 @@
       ],
       "usage": "in"
     },
+    "DiSourceInfo": {
+      "document": "Di 内部产品 采集数据源 相关辅助描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "采集源资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiSourceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源名称信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DiSourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InnerProductType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DiSourceTke": {
       "document": "数据接入tke数据源",
       "members": [
@@ -3846,9 +3925,10 @@
         {
           "disabled": false,
           "document": "词典键值",
-          "example": "",
+          "example": "test.dic",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3856,9 +3936,10 @@
         {
           "disabled": false,
           "document": "词典名称",
-          "example": "",
+          "example": "test.dic",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3866,15 +3947,16 @@
         {
           "disabled": false,
           "document": "词典大小，单位B",
-          "example": "",
+          "example": "123",
           "member": "uint64",
           "name": "Size",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "EsAcl": {
       "document": "ES集群配置项",
@@ -3934,7 +4016,7 @@
         {
           "disabled": false,
           "document": "启用词词典列表",
-          "example": "",
+          "example": "无",
           "member": "DictInfo",
           "name": "MainDict",
           "required": true,
@@ -3944,7 +4026,7 @@
         {
           "disabled": false,
           "document": "停用词词典列表",
-          "example": "",
+          "example": "无",
           "member": "DictInfo",
           "name": "Stopwords",
           "required": true,
@@ -3954,7 +4036,7 @@
         {
           "disabled": false,
           "document": "QQ分词词典列表",
-          "example": "",
+          "example": "无",
           "member": "DictInfo",
           "name": "QQDict",
           "required": true,
@@ -3964,7 +4046,7 @@
         {
           "disabled": false,
           "document": "同义词词典列表",
-          "example": "",
+          "example": "无",
           "member": "DictInfo",
           "name": "Synonym",
           "required": true,
@@ -3974,7 +4056,7 @@
         {
           "disabled": false,
           "document": "更新词典类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdateType",
           "required": true,
@@ -3982,7 +4064,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "EsPublicAcl": {
       "document": "ES公网访问访问控制信息",
@@ -4435,7 +4517,7 @@
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4445,7 +4527,7 @@
           "example": "实例名称",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4455,7 +4537,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4465,7 +4547,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4475,7 +4557,7 @@
           "example": "123456789",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4485,7 +4567,7 @@
           "example": "123456789",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4495,7 +4577,7 @@
           "example": "vpc-xxxxxxx",
           "member": "string",
           "name": "VpcUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4505,7 +4587,7 @@
           "example": "subnet-xxxxxxx",
           "member": "string",
           "name": "SubnetUid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4515,7 +4597,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4525,7 +4607,7 @@
           "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4535,7 +4617,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4545,7 +4627,7 @@
           "example": "6",
           "member": "uint64",
           "name": "ChargePeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4555,7 +4637,7 @@
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "NodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4565,7 +4647,7 @@
           "example": "3",
           "member": "uint64",
           "name": "NodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4575,7 +4657,7 @@
           "example": "4",
           "member": "uint64",
           "name": "CpuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4585,7 +4667,7 @@
           "example": "8",
           "member": "uint64",
           "name": "MemSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4595,7 +4677,7 @@
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4605,7 +4687,7 @@
           "example": "100",
           "member": "uint64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4615,7 +4697,7 @@
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4625,7 +4707,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "EsVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4635,7 +4717,7 @@
           "example": "9200",
           "member": "uint64",
           "name": "EsPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4645,7 +4727,7 @@
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4655,7 +4737,7 @@
           "example": "5.6.4",
           "member": "string",
           "name": "EsVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4665,7 +4747,7 @@
           "example": "\"{}\"",
           "member": "string",
           "name": "EsConfig",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4675,7 +4757,7 @@
           "example": "无",
           "member": "EsAcl",
           "name": "EsAcl",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4685,7 +4767,7 @@
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4695,7 +4777,7 @@
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4705,7 +4787,7 @@
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4715,7 +4797,7 @@
           "example": "1",
           "member": "uint64",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4725,7 +4807,7 @@
           "example": "无",
           "member": "EsDictionaryInfo",
           "name": "IkConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4735,7 +4817,7 @@
           "example": "无",
           "member": "MasterNodeInfo",
           "name": "MasterNodeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4745,7 +4827,7 @@
           "example": "无",
           "member": "CosBackup",
           "name": "CosBackup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4755,7 +4837,7 @@
           "example": "true",
           "member": "bool",
           "name": "AllowCosBackup",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -4765,7 +4847,7 @@
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4775,7 +4857,7 @@
           "example": "platinum",
           "member": "string",
           "name": "LicenseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4785,7 +4867,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableHotWarmMode",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -4795,7 +4877,7 @@
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "WarmNodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4805,7 +4887,7 @@
           "example": "3",
           "member": "uint64",
           "name": "WarmNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4815,7 +4897,7 @@
           "example": "2",
           "member": "uint64",
           "name": "WarmCpuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4825,7 +4907,7 @@
           "example": "4",
           "member": "uint64",
           "name": "WarmMemSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4835,7 +4917,7 @@
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "WarmDiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4845,7 +4927,7 @@
           "example": "100",
           "member": "uint64",
           "name": "WarmDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4855,7 +4937,7 @@
           "example": "无",
           "member": "NodeInfo",
           "name": "NodeInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4865,7 +4947,7 @@
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "EsPublicUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4875,7 +4957,7 @@
           "example": "无",
           "member": "ZoneDetail",
           "name": "MultiZoneInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4885,7 +4967,7 @@
           "example": "0",
           "member": "uint64",
           "name": "DeployMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4895,7 +4977,7 @@
           "example": "OPEN",
           "member": "string",
           "name": "PublicAccess",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4905,7 +4987,7 @@
           "example": "无",
           "member": "EsAcl",
           "name": "EsPublicAcl",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4915,7 +4997,7 @@
           "example": "http://es-xxxxxxxx",
           "member": "string",
           "name": "KibanaPrivateUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4925,7 +5007,7 @@
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPublicAccess",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4935,7 +5017,7 @@
           "example": "OPEN",
           "member": "string",
           "name": "KibanaPrivateAccess",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4945,7 +5027,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SecurityType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4955,7 +5037,7 @@
           "example": "0",
           "member": "int64",
           "name": "SceneType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4965,7 +5047,7 @@
           "example": "\"{}\"",
           "member": "string",
           "name": "KibanaConfig",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4975,7 +5057,7 @@
           "example": "无",
           "member": "KibanaNodeInfo",
           "name": "KibanaNodeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4985,7 +5067,7 @@
           "example": "无",
           "member": "WebNodeTypeInfo",
           "name": "WebNodeTypeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4995,7 +5077,7 @@
           "example": "oracle",
           "member": "string",
           "name": "Jdk",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5005,7 +5087,7 @@
           "example": "https",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5015,7 +5097,7 @@
           "example": "无",
           "member": "string",
           "name": "SecurityGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5025,7 +5107,7 @@
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "ColdNodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5035,7 +5117,7 @@
           "example": "3",
           "member": "uint64",
           "name": "ColdNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5045,7 +5127,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ColdCpuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5055,7 +5137,7 @@
           "example": "20",
           "member": "uint64",
           "name": "ColdMemSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5065,7 +5147,7 @@
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "ColdDiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5075,7 +5157,7 @@
           "example": "100",
           "member": "uint64",
           "name": "ColdDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5085,7 +5167,7 @@
           "example": "ES.S1.SMALL2",
           "member": "string",
           "name": "FrozenNodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5095,7 +5177,7 @@
           "example": "3",
           "member": "uint64",
           "name": "FrozenNodeNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5105,7 +5187,7 @@
           "example": "2",
           "member": "uint64",
           "name": "FrozenCpuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5115,7 +5197,7 @@
           "example": "20",
           "member": "uint64",
           "name": "FrozenMemSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5125,7 +5207,7 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "FrozenDiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5135,7 +5217,7 @@
           "example": "100",
           "member": "uint64",
           "name": "FrozenDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5145,7 +5227,7 @@
           "example": "-1",
           "member": "int64",
           "name": "HealthStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5155,7 +5237,7 @@
           "example": "https://xxx.com",
           "member": "string",
           "name": "EsPrivateUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5165,7 +5247,7 @@
           "example": "xxx.com",
           "member": "string",
           "name": "EsPrivateDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5175,7 +5257,7 @@
           "example": "无",
           "member": "EsConfigSetInfo",
           "name": "EsConfigSets",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5185,7 +5267,7 @@
           "example": "无",
           "member": "OperationDuration",
           "name": "OperationDuration",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5195,7 +5277,7 @@
           "example": "无",
           "member": "OptionalWebServiceInfo",
           "name": "OptionalWebServiceInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5205,7 +5287,7 @@
           "example": "true",
           "member": "bool",
           "name": "AutoIndexEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5215,7 +5297,7 @@
           "example": "0",
           "member": "uint64",
           "name": "EnableAdvancedFeature",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5225,7 +5307,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableHybridStorage",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5235,7 +5317,7 @@
           "example": "1.0",
           "member": "float",
           "name": "ProcessPercent",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -5245,7 +5327,27 @@
           "example": "OPEN",
           "member": "string",
           "name": "KibanaAlteringPublicAccess",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本月是否有内核可以更新：false-无，true-有\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HasKernelUpgrade",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdcId，使用cdc子网时传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxxxxx",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5502,9 +5604,10 @@
         {
           "disabled": false,
           "document": "本地盘类型<li>LOCAL_SATA：大数据型</li><li>NVME_SSD：高IO型</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LocalDiskType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5512,9 +5615,10 @@
         {
           "disabled": false,
           "document": "本地盘单盘大小",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "LocalDiskSize",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5522,15 +5626,16 @@
         {
           "disabled": false,
           "document": "本地盘块数",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "LocalDiskCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "LogstashBindedES": {
       "document": "Logstash绑定的ES集群信息",
@@ -7321,8 +7426,7 @@
           "member": "string",
           "name": "DiSourceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7331,8 +7435,7 @@
           "member": "DiSourceCvm",
           "name": "DiSourceCvm",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7341,8 +7444,16 @@
           "member": "DiSourceTke",
           "name": "DiSourceTke",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据链路采集源描述信息",
+          "example": "无",
+          "member": "DiSourceInfo",
+          "name": "DiSourceInfo",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -7356,7 +7467,7 @@
           "example": "10004222",
           "member": "uint64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7366,7 +7477,7 @@
           "example": "test",
           "member": "string",
           "name": "IndexName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7376,7 +7487,7 @@
           "example": "1",
           "member": "int64",
           "name": "IndexDocs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7386,7 +7497,7 @@
           "example": "30",
           "member": "int64",
           "name": "IndexStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7396,7 +7507,7 @@
           "example": "2021-03-01 10:00:00",
           "member": "string",
           "name": "IndexCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7406,7 +7517,7 @@
           "example": "index-abcdefgh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7416,7 +7527,7 @@
           "example": "无",
           "member": "ServerlessIndexOptionsField",
           "name": "IndexOptionsField",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7426,7 +7537,7 @@
           "example": "无",
           "member": "ServerlessIndexSettingsField",
           "name": "IndexSettingsField",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7436,7 +7547,7 @@
           "example": "无",
           "member": "ServerlessIndexNetworkField",
           "name": "IndexNetworkField",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7446,7 +7557,7 @@
           "example": "无",
           "member": "string",
           "name": "KibanaUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7456,7 +7567,7 @@
           "example": "无",
           "member": "string",
           "name": "KibanaPrivateUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7466,7 +7577,7 @@
           "example": "无",
           "member": "string",
           "name": "IndexAccessUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7476,7 +7587,7 @@
           "example": "无",
           "member": "EsAcl",
           "name": "KibanaPublicAcl",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7486,7 +7597,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7496,7 +7607,7 @@
           "example": "无",
           "member": "string",
           "name": "SpaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7506,7 +7617,7 @@
           "example": "无",
           "member": "string",
           "name": "SpaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7516,7 +7627,7 @@
           "example": "无",
           "member": "DiData",
           "name": "DiDataList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7526,7 +7637,7 @@
           "example": "无",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7536,7 +7647,7 @@
           "example": "无",
           "member": "int64",
           "name": "StorageType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7546,9 +7657,29 @@
           "example": "无",
           "member": "TagInfo",
           "name": "TagList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kibana内嵌域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KibanaEmbedUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内部产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InnerProductType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9073,7 +9204,7 @@
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ZoneDetail": {
       "document": "多可用区部署时可用区的详细信息",

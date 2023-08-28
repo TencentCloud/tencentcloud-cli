@@ -1,0 +1,872 @@
+{
+  "actions": {
+    "CreateApplication": {
+      "document": "rpc服务创建应用",
+      "input": "CreateApplicationRequest",
+      "name": "创建应用",
+      "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "DescribeApplication": {
+      "document": "应用详情查询",
+      "input": "DescribeApplicationRequest",
+      "name": "应用详情查询",
+      "output": "DescribeApplicationResponse",
+      "status": "online"
+    },
+    "DescribeApplicationList": {
+      "document": "应用列表查询",
+      "input": "DescribeApplicationListRequest",
+      "name": "应用列表查询",
+      "output": "DescribeApplicationListResponse",
+      "status": "online"
+    },
+    "DescribePackageState": {
+      "document": "查询用户套餐状态",
+      "input": "DescribePackageStateRequest",
+      "name": "查询用户套餐状态",
+      "output": "DescribePackageStateResponse",
+      "status": "online"
+    },
+    "DescribePackageTrend": {
+      "document": "查询用户套餐用量趋势",
+      "input": "DescribePackageTrendRequest",
+      "name": "查询用户套餐用量趋势",
+      "output": "DescribePackageTrendResponse",
+      "status": "online"
+    },
+    "DescribeSecurityList": {
+      "document": "查询应用白名单列表",
+      "input": "DescribeSecurityListRequest",
+      "name": "查询应用白名单列表",
+      "output": "DescribeSecurityListResponse",
+      "status": "online"
+    },
+    "DescribeServiceState": {
+      "document": "查询开通状态",
+      "input": "DescribeServiceStateRequest",
+      "name": "查询开通状态",
+      "output": "DescribeServiceStateResponse",
+      "status": "online"
+    },
+    "DescribeStatisticsTrend": {
+      "document": "查询请求统计趋势",
+      "input": "DescribeStatisticsTrendRequest",
+      "name": "查询请求统计趋势",
+      "output": "DescribeStatisticsTrendResponse",
+      "status": "online"
+    },
+    "ExportStatisticsTrend": {
+      "document": "导出请求统计趋势表单",
+      "input": "ExportStatisticsTrendRequest",
+      "name": "导出请求统计趋势表单",
+      "output": "ExportStatisticsTrendResponse",
+      "status": "online"
+    },
+    "ModifyApplicationInfo": {
+      "document": "更新应用信息",
+      "input": "ModifyApplicationInfoRequest",
+      "name": "更新应用信息",
+      "output": "ModifyApplicationInfoResponse",
+      "status": "online"
+    },
+    "ModifySecurityList": {
+      "document": "更新应用白名单",
+      "input": "ModifySecurityListRequest",
+      "name": "更新应用白名单",
+      "output": "ModifySecurityListResponse",
+      "status": "online"
+    },
+    "SubscribeService": {
+      "document": "用户开通rpc服务",
+      "input": "SubscribeServiceRequest",
+      "name": "服务开通",
+      "output": "SubscribeServiceResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-04-27",
+    "api_brief": "云官网控制台的服务开通，token生产，用量查询等能力",
+    "serviceNameCN": "腾讯云区块链 RPC",
+    "serviceShortName": "bcrpc"
+  },
+  "objects": {
+    "ApplicationData": {
+      "document": "应用列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "24小时请求总数\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Request",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api密钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApiKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateApplicationRequest": {
+      "document": "CreateApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名，长度不超过128",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用描述，长度不超过256",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationResponse": {
+      "document": "CreateApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListRequest": {
+      "document": "DescribeApplicationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-创建时间倒序\n2-应用名称排序\n3-请求数量倒序",
+          "example": "无",
+          "member": "int64",
+          "name": "OrderType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量\n",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "第几页\n",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListResponse": {
+      "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用列表数据",
+          "example": "无",
+          "member": "ApplicationData",
+          "name": "ApplicationList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationRequest": {
+      "document": "DescribeApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationResponse": {
+      "document": "DescribeApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "24小时请求总数\n",
+          "example": "无",
+          "member": "int64",
+          "name": "Request",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用描述\n",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "api密钥",
+          "example": "无",
+          "member": "string",
+          "name": "ApiKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageStateRequest": {
+      "document": "DescribePackageState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePackageStateResponse": {
+      "document": "DescribePackageState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "余额\n",
+          "example": "无",
+          "member": "int64",
+          "name": "Balance",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本周用量\n",
+          "example": "无",
+          "member": "int64",
+          "name": "UsageInWeek",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本日用量\n",
+          "example": "无",
+          "member": "int64",
+          "name": "UsageInDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageTrendRequest": {
+      "document": "DescribePackageTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "周期间隔类型\n1-分钟\n2-小时\n3-天",
+          "example": "无",
+          "member": "int64",
+          "name": "PeriodType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePackageTrendResponse": {
+      "document": "DescribePackageTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据列表\n",
+          "example": "无",
+          "member": "TrendData",
+          "name": "DataList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityListRequest": {
+      "document": "DescribeSecurityList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityListResponse": {
+      "document": "DescribeSecurityList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名白名单\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AllowedWebsite",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ip白名单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AllowedIpAddress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeServiceStateRequest": {
+      "document": "DescribeServiceState请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeServiceStateResponse": {
+      "document": "DescribeServiceState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态：\n1-开通 2-关闭",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStatisticsTrendRequest": {
+      "document": "DescribeStatisticsTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链名称",
+          "example": "无",
+          "member": "string",
+          "name": "Chain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链网络",
+          "example": "无",
+          "member": "string",
+          "name": "Network",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "周期间隔类型\n1-分钟\n2-小时\n3-天",
+          "example": "无",
+          "member": "int64",
+          "name": "PeriodType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeStatisticsTrendResponse": {
+      "document": "DescribeStatisticsTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总请求数\n",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalRequest",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每秒请求数\n",
+          "example": "无",
+          "member": "string",
+          "name": "AverageRequest",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "套餐使用数\n",
+          "example": "无",
+          "member": "int64",
+          "name": "CreditUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求趋势数据\n",
+          "example": "无",
+          "member": "TrendData",
+          "name": "RequestList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "请求速率趋势数据\n",
+          "example": "无",
+          "member": "TrendData",
+          "name": "AverageRequestList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据列表\n",
+          "example": "无",
+          "member": "TrendData",
+          "name": "UsageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportStatisticsTrendRequest": {
+      "document": "ExportStatisticsTrend请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容类型：\n1- 请求\n2-请求速率\n3-套餐用量",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链名称",
+          "example": "无",
+          "member": "string",
+          "name": "Chain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链网络",
+          "example": "无",
+          "member": "string",
+          "name": "Network",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "周期间隔类型\n1-分钟\n2-小时\n3-天\n",
+          "example": "无",
+          "member": "int64",
+          "name": "PeriodType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportStatisticsTrendResponse": {
+      "document": "ExportStatisticsTrend返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos路径",
+          "example": "无",
+          "member": "string",
+          "name": "CosUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationInfoRequest": {
+      "document": "ModifyApplicationInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称\n",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-更新名称\n2-更新描述",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新应用名，长度不超过128\n新应用描述，长度不超过256",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationInfoResponse": {
+      "document": "ModifyApplicationInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityListRequest": {
+      "document": "ModifySecurityList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称\n",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1-域名\n2-ip地址",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1-增加\n2-删除",
+          "example": "无",
+          "member": "int64",
+          "name": "Operate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "白名单域名或ip\n",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySecurityListResponse": {
+      "document": "ModifySecurityList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SubscribeServiceRequest": {
+      "document": "SubscribeService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-开通 2-关闭",
+          "example": "无",
+          "member": "int64",
+          "name": "Operate",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SubscribeServiceResponse": {
+      "document": "SubscribeService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TrendData": {
+      "document": "趋势数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "UTC时间\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

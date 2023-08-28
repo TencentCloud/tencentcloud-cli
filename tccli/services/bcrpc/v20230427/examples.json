@@ -1,0 +1,101 @@
+{
+  "actions": {
+    "CreateApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac\"\n    }\n}",
+        "title": "创建应用"
+      }
+    ],
+    "DescribeApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplication\n<公共请求参数>\n\n{\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Request\": 0,\n        \"Description\": \"abc\",\n        \"CreateTime\": \"ac\",\n        \"ApiKey\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "应用详情查询"
+      }
+    ],
+    "DescribeApplicationList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{\n    \"OrderType\": 0,\n    \"PageSize\": 0,\n    \"PageNumber\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"ApplicationList\": [\n            {\n                \"Name\": \"ac\",\n                \"Request\": 0,\n                \"Description\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ApiKey\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "应用列表查询"
+      }
+    ],
+    "DescribePackageState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePackageState\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Balance\": 0,\n        \"UsageInWeek\": 0,\n        \"UsageInDay\": 0,\n        \"RequestId\": \"ac\"\n    }\n}",
+        "title": "查询用户套餐状态"
+      }
+    ],
+    "DescribePackageTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePackageTrend\n<公共请求参数>\n\n{\n    \"PeriodType\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataList\": [\n            {\n                \"Time\": \"ac\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询用户套餐用量趋势"
+      }
+    ],
+    "DescribeSecurityList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityList\n<公共请求参数>\n\n{\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AllowedWebsite\": [\n            \"abc\"\n        ],\n        \"AllowedIpAddress\": [\n            \"ac\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询应用白名单列表"
+      }
+    ],
+    "DescribeServiceState": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceState\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"RequestId\": \"ac\"\n    }\n}",
+        "title": "查询开通状态"
+      }
+    ],
+    "DescribeStatisticsTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStatisticsTrend\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"abc\",\n    \"Chain\": \"abc\",\n    \"Network\": \"abc\",\n    \"PeriodType\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalRequest\": 0,\n        \"AverageRequest\": \"ab\",\n        \"CreditUsage\": 0,\n        \"RequestList\": [\n            {\n                \"Time\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"AverageRequestList\": [\n            {\n                \"Time\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"UsageList\": [\n            {\n                \"Time\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询请求统计趋势"
+      }
+    ],
+    "ExportStatisticsTrend": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportStatisticsTrend\n<公共请求参数>\n\n{\n    \"Type\": 0,\n    \"ApplicationName\": \"abc\",\n    \"Chain\": \"abc\",\n    \"Network\": \"abc\",\n    \"PeriodType\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"abc\",\n        \"RequestId\": \"ac\"\n    }\n}",
+        "title": "导出请求统计趋势表单"
+      }
+    ],
+    "ModifyApplicationInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationInfo\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Type\": 0,\n    \"Value\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab\"\n    }\n}",
+        "title": "更新应用信息"
+      }
+    ],
+    "ModifySecurityList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySecurityList\n<公共请求参数>\n\n{\n    \"Name\": \"abc\",\n    \"Type\": 0,\n    \"Operate\": 0,\n    \"Value\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab\"\n    }\n}",
+        "title": "更新应用白名单"
+      }
+    ],
+    "SubscribeService": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bcrpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SubscribeService\n<公共请求参数>\n\n{\n    \"Operate\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac\"\n    }\n}",
+        "title": "服务开通"
+      }
+    ]
+  },
+  "version": "1.0"
+}

@@ -4741,13 +4741,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "公网地址版本，可选：\"IPV4\" | \"IPV6-NAT64\" 。不填默认 IPV4 。",
-          "example": "IPV6-NAT64",
+          "document": "公网地址版本，可选：\"IPV4\" | \"IPV6\" 。不填默认 IPV4 。",
+          "example": "IPV6",
           "member": "string",
           "name": "InternetAddressVersion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4756,8 +4755,7 @@
           "member": "string",
           "name": "InternetPayMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4766,8 +4764,7 @@
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4776,8 +4773,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4786,8 +4782,7 @@
           "member": "string",
           "name": "SlaType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4796,8 +4791,7 @@
           "member": "bool",
           "name": "MultiZoneFlag",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -4806,8 +4800,7 @@
           "member": "string",
           "name": "MasterZoneId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4816,8 +4809,7 @@
           "member": "string",
           "name": "SlaveZoneId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6385,16 +6377,18 @@
           "example": "hello",
           "member": "string",
           "name": "Body",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "headrs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Headers\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[{key:\"\",value:\"\"},]",
           "member": "KVMapping",
           "name": "Headers",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6405,6 +6399,7 @@
           "example": "200",
           "member": "int64",
           "name": "HttpStatus",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true

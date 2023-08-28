@@ -1,3 +1,227 @@
+# Release 3.0.839.1
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 75 次发布
+
+发布时间：2023-08-29 01:24:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MySQLParam](http://document.tencentcloudapi.woa.com/document/product/597/40861#MySQLParam)
+
+	* 新增成员：SignalTable
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 15 次发布
+
+发布时间：2023-08-29 01:39:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAccessEntry](http://document.tencentcloudapi.woa.com/document/product/1492/81753)
+* [DescribeAccessWhiteListRules](http://document.tencentcloudapi.woa.com/document/product/1492/81752)
+* [DescribeSecuritySetting](http://document.tencentcloudapi.woa.com/document/product/1492/81754)
+
+新增数据结构：
+
+* [AccessWhiteListRule](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessWhiteListRule)
+* [AuthModeSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AuthModeSetting)
+* [LDAPSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LDAPSetting)
+* [LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#LoginSetting)
+* [PasswordSetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#PasswordSetting)
+* [SecuritySetting](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SecuritySetting)
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 41 次发布
+
+发布时间：2023-08-29 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateHourDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/70249)
+
+	* 新增入参：DcnSyncMode
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 35 次发布
+
+发布时间：2023-08-29 01:50:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30633)
+
+	* 新增入参：CdcId
+
+* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
+
+	* 新增入参：DiSourceInfo
+
+
+新增数据结构：
+
+* [DiSourceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceInfo)
+
+修改数据结构：
+
+* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
+
+	* 新增成员：DiSourceInfo
+
+	* <font color="#dd0000">**修改成员**：</font>DiId, CreateTime, Status, DiDataSourceCvm, DiDataSourceTke, DiDataSinkServerless, DiDataSourceType
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：HasKernelUpgrade, CdcId
+
+* [ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi)
+
+	* 新增成员：DiSourceInfo
+
+* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
+
+	* 新增成员：KibanaEmbedUrl, InnerProductType
+
+	* <font color="#dd0000">**修改成员**：</font>DiDataList, StorageType, TagList
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 24 次发布
+
+发布时间：2023-08-29 01:51:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1668/79347)
+
+* [CreatePersonAuthCertificateImage](http://document.tencentcloudapi.woa.com/document/product/1668/81457)
+
+	* 新增入参：Agent
+
+* [DescribeOrganizationSeals](http://document.tencentcloudapi.woa.com/document/product/1668/79303)
+
+	* 新增入参：SealStatuses
+
+
+新增数据结构：
+
+* [Permission](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Permission)
+* [PermissionGroup](http://document.tencentcloudapi.woa.com/document/product/1668/79360#PermissionGroup)
+
+修改数据结构：
+
+* [IntegrateRole](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntegrateRole)
+
+	* 新增成员：PermissionGroups
+
+	* <font color="#dd0000">**修改成员**：</font>RoleId, RoleName, RoleStatus, IsGroupRole, SubOrgIdList
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 82 次发布
+
+发布时间：2023-08-29 01:52:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateMultiFlowSignQRCode](http://document.tencentcloudapi.woa.com/document/product/1595/75252)
+
+
+修改数据结构：
+
+* [BaseFlowInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BaseFlowInfo)
+
+	* 新增成员：Components
+
+* [CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)
+
+	* 新增成员：SignComponents
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 34 次发布
+
+发布时间：2023-08-29 01:53:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IntentionVerifyData](http://document.tencentcloudapi.woa.com/document/product/1007/41958#IntentionVerifyData)
+
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 35 次发布
+
+发布时间：2023-08-29 02:09:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateHourDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/67878)
+
+	* 新增入参：DcnSyncMode
+
+
+
+
 # Release 3.0.838.1
 
 ## 智能视图计算平台(iss) 版本：2023-05-17

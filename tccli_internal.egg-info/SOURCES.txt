@@ -116,6 +116,8 @@ tccli/services/batch/__init__.py
 tccli/services/batch/batch_client.py
 tccli/services/batch/v20170312/api.json
 tccli/services/batch/v20170312/examples.json
+tccli/services/bcrpc/__init__.py
+tccli/services/bcrpc/bcrpc_client.py
 tccli/services/bda/__init__.py
 tccli/services/bda/bda_client.py
 tccli/services/bda/v20200324/api.json
