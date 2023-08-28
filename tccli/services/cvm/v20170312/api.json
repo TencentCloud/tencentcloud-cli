@@ -2394,7 +2394,7 @@
         {
           "disabled": false,
           "document": "准备删除的镜像Id列表",
-          "example": "[\"img-34vaef8fe\\r\\n\"]",
+          "example": "[\"img-34vaef8fe\"]",
           "member": "string",
           "name": "ImageIds",
           "required": true,

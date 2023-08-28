@@ -5378,6 +5378,7 @@
           "example": "E6918C",
           "member": "string",
           "name": "ID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5387,6 +5388,7 @@
           "example": "BROWN BENJAMIN",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5396,6 +5398,7 @@
           "example": "20230414",
           "member": "string",
           "name": "DateOfBirth",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5405,6 +5408,7 @@
           "example": "M",
           "member": "string",
           "name": "Sex",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5414,6 +5418,7 @@
           "example": "20230414",
           "member": "string",
           "name": "DateOfExpiration",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5423,6 +5428,7 @@
           "example": "SGP",
           "member": "string",
           "name": "IssuingCountry",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5432,6 +5438,7 @@
           "example": "SGP",
           "member": "string",
           "name": "Nationality",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5441,6 +5448,7 @@
           "example": "[]",
           "member": "int64",
           "name": "Warn",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5450,6 +5458,7 @@
           "example": "无",
           "member": "string",
           "name": "Image",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5459,24 +5468,27 @@
           "example": "{\"IssuingCountry\":{\"Confidence\":\"0.9500\"},\"Name\":{\"Confidence\":\"0.9500\"},\"ID\":{\"Confidence\":\"0.9500\"},\"Nationality\":{\"Confidence\":\"0.9500\"},\"Sex\":{\"Confidence\":\"0.9500\"},\"DateOfExpiration\":{\"Confidence\":\"0.9500\"}}",
           "member": "string",
           "name": "AdvancedInfo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最下方第一行 MRZ Code 序列",
-          "example": "P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<",
+          "example": "`P<CANBROWN<<BENJAMIN<<<<<<<<<<<<<<<<<<<<<<<<`",
           "member": "string",
           "name": "CodeSet",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最下方第二行 MRZ Code 序列",
-          "example": "JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04",
+          "example": "`JK123488<3CAN8510168M2603298<<<<<<<<<<<<<<04`",
           "member": "string",
           "name": "CodeCrc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5486,6 +5498,7 @@
           "example": "BROWN",
           "member": "string",
           "name": "Surname",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5495,6 +5508,7 @@
           "example": "BENJAMIN",
           "member": "string",
           "name": "GivenName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7456,6 +7470,7 @@
           "example": "CHN",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7465,6 +7480,7 @@
           "example": "G12345678",
           "member": "string",
           "name": "PassportNo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7474,6 +7490,7 @@
           "example": "M",
           "member": "string",
           "name": "Sex",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7483,6 +7500,7 @@
           "example": "CHN",
           "member": "string",
           "name": "Nationality",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7492,6 +7510,7 @@
           "example": "19920922",
           "member": "string",
           "name": "BirthDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7501,6 +7520,7 @@
           "example": "SHANGHAI",
           "member": "string",
           "name": "BirthPlace",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7510,6 +7530,7 @@
           "example": "20100820",
           "member": "string",
           "name": "IssueDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7519,6 +7540,7 @@
           "example": "SHANGHAI",
           "member": "string",
           "name": "IssuePlace",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7528,6 +7550,7 @@
           "example": "20200819",
           "member": "string",
           "name": "ExpiryDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7537,24 +7560,27 @@
           "example": "张三",
           "member": "string",
           "name": "Signature",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最下方第一行 MRZ Code 序列",
-          "example": "POCHNZHANG<<SAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<",
+          "example": "`POCHNZHANG<<SAN<<<<<<<<<<<<<<<<<<<<<<<<<<<<<`",
           "member": "string",
           "name": "CodeSet",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最下方第二行 MRZ Code 序列",
-          "example": "G123456785CHN9209220M200819219203100<<<<<<60",
+          "example": "`G123456785CHN9209220M200819219203100<<<<<<60`",
           "member": "string",
           "name": "CodeCrc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7564,6 +7590,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7573,6 +7600,7 @@
           "example": "ZHANG",
           "member": "string",
           "name": "FamilyName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7582,6 +7610,7 @@
           "example": "SAN",
           "member": "string",
           "name": "FirstName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

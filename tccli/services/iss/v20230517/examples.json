@@ -102,6 +102,14 @@
         "title": "设备类型错误"
       }
     ],
+    "BatchOperateDevice": [
+      {
+        "document": " ",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchOperateDevice\n<公共请求参数>\n\n{\n    \"DeviceIds\": [\n        \"2fa25418-****-4dde-****-5c2d****6d58\",\n        \"552fbaba-****-4a79-****-8504f****a53\",\n        \"6e448c42-****-4e2e-****-cc4a****15b9\",\n        \"e9b0b611-****-42a2-****-b30****b1c25\"\n    ],\n    \"Cmd\": \"enable\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"28bdf2f7-****-4507-****-35f0****7ecf5\"\n        },\n        \"RequestId\": \"e7d070d7-8d22-4bfe-9873-6ff0ea331310\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "CheckDomain": [
       {
         "document": " ",
@@ -458,6 +466,14 @@
         "title": "成功"
       }
     ],
+    "DescribeTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: \tDescribeTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"6d915841-****-****-****-5b278a217051\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"6d915841-****-****-****-5b278a217051\",\n            \"Status\": 2,\n            \"FailReason\": \"\",\n            \"Progress\": 0.94,\n            \"TaskType\": 2,\n            \"Action\": \"BatchEnableDevice\",\n            \"ActionZhDesc\": \"批量启用设备\",\n            \"Total\": 3,\n            \"SuccessCount\": 1,\n            \"FailCount\": 1,\n            \"RunningCount\": 1,\n            \"ResourceId\": \"\",\n            \"StartedAt\": \"2023-07-18 12:15:41\",\n            \"CreatedAt\": \"2023-07-18 12:11:57\",\n            \"UpdatedAt\": \"2023-07-18 14:27:06\",\n            \"Runtime\": 170209866\n        },\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
     "DescribeUserDevice": [
       {
         "document": "ok",
@@ -668,6 +684,22 @@
         "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListRecordTemplates\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"TemplateId\": \"9ee325e9984**********a805c19b4e1\",\n                \"TemplateName\": \"\",\n                \"TimeSections\": [\n                    {\n                        \"DayOfWeek\": 2,\n                        \"StartTime\": \"01:00:00\",\n                        \"EndTime\": \"01:10:00\"\n                    },\n                    {\n                        \"DayOfWeek\": 3,\n                        \"StartTime\": \"10:00:00\",\n                        \"EndTime\": \"10:30:00\"\n                    },\n                    {\n                        \"DayOfWeek\": 4,\n                        \"StartTime\": \"12:00:00\",\n                        \"EndTime\": \"13:00:00\"\n                    }\n                ]\n            },\n            {\n                \"TemplateId\": \"48676e89a8c**********baa36220fa4\",\n                \"TemplateName\": \"\",\n                \"TimeSections\": [\n                    {\n                        \"DayOfWeek\": 2,\n                        \"StartTime\": \"01:00:00\",\n                        \"EndTime\": \"01:10:00\"\n                    },\n                    {\n                        \"DayOfWeek\": 3,\n                        \"StartTime\": \"10:00:00\",\n                        \"EndTime\": \"10:30:00\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
         "title": "有实时上云模板"
+      }
+    ],
+    "ListSubTasks": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSubTasks\n<公共请求参数>\n\n{\n    \"TaskId\": \"6d915841-****-****-****-5b278a217051\",\n    \"PageNumber\": 1,\n    \"PageSize\": 2,\n    \"Status\": 4\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Action\": \"EnableDevice\",\n                    \"ActionZhDesc\": \"启用设备\",\n                    \"CreatedAt\": \"2023-07-19 16:12:50\",\n                    \"FailReason\": \"资源不可达，该资源不属于该地域\",\n                    \"Progress\": 1,\n                    \"ResourceId\": \"e9b0b611-****-****-****-b307e04b1c25\",\n                    \"Runtime\": 0,\n                    \"StartedAt\": \"2023-07-19 16:12:51\",\n                    \"Status\": 4,\n                    \"SubTaskId\": \"beb4f9c9-****-****-****-e7ce5d61b574\",\n                    \"UpdatedAt\": \"2023-07-19 16:12:51\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"03d99ae5-6126-447d-91de-d94aefcc7a0f\"\n    }\n}",
+        "title": "成功"
+      }
+    ],
+    "ListTasks": [
+      {
+        "document": "无",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTasks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 5,\n    \"Operation\": \"BatchEnableDevice\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"List\": [\n                {\n                    \"Action\": \"BatchEnableDevice\",\n                    \"ActionZhDesc\": \"批量启用设备\",\n                    \"CreatedAt\": \"2023-07-19 16:12:50\",\n                    \"FailCount\": 1,\n                    \"FailReason\": \"\",\n                    \"Progress\": 1,\n                    \"ResourceId\": \"\",\n                    \"RunningCount\": 0,\n                    \"Runtime\": 1000,\n                    \"StartedAt\": \"2023-07-19 16:12:50\",\n                    \"Status\": 3,\n                    \"SuccessCount\": 3,\n                    \"TaskId\": \"28bdf2f7-****-****-****-35f073f7ecf5\",\n                    \"TaskType\": 2,\n                    \"Total\": 4,\n                    \"UpdatedAt\": \"2023-07-19 16:12:51\"\n                },\n                {\n                    \"Action\": \"BatchEnableDevice\",\n                    \"ActionZhDesc\": \"批量启用设备\",\n                    \"CreatedAt\": \"2023-07-19 15:47:41\",\n                    \"FailCount\": 1,\n                    \"FailReason\": \"\",\n                    \"Progress\": 1,\n                    \"ResourceId\": \"\",\n                    \"RunningCount\": 0,\n                    \"Runtime\": 1000,\n                    \"StartedAt\": \"2023-07-19 15:47:41\",\n                    \"Status\": 3,\n                    \"SuccessCount\": 3,\n                    \"TaskId\": \"6a7c470b-****-****-****-d564918ad9d9\",\n                    \"TaskType\": 2,\n                    \"Total\": 4,\n                    \"UpdatedAt\": \"2023-07-19 15:47:42\"\n                }\n            ],\n            \"TotalCount\": 2\n        },\n        \"RequestId\": \"f37b7e5a-78c6-4931-81b0-095a9b318e03\"\n    }\n}",
+        "title": "成功"
       }
     ],
     "PlayRecord": [

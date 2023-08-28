@@ -8,9 +8,9 @@
       "status": "online"
     },
     "AddClusterSlaveZone": {
-      "document": "增加从可用区",
+      "document": "开启多可用区部署",
       "input": "AddClusterSlaveZoneRequest",
-      "name": "增加从可用区",
+      "name": "开启多可用区部署",
       "output": "AddClusterSlaveZoneResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "CreateAccounts": {
-      "document": "创建账号",
+      "document": "创建用户账号",
       "input": "CreateAccountsRequest",
-      "name": "创建账号",
+      "name": "创建用户账号",
       "output": "CreateAccountsResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DeleteAccounts": {
-      "document": "删除账号",
+      "document": "删除用户账号",
       "input": "DeleteAccountsRequest",
-      "name": "删除账号",
+      "name": "删除用户账号",
       "output": "DeleteAccountsResponse",
       "status": "online"
     },
@@ -183,9 +183,9 @@
       "status": "online"
     },
     "DescribeAccountAllGrantPrivileges": {
-      "document": "账号所有权限",
+      "document": "查询账号所有可授予权限",
       "input": "DescribeAccountAllGrantPrivilegesRequest",
-      "name": "账号所有权限",
+      "name": "查询账号所有可授予权限",
       "output": "DescribeAccountAllGrantPrivilegesResponse",
       "status": "online"
     },
@@ -197,9 +197,9 @@
       "status": "online"
     },
     "DescribeAccounts": {
-      "document": "本接口(DescribeAccounts)用于查询数据库管理账号。",
+      "document": "本接口(DescribeAccounts)用于查询数据库账号列表",
       "input": "DescribeAccountsRequest",
-      "name": "查询数据库管理账号",
+      "name": "查询数据库账号列表",
       "output": "DescribeAccountsResponse",
       "status": "online"
     },
@@ -295,9 +295,9 @@
       "status": "online"
     },
     "DescribeClusterParamLogs": {
-      "document": "本接口（DescribeClusterParamLogs）查询参数修改日志",
+      "document": "本接口（DescribeClusterParamLogs）查询参数修改记录",
       "input": "DescribeClusterParamLogsRequest",
-      "name": "查询参数修改日志",
+      "name": "查询参数修改记录",
       "output": "DescribeClusterParamLogsResponse",
       "status": "online"
     },
@@ -351,16 +351,16 @@
       "status": "online"
     },
     "DescribeInstanceParams": {
-      "document": "该接口(DescribeInstanceParams)查询实例参数列表",
+      "document": "该接口(DescribeInstanceParams)查询实例参数",
       "input": "DescribeInstanceParamsRequest",
-      "name": "查询实例参数列表",
+      "name": "查询实例参数",
       "output": "DescribeInstanceParamsResponse",
       "status": "online"
     },
     "DescribeInstanceSlowQueries": {
-      "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢查询日志。",
+      "document": "此接口（DescribeInstanceSlowQueries）用于查询实例慢日志详情。",
       "input": "DescribeInstanceSlowQueriesRequest",
-      "name": "查询实例慢查询日志",
+      "name": "查询实例慢日志详情",
       "output": "DescribeInstanceSlowQueriesResponse",
       "status": "online"
     },
@@ -449,16 +449,16 @@
       "status": "online"
     },
     "DescribeResourcesByDealName": {
-      "document": "根据计费订单id查询资源列表",
+      "document": "查询订单关联实例",
       "input": "DescribeResourcesByDealNameRequest",
-      "name": "根据订单id查询资源信息",
+      "name": "查询订单关联实例",
       "output": "DescribeResourcesByDealNameResponse",
       "status": "online"
     },
     "DescribeRollbackTimeRange": {
-      "document": "查询指定集群有效回滚时间范围",
+      "document": "查询回档时间范围",
       "input": "DescribeRollbackTimeRangeRequest",
-      "name": "查询有效回滚时间范围",
+      "name": "查询回档时间范围",
       "output": "DescribeRollbackTimeRangeResponse",
       "status": "online"
     },
@@ -554,16 +554,16 @@
       "status": "online"
     },
     "ModifyAccountParams": {
-      "document": "修改账号参数",
+      "document": "修改账号配置",
       "input": "ModifyAccountParamsRequest",
-      "name": "修改账号参数",
+      "name": "修改账号配置",
       "output": "ModifyAccountParamsResponse",
       "status": "online"
     },
     "ModifyAccountPrivileges": {
-      "document": "修改账号权限",
+      "document": "修改账号库表权限",
       "input": "ModifyAccountPrivilegesRequest",
-      "name": "修改账号权限",
+      "name": "修改账号库表权限",
       "output": "ModifyAccountPrivilegesResponse",
       "status": "online"
     },
@@ -631,9 +631,9 @@
       "status": "online"
     },
     "ModifyClusterSlaveZone": {
-      "document": "修改从可用区",
+      "document": "变更备可用区",
       "input": "ModifyClusterSlaveZoneRequest",
-      "name": "修改从可用区",
+      "name": "变更备可用区",
       "output": "ModifyClusterSlaveZoneResponse",
       "status": "online"
     },
@@ -647,7 +647,7 @@
     "ModifyDBInstanceSecurityGroups": {
       "document": "本接口(ModifyDBInstanceSecurityGroups)用于修改实例绑定的安全组。",
       "input": "ModifyDBInstanceSecurityGroupsRequest",
-      "name": "修改云数据库安全组",
+      "name": "修改实例绑定安全组",
       "output": "ModifyDBInstanceSecurityGroupsResponse",
       "status": "online"
     },
@@ -785,16 +785,16 @@
       "status": "online"
     },
     "RemoveClusterSlaveZone": {
-      "document": "删除从可用区",
+      "document": "关闭多可用区部署",
       "input": "RemoveClusterSlaveZoneRequest",
-      "name": "删除从可用区",
+      "name": "关闭多可用区部署",
       "output": "RemoveClusterSlaveZoneResponse",
       "status": "online"
     },
     "ResetAccountPassword": {
-      "document": "本接口(ResetAccountPassword)用于重置实例的数据库账号密码。",
+      "document": "本接口(ResetAccountPassword)用于修改数据库账号密码",
       "input": "ResetAccountPasswordRequest",
-      "name": "重置数据库账号密码",
+      "name": "修改数据库账号密码",
       "output": "ResetAccountPasswordResponse",
       "status": "online"
     },
@@ -820,9 +820,9 @@
       "status": "online"
     },
     "RollBackCluster": {
-      "document": "本接口（RollBackCluster）用于回档集群",
+      "document": "本接口（RollBackCluster）用于集群回档",
       "input": "RollBackClusterRequest",
-      "name": "回档集群",
+      "name": "集群回档",
       "output": "RollBackClusterResponse",
       "status": "online"
     },
@@ -855,9 +855,9 @@
       "status": "online"
     },
     "SwitchClusterZone": {
-      "document": "切换到从可用区",
+      "document": "主备可用区切换",
       "input": "SwitchClusterZoneRequest",
-      "name": "切换到从可用区",
+      "name": "主备可用区切换",
       "output": "SwitchClusterZoneResponse",
       "status": "online"
     },
@@ -1128,7 +1128,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5999,26 +5999,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库",
-          "example": "",
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Db",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "权限列表",
-          "example": "",
+          "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Privileges",
+          "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DatabaseTables": {
       "document": "数据库表信息",
@@ -6438,7 +6440,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivilegeStatements",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6448,7 +6450,7 @@
           "example": "无",
           "member": "string",
           "name": "GlobalPrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6458,7 +6460,7 @@
           "example": "无",
           "member": "DatabasePrivileges",
           "name": "DatabasePrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6468,7 +6470,7 @@
           "example": "无",
           "member": "TablePrivileges",
           "name": "TablePrivileges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7649,7 +7651,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7659,7 +7661,7 @@
           "example": "无",
           "member": "ClusterParamModifyLog",
           "name": "ClusterParamLogs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8179,7 +8181,7 @@
           "example": "无",
           "member": "InstanceParamItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8297,7 +8299,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8307,7 +8309,7 @@
           "example": "无",
           "member": "SlowQueriesItem",
           "name": "SlowQueries",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9414,7 +9416,7 @@
           "example": "2019-01-13 02:12:05",
           "member": "string",
           "name": "TimeRangeStart",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9424,7 +9426,7 @@
           "example": "2019-01-20 02:10:12",
           "member": "string",
           "name": "TimeRangeEnd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9434,7 +9436,7 @@
           "example": "无",
           "member": "RollbackTimeRange",
           "name": "RollbackTimeRanges",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11551,7 +11553,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14602,7 +14604,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14912,7 +14914,7 @@
           "example": "123",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15757,7 +15759,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15848,36 +15850,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据库名",
-          "example": "",
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Db",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表名",
-          "example": "",
+          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TableName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "权限列表",
-          "example": "",
+          "document": "权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Privileges",
+          "output_required": false,
           "required": true,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Tag": {
       "document": "集群绑定的标签信息，包含标签键TagKey和标签值TagValue",

@@ -70,6 +70,13 @@
       "output": "DeleteAttackDownloadRecordResponse",
       "status": "online"
     },
+    "DeleteCustomRule": {
+      "document": "删除自定义规则",
+      "input": "DeleteCustomRuleRequest",
+      "name": "删除自定义规则",
+      "output": "DeleteCustomRuleResponse",
+      "status": "online"
+    },
     "DeleteCustomWhiteRule": {
       "document": "删除精准白名单规则",
       "input": "DeleteCustomWhiteRuleRequest",
@@ -166,6 +173,13 @@
       "input": "DescribeCiphersDetailRequest",
       "name": "查询加密套件信息",
       "output": "DescribeCiphersDetailResponse",
+      "status": "online"
+    },
+    "DescribeCustomRuleList": {
+      "document": "获取防护配置中的访问控制策略列表",
+      "input": "DescribeCustomRuleListRequest",
+      "name": "查询访问控制规则",
+      "output": "DescribeCustomRuleListResponse",
       "status": "online"
     },
     "DescribeCustomWhiteRule": {
@@ -404,6 +418,13 @@
       "input": "ModifyBotStatusRequest",
       "name": "Bot_V2 bot总开关更新",
       "output": "ModifyBotStatusResponse",
+      "status": "online"
+    },
+    "ModifyCustomRule": {
+      "document": "编辑自定义规则",
+      "input": "ModifyCustomRuleRequest",
+      "name": "编辑自定义规则",
+      "output": "ModifyCustomRuleResponse",
       "status": "online"
     },
     "ModifyCustomRuleStatus": {
@@ -2379,6 +2400,51 @@
       ],
       "type": "object"
     },
+    "DeleteCustomRuleRequest": {
+      "document": "DeleteCustomRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "删除的规则ID",
+          "example": "",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomRuleResponse": {
+      "document": "DeleteCustomRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCustomWhiteRuleRequest": {
       "document": "DeleteCustomWhiteRule请求参数结构体",
       "members": [
@@ -3258,6 +3324,98 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleListRequest": {
+      "document": "DescribeCustomRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容量",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤数组,name可以是如下的值： RuleID,RuleName,Match",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "asc或者desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "exp_ts或者mod_ts",
+          "example": "mod_ts",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomRuleListResponse": {
+      "document": "DescribeCustomRuleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "DescribeCustomRulesRspRuleListItem",
+          "name": "RuleList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则条数",
+          "example": "1",
+          "member": "string",
+          "name": "TotalCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7748,6 +7906,114 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleRequest": {
+      "document": "ModifyCustomRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑的域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编辑的规则ID",
+          "example": "",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "编辑的规则名称",
+          "example": "",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "执行动作，0：放行、1：阻断、2：人机识别、3：观察、4：重定向",
+          "example": "",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "匹配条件数组",
+          "example": "",
+          "member": "Strategy",
+          "name": "Strategies",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "WAF的版本，clb-waf代表负载均衡WAF、sparta-waf代表SaaS WAF，默认是sparta-waf。",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动作为重定向的时候重定向URL，默认为\"/\"",
+          "example": "",
+          "member": "string",
+          "name": "Redirect",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "放行时是否继续执行其它检查逻辑，继续执行地域封禁防护：geoip、继续执行CC策略防护：cc、继续执行WEB应用防护：owasp、继续执行AI引擎防护：ai、继续执行信息防泄漏防护：antileakage。如果多个勾选那么以,串接。\n默认是\"geoip,cc,owasp,ai,antileakage\"",
+          "example": "",
+          "member": "string",
+          "name": "Bypass",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "优先级，1~100的整数，数字越小，代表这条规则的执行优先级越高。\n默认是100",
+          "example": "",
+          "member": "uint64",
+          "name": "SortId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则生效截止时间，0：永久生效，其它值为对应时间的时间戳。\n默认是0",
+          "example": "",
+          "member": "uint64",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomRuleResponse": {
+      "document": "ModifyCustomRule返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

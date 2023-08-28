@@ -63,6 +63,13 @@
       "output": "AddUserDeviceResponse",
       "status": "online"
     },
+    "BatchOperateDevice": {
+      "document": "用于批量操作（启用，禁用，删除）设备",
+      "input": "BatchOperateDeviceRequest",
+      "name": "批量操作设备",
+      "output": "BatchOperateDeviceResponse",
+      "status": "online"
+    },
     "CheckDomain": {
       "document": "用于检测域名是否备案。",
       "input": "CheckDomainRequest",
@@ -322,6 +329,13 @@
       "output": "DescribeStreamAuthResponse",
       "status": "online"
     },
+    "DescribeTask": {
+      "document": "用于查询任务详情",
+      "input": "DescribeTaskRequest",
+      "name": "查询任务详情",
+      "output": "DescribeTaskResponse",
+      "status": "online"
+    },
     "DescribeUserDevice": {
       "document": "用于查询设备的详细信息。",
       "input": "DescribeUserDeviceRequest",
@@ -432,6 +446,20 @@
       "input": "ListRecordTemplatesRequest",
       "name": "查询实时上云模板列表",
       "output": "ListRecordTemplatesResponse",
+      "status": "online"
+    },
+    "ListSubTasks": {
+      "document": "用于查询任务的子任务列表",
+      "input": "ListSubTasksRequest",
+      "name": "查询任务的子任务列表",
+      "output": "ListSubTasksResponse",
+      "status": "online"
+    },
+    "ListTasks": {
+      "document": "用于查询批量任务和简单任务列表",
+      "input": "ListTasksRequest",
+      "name": "查询任务列表",
+      "output": "ListTasksResponse",
       "status": "online"
     },
     "PlayRecord": {
@@ -2235,6 +2263,68 @@
         }
       ],
       "usage": "out"
+    },
+    "BatchOperateDeviceData": {
+      "document": "批量操作设备返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID（用于在查询任务的子任务列表接口ListSubTasks中查询任务进度）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "******-****-****-****-************",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchOperateDeviceRequest": {
+      "document": "BatchOperateDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备 ID 数组（从获取设备列表接口ListDevices中获取）",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作命令（enable：启用；disable：禁用；delete：删除）",
+          "example": "无",
+          "member": "string",
+          "name": "Cmd",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchOperateDeviceResponse": {
+      "document": "BatchOperateDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果",
+          "example": "无",
+          "member": "BatchOperateDeviceData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BodyAIResultInfo": {
       "document": "人体识别结果详情",
@@ -5254,6 +5344,43 @@
       ],
       "type": "object"
     },
+    "DescribeTaskRequest": {
+      "document": "DescribeTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "简单任务或复杂任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskResponse": {
+      "document": "DescribeTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务详情",
+          "example": "无",
+          "member": "TaskData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserDeviceRequest": {
       "document": "DescribeUserDevice请求参数结构体",
       "members": [
@@ -6081,6 +6208,24 @@
           "name": "GatewayId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6984,6 +7129,186 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSubTasksData": {
+      "document": "列举子任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子任务列表",
+          "example": "无",
+          "member": "SubTaskData",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子任务数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ListSubTasksRequest": {
+      "document": "ListSubTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "复杂任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码，默认为1",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认为10",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认不对该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSubTasksResponse": {
+      "document": "ListSubTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ListSubTasksData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTasksData": {
+      "document": "查询任务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskData",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ListTasksRequest": {
+      "document": "ListTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，默认为1",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认为10",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认不根据该字段进行筛选，否则根据设备操作类型进行筛选，对应任务的Action字段，批量任务操作类型以Batch开头。目前值有：BatchDeleteUserDevice，BatchDisableDevice，BatchEnableDevice，DeleteUserDevice，DisableDevice，EnableDevice",
+          "example": "无",
+          "member": "string",
+          "name": "Operation",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认不根据该字段进行筛选，否则根据任务状态进行筛选。状态码：1-NEW，2-RUNNING，3-COMPLETED，4-FAILED",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTasksResponse": {
+      "document": "ListTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "ListTasksData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7905,6 +8230,288 @@
         }
       ],
       "usage": "both"
+    },
+    "SubTaskData": {
+      "document": "子任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "SubTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态1:NEW,2:RUNNING,3:COMPLETED ,4:FAILED",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度",
+          "example": "无",
+          "member": "float",
+          "name": "Progress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型中文描述",
+          "example": "无",
+          "member": "string",
+          "name": "ActionZhDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务运行时间，单位ms",
+          "example": "无",
+          "member": "int64",
+          "name": "Runtime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskData": {
+      "document": "查询复杂任务详情返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态1:NEW,2:RUNNING,3:COMPLETED ,4:FAILED",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进度（0-1）",
+          "example": "无",
+          "member": "float",
+          "name": "Progress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务操作类型，批量任务类型以Batch开头",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作类型中文描述",
+          "example": "无",
+          "member": "string",
+          "name": "ActionZhDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型 1.简单 2.复杂 3.子任务",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务资源id（复杂任务该字段无效）",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总任务数（仅复杂任务有效）",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功任务数（仅复杂任务有效）",
+          "example": "无",
+          "member": "int64",
+          "name": "SuccessCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败任务数（仅复杂任务有效）",
+          "example": "无",
+          "member": "int64",
+          "name": "FailCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行任务数（仅复杂任务有效）",
+          "example": "无",
+          "member": "int64",
+          "name": "RunningCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新任务时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务运行时间，单位ms",
+          "example": "无",
+          "member": "int64",
+          "name": "Runtime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "Timeline": {
       "document": "时间片段结构体",

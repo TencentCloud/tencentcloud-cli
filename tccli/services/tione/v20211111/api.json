@@ -2349,6 +2349,15 @@
           "name": "ServiceCategory",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务的启动命令",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7294,7 +7303,7 @@
           "example": "false",
           "member": "bool",
           "name": "AllowSaveAllContent",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -7312,6 +7321,22 @@
         }
       ],
       "usage": "both"
+    },
+    "InferCodeInfo": {
+      "document": "推理代码的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推理代码所在的cos详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CosPathInfo",
+          "name": "CosPathInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InferGatewayCallInfo": {
       "document": "服务的调用信息，服务组下唯一",
@@ -8422,6 +8447,15 @@
           "name": "ModelTurboEnable",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "服务的启动命令",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10559,7 +10593,7 @@
           "example": "ms-testtest",
           "member": "string",
           "name": "ServiceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10569,7 +10603,7 @@
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10579,7 +10613,7 @@
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10589,7 +10623,7 @@
           "example": "ms-testtest-0",
           "member": "string",
           "name": "ServiceDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10599,7 +10633,7 @@
           "example": "{}",
           "member": "ServiceInfo",
           "name": "ServiceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10609,7 +10643,7 @@
           "example": "cls-sssss",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10619,7 +10653,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10629,7 +10663,7 @@
           "example": "infer-eeeee",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10639,7 +10673,7 @@
           "example": "PRE_PAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10649,7 +10683,7 @@
           "example": "rr-sssss",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10659,7 +10693,7 @@
           "example": "pregroup",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10669,7 +10703,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10679,7 +10713,7 @@
           "example": "my-ingress",
           "member": "string",
           "name": "IngressName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10689,7 +10723,7 @@
           "example": "1541252152",
           "member": "string",
           "name": "CreatedBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10699,7 +10733,7 @@
           "example": "ms-testtest",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10709,7 +10743,7 @@
           "example": "ms-testtest",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10719,7 +10753,7 @@
           "example": "1541252152",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10729,7 +10763,7 @@
           "example": "1541252152",
           "member": "string",
           "name": "SubUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10739,7 +10773,7 @@
           "example": "1541252152",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10749,7 +10783,7 @@
           "example": "CREATING",
           "member": "string",
           "name": "BusinessStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10759,7 +10793,7 @@
           "example": "{}",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10769,7 +10803,7 @@
           "example": "{}",
           "member": "ScheduledAction",
           "name": "ScheduledAction",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10779,7 +10813,7 @@
           "example": "api网关注册失败",
           "member": "string",
           "name": "CreateFailedReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10789,7 +10823,7 @@
           "example": "Normal",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10799,7 +10833,7 @@
           "example": "模型服务计费中：1.2元/小时",
           "member": "string",
           "name": "BillingInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10809,7 +10843,7 @@
           "example": "20",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10819,7 +10853,7 @@
           "example": "AUTO_ML",
           "member": "string",
           "name": "CreateSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10829,7 +10863,7 @@
           "example": "1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10839,7 +10873,7 @@
           "example": "1",
           "member": "string",
           "name": "LatestVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11384,7 +11418,7 @@
           "example": "无",
           "member": "string",
           "name": "ScheduledAction",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11417,7 +11451,7 @@
           "example": "无",
           "member": "ServiceLimit",
           "name": "ServiceLimit",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -11431,6 +11465,39 @@
           "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "挂载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeMount",
+          "name": "VolumeMount",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推理代码信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InferCodeInfo",
+          "name": "InferCodeInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的启动命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -11689,6 +11756,7 @@
           "example": "test",
           "member": "string",
           "name": "Message",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11699,6 +11767,7 @@
           "example": "test",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11709,6 +11778,7 @@
           "example": "True",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11719,6 +11789,7 @@
           "example": "Ready",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11729,7 +11800,19 @@
           "example": "2021-09-02T13:32:06Z",
           "member": "string",
           "name": "LastTransitionTime",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次更新的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-02T13:32:06Z",
+          "member": "string",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -13309,16 +13392,18 @@
           "example": "无",
           "member": "CFSConfig",
           "name": "CFSConfig",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "挂载源类型",
+          "document": "挂载源类型，CFS、COS，默认为CFS",
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13361,6 +13446,7 @@
           "example": "1",
           "member": "int64",
           "name": "Replicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13371,6 +13457,7 @@
           "example": "0",
           "member": "int64",
           "name": "UpdatedReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13381,6 +13468,7 @@
           "example": "1",
           "member": "int64",
           "name": "ReadyReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13391,6 +13479,7 @@
           "example": "1",
           "member": "int64",
           "name": "AvailableReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13401,6 +13490,7 @@
           "example": "0",
           "member": "int64",
           "name": "UnavailableReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13411,16 +13501,18 @@
           "example": "Normal",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "工作负载的状况信息",
           "example": "{}",
           "member": "StatefulSetCondition",
           "name": "StatefulSetCondition",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -13431,6 +13523,7 @@
           "example": "[]",
           "member": "StatefulSetCondition",
           "name": "Conditions",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -13441,6 +13534,7 @@
           "example": "无",
           "member": "string",
           "name": "Reason",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
