@@ -36,6 +36,12 @@ class BasicConfigure(BasicCommand):
     def _run_main(self, parsed_args, parsed_globals):
         raise NotImplementedError("_run_main")
 
+    def _get_profile_name(parsed_globals):
+        if parsed_globals.profile:
+            return parsed_globals.profile
+        profile_name = os.environ.get("TCCLI_PROFILE", "default")
+        return profile_name
+
     def _init_configure(self, profile_name, input_data, extra={}):
         conf_data = {}
         is_exist, config_path = self._profile_existed(profile_name)
@@ -126,8 +132,7 @@ class ConfigureListCommand(BasicConfigure):
         self._stream = stream
 
     def _run_main(self, args, parsed_globals):
-        profile_name = parsed_globals.profile \
-            if parsed_globals.profile else "default"
+        profile_name = self._get_profile_name(parsed_globals)
 
         is_exit, cred_path = self._profile_existed(profile_name + ".credential")
         self._stream.write("credential:\n")
@@ -200,8 +205,7 @@ class ConfigureSetCommand(BasicConfigure):
         varnames = varname_value[::2]
         values = varname_value[1::2]
 
-        profile_name = parsed_globals.profile \
-            if parsed_globals.profile else "default"
+        profile_name = self._get_profile_name(parsed_globals)
 
         config = {}
         cred = {}
@@ -260,8 +264,7 @@ class ConfigureGetCommand(BasicConfigure):
 
     def _run_main(self, args, parsed_globals):
         varname_list = args.varname
-        profile_name = parsed_globals.profile \
-            if parsed_globals.profile else "default"
+        profile_name = self._get_profile_name(parsed_globals)
 
         conf = {}
         cred = {}
@@ -301,8 +304,7 @@ class ConfigureRemoveCommand(BasicConfigure):
         self._error_stream = error_stream
 
     def _run_main(self, args, parsed_globals):
-        profile_name = parsed_globals.profile \
-            if parsed_globals.profile else "default"
+        profile_name = self._get_profile_name(parsed_globals)
 
         configure_name = profile_name + '.configure'
         credential_name = profile_name + '.credential'
@@ -358,8 +360,7 @@ class ConfigureCommand(BasicConfigure):
 
     def _run_main(self, parsed_args, parsed_globals):
         # tccli configure
-        profile_name = parsed_globals.profile \
-            if parsed_globals.profile else "default"
+        profile_name = self._get_profile_name(parsed_globals)
 
         config = {
             OptionsDefine.Region: "ap-guangzhou",
