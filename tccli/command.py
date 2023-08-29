@@ -49,7 +49,7 @@ class CLICommand(BaseCommand):
         return command_map[parsed_args.command](remaining, parsed_args)
 
     def _handle_warning(self, args):
-        profile = "default"
+        profile = os.environ.get("TCCLI_PROFILE", "default")
         if "--profile" in args:
             location = args.index("--profile") + 1
             if location < len(args):
@@ -251,7 +251,7 @@ class ActionCommand(BaseCommand):
             arg_object = arg_class(
                 name=arg_name,
                 argument_model=arg_info,
-                is_required=True if arg_info["required"] == "Required" else False,
+                is_required=True if arg_info.get("required") == "Required" else False,
                 action_model=self._action_model)
             arg_object.add_to_arg_map(argument_map)
         return argument_map
