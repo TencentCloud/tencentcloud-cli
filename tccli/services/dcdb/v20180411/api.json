@@ -1818,7 +1818,7 @@
         },
         {
           "disabled": false,
-          "document": "分片节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
+          "document": "分片节点可用区分布，可填写多个可用区。",
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "Zones",
@@ -1914,6 +1914,15 @@
           "name": "SecurityGroupIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "DCN同步模式，0：普通DCN同步，1：一致性同步",
+          "example": "1",
+          "member": "int64",
+          "name": "DcnSyncMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1927,6 +1936,7 @@
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1936,6 +1946,7 @@
           "example": "1122",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1945,6 +1956,7 @@
           "example": "20200409111543",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

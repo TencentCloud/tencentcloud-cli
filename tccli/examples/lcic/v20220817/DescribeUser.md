@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli lcic DescribeUser --cli-unfold-argument  \
-    --UserId xx
+    --UserId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Name": "xx",
-        "UserId": "xx",
-        "Avatar": "xx",
         "SdkAppId": 1,
-        "RequestId": "xx"
+        "UserId": "abc",
+        "Name": "abc",
+        "Avatar": "abc",
+        "OriginId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

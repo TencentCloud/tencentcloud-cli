@@ -13969,6 +13969,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信号表",
+          "example": "无",
+          "member": "string",
+          "name": "SignalTable",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

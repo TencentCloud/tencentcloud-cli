@@ -317,8 +317,8 @@
     "DescribeUser": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"xx\",\n        \"UserId\": \"xx\",\n        \"Avatar\": \"xx\",\n        \"SdkAppId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SdkAppId\": 1,\n        \"UserId\": \"abc\",\n        \"Name\": \"abc\",\n        \"Avatar\": \"abc\",\n        \"OriginId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取用户信息"
       }
     ],

@@ -1,6 +1,6 @@
 **Example 1: 查询ES集群实例**
 
-
+查询ES集群实例
 
 Input: 
 
@@ -146,16 +146,17 @@ Output:
                 "OptionalWebServiceInfos": [
                     {
                         "Status": 0,
-                        "PrivateAccess": "xx",
-                        "PublicAccess": "xx",
-                        "PrivateUrl": "xx",
-                        "Version": "xx",
-                        "Type": "xx",
-                        "PublicUrl": "xx"
+                        "PrivateAccess": "abc",
+                        "PublicAccess": "abc",
+                        "PrivateUrl": "abc",
+                        "Version": "abc",
+                        "Type": "abc",
+                        "PublicUrl": "abc"
                     }
                 ],
                 "ProcessPercent": 0.5,
-                "EnableHybridStorage": true
+                "EnableHybridStorage": true,
+                "HasKernelUpgrade": true
             }
         ],
         "RequestId": "xxxx"

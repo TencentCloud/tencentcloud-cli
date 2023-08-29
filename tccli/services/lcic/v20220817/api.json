@@ -3273,7 +3273,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3283,7 +3283,7 @@
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3293,7 +3293,7 @@
           "example": "abc",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3303,9 +3303,19 @@
           "example": "abc",
           "member": "string",
           "name": "Avatar",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户在客户系统的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "OriginId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5604,7 +5614,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "SdkAppId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5614,7 +5624,7 @@
           "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5624,7 +5634,7 @@
           "example": "abc",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5634,7 +5644,17 @@
           "example": "abc",
           "member": "string",
           "name": "Avatar",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户在客户系统的Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2CvDgjRNjylAsBZB4iZc0F6koXe",
+          "member": "string",
+          "name": "OriginId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

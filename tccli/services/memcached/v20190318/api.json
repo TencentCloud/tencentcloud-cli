@@ -159,6 +159,7 @@
           "example": "xxxx",
           "member": "datetime",
           "name": "ModTimeStamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -169,6 +170,7 @@
           "example": "xxxx",
           "member": "datetime",
           "name": "IsolateTimeStamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -179,6 +181,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -189,6 +192,7 @@
           "example": "0",
           "member": "int64",
           "name": "SetId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -199,6 +203,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -209,6 +214,7 @@
           "example": "0",
           "member": "int64",
           "name": "CmemId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -219,6 +225,7 @@
           "example": "[]",
           "member": "TagInfo",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -229,16 +236,18 @@
           "example": "xxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本",
+          "document": "地域id 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国   25--日本",
           "example": "0",
           "member": "int64",
           "name": "RegionId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -249,6 +258,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "InstanceDesc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -259,6 +269,7 @@
           "example": "0",
           "member": "int64",
           "name": "Expire",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -269,6 +280,7 @@
           "example": "0",
           "member": "int64",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -279,6 +291,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -289,6 +302,7 @@
           "example": "xxxx",
           "member": "datetime",
           "name": "AddTimeStamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -299,6 +313,7 @@
           "example": "0",
           "member": "int64",
           "name": "ZoneId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -309,6 +324,7 @@
           "example": "0",
           "member": "int64",
           "name": "PayMode",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -319,6 +335,7 @@
           "example": "0",
           "member": "int64",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -329,6 +346,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -339,6 +357,7 @@
           "example": "xxxx",
           "member": "datetime",
           "name": "DeadlineTimeStamp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -349,6 +368,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -359,6 +379,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -369,6 +390,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "UniqSubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -379,6 +401,7 @@
           "example": "0",
           "member": "int64",
           "name": "AppId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -389,6 +412,7 @@
           "example": "0",
           "member": "int64",
           "name": "Vport",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

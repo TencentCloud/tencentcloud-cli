@@ -43,7 +43,7 @@
       "status": "deprecated"
     },
     "CreateConvertTaskApi": {
-      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。\n注：如果是集团代子企业发起任务场景，可以通过对Agent参数（未列在入参列表）设置代理的相关应用信息来支持，Agent参数设置可以参考CreateFlow接口的Agent相关说明。",
+      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
       "input": "CreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "CreateConvertTaskApiResponse",
@@ -148,7 +148,7 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署\n\n 通过一码多扫二维码发起的合同，涉及到的合同回调消息可参考文档[合同发起以及签署相关回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n\n用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)",
       "input": "CreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫流程签署二维码",
       "output": "CreateMultiFlowSignQRCodeResponse",
@@ -414,7 +414,7 @@
       "status": "online"
     },
     "VerifyPdf": {
-      "document": "对流程的合同文件进行验证，判断文件是否合法。",
+      "document": "对流程的合同文件进行数字签名验证，判断文件是否被篡改。",
       "input": "VerifyPdfRequest",
       "name": "流程文件验签",
       "output": "VerifyPdfResponse",
@@ -501,7 +501,7 @@
       "usage": "in"
     },
     "ApproverInfo": {
-      "document": "参与者信息",
+      "document": "参与者信息。",
       "members": [
         {
           "disabled": false,
@@ -1635,8 +1635,8 @@
           "type": "object"
         },
         {
-          "disabled": true,
-          "document": "应用号信息",
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3179,8 +3179,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "回调地址,最大长度1000字符串\n<br/>回调时机：用户通过签署二维码发起签署流程时，企业额度不足导致失败",
+          "disabled": true,
+          "document": "已废弃，回调配置统一使用企业应用管理-应用集成-企业版应用中的配置 \n<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/company/callback_types_contracts_sign\n<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83\n",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -3188,8 +3188,8 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "应用信息",
+          "disabled": false,
+          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3368,6 +3368,15 @@
           "name": "IdCardNumber",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -4868,8 +4877,8 @@
           "type": "string"
         },
         {
-          "disabled": true,
-          "document": "应用相关信息",
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5542,7 +5551,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsGroupRole\"，Values:[\"0\"],查询非集团角色，Values:[\"1\"]表示查询集团角色",
+          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsGroupRole\"，Values:[\"0\"]:查询非集团角色，Values:[\"1\"]表示查询集团角色\nKey:\"IsReturnPermissionGroup\"，Values:[\"0\"]:表示接口不返回角色对应的权限树字段，Values:[\"1\"]表示接口返回角色对应的权限树字段",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5819,6 +5828,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询的印章状态列表。\n取值为空，只查询启用状态的印章；\n取值ALL，查询所有状态的印章；\n取值CHECKING，查询待审核的印章；\n取值SUCCESS，查询启用状态的印章；\n取值FAIL，查询印章审核拒绝的印章；\n取值DISABLE，查询已停用的印章；\n取值STOPPED，查询已终止的印章；\n取值VOID，查询已作废的印章；\n取值INVALID，查询以失效的印章；\n",
+          "example": "无",
+          "member": "string",
+          "name": "SealStatuses",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5832,6 +5850,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5841,6 +5860,7 @@
           "example": "无",
           "member": "OccupiedSeal",
           "name": "Seals",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6722,12 +6742,12 @@
       "usage": "out"
     },
     "FlowBrief": {
-      "document": "流程信息摘要",
+      "document": "合同流程的基础信息",
       "members": [
         {
           "disabled": false,
-          "document": "流程的编号ID",
-          "example": "xxx",
+          "document": "合同流程ID，为32位字符串。",
+          "example": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -6736,8 +6756,8 @@
         },
         {
           "disabled": false,
-          "document": "流程的名称",
-          "example": "xxx",
+          "document": "合同流程的名称。",
+          "example": "测试合同-1",
           "member": "string",
           "name": "FlowName",
           "output_required": true,
@@ -6746,8 +6766,8 @@
         },
         {
           "disabled": false,
-          "document": "流程的描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "合同流程描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试流程的描述信息",
           "member": "string",
           "name": "FlowDescription",
           "output_required": true,
@@ -6756,8 +6776,8 @@
         },
         {
           "disabled": false,
-          "document": "流程的类型",
-          "example": "xxx",
+          "document": "合同流程的类别分类（如销售合同/入职合同等）。",
+          "example": "入职合同",
           "member": "string",
           "name": "FlowType",
           "output_required": true,
@@ -6766,8 +6786,8 @@
         },
         {
           "disabled": false,
-          "document": "流程状态\n- 0 还没有发起\n- 1 待签署\n- 2 部分签署\n- 3 已拒签\n- 4 已签署\n- 5 已过期\n- 6 已撤销\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填\n- 21 已解除\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul><li> **0** : 未开启流程(合同中不存在填写环节)</li>\n<li> **1** : 待签署</li>\n<li> **2** : 部分签署</li>\n<li> **3** : 已拒签</li>\n<li> **4** : 已签署</li>\n<li> **5** : 已过期</li>\n<li> **6** : 已撤销</li>\n<li> **7** : 未开启流程(合同中存在填写环节)</li>\n<li> **8** : 等待填写</li>\n<li> **9** : 部分填写</li>\n<li> **10** : 已拒填</li>\n<li> **21** : 已解除</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "FlowStatus",
           "output_required": true,
@@ -6776,8 +6796,8 @@
         },
         {
           "disabled": false,
-          "document": "流程创建的时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "0",
+          "document": "合同流程创建时间，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1604910798",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -6786,8 +6806,8 @@
         },
         {
           "disabled": false,
-          "document": "当合同被拒签或者取消后(当FlowStatus=3或者FlowStatus=6的时候)\n此字段展示拒签或者取消的原因描述\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "因合同中的预付款金额错误所以撤销此合同",
           "member": "string",
           "name": "FlowMessage",
           "output_required": true,
@@ -6796,8 +6816,8 @@
         },
         {
           "disabled": false,
-          "document": " 合同发起人userId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": " 合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -6806,8 +6826,8 @@
         },
         {
           "disabled": false,
-          "document": "合同过期时间，时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1606910798",
           "member": "int64",
           "name": "Deadline",
           "output_required": true,
@@ -7371,8 +7391,8 @@
           "type": "object"
         },
         {
-          "disabled": true,
-          "document": "应用号信息",
+          "disabled": false,
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7604,7 +7624,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7614,7 +7634,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7624,7 +7644,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RoleStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7634,7 +7654,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsGroupRole",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7644,7 +7664,17 @@
           "example": "无",
           "member": "string",
           "name": "SubOrgIdList",
-          "required": false,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限树\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PermissionGroup",
+          "name": "PermissionGroups",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -8185,6 +8215,183 @@
         }
       ],
       "usage": "out"
+    },
+    "Permission": {
+      "document": "权限树节点权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型 1前端，2后端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Hide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限标签 1:表示根节点，2:表示叶子结点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataLabel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataRange",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联权限, 表示这个功能权限要受哪个数据权限管控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataTo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父级权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否选中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsChecked",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Permission",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PermissionGroup": {
+      "document": "权限树中的权限组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限组key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏分组，0否1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Hide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Permission",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Recipient": {
       "document": "流程中参与方的信息结构",
@@ -9714,15 +9921,17 @@
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "验签结果详情,内部状态1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误",
+          "document": "验签结果详情，每个签名域对应的验签结果。状态值：1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误",
           "example": "无",
           "member": "PdfVerifyResult",
           "name": "PdfVerifyResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9732,6 +9941,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifySerialNo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -99,7 +99,7 @@
       "status": "online"
     },
     "ChannelCreateMultiFlowSignQRCode": {
-      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。 适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署",
+      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。 适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署\n\n通过一码多扫二维码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/partner/callback_types_contracts_sign)\n\n用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
@@ -115,7 +115,7 @@
     "ChannelCreatePrepareFlow": {
       "document": "创建预发起合同\n通过此接口指定：合同，签署人，填写控件信息，生成预创建合同链接，点击后跳转到web页面完成合同创建并发起\n可指定合同信息不可更改，签署人信息不可更改\n合同发起后，填写及签署流程与现有操作流程一致\n注意：目前仅支持模板发起",
       "input": "ChannelCreatePrepareFlowRequest",
-      "name": "获取模板发起合同web页面",
+      "name": "获取发起合同web页面",
       "output": "ChannelCreatePrepareFlowResponse",
       "status": "online"
     },
@@ -696,6 +696,15 @@
           "name": "NeedCreateReview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "填写控件：文件发起使用",
+          "example": "无",
+          "member": "Component",
+          "name": "Components",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1889,8 +1898,8 @@
           "type": "list"
         },
         {
-          "disabled": false,
-          "document": "回调地址，最大长度1000个字符\n不传默认使用第三方应用号配置的回调地址\n回调时机:用户通过签署二维码发起合同时，企业额度不足导致失败",
+          "disabled": true,
+          "document": "已废弃，回调配置统一使用企业应用管理-应用集成-第三方应用中的配置\n<br/> 通过一码多扫二维码发起的合同，回调消息可参考文档 https://qian.tencent.com/developers/partner/callback_types_contracts_sign\n<br/> 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档 https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83",
           "example": "无",
           "member": "string",
           "name": "CallbackUrl",
@@ -2011,7 +2020,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，1：模板，目前仅支持模板，与ResourceId对应",
+          "document": "资源类型，与ResourceId对应1：模板   2: 文件",
           "example": "无",
           "member": "int64",
           "name": "ResourceType",
@@ -3733,6 +3742,15 @@
           "name": "ApproverOption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件：文件发起使用",
+          "example": "无",
+          "member": "Component",
+          "name": "SignComponents",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5503,7 +5521,7 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。",
       "members": [
         {
           "disabled": false,

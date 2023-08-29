@@ -27,9 +27,9 @@ Output:
 ```
 {
     "Response": {
-        "InstanceId": "xx",
-        "RequestId": "xx",
-        "DealName": "xx"
+        "InstanceId": "ab",
+        "RequestId": "ab",
+        "DealName": "ab"
     }
 }
 ```
