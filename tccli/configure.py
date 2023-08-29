@@ -36,7 +36,7 @@ class BasicConfigure(BasicCommand):
     def _run_main(self, parsed_args, parsed_globals):
         raise NotImplementedError("_run_main")
 
-    def _get_profile_name(parsed_globals):
+    def _get_profile_name(self, parsed_globals):
         if parsed_globals.profile:
             return parsed_globals.profile
         profile_name = os.environ.get("TCCLI_PROFILE", "default")
