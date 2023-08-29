@@ -109,6 +109,10 @@ tccli configure remove      --profile test
 在调用接口时指定账户(以cvm DescribeZones接口为例)。
 tccli cvm DescribeZones --profile test
 ```
+如果不希望输入命令是手动指定账户名，还可以设置环境变量，tccli能从环境变量中读取指定的profile
+```bash
+export TCCLI_PROFILE=test
+```
 
 4. 您可以配置https代理，让tccli通过代理调用API
 

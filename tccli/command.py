@@ -49,7 +49,7 @@ class CLICommand(BaseCommand):
         return command_map[parsed_args.command](remaining, parsed_args)
 
     def _handle_warning(self, args):
-        profile = "default"
+        profile = os.environ.get("TCCLI_PROFILE", "default")
         if "--profile" in args:
             location = args.index("--profile") + 1
             if location < len(args):
