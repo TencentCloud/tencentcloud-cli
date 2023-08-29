@@ -67,7 +67,7 @@
     "DeleteApplication": [
       {
         "document": "服务版本删除",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"DeleteApplicationIfNoRunningVersion\": true,\n    \"EnvironmentId\": \"xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"abc\",\n    \"DeleteApplicationIfNoRunningVersion\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": true\n    }\n}",
         "title": "服务版本删除"
       }
@@ -313,8 +313,8 @@
     "ModifyApplicationReplicas": [
       {
         "document": "修改版本规格",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationReplicas\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"Replicas\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationReplicas\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"abc\",\n    \"Replicas\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改版本规格"
       }
     ],
@@ -360,10 +360,10 @@
     ],
     "RestartApplication": [
       {
-        "document": "服务版本停止",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "服务版本停止"
+        "document": "服务重启",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"abc\",\n    \"SourceChannel\": 0,\n    \"EnvironmentId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "服务重启"
       }
     ],
     "RestartApplicationPod": [
@@ -407,8 +407,8 @@
     "StopApplication": [
       {
         "document": "服务版本停止",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"xx\",\n    \"EnvironmentId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopApplication\n<公共请求参数>\n\n{\n    \"SourceChannel\": 0,\n    \"ApplicationId\": \"abc\",\n    \"EnvironmentId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "服务版本停止"
       }
     ]

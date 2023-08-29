@@ -8,6 +8,22 @@
         "title": "异步操作完成业务回调通知计费"
       }
     ],
+    "CreateAllocationTag": [
+      {
+        "document": "批量设置分账标签",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAllocationTag\n<公共请求参数>\n\n{\n    \"TagKey\": [\n        \"测试3\",\n        \"测试7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"13a853ab-5471-46fd-9f6d-1c9ab6a6aaaf\"\n    }\n}",
+        "title": "批量设置分账标签"
+      }
+    ],
+    "DeleteAllocationTag": [
+      {
+        "document": "批量取消设置分账标签",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllocationTag\n<公共请求参数>\n\n{\n    \"TagKey\": [\n        \"测试7\",\n        \"测试3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c0edd0d-81a7-4e25-a292-e2a281c612ed\"\n    }\n}",
+        "title": "批量取消设置分账标签"
+      }
+    ],
     "DescribeAccountBalance": [
       {
         "document": "",
@@ -36,7 +52,7 @@
       {
         "document": "获取账单资源汇总",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillResourceSummary\n\n{\n    \"Offset\": 0,\n    \"Limit\": 1,\n    \"PeriodType\": \"byPayTime\",\n    \"Month\": \"2022-01\",\n    \"NeedRecordNum\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a63a68af-fb44-4d2f-8595-5269a9e69876\",\n        \"ResourceSummarySet\": [\n            {\n                \"ActionTypeName\": \"按量计费日结\",\n                \"BusinessCode\": \"p_yunjing\",\n                \"BusinessCodeName\": \"T-Sec-主机安全（CWP）\",\n                \"CashPayAmount\": \"16.20000000\",\n                \"ConfigDesc\": \"主机安全/专业版: 1 个\",\n                \"Discount\": \"0.3\",\n                \"ExtendField1\": \"-\",\n                \"ExtendField2\": \"-\",\n                \"ExtendField3\": \"-\",\n                \"ExtendField4\": \"-\",\n                \"ExtendField5\": \"-\",\n                \"FeeBeginTime\": \"2022-01-13 00:00:00\",\n                \"FeeEndTime\": \"2022-01-31 23:59:59\",\n                \"IncentivePayAmount\": \"0.00000000\",\n                \"InstanceType\": \"-\",\n                \"OperateUin\": \"90xxxxx00\",\n                \"OrderId\": \"-\",\n                \"OriginalCostWithRI\": \"0.00000000\",\n                \"OriginalCostWithSP\": \"0.00000000\",\n                \"OwnerUin\": \"90xxxxx00\",\n                \"PayModeName\": \"按量计费\",\n                \"PayTime\": \"0000-00-00 00:00:00\",\n                \"PayerUin\": \"90xxxxx00\",\n                \"ProductCode\": \"sp_yunjing_vip\",\n                \"ProductCodeName\": \"主机安全/专业防护\",\n                \"ProjectName\": \"默认项目\",\n                \"RealTotalCost\": \"17.10000000\",\n                \"ReduceType\": \"折扣\",\n                \"RegionId\": 1,\n                \"RegionName\": \"华南地区（广州）\",\n                \"ResourceId\": \"0-0xxd9-1ab4-4d6d-b38a-axx0fa4e-172.16.64.12\",\n                \"ResourceName\": \"\",\n                \"SPDeduction\": \"0.00000000\",\n                \"Tags\": [],\n                \"TotalCost\": \"57\",\n                \"VoucherPayAmount\": \"0.90000000\",\n                \"ZoneName\": \"其他\"\n            }\n        ],\n        \"Total\": 465\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceSummarySet\": [\n            {\n                \"BusinessCodeName\": \"abc\",\n                \"ProductCodeName\": \"abc\",\n                \"PayModeName\": \"abc\",\n                \"ProjectName\": \"abc\",\n                \"RegionName\": \"abc\",\n                \"ZoneName\": \"abc\",\n                \"ResourceId\": \"abc\",\n                \"ResourceName\": \"abc\",\n                \"ActionTypeName\": \"abc\",\n                \"OrderId\": \"abc\",\n                \"PayTime\": \"2020-09-22 00:00:00\",\n                \"FeeBeginTime\": \"2020-09-22 00:00:00\",\n                \"FeeEndTime\": \"2020-09-22 00:00:00\",\n                \"ConfigDesc\": \"abc\",\n                \"ExtendField1\": \"abc\",\n                \"ExtendField2\": \"abc\",\n                \"TotalCost\": \"abc\",\n                \"Discount\": \"abc\",\n                \"ReduceType\": \"abc\",\n                \"RealTotalCost\": \"abc\",\n                \"VoucherPayAmount\": \"abc\",\n                \"CashPayAmount\": \"abc\",\n                \"IncentivePayAmount\": \"abc\",\n                \"TransferPayAmount\": \"abc\",\n                \"ExtendField3\": \"abc\",\n                \"ExtendField4\": \"abc\",\n                \"ExtendField5\": \"abc\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"PayerUin\": \"abc\",\n                \"OwnerUin\": \"abc\",\n                \"OperateUin\": \"abc\",\n                \"BusinessCode\": \"abc\",\n                \"ProductCode\": \"abc\",\n                \"RegionId\": 0,\n                \"InstanceType\": \"abc\",\n                \"OriginalCostWithRI\": \"abc\",\n                \"SPDeduction\": \"abc\",\n                \"OriginalCostWithSP\": \"abc\"\n            }\n        ],\n        \"Total\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取账单资源汇总"
       }
     ],
@@ -188,6 +204,14 @@
         "input": "https://billing.tencentcloudapi.com/?Action=DescribeGoodsVoucherList\n&Limit=100\n&Offset=1\n&Goods.0.GoodsCategoryId=101444\n&Goods.0.Region=ap-guangzhou\n&Goods.0.Zone=ap-guangzhou-1\n&Goods.0.GoodsNum=1\n&Goods.0.ProjectId=0\n&Goods.0.PayMode=1\n&Goods.0.GoodsDetail={\"buyr\":\"test\",\"productInfo\":[{\"name\":\"计费测试商品\",\"value\":\"jfcs\"}],\"productCode\":\"p_trade_t_s\",\"subProductCode\":\"sp_trade_t_s\",\"pid\":16994,\"timeUnit\":\"m\",\"timeSpan\":1,\"action\":\"purchase\",\"succCheck\":1,\"succ\":1,\"queryFlowType\":1,\"region\":1,\"trade_t_s\":1}\n&MainType=no_price\n&SubType=deduct\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"AvailableCount\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"VoucherInfos\": [\n            {\n                \"ProductDefine\": \"xx\",\n                \"PayScene\": \"xx\",\n                \"PolicyId\": \"xx\",\n                \"EndTime\": \"xx\",\n                \"Status\": \"xx\",\n                \"GoodsTypeInfo\": \"xx\",\n                \"CouponType\": \"xx\",\n                \"BatchCreateTime\": \"xx\",\n                \"MinPayTime\": \"xx\",\n                \"Reusable\": 0,\n                \"Available\": true,\n                \"MaxPayTime\": \"xx\",\n                \"ActivityName\": \"xx\",\n                \"BaseAmount\": 0,\n                \"OwnerUin\": \"xx\",\n                \"PayMode\": \"xx\",\n                \"ActivityId\": \"xx\",\n                \"CodeId\": \"xx\",\n                \"UnavailableReason\": [\n                    0\n                ],\n                \"UseDeadLine\": \"xx\",\n                \"Creator\": \"xx\",\n                \"VoucherName\": \"xx\",\n                \"Amount\": 0,\n                \"VoucherId\": \"xx\",\n                \"BeginTime\": \"xx\",\n                \"UsedAmount\": 0,\n                \"ExcludedProduct\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"LeftAmount\": 0\n            }\n        ]\n    }\n}",
         "title": "获取商品信息"
+      }
+    ],
+    "DescribeTagList": [
+      {
+        "document": "查询标签信息",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTagList\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Status\": 1,\n                \"TagKey\": \"测试3\",\n                \"UpdateTime\": \"2023-02-28 19:22:21\"\n            },\n            {\n                \"Status\": 1,\n                \"TagKey\": \"测试7\",\n                \"UpdateTime\": \"2023-02-28 19:22:21\"\n            },\n            {\n                \"Status\": 1,\n                \"TagKey\": \"测试8\",\n                \"UpdateTime\": \"2023-02-28 19:22:21\"\n            },\n            {\n                \"Status\": 0,\n                \"TagKey\": \"测试4\"\n            },\n            {\n                \"Status\": 0,\n                \"TagKey\": \"测试6\"\n            }\n        ],\n        \"RecordNum\": 5,\n        \"RequestId\": \"3cf36106-93e2-498d-a12f-62b3a6d9da34\"\n    }\n}",
+        "title": "查询标签信息"
       }
     ],
     "DescribeVoucherInfo": [

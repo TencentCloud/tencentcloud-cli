@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tem ModifyApplicationReplicas --cli-unfold-argument  \
+    --ApplicationId abc \
     --SourceChannel 0 \
-    --Replicas 0 \
-    --ApplicationId xx \
-    --EnvironmentId xx
+    --EnvironmentId abc \
+    --Replicas 0
 ```
 
 Output: 
@@ -17,7 +17,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

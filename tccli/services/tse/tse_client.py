@@ -2485,7 +2485,7 @@ def parse_global_arg(parsed_globals):
     is_exist_profile = True
     if not parsed_globals["profile"]:
         is_exist_profile = False
-        g_param["profile"] = "default"
+        g_param["profile"] = os.environ.get("TCCLI_PROFILE", "default")
 
     configure_path = os.path.join(os.path.expanduser("~"), ".tccli")
     is_conf_exist, conf_path = Utils.file_existed(configure_path, g_param["profile"] + ".configure")

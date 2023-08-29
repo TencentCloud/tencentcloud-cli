@@ -134,21 +134,21 @@
       "status": "online"
     },
     "RequestLocalTask": {
-      "document": "client任务请求地址",
+      "document": "client任务请求",
       "input": "RequestLocalTaskRequest",
       "name": "client任务请求地址",
       "output": "RequestLocalTaskResponse",
       "status": "online"
     },
     "UpdateClientState": {
-      "document": "更新client状态",
+      "document": "更新client状态，需要白名单",
       "input": "UpdateClientStateRequest",
       "name": "更新client状态",
       "output": "UpdateClientStateResponse",
       "status": "online"
     },
     "UpdateLocalTaskResult": {
-      "document": "更新本地任务结果",
+      "document": "更新本地任务执行结果",
       "input": "UpdateLocalTaskResultRequest",
       "name": "更新本地任务结果",
       "output": "UpdateLocalTaskResultResponse",

@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli tem DeleteApplication --cli-unfold-argument  \
+    --ApplicationId abc \
     --SourceChannel 0 \
-    --ApplicationId xx \
-    --DeleteApplicationIfNoRunningVersion True \
-    --EnvironmentId xx
+    --EnvironmentId abc \
+    --DeleteApplicationIfNoRunningVersion True
 ```
 
 Output: 

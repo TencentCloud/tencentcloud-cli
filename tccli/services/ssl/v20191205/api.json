@@ -626,7 +626,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -636,7 +636,7 @@
           "example": "无",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -646,7 +646,17 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名计费状态",
+          "example": "无",
+          "member": "string",
+          "name": "HttpsBillingSwitch",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -708,7 +718,7 @@
           "example": "无",
           "member": "string",
           "name": "CertId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -718,9 +728,29 @@
           "example": "无",
           "member": "string",
           "name": "DnsNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "根证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertCaId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书认证模式：UNIDIRECTIONAL单向认证，MUTUAL双向认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SSLMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7416,7 +7446,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7426,7 +7456,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7436,8 +7466,28 @@
           "example": "无",
           "member": "TkeNameSpaceDetail",
           "name": "NamespaceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群版本",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterVersion",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
