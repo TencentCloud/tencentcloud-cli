@@ -1,5 +1,19 @@
 {
   "actions": {
+    "CreateAllocationTag": {
+      "document": "批量设置分账标签",
+      "input": "CreateAllocationTagRequest",
+      "name": "批量设置分账标签",
+      "output": "CreateAllocationTagResponse",
+      "status": "online"
+    },
+    "DeleteAllocationTag": {
+      "document": "批量取消设置分账标签",
+      "input": "DeleteAllocationTagRequest",
+      "name": "批量取消设置分账标签",
+      "output": "DeleteAllocationTagResponse",
+      "status": "online"
+    },
     "DescribeAccountBalance": {
       "document": "获取云账户余额信息。",
       "input": "DescribeAccountBalanceRequest",
@@ -124,6 +138,13 @@
       "input": "DescribeDosageDetailByDateRequest",
       "name": "按日期获取产品用量明细",
       "output": "DescribeDosageDetailByDateResponse",
+      "status": "online"
+    },
+    "DescribeTagList": {
+      "document": "获取分账标签",
+      "input": "DescribeTagListRequest",
+      "name": "获取分账标签",
+      "output": "DescribeTagListResponse",
       "status": "online"
     },
     "DescribeVoucherInfo": {
@@ -2977,6 +2998,33 @@
       ],
       "usage": "out"
     },
+    "CreateAllocationTagRequest": {
+      "document": "CreateAllocationTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户分账标签键",
+          "example": "testTag",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAllocationTagResponse": {
+      "document": "CreateAllocationTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Deal": {
       "document": "订单数据对象",
       "members": [
@@ -3242,6 +3290,33 @@
         }
       ],
       "usage": "out"
+    },
+    "DeleteAllocationTagRequest": {
+      "document": "DeleteAllocationTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户分账标签键",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAllocationTagResponse": {
+      "document": "DeleteAllocationTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAccountBalanceRequest": {
       "document": "DescribeAccountBalance请求参数结构体",
@@ -3854,6 +3929,24 @@
           "name": "PayerUin",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账标签键，用户自定义（支持2021-01以后账单查询）",
+          "example": "province",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分账标签值，该参数为空表示该标签键下未设置标签值的记录\n（支持2021-01以后账单查询）",
+          "example": "0",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3867,6 +3960,7 @@
           "example": "无",
           "member": "BillResourceSummary",
           "name": "ResourceSummarySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3876,6 +3970,7 @@
           "example": "103",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5154,6 +5249,89 @@
       ],
       "type": "object"
     },
+    "DescribeTagListRequest": {
+      "document": "DescribeTagList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页偏移量，Offset=0表示第一页，如果Limit=100，则Offset=100表示第二页，Offset=200表示第三页，依次类推",
+          "example": "3",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数量，最大值为1000",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分账标签键，用作模糊搜索",
+          "example": "test",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型，枚举值：0普通标签，1分账标签，用作筛选，不传获取全部标签键",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，枚举值：asc排升序，desc排降序",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTagListResponse": {
+      "document": "DescribeTagList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "10",
+          "member": "uint64",
+          "name": "RecordNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签信息",
+          "example": "无",
+          "member": "TagDataInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVoucherInfoRequest": {
       "document": "DescribeVoucherInfo请求参数结构体",
       "members": [
@@ -6044,6 +6222,42 @@
           "member": "string",
           "name": "TotalCost",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TagDataInfo": {
+      "document": "标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分账标签键",
+          "example": "test1",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签类型，0普通标签，1分账标签",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设置分账标签时间，普通标签不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-28 19:22:21",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

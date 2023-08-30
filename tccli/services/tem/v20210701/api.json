@@ -1565,7 +1565,7 @@
         },
         {
           "disabled": false,
-          "document": "来源渠道",
+          "document": "来源渠道(用户不需要关心此参数)",
           "example": "0",
           "member": "int64",
           "name": "SourceChannel",
@@ -1593,7 +1593,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5076,7 +5076,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "服务id",
+          "document": "应用id",
           "example": "service-adfi142f",
           "member": "string",
           "name": "ApplicationId",
@@ -5122,7 +5122,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6065,7 +6065,7 @@
         },
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "环境ID/命名空间ID",
           "example": "1",
           "member": "string",
           "name": "EnvironmentId",
@@ -6084,7 +6084,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6954,7 +6954,7 @@
         },
         {
           "disabled": false,
-          "document": "环境ID",
+          "document": "环境ID/命名空间ID",
           "example": "1",
           "member": "string",
           "name": "EnvironmentId",
@@ -6973,7 +6973,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

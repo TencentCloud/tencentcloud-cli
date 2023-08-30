@@ -17,7 +17,7 @@ tccli wedata DescribeTaskRunHistory --cli-unfold-argument  \
     --SearchCondition.SortCol abc \
     --SearchCondition.StateList abc \
     --PageSize 1 \
-    --PageNumber abc
+    --PageNumber 10
 ```
 
 Output: 
@@ -39,6 +39,7 @@ Output:
                     "RunPriority": 1,
                     "TryLimit": 1,
                     "Tries": 1,
+                    "TotalRunNum": 1,
                     "DoFlag": 1,
                     "RedoFlag": 1,
                     "State": "abc",
@@ -55,6 +56,7 @@ Output:
                     "StartTime": "abc",
                     "EndTime": "abc",
                     "CostTime": "abc",
+                    "CostMillisecond": 1,
                     "MaxCostTime": 1,
                     "MinCostTime": 1,
                     "AvgCostTime": 0,
@@ -69,6 +71,7 @@ Output:
                     "VirtualFlag": true,
                     "FolderId": "abc",
                     "FolderName": "abc",
+                    "SonList": "abc",
                     "ProductName": "abc",
                     "ResourceGroup": "abc",
                     "ResourceInstanceId": "abc",
@@ -79,7 +82,8 @@ Output:
                     "ProjectId": "abc",
                     "ProjectIdent": "abc",
                     "ProjectName": "abc",
-                    "TenantId": "abc"
+                    "TenantId": "abc",
+                    "InstanceKey": "abc"
                 }
             ]
         },

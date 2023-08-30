@@ -1350,6 +1350,7 @@
           "example": "110000012345678",
           "member": "string",
           "name": "RegNum",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1359,6 +1360,7 @@
           "example": "深圳市腾讯计算机系统有限公司",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1368,6 +1370,7 @@
           "example": "人民币600000万元整",
           "member": "string",
           "name": "Capital",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1377,6 +1380,7 @@
           "example": "艾米",
           "member": "string",
           "name": "Person",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1386,6 +1390,7 @@
           "example": "深圳市南山区高新区高新南一路飞亚达大厦",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1395,6 +1400,7 @@
           "example": "计算机软、硬件的设计、技术开发、销售(不含专营、专控、专卖商品及限制项目);数据库及计算机网络服务;国内商业、物资供销业(不含专营、专控、专卖商品)",
           "member": "string",
           "name": "Business",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1404,6 +1410,7 @@
           "example": "有限责任公司",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1413,6 +1420,7 @@
           "example": "1998年11月至长期",
           "member": "string",
           "name": "Period",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1422,6 +1430,7 @@
           "example": "无",
           "member": "string",
           "name": "ComposingForm",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1431,24 +1440,27 @@
           "example": "1998年11月",
           "member": "string",
           "name": "SetDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Code 告警码列表和释义：\n-9102 黑白复印件告警",
+          "document": "Code 告警码列表和释义：\n-9102 黑白复印件告警\n-9104 翻拍件告警",
           "example": "无",
           "member": "int64",
           "name": "RecognizeWarnCode",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警码说明：\nWARN_COPY_CARD 黑白复印件告警",
+          "document": "告警码说明：\nWARN_COPY_CARD 黑白复印件告警\nWARN_RESHOOT_SCREENED_CARD 翻拍件告警",
           "example": "无",
           "member": "string",
           "name": "RecognizeWarnMsg",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1458,6 +1470,7 @@
           "example": "-1",
           "member": "int64",
           "name": "IsDuplication",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1467,6 +1480,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrationDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

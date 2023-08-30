@@ -2148,6 +2148,15 @@
           "name": "OrderId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3662,6 +3671,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3675,7 +3693,7 @@
           "example": "[\"2021-01-14\"]",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3766,7 +3784,7 @@
         {
           "disabled": false,
           "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "ChannelId",
           "required": false,
@@ -3784,7 +3802,7 @@
           "example": "无",
           "member": "CloudStorageEvent",
           "name": "Events",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3794,7 +3812,7 @@
           "example": "DnF1ZXJ5VGhlbkZldGNoCgAAAAAAABO3FkI2SzRCVTJYUjZxUVRnbUJRaUJzc0EA",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3804,7 +3822,7 @@
           "example": "true",
           "member": "bool",
           "name": "Listover",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3814,7 +3832,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3824,7 +3842,7 @@
           "example": "http://test.iotvideo.tencentcs.com/timeshift/live/test.m3u8",
           "member": "string",
           "name": "VideoURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4267,6 +4285,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4280,7 +4307,7 @@
           "example": "无",
           "member": "CloudStorageTimeData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8679,7 +8706,7 @@
         {
           "disabled": false,
           "document": "通道ID 非NVR设备则不填 NVR设备则必填 默认为无",
-          "example": "0",
+          "example": "1",
           "member": "uint64",
           "name": "ChannelId",
           "required": false,

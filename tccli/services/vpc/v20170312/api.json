@@ -8455,6 +8455,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8464,6 +8465,7 @@
           "example": "vpns-xxxxx",
           "member": "string",
           "name": "SslVpnServerId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -548,6 +548,42 @@
       "members": [
         {
           "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型 meta(元数据)  data (表数据)",
+          "example": "\"meta“",
+          "member": "string",
+          "name": "ScheduleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型 create(创建) update(编辑修改)",
+          "example": "\"create\"",
+          "member": "string",
+          "name": "OperationType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "保留天数 例如7",
+          "example": "7",
+          "member": "int64",
+          "name": "RetainDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "编辑时需要传",
           "example": "12345",
           "member": "int64",
@@ -588,6 +624,16 @@
     "CreateBackUpScheduleResponse": {
       "document": "CreateBackUpSchedule返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误描述",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -9625,7 +9625,7 @@
           "example": "10003",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9635,7 +9635,7 @@
           "example": "451f36cf-ac23-4635-bb96-23cd721b4b25",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9645,7 +9645,7 @@
           "example": "规则",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9655,7 +9655,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9665,17 +9665,17 @@
           "example": "vim",
           "member": "string",
           "name": "Rule",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "规则描述",
           "example": "描述",
           "member": "string",
           "name": "Decription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9685,7 +9685,7 @@
           "example": "admin",
           "member": "string",
           "name": "Operator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9695,7 +9695,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsGlobal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9705,7 +9705,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9715,7 +9715,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9725,7 +9725,7 @@
           "example": "2021-03-30 19:17:28",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9735,7 +9735,7 @@
           "example": "172.27.16.14",
           "member": "string",
           "name": "Hostip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9745,7 +9745,7 @@
           "example": "[\"451f36cf-ac23-4635-bb96-23cd721b4b25\"]",
           "member": "string",
           "name": "Uuids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9755,7 +9755,7 @@
           "example": "1",
           "member": "uint64",
           "name": "White",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9765,8 +9765,18 @@
           "example": "0",
           "member": "uint64",
           "name": "DealOldEvents",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

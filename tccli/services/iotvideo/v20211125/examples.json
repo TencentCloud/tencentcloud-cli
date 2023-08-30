@@ -732,7 +732,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetCloudStorage\n<公共请求参数>\n\n{\n    \"DeviceName\": \"event_36502632_1\",\n    \"ProductId\": \"H541SOP191\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "ResetCloudStorage"
       }
     ],

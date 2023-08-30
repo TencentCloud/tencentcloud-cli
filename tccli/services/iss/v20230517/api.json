@@ -6669,7 +6669,7 @@
           "member": "RecordPlanChannelInfo",
           "name": "List",
           "output_required": true,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6718,19 +6718,19 @@
           "disabled": false,
           "document": "每页最大数量",
           "example": "无",
-          "member": "string",
+          "member": "int64",
           "name": "PageSize",
           "required": false,
-          "type": "string"
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "第几页",
+          "document": "分页页数",
           "example": "无",
-          "member": "string",
+          "member": "int64",
           "name": "PageNumber",
           "required": false,
-          "type": "string"
+          "type": "int"
         }
       ],
       "type": "object"

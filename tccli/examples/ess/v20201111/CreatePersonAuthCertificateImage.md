@@ -20,8 +20,11 @@ Output:
 ```
 {
     "Response": {
-        "AuthCertUrl": "abc",
-        "RequestId": "abc"
+        "AuthCertUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=522d****6cb5",
+        "RequestId": "s169329230***84920859",
+        "SerialNumber": "1000000000095674",
+        "ValidFrom": 1692788219,
+        "ValidTo": 1724324219
     }
 }
 ```

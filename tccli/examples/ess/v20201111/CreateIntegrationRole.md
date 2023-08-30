@@ -1,0 +1,1244 @@
+**Example 1: 示例-主代子创建角色**
+
+主企业代理子企业创建角色，设置 Agent 参数，并设置 ProxyOrganizationId 为子企业id
+
+Input: 
+
+```
+tccli ess CreateIntegrationRole --cli-unfold-argument  \
+    --Name 业务员角色 \
+    --Description 这是角色描述信息 \
+    --IsGroupRole 0 \
+    --Operator.UserId y******************5 \
+    --Agent.ProxyOrganizationId y**********************J
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RoleId": "abc",
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 2: 示例-普通企业创建角色（不带权限树参数）**
+
+示例-普通企业创建角色（不带权限树参数）
+
+Input: 
+
+```
+tccli ess CreateIntegrationRole --cli-unfold-argument  \
+    --Name 业务员角色 \
+    --Description 这是角色描述信息 \
+    --IsGroupRole 0 \
+    --Operator.UserId y******************5
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RoleId": "abc",
+        "RequestId": "abc"
+    }
+}
+```
+
+**Example 3: 示例-普通企业创建角色（带权限树参数）**
+
+创建角色并同时设置角色中的权限内容，设置权限树参数 PermissionGroups ，PermissionGroups 展开为树形结构，可以需要的权限节点下将 IsChecked 属性设置为true。
+注意：父权限节点 IsChecked 属性为true，则需要将其下所有子节点的 IsChecked属性同时设置为true，否则校验不通过。
+
+Input: 
+
+```
+tccli ess CreateIntegrationRole --cli-unfold-argument  \
+    --Name 业务员角色 \
+    --Description 这是角色描述信息 \
+    --IsGroupRole 0 \
+    --Operator.UserId y******************5 \
+    --PermissionGroups.0.GroupKey Flow \
+    --PermissionGroups.0.GroupName 合同中心 \
+    --PermissionGroups.0.Hide 0 \
+    --PermissionGroups.0.Permissions.0.DataLabel 0 \
+    --PermissionGroups.0.Permissions.0.DataRange 0 \
+    --PermissionGroups.0.Permissions.0.DataTo  \
+    --PermissionGroups.0.Permissions.0.DataType 0 \
+    --PermissionGroups.0.Permissions.0.Hide 0 \
+    --PermissionGroups.0.Permissions.0.IsChecked False \
+    --PermissionGroups.0.Permissions.0.Key UserFlowTypesManagement \
+    --PermissionGroups.0.Permissions.0.Name 合同类型管理 \
+    --PermissionGroups.0.Permissions.0.ParentKey  \
+    --PermissionGroups.0.Permissions.0.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.DataLabel 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.DataRange 1 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.Key DescribeAllFlows \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.Name 企业全部合同 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.ParentKey FlowsManagement \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.0.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.DataLabel 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.DataRange 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.Key FlowsManagement-Department \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.Name 本部门全部合同 \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.ParentKey FlowsManagement \
+    --PermissionGroups.0.Permissions.1.Children.0.Children.1.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.DataLabel 1 \
+    --PermissionGroups.0.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.0.DataType 2 \
+    --PermissionGroups.0.Permissions.1.Children.0.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.0.Key FlowsManagement \
+    --PermissionGroups.0.Permissions.1.Children.0.Name 查询合同 \
+    --PermissionGroups.0.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.0.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.1.DataLabel 1 \
+    --PermissionGroups.0.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.1.DataTo FlowsManagement \
+    --PermissionGroups.0.Permissions.1.Children.1.DataType 1 \
+    --PermissionGroups.0.Permissions.1.Children.1.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.1.Key DownloadFlow \
+    --PermissionGroups.0.Permissions.1.Children.1.Name 下载合同 \
+    --PermissionGroups.0.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.1.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.Key FlowByImportedFile \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.Name 上传文件发起 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.0.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.DataLabel 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.DataRange 1 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.Key FlowByOrganizationTemplate-All \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.Name 本企业全部模板 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.ParentKey FlowByOrganizationTemplate \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.0.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.DataLabel 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.DataRange 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.Key FlowByOrganizationTemplate-Department \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.Name 本部门全部模板 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.ParentKey FlowByOrganizationTemplate \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.1.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.DataLabel 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.DataRange 3 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.Key FlowByOrganizationTemplate-Own \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.Name 本人创建模板 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.ParentKey FlowByOrganizationTemplate \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Children.2.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.DataLabel 1 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.DataType 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Key FlowByOrganizationTemplate \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Name 企业模板发起 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.1.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.Key CreateMultiFlowSignQRCode \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.Name 创建签署二维码 \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.2.Children.2.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.2.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.2.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.2.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.2.Key CreateFlow \
+    --PermissionGroups.0.Permissions.1.Children.2.Name 发起合同 \
+    --PermissionGroups.0.Permissions.1.Children.2.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.2.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.3.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.3.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.3.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.3.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.3.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.3.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.3.Key CreateMultipleFlow \
+    --PermissionGroups.0.Permissions.1.Children.3.Name 批量发起合同 \
+    --PermissionGroups.0.Permissions.1.Children.3.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.3.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.4.DataLabel 1 \
+    --PermissionGroups.0.Permissions.1.Children.4.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.4.DataTo FlowsManagement \
+    --PermissionGroups.0.Permissions.1.Children.4.DataType 1 \
+    --PermissionGroups.0.Permissions.1.Children.4.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.4.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.4.Key CancelFlow \
+    --PermissionGroups.0.Permissions.1.Children.4.Name 撤销合同 \
+    --PermissionGroups.0.Permissions.1.Children.4.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.4.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.5.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.5.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.5.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.5.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.5.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.5.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.5.Key SetUserFlowTypes \
+    --PermissionGroups.0.Permissions.1.Children.5.Name 设置合同所属类型 \
+    --PermissionGroups.0.Permissions.1.Children.5.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.5.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.6.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.6.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.6.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.6.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.6.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.6.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.6.Key RelieveFlows \
+    --PermissionGroups.0.Permissions.1.Children.6.Name 解除合同 \
+    --PermissionGroups.0.Permissions.1.Children.6.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.6.Type 1 \
+    --PermissionGroups.0.Permissions.1.Children.7.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.7.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.7.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.7.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.7.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.7.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.7.Key BatchSignAccredit \
+    --PermissionGroups.0.Permissions.1.Children.7.Name 批量签署授权 \
+    --PermissionGroups.0.Permissions.1.Children.7.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.7.Type 2 \
+    --PermissionGroups.0.Permissions.1.Children.8.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.Children.8.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.Children.8.DataTo  \
+    --PermissionGroups.0.Permissions.1.Children.8.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Children.8.Hide 0 \
+    --PermissionGroups.0.Permissions.1.Children.8.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Children.8.Key DraftFlow \
+    --PermissionGroups.0.Permissions.1.Children.8.Name 起草合同 \
+    --PermissionGroups.0.Permissions.1.Children.8.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Children.8.Type 1 \
+    --PermissionGroups.0.Permissions.1.DataLabel 0 \
+    --PermissionGroups.0.Permissions.1.DataRange 0 \
+    --PermissionGroups.0.Permissions.1.DataTo  \
+    --PermissionGroups.0.Permissions.1.DataType 0 \
+    --PermissionGroups.0.Permissions.1.Hide 0 \
+    --PermissionGroups.0.Permissions.1.IsChecked False \
+    --PermissionGroups.0.Permissions.1.Key Flows \
+    --PermissionGroups.0.Permissions.1.Name 合同文件夹 \
+    --PermissionGroups.0.Permissions.1.ParentKey  \
+    --PermissionGroups.0.Permissions.1.Type 1 \
+    --PermissionGroups.1.GroupKey Template \
+    --PermissionGroups.1.GroupName 模板中心 \
+    --PermissionGroups.1.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.DataLabel 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.DataRange 1 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.Key PreviewFlowTemplate-All \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.Name 本企业全部模板 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.ParentKey PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.0.Type 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.DataLabel 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.DataRange 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.Key PreviewFlowTemplate-Department \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.Name 本部门全部模板 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.ParentKey PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.1.Type 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.DataLabel 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.DataRange 3 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.Key PreviewFlowTemplate-Own \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.Name 本人创建模板 \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.ParentKey PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.0.Children.2.Type 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.DataLabel 1 \
+    --PermissionGroups.1.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.0.DataType 2 \
+    --PermissionGroups.1.Permissions.0.Children.0.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.0.Key PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.0.Name 查询模板 \
+    --PermissionGroups.1.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.0.Type 1 \
+    --PermissionGroups.1.Permissions.0.Children.1.DataLabel 1 \
+    --PermissionGroups.1.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.1.DataTo PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.1.DataType 1 \
+    --PermissionGroups.1.Permissions.0.Children.1.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.1.Key DownloadFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.1.Name 下载模板 \
+    --PermissionGroups.1.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.1.Type 1 \
+    --PermissionGroups.1.Permissions.0.Children.2.DataLabel 0 \
+    --PermissionGroups.1.Permissions.0.Children.2.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.2.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.2.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Children.2.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.2.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.2.Key CreateFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.2.Name 创建模板 \
+    --PermissionGroups.1.Permissions.0.Children.2.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.2.Type 1 \
+    --PermissionGroups.1.Permissions.0.Children.3.DataLabel 1 \
+    --PermissionGroups.1.Permissions.0.Children.3.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.3.DataTo PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.3.DataType 1 \
+    --PermissionGroups.1.Permissions.0.Children.3.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.3.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.3.Key DeleteFlowTemplates \
+    --PermissionGroups.1.Permissions.0.Children.3.Name 删除模板 \
+    --PermissionGroups.1.Permissions.0.Children.3.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.3.Type 1 \
+    --PermissionGroups.1.Permissions.0.Children.4.DataLabel 1 \
+    --PermissionGroups.1.Permissions.0.Children.4.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.4.DataTo PreviewFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.4.DataType 1 \
+    --PermissionGroups.1.Permissions.0.Children.4.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.4.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.4.Key ModifyFlowTemplate \
+    --PermissionGroups.1.Permissions.0.Children.4.Name 编辑模板 \
+    --PermissionGroups.1.Permissions.0.Children.4.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.4.Type 1 \
+    --PermissionGroups.1.Permissions.0.Children.5.DataLabel 0 \
+    --PermissionGroups.1.Permissions.0.Children.5.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.Children.5.DataTo  \
+    --PermissionGroups.1.Permissions.0.Children.5.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Children.5.Hide 0 \
+    --PermissionGroups.1.Permissions.0.Children.5.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Children.5.Key OfficialFlowTemplateCollection \
+    --PermissionGroups.1.Permissions.0.Children.5.Name 官方模板收藏 \
+    --PermissionGroups.1.Permissions.0.Children.5.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Children.5.Type 1 \
+    --PermissionGroups.1.Permissions.0.DataLabel 0 \
+    --PermissionGroups.1.Permissions.0.DataRange 0 \
+    --PermissionGroups.1.Permissions.0.DataTo  \
+    --PermissionGroups.1.Permissions.0.DataType 0 \
+    --PermissionGroups.1.Permissions.0.Hide 0 \
+    --PermissionGroups.1.Permissions.0.IsChecked False \
+    --PermissionGroups.1.Permissions.0.Key TemplateManagement \
+    --PermissionGroups.1.Permissions.0.Name 模板管理 \
+    --PermissionGroups.1.Permissions.0.ParentKey  \
+    --PermissionGroups.1.Permissions.0.Type 1 \
+    --PermissionGroups.2.GroupKey Seal \
+    --PermissionGroups.2.GroupName 印章中心 \
+    --PermissionGroups.2.Hide 0 \
+    --PermissionGroups.2.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.2.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.2.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.2.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.2.Permissions.0.Children.0.Hide 1 \
+    --PermissionGroups.2.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.2.Permissions.0.Children.0.Key QueryHoldSeal \
+    --PermissionGroups.2.Permissions.0.Children.0.Name 查询印章 \
+    --PermissionGroups.2.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.2.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.2.Permissions.0.DataLabel 0 \
+    --PermissionGroups.2.Permissions.0.DataRange 0 \
+    --PermissionGroups.2.Permissions.0.DataTo  \
+    --PermissionGroups.2.Permissions.0.DataType 0 \
+    --PermissionGroups.2.Permissions.0.Hide 0 \
+    --PermissionGroups.2.Permissions.0.IsChecked False \
+    --PermissionGroups.2.Permissions.0.Key HoldSeal \
+    --PermissionGroups.2.Permissions.0.Name 我持有企业印章 \
+    --PermissionGroups.2.Permissions.0.ParentKey  \
+    --PermissionGroups.2.Permissions.0.Type 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.DataLabel 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.DataRange 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.Key QuerySeal-All \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.Name 本企业全部印章 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.ParentKey QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.0.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.DataLabel 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.DataRange 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.Key QuerySeal-Department \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.Name 本部门全部印章 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.ParentKey QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.1.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.DataLabel 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.DataRange 3 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.Key QuerySeal-Own \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.Name 本人创建印章 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.ParentKey QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.2.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.Key QueryAuthSeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.Name 授权记录 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.3.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.Key AssociationTemplate \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.Name 关联模版 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.4.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.Key SealRecord \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.Name 用印记录 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.5.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.Key ChangeRecord \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.Name 变更记录 \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.0.Children.6.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.0.DataType 2 \
+    --PermissionGroups.2.Permissions.1.Children.0.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.0.Key QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.0.Name 查询印章 \
+    --PermissionGroups.2.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.0.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.DataLabel 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.Key TemplateSeal \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.Name 模版印章 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.0.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.DataLabel 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.Hide 1 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.Key LocalUploadSeal \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.Name 本地上传 \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.1.Children.1.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.1.DataLabel 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.DataTo  \
+    --PermissionGroups.2.Permissions.1.Children.1.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.1.Key CreateSeal \
+    --PermissionGroups.2.Permissions.1.Children.1.Name 添加印章 \
+    --PermissionGroups.2.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.1.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.2.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.2.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.2.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.2.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.2.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.2.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.2.Key ModifySeal \
+    --PermissionGroups.2.Permissions.1.Children.2.Name 启停用印章 \
+    --PermissionGroups.2.Permissions.1.Children.2.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.2.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.3.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.3.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.3.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.3.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.3.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.3.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.3.Key CreateSealPolicy \
+    --PermissionGroups.2.Permissions.1.Children.3.Name 授权持有人 \
+    --PermissionGroups.2.Permissions.1.Children.3.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.3.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.4.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.4.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.4.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.4.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.4.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.4.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.4.Key DeleteSeal \
+    --PermissionGroups.2.Permissions.1.Children.4.Name 删除印章 \
+    --PermissionGroups.2.Permissions.1.Children.4.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.4.Type 2 \
+    --PermissionGroups.2.Permissions.1.Children.5.DataLabel 1 \
+    --PermissionGroups.2.Permissions.1.Children.5.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.Children.5.DataTo QuerySeal \
+    --PermissionGroups.2.Permissions.1.Children.5.DataType 1 \
+    --PermissionGroups.2.Permissions.1.Children.5.Hide 0 \
+    --PermissionGroups.2.Permissions.1.Children.5.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Children.5.Key ApplySealOnce \
+    --PermissionGroups.2.Permissions.1.Children.5.Name 单次用印审批 \
+    --PermissionGroups.2.Permissions.1.Children.5.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Children.5.Type 2 \
+    --PermissionGroups.2.Permissions.1.DataLabel 0 \
+    --PermissionGroups.2.Permissions.1.DataRange 0 \
+    --PermissionGroups.2.Permissions.1.DataTo  \
+    --PermissionGroups.2.Permissions.1.DataType 0 \
+    --PermissionGroups.2.Permissions.1.Hide 0 \
+    --PermissionGroups.2.Permissions.1.IsChecked False \
+    --PermissionGroups.2.Permissions.1.Key SealManagement \
+    --PermissionGroups.2.Permissions.1.Name 印章管理 \
+    --PermissionGroups.2.Permissions.1.ParentKey  \
+    --PermissionGroups.2.Permissions.1.Type 1 \
+    --PermissionGroups.3.GroupKey bill \
+    --PermissionGroups.3.GroupName 费用中心 \
+    --PermissionGroups.3.Hide 0 \
+    --PermissionGroups.3.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.3.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.3.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.3.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.3.Permissions.0.Children.0.Hide 1 \
+    --PermissionGroups.3.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.3.Permissions.0.Children.0.Key BillOrderManagement \
+    --PermissionGroups.3.Permissions.0.Children.0.Name 订单管理 \
+    --PermissionGroups.3.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.3.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.3.Permissions.0.Children.1.DataLabel 0 \
+    --PermissionGroups.3.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.3.Permissions.0.Children.1.DataTo  \
+    --PermissionGroups.3.Permissions.0.Children.1.DataType 0 \
+    --PermissionGroups.3.Permissions.0.Children.1.Hide 1 \
+    --PermissionGroups.3.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.3.Permissions.0.Children.1.Key BillSetMealManagement \
+    --PermissionGroups.3.Permissions.0.Children.1.Name 套餐管理 \
+    --PermissionGroups.3.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.3.Permissions.0.Children.1.Type 2 \
+    --PermissionGroups.3.Permissions.0.Children.2.DataLabel 0 \
+    --PermissionGroups.3.Permissions.0.Children.2.DataRange 0 \
+    --PermissionGroups.3.Permissions.0.Children.2.DataTo  \
+    --PermissionGroups.3.Permissions.0.Children.2.DataType 0 \
+    --PermissionGroups.3.Permissions.0.Children.2.Hide 1 \
+    --PermissionGroups.3.Permissions.0.Children.2.IsChecked False \
+    --PermissionGroups.3.Permissions.0.Children.2.Key BillInvoiceManagement \
+    --PermissionGroups.3.Permissions.0.Children.2.Name 发票管理 \
+    --PermissionGroups.3.Permissions.0.Children.2.ParentKey  \
+    --PermissionGroups.3.Permissions.0.Children.2.Type 2 \
+    --PermissionGroups.3.Permissions.0.DataLabel 0 \
+    --PermissionGroups.3.Permissions.0.DataRange 0 \
+    --PermissionGroups.3.Permissions.0.DataTo  \
+    --PermissionGroups.3.Permissions.0.DataType 0 \
+    --PermissionGroups.3.Permissions.0.Hide 0 \
+    --PermissionGroups.3.Permissions.0.IsChecked False \
+    --PermissionGroups.3.Permissions.0.Key BillManagement \
+    --PermissionGroups.3.Permissions.0.Name 费用管理 \
+    --PermissionGroups.3.Permissions.0.ParentKey  \
+    --PermissionGroups.3.Permissions.0.Type 1 \
+    --PermissionGroups.4.GroupKey channel \
+    --PermissionGroups.4.GroupName 开发者中心 \
+    --PermissionGroups.4.Hide 0 \
+    --PermissionGroups.4.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.4.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.4.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.4.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.4.Permissions.0.Children.0.Hide 0 \
+    --PermissionGroups.4.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.4.Permissions.0.Children.0.Key DescribeApplication \
+    --PermissionGroups.4.Permissions.0.Children.0.Name 企业应用查看 \
+    --PermissionGroups.4.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.4.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.4.Permissions.0.Children.1.DataLabel 0 \
+    --PermissionGroups.4.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.4.Permissions.0.Children.1.DataTo  \
+    --PermissionGroups.4.Permissions.0.Children.1.DataType 0 \
+    --PermissionGroups.4.Permissions.0.Children.1.Hide 0 \
+    --PermissionGroups.4.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.4.Permissions.0.Children.1.Key ModifyApplication \
+    --PermissionGroups.4.Permissions.0.Children.1.Name 企业应用编辑 \
+    --PermissionGroups.4.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.4.Permissions.0.Children.1.Type 2 \
+    --PermissionGroups.4.Permissions.0.DataLabel 0 \
+    --PermissionGroups.4.Permissions.0.DataRange 0 \
+    --PermissionGroups.4.Permissions.0.DataTo  \
+    --PermissionGroups.4.Permissions.0.DataType 0 \
+    --PermissionGroups.4.Permissions.0.Hide 0 \
+    --PermissionGroups.4.Permissions.0.IsChecked False \
+    --PermissionGroups.4.Permissions.0.Key ApplicationIntegrate \
+    --PermissionGroups.4.Permissions.0.Name 应用集成 \
+    --PermissionGroups.4.Permissions.0.ParentKey  \
+    --PermissionGroups.4.Permissions.0.Type 1 \
+    --PermissionGroups.4.Permissions.1.DataLabel 0 \
+    --PermissionGroups.4.Permissions.1.DataRange 0 \
+    --PermissionGroups.4.Permissions.1.DataTo  \
+    --PermissionGroups.4.Permissions.1.DataType 0 \
+    --PermissionGroups.4.Permissions.1.Hide 0 \
+    --PermissionGroups.4.Permissions.1.IsChecked False \
+    --PermissionGroups.4.Permissions.1.Key ChannelUserFlowTypesManagement \
+    --PermissionGroups.4.Permissions.1.Name 渠道合同类型管理 \
+    --PermissionGroups.4.Permissions.1.ParentKey  \
+    --PermissionGroups.4.Permissions.1.Type 2 \
+    --PermissionGroups.4.Permissions.2.Children.0.DataLabel 0 \
+    --PermissionGroups.4.Permissions.2.Children.0.DataRange 0 \
+    --PermissionGroups.4.Permissions.2.Children.0.DataTo  \
+    --PermissionGroups.4.Permissions.2.Children.0.DataType 0 \
+    --PermissionGroups.4.Permissions.2.Children.0.Hide 1 \
+    --PermissionGroups.4.Permissions.2.Children.0.IsChecked False \
+    --PermissionGroups.4.Permissions.2.Children.0.Key DescribeChannelComponents \
+    --PermissionGroups.4.Permissions.2.Children.0.Name 渠道控件查看 \
+    --PermissionGroups.4.Permissions.2.Children.0.ParentKey  \
+    --PermissionGroups.4.Permissions.2.Children.0.Type 2 \
+    --PermissionGroups.4.Permissions.2.Children.1.DataLabel 0 \
+    --PermissionGroups.4.Permissions.2.Children.1.DataRange 0 \
+    --PermissionGroups.4.Permissions.2.Children.1.DataTo  \
+    --PermissionGroups.4.Permissions.2.Children.1.DataType 0 \
+    --PermissionGroups.4.Permissions.2.Children.1.Hide 1 \
+    --PermissionGroups.4.Permissions.2.Children.1.IsChecked False \
+    --PermissionGroups.4.Permissions.2.Children.1.Key InsertOrModifyChannelComponents \
+    --PermissionGroups.4.Permissions.2.Children.1.Name 渠道控件编辑 \
+    --PermissionGroups.4.Permissions.2.Children.1.ParentKey  \
+    --PermissionGroups.4.Permissions.2.Children.1.Type 2 \
+    --PermissionGroups.4.Permissions.2.Children.2.DataLabel 0 \
+    --PermissionGroups.4.Permissions.2.Children.2.DataRange 0 \
+    --PermissionGroups.4.Permissions.2.Children.2.DataTo  \
+    --PermissionGroups.4.Permissions.2.Children.2.DataType 0 \
+    --PermissionGroups.4.Permissions.2.Children.2.Hide 1 \
+    --PermissionGroups.4.Permissions.2.Children.2.IsChecked False \
+    --PermissionGroups.4.Permissions.2.Children.2.Key DeleteChannelComponents \
+    --PermissionGroups.4.Permissions.2.Children.2.Name 渠道控件删除 \
+    --PermissionGroups.4.Permissions.2.Children.2.ParentKey  \
+    --PermissionGroups.4.Permissions.2.Children.2.Type 2 \
+    --PermissionGroups.4.Permissions.2.DataLabel 0 \
+    --PermissionGroups.4.Permissions.2.DataRange 0 \
+    --PermissionGroups.4.Permissions.2.DataTo  \
+    --PermissionGroups.4.Permissions.2.DataType 0 \
+    --PermissionGroups.4.Permissions.2.Hide 0 \
+    --PermissionGroups.4.Permissions.2.IsChecked False \
+    --PermissionGroups.4.Permissions.2.Key WidgetManagement \
+    --PermissionGroups.4.Permissions.2.Name 渠道模板控件管理 \
+    --PermissionGroups.4.Permissions.2.ParentKey  \
+    --PermissionGroups.4.Permissions.2.Type 1 \
+    --PermissionGroups.5.GroupKey Organization \
+    --PermissionGroups.5.GroupName 组织员工 \
+    --PermissionGroups.5.Hide 0 \
+    --PermissionGroups.5.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.0.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.0.Key ModifyRole \
+    --PermissionGroups.5.Permissions.0.Children.0.Name 修改角色 \
+    --PermissionGroups.5.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.5.Permissions.0.Children.1.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.1.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.1.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.1.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.1.Key DeleteRole \
+    --PermissionGroups.5.Permissions.0.Children.1.Name 删除角色 \
+    --PermissionGroups.5.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.1.Type 2 \
+    --PermissionGroups.5.Permissions.0.Children.2.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.2.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.2.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.2.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.2.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.2.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.2.Key ModifyRoleStatus \
+    --PermissionGroups.5.Permissions.0.Children.2.Name 启用u0026禁用角色 \
+    --PermissionGroups.5.Permissions.0.Children.2.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.2.Type 2 \
+    --PermissionGroups.5.Permissions.0.Children.3.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.3.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.3.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.3.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.3.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.3.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.3.Key CreateRoleUsers \
+    --PermissionGroups.5.Permissions.0.Children.3.Name 添加员工 \
+    --PermissionGroups.5.Permissions.0.Children.3.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.3.Type 2 \
+    --PermissionGroups.5.Permissions.0.Children.4.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.4.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.4.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.4.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.4.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.4.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.4.Key DeleteRoleUsers \
+    --PermissionGroups.5.Permissions.0.Children.4.Name 取消关联 \
+    --PermissionGroups.5.Permissions.0.Children.4.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.4.Type 2 \
+    --PermissionGroups.5.Permissions.0.Children.5.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.Children.5.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.Children.5.DataTo  \
+    --PermissionGroups.5.Permissions.0.Children.5.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Children.5.Hide 1 \
+    --PermissionGroups.5.Permissions.0.Children.5.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Children.5.Key CreateRole \
+    --PermissionGroups.5.Permissions.0.Children.5.Name 创建角色 \
+    --PermissionGroups.5.Permissions.0.Children.5.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Children.5.Type 2 \
+    --PermissionGroups.5.Permissions.0.DataLabel 0 \
+    --PermissionGroups.5.Permissions.0.DataRange 0 \
+    --PermissionGroups.5.Permissions.0.DataTo  \
+    --PermissionGroups.5.Permissions.0.DataType 0 \
+    --PermissionGroups.5.Permissions.0.Hide 0 \
+    --PermissionGroups.5.Permissions.0.IsChecked False \
+    --PermissionGroups.5.Permissions.0.Key RoleManagement \
+    --PermissionGroups.5.Permissions.0.Name 角色管理 \
+    --PermissionGroups.5.Permissions.0.ParentKey  \
+    --PermissionGroups.5.Permissions.0.Type 1 \
+    --PermissionGroups.5.Permissions.1.Children.0.DataLabel 0 \
+    --PermissionGroups.5.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.5.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.5.Permissions.1.Children.0.DataType 0 \
+    --PermissionGroups.5.Permissions.1.Children.0.Hide 1 \
+    --PermissionGroups.5.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.5.Permissions.1.Children.0.Key CreateUserRoles \
+    --PermissionGroups.5.Permissions.1.Children.0.Name 为员工分配角色 \
+    --PermissionGroups.5.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.5.Permissions.1.Children.0.Type 2 \
+    --PermissionGroups.5.Permissions.1.Children.1.DataLabel 0 \
+    --PermissionGroups.5.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.5.Permissions.1.Children.1.DataTo  \
+    --PermissionGroups.5.Permissions.1.Children.1.DataType 0 \
+    --PermissionGroups.5.Permissions.1.Children.1.Hide 1 \
+    --PermissionGroups.5.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.5.Permissions.1.Children.1.Key ModifyYuFuOrg \
+    --PermissionGroups.5.Permissions.1.Children.1.Name 编辑组织架构 \
+    --PermissionGroups.5.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.5.Permissions.1.Children.1.Type 1 \
+    --PermissionGroups.5.Permissions.1.DataLabel 0 \
+    --PermissionGroups.5.Permissions.1.DataRange 0 \
+    --PermissionGroups.5.Permissions.1.DataTo  \
+    --PermissionGroups.5.Permissions.1.DataType 0 \
+    --PermissionGroups.5.Permissions.1.Hide 0 \
+    --PermissionGroups.5.Permissions.1.IsChecked False \
+    --PermissionGroups.5.Permissions.1.Key OrgManagement \
+    --PermissionGroups.5.Permissions.1.Name 组织架构管理 \
+    --PermissionGroups.5.Permissions.1.ParentKey  \
+    --PermissionGroups.5.Permissions.1.Type 1 \
+    --PermissionGroups.5.Permissions.2.Children.0.DataLabel 0 \
+    --PermissionGroups.5.Permissions.2.Children.0.DataRange 0 \
+    --PermissionGroups.5.Permissions.2.Children.0.DataTo  \
+    --PermissionGroups.5.Permissions.2.Children.0.DataType 0 \
+    --PermissionGroups.5.Permissions.2.Children.0.Hide 1 \
+    --PermissionGroups.5.Permissions.2.Children.0.IsChecked False \
+    --PermissionGroups.5.Permissions.2.Children.0.Key GroupOrgCreate \
+    --PermissionGroups.5.Permissions.2.Children.0.Name 集团组织创建 \
+    --PermissionGroups.5.Permissions.2.Children.0.ParentKey  \
+    --PermissionGroups.5.Permissions.2.Children.0.Type 1 \
+    --PermissionGroups.5.Permissions.2.Children.1.DataLabel 0 \
+    --PermissionGroups.5.Permissions.2.Children.1.DataRange 0 \
+    --PermissionGroups.5.Permissions.2.Children.1.DataTo  \
+    --PermissionGroups.5.Permissions.2.Children.1.DataType 0 \
+    --PermissionGroups.5.Permissions.2.Children.1.Hide 1 \
+    --PermissionGroups.5.Permissions.2.Children.1.IsChecked False \
+    --PermissionGroups.5.Permissions.2.Children.1.Key GroupOrgQuery \
+    --PermissionGroups.5.Permissions.2.Children.1.Name 集团组织查询 \
+    --PermissionGroups.5.Permissions.2.Children.1.ParentKey  \
+    --PermissionGroups.5.Permissions.2.Children.1.Type 2 \
+    --PermissionGroups.5.Permissions.2.Children.2.DataLabel 0 \
+    --PermissionGroups.5.Permissions.2.Children.2.DataRange 0 \
+    --PermissionGroups.5.Permissions.2.Children.2.DataTo  \
+    --PermissionGroups.5.Permissions.2.Children.2.DataType 0 \
+    --PermissionGroups.5.Permissions.2.Children.2.Hide 1 \
+    --PermissionGroups.5.Permissions.2.Children.2.IsChecked False \
+    --PermissionGroups.5.Permissions.2.Children.2.Key GroupOrgMemberManagement \
+    --PermissionGroups.5.Permissions.2.Children.2.Name 集团成员管理 \
+    --PermissionGroups.5.Permissions.2.Children.2.ParentKey  \
+    --PermissionGroups.5.Permissions.2.Children.2.Type 1 \
+    --PermissionGroups.5.Permissions.2.DataLabel 0 \
+    --PermissionGroups.5.Permissions.2.DataRange 0 \
+    --PermissionGroups.5.Permissions.2.DataTo  \
+    --PermissionGroups.5.Permissions.2.DataType 0 \
+    --PermissionGroups.5.Permissions.2.Hide 0 \
+    --PermissionGroups.5.Permissions.2.IsChecked False \
+    --PermissionGroups.5.Permissions.2.Key GroupOrgManagement \
+    --PermissionGroups.5.Permissions.2.Name 集团组织管理 \
+    --PermissionGroups.5.Permissions.2.ParentKey  \
+    --PermissionGroups.5.Permissions.2.Type 1 \
+    --PermissionGroups.6.GroupKey Reseller \
+    --PermissionGroups.6.GroupName 分销商助手 \
+    --PermissionGroups.6.Hide 0 \
+    --PermissionGroups.6.Permissions.0.DataLabel 0 \
+    --PermissionGroups.6.Permissions.0.DataRange 0 \
+    --PermissionGroups.6.Permissions.0.DataTo  \
+    --PermissionGroups.6.Permissions.0.DataType 0 \
+    --PermissionGroups.6.Permissions.0.Hide 0 \
+    --PermissionGroups.6.Permissions.0.IsChecked False \
+    --PermissionGroups.6.Permissions.0.Key StartResell \
+    --PermissionGroups.6.Permissions.0.Name 分销开单 \
+    --PermissionGroups.6.Permissions.0.ParentKey  \
+    --PermissionGroups.6.Permissions.0.Type 1 \
+    --PermissionGroups.6.Permissions.1.Children.0.DataLabel 0 \
+    --PermissionGroups.6.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.6.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.6.Permissions.1.Children.0.DataType 0 \
+    --PermissionGroups.6.Permissions.1.Children.0.Hide 0 \
+    --PermissionGroups.6.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.6.Permissions.1.Children.0.Key ResellTool \
+    --PermissionGroups.6.Permissions.1.Children.0.Name 购买并发货 \
+    --PermissionGroups.6.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.6.Permissions.1.Children.0.Type 2 \
+    --PermissionGroups.6.Permissions.1.Children.1.DataLabel 0 \
+    --PermissionGroups.6.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.6.Permissions.1.Children.1.DataTo  \
+    --PermissionGroups.6.Permissions.1.Children.1.DataType 0 \
+    --PermissionGroups.6.Permissions.1.Children.1.Hide 0 \
+    --PermissionGroups.6.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.6.Permissions.1.Children.1.Key PreOrderAndSendOutGoods \
+    --PermissionGroups.6.Permissions.1.Children.1.Name 从预购额度发货 \
+    --PermissionGroups.6.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.6.Permissions.1.Children.1.Type 2 \
+    --PermissionGroups.6.Permissions.1.DataLabel 0 \
+    --PermissionGroups.6.Permissions.1.DataRange 0 \
+    --PermissionGroups.6.Permissions.1.DataTo  \
+    --PermissionGroups.6.Permissions.1.DataType 0 \
+    --PermissionGroups.6.Permissions.1.Hide 0 \
+    --PermissionGroups.6.Permissions.1.IsChecked False \
+    --PermissionGroups.6.Permissions.1.Key BuyAndSendOutGoods \
+    --PermissionGroups.6.Permissions.1.Name 发货工具 \
+    --PermissionGroups.6.Permissions.1.ParentKey  \
+    --PermissionGroups.6.Permissions.1.Type 1 \
+    --PermissionGroups.6.Permissions.2.Children.0.DataLabel 2 \
+    --PermissionGroups.6.Permissions.2.Children.0.DataRange 3 \
+    --PermissionGroups.6.Permissions.2.Children.0.DataTo  \
+    --PermissionGroups.6.Permissions.2.Children.0.DataType 0 \
+    --PermissionGroups.6.Permissions.2.Children.0.Hide 0 \
+    --PermissionGroups.6.Permissions.2.Children.0.IsChecked False \
+    --PermissionGroups.6.Permissions.2.Children.0.Key ResellOrders-Own \
+    --PermissionGroups.6.Permissions.2.Children.0.Name 本人销售记录 \
+    --PermissionGroups.6.Permissions.2.Children.0.ParentKey ResellOrders \
+    --PermissionGroups.6.Permissions.2.Children.0.Type 2 \
+    --PermissionGroups.6.Permissions.2.Children.1.DataLabel 2 \
+    --PermissionGroups.6.Permissions.2.Children.1.DataRange 1 \
+    --PermissionGroups.6.Permissions.2.Children.1.DataTo  \
+    --PermissionGroups.6.Permissions.2.Children.1.DataType 0 \
+    --PermissionGroups.6.Permissions.2.Children.1.Hide 0 \
+    --PermissionGroups.6.Permissions.2.Children.1.IsChecked False \
+    --PermissionGroups.6.Permissions.2.Children.1.Key ResellOrders-All \
+    --PermissionGroups.6.Permissions.2.Children.1.Name 所有销售记录 \
+    --PermissionGroups.6.Permissions.2.Children.1.ParentKey ResellOrders \
+    --PermissionGroups.6.Permissions.2.Children.1.Type 2 \
+    --PermissionGroups.6.Permissions.2.DataLabel 0 \
+    --PermissionGroups.6.Permissions.2.DataRange 0 \
+    --PermissionGroups.6.Permissions.2.DataTo  \
+    --PermissionGroups.6.Permissions.2.DataType 0 \
+    --PermissionGroups.6.Permissions.2.Hide 0 \
+    --PermissionGroups.6.Permissions.2.IsChecked False \
+    --PermissionGroups.6.Permissions.2.Key ResellOrders \
+    --PermissionGroups.6.Permissions.2.Name 销售记录 \
+    --PermissionGroups.6.Permissions.2.ParentKey  \
+    --PermissionGroups.6.Permissions.2.Type 1 \
+    --PermissionGroups.6.Permissions.3.DataLabel 0 \
+    --PermissionGroups.6.Permissions.3.DataRange 0 \
+    --PermissionGroups.6.Permissions.3.DataTo  \
+    --PermissionGroups.6.Permissions.3.DataType 0 \
+    --PermissionGroups.6.Permissions.3.Hide 0 \
+    --PermissionGroups.6.Permissions.3.IsChecked False \
+    --PermissionGroups.6.Permissions.3.Key ResellConsumeAnalysis \
+    --PermissionGroups.6.Permissions.3.Name 客户消耗分析 \
+    --PermissionGroups.6.Permissions.3.ParentKey  \
+    --PermissionGroups.6.Permissions.3.Type 1 \
+    --PermissionGroups.6.Permissions.4.DataLabel 0 \
+    --PermissionGroups.6.Permissions.4.DataRange 0 \
+    --PermissionGroups.6.Permissions.4.DataTo  \
+    --PermissionGroups.6.Permissions.4.DataType 0 \
+    --PermissionGroups.6.Permissions.4.Hide 0 \
+    --PermissionGroups.6.Permissions.4.IsChecked False \
+    --PermissionGroups.6.Permissions.4.Key ResellPerformanceData \
+    --PermissionGroups.6.Permissions.4.Name 业绩数据 \
+    --PermissionGroups.6.Permissions.4.ParentKey  \
+    --PermissionGroups.6.Permissions.4.Type 1 \
+    --PermissionGroups.6.Permissions.5.Children.0.DataLabel 0 \
+    --PermissionGroups.6.Permissions.5.Children.0.DataRange 0 \
+    --PermissionGroups.6.Permissions.5.Children.0.DataTo  \
+    --PermissionGroups.6.Permissions.5.Children.0.DataType 0 \
+    --PermissionGroups.6.Permissions.5.Children.0.Hide 0 \
+    --PermissionGroups.6.Permissions.5.Children.0.IsChecked False \
+    --PermissionGroups.6.Permissions.5.Children.0.Key ResellAdminLearningMaterials \
+    --PermissionGroups.6.Permissions.5.Children.0.Name 管理员学习资料 \
+    --PermissionGroups.6.Permissions.5.Children.0.ParentKey  \
+    --PermissionGroups.6.Permissions.5.Children.0.Type 1 \
+    --PermissionGroups.6.Permissions.5.Children.1.DataLabel 0 \
+    --PermissionGroups.6.Permissions.5.Children.1.DataRange 0 \
+    --PermissionGroups.6.Permissions.5.Children.1.DataTo  \
+    --PermissionGroups.6.Permissions.5.Children.1.DataType 0 \
+    --PermissionGroups.6.Permissions.5.Children.1.Hide 0 \
+    --PermissionGroups.6.Permissions.5.Children.1.IsChecked False \
+    --PermissionGroups.6.Permissions.5.Children.1.Key ResellOperatorLearningMaterials \
+    --PermissionGroups.6.Permissions.5.Children.1.Name 业务员学习资料 \
+    --PermissionGroups.6.Permissions.5.Children.1.ParentKey  \
+    --PermissionGroups.6.Permissions.5.Children.1.Type 1 \
+    --PermissionGroups.6.Permissions.5.DataLabel 0 \
+    --PermissionGroups.6.Permissions.5.DataRange 0 \
+    --PermissionGroups.6.Permissions.5.DataTo  \
+    --PermissionGroups.6.Permissions.5.DataType 0 \
+    --PermissionGroups.6.Permissions.5.Hide 0 \
+    --PermissionGroups.6.Permissions.5.IsChecked False \
+    --PermissionGroups.6.Permissions.5.Key ResellLearningMaterials \
+    --PermissionGroups.6.Permissions.5.Name 学习资料 \
+    --PermissionGroups.6.Permissions.5.ParentKey  \
+    --PermissionGroups.6.Permissions.5.Type 1 \
+    --PermissionGroups.6.Permissions.6.DataLabel 0 \
+    --PermissionGroups.6.Permissions.6.DataRange 0 \
+    --PermissionGroups.6.Permissions.6.DataTo  \
+    --PermissionGroups.6.Permissions.6.DataType 0 \
+    --PermissionGroups.6.Permissions.6.Hide 0 \
+    --PermissionGroups.6.Permissions.6.IsChecked False \
+    --PermissionGroups.6.Permissions.6.Key ActivityManagement \
+    --PermissionGroups.6.Permissions.6.Name 活动管理 \
+    --PermissionGroups.6.Permissions.6.ParentKey  \
+    --PermissionGroups.6.Permissions.6.Type 2 \
+    --PermissionGroups.6.Permissions.7.DataLabel 0 \
+    --PermissionGroups.6.Permissions.7.DataRange 0 \
+    --PermissionGroups.6.Permissions.7.DataTo  \
+    --PermissionGroups.6.Permissions.7.DataType 0 \
+    --PermissionGroups.6.Permissions.7.Hide 0 \
+    --PermissionGroups.6.Permissions.7.IsChecked False \
+    --PermissionGroups.6.Permissions.7.Key PreOrderOverview \
+    --PermissionGroups.6.Permissions.7.Name 预购总览 \
+    --PermissionGroups.6.Permissions.7.ParentKey  \
+    --PermissionGroups.6.Permissions.7.Type 2 \
+    --PermissionGroups.7.GroupKey fulfill \
+    --PermissionGroups.7.GroupName 服务预约 \
+    --PermissionGroups.7.Hide 0 \
+    --PermissionGroups.7.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.7.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.7.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.7.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.7.Permissions.0.Children.0.Hide 0 \
+    --PermissionGroups.7.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.7.Permissions.0.Children.0.Key AppointmentMerchantService \
+    --PermissionGroups.7.Permissions.0.Children.0.Name 代客预约 \
+    --PermissionGroups.7.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.7.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.7.Permissions.0.Children.1.DataLabel 0 \
+    --PermissionGroups.7.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.7.Permissions.0.Children.1.DataTo  \
+    --PermissionGroups.7.Permissions.0.Children.1.DataType 0 \
+    --PermissionGroups.7.Permissions.0.Children.1.Hide 0 \
+    --PermissionGroups.7.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.7.Permissions.0.Children.1.Key WriteOffForCustomerService \
+    --PermissionGroups.7.Permissions.0.Children.1.Name 代客核销 \
+    --PermissionGroups.7.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.7.Permissions.0.Children.1.Type 2 \
+    --PermissionGroups.7.Permissions.0.Children.2.DataLabel 0 \
+    --PermissionGroups.7.Permissions.0.Children.2.DataRange 0 \
+    --PermissionGroups.7.Permissions.0.Children.2.DataTo  \
+    --PermissionGroups.7.Permissions.0.Children.2.DataType 0 \
+    --PermissionGroups.7.Permissions.0.Children.2.Hide 0 \
+    --PermissionGroups.7.Permissions.0.Children.2.IsChecked False \
+    --PermissionGroups.7.Permissions.0.Children.2.Key DescribeFulfillAppointments \
+    --PermissionGroups.7.Permissions.0.Children.2.Name 查看记录 \
+    --PermissionGroups.7.Permissions.0.Children.2.ParentKey  \
+    --PermissionGroups.7.Permissions.0.Children.2.Type 2 \
+    --PermissionGroups.7.Permissions.0.DataLabel 0 \
+    --PermissionGroups.7.Permissions.0.DataRange 0 \
+    --PermissionGroups.7.Permissions.0.DataTo  \
+    --PermissionGroups.7.Permissions.0.DataType 0 \
+    --PermissionGroups.7.Permissions.0.Hide 0 \
+    --PermissionGroups.7.Permissions.0.IsChecked False \
+    --PermissionGroups.7.Permissions.0.Key AppointmentManagement \
+    --PermissionGroups.7.Permissions.0.Name 预约记录 \
+    --PermissionGroups.7.Permissions.0.ParentKey  \
+    --PermissionGroups.7.Permissions.0.Type 1 \
+    --PermissionGroups.7.Permissions.1.Children.0.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.0.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.0.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.0.Key DescribeFulfillOrganizationConsumers \
+    --PermissionGroups.7.Permissions.1.Children.0.Name 查看顾客 \
+    --PermissionGroups.7.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.0.Type 2 \
+    --PermissionGroups.7.Permissions.1.Children.1.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.1.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.1.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.1.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.1.Key CreateFulfillOrganizationConsumer \
+    --PermissionGroups.7.Permissions.1.Children.1.Name 添加顾客 \
+    --PermissionGroups.7.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.1.Type 2 \
+    --PermissionGroups.7.Permissions.1.Children.2.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.2.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.2.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.2.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.2.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.2.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.2.Key ModifyFulfillOrganizationConsumer \
+    --PermissionGroups.7.Permissions.1.Children.2.Name 编辑顾客 \
+    --PermissionGroups.7.Permissions.1.Children.2.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.2.Type 2 \
+    --PermissionGroups.7.Permissions.1.Children.3.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.3.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.3.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.3.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.3.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.3.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.3.Key DeleteFulfillOrganizationConsumer \
+    --PermissionGroups.7.Permissions.1.Children.3.Name 删除顾客 \
+    --PermissionGroups.7.Permissions.1.Children.3.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.3.Type 2 \
+    --PermissionGroups.7.Permissions.1.Children.4.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.4.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.4.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.4.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.4.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.4.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.4.Key DescribeFulfillConsumersWithExcel \
+    --PermissionGroups.7.Permissions.1.Children.4.Name 导出 \
+    --PermissionGroups.7.Permissions.1.Children.4.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.4.Type 2 \
+    --PermissionGroups.7.Permissions.1.Children.5.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.Children.5.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.Children.5.DataTo  \
+    --PermissionGroups.7.Permissions.1.Children.5.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Children.5.Hide 0 \
+    --PermissionGroups.7.Permissions.1.Children.5.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Children.5.Key CreateFulfillConsumerContract \
+    --PermissionGroups.7.Permissions.1.Children.5.Name 添加/更新合同 \
+    --PermissionGroups.7.Permissions.1.Children.5.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Children.5.Type 2 \
+    --PermissionGroups.7.Permissions.1.DataLabel 0 \
+    --PermissionGroups.7.Permissions.1.DataRange 0 \
+    --PermissionGroups.7.Permissions.1.DataTo  \
+    --PermissionGroups.7.Permissions.1.DataType 0 \
+    --PermissionGroups.7.Permissions.1.Hide 0 \
+    --PermissionGroups.7.Permissions.1.IsChecked False \
+    --PermissionGroups.7.Permissions.1.Key ConsumerService \
+    --PermissionGroups.7.Permissions.1.Name 顾客列表 \
+    --PermissionGroups.7.Permissions.1.ParentKey  \
+    --PermissionGroups.7.Permissions.1.Type 1 \
+    --PermissionGroups.7.Permissions.2.Children.0.DataLabel 0 \
+    --PermissionGroups.7.Permissions.2.Children.0.DataRange 0 \
+    --PermissionGroups.7.Permissions.2.Children.0.DataTo  \
+    --PermissionGroups.7.Permissions.2.Children.0.DataType 0 \
+    --PermissionGroups.7.Permissions.2.Children.0.Hide 0 \
+    --PermissionGroups.7.Permissions.2.Children.0.IsChecked False \
+    --PermissionGroups.7.Permissions.2.Children.0.Key ManageFulfillShops \
+    --PermissionGroups.7.Permissions.2.Children.0.Name 店铺信息管理 \
+    --PermissionGroups.7.Permissions.2.Children.0.ParentKey  \
+    --PermissionGroups.7.Permissions.2.Children.0.Type 2 \
+    --PermissionGroups.7.Permissions.2.DataLabel 0 \
+    --PermissionGroups.7.Permissions.2.DataRange 0 \
+    --PermissionGroups.7.Permissions.2.DataTo  \
+    --PermissionGroups.7.Permissions.2.DataType 0 \
+    --PermissionGroups.7.Permissions.2.Hide 0 \
+    --PermissionGroups.7.Permissions.2.IsChecked False \
+    --PermissionGroups.7.Permissions.2.Key ShopService \
+    --PermissionGroups.7.Permissions.2.Name 店铺管理 \
+    --PermissionGroups.7.Permissions.2.ParentKey  \
+    --PermissionGroups.7.Permissions.2.Type 1 \
+    --PermissionGroups.7.Permissions.3.Children.0.DataLabel 0 \
+    --PermissionGroups.7.Permissions.3.Children.0.DataRange 0 \
+    --PermissionGroups.7.Permissions.3.Children.0.DataTo  \
+    --PermissionGroups.7.Permissions.3.Children.0.DataType 0 \
+    --PermissionGroups.7.Permissions.3.Children.0.Hide 0 \
+    --PermissionGroups.7.Permissions.3.Children.0.IsChecked False \
+    --PermissionGroups.7.Permissions.3.Children.0.Key DescribeFulfillDataDashboard \
+    --PermissionGroups.7.Permissions.3.Children.0.Name 查看 \
+    --PermissionGroups.7.Permissions.3.Children.0.ParentKey  \
+    --PermissionGroups.7.Permissions.3.Children.0.Type 2 \
+    --PermissionGroups.7.Permissions.3.DataLabel 0 \
+    --PermissionGroups.7.Permissions.3.DataRange 0 \
+    --PermissionGroups.7.Permissions.3.DataTo  \
+    --PermissionGroups.7.Permissions.3.DataType 0 \
+    --PermissionGroups.7.Permissions.3.Hide 0 \
+    --PermissionGroups.7.Permissions.3.IsChecked False \
+    --PermissionGroups.7.Permissions.3.Key DataDashboard \
+    --PermissionGroups.7.Permissions.3.Name 数据看板 \
+    --PermissionGroups.7.Permissions.3.ParentKey  \
+    --PermissionGroups.7.Permissions.3.Type 1 \
+    --PermissionGroups.8.GroupKey Company \
+    --PermissionGroups.8.GroupName 企业中心 \
+    --PermissionGroups.8.Hide 1 \
+    --PermissionGroups.8.Permissions.0.Children.0.DataLabel 0 \
+    --PermissionGroups.8.Permissions.0.Children.0.DataRange 0 \
+    --PermissionGroups.8.Permissions.0.Children.0.DataTo  \
+    --PermissionGroups.8.Permissions.0.Children.0.DataType 0 \
+    --PermissionGroups.8.Permissions.0.Children.0.Hide 1 \
+    --PermissionGroups.8.Permissions.0.Children.0.IsChecked False \
+    --PermissionGroups.8.Permissions.0.Children.0.Key QueryEnterpriseInfo \
+    --PermissionGroups.8.Permissions.0.Children.0.Name 企业信息查询 \
+    --PermissionGroups.8.Permissions.0.Children.0.ParentKey  \
+    --PermissionGroups.8.Permissions.0.Children.0.Type 2 \
+    --PermissionGroups.8.Permissions.0.Children.1.DataLabel 0 \
+    --PermissionGroups.8.Permissions.0.Children.1.DataRange 0 \
+    --PermissionGroups.8.Permissions.0.Children.1.DataTo  \
+    --PermissionGroups.8.Permissions.0.Children.1.DataType 0 \
+    --PermissionGroups.8.Permissions.0.Children.1.Hide 1 \
+    --PermissionGroups.8.Permissions.0.Children.1.IsChecked False \
+    --PermissionGroups.8.Permissions.0.Children.1.Key BindingAgent \
+    --PermissionGroups.8.Permissions.0.Children.1.Name 绑定代理商 \
+    --PermissionGroups.8.Permissions.0.Children.1.ParentKey  \
+    --PermissionGroups.8.Permissions.0.Children.1.Type 2 \
+    --PermissionGroups.8.Permissions.0.DataLabel 0 \
+    --PermissionGroups.8.Permissions.0.DataRange 0 \
+    --PermissionGroups.8.Permissions.0.DataTo  \
+    --PermissionGroups.8.Permissions.0.DataType 0 \
+    --PermissionGroups.8.Permissions.0.Hide 1 \
+    --PermissionGroups.8.Permissions.0.IsChecked False \
+    --PermissionGroups.8.Permissions.0.Key Company-Account \
+    --PermissionGroups.8.Permissions.0.Name 企业信息 \
+    --PermissionGroups.8.Permissions.0.ParentKey  \
+    --PermissionGroups.8.Permissions.0.Type 1 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.DataTo  \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.Hide 1 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.Key Company-Serves-ServerSign-Open \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.Name 开通u0026关闭 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.0.Type 2 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.DataTo  \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.Hide 1 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.Key Company-Serves-ServerSign-Auth \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.Name 授权 \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Children.0.Children.1.Type 2 \
+    --PermissionGroups.8.Permissions.1.Children.0.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.DataTo  \
+    --PermissionGroups.8.Permissions.1.Children.0.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Children.0.Hide 1 \
+    --PermissionGroups.8.Permissions.1.Children.0.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Children.0.Key Company-Serves-ServerSign \
+    --PermissionGroups.8.Permissions.1.Children.0.Name 企业静默签 \
+    --PermissionGroups.8.Permissions.1.Children.0.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Children.0.Type 2 \
+    --PermissionGroups.8.Permissions.1.Children.1.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.Children.1.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.Children.1.DataTo  \
+    --PermissionGroups.8.Permissions.1.Children.1.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Children.1.Hide 1 \
+    --PermissionGroups.8.Permissions.1.Children.1.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Children.1.Key EnterpriseExtendedServicesSignFlow \
+    --PermissionGroups.8.Permissions.1.Children.1.Name 企业与港澳台居民签署合同 \
+    --PermissionGroups.8.Permissions.1.Children.1.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Children.1.Type 2 \
+    --PermissionGroups.8.Permissions.1.Children.2.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.Children.2.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.Children.2.DataTo  \
+    --PermissionGroups.8.Permissions.1.Children.2.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Children.2.Hide 1 \
+    --PermissionGroups.8.Permissions.1.Children.2.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Children.2.Key ApprovalFlowConfig \
+    --PermissionGroups.8.Permissions.1.Children.2.Name 审批流配置 \
+    --PermissionGroups.8.Permissions.1.Children.2.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Children.2.Type 2 \
+    --PermissionGroups.8.Permissions.1.DataLabel 0 \
+    --PermissionGroups.8.Permissions.1.DataRange 0 \
+    --PermissionGroups.8.Permissions.1.DataTo  \
+    --PermissionGroups.8.Permissions.1.DataType 0 \
+    --PermissionGroups.8.Permissions.1.Hide 1 \
+    --PermissionGroups.8.Permissions.1.IsChecked False \
+    --PermissionGroups.8.Permissions.1.Key Company-Serves \
+    --PermissionGroups.8.Permissions.1.Name 扩展服务 \
+    --PermissionGroups.8.Permissions.1.ParentKey  \
+    --PermissionGroups.8.Permissions.1.Type 1 \
+    --PermissionGroups.9.GroupKey BusinessManagement \
+    --PermissionGroups.9.GroupName 企业管理 \
+    --PermissionGroups.9.Hide 0 \
+    --PermissionGroups.9.Permissions.0.DataLabel 0 \
+    --PermissionGroups.9.Permissions.0.DataRange 0 \
+    --PermissionGroups.9.Permissions.0.DataTo  \
+    --PermissionGroups.9.Permissions.0.DataType 0 \
+    --PermissionGroups.9.Permissions.0.Hide 0 \
+    --PermissionGroups.9.Permissions.0.IsChecked False \
+    --PermissionGroups.9.Permissions.0.Key StyleConfig \
+    --PermissionGroups.9.Permissions.0.Name 样式配置 \
+    --PermissionGroups.9.Permissions.0.ParentKey  \
+    --PermissionGroups.9.Permissions.0.Type 2 \
+    --PermissionGroups.9.Permissions.1.DataLabel 0 \
+    --PermissionGroups.9.Permissions.1.DataRange 0 \
+    --PermissionGroups.9.Permissions.1.DataTo  \
+    --PermissionGroups.9.Permissions.1.DataType 0 \
+    --PermissionGroups.9.Permissions.1.Hide 0 \
+    --PermissionGroups.9.Permissions.1.IsChecked False \
+    --PermissionGroups.9.Permissions.1.Key ToolKitConfig \
+    --PermissionGroups.9.Permissions.1.Name 工具箱配置 \
+    --PermissionGroups.9.Permissions.1.ParentKey  \
+    --PermissionGroups.9.Permissions.1.Type 2 \
+    --PermissionGroups.9.Permissions.2.DataLabel 0 \
+    --PermissionGroups.9.Permissions.2.DataRange 0 \
+    --PermissionGroups.9.Permissions.2.DataTo  \
+    --PermissionGroups.9.Permissions.2.DataType 0 \
+    --PermissionGroups.9.Permissions.2.Hide 0 \
+    --PermissionGroups.9.Permissions.2.IsChecked False \
+    --PermissionGroups.9.Permissions.2.Key ApprovalFlowConfig \
+    --PermissionGroups.9.Permissions.2.Name 审批流程配置 \
+    --PermissionGroups.9.Permissions.2.ParentKey  \
+    --PermissionGroups.9.Permissions.2.Type 2
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RoleId": "abc",
+        "RequestId": "abc"
+    }
+}
+```
+
