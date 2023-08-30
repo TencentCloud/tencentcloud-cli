@@ -18,6 +18,7 @@ Output:
         "SetId": 1,
         "InnerHttpsPort": 0,
         "InnerHttpPort": 0,
+        "UniqVpcId": "vpc-abc",
         "Tags": [
             {
                 "Value": "test",

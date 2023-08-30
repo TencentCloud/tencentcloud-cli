@@ -620,6 +620,15 @@
           "name": "WhiteLists",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "白名单备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -868,6 +877,7 @@
           "example": "无",
           "member": "WhiteListData",
           "name": "WhiteLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -877,6 +887,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1508,7 +1519,7 @@
           "example": "无",
           "member": "int64",
           "name": "WhiteListId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1518,7 +1529,7 @@
           "example": "无",
           "member": "int64",
           "name": "CompanyId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1528,7 +1539,7 @@
           "example": "无",
           "member": "string",
           "name": "BrandName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1538,7 +1549,7 @@
           "example": "无",
           "member": "int64",
           "name": "AssetsType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1548,7 +1559,17 @@
           "example": "无",
           "member": "string",
           "name": "WhiteList",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "白名单备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1558,7 +1579,7 @@
           "example": "无",
           "member": "string",
           "name": "InsertTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

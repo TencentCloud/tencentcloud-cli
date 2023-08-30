@@ -1508,6 +1508,45 @@
       ],
       "usage": "out"
     },
+    "BrokerTopicFlowData": {
+      "document": "broker维度topic 流量排行指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Topic 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "reac-tpc",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Topic Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-3j9x911",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Topic 流量(MB)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.20",
+          "member": "string",
+          "name": "TopicTraffic",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BurnCPURequest": {
       "document": "BurnCPU请求参数结构体",
       "members": [
@@ -4026,6 +4065,15 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券:1-是;0否。默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoVoucher",
           "required": false,
           "type": "int"
         }
@@ -16909,7 +16957,7 @@
           "example": "无",
           "member": "TopicFlowRanking",
           "name": "TopicFlow",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16919,7 +16967,7 @@
           "example": "无",
           "member": "ConsumerGroupSpeed",
           "name": "ConsumeSpeed",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16929,7 +16977,7 @@
           "example": "五",
           "member": "TopicMessageHeapRanking",
           "name": "TopicMessageHeap",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16939,7 +16987,7 @@
           "example": "无",
           "member": "string",
           "name": "BrokerIp",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16949,9 +16997,19 @@
           "example": "无",
           "member": "BrokerTopicData",
           "name": "BrokerTopicData",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单个Broker 节点Topic 流量的大小(单位MB)",
+          "example": "无",
+          "member": "BrokerTopicFlowData",
+          "name": "BrokerTopicFlowData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17832,7 +17890,7 @@
           "example": "100001",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17842,7 +17900,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsInternalApp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17852,7 +17910,7 @@
           "example": "1231312",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17862,7 +17920,7 @@
           "example": "1",
           "member": "bool",
           "name": "Flag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -17872,7 +17930,7 @@
           "example": "一区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17882,17 +17940,17 @@
           "example": "1",
           "member": "int64",
           "name": "ZoneStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "额外标识",
           "example": "1",
           "member": "string",
           "name": "Exflag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17902,7 +17960,7 @@
           "example": "1",
           "member": "string",
           "name": "SoldOut",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17912,9 +17970,19 @@
           "example": "[]",
           "member": "SaleInfo",
           "name": "SalesInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外标识",
+          "example": "1",
+          "member": "string",
+          "name": "ExtraFlag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

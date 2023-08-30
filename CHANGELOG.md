@@ -1,3 +1,333 @@
+# Release 3.0.841.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 4 次发布
+
+发布时间：2023-08-31 01:06:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Filters](http://document.tencentcloudapi.woa.com/document/product/1660/78752#Filters)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Values
+
+
+
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 27 次发布
+
+发布时间：2023-08-31 01:08:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeService](http://document.tencentcloudapi.woa.com/document/product/628/45199)
+
+	* 新增出参：UniqVpcId
+
+* [ModifyService](http://document.tencentcloudapi.woa.com/document/product/628/45193)
+
+	* 新增入参：UniqVpcId
+
+
+
+
+## 品牌经营管家(bma) 版本：2022-11-15
+
+### 第 3 次发布
+
+发布时间：2023-08-31 01:14:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBPWhiteList](http://document.tencentcloudapi.woa.com/document/product/1665/79238)
+
+	* 新增入参：Remark
+
+
+修改数据结构：
+
+* [WhiteListData](http://document.tencentcloudapi.woa.com/document/product/1665/79244#WhiteListData)
+
+	* 新增成员：Remark
+
+	* <font color="#dd0000">**修改成员**：</font>WhiteListId, CompanyId, BrandName, AssetsType, WhiteList, InsertTime
+
+
+
+
+## 品牌经营管家(bma) 版本：2021-06-24
+
+
+
+## 品牌经营管家(bma) 版本：2020-11-25
+
+
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 5 次发布
+
+发布时间：2023-08-31 01:22:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteBackUpData](http://document.tencentcloudapi.woa.com/document/product/1667/81761)
+* [DescribeBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1667/81763)
+* [DescribeBackUpJobDetail](http://document.tencentcloudapi.woa.com/document/product/1667/81762)
+* [RecoverBackUpJob](http://document.tencentcloudapi.woa.com/document/product/1667/81760)
+
+修改接口：
+
+* [DescribeCkSqlApis](http://document.tencentcloudapi.woa.com/document/product/1667/79280)
+
+	* 新增入参：UserType
+
+
+新增数据结构：
+
+* [BackUpJobDisplay](http://document.tencentcloudapi.woa.com/document/product/1667/79282#BackUpJobDisplay)
+
+
+
+## 消息队列 CKafka(ckafka) 版本：2019-08-19
+
+### 第 76 次发布
+
+发布时间：2023-08-31 01:25:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateInstancePre](http://document.tencentcloudapi.woa.com/document/product/597/45847)
+
+	* 新增入参：AutoVoucher
+
+
+新增数据结构：
+
+* [BrokerTopicFlowData](http://document.tencentcloudapi.woa.com/document/product/597/40861#BrokerTopicFlowData)
+
+修改数据结构：
+
+* [TopicFlowRankingResult](http://document.tencentcloudapi.woa.com/document/product/597/40861#TopicFlowRankingResult)
+
+	* 新增成员：BrokerTopicFlowData
+
+	* <font color="#dd0000">**修改成员**：</font>BrokerIp, BrokerTopicData
+
+* [ZoneInfo](http://document.tencentcloudapi.woa.com/document/product/597/40861#ZoneInfo)
+
+	* 新增成员：ExtraFlag
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 45 次发布
+
+发布时间：2023-08-31 01:26:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [GatewayLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30694#GatewayLoadBalancer)
+
+	* <font color="#dd0000">**修改成员**：</font>AssociateAclGroup
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 5 次发布
+
+发布时间：2023-08-31 01:34:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClbListenerListInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ClbListenerListInfo)
+
+	* 新增成员：LoadBalancerDomain
+
+	* <font color="#dd0000">**修改成员**：</font>ListenerId, ListenerName, LoadBalancerId, LoadBalancerName, Protocol, Region, Vip, VPort, Zone, NumericalVpcId, LoadBalancerType, Domain
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 71 次发布
+
+发布时间：2023-08-31 01:36:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeMaliciousRequestWhiteList](http://document.tencentcloudapi.woa.com/document/product/296/61720)
+
+	* 新增入参：Order, By
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 22 次发布
+
+发布时间：2023-08-31 01:42:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1130/57812#InstanceInfo)
+
+	* 新增成员：AgentStatus, InstanceStatus
+
+	* <font color="#dd0000">**修改成员**：</font>InternalVip, InternalVport, CreateTime, ClusterId, ClusterName
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 35 次发布
+
+发布时间：2023-08-31 01:54:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetEidResult](http://document.tencentcloudapi.woa.com/document/product/1007/54090)
+
+	* 新增出参：IntentionActionResult
+
+
+修改数据结构：
+
+* [GetEidTokenConfig](http://document.tencentcloudapi.woa.com/document/product/1007/41958#GetEidTokenConfig)
+
+	* 新增成员：IntentionActions
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 30 次发布
+
+发布时间：2023-08-31 02:15:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [Order](http://document.tencentcloudapi.woa.com/document/product/849/52010#Order)
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/849/52010#Cluster)
+
+	* 新增成员：ArchGeneration, ClusterType, Orders
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterSessions
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 103 次发布
+
+发布时间：2023-08-31 02:47:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyNetworkAclEntries](http://document.tencentcloudapi.woa.com/document/product/215/42107)
+
+	* 新增入参：EnableUpdateAclEntries
+
+
+修改数据结构：
+
+* [NetworkAclEntry](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkAclEntry)
+
+	* 新增成员：Priority, NetworkAclIpv4EntryId, NetworkAclIpv6EntryId
+
+	* <font color="#dd0000">**修改成员**：</font>ModifyTime
+
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 22 次发布
+
+发布时间：2023-08-31 02:52:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1607/77747#DataSourceInfo)
+
+	* 新增成员：ShowType
+
+	* <font color="#dd0000">**修改成员**：</font>ModifiedTime
+
+
+
+
 # Release 3.0.840.1
 
 ## 智能语音(aai) 版本：2018-05-22

@@ -43,7 +43,7 @@
     "CreateBPWhiteList": [
       {
         "document": "添加白名单",
-        "input": "{\n  \"CompanyId\": 123,\n  \"WhiteListType\": 0,\n  \"WhiteLists\": [\n    \"xxx\"\n  ]\n}",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBPWhiteList\n<公共请求参数>\n\n{\n    \"CompanyId\": 123,\n    \"WhiteListType\": 0,\n    \"WhiteLists\": [\n        \"xxx\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "添加白名单"
       }
@@ -83,7 +83,7 @@
     "DescribeBPWhiteLists": [
       {
         "document": "查询白名单列表",
-        "input": "{\n  \"Filters\": [\n    {\n      \"Name\": \"CompanyId\",\n      \"Value\": \"123\"\n    },\n    {\n      \"Name\": \"AssetsType\",\n      \"Value\": \"0\"\n    },\n    {\n      \"Name\": \"WhiteList\",\n      \"Value\": \"白名单名称\"\n    },\n    {\n      \"Name\": \"StartTime\",\n      \"Value\": \"2022-10-01 00:00:00\"\n    },\n    {\n      \"Name\": \"EndTime\",\n      \"Value\": \"2022-10-01 23:59:59\"\n    }\n  ],\n  \"PageSize\": 10,\n  \"PageNumber\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: bma.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBPWhiteLists\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"CompanyId\",\n            \"Value\": \"123\"\n        },\n        {\n            \"Name\": \"AssetsType\",\n            \"Value\": \"0\"\n        },\n        {\n            \"Name\": \"WhiteList\",\n            \"Value\": \"白名单名称\"\n        },\n        {\n            \"Name\": \"StartTime\",\n            \"Value\": \"2022-10-01 00:00:00\"\n        },\n        {\n            \"Name\": \"EndTime\",\n            \"Value\": \"2022-10-01 23:59:59\"\n        }\n    ],\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"WhiteLists\": [\n            {\n                \"WhiteListId\": 123,\n                \"CompanyId\": 123,\n                \"BrandName\": \"品牌名称\",\n                \"AssetsType\": 0,\n                \"WhiteList\": \"白名单名称\",\n                \"InsertTime\": \"2022-10-01 00:00:00\"\n            }\n        ],\n        \"TotalCount\": 10,\n        \"RequestId\": \"xxx\"\n    }\n}",
         "title": "查询白名单列表"
       }

@@ -6781,7 +6781,7 @@
           "example": "gwlb-xxx",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6791,7 +6791,7 @@
           "example": "Name",
           "member": "string",
           "name": "LoadBalancerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6801,7 +6801,7 @@
           "example": "vpc-mj65xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6811,7 +6811,7 @@
           "example": "subnet-lzj3xxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6821,7 +6821,7 @@
           "example": "x.x.x.x",
           "member": "string",
           "name": "Vips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6831,7 +6831,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6841,7 +6841,7 @@
           "example": "lbtg-xxx",
           "member": "string",
           "name": "TargetGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6851,17 +6851,17 @@
           "example": "gwlbacl-xxx",
           "member": "string",
           "name": "AssociateAclGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "最大带宽。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "带宽上限，单位为Mbps。默认为512000Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6871,7 +6871,7 @@
           "example": "true",
           "member": "bool",
           "name": "DeleteProtect",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6881,7 +6881,7 @@
           "example": "无",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6891,7 +6891,7 @@
           "example": "share",
           "member": "string",
           "name": "Specifications",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6901,7 +6901,7 @@
           "example": "2022-12-14 20:30:48",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

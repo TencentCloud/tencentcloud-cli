@@ -659,26 +659,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤名称",
+          "document": "过滤名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "aaa",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "过滤值",
+          "document": "过滤值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[a,b]",
           "member": "string",
           "name": "Values",
-          "required": true,
+          "output_required": false,
+          "required": false,
           "type": "list",
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "GroupSummary": {
       "document": "分组的扫描结果概览。",

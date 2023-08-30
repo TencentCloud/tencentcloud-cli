@@ -16,38 +16,8 @@ Output:
 ```
 {
     "Response": {
-        "ReturnData": [
-            {
-                "InstanceId": "cdwch-1vud9x9x",
-                "UserName": "cdwch",
-                "Describe": "",
-                "Type": "RBAC",
-                "Cluster": "default_cluster"
-            },
-            {
-                "InstanceId": "cdwch-1vud9x9x",
-                "UserName": "willltgu",
-                "Describe": "",
-                "Type": "RBAC",
-                "Cluster": ""
-            },
-            {
-                "InstanceId": "cdwch-1vud9x9x",
-                "UserName": "willltguo",
-                "Describe": "",
-                "Type": "RBAC",
-                "Cluster": ""
-            },
-            {
-                "InstanceId": "cdwch-1vud9x9x",
-                "UserName": "default",
-                "Describe": "xml 用户，只能查询不能做任何修改",
-                "Type": "XML",
-                "Cluster": ""
-            }
-        ],
-        "RequestId": "xx",
-        "ErrMsg": "xx"
+        "ReturnData": "abc",
+        "RequestId": "abc"
     }
 }
 ```
