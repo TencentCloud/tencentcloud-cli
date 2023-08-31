@@ -336,6 +336,13 @@
       "output": "CreateNetworkAclResponse",
       "status": "online"
     },
+    "CreateNetworkAclEntries": {
+      "document": "本接口（CreateNetworkAclEntries）用于增量添加网络ACL三元组的入站规则和出站规则。",
+      "input": "CreateNetworkAclEntriesRequest",
+      "name": "增量添加网络ACL三元组规则接口",
+      "output": "CreateNetworkAclEntriesResponse",
+      "status": "online"
+    },
     "CreateNetworkAclQuintupleEntries": {
       "document": "本接口（CreateNetworkAclQuintupleEntries）用于增量网络ACL五元组的入站规则和出站规则。",
       "input": "CreateNetworkAclQuintupleEntriesRequest",
@@ -621,6 +628,13 @@
       "input": "DeleteNetworkAclRequest",
       "name": "删除网络ACL",
       "output": "DeleteNetworkAclResponse",
+      "status": "online"
+    },
+    "DeleteNetworkAclEntries": {
+      "document": "本接口（DeleteNetworkAclEntries）用于删除三元组网络ACL的入站规则和出站规则。在NetworkAclEntrySet参数中：\n* 删除IPv4规则，需要传入NetworkAclIpv4EntryId。\n* 删除IPv6规则，需要传入NetworkAclIpv6EntryId。",
+      "input": "DeleteNetworkAclEntriesRequest",
+      "name": "删除ACL三元组单条规则",
+      "output": "DeleteNetworkAclEntriesResponse",
       "status": "online"
     },
     "DeleteNetworkAclQuintupleEntries": {
@@ -6810,6 +6824,42 @@
       ],
       "type": "object"
     },
+    "CreateNetworkAclEntriesRequest": {
+      "document": "CreateNetworkAclEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络三元组ACL规则集。",
+          "example": "无",
+          "member": "NetworkAclEntrySet",
+          "name": "NetworkAclEntrySet",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateNetworkAclEntriesResponse": {
+      "document": "CreateNetworkAclEntries返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateNetworkAclQuintupleEntriesRequest": {
       "document": "CreateNetworkAclQuintupleEntries请求参数结构体",
       "members": [
@@ -9521,6 +9571,42 @@
     },
     "DeleteNetDetectResponse": {
       "document": "DeleteNetDetect返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkAclEntriesRequest": {
+      "document": "DeleteNetworkAclEntries请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "三元组网络ACL实例ID。例如：acl-12345678。",
+          "example": "acl-12345678",
+          "member": "string",
+          "name": "NetworkAclId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "三元组网络ACL规则集。",
+          "example": "无",
+          "member": "NetworkAclEntrySet",
+          "name": "NetworkAclEntrySet",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteNetworkAclEntriesResponse": {
+      "document": "DeleteNetworkAclEntries返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

@@ -468,6 +468,14 @@
         "title": "创建网络ACL"
       }
     ],
+    "CreateNetworkAclEntries": [
+      {
+        "document": "增量增加三元组ACL规则。",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-12345678\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Port\": \"80\",\n                \"CidrBlock\": \"192.168.0.0/24\",\n                \"Action\": \"Accept\",\n                \"Description\": \"TEST\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"Protocol\": \"TCP\",\n                \"Port\": \"80\",\n                \"CidrBlock\": \"192.168.0.0/24\",\n                \"Action\": \"Accept\",\n                \"Description\": \"TEST\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
+        "title": "增量增加三元组ACL规则。"
+      }
+    ],
     "CreateNetworkAclQuintupleEntries": [
       {
         "document": "",
@@ -806,6 +814,14 @@
         "input": "https://vpc.tencentcloudapi.com/?Action=DeleteNetworkAcl\n&NetworkAclId=acl-12345678\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f23d1450-ed00-4442-98d4-be409e625e6c\"\n    }\n}",
         "title": "删除网络ACL"
+      }
+    ],
+    "DeleteNetworkAclEntries": [
+      {
+        "document": "删除单条IPv4规则",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNetworkAclEntries\n<公共请求参数>\n\n{\n    \"NetworkAclId\": \"acl-n8w3ppae\",\n    \"NetworkAclEntrySet\": {\n        \"Ingress\": [\n            {\n                \"NetworkAclIpv4EntryId\": \"acli43-kl90bzxv\"\n            }\n        ],\n        \"Egress\": [\n            {\n                \"NetworkAclIpv4EntryId\": \"acli43-25s6gffh\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fed474df-e6c9-434e-8d07-0ce7e11e7315\"\n    }\n}",
+        "title": "删除单条IPv4规则"
       }
     ],
     "DeleteNetworkAclQuintupleEntries": [

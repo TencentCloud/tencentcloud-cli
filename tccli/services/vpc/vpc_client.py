@@ -1421,7 +1421,7 @@ def doEnableSnapshotPolicies(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeNetDetects(args, parsed_globals):
+def doDeleteNetworkAclEntries(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1450,11 +1450,11 @@ def doDescribeNetDetects(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeNetDetectsRequest()
+    model = models.DeleteNetworkAclEntriesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeNetDetects(model)
+        rsp = client.DeleteNetworkAclEntries(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2357,7 +2357,7 @@ def doDescribeSecurityGroupPolicies(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifyDirectConnectGatewayAttribute(args, parsed_globals):
+def doUnlockCcns(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -2386,11 +2386,11 @@ def doModifyDirectConnectGatewayAttribute(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifyDirectConnectGatewayAttributeRequest()
+    model = models.UnlockCcnsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifyDirectConnectGatewayAttribute(model)
+        rsp = client.UnlockCcns(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -4801,6 +4801,58 @@ def doDescribeIp6Translators(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
+def doCreateNetworkInterface(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateNetworkInterfaceRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateNetworkInterface(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
 def doDescribeDirectConnectGateways(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -6361,7 +6413,7 @@ def doDescribeDirectConnectGatewayCcnRoutes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateNetworkInterface(args, parsed_globals):
+def doDescribeNetDetects(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -6390,11 +6442,11 @@ def doCreateNetworkInterface(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateNetworkInterfaceRequest()
+    model = models.DescribeNetDetectsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.CreateNetworkInterface(model)
+        rsp = client.DescribeNetDetects(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6447,6 +6499,58 @@ def doDeleteBandwidthPackage(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.DeleteBandwidthPackage(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doCreateNetworkAclEntries(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.CreateNetworkAclEntriesRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.CreateNetworkAclEntries(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -6759,6 +6863,58 @@ def doHaVipDisassociateAddressIp(args, parsed_globals):
     start_time = time.time()
     while True:
         rsp = client.HaVipDisassociateAddressIp(model)
+        result = rsp.to_json_string()
+        try:
+            json_obj = json.loads(result)
+        except TypeError as e:
+            json_obj = json.loads(result.decode('utf-8'))  # python3.3
+        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
+            break
+        cur_time = time.time()
+        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
+            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
+            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
+            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
+        else:
+            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
+        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
+    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
+
+
+def doDescribeHaVips(args, parsed_globals):
+    g_param = parse_global_arg(parsed_globals)
+
+    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
+        cred = credential.CVMRoleCredential()
+    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
+        cred = credential.STSAssumeRoleCredential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
+            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
+        )
+    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
+        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
+    else:
+        cred = credential.Credential(
+            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
+        )
+    http_profile = HttpProfile(
+        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
+        reqMethod="POST",
+        endpoint=g_param[OptionsDefine.Endpoint],
+        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
+    )
+    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
+    if g_param[OptionsDefine.Language]:
+        profile.language = g_param[OptionsDefine.Language]
+    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
+    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
+    client._sdkVersion += ("_CLI_" + __version__)
+    models = MODELS_MAP[g_param[OptionsDefine.Version]]
+    model = models.DescribeHaVipsRequest()
+    model.from_json_string(json.dumps(args))
+    start_time = time.time()
+    while True:
+        rsp = client.DescribeHaVips(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9585,7 +9741,7 @@ def doCreateServiceTemplate(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteVpc(args, parsed_globals):
+def doCreateSnapshotPolicies(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9614,11 +9770,11 @@ def doDeleteVpc(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteVpcRequest()
+    model = models.CreateSnapshotPoliciesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteVpc(model)
+        rsp = client.CreateSnapshotPolicies(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9689,7 +9845,7 @@ def doDeleteRoutes(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySecurityGroupPolicies(args, parsed_globals):
+def doModifyDirectConnectGatewayAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9718,11 +9874,11 @@ def doModifySecurityGroupPolicies(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySecurityGroupPoliciesRequest()
+    model = models.ModifyDirectConnectGatewayAttributeRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifySecurityGroupPolicies(model)
+        rsp = client.ModifyDirectConnectGatewayAttribute(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -9741,7 +9897,7 @@ def doModifySecurityGroupPolicies(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDisableFlowLogs(args, parsed_globals):
+def doModifySubnetAttribute(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -9770,11 +9926,11 @@ def doDisableFlowLogs(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DisableFlowLogsRequest()
+    model = models.ModifySubnetAttributeRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DisableFlowLogs(model)
+        rsp = client.ModifySubnetAttribute(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10105,7 +10261,7 @@ def doReleaseIp6AddressesBandwidth(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDescribeHaVips(args, parsed_globals):
+def doModifySecurityGroupPolicies(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -10134,11 +10290,11 @@ def doDescribeHaVips(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DescribeHaVipsRequest()
+    model = models.ModifySecurityGroupPoliciesRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DescribeHaVips(model)
+        rsp = client.ModifySecurityGroupPolicies(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -10573,7 +10729,7 @@ def doDescribeVpnGateways(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doModifySubnetAttribute(args, parsed_globals):
+def doDisableFlowLogs(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -10602,11 +10758,11 @@ def doModifySubnetAttribute(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.ModifySubnetAttributeRequest()
+    model = models.DisableFlowLogsRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.ModifySubnetAttribute(model)
+        rsp = client.DisableFlowLogs(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -12185,58 +12341,6 @@ def doDeleteHaVip(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doCreateSnapshotPolicies(args, parsed_globals):
-    g_param = parse_global_arg(parsed_globals)
-
-    if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
-        cred = credential.CVMRoleCredential()
-    elif g_param[OptionsDefine.RoleArn.replace('-', '_')] and g_param[OptionsDefine.RoleSessionName.replace('-', '_')]:
-        cred = credential.STSAssumeRoleCredential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.RoleArn.replace('-', '_')],
-            g_param[OptionsDefine.RoleSessionName.replace('-', '_')]
-        )
-    elif os.getenv(OptionsDefine.ENV_TKE_REGION)             and os.getenv(OptionsDefine.ENV_TKE_PROVIDER_ID)             and os.getenv(OptionsDefine.ENV_TKE_WEB_IDENTITY_TOKEN_FILE)             and os.getenv(OptionsDefine.ENV_TKE_ROLE_ARN):
-        cred = credential.DefaultTkeOIDCRoleArnProvider().get_credentials()
-    else:
-        cred = credential.Credential(
-            g_param[OptionsDefine.SecretId], g_param[OptionsDefine.SecretKey], g_param[OptionsDefine.Token]
-        )
-    http_profile = HttpProfile(
-        reqTimeout=60 if g_param[OptionsDefine.Timeout] is None else int(g_param[OptionsDefine.Timeout]),
-        reqMethod="POST",
-        endpoint=g_param[OptionsDefine.Endpoint],
-        proxy=g_param[OptionsDefine.HttpsProxy.replace('-', '_')]
-    )
-    profile = ClientProfile(httpProfile=http_profile, signMethod="HmacSHA256")
-    if g_param[OptionsDefine.Language]:
-        profile.language = g_param[OptionsDefine.Language]
-    mod = CLIENT_MAP[g_param[OptionsDefine.Version]]
-    client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
-    client._sdkVersion += ("_CLI_" + __version__)
-    models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.CreateSnapshotPoliciesRequest()
-    model.from_json_string(json.dumps(args))
-    start_time = time.time()
-    while True:
-        rsp = client.CreateSnapshotPolicies(model)
-        result = rsp.to_json_string()
-        try:
-            json_obj = json.loads(result)
-        except TypeError as e:
-            json_obj = json.loads(result.decode('utf-8'))  # python3.3
-        if not g_param[OptionsDefine.Waiter] or search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj) == g_param['OptionsDefine.WaiterInfo']['to']:
-            break
-        cur_time = time.time()
-        if cur_time - start_time >= g_param['OptionsDefine.WaiterInfo']['timeout']:
-            raise ClientError('Request timeout, wait `%s` to `%s` timeout, last request is %s' %
-            (g_param['OptionsDefine.WaiterInfo']['expr'], g_param['OptionsDefine.WaiterInfo']['to'],
-            search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj)))
-        else:
-            print('Inquiry result is %s.' % search(g_param['OptionsDefine.WaiterInfo']['expr'], json_obj))
-        time.sleep(g_param['OptionsDefine.WaiterInfo']['interval'])
-    FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
-
-
 def doDescribeProductQuota(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
@@ -12653,7 +12757,7 @@ def doResetVpnGatewayInternetMaxBandwidth(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doUnlockCcns(args, parsed_globals):
+def doDeleteVpc(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -12682,11 +12786,11 @@ def doUnlockCcns(args, parsed_globals):
     client = mod.VpcClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.UnlockCcnsRequest()
+    model = models.DeleteVpcRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.UnlockCcns(model)
+        rsp = client.DeleteVpc(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -16331,7 +16435,7 @@ ACTION_MAP = {
     "DeleteVpnGatewaySslServer": doDeleteVpnGatewaySslServer,
     "DescribeNetworkInterfaceLimit": doDescribeNetworkInterfaceLimit,
     "EnableSnapshotPolicies": doEnableSnapshotPolicies,
-    "DescribeNetDetects": doDescribeNetDetects,
+    "DeleteNetworkAclEntries": doDeleteNetworkAclEntries,
     "AcceptVpcPeeringConnection": doAcceptVpcPeeringConnection,
     "ModifyCcnRegionBandwidthLimitsType": doModifyCcnRegionBandwidthLimitsType,
     "DescribeGatewayFlowMonitorDetail": doDescribeGatewayFlowMonitorDetail,
@@ -16349,7 +16453,7 @@ ACTION_MAP = {
     "DeleteLocalGateway": doDeleteLocalGateway,
     "CreateDirectConnectGateway": doCreateDirectConnectGateway,
     "DescribeSecurityGroupPolicies": doDescribeSecurityGroupPolicies,
-    "ModifyDirectConnectGatewayAttribute": doModifyDirectConnectGatewayAttribute,
+    "UnlockCcns": doUnlockCcns,
     "ModifyNatGatewaySourceIpTranslationNatRule": doModifyNatGatewaySourceIpTranslationNatRule,
     "AssociateNatGatewayAddress": doAssociateNatGatewayAddress,
     "ModifyVpcEndPointAttribute": doModifyVpcEndPointAttribute,
@@ -16396,6 +16500,7 @@ ACTION_MAP = {
     "DescribeLocalGateway": doDescribeLocalGateway,
     "DisableVpnGatewaySslClientCert": doDisableVpnGatewaySslClientCert,
     "DescribeIp6Translators": doDescribeIp6Translators,
+    "CreateNetworkInterface": doCreateNetworkInterface,
     "DescribeDirectConnectGateways": doDescribeDirectConnectGateways,
     "ModifyServiceTemplateGroupAttribute": doModifyServiceTemplateGroupAttribute,
     "CreateVpc": doCreateVpc,
@@ -16426,14 +16531,16 @@ ACTION_MAP = {
     "DeleteDirectConnectGateway": doDeleteDirectConnectGateway,
     "CreateVpnGatewayRoutes": doCreateVpnGatewayRoutes,
     "DescribeDirectConnectGatewayCcnRoutes": doDescribeDirectConnectGatewayCcnRoutes,
-    "CreateNetworkInterface": doCreateNetworkInterface,
+    "DescribeNetDetects": doDescribeNetDetects,
     "DeleteBandwidthPackage": doDeleteBandwidthPackage,
+    "CreateNetworkAclEntries": doCreateNetworkAclEntries,
     "DescribeNetDetectStates": doDescribeNetDetectStates,
     "DescribeCcns": doDescribeCcns,
     "DeleteIp6Translators": doDeleteIp6Translators,
     "DeleteCcn": doDeleteCcn,
     "ModifyNetworkAclEntries": doModifyNetworkAclEntries,
     "HaVipDisassociateAddressIp": doHaVipDisassociateAddressIp,
+    "DescribeHaVips": doDescribeHaVips,
     "ModifyVpnGatewayCcnRoutes": doModifyVpnGatewayCcnRoutes,
     "DetachNetworkInterface": doDetachNetworkInterface,
     "RejectAttachCcnInstances": doRejectAttachCcnInstances,
@@ -16488,17 +16595,17 @@ ACTION_MAP = {
     "DeleteVpnGateway": doDeleteVpnGateway,
     "DescribeTenantCcns": doDescribeTenantCcns,
     "CreateServiceTemplate": doCreateServiceTemplate,
-    "DeleteVpc": doDeleteVpc,
+    "CreateSnapshotPolicies": doCreateSnapshotPolicies,
     "DeleteRoutes": doDeleteRoutes,
-    "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
-    "DisableFlowLogs": doDisableFlowLogs,
+    "ModifyDirectConnectGatewayAttribute": doModifyDirectConnectGatewayAttribute,
+    "ModifySubnetAttribute": doModifySubnetAttribute,
     "DescribeSgSnapshotFileContent": doDescribeSgSnapshotFileContent,
     "DescribeNetworkInterfaces": doDescribeNetworkInterfaces,
     "InquiryPriceRenewVpnGateway": doInquiryPriceRenewVpnGateway,
     "DisableCcnRoutes": doDisableCcnRoutes,
     "DescribeVpcEndPointServiceWhiteList": doDescribeVpcEndPointServiceWhiteList,
     "ReleaseIp6AddressesBandwidth": doReleaseIp6AddressesBandwidth,
-    "DescribeHaVips": doDescribeHaVips,
+    "ModifySecurityGroupPolicies": doModifySecurityGroupPolicies,
     "ResetVpnConnection": doResetVpnConnection,
     "CreateCustomerGateway": doCreateCustomerGateway,
     "DescribeCrossBorderCompliance": doDescribeCrossBorderCompliance,
@@ -16507,7 +16614,7 @@ ACTION_MAP = {
     "AuditCrossBorderCompliance": doAuditCrossBorderCompliance,
     "ModifyNetworkInterfaceAttribute": doModifyNetworkInterfaceAttribute,
     "DescribeVpnGateways": doDescribeVpnGateways,
-    "ModifySubnetAttribute": doModifySubnetAttribute,
+    "DisableFlowLogs": doDisableFlowLogs,
     "DownloadCustomerGatewayConfiguration": doDownloadCustomerGatewayConfiguration,
     "DescribeVpcInstances": doDescribeVpcInstances,
     "AssociateNetworkInterfaceSecurityGroups": doAssociateNetworkInterfaceSecurityGroups,
@@ -16538,7 +16645,6 @@ ACTION_MAP = {
     "ModifyCcnAttachedInstancesAttribute": doModifyCcnAttachedInstancesAttribute,
     "DownloadVpnGatewaySslClientCert": doDownloadVpnGatewaySslClientCert,
     "DeleteHaVip": doDeleteHaVip,
-    "CreateSnapshotPolicies": doCreateSnapshotPolicies,
     "DescribeProductQuota": doDescribeProductQuota,
     "DescribeVpcPeeringConnections": doDescribeVpcPeeringConnections,
     "InquiryPriceCreateVpnGateway": doInquiryPriceCreateVpnGateway,
@@ -16547,7 +16653,7 @@ ACTION_MAP = {
     "CreateVpnGatewaySslServer": doCreateVpnGatewaySslServer,
     "ModifyVpnGatewayAttribute": doModifyVpnGatewayAttribute,
     "ResetVpnGatewayInternetMaxBandwidth": doResetVpnGatewayInternetMaxBandwidth,
-    "UnlockCcns": doUnlockCcns,
+    "DeleteVpc": doDeleteVpc,
     "DescribeSubnets": doDescribeSubnets,
     "CreateCcn": doCreateCcn,
     "ModifyCustomerGatewayAttribute": doModifyCustomerGatewayAttribute,
