@@ -20,21 +20,22 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
-        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659",
         "TrainingModels": [
             {
-                "TrainingModelName": "test-model",
                 "TrainingModelId": "m-660879334503305216",
-                "CreateTime": "2022-11-17 20:09:16",
+                "TrainingModelName": "test-model",
                 "Tags": [
                     {
                         "TagKey": "test-key",
                         "TagValue": "test-value"
                     }
-                ]
+                ],
+                "CreateTime": "2022-11-17 20:09:16",
+                "TrainingModelVersions": []
             }
-        ]
+        ],
+        "TotalCount": 1,
+        "RequestId": "ced11c16-fd5a-4f12-8a0b-17c7f0b14659"
     }
 }
 ```

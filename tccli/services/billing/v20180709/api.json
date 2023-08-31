@@ -154,6 +154,13 @@
       "output": "DescribeGoodsVoucherListResponse",
       "status": "online"
     },
+    "DescribeMeasureResources": {
+      "document": "资源包详情查询接口",
+      "input": "DescribeMeasureResourcesRequest",
+      "name": "资源包详情查询接口",
+      "output": "DescribeMeasureResourcesResponse",
+      "status": "online"
+    },
     "DescribeTagList": {
       "document": "获取分账标签",
       "input": "DescribeTagListRequest",
@@ -5447,6 +5454,186 @@
       ],
       "type": "object"
     },
+    "DescribeMeasurePackageListData": {
+      "document": "DescribeMeasureResource正常出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户购买的套餐包列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MeasureAccountDosages",
+          "name": "Accounts",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余总量",
+          "example": "60000",
+          "member": "uint64",
+          "name": "TotalDosage",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMeasureResourcesRequest": {
+      "document": "DescribeMeasureResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品一层",
+          "example": "p_ccc",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户状态：0-有效 1-已退款 2-已过期 3-已用完， 非必须",
+          "example": "[]",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "二层列表",
+          "example": "[\"sp_rav_audio_video\"]",
+          "member": "string",
+          "name": "SubProductCodes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资源包ID",
+          "example": "[]",
+          "member": "string",
+          "name": "ResourceIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "使用类型：1-总量递减型 2-周期递减型 3-无限容量型",
+          "example": "1",
+          "member": "int64",
+          "name": "CapacityType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "生效日期起始查询时间，格式：\"yyyy-MM-dd HH:mm:ss\"",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageStartTimeRangeBegin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效日期截止查询时间， 生效日期的查询起始时间和截止时间必须同时存在",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageStartTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "失效日期起始查询时间",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageEndTimeRangeBegin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "失效日期截止查询时间, 失效日期的查询起始时间和截止时间必须同时存在",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageEndTimeRangeEnd",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：asc，desc，默认asc",
+          "example": "无",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段：“buyTime” ”startTime“ ”endTime“ ",
+          "example": "无",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureResourcesResponse": {
+      "document": "DescribeMeasureResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常返回值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMeasurePackageListData",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTagListRequest": {
       "document": "DescribeTagList请求参数结构体",
       "members": [
@@ -6362,6 +6549,352 @@
           "member": "string",
           "name": "Message",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MeasureAccountDosages": {
+      "document": "计量用量账户返回参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccountId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uin, 资源包所属用户",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Uin",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户appid",
+          "example": "1000",
+          "member": "uint64",
+          "name": "AppId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "DealName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "费用类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "FeeType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一层Code",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二层Code",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二层产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SubProductName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CapacitySize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CapacityUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅时长套餐包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包周期ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ResourceCycleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包来源类型 0：默认 1：业务存量包 2：灰度前的增量包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PkgSourceType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣开始时间戳",
+          "example": "1622044800000",
+          "member": "uint64",
+          "name": "DeductionStartTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣结束时间戳（和资源有效期的区别）",
+          "example": "1627055999000",
+          "member": "float",
+          "name": "DeductionEndTime",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量类型：1-总量递减型 2-周期递减型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "CapacityType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源包类型：1-单产品通用包、2-单产品专用包、3-多产品通用包、4-多产品专用包",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "Threshold",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账户状态：0-有效 1-已退款 2-已过期 3-已用完",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID, 示例：ri-pdxhd7d8",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户类型： 1-RI / 2-资源包",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容量剩余值",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CapacityRemain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包ID, 用于在资源包系统检索资源包详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PackageCode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前周期余量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CycleCapacityRemain",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前周期总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "uint64",
+          "name": "CycleCapacitySize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1622044800000",
+          "member": "uint64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "OriginUnit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总周期数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "TotalCycles",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余周期数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RemainCycles",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单周期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CycleStartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单周期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CycleEndTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou-2\"",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }

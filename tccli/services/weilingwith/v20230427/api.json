@@ -17,12 +17,115 @@
   "objects": {
     "DescribeResourcesRequest": {
       "document": "DescribeResources请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前页码，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称或资源Id，搜索关键字\t",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-05-16 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2023-05-16 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源状态（ALL全部，WAIT_OPEN待开通，IN_USE使用中，EXPIRED已到期，CLOSED已关闭）\t多种状态以,分隔",
+          "example": "ALL",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间Id",
+          "example": "2023051612345678",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型（包年包月 or 一次性购买）",
+          "example": "包年包月",
+          "member": "string",
+          "name": "ResourceType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeResourcesResponse": {
       "document": "DescribeResources返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "资源列表",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "ResourceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1000",
+          "member": "int64",
+          "name": "TotalRow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -31,6 +134,122 @@
         }
       ],
       "type": "object"
+    },
+    "ResourceInfo": {
+      "document": "资源信息结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "微瓴同业-新购",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nCovUW2bua9HzWLV",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "包年包月",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-16 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源状态（待开通WAIT_OPEN，已使用IN_USE，已到期EXPIRED，已关闭CLOSED）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IN_USE",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20230519199000015275111",
+          "member": "string",
+          "name": "BigDealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目空间Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023051612345678",
+          "member": "string",
+          "name": "ProjectId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开通时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.5年",
+          "member": "string",
+          "name": "TimeSpan",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标识，true是，false否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本信息，base64编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eyJwdXJjaGFzZVZlcnNpb24iOiIzIiwiaXNWaWRlb0Nsb3VkIjp0cnVlLCJ2aWRlb0Nvc1N0b3JhZ2VUaW1lIjoxMDAsInZpZGVvQ29zUm9hZCI6Mn0=",
+          "member": "string",
+          "name": "VersionInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-16 12:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

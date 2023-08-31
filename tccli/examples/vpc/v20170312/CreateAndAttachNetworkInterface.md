@@ -34,6 +34,8 @@ Output:
             "CdcId": "",
             "EniType": 1,
             "AttachType": 1,
+            "QosLevel": "DEFAULT",
+            "ResourceId": "",
             "SubNetworkInterfaces": [],
             "PrivateIpAddressSet": [
                 {
@@ -43,7 +45,8 @@ Output:
                     "PublicIpAddress": "",
                     "Description": "",
                     "IsWanIpBlocked": false,
-                    "State": "PENDING"
+                    "State": "PENDING",
+                    "QosLevel": "DEFAULT"
                 }
             ],
             "Attachment": {

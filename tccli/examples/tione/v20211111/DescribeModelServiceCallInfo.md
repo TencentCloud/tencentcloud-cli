@@ -14,25 +14,30 @@ Output:
 {
     "Response": {
         "ServiceCallInfo": {
-            "ServiceGroupId": "ms-p8w5zvh7",
-            "InnerHttpAddr": "http://service-cmpdh0cg-1308945662-in.gz.apigw.tencentcs.com:8001/tione",
-            "InnerHttpsAddr": "https://service-cmpdh0cg-1308945662-in.gz.apigw.tencentcs.com:9001/tione",
-            "OuterHttpAddr": "http://service-cmpdh0cg-1308945662.gz.apigw.tencentcs.com:80/tione",
-            "OuterHttpsAddr": "https://service-cmpdh0cg-1308945662.gz.apigw.tencentcs.com:443/tione",
-            "AppKey": "",
-            "AppSecret": ""
+            "ServiceGroupId": "abc",
+            "InnerHttpAddr": "abc",
+            "InnerHttpsAddr": "abc",
+            "OuterHttpAddr": "abc",
+            "OuterHttpsAddr": "abc",
+            "AppKey": "abc",
+            "AppSecret": "abc"
         },
         "InferGatewayCallInfo": {
-            "VpcHttpAddr": "xx",
-            "VpcHttpsAddr": "xx",
-            "VpcGrpcTlsAddr": "xx",
-            "VpcId": "xx",
-            "SubnetId": "xx"
+            "VpcHttpAddr": "abc",
+            "VpcHttpsAddr": "abc",
+            "VpcGrpcTlsAddr": "abc",
+            "VpcId": "abc",
+            "SubnetId": "abc"
         },
         "DefaultNginxGatewayCallInfo": {
-            "Host": "xx"
+            "Host": "abc"
         },
-        "RequestId": "8db93f56-6061-44ae-9e69-41ec47577db4"
+        "TJCallInfo": {
+            "HttpAddr": "abc",
+            "Token": "abc",
+            "CallExample": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

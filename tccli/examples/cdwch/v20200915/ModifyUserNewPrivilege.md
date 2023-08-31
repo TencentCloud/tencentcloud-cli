@@ -1,4 +1,4 @@
-**Example 1: 新增、修改ck账号权限（新版）**
+**Example 1: 新增、修改集群账号权限（新版）**
 
 
 
@@ -11,7 +11,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "xadasdfxasqs"
     }
 }
 ```

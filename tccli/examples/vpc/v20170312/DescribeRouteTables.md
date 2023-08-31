@@ -30,45 +30,18 @@ Output:
                 "AssociationSet": [],
                 "RouteSet": [
                     {
+                        "RouteTableId": "rtb-l2h8d7c2",
                         "RouteId": 0,
                         "RouteItemId": "rti6-12345678",
                         "DestinationCidrBlock": "",
                         "DestinationIpv6CidrBlock": "2402:4e00:1000:810b::/64",
                         "GatewayType": "CCN",
                         "GatewayId": "ccn-12345678",
-                        "RouteDescription": ""
-                    },
-                    {
-                        "RouteId": 14915,
-                        "RouteItemId": "rti-12345678",
-                        "DestinationCidrBlock": "169.254.64.0/23",
-                        "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.0.25",
-                        "RouteDescription": ""
-                    },
-                    {
-                        "RouteId": 14916,
-                        "RouteItemId": "rti-22345678",
-                        "DestinationCidrBlock": "10.254.64.0/24",
-                        "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.0.26",
-                        "RouteDescription": ""
-                    },
-                    {
-                        "RouteId": 14917,
-                        "RouteItemId": "rti-32345678",
-                        "DestinationCidrBlock": "10.254.100.0/24",
-                        "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.0.26",
-                        "RouteDescription": "whoIam"
-                    },
-                    {
-                        "RouteId": 16642,
-                        "RouteItemId": "rti-42345678",
-                        "DestinationCidrBlock": "10.200.0.0/18",
-                        "GatewayType": "PEERCONNECTION",
-                        "GatewayId": "pcx-4n2m594s",
-                        "RouteDescription": "bb"
+                        "RouteDescription": "",
+                        "CreatedTime": "2017-06-30 19:52:03",
+                        "RouteType": "USER",
+                        "Enabled": true,
+                        "PublishedToVbc": false
                     }
                 ],
                 "Main": false,
@@ -87,7 +60,7 @@ Output:
                 "CreatedTime": "2017-06-30 19:52:03"
             }
         ],
-        "TotalCount": 16,
+        "TotalCount": 1,
         "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
     }
 }
@@ -119,36 +92,18 @@ Output:
                 "AssociationSet": [],
                 "RouteSet": [
                     {
+                        "RouteTableId": "rtb-l2h8d7c2",
                         "RouteId": 14915,
                         "RouteItemId": "rti-12345678",
                         "DestinationCidrBlock": "169.254.64.0/23",
+                        "DestinationIpv6CidrBlock": "",
                         "GatewayType": "NORMAL_CVM",
                         "GatewayId": "172.16.0.25",
-                        "RouteDescription": ""
-                    },
-                    {
-                        "RouteId": 14916,
-                        "RouteItemId": "rti-22345678",
-                        "DestinationCidrBlock": "10.254.64.0/24",
-                        "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.0.26",
-                        "RouteDescription": ""
-                    },
-                    {
-                        "RouteId": 14917,
-                        "RouteItemId": "rti-32345678",
-                        "DestinationCidrBlock": "10.254.100.0/24",
-                        "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.0.26",
-                        "RouteDescription": "whoIam"
-                    },
-                    {
-                        "RouteId": 16642,
-                        "RouteItemId": "rti-42345678",
-                        "DestinationCidrBlock": "10.200.0.0/18",
-                        "GatewayType": "PEERCONNECTION",
-                        "GatewayId": "pcx-4n2m594s",
-                        "RouteDescription": "bb"
+                        "RouteDescription": "",
+                        "CreatedTime": "2017-06-30 19:52:03",
+                        "RouteType": "USER",
+                        "Enabled": true,
+                        "PublishedToVbc": false
                     }
                 ],
                 "TagSet": [
@@ -167,7 +122,7 @@ Output:
                 "CreatedTime": "2017-06-30 19:52:03"
             }
         ],
-        "TotalCount": 16,
+        "TotalCount": 1,
         "RequestId": "74883e1b-5901-46de-ae1e-d6e2cf591c5b"
     }
 }

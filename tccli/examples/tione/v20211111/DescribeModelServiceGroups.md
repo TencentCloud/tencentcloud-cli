@@ -16,102 +16,162 @@ Output:
     "Response": {
         "ServiceGroups": [
             {
-                "ServiceGroupId": "ms-9mm6npf7",
-                "ServiceGroupName": "hgy-infer-preonline-bj-1",
-                "CreatedBy": "xxxxxxxxx",
-                "CreateTime": "2022-01-17T05:44:02Z",
-                "UpdateTime": "2022-01-17T05:44:24Z",
-                "Uin": "xxxxxxx",
+                "ServiceGroupId": "ms-vzd8qdk5",
+                "ServiceGroupName": "llm_test",
+                "CreatedBy": "100032054859",
+                "CreateTime": "2023-08-05T05:46:58Z",
+                "UpdateTime": "2023-08-08T14:27:02Z",
+                "Uin": "100005348929",
                 "ServiceCount": 1,
-                "RunningServiceCount": 1,
+                "RunningServiceCount": 0,
                 "Services": [
                     {
-                        "ServiceGroupId": "ms-9mm6npf7",
-                        "ServiceId": "ms-9mm6npf7-1",
-                        "ServiceGroupName": "hgy-infer-preonline-bj-1",
+                        "ServiceGroupId": "ms-vzd8qdk5",
+                        "ServiceId": "ms-vzd8qdk5-1",
+                        "ServiceGroupName": "llm_test",
                         "ServiceDescription": "",
                         "ServiceInfo": {
-                            "Replicas": 1,
+                            "Replicas": 0,
                             "ImageInfo": {
-                                "ImageType": "",
-                                "ImageUrl": "ccr.ccs.tencentyun.com/xxx/xxxxxx",
+                                "ImageType": "PRE_SET",
+                                "ImageUrl": "tione.tencentcloudcr.com/qcloud-ti-platform/chatglm-demo:latest",
                                 "RegistryRegion": "",
                                 "RegistryId": ""
                             },
                             "Env": [],
                             "Resources": {
-                                "Cpu": 2000,
-                                "Memory": 4096,
-                                "Gpu": 0,
-                                "GpuType": ""
+                                "Cpu": 12000,
+                                "Memory": 45056,
+                                "Gpu": 100,
+                                "RealGpu": 100,
+                                "GpuType": "A10",
+                                "RealGpuDetailSet": [
+                                    {
+                                        "Name": "A10",
+                                        "Value": 100
+                                    }
+                                ]
                             },
-                            "InstanceType": "TI.S.MEDIUM.POST",
-                            "ModelInfo": null,
+                            "InstanceType": "TI.GNV4.3XLARGE44.POST",
+                            "ModelInfo": {
+                                "ModelId": "m-838176671237008128",
+                                "ModelName": "chatglm-6b-tiacc-ft",
+                                "ModelVersionId": "mv-v1-838176671237008129",
+                                "ModelVersion": "v1",
+                                "ModelSource": "COS",
+                                "ModelType": "NORMAL",
+                                "CosPathInfo": {
+                                    "Bucket": "danerli-guangzhou-1256580188",
+                                    "Region": "ap-guangzhou",
+                                    "Paths": [
+                                        "output/ai_market_algo_test_thu_tiacc_ft/train-793371624977165056/output/adgen-chatglm-6b-ft-1e-8/checkpoint-500/model_service.py"
+                                    ]
+                                },
+                                "AlgorithmFramework": "PYTORCH",
+                                "ModelFormat": "PYTORCH"
+                            },
+                            "InferCodeInfo": {
+                                "CosPathInfo": {
+                                    "Bucket": "danerli-guangzhou-1256580188",
+                                    "Region": "ap-guangzhou",
+                                    "Paths": [
+                                        "output/ai_market_algo_test_thu_tiacc_ft/train-793371624977165056/output/adgen-chatglm-6b-ft-1e-8/checkpoint-500/model_service.py"
+                                    ]
+                                }
+                            },
+                            "VolumeMount": {
+                                "VolumeSourceType": "CFS",
+                                "CFSConfig": {
+                                    "Id": "cfs-mpjk7vit",
+                                    "Path": "/",
+                                    "MountType": "",
+                                    "Protocol": ""
+                                }
+                            },
                             "LogEnable": false,
                             "LogConfig": null,
                             "AuthorizationEnable": false,
                             "ScaleMode": "",
                             "HorizontalPodAutoscaler": null,
+                            "CronScaleJobs": [],
+                            "ScaleStrategy": "",
+                            "ScheduledAction": null,
                             "Status": {
-                                "Replicas": 1,
-                                "UpdatedReplicas": 1,
-                                "ReadyReplicas": 1,
-                                "AvailableReplicas": 1,
+                                "Replicas": 0,
+                                "UpdatedReplicas": 0,
+                                "ReadyReplicas": 0,
+                                "AvailableReplicas": 0,
                                 "UnavailableReplicas": 0,
-                                "Status": "Normal",
+                                "Status": "Stopped",
+                                "Reason": "",
                                 "Conditions": [
                                     {
                                         "Message": "Deployment has minimum availability.",
                                         "Reason": "MinimumReplicasAvailable",
                                         "Status": "True",
                                         "Type": "Available",
-                                        "LastTransitionTime": "2022-01-17T13:47:10+08:00",
-                                        "LastUpdateTime": "2022-01-17T13:47:10+08:00"
+                                        "LastTransitionTime": "2023-08-08T22:27:01+08:00",
+                                        "LastUpdateTime": "2023-08-08T22:27:01+08:00"
                                     },
                                     {
-                                        "Message": "ReplicaSet \"ms-9mm6npf7-1-548c6b4fdc\" has successfully progressed.",
+                                        "Message": "ReplicaSet \"ms-vzd8qdk5-1-7456b4cc97\" has successfully progressed.",
                                         "Reason": "NewReplicaSetAvailable",
                                         "Status": "True",
                                         "Type": "Progressing",
-                                        "LastTransitionTime": "2022-01-17T13:44:12+08:00",
-                                        "LastUpdateTime": "2022-01-17T13:47:10+08:00"
+                                        "LastTransitionTime": "2023-08-08T22:27:02+08:00",
+                                        "LastUpdateTime": "2023-08-08T22:27:02+08:00"
                                     }
                                 ]
                             },
                             "Weight": 0,
                             "PodList": [],
+                            "Pods": null,
+                            "PodInfos": [],
                             "ResourceTotal": null,
-                            "OldReplicas": 1
+                            "OldReplicas": 1,
+                            "HybridBillingPrepaidReplicas": 0,
+                            "OldHybridBillingPrepaidReplicas": 0,
+                            "ServiceLimit": null,
+                            "ModelHotUpdateEnable": false,
+                            "ModelTurboEnable": false
                         },
                         "ClusterId": "",
-                        "Region": "ap-beijing",
-                        "Namespace": "infer-xxxxxx",
+                        "Region": "ap-guangzhou",
+                        "Namespace": "infer-100005348929",
                         "ChargeType": "POSTPAID_BY_HOUR",
                         "ResourceGroupId": "",
                         "ResourceGroupName": "",
                         "Tags": [],
-                        "CreatedBy": "xxxxxxxxx",
-                        "CreateTime": "2022-01-17T05:44:02Z",
-                        "UpdateTime": "2022-01-17T05:44:24Z",
-                        "Uin": "xxxxxxx",
+                        "IngressName": "user-ingress-1",
+                        "CreatedBy": "100032054859",
+                        "CreateTime": "2023-08-05T05:46:58Z",
+                        "UpdateTime": "2023-08-08T14:27:02Z",
+                        "Uin": "100005348929",
                         "SubUin": "",
                         "AppId": 0,
                         "BusinessStatus": "CREATE_SUCCEED",
                         "CreateFailedReason": "CREATE_SUCCEED",
+                        "Status": "Stopped",
+                        "BillingInfo": "",
                         "Weight": 100,
+                        "CreateSource": "DEFAULT",
                         "Version": "1",
-                        "LatestVersion": ""
+                        "LatestVersion": "",
+                        "ServiceLimit": null,
+                        "ScheduledAction": null
                     }
                 ],
-                "Status": "Normal",
+                "Status": "Stopped",
                 "Tags": [],
                 "BusinessStatus": "",
                 "WeightUpdateStatus": "",
+                "CreateSource": "DEFAULT",
+                "BillingInfo": "",
                 "LatestVersion": ""
             }
         ],
         "TotalCount": 1,
-        "RequestId": "698d2c95-afd2-4371-a9ad-701f40e39654"
+        "RequestId": "e5daa146-abed-4d31-ab15-ac9e251fc13c"
     }
 }
 ```

@@ -16,6 +16,7 @@ Output:
         "TrainingModelVersions": [
             {
                 "ReasoningEnvironment": "tione.tencentcloudcr.com/qcloud-ti-platform/ti-cloud-infer-pytorch-gpu:py38-torch1.9.0-cu111-tiacc2.5.0-2.0.2",
+                "ReasoningEnvironmentId": "pytorch1.9.0-py38(gpu)",
                 "TrainingModelCosPath": {
                     "Paths": [
                         "test/model/"
@@ -47,6 +48,10 @@ Output:
                 "GPUType": "",
                 "TrainingModelFormat": "TORCH_SCRIPT",
                 "TrainingJobName": "",
+                "TrainingJobVersion": "",
+                "TrainingPreference": "",
+                "AutoMLTaskId": "",
+                "IsQAT": false,
                 "TrainingModelVersionId": "mv-v1-625097625049989888",
                 "TrainingModelIndex": "",
                 "TrainingModelId": "m-608587242317024640",
@@ -55,7 +60,8 @@ Output:
                     "ImageUrl": "",
                     "RegistryRegion": "",
                     "RegistryId": "",
-                    "ImageType": ""
+                    "ImageType": "",
+                    "AllowSaveAllContent": false
                 },
                 "CreateTime": "2022-09-29T03:17:24Z"
             }
