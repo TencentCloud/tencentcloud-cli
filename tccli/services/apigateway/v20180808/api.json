@@ -4187,7 +4187,7 @@
         },
         {
           "disabled": false,
-          "document": "vpc属性",
+          "document": "vpc属性，选择VPC后不可修改，为服务选择VPC后，可对接该VPC下的后端资源",
           "example": "vpc-quyenan",
           "member": "string",
           "name": "UniqVpcId",
@@ -4294,7 +4294,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "后端协议，取值范围：HTTP, HTTPS",
+          "document": "后端协议，取值范围：HTTP, HTTPS,gRPC，gRPCs",
           "example": "HTTP",
           "member": "string",
           "name": "Scheme",
@@ -4412,6 +4412,7 @@
           "example": "upstream-0c96l2bo",
           "member": "string",
           "name": "UpstreamId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7726,6 +7727,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "vpc属性，存量可能为空字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-syandask",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -10639,6 +10650,15 @@
           "name": "NetTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "vpc属性，选择VPC后不可修改。为服务选择VPC后，可对接该VPC下的后端资源",
+          "example": "vpc-adsada",
+          "member": "string",
+          "name": "UniqVpcId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

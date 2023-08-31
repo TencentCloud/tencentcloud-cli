@@ -3912,6 +3912,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3921,6 +3922,7 @@
           "example": "无",
           "member": "DescAcItem",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3930,6 +3932,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AllTotal",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -1756,7 +1756,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1766,7 +1766,7 @@
           "example": "无",
           "member": "string",
           "name": "ListenerName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1776,7 +1776,7 @@
           "example": "无",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1786,7 +1786,7 @@
           "example": "无",
           "member": "string",
           "name": "LoadBalancerName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1796,7 +1796,7 @@
           "example": "无",
           "member": "string",
           "name": "Protocol",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1806,7 +1806,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1816,7 +1816,7 @@
           "example": "无",
           "member": "string",
           "name": "Vip",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1826,7 +1826,7 @@
           "example": "无",
           "member": "int64",
           "name": "VPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1836,7 +1836,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1846,7 +1846,7 @@
           "example": "无",
           "member": "int64",
           "name": "NumericalVpcId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1856,7 +1856,7 @@
           "example": "无",
           "member": "string",
           "name": "LoadBalancerType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1866,7 +1866,17 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LoadBalancerDomain",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2856,6 +2866,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2865,6 +2876,7 @@
           "example": "无",
           "member": "ClbListenerListInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli bma CreateBPWhiteList --cli-unfold-argument ```
+tccli bma CreateBPWhiteList --cli-unfold-argument  \
+    --CompanyId 123 \
+    --WhiteListType 0 \
+    --WhiteLists xxx
+```
 
 Output: 
 ```

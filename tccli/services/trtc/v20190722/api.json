@@ -2485,7 +2485,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "",
+          "example": "1400000000",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -2493,8 +2493,8 @@
         },
         {
           "disabled": false,
-          "document": "房间号。",
-          "example": "",
+          "document": "字符串类型房间号。\n本接口仅支持解散字符串类型房间号，如需解散数字类型房间号，请使用：DismissRoom",
+          "example": "abcd",
           "member": "string",
           "name": "RoomId",
           "required": true,

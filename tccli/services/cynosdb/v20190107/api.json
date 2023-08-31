@@ -11754,7 +11754,7 @@
         },
         {
           "disabled": false,
-          "document": "集群参数列表",
+          "document": "集群参数列表，例如 [{           \"CurrentValue\":\"2\",        \"ParamName\":\"innodb_stats_transient_sample_pages\"}]",
           "example": "无",
           "member": "ModifyParamItem",
           "name": "ClusterParamList",
@@ -11763,7 +11763,7 @@
         },
         {
           "disabled": false,
-          "document": "实例参数列表",
+          "document": "实例参数列表，例如[{           \"CurrentValue\":\"2\",        \"ParamName\":\"innodb_stats_transient_sample_pages\"}]",
           "example": "无",
           "member": "ModifyParamItem",
           "name": "InstanceParamList",
@@ -11791,7 +11791,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

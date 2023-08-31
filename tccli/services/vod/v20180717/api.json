@@ -26998,7 +26998,7 @@
           "example": "ResourcePackage",
           "member": "string",
           "name": "ProductType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27008,7 +27008,7 @@
           "example": "2019-02-23T16:00:00Z",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27018,7 +27018,7 @@
           "example": "2020-02-23T16:01:00Z",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27028,7 +27028,7 @@
           "example": "50011-251007502-27891",
           "member": "string",
           "name": "ProductInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27038,7 +27038,7 @@
           "example": "2020-02-22T16:00:00Z",
           "member": "string",
           "name": "LastConsumeDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27048,17 +27048,27 @@
           "example": "0",
           "member": "int64",
           "name": "BindStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "预付费资源包实例中包含的资源包列表。",
+          "example": "*",
+          "member": "ProductInstanceRecource",
+          "name": "ProductInstanceResourceSet",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预付费资源包实例中包含的资源包列表。",
-          "example": "*",
-          "member": "ProductInstanceRecource",
-          "name": "ProductInstanceResourceSet",
-          "required": true,
+          "example": "无",
+          "member": "ProductInstanceResource",
+          "name": "ResourceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -27068,7 +27078,7 @@
           "example": "Effective",
           "member": "string",
           "name": "ProductInstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27078,7 +27088,7 @@
           "example": "Denied",
           "member": "string",
           "name": "RefundStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27088,7 +27098,7 @@
           "example": "Expire",
           "member": "string",
           "name": "RenewStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -27096,6 +27106,42 @@
       "usage": "out"
     },
     "ProductInstanceRecource": {
+      "document": "资源包中包含的资源。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型。\n<li>Storage：存储资源包。</li>\n<li>Traffic：流量资源包。</li>\n<li>Transcode：普通转码资源包。</li>\n<li>TESHD：极速高清转码资源包。</li>\n<li>Review：音视频审核转码资源包。</li>\n<li>MediaProcess：媒体处理时长资源包。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包额度。\n<li>音视频存储资源包，单位为字节。</li>\n<li>音视频转码资源包，单位为秒。</li>\n<li>音视频审核资源包，单位为秒。</li>\n<li>音视频极速高清资源包，单位为秒。</li>\n<li>音视频加速资源包，单位为字节。</li>\n<li>媒体处理时长资源包，单位为秒。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "Amount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源包余量。\n<li>音视频存储资源包，单位为字节。</li>\n<li>音视频转码资源包，单位为秒。</li>\n<li>音视频审核资源包，单位为秒。</li>\n<li>音视频极速高清资源包，单位为秒。</li>\n<li>音视频加速资源包，单位为字节。</li>\n<li>媒体处理时长资源包，单位为秒。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "Left",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductInstanceResource": {
       "document": "资源包中包含的资源。",
       "members": [
         {

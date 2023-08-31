@@ -27721,6 +27721,7 @@
           "example": "无",
           "member": "string",
           "name": "Relationship",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27731,6 +27732,7 @@
           "example": "无",
           "member": "string",
           "name": "DestNamespaceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27741,6 +27743,7 @@
           "example": "无",
           "member": "string",
           "name": "DestNamespaceName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27751,6 +27754,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27761,6 +27765,7 @@
           "example": "无",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27771,6 +27776,7 @@
           "example": "无",
           "member": "string",
           "name": "UnitRuleId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27781,6 +27787,7 @@
           "example": "无",
           "member": "int64",
           "name": "Priority",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -27791,6 +27798,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27801,16 +27809,18 @@
           "example": "无",
           "member": "UnitRuleTag",
           "name": "UnitRuleTagList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "项目id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "规则项索引\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "ItemIndex",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -27821,6 +27831,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27831,6 +27842,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27843,10 +27855,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签类型 : U(用户标签)",
-          "example": "",
+          "document": "标签类型 : U(用户标签)/S(系统标签)",
+          "example": "无",
           "member": "string",
           "name": "TagType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27854,9 +27867,10 @@
         {
           "disabled": false,
           "document": "标签名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagField",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27864,9 +27878,10 @@
         {
           "disabled": false,
           "document": "操作符:IN/NOT_IN/EQUAL/NOT_EQUAL/REGEX",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagOperator",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27874,9 +27889,10 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -27884,9 +27900,10 @@
         {
           "disabled": false,
           "document": "单元化规则项ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UnitRuleItemId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -27894,9 +27911,10 @@
         {
           "disabled": false,
           "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

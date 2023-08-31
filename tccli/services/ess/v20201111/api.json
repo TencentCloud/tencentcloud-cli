@@ -5976,7 +5976,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的印章状态列表。\n取值为空，只查询启用状态的印章；\n取值ALL，查询所有状态的印章；\n取值CHECKING，查询待审核的印章；\n取值SUCCESS，查询启用状态的印章；\n取值FAIL，查询印章审核拒绝的印章；\n取值DISABLE，查询已停用的印章；\n取值STOPPED，查询已终止的印章；\n取值VOID，查询已作废的印章；\n取值INVALID，查询以失效的印章；\n",
+          "document": "查询的印章状态列表。\n取值为空，只查询启用状态的印章；\n取值ALL，查询所有状态的印章；\n取值CHECKING，查询待审核的印章；\n取值SUCCESS，查询启用状态的印章；\n取值FAIL，查询印章审核拒绝的印章；\n取值DISABLE，查询已停用的印章；\n取值STOPPED，查询已终止的印章；\n取值VOID，查询已作废的印章；\n取值INVALID，查询已失效的印章；\n",
           "example": "无",
           "member": "string",
           "name": "SealStatuses",

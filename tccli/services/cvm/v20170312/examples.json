@@ -587,7 +587,7 @@
     "ModifyImageSharePermission": [
       {
         "document": "共享镜像img-6pb6lrmy给账户1038493875",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ModifyImageSharePermission\n&ImageId=img-6pb6lrmy\n&AccountIds.0=1038493875\n&Permission=SHARE\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSharePermission\n<公共请求参数>\n\n{\n    \"AccountIds\": [\n        \"1038493875\"\n    ],\n    \"Permission\": \"SHARE\",\n    \"ImageId\": \"img-6pb6lrmy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71e69b56-32be-4412-ab45-49eded6a87be\"\n    }\n}",
         "title": "共享镜像"
       }

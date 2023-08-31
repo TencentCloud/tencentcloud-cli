@@ -21,12 +21,18 @@ Output:
     "Response": {
         "Items": [
             {
-                "TaskId": "abc",
+                "Id": 0,
+                "TaskId": 0,
                 "FieldName": "abc",
                 "RuleId": 0,
                 "RuleName": "abc",
                 "CategoryId": 0,
-                "CategoryName": "abc"
+                "CategoryName": "abc",
+                "CategoryArr": [
+                    "abc"
+                ],
+                "LevelId": 0,
+                "LevelName": "abc"
             }
         ],
         "TotalCount": 0,

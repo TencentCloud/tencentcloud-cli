@@ -460,6 +460,22 @@
         "title": "xx"
       }
     ],
+    "DescribeDSPAAssessmentRiskSideDistributed": [
+      {
+        "document": "查询风险面的分布详情",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideDistributed\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskSideDistributed\": [\n            {\n                \"AssessmentRiskSide\": {\n                    \"Key\": \"abc\",\n                    \"Value\": 0\n                },\n                \"AssessmentRisk\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "xx"
+      }
+    ],
+    "DescribeDSPAAssessmentRiskSideList": [
+      {
+        "document": "查询风险面的列表",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideItemList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskSideItmeList\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "风险面列表"
+      }
+    ],
     "DescribeDSPAAssessmentRiskTemplateDetail": [
       {
         "document": "xx",
@@ -472,7 +488,7 @@
       {
         "document": "xx",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskTemplateVulnerableList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"RiskName\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ],\n                \"RiskSide\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "xx"
       }
     ],
@@ -720,7 +736,7 @@
       {
         "document": "查询es的分类分级扫描任务结果详情",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAESDiscoveryTaskResultDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TaskId\": 0,\n    \"ComplianceId\": 0,\n    \"CategoryIdList\": [\n        0\n    ],\n    \"LevelId\": 0,\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"TaskId\": \"abc\",\n                \"FieldName\": \"abc\",\n                \"RuleId\": 0,\n                \"RuleName\": \"abc\",\n                \"CategoryId\": 0,\n                \"CategoryName\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Id\": 0,\n                \"TaskId\": 0,\n                \"FieldName\": \"abc\",\n                \"RuleId\": 0,\n                \"RuleName\": \"abc\",\n                \"CategoryId\": 0,\n                \"CategoryName\": \"abc\",\n                \"CategoryArr\": [\n                    \"abc\"\n                ],\n                \"LevelId\": 0,\n                \"LevelName\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "xx"
       }
     ],

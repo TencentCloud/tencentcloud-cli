@@ -27,7 +27,8 @@ Output:
                 "ReferTemplateCount": 0,
                 "SupportDataSource": [
                     "abc"
-                ]
+                ],
+                "RiskSide": "abc"
             }
         ],
         "TotalCount": 0,

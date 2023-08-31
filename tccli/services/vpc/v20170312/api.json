@@ -5695,7 +5695,7 @@
         },
         {
           "disabled": false,
-          "document": "带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>",
+          "document": "带宽包计费类型, 默认为: TOP5_POSTPAID_BY_MONTH, 可选值:\n<li>TOP5_POSTPAID_BY_MONTH: 按月后付费TOP5计费</li>\n<li>PERCENT95_POSTPAID_BY_MONTH: 按月后付费月95计费</li>\n<li>FIXED_PREPAID_BY_MONTH: 包月预付费计费</li>\n<li>ENHANCED95_POSTPAID_BY_MONTH: 按月后付费增强型95计费</li>\n<li>PEAK_BANDWIDTH_POSTPAID_BY_DAY: 后付费日结按带宽计费</li>\n",
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
@@ -5768,6 +5768,7 @@
           "example": "bwp-8rolc8ec",
           "member": "string",
           "name": "BandwidthPackageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5777,6 +5778,7 @@
           "example": "[\"bwp-8rolc8ec\"]",
           "member": "string",
           "name": "BandwidthPackageIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20833,6 +20835,15 @@
           "name": "NetworkAclQuintupleSet",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "三元组的增量更新。该接口的默认语义为全量覆盖。当需要实现增量更新语义时，设置该参数为True。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableUpdateAclEntries",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -22586,20 +22597,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "修改时间。",
-          "example": "",
-          "member": "string",
-          "name": "ModifyTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "协议, 取值: TCP,UDP, ICMP, ALL。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -22607,19 +22609,21 @@
         {
           "disabled": false,
           "document": "端口(all, 单个port,  range)。当Protocol为ALL或ICMP时，不能指定Port。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或IP(互斥)。",
-          "example": "",
+          "document": "网段或IP(互斥)。增量创建ACL规则时，CidrBlock和Ipv6CidrBlock至少提供一个。",
+          "example": "无",
           "member": "string",
           "name": "CidrBlock",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -22627,9 +22631,10 @@
         {
           "disabled": false,
           "document": "网段或IPv6(互斥)。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Ipv6CidrBlock",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -22637,9 +22642,10 @@
         {
           "disabled": false,
           "document": "ACCEPT 或 DROP。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -22647,12 +22653,57 @@
         {
           "disabled": false,
           "document": "规则描述，最大长度100。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级，从1开始。\t",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv4网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryID至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "acli43-0pngbwph",
+          "member": "string",
+          "name": "NetworkAclIpv4EntryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IPv6网络ACL条目唯一ID。当修改ACL条目时，NetworkAclIpv4EntryId和NetworkAclIpv6EntryId至少提供一个。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "acli46-0pngbwph",
+          "member": "string",
+          "name": "NetworkAclIpv6EntryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

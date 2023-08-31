@@ -5,7 +5,20 @@
 Input: 
 
 ```
-tccli bma DescribeBPWhiteLists --cli-unfold-argument ```
+tccli bma DescribeBPWhiteLists --cli-unfold-argument  \
+    --Filters.0.Name CompanyId \
+    --Filters.0.Value 123 \
+    --Filters.1.Name AssetsType \
+    --Filters.1.Value 0 \
+    --Filters.2.Name WhiteList \
+    --Filters.2.Value 白名单名称 \
+    --Filters.3.Name StartTime \
+    --Filters.3.Value 2022-10-01 00:00:00 \
+    --Filters.4.Name EndTime \
+    --Filters.4.Value 2022-10-01 23:59:59 \
+    --PageSize 10 \
+    --PageNumber 1
+```
 
 Output: 
 ```

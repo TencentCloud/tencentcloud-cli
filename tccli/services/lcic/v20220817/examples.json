@@ -254,10 +254,16 @@
     ],
     "DescribeGroupList": [
       {
-        "document": "获取群组列表",
-        "input": "{\n    \"SdkAppId\": 12345678\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Total\": 1,\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"adfgdfg\",\n                \"GroupName\": \"test\",\n                \"GroupType\": 0\n            }\n        ]\n    }\n}",
-        "title": "获取群组列表"
+        "document": "TeacherId和MemberId都不填的返回结果",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3618809\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"cfmsqfu2r378uak93i70\",\n                \"GroupName\": \"修改测试群组名称\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            },\n            {\n                \"GroupId\": \"cfmst8u2r378uak93i90\",\n                \"GroupName\": \"批量创建群组1\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"\"\n            },\n            {\n                \"GroupId\": \"cfmst8u2r378uak93i9g\",\n                \"GroupName\": \"批量创建群组2\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"\"\n            },\n            {\n                \"GroupId\": \"cfmthke2r378uak93ii0\",\n                \"GroupName\": \"测试修改群组\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            },\n            {\n                \"GroupId\": \"cjdipop7qk6r714q0fh0\",\n                \"GroupName\": \"lukatest\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"\"\n            }\n        ],\n        \"RequestId\": \"5b261337-70dc-49a9-92cb-820641958626\",\n        \"Total\": 5\n    }\n}",
+        "title": "示例1"
+      },
+      {
+        "document": "查询TeacherId的结果",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGroupList\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3618809,\n    \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupInfos\": [\n            {\n                \"GroupId\": \"cfmsqfu2r378uak93i70\",\n                \"GroupName\": \"修改测试群组名称\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            },\n            {\n                \"GroupId\": \"cfmthke2r378uak93ii0\",\n                \"GroupName\": \"测试修改群组\",\n                \"GroupType\": 0,\n                \"SubGroupIds\": null,\n                \"TeacherId\": \"2LoDvr6M9TvI4x4dMFBpGRzxZXr\"\n            }\n        ],\n        \"RequestId\": \"a69c412e-1da6-4d27-bd37-c74a2703f94a\",\n        \"Total\": 2\n    }\n}",
+        "title": "示例2"
       }
     ],
     "DescribeGroupMemberList": [

@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli cfw DescribeNatAcRule --cli-unfold-argument  \
-    --Index xx \
-    --Filters.0.Name xx \
-    --Filters.0.Values xx \
+    --Index abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
     --Filters.0.OperatorType 0 \
     --Limit 1 \
     --Offset 1 \
-    --StartTime xx \
-    --EndTime xx \
-    --Order xx \
-    --By xx
+    --StartTime abc \
+    --EndTime abc \
+    --Order abc \
+    --By abc
 ```
 
 Output: 
@@ -25,34 +25,43 @@ Output:
         "Total": 1,
         "Data": [
             {
-                "SourceContent": "xx",
-                "TargetContent": "xx",
-                "Protocol": "xx",
-                "Port": "xx",
-                "RuleAction": "xx",
-                "Description": "xx",
+                "SourceContent": "abc",
+                "TargetContent": "abc",
+                "Protocol": "abc",
+                "Port": "abc",
+                "RuleAction": "abc",
+                "Description": "abc",
                 "Count": 1,
                 "OrderIndex": 1,
-                "SourceType": "xx",
-                "TargetType": "xx",
+                "SourceType": "abc",
+                "TargetType": "abc",
                 "Uuid": 1,
                 "Invalid": 1,
                 "IsRegion": 1,
                 "CountryCode": 1,
                 "CityCode": 1,
-                "CountryName": "xx",
-                "CityName": "xx",
-                "CloudCode": "xx",
+                "CountryName": "abc",
+                "CityName": "abc",
+                "CloudCode": "abc",
                 "IsCloud": 1,
-                "Enable": "xx",
+                "Enable": "abc",
                 "Direction": 1,
-                "InstanceName": "xx",
+                "InstanceName": "abc",
                 "InternalUuid": 0,
-                "Status": 1
+                "Status": 1,
+                "BetaList": [
+                    {
+                        "TaskId": 0,
+                        "TaskName": "abc",
+                        "LastTime": "abc"
+                    }
+                ],
+                "Scope": "abc",
+                "InternetBorderUuid": "abc"
             }
         ],
         "AllTotal": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -24,6 +24,30 @@
         "title": "test"
       }
     ],
+    "DeleteBackUpData": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBackUpData\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBackUpJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"PageNum\": 0,\n    \"PageSize\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"BackUpJobs\": [\n            {\n                \"ExpireTime\": \"xx\",\n                \"BackUpTime\": \"xx\",\n                \"BackUpSize\": 0,\n                \"BackUpType\": \"xx\",\n                \"Snapshot\": \"xx\",\n                \"JobId\": 0\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "DescribeBackUpJobDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpJobDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TableContents\": [\n            {\n                \"Table\": \"xx\",\n                \"Ips\": \"xx\",\n                \"VCluster\": \"xx\",\n                \"TotalBytes\": 0,\n                \"Database\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeBackUpSchedule": [
       {
         "document": "查询备份策略信息",
@@ -36,7 +60,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCkSqlApis\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-czj3e8qw\",\n    \"Cluster\": \"default\",\n    \"UserName\": \"admin\",\n    \"ApiType\": \"GetSystemUsers\"\n}",
-        "output": "{\r\n    \"Response\": {\r\n        \"ReturnData\": \r\n                [{\"InstanceId\":\"cdwch-1vud9x9x\",\"UserName\":\"cdwch\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"default_cluster\"},{\"InstanceId\":\"cdwch-1vud9x9x\",\"UserName\":\"willltgu\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"\"},{\"InstanceId\":\"cdwch-1vud9x9x\",\"UserName\":\"willltguo\",\"Describe\":\"\",\"Type\":\"RBAC\",\"Cluster\":\"\"},{\"InstanceId\":\"cdwch-1vud9x9x\",\"UserName\":\"default\",\"Describe\":\"xml 用户，只能查询不能做任何修改\",\"Type\":\"XML\",\"Cluster\":\"\"}],\r\n\r\n    \r\n        \"RequestId\": \"xx\", \r\n        \"ErrMsg\": \"xx\"\r\n    }\r\n}",
+        "output": "{\n    \"Response\": {\n        \"ReturnData\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询ck集群信息"
       }
     ],
@@ -140,6 +164,14 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenBackUp\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"CosBucketName\": \"xx\",\n    \"OperationType\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
+    "RecoverBackUpJob": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecoverBackUpJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"BackUpJobId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "示例"
       }

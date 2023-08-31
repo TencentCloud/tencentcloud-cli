@@ -470,9 +470,9 @@
       "status": "online"
     },
     "ModifyImageSharePermission": {
-      "document": "本接口（ModifyImageSharePermission）用于修改镜像分享信息。\n\n* 分享镜像后，被分享账户可以通过该镜像创建实例。\n* 每个自定义镜像最多可共享给50个账户。\n* 分享镜像无法更改名称，描述，仅可用于创建实例。\n* 只支持分享到对方账户相同地域。\n",
+      "document": "本接口（ModifyImageSharePermission）用于修改镜像共享信息。\n\n* 共享镜像后，被共享账户可以通过该镜像创建实例。\n* 每个自定义镜像最多可共享给50个账户。\n* 共享镜像无法更改名称，描述，仅可用于创建实例。\n* 只支持共享到对方账户相同地域。",
       "input": "ModifyImageSharePermissionRequest",
-      "name": "修改镜像分享信息",
+      "name": "修改镜像共享信息",
       "output": "ModifyImageSharePermissionResponse",
       "status": "online"
     },
@@ -8252,7 +8252,7 @@
         },
         {
           "disabled": false,
-          "document": "接收分享镜像的账号Id列表，array型参数的格式可以参考[API简介](/document/api/213/568)。帐号ID不同于QQ号，查询用户帐号ID请查看[帐号信息](https://console.cloud.tencent.com/developer)中的帐号ID栏。",
+          "document": "接收共享镜像的账号Id列表，array型参数的格式可以参考[API简介](/document/api/213/568)。账号ID不同于QQ号，查询用户账号ID请查看[账号信息](https://console.cloud.tencent.com/developer)中的账号ID栏。",
           "example": "[\"1038493875\\r\\n\"]",
           "member": "string",
           "name": "AccountIds",
@@ -8261,7 +8261,7 @@
         },
         {
           "disabled": false,
-          "document": "操作，包括 `SHARE`，`CANCEL`。其中`SHARE`代表分享操作，`CANCEL`代表取消分享操作。",
+          "document": "操作，包括 `SHARE`，`CANCEL`。其中`SHARE`代表共享操作，`CANCEL`代表取消共享操作。",
           "example": "SHARE",
           "member": "string",
           "name": "Permission",

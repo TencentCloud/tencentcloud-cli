@@ -2216,7 +2216,7 @@
           "example": "无",
           "member": "DetectInfoText",
           "name": "Text",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2226,7 +2226,7 @@
           "example": "无",
           "member": "DetectInfoIdCardData",
           "name": "IdCardData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2236,7 +2236,7 @@
           "example": "无",
           "member": "DetectInfoBestFrame",
           "name": "BestFrame",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2246,7 +2246,7 @@
           "example": "无",
           "member": "EidInfo",
           "name": "EidInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2256,7 +2256,7 @@
           "example": "无",
           "member": "IntentionVerifyData",
           "name": "IntentionVerifyData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2266,7 +2266,17 @@
           "example": "无",
           "member": "IntentionQuestionResult",
           "name": "IntentionQuestionResult",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身点头确认模式的结果信息，若未使用该意愿核身功能，该字段返回值可以不处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntentionActionResult",
+          "name": "IntentionActionResult",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2302,7 +2312,7 @@
         },
         {
           "disabled": false,
-          "document": "意愿核身模式。枚举值：1( 朗读模式)，2（问答模式） 。默认值1",
+          "document": "意愿核身模式。枚举值：1( 语音朗读模式)，2（语音问答模式） ，3（点头确认模式）。默认值为1。",
           "example": "1",
           "member": "string",
           "name": "IntentionMode",
@@ -2324,6 +2334,15 @@
           "example": "无",
           "member": "IntentionQuestion",
           "name": "IntentionQuestions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "意愿核身（点头确认模式）使用的文案，若未使用意愿核身（点头确认模式），则该字段无需传入。默认为空，最长可接受150的字符串长度。",
+          "example": "无",
+          "member": "IntentionActionConfig",
+          "name": "IntentionActions",
           "required": false,
           "type": "list"
         },

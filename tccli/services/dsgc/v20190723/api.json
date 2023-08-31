@@ -392,6 +392,20 @@
       "output": "DescribeDSPAAssessmentRiskProcessHistoryResponse",
       "status": "online"
     },
+    "DescribeDSPAAssessmentRiskSideDistributed": {
+      "document": "风险评估概览页，查询风险面的分布",
+      "input": "DescribeDSPAAssessmentRiskSideDistributedRequest",
+      "name": "查询风险评估风险面的分布",
+      "output": "DescribeDSPAAssessmentRiskSideDistributedResponse",
+      "status": "online"
+    },
+    "DescribeDSPAAssessmentRiskSideList": {
+      "document": "风险评估概览页，查询风险面的分布",
+      "input": "DescribeDSPAAssessmentRiskSideListRequest",
+      "name": "查询风险评估风险面的列表",
+      "output": "DescribeDSPAAssessmentRiskSideListResponse",
+      "status": "online"
+    },
     "DescribeDSPAAssessmentRiskTemplateDetail": {
       "document": "风险项页面--查看评估模版详情",
       "input": "DescribeDSPAAssessmentRiskTemplateDetailRequest",
@@ -1197,7 +1211,7 @@
           "example": "risk-3mr0ndot",
           "member": "string",
           "name": "RiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1207,7 +1221,7 @@
           "example": "敏感个人信息InstanceA.dbA.tableA.Name未加密",
           "member": "string",
           "name": "RiskDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1217,7 +1231,7 @@
           "example": "template-9gkskr3g",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1227,7 +1241,7 @@
           "example": "个人信息保护法",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1237,7 +1251,7 @@
           "example": "control-8an32mgd",
           "member": "string",
           "name": "ControlItemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1247,7 +1261,7 @@
           "example": "敏感信息加密",
           "member": "string",
           "name": "ControlItemName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1257,7 +1271,7 @@
           "example": "针对敏感信息需要采用加密技术进行加密",
           "member": "string",
           "name": "ControlItemDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1267,7 +1281,7 @@
           "example": "low",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1277,7 +1291,7 @@
           "example": "对敏感个人字段进行加密存储；使用CASB进行加密",
           "member": "string",
           "name": "RiskMitigation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1287,7 +1301,7 @@
           "example": "waiting",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1297,7 +1311,7 @@
           "example": "2022-04-20 15:59:42",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1307,7 +1321,7 @@
           "example": "Bob",
           "member": "string",
           "name": "RiskOwner",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1317,7 +1331,7 @@
           "example": "Instance1.Db1",
           "member": "string",
           "name": "RelatedAsset",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1327,7 +1341,7 @@
           "example": "Instance1.Db1",
           "member": "string",
           "name": "DataSourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1337,7 +1351,7 @@
           "example": "无",
           "member": "string",
           "name": "DataSourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1347,7 +1361,7 @@
           "example": "xx",
           "member": "string",
           "name": "AssetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1357,7 +1371,7 @@
           "example": "xx",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1367,7 +1381,17 @@
           "example": "无",
           "member": "string",
           "name": "RiskType",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskSide",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1383,6 +1407,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1393,6 +1418,7 @@
           "example": "数据库未开启审计",
           "member": "string",
           "name": "RiskName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1403,6 +1429,7 @@
           "example": "高",
           "member": "string",
           "name": "Level",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1413,6 +1440,7 @@
           "example": "xxx-说明",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1423,6 +1451,7 @@
           "example": "config-risk",
           "member": "string",
           "name": "RiskType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1433,6 +1462,7 @@
           "example": "2",
           "member": "int64",
           "name": "ReferTemplateCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1443,6 +1473,29 @@
           "example": "mysql",
           "member": "string",
           "name": "SupportDataSource",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "网络安全",
+          "member": "string",
+          "name": "RiskSide",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联模版列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TemplateInfo",
+          "name": "ReferTemplateList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1635,7 +1688,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1645,7 +1698,7 @@
           "example": "template-f04ng1ds",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1655,7 +1708,7 @@
           "example": "数据安全自动化评估",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1665,7 +1718,7 @@
           "example": "用于自动化地评估系统存在的数据安全风险",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1675,7 +1728,7 @@
           "example": "system",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1685,7 +1738,7 @@
           "example": "auto",
           "member": "string",
           "name": "UseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1695,7 +1748,7 @@
           "example": "2022-04-20 15:59:42",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1705,7 +1758,7 @@
           "example": "2",
           "member": "int64",
           "name": "ControlItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1715,7 +1768,7 @@
           "example": "1",
           "member": "int64",
           "name": "AppliedItemCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1725,7 +1778,7 @@
           "example": "draft",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1735,8 +1788,18 @@
           "example": "[mysq,pgsql]",
           "member": "string",
           "name": "SupportDataSource",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否包含攻击面风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsASMTemplate",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -2938,15 +3001,6 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "敏感数据扫描数据源条件。",
-          "example": "无",
-          "member": "DiscoveryCondition",
-          "name": "DiscoveryCondition",
-          "required": true,
-          "type": "object"
-        },
-        {
           "disabled": true,
           "document": "评估业务名称。1-60个字符，仅允许输入中文、英文字母、数字、'_'、'-'，并且开头和结尾需为中文、英文字母或者数字",
           "example": "KMS",
@@ -2984,6 +3038,15 @@
         },
         {
           "disabled": false,
+          "document": "敏感数据扫描数据源条件。",
+          "example": "无",
+          "member": "DiscoveryCondition",
+          "name": "DiscoveryCondition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "说明",
           "example": "无",
           "member": "string",
@@ -3003,6 +3066,7 @@
           "example": "task-xxxxxxxx",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5586,6 +5650,15 @@
           "name": "TemplateId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件， rdb（数据库）cos（对象存储）\n不传就是全部",
+          "example": "rdb，cos",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5599,6 +5672,7 @@
           "example": "[xxx,10]",
           "member": "HighRiskAssetsDetail",
           "name": "AssetsList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5928,6 +6002,15 @@
           "name": "RiskLevel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险面筛选",
+          "example": "xx",
+          "member": "string",
+          "name": "RiskSide",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5941,6 +6024,7 @@
           "example": "无",
           "member": "RiskItemInfo",
           "name": "LatestRiskList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5950,6 +6034,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6392,6 +6477,15 @@
           "name": "TemplateId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "风险资产分布的过滤条件\n（rdb，cos，不传就筛选全部）",
+          "example": "rdb，cos",
+          "member": "string",
+          "name": "Filter",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6405,6 +6499,7 @@
           "example": "[{aksk泄漏，10}]",
           "member": "Note",
           "name": "RiskTypeDistribution",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6414,6 +6509,7 @@
           "example": "[{aksk泄漏，10}]",
           "member": "Note",
           "name": "RiskDetailDistribution",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6423,6 +6519,7 @@
           "example": "[{资产1，100}]",
           "member": "Note",
           "name": "RiskAssetsDistribution",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6791,6 +6888,98 @@
       ],
       "type": "object"
     },
+    "DescribeDSPAAssessmentRiskSideDistributedRequest": {
+      "document": "DescribeDSPAAssessmentRiskSideDistributed请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DSPA实例ID",
+          "example": "dspa-001",
+          "member": "string",
+          "name": "DspaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估模版id",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDSPAAssessmentRiskSideDistributedResponse": {
+      "document": "DescribeDSPAAssessmentRiskSideDistributed返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险面的分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RiskSideDistributed",
+          "name": "RiskSideDistributed",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDSPAAssessmentRiskSideListRequest": {
+      "document": "DescribeDSPAAssessmentRiskSideList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DSPA实例ID",
+          "example": "dspa-001",
+          "member": "string",
+          "name": "DspaId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估模版id",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDSPAAssessmentRiskSideListResponse": {
+      "document": "DescribeDSPAAssessmentRiskSideList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险面列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Note",
+          "name": "RiskSideItmeList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDSPAAssessmentRiskTemplateDetailRequest": {
       "document": "DescribeDSPAAssessmentRiskTemplateDetail请求参数结构体",
       "members": [
@@ -6964,6 +7153,15 @@
           "name": "RiskName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险面",
+          "example": "无",
+          "member": "string",
+          "name": "RiskSide",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6977,6 +7175,7 @@
           "example": "无",
           "member": "AssessmentRiskItem",
           "name": "RiskItemList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6986,6 +7185,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9121,6 +9321,15 @@
           "name": "LevelId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "索引名称",
+          "example": "ex",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13647,6 +13856,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分级分数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "LevelRiskScore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14063,7 +14282,27 @@
           "example": "11",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos",
+          "member": "string",
+          "name": "DataSourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cos-xxx",
+          "member": "string",
+          "name": "DataSourceName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14073,7 +14312,7 @@
           "example": "cos-xxx",
           "member": "string",
           "name": "AssetsName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14083,7 +14322,7 @@
           "example": "10",
           "member": "int64",
           "name": "HighRiskCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14093,7 +14332,7 @@
           "example": "配置风险",
           "member": "string",
           "name": "RiskType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14103,8 +14342,28 @@
           "example": "100",
           "member": "int64",
           "name": "TotalRiskCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskSide",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "ResourceRegion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14490,7 +14749,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "最新风险项Id",
           "example": "1",
           "member": "uint64",
@@ -14524,6 +14783,15 @@
           "name": "ProcessPeople",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "批量处理的列表",
+          "example": "[1,2,3,4]",
+          "member": "int64",
+          "name": "BathRiskIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -16377,7 +16645,7 @@
           "example": "高",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16387,9 +16655,19 @@
           "example": "1",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskLevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16475,6 +16753,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -16485,6 +16764,7 @@
           "example": "cynosdbmysql-9lo12zih\"",
           "member": "string",
           "name": "DataSourceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16495,6 +16775,7 @@
           "example": "cos-xxx",
           "member": "string",
           "name": "DataSourceName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16505,6 +16786,18 @@
           "example": "mysql",
           "member": "string",
           "name": "DataSourceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "ResourceRegion",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16515,6 +16808,7 @@
           "example": "cos-xxx",
           "member": "string",
           "name": "AssetName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16525,6 +16819,7 @@
           "example": "账号风险",
           "member": "string",
           "name": "RiskType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16535,6 +16830,7 @@
           "example": "数据库账号和权限评估",
           "member": "string",
           "name": "RiskName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16545,6 +16841,7 @@
           "example": "high",
           "member": "string",
           "name": "RiskLevel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16555,6 +16852,7 @@
           "example": "无",
           "member": "string",
           "name": "RiskDescription",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16565,6 +16863,7 @@
           "example": "请注意用户访问敏感表的权限",
           "member": "string",
           "name": "SuggestAction",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16575,6 +16874,7 @@
           "example": "无",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -16585,6 +16885,7 @@
           "example": "未处理",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16595,6 +16896,7 @@
           "example": "2022-09-01 10:00:00",
           "member": "string",
           "name": "ScanTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16605,6 +16907,7 @@
           "example": "2022-09-01 10:00:00",
           "member": "string",
           "name": "LastProcessTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16615,6 +16918,7 @@
           "example": "1",
           "member": "int64",
           "name": "IdentifyComplianceId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16625,6 +16929,18 @@
           "example": "db_sensitive_data",
           "member": "string",
           "name": "ItemSubType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RiskSide",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16835,6 +17151,32 @@
         }
       ],
       "usage": "both"
+    },
+    "RiskSideDistributed": {
+      "document": "风险面的分布",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险面\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Note",
+          "name": "AssessmentRiskSide",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Note",
+          "name": "AssessmentRisk",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RuleDistribution": {
       "document": "数据资产报告-rdb的敏感数据规则分布",
@@ -17287,6 +17629,32 @@
           "name": "RiskScore",
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TemplateInfo": {
+      "document": "评估模版的详情数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "风险模版",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

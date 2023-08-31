@@ -2504,6 +2504,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2513,6 +2514,7 @@
           "example": "无",
           "member": "GroupInfo",
           "name": "GroupInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

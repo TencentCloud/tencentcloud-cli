@@ -21,6 +21,27 @@
       "output": "CreateInstanceNewResponse",
       "status": "online"
     },
+    "DeleteBackUpData": {
+      "document": "删除备份数据",
+      "input": "DeleteBackUpDataRequest",
+      "name": "删除备份数据",
+      "output": "DeleteBackUpDataResponse",
+      "status": "online"
+    },
+    "DescribeBackUpJob": {
+      "document": "查询备份任务列表",
+      "input": "DescribeBackUpJobRequest",
+      "name": "查询备份任务列表",
+      "output": "DescribeBackUpJobResponse",
+      "status": "online"
+    },
+    "DescribeBackUpJobDetail": {
+      "document": "查询备份任务详情",
+      "input": "DescribeBackUpJobDetailRequest",
+      "name": "查询备份任务详情",
+      "output": "DescribeBackUpJobDetailResponse",
+      "status": "online"
+    },
     "DescribeBackUpSchedule": {
       "document": "查询备份策略信息",
       "input": "DescribeBackUpScheduleRequest",
@@ -124,6 +145,13 @@
       "input": "OpenBackUpRequest",
       "name": "开启或者关闭策略",
       "output": "OpenBackUpResponse",
+      "status": "online"
+    },
+    "RecoverBackUpJob": {
+      "document": "备份恢复",
+      "input": "RecoverBackUpJobRequest",
+      "name": "备份恢复",
+      "output": "RecoverBackUpJobResponse",
       "status": "online"
     },
     "ResizeDisk": {
@@ -246,6 +274,82 @@
         }
       ],
       "usage": "both"
+    },
+    "BackUpJobDisplay": {
+      "document": "备份任务详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份任务id",
+          "example": "任务id",
+          "member": "int64",
+          "name": "JobId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份任务名",
+          "example": "\"XXX\"",
+          "member": "string",
+          "name": "Snapshot",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型(元数据),(数据)",
+          "example": "\"XXX\"",
+          "member": "string",
+          "name": "BackUpType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份数据量",
+          "example": "123",
+          "member": "int64",
+          "name": "BackUpSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务创建时间",
+          "example": "\"2021-09-18 00:12:23\"",
+          "member": "string",
+          "name": "BackUpTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务过期时间",
+          "example": "\"2021-09-18 00:12:23\"",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "\"jing\"",
+          "member": "string",
+          "name": "JobStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "BackupTableContent": {
       "document": "备份表信息",
@@ -817,6 +921,170 @@
       ],
       "type": "object"
     },
+    "DeleteBackUpDataRequest": {
+      "document": "DeleteBackUpData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "BackUpJobId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除所有数据",
+          "example": "true",
+          "member": "bool",
+          "name": "IsDeleteAll",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBackUpDataResponse": {
+      "document": "DeleteBackUpData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpJobDetailRequest": {
+      "document": "DescribeBackUpJobDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "12",
+          "member": "int64",
+          "name": "BackUpJobId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpJobDetailResponse": {
+      "document": "DescribeBackUpJobDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份表详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupTableContent",
+          "name": "TableContents",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpJobRequest": {
+      "document": "DescribeBackUpJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "12",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页号",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "\"2021-02-12\"",
+          "member": "string",
+          "name": "BeginTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "\"2021-02-12\"",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpJobResponse": {
+      "document": "DescribeBackUpJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackUpJobDisplay",
+          "name": "BackUpJobs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackUpScheduleRequest": {
       "document": "DescribeBackUpSchedule请求参数结构体",
       "members": [
@@ -942,6 +1210,15 @@
           "name": "UserName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户的类型",
+          "example": "XML",
+          "member": "string",
+          "name": "UserType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -955,7 +1232,7 @@
           "example": "-",
           "member": "string",
           "name": "ReturnData",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2682,6 +2959,42 @@
     },
     "OpenBackUpResponse": {
       "document": "OpenBackUp返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverBackUpJobRequest": {
+      "document": "RecoverBackUpJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "123",
+          "member": "int64",
+          "name": "BackUpJobId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RecoverBackUpJobResponse": {
+      "document": "RecoverBackUpJob返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
