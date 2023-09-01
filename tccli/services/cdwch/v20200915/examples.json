@@ -5,7 +5,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ActionAlterCkUser\n<公共请求参数>\n\n{\n    \"UserInfo\": {\n        \"InstanceId\": \"cdwch-1vud9x9x\",\n        \"UserName\": \"admin\",\n        \"PassWord\": \"base54加密\",\n        \"Describe\": \"测试用户\"\n    },\n    \"ApiType\": \"AddSystemUser\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123456\",\n        \"ErrMsg\": \"\"\n    }\n}",
-        "title": "新增、修改ck集群用户"
+        "title": "新增、修改集群用户"
       }
     ],
     "CreateBackUpSchedule": [
@@ -156,8 +156,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserNewPrivilege\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "新增、修改ck账号权限（新版）"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xadasdfxasqs\"\n    }\n}",
+        "title": "新增、修改集群账号权限（新版）"
       }
     ],
     "OpenBackUp": [

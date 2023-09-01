@@ -1,9 +1,9 @@
 {
   "actions": {
     "ChatCompletion": {
-      "document": "与大模型聊天",
+      "document": "该接口支持与两种类型大模型的聊天。\n1. 与多行业多场景大模型的在线体验聊天\n2. 与自行部署的开源大模型的聊天",
       "input": "ChatCompletionRequest",
-      "name": "大模型聊天",
+      "name": "与大模型聊天",
       "output": "ChatCompletionResponse",
       "status": "online"
     },
@@ -225,7 +225,7 @@
       "status": "online"
     },
     "DescribeLogs": {
-      "document": "获取训练、推理、Notebook服务的日志",
+      "document": "获取训练、推理、Notebook服务的日志 API",
       "input": "DescribeLogsRequest",
       "name": "获取日志",
       "output": "DescribeLogsResponse",
@@ -435,9 +435,9 @@
       "status": "online"
     },
     "SendChatMessage": {
-      "document": "LLM模型的对话请求发送接口",
+      "document": "这是一个供您体验大模型聊天的接口。",
       "input": "SendChatMessageRequest",
-      "name": "LLM模型对话请求",
+      "name": "大模型聊天体验",
       "output": "SendChatMessageResponse",
       "status": "online"
     },
@@ -1399,7 +1399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部署好的模型服务Id。",
+          "document": "对话的目标模型ID。\n多行业多场景大模型在线体验聊天：tj_llm_clm-v1。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。",
           "example": "无",
           "member": "string",
           "name": "Model",
@@ -1417,7 +1417,7 @@
         },
         {
           "disabled": false,
-          "document": "采样随机值，默认值为1.0，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
+          "document": "仅当模型为自行部署的开源大模型时生效。采样随机值，默认值为1.0，取值范围[0,2]。较高的值(如0.8)将使输出更加随机，而较低的值(如0.2)将使输出更加确定。建议仅修改此参数或TopP，但不建议两者都修改。",
           "example": "无",
           "member": "float",
           "name": "Temperature",
@@ -1426,7 +1426,7 @@
         },
         {
           "disabled": false,
-          "document": "核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
+          "document": "仅当模型为自行部署的开源大模型时生效。核采样，默认值为1，取值范围[0,1]。指的是预先设置一个概率界限 p，然后将所有可能生成的token，根据概率大小从高到低排列，依次选取。当这些选取的token的累积概率大于或等于 p 值时停止，然后从已经选取的token中进行采样，生成下一个token。例如top_p为0.1时意味着模型只考虑累积概率为10%的token。建议仅修改此参数或Temperature，不建议两者都修改。",
           "example": "无",
           "member": "float",
           "name": "TopP",
@@ -1435,7 +1435,7 @@
         },
         {
           "disabled": false,
-          "document": "最大生成的token数目。默认为无限大。",
+          "document": "仅当模型为自行部署的开源大模型时生效。最大生成的token数目。默认为无限大。",
           "example": "无",
           "member": "int64",
           "name": "MaxTokens",
@@ -2734,15 +2734,6 @@
         },
         {
           "disabled": false,
-          "document": "模型来源cos目录，以/结尾",
-          "example": "a2",
-          "member": "CosPathInfo",
-          "name": "TrainingModelCosPath",
-          "required": true,
-          "type": "object"
-        },
-        {
-          "disabled": false,
           "document": "推理环境来源（SYSTEM/CUSTOM）",
           "example": "a2",
           "member": "string",
@@ -2776,6 +2767,15 @@
           "name": "TrainingJobName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型来源cos目录，以/结尾",
+          "example": "a2",
+          "member": "CosPathInfo",
+          "name": "TrainingModelCosPath",
+          "required": false,
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2969,7 +2969,7 @@
           "example": "a1",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2979,7 +2979,7 @@
           "example": "mv-23131231",
           "member": "string",
           "name": "TrainingModelVersionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4200,6 +4200,15 @@
           "name": "ServiceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5231,15 +5240,6 @@
         },
         {
           "disabled": false,
-          "document": "查询哪个Pod的日志（支持结尾通配符*)",
-          "example": "train-fsdjl-1",
-          "member": "string",
-          "name": "PodName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "日志查询开始时间（RFC3339格式的时间字符串），默认值为当前时间的前一个小时",
           "example": "2021-11-30T16:22:09+08:00",
           "member": "string",
@@ -5264,6 +5264,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询哪个Pod的日志（支持结尾通配符*)",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "PodName",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5313,7 +5322,7 @@
           "example": "aaa-bbb-ccc",
           "member": "string",
           "name": "Context",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5323,7 +5332,7 @@
           "example": "无",
           "member": "LogIdentity",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5533,6 +5542,15 @@
           "name": "ServiceGroupId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5546,6 +5564,7 @@
           "example": "无",
           "member": "ServiceCallInfo",
           "name": "ServiceCallInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5555,6 +5574,7 @@
           "example": "无",
           "member": "InferGatewayCallInfo",
           "name": "InferGatewayCallInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5564,6 +5584,27 @@
           "example": "无",
           "member": "DefaultNginxGatewayCallInfo",
           "name": "DefaultNginxGatewayCallInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "太极服务的调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TJCallInfo",
+          "name": "TJCallInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntranetCallInfo",
+          "name": "IntranetCallInfo",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5587,6 +5628,15 @@
           "name": "ServiceGroupId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5600,7 +5650,7 @@
           "example": "无",
           "member": "ServiceGroup",
           "name": "ServiceGroup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5669,6 +5719,15 @@
           "name": "TagFilters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5682,7 +5741,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5692,7 +5751,7 @@
           "example": "无",
           "member": "ServiceGroup",
           "name": "ServiceGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5818,6 +5877,15 @@
           "name": "ServiceId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务分类",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceCategory",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5831,7 +5899,7 @@
           "example": "无",
           "member": "Service",
           "name": "Service",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6314,7 +6382,7 @@
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6405,6 +6473,7 @@
           "example": "无",
           "member": "TrainingModelDTO",
           "name": "TrainingModels",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6414,6 +6483,7 @@
           "example": "4",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7466,6 +7536,56 @@
       ],
       "usage": "out"
     },
+    "IngressPrivateLinkInfo": {
+      "document": "私有连接通道信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-314xh0ko",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-8ra6pdq7",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网http调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://service-xxx-in.gz.apigw.tencentcs.com:8007/tione",
+          "member": "string",
+          "name": "InnerHttpAddr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网https调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://service-xxx-in.gz.apigw.tencentcs.com:8007/tione",
+          "member": "string",
+          "name": "InnerHttpsAddr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Instance": {
       "document": "资源组节点信息",
       "members": [
@@ -7571,6 +7691,34 @@
         }
       ],
       "usage": "out"
+    },
+    "IntranetCallInfo": {
+      "document": "内网调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "私有连接通道信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IngressPrivateLinkInfo",
+          "name": "IngressPrivateLinkInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "共享弹性网卡信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceEIPInfo",
+          "name": "ServiceEIPInfo",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "LogConfig": {
       "document": "日志配置",
@@ -10524,8 +10672,8 @@
         },
         {
           "disabled": false,
-          "document": "会话模型版本，不同的会话模型调用到不同的模型后台。\n注: 多行业多场景大模型填写 tj_llm_clm-v1",
-          "example": "tj_llm_clm-v1",
+          "document": "会话模型版本。\n多行业多场景大模型：填写 tj_llm_clm-v1。\n多行业客服大模型：填写demo_big_model_version_id。\n默认为demo_big_model_version_id，即多行业客服大模型。",
+          "example": "demo_big_model_version_id",
           "member": "string",
           "name": "ModelVersion",
           "required": false,
@@ -10533,7 +10681,7 @@
         },
         {
           "disabled": false,
-          "document": "使用模式(仅部分模型支持)。General 通用问答；WithSearchPlugin 搜索增强问答",
+          "document": "使用模式(仅多场景客服大模型支持)。\n通用问答：填写General。\n搜索增强问答：填写WithSearchPlugin。\n默认为General，即通用问答。",
           "example": "General",
           "member": "string",
           "name": "Mode",
@@ -10542,7 +10690,7 @@
         },
         {
           "disabled": false,
-          "document": "搜索来源。仅当Mode未WithSearchPlugin时生效。Preset 预置文稿库；Custom 自定义。",
+          "document": "搜索来源。仅当Mode为WithSearchPlugin时生效。\n预置文稿库：填写Preset。自定义：填写Custom。",
           "example": "无",
           "member": "string",
           "name": "SearchSource",
@@ -10955,6 +11103,84 @@
         }
       ],
       "usage": "out"
+    },
+    "ServiceEIP": {
+      "document": "服务共享弹性网卡设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启TIONE内网到外部的访问\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableEIP",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-314xh0ko",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户subnetId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-8ra6pdq7",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ServiceEIPInfo": {
+      "document": "共享弹性网卡信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ms-22c9njmt-1",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户VpcId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-314xh0ko",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户子网Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-8ra6pdq7",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ServiceGroup": {
       "document": "在线服务一个服务组的信息",
@@ -11499,6 +11725,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启TIONE内网访问外部设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceEIP",
+          "name": "ServiceEIP",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11974,6 +12211,42 @@
       ],
       "type": "object"
     },
+    "TJCallInfo": {
+      "document": "太极服务的调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "调用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.tione.tencentcs.com",
+          "member": "string",
+          "name": "HttpAddr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dsadasdada",
+          "member": "string",
+          "name": "Token",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调用示例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CallExample",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "描述腾讯云标签",
       "members": [
@@ -12342,7 +12615,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12352,7 +12625,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12362,7 +12635,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12372,7 +12645,7 @@
           "example": "2021-12-18T12:30:14Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12382,7 +12655,7 @@
           "example": "无",
           "member": "TrainingModelVersionDTO",
           "name": "TrainingModelVersions",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -12398,7 +12671,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12408,7 +12681,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelVersionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12418,7 +12691,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12428,7 +12701,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12438,7 +12711,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12448,7 +12721,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelCreator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12458,7 +12731,7 @@
           "example": "a1",
           "member": "string",
           "name": "AlgorithmFramework",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12468,7 +12741,7 @@
           "example": "a1",
           "member": "string",
           "name": "ReasoningEnvironment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12478,7 +12751,7 @@
           "example": "a1",
           "member": "string",
           "name": "ReasoningEnvironmentSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12488,7 +12761,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelIndex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12498,7 +12771,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingJobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12508,7 +12781,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "TrainingModelCosPath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12518,7 +12791,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12528,7 +12801,7 @@
           "example": "a1",
           "member": "string",
           "name": "TrainingJobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12538,7 +12811,7 @@
           "example": "无",
           "member": "ImageInfo",
           "name": "ReasoningImageInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12548,7 +12821,7 @@
           "example": "2021-12-18T12:30:14Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12558,7 +12831,7 @@
           "example": "STATUS_SUCCESS",
           "member": "string",
           "name": "TrainingModelStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12568,7 +12841,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TrainingModelProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12578,7 +12851,7 @@
           "example": "无",
           "member": "string",
           "name": "TrainingModelErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12588,7 +12861,7 @@
           "example": "SAVED_MODEL",
           "member": "string",
           "name": "TrainingModelFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12598,7 +12871,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "VersionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12608,7 +12881,7 @@
           "example": "T4",
           "member": "string",
           "name": "GPUType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12618,7 +12891,7 @@
           "example": "false",
           "member": "string",
           "name": "AutoClean",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12628,7 +12901,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ModelCleanPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12638,7 +12911,7 @@
           "example": "24",
           "member": "uint64",
           "name": "MaxReservedModels",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12648,7 +12921,7 @@
           "example": "无",
           "member": "CosPathInfo",
           "name": "ModelHotUpdatePath",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12658,7 +12931,7 @@
           "example": "无",
           "member": "string",
           "name": "ReasoningEnvironmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12668,7 +12941,7 @@
           "example": "无",
           "member": "string",
           "name": "TrainingJobVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12678,7 +12951,7 @@
           "example": "无",
           "member": "string",
           "name": "TrainingPreference",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12688,7 +12961,7 @@
           "example": "无",
           "member": "string",
           "name": "AutoMLTaskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12698,7 +12971,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsQAT",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }

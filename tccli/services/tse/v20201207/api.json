@@ -378,6 +378,112 @@
       ],
       "usage": "in"
     },
+    "AutoScalerBehavior": {
+      "document": "指标伸缩行为",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩容行为配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoScalerRules",
+          "name": "ScaleUp",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩容行为配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoScalerRules",
+          "name": "ScaleDown",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoScalerPolicy": {
+      "document": "扩容策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型，Pods或Percent\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pods",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PeriodSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AutoScalerRules": {
+      "document": "指标伸缩的规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "稳定窗口时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "StabilizationWindowSeconds",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选择策略依据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Max",
+          "member": "string",
+          "name": "SelectPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩容策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoScalerPolicy",
+          "name": "Policies",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BoundK8SInfo": {
       "document": "服务治理引擎绑定的kubernetes信息",
       "members": [
@@ -881,7 +987,7 @@
           "example": "strategy-7bb4fcb0",
           "member": "string",
           "name": "StrategyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -891,7 +997,7 @@
           "example": "test",
           "member": "string",
           "name": "StrategyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -901,7 +1007,7 @@
           "example": "2021-09-09 11:52:3",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -911,7 +1017,7 @@
           "example": "2021-09-09 11:52:3",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -921,7 +1027,7 @@
           "example": "测试",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -931,7 +1037,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyAutoScalerConfig",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -941,7 +1047,7 @@
           "example": "gateway-4a34cf5f",
           "member": "string",
           "name": "GatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -951,17 +1057,17 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyCronScalerConfig",
           "name": "CronConfig",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "最大节点数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "MaxReplicas",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -977,6 +1083,7 @@
           "example": "5",
           "member": "int64",
           "name": "MaxReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -987,6 +1094,7 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyAutoScalerConfigMetric",
           "name": "Metrics",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -997,48 +1105,64 @@
           "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "strategy-448e24f7",
           "member": "string",
           "name": "StrategyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "指标配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "autoscaler-92aaca7b",
+          "member": "string",
+          "name": "AutoScalerId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "指标配置ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "autoscaler-92aaca7b",
-          "member": "string",
-          "name": "AutoScalerId",
+          "document": "指标伸缩行为配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AutoScalerBehavior",
+          "name": "Behavior",
+          "output_required": false,
           "required": false,
-          "type": "string",
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -1099,6 +1223,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -1109,36 +1234,40 @@
           "example": "无",
           "member": "CloudNativeAPIGatewayStrategyCronScalerConfigParam",
           "name": "Params",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-03-08 16:57:18",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "弹性策略ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "strategy-448e24f7",
           "member": "string",
           "name": "StrategyId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

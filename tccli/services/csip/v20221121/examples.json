@@ -112,12 +112,44 @@
         "title": "获取扫描报告列表"
       }
     ],
+    "DescribeScanTaskList": [
+      {
+        "document": "获取扫描任务列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScanTaskList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"Order\": \"abc\",\n        \"By\": \"abc\",\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"OperatorType\": 0\n            }\n        ],\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"TaskName\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"EndTime\": \"abc\",\n                \"ScanPlanContent\": \"abc\",\n                \"TaskType\": 0,\n                \"InsertTime\": \"abc\",\n                \"TaskId\": \"abc\",\n                \"SelfDefiningAssets\": [\n                    \"abc\"\n                ],\n                \"PredictTime\": 0,\n                \"PredictEndTime\": \"abc\",\n                \"ReportNumber\": 0,\n                \"AssetNumber\": 0,\n                \"ScanStatus\": 0,\n                \"Percent\": 0,\n                \"ScanItem\": \"abc\",\n                \"ScanAssetType\": 0,\n                \"VSSTaskId\": \"abc\",\n                \"CSPMTaskId\": \"abc\",\n                \"CWPPOCId\": \"abc\",\n                \"CWPBlId\": \"abc\",\n                \"VSSTaskProcess\": 0,\n                \"CSPMTaskProcess\": 1,\n                \"CWPPOCProcess\": 0,\n                \"CWPBlProcess\": 1,\n                \"ErrorCode\": 0,\n                \"ErrorInfo\": \"abc\",\n                \"StartDay\": 0,\n                \"Frequency\": 0,\n                \"CompleteNumber\": 0,\n                \"CompleteAssetNumber\": 0,\n                \"RiskCount\": 0,\n                \"Assets\": [\n                    {\n                        \"AssetName\": \"abc\",\n                        \"InstanceType\": \"abc\",\n                        \"AssetType\": \"abc\",\n                        \"Asset\": \"abc\",\n                        \"Region\": \"abc\"\n                    }\n                ],\n                \"AppId\": \"abc\",\n                \"UIN\": \"abc\",\n                \"UserName\": \"abc\",\n                \"TaskMode\": 0\n            }\n        ],\n        \"UINList\": [\n            \"abc\"\n        ],\n        \"TaskModeList\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取扫描任务列表"
+      }
+    ],
+    "DescribeSearchBugInfo": [
+      {
+        "document": "无",
+        "input": "{\n  \"Id\": \"xx\",\n  \"CVEId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"StateCode\": \"xx\",\n            \"DataBug\": [\n                {\n                    \"Id\": 1,\n                    \"PatchId\": \"xx\",\n                    \"VULName\": \"xx\",\n                    \"Level\": \"xx\",\n                    \"CVSSScore\": \"xx\",\n                    \"CVEId\": \"xx\",\n                    \"Tag\": \"xx\",\n                    \"VULCategory\": 1,\n                    \"ImpactOs\": \"xx\",\n                    \"ImpactCOMPENT\": \"xx\",\n                    \"ImpactVersion\": \"xx\",\n                    \"Reference\": \"xx\",\n                    \"VULDescribe\": \"xx\",\n                    \"Fix\": \"xx\",\n                    \"ProSupport\": 1,\n                    \"IsPublish\": 1,\n                    \"ReleaseTime\": \"xx\",\n                    \"CreateTime\": \"xx\",\n                    \"UpdateTime\": \"xx\",\n                    \"SubCategory\": \"xx\"\n                }\n            ],\n            \"DataAsset\": [\n                {\n                    \"AppID\": \"xx\",\n                    \"CVEId\": \"xx\",\n                    \"IsScan\": 0,\n                    \"InfluenceAsset\": 0,\n                    \"NotRepairAsset\": 0,\n                    \"NotProtectAsset\": 0,\n                    \"TaskId\": \"xx\",\n                    \"TaskPercent\": 0,\n                    \"TaskTime\": 0,\n                    \"ScanTime\": \"xx\"\n                }\n            ],\n            \"VSSScan\": true,\n            \"CWPScan\": \"xx\",\n            \"CFWPatch\": \"xx\",\n            \"WafPatch\": 0,\n            \"CWPFix\": 0\n        },\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeSubnetAssets": [
       {
         "document": "空示例",
         "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"2021-01-01 00:00:00\",\n    \"EndTime\": \"2021-01-01 00:00:00\"\n  }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"AssetId\": \"xx\",\n                \"AssetName\": \"xx\",\n                \"Region\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"Nick\": \"xx\",\n                \"CIDR\": \"xx\",\n                \"Zone\": \"xx\",\n                \"CVM\": 0,\n                \"AvailableIp\": 0,\n                \"CreateTime\": \"xx\",\n                \"ConfigureRisk\": 0,\n                \"ScanTask\": 0,\n                \"LastScanTime\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RegionList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"VpcList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"ZoneList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"AppIdList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "空示例"
+      }
+    ],
+    "DescribeTaskLogList": [
+      {
+        "document": "获取任务扫描报告列表",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\"\n  }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"TaskLogName\": \"xx\",\n                \"TaskLogId\": \"xx\",\n                \"AssetsNumber\": 0,\n                \"RiskNumber\": 0,\n                \"Time\": \"xx\",\n                \"Status\": 0,\n                \"TaskName\": \"xx\",\n                \"StartTime\": \"xx\",\n                \"TaskCenterTaskId\": \"xx\",\n                \"AppId\": \"xx\",\n                \"UIN\": \"xx\",\n                \"UserName\": \"xx\"\n            }\n        ],\n        \"NotViewNumber\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取任务扫描报告列表"
+      }
+    ],
+    "DescribeTaskLogURL": [
+      {
+        "document": "获取报告下载的临时链接",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"ReportItemKeyList\": [\n    {\n      \"AppId\": \"xx\",\n      \"TaskLogList\": [\n        \"xx\"\n      ]\n    }\n  ],\n  \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"URL\": \"xx\",\n                \"LogId\": \"xx\",\n                \"TaskLogName\": \"xx\",\n                \"AppId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取报告下载的临时链接"
       }
     ],
     "DescribeVpcAssets": [

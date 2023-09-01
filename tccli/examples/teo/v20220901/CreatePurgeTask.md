@@ -1,7 +1,7 @@
 **Example 1: Cache-Tag 刷新**
 
-此清除类型使用的是标记过期的清除方法，会将该站点下所有 HTTP 应答包中存在对应 Cache-Tag 响应头标签值（tags）的资源标记为过期。
-例如：需要清除站点 example.com 下所有 HTTP 应答包中包含 tag1、tag2 或 tag3 标签且发生过变更的资源，可以参照以下示例进行刷新。
+此清除类型使用的是直接清除的清除方法，会将该站点下所有 HTTP 应答包中存在对应 Cache-Tag 响应头标签值（tags）的资源直接清除。
+例如：需要清除站点 example.com 下所有 HTTP 应答包中包含 tag1、tag2 或 tag3 标签的资源，可以参照以下示例进行刷新。
 
 Input: 
 

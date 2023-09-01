@@ -1,6 +1,6 @@
 **Example 1: 获取日志**
 
-
+获取TI平台各种服务（训练，Notebook，推理等）的日志
 
 Input: 
 

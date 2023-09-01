@@ -15,11 +15,11 @@
       "status": "online"
     },
     "CreateOfflineRecord": {
-      "document": "创建课后录制任务",
+      "document": "课后录制服务已下线\n\n创建课后录制任务",
       "input": "CreateOfflineRecordRequest",
       "name": "创建课后录制任务",
       "output": "CreateOfflineRecordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreatePPTCheckTask": {
       "document": "检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素",
@@ -85,18 +85,18 @@
       "status": "online"
     },
     "DescribeOfflineRecord": {
-      "document": "查询课后录制任务的进度与录制结果等相关信息",
+      "document": "课后录制服务已下线\n\n查询课后录制任务的进度与录制结果等相关信息",
       "input": "DescribeOfflineRecordRequest",
       "name": "查询课后录制任务",
       "output": "DescribeOfflineRecordResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeOfflineRecordCallback": {
-      "document": "查询课后录制回调地址",
+      "document": "课后录制服务已下线\n\n查询课后录制回调地址",
       "input": "DescribeOfflineRecordCallbackRequest",
       "name": "查询回调地址",
       "output": "DescribeOfflineRecordCallbackResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeOnlineRecord": {
       "document": "查询录制任务状态与结果",
@@ -337,11 +337,11 @@
       "status": "online"
     },
     "SetOfflineRecordCallback": {
-      "document": "设置课后录制回调地址",
+      "document": "课后录制服务已下线\n\n设置课后录制回调地址",
       "input": "SetOfflineRecordCallbackRequest",
       "name": "设置回调地址",
       "output": "SetOfflineRecordCallbackResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "SetOnlineRecordCallback": {
       "document": "设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",

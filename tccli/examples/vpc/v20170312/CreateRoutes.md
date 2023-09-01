@@ -30,7 +30,10 @@ Output:
                         "Enabled": true,
                         "RouteId": 1,
                         "GatewayType": "NORMAL_CVM",
-                        "GatewayId": "172.16.16.37"
+                        "GatewayId": "172.16.16.37",
+                        "RouteType": "USER",
+                        "DestinationIpv6CidrBlock": "",
+                        "PublishedToVbc": false
                     }
                 ],
                 "RouteTableId": "rtb-n0yejvje",

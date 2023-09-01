@@ -20,7 +20,10 @@ Output:
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
             "ProjectId": "0",
-            "CreatedTime": "2018-01-13 19:26:33"
+            "CreatedTime": "2018-01-13 19:26:33",
+            "UpdateTime": "2018-01-13 19:26:33",
+            "TagSet": [],
+            "IsDefault": false
         }
     }
 }
@@ -62,7 +65,10 @@ Output:
             "SecurityGroupName": "TestGroup",
             "SecurityGroupDesc": "test-group-desc",
             "ProjectId": "0",
-            "CreatedTime": "2018-01-13 19:26:33"
+            "CreatedTime": "2018-01-13 19:26:33",
+            "UpdateTime": "2018-01-13 19:26:33",
+            "TagSet": [],
+            "IsDefault": false
         }
     }
 }

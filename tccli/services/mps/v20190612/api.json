@@ -1325,6 +1325,17 @@
           "required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Drm信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DrmInfo",
+          "name": "DrmInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11931,6 +11942,34 @@
       ],
       "type": "object"
     },
+    "DrmInfo": {
+      "document": "Drm 加密信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密类型：\n<li> simpleaes: aes-128 加密</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SimpleAes 加密信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SimpleAesDrm",
+          "name": "SimpleAesDrm",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "EditMediaFileInfo": {
       "document": "编辑点播视频文件信息",
       "members": [
@@ -21805,6 +21844,45 @@
           "name": "Intensity",
           "required": false,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SimpleAesDrm": {
+      "document": "SimpleAes 加密信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求解密秘钥uri地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://test.qq.com?vid=xxx",
+          "member": "string",
+          "name": "Uri",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密key(32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "14367588ab31370e32ae000544bd007d",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密初始化向量(32字节字符串)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "452ac1553f19b846e2f2c4cffd8f4a9b",
+          "member": "string",
+          "name": "Vector",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

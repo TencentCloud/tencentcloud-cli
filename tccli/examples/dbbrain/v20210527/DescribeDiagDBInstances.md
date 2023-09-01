@@ -42,7 +42,8 @@ Output:
                 "HealthScore": 100,
                 "InstanceConf": {
                     "OverviewDisplay": "Yes",
-                    "DailyInspection": "Yes"
+                    "DailyInspection": "Yes",
+                    "KeyDelimiters": []
                 },
                 "AuditPolicyStatus": "UNBOUND",
                 "Volume": 100,
@@ -50,7 +51,12 @@ Output:
                 "SecAuditStatus": "ON",
                 "Region": "ap-guangzhou",
                 "Vip": "10.5.0.9",
-                "IsSupported": true
+                "IsSupported": true,
+                "CreateTime": "2021-02-25 16:33:26",
+                "InternalVip": "10.5.0.9",
+                "ClusterId": "cdb-test",
+                "InternalVport": 9090,
+                "ClusterName": "cdb-test"
             }
         ],
         "RequestId": "b2d08895-1cfe-48bc-b7f7-87fd7cb5d6f1"

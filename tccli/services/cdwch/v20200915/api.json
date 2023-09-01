@@ -3,7 +3,7 @@
     "ActionAlterCkUser": {
       "document": "新增和修改用户接口",
       "input": "ActionAlterCkUserRequest",
-      "name": "新增、修改ck用户接口",
+      "name": "新增、修改集群用户接口",
       "output": "ActionAlterCkUserResponse",
       "status": "online"
     },
@@ -134,9 +134,9 @@
       "status": "online"
     },
     "ModifyUserNewPrivilege": {
-      "document": "针对ck账号的权限做管控（新版）",
+      "document": "针对集群账号的权限做管控（新版）",
       "input": "ModifyUserNewPrivilegeRequest",
-      "name": "新增、修改ck账号cluster权限（新版）",
+      "name": "新增、修改集群账号cluster权限（新版）",
       "output": "ModifyUserNewPrivilegeResponse",
       "status": "online"
     },
@@ -216,7 +216,7 @@
           "example": "-",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

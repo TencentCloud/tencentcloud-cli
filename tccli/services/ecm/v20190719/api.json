@@ -15356,12 +15356,21 @@
         },
         {
           "disabled": false,
-          "document": "为弹性网卡指定随机生成的IPv6地址数量，目前数量不能大于1。",
+          "document": "为弹性网卡指定随机生成的IPv6地址数量，单网情况下是1，单网需要ISP 只能为单网运营商，三网情况3",
           "example": "1",
           "member": "int64",
           "name": "Ipv6AddressCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段",
+          "example": "sub-123456",
+          "member": "string",
+          "name": "Ipv6SubnetIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"

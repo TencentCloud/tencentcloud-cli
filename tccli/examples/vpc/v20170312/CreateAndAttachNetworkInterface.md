@@ -34,6 +34,8 @@ Output:
             "CdcId": "",
             "EniType": 1,
             "AttachType": 1,
+            "QosLevel": "DEFAULT",
+            "ResourceId": "",
             "PrivateIpAddressSet": [
                 {
                     "PrivateIpAddress": "172.16.64.13",
@@ -42,7 +44,8 @@ Output:
                     "PublicIpAddress": "",
                     "Description": "",
                     "IsWanIpBlocked": false,
-                    "State": "PENDING"
+                    "State": "PENDING",
+                    "QosLevel": "DEFAULT"
                 }
             ],
             "Attachment": {

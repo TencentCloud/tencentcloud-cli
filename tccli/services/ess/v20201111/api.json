@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateFlowEvidenceReport": {
-      "document": "创建出证报告，返回报告 ID。需要配合出证套餐才能调用。\n出证需要一定时间，建议调用创建出证24小时之后再通过DescribeFlowEvidenceReport进行查询。",
+      "document": "创建出证报告并返回报告ID。\n使用此功能需搭配出证套餐。\n注意：出证过程需一定时间，建议在调用创建出证后的24小时之后，通过DescribeFlowEvidenceReport接口进行查询。",
       "input": "CreateFlowEvidenceReportRequest",
       "name": "创建并返回出证报告",
       "output": "CreateFlowEvidenceReportResponse",
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "CreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程Id，批量催办合同，最多100个; 接口失败后返回错误信息\n注意:\n该接口不可直接调用，请联系客户经理申请使用\n仅能催办当前状态为“待签署”的签署人，且只能催办一次\n发起合同时，签署人的NotifyType需设置为sms，否则无法催办",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，签署人的NotifyType需设置为sms\n2. 合同中当前状态为“待签署”的签署人是催办的对象\n3. 每个合同只能催办一次\n\n注意：该接口无法直接调用，请联系客户经理申请使用。",
       "input": "CreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "CreateFlowRemindsResponse",
@@ -2185,7 +2185,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2194,7 +2194,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号",
+          "document": "合同流程ID，为32位字符串。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -2203,7 +2203,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\n",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2218,8 +2218,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "出证报告 ID，可用于DescribeFlowEvidenceReport接口查询出证PDF的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yDx************************AyF",
           "member": "string",
           "name": "ReportId",
           "output_required": true,
@@ -2228,7 +2228,7 @@
         },
         {
           "disabled": false,
-          "document": "执行中：EvidenceStatusExecuting\n成功：EvidenceStatusSuccess\n失败：EvidenceStatusFailed",
+          "document": "出证任务执行的状态, 可能会有以下状态：\n\n<ul><li>EvidenceStatusExecuting：  出证任务在执行中</li>\n<li>EvidenceStatusSuccess：  出证任务执行成功</li>\n<li>EvidenceStatusFailed ： 出征任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -2237,8 +2237,8 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
-          "document": "废除，字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "此字段已经废除,不再使用.\n出证的PDF下载地址请调用DescribeChannelFlowEvidenceReport接口获取\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://file.xxx",
           "member": "string",
           "name": "ReportUrl",
@@ -2513,8 +2513,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
-          "example": "无",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yDR***************oimj",
           "member": "UserInfo",
           "name": "Operator",
           "required": true,
@@ -2522,8 +2522,8 @@
         },
         {
           "disabled": false,
-          "document": "需要执行催办的签署流程id数组，最多100个",
-          "example": "无",
+          "document": "需执行催办的签署流程ID数组，最多包含100个。",
+          "example": "['yDw*************Gm','yDwFmU*******Ot2iQF']",
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -2531,7 +2531,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2546,7 +2546,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "催办合同详情列表",
+          "document": "合同催办结果的详细信息列表。",
           "example": "无",
           "member": "RemindFlowRecords",
           "name": "RemindFlowRecords",
@@ -2595,6 +2595,15 @@
         },
         {
           "disabled": false,
+          "document": "签署流程描述,最大长度1000个字符",
+          "example": "无",
+          "member": "string",
+          "name": "FlowDescription",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符",
           "example": "劳务合同",
           "member": "string",
@@ -2613,7 +2622,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
+          "document": "签署流程的签署截止时间。\n\n值为unix时间戳,精确到秒,不传默认为当前时间一年后",
           "example": "1604912664",
           "member": "int64",
           "name": "DeadLine",
@@ -2635,15 +2644,6 @@
           "example": "无",
           "member": "string",
           "name": "UserData",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "签署流程描述,最大长度1000个字符",
-          "example": "无",
-          "member": "string",
-          "name": "FlowDescription",
           "required": false,
           "type": "string"
         },
@@ -2727,8 +2727,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署流程编号",
-          "example": "流程编号",
+          "document": "签署流程编号，\n\n返回的流程编号，需要在CreateDocument，StartFlow中使用，\n\n注意：这三个接口（CreateFlow，CreateDocument，StartFlow）要一并调用，才算发起成功",
+          "example": "无",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -8974,35 +8974,35 @@
       "usage": "in"
     },
     "RemindFlowRecords": {
-      "document": "催办接口返回详细信息",
+      "document": "催办接口返回的详细信息。",
       "members": [
         {
           "disabled": false,
-          "document": "是否能够催办，true-是，false-否",
+          "document": "合同流程是否可以催办：\ntrue - 可以，false - 不可以。\n若无法催办，将返回RemindMessage以解释原因。",
           "example": "true",
           "member": "bool",
           "name": "CanRemind",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同id",
-          "example": "xx",
+          "document": "合同流程ID，为32位字符串。",
+          "example": "yDwxxxxxxxW72Qaxm",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "催办详情信息",
-          "example": "xx",
+          "document": "在合同流程无法催办的情况下，系统将返回RemindMessage以阐述原因。",
+          "example": "\"\"",
           "member": "string",
           "name": "RemindMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

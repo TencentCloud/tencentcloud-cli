@@ -212,7 +212,7 @@
       {
         "document": "获取实例信息列表，支持按实例ID，实例名称，地域来查询实例相关信息。",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeDiagDBInstances\n&IsSupported=true\n&Offset=0\n&Limit=50\n&Product=mysql\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"DbScanStatus\": 1,\n        \"Items\": [\n            {\n                \"GroupName\": \"4个地域一个组\",\n                \"EventCount\": 0,\n                \"Memory\": 4000,\n                \"Product\": \"MySQL\",\n                \"Cpu\": 2,\n                \"Source\": \"TENCENT_CLOUD\",\n                \"UniqSubnetId\": \"subnet-test\",\n                \"DeployMode\": \"CUSTOM\",\n                \"InstanceType\": 1,\n                \"AuditRunningStatus\": \"normal\",\n                \"Status\": 1,\n                \"EngineVersion\": \"5.6\",\n                \"InstanceId\": \"cdb-test\",\n                \"Vport\": 63492,\n                \"InitFlag\": 1,\n                \"TaskStatus\": 0,\n                \"UniqVpcId\": \"vpc-fstest\",\n                \"GroupId\": \"dg-0ttest\",\n                \"InstanceName\": \"长期监控\",\n                \"HealthScore\": 100,\n                \"InstanceConf\": {\n                    \"OverviewDisplay\": \"Yes\",\n                    \"DailyInspection\": \"Yes\"\n                },\n                \"AuditPolicyStatus\": \"UNBOUND\",\n                \"Volume\": 100,\n                \"DeadlineTime\": \"2021-02-25 16:33:26\",\n                \"SecAuditStatus\": \"ON\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"10.5.0.9\",\n                \"IsSupported\": true\n            }\n        ],\n        \"RequestId\": \"b2d08895-1cfe-48bc-b7f7-87fd7cb5d6f1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"DbScanStatus\": 1,\n        \"Items\": [\n            {\n                \"GroupName\": \"4个地域一个组\",\n                \"EventCount\": 0,\n                \"Memory\": 4000,\n                \"Product\": \"MySQL\",\n                \"Cpu\": 2,\n                \"Source\": \"TENCENT_CLOUD\",\n                \"UniqSubnetId\": \"subnet-test\",\n                \"DeployMode\": \"CUSTOM\",\n                \"InstanceType\": 1,\n                \"AuditRunningStatus\": \"normal\",\n                \"Status\": 1,\n                \"EngineVersion\": \"5.6\",\n                \"InstanceId\": \"cdb-test\",\n                \"Vport\": 63492,\n                \"InitFlag\": 1,\n                \"TaskStatus\": 0,\n                \"UniqVpcId\": \"vpc-fstest\",\n                \"GroupId\": \"dg-0ttest\",\n                \"InstanceName\": \"长期监控\",\n                \"HealthScore\": 100,\n                \"InstanceConf\": {\n                    \"OverviewDisplay\": \"Yes\",\n                    \"DailyInspection\": \"Yes\",\n                    \"KeyDelimiters\": []\n                },\n                \"AuditPolicyStatus\": \"UNBOUND\",\n                \"Volume\": 100,\n                \"DeadlineTime\": \"2021-02-25 16:33:26\",\n                \"SecAuditStatus\": \"ON\",\n                \"Region\": \"ap-guangzhou\",\n                \"Vip\": \"10.5.0.9\",\n                \"IsSupported\": true,\n                \"CreateTime\": \"2021-02-25 16:33:26\",\n                \"InternalVip\": \"10.5.0.9\",\n                \"ClusterId\": \"cdb-test\",\n                \"InternalVport\": 9090,\n                \"ClusterName\": \"cdb-test\"\n            }\n        ],\n        \"RequestId\": \"b2d08895-1cfe-48bc-b7f7-87fd7cb5d6f1\"\n    }\n}",
         "title": "获取实例信息列表"
       }
     ],
@@ -428,6 +428,22 @@
         "input": "https://dbbrain.tencentcloudapi.com/?Action=OpenAuditService\n&Product=dcdb\n&NodeRequestType=dcdb\n&InstanceId=tdsqlsertsd\n&LogExpireDay=30\n&HotLogExpireDay=7\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TaskId\": 0,\n        \"RequestId\": \"b39db780-0b49-11ee-8525-17d65d16bdaf\"\n    }\n}",
         "title": "开通数据库审计"
+      }
+    ],
+    "UpdateAgentSwitch": [
+      {
+        "document": "更新Agent状态（停止或者重连Agent）",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=UpdateAgentSwitch\n&AgentId=ins-ehocdsc\n&Switch=on\n&Product=ap-chengdu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\"\n    }\n}",
+        "title": "更新Agent状态"
+      }
+    ],
+    "UpdateMonitorSwitch": [
+      {
+        "document": "更新Agent实例状态（停止或者重连实例）",
+        "input": "https://dbbrain.tencentcloudapi.com/?Action=UpdateMonitorSwitch\n&Switch=on\n&InstanceId=mysql-069yc1dda\n&Product=ap-chengdu\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b49053b9-f21c-40ec-a1ce-d1a5fae5193f\"\n    }\n}",
+        "title": "更新Agent实例状态"
       }
     ],
     "VerifyUserAccount": [

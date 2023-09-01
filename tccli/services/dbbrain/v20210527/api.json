@@ -371,6 +371,20 @@
       "output": "OpenAuditServiceResponse",
       "status": "online"
     },
+    "UpdateAgentSwitch": {
+      "document": "更新agent状态（停止或重连Agent）",
+      "input": "UpdateAgentSwitchRequest",
+      "name": "更新Agent状态",
+      "output": "UpdateAgentSwitchResponse",
+      "status": "online"
+    },
+    "UpdateMonitorSwitch": {
+      "document": "更新Agent实例状态（停止或重连实例）",
+      "input": "UpdateMonitorSwitchRequest",
+      "name": "更新Agent实例状态",
+      "output": "UpdateMonitorSwitchResponse",
+      "status": "online"
+    },
     "VerifyUserAccount": {
       "document": "验证用户数据库账号权限，获取会话token。",
       "input": "VerifyUserAccountRequest",
@@ -2731,7 +2745,7 @@
         },
         {
           "disabled": false,
-          "document": "服务产品类型，支持值包括： \"mysql\" - 云数据库 MySQL， \"cynosdb\" - 云数据库 TDSQL-C for MySQL，默认为\"mysql\"。",
+          "document": "服务产品类型，支持值包括：\"mysql\" - 云数据库 MySQL，\"cynosdb\" - 云数据库 TDSQL-C for MySQL，\"dbbrain-mysql\" - 自建 MySQL，默认为\"mysql\"。",
           "example": "mysql",
           "member": "string",
           "name": "Product",
@@ -2795,7 +2809,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2805,7 +2819,7 @@
           "example": "1",
           "member": "int64",
           "name": "DbScanStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2815,7 +2829,7 @@
           "example": "-",
           "member": "InstanceInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7748,6 +7762,96 @@
         }
       ],
       "usage": "out"
+    },
+    "UpdateAgentSwitchRequest": {
+      "document": "UpdateAgentSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Agent标识。",
+          "example": "a6a7fccd-3cca-4310-b31e-2a60598d3414",
+          "member": "string",
+          "name": "AgentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "停止或重连Agent，支持值包括：\"on\" - 重连Agent， \"off\" - 停止Agent。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅支持 \"dbbrain-mysql\" - 自建MySQL。",
+          "example": "dbbrain-mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateAgentSwitchResponse": {
+      "document": "UpdateAgentSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMonitorSwitchRequest": {
+      "document": "UpdateMonitorSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "停止或重连Agent实例，支持值包括：\"on\" - 重连实例， \"off\" - 停止实例。",
+          "example": "on",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "mysql-069yc1dda",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，仅支持 \"dbbrain-mysql\" - 自建MySQL。",
+          "example": "dbbrain-mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateMonitorSwitchResponse": {
+      "document": "UpdateMonitorSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UserProfile": {
       "document": "用户配置的相关信息，包括邮件配置。",

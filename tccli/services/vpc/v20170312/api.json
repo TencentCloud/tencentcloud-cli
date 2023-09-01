@@ -379,7 +379,7 @@
       "status": "online"
     },
     "CreateSecurityGroupPolicies": {
-      "document": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n在 SecurityGroupPolicySet 参数中：\n<ul>\n<li>Version 安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。</li>\n<li>在创建出站和入站规则（Egress 和 Ingress）时：<ul>\n<li>Protocol 字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n<li>CidrBlock 字段允许输入符合cidr格式标准的任意字符串。在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n<li>Ipv6CidrBlock 字段允许输入符合IPv6 cidr格式标准的任意字符串。在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个 ID 所关联的云服务器变化而变化，不需要重新修改。</li>\n<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 排他关系，不允许同时输入，否则会接口报错。</li>\n<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。IPv6CidrBlock和ICMP是排他关系，如需使用，请输入ICMPV6。</li>\n<li>一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。如想在规则最前面插入一条，则填0即可，如果想在最后追加，该字段可不填。</li>\n</ul></li></ul>",
+      "document": "本接口（CreateSecurityGroupPolicies）用于创建安全组规则（SecurityGroupPolicy）。\n\n在 SecurityGroupPolicySet 参数中：\n<ul>\n<li>Version 安全组规则版本号，用户每次更新安全规则版本会自动加1，防止您更新的路由规则已过期，不填不考虑冲突。</li>\n<li>在创建出站和入站规则（Egress 和 Ingress）时：<ul>\n<li>Protocol 字段支持输入TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n<li>CidrBlock 字段允许输入符合cidr格式标准的任意字符串。在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n<li>Ipv6CidrBlock 字段允许输入符合IPv6 cidr格式标准的任意字符串。在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个 ID 所关联的云服务器变化而变化，不需要重新修改。</li>\n<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受，即 Protocol 字段不是 TCP 或 UDP 时，Protocol 和 Port 是排他关系，不允许同时输入，否则会接口报错。</li>\n<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。IPv6CidrBlock和ICMP是排他关系，如需使用，请输入ICMPV6。</li>\n<li>一次请求中只能创建单个方向的规则, 如果需要指定索引（PolicyIndex）参数, 多条规则的索引必须一致。如想在规则最前面插入一条，则填0即可，如果想在最后追加，该字段可不填。</li>\n</ul></li></ul>",
       "input": "CreateSecurityGroupPoliciesRequest",
       "name": "安全组添加规则",
       "output": "CreateSecurityGroupPoliciesResponse",
@@ -1877,7 +1877,7 @@
       "status": "online"
     },
     "ModifySecurityGroupPolicies": {
-      "document": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n<ul>\n<li>该接口不支持自定义索引 PolicyIndex。</li>\n<li>在 SecurityGroupPolicySet 参数中：<ul>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略 Egress 和 Ingress。</li>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 不为0, 在添加出站和入站规则（Egress 和 Ingress）时：<ul>\n\t\t<li>Protocol 字段支持输入 TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n\t\t<li>CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。(展开)在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>Ipv6CidrBlock 字段允许输入符合 IPv6 cidr 格式标准的任意字符串。(展开)在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。</li>\n\t\t<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受。</li>\n\t\t<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n\t\t<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>\n</ul></li></ul></li>\n</ul>",
+      "document": "本接口（ModifySecurityGroupPolicies）用于重置安全组出站和入站规则（SecurityGroupPolicy）。\n\n<ul>\n<li>该接口不支持自定义索引 PolicyIndex。</li>\n<li>在 SecurityGroupPolicySet 参数中：<ul>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 为0, 表示清空所有规则，并忽略 Egress 和 Ingress。</li>\n\t<li> 如果指定 SecurityGroupPolicySet.Version 不为0, 在添加出站和入站规则（Egress 和 Ingress）时：<ul>\n\t\t<li>Protocol 字段支持输入 TCP, UDP, ICMP, ICMPV6, GRE, ALL。</li>\n\t\t<li>CidrBlock 字段允许输入符合 cidr 格式标准的任意字符串。在基础网络中，如果 CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IP，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>Ipv6CidrBlock 字段允许输入符合 IPv6 cidr 格式标准的任意字符串。在基础网络中，如果Ipv6CidrBlock 包含您的账户内的云服务器之外的设备在腾讯云的内网 IPv6，并不代表此规则允许您访问这些设备，租户之间网络隔离规则优先于安全组中的内网规则。</li>\n\t\t<li>SecurityGroupId 字段允许输入与待修改的安全组位于相同项目中的安全组 ID，包括这个安全组 ID 本身，代表安全组下所有云服务器的内网 IP。使用这个字段时，这条规则用来匹配网络报文的过程中会随着被使用的这个ID所关联的云服务器变化而变化，不需要重新修改。</li>\n\t\t<li>Port 字段允许输入一个单独端口号，或者用减号分隔的两个端口号代表端口范围，例如80或8000-8010。只有当 Protocol 字段是 TCP 或 UDP 时，Port 字段才被接受。</li>\n\t\t<li>Action 字段只允许输入 ACCEPT 或 DROP。</li>\n\t\t<li>CidrBlock, Ipv6CidrBlock, SecurityGroupId, AddressTemplate 四者是排他关系，不允许同时输入，Protocol + Port 和 ServiceTemplate 二者是排他关系，不允许同时输入。</li>\n</ul></li></ul></li>\n</ul>",
       "input": "ModifySecurityGroupPoliciesRequest",
       "name": "修改安全组出站和入站规则",
       "output": "ModifySecurityGroupPoliciesResponse",
@@ -3463,6 +3463,15 @@
           "name": "QosLevel",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3476,6 +3485,7 @@
           "example": "无",
           "member": "PrivateIpAddressSpecification",
           "name": "PrivateIpAddressSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3951,6 +3961,15 @@
           "name": "AttachType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5625,6 +5644,15 @@
           "name": "AttachType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5638,6 +5666,7 @@
           "example": "--",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7051,6 +7080,15 @@
           "name": "TrunkingFlag",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7064,6 +7102,7 @@
           "example": "无",
           "member": "NetworkInterface",
           "name": "NetworkInterface",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7163,6 +7202,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7172,6 +7212,7 @@
           "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7189,7 +7230,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-33ocnj9n",
           "member": "string",
           "name": "SecurityGroupId",
@@ -7243,7 +7284,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，默认0。可在qcloud控制台项目管理页面查询到。",
+          "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。",
           "example": "0",
           "member": "string",
           "name": "ProjectId",
@@ -7271,6 +7312,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7306,7 +7348,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">qcloud控制台项目管理页面</a>查询到。",
+          "document": "项目ID，默认0。可在<a href=\"https://console.cloud.tencent.com/project\">控制台项目管理页面</a>查询到。",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -7334,6 +7376,7 @@
           "example": "sg-2quou3gv",
           "member": "SecurityGroup",
           "name": "SecurityGroup",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7551,6 +7594,7 @@
           "example": "无",
           "member": "Subnet",
           "name": "Subnet",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7614,6 +7658,7 @@
           "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9767,6 +9812,7 @@
           "example": "无",
           "member": "Route",
           "name": "RouteSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9784,7 +9830,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
@@ -9820,7 +9866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-33ocnj9n",
           "member": "string",
           "name": "SecurityGroupId",
@@ -13307,6 +13353,7 @@
           "example": "无",
           "member": "NetworkAcl",
           "name": "NetworkAclSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13316,6 +13363,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13602,7 +13650,7 @@
         },
         {
           "disabled": false,
-          "document": "请求对象个数。",
+          "document": "返回数量，默认为20，最大值为100。",
           "example": "1",
           "member": "string",
           "name": "Limit",
@@ -13621,6 +13669,7 @@
           "example": "16",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13630,6 +13679,7 @@
           "example": "无",
           "member": "RouteTable",
           "name": "RouteTableSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13647,8 +13697,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
-          "example": "",
+          "document": "安全实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
+          "example": "[\"sg-ohuuioma\\r\\n\",\"sg-2quou3gv\\r\\n\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -13663,9 +13713,10 @@
         {
           "disabled": false,
           "document": "安全组关联实例统计。",
-          "example": "",
+          "example": "无",
           "member": "SecurityGroupAssociationStatistics",
           "name": "SecurityGroupAssociationStatisticsSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16163,6 +16214,15 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。\t",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
           "type": "string"
         }
       ],
@@ -21167,7 +21227,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-33ocnj9n",
           "member": "string",
           "name": "SecurityGroupId",
@@ -21212,7 +21272,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
@@ -22383,7 +22443,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22393,7 +22453,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22403,7 +22463,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22413,7 +22473,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22423,7 +22483,7 @@
           "example": "无",
           "member": "string",
           "name": "NetDetectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22433,7 +22493,7 @@
           "example": "无",
           "member": "string",
           "name": "NetDetectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22443,7 +22503,7 @@
           "example": "无",
           "member": "string",
           "name": "DetectDestinationIp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22453,7 +22513,7 @@
           "example": "无",
           "member": "string",
           "name": "DetectSourceIp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22463,17 +22523,17 @@
           "example": "无",
           "member": "string",
           "name": "NextHopType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；",
+          "document": "下一跳目的网关，取值与“下一跳类型”相关：\n下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；\n下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；\n下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；\n下一跳类型为NAT，取值Nat网关，形如：nat-12345678；\n下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；\n下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；\n下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测，添加和修改时，不需要指定值，查询时值为空字符串；",
           "example": "无",
           "member": "string",
           "name": "NextHopDestination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22483,7 +22543,7 @@
           "example": "无",
           "member": "string",
           "name": "NextHopName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22493,7 +22553,7 @@
           "example": "无",
           "member": "string",
           "name": "NetDetectDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22503,7 +22563,7 @@
           "example": "无",
           "member": "datetime",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -24008,7 +24068,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "安全组实例ID，例如sg-33ocnj9n，可通过DescribeSecurityGroups获取。",
+          "document": "安全组实例ID，例如sg-33ocnj9n，可通过<a href=\"https://cloud.tencent.com/document/product/215/15808\">DescribeSecurityGroups</a>获取。",
           "example": "sg-ohuuioma",
           "member": "string",
           "name": "SecurityGroupId",
@@ -25033,7 +25093,7 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25043,7 +25103,7 @@
           "example": "rtb-32kbqgtm",
           "member": "string",
           "name": "RouteTableId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25053,7 +25113,7 @@
           "example": "ruby",
           "member": "string",
           "name": "RouteTableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25063,7 +25123,7 @@
           "example": "10.0.0.0/16",
           "member": "RouteTableAssociation",
           "name": "AssociationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25073,7 +25133,7 @@
           "example": "-",
           "member": "Route",
           "name": "RouteSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25083,7 +25143,7 @@
           "example": "True",
           "member": "bool",
           "name": "Main",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -25093,7 +25153,7 @@
           "example": "2010-11-21",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25103,7 +25163,7 @@
           "example": "-",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -25113,7 +25173,7 @@
           "example": "-",
           "member": "CidrForCcn",
           "name": "LocalCidrForCcn",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

@@ -98,11 +98,39 @@
       "output": "DescribeScanReportListResponse",
       "status": "online"
     },
+    "DescribeScanTaskList": {
+      "document": "获取扫描任务列表",
+      "input": "DescribeScanTaskListRequest",
+      "name": "获取扫描任务列表",
+      "output": "DescribeScanTaskListResponse",
+      "status": "online"
+    },
+    "DescribeSearchBugInfo": {
+      "document": "立体防护中心查询漏洞信息",
+      "input": "DescribeSearchBugInfoRequest",
+      "name": "查询漏洞信息",
+      "output": "DescribeSearchBugInfoResponse",
+      "status": "online"
+    },
     "DescribeSubnetAssets": {
       "document": "获取子网列表",
       "input": "DescribeSubnetAssetsRequest",
       "name": "子网列表",
       "output": "DescribeSubnetAssetsResponse",
+      "status": "online"
+    },
+    "DescribeTaskLogList": {
+      "document": "获取任务扫描报告列表",
+      "input": "DescribeTaskLogListRequest",
+      "name": "获取任务扫描报告列表",
+      "output": "DescribeTaskLogListResponse",
+      "status": "online"
+    },
+    "DescribeTaskLogURL": {
+      "document": "获取报告下载的临时链接",
+      "input": "DescribeTaskLogURLRequest",
+      "name": "获取报告下载的临时链接",
+      "output": "DescribeTaskLogURLResponse",
       "status": "online"
     },
     "DescribeVpcAssets": {
@@ -648,6 +676,112 @@
       ],
       "usage": "out"
     },
+    "AssetInfoDetail": {
+      "document": "资产扫描结构细节",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVE编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVE-2012-12345",
+          "member": "string",
+          "name": "CVEId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是扫描，0默认未扫描，1正在扫描，2扫描完成，3扫描出错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsScan",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "影响资产数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45",
+          "member": "int64",
+          "name": "InfluenceAsset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未修复资产数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "33",
+          "member": "int64",
+          "name": "NotRepairAsset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未防护资产数目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "24",
+          "member": "int64",
+          "name": "NotProtectAsset",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mis-qbskll7i",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TaskPercent",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "46",
+          "member": "int64",
+          "name": "TaskTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-1-12",
+          "member": "string",
+          "name": "ScanTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AssetViewPortRisk": {
       "document": "资产视角的端口风险对象",
       "members": [
@@ -1175,6 +1309,212 @@
           "name": "EMGCVulType",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BugInfoDetail": {
+      "document": "漏洞详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞对应pocId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pcmgr_12435",
+          "member": "string",
+          "name": "PatchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sql注入",
+          "member": "string",
+          "name": "VULName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞严重性：high,middle，low，info\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "high",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cvss评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.8",
+          "member": "string",
+          "name": "CVSSScore",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cve编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CVE-2012-12345",
+          "member": "string",
+          "name": "CVEId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"POC\"]",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞种类，1:web应用，2:系统组件漏洞，3:配置风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1:web应用，2:系统组件漏洞，3:配置风险",
+          "member": "uint64",
+          "name": "VULCategory",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "windows",
+          "member": "string",
+          "name": "ImpactOs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apache",
+          "member": "string",
+          "name": "ImpactCOMPENT",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "string",
+          "name": "ImpactVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "网页链接",
+          "member": "string",
+          "name": "Reference",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VULDescribe",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Fix",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品支持状态，实时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProSupport",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否公开，0为未发布，1为发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0为未发布，1为发布",
+          "member": "uint64",
+          "name": "IsPublish",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "释放时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞子类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubCategory",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2285,6 +2625,92 @@
       ],
       "usage": "out"
     },
+    "DataSearchBug": {
+      "document": "漏洞和资产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回查询状态",
+          "example": "1",
+          "member": "string",
+          "name": "StateCode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BugInfoDetail",
+          "name": "DataBug",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AssetInfoDetail",
+          "name": "DataAsset",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true支持扫描。false不支持扫描\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "VSSScan",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0不支持，1支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CWPScan",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1支持虚拟补丁，0或空不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CFWPatch",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0不支持，1支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WafPatch",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0不支持，1支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CWPFix",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DbAssetInfo": {
       "document": "db资产详情",
       "members": [
@@ -3222,6 +3648,132 @@
       ],
       "type": "object"
     },
+    "DescribeScanTaskListRequest": {
+      "document": "DescribeScanTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScanTaskListResponse": {
+      "document": "DescribeScanTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ScanTaskInfoList",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账户ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UINList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检模式过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "TaskModeList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchBugInfoRequest": {
+      "document": "DescribeSearchBugInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "1",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "id=3时传入该参数",
+          "example": "CVE-2012-12345",
+          "member": "string",
+          "name": "CVEId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSearchBugInfoResponse": {
+      "document": "DescribeSearchBugInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "漏洞信息和资产信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataSearchBug",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态值，0：查询成功，非0：查询失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态信息，success：查询成功，fail：查询失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSubnetAssetsRequest": {
       "document": "DescribeSubnetAssets请求参数结构体",
       "members": [
@@ -3291,6 +3843,105 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "ZoneList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskLogListRequest": {
+      "document": "DescribeTaskLogList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskLogListResponse": {
+      "document": "DescribeTaskLogList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskLogInfo",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "待查看数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "NotViewNumber",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskLogURLRequest": {
+      "document": "DescribeTaskLogURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务报告Id 列表",
+          "example": "无",
+          "member": "ReportItemKey",
+          "name": "ReportItemKeyList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0: 预览， 1: 下载",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskLogURLResponse": {
+      "document": "DescribeTaskLogURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回报告临时下载url",
+          "example": "无",
+          "member": "TaskLogURL",
+          "name": "Data",
           "type": "list",
           "value_allowed_null": false
         },
@@ -4219,6 +4870,22 @@
       ],
       "usage": "out"
     },
+    "ReportItemKey": {
+      "document": "报告项key",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志Id列表",
+          "example": "xx",
+          "member": "string",
+          "name": "TaskLogList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "ScanTaskInfo": {
       "document": "扫描任务详情",
       "members": [
@@ -4340,6 +5007,402 @@
           "name": "UserName",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ScanTaskInfoList": {
+      "document": "扫描任务列表展示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 17:14:20",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 17:14:20",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "corn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "* * * * 1 *",
+          "member": "string",
+          "name": "ScanPlanContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0-周期任务,1-立即扫描,2-定时扫描,3-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 17:14:20",
+          "member": "string",
+          "name": "InsertTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mis-xxxxxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排除扫描资产信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{xx}]",
+          "member": "string",
+          "name": "SelfDefiningAssets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预估时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PredictTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预估完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-01 17:14:20",
+          "member": "string",
+          "name": "PredictEndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ReportNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AssetNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScanStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Percent",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "port/poc/weakpass/webcontent/configrisk\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "port",
+          "member": "string",
+          "name": "ScanItem",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0-全扫，1-指定资产扫，2-排除资产扫\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScanAssetType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vss子任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "VSSTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cspm子任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CSPMTaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机漏扫子任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CWPPOCId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机基线子任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "CWPBlId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vss子任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "VSSTaskProcess",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cspm子任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CSPMTaskProcess",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机漏扫子任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CWPPOCProcess",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机基线子任务进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CWPBlProcess",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "ErrorInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "周期任务开始的天数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "StartDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描频率,单位天,1-每天,7-每周,30-月,0-扫描一次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Frequency",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "完成次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompleteNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已完成资产个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompleteAssetNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "RiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskAssetObject",
+          "name": "Assets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户主账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UIN",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检模式，0-标准模式，1-快速模式，2-高级模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TaskMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vss",
+          "member": "string",
+          "name": "ScanFrom",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否限免体检0不是，1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsFree",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可以删除，1-可以，0-不可以，对应多账户管理使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDelete",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -4746,6 +5809,178 @@
         }
       ],
       "usage": "in"
+    },
+    "TaskLogInfo": {
+      "document": "任务报告信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "报告1",
+          "member": "string",
+          "name": "TaskLogName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告ID",
+          "example": "2222",
+          "member": "string",
+          "name": "TaskLogId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联资产个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AssetsNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全风险数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskNumber",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告生成时间,任务结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-27 15:42:22",
+          "member": "string",
+          "name": "Time",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态码：0 初始值  1正在扫描  2扫描完成  3扫描出错，4停止，5暂停，6该任务已被重启过\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "helloworld",
+          "member": "string",
+          "name": "TaskName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-09-27 15:42:22",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务中心扫描任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rmis-11111111",
+          "member": "string",
+          "name": "TaskCenterTaskId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "UIN",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "UserName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskLogURL": {
+      "document": "报告pdf下载的临时链接",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报告下载临时链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxxx/xxx",
+          "member": "string",
+          "name": "URL",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务报告id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "LogId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务报告名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TaskLogName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "APP ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Vpc": {
       "document": "vpc列表数据",
