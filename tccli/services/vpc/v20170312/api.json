@@ -1155,6 +1155,13 @@
       "output": "DescribeAccountAttributesResponse",
       "status": "online"
     },
+    "DescribeAddressAvailability": {
+      "document": "查询弹性公网IP（EIP）库存状态",
+      "input": "DescribeAddressAvailabilityRequest",
+      "name": "查询弹性公网IP（EIP）库存状态",
+      "output": "DescribeAddressAvailabilityResponse",
+      "status": "online"
+    },
     "DescribeAddressQuota": {
       "document": "本接口 (DescribeAddressQuota) 用于查询您账户的[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）在当前地域的配额信息。配额详情可参见 [EIP 产品简介](https://cloud.tencent.com/document/product/213/5733)。",
       "input": "DescribeAddressQuotaRequest",
@@ -3686,6 +3693,82 @@
           "member": "string",
           "name": "AntiDDoSPackageId",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AddressAvailableInfo": {
+      "document": "资源可用状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源可用余量",
+          "example": "1",
+          "member": "int64",
+          "name": "AddressCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源产品类型",
+          "example": "EIP",
+          "member": "string",
+          "name": "AddressType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源可用状态",
+          "example": "Available",
+          "member": "string",
+          "name": "Availability",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源运营商类型",
+          "example": "BGP",
+          "member": "string",
+          "name": "InternetServiceProvider",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源所在可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源所在网络组",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "NetworkGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源产品子类型",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -13948,6 +14031,70 @@
           "example": "[{\"AttributeName\":\"supported-platforms\",\"AttributeValues\":[\"VPC\"]}]",
           "member": "AccountAttribute",
           "name": "AccountAttributeSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddressAvailabilityRequest": {
+      "document": "DescribeAddressAvailability请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请 EIP 数量，默认值为1。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AddressCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "EIP类型，可选值[EIP|AnycastEIP|WanIP]，默认EIP。",
+          "example": "EIP",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请适用于CLB的EIP，默认值为False。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "ApplicableForCLB",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "运营商名称，可选值[BGP|CTCC|CMCC|CUCC]，默认BGP。",
+          "example": "BGP",
+          "member": "string",
+          "name": "InternetServiceProvider",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAddressAvailabilityResponse": {
+      "document": "DescribeAddressAvailability返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源可用状态信息。",
+          "example": "无",
+          "member": "AddressAvailableInfo",
+          "name": "AvailabilitySet",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },

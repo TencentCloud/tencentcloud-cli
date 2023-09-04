@@ -12721,6 +12721,26 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL是否截断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "fasle",
+          "member": "bool",
+          "name": "IsSQLCutOff",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间，毫秒时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611646962000",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

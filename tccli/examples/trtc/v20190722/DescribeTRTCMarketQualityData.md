@@ -9,7 +9,7 @@ tccli trtc DescribeTRTCMarketQualityData --cli-unfold-argument  \
     --SdkAppId abc \
     --StartTime 2020-09-22 \
     --EndTime 2020-09-22 \
-    --Period abc
+    --Period d
 ```
 
 Output: 
@@ -22,64 +22,31 @@ Output:
                 {
                     "Columns": [
                         "time",
-                        "userCount",
-                        "roomCount"
+                        "videoFreezeRate",
+                        "audioFreezeRate",
+                        "networkDelay",
+                        "joinSuccessRate",
+                        "joinSuccessRate"
                     ],
                     "Values": [
                         {
                             "RowValue": [
-                                1692935050,
-                                1,
-                                1
+                                1664553600,
+                                2,
+                                0,
+                                0,
+                                97,
+                                97
                             ]
                         },
                         {
                             "RowValue": [
-                                1692935060,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935070,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935080,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935090,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935100,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935110,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935120,
-                                1,
-                                1
+                                1664640000,
+                                3,
+                                0,
+                                0,
+                                98,
+                                98
                             ]
                         }
                     ]

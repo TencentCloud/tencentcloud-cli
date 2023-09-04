@@ -22,11 +22,11 @@
       "status": "online"
     },
     "CreateLead": {
-      "document": "TCC导创建线索，有白名单限制，需要的童鞋，请联系joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
+      "document": "下线接口\n\nTCC导创建线索，有白名单限制，需要的童鞋，请联系joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
       "input": "CreateLeadRequest",
       "name": "创建线索",
       "output": "CreateLeadResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateProductPatch": {
       "document": "产研接口--推送产品补丁包信息接口\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",

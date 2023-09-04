@@ -1170,9 +1170,9 @@
       "status": "online"
     },
     "ExecuteTask": {
-      "document": "手动执行一次任务。",
+      "document": "手动执行一次任务",
       "input": "ExecuteTaskRequest",
-      "name": "手动执行一次任务。",
+      "name": "手动执行一次任务",
       "output": "ExecuteTaskResponse",
       "status": "online"
     },
@@ -10489,7 +10489,7 @@
         },
         {
           "disabled": false,
-          "document": "滚动发布的执行方式",
+          "document": "滚动发布的执行方式，auto表示自动， manual表示手动",
           "example": "无",
           "member": "string",
           "name": "DeployExeMode",
@@ -10543,7 +10543,7 @@
         },
         {
           "disabled": false,
-          "document": "JDK版本: 8或11 (openJDK只支持8)",
+          "document": "konaJDK版本：8、11和17\nopenJDK版本：8、17",
           "example": "无",
           "member": "string",
           "name": "JdkVersion",
@@ -10589,6 +10589,7 @@
           "example": "无",
           "member": "TaskId",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17451,8 +17452,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
-          "example": "",
+          "document": "任务 ID",
+          "example": "task-xxxxxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -17467,9 +17468,10 @@
         {
           "disabled": false,
           "document": "成功/失败",
-          "example": "",
+          "example": "batch-xxxxxx",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -28412,7 +28414,7 @@
         {
           "disabled": false,
           "document": "部署组ID",
-          "example": "",
+          "example": "group-ap7qxxxx",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -28420,8 +28422,8 @@
         },
         {
           "disabled": false,
-          "document": "是否能使健康检查",
-          "example": "",
+          "document": "是否开启健康检查",
+          "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
           "required": false,
@@ -28430,7 +28432,7 @@
         {
           "disabled": false,
           "document": "健康检查配置",
-          "example": "",
+          "example": " ",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
           "required": false,
@@ -28445,9 +28447,10 @@
         {
           "disabled": false,
           "document": "更新健康检查配置操作是否成功。\ntrue：操作成功。\nfalse：操作失败。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": " ",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

@@ -352,6 +352,14 @@
         "title": "修改云原生API网关实例分组基础信息"
       }
     ],
+    "RestartNativeGatewayInstanceNode": [
+      {
+        "document": "重启网关实例节点",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"GroupId\": \"group-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "重启网关实例节点"
+      }
+    ],
     "UpdateCloudNativeAPIGatewaySpec": [
       {
         "document": "修改云原生API网关实例规格",

@@ -5636,8 +5636,7 @@
           "member": "string",
           "name": "Procedure",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5646,8 +5645,7 @@
           "member": "uint64",
           "name": "ExpireTime",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5656,8 +5654,7 @@
           "member": "string",
           "name": "StorageRegion",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5666,8 +5663,7 @@
           "member": "uint64",
           "name": "ClassId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5676,8 +5672,7 @@
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5686,8 +5681,7 @@
           "member": "string",
           "name": "SessionContext",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5696,18 +5690,16 @@
           "member": "string",
           "name": "SourceContext",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效)。",
+          "document": "上传到vod平台的录制文件格式类型，0：mp4(默认), 1: hls, 2:aac(StreamType=1纯音频录制时有效),\n3: hls+mp4, 4: hls+aac(StreamType=1纯音频录制时有效)。",
           "example": "1",
           "member": "uint64",
           "name": "MediaType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5716,8 +5708,7 @@
           "member": "string",
           "name": "UserDefineRecordId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

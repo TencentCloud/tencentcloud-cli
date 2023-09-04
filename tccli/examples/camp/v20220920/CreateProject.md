@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli camp CreateProject --cli-unfold-argument ```
+tccli camp CreateProject --cli-unfold-argument  \
+    --DisplayName test \
+    --Description test
+```
 
 Output: 
 ```

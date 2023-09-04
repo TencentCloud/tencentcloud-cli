@@ -18,7 +18,10 @@ Output:
             "ReturnCode": "0",
             "ReturnMessage": "ok",
             "Data": {
-                "FlowId": 0
+                "FlowId": 111,
+                "RouteDTO": {
+                    "RouteId": 132321
+                }
             }
         },
         "RequestId": "36713f94-d07d-4b96-babf-42d139276f23"

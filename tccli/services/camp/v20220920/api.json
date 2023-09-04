@@ -685,8 +685,257 @@
           "example": "xx",
           "member": "string",
           "name": "TopicID",
+          "output_required": true,
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域日志投递region 配置： 该参数当前仅对公有云生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集的日志类型: json_log代表json格式日志，delimiter_log代表分隔符格式日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称： 当指定日志集ID为空，并指定日志集名称时，cls-provisioner 将自动创建日志集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称： 当指定日志主题ID为空，并指定日志主题名称时，cls-provisioner 将自动创建日志主题。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志格式化方式： 默认default， 主要用于自建 k8s 日志采集。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期，单位天，标准存储取值范围1~3600，低频存储取值范围7~3600天。取值为3640时代表永久保存. 适用于自动创建日志主题的场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Period",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志沉降开关： 0 关闭日志沉降，非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效。 适用于自动创建日志主题的场景\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HotPeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题分区个数: 默认创建1个，最大支持创建10个分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PartitionCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自动分裂，默认值为true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoSplit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启自动分裂后，每个主题能够允许的最大分区数，默认值为50\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxSplitPartitions",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题的存储类型，可选值 hot（标准存储），cold（低频存储）；默认为hot\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义采集规则，Json格式序列化的字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserDefineRule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集配置名称： 主要用于 TKEX 弹性pod日志采集\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSExtractRule",
+          "name": "ExtractRule",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集黑名单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSExcludePath",
+          "name": "ExcludePaths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSIndex",
+          "name": "Indexs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高级设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSAdvancedConfig",
+          "name": "AdvancedConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSAdvancedConfig": {
+      "document": "CLS高级设置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志目录最大下钻深度： 当前默认下钻深度为5\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxDepth",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件超时配置： 当文件在指定时间段内没有输出，该文件将不再watch队列。即使后续有日志输出，也将不会被采集到\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "FileTimeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析失败合并\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ParseFailMerge",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -715,6 +964,244 @@
           "output_required": false,
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSExcludePath": {
+      "document": "CLS采集黑名单路径",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型，选填File或Path\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Type对应的具体内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSExtractRule": {
+      "document": "CLS日志采集规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间字段的key名字，time_key和time_format必须成对出现\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间字段的格式，参考c语言的strftime函数对于时间的格式说明输出参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeFormat",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分隔符类型日志的分隔符，只有log_type为delimiter_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Delimiter",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "整条日志匹配规则，只有log_type为fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogRegex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行首匹配规则，只有log_type为multiline_log或fullregex_log时有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginningRegex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取的每个字段的key名字，为空的key代表丢弃这个字段，只有log_type为delimiter_log时有效，json_log的日志使用json本身的key 注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterKeys",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要过滤的值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FilterRegex",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析失败日志是否上传，true表示上传，false表示不上传\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnMatchUpload",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败日志的key， 配合 unMatchUpload 使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnMatchedKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "增量采集模式下的回溯数据量，默认-1（全量采集）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Backtracking",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为Gbk编码. 0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IsGBK",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为标准json. 0: 否, 1: 是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JsonStandard",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSIndex": {
+      "document": "CLS日志主题索引配置 适用于自动创建日志主题的场景",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分词器\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tokenizer",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SqlFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否包含中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ContainZH",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -788,6 +1275,67 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilePath",
+          "name": "FilePaths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLSObject": {
+      "document": "CLS 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "MainUIN",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志采集规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLSDetail",
+          "name": "Details",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -813,30 +1361,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
-          "member": "string",
-          "name": "MainUIN",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ap-shanghai",
-          "member": "string",
-          "name": "Region",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "日志采集规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CLS日志\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "CLSDetail",
-          "name": "Details",
+          "member": "CLSObject",
+          "name": "Objects",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -941,6 +1470,17 @@
           "example": "无",
           "member": "string",
           "name": "VolumeName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SubPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubPath",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1844,6 +2384,42 @@
         },
         {
           "disabled": false,
+          "document": "业务名称",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "业务描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织架构信息",
+          "example": "无",
+          "member": "Organization",
+          "name": "Organization",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "管理员列表",
+          "example": "无",
+          "member": "User",
+          "name": "Admins",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "CMDB 管理员",
           "example": "无",
           "member": "User",
@@ -1871,6 +2447,15 @@
         },
         {
           "disabled": false,
+          "document": "云标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "来源",
           "example": "无",
           "member": "string",
@@ -1893,6 +2478,33 @@
           "example": "无",
           "member": "User",
           "name": "Creator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "true",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "迁移状态",
+          "example": "无",
+          "member": "Migration",
+          "name": "Migration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "智研信息",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
           "required": false,
           "type": "object"
         }
@@ -4476,6 +5088,34 @@
       ],
       "usage": "both"
     },
+    "FilePath": {
+      "document": "文件路径",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "File",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "过滤器",
       "members": [
@@ -5023,6 +5663,34 @@
       ],
       "usage": "both"
     },
+    "Migration": {
+      "document": "迁移相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Done",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyApplicationRequest": {
       "document": "ModifyApplication请求参数结构体",
       "members": [
@@ -5483,6 +6151,33 @@
           "name": "CMDBAdmins",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "智研属性",
+          "example": "无",
+          "member": "ZhiYanObject",
+          "name": "ZhiYan",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "只读",
+          "example": "true",
+          "member": "bool",
+          "name": "ReadOnly",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "迁移状态",
+          "example": "无",
+          "member": "Migration",
+          "name": "Migration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -5648,6 +6343,22 @@
           "name": "Annotations",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Organization": {
+      "document": "组织架构信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自研组织架构信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TencentOrganization",
+          "name": "Tencent",
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -6169,6 +6880,23 @@
       ],
       "usage": "both"
     },
+    "PreAuthTrait": {
+      "document": "Pod前置鉴权Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鉴权流程ID",
+          "example": "1122",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RainbowMetaConfig": {
       "document": "七彩石元配置信息",
       "members": [
@@ -6450,6 +7178,32 @@
       ],
       "usage": "both"
     },
+    "Tag": {
+      "document": "云标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云标签键",
+          "example": "test",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "云标签值",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Template": {
       "document": "模板，如应用模板",
       "members": [
@@ -6495,6 +7249,78 @@
         }
       ],
       "usage": "out"
+    },
+    "TencentOrganization": {
+      "document": "Tencent 组织架构信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Unit",
+          "name": "Department",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "虚拟部门信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Unit",
+          "name": "VirtualDepartment",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Unit",
+          "name": "Product",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规划产品信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Unit",
+          "name": "PlanProduct",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模块列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Module",
+          "name": "Modules",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "BG 信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Unit",
+          "name": "BusinessGroup",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TencentUser": {
       "document": "用户信息",
@@ -6690,6 +7516,17 @@
           "required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "前置鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PreAuthTrait",
+          "name": "PreAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6759,6 +7596,32 @@
           "example": "无",
           "member": "string",
           "name": "Kind",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Unit": {
+      "document": "组织对象单元",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
           "required": false,
           "type": "string",
           "value_allowed_null": true

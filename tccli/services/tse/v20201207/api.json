@@ -308,6 +308,13 @@
       "output": "ModifyNativeGatewayServerGroupResponse",
       "status": "online"
     },
+    "RestartNativeGatewayInstanceNode": {
+      "document": "重启云原生网关一个节点",
+      "input": "RestartNativeGatewayInstanceNodeRequest",
+      "name": "重启云原生网关节点",
+      "output": "RestartNativeGatewayInstanceNodeResponse",
+      "status": "online"
+    },
     "UpdateCloudNativeAPIGatewaySpec": {
       "document": "修改云原生API网关实例的节点规格信息，比如节点扩缩容或者升降配",
       "input": "UpdateCloudNativeAPIGatewaySpecRequest",
@@ -6535,6 +6542,52 @@
         }
       ],
       "usage": "both"
+    },
+    "RestartNativeGatewayInstanceNodeRequest": {
+      "document": "RestartNativeGatewayInstanceNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关集群分组ID",
+          "example": "group-xxxxxxxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartNativeGatewayInstanceNodeResponse": {
+      "document": "RestartNativeGatewayInstanceNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"GatewayId\":\"abc\",\"GroupId\":\"abc\",\"Status\":\"abc\",\"TaskId\":\"abc\"}",
+          "member": "DeleteNativeGatewayServerGroupResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SREInstance": {
       "document": "微服务注册引擎实例",

@@ -222,6 +222,114 @@
           "name": "RegionName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例类型名称",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作UIN",
+          "example": "无",
+          "member": "string",
+          "name": "OperateUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "所属UIN",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支付时间",
+          "example": "无",
+          "member": "string",
+          "name": "PayTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "支付UIN",
+          "example": "无",
+          "member": "int64",
+          "name": "PayerUin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductCodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区域类型",
+          "example": "无",
+          "member": "string",
+          "name": "RegionType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区域类型名称",
+          "example": "无",
+          "member": "string",
+          "name": "RegionTypeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "总折扣",
+          "example": "无",
+          "member": "string",
+          "name": "TotalDiscount",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Zone名称",
+          "example": "无",
+          "member": "string",
+          "name": "ZoneName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
