@@ -119,6 +119,13 @@
       "output": "DeleteSqlFiltersResponse",
       "status": "online"
     },
+    "DescribeAlarmTemplate": {
+      "document": "通知模板查询",
+      "input": "DescribeAlarmTemplateRequest",
+      "name": "通知模板查询",
+      "output": "DescribeAlarmTemplateResponse",
+      "status": "online"
+    },
     "DescribeAllUserContact": {
       "document": "获取邮件发送中联系人的相关信息。",
       "input": "DescribeAllUserContactRequest",
@@ -343,6 +350,13 @@
       "output": "KillMySqlThreadsResponse",
       "status": "online"
     },
+    "ModifyAlarmPolicy": {
+      "document": "修改告警策略",
+      "input": "ModifyAlarmPolicyRequest",
+      "name": "修改告警策略",
+      "output": "ModifyAlarmPolicyResponse",
+      "status": "online"
+    },
     "ModifyAuditService": {
       "document": "修改审计配置相关信息，如高频存储时长等",
       "input": "ModifyAuditServiceRequest",
@@ -454,6 +468,212 @@
         }
       ],
       "type": "object"
+    },
+    "AlarmProfileList": {
+      "document": "通知模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0-不是 1-是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWebHook",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收告警用户数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReceiveUinCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "语言\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cn",
+          "member": "string",
+          "name": "Lang",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "msg_template",
+          "member": "string",
+          "name": "TemplateType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收组数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReceiveGroupCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新用户的uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "000001",
+          "member": "int64",
+          "name": "UpdateUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReceiveType",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收用户信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReceiveInfo",
+          "name": "ReceiveInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发送渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0, 1]",
+          "member": "int64",
+          "name": "SendChannel",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23455",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "webhook数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WebHookCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmsRules": {
+      "document": "告警规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "间隔",
+          "example": "0",
+          "member": "int64",
+          "name": "Interval",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警名",
+          "example": "磁盘空间利用率",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标",
+          "example": "SpaceUsage",
+          "member": "string",
+          "name": "Metric",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作符",
+          "example": ">",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "等级 \nfatal-致命\ncritical-严重\nwarning-告警\ninformation-通知\n",
+          "example": "warning",
+          "member": "string",
+          "name": "Severity",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标值",
+          "example": "80",
+          "member": "float",
+          "name": "Value",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
     },
     "AuditInstance": {
       "document": "实例详细信息",
@@ -1922,6 +2142,80 @@
     "DeleteSqlFiltersResponse": {
       "document": "DeleteSqlFilters返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmTemplateRequest": {
+      "document": "DescribeAlarmTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索字段",
+          "example": "test",
+          "member": "string",
+          "name": "TemplateNameRegexp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回限制长度",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "mysql -  mysql\ncynosdb -  tdsql-c",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmTemplateResponse": {
+      "document": "DescribeAlarmTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板列表",
+          "example": "无",
+          "member": "AlarmProfileList",
+          "name": "ProfileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板总数",
+          "example": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5266,6 +5560,21 @@
       ],
       "usage": "both"
     },
+    "InstanceID": {
+      "document": "实例id",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cdb-dxnfjfks",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InstanceInfo": {
       "document": "查询实例列表，返回实例的相关信息的对象。",
       "members": [
@@ -5804,6 +6113,132 @@
       ],
       "usage": "both"
     },
+    "ModifyAlarmPolicyRequest": {
+      "document": "ModifyAlarmPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "instance",
+          "member": "string",
+          "name": "ApplyType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启策略",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "[{InstanceId: \"cdb-k9p7z9l9\"}]",
+          "member": "InstanceID",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "User-动态关联该用户所有实例\nInstance-关联实例列表的实例",
+          "example": "Instance",
+          "member": "string",
+          "name": "NewProfileLevel",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新策略名",
+          "example": "test",
+          "member": "string",
+          "name": "NewProfileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧策略名",
+          "example": "test",
+          "member": "string",
+          "name": "ProfileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "策略类型",
+          "example": "alarm_policy",
+          "member": "string",
+          "name": "ProfileType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "空",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型 0-快速，1-自定义 若值为0，则QuickRule不能为空，若值为1，则Rules 不能为空",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接受模板",
+          "example": "无",
+          "member": "TemplateInfo",
+          "name": "TemplateInfo",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "快速规则  支持包括fatal-致命, critical-严重,\nwarning-告警,\ninformation-通知",
+          "example": "fatal",
+          "member": "string",
+          "name": "QuickRule",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则",
+          "example": "无",
+          "member": "AlarmsRules",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAlarmPolicyResponse": {
+      "document": "ModifyAlarmPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyAuditServiceRequest": {
       "document": "ModifyAuditService请求参数结构体",
       "members": [
@@ -6338,6 +6773,98 @@
         }
       ],
       "usage": "both"
+    },
+    "ReceiveInfo": {
+      "document": "接收组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接收组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReceiveGroup",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后接收时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndReceiveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "通知",
+          "member": "string",
+          "name": "ReceiveName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推送渠道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SendChannel",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartReceiveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接收用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ReceiveUin",
+          "name": "ReceiveUin",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReceiveUin": {
+      "document": "接收用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "UinName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100001",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RedisKeySpaceData": {
       "document": "redis key空间信息。",
@@ -7736,6 +8263,30 @@
         }
       ],
       "usage": "out"
+    },
+    "TemplateInfo": {
+      "document": "通知模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板id",
+          "example": "23002",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板名",
+          "example": "测试",
+          "member": "string",
+          "name": "TemplateName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "TimeSlice": {
       "document": "单位时间间隔内的慢日志统计",

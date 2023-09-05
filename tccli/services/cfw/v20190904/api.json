@@ -35,6 +35,13 @@
       "output": "CreateAddressTemplateResponse",
       "status": "online"
     },
+    "CreateBlockIgnoreRuleList": {
+      "document": "批量添加入侵防御封禁列表、放通列表规则",
+      "input": "CreateBlockIgnoreRuleListRequest",
+      "name": "批量添加入侵防御封禁列表、放通列表规则",
+      "output": "CreateBlockIgnoreRuleListResponse",
+      "status": "online"
+    },
     "CreateChooseVpcs": {
       "document": "创建、选择vpc",
       "input": "CreateChooseVpcsRequest",
@@ -369,6 +376,13 @@
       "input": "ModifyBlockTopRequest",
       "name": "取消阻断记录置顶接口",
       "output": "ModifyBlockTopResponse",
+      "status": "online"
+    },
+    "ModifyEWRuleStatus": {
+      "document": "启用停用VPC间规则或Nat边界规则\nVPC间规则需指定EdgeId。Nat边界规则需指定地域Region与Direction。",
+      "input": "ModifyEWRuleStatusRequest",
+      "name": "启用停用VPC间规则或Nat边界规则",
+      "output": "ModifyEWRuleStatusResponse",
       "status": "online"
     },
     "ModifyEnterpriseSecurityDispatchStatus": {
@@ -1513,6 +1527,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockIgnoreRuleListRequest": {
+      "document": "CreateBlockIgnoreRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "IntrusionDefenseRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型，1封禁，2放通，不支持域名封禁",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBlockIgnoreRuleListResponse": {
+      "document": "CreateBlockIgnoreRuleList返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5377,6 +5427,72 @@
       ],
       "usage": "out"
     },
+    "IntrusionDefenseRule": {
+      "document": "入侵防御封禁列表、放通列表添加规则入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则方向，0出站，1入站，3内网间",
+          "example": "1",
+          "member": "int64",
+          "name": "Direction",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则结束时间，格式：2006-01-02 15:04:05，必须大于当前时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则IP地址，IP与Domain必填其中之一",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则域名，IP与Domain必填其中之一",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息，长度不能超过50",
+          "example": "放通ip",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开始时间",
+          "example": "2021-09-21 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "IocListData": {
       "document": "黑白名单IOC列表",
       "members": [
@@ -5879,6 +5995,89 @@
     "ModifyBlockTopResponse": {
       "document": "ModifyBlockTop返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEWRuleStatusRequest": {
+      "document": "ModifyEWRuleStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc规则必填，边id",
+          "example": "EdgeId",
+          "member": "string",
+          "name": "EdgeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开关开启，0：未开启，1：开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向，0：出站，1：入站，默认1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "更改的规则当前执行顺序",
+          "example": "3",
+          "member": "uint64",
+          "name": "RuleSequence",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型，vpc：VPC间规则、nat：Nat边界规则",
+          "example": "vpc",
+          "member": "string",
+          "name": "RuleType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEWRuleStatusResponse": {
+      "document": "ModifyEWRuleStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态值，0：修改成功，非0：修改失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态信息，success：查询成功，fail：查询失败",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7246,8 +7445,7 @@
           "member": "uint64",
           "name": "OrderIndex",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7256,8 +7454,7 @@
           "member": "string",
           "name": "SourceIp",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7266,8 +7463,7 @@
           "member": "string",
           "name": "TargetIp",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7276,8 +7472,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7286,8 +7481,7 @@
           "member": "string",
           "name": "Strategy",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7296,8 +7490,7 @@
           "member": "uint64",
           "name": "SourceType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7306,8 +7499,7 @@
           "member": "uint64",
           "name": "Direction",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7316,8 +7508,7 @@
           "member": "string",
           "name": "Detail",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7326,8 +7517,7 @@
           "member": "uint64",
           "name": "TargetType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7336,8 +7526,7 @@
           "member": "string",
           "name": "Port",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7346,8 +7535,7 @@
           "member": "uint64",
           "name": "Id",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7356,8 +7544,7 @@
           "member": "string",
           "name": "LogId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7366,8 +7553,7 @@
           "member": "uint64",
           "name": "City",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7376,8 +7562,7 @@
           "member": "uint64",
           "name": "Country",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7386,8 +7571,7 @@
           "member": "string",
           "name": "CloudCode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7396,8 +7580,7 @@
           "member": "uint64",
           "name": "IsRegion",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7406,8 +7589,7 @@
           "member": "string",
           "name": "CityName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7416,8 +7598,16 @@
           "member": "string",
           "name": "CountryName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "国家二位iso代码或者省份缩写代码",
+          "example": "gb",
+          "member": "string",
+          "name": "RegionIso",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8077,10 +8267,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)",
+          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板id(ipm-dyodhpby)\ninstance：资产实例id(ins-123456)\nresourcegroup：资产分组id(cfwrg-xxxx)\ntag：资源标签({\\\"Key\\\":\\\"标签key值\\\",\\\"Value\\\":\\\"标签Value值\\\"})\nregion：地域(ap-gaungzhou)",
           "example": "ipm-dyodhpby",
           "member": "string",
           "name": "SourceContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8091,16 +8282,18 @@
           "example": "template",
           "member": "string",
           "name": "SourceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板(ipm-dyodhpby)\ninstance：资产实例(ins-123456)\nresourcegroup：资产分组(/全部分组/分组1/子分组1)\ntag：资源标签({\"Key\":\"标签key值\",\"Value\":\"标签Value值\"})\nregion：地域(ap-gaungzhou)",
+          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ntemplate：参数模板id(ipm-dyodhpby)\ninstance：资产实例id(ins-123456)\nresourcegroup：资产分组id(cfwrg-xxxx)\ntag：资源标签({\\\"Key\\\":\\\"标签key值\\\",\\\"Value\\\":\\\"标签Value值\\\"})\nregion：地域(ap-gaungzhou)",
           "example": "ins-fmo10koi",
           "member": "string",
           "name": "DestContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8111,6 +8304,7 @@
           "example": "instance",
           "member": "string",
           "name": "DestType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8121,6 +8315,7 @@
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8131,16 +8326,18 @@
           "example": "test",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则顺序，-1表示最低，1表示最高",
+          "document": "规则顺序，-1表示最低，1表示最高，请勿和外层Type冲突（和外层的Type配合使用，当中间插入时，指定添加位置）",
           "example": "-1",
           "member": "string",
           "name": "OrderIndex",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8151,6 +8348,7 @@
           "example": "ANY",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8161,6 +8359,7 @@
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8171,26 +8370,29 @@
           "example": "ppmg-jz17vpis",
           "member": "string",
           "name": "ServiceTemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "规则对应的唯一id",
+          "document": "（入参时无需填写，自动生成）规则对应的唯一id",
           "example": "8888",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "规则状态，true表示启用，false表示禁用",
+          "document": "（入参时、Enable已弃用；由通用配置中新增规则启用状态控制）\n规则状态，true表示启用，false表示禁用",
           "example": "true",
           "member": "string",
           "name": "Enable",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

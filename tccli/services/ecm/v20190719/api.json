@@ -15320,7 +15320,7 @@
         },
         {
           "disabled": false,
-          "document": "运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动\n多个运营商用英文分号连接\";\"，例如：\"CMCC;CUCC;CTCC\"。多运营商需要开通白名单，请直接联系腾讯云客服。",
+          "document": "运营商如下：\nCTCC：中国电信\nCUCC：中国联通\nCMCC：中国移动\nCMCC;CUCC;CTCC：三网；三网需要开通白名单，请直接联系腾讯云客服。",
           "example": "CMCC",
           "member": "string",
           "name": "ISP",
@@ -15365,7 +15365,7 @@
         },
         {
           "disabled": false,
-          "document": "指定创建三网ipv6地址，使用的subnet数组，单独ipv4和单网ipv6子网依然使用SubnetId字段",
+          "document": "指定创建三网ipv6地址，使用的subnet数组，只创建ipv4不创建ipv6和单网ipv6子网依然使用SubnetId字段；\n该数组必须且仅支持传入三个不同的子网，并且这三个子网各自分配了电信、联通、移动三个运营商的其中一个IPV6 CIDR网段",
           "example": "sub-123456",
           "member": "string",
           "name": "Ipv6SubnetIds",

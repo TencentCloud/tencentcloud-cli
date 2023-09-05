@@ -5338,6 +5338,140 @@
       ],
       "usage": "in"
     },
+    "AudioBeautifyConfig": {
+      "document": "音量美化配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可多选，可选值：\n<li>declick：杂音去除</li>\n<li>deesser：齿音压制</li>\n默认值：declick。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Types",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioDenoiseConfig": {
+      "document": "音频降噪配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioEnhanceConfig": {
+      "document": "音频增强配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频降噪配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioDenoiseConfig",
+          "name": "Denoise",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频分离配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioSeparateConfig",
+          "name": "Separate",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音量均衡配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeBalanceConfig",
+          "name": "VolumeBalance",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频美化配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioBeautifyConfig",
+          "name": "Beautify",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "AudioSeparateConfig": {
+      "document": "音频分离配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景类型，可选值：\n<li>normal：人声背景声场景</li>\n<li>music：演唱伴奏场景</li>\n默认值：normal。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "输出音轨，可选值：\n<li>vocal：输出人声</li>\n<li>background：应用场景为normal时输出背景声，应用场景为music时输出伴奏</li>\n默认值：vocal。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Track",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AudioTemplateInfo": {
       "document": "音频流配置参数",
       "members": [
@@ -7847,7 +7981,7 @@
           "example": "1008",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12313,6 +12447,18 @@
           "example": "无",
           "member": "VideoEnhanceConfig",
           "name": "VideoEnhance",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音频增强配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AudioEnhanceConfig",
+          "name": "AudioEnhance",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -23027,7 +23173,7 @@
           "example": "0",
           "member": "string",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23037,7 +23183,7 @@
           "example": "“”",
           "member": "string",
           "name": "Container",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23047,7 +23193,7 @@
           "example": "“”",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23057,7 +23203,7 @@
           "example": "“”",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23067,7 +23213,7 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23077,7 +23223,7 @@
           "example": "0",
           "member": "int64",
           "name": "RemoveVideo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23087,7 +23233,7 @@
           "example": "0",
           "member": "int64",
           "name": "RemoveAudio",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23097,7 +23243,7 @@
           "example": "无",
           "member": "VideoTemplateInfo",
           "name": "VideoTemplate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23107,7 +23253,7 @@
           "example": "无",
           "member": "AudioTemplateInfo",
           "name": "AudioTemplate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23117,7 +23263,7 @@
           "example": "无",
           "member": "TEHDConfig",
           "name": "TEHDConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -23127,7 +23273,7 @@
           "example": "“”",
           "member": "string",
           "name": "ContainerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23137,7 +23283,7 @@
           "example": "“”",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23147,7 +23293,7 @@
           "example": "“”",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23157,7 +23303,7 @@
           "example": "无",
           "member": "EnhanceConfig",
           "name": "EnhanceConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -23958,6 +24104,34 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VolumeBalanceConfig": {
+      "document": "音量均衡配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "能力配置开关，可选值：\n<li>ON：开启；</li>\n<li>OFF：关闭。</li>\n默认值：ON。",
+          "example": "“”",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型，可选值：\n<li>loudNorm：响度标准化</li>\n<li>gainControl：减小突变</li>\n默认值：loudNorm。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -1170,9 +1170,9 @@
       "status": "online"
     },
     "ExecuteTask": {
-      "document": "手动执行一次任务。",
+      "document": "手动执行一次任务",
       "input": "ExecuteTaskRequest",
-      "name": "手动执行一次任务。",
+      "name": "手动执行一次任务",
       "output": "ExecuteTaskResponse",
       "status": "online"
     },
@@ -17442,8 +17442,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID。",
-          "example": "",
+          "document": "任务 ID",
+          "example": "task-xxxxxx",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -17458,9 +17458,10 @@
         {
           "disabled": false,
           "document": "成功/失败",
-          "example": "",
+          "example": "batch-xxxxxx",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

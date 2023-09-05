@@ -136,6 +136,14 @@
         "title": "删除实例SQL限流任务"
       }
     ],
+    "DescribeAlarmTemplate": [
+      {
+        "document": "查询通知模板示例",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmTemplate\n<公共请求参数>\n\n{\n    \"TemplateNameRegexp\": \"test\",\n    \"Limit\": 50,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ProfileList\": [],\n        \"RequestId\": \"5c2ad5eb-784b-4ff4-8860-17f75f4e5c1f\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询通知模板示例"
+      }
+    ],
     "DescribeAllUserContact": [
       {
         "document": "",
@@ -396,6 +404,14 @@
         "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: KillMySqlThreads\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-8jawylhf\",\n    \"SqlExecId\": \"2e2e2\",\n    \"Stage\": \"Commit\",\n    \"Product\": \"mysql\"\n}",
         "output": "{\n    \"Response\": {\n        \"SqlExecId\": \"ewfscd\",\n        \"Threads\": [\n            0\n        ],\n        \"RequestId\": \"sscrft\"\n    }\n}",
         "title": "根据会话ID中断当前会话"
+      }
+    ],
+    "ModifyAlarmPolicy": [
+      {
+        "document": "修改策略",
+        "input": "POST / HTTP/1.1\nHost: dbbrain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAlarmPolicy\n<公共请求参数>\n\n{\n    \"ApplyType\": \"instance\",\n    \"Enable\": 1,\n    \"InstanceIds\": [\n        {\n            \"InstanceId\": \"cdb-k9p7oscf\"\n        },\n        {\n            \"InstanceId\": \"cdb-5jqzedc\"\n        }\n    ],\n    \"NewProfileLevel\": \"Instance\",\n    \"NewProfileName\": \"test\",\n    \"ProfileName\": \"test\",\n    \"ProfileType\": \"alarm_policy\",\n    \"Remark\": \"test\",\n    \"RuleType\": 0,\n    \"QuickRule\": \"fatal\",\n    \"TemplateInfo\": [\n        {\n            \"TemplateId\": \"23002\",\n            \"TemplateName\": \"ada测试\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"08baa278-1104-4d3a-8585-027cc511d300\"\n    }\n}",
+        "title": "增加实例"
       }
     ],
     "ModifyAuditService": [

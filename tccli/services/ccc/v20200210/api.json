@@ -1457,7 +1457,7 @@
         },
         {
           "disabled": false,
-          "document": "用户 ID",
+          "document": "用户 ID，该值必须与 ClientData 字段中 Uid 的值一致",
           "example": "foo",
           "member": "string",
           "name": "Uid",
@@ -1467,7 +1467,7 @@
         {
           "disabled": false,
           "document": "有效期，单位秒，不超过 1 小时",
-          "example": "86400",
+          "example": "3600",
           "member": "int64",
           "name": "ExpiredTime",
           "required": true,
@@ -1475,8 +1475,8 @@
         },
         {
           "disabled": false,
-          "document": "用户签名数据",
-          "example": "bar",
+          "document": "用户签名数据，必填字段，为标准 JSON 格式",
+          "example": "参考下文示例",
           "member": "string",
           "name": "ClientData",
           "required": false,
@@ -1494,7 +1494,7 @@
           "example": "eJw0jkFPwjAYQP-Ld9Wwfm2HtokHswhK9IBMBtw22uEHbpa1JRrjfzfZ5vW95OX9",
           "member": "string",
           "name": "UserSig",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

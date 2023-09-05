@@ -8,8 +8,8 @@ Input:
 tccli ccc CreateUserSig --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --Uid staff1@xxx.com \
-    --ClientData abc \
-    --ExpiredTime 86400
+    --ClientData {"peerSource":"腾讯科技","nickName":"企鹅一号","avatarUrl":"https://foo.tencent.com/qieyihao.jpeg","uid":1846526} \
+    --ExpiredTime 3600
 ```
 
 Output: 

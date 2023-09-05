@@ -364,6 +364,13 @@
       "output": "DescribeDeliverBandwidthListResponse",
       "status": "online"
     },
+    "DescribeDeliverLogDownList": {
+      "document": "批量获取转推日志的URL。",
+      "input": "DescribeDeliverLogDownListRequest",
+      "name": "批量获取转推日志的URL",
+      "output": "DescribeDeliverLogDownListResponse",
+      "status": "online"
+    },
     "DescribeGroupProIspPlayInfoList": {
       "document": "该接口为监控数据接口，数据采集及统计方式与计费数据不同，仅供运营分析使用，不能用于计费对账参考。\n查询按省份和运营商分组的下行播放数据。",
       "input": "DescribeGroupProIspPlayInfoListRequest",
@@ -5632,6 +5639,43 @@
           "member": "BandwidthInfo",
           "name": "DataInfoList",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeliverLogDownListRequest": {
+      "document": "DescribeDeliverLogDownList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeliverLogDownListResponse": {
+      "document": "DescribeDeliverLogDownList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志信息列表。",
+          "example": "无",
+          "member": "PushLogInfo",
+          "name": "LogInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -14337,6 +14381,52 @@
           "example": "30",
           "member": "uint64",
           "name": "MetaFps",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PushLogInfo": {
+      "document": "推流域名日志信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志名称。",
+          "example": "pushlog-xxx",
+          "member": "string",
+          "name": "LogName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志下载地址。",
+          "example": "https://livelog-down.cdn.qcloud.com/20220804/11/202208041125-pul",
+          "member": "string",
+          "name": "LogUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志时间。UTC 格式，例如：2018-11-29T19:00:00Z。\n注意：\n1. 北京时间值为 UTC 时间值 + 8 小时，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2022-02-09T12:36:42Z",
+          "member": "string",
+          "name": "LogTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小，单位字节。",
+          "example": "1222",
+          "member": "int64",
+          "name": "FileSize",
           "required": true,
           "type": "int",
           "value_allowed_null": false

@@ -23549,7 +23549,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "媒体文件唯一标识列表。",
+          "document": "媒体文件唯一标识列表，最大长度：100。",
           "example": "无",
           "member": "string",
           "name": "FileIds",

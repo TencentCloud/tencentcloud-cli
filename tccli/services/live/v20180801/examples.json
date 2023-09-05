@@ -440,6 +440,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeDeliverLogDownList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeliverLogDownList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"LogInfoList\": [\n            {\n                \"LogName\": \"abc\",\n                \"LogUrl\": \"abc\",\n                \"LogTime\": \"abc\",\n                \"FileSize\": 0\n            }\n        ],\n        \"TotalNum\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeGroupProIspPlayInfoList": [
       {
         "document": "省份和运营商参考： [映射表](/document/api/267/34019)",
