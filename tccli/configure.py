@@ -155,7 +155,7 @@ class ConfigureListCommand(BasicConfigure):
             for c in modlist:
                 if not config[c]:
                     continue
-                if c in self.config_list:
+                if c == OptionsDefine.SysParam:
                     continue
                 try:
                     self._stream.write("%s.version = %s\n" % (c, config[c]["version"]))
@@ -380,8 +380,10 @@ class ConfigureCommand(BasicConfigure):
         if is_conf_exist:
             conf_data = Utils.load_json_msg(config_path)
             for c in config:
-                if c in conf_data and conf_data[c]:
-                    config[c] = conf_data[c]
+                if OptionsDefine.SysParam in conf_data \
+                        and c in conf_data[OptionsDefine.SysParam] \
+                        and conf_data[OptionsDefine.SysParam][c]:
+                    config[c] = conf_data[OptionsDefine.SysParam][c]
         if is_cred_exist:
             cred_data = Utils.load_json_msg(cred_path)
             for c in cred:
@@ -394,18 +396,18 @@ class ConfigureCommand(BasicConfigure):
                 if index == OptionsDefine.Output and response not in ['json', 'text', 'table']:
                     if config[index] not in ['json', 'text', 'table']:
                         print('Output format must be json, text or table. Set as default: json')
-                        conf_data[index] = 'json'
+                        conf_data[OptionsDefine.SysParam][index] = 'json'
                     else:
-                        conf_data[index] = config[index]
+                        conf_data[OptionsDefine.SysParam][index] = config[index]
                 elif index == OptionsDefine.Region and not response:
                     if not config[index]:
                         print('Set region as default: %s' % config[index])
-                    conf_data[index] = config[index]
+                    conf_data[OptionsDefine.SysParam][index] = config[index]
                 else:
-                    conf_data[index] = response if response else config[index]
+                    conf_data[OptionsDefine.SysParam][index] = response if response else config[index]
             else:
                 response = self._compat_input(
-                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index]!="None" else cred[index]))
+                    "%s[%s]: " % (prompt_text, "*"+cred[index][-4:] if cred[index] != "None" else cred[index]))
                 cred_data[index] = response if response else cred[index]
 
         self._init_configure(profile_name + ".configure", conf_data)
