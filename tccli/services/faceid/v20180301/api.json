@@ -91,6 +91,13 @@
       "output": "CreateUploadUrlResponse",
       "status": "online"
     },
+    "DeleteSDKRecord": {
+      "document": "此接口提供给客户删除SDK验证记录，传入token，删除与此token相关的所有验证记录信息。此接口请求时的部分会进行排队处理，如一次请求删除的验证记录较多，则记录的删除时间可能存在时延。",
+      "input": "DeleteSDKRecordRequest",
+      "name": "删除SDK验证记录",
+      "output": "DeleteSDKRecordResponse",
+      "status": "online"
+    },
     "DetectAuth": {
       "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "DetectAuthRequest",
@@ -916,7 +923,7 @@
           "example": "无",
           "member": "string",
           "name": "ReqTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -926,7 +933,7 @@
           "example": "无",
           "member": "string",
           "name": "Seq",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -935,8 +942,18 @@
           "document": "一比一时使用的、脱敏后的身份证号。",
           "example": "无",
           "member": "string",
+          "name": "IdCard",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "已废弃。请使用“IdCard”字段",
+          "example": "无",
+          "member": "string",
           "name": "Idcard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -946,7 +963,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -956,7 +973,7 @@
           "example": "无",
           "member": "string",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -966,7 +983,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsNeedCharge",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -976,7 +993,7 @@
           "example": "无",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -986,7 +1003,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -996,7 +1013,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1638,6 +1655,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSDKRecordRequest": {
+      "document": "DeleteSDKRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的验证记录的Token",
+          "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
+          "member": "string",
+          "name": "FaceIdToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSDKRecordResponse": {
+      "document": "DeleteSDKRecord返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

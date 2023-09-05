@@ -197,9 +197,9 @@
       "status": "online"
     },
     "CreateSchemeUrl": {
-      "document": "获取小程序签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n注：如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署。\n\n\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式）\n\n\n如您需要自主配置小程序跳转链接，请参考: <a href=\"https://cloud.tencent.com/document/product/1323/74774\">跳转小程序链接配置说明</a>",
+      "document": "获取跳转至腾讯电子签小程序的签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n注：\n`1. 如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署`\n`2. 签署链接的有效期为90天，超过有效期链接不可用`\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateSchemeUrlRequest",
-      "name": "获取小程序签署链接",
+      "name": "获取跳转至腾讯电子签小程序的签署链接",
       "output": "CreateSchemeUrlResponse",
       "status": "online"
     },
@@ -407,7 +407,7 @@
       "status": "online"
     },
     "StartFlow": {
-      "document": "此接口用于发起流程\n适用场景：见创建签署流程接口。\n注：该接口是“创建电子文档”接口的后置接口，用于激活包含完整合同信息（模板及内容信息）的流程。激活后的流程就是一份待签署的电子合同。",
+      "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于激活包含完整合同信息（模板及内容信息）的流程。\n流程激活后，将生成一份待签署的电子合同。",
       "input": "StartFlowRequest",
       "name": "模板发起合同-发起签署流程",
       "output": "StartFlowResponse",
@@ -3983,7 +3983,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息, userId 必填。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3992,8 +3992,8 @@
         },
         {
           "disabled": false,
-          "document": "企业名称",
-          "example": "测试企业",
+          "document": "合同流程签署方的组织机构名称。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -4001,8 +4001,8 @@
         },
         {
           "disabled": false,
-          "document": "姓名,最大长度50个字符",
-          "example": "张三三",
+          "document": "合同流程里边签署方经办人的姓名。\n",
+          "example": "典子谦",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -4010,8 +4010,8 @@
         },
         {
           "disabled": false,
-          "document": "手机号，大陆手机号11位",
-          "example": "13788888888",
+          "document": "合同流程里边签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。",
+          "example": "13200000000",
           "member": "string",
           "name": "Mobile",
           "required": false,
@@ -4019,7 +4019,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转的链接类型\n\n- HTTP：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  (默认)，此时返回长链\n- HTTP_SHORT_URL：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链\n- APP： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型\n",
+          "document": "要跳转的链接类型\n\n<ul><li> **HTTP**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型  ，此时返回长链 (默认类型)</li>\n<li>**HTTP_SHORT_URL**：跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型，此时返回短链</li>\n<li>**APP**： 第三方APP或小程序跳转电子签小程序的path,  APP或者小程序跳转适合此类型</li></ul>",
           "example": "HTTP",
           "member": "string",
           "name": "EndPoint",
@@ -4028,8 +4028,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号 (PathType=1时必传)",
-          "example": "dajshd8732h2k3u42938d92",
+          "document": "合同流程ID \n注: `如果准备跳转到合同流程签署的详情页面(即PathType=1时)必传,   跳转其他页面可不传`",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
           "required": false,
@@ -4037,8 +4037,8 @@
         },
         {
           "disabled": false,
-          "document": "合同组ID ",
-          "example": "无",
+          "document": "合同流程组的组ID, 在合同流程组场景下，生成合同流程组的签署链接时需要赋值",
+          "example": "yDR1AUUgygjazuesUuO4zjESPW4PkfNi",
           "member": "string",
           "name": "FlowGroupId",
           "required": false,
@@ -4046,7 +4046,7 @@
         },
         {
           "disabled": false,
-          "document": "要跳转到的页面类型 \n\n- 0: 不传, 主页 (默认)\n- 1: 小程序合同详情 \n- 2: 小程序合同列表页 \n",
+          "document": "要跳转到的页面类型 \n\n<ul><li> **0** : 腾讯电子签小程序个人首页 (默认)</li>\n<li> **1** : 腾讯电子签小程序流程合同的详情页 (即合同签署页面)</li>\n<li> **2** : 腾讯电子签小程序合同列表页</li></ul>",
           "example": "1",
           "member": "uint64",
           "name": "PathType",
@@ -4055,7 +4055,7 @@
         },
         {
           "disabled": false,
-          "document": "是否自动回跳\ntrue：是，\nfalse：否。\n该参数只针对\"APP\" 类型的签署链接有效",
+          "document": "签署完成后是否自动回跳\n<ul><li>**false**：否, 签署完成不会自动跳转回来(默认)</li><li>**true**：是, 签署完成会自动跳转回来</li></ul>\n注:  ` 该参数只针对\"APP\" 类型的签署链接有效`",
           "example": "false",
           "member": "bool",
           "name": "AutoJumpBack",
@@ -4064,7 +4064,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4073,7 +4073,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下\n\n- 0:合同签署页面更多操作按钮\n- 1:合同签署页面更多操作的拒绝签署按钮\n- 2:合同签署页面更多操作的转他人处理按钮\n- 3:签署成功页的查看详情按钮",
+          "document": "生成的签署链接在签署页面隐藏的按钮列表，可设置如下：\n\n<ul><li> **0** :合同签署页面更多操作按钮</li>\n<li> **1** :合同签署页面更多操作的拒绝签署按钮</li>\n<li> **2** :合同签署页面更多操作的转他人处理按钮</li>\n<li> **3** :签署成功页的查看详情按钮</li></ul>\n\n注:  `字段为数组, 可以传值隐藏多个按钮`",
           "example": "无",
           "member": "int64",
           "name": "Hides",
@@ -4088,8 +4088,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "小程序链接地址，有效期90天。如果EndPoint是App，得到的链接Path如’weixin://dl/business/?t= *TICKET*‘，用于客户APP、小程序直接拉起电子签小程序；其他EndPoint得到的https链接如'https://essurl.cn/xxx'，点击链接会打开一个H5页面，然后拉起电子签小程序。",
-          "example": "weixin://dl/business/?t= *TICKET*",
+          "document": "腾讯电子签小程序的签署链接。\n\n<ul><li>如果EndPoint是**APP**，得到的链接类似于`pages/guide?from=default&where=mini&id=yDwJSUUirqauh***7jNSxwdirTSGuH&to=CONTRACT_DETAIL&name=&phone=&shortKey=yDw***k1xFc5`, 用法可以参加接口描述中的\"跳转到小程序的实现\"</li>\n<li>如果EndPoint是**HTTP**，得到的链接类似于 `https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?where=mini&from=SFY&id=yDwfEUUw**4rV6Avz&to=MVP_CONTRACT_COVER&name=%E9%83%**5%86%9B`，点击后会跳转到腾讯电子签小程序进行签署</li>\n<li>如果EndPoint是**HTTP_SHORT_URL**，得到的链接类似于 `https://essurl.cn/2n**42Nd`，点击后会跳转到腾讯电子签小程序进行签署</li></ul>",
+          "example": "https://essurl.cn/2n**42Nd",
           "member": "string",
           "name": "SchemeUrl",
           "output_required": true,
@@ -9433,7 +9433,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9442,15 +9442,15 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号，由CreateFlow接口返回",
-          "example": "无",
+          "document": "合同流程ID，为32位字符串。\n此处需要传入[创建签署流程接口](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)得到的FlowId。",
+          "example": "yDwFk************qS26",
           "member": "string",
           "name": "FlowId",
           "required": true,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "客户端Token，保持接口幂等性,最大长度64个字符",
           "example": "无",
           "member": "string",
@@ -9460,7 +9460,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9469,7 +9469,7 @@
         },
         {
           "disabled": false,
-          "document": "给关注人发送短信通知的类型，\n\n0-合同发起时通知 \n\n1-签署完成后通知",
+          "document": "若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：\n0 - 合同发起时通知（默认）\n1 - 签署完成后通知",
           "example": "无",
           "member": "int64",
           "name": "CcNotifyType",
@@ -9484,7 +9484,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发起成功之后返回状态，\n\nSTART-发起成功， \n\nREVIEW-提交审核成功，\n\nEXECUTING-已提交发起任务",
+          "document": "发起成功后返回的状态，根据合同流程的不同，返回不同状态：\nSTART - 发起成功\nREVIEW - 提交审核成功\nEXECUTING - 已提交发起任务",
           "example": "无",
           "member": "string",
           "name": "Status",

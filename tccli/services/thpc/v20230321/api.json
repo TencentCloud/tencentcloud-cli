@@ -2423,8 +2423,7 @@
           "member": "string",
           "name": "QueueName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2433,8 +2432,7 @@
           "member": "uint64",
           "name": "MinSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2443,8 +2441,7 @@
           "member": "uint64",
           "name": "MaxSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2453,8 +2450,7 @@
           "member": "bool",
           "name": "EnableAutoExpansion",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2463,8 +2459,7 @@
           "member": "bool",
           "name": "EnableAutoShrink",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -2473,8 +2468,7 @@
           "member": "string",
           "name": "ImageId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2483,8 +2477,7 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2493,8 +2486,7 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2503,8 +2495,7 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2513,8 +2504,7 @@
           "member": "ExpansionNodeConfig",
           "name": "ExpansionNodeConfigs",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2523,8 +2513,7 @@
           "member": "int64",
           "name": "DesiredIdleNodeCapacity",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2533,8 +2522,7 @@
           "member": "int64",
           "name": "ScaleOutRatio",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2543,8 +2531,7 @@
           "member": "int64",
           "name": "ScaleOutNodeThreshold",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2553,8 +2540,7 @@
           "member": "int64",
           "name": "MaxNodesPerCycle",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2568,7 +2554,7 @@
           "example": "compute",
           "member": "string",
           "name": "QueueName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2578,7 +2564,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2588,7 +2574,7 @@
           "example": "5",
           "member": "int64",
           "name": "MaxSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2598,7 +2584,7 @@
           "example": "无",
           "member": "bool",
           "name": "EnableAutoExpansion",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2608,7 +2594,7 @@
           "example": "无",
           "member": "bool",
           "name": "EnableAutoShrink",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2618,7 +2604,7 @@
           "example": "无",
           "member": "ExpansionNodeConfigOverview",
           "name": "ExpansionNodeConfigs",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2628,7 +2614,7 @@
           "example": "5",
           "member": "int64",
           "name": "DesiredIdleNodeCapacity",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2638,7 +2624,7 @@
           "example": "50",
           "member": "int64",
           "name": "ScaleOutRatio",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2648,7 +2634,7 @@
           "example": "0",
           "member": "int64",
           "name": "ScaleOutNodeThreshold",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2658,7 +2644,7 @@
           "example": "10",
           "member": "int64",
           "name": "MaxNodesPerCycle",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

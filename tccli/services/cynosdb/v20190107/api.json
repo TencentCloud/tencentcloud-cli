@@ -1231,7 +1231,7 @@
         {
           "disabled": false,
           "document": "从可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-4",
           "member": "string",
           "name": "SlaveZone",
           "required": true,
@@ -1294,7 +1294,7 @@
         },
         {
           "disabled": false,
-          "document": "新增只读实例数，取值范围为[0,4]",
+          "document": "新增只读实例数，取值范围为(0,15]",
           "example": "1",
           "member": "int64",
           "name": "ReadOnlyCount",
@@ -2843,7 +2843,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd45qwe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -3376,7 +3376,7 @@
         },
         {
           "disabled": false,
-          "document": "包年包月购买是否自动续费，默认为0",
+          "document": "包年包月购买是否自动续费，默认为0。\n0标识默认续费方式，1表示自动续费，2表示手不自动续费。",
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
@@ -6729,7 +6729,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd45qwe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -6814,7 +6814,7 @@
         {
           "disabled": false,
           "document": "账户名",
-          "example": "xxx",
+          "example": "account1",
           "member": "string",
           "name": "AccountName",
           "required": true,
@@ -6823,7 +6823,7 @@
         {
           "disabled": false,
           "document": "主机",
-          "example": "xxx",
+          "example": "192.0.0.0",
           "member": "string",
           "name": "Host",
           "required": true,
@@ -6832,7 +6832,7 @@
         {
           "disabled": false,
           "document": "数据库名，为*时，忽略Type/TableName, 表示修改用户全局权限；",
-          "example": "xxx",
+          "example": "testDb",
           "member": "string",
           "name": "Db",
           "required": true,
@@ -6850,7 +6850,7 @@
         {
           "disabled": false,
           "document": "当Type=\"table\"时，用来指定表名",
-          "example": "xx",
+          "example": "testTable",
           "member": "string",
           "name": "TableName",
           "required": false,
@@ -6864,7 +6864,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "权限列表，示例值为：[\"select\",\"update\",\"delete\",\"create\",\"drop\",\"references\",\"index\",\"alter\",\"show_db\",\"create_tmp_table\",\"lock_tables\",\"execute\",\"create_view\",\"show_view\",\"create_routine\",\"alter_routine\",\"event\",\"trigger\"]",
+          "document": "权限列表，示例值为：[\"\",\"select\",\"update\",\"delete\",\"create\",\"drop\",\"references\",\"index\",\"alter\",\"show_db\",\"create_tmp_table\",\"lock_tables\",\"execute\",\"create_view\",\"show_view\",\"create_routine\",\"alter_routine\",\"event\",\"trigger\"]",
           "example": "[\"select\"]",
           "member": "string",
           "name": "Privileges",
@@ -9786,7 +9786,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "计费订单ID（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
+          "document": "计费订单ID（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）。\nDealName与DealNames至少应输入一项，两者都传时以DealName为准。",
           "example": "1000000001111",
           "member": "string",
           "name": "DealName",
@@ -9795,7 +9795,7 @@
         },
         {
           "disabled": false,
-          "document": "计费订单ID列表，可以一次查询若干条订单ID对应资源信息（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）",
+          "document": "计费订单ID列表，可以一次查询若干条订单ID对应资源信息（如果计费还没回调业务发货，可能出现错误码InvalidParameterValue.DealNameNotFound，这种情况需要业务重试DescribeResourcesByDealName接口直到成功）。\nDealName与DealNames至少应输入一项，两者都传时以DealName为准。",
           "example": "[\"xxx\",\"xxx\"]",
           "member": "string",
           "name": "DealNames",
@@ -11872,7 +11872,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-ins-jhi2gdi0",
+          "example": "cynosdbmysql-jhi2gdi0",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11908,7 +11908,7 @@
           "example": "56317d06-8078-4e5c-b675-9e048995c820",
           "member": "string",
           "name": "AsyncRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12328,7 +12328,7 @@
         },
         {
           "disabled": false,
-          "document": "集群参数列表，例如 [{           \"CurrentValue\":\"2\",        \"ParamName\":\"innodb_stats_transient_sample_pages\"}]",
+          "document": "集群参数列表，例如 [{           \"CurrentValue\":\"2\",        \"ParamName\":\"auto_increment_increment\"}]",
           "example": "无",
           "member": "ModifyParamItem",
           "name": "ClusterParamList",
@@ -15250,7 +15250,7 @@
         {
           "disabled": false,
           "document": "从可用区",
-          "example": "ap-guangzhou-2",
+          "example": "ap-guangzhou-4",
           "member": "string",
           "name": "SlaveZone",
           "required": true,
@@ -15471,7 +15471,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "xxx",
+          "example": "cynosdbmysql-ins-a45df3g",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -16059,7 +16059,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asf5g5fx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16114,7 +16114,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd54fgh",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16507,7 +16507,7 @@
         {
           "disabled": false,
           "document": "维护期间执行-yes,立即执行-no",
-          "example": "false",
+          "example": "no",
           "member": "string",
           "name": "IsInMaintainPeriod",
           "required": false,
@@ -17051,7 +17051,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asdf54qw",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -17060,7 +17060,7 @@
         {
           "disabled": false,
           "document": "内核版本",
-          "example": "2.0.0",
+          "example": "2.1.10",
           "member": "string",
           "name": "CynosVersion",
           "required": true,

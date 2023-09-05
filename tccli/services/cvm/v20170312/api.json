@@ -491,7 +491,7 @@
       "status": "online"
     },
     "ModifyInstancesAttribute": {
-      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesAttribute) 用于修改实例的属性（目前只支持修改实例的名称和关联的安全组）。\n\n* 每次请求必须指定实例的一种属性用于修改。\n* “实例名称”仅为方便用户自己管理之用，腾讯云并不以此名称作为在线支持或是进行实例管理操作的依据。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 修改关联安全组时，子机原来关联的安全组会被解绑。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。\n* 修改主机名后实例会立即重启，重启后新的主机名生效。",
       "input": "ModifyInstancesAttributeRequest",
       "name": "修改实例的属性",
       "output": "ModifyInstancesAttributeResponse",
@@ -8706,7 +8706,7 @@
         },
         {
           "disabled": false,
-          "document": "实例的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：主机名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
+          "document": "实例的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：主机名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。<br> 注意点：修改主机名后实例会立即重启，重启后新的主机名生效。",
           "example": "myhostname",
           "member": "string",
           "name": "HostName",
@@ -9098,6 +9098,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9108,6 +9109,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -9118,6 +9120,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -9128,6 +9131,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIps",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -9138,6 +9142,7 @@
           "example": "无",
           "member": "string",
           "name": "HostId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

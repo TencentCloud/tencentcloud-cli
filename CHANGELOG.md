@@ -1,3 +1,315 @@
+# Release 3.0.844.1
+
+## 正版曲库直通车(ame) 版本：2019-09-16
+
+### 第 19 次发布
+
+发布时间：2023-09-06 01:05:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* BatchDescribeKTVMusicDetails
+* CreateKTVRobot
+* DescribeAuthInfo
+* DescribeCloudMusic
+* DescribeCloudMusicPurchased
+* DescribeItemById
+* DescribeItems
+* DescribeKTVMusicDetail
+* DescribeKTVMusicTags
+* DescribeKTVPlaylistDetail
+* DescribeKTVPlaylists
+* DescribeKTVRobots
+* DescribeKTVSingerCategories
+* DescribeKTVSingerMusics
+* DescribeKTVSingers
+* DescribeKTVSuggestions
+* DescribeKTVTopList
+* DescribeLyric
+* DescribeMusic
+* DescribeMusicSaleStatus
+* DescribePackageItems
+* DescribePackages
+* DescribePkgOfflineMusic
+* DestroyKTVRobot
+* ModifyMusicOnShelves
+* PutMusicOnTheShelves
+* ReportData
+* SearchKTVMusics
+* SyncKTVRobotCommand
+* TakeMusicOffShelves
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* Album
+* ApplicationLicenseInput
+* Artist
+* AuthInfo
+* ChorusClip
+* DataInfo
+* Item
+* JoinRoomInput
+* KTVMusicBaseInfo
+* KTVMusicDefinitionInfo
+* KTVMusicDetailInfo
+* KTVMusicTagGroup
+* KTVMusicTagInfo
+* KTVMusicTopInfo
+* KTVPlaylistBaseInfo
+* KTVRobotInfo
+* KTVSingerBaseInfo
+* KTVSingerCategoryInfo
+* KTVSingerInfo
+* KTVSuggestionInfo
+* Lyric
+* Music
+* MusicDetailInfo
+* MusicOpenDetail
+* MusicStatus
+* OfflineMusicDetail
+* Package
+* PackageItem
+* PlayCommandInput
+* SeekCommandInput
+* SendMessageCommandInput
+* SetAudioParamCommandInput
+* SetDestroyModeCommandInput
+* SetPlayModeCommandInput
+* SetPlaylistCommandInput
+* SetRealVolumeCommandInput
+* SetVolumeCommandInput
+* SortBy
+* SyncRobotCommand
+* TRTCJoinRoomInput
+* TakeMusicOffShelves
+* TimeRange
+* UseRange
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 42 次发布
+
+发布时间：2023-09-06 01:10:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ExportInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ExportInfo)
+
+	* 新增成员：SyntaxRule
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 28 次发布
+
+发布时间：2023-09-06 01:16:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79344)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 83 次发布
+
+发布时间：2023-09-06 01:16:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SignUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#SignUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>CustomUserId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 36 次发布
+
+发布时间：2023-09-06 01:16:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteSDKRecord](http://document.tencentcloudapi.woa.com/document/product/1007/81840)
+
+修改数据结构：
+
+* [ChargeDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#ChargeDetail)
+
+	* 新增成员：IdCard
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 31 次发布
+
+发布时间：2023-09-06 01:20:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RunJobDescription](http://document.tencentcloudapi.woa.com/document/product/849/52010#RunJobDescription)
+
+	* 新增成员：CustomTimestamp
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 2 次发布
+
+发布时间：2023-09-06 01:25:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueueConfigOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#QueueConfigOverview)
+
+	* <font color="#dd0000">**修改成员**：</font>QueueName, MinSize, MaxSize, EnableAutoExpansion, EnableAutoShrink, ExpansionNodeConfigs, DesiredIdleNodeCapacity, ScaleOutRatio, ScaleOutNodeThreshold, MaxNodesPerCycle
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 35 次发布
+
+发布时间：2023-09-06 01:25:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateModelService](http://document.tencentcloudapi.woa.com/document/product/851/76500)
+
+	* 新增入参：ServiceEIP
+
+* [ModifyModelService](http://document.tencentcloudapi.woa.com/document/product/851/76703)
+
+	* 新增入参：ServiceEIP
+
+
+修改数据结构：
+
+* [PodInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#PodInfo)
+
+	* 新增成员：StartTime, EndTime, ResourceConfigInfo
+
+* [Spec](http://document.tencentcloudapi.woa.com/document/product/851/74915#Spec)
+
+	* 新增成员：SpecFeatures, SpecType, GpuType, CategoryId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 36 次发布
+
+发布时间：2023-09-06 01:26:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [KongServicePreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongServicePreview)
+
+	* 新增成员：Path
+
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 4 次发布
+
+发布时间：2023-09-06 01:36:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeApplicationList](http://document.tencentcloudapi.woa.com/document/product/1734/81846)
+* [DescribeEdgeApplicationToken](http://document.tencentcloudapi.woa.com/document/product/1734/81845)
+* [DescribeInterfaceList](http://document.tencentcloudapi.woa.com/document/product/1734/81844)
+* [DescribeVideoLiveStream](http://document.tencentcloudapi.woa.com/document/product/1734/81842)
+* [DescribeVideoRecordStream](http://document.tencentcloudapi.woa.com/document/product/1734/81841)
+* [DescribeWorkspaceList](http://document.tencentcloudapi.woa.com/document/product/1734/81843)
+
+新增数据结构：
+
+* [ApiContent](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApiContent)
+* [ApiInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApiInfo)
+* [ApiInfoList](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApiInfoList)
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApplicationInfo)
+* [ApplicationList](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApplicationList)
+* [ApplicationLogo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ApplicationLogo)
+* [RawInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#RawInfo)
+* [SpaceInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SpaceInfo)
+* [VideoRecordStreamRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#VideoRecordStreamRes)
+* [WorkspaceInfoList](http://document.tencentcloudapi.woa.com/document/product/1734/81779#WorkspaceInfoList)
+
+
+
 # Release 3.0.843.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

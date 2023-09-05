@@ -77,6 +77,13 @@
       "output": "DescribeAlarmTypeListResponse",
       "status": "online"
     },
+    "DescribeApplicationList": {
+      "document": "查询指定空间关联的应用列表",
+      "input": "DescribeApplicationListRequest",
+      "name": "查询应用列表",
+      "output": "DescribeApplicationListResponse",
+      "status": "online"
+    },
     "DescribeBuildingList": {
       "document": "查询建筑列表",
       "input": "DescribeBuildingListRequest",
@@ -140,6 +147,13 @@
       "output": "DescribeDeviceTypeListResponse",
       "status": "online"
     },
+    "DescribeEdgeApplicationToken": {
+      "document": "查询边缘应用凭证",
+      "input": "DescribeEdgeApplicationTokenRequest",
+      "name": "查询边缘应用凭证",
+      "output": "DescribeEdgeApplicationTokenResponse",
+      "status": "online"
+    },
     "DescribeElementProfilePage": {
       "document": "查询分页构件信息",
       "input": "DescribeElementProfilePageRequest",
@@ -159,6 +173,13 @@
       "input": "DescribeEventListRequest",
       "name": "事件列表查询",
       "output": "DescribeEventListResponse",
+      "status": "online"
+    },
+    "DescribeInterfaceList": {
+      "document": "查询接口列表",
+      "input": "DescribeInterfaceListRequest",
+      "name": "查询接口列表",
+      "output": "DescribeInterfaceListResponse",
       "status": "online"
     },
     "DescribeLinkRuleList": {
@@ -245,11 +266,32 @@
       "output": "DescribeTenantBuildingCountAndAreaResponse",
       "status": "online"
     },
+    "DescribeVideoLiveStream": {
+      "document": "实时流接口",
+      "input": "DescribeVideoLiveStreamRequest",
+      "name": "实时流接口",
+      "output": "DescribeVideoLiveStreamResponse",
+      "status": "online"
+    },
+    "DescribeVideoRecordStream": {
+      "document": "历史流接口",
+      "input": "DescribeVideoRecordStreamRequest",
+      "name": "历史流接口",
+      "output": "DescribeVideoRecordStreamResponse",
+      "status": "online"
+    },
     "DescribeWorkSpaceBuildingCountAndArea": {
       "document": "查询项目空间楼栋数量与建筑面积",
       "input": "DescribeWorkSpaceBuildingCountAndAreaRequest",
       "name": "查询项目空间楼栋数量与建筑面积",
       "output": "DescribeWorkSpaceBuildingCountAndAreaResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceList": {
+      "document": "获取租户下的空间列表",
+      "input": "DescribeWorkspaceListRequest",
+      "name": "获取租户下的空间列表",
+      "output": "DescribeWorkspaceListResponse",
       "status": "online"
     },
     "StopVideoStreaming": {
@@ -948,6 +990,452 @@
         }
       ],
       "usage": "in"
+    },
+    "ApiContent": {
+      "document": "API参数信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "所属API的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "741f3abd-639c-49ad-b9ed-b52a0f08a62e",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "获取视频流",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为动态值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Dynamic",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Required",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "741f3abd-639c-49ad-b9ed-b52a0f08a62e",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "741f3abd-639c-49ad-b9ed-b52a0f08a62e",
+          "member": "string",
+          "name": "DefaultValue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiInfo": {
+      "document": "API描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "741f3abd-639c-49ad-b9ed-b52a0f08a62e",
+          "member": "string",
+          "name": "ApiId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "获取视频流",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API所属应用的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API所属的项目空间的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1101",
+          "member": "string",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API所属目录的编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api000",
+          "member": "string",
+          "name": "PoiCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 接口分类0. 其他服务 1. IOT服务 2. 空间服务 3.微应用服务 4.场景服务 5.AI算法服务 6.任务算法服务 7.第三方服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据授权 0:否 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DataAudit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否需要申请 0:否 1:是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApplyAudit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "获取视频流",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/video/ControlCameraPtz",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求方法类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "Method",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API预览地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://t-apigw.twins.tencent.com/proxy/138c04de-4f1e-4bff-9498-4f16f2ed4cd5/video/ControlCameraPtz",
+          "member": "string",
+          "name": "PreviewUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "query参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiContent",
+          "name": "QueryParams",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiContent",
+          "name": "PathParams",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiContent",
+          "name": "RequestHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应头\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiContent",
+          "name": "ResponseHeaders",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为公共空间接口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "IsCommonSpace",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求体（base64编码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Body",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应体（base64编码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResponseBody",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接口方式 1.http 2消息通知服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Style",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApiInfoList": {
+      "document": "API列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiInfo",
+          "name": "ApiInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationInfo": {
+      "document": "应用描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用分配的appId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10001",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "能源管理",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://www.capi.woa.com",
+          "member": "string",
+          "name": "Address",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用logo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationLogo",
+          "name": "ApplicationLogo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型，0:saas应用 1:平台应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "engine\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "应用英文名",
+          "member": "string",
+          "name": "EnglishName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "能源管理应用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "应用详情",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationList": {
+      "document": "应用列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationInfo",
+          "name": "ApplicationInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前查询条件命中的数据总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ApplicationLogo": {
+      "document": "应用logo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "logo图片对应的fileId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "logo图片地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ApplicationTokenInfo": {
       "document": "应用Token令牌信息",
@@ -2466,6 +2954,79 @@
       ],
       "type": "object"
     },
+    "DescribeApplicationListRequest": {
+      "document": "DescribeApplicationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目空间id，本次查询返回的应用均关联至该空间",
+          "example": "1001",
+          "member": "uint64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "XaaJvayJyusfUwuoJ2OlT5Z2YAVb6bVo",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用id数组，可选，填了则表示根据id批量查询",
+          "example": "[10000,10001,10002]",
+          "member": "uint64",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "请求页号",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页容量，默认为10",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListResponse": {
+      "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用列表",
+          "example": "无",
+          "member": "ApplicationList",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBuildingListRequest": {
       "document": "DescribeBuildingList请求参数结构体",
       "members": [
@@ -3188,6 +3749,52 @@
       ],
       "type": "object"
     },
+    "DescribeEdgeApplicationTokenRequest": {
+      "document": "DescribeEdgeApplicationToken请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "XaaJvayJyusfUwuoJ2OlT5Z2YAVb6bVo",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否刷新token，默认为false",
+          "example": "true",
+          "member": "bool",
+          "name": "Refresh",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeApplicationTokenResponse": {
+      "document": "DescribeEdgeApplicationToken返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "边缘应用令牌信息\t",
+          "example": "Oq9lShbmhCT3FLnemDCecrXAnAHQe6SJ",
+          "member": "ApplicationTokenInfo",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeElementProfilePageRequest": {
       "document": "DescribeElementProfilePage请求参数结构体",
       "members": [
@@ -3530,6 +4137,88 @@
           "document": "事件列表查询结果",
           "example": "{\"EventDetailSet\": [{\"CreateTime\": \"2023-05-13 20:23:37\",\"DeviceType\": \"\",\"Id\": 14,\"LinkRuleSet\": [{\"Id\": 23,\"Name\": \"\"}],\"Name\": \"13\",\"TriggerCondition\": \"x-json:\",\"TriggerType\": \"timer\",\"ValidPeriod\": \"\",\"WID\": \"\"}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 78,\"TotalRow\": 78}",
           "member": "DescribeEventListRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInterfaceListRequest": {
+      "document": "DescribeInterfaceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "XaaJvayJyusfUwuoJ2OlT5Z2YAVb6bVo",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求页号",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "请求页容量，默认全量返回",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询关键字",
+          "example": "视频",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口方式 1.http 2消息通知服务",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "Style",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "接口分类0. 其他服务 1. IOT服务 2. 空间服务 3.微应用服务 4.场景服务 5.AI算法服务 6.任务算法服务 7.第三方服务 8.3DTiles服务",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInterfaceListResponse": {
+      "document": "DescribeInterfaceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "API列表",
+          "example": "无",
+          "member": "ApiInfoList",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -4442,6 +5131,197 @@
       ],
       "type": "object"
     },
+    "DescribeVideoLiveStreamRequest": {
+      "document": "DescribeVideoLiveStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备的唯一标识\n",
+          "example": "c0e3f641-6ec6-444e-8ac9-3cfecc755cb0",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "枚举如下：\nflv\nrtmp\nhls\nwebrtc\nraw (视频原始帧)",
+          "example": "hls",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主码流传0，子码流传1，默认主码流\n",
+          "example": "0",
+          "member": "int64",
+          "name": "StreamId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备所在环境，公有云私有化项目传0或者不传，混合云项目一般传空间id",
+          "example": "0",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoLiveStreamResponse": {
+      "document": "DescribeVideoLiveStream返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频实时流获取结果",
+          "example": "{\"FLV\":\"\",\"HLS\":\"https://t-video.twins.tencent.com:443/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8.m3u8?ticket=7a2368131f084363a4a6cb146cbfc353\",\"RAW\":{\"IP\":\"\",\"InnerIP\":\"\",\"NATIP\":\"\",\"Port\":0,\"SM4Vector\":\"\",\"StreamEnKey\":\"\",\"StreamToken\":\"\"},\"RTMP\":\"\",\"Stream\":\"76d8109e-64cd-4a85-b011-4a0c29a654e8\",\"WebRTC\":\"\"}",
+          "member": "VideoRecordStreamRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoRecordStreamRequest": {
+      "document": "DescribeVideoRecordStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备唯一标识",
+          "example": "无",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "枚举如下：\nflvsh\nrtmp\nhls\nwebrtc\nraw (视频原始帧)",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间（精确到毫秒）",
+          "example": "无",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间（精确到毫秒）",
+          "example": "无",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "倍速 0.5、1、2、4",
+          "example": "无",
+          "member": "float",
+          "name": "PlayBackRate",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "无",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流的唯一标识，播放链接尾缀",
+          "example": "无",
+          "member": "string",
+          "name": "Stream",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公有云私有化项目传0或者不传；混合云项目一般传空间id",
+          "example": "无",
+          "member": "string",
+          "name": "Env",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoRecordStreamResponse": {
+      "document": "DescribeVideoRecordStream返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取历史流结果",
+          "example": "{\"FLV\":\"\",\"HLS\":\"https://t-video.twins.tencent.com:443/hls1935/c0e3f641-6ec6-444e-8ac9-3cfecc755cb0_2beb0875.m3u8?ticket=5d4098970dfc4c7fbea9d3859a418c0d\",\"RAW\":{\"IP\":\"\",\"InnerIP\":\"\",\"NATIP\":\"\",\"Port\":0,\"SM4Vector\":\"\",\"StreamEnKey\":\"\",\"StreamToken\":\"\"},\"RTMP\":\"\",\"Stream\":\"c0e3f641-6ec6-444e-8ac9-3cfecc755cb0_2beb0875\",\"WebRTC\":\"\"}",
+          "member": "VideoRecordStreamRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeWorkSpaceBuildingCountAndAreaRequest": {
       "document": "DescribeWorkSpaceBuildingCountAndArea请求参数结构体",
       "members": [
@@ -4474,6 +5354,52 @@
           "document": "查询项目空间楼栋数量与建筑面积出参",
           "example": "无",
           "member": "SpaceDataListStatsRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceListRequest": {
+      "document": "DescribeWorkspaceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "XaaJvayJyusfUwuoJ2OlT5Z2YAVb6bVo",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间id，非必填，填了则表示根据id进行批量查询",
+          "example": "1101",
+          "member": "uint64",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceListResponse": {
+      "document": "DescribeWorkspaceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目空间列表",
+          "example": "无",
+          "member": "WorkspaceInfoList",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -6314,6 +7240,82 @@
       ],
       "usage": "in"
     },
+    "RawInfo": {
+      "document": "视频流Raw协议信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加密向量（如果视频网关选择流为非加密传输这个参数可忽略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LT50CB5unVXLDjkM",
+          "member": "string",
+          "name": "SM4Vector",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专线ip (非专线接入可忽略)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.47.110.0",
+          "member": "string",
+          "name": "NATIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端握手鉴权参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "18c434ca",
+          "member": "string",
+          "name": "StreamToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拉流端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9001",
+          "member": "int64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频流加密key,目前为AES128加密KEY（如果视频网关选择流为非加密传输这个参数可忽略）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VRK0JsivUkHWon7K",
+          "member": "string",
+          "name": "StreamEnKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拉流公网地址（非公网接入时，这个地址是内网地址）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "185.47.110.0",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "拉流内网地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11.121.500.32",
+          "member": "string",
+          "name": "InnerIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RelatedProduct": {
       "document": "关联产品信息",
       "members": [
@@ -6796,6 +7798,122 @@
       ],
       "usage": "out"
     },
+    "SpaceInfo": {
+      "document": "项目空间详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1101",
+          "member": "uint64",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "uint64",
+          "name": "TenantId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testspace",
+          "member": "string",
+          "name": "EnglishName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华南项目空间",
+          "member": "string",
+          "name": "ChineseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "华南项目空间",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目空间状态:0 启用 1 停用 -1 已删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是公共空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCommWorkspace",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1693193293",
+          "member": "string",
+          "name": "ValidityStartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效期结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1693193293",
+          "member": "string",
+          "name": "ValidityEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "选中状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Selected",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统生成状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSystem",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SpaceRelation": {
       "document": "空间层级关系",
       "members": [
@@ -7197,6 +8315,88 @@
         }
       ],
       "type": "object"
+    },
+    "VideoRecordStreamRes": {
+      "document": "视频流查询结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "FLV协议格式视频流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"https://t-video.twins.tencent.com:443/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8.flv?ticket=75f35918756c42ee89abde1b5c0c7df2\"",
+          "member": "string",
+          "name": "FLV",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RTMP协议格式视频流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://11.141.177.239:8080/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8?ticket=fbb63fb0c65c4574835880cf2aa59c55",
+          "member": "string",
+          "name": "RTMP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HLS协议格式视频流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://t-video.twins.tencent.com:443/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8.m3u8?ticket=39c6e6b59d4545ccb7811155c52d6208",
+          "member": "string",
+          "name": "HLS",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "WebRtc协议格式视频流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "webrtc://t-video.twins.tencent.com:443/hls1935/76d8109e-64cd-4a85-b011-4a0c29a654e8?ticket=bb3f73b226ae42c1b2ec6cbb2211be2a",
+          "member": "string",
+          "name": "WebRTC",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "RAW协议格式视频流\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"IP\":\"183.47.110.99\",\"InnerIP\":\"11.141.200.32\",\"NATIP\":\"\",\"Port\":9001,\"SM4Vector\":\"LT50CB5unVXLDjkM\",\"StreamEnKey\":\"VRK0JsivUkHWon7K\",\"StreamToken\":\"18c434ba\"}",
+          "member": "RawInfo",
+          "name": "RAW",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频流的唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "76d8109e-64cd-4a85-b011-4a0c29a654e8",
+          "member": "string",
+          "name": "Stream",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceInfoList": {
+      "document": "项目空间列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目空间列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SpaceInfo",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"
