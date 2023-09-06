@@ -1974,7 +1974,7 @@
           "example": "stgw-clclwcxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1984,7 +1984,7 @@
           "example": "Guanzhaou-hxy-MS-CLB",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1994,7 +1994,7 @@
           "example": "STGW",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2004,7 +2004,7 @@
           "example": "TEST-FOR-XXX",
           "member": "string",
           "name": "ClusterTag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2014,7 +2014,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2024,7 +2024,7 @@
           "example": "Public",
           "member": "string",
           "name": "Network",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2034,7 +2034,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2044,7 +2044,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxInFlow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2054,7 +2054,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxInPkg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2064,7 +2064,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxOutFlow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2074,7 +2074,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxOutPkg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2084,7 +2084,7 @@
           "example": "0",
           "member": "int64",
           "name": "MaxNewConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2094,7 +2094,7 @@
           "example": "0",
           "member": "int64",
           "name": "HTTPMaxNewConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2104,7 +2104,7 @@
           "example": "0",
           "member": "int64",
           "name": "HTTPSMaxNewConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2114,7 +2114,7 @@
           "example": "0",
           "member": "int64",
           "name": "HTTPQps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2124,7 +2124,7 @@
           "example": "0",
           "member": "int64",
           "name": "HTTPSQps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2134,7 +2134,7 @@
           "example": "0",
           "member": "int64",
           "name": "ResourceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2144,7 +2144,7 @@
           "example": "0",
           "member": "int64",
           "name": "IdleResourceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2154,7 +2154,7 @@
           "example": "4",
           "member": "int64",
           "name": "LoadBalanceDirectorCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2164,7 +2164,7 @@
           "example": "BGP",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2174,7 +2174,7 @@
           "example": "无",
           "member": "ClustersZone",
           "name": "ClustersZone",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2184,7 +2184,7 @@
           "example": "1",
           "member": "string",
           "name": "ClustersVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2194,7 +2194,17 @@
           "example": "SINGLE-ZONE",
           "member": "string",
           "name": "DisasterRecoveryType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "center_egress2",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7245,6 +7255,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "center_egress1",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7258,7 +7279,7 @@
           "example": "lb-12345678",
           "member": "string",
           "name": "LoadBalancerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7268,7 +7289,7 @@
           "example": "test",
           "member": "string",
           "name": "LoadBalancerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7278,7 +7299,7 @@
           "example": "OPEN",
           "member": "string",
           "name": "LoadBalancerType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7288,7 +7309,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7298,7 +7319,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7308,7 +7329,7 @@
           "example": "null",
           "member": "string",
           "name": "AddressIPv6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7318,7 +7339,7 @@
           "example": "IPv4",
           "member": "string",
           "name": "AddressIPVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7328,7 +7349,7 @@
           "example": "null",
           "member": "string",
           "name": "IPv6Mode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7338,7 +7359,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7348,7 +7369,7 @@
           "example": "CMCC",
           "member": "string",
           "name": "AddressIsp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7358,7 +7379,7 @@
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7368,7 +7389,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7378,7 +7399,7 @@
           "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7388,7 +7409,7 @@
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7398,7 +7419,7 @@
           "example": "null",
           "member": "InternetAccessible",
           "name": "NetworkAttributes",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7408,7 +7429,7 @@
           "example": "null",
           "member": "LBChargePrepaid",
           "name": "PrepaidAttributes",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7418,7 +7439,7 @@
           "example": "{\"ZhitTong\":false,\"TgwGroupName\":null}",
           "member": "ExtraInfo",
           "name": "ExtraInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7428,7 +7449,7 @@
           "example": "pz-12345678",
           "member": "string",
           "name": "ConfigId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7438,7 +7459,7 @@
           "example": "[{\"TagKey\":\"1\",\"TagValue\":\"2\"}]",
           "member": "TagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7448,7 +7469,7 @@
           "example": "lbl-12345678",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7458,7 +7479,7 @@
           "example": "tcp",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7468,7 +7489,7 @@
           "example": "80",
           "member": "uint64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7478,7 +7499,7 @@
           "example": "loc-12345678",
           "member": "string",
           "name": "LocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7488,7 +7509,7 @@
           "example": "test.com",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7498,7 +7519,7 @@
           "example": "/",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7508,7 +7529,7 @@
           "example": "ins-12345678",
           "member": "string",
           "name": "TargetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7518,7 +7539,7 @@
           "example": "172.16.0.2",
           "member": "string",
           "name": "TargetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7528,7 +7549,7 @@
           "example": "80",
           "member": "uint64",
           "name": "TargetPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7538,7 +7559,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TargetWeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7548,7 +7569,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Isolation",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7558,7 +7579,7 @@
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroup",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7568,7 +7589,7 @@
           "example": "1",
           "member": "uint64",
           "name": "LoadBalancerPassToTarget",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7578,7 +7599,7 @@
           "example": "Alive",
           "member": "string",
           "name": "TargetHealth",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7588,7 +7609,7 @@
           "example": "[\"www.xxxx.com\"]",
           "member": "string",
           "name": "Domains",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7598,7 +7619,7 @@
           "example": "[\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "SlaveZone",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7608,7 +7629,7 @@
           "example": "[\"ap-guangzhou-1\"]",
           "member": "string",
           "name": "Zones",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7618,7 +7639,7 @@
           "example": "0",
           "member": "int64",
           "name": "SniSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7628,7 +7649,17 @@
           "example": "lb-xxxxxxx-e4841923c1214a90.clb.ap-guangzhou.tencentclb.com",
           "member": "string",
           "name": "LoadBalancerDomain",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "center_egress1",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10829,7 +10860,7 @@
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "MasterZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10839,7 +10870,7 @@
           "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10849,7 +10880,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "SlaveZone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10859,7 +10890,7 @@
           "example": "IPv4",
           "member": "string",
           "name": "IPVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10869,7 +10900,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ZoneRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10879,7 +10910,7 @@
           "example": "false",
           "member": "bool",
           "name": "LocalZone",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10889,7 +10920,7 @@
           "example": "\"SHARED\"",
           "member": "string",
           "name": "ZoneResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10899,9 +10930,19 @@
           "example": "false",
           "member": "bool",
           "name": "EdgeZone",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "center_egress1",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

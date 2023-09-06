@@ -2358,6 +2358,15 @@
           "name": "Command",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启TIONE内网访问外部",
+          "example": "无",
+          "member": "ServiceEIP",
+          "name": "ServiceEIP",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -8604,6 +8613,15 @@
           "name": "Command",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启TIONE内网访问外部",
+          "example": "无",
+          "member": "ServiceEIP",
+          "name": "ServiceEIP",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9883,6 +9901,36 @@
           "name": "Status",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod启动时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "pod资源配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceConfigInfo",
+          "name": "ResourceConfigInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -11775,7 +11823,7 @@
           "example": "sv_tio_platform_cloud_post_gpu_8c40g_1v100",
           "member": "string",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11785,7 +11833,7 @@
           "example": "TI.GN10.2XLARGE40.POST",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11795,7 +11843,7 @@
           "example": "8核40GB V100*1",
           "member": "string",
           "name": "SpecAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11805,7 +11853,7 @@
           "example": "true",
           "member": "bool",
           "name": "Available",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11815,9 +11863,49 @@
           "example": "[]",
           "member": "string",
           "name": "AvailableRegion",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前计费项支持的特性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "SpecFeatures",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GPU",
+          "member": "string",
+          "name": "SpecType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "V100",
+          "member": "string",
+          "name": "GpuType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项CategoryId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024554",
+          "member": "string",
+          "name": "CategoryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -3375,6 +3375,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "IPv6 CIDR",
+          "example": "2409:8c30:141:12::/64",
+          "member": "string",
+          "name": "IPv6CidrBlock",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

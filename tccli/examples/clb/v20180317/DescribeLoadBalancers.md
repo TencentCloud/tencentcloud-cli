@@ -139,7 +139,8 @@ Output:
                 "AttributeFlags": [
                     "abc"
                 ],
-                "LoadBalancerDomain": "abc"
+                "LoadBalancerDomain": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"
@@ -287,7 +288,8 @@ Output:
                 "AttributeFlags": [
                     "abc"
                 ],
-                "LoadBalancerDomain": "abc"
+                "LoadBalancerDomain": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"
@@ -435,7 +437,8 @@ Output:
                 "AttributeFlags": [
                     "abc"
                 ],
-                "LoadBalancerDomain": "abc"
+                "LoadBalancerDomain": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"
@@ -586,7 +589,8 @@ Output:
                 "AttributeFlags": [
                     "abc"
                 ],
-                "LoadBalancerDomain": "abc"
+                "LoadBalancerDomain": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"
@@ -738,7 +742,8 @@ Output:
                 "AttributeFlags": [
                     "abc"
                 ],
-                "LoadBalancerDomain": "abc"
+                "LoadBalancerDomain": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"

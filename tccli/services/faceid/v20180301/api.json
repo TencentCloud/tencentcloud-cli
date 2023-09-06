@@ -488,7 +488,7 @@
           "example": "无",
           "member": "string",
           "name": "ReqTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -498,7 +498,7 @@
           "example": "无",
           "member": "string",
           "name": "Seq",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -507,8 +507,18 @@
           "document": "一比一时使用的、脱敏后的身份证号。",
           "example": "无",
           "member": "string",
+          "name": "IdCard",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "已废弃。请使用“IdCard”字段",
+          "example": "无",
+          "member": "string",
           "name": "Idcard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -518,7 +528,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -528,7 +538,7 @@
           "example": "无",
           "member": "string",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -538,7 +548,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsNeedCharge",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -548,7 +558,7 @@
           "example": "无",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -558,7 +568,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -568,7 +578,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

@@ -4912,6 +4912,7 @@
           "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
           "member": "string",
           "name": "ID",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4922,6 +4923,7 @@
           "example": "test-service",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4932,6 +4934,7 @@
           "example": "[\"test\"]",
           "member": "string",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -4942,6 +4945,7 @@
           "example": "无",
           "member": "KongUpstreamInfo",
           "name": "UpstreamInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -4952,6 +4956,7 @@
           "example": "HostIP",
           "member": "string",
           "name": "UpstreamType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4962,6 +4967,7 @@
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4972,8 +4978,20 @@
           "example": "无",
           "member": "bool",
           "name": "Editable",
+          "output_required": true,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/open",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

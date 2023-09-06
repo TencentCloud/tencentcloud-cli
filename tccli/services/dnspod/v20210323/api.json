@@ -8457,7 +8457,7 @@
           "example": "无",
           "member": "WhoisContact",
           "name": "Contacts",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8467,7 +8467,7 @@
           "example": "2021-11-07 14:42:55",
           "member": "string",
           "name": "CreationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8477,7 +8477,7 @@
           "example": "2023-11-07 14:42:55",
           "member": "string",
           "name": "ExpirationDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8487,17 +8487,17 @@
           "example": "true",
           "member": "bool",
           "name": "IsQcloud",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否当前操作帐号注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否当前操作账号注册的域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "IsQcloudOwner",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8507,7 +8507,7 @@
           "example": "无",
           "member": "string",
           "name": "NameServers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8517,7 +8517,7 @@
           "example": "无",
           "member": "string",
           "name": "Raw",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8527,7 +8527,7 @@
           "example": "无",
           "member": "string",
           "name": "Registrar",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8537,7 +8537,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8547,7 +8547,7 @@
           "example": "2022-11-17 14:42:55",
           "member": "string",
           "name": "UpdatedDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

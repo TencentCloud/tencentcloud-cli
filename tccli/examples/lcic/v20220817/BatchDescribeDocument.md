@@ -39,7 +39,8 @@ Output:
                 "Pages": 1,
                 "Width": 1,
                 "Height": 1,
-                "Cover": "abc"
+                "Cover": "abc",
+                "Preview": "abc"
             }
         ],
         "RequestId": "abc"

@@ -921,6 +921,42 @@
       ],
       "type": "object"
     },
+    "DatabasePrivilegeInfo": {
+      "document": "数据库权限信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "db1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "//库表权限，SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE、CREATE_TABLE、DROP_DATABASE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "【】",
+          "member": "string",
+          "name": "DatabasePrivileges",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "// 库下面的表权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "【】",
+          "member": "TablePrivilegeInfo",
+          "name": "TablePrivilegeList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "DeleteBackUpDataRequest": {
       "document": "DeleteBackUpData请求参数结构体",
       "members": [
@@ -2727,7 +2763,62 @@
     },
     "ModifyUserNewPrivilegeRequest": {
       "document": "ModifyUserNewPrivilege请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cluster名称",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否所有数据库表",
+          "example": "false",
+          "member": "bool",
+          "name": "AllDatabase",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "全局权限",
+          "example": "数组",
+          "member": "string",
+          "name": "GlobalPrivileges",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库表权限",
+          "example": "数组",
+          "member": "DatabasePrivilegeInfo",
+          "name": "DatabasePrivilegeList",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "ModifyUserNewPrivilegeResponse": {
@@ -3515,6 +3606,32 @@
         }
       ],
       "usage": "out"
+    },
+    "TablePrivilegeInfo": {
+      "document": "表权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表名称",
+          "example": "table1",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表权限列表 SELECT、INSERT_ALL、ALTER、TRUNCATE、DROP_TABLE 查询、插入、设置、清空表、删除表",
+          "example": "【】",
+          "member": "string",
+          "name": "TablePrivileges",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签描述",

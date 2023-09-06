@@ -1106,11 +1106,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态码",
+          "document": "状态码：0-修改成功，否则修改失败",
           "example": "0",
           "member": "int64",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4197,7 +4197,7 @@
         },
         {
           "disabled": false,
-          "document": "访问类型",
+          "document": "访问类型：0-plaintext；1-sasl_plaintext；2-ssl；3-sasl_ssl",
           "example": "1",
           "member": "int64",
           "name": "AccessType",
@@ -4252,7 +4252,7 @@
           "example": "无",
           "member": "JgwOperateResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

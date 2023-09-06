@@ -42,6 +42,13 @@
       "output": "CreateCertificateResponse",
       "status": "online"
     },
+    "CreateCertificateBindResourceSyncTask": {
+      "document": "创建证书绑定关联云资源异步任务， 该接口用于查询证书关联云资源。 若证书ID已存在查询云资源任务，则结果返回该任务ID。关联云资源类型，支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）。查询关联云资源结果使用DescribeCertificateBindResourceTaskResult接口",
+      "input": "CreateCertificateBindResourceSyncTaskRequest",
+      "name": "创建证书关联云资源异步任务",
+      "output": "CreateCertificateBindResourceSyncTaskResponse",
+      "status": "online"
+    },
     "CreateCertificateByPackage": {
       "document": "使用权益点创建证书",
       "input": "CreateCertificateByPackageRequest",
@@ -89,6 +96,20 @@
       "input": "DescribeCertificateRequest",
       "name": "获取证书信息",
       "output": "DescribeCertificateResponse",
+      "status": "online"
+    },
+    "DescribeCertificateBindResourceTaskDetail": {
+      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
+      "input": "DescribeCertificateBindResourceTaskDetailRequest",
+      "name": "查询证书关联云资源任务结果 - 返回关联详情",
+      "output": "DescribeCertificateBindResourceTaskDetailResponse",
+      "status": "online"
+    },
+    "DescribeCertificateBindResourceTaskResult": {
+      "document": "查询CreateCertificateBindResourceSyncTask任务结果， 返回证书关联云资源异步任务结果， 支持以下云资源：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
+      "input": "DescribeCertificateBindResourceTaskResultRequest",
+      "name": "查询证书关联云资源任务结果 - 仅返回总数",
+      "output": "DescribeCertificateBindResourceTaskResultResponse",
       "status": "online"
     },
     "DescribeCertificateDetail": {
@@ -428,6 +449,42 @@
       ],
       "usage": "out"
     },
+    "ApiGatewayInstanceList": {
+      "document": "apigateway实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "apigateway实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiGatewayInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下apigateway实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ApplyCertificateRequest": {
       "document": "ApplyCertificate请求参数结构体",
       "members": [
@@ -581,6 +638,58 @@
       ],
       "type": "object"
     },
+    "BindResourceRegionResult": {
+      "document": "绑定资源地域结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联资源总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "BindResourceResult": {
+      "document": "绑定资源结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型：clb、cdn、waf、live、vod、ddos、tke、apigateway、tcb、teo（edgeOne）",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定资源地域结果",
+          "example": "无",
+          "member": "BindResourceRegionResult",
+          "name": "BindResourceRegionResult",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CancelCertificateOrderRequest": {
       "document": "CancelCertificateOrder请求参数结构体",
       "members": [
@@ -663,6 +772,32 @@
       ],
       "usage": "out"
     },
+    "CdnInstanceList": {
+      "document": "cdn实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该地域下CDN域名总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cdn域名详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdnInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CertHostingInfo": {
       "document": "云资源配置详情",
       "members": [
@@ -708,6 +843,34 @@
         }
       ],
       "usage": "out"
+    },
+    "CertTaskId": {
+      "document": "证书异步任务ID",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "Certificate": {
       "document": "CLB证书详情",
@@ -1297,6 +1460,42 @@
       ],
       "usage": "out"
     },
+    "ClbInstanceList": {
+      "document": "clb实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "clb实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下Clb实例总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ClbListener": {
       "document": "CLB实例监听器",
       "members": [
@@ -1671,6 +1870,52 @@
       ],
       "usage": "out"
     },
+    "CreateCertificateBindResourceSyncTaskRequest": {
+      "document": "CreateCertificateBindResourceSyncTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID列表，总数不能超过100",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用缓存， 1使用缓存，0不使用缓存； 默认为1使用缓存； 若当前证书ID存在半小时已完成的任务， 则使用缓存的情况下， 会读取半小时内离当前时间最近的查询结果",
+          "example": "无",
+          "member": "uint64",
+          "name": "IsCache",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCertificateBindResourceSyncTaskResponse": {
+      "document": "CreateCertificateBindResourceSyncTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书关联云资源异步任务ID列表",
+          "example": "无",
+          "member": "CertTaskId",
+          "name": "CertTaskIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCertificateByPackageRequest": {
       "document": "CreateCertificateByPackage请求参数结构体",
       "members": [
@@ -1977,6 +2222,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DdosInstanceList": {
+      "document": "ddos实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该地域下ddos域名总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ddos实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DdosInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2548,6 +2819,226 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeCertificateBindResourceTaskDetailRequest": {
+      "document": "DescribeCertificateBindResourceTaskDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，根据任务ID查询绑定云资源结果",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每页展示数量， 默认10，最大值100; 分页总数为云资源地域下实例总数， 即第一页会拉群每个云资源的地域下面Limit数量实例",
+          "example": "无",
+          "member": "string",
+          "name": "Limit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前偏移量",
+          "example": "无",
+          "member": "string",
+          "name": "Offset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询资源类型的结果详情， 不传则查询所有",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询地域列表的数据，CLB、TKE、WAF、APIGATEWAY、TCB支持地域查询， 其他资源类型不支持",
+          "example": "无",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateBindResourceTaskDetailResponse": {
+      "document": "DescribeCertificateBindResourceTaskDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联clb资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbInstanceList",
+          "name": "CLB",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联cdn资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CdnInstanceList",
+          "name": "CDN",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联waf资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WafInstanceList",
+          "name": "WAF",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联ddos资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DdosInstanceList",
+          "name": "DDOS",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联live资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveInstanceList",
+          "name": "LIVE",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联vod资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VODInstanceList",
+          "name": "VOD",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联tke资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TkeInstanceList",
+          "name": "TKE",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联apigateway资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApiGatewayInstanceList",
+          "name": "APIGATEWAY",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联tcb资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBInstanceList",
+          "name": "TCB",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联teo资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TeoInstanceList",
+          "name": "TEO",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前结果缓存时间",
+          "example": "无",
+          "member": "string",
+          "name": "CacheTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateBindResourceTaskResultRequest": {
+      "document": "DescribeCertificateBindResourceTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID，根据任务ID查询绑定云资源结果， 最大支持100个",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateBindResourceTaskResultResponse": {
+      "document": "DescribeCertificateBindResourceTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务绑定关联云资源结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SyncTaskBindResourceResult",
+          "name": "SyncTaskBindResourceResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeCertificateDetailRequest": {
       "document": "DescribeCertificateDetail请求参数结构体",
@@ -5710,6 +6201,32 @@
       ],
       "usage": "out"
     },
+    "Error": {
+      "document": "错误异常",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异常错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Filter": {
       "document": "过滤参数列表",
       "members": [
@@ -5860,6 +6377,32 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveInstanceList": {
+      "document": "live实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该地域下live实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "live实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7329,6 +7872,334 @@
       ],
       "usage": "both"
     },
+    "SyncTaskBindResourceResult": {
+      "document": "异步任务证书关联云资源结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联云资源结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BindResourceResult",
+          "name": "BindResourceResult",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联云资源异步查询结果： 0表示查询中， 1表示查询成功。 2表示查询异常； 若状态为1，则查看BindResourceResult结果；若状态为2，则查看Error原因",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联云资源错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Error",
+          "name": "Error",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前结果缓存时间",
+          "example": "无",
+          "member": "string",
+          "name": "CacheTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBAccessInstance": {
+      "document": "TCB访问服务实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统一域名状态\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UnionStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否被抢占, 被抢占表示域名被其他环境绑定了，需要解绑或者重新绑定。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPreempted",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "icp黑名单封禁状态，0-未封禁，1-封禁\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ICPStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBAccessService": {
+      "document": "TCB访问服务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBAccessInstance",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBEnvironment": {
+      "document": "TCB环境",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBEnvironments": {
+      "document": "tcb环境实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "tcb环境\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBEnvironment",
+          "name": "Environment",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问服务\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBAccessService",
+          "name": "AccessService",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "静态托管\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBHostService",
+          "name": "HostService",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBHostInstance": {
+      "document": "TCB静态托管服务实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "解析状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DNSStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已绑定证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OldCertificateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBHostService": {
+      "document": "TCB静态托管服务列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBHostInstance",
+          "name": "InstanceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TCBInstanceList": {
+      "document": "tcb地域实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tcb环境实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TCBEnvironments",
+          "name": "Environments",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tags": {
       "document": "标签",
       "members": [
@@ -7396,6 +8267,32 @@
           "name": "Status",
           "required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TeoInstanceList": {
+      "document": "edgeone实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "edgeone实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TeoInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "edgeone实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -7488,6 +8385,42 @@
           "name": "ClusterVersion",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "TkeInstanceList": {
+      "document": "tke实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "tke实例详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TkeInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下tke实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -8289,6 +9222,32 @@
       ],
       "type": "object"
     },
+    "VODInstanceList": {
+      "document": "vod实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vod实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VodInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下vod实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VerifyManagerRequest": {
       "document": "VerifyManager请求参数结构体",
       "members": [
@@ -8347,6 +9306,78 @@
           "name": "CertId",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WafInstanceDetail": {
+      "document": "waf实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否保持长连接，1是，0 否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Keepalive",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WafInstanceList": {
+      "document": "waf实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WafInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下waf实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli ckafka BatchCreateAcl --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId ckafka-xx \
     --ResourceType 2 \
-    --RuleList.0.Operation xx \
-    --RuleList.0.PermissionType xx \
-    --RuleList.0.Host xx \
-    --RuleList.0.Principal xx \
+    --RuleList.0.Operation 2 \
+    --RuleList.0.PermissionType 3 \
+    --RuleList.0.Host * \
+    --RuleList.0.Principal User:* \
     --ResourceNames ******
 ```
 

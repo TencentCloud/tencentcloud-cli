@@ -267,7 +267,7 @@
       "status": "online"
     },
     "CreateSignUrls": {
-      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。",
+      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转小程序查看或签署链接",
       "output": "CreateSignUrlsResponse",
@@ -4509,7 +4509,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号数组，最多支持100个。(备注：该参数和合同组编号必须二选一)",
+          "document": "流程(合同)的编号列表，最多支持100个。(备注：该参数和合同组编号必须二选一)",
           "example": "[\"xxx\", \"yyy\"]",
           "member": "string",
           "name": "FlowIds",
@@ -4527,7 +4527,7 @@
         },
         {
           "disabled": false,
-          "document": "签署链接类型：“WEIXINAPP”-短链直接跳小程序；“CHANNEL”-跳转H5页面；“APP”-第三方APP或小程序跳转电子签小程序；\"LONGURL2WEIXINAPP\"-长链接跳转小程序；默认“WEIXINAPP”类型，即跳转至小程序；",
+          "document": "签署链接类型,可以设置的参数如下\n\n- WEIXINAPP:短链直接跳小程序 (默认类型)\n- CHANNEL:跳转H5页面\n- APP:第三方APP或小程序跳转电子签小程序\n- LONGURL2WEIXINAPP:长链接跳转小程序",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -4536,7 +4536,7 @@
         },
         {
           "disabled": false,
-          "document": "签署链接生成类型，默认是 \"ALL\"；\n\"ALL\"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；\n\"CHANNEL\"：第三方平台子客企业企业；\n\"NOT_CHANNEL\"：非第三方平台子客企业企业；\n\"PERSON\"：个人；\n\"FOLLOWER\"：关注方，目前是合同抄送方；",
+          "document": "签署链接生成类型，可以选择的类型如下\n\n- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)\n- CHANNEL：第三方平台子客企业企业\n- NOT_CHANNEL：非第三方平台子客企业企业\n- PERSON：个人\n- FOLLOWER：关注方，目前是合同抄送方",
           "example": "CHANNEL",
           "member": "string",
           "name": "GenerateType",
@@ -4554,7 +4554,7 @@
         },
         {
           "disabled": false,
-          "document": "参与人姓名，GenerateType为\"PERSON\"时必填",
+          "document": "参与人姓名\nGenerateType为\"PERSON\"(即个人签署方)时必填",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -4563,7 +4563,7 @@
         },
         {
           "disabled": false,
-          "document": "参与人手机号；\nGenerateType为\"PERSON\"或\"FOLLOWER\"时必填",
+          "document": "参与人手机号\nGenerateType为\"PERSON\"或\"FOLLOWER\"时必填",
           "example": "xxx",
           "member": "string",
           "name": "Mobile",
@@ -4617,7 +4617,7 @@
         },
         {
           "disabled": false,
-          "document": "生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下\n\n0:合同签署页面更多操作按钮\n1:合同签署页面更多操作的拒绝签署按钮\n2:合同签署页面更多操作的转他人处理按钮\n3:签署成功页的查看详情按钮",
+          "document": "生成的签署链接在签署过程隐藏的按钮列表, 可以设置隐藏的按钮列表如下\n\n- 0:合同签署页面更多操作按钮\n- 1:合同签署页面更多操作的拒绝签署按钮\n- 2:合同签署页面更多操作的转他人处理按钮\n- 3:签署成功页的查看详情按钮",
           "example": "无",
           "member": "int64",
           "name": "Hides",
@@ -7416,11 +7416,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署链接，过期时间为30天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署链接，过期时间为90天\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://essurl.cn/xxxx",
           "member": "string",
           "name": "SignUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7430,7 +7430,7 @@
           "example": "无",
           "member": "int64",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7440,7 +7440,7 @@
           "example": "无",
           "member": "int64",
           "name": "SignOrder",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7450,7 +7450,7 @@
           "example": "无",
           "member": "string",
           "name": "SignId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7460,7 +7460,7 @@
           "example": "无",
           "member": "string",
           "name": "CustomUserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7470,7 +7470,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7480,7 +7480,7 @@
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7490,7 +7490,7 @@
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7500,7 +7500,7 @@
           "example": "无",
           "member": "string",
           "name": "ApproverType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7510,7 +7510,7 @@
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7520,7 +7520,7 @@
           "example": "\"test-flow-id\"",
           "member": "string",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7530,7 +7530,7 @@
           "example": "test_open_id",
           "member": "string",
           "name": "OpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7540,7 +7540,7 @@
           "example": "\"test-flow-group-id\"",
           "member": "string",
           "name": "FlowGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

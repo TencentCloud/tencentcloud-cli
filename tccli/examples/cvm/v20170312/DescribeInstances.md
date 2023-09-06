@@ -65,8 +65,7 @@ Output:
                     "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
                     "HostIds": [],
-                    "Zone": "ap-guangzhou-1",
-                    "HostIps": []
+                    "Zone": "ap-guangzhou-1"
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"
@@ -272,8 +271,7 @@ Output:
                     "HostId": "host-h3m57oik",
                     "ProjectId": 1174660,
                     "HostIds": [],
-                    "Zone": "ap-guangzhou-1",
-                    "HostIps": []
+                    "Zone": "ap-guangzhou-1"
                 },
                 "PrivateIpAddresses": [
                     "172.16.32.78"

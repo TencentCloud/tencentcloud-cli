@@ -4777,8 +4777,7 @@
           "member": "string",
           "name": "JobId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4787,28 +4786,25 @@
           "member": "int64",
           "name": "RunType",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
-          "document": "兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）",
+          "document": "兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（建议传值）\n保证参数为 LATEST、EARLIEST、T+Timestamp （例:T1557394288000）",
           "example": "LATEST",
           "member": "string",
           "name": "StartMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "当前作业的某个版本",
+          "document": "当前作业的某个版本\n（不传默认为非草稿的作业版本）",
           "example": "1",
           "member": "uint64",
           "name": "JobConfigVersion",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4817,8 +4813,7 @@
           "member": "string",
           "name": "SavepointPath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4827,8 +4822,7 @@
           "member": "string",
           "name": "SavepointId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4837,8 +4831,16 @@
           "member": "bool",
           "name": "UseOldSystemConnector",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": true
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "自定义时间戳",
+          "example": "1690531378626",
+          "member": "int64",
+          "name": "CustomTimestamp",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"

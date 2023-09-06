@@ -3584,7 +3584,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3594,7 +3594,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3604,7 +3604,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3614,7 +3614,7 @@
           "example": "无",
           "member": "int64",
           "name": "NetworkCard",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3624,7 +3624,7 @@
           "example": "无",
           "member": "Externals",
           "name": "Externals",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3634,7 +3634,7 @@
           "example": "无",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3644,7 +3644,7 @@
           "example": "无",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3654,7 +3654,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3664,7 +3664,7 @@
           "example": "无",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3674,7 +3674,7 @@
           "example": "无",
           "member": "LocalDiskType",
           "name": "LocalDiskTypeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3684,7 +3684,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3694,7 +3694,7 @@
           "example": "无",
           "member": "ItemPrice",
           "name": "Price",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3704,7 +3704,7 @@
           "example": "无",
           "member": "string",
           "name": "SoldOutReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3714,7 +3714,7 @@
           "example": "无",
           "member": "float",
           "name": "InstanceBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3724,7 +3724,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstancePps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3734,7 +3734,7 @@
           "example": "无",
           "member": "int64",
           "name": "StorageBlockAmount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3744,7 +3744,7 @@
           "example": "无",
           "member": "string",
           "name": "CpuType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3754,7 +3754,7 @@
           "example": "无",
           "member": "int64",
           "name": "Gpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3764,7 +3764,7 @@
           "example": "无",
           "member": "int64",
           "name": "Fpga",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3774,7 +3774,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3784,7 +3784,7 @@
           "example": "无",
           "member": "float",
           "name": "GpuCount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3794,7 +3794,7 @@
           "example": "无",
           "member": "string",
           "name": "Frequency",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

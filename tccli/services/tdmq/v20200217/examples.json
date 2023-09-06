@@ -556,12 +556,28 @@
         "title": "示例"
       }
     ],
+    "DescribeRocketMQMsgTrace": [
+      {
+        "document": "查询消息轨迹",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQMsgTrace\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"EnvironmentId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"MsgId\": \"abc\",\n    \"GroupName\": \"abc\",\n    \"QueryDLQMsg\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"Stage\": \"abc\",\n                \"Data\": \"abc\"\n            }\n        ],\n        \"ShowTopicName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询消息轨迹"
+      }
+    ],
     "DescribeRocketMQNamespaces": [
       {
         "document": "",
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeRocketMQNamespaces\n&ClusterId=rocketmq-rd3545bkkj49\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Namespaces\": [\n            {\n                \"Remark\": \"xx\",\n                \"PublicEndpoint\": \"xx\",\n                \"RetentionTime\": 1,\n                \"VpcEndpoint\": \"xx\",\n                \"Ttl\": 1,\n                \"NamespaceId\": \"xx\"\n            }\n        ]\n    }\n}",
         "title": "获取用户命名空间列表"
+      }
+    ],
+    "DescribeRocketMQTopicMsgs": [
+      {
+        "document": "查询topic 最近的100条消息",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopicMsgs\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"xx\",\n    \"Offset\": 1,\n    \"EndTime\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgKey\": \"xx\",\n    \"QueryDlqMsg\": false,\n    \"NumOfLatestMsg\": 100\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskRequestId\": \"xx\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"TopicMsgLogSets\": [\n            {\n                \"PulsarMsgId\": \"xx\",\n                \"MsgId\": \"xx\",\n                \"MsgTag\": \"xx\",\n                \"ProduceTime\": \"xx\",\n                \"MsgKey\": \"xx\",\n                \"ProducerAddr\": \"xx\"\n            }\n        ]\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeRocketMQTopics": [

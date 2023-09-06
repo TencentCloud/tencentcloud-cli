@@ -756,6 +756,14 @@
         "title": "拉取聚合规则"
       }
     ],
+    "DescribePrometheusRegions": [
+      {
+        "document": "",
+        "input": "https://monitor.tencentcloudapi.com/?Action=DescribePrometheusRegions\n&PayMode=3\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"RegionState\": 1,\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"RegionName\": \"广州\",\n                \"RegionShortName\": \"gz\",\n                \"Area\": \"华南地区\",\n                \"RegionPayMode\": 3\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "列出 Prometheus 服务所有可用的区域和可用区"
+      }
+    ],
     "DescribePrometheusScrapeJobs": [
       {
         "document": "查询 Prometheus 抓取任务列表",

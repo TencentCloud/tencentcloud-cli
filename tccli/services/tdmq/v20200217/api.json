@@ -476,11 +476,25 @@
       "output": "DescribeRocketMQMsgResponse",
       "status": "online"
     },
+    "DescribeRocketMQMsgTrace": {
+      "document": "查询消息轨迹",
+      "input": "DescribeRocketMQMsgTraceRequest",
+      "name": "查询RocketMQ消息轨迹",
+      "output": "DescribeRocketMQMsgTraceResponse",
+      "status": "online"
+    },
     "DescribeRocketMQNamespaces": {
       "document": "获取RocketMQ命名空间列表",
       "input": "DescribeRocketMQNamespacesRequest",
       "name": "获取RocketMQ命名空间列表",
       "output": "DescribeRocketMQNamespacesResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQTopicMsgs": {
+      "document": "rocketmq 消息查询",
+      "input": "DescribeRocketMQTopicMsgsRequest",
+      "name": "rocketmq 消息查询",
+      "output": "DescribeRocketMQTopicMsgsResponse",
       "status": "online"
     },
     "DescribeRocketMQTopics": {
@@ -2232,7 +2246,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过16个字符。",
+          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
           "example": "default",
           "member": "string",
           "name": "ClusterName",
@@ -2287,7 +2301,7 @@
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7033,6 +7047,98 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQMsgTraceRequest": {
+      "document": "DescribeRocketMQMsgTrace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "pulsar-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题，rocketmq查询死信时值为groupId",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组、订阅",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询死信时该值为true",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDLQMsg",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQMsgTraceResponse": {
+      "document": "DescribeRocketMQMsgTrace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "[\n    {\n        \"Stage\": \"produce\",\n        \"Data\": {\n            \"ProducerName\": \"生产者名\",\n            \"ProduceTime\": \"消息生产时间\",\n            \"ProducerAddr\": \"客户端地址\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"persist\",\n        \"Data\": {\n            \"PersistTime\": \"存储时间\",\n            \"Duration\": \"耗时ms\",\n            \"Status\": \"状态（0：成功，1：失败）\"\n        }\n    },\n    {\n        \"Stage\": \"consume\",\n        \"Data\": {\n            \"TotalCount\": 2,\n            \"RocketMqConsumeLogs\": [\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                },\n                {\n                    \"ConsumerGroup\": \"消费组\",\n                    \"ConsumeModel\": \"消费模式\",\n                    \"ConsumerAddr\": \"消费者地址\",\n                    \"ConsumeTime\": \"推送时间\",\n                    \"Status\": \"状态（0:已推送未确认, 2:已确认, 3:转入重试, 4:已重试未确认, 5:已转入死信队列）\"\n                }\n            ]    \n        }\n    }\n]",
+          "example": "xxx",
+          "member": "TraceResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息轨迹页展示的topic名称",
+          "example": "topic",
+          "member": "string",
+          "name": "ShowTopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQNamespacesRequest": {
       "document": "DescribeRocketMQNamespaces请求参数结构体",
       "members": [
@@ -7097,6 +7203,159 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicMsgsRequest": {
+      "document": "DescribeRocketMQTopicMsgs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "ns",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称，查询死信时为groupId",
+          "example": "topic",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2021-12-22 12:22:22",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2021-12-22 12:22:22",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 ID",
+          "example": "msgid",
+          "member": "string",
+          "name": "MsgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息 key",
+          "example": "msgkey",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询限额",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标志一次分页事务",
+          "example": "2e5ecbb3-f2d6-49d3-9c82-8648f8ed8748",
+          "member": "string",
+          "name": "TaskRequestId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "死信查询时该值为true，只对Rocketmq有效",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDlqMsg",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "查询最近N条消息 最大不超过1024，默认-1为其他查询条件",
+          "example": "100",
+          "member": "int64",
+          "name": "NumOfLatestMsg",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQTopicMsgsResponse": {
+      "document": "DescribeRocketMQTopicMsgs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息列表",
+          "example": "无",
+          "member": "RocketMQMsgLog",
+          "name": "TopicMsgLogSets",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标志一次分页事务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2e5ecbb3-f2d6-49d3-9c82-8648f8ed8748",
+          "member": "string",
+          "name": "TaskRequestId",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12172,6 +12431,92 @@
       ],
       "usage": "out"
     },
+    "RocketMQMsgLog": {
+      "document": "rocketmq消息日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgTag",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProducerAddr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息发送时间",
+          "example": "xxx",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pulsar消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "PulsarMsgId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "死信重发次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DeadLetterResendTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "死信重发成功次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "ResendSuccessCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQNamespace": {
       "document": "RocketMQ命名空间信息",
       "members": [
@@ -13557,6 +13902,32 @@
         }
       ],
       "usage": "both"
+    },
+    "TraceResult": {
+      "document": "消息轨迹结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "阶段",
+          "example": "produce",
+          "member": "string",
+          "name": "Stage",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容详情",
+          "example": "{\"\", \"\"}",
+          "member": "string",
+          "name": "Data",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UnbindCmqDeadLetterRequest": {
       "document": "UnbindCmqDeadLetter请求参数结构体",

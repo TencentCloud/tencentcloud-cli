@@ -630,6 +630,13 @@
       "output": "DescribePrometheusRecordRulesResponse",
       "status": "online"
     },
+    "DescribePrometheusRegions": {
+      "document": "列出 Prometheus 服务所有可用的地域",
+      "input": "DescribePrometheusRegionsRequest",
+      "name": "列出 Prometheus 服务所有可用的地域",
+      "output": "DescribePrometheusRegionsResponse",
+      "status": "online"
+    },
     "DescribePrometheusScrapeJobs": {
       "document": "列出 Prometheus 抓取任务",
       "input": "DescribePrometheusScrapeJobsRequest",
@@ -11439,6 +11446,43 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusRegionsRequest": {
+      "document": "DescribePrometheusRegions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-预付费，2-后付费，3-全地域（不填默认全地域）",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusRegionsResponse": {
+      "document": "DescribePrometheusRegions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区域列表",
+          "example": "无",
+          "member": "PrometheusRegionItem",
+          "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusScrapeJobsRequest": {
       "document": "DescribePrometheusScrapeJobs请求参数结构体",
       "members": [
@@ -12811,7 +12855,7 @@
           "example": "my-instance",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12821,7 +12865,7 @@
           "example": "grafana-abcdefgh",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12831,7 +12875,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12841,7 +12885,7 @@
           "example": "vpc-abcdef",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12851,18 +12895,8 @@
           "example": "[\"subnet-abcdef\"]",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "Grafana 内网地址",
-          "example": "192.168.0.1",
-          "member": "string",
-          "name": "InternetUrl",
-          "required": true,
-          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -12870,8 +12904,18 @@
           "document": "Grafana 公网地址",
           "example": "192.168.0.1",
           "member": "string",
+          "name": "InternetUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Grafana 内网地址",
+          "example": "192.168.0.1",
+          "member": "string",
           "name": "InternalUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12881,7 +12925,7 @@
           "example": "2021-03-11T16:54:33+08:00",
           "member": "datetime",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12891,7 +12935,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12901,7 +12945,7 @@
           "example": "[{\"key\":\"1\",\"value\":\"2\"}]",
           "member": "PrometheusTag",
           "name": "TagSpecification",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12911,7 +12955,7 @@
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12921,7 +12965,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceChargeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12931,7 +12975,7 @@
           "example": "Default-VPC",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12941,7 +12985,7 @@
           "example": "Default-Subnet",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12951,7 +12995,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12961,7 +13005,7 @@
           "example": "http://127.0.0.1",
           "member": "string",
           "name": "RootUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12971,7 +13015,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableSSO",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -12981,7 +13025,7 @@
           "example": "v7.4.2",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12991,7 +13035,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableSSOCamCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }
@@ -16942,6 +16986,82 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PrometheusRegionItem": {
+      "document": "DescribePrometheusRegions 响应结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域 ID",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域状态( 0: 不可用；1: 可用)",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionState",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域名(中文)",
+          "example": "广州",
+          "member": "string",
+          "name": "RegionName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域名(英文缩写)",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionShortName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域所在大区名",
+          "example": "华南地区",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1-仅支持预付费，2-仅支持后付费，3-支持两种计费模式实例",
+          "example": "3",
+          "member": "int64",
+          "name": "RegionPayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

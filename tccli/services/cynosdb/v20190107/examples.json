@@ -11,7 +11,7 @@
     "AddClusterSlaveZone": [
       {
         "document": "开启多可用区部署",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"SlaveZone\": \"ap-guangzhou-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-asd\",\n    \"SlaveZone\": \"ap-guangzhou-4\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "开启多可用区部署"
       }
@@ -83,7 +83,7 @@
     "CreateAccounts": [
       {
         "document": "创建用户账号",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Accounts\": [\n        {\n            \"AccountName\": \"test\",\n            \"AccountPassword\": \"888888\",\n            \"Host\": \"1.1.1.1\",\n            \"Description\": \"abc\",\n            \"MaxUserConnections\": 10\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccounts\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Accounts\": [\n        {\n            \"AccountName\": \"test\",\n            \"AccountPassword\": \"888888@Abcde\",\n            \"Host\": \"1.1.1.1\",\n            \"Description\": \"abc\",\n            \"MaxUserConnections\": 10\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"176669\"\n    }\n}",
         "title": "创建用户账号"
       }
@@ -923,7 +923,7 @@
     "RemoveClusterSlaveZone": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdmysql-asd\",\n    \"SlaveZone\": \"ap-guangzhou-3\"\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveClusterSlaveZone\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdmysql-asd\",\n    \"SlaveZone\": \"ap-guangzhou-4\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 123,\n        \"RequestId\": \"128046\"\n    }\n}",
         "title": "关闭多可用区部署"
       }
@@ -972,7 +972,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-qwer\",\n    \"Database\": \"testDb\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Databases\": []\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"176466\",\n        \"Databases\": [\n            \"testDb\"\n        ]\n    }\n}",
         "title": "搜索集群database列表"
       }
     ],
