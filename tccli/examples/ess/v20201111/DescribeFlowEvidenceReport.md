@@ -1,6 +1,33 @@
-**Example 1: 查询出证报告**
+**Example 1: 查询正在处理中的签署报告**
 
-查询出证报告，返回报告 URL
+查询正在处理中的签署报告，正在处理中
+
+Input: 
+
+```
+tccli ess DescribeFlowEvidenceReport --cli-unfold-argument  \
+    --ReportId yDR0PUUhw8ahh****KyK18G1h3FK5ccC \
+    --Operator.OpenId  \
+    --Operator.ClientIp 113.***.**.65 \
+    --Operator.ProxyIp  \
+    --Operator.Channel  \
+    --Operator.UserId de71c67592974c****20572d44ec0b6d
+```
+
+Output: 
+```
+{
+    "Response": {
+        "ReportUrl": "",
+        "RequestId": "3129718393196",
+        "Status": "EvidenceStatusExecuting"
+    }
+}
+```
+
+**Example 2: 查询签署报告**
+
+查询签署报告，返回报告 URL
 
 Input: 
 

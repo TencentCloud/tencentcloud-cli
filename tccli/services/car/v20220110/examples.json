@@ -8,6 +8,30 @@
         "title": "ApplyConcurrent示例"
       }
     ],
+    "CreateApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplication\n<公共请求参数>\n\n{\n    \"ApplicationName\": \"xxx\",\n    \"ApplicationType\": \"Application3D\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationId\": \"app-xkfad8s7\",\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加创建应用请求"
+      }
+    ],
+    "CreateApplicationSnapshot": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationSnapshot\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-afrherc\",\n    \"ApplicationDownloadUrl\": \"http://www.xxx/xxx.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加创建云应用快照请求"
+      }
+    ],
+    "CreateApplicationVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"xxx\",\n    \"ApplicationFileName\": \"xxx.zip\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Version\": {\n            \"ApplicationVersionId\": \"app-efgtyab\",\n            \"ApplicationVersionSize\": 1024,\n            \"ApplicationVersionStatus\": \"Creating\",\n            \"ApplicationVersionName\": \"xxx\",\n            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n        },\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加创建云应用版本请求"
+      }
+    ],
     "CreateSession": [
       {
         "document": "CreateSession示例",
@@ -16,12 +40,100 @@
         "title": "CreateSession示例"
       }
     ],
+    "DeleteApplication": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplication\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-fdgcabe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加删除云应用请求"
+      }
+    ],
+    "DeleteApplicationVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-gnlxuge\",\n    \"ApplicationVersionId\": \"ver-eglebca\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加删除云应用版本请求"
+      }
+    ],
+    "DescribeApplicationFileInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationFileInfo\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-dafe32hr\",\n    \"FilePathList\": [\n        \"xxx/file1.exe\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\",\n        \"FileInfoList\": [\n            {\n                \"FilePath\": \"xxx/file1.exe\",\n                \"FileState\": \"EXIST\"\n            }\n        ]\n    }\n}",
+        "title": "添加查询应用文件信息请求"
+      }
+    ],
+    "DescribeApplicationList": [
+      {
+        "document": "查询应用列表",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Name\": \"ApplicationId\",\n            \"Values\": [\n                \"app-6get57ac\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"UserApplicationList\": [\n            {\n                \"ApplicationId\": \"app-6get57ac\",\n                \"ApplicationName\": \"xxx\",\n                \"ApplicationType\": \"Application3D\",\n                \"ApplicationExePath\": \"xxx\",\n                \"ApplicationInterList\": \"xxx\",\n                \"ApplicationParams\": \"xxx\",\n                \"ApplicationCreateTime\": \"2021-08-29T08:00:30Z\",\n                \"ApplicationRunStatus\": \"xxx\",\n                \"ApplicationUpdateStatus\": \"xxx\",\n                \"ApplicationUpdateProgress\": 100,\n                \"ApplicationVersions\": [\n                    {\n                        \"ApplicationVersionId\": \"ver-gq4c5eq\",\n                        \"ApplicationVersionSize\": 1024,\n                        \"ApplicationVersionStatus\": \"xxx\",\n                        \"ApplicationVersionName\": \"xxx\",\n                        \"CreateTime\": \"2021-08-29T08:00:30Z\"\n                    }\n                ],\n                \"ApplicationBaseInfo\": {\n                    \"WindowUseType\": \"xxx\",\n                    \"WindowName\": \"xxx\",\n                    \"WindowClassName\": \"xxx\"\n                },\n                \"ApplicationNature\": \"PUBLIC\",\n                \"ApplicationStores\": [\n                    {\n                        \"CosBucket\": \"bucket-123456\",\n                        \"CosRegion\": \"ap-guangzhou\",\n                        \"StoreType\": \"LOG\",\n                        \"StoreState\": \"ON\",\n                        \"StorePath\": \"xxx\"\n                    },\n                    {\n                        \"CosBucket\": \"bucket-123456\",\n                        \"CosRegion\": \"ap-guangzhou\",\n                        \"StoreType\": \"ARCHIVE\",\n                        \"StoreState\": \"OFF\",\n                        \"StorePath\": \"xxx\"\n                    }\n                ]\n            }\n        ],\n        \"ApplicationTotal\": 100,\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加查询云应用列表请求"
+      }
+    ],
+    "DescribeApplicationPathList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationPathList\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-afdxfafc\",\n    \"ApplicationVersionId\": \"ver-geyacbf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PathList\": [\n            \"xxxx\\\\xxx.exe\"\n        ],\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加查询应用启动路径列表请求"
+      }
+    ],
+    "DescribeApplicationStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationStatus\n<公共请求参数>\n\n{\n    \"ApplicationIdList\": [\n        \"app-lgefeha\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"StatusList\": [\n            {\n                \"ApplicationId\": \"app-lgefeha\",\n                \"ApplicationRunStatus\": \"ApplicationRunning\",\n                \"ApplicationUpdateStatus\": \"ApplicationUpdateNormal\",\n                \"ApplicationUpdateProgress\": 100\n            }\n        ],\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加查询云应用状态请求"
+      }
+    ],
+    "DescribeApplicationVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-xlgehac\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"ApplicationVersionId\": \"ver-uechqlx\",\n                \"ApplicationVersionSize\": 1024,\n                \"ApplicationVersionStatus\": \"Inuse\",\n                \"ApplicationVersionName\": \"xxx\",\n                \"CreateTime\": \"2021-08-29T08:00:30Z\"\n            }\n        ],\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加查询云应用版本信息请求"
+      }
+    ],
+    "DescribeCosCredential": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCosCredential\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-fcegkdfa\",\n    \"ApplicationFileName\": \"xxx.rar\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SecretID\": \"xxx\",\n        \"SecretKey\": \"xxx\",\n        \"SessionToken\": \"xxx\",\n        \"CosBucket\": \"examplebucket-1250000000\",\n        \"CosRegion\": \"ap-guangzhou\",\n        \"Path\": \"103121832/app-fcegkdfa/ver-xxx/app-fcegkdfa.rar\",\n        \"StartTime\": 1500000,\n        \"ExpiredTime\": 1000000,\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加查询 COS 密钥信息请求"
+      }
+    ],
     "DestroySession": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"cg_user\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
         "title": "DestroySession示例"
+      }
+    ],
+    "ModifyApplicationBaseInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationBaseInfo\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-lxfdfwf\",\n    \"ApplicationName\": \"testname\",\n    \"ApplicationExePath\": \"App/bin/test.exe\",\n    \"ApplicationInterList\": \"test.exe|xxx.exe\",\n    \"ApplicationParams\": \"-b -param\",\n    \"ApplicationBaseInfo\": {\n        \"WindowUseType\": \"ApplicationDesktop\",\n        \"WindowName\": \"xxx\",\n        \"WindowClassName\": \"xxx\"\n    },\n    \"ApplicationStores\": [\n        {\n            \"CosBucket\": \"bucket-123456\",\n            \"CosRegion\": \"ap-guangzhou\",\n            \"StoreType\": \"ARCHIVE\",\n            \"StoreState\": \"OFF\",\n            \"StorePath\": \"xxx\"\n        },\n        {\n            \"CosBucket\": \"bucket-123456\",\n            \"CosRegion\": \"ap-guangzhou\",\n            \"StoreType\": \"LOG\",\n            \"StoreState\": \"ON\",\n            \"StorePath\": \"xxx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加修改云应用基础信息请求"
+      }
+    ],
+    "ModifyApplicationVersion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApplicationVersion\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-dgxeqlc\",\n    \"ApplicationVersionId\": \"ver-hert4hq\",\n    \"ApplicationVersionName\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e460bae7-9ce3-4499-9930-7cc48a7ffac9\"\n    }\n}",
+        "title": "添加修改云应用版本请求"
+      }
+    ],
+    "SetApplicationVersionOnline": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetApplicationVersionOnline\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-glheghe\",\n    \"ApplicationVersionId\": \"ver-cebgkd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Versions\": [\n            {\n                \"ApplicationVersionId\": \"ver-cebgkd\",\n                \"ApplicationVersionSize\": 1024,\n                \"ApplicationVersionStatus\": \"Inuse\",\n                \"ApplicationVersionName\": \"xxx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            },\n            {\n                \"ApplicationVersionId\": \"ver-grshefa\",\n                \"ApplicationVersionSize\": 2048,\n                \"ApplicationVersionStatus\": \"Usable\",\n                \"ApplicationVersionName\": \"xxx\",\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"4eb17e58-68da-4e9a-b298-0894723c9022\"\n    }\n}",
+        "title": "添加上线云应用版本请求"
       }
     ],
     "StartPublishStream": [

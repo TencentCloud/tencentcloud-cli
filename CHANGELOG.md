@@ -1,3 +1,226 @@
+# Release 3.0.845.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 3 次发布
+
+发布时间：2023-09-07 01:17:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateApplication](http://document.tencentcloudapi.woa.com/document/product/1710/81861)
+* [CreateApplicationSnapshot](http://document.tencentcloudapi.woa.com/document/product/1710/81860)
+* [CreateApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81859)
+* [DeleteApplication](http://document.tencentcloudapi.woa.com/document/product/1710/81858)
+* [DeleteApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81857)
+* [DescribeApplicationFileInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81856)
+* [DescribeApplicationList](http://document.tencentcloudapi.woa.com/document/product/1710/81855)
+* [DescribeApplicationPathList](http://document.tencentcloudapi.woa.com/document/product/1710/81854)
+* [DescribeApplicationStatus](http://document.tencentcloudapi.woa.com/document/product/1710/81853)
+* [DescribeApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81852)
+* [DescribeCosCredential](http://document.tencentcloudapi.woa.com/document/product/1710/81851)
+* [ModifyApplicationBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81850)
+* [ModifyApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81849)
+* [SetApplicationVersionOnline](http://document.tencentcloudapi.woa.com/document/product/1710/81848)
+
+新增数据结构：
+
+* [ApplicationBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationBaseInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1710/81862#Filter)
+* [UserApplicationFileInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationFileInfo)
+* [UserApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationInfo)
+* [UserApplicationStatus](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationStatus)
+* [UserApplicationStore](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationStore)
+* [UserApplicationVersion](http://document.tencentcloudapi.woa.com/document/product/1710/81862#UserApplicationVersion)
+
+
+
+## 云呼叫中心(ccc) 版本：2020-02-10
+
+### 第 41 次发布
+
+发布时间：2023-09-07 01:18:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [BindStaffSkillGroupList](http://document.tencentcloudapi.woa.com/document/product/679/58190)
+
+	* 新增入参：StaffSkillGroupList
+
+	* <font color="#dd0000">**修改入参**：</font>SkillGroupList
+
+
+新增数据结构：
+
+* [StaffSkillGroupList](http://document.tencentcloudapi.woa.com/document/product/679/47715#StaffSkillGroupList)
+
+修改数据结构：
+
+* [SipTrunkInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#SipTrunkInfo)
+
+	* 新增成员：RegisterOutboundProxyBak
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 4 次发布
+
+发布时间：2023-09-07 01:28:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NodeInfoList](http://document.tencentcloudapi.woa.com/document/product/1626/78427#NodeInfoList)
+
+	* 新增成员：StatusZh
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 29 次发布
+
+发布时间：2023-09-07 01:53:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CancelUserAutoSignEnableUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79357)
+
+	* 新增入参：Agent
+
+* [CreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79336)
+
+	* 新增入参：UserData
+
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowApproverUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>SignUrl, ApproverType, ApproverName, ApproverMobile, LongUrl, ExpirationTime, SignScene
+
+
+
+
+## 医疗报告结构化(mrs) 版本：2020-09-10
+
+### 第 12 次发布
+
+发布时间：2023-09-07 02:14:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Organ](http://document.tencentcloudapi.woa.com/document/product/1314/56230#Organ)
+
+	* 新增成员：IsthmusThickness
+
+	* <font color="#dd0000">**修改成员**：</font>Part, Size, Envelope, Edge, InnerEcho, Gland, Shape, Thickness, ShapeAttr, CDFI, SymDesc, SizeStatus, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, InnerEchoDistribution, Src, Index, Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, LymphEnlargement, ImageFeature, Duct, Trend, Operation, Coords
+
+* [ParagraphBlock](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ParagraphBlock)
+
+	* 新增成员：MenstrualHistoryText
+
+	* <font color="#dd0000">**修改成员**：</font>IncisionHealingText, AuxiliaryExaminationText, SpecialExamText, OutpatientDiagnosisText, AdmissionConditionText, CheckAndTreatmentProcessText, SymptomsAndSignsText, DischargeInstructionsText, AdmissionDiagnosisText, SurgeryConditionText, PathologicalDiagnosisText, DischargeConditionText, CheckRecordText, ChiefComplaintText, DischargeDiagnosisText, MainDiseaseHistoryText, DiseasePresentText, PersonalHistoryText, MenstruallHistoryText, ObstericalHistoryText, FamilyHistoryText, AllergyHistoryText, DiseaseHistoryText, OtherDiagnosisText, BodyExaminationText, SpecialistExaminationText, TreatmentResultText
+
+* [ReportInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#ReportInfo)
+
+	* 新增成员：BedNo
+
+* [TuberInfo](http://document.tencentcloudapi.woa.com/document/product/1314/56230#TuberInfo)
+
+	* 新增成员：IsthmusThickness
+
+	* <font color="#dd0000">**修改成员**：</font>Type, Part, Size, Multiple, AspectRatio, Edge, InnerEcho, RearEcho, Elastic, Shape, ShapeAttr, SkinMedulla, Trend, Calcification, Envelope, Enhancement, LymphEnlargement, LymphDoor, Activity, Operation, CDFI, Index, SizeStatus, InnerEchoDistribution, InnerEchoType, Outline, Structure, Density, Vas, Cysticwall, Capsule, IsthmusThicknese, Src, Transparent, MriAdc, MriDwi, MriT1, MriT2, CtHu, Suvmax, Metabolism, RadioactiveUptake, SymDesc, ImageFeature, Coords
+
+
+
+
+## 高性能计算平台(thpc) 版本：2023-03-21
+
+### 第 3 次发布
+
+发布时间：2023-09-07 02:37:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [QueueConfig](http://document.tencentcloudapi.woa.com/document/product/1701/80209#QueueConfig)
+
+	* 新增成员：ScaleUpMemRatio
+
+* [QueueConfigOverview](http://document.tencentcloudapi.woa.com/document/product/1701/80209#QueueConfigOverview)
+
+	* 新增成员：ScaleUpMemRatio
+
+
+
+
+## 高性能计算平台(thpc) 版本：2022-04-01
+
+
+
+## 高性能计算平台(thpc) 版本：2021-11-09
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 5 次发布
+
+发布时间：2023-09-07 02:59:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAdministrationByTag](http://document.tencentcloudapi.woa.com/document/product/1734/81864)
+* [DescribeAlarmStatusList](http://document.tencentcloudapi.woa.com/document/product/1734/81863)
+* [DescribeTenantDepartmentList](http://document.tencentcloudapi.woa.com/document/product/1734/81868)
+* [DescribeTenantUserList](http://document.tencentcloudapi.woa.com/document/product/1734/81867)
+* [DescribeWorkspaceUserList](http://document.tencentcloudapi.woa.com/document/product/1734/81866)
+
+新增数据结构：
+
+* [AdministrationData](http://document.tencentcloudapi.woa.com/document/product/1734/81779#AdministrationData)
+* [AlarmStatusData](http://document.tencentcloudapi.woa.com/document/product/1734/81779#AlarmStatusData)
+* [DescribeAdministrationByTagRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DescribeAdministrationByTagRes)
+* [DescribeAlarmStatusListRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DescribeAlarmStatusListRes)
+* [SsoDepartment](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoDepartment)
+* [SsoDepartmentsResult](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoDepartmentsResult)
+* [SsoTeamUser](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoTeamUser)
+* [SsoTeamUserResult](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoTeamUserResult)
+* [SsoUser](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoUser)
+* [SsoUserResult](http://document.tencentcloudapi.woa.com/document/product/1734/81779#SsoUserResult)
+
+
+
 # Release 3.0.844.1
 
 ## 正版曲库直通车(ame) 版本：2019-09-16

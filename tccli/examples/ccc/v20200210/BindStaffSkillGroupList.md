@@ -8,7 +8,8 @@ Input:
 tccli ccc BindStaffSkillGroupList --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --StaffEmail staff1@xxx.com \
-    --SkillGroupList 100 101
+    --StaffSkillGroupList.0.SkillGroupId 100 \
+    --StaffSkillGroupList.0.Priority 1
 ```
 
 Output: 

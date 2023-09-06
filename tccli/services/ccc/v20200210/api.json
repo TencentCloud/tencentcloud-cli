@@ -15,9 +15,9 @@
       "status": "online"
     },
     "BindStaffSkillGroupList": {
-      "document": "绑定坐席所属技能组",
+      "document": "绑定座席所属技能组",
       "input": "BindStaffSkillGroupListRequest",
-      "name": "绑定坐席所属技能组",
+      "name": "绑定座席所属技能组",
       "output": "BindStaffSkillGroupListResponse",
       "status": "online"
     },
@@ -620,7 +620,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "staff1@xx.com",
           "member": "string",
           "name": "StaffEmail",
@@ -628,12 +628,21 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "绑定技能组列表",
           "example": "无",
           "member": "int64",
           "name": "SkillGroupList",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定技能组列表(必填)",
+          "example": "无",
+          "member": "StaffSkillGroupList",
+          "name": "StaffSkillGroupList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -4959,6 +4968,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4969,6 +4979,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4979,6 +4990,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AppId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -4989,6 +5001,7 @@
           "example": "IP-ALLOW-LIST",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -4999,6 +5012,7 @@
           "example": "true",
           "member": "bool",
           "name": "CheckHealth",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -5009,6 +5023,7 @@
           "example": "101",
           "member": "int64",
           "name": "ProviderId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5019,6 +5034,7 @@
           "example": "1001",
           "member": "string",
           "name": "RegisterUserName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5029,6 +5045,7 @@
           "example": "abcd",
           "member": "string",
           "name": "RegisterPassword",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5039,6 +5056,7 @@
           "example": "sip.xxx.com",
           "member": "string",
           "name": "RegisterServer",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5049,6 +5067,7 @@
           "example": "5060",
           "member": "int64",
           "name": "RegisterServerPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5059,6 +5078,7 @@
           "example": "outbound.xxx.com",
           "member": "string",
           "name": "RegisterOutboundProxy",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5069,6 +5089,7 @@
           "example": "5060",
           "member": "int64",
           "name": "RegisterOutboundProxyPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5079,6 +5100,7 @@
           "example": "UDP",
           "member": "string",
           "name": "RegisterProto",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5089,6 +5111,7 @@
           "example": "1001@sip.xxx.com",
           "member": "string",
           "name": "RegisterFullName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5099,6 +5122,7 @@
           "example": "3600",
           "member": "int64",
           "name": "RegisterExpires",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5109,6 +5133,7 @@
           "example": "NUMBER",
           "member": "string",
           "name": "InboundCalleeFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5119,6 +5144,7 @@
           "example": "TO",
           "member": "string",
           "name": "InboundCalleeField",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5129,6 +5155,7 @@
           "example": "NUMBER",
           "member": "string",
           "name": "OutboundCallerFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5139,6 +5166,7 @@
           "example": "1",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5149,6 +5177,7 @@
           "example": "无",
           "member": "HostInfo",
           "name": "AllowIpList",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5159,6 +5188,7 @@
           "example": "REGISTERED",
           "member": "string",
           "name": "RegisterStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5169,6 +5199,7 @@
           "example": "HEALTH",
           "member": "string",
           "name": "HealthStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5179,6 +5210,7 @@
           "example": "名称",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5189,6 +5221,7 @@
           "example": "35090",
           "member": "int64",
           "name": "RegisterServerTCPPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5199,6 +5232,7 @@
           "example": "5061",
           "member": "int64",
           "name": "RegisterServerTLSPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5209,6 +5243,7 @@
           "example": "35090",
           "member": "int64",
           "name": "RegisterOutboundProxyTCPPort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5219,8 +5254,20 @@
           "example": "5061",
           "member": "int64",
           "name": "RegisterOutboundProxyTLSPort",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份OutBound代理服务器地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "outbound2.xxx.com",
+          "member": "string",
+          "name": "RegisterOutboundProxyBak",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5479,6 +5526,30 @@
         }
       ],
       "usage": "out"
+    },
+    "StaffSkillGroupList": {
+      "document": "座席绑定技能组列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "技能组ID",
+          "example": "2134",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "座席在技能组中的优先级（1为最高，5最低，默认3）",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "StaffStatusExtra": {
       "document": "坐席状态补充信息",

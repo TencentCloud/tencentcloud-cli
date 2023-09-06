@@ -7,6 +7,27 @@
       "output": "ApplyConcurrentResponse",
       "status": "online"
     },
+    "CreateApplication": {
+      "document": "用于创建应用请求",
+      "input": "CreateApplicationRequest",
+      "name": "创建云应用",
+      "output": "CreateApplicationResponse",
+      "status": "online"
+    },
+    "CreateApplicationSnapshot": {
+      "document": "用于创建云应用版本快照",
+      "input": "CreateApplicationSnapshotRequest",
+      "name": "创建云应用快照",
+      "output": "CreateApplicationSnapshotResponse",
+      "status": "online"
+    },
+    "CreateApplicationVersion": {
+      "document": "用于创建云应用版本请求",
+      "input": "CreateApplicationVersionRequest",
+      "name": "创建云应用版本",
+      "output": "CreateApplicationVersionResponse",
+      "status": "online"
+    },
     "CreateSession": {
       "document": "本接口用于创建会话。接口超时时间：5秒。",
       "input": "CreateSessionRequest",
@@ -14,11 +35,88 @@
       "output": "CreateSessionResponse",
       "status": "online"
     },
+    "DeleteApplication": {
+      "document": "用于删除云应用请求",
+      "input": "DeleteApplicationRequest",
+      "name": "删除云应用",
+      "output": "DeleteApplicationResponse",
+      "status": "online"
+    },
+    "DeleteApplicationVersion": {
+      "document": "用于删除云应用版本请求",
+      "input": "DeleteApplicationVersionRequest",
+      "name": "删除云应用版本",
+      "output": "DeleteApplicationVersionResponse",
+      "status": "online"
+    },
+    "DescribeApplicationFileInfo": {
+      "document": "用于查询应用文件信息",
+      "input": "DescribeApplicationFileInfoRequest",
+      "name": "查询应用文件信息",
+      "output": "DescribeApplicationFileInfoResponse",
+      "status": "online"
+    },
+    "DescribeApplicationList": {
+      "document": "用于查询云应用列表请求",
+      "input": "DescribeApplicationListRequest",
+      "name": "查询云应用列表",
+      "output": "DescribeApplicationListResponse",
+      "status": "online"
+    },
+    "DescribeApplicationPathList": {
+      "document": "用于查询云应用启动路径列表信息",
+      "input": "DescribeApplicationPathListRequest",
+      "name": "查询云应用启动路径列表",
+      "output": "DescribeApplicationPathListResponse",
+      "status": "online"
+    },
+    "DescribeApplicationStatus": {
+      "document": "用于查询云应用运行状态，更新状态信息",
+      "input": "DescribeApplicationStatusRequest",
+      "name": "查询云应用状态",
+      "output": "DescribeApplicationStatusResponse",
+      "status": "online"
+    },
+    "DescribeApplicationVersion": {
+      "document": "用于查询云应用版本信息请求",
+      "input": "DescribeApplicationVersionRequest",
+      "name": "查询云应用版本信息",
+      "output": "DescribeApplicationVersionResponse",
+      "status": "online"
+    },
+    "DescribeCosCredential": {
+      "document": "用于查询 COS 密钥信息请求",
+      "input": "DescribeCosCredentialRequest",
+      "name": "查询 COS 密钥信息",
+      "output": "DescribeCosCredentialResponse",
+      "status": "online"
+    },
     "DestroySession": {
       "document": "销毁会话",
       "input": "DestroySessionRequest",
       "name": "销毁会话",
       "output": "DestroySessionResponse",
+      "status": "online"
+    },
+    "ModifyApplicationBaseInfo": {
+      "document": "用于修改云应用基础数据",
+      "input": "ModifyApplicationBaseInfoRequest",
+      "name": "修改云应用基础信息",
+      "output": "ModifyApplicationBaseInfoResponse",
+      "status": "online"
+    },
+    "ModifyApplicationVersion": {
+      "document": "用于修改云应用版本数据",
+      "input": "ModifyApplicationVersionRequest",
+      "name": "修改云应用版本信息",
+      "output": "ModifyApplicationVersionResponse",
+      "status": "online"
+    },
+    "SetApplicationVersionOnline": {
+      "document": "用于上线应用版本请求",
+      "input": "SetApplicationVersionOnlineRequest",
+      "name": "上线云应用版本",
+      "output": "SetApplicationVersionOnlineResponse",
       "status": "online"
     },
     "StartPublishStream": {
@@ -43,6 +141,45 @@
     "serviceShortName": "car"
   },
   "objects": {
+    "ApplicationBaseInfo": {
+      "document": "应用基础数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用窗口使用模式（ApplicationDesktop 捕捉整个桌面、ApplicationWindow 仅捕捉应用窗口）",
+          "example": "\"ApplicationDesktop\"",
+          "member": "string",
+          "name": "WindowUseType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用窗口名称",
+          "example": "\"application test\"",
+          "member": "string",
+          "name": "WindowName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用窗口类名",
+          "example": "\"application class\"",
+          "member": "string",
+          "name": "WindowClassName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ApplyConcurrentRequest": {
       "document": "ApplyConcurrent请求参数结构体",
       "members": [
@@ -97,6 +234,134 @@
     "ApplyConcurrentResponse": {
       "document": "ApplyConcurrent返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationRequest": {
+      "document": "CreateApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型（云 3D: Application3D、 云 XR: ApplicationXR、云 APK: ApplicationAPK）",
+          "example": "\"Application3D\"",
+          "member": "string",
+          "name": "ApplicationType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationResponse": {
+      "document": "CreateApplication返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-a1b2c3\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationSnapshotRequest": {
+      "document": "CreateApplicationSnapshot请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用下载地址（若通过文件上传方式创建版本，则此参数为空字符串）",
+          "example": "\"https://xxx/xx.zip\"",
+          "member": "string",
+          "name": "ApplicationDownloadUrl",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationSnapshotResponse": {
+      "document": "CreateApplicationSnapshot返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationVersionRequest": {
+      "document": "CreateApplicationVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用文件名（必须是 zip/rar/7z 格式压缩包）",
+          "example": "\"application.zip\"",
+          "member": "string",
+          "name": "ApplicationFileName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationVersionResponse": {
+      "document": "CreateApplicationVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本数据（新增）",
+          "example": "\"\"",
+          "member": "UserApplicationVersion",
+          "name": "Version",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -197,6 +462,416 @@
       ],
       "type": "object"
     },
+    "DeleteApplicationRequest": {
+      "document": "DeleteApplication请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationResponse": {
+      "document": "DeleteApplication返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationVersionRequest": {
+      "document": "DeleteApplicationVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-dafu23jh\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本 Id",
+          "example": "\"ver-dgekejy\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteApplicationVersionResponse": {
+      "document": "DeleteApplicationVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationFileInfoRequest": {
+      "document": "DescribeApplicationFileInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-dafe32hr\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用文件路径列表",
+          "example": "\"\"",
+          "member": "string",
+          "name": "FilePathList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationFileInfoResponse": {
+      "document": "DescribeApplicationFileInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用文件数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "UserApplicationFileInfo",
+          "name": "FileInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListRequest": {
+      "document": "DescribeApplicationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用列表偏移",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用数量限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "\"\"",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationListResponse": {
+      "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用列表信息",
+          "example": "\"\"",
+          "member": "UserApplicationInfo",
+          "name": "UserApplicationList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用总数",
+          "example": "10",
+          "member": "int64",
+          "name": "ApplicationTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationPathListRequest": {
+      "document": "DescribeApplicationPathList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云应用版本 Id",
+          "example": "\"ver-adgegef\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationPathListResponse": {
+      "document": "DescribeApplicationPathList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 exe 文件路径列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PathList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationStatusRequest": {
+      "document": "DescribeApplicationStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID 列表",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationStatusResponse": {
+      "document": "DescribeApplicationStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用状态列表",
+          "example": "\"\"",
+          "member": "UserApplicationStatus",
+          "name": "StatusList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationVersionRequest": {
+      "document": "DescribeApplicationVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApplicationVersionResponse": {
+      "document": "DescribeApplicationVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本列表",
+          "example": "\"\"",
+          "member": "UserApplicationVersion",
+          "name": "Versions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosCredentialRequest": {
+      "document": "DescribeCosCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用文件名（必须是 zip/rar/7z 格式后缀的压缩包）",
+          "example": "\"xxx.zip\"",
+          "member": "string",
+          "name": "ApplicationFileName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCosCredentialResponse": {
+      "document": "DescribeCosCredential返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cos SecretID",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "SecretID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos SecretKey",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Session",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "SessionToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Bucket",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos Region",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 操作路径",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 密钥的起始时间",
+          "example": "15000000",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Cos 密钥的失效时间",
+          "example": "10000000",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DestroySessionRequest": {
       "document": "DestroySession请求参数结构体",
       "members": [
@@ -215,6 +890,202 @@
     "DestroySessionResponse": {
       "document": "DestroySession返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "查询过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段名（ApplicationId 应用Id、ApplicationName 应用名称、ApplicationRunStatus 运行状态、ApplicationUpdateStatus 更新状态）",
+          "example": "\"ApplicationId\"",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤值集合（当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无]）",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ModifyApplicationBaseInfoRequest": {
+      "document": "ModifyApplicationBaseInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-dafe32hr\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用运行程序路径",
+          "example": "\"application/bin/xx.exe\"",
+          "member": "string",
+          "name": "ApplicationExePath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用进程列表",
+          "example": "\"xx.exe|test.exe\"",
+          "member": "string",
+          "name": "ApplicationInterList",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用基础数据",
+          "example": "\"\"",
+          "member": "ApplicationBaseInfo",
+          "name": "ApplicationBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "应用启动参数",
+          "example": "\"-b -xxx\"",
+          "member": "string",
+          "name": "ApplicationParams",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用仓库信息列表",
+          "example": "\"\"",
+          "member": "UserApplicationStore",
+          "name": "ApplicationStores",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationBaseInfoResponse": {
+      "document": "ModifyApplicationBaseInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationVersionRequest": {
+      "document": "ModifyApplicationVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本 ID",
+          "example": "\"ver-xgafgeg\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本名称",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ApplicationVersionName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyApplicationVersionResponse": {
+      "document": "ModifyApplicationVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetApplicationVersionOnlineRequest": {
+      "document": "SetApplicationVersionOnline请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本 Id",
+          "example": "\"ver-flghera\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetApplicationVersionOnlineResponse": {
+      "document": "SetApplicationVersionOnline返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本列表",
+          "example": "\"\"",
+          "member": "UserApplicationVersion",
+          "name": "Versions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -286,6 +1157,341 @@
         }
       ],
       "type": "object"
+    },
+    "UserApplicationFileInfo": {
+      "document": "应用文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"windows/test\"",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件状态，NO_EXIST 不存在，EXIST 存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"EXIST|NO_EXIST\"",
+          "member": "string",
+          "name": "FileState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserApplicationInfo": {
+      "document": "应用数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 Id",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "\"name\"",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型（云 3D: Application3D 、 云 XR: ApplicationXR、 云 APK: ApplicationAPK）",
+          "example": "\"Application3D\"",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用运行程序路径",
+          "example": "\"applicatoin/bin/xx.exe\"",
+          "member": "string",
+          "name": "ApplicationExePath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用进程列表",
+          "example": "\"xx.exe|test.exe\"",
+          "member": "string",
+          "name": "ApplicationInterList",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用启动参数",
+          "example": "\"-b -xxx\"",
+          "member": "string",
+          "name": "ApplicationParams",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置\t）",
+          "example": "\"ApplicationDeleting\"",
+          "member": "string",
+          "name": "ApplicationRunStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased  版本发布完成、applicationUpdateStatusNormal 无）",
+          "example": "\"ApplicationUpdateCreating\"",
+          "member": "string",
+          "name": "ApplicationUpdateStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用创建时间",
+          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "member": "datetime_iso",
+          "name": "ApplicationCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本列表",
+          "example": "\"\"",
+          "member": "UserApplicationVersion",
+          "name": "ApplicationVersions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用基础数据",
+          "example": "\"\"",
+          "member": "ApplicationBaseInfo",
+          "name": "ApplicationBaseInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用更新进度",
+          "example": "100",
+          "member": "int64",
+          "name": "ApplicationUpdateProgress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用性质（PUBLIC 公共应用 、PRIVATE 用户应用）",
+          "example": "\"PRIVATE\"",
+          "member": "string",
+          "name": "ApplicationNature",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用仓库列表",
+          "example": "\"\"",
+          "member": "UserApplicationStore",
+          "name": "ApplicationStores",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserApplicationStatus": {
+      "document": "应用状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用 ID",
+          "example": "\"app-r3fsr45g\"",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用运行状态（ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ）",
+          "example": "\"ApplicationRunning\"",
+          "member": "string",
+          "name": "ApplicationRunStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用更新状态（ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无）",
+          "example": "\"ApplicationUpdateNoReleased\"",
+          "member": "string",
+          "name": "ApplicationUpdateStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用更新进度",
+          "example": "100",
+          "member": "int64",
+          "name": "ApplicationUpdateProgress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserApplicationStore": {
+      "document": "应用仓库信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cos 桶名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"examplebucket-1250000000\"",
+          "member": "string",
+          "name": "CosBucket",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cos 桶所在区域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CosRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库类型，LOG : 应用日志  ARCHIVE: 应用存档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"LOG|ARCHIVE\"",
+          "member": "string",
+          "name": "StoreType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库状态，ON: 打开 OFF:关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ON|OFF\"",
+          "member": "string",
+          "name": "StoreState",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "StorePath",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "UserApplicationVersion": {
+      "document": "应用版本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用版本 Id",
+          "example": "\"ver-kcegqb\"",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本大小",
+          "example": "1024",
+          "member": "int64",
+          "name": "ApplicationVersionSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本状态（Uploading 创建中、Creating 创建中、CreateFailed 创建失败、Deleting 删除中、Inuse 当前版本、Normal 待发布、Usable 可用）",
+          "example": "\"Createing\"",
+          "member": "string",
+          "name": "ApplicationVersionStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本名称",
+          "example": "\"xxx\"",
+          "member": "string",
+          "name": "ApplicationVersionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本创建时间",
+          "example": "\"2022-02-15T01:51:55.786Z\"",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

@@ -56,6 +56,13 @@
       "output": "DescribeActionListResponse",
       "status": "online"
     },
+    "DescribeAdministrationByTag": {
+      "document": "根据标签获取行政区划列表",
+      "input": "DescribeAdministrationByTagRequest",
+      "name": "根据标签获取行政区划列表",
+      "output": "DescribeAdministrationByTagResponse",
+      "status": "online"
+    },
     "DescribeAlarmLevelList": {
       "document": "告警级别枚举获取",
       "input": "DescribeAlarmLevelListRequest",
@@ -68,6 +75,13 @@
       "input": "DescribeAlarmListRequest",
       "name": "告警列表查询",
       "output": "DescribeAlarmListResponse",
+      "status": "online"
+    },
+    "DescribeAlarmStatusList": {
+      "document": "用来查询系统中的告警状态列表",
+      "input": "DescribeAlarmStatusListRequest",
+      "name": "告警状态列表查询",
+      "output": "DescribeAlarmStatusListResponse",
       "status": "online"
     },
     "DescribeAlarmTypeList": {
@@ -266,6 +280,20 @@
       "output": "DescribeTenantBuildingCountAndAreaResponse",
       "status": "online"
     },
+    "DescribeTenantDepartmentList": {
+      "document": "查询租户组织部门列表",
+      "input": "DescribeTenantDepartmentListRequest",
+      "name": "查询租户组织部门列表",
+      "output": "DescribeTenantDepartmentListResponse",
+      "status": "online"
+    },
+    "DescribeTenantUserList": {
+      "document": "查询租户人员列表",
+      "input": "DescribeTenantUserListRequest",
+      "name": "查询租户人员列表",
+      "output": "DescribeTenantUserListResponse",
+      "status": "online"
+    },
     "DescribeVideoLiveStream": {
       "document": "实时流接口",
       "input": "DescribeVideoLiveStreamRequest",
@@ -292,6 +320,13 @@
       "input": "DescribeWorkspaceListRequest",
       "name": "获取租户下的空间列表",
       "output": "DescribeWorkspaceListResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceUserList": {
+      "document": "查询项目空间人员列表",
+      "input": "DescribeWorkspaceUserListRequest",
+      "name": "查询项目空间人员列表",
+      "output": "DescribeWorkspaceUserListResponse",
       "status": "online"
     },
     "StopVideoStreaming": {
@@ -659,6 +694,32 @@
       ],
       "usage": "in"
     },
+    "AdministrationData": {
+      "document": "行政区划数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行政区划编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdministrationCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行政区划名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdministrationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AlarmInfo": {
       "document": "告警信息",
       "members": [
@@ -904,6 +965,42 @@
           "example": "严重",
           "member": "string",
           "name": "LevelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmStatusData": {
+      "document": "告警状态返回结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警状态ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警状态名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警状态类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusType",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2593,6 +2690,77 @@
       ],
       "type": "object"
     },
+    "DescribeAdministrationByTagRequest": {
+      "document": "DescribeAdministrationByTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "无",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签值",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAdministrationByTagRes": {
+      "document": "根据Tag获取行政区划列表返回结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行政区划列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AdministrationData",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAdministrationByTagResponse": {
+      "document": "DescribeAdministrationByTag返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行政区划返回结构",
+          "example": "无",
+          "member": "DescribeAdministrationByTagRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlarmLevelListRequest": {
       "document": "DescribeAlarmLevelList请求参数结构体",
       "members": [
@@ -2869,6 +3037,68 @@
           "document": "告警列表查询结果",
           "example": "{\"AlarmInfoSet\": [{\"AppId\": 0,\"Desc\": \"水量使用超限\",\"DeviceName\": \"20楼水表\",\"Echo\": \"\",\"Extend\": \"x-json:{\\\"alarmLevel\\\":3,\\\"alarmValue\\\":13730945.6}\",\"ExtendOne\": \"x-json:\",\"ExtendTwo\": \"x-json:\",\"HandlePersonSet\": [],\"HandleRecordSet\": [],\"Id\": \"0c6ec1cc-25d6-43bc-96b1-6b4131f1771a\",\"Level\": 3,\"LevelName\": \"严重\",\"Position\": \"滨海大厦-7F\",\"ReportImg\": {\"Data\": \"\",\"Type\": 0},\"Status\": \"unprocessed\",\"SubType\": \"water_limit\",\"SubTypeName\": \"水量使用超限\",\"Time\": 1693416976,\"Type\": \"energy\",\"TypeName\": \"能源\",\"WID\": \"b1fd7aa3-4407-4b82-9dc3-aff9b3034a9f\",\"WorkspaceId\": 1016}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 125,\"TotalRow\": 125}}",
           "member": "DescribeAlarmListRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmStatusListRequest": {
+      "document": "DescribeAlarmStatusList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmStatusListRes": {
+      "document": "告警状态列表返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警状态返回结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmStatusData",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeAlarmStatusListResponse": {
+      "document": "DescribeAlarmStatusList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警状态返回结构",
+          "example": "无",
+          "member": "DescribeAlarmStatusListRes",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -5131,6 +5361,224 @@
       ],
       "type": "object"
     },
+    "DescribeTenantDepartmentListRequest": {
+      "document": "DescribeTenantDepartmentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantDepartmentListResponse": {
+      "document": "DescribeTenantDepartmentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoDepartmentsResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantUserListRequest": {
+      "document": "DescribeTenantUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态，0，获取所有数据，1正常启用，2禁用",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间id",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否递归获取子级数据，0需要，1不需要，默认为0",
+          "example": "无",
+          "member": "string",
+          "name": "NoRecursive",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantUserListResponse": {
+      "document": "DescribeTenantUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoUserResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVideoLiveStreamRequest": {
       "document": "DescribeVideoLiveStream请求参数结构体",
       "members": [
@@ -5400,6 +5848,88 @@
           "document": "项目空间列表",
           "example": "无",
           "member": "WorkspaceInfoList",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceUserListRequest": {
+      "document": "DescribeWorkspaceUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceUserListResponse": {
+      "document": "DescribeWorkspaceUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoTeamUserResult",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -8031,6 +8561,402 @@
           "example": "无",
           "member": "SpaceType",
           "name": "SpaceTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoDepartment": {
+      "document": "部门用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父级部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoDepartmentsResult": {
+      "document": "部门用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoDepartment",
+          "name": "Departments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoTeamUser": {
+      "document": "部门用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否关联权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LinkFilter",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoTeamUserResult": {
+      "document": "空间用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoTeamUser",
+          "name": "Users",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoUser": {
+      "document": "用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否属于团队\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BelongTeam",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DepartmentUserId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoUserResult": {
+      "document": "租户人员结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户人员数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoUser",
+          "name": "Users",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
