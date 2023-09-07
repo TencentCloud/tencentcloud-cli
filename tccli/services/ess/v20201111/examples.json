@@ -17,25 +17,49 @@
     "CancelFlow": [
       {
         "document": "撤销单个签署流程",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxMkUy***************JmKxPkk\"\n    },\n    \"FlowId\": \"yDR1HUU***************JjE8imAxVxl3\",\n    \"CancelMessage\": \"字符串\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b29b***************651ecc8\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"CancelMessage\": \"这个合同里边的付款金额写错了\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85651ecc8\"\n    }\n}",
         "title": "撤销签署流程样例"
+      },
+      {
+        "document": "1. 合同已经签署完成\n2. 撤销该合同",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\",\n    \"CancelMessage\": \"这个合同里边的付款金额写错了\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.FlowHasTerminated\",\n            \"Message\": \"此流程已经终止，当前所有参与者签署\"\n        },\n        \"RequestId\": \"s1693***537224\"\n    }\n}",
+        "title": "错误示例-撤销一个已经签署完成的流程合同"
       }
     ],
     "CancelMultiFlowSignQRCode": [
       {
-        "document": "取消一码多扫二维码",
+        "document": "取消一码多扫流程签署二维码",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxxxxxxx\"\n    },\n    \"QrCodeId\": \"yDRvQxxxxxKC\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c75e86d-xxxxxxxxxx6f330a05e\"\n    }\n}",
-        "title": "取消一码多扫二维码"
+        "title": "取消一码多扫流程签署二维码"
+      },
+      {
+        "document": "废除一码多扫流程签署二维码，若二维码已经失效，则返回操作失败。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxxxxxxx\"\n    },\n    \"QrCodeId\": \"yDRvQxxxxxKC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.QrInvalid\",\n            \"Message\": \"签署二维码不可用，请检查后重试。\"\n        },\n        \"RequestId\": \"s169*****0872\"\n    }\n}",
+        "title": "取消一码多扫流程签署二维码-已失效"
       }
     ],
     "CancelUserAutoSignEnableUrl": [
       {
-        "document": "撤销自动签开通流程",
+        "document": "已经开通自动签成功，无法撤销",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"Name\": \"小强\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.UserAutoSignEnableAlready\",\n            \"Message\": \"无法撤销，此用户已开通自动签成功\"\n        },\n        \"RequestId\": \"a97c85196a3e\"\n    }\n}",
+        "title": "已开通完成自动签，撤销链接失败"
+      },
+      {
+        "document": "撤销自动签开通链接成功",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb5f54-xxxxxa97c85196a3e\"\n    }\n}",
-        "title": "撤销自动签开通流程"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a97c85196a3e\"\n    }\n}",
+        "title": "撤销自动签开通链接成功"
+      },
+      {
+        "document": "还未生成开通自动签链接，无法撤销",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"Name\": \"小红\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.UserAutoSignEnableUrlNotExist\",\n            \"Message\": \"无法撤销，未生成此用户开通自动签链接\"\n        },\n        \"RequestId\": \"a97c85196a3e\"\n    }\n}",
+        "title": "未生成自动签链接，撤销链接失败"
       }
     ],
     "CreateBatchCancelFlowUrl": [
@@ -217,9 +241,27 @@
     "CreateFlowSignUrl": [
       {
         "document": "发起流程后，给其中的C端签署人创建签署链接",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yD*****************1Khs7\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverMobile\": \"test\",\n            \"ApproverName\": \"test\",\n            \"ApproverType\": 1\n        }\n    ],\n    \"FlowId\": \"test\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"test\",\n                \"ApproverName\": \"test\",\n                \"ApproverType\": 1,\n                \"SignUrl\": \"https://***cn/7YIxx\",\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=**&ApproverIdCardType=ID_CARD&ApproverMobile=MTM1Kio**%3D&ApproverName=**&ApproverType=1&Code=**&CodeType=QUICK&FlowId=***&ShowHeader=0&token=3LXFLU1HS9\"\n            }\n        ],\n        \"RequestId\": \"s1672381196019320421\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 1,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
         "title": "创建个人用户H5签署链接"
+      },
+      {
+        "document": "1. 给个人用户创建签署链接\n2. 签署完成后跳转到指定页面地址(设置跳转地址JumpUrl)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\"\n        }\n    ],\n    \"JumpUrl\": \"https://www.example.com\",\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 1,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=MioqKi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建个人用户H5签署链接(签署完成后跳转到指定地址)"
+      },
+      {
+        "document": "1. 给个人用户创建签署链接\n2. 用户姓名不是合同的参与人",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"张三\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"无法找到参与人\"\n        },\n        \"RequestId\": \"s1693832578941223891\"\n    }\n}",
+        "title": "错误示例-创建个人用户签署链接，传错签署人姓名"
+      },
+      {
+        "document": "1. 给个人用户创建签署链接\n2. 该个人用户除了签署控件，还有填写控件需要补充",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"该用户有暂不支持H5端的控件，请删除后重新发起流程\"\n        },\n        \"RequestId\": \"s1693901602090298421\"\n    }\n}",
+        "title": "错误示例-创建个人用户签署链接，该用户还有些控件需要填写"
       }
     ],
     "CreateIntegrationDepartment": [
@@ -342,6 +384,30 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxjOUUgydjxxxxxjEWA07rC2xl\"\n    },\n    \"NeedRelievedFlowId\": \"yDwnGUUgygkgi7fdUx6JlVOE0wxxxxx\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"1870000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRscUUgyg1zr7vjUyJ8QKxxxxxxx\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整,结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDRscAABDg1zr7vjUyJ8QKxxxxxxx\",\n        \"RequestId\": \"s1989876373464\"\n    }\n}",
         "title": "发起解除协议（使用本企业的签署人，替换用原流程中本企业的签署人）"
+      },
+      {
+        "document": "1. 解除某个签署完成的合同\n2. 主企业代子企业操作(通过指定Agent中的ProxyOrganizationId)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRSRUUgygj6rqouUuO4zjESlnSFPcIE\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwJBUUc***uxAppfh2XR\",\n        \"RequestId\": \"s1693969234439636483\"\n    }\n}",
+        "title": "发起解除协议（主代子场景）"
+      },
+      {
+        "document": "1. 更换原合同中本方企业的参与人\n2. 给该企业参与人指定自定义的角色名称(通过设置ApproverSignRole)\n3. 给该企业参与人指定签署控件类型为手写签名(通过设置ApproverSignComponentType)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRSRUUgygj6rqouUuO4zjESlnSFPcIE\",\n            \"ApproverSignRole\": \"自定义的签署方角色(供应商)\",\n            \"ApproverSignComponentType\": \"SIGN_SIGNATURE\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwgkUU7y***********zWBfv\",\n        \"RequestId\": \"s1688099393764508839\"\n    }\n}",
+        "title": "发起解除协议（替换原流程中本企业的参与人并指定签署人角色、签署控件）"
+      },
+      {
+        "document": "1. 更换原合同中的企业参与人(通过指定ReleasedApprovers中的RelievedApproverReceiptId)\n2. 在解除协议中记录下原合同ID(通过设置UserData字段)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"UserData\": \"{\\\"OriginalFlowId\\\":\\\"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\\\"}\",\n    \"NeedRelievedFlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"RelievedApproverReceiptId\": \"yDRSRUUgygj6rqouUuO4zjESlnSFPcIE\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwJBUUc***uxAppfh2XR\",\n        \"RequestId\": \"s1693969233639636483\"\n    }\n}",
+        "title": "发起解除协议（记录下原合同与解除协议的映射关系）"
+      },
+      {
+        "document": "1. 解除某个包含个人类型签署人的合同\n2. 更换其他个人类型签署人作为解除协议的参与人",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"NeedRelievedFlowId\": \"yDR1AUUgygjazuesUuO4zjESPW4PkfNi\",\n    \"ReleasedApprovers\": [\n        {\n            \"Mobile\": \"15100000000\",\n            \"Name\": \"李四\",\n            \"RelievedApproverReceiptId\": \"yDwFdUUckpsvi8mpUEn0aFR1tWzReoTk\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"不能更换非企业签署人身份信息\"\n        },\n        \"RequestId\": \"s16939xxx23898\"\n    }\n}",
+        "title": "错误示例-解除协议中更换原合同个人类型的参与人"
       }
     ],
     "CreateSchemeUrl": [
@@ -510,10 +576,16 @@
     ],
     "DescribeFlowEvidenceReport": [
       {
-        "document": "查询出证报告，返回报告 URL",
+        "document": "查询正在处理中的签署报告，正在处理中",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowEvidenceReport\n<公共请求参数>\n\n{\n    \"ReportId\": \"yDR0PUUhw8ahh****KyK18G1h3FK5ccC\",\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"113.***.**.65\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\",\n        \"UserId\": \"de71c67592974c****20572d44ec0b6d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"\",\n        \"RequestId\": \"3129718393196\",\n        \"Status\": \"EvidenceStatusExecuting\"\n    }\n}",
+        "title": "查询正在处理中的签署报告"
+      },
+      {
+        "document": "查询签署报告，返回报告 URL",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFlowEvidenceReport\n<公共请求参数>\n\n{\n    \"ReportId\": \"yDR0PUUhw8ahh****KyK18G1h3FK5ccC\",\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"113.***.**.65\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\",\n        \"UserId\": \"de71c67592974c****20572d44ec0b6d\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"ReportUrl\": \"https://file.ess.tencent.cn/file/yDwhIU*****kvSEnAV3Qyl2B/0/1.PDF?hkey=58cce665fd939d77e5895e16e05e893c***ccff7e5f2c81027b190f9ef3bf4e7cb06f02a5b6fea82b7b211d1f85204b11bd66fb28ab960b2b966215ec624b11c422291f68554b8e0f\",\n        \"RequestId\": \"s16679771xxxx693616\",\n        \"Status\": \"EvidenceStatusSuccess\"\n    }\n}",
-        "title": "查询出证报告"
+        "title": "查询签署报告"
       }
     ],
     "DescribeFlowInfo": [

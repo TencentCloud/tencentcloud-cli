@@ -6,11 +6,12 @@ Input:
 
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
-    --Operator.UserId yD*****************1Khs7 \
-    --FlowApproverInfos.0.ApproverMobile test \
-    --FlowApproverInfos.0.ApproverName test \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
     --FlowApproverInfos.0.ApproverType 1 \
-    --FlowId test
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
 ```
 
 Output: 
@@ -19,14 +20,110 @@ Output:
     "Response": {
         "FlowApproverUrlInfos": [
             {
-                "ApproverMobile": "test",
-                "ApproverName": "test",
+                "ApproverMobile": "13200000000",
+                "ApproverName": "典子谦",
                 "ApproverType": 1,
-                "SignUrl": "https://***cn/7YIxx",
-                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=**&ApproverIdCardType=ID_CARD&ApproverMobile=MTM1Kio**%3D&ApproverName=**&ApproverType=1&Code=**&CodeType=QUICK&FlowId=***&ShowHeader=0&token=3LXFLU1HS9"
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
             }
         ],
-        "RequestId": "s1672381196019320421"
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+
+**Example 2: 创建个人用户H5签署链接(签署完成后跳转到指定地址)**
+
+1. 给个人用户创建签署链接
+2. 签署完成后跳转到指定页面地址(设置跳转地址JumpUrl)
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
+    --FlowApproverInfos.0.ApproverType 1 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --JumpUrl https://www.example.com \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverMobile": "13200000000",
+                "ApproverName": "典子谦",
+                "ApproverType": 1,
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=MioqKi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
+            }
+        ],
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+
+**Example 3: 错误示例-创建个人用户签署链接，传错签署人姓名**
+
+1. 给个人用户创建签署链接
+2. 用户姓名不是合同的参与人
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
+    --FlowApproverInfos.0.ApproverType 1 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 张三 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "无法找到参与人"
+        },
+        "RequestId": "s1693832578941223891"
+    }
+}
+```
+
+**Example 4: 错误示例-创建个人用户签署链接，该用户还有些控件需要填写**
+
+1. 给个人用户创建签署链接
+2. 该个人用户除了签署控件，还有填写控件需要补充
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
+    --FlowApproverInfos.0.ApproverType 1 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "该用户有暂不支持H5端的控件，请删除后重新发起流程"
+        },
+        "RequestId": "s1693901602090298421"
     }
 }
 ```

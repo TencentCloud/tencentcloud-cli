@@ -462,6 +462,13 @@
       "output": "DescribeWafThreatenIntelligenceResponse",
       "status": "online"
     },
+    "FreshAntiFakeUrl": {
+      "document": "刷新防篡改url",
+      "input": "FreshAntiFakeUrlRequest",
+      "name": "刷新防篡改url",
+      "output": "FreshAntiFakeUrlResponse",
+      "status": "online"
+    },
     "GetAttackDownloadRecords": {
       "document": "查询下载攻击日志任务记录列表",
       "input": "GetAttackDownloadRecordsRequest",
@@ -7841,6 +7848,51 @@
         }
       ],
       "usage": "both"
+    },
+    "FreshAntiFakeUrlRequest": {
+      "document": "FreshAntiFakeUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "FreshAntiFakeUrlResponse": {
+      "document": "FreshAntiFakeUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果成功与否",
+          "example": "",
+          "member": "string",
+          "name": "Result",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetAttackDownloadRecordsRequest": {
       "document": "GetAttackDownloadRecords请求参数结构体",

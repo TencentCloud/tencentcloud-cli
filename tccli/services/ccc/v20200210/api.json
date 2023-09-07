@@ -8,9 +8,9 @@
       "status": "online"
     },
     "BindStaffSkillGroupList": {
-      "document": "绑定坐席所属技能组",
+      "document": "绑定座席所属技能组",
       "input": "BindStaffSkillGroupListRequest",
-      "name": "绑定坐席所属技能组",
+      "name": "绑定座席所属技能组",
       "output": "BindStaffSkillGroupListResponse",
       "status": "online"
     },
@@ -515,7 +515,7 @@
         },
         {
           "disabled": false,
-          "document": "坐席邮箱",
+          "document": "座席邮箱",
           "example": "staff1@xx.com",
           "member": "string",
           "name": "StaffEmail",
@@ -523,12 +523,21 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "绑定技能组列表",
           "example": "无",
           "member": "int64",
           "name": "SkillGroupList",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定技能组列表(必填)",
+          "example": "无",
+          "member": "StaffSkillGroupList",
+          "name": "StaffSkillGroupList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -4892,6 +4901,30 @@
         }
       ],
       "usage": "out"
+    },
+    "StaffSkillGroupList": {
+      "document": "座席绑定技能组列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "技能组ID",
+          "example": "2134",
+          "member": "int64",
+          "name": "SkillGroupId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "座席在技能组中的优先级（1为最高，5最低，默认3）",
+          "example": "1",
+          "member": "int64",
+          "name": "Priority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "StaffStatusExtra": {
       "document": "坐席状态补充信息",

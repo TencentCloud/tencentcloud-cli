@@ -588,6 +588,14 @@
         "title": "描述WAF威胁情报封禁模块详情"
       }
     ],
+    "FreshAntiFakeUrl": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=FreshAntiFakeUrl\r\n&Domain=www.test1.com\r\n&Id=135\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f6f281dd-5a8c-4525-90fb-9291170b804c\",\n        \"Result\": \"success\"\n    }\n}",
+        "title": "刷新防篡改url"
+      }
+    ],
     "GetAttackDownloadRecords": [
       {
         "document": "",

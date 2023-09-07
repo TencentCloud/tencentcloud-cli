@@ -461,20 +461,20 @@
         {
           "disabled": false,
           "document": "属性值",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Type识别概率值，【0,1】,代表判断正确的概率。",
-          "example": "",
+          "document": "Type识别概率值,[0,1],代表判断正确的概率。",
+          "example": "无",
           "member": "float",
           "name": "Probability",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -597,7 +597,7 @@
         },
         {
           "disabled": false,
-          "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
+          "document": "图片质量控制。 \n0: 不进行控制； \n1: 较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多，在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
           "example": "0",
           "member": "uint64",
           "name": "QualityControl",
@@ -625,7 +625,7 @@
           "example": "0.999",
           "member": "float",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -635,7 +635,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -967,7 +967,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "document": "人脸识别服务所用的算法模型版本。\n目前入参支持 “2.0”和“3.0“ 两个输入。\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
@@ -986,7 +986,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1622,7 +1622,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "http://test.image.myqcloud.com/testB.jpg",
+          "example": "https://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -1649,7 +1649,7 @@
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
-          "example": "0",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,

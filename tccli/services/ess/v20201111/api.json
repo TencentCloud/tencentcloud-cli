@@ -8,21 +8,21 @@
       "status": "online"
     },
     "CancelFlow": {
-      "document": "用于撤销签署流程\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n注：如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同。",
+      "document": "用于撤销签署流程<br/>\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n`注意：如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同。`",
       "input": "CancelFlowRequest",
       "name": "撤销单个签署流程",
       "output": "CancelFlowResponse",
       "status": "online"
     },
     "CancelMultiFlowSignQRCode": {
-      "document": "此接口（CancelMultiFlowSignQRCode）用于取消一码多扫二维码。该接口对传入的二维码ID，若还在有效期内，可以提前失效。",
+      "document": "此接口（CancelMultiFlowSignQRCode）用于废除一码多扫流程签署二维码。\n该接口所需的二维码ID，源自[创建一码多扫流程签署二维码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode)生成的。\n如果该二维码尚处于有效期内，可通过本接口将其设置为失效状态。",
       "input": "CancelMultiFlowSignQRCodeRequest",
-      "name": "取消一码多扫二维码",
+      "name": "取消一码多扫流程签署二维码",
       "output": "CancelMultiFlowSignQRCodeResponse",
       "status": "online"
     },
     "CancelUserAutoSignEnableUrl": {
-      "document": "此接口（CancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）",
+      "document": "此接口（CancelUserAutoSignEnableUrl）用来撤销发送给个人用户的自动签开通链接，撤销后对应的个人用户开通链接失效。若个人用户已经完成开通，将无法撤销。（处方单场景专用，使用此接口请与客户经理确认）\n\n注: `在调用此接口时，请确保指定的用户已生成自动签开通链接并且未完成开通，否则无法撤销`",
       "input": "CancelUserAutoSignEnableUrlRequest",
       "name": "撤销自动签开通链接",
       "output": "CancelUserAutoSignEnableUrlResponse",
@@ -120,9 +120,9 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "创建个人H5签署链接，请联系客户经理申请开通使用, 否则调用会返回失败 <br/>\n\n该接口用于发起合同后，生成个人签署人的签署链接, 暂时不支持企业端签署 <br/>\n\n注意：该接口目前签署人类型仅支持个人签署方（PERSON） <br/>\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>\n注意：该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。微信小程序请使用小程序跳转或半屏弹窗的方式<br/>",
+      "document": "该接口用于发起合同后，生成个人用户的签署链接, 暂时不支持企业端签署 <br/>\n\n注：\n`1. 该接口目前仅支持签署人类型是个人签署方的场景（PERSON）` \n`2. 该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 `\n`3. 该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入`。跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
       "input": "CreateFlowSignUrlRequest",
-      "name": "创建个人用户H5签署链接",
+      "name": "获取个人用户H5签署链接",
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "CreateReleaseFlow": {
-      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。",
+      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n\n`注意：原合同必须签署完成后，才能发起解除协议。` <br/>\n`注意：只有原合同企业类型的参与人才能发起解除协议，个人不能发起解除协议。`<br/>\n`注意：原合同个人类型参与人必须是解除协议的参与人，不能更换其他第三方个人参与解除协议。`<br/>\n`注意：如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的企业员工代为处理。`<br/>\n`注意：发起解除协议同发起其他企业合同一样，也会参与合同扣费，扣费标准同其他类型合同。`<br/>\n`注意：在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均会转变为已解除状态。`<br/>",
       "input": "CreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "CreateReleaseFlowResponse",
@@ -288,9 +288,9 @@
       "status": "online"
     },
     "DescribeFlowEvidenceReport": {
-      "document": "查询出证报告，返回报告 URL。出证报告编号通过CreateFlowEvidenceReport接口获取。",
+      "document": "查询签署报告，返回报告 URL。需调用创建并返回出证报告接口（CreateFlowEvidenceReport）获取报告编号后调用当前接口获取报告链接。",
       "input": "DescribeFlowEvidenceReportRequest",
-      "name": "查询出证报告",
+      "name": "查询签署报告",
       "output": "DescribeFlowEvidenceReportResponse",
       "status": "online"
     },
@@ -994,7 +994,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1003,8 +1003,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程id",
-          "example": "flow-id",
+          "document": "合同流程ID, 为32位字符串。\n建议开发者保存此流程ID方便后续其他操作。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -1012,7 +1012,7 @@
         },
         {
           "disabled": false,
-          "document": "撤销原因，最长200个字符；",
+          "document": "撤销此合同(流程)的原因，最长200个字。",
           "example": "cancel",
           "member": "string",
           "name": "CancelMessage",
@@ -1021,7 +1021,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1048,7 +1048,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1057,8 +1057,8 @@
         },
         {
           "disabled": false,
-          "document": "二维码id",
-          "example": "无",
+          "document": "二维码ID，为32位字符串。",
+          "example": "yDR***********Apl",
           "member": "string",
           "name": "QrCodeId",
           "required": true,
@@ -1066,7 +1066,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1093,7 +1093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，UseId必填\t",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1102,7 +1102,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "document": "企业开通用户自动签场景，例如电子处方。\n<ul>\n<li>E_PRESCRIPTION_AUTO_SIGN : 电子处方</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -1116,6 +1116,15 @@
           "member": "UserThreeFactor",
           "name": "UserInfo",
           "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
           "type": "object"
         }
       ],
@@ -2826,8 +2835,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程编号",
-          "example": "xx",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
           "required": true,
@@ -2835,7 +2844,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，ApproverType目前只支持个人类型的签署人。\n\n签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。",
+          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，\n\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "FlowApproverInfos",
@@ -2844,7 +2853,7 @@
         },
         {
           "disabled": false,
-          "document": "用户信息，此结构体UserId必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2853,7 +2862,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2871,7 +2880,7 @@
         },
         {
           "disabled": false,
-          "document": "签署完之后的H5页面的跳转链接，此链接支持http://和https://，最大长度1000个字符。",
+          "document": "签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)",
           "example": "无",
           "member": "string",
           "name": "JumpUrl",
@@ -3884,7 +3893,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3893,7 +3902,7 @@
         },
         {
           "disabled": false,
-          "document": "待解除的签署流程编号（即原签署流程的编号）",
+          "document": "待解除的签署流程编号（即原签署流程的编号）。",
           "example": "无",
           "member": "string",
           "name": "NeedRelievedFlowId",
@@ -3902,7 +3911,7 @@
         },
         {
           "disabled": false,
-          "document": "解除协议内容",
+          "document": "解除协议内容。",
           "example": "无",
           "member": "RelieveInfo",
           "name": "ReliveInfo",
@@ -3911,7 +3920,16 @@
         },
         {
           "disabled": false,
-          "document": "非必须，解除协议的本企业签署人列表，\n默认使用原流程的签署人列表,当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业其他已实名员工来替换原流程中的原签署人，注意需要指明原签署人的编号(ReceiptId,通过DescribeFlowInfo接口获取)来代表需要替换哪一个签署人\n解除协议的签署人数量不能多于原流程的签署人数量",
+          "document": "关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>\n如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n解除协议的签署人数量不能多于原流程的签署人数量。<br/>\n\n`注意：只能更换同企业的签署人。`<br/>\n`注意：不支持更换个人类型的签署人。`<br/>",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -3920,7 +3938,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
           "example": "1604912664",
           "member": "int64",
           "name": "Deadline",
@@ -3929,12 +3947,12 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
           "example": "无",
-          "member": "Agent",
-          "name": "Agent",
+          "member": "string",
+          "name": "UserData",
           "required": false,
-          "type": "object"
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3944,7 +3962,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "解除协议流程编号\n",
+          "document": "解除协议流程编号\n`注意：这里的流程编号对应的合同是本次发起的解除协议。`\n",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -5177,7 +5195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5186,7 +5204,7 @@
         },
         {
           "disabled": false,
-          "document": "出证报告编号",
+          "document": "签署报告编号",
           "example": "无",
           "member": "string",
           "name": "ReportId",
@@ -5195,7 +5213,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\n",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5220,7 +5238,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 分布表示下面的含义\n\nEvidenceStatusExecuting  出证任务在执行中\nEvidenceStatusSuccess  出证任务执行成功\nEvidenceStatusFailed  出证任务执行失败",
+          "document": "签署报告出证任务的状态\n<ul>\n<li>EvidenceStatusExecuting : 出证任务在执行中</li>\n<li>EvidenceStatusSuccess : 出证任务执行成功</li>\n<li>EvidenceStatusFailed : 出证任务执行失败</li>\n</ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -6848,51 +6866,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "document": "签署链接(短链形式呈现)。请注意保密，不要将其外泄给无关用户。\n注: `注意该链接有效期为30分钟`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://essurl.cn/bR8**HA",
           "member": "string",
           "name": "SignUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "签署人类型 1-个人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署参与人类型 \n<ul><li> **1** :个人参与方</li></ul>\n\n注: `现在仅支持个人参与方`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ApproverType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "典子谦",
           "member": "string",
           "name": "ApproverName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "example": "13200000000",
           "member": "string",
           "name": "ApproverMobile",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "签署长链接。注意该链接有效期为30分钟，同时需要注意保密，不要外泄给无关用户。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xx",
+          "document": "签署链接(长链形式呈现)。请注意保密，不要将其外泄给无关用户。\n注: `注意该链接有效期为30分钟`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
           "member": "string",
           "name": "LongUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10108,33 +10126,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
           "example": "小明",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "证件号，如果有 X 请大写",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "610*************1X",
           "member": "string",
           "name": "IdCardNumber",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
