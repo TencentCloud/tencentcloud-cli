@@ -1,5 +1,26 @@
 {
   "actions": {
+    "CreateInstance": {
+      "document": "购买新实例",
+      "input": "CreateInstanceRequest",
+      "name": "购买实例",
+      "output": "CreateInstanceResponse",
+      "status": "online"
+    },
+    "DeleteInstance": {
+      "document": "删除实例",
+      "input": "DeleteInstanceRequest",
+      "name": "删除实例",
+      "output": "DeleteInstanceResponse",
+      "status": "online"
+    },
+    "DescribeInstance": {
+      "document": "查询实例信息",
+      "input": "DescribeInstanceRequest",
+      "name": "查询实例信息",
+      "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
     "DescribeInstanceList": {
       "document": "获取实例列表，Filters参数使用说明如下：\n1. InstanceName, 名称模糊查询\n2. InstanceId，实例ID查询\n3. InstanceType, 实例类型查询，支持多选\n3. InstanceStatus，实例状态查询，支持多选\n\n当使用TagFilters查询时，Filters参数失效。",
       "input": "DescribeInstanceListRequest",
@@ -13,6 +34,13 @@
       "name": "查询主题列表",
       "output": "DescribeTopicListResponse",
       "status": "online"
+    },
+    "ModifyInstance": {
+      "document": "修改实例属性",
+      "input": "ModifyInstanceRequest",
+      "name": "修改实例属性",
+      "output": "ModifyInstanceResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -22,6 +50,150 @@
     "serviceShortName": "trocket"
   },
   "objects": {
+    "CreateInstanceRequest": {
+      "document": "CreateInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT 体验版\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "abcd",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "商品规格，可用规格如下：\nexperiment_500,\nbasic_1k,\nbasic_2k,\nbasic_4k,\nbasic_6k",
+          "example": "无",
+          "member": "string",
+          "name": "SkuCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例绑定的VPC信息",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "VpcList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启公网",
+          "example": "无",
+          "member": "bool",
+          "name": "EnablePublic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽",
+          "example": "无",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网访问白名单",
+          "example": "无",
+          "member": "IpRule",
+          "name": "IpRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageRetention",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceResponse": {
+      "document": "CreateInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceRequest": {
+      "document": "DeleteInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstanceResponse": {
+      "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceListRequest": {
       "document": "DescribeInstanceList请求参数结构体",
       "members": [
@@ -83,6 +255,240 @@
           "member": "InstanceItem",
           "name": "Data",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRequest": {
+      "document": "DescribeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceResponse": {
+      "document": "DescribeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例类型，\nEXPERIMENT 体验版\nBASIC 基础版\nPRO  专业版\nPLATINUM 铂金版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "BASIC",
+          "member": "string",
+          "name": "InstanceType",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最大主题数量",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicNumLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组数量",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupNum",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例最大消费组数量",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupNumLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时间，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageRetention",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大可调整消息保留时间，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "RetentionUpperLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最小可调整消息保留时间，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "RetentionLowerLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TPS限流值",
+          "example": "无",
+          "member": "int64",
+          "name": "TpsLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性TPS限流值",
+          "example": "无",
+          "member": "int64",
+          "name": "ScaledTpsLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "延迟消息最长时间，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxMessageDelay",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedTime",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息发送接收比例",
+          "example": "无",
+          "member": "float",
+          "name": "SendReceiveRatio",
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Endpoint",
+          "name": "EndpointList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题队列数上限",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicQueueNumUpperLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题队列数下限",
+          "example": "无",
+          "member": "int64",
+          "name": "TopicQueueNumLowerLimit",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceStatus",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例规格",
+          "example": "无",
+          "member": "string",
+          "name": "SkuCode",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费模式",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -165,6 +571,92 @@
         }
       ],
       "type": "object"
+    },
+    "Endpoint": {
+      "document": "接入点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入点类型，\nVPC，\nPUBLIC 公网",
+          "example": "VPC",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态，\nOPEN 开启，\nCLOSE 关闭，\nPROCESSING 操作中，",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，仅公网\nPREPAID 包年包月\nPOSTPAID 按量付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PayMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndpointUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网带宽，Mbps为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网放通规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IpRule",
+          "name": "IpRules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "查询过滤器",
@@ -376,6 +868,123 @@
       ],
       "usage": "out"
     },
+    "IpRule": {
+      "document": "IP规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "0.0.0.0",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否允许放行",
+          "example": "无",
+          "member": "bool",
+          "name": "Allow",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息发送和接收的比例",
+          "example": "无",
+          "member": "float",
+          "name": "SendReceiveRatio",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "调整实例规格的商品代号",
+          "example": "无",
+          "member": "string",
+          "name": "SkuCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息保留时长，小时为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "MessageRetention",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启弹性TPS",
+          "example": "false",
+          "member": "bool",
+          "name": "ScaledTpsEnabled",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Tag": {
       "document": "标签数据",
       "members": [
@@ -481,6 +1090,30 @@
         }
       ],
       "usage": "both"
+    },
+    "VpcInfo": {
+      "document": "VPC信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC ID",
+          "example": "vpc-xxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "subnet-xxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

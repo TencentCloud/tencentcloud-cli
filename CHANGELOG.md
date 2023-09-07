@@ -1,3 +1,174 @@
+# Release 3.0.846.1
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 7 次发布
+
+发布时间：2023-09-08 01:23:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1667/81869)
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 32 次发布
+
+发布时间：2023-09-08 01:24:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81880)
+* [AddVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81879)
+* [CreateVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81888)
+* [DeleteBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81889)
+* [DeleteVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81887)
+* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81878)
+* [DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1132/81874)
+* [DescribeFwGroupInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/81886)
+* [DescribeVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81877)
+* [DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81873)
+* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81876)
+* [ModifyBlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/81885)
+* [ModifyEdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81872)
+* [ModifyFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81884)
+* [ModifySequenceAclRules](http://document.tencentcloudapi.woa.com/document/product/1132/81883)
+* [ModifyVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81875)
+* [ModifyVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81882)
+* [ModifyVpcFwSequenceRules](http://document.tencentcloudapi.woa.com/document/product/1132/81881)
+* [RemoveAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81871)
+* [RemoveVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81870)
+
+修改接口：
+
+* [CreateAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81231)
+
+	* 新增出参：Uuid
+
+* [CreateBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81781)
+
+	* 新增出参：List
+
+
+新增数据结构：
+
+* [CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem)
+* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+* [EdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpSwitch)
+* [FwDeploy](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwDeploy)
+* [FwGateway](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGateway)
+* [FwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitch)
+* [FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitchShow)
+* [NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NetInstancesInfo)
+* [VpcFwCvmInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwCvmInsInfo)
+* [VpcFwGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInfo)
+* [VpcFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstance)
+* [VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo)
+* [VpcFwInstanceShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceShow)
+* [VpcFwJoinInstanceType](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwJoinInstanceType)
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 10 次发布
+
+发布时间：2023-09-08 01:50:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetPlatformEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/81893)
+* [ListPlatformEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/81892)
+* [ListPlatformEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/81891)
+* [ListPlatformProducts](http://document.tencentcloudapi.woa.com/document/product/1359/81890)
+
+新增数据结构：
+
+* [PlatformEventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventDetail)
+* [PlatformEventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventSummary)
+* [PlatformProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformProduct)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 30 次发布
+
+发布时间：2023-09-08 01:55:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>CallbackUrl
+
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+### 第 3 次发布
+
+发布时间：2023-09-08 01:57:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* FaceFusionLite
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 2 次发布
+
+发布时间：2023-09-08 02:47:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)
+* [DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81896)
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81895)
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81894)
+
+新增数据结构：
+
+* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint)
+* [IpRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#IpRule)
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#VpcInfo)
+
+
+
 # Release 3.0.845.1
 
 ## 应用云渲染(car) 版本：2022-01-10
