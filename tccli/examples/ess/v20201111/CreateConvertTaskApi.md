@@ -1,46 +1,46 @@
-**Example 1: 调用示例**
+**Example 1: jpg文件转换示例**
 
-适用场景：通过word文件资源id进行文件转换
+适用场景：将jpg文件转换为pdf
 
 Input: 
 
 ```
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
-    --ResourceType doc \
-    --ResourceId y***********************************l \
-    --Operator.UserId y***********************************p \
-    --ResourceName hello.docx
+    --ResourceType jpg \
+    --ResourceName 合同图片.jpg \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --ResourceId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "b2eae8xxxx61cfaf19a21",
+        "RequestId": "d245a68d-e13b-xxxx-xxxx-e5adc794db24",
         "TaskId": "202xxxx3011294"
     }
 }
 ```
 
-**Example 2: test示例**
+**Example 2: word文件转换示例**
 
-适用场景：通过word文件资源id进行文件转换
+适用场景：将docx文件转换为pdf
 
 Input: 
 
 ```
 tccli ess CreateConvertTaskApi --cli-unfold-argument  \
-    --ResourceType doc \
-    --ResourceName hello.docx \
-    --Operator.UserId y***********************************R \
-    --ResourceId y***********************************l
+    --ResourceType docx \
+    --ResourceName 员工劳动合同.docx \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --ResourceId yDRSRUUgygj6qnyvUuO4zjE1vLuGdWjL
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "fbf25f31-xxxxxfed19e9849",
+        "RequestId": "d245a68d-e13b-xxxx-xxxx-e5adc794db24",
         "TaskId": "20220xxxx549202141"
     }
 }

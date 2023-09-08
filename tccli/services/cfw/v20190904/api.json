@@ -7,6 +7,13 @@
       "output": "AddAcRuleResponse",
       "status": "online"
     },
+    "AddAclRule": {
+      "document": "添加互联网边界访问控制规则",
+      "input": "AddAclRuleRequest",
+      "name": "添加互联网边界访问控制规则",
+      "output": "AddAclRuleResponse",
+      "status": "online"
+    },
     "AddEnterpriseSecurityGroupRules": {
       "document": "创建新企业安全组规则",
       "input": "AddEnterpriseSecurityGroupRulesRequest",
@@ -19,6 +26,13 @@
       "input": "AddNatAcRuleRequest",
       "name": "添加nat访问控制规则(地域必填)",
       "output": "AddNatAcRuleResponse",
+      "status": "online"
+    },
+    "AddVpcAcRule": {
+      "document": "添加VPC内网间规则",
+      "input": "AddVpcAcRuleRequest",
+      "name": "添加VPC内网间规则",
+      "output": "AddVpcAcRuleResponse",
       "status": "online"
     },
     "CreateAcRules": {
@@ -77,6 +91,13 @@
       "output": "CreateSecurityGroupRulesResponse",
       "status": "online"
     },
+    "CreateVpcFwGroup": {
+      "document": "创建VPC间防火墙(防火墙组)",
+      "input": "CreateVpcFwGroupRequest",
+      "name": "创建VPC间防火墙(防火墙组)",
+      "output": "CreateVpcFwGroupResponse",
+      "status": "online"
+    },
     "DeleteAcRule": {
       "document": "删除规则",
       "input": "DeleteAcRuleRequest",
@@ -96,6 +117,13 @@
       "input": "DeleteAllAccessControlRuleRequest",
       "name": "全部删除规则",
       "output": "DeleteAllAccessControlRuleResponse",
+      "status": "online"
+    },
+    "DeleteBlockIgnoreRuleList": {
+      "document": "批量删除入侵防御封禁列表、放通列表规则",
+      "input": "DeleteBlockIgnoreRuleListRequest",
+      "name": "批量删除入侵防御封禁列表、放通列表规则",
+      "output": "DeleteBlockIgnoreRuleListResponse",
       "status": "online"
     },
     "DeleteNatFwInstance": {
@@ -119,6 +147,13 @@
       "output": "DeleteSecurityGroupRuleResponse",
       "status": "online"
     },
+    "DeleteVpcFwGroup": {
+      "document": "删除防火墙(组)，或者删除其中实例",
+      "input": "DeleteVpcFwGroupRequest",
+      "name": "删除防火墙(组)，或者删除其中实例",
+      "output": "DeleteVpcFwGroupResponse",
+      "status": "online"
+    },
     "DeleteVpcInstance": {
       "document": "删除防火墙实例",
       "input": "DeleteVpcInstanceRequest",
@@ -131,6 +166,13 @@
       "input": "DescribeAcListsRequest",
       "name": "访问控制列表",
       "output": "DescribeAcListsResponse",
+      "status": "online"
+    },
+    "DescribeAclRule": {
+      "document": "查询互联网边界访问控制列表",
+      "input": "DescribeAclRuleRequest",
+      "name": "查询互联网边界访问控制列表",
+      "output": "DescribeAclRuleResponse",
       "status": "online"
     },
     "DescribeAssociatedInstanceList": {
@@ -187,6 +229,20 @@
       "input": "DescribeEnterpriseSecurityGroupRuleRequest",
       "name": "查询新企业安全组规则",
       "output": "DescribeEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "DescribeFwEdgeIps": {
+      "document": "串行防火墙IP开关列表",
+      "input": "DescribeFwEdgeIpsRequest",
+      "name": "串行防火墙开关列表",
+      "output": "DescribeFwEdgeIpsResponse",
+      "status": "online"
+    },
+    "DescribeFwGroupInstanceInfo": {
+      "document": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
+      "input": "DescribeFwGroupInstanceInfoRequest",
+      "name": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
+      "output": "DescribeFwGroupInstanceInfoResponse",
       "status": "online"
     },
     "DescribeGuideScanInfo": {
@@ -322,6 +378,20 @@
       "output": "DescribeUnHandleEventTabListResponse",
       "status": "online"
     },
+    "DescribeVpcAcRule": {
+      "document": "查询内网间访问控制列表",
+      "input": "DescribeVpcAcRuleRequest",
+      "name": "查询内网间访问控制列表",
+      "output": "DescribeVpcAcRuleResponse",
+      "status": "online"
+    },
+    "DescribeVpcFwGroupSwitch": {
+      "document": "VPC防火墙(组)开关列表",
+      "input": "DescribeVpcFwGroupSwitchRequest",
+      "name": "VPC防火墙(组)开关列表",
+      "output": "DescribeVpcFwGroupSwitchResponse",
+      "status": "online"
+    },
     "ExpandCfwVertical": {
       "document": "防火墙垂直扩容",
       "input": "ExpandCfwVerticalRequest",
@@ -334,6 +404,13 @@
       "input": "ModifyAcRuleRequest",
       "name": "修改规则",
       "output": "ModifyAcRuleResponse",
+      "status": "online"
+    },
+    "ModifyAclRule": {
+      "document": "修改互联网边界访问控制规则",
+      "input": "ModifyAclRuleRequest",
+      "name": "修改互联网边界访问控制规则",
+      "output": "ModifyAclRuleResponse",
       "status": "online"
     },
     "ModifyAllPublicIPSwitchStatus": {
@@ -371,6 +448,13 @@
       "output": "ModifyBlockIgnoreListResponse",
       "status": "online"
     },
+    "ModifyBlockIgnoreRule": {
+      "document": "编辑单条入侵防御封禁列表、放通列表规则",
+      "input": "ModifyBlockIgnoreRuleRequest",
+      "name": "编辑单条入侵防御封禁列表、放通列表规则",
+      "output": "ModifyBlockIgnoreRuleResponse",
+      "status": "online"
+    },
     "ModifyBlockTop": {
       "document": "ModifyBlockTop取消置顶接口",
       "input": "ModifyBlockTopRequest",
@@ -385,6 +469,13 @@
       "output": "ModifyEWRuleStatusResponse",
       "status": "online"
     },
+    "ModifyEdgeIpSwitch": {
+      "document": "修改边界防火墙开关(旁路、串行)",
+      "input": "ModifyEdgeIpSwitchRequest",
+      "name": "修改边界防火墙开关(旁路、串行)",
+      "output": "ModifyEdgeIpSwitchResponse",
+      "status": "online"
+    },
     "ModifyEnterpriseSecurityDispatchStatus": {
       "document": "修改企业安全组下发状态",
       "input": "ModifyEnterpriseSecurityDispatchStatusRequest",
@@ -397,6 +488,13 @@
       "input": "ModifyEnterpriseSecurityGroupRuleRequest",
       "name": "编辑新企业安全组规则",
       "output": "ModifyEnterpriseSecurityGroupRuleResponse",
+      "status": "online"
+    },
+    "ModifyFwGroupSwitch": {
+      "document": "修改防火墙(组)开关(支持单点模式、多点模式、全互通模式)",
+      "input": "ModifyFwGroupSwitchRequest",
+      "name": "修改防火墙(组)开关(支持单点模式、多点模式、全互通模式)",
+      "output": "ModifyFwGroupSwitchResponse",
       "status": "online"
     },
     "ModifyNatAcRule": {
@@ -476,6 +574,13 @@
       "output": "ModifySecurityGroupSequenceRulesResponse",
       "status": "online"
     },
+    "ModifySequenceAclRules": {
+      "document": "互联网边界规则快速排序",
+      "input": "ModifySequenceAclRulesRequest",
+      "name": "互联网边界规则快速排序",
+      "output": "ModifySequenceAclRulesResponse",
+      "status": "online"
+    },
     "ModifySequenceRules": {
       "document": "修改规则执行顺序",
       "input": "ModifySequenceRulesRequest",
@@ -497,11 +602,39 @@
       "output": "ModifyTableStatusResponse",
       "status": "online"
     },
+    "ModifyVpcAcRule": {
+      "document": "修改内网间访问控制规则",
+      "input": "ModifyVpcAcRuleRequest",
+      "name": "修改内网间访问控制规则",
+      "output": "ModifyVpcAcRuleResponse",
+      "status": "online"
+    },
+    "ModifyVpcFwGroup": {
+      "document": "编辑VPC间防火墙(防火墙组)",
+      "input": "ModifyVpcFwGroupRequest",
+      "name": "编辑VPC间防火墙(防火墙组)",
+      "output": "ModifyVpcFwGroupResponse",
+      "status": "online"
+    },
+    "ModifyVpcFwSequenceRules": {
+      "document": "vpc间规则快速排序",
+      "input": "ModifyVpcFwSequenceRulesRequest",
+      "name": "vpc间规则快速排序",
+      "output": "ModifyVpcFwSequenceRulesResponse",
+      "status": "online"
+    },
     "RemoveAcRule": {
       "document": "删除互联网边界规则",
       "input": "RemoveAcRuleRequest",
       "name": "删除互联网边界规则",
       "output": "RemoveAcRuleResponse",
+      "status": "online"
+    },
+    "RemoveAclRule": {
+      "document": "删除互联网边界访问控制规则",
+      "input": "RemoveAclRuleRequest",
+      "name": "删除互联网边界访问控制规则",
+      "output": "RemoveAclRuleResponse",
       "status": "online"
     },
     "RemoveEnterpriseSecurityGroupRule": {
@@ -516,6 +649,13 @@
       "input": "RemoveNatAcRuleRequest",
       "name": "删除NAT访问控制规则",
       "output": "RemoveNatAcRuleResponse",
+      "status": "online"
+    },
+    "RemoveVpcAcRule": {
+      "document": "删除VPC间规则",
+      "input": "RemoveVpcAcRuleRequest",
+      "name": "删除VPC间规则",
+      "output": "RemoveVpcAcRuleResponse",
       "status": "online"
     },
     "SetNatFwDnatRule": {
@@ -809,6 +949,52 @@
       ],
       "type": "object"
     },
+    "AddAclRuleRequest": {
+      "document": "AddAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要添加的访问控制规则列表",
+          "example": "无",
+          "member": "CreateRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAclRuleResponse": {
+      "document": "AddAclRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddEnterpriseSecurityGroupRulesRequest": {
       "document": "AddEnterpriseSecurityGroupRules请求参数结构体",
       "members": [
@@ -914,6 +1100,51 @@
           "example": "[8888, 8889]",
           "member": "int64",
           "name": "RuleUuid",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVpcAcRuleRequest": {
+      "document": "AddVpcAcRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要添加的vpc内网间规则列表",
+          "example": "无",
+          "member": "VpcRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "添加规则的来源，一般不需要使用，值insert_rule 表示插入指定位置的规则；值batch_import 表示批量导入规则；为空时表示添加规则",
+          "example": "无",
+          "member": "string",
+          "name": "From",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddVpcAcRuleResponse": {
+      "document": "AddVpcAcRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuids",
           "type": "list",
           "value_allowed_null": false
         },
@@ -1528,6 +1759,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "唯一Id",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -1563,6 +1804,16 @@
     "CreateBlockIgnoreRuleListResponse": {
       "document": "CreateBlockIgnoreRuleList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "成功返回",
+          "example": "无",
+          "member": "IocListData",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2007,6 +2258,147 @@
       ],
       "usage": "in"
     },
+    "CreateRuleItem": {
+      "document": "创建互联网边界规则参数结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问源示例： net：IP/CIDR(192.168.0.2)",
+          "example": "192.168.0.2",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag",
+          "example": "ip",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com",
+          "example": "*.qq.com",
+          "member": "string",
+          "name": "TargetContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location",
+          "example": "domain",
+          "member": "string",
+          "name": "TargetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略的端口。取值： -1/-1：全部端口 80：80端口",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：1，入站；0，出站",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则序号",
+          "example": "1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则对应的唯一id，创建规则时无需填写",
+          "example": "8888",
+          "member": "int64",
+          "name": "Uuid",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，true表示启用，false表示禁用",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "all",
+          "example": "生效范围：serial，串行；side，旁路；all，全局",
+          "member": "string",
+          "name": "Scope",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0，正常规则添加；1，入侵检测添加",
+          "example": "0",
+          "member": "int64",
+          "name": "RuleSource",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警Id",
+          "example": "无",
+          "member": "string",
+          "name": "LogId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "CreateSecurityGroupRulesRequest": {
       "document": "CreateSecurityGroupRules请求参数结构体",
       "members": [
@@ -2061,6 +2453,105 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcFwGroupRequest": {
+      "document": "CreateVpcFwGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙(组)名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)下的防火墙实例列表",
+          "example": "无",
+          "member": "VpcFwInstance",
+          "name": "VpcFwInstances",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例的开关模式\n1: 单点互通\n2: 多点互通\n3: 全互通\n4: 自定义路由",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "auto 自动选择防火墙网段\n10.10.10.0/24 用户输入的防火墙网段",
+          "example": "10.10.10.0/24",
+          "member": "string",
+          "name": "FwVpcCidr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云联网id ，适用于云联网模式",
+          "example": "ccn-xxxxxxx",
+          "member": "string",
+          "name": "CcnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定防火墙使用网段信息",
+          "example": "无",
+          "member": "FwCidrInfo",
+          "name": "FwCidrInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "跨租户管理员模式  1管理员 2多账号",
+          "example": "无",
+          "member": "string",
+          "name": "CrossUserMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateVpcFwGroupResponse": {
+      "document": "CreateVpcFwGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwg-xxxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -2383,6 +2874,42 @@
       ],
       "type": "object"
     },
+    "DeleteBlockIgnoreRuleListRequest": {
+      "document": "DeleteBlockIgnoreRuleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表",
+          "example": "无",
+          "member": "IocListData",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型，1封禁，2放通，不支持域名封禁",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteBlockIgnoreRuleListResponse": {
+      "document": "DeleteBlockIgnoreRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNatFwInstanceRequest": {
       "document": "DeleteNatFwInstance请求参数结构体",
       "members": [
@@ -2502,6 +3029,51 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcFwGroupRequest": {
+      "document": "DeleteVpcFwGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙(组)Id",
+          "example": "cfwg-xxxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除整个防火墙(组)\n0：不删除防火墙(组)，只删除单独实例\n1：删除整个防火墙(组)",
+          "example": "1",
+          "member": "int64",
+          "name": "DeleteFwGroup",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "待删除的防火墙实例数组",
+          "example": "[\"cfwew-xxxxxxxx\"]",
+          "member": "string",
+          "name": "VpcFwInsList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteVpcFwGroupResponse": {
+      "document": "DeleteVpcFwGroup返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2942,6 +3514,126 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAclRuleRequest": {
+      "document": "DescribeAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的索引，特定场景使用，可不填",
+          "example": "vpc_rule",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序所用到的字段",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAclRuleResponse": {
+      "document": "DescribeAclRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "nat访问控制列表数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescAcItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未过滤的总条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "AllTotal",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3673,6 +4365,228 @@
           "name": "TotalCount",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFwEdgeIpsRequest": {
+      "document": "DescribeFwEdgeIps请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序所用到的字段",
+          "example": "\tid",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFwEdgeIpsResponse": {
+      "document": "DescribeFwEdgeIps返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip 开关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EdgeIpInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ip 开关列表个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionLst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceTypeLst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFwGroupInstanceInfoRequest": {
+      "document": "DescribeFwGroupInstanceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序所用到的字段",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFwGroupInstanceInfoResponse": {
+      "document": "DescribeFwGroupInstanceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙(组)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwGroupInfo",
+          "name": "VpcFwGroupLst",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5102,6 +6016,215 @@
       ],
       "type": "object"
     },
+    "DescribeVpcAcRuleRequest": {
+      "document": "DescribeVpcAcRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要查询的索引，特定场景使用，可不填",
+          "example": "vpc_rule",
+          "member": "string",
+          "name": "Index",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序所用到的字段",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcAcRuleResponse": {
+      "document": "DescribeVpcAcRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网间访问控制列表数据",
+          "example": "无",
+          "member": "VpcRuleItem",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwGroupSwitchRequest": {
+      "document": "DescribeVpcFwGroupSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移值",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件组合",
+          "example": "无",
+          "member": "CommonFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "检索的起始时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索的截止时间，可不传",
+          "example": "2022-07-27 16:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "desc：降序；asc：升序。根据By字段的值进行排序，这里传参的话则By也必须有值",
+          "example": "desc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序所用到的字段",
+          "example": "id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwGroupSwitchResponse": {
+      "document": "DescribeVpcFwGroupSwitch返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开关列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FwGroupSwitchShow",
+          "name": "SwitchList",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DnsVpcSwitch": {
       "document": "设置nat防火墙的vpc dns 接入开关 ",
       "members": [
@@ -5124,6 +6247,254 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "EdgeIpInfo": {
+      "document": "边界防火墙公网IP开关列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网 IP 类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PublicIpType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IntranetIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AssetType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险端口数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "PortRiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近扫描时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LastScanTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为region eip\n0 不为region eip，不能选择串行\n1 为region eip 可以选择串行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsRegionEip",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EIP 所关联的VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0: 该地域暂未支持串行\n1: 该用户未在该地域配置串行带宽\n2: 该用户已在该地域配置串行带宽，可以开启串行开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsSerialRegion",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0: 不是公网CLB 可以开启串行开关\n1: 是公网CLB 不可以开启串行开关\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsPublicClb",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0: 开启开关时提示要创建私有连接。\n1: 关闭该开关是提示删除私有连接。\n如果大于 1: 关闭开关 、开启开关不需提示创建删除私有连接。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "EndpointBindEipNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描深度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "ScanMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫描状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ScanStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关状态\n0 : 关闭\n1 : 开启\n2 : 开启中\n3 : 关闭中\n4 : 异常\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpce-xxxxxxxx",
+          "member": "string",
+          "name": "EndpointId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有连接IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.10.10.10",
+          "member": "string",
+          "name": "EndpointIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 : 旁路\n1 : 串行\n2 : 正在模式切换",
+          "example": "0",
+          "member": "uint64",
+          "name": "SwitchMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EdgeIpSwitch": {
+      "document": "开启、关闭 防火墙互联网边界开关",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网IP",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "vpc 中第一个EIP开关打开，需要指定子网创建私有连接",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建私有连接指定IP",
+          "example": "10.1.1.1",
+          "member": "string",
+          "name": "EndpointIp",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0 : 旁路 1 : 串行",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5208,6 +6579,320 @@
         }
       ],
       "usage": "in"
+    },
+    "FwDeploy": {
+      "document": "防火墙部署输入参数列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙部署地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DeployRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带宽，单位：Mbps",
+          "example": "500",
+          "member": "int64",
+          "name": "Width",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异地灾备 1：使用异地灾备；0：不使用异地灾备；为空则默认不使用异地灾备",
+          "example": "0",
+          "member": "int64",
+          "name": "CrossAZone",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主可用区，为空则选择默认可用区",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备可用区，为空则选择默认可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "ZoneBak",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若为cdc防火墙时填充该id",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "FwGateway": {
+      "document": "防火墙引流网关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙网关id",
+          "example": "havip-xxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网关所属vpc id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关ip地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1/24",
+          "member": "string",
+          "name": "IpAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FwGroupSwitch": {
+      "document": "多种VPC墙模式开关结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙开关ID\n支持三种类型\n1. 边开关(单点互通)\n2. 点开关(多点互通)\n3. 全开关(全互通)",
+          "example": "cfws-xxxxxxxx",
+          "member": "string",
+          "name": "SwitchId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "FwGroupSwitchShow": {
+      "document": "VPC防火墙(组)四种开关展示",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙开关ID",
+          "example": "cfws-xxxxxxxx",
+          "member": "string",
+          "name": "SwitchId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙开关NAME\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaaa-bbbb开关",
+          "member": "string",
+          "name": "SwitchName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "互通模式",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关边连接类型 0：对等连接， 1：云连网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConnectType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-58cqznrf",
+          "member": "string",
+          "name": "ConnectId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连接名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云联网ccn防火墙开发--勿删",
+          "member": "string",
+          "name": "ConnectName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetInstancesInfo",
+          "name": "SrcInstancesInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的实例信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetInstancesInfo",
+          "name": "DstInstancesInfo",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "视死忽如归",
+          "member": "string",
+          "name": "FwGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关状态 0：关 ， 1：开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关的状态 0：正常， 1：转换中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0-非sase实例，忽略，1-未绑定状态，2-已绑定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AttachWithEdge",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对等防火墙和开关状态 0：正常， 1：对等未创建防火墙，2：对等已创建防火墙，未打开开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CrossEdgeStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络经过VPC防火墙CVM所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "FwInsRegion",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 观察 1 拦截 2 严格 3 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IpsAction",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关关联的防火墙实例列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwInstanceShow",
+          "name": "FwInsLst",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关是否处于bypass状态\n0：正常状态\n1：bypass状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "BypassStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FwVpcCidr": {
       "document": "vpc的防火墙网段",
@@ -5494,40 +7179,43 @@
       "usage": "in"
     },
     "IocListData": {
-      "document": "黑白名单IOC列表",
+      "document": "封禁放通IOC列表",
       "members": [
         {
           "disabled": false,
-          "document": "待处置IP地址，IP/Domain字段二选一",
+          "document": "待处置IP地址，IP/Domain字段二选一\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "192.168.1.1",
           "member": "string",
           "name": "IP",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "只能为0或者1   0代表出站 1代表入站",
+          "document": "只能为0或者1   0代表出站 1代表入站\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Direction",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "待处置域名，IP/Domain字段二选一",
+          "document": "待处置域名，IP/Domain字段二选一\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.qq.com",
           "member": "string",
           "name": "Domain",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "IpStatic": {
       "document": "统计折线图通用结构体",
@@ -5619,6 +7307,43 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAclRuleRequest": {
+      "document": "ModifyAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要编辑的规则数组",
+          "example": "无",
+          "member": "CreateRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAclRuleResponse": {
+      "document": "ModifyAclRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5968,6 +7693,42 @@
       ],
       "type": "object"
     },
+    "ModifyBlockIgnoreRuleRequest": {
+      "document": "ModifyBlockIgnoreRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则",
+          "example": "无",
+          "member": "IntrusionDefenseRule",
+          "name": "Rule",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "规则类型，1封禁，2放通",
+          "example": "1",
+          "member": "int64",
+          "name": "RuleType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyBlockIgnoreRuleResponse": {
+      "document": "ModifyBlockIgnoreRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBlockTopRequest": {
       "document": "ModifyBlockTop请求参数结构体",
       "members": [
@@ -6087,6 +7848,42 @@
       ],
       "type": "object"
     },
+    "ModifyEdgeIpSwitchRequest": {
+      "document": "ModifyEdgeIpSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0 关闭开关\n1 打开开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作开关详情",
+          "example": "无",
+          "member": "EdgeIpSwitch",
+          "name": "EdgeIpSwitchLst",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyEdgeIpSwitchResponse": {
+      "document": "ModifyEdgeIpSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyEnterpriseSecurityDispatchStatusRequest": {
       "document": "ModifyEnterpriseSecurityDispatchStatus请求参数结构体",
       "members": [
@@ -6189,6 +7986,51 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFwGroupSwitchRequest": {
+      "document": "ModifyFwGroupSwitch请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "打开或关闭开关\n0：关闭开关\n1：打开开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否操作全部开关 0 不操作全部开关，1 操作全部开关",
+          "example": "0",
+          "member": "int64",
+          "name": "AllSwitch",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开关列表",
+          "example": "无",
+          "member": "FwGroupSwitch",
+          "name": "SwitchList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFwGroupSwitchResponse": {
+      "document": "ModifyFwGroupSwitch返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6746,6 +8588,42 @@
       ],
       "type": "object"
     },
+    "ModifySequenceAclRulesRequest": {
+      "document": "ModifySequenceAclRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号",
+          "example": "[{\"OrderIndex\":100,\"NewOrderIndex\":100}]",
+          "member": "RuleChangeItem",
+          "name": "RuleChangeItems",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：1，入站；0，出站",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySequenceAclRulesResponse": {
+      "document": "ModifySequenceAclRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySequenceRulesRequest": {
       "document": "ModifySequenceRules请求参数结构体",
       "members": [
@@ -6882,6 +8760,123 @@
           "type": "int",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAcRuleRequest": {
+      "document": "ModifyVpcAcRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要编辑的规则数组",
+          "example": "无",
+          "member": "VpcRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcAcRuleResponse": {
+      "document": "ModifyVpcAcRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑成功后返回新策略ID列表",
+          "example": "[8888, 8889]",
+          "member": "int64",
+          "name": "RuleUuids",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcFwGroupRequest": {
+      "document": "ModifyVpcFwGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编辑的防火墙(组)ID",
+          "example": "cfwg-xxxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改防火墙(组)名称",
+          "example": "此地无银三百两",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "编辑的防火墙实例列表",
+          "example": "无",
+          "member": "VpcFwInstance",
+          "name": "VpcFwInstances",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定防火墙使用网段信息",
+          "example": "无",
+          "member": "FwCidrInfo",
+          "name": "FwCidrInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcFwGroupResponse": {
+      "document": "ModifyVpcFwGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcFwSequenceRulesRequest": {
+      "document": "ModifyVpcFwSequenceRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则快速排序：OrderIndex，原始序号；NewOrderIndex：新序号",
+          "example": "[{\"OrderIndex\":100,\"NewOrderIndex\":100}]",
+          "member": "RuleChangeItem",
+          "name": "RuleChangeItems",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpcFwSequenceRulesResponse": {
+      "document": "ModifyVpcFwSequenceRules返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7215,6 +9210,52 @@
       ],
       "usage": "out"
     },
+    "NetInstancesInfo": {
+      "document": "网络实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络实例名称",
+          "example": "chengdu-云联网CCN-VPC2-勿用",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络cidr (多段以逗号分隔)",
+          "example": "10.1.0.0/16",
+          "member": "string",
+          "name": "InstanceCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络实例所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "NewModeItems": {
       "document": "新增模式传递参数",
       "members": [
@@ -7298,6 +9339,52 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveAclRuleRequest": {
+      "document": "RemoveAclRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleUuid",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则方向：1，入站；0，出站",
+          "example": "0",
+          "member": "uint64",
+          "name": "Direction",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveAclRuleResponse": {
+      "document": "RemoveAclRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除成功后返回被删除策略的uuid列表",
+          "example": "[8888,8889]",
+          "member": "int64",
+          "name": "RuleUuid",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7397,6 +9484,43 @@
           "example": "[8888,8889]",
           "member": "int64",
           "name": "RuleUuid",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveVpcAcRuleRequest": {
+      "document": "RemoveVpcAcRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则的uuid列表，可通过查询规则列表获取，注意：如果传入的是[-1]将删除所有规则",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleUuids",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "RemoveVpcAcRuleResponse": {
+      "document": "RemoveVpcAcRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除成功后返回被删除策略的uuid列表",
+          "example": "[8888,8889]",
+          "member": "int64",
+          "name": "RuleUuids",
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9111,6 +11235,771 @@
         }
       ],
       "usage": "out"
+    },
+    "VpcFwCvmInsInfo": {
+      "document": "VPC防火墙实例的CVM信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "FwInsId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu",
+          "member": "string",
+          "name": "Region",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM所在地域中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都",
+          "member": "string",
+          "name": "RegionZh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM所在地域详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "西南地区",
+          "member": "string",
+          "name": "RegionDetail",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都一区",
+          "member": "string",
+          "name": "ZoneZh",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备机所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "成都二区",
+          "member": "string",
+          "name": "ZoneZhBack",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙CVM带宽值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "BandWidth",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcFwGroupInfo": {
+      "document": "VPC防火墙(组)及防火墙实例详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwg-xxxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "捐躯赴国难",
+          "member": "string",
+          "name": "FwGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙组涉及到的开关个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FwSwitchNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)部署的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "['ap-guangzhou']",
+          "member": "string",
+          "name": "RegionLst",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模式 1：CCN云联网模式；0：私有网络模式 2: sase 模式 3：ccn 高级模式 4: 私有网络(跨租户单边模式)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例的开关模式 1: 单点互通 2: 多点互通 3: 全互通 4: 自定义路由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例卡片信息数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwInstanceInfo",
+          "name": "FwInstanceLst",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(状态) 0：正常 1: 初始化或操作中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "auto :自动选择\n如果为网段，则为用户自定义 192.168.0.0/20 ",
+          "example": "auto",
+          "member": "string",
+          "name": "FwVpcCidr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cdc专用集群场景时表示部署所属的cdc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-xxx",
+          "member": "string",
+          "name": "CdcId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdc专用集群场景时表示cdc名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "CdcName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨租户模式 1管理员 2单边 0 非跨租户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CrossUserMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcFwInstance": {
+      "document": "vpc 防火墙下单防火墙实例结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "防火墙实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "私有网络模式下接入的VpcId列表；仅私有网络模式使用",
+          "example": "[\"vpc-xxx\",\"vpc-xxx\"]",
+          "member": "string",
+          "name": "VpcIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署地域信息",
+          "example": "{\"DeployRegion\":\"ap-nanjing\",\"Width\":500}",
+          "member": "FwDeploy",
+          "name": "FwDeploy",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID (编辑场景传)",
+          "example": "cfwew-xxxxxxxx",
+          "member": "string",
+          "name": "FwInsId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "VpcFwInstanceInfo": {
+      "document": "VPC防火墙实例卡片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "沉舟侧畔千帆过，病树前头万木春",
+          "member": "string",
+          "name": "FwInsName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-de1a3a1a",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例模式 0: 旧VPC模式防火墙 1: CCN模式防火墙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "FwMode",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙接入网络实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "JoinInsNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙开关个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "FwSwitchNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙状态 0:正常 ， 1：创建中 2: 变更中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-12-09 11:56:58",
+          "member": "string",
+          "name": "Time",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 相关云联网ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ccn-58cqznrf\"]",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 相关云联网名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"云联网ccn防火墙开发--勿删\"]",
+          "member": "string",
+          "name": "CcnName",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 相关对等连接ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "PeerConnectionId",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC 相关对等连接名称列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "string",
+          "name": "PeerConnectionName",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙CVM的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwCvmInsInfo",
+          "name": "FwCvmLst",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙接入网络实例类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwJoinInstanceType",
+          "name": "JoinInsLst",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙网关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FwGateway",
+          "name": "FwGateway",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwg-xxxxxxxx",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RuleUsed",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大规则数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "RuleMax",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "Width",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户VPC墙总带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000",
+          "member": "int64",
+          "name": "UserVpcWidth",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入的vpc列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"vpc-abcdabcd\"]",
+          "member": "string",
+          "name": "JoinInsIdLst",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网间峰值带宽 (单位 bps )",
+          "example": "1000",
+          "member": "int64",
+          "name": "FlowMax",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例引擎版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfw_3.7.0.888",
+          "member": "string",
+          "name": "EngineVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎是否可升级：0，不可升级；1，可升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UpdateEnable",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcFwInstanceShow": {
+      "document": "VPC防火墙实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例ID",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "FwInsId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "春城无处不飞花",
+          "member": "string",
+          "name": "FwInsName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络经过VPC防火墙CVM所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chongqing",
+          "member": "string",
+          "name": "FwInsRegion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcFwJoinInstanceType": {
+      "document": "VPC防火墙接入的网络实例类型及数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入实例类型，VPC、DIRECTCONNECT、 VPNGW 等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VPC",
+          "member": "string",
+          "name": "JoinType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入的对应网络实例类型的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Num",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VpcRuleItem": {
+      "document": "VPC内网间规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问源示例：\nnet：IP/CIDR(192.168.0.2)",
+          "example": "192.168.0.2",
+          "member": "string",
+          "name": "SourceContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问源类型，类型可以为：net",
+          "example": "net",
+          "member": "string",
+          "name": "SourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问目的示例：\nnet：IP/CIDR(192.168.0.2)\ndomain：域名规则，例如*.qq.com",
+          "example": "*.qq.com",
+          "member": "string",
+          "name": "DestContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问目的类型，类型可以为：net，domain",
+          "example": "net",
+          "member": "string",
+          "name": "DestType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议，可选的值：\nTCP\nUDP\nICMP\nANY\nHTTP\nHTTPS\nHTTP/HTTPS\nSMTP\nSMTPS\nSMTP/SMTPS\nFTP\nDNS\nTLS/SSL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ANY",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略中设置的流量通过云防火墙的方式。取值：\naccept：放行\ndrop：拒绝\nlog：观察",
+          "example": "accept",
+          "member": "string",
+          "name": "RuleAction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略的端口。取值：\n-1/-1：全部端口\n80：80端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-1/-1",
+          "member": "string",
+          "name": "Port",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则顺序，-1表示最低，1表示最高",
+          "example": "-1",
+          "member": "int64",
+          "name": "OrderIndex",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则对应的唯一id",
+          "example": "8888",
+          "member": "int64",
+          "name": "Uuid",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则状态，true表示启用，false表示禁用",
+          "example": "true",
+          "member": "string",
+          "name": "Enable",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效的范围，是在哪对vpc之间还是针对所有vpc间生效",
+          "example": "cfws-xxx或者ALL",
+          "member": "string",
+          "name": "EdgeId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则的命中次数，增删改查规则时无需传入此参数，主要用于返回查询结果数据",
+          "example": "0",
+          "member": "int64",
+          "name": "DetectedTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "EdgeId对应的这对VPC间防火墙的描述",
+          "example": "描述信息",
+          "member": "string",
+          "name": "EdgeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内部使用的uuid，一般情况下不会使用到该字段",
+          "example": "123456789",
+          "member": "int64",
+          "name": "InternalUuid",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则被删除：1，已删除；0，未删除",
+          "example": "0",
+          "member": "int64",
+          "name": "Deleted",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则生效的防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-d92f04f8",
+          "member": "string",
+          "name": "FwGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "防火墙名称",
+          "member": "string",
+          "name": "FwGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "beta任务详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BetaInfoByACL",
+          "name": "BetaList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VpcZoneData": {
       "document": "vpc区域数据详情",

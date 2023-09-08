@@ -8,6 +8,14 @@
         "title": "添加互联网边界规则"
       }
     ],
+    "AddAclRule": [
+      {
+        "document": "添加互联网边界访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\",\n            \"Scope\": \"abc\",\n            \"RuleSource\": 0\n        }\n    ],\n    \"From\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "添加互联网边界访问控制规则"
+      }
+    ],
     "AddEnterpriseSecurityGroupRules": [
       {
         "document": "创建新企业安全组规则",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddNatAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\"\n        }\n    ],\n    \"From\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "添加nat访问控制规则"
+      }
+    ],
+    "AddVpcAcRule": [
+      {
+        "document": "添加VPC内网间规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddVpcAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"OrderIndex\": 0,\n            \"Enable\": \"11\",\n            \"Protocol\": \"TCP\",\n            \"SourceType\": \"SRC\",\n            \"EdgeId\": \"cfws-xxxxxxxx\",\n            \"EdgeName\": \"wo lie kai\",\n            \"SourceContent\": \"1.1.1.1\",\n            \"DestType\": \"1\",\n            \"DestContent\": \"2.2.2.2\",\n            \"RuleAction\": \"drop\",\n            \"Uuid\": 0,\n            \"DetectedTimes\": 0,\n            \"Port\": \"53\",\n            \"Description\": \"wo lie kai\"\n        }\n    ],\n    \"From\": \"src\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888,\n            8889\n        ],\n        \"RequestId\": \"9a86c4e3-b926-4244-919b-aba9a7e82686\"\n    }\n}",
+        "title": "添加VPC内网间规则"
       }
     ],
     "CreateAcRules": [
@@ -100,6 +116,14 @@
         "title": "创建企业安全组规则"
       }
     ],
+    "CreateVpcFwGroup": [
+      {
+        "document": "创建防火墙(组)",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcFwGroup\n<公共请求参数>\n\n{\n    \"Name\": \"新的世界\",\n    \"Mode\": 0,\n    \"VpcFwInstances\": [\n        {\n            \"FwInsId\": \"\",\n            \"Name\": \"新的时间\",\n            \"VpcIds\": [\n                \"vpc-ddddaaaa\"\n            ],\n            \"FwDeploy\": {\n                \"DeployRegion\": \"ap-guangzhou\",\n                \"Width\": 1024,\n                \"CrossAZone\": 1,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ZoneBak\": \"ap-guangzhou-2\",\n                \"CdcId\": \"abc\"\n            }\n        }\n    ],\n    \"SwitchMode\": 1,\n    \"FwVpcCidr\": \"auto\",\n    \"CcnId\": \"\",\n    \"FwCidrInfo\": {\n        \"FwCidrType\": \"\",\n        \"FwCidrLst\": [],\n        \"ComFwCidr\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FwGroupId\": \"cfwg-12345678\",\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
+        "title": "创建防火墙(组)"
+      }
+    ],
     "DeleteAcRule": [
       {
         "document": "",
@@ -122,6 +146,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAllAccessControlRule\n<公共请求参数>\n\n{\n    \"Area\": \"\",\n    \"EdgeId\": \"\",\n    \"Direction\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": 0,\n        \"RequestId\": \"b21d7f7c-3191-41a2-bd13-9a5f6d86ab44\"\n    }\n}",
         "title": "全部删除规则"
+      }
+    ],
+    "DeleteBlockIgnoreRuleList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteBlockIgnoreRuleList\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"IP\": \"abc\",\n            \"Direction\": 0,\n            \"Domain\": \"abc\"\n        }\n    ],\n    \"RuleType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量删除入侵防御封禁列表、放通列表规则"
       }
     ],
     "DeleteNatFwInstance": [
@@ -148,6 +180,14 @@
         "title": "删除安全组规则"
       }
     ],
+    "DeleteVpcFwGroup": [
+      {
+        "document": "创建防火墙(组)",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteVpcFwGroup\n<公共请求参数>\n\n{\n    \"FwGroupId\": \"cfwg-xxxxaaaaa\",\n    \"DeleteFwGroup\": 0,\n    \"VpcFwInsList\": [\n        \"cfwew-aaaabbbb\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
+        "title": "删除防火墙(组)"
+      }
+    ],
     "DeleteVpcInstance": [
       {
         "document": "",
@@ -162,6 +202,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAcLists\n<公共请求参数>\n\n{\n    \"EdgeId\": \"\",\n    \"Protocol\": \"TCP\",\n    \"Strategy\": \"\",\n    \"SearchValue\": \"\",\n    \"Direction\": 1,\n    \"Limit\": 20,\n    \"Offset\": 0,\n    \"Area\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"AllTotal\": 1,\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"Protocol\": \"xx\",\n                \"Detail\": \"xx\",\n                \"Strategy\": 1,\n                \"LogId\": \"xx\",\n                \"OrderIndex\": 1,\n                \"TargetIp\": \"xx\",\n                \"Port\": \"xx\",\n                \"SourceIp\": \"xx\",\n                \"Id\": 1\n            }\n        ],\n        \"Enable\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "访问控制列表"
+      }
+    ],
+    "DescribeAclRule": [
+      {
+        "document": "查询互联网边界访问控制列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAclRule\n<公共请求参数>\n\n{\n    \"Index\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Order\": \"abc\",\n    \"By\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"TargetContent\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Port\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Description\": \"abc\",\n                \"Count\": 1,\n                \"OrderIndex\": 1,\n                \"SourceType\": \"abc\",\n                \"TargetType\": \"abc\",\n                \"Uuid\": 1,\n                \"Invalid\": 1,\n                \"IsRegion\": 1,\n                \"CountryCode\": 1,\n                \"CityCode\": 1,\n                \"CountryName\": \"abc\",\n                \"CityName\": \"abc\",\n                \"CloudCode\": \"abc\",\n                \"IsCloud\": 1,\n                \"Enable\": \"abc\",\n                \"Direction\": 1,\n                \"InstanceName\": \"abc\",\n                \"InternalUuid\": 0,\n                \"Status\": 1,\n                \"BetaList\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskName\": \"abc\",\n                        \"LastTime\": \"abc\"\n                    }\n                ],\n                \"Scope\": \"abc\",\n                \"InternetBorderUuid\": \"abc\"\n            }\n        ],\n        \"AllTotal\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询互联网边界访问控制列表"
       }
     ],
     "DescribeAssociatedInstanceList": [
@@ -226,6 +274,22 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"SourceContent\": \"abc\",\n    \"DestContent\": \"abc\",\n    \"Description\": \"abc\",\n    \"RuleAction\": \"abc\",\n    \"Enable\": \"abc\",\n    \"Port\": \"abc\",\n    \"Protocol\": \"abc\",\n    \"ServiceTemplateId\": \"abc\",\n    \"PageNo\": \"abc\",\n    \"PageSize\": \"abc\",\n    \"RuleUuid\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"PageNo\": \"abc\",\n        \"PageSize\": \"abc\",\n        \"Rules\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"SourceType\": \"abc\",\n                \"DestContent\": \"abc\",\n                \"DestType\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Port\": \"abc\",\n                \"ServiceTemplateId\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Description\": \"abc\",\n                \"OrderIndex\": \"abc\",\n                \"Id\": \"abc\",\n                \"Enable\": \"abc\"\n            }\n        ],\n        \"TotalCount\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询新企业安全组规则"
+      }
+    ],
+    "DescribeFwEdgeIps": [
+      {
+        "document": "串行防火墙开关列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwEdgeIps\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"PublicIp\",\n            \"Values\": [\n                \"1.1.1.1\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"StartTime\": \"2022-07-27 16:00:00\",\n    \"EndTime\": \"2022-07-27 16:00:00\",\n    \"Order\": \"desc\",\n    \"By\": \"PublicIp\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"PublicIp\": \"2.2.2.2\",\n                \"PublicIpType\": 2,\n                \"InstanceId\": \"ins-xxxxxxxx\",\n                \"InstanceName\": \"cvm实例1\",\n                \"IntranetIp\": \"172.16.1.1\",\n                \"AssetType\": \"cvm\",\n                \"Region\": \"ap-chongqing\",\n                \"PortRiskCount\": 10,\n                \"LastScanTime\": \"2022-07-27 16:00:00\",\n                \"SwitchMode\": 2,\n                \"IsRegionEip\": 1,\n                \"VpcId\": \"vpc-abcdabcd\",\n                \"IsSerialRegion\": 1,\n                \"IsPublicClb\": 0,\n                \"EndpointBindEipNum\": 1,\n                \"ScanMode\": \"medium\",\n                \"ScanStatus\": 0,\n                \"EndpointId\": \"vpce-xxxxxxxx\",\n                \"EndpointIp\": \"10.10.10.10\"\n            }\n        ],\n        \"Total\": 10,\n        \"RegionLst\": [\n            \"abc\"\n        ],\n        \"InstanceTypeLst\": [\n            \"nat\",\n            \"cvm\"\n        ],\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
+        "title": "串行防火墙开关列表"
+      }
+    ],
+    "DescribeFwGroupInstanceInfo": [
+      {
+        "document": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwGroupInstanceInfo\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"FwGroupId\",\n            \"Values\": [\n                \"cfwg-xxxxxxxx\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"StartTime\": \"2023-02-08 20:19:13\",\n    \"EndTime\": \"2023-02-08 20:19:13\",\n    \"Order\": \"desc\",\n    \"By\": \"FwGroupId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1433cc95-0a1e-41e9-8c80-773452c3956a\",\n        \"Total\": 3,\n        \"VpcFwGroupLst\": [\n            {\n                \"FwGroupId\": \"cfwg-091403ba\",\n                \"FwGroupName\": \"vpc11\",\n                \"Mode\": 0,\n                \"SwitchMode\": 1,\n                \"FwVpcCidr\": \"\",\n                \"Status\": 0,\n                \"CdcId\": \"\",\n                \"CdcName\": \"\",\n                \"FwSwitchNum\": 1,\n                \"RegionLst\": [\n                    \"ap-singapore\"\n                ],\n                \"FwInstanceLst\": [\n                    {\n                        \"FwGroupId\": \"cfwg-091403ba\",\n                        \"FwInsName\": \"vpc11-Singapore\",\n                        \"FwInsId\": \"cfwew-091403ba\",\n                        \"FwMode\": 0,\n                        \"CcnId\": null,\n                        \"CcnName\": null,\n                        \"PeerConnectionId\": [\n                            \"pcx-agelgm26\"\n                        ],\n                        \"PeerConnectionName\": [\n                            \"dora对等连接\"\n                        ],\n                        \"FwCvmLst\": [\n                            {\n                                \"FwInsId\": \"cfwew-091403ba\",\n                                \"Region\": \"ap-singapore\",\n                                \"RegionZh\": \"Singapore\",\n                                \"RegionDetail\": \"Southeast Asia\",\n                                \"ZoneZh\": \"Singapore Zone 1\",\n                                \"ZoneZhBack\": \"Singapore Zone 1\",\n                                \"BandWidth\": 1024\n                            }\n                        ],\n                        \"JoinInsLst\": [\n                            {\n                                \"JoinType\": \"VPC\",\n                                \"Num\": 2\n                            }\n                        ],\n                        \"JoinInsIdLst\": [\n                            \"vpc-1mu72m45\",\n                            \"vpc-evukp8gr\"\n                        ],\n                        \"FwGateway\": [\n                            {\n                                \"GatewayId\": \"havip-mowa99k4\",\n                                \"VpcId\": \"vpc-1mu72m45\",\n                                \"IpAddress\": \"172.18.1.20\"\n                            },\n                            {\n                                \"GatewayId\": \"havip-h4fk33t8\",\n                                \"VpcId\": \"vpc-evukp8gr\",\n                                \"IpAddress\": \"192.168.1.4\"\n                            }\n                        ],\n                        \"JoinInsNum\": 2,\n                        \"FwSwitchNum\": 1,\n                        \"Status\": 0,\n                        \"Time\": \"2023-01-16 13:32:02\",\n                        \"Width\": 1024,\n                        \"UserVpcWidth\": 6144,\n                        \"RuleUsed\": 17,\n                        \"RuleMax\": 0,\n                        \"FlowMax\": 0\n                    }\n                ]\n            },\n            {\n                \"FwGroupId\": \"cfwg-bd65c35d\",\n                \"FwGroupName\": \"ill-VPC防火墙\",\n                \"Mode\": 0,\n                \"SwitchMode\": 1,\n                \"FwVpcCidr\": \"\",\n                \"Status\": 0,\n                \"CdcId\": \"\",\n                \"CdcName\": \"\",\n                \"FwSwitchNum\": 1,\n                \"RegionLst\": [\n                    \"na-siliconvalley\"\n                ],\n                \"FwInstanceLst\": [\n                    {\n                        \"FwGroupId\": \"cfwg-bd65c35d\",\n                        \"FwInsName\": \"ill-VPC防火墙-Silicon Valley\",\n                        \"FwInsId\": \"cfwew-bd65c35d\",\n                        \"FwMode\": 0,\n                        \"CcnId\": null,\n                        \"CcnName\": null,\n                        \"PeerConnectionId\": [\n                            \"pcx-qc3u5vny\"\n                        ],\n                        \"PeerConnectionName\": [\n                            \"ill-AC对等\"\n                        ],\n                        \"FwCvmLst\": [\n                            {\n                                \"FwInsId\": \"cfwew-bd65c35d\",\n                                \"Region\": \"na-siliconvalley\",\n                                \"RegionZh\": \"Silicon Valley\",\n                                \"RegionDetail\": \"US West\",\n                                \"ZoneZh\": \"Silicon Valley Zone 1\",\n                                \"ZoneZhBack\": \"Silicon Valley Zone 1\",\n                                \"BandWidth\": 1026\n                            }\n                        ],\n                        \"JoinInsLst\": [\n                            {\n                                \"JoinType\": \"VPC\",\n                                \"Num\": 2\n                            }\n                        ],\n                        \"JoinInsIdLst\": [\n                            \"vpc-bogtkdw5\",\n                            \"vpc-lryryblf\"\n                        ],\n                        \"FwGateway\": [\n                            {\n                                \"GatewayId\": \"havip-qv2vu0ko\",\n                                \"VpcId\": \"vpc-bogtkdw5\",\n                                \"IpAddress\": \"10.1.0.4\"\n                            },\n                            {\n                                \"GatewayId\": \"havip-pnhsiig8\",\n                                \"VpcId\": \"vpc-lryryblf\",\n                                \"IpAddress\": \"192.168.0.4\"\n                            }\n                        ],\n                        \"JoinInsNum\": 2,\n                        \"FwSwitchNum\": 1,\n                        \"Status\": 0,\n                        \"Time\": \"2023-03-02 15:02:05\",\n                        \"Width\": 1026,\n                        \"UserVpcWidth\": 6144,\n                        \"RuleUsed\": 19,\n                        \"RuleMax\": 20000,\n                        \"FlowMax\": 0\n                    }\n                ]\n            },\n            {\n                \"FwGroupId\": \"cfwg-9d364c8c\",\n                \"FwGroupName\": \"ill-vpc\",\n                \"Mode\": 0,\n                \"SwitchMode\": 1,\n                \"FwVpcCidr\": \"auto\",\n                \"Status\": 0,\n                \"CdcId\": \"\",\n                \"CdcName\": \"\",\n                \"FwSwitchNum\": 1,\n                \"RegionLst\": [\n                    \"ap-guangzhou\"\n                ],\n                \"FwInstanceLst\": [\n                    {\n                        \"FwGroupId\": \"cfwg-9d364c8c\",\n                        \"FwInsName\": \"ill-vpc-实例\",\n                        \"FwInsId\": \"cfwew-6ea63bd1\",\n                        \"FwMode\": 0,\n                        \"CcnId\": null,\n                        \"CcnName\": null,\n                        \"PeerConnectionId\": [\n                            \"pcx-jbd9cfr2\"\n                        ],\n                        \"PeerConnectionName\": [\n                            \"01-02\"\n                        ],\n                        \"FwCvmLst\": [\n                            {\n                                \"FwInsId\": \"cfwew-6ea63bd1\",\n                                \"Region\": \"ap-guangzhou\",\n                                \"RegionZh\": \"Guangzhou\",\n                                \"RegionDetail\": \"South China\",\n                                \"ZoneZh\": \"Guangzhou Zone 3\",\n                                \"ZoneZhBack\": \"Guangzhou Zone 3\",\n                                \"BandWidth\": 1024\n                            }\n                        ],\n                        \"JoinInsLst\": [\n                            {\n                                \"JoinType\": \"VPC\",\n                                \"Num\": 2\n                            }\n                        ],\n                        \"JoinInsIdLst\": [\n                            \"vpc-oqkl55nv\",\n                            \"vpc-r275qh7n\"\n                        ],\n                        \"FwGateway\": [\n                            {\n                                \"GatewayId\": \"havip-pcvydwd0\",\n                                \"VpcId\": \"vpc-oqkl55nv\",\n                                \"IpAddress\": \"10.1.0.4\"\n                            },\n                            {\n                                \"GatewayId\": \"havip-4jkwh854\",\n                                \"VpcId\": \"vpc-r275qh7n\",\n                                \"IpAddress\": \"10.2.0.4\"\n                            }\n                        ],\n                        \"JoinInsNum\": 2,\n                        \"FwSwitchNum\": 1,\n                        \"Status\": 0,\n                        \"Time\": \"2023-05-18 12:12:50\",\n                        \"Width\": 1024,\n                        \"UserVpcWidth\": 6144,\n                        \"RuleUsed\": 17,\n                        \"RuleMax\": 20000,\n                        \"FlowMax\": 0\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息"
       }
     ],
     "DescribeGuideScanInfo": [
@@ -380,6 +444,22 @@
         "title": "DescribeUnHandleEventTabList"
       }
     ],
+    "DescribeVpcAcRule": [
+      {
+        "document": "查询内网间访问控制列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcAcRule\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"Protocol\",\n            \"Values\": [\n                \"ANY\",\n                \"TCP\",\n                \"ICMP\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0,\n    \"Order\": \"desc\",\n    \"By\": \"sequence\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"SourceContent\": \"abc\",\n                \"SourceType\": \"abc\",\n                \"DestContent\": \"abc\",\n                \"DestType\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"RuleAction\": \"abc\",\n                \"Port\": \"abc\",\n                \"Description\": \"abc\",\n                \"OrderIndex\": 0,\n                \"Uuid\": 0,\n                \"Enable\": \"abc\",\n                \"EdgeId\": \"abc\",\n                \"DetectedTimes\": 0,\n                \"EdgeName\": \"abc\",\n                \"InternalUuid\": 0,\n                \"Deleted\": 0,\n                \"FwGroupId\": \"abc\",\n                \"FwGroupName\": \"abc\",\n                \"BetaList\": [\n                    {\n                        \"TaskId\": 0,\n                        \"TaskName\": \"abc\",\n                        \"LastTime\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询内网间访问控制列表"
+      }
+    ],
+    "DescribeVpcFwGroupSwitch": [
+      {
+        "document": "VPC间防火墙开关列表",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwGroupSwitch\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"SwitchId\",\n            \"Values\": [\n                \"cfws-18def16a8b\"\n            ],\n            \"OperatorType\": 9\n        }\n    ],\n    \"Limit\": 10,\n    \"Offset\": 1,\n    \"StartTime\": \"2023-03-09 20:40:19\",\n    \"EndTime\": \"2023-03-09 20:40:19\",\n    \"Order\": \"desc\",\n    \"By\": \"SwitchId\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8894118f-9353-4579-8294-0582de7e3495\",\n        \"SwitchList\": [\n            {\n                \"SwitchId\": \"cfwalls-1448c486f4\",\n                \"SwitchName\": \"云连网 leo 测试\",\n                \"SwitchMode\": 3,\n                \"ConnectType\": 0,\n                \"ConnectId\": \"\",\n                \"ConnectName\": \"\",\n                \"SrcInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"vpc-dw314am3\",\n                        \"InstanceName\": \"冲突sdwan\",\n                        \"InstanceCidr\": \"10.24.0.0/16\",\n                        \"Region\": \"ap-nanjing\"\n                    },\n                    {\n                        \"InstanceId\": \"vpc-rkm452h0\",\n                        \"InstanceName\": \"vpctest\",\n                        \"InstanceCidr\": \"172.21.0.0/16,10.254.4.0/24,10.253.0.0/24\",\n                        \"Region\": \"ap-beijing\"\n                    },\n                    {\n                        \"InstanceId\": \"vpc-qdiryzpe\",\n                        \"InstanceName\": \"ill-私有网络\",\n                        \"InstanceCidr\": \"192.168.0.0/16\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"DstInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"vpc-dw314am3\",\n                        \"InstanceName\": \"冲突sdwan\",\n                        \"InstanceCidr\": \"10.24.0.0/16\",\n                        \"Region\": \"ap-nanjing\"\n                    },\n                    {\n                        \"InstanceId\": \"vpc-rkm452h0\",\n                        \"InstanceName\": \"vpctest\",\n                        \"InstanceCidr\": \"172.21.0.0/16,10.254.4.0/24,10.253.0.0/24\",\n                        \"Region\": \"ap-beijing\"\n                    },\n                    {\n                        \"InstanceId\": \"vpc-qdiryzpe\",\n                        \"InstanceName\": \"ill-私有网络\",\n                        \"InstanceCidr\": \"192.168.0.0/16\",\n                        \"Region\": \"ap-shanghai\"\n                    }\n                ],\n                \"FwGroupId\": \"cfwg-03508673\",\n                \"FwGroupName\": \"\",\n                \"FwInsLst\": [\n                    {\n                        \"FwInsId\": \"cfwew-63a110d9\",\n                        \"FwInsName\": \"云连网 leo 测试-南京\",\n                        \"FwInsRegion\": \"ap-nanjing\"\n                    }\n                ],\n                \"Enable\": 1,\n                \"Status\": 3,\n                \"BypassStatus\": 1,\n                \"AttachWithEdge\": 0,\n                \"CrossEdgeStatus\": 0,\n                \"IpsAction\": 0\n            }\n        ],\n        \"Total\": 23\n    }\n}",
+        "title": "VPC间防火墙开关列表"
+      }
+    ],
     "ExpandCfwVertical": [
       {
         "document": "",
@@ -394,6 +474,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAcRule\n<公共请求参数>\n\n{\n    \"Data\": [\n        {\n            \"OrderIndex\": 4,\n            \"Id\": 36064,\n            \"SourceIp\": \"0.0.0.0/0\",\n            \"TargetIp\": \"0.0.0.0/0\",\n            \"Protocol\": \"TCP\",\n            \"Port\": \"-1/-1\",\n            \"Strategy\": \"0\",\n            \"Detail\": \"333\",\n            \"IsRegion\": 0,\n            \"Country\": 0,\n            \"City\": 0,\n            \"CloudCode\": \"\",\n            \"SourceType\": 1,\n            \"TargetType\": 1,\n            \"Direction\": 1,\n            \"CityName\": \"\",\n            \"CountryName\": \"\"\n        }\n    ],\n    \"EdgeId\": \"\",\n    \"Enable\": 1,\n    \"Area\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Info\": \"\",\n        \"RequestId\": \"5cdfff8d-bd3b-4411-91be-2117d4205f0f\"\n    }\n}",
         "title": "修改规则"
+      }
+    ],
+    "ModifyAclRule": [
+      {
+        "document": "修改互联网边界访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAclRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"SourceContent\": \"abc\",\n            \"SourceType\": \"abc\",\n            \"TargetContent\": \"abc\",\n            \"TargetType\": \"abc\",\n            \"Protocol\": \"abc\",\n            \"RuleAction\": \"abc\",\n            \"Port\": \"abc\",\n            \"Direction\": 1,\n            \"OrderIndex\": 0,\n            \"Uuid\": 0,\n            \"Enable\": \"abc\",\n            \"Description\": \"abc\",\n            \"Scope\": \"abc\",\n            \"RuleSource\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改互联网边界访问控制规则"
       }
     ],
     "ModifyAllPublicIPSwitchStatus": [
@@ -436,6 +524,14 @@
         "title": "入侵防御-封禁列表/放通列表-增删改接口"
       }
     ],
+    "ModifyBlockIgnoreRule": [
+      {
+        "document": "空值返回",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyBlockIgnoreRule\n<公共请求参数>\n\n{\n    \"Rule\": {\n        \"IP\": \"abc\",\n        \"Domain\": \"abc\",\n        \"Direction\": 0,\n        \"EndTime\": \"abc\",\n        \"Comment\": \"abc\",\n        \"StartTime\": \"abc\"\n    },\n    \"RuleType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "空值返回"
+      }
+    ],
     "ModifyBlockTop": [
       {
         "document": "",
@@ -452,6 +548,14 @@
         "title": "启用停用VPC间规则或Nat边界规则"
       }
     ],
+    "ModifyEdgeIpSwitch": [
+      {
+        "document": "修改边界防火墙开关(旁路、串行)",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEdgeIpSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 1,\n    \"EdgeIpSwitchLst\": [\n        {\n            \"PublicIp\": \"1.1.1.1\",\n            \"SubnetId\": \"subnet-11111111\",\n            \"EndpointIp\": \"\",\n            \"SwitchMode\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"11112222\"\n    }\n}",
+        "title": "修改边界防火墙开关(旁路、串行)"
+      }
+    ],
     "ModifyEnterpriseSecurityDispatchStatus": [
       {
         "document": "修改企业安全组下发状态",
@@ -466,6 +570,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnterpriseSecurityGroupRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": 1,\n    \"Data\": {\n        \"OrderIndex\": \"xx\",\n        \"Protocol\": \"xx\",\n        \"SourceType\": \"xx\",\n        \"SourceContent\": \"xx\",\n        \"DestType\": \"xx\",\n        \"ServiceTemplateId\": \"xx\",\n        \"DestContent\": \"xx\",\n        \"RuleAction\": \"xx\",\n        \"Port\": \"xx\",\n        \"Description\": \"xx\"\n    },\n    \"ModifyType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"\",\n        \"Status\": 0,\n        \"NewRuleUuid\": 35641\n    }\n}",
         "title": "编辑新企业安全组规则"
+      }
+    ],
+    "ModifyFwGroupSwitch": [
+      {
+        "document": "修改防火墙组开关状态",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyFwGroupSwitch\n<公共请求参数>\n\n{\n    \"Enable\": 0,\n    \"SwitchList\": [\n        {\n            \"SwitchMode\": 1,\n            \"SwitchId\": \"cfws-xxxaaacs\"\n        }\n    ],\n    \"AllSwitch\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0752de63-570c-4c2e-bbd2-78574e22a1ae\"\n    }\n}",
+        "title": "修改防火墙组开关状态"
       }
     ],
     "ModifyNatAcRule": [
@@ -568,6 +680,14 @@
         "title": "企业安全组规则快速排序"
       }
     ],
+    "ModifySequenceAclRules": [
+      {
+        "document": "互联网边界规则快速排序",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySequenceAclRules\n<公共请求参数>\n\n{\n    \"RuleChangeItems\": [\n        {\n            \"OrderIndex\": 0,\n            \"NewOrderIndex\": 0\n        }\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "互联网边界规则快速排序"
+      }
+    ],
     "ModifySequenceRules": [
       {
         "document": "",
@@ -592,12 +712,44 @@
         "title": "修改规则表状态"
       }
     ],
+    "ModifyVpcAcRule": [
+      {
+        "document": "修改内网间访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcAcRule\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"OrderIndex\": \"1\",\n            \"Description\": \"api test3\",\n            \"SourceType\": \"net\",\n            \"SourceContent\": \"0.0.0.0/0\",\n            \"DestType\": \"net\",\n            \"DestContent\": \"192.168.5.0/24\",\n            \"Enable\": \"true\",\n            \"RuleAction\": \"drop\",\n            \"Uuid\": 0,\n            \"Port\": \"-1/-1\",\n            \"Protocol\": \"ANY\",\n            \"EdgeId\": \"All\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888,\n            8889\n        ],\n        \"RequestId\": \"9a86c4e3-b926-4244-919b-aba9a7e82686\"\n    }\n}",
+        "title": "修改内网间访问控制规则"
+      }
+    ],
+    "ModifyVpcFwGroup": [
+      {
+        "document": "编辑VPC间防火墙(防火墙组)",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcFwGroup\n<公共请求参数>\n\n{\n    \"FwGroupId\": \"cfwg-4e14ec17\",\n    \"Name\": \"防火墙(组)第三个实例\",\n    \"VpcFwInstances\": [\n        {\n            \"FwInsId\": \"cfwew-ace94947\",\n            \"Name\": \"防火墙(组)第三个实例(生死有命)\",\n            \"VpcIds\": [\n                \"vpc-39sc6ru5\"\n            ],\n            \"FwDeploy\": {\n                \"DeployRegion\": \"ap-guangzhou\",\n                \"Width\": 1024,\n                \"CrossAZone\": 1,\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ZoneBak\": \"ap-guangzhou-2\",\n                \"CdcId\": \"\"\n            }\n        }\n    ],\n    \"FwCidrInfo\": {\n        \"FwCidrType\": \"Custom\",\n        \"FwCidrLst\": [\n            {\n                \"VpcId\": \"vpc-39sc6ru5\",\n                \"FwCidr\": \"192.168.1.0/24\"\n            }\n        ],\n        \"ComFwCidr\": \"\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"570c7dee-1fb5-450e-b5c1-178ac7fe93e8\"\n    }\n}",
+        "title": "编辑VPC间防火墙(防火墙组)"
+      }
+    ],
+    "ModifyVpcFwSequenceRules": [
+      {
+        "document": "vpc间规则快速排序示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcFwSequenceRules\n<公共请求参数>\n\n{\n    \"RuleChangeItems\": [\n        {\n            \"OrderIndex\": 100,\n            \"NewOrderIndex\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "vpc间规则快速排序"
+      }
+    ],
     "RemoveAcRule": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAcRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": 8888\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": 8888,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\"\n    }\n}",
         "title": "删除互联网边界规则"
+      }
+    ],
+    "RemoveAclRule": [
+      {
+        "document": "删除互联网边界访问控制规则",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveAclRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": [\n        0\n    ],\n    \"Direction\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除互联网边界访问控制规则"
       }
     ],
     "RemoveEnterpriseSecurityGroupRule": [
@@ -614,6 +766,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveNatAcRule\n<公共请求参数>\n\n{\n    \"RuleUuid\": [\n        0\n    ],\n    \"Direction\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RuleUuid\": [\n            0\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "删除NAT访问控制规则"
+      }
+    ],
+    "RemoveVpcAcRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RemoveVpcAcRule\n<公共请求参数>\n\n{\n    \"RuleUuids\": [\n        8888,\n        8889\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleUuids\": [\n            8888,\n            8889\n        ],\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "删除VPC间规则"
       }
     ],
     "SetNatFwDnatRule": [

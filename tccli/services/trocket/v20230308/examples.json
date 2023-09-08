@@ -1,5 +1,29 @@
 {
   "actions": {
+    "CreateInstance": [
+      {
+        "document": "创建实例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstance\n<公共请求参数>\n\n{\n    \"InstanceType\": \"BASIC\",\n    \"Name\": \"testbuy3\",\n    \"SkuCode\": \"basic_2k\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"InstanceId\": \"rmq-odrvrqwr\",\n        \"RequestId\": \"32759095-0372-4ec0-ae3a-e5a2759fd0ff\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ],
+    "DeleteInstance": [
+      {
+        "document": "删除实例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-xxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除实例"
+      }
+    ],
+    "DescribeInstance": [
+      {
+        "document": "查询实例",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceType\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"InstanceName\": \"abc\",\n        \"TopicNum\": 0,\n        \"TopicNumLimit\": 0,\n        \"GroupNum\": 0,\n        \"GroupNumLimit\": 0,\n        \"MessageRetention\": 0,\n        \"RetentionUpperLimit\": 0,\n        \"RetentionLowerLimit\": 0,\n        \"TpsLimit\": 0,\n        \"ScaledTpsLimit\": 0,\n        \"MaxMessageDelay\": 0,\n        \"CreatedTime\": 0,\n        \"SendReceiveRatio\": 0,\n        \"TagList\": [\n            {\n                \"TagKey\": \"abc\",\n                \"TagValue\": \"abc\"\n            }\n        ],\n        \"EndpointList\": [\n            {\n                \"Type\": \"abc\",\n                \"Status\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"EndpointUrl\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Bandwidth\": 0,\n                \"IpRules\": [\n                    {\n                        \"Ip\": \"abc\",\n                        \"Allow\": true,\n                        \"Remark\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"TopicQueueNumUpperLimit\": 0,\n        \"TopicQueueNumLowerLimit\": 0,\n        \"Remark\": \"abc\",\n        \"InstanceStatus\": \"abc\",\n        \"SkuCode\": \"abc\",\n        \"PayMode\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询实例"
+      }
+    ],
     "DescribeInstanceList": [
       {
         "document": "查询实例列表",
@@ -14,6 +38,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTopicList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"QueueNum\": 16,\n                \"Remark\": \"remoark\",\n                \"Topic\": \"test\",\n                \"TopicType\": \"NORMAL\"\n            }\n        ],\n        \"RequestId\": \"927cbd2c-be83-410e-a83f-24dcea1d88d9\",\n        \"TotalCount\": 7\n    }\n}",
         "title": "查询主题列表"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "修改实例配置",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Remark\": \"tests\",\n    \"MessageRetention\": 25\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"becc23c2-b5e1-4df4-9df1-22ba8e5b20c3\"\n    }\n}",
+        "title": "修改实例配置"
       }
     ]
   },

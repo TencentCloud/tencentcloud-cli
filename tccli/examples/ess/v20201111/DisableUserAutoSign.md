@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ess DisableUserAutoSign --cli-unfold-argument  \
-    --Operator.UserId abc \
+    --Operator.UserId yDRCLUUgygq2xu********Ewg0vjoimj \
     --SceneKey E_PRESCRIPTION_AUTO_SIGN \
-    --UserInfo.Name 小明 \
-    --UserInfo.IdCardNumber 610000000000000000 \
-    --UserInfo.IdCardType ID_CARD
+    --UserInfo.Name 典子谦 \
+    --UserInfo.IdCardType ID_CARD \
+    --UserInfo.IdCardNumber 620000198802020000
 ```
 
 Output: 

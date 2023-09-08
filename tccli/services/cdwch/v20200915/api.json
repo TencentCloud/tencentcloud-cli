@@ -49,6 +49,13 @@
       "output": "DescribeBackUpScheduleResponse",
       "status": "online"
     },
+    "DescribeBackUpTables": {
+      "document": "获取可备份表信息",
+      "input": "DescribeBackUpTablesRequest",
+      "name": "获取可备份表信息",
+      "output": "DescribeBackUpTablesResponse",
+      "status": "online"
+    },
     "DescribeCkSqlApis": {
       "document": "查询集群用户、集群表，数据库等相关信息",
       "input": "DescribeCkSqlApisRequest",
@@ -1198,6 +1205,43 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpTablesRequest": {
+      "document": "DescribeBackUpTables请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "\"cdwch-xxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackUpTablesResponse": {
+      "document": "DescribeBackUpTables返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可备份表列表",
+          "example": "无",
+          "member": "BackupTableContent",
+          "name": "AvailableTables",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

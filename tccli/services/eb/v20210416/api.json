@@ -98,6 +98,13 @@
       "output": "GetEventBusResponse",
       "status": "online"
     },
+    "GetPlatformEventTemplate": {
+      "document": "获取平台产品事件模板",
+      "input": "GetPlatformEventTemplateRequest",
+      "name": "获取平台产品事件模板",
+      "output": "GetPlatformEventTemplateResponse",
+      "status": "online"
+    },
     "GetRule": {
       "document": "获取事件规则详情",
       "input": "GetRuleRequest",
@@ -124,6 +131,27 @@
       "input": "ListEventBusesRequest",
       "name": "获取事件集列表",
       "output": "ListEventBusesResponse",
+      "status": "online"
+    },
+    "ListPlatformEventNames": {
+      "document": "获取平台产品事件名称",
+      "input": "ListPlatformEventNamesRequest",
+      "name": "获取平台产品事件名称",
+      "output": "ListPlatformEventNamesResponse",
+      "status": "online"
+    },
+    "ListPlatformEventPatterns": {
+      "document": "获取平台产品事件匹配规则",
+      "input": "ListPlatformEventPatternsRequest",
+      "name": "获取平台产品事件匹配规则",
+      "output": "ListPlatformEventPatternsResponse",
+      "status": "online"
+    },
+    "ListPlatformProducts": {
+      "document": "获取平台产品列表",
+      "input": "ListPlatformProductsRequest",
+      "name": "获取平台产品列表",
+      "output": "ListPlatformProductsResponse",
       "status": "online"
     },
     "ListRules": {
@@ -1655,6 +1683,43 @@
       ],
       "type": "object"
     },
+    "GetPlatformEventTemplateRequest": {
+      "document": "GetPlatformEventTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品事件类型",
+          "example": "eb_platform_test:TEST:AL",
+          "member": "string",
+          "name": "EventType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetPlatformEventTemplateResponse": {
+      "document": "GetPlatformEventTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品事件模板",
+          "example": "无",
+          "member": "string",
+          "name": "EventTemplate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRuleRequest": {
       "document": "GetRule请求参数结构体",
       "members": [
@@ -1991,6 +2056,107 @@
       ],
       "type": "object"
     },
+    "ListPlatformEventNamesRequest": {
+      "document": "ListPlatformEventNames请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品类型",
+          "example": "eb_platform_test",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPlatformEventNamesResponse": {
+      "document": "ListPlatformEventNames返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品列表",
+          "example": "无",
+          "member": "PlatformEventDetail",
+          "name": "EventNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPlatformEventPatternsRequest": {
+      "document": "ListPlatformEventPatterns请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品类型",
+          "example": "eb_platform_test",
+          "member": "string",
+          "name": "ProductType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPlatformEventPatternsResponse": {
+      "document": "ListPlatformEventPatterns返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品事件匹配规则",
+          "example": "无",
+          "member": "PlatformEventSummary",
+          "name": "EventPatterns",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListPlatformProductsRequest": {
+      "document": "ListPlatformProducts请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ListPlatformProductsResponse": {
+      "document": "ListPlatformProducts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品列表",
+          "example": "无",
+          "member": "PlatformProduct",
+          "name": "PlatformProducts",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListRulesRequest": {
       "document": "ListRules请求参数结构体",
       "members": [
@@ -2293,6 +2459,84 @@
         }
       ],
       "usage": "both"
+    },
+    "PlatformEventDetail": {
+      "document": "平台事件名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PlatformEventSummary": {
+      "document": "平台事件匹配规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台事件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平台事件匹配规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EventPattern",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PlatformProduct": {
+      "document": "平台产品基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平台产品名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台产品类型",
+          "example": "无",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PublishEventRequest": {
       "document": "PublishEvent请求参数结构体",

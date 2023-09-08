@@ -56,6 +56,14 @@
         "title": "示例"
       }
     ],
+    "DescribeBackUpTables": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwch.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackUpTables\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AvailableTables\": [\n            {\n                \"Table\": \"xx\",\n                \"VCluster\": \"xx\",\n                \"TotalBytes\": 0,\n                \"Database\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "DescribeCkSqlApis": [
       {
         "document": "",

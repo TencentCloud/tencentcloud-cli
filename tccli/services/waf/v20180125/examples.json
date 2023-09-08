@@ -72,22 +72,6 @@
         "title": "添加SAAS-WAF防护域名"
       }
     ],
-    "AddSpartaProtectionAuto": [
-      {
-        "document": "一键接入",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtectionAuto\n<公共请求参数>\n\n{\n    \"Domain\": \"lucasAutoSaaswaf.qcloudwaf.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"04c0c837-0192-457b-8759-41525ac1f82c\"\n    }\n}",
-        "title": "自动添加saaswaf"
-      }
-    ],
-    "AddSpartaProtectionsAuto": [
-      {
-        "document": "用户批量添加域名的场景",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpartaProtectionsAuto\n<公共请求参数>\n\n{\n    \"Domain\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FailedInfos\": [\n            {\n                \"Domain\": \"abc\",\n                \"Message\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "批量添加域名"
-      }
-    ],
     "CreateAccessExport": [
       {
         "document": "",
@@ -382,6 +366,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDetailsSaas\n<公共请求参数>\n\n{\n    \"Domain\": \"lucasssli3.qcloud.com\",\n    \"DomainId\": \"20200728142847163546341\",\n    \"InstanceId\": \"waf_000000002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsPartInfo\": {\n            \"CertType\": 0,\n            \"Cls\": 0,\n            \"Cname\": \"\",\n            \"SniType\": 0,\n            \"SniHost\": \"\",\n            \"ProxySendTimeout\": 0,\n            \"ProxyReadTimeout\": 0,\n            \"Ciphers\": [\n                0\n            ],\n            \"HttpsRewrite\": 0,\n            \"HttpsUpstreamPort\": \"\",\n            \"IsKeepAlive\": 0,\n            \"IsCdn\": 0,\n            \"IsGray\": 0,\n            \"IsHttp2\": 0,\n            \"IsWebsocket\": 0,\n            \"LoadBalance\": 0,\n            \"Mode\": 0,\n            \"PrivateKey\": \"\",\n            \"SSLId\": \"\",\n            \"UpstreamDomain\": \"\",\n            \"UpstreamScheme\": \"\",\n            \"UpstreamType\": 0,\n            \"TLSVersion\": 0,\n            \"CipherTemplate\": 0,\n            \"SrcList\": [],\n            \"Ports\": [],\n            \"ActiveCheck\": 1\n        }\n    }\n}",
         "title": "查询单个saas域名详情"
+      }
+    ],
+    "DescribeDomainVerifyResult": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeDomainVerifyResult\n&Domain=test1.qcloud.com\n&InstanceID=aaaaa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"xx\",\n        \"VerifyCode\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取域名可添加校验结果"
       }
     ],
     "DescribeDomainWhiteRules": [

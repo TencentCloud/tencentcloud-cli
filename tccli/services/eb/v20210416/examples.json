@@ -112,6 +112,14 @@
         "title": "获取事件集"
       }
     ],
+    "GetPlatformEventTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetPlatformEventTemplate\n<公共请求参数>\n\n{\n    \"EventType\": \"eb_platform_test:TEST:ALL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"EventTemplate\": \"{\\n\\t\\t\\t\\t\\t\\\"specversion\\\": \\\"1.0\\\",\\n\\t\\t\\t\\t\\t\\\"id\\\": \\\"752e37c8-3528-47f1-8311-98c01e2e89c4\\\",\\n\\t\\t\\t\\t\\t\\\"source\\\": \\\"platform.cloud.tencent\\\",\\n\\t\\t\\t\\t\\t\\\"type\\\": \\\"eb_platform_test:TEST:ALL\\\",\\n\\t\\t\\t\\t\\t\\\"subject\\\": \\\"ins-xxxx\\\",\\n\\t\\t\\t\\t\\t\\\"time\\\": 1693986756,\\n\\t\\t\\t\\t\\t\\\"region\\\": \\\"ap-guangzhou\\\",\\n\\t\\t\\t\\t\\t\\\"datacontenttype\\\": \\\"application/json;charset=utf-8\\\",\\n\\t\\t\\t\\t\\t\\\"tags\\\": {\\n\\t\\t\\t\\t\\t  \\\"key1\\\": \\\"value1\\\",\\n\\t\\t\\t\\t\\t  \\\"key2\\\": \\\"value2\\\"\\n\\t\\t\\t\\t\\t},\\n\\t\\t\\t\\t\\t\\\"data\\\": {\\n\\t\\t\\t\\t\\t  \\\"appId\\\": 1253970226,\\n\\t\\t\\t\\t\\t  \\\"requestID\\\": \\\"xxxxxxxx\\\",\\n\\t\\t\\t\\t\\t  \\\"errorCode\\\": \\\"0\\\",\\n\\t\\t\\t\\t\\t  \\\"errorMessage\\\": \\\"permission verify\\\",\\n\\t\\t\\t\\t\\t  \\\"actionType\\\": \\\"Write\\\"\\n\\t\\t\\t\\t\\t}\\n\\t\\t\\t\\t  }\",\n        \"RequestId\": \"d8078f15-962d-4407-a4dc-dec4676a9c03\"\n    }\n}",
+        "title": "获取平台产品事件模板"
+      }
+    ],
     "GetRule": [
       {
         "document": "获取规则详情",
@@ -148,6 +156,30 @@
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEventBuses\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"ModTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"xx\",\n                \"AddTime\": \"2020-09-22T00:00:00+00:00\",\n                \"EventBusName\": \"xx\",\n                \"EventBusId\": \"xx\",\n                \"Type\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "获取事件集列表"
+      }
+    ],
+    "ListPlatformEventNames": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPlatformEventNames\n<公共请求参数>\n\n{\n    \"ProductType\": \"eb_platform_test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventNames\": [\n            {\n                \"EventName\": \"TEST\",\n                \"EventType\": \"eb_platform_test:TEST:ALL\"\n            }\n        ]\n    }\n}",
+        "title": "查询平台事件中文名称"
+      }
+    ],
+    "ListPlatformEventPatterns": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPlatformEventPatterns\n<公共请求参数>\n\n{\n    \"ProductType\": \"eb_platform_test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"EventPatterns\": [\n            {\n                \"EventName\": \"TEST\",\n                \"EventPattern\": \"{\\n\\t\\t\\t\\t\\t\\\"source\\\":\\\"platform.cloud.tencent\\\",\\n\\t\\t\\t\\t\\t\\\"type\\\":\\\"eb_platform_test:TEST:ALL\\\"\\n\\t\\t\\t\\t  }\"\n            }\n        ]\n    }\n}",
+        "title": "查询平台产品事件匹配规则"
+      }
+    ],
+    "ListPlatformProducts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListPlatformProducts\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffd4aae2-c29e-40a8-b18c-037a17ed810c\",\n        \"PlatformProducts\": [\n            {\n                \"ProductName\": \"告警平台事件测试\",\n                \"ProductType\": \"alarm\"\n            }\n        ]\n    }\n}",
+        "title": "获取平台产品列表"
       }
     ],
     "ListRules": [
