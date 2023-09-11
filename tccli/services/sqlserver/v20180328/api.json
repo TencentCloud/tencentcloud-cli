@@ -308,6 +308,13 @@
       "output": "DescribeFlowStatusResponse",
       "status": "online"
     },
+    "DescribeHASwitchLog": {
+      "document": "本接口(DescribeHASwitchLog)用于手动主备切换。",
+      "input": "DescribeHASwitchLogRequest",
+      "name": "查询主备切换日志",
+      "output": "DescribeHASwitchLogResponse",
+      "status": "online"
+    },
     "DescribeIncrementalMigration": {
       "document": "本接口（DescribeIncrementalMigration）用于查询增量备份导入任务。",
       "input": "DescribeIncrementalMigrationRequest",
@@ -768,6 +775,13 @@
       "input": "StopMigrationRequest",
       "name": "中止迁移任务",
       "output": "StopMigrationResponse",
+      "status": "online"
+    },
+    "SwitchCloudInstanceHA": {
+      "document": "本接口(SwitchCloudInstanceHA)用于手动主备切换。",
+      "input": "SwitchCloudInstanceHARequest",
+      "name": "实例手动主备切换",
+      "output": "SwitchCloudInstanceHAResponse",
       "status": "online"
     },
     "TerminateDBInstance": {
@@ -6695,6 +6709,98 @@
           "name": "Status",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHASwitchLogRequest": {
+      "document": "DescribeHASwitchLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-8ua7ah",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间(yyyy-MM-dd HH:mm:ss)",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间(yyyy-MM-dd HH:mm:ss)",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换模式 0-系统自动切换，1-手动切换，不填默认查全部。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SwitchType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页，页大小",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页,页数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHASwitchLogResponse": {
+      "document": "DescribeHASwitchLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志总数量",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主备切换日志",
+          "example": "[]",
+          "member": "SwitchLog",
+          "name": "SwitchLog",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -13222,6 +13328,108 @@
         }
       ],
       "type": "object"
+    },
+    "SwitchCloudInstanceHARequest": {
+      "document": "SwitchCloudInstanceHA请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-8ua7ah",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换执行方式，0-立刻执行，1-时间窗内执行，默认取值为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "WaitSwitch",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchCloudInstanceHAResponse": {
+      "document": "SwitchCloudInstanceHA返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务流程ID",
+          "example": "102022",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchLog": {
+      "document": "主备切换日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "切换事件ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "f39bc24b76d1c5d3ce60f0dcb9e0bd79",
+          "member": "string",
+          "name": "EventId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "切换模式 0-系统自动切换，1-手动切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "SwitchType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "切换开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "切换结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "机器故障导致自动切换\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AUTO",
+          "member": "string",
+          "name": "Reason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TDEConfigAttribute": {
       "document": "TDE透明数据加密配置",

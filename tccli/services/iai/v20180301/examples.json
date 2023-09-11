@@ -46,7 +46,7 @@
         "title": "增加人脸接口"
       },
       {
-        "document": "一个人最多拥有5张脸",
+        "document": "已有人员最多再新增4张人脸图片",
         "input": "https://iai.tencentcloudapi.com/?Action=CreateFace\n&PersonId=1001\n&Urls.0=http://test.image.myqcloud.com/testB.jpg\n&Urls.1=http://test.image.myqcloud.com/testC.jpg\n&Urls.2=http://test.image.myqcloud.com/testD.jpg\n&Urls.3=http://test.image.myqcloud.com/testE.jpg\n&Urls.4=http://test.image.myqcloud.com/testF.jpg\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue.UploadFaceNumExceed\",\n            \"Message\": \"一次最多上传四张人脸。\"\n        },\n        \"RequestId\": \"44506f79-2191-49bc-997b-748a566d781c\"\n    }\n}",
         "title": "错误示例"

@@ -670,10 +670,10 @@
     ],
     "DescribeServiceAccounts": [
       {
-        "document": "查询自定义账号",
+        "document": "查询服务级账号",
         "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceAccounts\n<公共请求参数>\n\n{\n    \"RegistryId\": \"abc\",\n    \"All\": true,\n    \"EmbedPermission\": true,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"ServiceAccounts\": [\n            {\n                \"Name\": \"abc\",\n                \"Description\": \"abc\",\n                \"Disable\": true,\n                \"ExpiresAt\": 0,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"UpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Permissions\": [\n                    {\n                        \"Resource\": \"abc\",\n                        \"Actions\": [\n                            \"abc\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "查询自定义账号"
+        "title": "查询服务级账号"
       }
     ],
     "DescribeTagRetentionExecution": [

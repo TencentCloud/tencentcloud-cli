@@ -212,6 +212,22 @@
         "title": "查询互联网边界访问控制列表"
       }
     ],
+    "DescribeAddressTemplateList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAddressTemplateList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"By\": \"abc\",\n    \"Order\": \"abc\",\n    \"SearchValue\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Data\": [\n            {\n                \"Uuid\": \"abc\",\n                \"Name\": \"abc\",\n                \"Detail\": \"abc\",\n                \"IpString\": \"abc\",\n                \"InsertTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"Type\": 0,\n                \"RulesNum\": 0\n            }\n        ],\n        \"NameList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询地址模板列表"
+      }
+    ],
+    "DescribeAssetSync": [
+      {
+        "document": "资产同步状态查询",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSync\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"31aacf70-c794-4caa-9d22-4e0419b69669\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 2\n    }\n}",
+        "title": "资产同步状态查询"
+      }
+    ],
     "DescribeAssociatedInstanceList": [
       {
         "document": "",
@@ -292,6 +308,14 @@
         "title": "获取租户所有VPC防火墙(组)及VPC防火墙实例卡片信息"
       }
     ],
+    "DescribeFwSyncStatus": [
+      {
+        "document": "获取防火墙同步状态，一般在执行同步操作后查询",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwSyncStatus\n<公共请求参数>\n\n{\n    \"SyncType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SyncStatus\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取防火墙同步状态"
+      }
+    ],
     "DescribeGuideScanInfo": [
       {
         "document": "",
@@ -362,6 +386,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwVpcDnsLst\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"VpcDnsSwitchLst\": [\n            {\n                \"SwitchStatus\": 0,\n                \"NatInsId\": \"cfwnat-f3250045\",\n                \"DNSEip\": \"121.5.27.250\",\n                \"VpcIpv4Cidr\": \"10.115.0.0/16\",\n                \"FwMode\": 1,\n                \"VpcName\": \"wy\",\n                \"VpcId\": \"vpc-ilbrv877\"\n            }\n        ],\n        \"Total\": 1,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"50e39f16-3b3a-4c66-b76e-1705449ba828\"\n    }\n}",
         "title": "ShowNatFwVpcDnsLst 展示租户NAT防火墙实例的vpc dns 开关信息"
+      }
+    ],
+    "DescribeNatSwitchList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatSwitchList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchValue\": \"abc\",\n    \"Status\": 0,\n    \"VpcId\": \"abc\",\n    \"NatId\": \"abc\",\n    \"NatInsId\": \"abc\",\n    \"Area\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Data\": [\n            {\n                \"Id\": 1,\n                \"SubnetId\": \"abc\",\n                \"SubnetName\": \"abc\",\n                \"SubnetCidr\": \"abc\",\n                \"RouteId\": \"abc\",\n                \"RouteName\": \"abc\",\n                \"CvmNum\": 1,\n                \"VpcId\": \"abc\",\n                \"VpcName\": \"abc\",\n                \"Enable\": 1,\n                \"Status\": 1,\n                \"NatId\": \"abc\",\n                \"NatName\": \"abc\",\n                \"NatInsId\": \"abc\",\n                \"NatInsName\": \"abc\",\n                \"Region\": \"abc\",\n                \"Abnormal\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询NAT边界防火墙开关列表"
       }
     ],
     "DescribeResourceGroup": [
@@ -484,6 +516,14 @@
         "title": "修改互联网边界访问控制规则"
       }
     ],
+    "ModifyAddressTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAddressTemplate\n<公共请求参数>\n\n{\n    \"Uuid\": \"abc\",\n    \"Name\": \"abc\",\n    \"Detail\": \"abc\",\n    \"IpString\": \"abc\",\n    \"Type\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Uuid\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改地址模板"
+      }
+    ],
     "ModifyAllPublicIPSwitchStatus": [
       {
         "document": "",
@@ -514,6 +554,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetScan\n<公共请求参数>\n\n{\n    \"ScanRange\": 1,\n    \"ScanDeep\": \"heavy\",\n    \"RangeType\": 2,\n    \"ScanPeriod\": \"每周-星期四/12:51:00\",\n    \"ScanFilterIp\": [\n        \"11\",\n        \"22\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "资产扫描"
+      }
+    ],
+    "ModifyAssetSync": [
+      {
+        "document": "资产同步返回示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAssetSync\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bff8c36a-9bd4-4428-b05f-a5dc7a4a8347\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Status\": 0\n    }\n}",
+        "title": "资产同步返回示例"
       }
     ],
     "ModifyBlockIgnoreList": [
@@ -622,6 +670,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatFwVpcDnsSwitch\n<公共请求参数>\n\n{\n    \"NatFwInsId\": \"cfwnat-d1580b7b\",\n    \"DnsVpcSwitchLst\": [\n        {\n            \"VpcId\": \"vpc-ilbrv877\",\n            \"Status\": 0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ReturnMsg\": \"success\",\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "SetNatFwVpcDnsSwitch 防火墙VPC DNS 开关切换"
+      }
+    ],
+    "ModifyNatInstance": [
+      {
+        "document": "请求示例",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNatInstance\n<公共请求参数>\n\n{\n    \"InstanceName\": \"[autotest]【勿动】自动化测试-123\",\n    \"NatInstanceId\": \"cfwnat-f0f1c7c0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NatInstanceId\": \"cfwnat-f0f1c7c0\",\n        \"RequestId\": \"2cc7814e-fb74-479b-8995-41eb3b712930\",\n        \"Status\": 0\n    }\n}",
+        "title": "请求示例"
       }
     ],
     "ModifyNatSequenceRules": [
@@ -804,6 +860,14 @@
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopSecurityGroupRuleDispatch\n<公共请求参数>\n\n{\n    \"StopType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "修改防火墙开关"
+      }
+    ],
+    "SyncFwOperate": [
+      {
+        "document": "同步防火墙操作，包括同步防火墙路由（若vpc，专线网关等增加了Cidr，需要手动同步一下路由使之在防火墙上生效）等",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncFwOperate\n<公共请求参数>\n\n{\n    \"SyncType\": \"abc\",\n    \"FwType\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "同步防火墙操作"
       }
     ]
   },

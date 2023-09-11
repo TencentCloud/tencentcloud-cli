@@ -376,6 +376,14 @@
         "title": "查询流程状态"
       }
     ],
+    "DescribeHASwitchLog": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCloudInstanceHA\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-98aiauan\",\n    \"SwitchType\": 1,\n    \"StartTime\": \"2023-01-01 00:00:00\",\n    \"EndTime\": \"2023-01-01 00:01:00\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"863b2797-858b-49f3-88e9-50159e564cbc\",\n        \"TotalCount\": 1,\n        \"SwitchLog\": [\n            {\n                \"EventId\": \"f39bc24b76d1c5d3ce60f0dcb9e0bd79\",\n                \"SwitchType\": 1,\n                \"StartTime\": \"2023-01-01 00:00:00\",\n                \"EndTime\": \"2023-01-01 00:01:00\",\n                \"Reason\": \"AUTO\"\n            }\n        ]\n    }\n}",
+        "title": "查询实例主备切换日志"
+      }
+    ],
     "DescribeIncrementalMigration": [
       {
         "document": "",
@@ -908,6 +916,14 @@
         "input": "https://sqlserver.tencentcloudapi.com/?Action=StopMigration\n&MigrateId=2729\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4be5990d-a4b5-49dc-b2b4-e713b6aa7ba35\",\n        \"FlowId\": 30530\n    }\n}",
         "title": "中止迁移任务"
+      }
+    ],
+    "SwitchCloudInstanceHA": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchCloudInstanceHA\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-987qhaha\",\n    \"WaitSwitch\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"863b2797-858b-49f3-88e9-50159e564cbc\",\n        \"FlowId\": 109181\n    }\n}",
+        "title": "实例手动主备切换"
       }
     ],
     "TerminateDBInstance": [
