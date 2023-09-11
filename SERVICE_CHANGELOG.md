@@ -1,90 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
-
-### 第 7 次发布
-
-发布时间：2023-09-08 01:23:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1667/81869)
-
-
-
 ## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 32 次发布
+### 第 33 次发布
 
-发布时间：2023-09-08 01:24:28
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [AddAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81880)
-* [AddVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81879)
-* [CreateVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81888)
-* [DeleteBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81889)
-* [DeleteVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81887)
-* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81878)
-* [DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1132/81874)
-* [DescribeFwGroupInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/81886)
-* [DescribeVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81877)
-* [DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81873)
-* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81876)
-* [ModifyBlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/81885)
-* [ModifyEdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81872)
-* [ModifyFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81884)
-* [ModifySequenceAclRules](http://document.tencentcloudapi.woa.com/document/product/1132/81883)
-* [ModifyVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81875)
-* [ModifyVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81882)
-* [ModifyVpcFwSequenceRules](http://document.tencentcloudapi.woa.com/document/product/1132/81881)
-* [RemoveAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81871)
-* [RemoveVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81870)
-
-修改接口：
-
-* [CreateAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81231)
-
-	* 新增出参：Uuid
-
-* [CreateBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81781)
-
-	* 新增出参：List
-
-
-新增数据结构：
-
-* [CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem)
-* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
-* [EdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpSwitch)
-* [FwDeploy](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwDeploy)
-* [FwGateway](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGateway)
-* [FwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitch)
-* [FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitchShow)
-* [NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NetInstancesInfo)
-* [VpcFwCvmInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwCvmInsInfo)
-* [VpcFwGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInfo)
-* [VpcFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstance)
-* [VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo)
-* [VpcFwInstanceShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceShow)
-* [VpcFwJoinInstanceType](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwJoinInstanceType)
-* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
-
-
-
-## 事件总线(eb) 版本：2021-04-16
-
-### 第 10 次发布
-
-发布时间：2023-09-08 01:50:50
+发布时间：2023-09-11 01:10:47
 
 本次发布包含了以下内容：
 
@@ -92,24 +12,48 @@
 
 新增接口：
 
-* [GetPlatformEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/81893)
-* [ListPlatformEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/81892)
-* [ListPlatformEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/81891)
-* [ListPlatformProducts](http://document.tencentcloudapi.woa.com/document/product/1359/81890)
+* [DescribeAddressTemplateList](http://document.tencentcloudapi.woa.com/document/product/1132/81902)
+* [DescribeAssetSync](http://document.tencentcloudapi.woa.com/document/product/1132/81901)
+* [DescribeFwSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1132/81904)
+* [DescribeNatSwitchList](http://document.tencentcloudapi.woa.com/document/product/1132/81899)
+* [ModifyAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81903)
+* [ModifyAssetSync](http://document.tencentcloudapi.woa.com/document/product/1132/81905)
+* [ModifyNatInstance](http://document.tencentcloudapi.woa.com/document/product/1132/81898)
+* [SyncFwOperate](http://document.tencentcloudapi.woa.com/document/product/1132/81900)
 
 新增数据结构：
 
-* [PlatformEventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventDetail)
-* [PlatformEventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventSummary)
-* [PlatformProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformProduct)
+* [NatSwitchListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatSwitchListData)
+* [TemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TemplateListInfo)
 
 
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
-### 第 30 次发布
+### 第 26 次发布
 
-发布时间：2023-09-08 01:55:35
+发布时间：2023-09-11 01:26:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeHASwitchLog](http://document.tencentcloudapi.woa.com/document/product/238/81907)
+* [SwitchCloudInstanceHA](http://document.tencentcloudapi.woa.com/document/product/238/81906)
+
+新增数据结构：
+
+* [SwitchLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SwitchLog)
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 27 次发布
+
+发布时间：2023-09-11 01:27:39
 
 本次发布包含了以下内容：
 
@@ -117,55 +61,10 @@
 
 修改数据结构：
 
-* [AutoSignConfig](http://document.tencentcloudapi.woa.com/document/product/1668/79360#AutoSignConfig)
+* [Registry](http://document.tencentcloudapi.woa.com/document/product/1141/41603#Registry)
 
-	* <font color="#dd0000">**修改成员**：</font>CallbackUrl
+	* 新增成员：DeletionProtection
 
-
-
-
-## 人脸融合(facefusion) 版本：2022-09-27
-
-
-
-## 人脸融合(facefusion) 版本：2018-12-01
-
-### 第 3 次发布
-
-发布时间：2023-09-08 01:57:17
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* FaceFusionLite
-
-
-
-## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
-
-### 第 2 次发布
-
-发布时间：2023-09-08 02:47:31
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)
-* [DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81896)
-* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81895)
-* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81894)
-
-新增数据结构：
-
-* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint)
-* [IpRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#IpRule)
-* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#VpcInfo)
 
 
 
@@ -12461,7 +12360,7 @@
 
 新增接口：
 
-* [[DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1667/81869)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackUpTables](http://document.tencentcloudapi.woa.com/document/product/1667/81869)
 
 ### 第 6 次发布
 
@@ -13205,6 +13104,30 @@
 
 ## 云防火墙(cfw) 版本：2019-09-04
 
+### 第 33 次发布
+
+发布时间：2023-09-11 01:10:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAddressTemplateList](http://document.tencentcloudapi.woa.com/document/product/1132/81902)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeAssetSync](http://document.tencentcloudapi.woa.com/document/product/1132/81901)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeFwSyncStatus](http://document.tencentcloudapi.woa.com/document/product/1132/81904)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeNatSwitchList](http://document.tencentcloudapi.woa.com/document/product/1132/81899)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81903)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAssetSync](http://document.tencentcloudapi.woa.com/document/product/1132/81905)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyNatInstance](http://document.tencentcloudapi.woa.com/document/product/1132/81898)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SyncFwOperate](http://document.tencentcloudapi.woa.com/document/product/1132/81900)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[NatSwitchListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatSwitchListData)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[NatSwitchListData](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NatSwitchListData))
+* [[TemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TemplateListInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[TemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TemplateListInfo))
+
 ### 第 32 次发布
 
 发布时间：2023-09-08 01:24:28
@@ -13215,26 +13138,26 @@
 
 新增接口：
 
-* [[AddAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81880)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[AddVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81879)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[CreateVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81888)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81889)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81887)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81878)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1132/81874)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFwGroupInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/81886)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81877)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81873)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81876)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyBlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/81885)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyEdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81872)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81884)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifySequenceAclRules](http://document.tencentcloudapi.woa.com/document/product/1132/81883)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81875)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81882)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyVpcFwSequenceRules](http://document.tencentcloudapi.woa.com/document/product/1132/81881)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RemoveAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81871)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RemoveVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81870)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AddAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81880)
+* [AddVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81879)
+* [CreateVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81888)
+* [DeleteBlockIgnoreRuleList](http://document.tencentcloudapi.woa.com/document/product/1132/81889)
+* [DeleteVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81887)
+* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81878)
+* [DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1132/81874)
+* [DescribeFwGroupInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/81886)
+* [DescribeVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81877)
+* [DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81873)
+* [ModifyAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81876)
+* [ModifyBlockIgnoreRule](http://document.tencentcloudapi.woa.com/document/product/1132/81885)
+* [ModifyEdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81872)
+* [ModifyFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/81884)
+* [ModifySequenceAclRules](http://document.tencentcloudapi.woa.com/document/product/1132/81883)
+* [ModifyVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81875)
+* [ModifyVpcFwGroup](http://document.tencentcloudapi.woa.com/document/product/1132/81882)
+* [ModifyVpcFwSequenceRules](http://document.tencentcloudapi.woa.com/document/product/1132/81881)
+* [RemoveAclRule](http://document.tencentcloudapi.woa.com/document/product/1132/81871)
+* [RemoveVpcAcRule](http://document.tencentcloudapi.woa.com/document/product/1132/81870)
 
 修改接口：
 
@@ -13249,21 +13172,21 @@
 
 新增数据结构：
 
-* [[CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem))
-* [[EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo))
-* [[EdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpSwitch)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[EdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpSwitch))
-* [[FwDeploy](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwDeploy)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[FwDeploy](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwDeploy))
-* [[FwGateway](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGateway)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[FwGateway](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGateway))
-* [[FwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitch)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[FwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitch))
-* [[FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitchShow)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitchShow))
-* [[NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NetInstancesInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NetInstancesInfo))
-* [[VpcFwCvmInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwCvmInsInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwCvmInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwCvmInsInfo))
-* [[VpcFwGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInfo))
-* [[VpcFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstance)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstance))
-* [[VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo))
-* [[VpcFwInstanceShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceShow)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwInstanceShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceShow))
-* [[VpcFwJoinInstanceType](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwJoinInstanceType)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcFwJoinInstanceType](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwJoinInstanceType))
-* [[VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)](http://document.tencentcloudapi.woa.com/document/product/1132/49071#[VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem))
+* [CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem)
+* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+* [EdgeIpSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpSwitch)
+* [FwDeploy](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwDeploy)
+* [FwGateway](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGateway)
+* [FwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitch)
+* [FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#FwGroupSwitchShow)
+* [NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#NetInstancesInfo)
+* [VpcFwCvmInsInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwCvmInsInfo)
+* [VpcFwGroupInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwGroupInfo)
+* [VpcFwInstance](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstance)
+* [VpcFwInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceInfo)
+* [VpcFwInstanceShow](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwInstanceShow)
+* [VpcFwJoinInstanceType](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcFwJoinInstanceType)
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
 
 ### 第 31 次发布
 
@@ -30772,16 +30695,16 @@
 
 新增接口：
 
-* [[GetPlatformEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/81893)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ListPlatformEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/81892)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ListPlatformEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/81891)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ListPlatformProducts](http://document.tencentcloudapi.woa.com/document/product/1359/81890)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetPlatformEventTemplate](http://document.tencentcloudapi.woa.com/document/product/1359/81893)
+* [ListPlatformEventNames](http://document.tencentcloudapi.woa.com/document/product/1359/81892)
+* [ListPlatformEventPatterns](http://document.tencentcloudapi.woa.com/document/product/1359/81891)
+* [ListPlatformProducts](http://document.tencentcloudapi.woa.com/document/product/1359/81890)
 
 新增数据结构：
 
-* [[PlatformEventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventDetail)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[PlatformEventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventDetail))
-* [[PlatformEventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventSummary)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[PlatformEventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventSummary))
-* [[PlatformProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformProduct)](http://document.tencentcloudapi.woa.com/document/product/1359/67704#[PlatformProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformProduct))
+* [PlatformEventDetail](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventDetail)
+* [PlatformEventSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformEventSummary)
+* [PlatformProduct](http://document.tencentcloudapi.woa.com/document/product/1359/67704#PlatformProduct)
 
 ### 第 9 次发布
 
@@ -57708,6 +57631,23 @@
 
 ## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
 
+### 第 26 次发布
+
+发布时间：2023-09-11 01:26:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeHASwitchLog](http://document.tencentcloudapi.woa.com/document/product/238/81907)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SwitchCloudInstanceHA](http://document.tencentcloudapi.woa.com/document/product/238/81906)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SwitchLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SwitchLog)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[SwitchLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SwitchLog))
+
 ### 第 25 次发布
 
 发布时间：2023-08-04 01:37:40
@@ -62324,6 +62264,21 @@
 
 
 ## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 27 次发布
+
+发布时间：2023-09-11 01:27:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Registry](http://document.tencentcloudapi.woa.com/document/product/1141/41603#Registry)
+
+	* 新增成员：DeletionProtection
+
 
 ### 第 26 次发布
 
@@ -70919,16 +70874,16 @@
 
 新增接口：
 
-* [[CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81896)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81895)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81894)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CreateInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81897)
+* [DeleteInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81896)
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81895)
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1739/81894)
 
 新增数据结构：
 
-* [[Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint))
-* [[IpRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#IpRule)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[IpRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#IpRule))
-* [[VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#VpcInfo)](http://document.tencentcloudapi.woa.com/document/product/1739/81437#[VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#VpcInfo))
+* [Endpoint](http://document.tencentcloudapi.woa.com/document/product/1739/81437#Endpoint)
+* [IpRule](http://document.tencentcloudapi.woa.com/document/product/1739/81437#IpRule)
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/1739/81437#VpcInfo)
 
 ### 第 1 次发布
 

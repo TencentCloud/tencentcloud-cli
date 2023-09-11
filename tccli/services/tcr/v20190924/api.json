@@ -134,7 +134,7 @@
       "status": "online"
     },
     "CreateServiceAccount": {
-      "document": "创建自定义账户",
+      "document": "创建服务级账户",
       "input": "CreateServiceAccountRequest",
       "name": "创建服务级账号",
       "output": "CreateServiceAccountResponse",
@@ -2328,6 +2328,7 @@
           "example": "tcr$robot",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2337,6 +2338,7 @@
           "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2346,6 +2348,7 @@
           "example": "1676897989",
           "member": "int64",
           "name": "ExpiresAt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2355,6 +2358,7 @@
           "example": "2023-02-20T17:30:00+8:00",
           "member": "datetime_iso",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5837,7 +5841,7 @@
         },
         {
           "disabled": false,
-          "document": "是否填充策略",
+          "document": "是否填充权限信息",
           "example": "false",
           "member": "bool",
           "name": "EmbedPermission",
@@ -5883,15 +5887,17 @@
           "example": "无",
           "member": "ServiceAccount",
           "name": "ServiceAccounts",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自定义账户数量",
+          "document": "服务级账户数量",
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8329,16 +8335,18 @@
           "example": "library",
           "member": "string",
           "name": "Resource",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "动作，目前仅支持：tcr:PushRepository、tcr:PullRepository\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动作，目前仅支持：tcr:PushRepository、tcr:PullRepository、tcr:CreateRepository、tcr:CreateHelmChart、tcr:DescribeHelmCharts\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"tcr:PushRepository\", \"tcr:PullRepository\"]",
           "member": "string",
           "name": "Actions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -8438,7 +8446,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RegistryId",
           "required": true,
@@ -8448,7 +8456,7 @@
         {
           "disabled": false,
           "document": "实例名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RegistryName",
           "required": true,
@@ -8458,7 +8466,7 @@
         {
           "disabled": false,
           "document": "实例规格",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RegistryType",
           "required": true,
@@ -8468,7 +8476,7 @@
         {
           "disabled": false,
           "document": "实例状态",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -8478,7 +8486,7 @@
         {
           "disabled": false,
           "document": "实例的公共访问地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PublicDomain",
           "required": true,
@@ -8488,7 +8496,7 @@
         {
           "disabled": false,
           "document": "实例创建时间",
-          "example": "",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreatedAt",
           "required": true,
@@ -8498,7 +8506,7 @@
         {
           "disabled": false,
           "document": "地域名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RegionName",
           "required": true,
@@ -8508,7 +8516,7 @@
         {
           "disabled": false,
           "document": "地域Id",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "RegionId",
           "required": true,
@@ -8518,7 +8526,7 @@
         {
           "disabled": false,
           "document": "是否支持匿名",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "EnableAnonymous",
           "required": true,
@@ -8528,7 +8536,7 @@
         {
           "disabled": false,
           "document": "Token有效时间",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "TokenValidTime",
           "required": true,
@@ -8538,7 +8546,7 @@
         {
           "disabled": false,
           "document": "实例内部访问地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InternalEndpoint",
           "required": true,
@@ -8548,7 +8556,7 @@
         {
           "disabled": false,
           "document": "实例云标签\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": true,
@@ -8558,7 +8566,7 @@
         {
           "disabled": false,
           "document": "实例过期时间（预付费）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ExpiredAt",
           "required": true,
@@ -8568,7 +8576,7 @@
         {
           "disabled": false,
           "document": "实例付费类型，0表示后付费，1表示预付费\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "PayMod",
           "required": true,
@@ -8578,12 +8586,22 @@
         {
           "disabled": false,
           "document": "预付费续费标识，0表示手动续费，1表示自动续费，2不续费并且不通知\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "RenewFlag",
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启实例删除保护，false表示不开启",
+          "example": "无",
+          "member": "bool",
+          "name": "DeletionProtection",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9674,26 +9692,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "云标签的key",
-          "example": "",
+          "document": "云标签的key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "云标签的值",
-          "example": "",
+          "document": "云标签的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TagInfo": {
       "document": "镜像tag信息",

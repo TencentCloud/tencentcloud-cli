@@ -818,7 +818,7 @@
         {
           "disabled": false,
           "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
-          "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\\r\\n\"]",
+          "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\"]",
           "member": "string",
           "name": "Urls",
           "required": false,
@@ -950,7 +950,7 @@
         {
           "disabled": false,
           "document": "人员库自定义描述字段，用于描述人员库中人员属性，该人员库下所有人员将拥有此描述字段。 \n最多可以创建5个。 \n每个自定义描述字段支持[1,30]个字符。 \n在同一人员库中自定义描述字段不可重复。 \n例： 设置某人员库“自定义描述字段”为[\"学号\",\"工号\",\"手机号\"]， \n则该人员库下所有人员将拥有名为“学号”、“工号”、“手机号”的描述字段， \n可在对应人员描述字段中填写内容，登记该人员的学号、工号、手机号等信息。",
-          "example": "[\"\\u4e8b\\u4e1a\\u7fa4\\n\",\"\\u90e8\\u95e8\\u540d\\n\",\"\\u7ec4\\u540d\\n\"]",
+          "example": "[\"\\u4e8b\\u4e1a\\u7fa4\",\"\\u90e8\\u95e8\\u540d\",\"\\u7ec4\\u540d\"]",
           "member": "string",
           "name": "GroupExDescriptions",
           "required": false,
@@ -1648,7 +1648,7 @@
         },
         {
           "disabled": false,
-          "document": "人脸识别服务所用的算法模型版本。\n\n目前入参支持 “2.0”和“3.0“ 两个输入。\n\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
+          "document": "人脸识别服务所用的算法模型版本。\n目前入参支持 “2.0”和“3.0“ 两个输入。\n2020年4月2日开始，默认为“3.0”，之前使用过本接口的账号若未填写本参数默认为“2.0”。\n2020年11月26日后开通服务的账号仅支持输入“3.0”。\n不同算法模型版本对应的人脸识别算法不同，新版本的整体效果会优于旧版本，建议使用“3.0”版本。",
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
@@ -2621,7 +2621,7 @@
         {
           "disabled": false,
           "document": "人员库 ID，取值为创建人员库接口中的GroupId",
-          "example": "",
+          "example": "ABC",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -2636,54 +2636,60 @@
         {
           "disabled": false,
           "document": "人员库名称",
-          "example": "",
+          "example": "ABC",
           "member": "string",
           "name": "GroupName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库ID",
-          "example": "",
+          "example": "ABC",
           "member": "string",
           "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库自定义描述字段",
-          "example": "",
+          "example": "ABC",
           "member": "string",
           "name": "GroupExDescriptions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人员库信息备注",
-          "example": "",
+          "example": "ABC",
           "member": "string",
           "name": "Tag",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Group的创建时间和日期 CreationTimestamp。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。",
-          "example": "",
+          "document": "Group的创建时间和日期。CreationTimestamp 的值是自 Unix 纪元时间到Group创建时间的毫秒数。",
+          "example": "1694139227378",
           "member": "uint64",
           "name": "CreationTimestamp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3790,7 +3796,7 @@
         {
           "disabled": false,
           "document": "希望搜索的人员库列表，上限100个。数组元素取值为创建人员库接口中的GroupId。\n不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
-          "example": "[\"TencentShenZhenEmployee\\n\"]",
+          "example": "[\"TencentShenZhenEmployee\"]",
           "member": "string",
           "name": "GroupIds",
           "required": true,

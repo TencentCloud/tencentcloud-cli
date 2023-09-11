@@ -7,7 +7,6 @@ Input:
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
     --FlowApproverInfos.0.ApproverType 1 \
     --FlowApproverInfos.0.ApproverMobile 13200000000 \
     --FlowApproverInfos.0.ApproverName 典子谦 \
@@ -44,7 +43,6 @@ Input:
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
     --FlowApproverInfos.0.ApproverType 1 \
     --FlowApproverInfos.0.ApproverMobile 13200000000 \
     --FlowApproverInfos.0.ApproverName 典子谦 \
@@ -82,7 +80,6 @@ Input:
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
     --FlowApproverInfos.0.ApproverType 1 \
     --FlowApproverInfos.0.ApproverMobile 13200000000 \
     --FlowApproverInfos.0.ApproverName 张三 \
@@ -112,7 +109,6 @@ Input:
 ```
 tccli ess CreateFlowSignUrl --cli-unfold-argument  \
     --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --Organization.OrganizationId yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF \
     --FlowApproverInfos.0.ApproverType 1 \
     --FlowApproverInfos.0.ApproverMobile 13200000000 \
     --FlowApproverInfos.0.ApproverName 典子谦 \
