@@ -1,3 +1,323 @@
+# Release 3.0.848.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 29 次发布
+
+发布时间：2023-09-12 01:09:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyLaunchConfigurationAttributes](http://document.tencentcloudapi.woa.com/document/product/377/31298)
+
+	* 新增入参：LoginSettings
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 15 次发布
+
+发布时间：2023-09-12 01:16:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyTraits](http://document.tencentcloudapi.woa.com/document/product/1609/81909)
+
+
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 2 次发布
+
+发布时间：2023-09-12 01:20:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDedicatedClusterHostStatistics](http://document.tencentcloudapi.woa.com/document/product/1676/79495)
+
+	* 新增入参：HostId, StartTime, EndTime, Period
+
+
+新增数据结构：
+
+* [DetailData](http://document.tencentcloudapi.woa.com/document/product/1676/79502#DetailData)
+
+修改数据结构：
+
+* [HostStatistic](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostStatistic)
+
+	* 新增成员：CpuAverage, MemAverage, NetAverage, CpuDetailData, MemDetailData, NetRateDetailData, NetPacketDetailData
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 7 次发布
+
+发布时间：2023-09-12 01:34:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainAssetVO](http://document.tencentcloudapi.woa.com/document/product/1726/80814#DomainAssetVO)
+
+	* 新增成员：BotAccessCount
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 31 次发布
+
+发布时间：2023-09-12 01:51:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ComponentLimit](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ComponentLimit)
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* 新增成员：AddSignComponentsLimits
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 84 次发布
+
+发布时间：2023-09-12 01:52:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [ComponentLimit](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ComponentLimit)
+
+修改数据结构：
+
+* [CommonFlowApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CommonFlowApprover)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
+* [Component](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Component)
+
+	* 新增成员：LockComponentValue, ForbidMoveAndDelete
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：AddSignComponentsLimits
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 邮件推送(ses) 版本：2020-10-02
+
+### 第 19 次发布
+
+发布时间：2023-09-12 02:18:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListReceiverDetails](http://document.tencentcloudapi.woa.com/document/product/1288/81910)
+
+新增数据结构：
+
+* [ReceiverDetail](http://document.tencentcloudapi.woa.com/document/product/1288/51053#ReceiverDetail)
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 16 次发布
+
+发布时间：2023-09-12 02:21:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAlarmStat](http://document.tencentcloudapi.woa.com/document/product/664/81911)
+
+新增数据结构：
+
+* [AlarmInfoRsp](http://document.tencentcloudapi.woa.com/document/product/664/51406#AlarmInfoRsp)
+* [AttackEvent](http://document.tencentcloudapi.woa.com/document/product/664/51406#AttackEvent)
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 38 次发布
+
+发布时间：2023-09-12 02:22:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeHostTeoInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/77797)
+
+	* 新增入参：Offset, Limit, AsyncCache
+
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：HostingStatus, HostingCompleteTime, HostingRenewCertId
+
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 80 次发布
+
+发布时间：2023-09-12 02:37:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81920)
+* [DeleteReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81919)
+* [DescribePodDeductionRate](http://document.tencentcloudapi.woa.com/document/product/457/81918)
+* [DescribePodsBySpec](http://document.tencentcloudapi.woa.com/document/product/457/81917)
+* [DescribePostNodeResources](http://document.tencentcloudapi.woa.com/document/product/457/81921)
+* [DescribeRIUtilizationDetail](http://document.tencentcloudapi.woa.com/document/product/457/81916)
+* [DescribeReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81915)
+* [ModifyReservedInstanceScope](http://document.tencentcloudapi.woa.com/document/product/457/81914)
+* [RenewReservedInstances](http://document.tencentcloudapi.woa.com/document/product/457/81913)
+
+新增数据结构：
+
+* [InstanceChargePrepaid](http://document.tencentcloudapi.woa.com/document/product/457/31866#InstanceChargePrepaid)
+* [PodDeductionRate](http://document.tencentcloudapi.woa.com/document/product/457/31866#PodDeductionRate)
+* [PodNodeInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#PodNodeInfo)
+* [RIUtilizationDetail](http://document.tencentcloudapi.woa.com/document/product/457/31866#RIUtilizationDetail)
+* [ReservedInstance](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReservedInstance)
+* [ReservedInstanceScope](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReservedInstanceScope)
+* [ReservedInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/457/31866#ReservedInstanceSpec)
+* [SuperNodeResource](http://document.tencentcloudapi.woa.com/document/product/457/31866#SuperNodeResource)
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 3 次发布
+
+发布时间：2023-09-12 02:40:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/1739/81928)
+* [CreateTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81932)
+* [DeleteConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/1739/81927)
+* [DeleteTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81931)
+* [DescribeConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/1739/81926)
+* [DescribeTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81930)
+* [DescribeTopicStatsOp](http://document.tencentcloudapi.woa.com/document/product/1739/81923)
+* [ModifyConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/1739/81925)
+* [ModifyTopic](http://document.tencentcloudapi.woa.com/document/product/1739/81929)
+
+新增数据结构：
+
+* [SubscriptionData](http://document.tencentcloudapi.woa.com/document/product/1739/81437#SubscriptionData)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 37 次发布
+
+发布时间：2023-09-12 02:42:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDeliveryConfigs](http://document.tencentcloudapi.woa.com/document/product/649/74992)
+
+	* 新增入参：ProgramIdList, ConfigIdList
+
+* [DescribeGatewayApis](http://document.tencentcloudapi.woa.com/document/product/649/63178)
+
+	* 新增入参：ReleaseStatus
+
+* [DescribeGroupsWithPlugin](http://document.tencentcloudapi.woa.com/document/product/649/53936)
+
+	* <font color="#dd0000">**修改入参**：</font>Bound
+
+* [DescribeLaneRules](http://document.tencentcloudapi.woa.com/document/product/649/44505)
+
+	* <font color="#dd0000">**修改入参**：</font>Limit, Offset
+
+* [DescribePluginInstances](http://document.tencentcloudapi.woa.com/document/product/649/53935)
+
+	* <font color="#dd0000">**修改入参**：</font>Bound
+
+
+修改数据结构：
+
+* [GatewayPluginBoundParam](http://document.tencentcloudapi.woa.com/document/product/649/36099#GatewayPluginBoundParam)
+
+	* 新增成员：MicroserviceId, GatewayInstanceId
+
+
+
+
 # Release 3.0.847.1
 
 ## 云防火墙(cfw) 版本：2019-09-04

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeAlarmStat": {
+      "document": "安全大屏-用户威胁告警信息",
+      "input": "DescribeAlarmStatRequest",
+      "name": "用户威胁告警信息",
+      "output": "DescribeAlarmStatResponse",
+      "status": "online"
+    },
     "DescribeAssetDetail": {
       "document": "资产安全页资产详情",
       "input": "DescribeAssetDetailRequest",
@@ -198,6 +205,22 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AlarmInfoRsp": {
+      "document": "用户威胁告警信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "近7天威胁告警\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AttackEvent",
+          "name": "AttackEvent",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1525,6 +1548,100 @@
         }
       ],
       "usage": "out"
+    },
+    "AttackEvent": {
+      "document": "攻击事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "来源ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaSrcIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaDstIp",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaDstProvince",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaDstCity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaDstCountry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaSrcProvince",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaSrcCountry",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SsaSrcCity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Bucket": {
       "document": "es聚合数据类型",
@@ -3249,6 +3366,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeAlarmStatRequest": {
+      "document": "DescribeAlarmStat请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-11-21 10:10:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-11-22 10:10:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmStatResponse": {
+      "document": "DescribeAlarmStat返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "威胁告警信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmInfoRsp",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeAssetDetailListRequest": {
       "document": "DescribeAssetDetailList请求参数结构体",

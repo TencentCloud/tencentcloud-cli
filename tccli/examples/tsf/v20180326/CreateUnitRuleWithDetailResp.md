@@ -54,7 +54,10 @@ Output:
                             "TagOperator": "abc",
                             "TagValue": "abc"
                         }
-                    ]
+                    ],
+                    "ItemIndex": 0,
+                    "CreatedTime": "abc",
+                    "UpdatedTime": "abc"
                 }
             ],
             "CreatedTime": "abc",

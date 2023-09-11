@@ -469,6 +469,13 @@
       "output": "ModifyTraitResponse",
       "status": "online"
     },
+    "ModifyTraits": {
+      "document": "批量修改运维操作",
+      "input": "ModifyTraitsRequest",
+      "name": "批量修改运维操作",
+      "output": "ModifyTraitsResponse",
+      "status": "online"
+    },
     "ValidateCreateComponent": {
       "document": "校验创建组件",
       "input": "ValidateCreateComponentRequest",
@@ -6256,6 +6263,78 @@
     },
     "ModifyTraitResponse": {
       "document": "ModifyTrait返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraitsRequest": {
+      "document": "ModifyTraits请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境信息",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用 名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组件名称",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Trait 数组",
+          "example": "无",
+          "member": "Trait",
+          "name": "Traits",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyTraitsResponse": {
+      "document": "ModifyTraits返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

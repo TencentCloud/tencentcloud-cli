@@ -11,8 +11,51 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e64dc152-b874-4b91-9301-e9b290f1ffbb",
-        "Result": true
+        "Result": {
+            "TotalCount": 0,
+            "Content": [
+                {
+                    "ConfigId": "abc",
+                    "ConfigName": "abc",
+                    "CollectPath": [
+                        "abc"
+                    ],
+                    "Groups": [
+                        {
+                            "GroupId": "abc",
+                            "GroupName": "abc",
+                            "ClusterId": "abc",
+                            "ClusterName": "abc",
+                            "ClusterType": "abc",
+                            "NamespaceName": "abc",
+                            "AssociateTime": "abc"
+                        }
+                    ],
+                    "CreateTime": "abc",
+                    "KafkaVIp": "abc",
+                    "KafkaAddress": "abc",
+                    "KafkaVPort": "abc",
+                    "Topic": "abc",
+                    "LineRule": "abc",
+                    "CustomRule": "abc",
+                    "EnableGlobalLineRule": true,
+                    "EnableAuth": true,
+                    "Username": "abc",
+                    "Password": "abc",
+                    "KafkaInfos": [
+                        {
+                            "Topic": "abc",
+                            "Path": [
+                                "abc"
+                            ],
+                            "LineRule": "abc",
+                            "CustomRule": "abc"
+                        }
+                    ]
+                }
+            ]
+        },
+        "RequestId": "abc"
     }
 }
 ```

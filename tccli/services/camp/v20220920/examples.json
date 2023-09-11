@@ -536,6 +536,14 @@
         "title": "修改 北极星类型 Trait"
       }
     ],
+    "ModifyTraits": [
+      {
+        "document": "批量修改运维操作",
+        "input": "POST / HTTP/1.1\nHost: camp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTraits\n<公共请求参数>\n\n{\n    \"ProjectID\": \"abc\",\n    \"EnvironmentName\": \"abc\",\n    \"ApplicationID\": \"abc\",\n    \"InstanceID\": \"abc\",\n    \"ComponentName\": \"abc\",\n    \"Traits\": [\n        {\n            \"Type\": \"volume\",\n            \"Properties\": {\n                \"Volume\": {\n                    \"Objects\": [\n                        {\n                            \"Name\": \"v1\",\n                            \"Type\": \"CBS\",\n                            \"CBS\": {\n                                \"Type\": \"CLOUD_SSD\",\n                                \"Storage\": 1\n                            },\n                            \"Containers\": [\n                                {\n                                    \"Name\": \"c1\",\n                                    \"MountPath\": \"/tmp/c1\"\n                                }\n                            ]\n                        }\n                    ]\n                }\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "批量修改运维操作"
+      }
+    ],
     "ValidateCreateComponent": [
       {
         "document": "校验创建组件",

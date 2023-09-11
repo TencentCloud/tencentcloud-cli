@@ -18,59 +18,41 @@ Output:
 {
     "Response": {
         "Result": {
+            "TotalCount": 0,
             "Content": [
                 {
-                    "Status": "xx",
-                    "UpdatedTime": "xx",
-                    "AuthType": "xx",
-                    "Description": "xx",
+                    "GroupId": "abc",
+                    "GroupName": "abc",
+                    "GroupContext": "abc",
+                    "AuthType": "abc",
+                    "Status": "abc",
+                    "CreatedTime": "abc",
+                    "UpdatedTime": "abc",
                     "BindedGatewayDeployGroups": [
                         {
-                            "DeployGroupId": "xx",
-                            "ApplicationName": "xx",
-                            "GroupStatus": "xx",
-                            "ClusterType": "xx",
-                            "DeployGroupName": "xx",
-                            "ApplicationType": "xx",
-                            "ApplicationId": "xx"
+                            "DeployGroupId": "abc",
+                            "DeployGroupName": "abc",
+                            "ApplicationId": "abc",
+                            "ApplicationName": "abc",
+                            "ApplicationType": "abc",
+                            "GroupStatus": "abc",
+                            "ClusterType": "abc"
                         }
                     ],
-                    "GroupType": "xx",
-                    "AclMode": "xx",
-                    "ApiCount": 1,
-                    "GroupName": "xx",
-                    "GroupContext": "xx",
-                    "CreatedTime": "xx",
-                    "GroupId": "xx"
-                },
-                {
-                    "Status": "xx",
-                    "UpdatedTime": "xx",
-                    "AuthType": "xx",
-                    "Description": "xx",
-                    "BindedGatewayDeployGroups": [
-                        {
-                            "DeployGroupId": "xx",
-                            "ApplicationName": "xx",
-                            "ApplicationId": "xx",
-                            "ClusterType": "xx",
-                            "DeployGroupName": "xx",
-                            "ApplicationType": "xx",
-                            "GroupStatus": "xx"
-                        }
-                    ],
-                    "GroupType": "xx",
-                    "AclMode": "xx",
-                    "GroupId": "xx",
-                    "GroupName": "xx",
-                    "GroupContext": "xx",
-                    "CreatedTime": "xx",
-                    "ApiCount": 3
+                    "ApiCount": 0,
+                    "AclMode": "abc",
+                    "Description": "abc",
+                    "GroupType": "abc",
+                    "GatewayInstanceType": "abc",
+                    "GatewayInstanceId": "abc",
+                    "NamespaceNameKey": "abc",
+                    "ServiceNameKey": "abc",
+                    "NamespaceNameKeyPosition": "abc",
+                    "ServiceNameKeyPosition": "abc"
                 }
-            ],
-            "TotalCount": 2
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

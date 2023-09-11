@@ -585,3 +585,56 @@ Output:
 }
 ```
 
+**Example 11: 发起合同后添加签署区-指定签署控件和印章的无序签署示例合同**
+
+1. 签署方包括本方企业、他方企业和个人（Approvers中有三个ApproverInfo元素）。
+2. 允许签署方在签署时自行添加签署控件，可以拖动位置和控制数量。（SignBeanTag 设置为1）
+3. 明确规定本方企业在签署时可以添加骑缝章控件（SIGN_PAGING_SEAL）、印章控件（SIGN_SEAL）、和法人控件（SIGN_LEGAL_PERSON_SEAL），并且限制了骑缝章控件和印章控件可用的印章ID列表。
+4. 明确规定他方企业在签署时必须使用印章控件（SIGN_SEAL）。
+5. 明确规定个人签署方在签署时必须使用签名控件（SIGN_SIGNATURE），并且使用系统签名（SYSTEM_ESIGN）。
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --FlowName 发起合同后添加签署区-指定签署控件和印章的无序签署示例合同 \
+    --FlowType 示例合同 \
+    --Unordered True \
+    --SignBeanTag 1 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.PreReadTime 10 \
+    --Approvers.0.AddSignComponentsLimits.0.ComponentType SIGN_SEAL \
+    --Approvers.0.AddSignComponentsLimits.0.ComponentValue yDwJCUUckpk7t9yyUuXF6wL8KMm3yXcX yDRRuUUgygjvznc7UuO5sjES5RaqSnyn \
+    --Approvers.0.AddSignComponentsLimits.1.ComponentType SIGN_PAGING_SEAL \
+    --Approvers.0.AddSignComponentsLimits.1.ComponentValue yDwJCUUckpk7t9yyUuXF6wL8KMm3yXcX yDRRuUU2qyjvspleUuO6zjE1EkGzMK1A \
+    --Approvers.0.AddSignComponentsLimits.2.ComponentType SIGN_LEGAL_PERSON_SEAL \
+    --Approvers.1.ApproverType 0 \
+    --Approvers.1.OrganizationName 张三示例企业 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.PreReadTime 10 \
+    --Approvers.1.AddSignComponentsLimits.0.ComponentType SIGN_SEAL \
+    --Approvers.2.ApproverType 1 \
+    --Approvers.2.ApproverName 李四 \
+    --Approvers.2.ApproverMobile 15100000000 \
+    --Approvers.2.PreReadTime 10 \
+    --Approvers.2.AddSignComponentsLimits.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.2.AddSignComponentsLimits.0.ComponentValue SYSTEM_ESIGN \
+    --FileIds yDwqYUUckp93gkfxUu14JJPxaTy13dtq
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDJJPxaTy13dtqwqYUUckp93gkfxUu14",
+        "PreviewUrl": "",
+        "RequestId": "s1674414304627348115"
+    }
+}
+```
+

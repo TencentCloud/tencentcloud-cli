@@ -16,35 +16,40 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5d996e5507e42d5970cd2e25ed5267a",
         "Result": {
-            "TotalCount": 30,
+            "TotalCount": 0,
             "Content": [
                 {
-                    "UpdatedTime": "2021-03-17 10:44:27",
-                    "PathMapping": "/pd/v1/echo",
-                    "MicroserviceName": "服务名称",
-                    "Description": "描述",
-                    "MicroserviceId": "服务ID",
-                    "NamespaceName": "命名空间名称",
-                    "ApiId": "api-d5970cd2",
-                    "UsableStatus": "enabled",
-                    "ApiType": "ms",
-                    "ReleaseStatus": "released",
-                    "GroupName": "分组名称",
-                    "Host": "xx",
-                    "Method": "POST",
-                    "RateLimitStatus": "disabled",
+                    "ApiId": "abc",
+                    "NamespaceId": "abc",
+                    "NamespaceName": "abc",
+                    "MicroserviceId": "abc",
+                    "MicroserviceName": "abc",
+                    "Path": "abc",
+                    "PathMapping": "abc",
+                    "Method": "abc",
+                    "GroupId": "abc",
+                    "UsableStatus": "abc",
+                    "ReleaseStatus": "abc",
+                    "RateLimitStatus": "abc",
+                    "MockStatus": "abc",
+                    "CreatedTime": "abc",
+                    "UpdatedTime": "abc",
+                    "ReleasedTime": "abc",
+                    "GroupName": "abc",
                     "Timeout": 0,
-                    "NamespaceId": "命名空间ID",
-                    "CreatedTime": "2021-03-17 10:44:27",
-                    "Path": "/provider-demo/v1/echo",
-                    "ReleasedTime": "2021-03-17 10:44:27",
-                    "MockStatus": "disabled",
-                    "GroupId": "grp-ib3xchsw"
+                    "Host": "abc",
+                    "ApiType": "abc",
+                    "Description": "abc",
+                    "ApiMatchType": "abc",
+                    "RpcExt": "abc",
+                    "GatewayDeployGroupId": "abc",
+                    "Md5": "abc",
+                    "RpcType": "abc"
                 }
             ]
-        }
+        },
+        "RequestId": "abc"
     }
 }
 ```

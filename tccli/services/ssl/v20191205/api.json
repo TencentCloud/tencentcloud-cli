@@ -1211,7 +1211,7 @@
           "example": "无",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1221,7 +1221,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1231,7 +1231,7 @@
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1241,7 +1241,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1251,7 +1251,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1261,7 +1261,7 @@
           "example": "无",
           "member": "string",
           "name": "ProductZhName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1271,7 +1271,7 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1281,7 +1281,7 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1291,7 +1291,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1301,7 +1301,7 @@
           "example": "无",
           "member": "CertificateExtra",
           "name": "CertificateExtra",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1311,7 +1311,7 @@
           "example": "无",
           "member": "string",
           "name": "VulnerabilityStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1321,7 +1321,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1331,7 +1331,7 @@
           "example": "无",
           "member": "string",
           "name": "VerifyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1341,7 +1341,7 @@
           "example": "无",
           "member": "string",
           "name": "CertBeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1351,7 +1351,7 @@
           "example": "无",
           "member": "string",
           "name": "CertEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1361,7 +1361,7 @@
           "example": "无",
           "member": "string",
           "name": "ValidityPeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1371,7 +1371,7 @@
           "example": "无",
           "member": "string",
           "name": "InsertTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1381,7 +1381,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1391,7 +1391,7 @@
           "example": "无",
           "member": "string",
           "name": "SubjectAltName",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1401,7 +1401,7 @@
           "example": "无",
           "member": "string",
           "name": "PackageTypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1411,7 +1411,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1421,7 +1421,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVip",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1431,7 +1431,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsDv",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1441,7 +1441,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsWildcard",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1451,7 +1451,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsVulnerability",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1461,7 +1461,7 @@
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1471,7 +1471,7 @@
           "example": "无",
           "member": "ProjectInfo",
           "name": "ProjectInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1481,7 +1481,7 @@
           "example": "无",
           "member": "string",
           "name": "BoundResource",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1491,7 +1491,7 @@
           "example": "无",
           "member": "bool",
           "name": "Deployable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1501,7 +1501,7 @@
           "example": "无",
           "member": "Tags",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1511,7 +1511,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsIgnore",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1521,7 +1521,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsSM",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1531,7 +1531,7 @@
           "example": "无",
           "member": "string",
           "name": "EncryptAlgorithm",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1541,7 +1541,7 @@
           "example": "无",
           "member": "string",
           "name": "CAEncryptAlgorithms",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1551,7 +1551,7 @@
           "example": "无",
           "member": "string",
           "name": "CAEndTimes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1561,7 +1561,7 @@
           "example": "无",
           "member": "string",
           "name": "CACommonNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1571,7 +1571,7 @@
           "example": "无",
           "member": "PreAuditInfo",
           "name": "PreAuditInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1581,8 +1581,38 @@
           "example": "无",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管状态，0，托管中，5，资源替换中， 10， 托管完成， -1未托管 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "HostingStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管完成时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostingCompleteTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "托管新证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostingRenewCertId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -5720,6 +5750,33 @@
           "name": "OldCertificateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，从0开始。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数量，默认10。\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步",
+          "example": "无",
+          "member": "int64",
+          "name": "AsyncCache",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5733,6 +5790,7 @@
           "example": "无",
           "member": "TeoInstanceDetail",
           "name": "InstanceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5742,6 +5800,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
