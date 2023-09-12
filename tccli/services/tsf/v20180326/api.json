@@ -645,7 +645,7 @@
       "status": "online"
     },
     "DescribeDeliveryConfigs": {
-      "document": "获取多个投递项配置 ",
+      "document": "获取多个投递项配置",
       "input": "DescribeDeliveryConfigsRequest",
       "name": "获取多个投递项配置",
       "output": "DescribeDeliveryConfigsResponse",
@@ -3152,7 +3152,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8666,7 +8666,7 @@
         {
           "disabled": false,
           "document": "网关实体ID",
-          "example": "",
+          "example": "gw-ins-xxx",
           "member": "string",
           "name": "GatewayInstanceId",
           "required": true,
@@ -8675,7 +8675,7 @@
         {
           "disabled": false,
           "document": "单元化命名空间对象列表",
-          "example": "",
+          "example": "namespace-xxx",
           "member": "UnitNamespace",
           "name": "UnitNamespaceList",
           "required": false,
@@ -8690,9 +8690,10 @@
         {
           "disabled": false,
           "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8815,10 +8816,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "单元化规则 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单元化规则信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "UnitRule",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10925,7 +10927,7 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "",
+          "example": "ms-xxx",
           "member": "string",
           "name": "MicroserviceId",
           "required": true,
@@ -10934,7 +10936,7 @@
         {
           "disabled": false,
           "document": "API 请求路径",
-          "example": "",
+          "example": "/hello",
           "member": "string",
           "name": "Path",
           "required": false,
@@ -10943,7 +10945,7 @@
         {
           "disabled": false,
           "document": "请求方法",
-          "example": "",
+          "example": "GET",
           "member": "string",
           "name": "Method",
           "required": false,
@@ -10958,9 +10960,10 @@
         {
           "disabled": false,
           "document": "API版本列表",
-          "example": "",
+          "example": "无",
           "member": "ApiVersionArray",
           "name": "Result",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12238,8 +12241,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求方法",
-          "example": "",
+          "document": "所属分组ID",
+          "example": "grp-xxx",
           "member": "string",
           "name": "GroupId",
           "required": false,
@@ -12248,7 +12251,7 @@
         {
           "disabled": false,
           "document": "微服务ID",
-          "example": "",
+          "example": "ms-xxx",
           "member": "string",
           "name": "MicroserviceId",
           "required": false,
@@ -12263,9 +12266,10 @@
         {
           "disabled": false,
           "document": "是否已完成导入任务",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -12356,7 +12360,7 @@
         {
           "disabled": false,
           "document": "关键字",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SearchWord",
           "required": false,
@@ -12365,7 +12369,7 @@
         {
           "disabled": false,
           "document": "偏移",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -12374,11 +12378,29 @@
         {
           "disabled": false,
           "document": "搜索条数",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据集idList",
+          "example": "无",
+          "member": "string",
+          "name": "ProgramIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ConfigIdList",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -12389,9 +12411,10 @@
         {
           "disabled": false,
           "document": "投递项关联部署组信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "DeliveryConfigBindGroups",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12821,6 +12844,15 @@
           "name": "GatewayDeployGroupId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发布状态, drafted(未发布)/released(已发布)/releasing(发布中)/failed(发布失败)",
+          "example": "released",
+          "member": "string",
+          "name": "ReleaseStatus",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12834,7 +12866,7 @@
           "example": "无",
           "member": "TsfPageApiDetailInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13450,15 +13482,6 @@
         },
         {
           "disabled": false,
-          "document": "绑定/未绑定: true / false",
-          "example": "无",
-          "member": "bool",
-          "name": "Bound",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "翻页偏移量",
           "example": "无",
           "member": "int64",
@@ -13474,6 +13497,15 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "绑定/未绑定: true / false",
+          "example": "无",
+          "member": "bool",
+          "name": "Bound",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -13505,7 +13537,7 @@
           "example": "无",
           "member": "TsfPageApiGroupInfo",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14315,7 +14347,7 @@
           "example": "0",
           "member": "int64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -14324,7 +14356,7 @@
           "example": "10",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -14366,7 +14398,7 @@
           "example": "无",
           "member": "LaneRules",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14992,15 +15024,6 @@
         },
         {
           "disabled": false,
-          "document": "绑定: true; 未绑定: false",
-          "example": "true",
-          "member": "bool",
-          "name": "Bound",
-          "required": true,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "翻页偏移量",
           "example": "0",
           "member": "int64",
@@ -15016,6 +15039,15 @@
           "name": "Limit",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "绑定: true; 未绑定: false",
+          "example": "true",
+          "member": "bool",
+          "name": "Bound",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -15047,7 +15079,7 @@
           "example": "无",
           "member": "TsfPageGatewayPlugin",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18165,7 +18197,7 @@
         {
           "disabled": false,
           "document": "插件id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "PluginId",
           "required": true,
@@ -18174,8 +18206,8 @@
         },
         {
           "disabled": false,
-          "document": "插件绑定到的对象类型:group/api",
-          "example": "",
+          "document": "插件绑定到的对象类型:group/api/all",
+          "example": "无",
           "member": "string",
           "name": "ScopeType",
           "required": true,
@@ -18185,12 +18217,32 @@
         {
           "disabled": false,
           "document": "插件绑定到的对象主键值，例如分组的ID/API的ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ScopeValue",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建关联的服务id，关联envoy网关时使用",
+          "example": "无",
+          "member": "string",
+          "name": "MicroserviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关id",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayInstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"
@@ -27956,7 +28008,7 @@
         },
         {
           "disabled": false,
-          "document": "鉴权类型",
+          "document": "鉴权类型。 secret： 密钥鉴权； none:无鉴权",
           "example": "none",
           "member": "string",
           "name": "AuthType",
@@ -27966,7 +28018,7 @@
         {
           "disabled": false,
           "document": "分组上下文",
-          "example": "%2Fuser",
+          "example": "/user",
           "member": "string",
           "name": "GroupContext",
           "required": false,
@@ -28017,10 +28069,10 @@
         {
           "disabled": false,
           "document": "返回结果，true: 成功, false: 失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
+          "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

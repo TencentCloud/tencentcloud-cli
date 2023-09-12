@@ -75,8 +75,8 @@
     "CreateDocument": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocument\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"DocumentUrl\": \"xx\",\n    \"DocumentName\": \"xx\",\n    \"Owner\": \"xx\",\n    \"TranscodeType\": 1,\n    \"Permission\": 1,\n    \"DocumentType\": \"xx\",\n    \"DocumentSize\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"xx\",\n        \"RequestId\": \"213das\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDocument\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1,\n    \"DocumentUrl\": \"abc\",\n    \"DocumentName\": \"abc\",\n    \"Owner\": \"abc\",\n    \"TranscodeType\": 1,\n    \"Permission\": 1,\n    \"DocumentType\": \"abc\",\n    \"DocumentSize\": 1,\n    \"AutoHandleUnsupportedElement\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"DocumentId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建文档"
       }
     ],

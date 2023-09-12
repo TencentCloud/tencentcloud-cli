@@ -11864,40 +11864,44 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "匹配字段\n \n有以下枚举值：\nIP-来源IP\u000b\tIPV6-来源IPv6\u000b\tReferer-Referer\u000b\tURL-请求路径\nUserAgent-UserAgent\u000b\tHTTP_METHOD-HTTP请求方法\u000b\tQUERY_STRING-请求字符串\u000b\tGET-GET参数值\u000b\tGET_PARAMS_NAMES-GET参数名\u000b\tPOST-POST参数值\u000b\tGET_POST_NAMES-POST参数名\u000b\tPOST_BODY-完整BODY\u000b\tCOOKIE-Cookie\u000b\tGET_COOKIES_NAMES-Cookie参数名\u000b\tARGS_COOKIE-Cookie参数值\u000b\tGET_HEADERS_NAMES-Header参数名\u000b\tARGS_HEADER-Header参数值\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "逻辑符号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "逻辑符号 \n\n有以下枚举值：\nempty - 内容为空\n  \tnull - 不存在\n  \teq - 等于\n  \tneq - 不等于\n  \tcontains - 包含\n \tncontains - 不包含\n  \tstrprefix - 前缀匹配\n  \tstrsuffix - 后缀匹配\n  \tlen_eq - 长度等于\n  \tlen_gt - 长度大于\n  \tlen_lt - 长度小于\n  \tipmatch - 属于\n \tipnmatch - 不属于\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "匹配内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "匹配内容\n\n目前 只有匹配字段为COOKIE-Cookie时，才不需要输入 匹配内容\u000b其他都需要\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/abc",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "匹配参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "匹配参数\n\n目前 只有匹配字段为以下4个时，匹配参数才能选择，否则置灰无法选择\t\n\nGET-GET参数值\u000b\tPOST-POST参数值\u000b\tARGS_COOKIE-Cookie参数值\u000b\tARGS_HEADER-Header参数值\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
           "member": "string",
           "name": "Arg",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true

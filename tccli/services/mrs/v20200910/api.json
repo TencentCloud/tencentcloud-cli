@@ -27,6 +27,13 @@
       "name": "文本结构化接口",
       "output": "TextToObjectResponse",
       "status": "online"
+    },
+    "TurnPDFToObject": {
+      "document": "将PDF格式的体检报告文件结构化,解析关键信息.",
+      "input": "TurnPDFToObjectRequest",
+      "name": "体检报告PDF文件结构化",
+      "output": "TurnPDFToObjectResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -522,6 +529,262 @@
       ],
       "usage": "out"
     },
+    "Block": {
+      "document": "结构化信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Check",
+          "name": "Check",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "病理报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PathologyReport",
+          "name": "Pathology",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "医学资料\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MedDoc",
+          "name": "MedDoc",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断证明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiagCert",
+          "name": "DiagCert",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "病案首页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FirstPage",
+          "name": "FirstPage",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检验报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Indicator",
+          "name": "Indicator",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "门诊病历信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MedicalRecordInfo",
+          "name": "MedicalRecordInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出入院信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Hospitalization",
+          "name": "Hospitalization",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "手术记录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Surgery",
+          "name": "Surgery",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "处方单\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Prescription",
+          "name": "Prescription",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "免疫接种证明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VaccineCertificate",
+          "name": "VaccineCertificate",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "心电图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Electrocardiogram",
+          "name": "Electrocardiogram",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "病理报告v2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PathologyV2",
+          "name": "PathologyV2",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内窥镜报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Endoscopy",
+          "name": "Endoscopy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "C14检验报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Indicator",
+          "name": "C14",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检结论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Exame",
+          "name": "Exame",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出入院结构体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DischargeInfoBlock",
+          "name": "MedDocV2",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检验报告v3\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndicatorV3",
+          "name": "IndicatorV3",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "孕产报告\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Maternity",
+          "name": "Maternity",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间轴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TimelineInformation",
+          "name": "Timeline",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "核酸报告结论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CovidItemsInfo",
+          "name": "Covid",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "眼科报告结构体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EyeItemsInfo",
+          "name": "Eye",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出生证明结构化信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BirthCert",
+          "name": "BirthCert",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文本类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextTypeListBlock",
+          "name": "TextTypeListBlocks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalExaminationV1",
+          "name": "PhysicalExamination",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BlockInfo": {
       "document": "块信息",
       "members": [
@@ -730,6 +993,72 @@
       ],
       "usage": "out"
     },
+    "BloodPressureItem": {
+      "document": "体检报告血压检测信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Unit",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "第几次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1,2,3,平均,null",
+          "member": "PhysicalBaseItem",
+          "name": "Times",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "左右手臂\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "左，右，null",
+          "member": "PhysicalBaseItem",
+          "name": "Location",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BodyExaminationBlock": {
       "document": "查体",
       "members": [
@@ -852,6 +1181,62 @@
           "member": "Summary",
           "name": "Summary",
           "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ChestCircumferenceItem": {
+      "document": "体检报告-胸围信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Unit",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "呼吸状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "呼气、吸气、null",
+          "member": "PhysicalBaseItem",
+          "name": "State",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3230,6 +3615,316 @@
       ],
       "usage": "out"
     },
+    "GeneralExaminationBaseItem": {
+      "document": "体检报告-一般检测信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命体征\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralExaminationVitalSign",
+          "name": "VitalSign",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralExaminationOthers",
+          "name": "Others",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralExaminationBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GeneralExaminationBriefSummary": {
+      "document": "体检报告-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一般检查小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GeneralExaminationOthers": {
+      "document": "体检报告-其他项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "面容与表情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Countenance",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "精神状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "MentalStatus",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发育及营养状况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "DevelopmentCondition",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "记忆力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Memory",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "臀围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "Hipline",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腰臀比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "WaistHipRatio",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生活嗜好\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Addiction",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生活能力评定\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "AbilityOfLifeADL",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "一般检查其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胸围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChestCircumferenceItem",
+          "name": "ChestCircumference",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GeneralExaminationVitalSign": {
+      "document": "生命体征",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命体征总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体温\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "BodyTemperature",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脉率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "Pulse",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "心率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "HeartRate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "呼吸频率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "BreathingRate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "身高\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "BodyHeight",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "BodyWeight",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体质指数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "BodyMassIndex",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腰围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "Waistline",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血压\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralExaminationVitalSignBloodPressure",
+          "name": "BloodPressure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GeneralExaminationVitalSignBloodPressure": {
+      "document": "血压",
+      "members": [
+        {
+          "disabled": false,
+          "document": "血压\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BloodPressureItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "收缩压/舒张压\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BloodPressureItem",
+          "name": "SystolicDiastolicPressure",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "收缩压\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BloodPressureItem",
+          "name": "SystolicPressure",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "舒张压\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BloodPressureItem",
+          "name": "DiastolicPressure",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "GeneticHistoryBlock": {
       "document": "家族遗传史",
       "members": [
@@ -3271,6 +3966,230 @@
           "name": "Value",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyAdnexal": {
+      "document": "体检报告-妇科-子宫附件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子宫附件总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyBaseItem": {
+      "document": "体检报告-妇科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "外阴\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyVulva",
+          "name": "Vulva",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "阴道\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyVagina",
+          "name": "Vagina",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子宫颈\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyCervix",
+          "name": "Cervix",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子宫\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyUterus",
+          "name": "Uterus",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子宫附件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyAdnexal",
+          "name": "Adnexal",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "盆腔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyPelvicCavity",
+          "name": "PelvicCavity",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "妇科其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "月经史\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyMenstrualHistory",
+          "name": "MenstrualHistory",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyBriefSummary": {
+      "document": "体检报告-妇科-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyCervix": {
+      "document": "体检报告-妇科-子宫颈",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子宫颈总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyMenstrualHistory": {
+      "document": "体检报告-妇科-月经史",
+      "members": [
+        {
+          "disabled": false,
+          "document": "妇科月经史总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyPelvicCavity": {
+      "document": "体检报告-妇科-盆腔",
+      "members": [
+        {
+          "disabled": false,
+          "document": "盆腔总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyUterus": {
+      "document": "体检报告-妇科-子宫",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子宫总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyVagina": {
+      "document": "体检报告-妇科-阴道",
+      "members": [
+        {
+          "disabled": false,
+          "document": "阴道总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "GynaecologyVulva": {
+      "document": "体检报告-妇科-外阴",
+      "members": [
+        {
+          "disabled": false,
+          "document": "外阴总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -3361,6 +4280,52 @@
         }
       ],
       "usage": "in"
+    },
+    "HearingItem": {
+      "document": "听力信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "方位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Location",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "HistologyClass": {
       "document": "组织学类",
@@ -4329,6 +5294,632 @@
       ],
       "usage": "out"
     },
+    "InternalMedicineAbdomen": {
+      "document": "体检报告-内科-腹部",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内科腹部小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomenLiver",
+          "name": "Liver",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomenGallBladder",
+          "name": "GallBladder",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胰腺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomenPancreas",
+          "name": "Pancreas",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomenSpleen",
+          "name": "Spleen",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomenKidney",
+          "name": "Kidney",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "腹部其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineAbdomenGallBladder": {
+      "document": "体检报告-内科-腹部-胆囊",
+      "members": [
+        {
+          "disabled": false,
+          "document": "胆囊总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Src",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Size",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊触诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Palpation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Percussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊压痛\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Tenderness",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胆囊质地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineAbdomenKidney": {
+      "document": "体检报告-内科-腹部-肾脏",
+      "members": [
+        {
+          "disabled": false,
+          "document": "肾脏总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Src",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Size",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏触诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Palpation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Percussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏压痛\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Tenderness",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肾脏质地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineAbdomenLiver": {
+      "document": "体检报告-内科-腹部-肝脏",
+      "members": [
+        {
+          "disabled": false,
+          "document": "肝脏总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Src",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Size",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏触诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Palpation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Percussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏压痛\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Tenderness",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏质地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineAbdomenPancreas": {
+      "document": "体检报告-内科-腹部-胰腺",
+      "members": [
+        {
+          "disabled": false,
+          "document": "胰腺总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Src",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胰腺大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Size",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胰腺触诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Palpation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胰腺叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Percussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肝脏压痛\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Tenderness",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胰腺质地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineAbdomenSpleen": {
+      "document": "体检报告-内科-腹部-脾脏",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脾脏总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Src",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Size",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏触诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Palpation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Percussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏压痛\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Tenderness",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脾脏质地\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineBaseItem": {
+      "document": "体检报告-内科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "体检报告-内科-腹部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineAbdomen",
+          "name": "Abdomen",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-内科-心脏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineHeart",
+          "name": "Heart",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-内科-血管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineVessel",
+          "name": "Vessel",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-内科-呼吸系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineRespiratorySystem",
+          "name": "RespiratorySystem",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-内科-内科其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-内科-小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineBriefSummary": {
+      "document": "体检报告-内科-内科小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内科小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineHeart": {
+      "document": "体检报告-内科-心脏",
+      "members": [
+        {
+          "disabled": false,
+          "document": "心脏总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "心律\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "HeartRhythm",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "心率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ValueUnitItem",
+          "name": "HeartRate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "心脏听诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "HeartAuscultation",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineRespiratorySystem": {
+      "document": "体检报告-内科-呼吸系统",
+      "members": [
+        {
+          "disabled": false,
+          "document": "呼吸系统总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "胸廓\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Thoracic",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "痰量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Sputum",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肺部叩诊\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "LungPercussion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "肺部听诊其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "LungAuscultation",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InternalMedicineVessel": {
+      "document": "体检报告-内科-血管",
+      "members": [
+        {
+          "disabled": false,
+          "document": "血管总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "血管杂音\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "VascularMurmur",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外周血管\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "PeripheralVessel",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Invas": {
       "document": "侵犯扩散",
       "members": [
@@ -4462,6 +6053,42 @@
           "name": "IssuedDate",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KeyValueItem": {
+      "document": "体检报告信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -6079,6 +7706,192 @@
       ],
       "usage": "out"
     },
+    "OphthalmologyBareEyeSight": {
+      "document": "体检报告-眼科-裸眼视力",
+      "members": [
+        {
+          "disabled": false,
+          "document": "左眼视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "LeftEyeVisual",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "裸眼视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "右眼视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "RightEyeVisual",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OphthalmologyBaseItem": {
+      "document": "体检报告-眼科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "裸眼视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyBareEyeSight",
+          "name": "BareEyeSight",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "矫正视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyCorrectedVisualAcuity",
+          "name": "CorrectedVisualAcuity",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "色觉\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyColourVision",
+          "name": "ColourVision",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "眼底\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyFundoscopy",
+          "name": "Fundoscopy",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "眼科其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "眼科小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OphthalmologyBriefSummary": {
+      "document": "体检报告-眼科-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "眼科小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OphthalmologyColourVision": {
+      "document": "体检报告-眼科-色觉",
+      "members": [
+        {
+          "disabled": false,
+          "document": "色觉总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OphthalmologyCorrectedVisualAcuity": {
+      "document": "体检报告-眼科-矫正视力",
+      "members": [
+        {
+          "disabled": false,
+          "document": "左眼矫正视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "LeftEyeVisual",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "矫正视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "右眼矫正视力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "RightEyeVisual",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OphthalmologyFundoscopy": {
+      "document": "体检报告-眼科-眼底",
+      "members": [
+        {
+          "disabled": false,
+          "document": "眼底检查总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Organ": {
       "document": "器官",
       "members": [
@@ -6525,6 +8338,136 @@
           "member": "SurgeryAttr",
           "name": "StartTime",
           "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OtolaryngologyBaseItem": {
+      "document": "体检报告-耳鼻喉科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "耳朵\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtolaryngologyEar",
+          "name": "Ear",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "鼻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtolaryngologyNose",
+          "name": "Nose",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "喉\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtolaryngologyLarynx",
+          "name": "Larynx",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "耳鼻喉其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtolaryngologyBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OtolaryngologyBriefSummary": {
+      "document": "体检报告-耳鼻喉科-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "耳鼻喉小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OtolaryngologyEar": {
+      "document": "体检报告-耳鼻喉科-耳朵",
+      "members": [
+        {
+          "disabled": false,
+          "document": "耳总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "听力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HearingItem",
+          "name": "Hearing",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OtolaryngologyLarynx": {
+      "document": "体检报告-耳鼻喉科-喉",
+      "members": [
+        {
+          "disabled": false,
+          "document": "喉总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OtolaryngologyNose": {
+      "document": "体检报告-耳鼻喉科-鼻",
+      "members": [
+        {
+          "disabled": false,
+          "document": "鼻总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -7737,6 +9680,30 @@
       ],
       "usage": "out"
     },
+    "PdfInfo": {
+      "document": "体检报告PDF信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pdf文件url链接(暂不支持)",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "pdf文件base64编码字符串",
+          "example": "无",
+          "member": "string",
+          "name": "Base64",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "PersonalHistoryBlock": {
       "document": "个人史",
       "members": [
@@ -7873,6 +9840,164 @@
           "member": "string",
           "name": "AlcoholicHistory",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PhysicalBaseItem": {
+      "document": "体检报告基础信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原始文本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Src",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "归一化后值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "四点坐标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Coord",
+          "name": "Coords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PhysicalExamination": {
+      "document": "体检报告综合信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一般检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GeneralExaminationBaseItem",
+          "name": "GeneralExamination",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InternalMedicineBaseItem",
+          "name": "InternalMedicine",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryBaseItem",
+          "name": "Surgery",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "口腔科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StomatologyBaseItem",
+          "name": "Stomatology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "眼科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OphthalmologyBaseItem",
+          "name": "Ophthalmology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "耳鼻喉科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OtolaryngologyBaseItem",
+          "name": "Otolaryngology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "妇科\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GynaecologyBaseItem",
+          "name": "Gynaecology",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "未标准化\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Unclassified",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PhysicalExaminationV1": {
+      "document": "体检报告V1版本",
+      "members": [
+        {
+          "disabled": false,
+          "document": "体检报告信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalExamination",
+          "name": "PhysicalExaminationMulti",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8733,6 +10858,126 @@
       ],
       "usage": "out"
     },
+    "StomatologyBaseItem": {
+      "document": "体检报告-口腔科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "龋齿\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StomatologyToothDecay",
+          "name": "ToothDecay",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "牙龈\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StomatologyGingiva",
+          "name": "Gingiva",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "牙周\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StomatologyPeriodontics",
+          "name": "Periodontics",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "口腔其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StomatologyBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StomatologyBriefSummary": {
+      "document": "体检报告-口腔科-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "口腔小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StomatologyGingiva": {
+      "document": "体检报告-口腔科-牙龈",
+      "members": [
+        {
+          "disabled": false,
+          "document": "牙龈总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StomatologyPeriodontics": {
+      "document": "体检报告-口腔科-牙周",
+      "members": [
+        {
+          "disabled": false,
+          "document": "牙周总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StomatologyToothDecay": {
+      "document": "体检报告-口腔科-龋齿",
+      "members": [
+        {
+          "disabled": false,
+          "document": "龋齿总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Summary": {
       "document": "结论",
       "members": [
@@ -8821,6 +11066,42 @@
       ],
       "usage": "out"
     },
+    "SurgeryAnorectal": {
+      "document": "体检报告-外科-肛门直肠",
+      "members": [
+        {
+          "disabled": false,
+          "document": "肛门直肠总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直肠指检\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "DigitalRectalExamination",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "痔疮\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Hemorrhoid",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SurgeryAttr": {
       "document": "手术记录属性",
       "members": [
@@ -8842,6 +11123,144 @@
           "name": "Value",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryBaseItem": {
+      "document": "体检报告-外科",
+      "members": [
+        {
+          "disabled": false,
+          "document": "体检报告-外科-头颈部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryHeadNeck",
+          "name": "HeadNeck",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-甲状腺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryThyroid",
+          "name": "Thyroid",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-乳房\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryBreast",
+          "name": "Breast",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-浅表淋巴结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryLymphNode",
+          "name": "LymphNode",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-脊柱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgerySpinalExtremities",
+          "name": "SpinalExtremities",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-皮肤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgerySkin",
+          "name": "Skin",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-肛门直肠\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryAnorectal",
+          "name": "Anorectal",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-泌尿生殖系统\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryUrogenitalSystem",
+          "name": "UrogenitalSystem",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-外科其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Others",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "体检报告-外科-小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SurgeryBriefSummary",
+          "name": "BriefSummary",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryBreast": {
+      "document": "体检报告-外科-乳房",
+      "members": [
+        {
+          "disabled": false,
+          "document": "乳房总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryBriefSummary": {
+      "document": "体检报告-外科-小结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "外科小结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -8888,6 +11307,22 @@
           "name": "Value",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryHeadNeck": {
+      "document": "体检报告-外科-头颈部",
+      "members": [
+        {
+          "disabled": false,
+          "document": "头颈部总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9046,6 +11481,166 @@
           "name": "Part",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryLymphNode": {
+      "document": "体检报告-外科-浅表淋巴结",
+      "members": [
+        {
+          "disabled": false,
+          "document": "浅表淋巴结总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgerySkin": {
+      "document": "体检报告-外科-皮肤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "皮肤总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgerySpinalExtremities": {
+      "document": "体检报告-外科-脊柱",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脊柱四肢总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "脊柱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "SpinalColumn",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "四肢和关节\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "LimbJoint",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平跛足\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Foot",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "骨骼\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Bone",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Gait",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "残疾或畸形\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Deformity",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryThyroid": {
+      "document": "体检报告-外科-甲状腺",
+      "members": [
+        {
+          "disabled": false,
+          "document": "甲状腺总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SurgeryUrogenitalSystem": {
+      "document": "体检报告-外科-泌尿生殖系统",
+      "members": [
+        {
+          "disabled": false,
+          "document": "泌尿生殖系统总体描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Text",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "前列腺\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "Prostate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "外生殖器（男性）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValueItem",
+          "name": "ExternalReproductiveOrgans",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -9597,6 +12192,22 @@
           "name": "Name",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TextTypeListBlock": {
+      "document": "文本类型列表块",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本类型列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TextType",
+          "name": "TextTypeList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -11034,6 +13645,73 @@
       ],
       "usage": "out"
     },
+    "TurnPDFToObjectRequest": {
+      "document": "TurnPDFToObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符",
+          "example": "无",
+          "member": "PdfInfo",
+          "name": "PdfInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "TurnPDFToObjectResponse": {
+      "document": "TurnPDFToObject返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报告结构化结果",
+          "example": "无",
+          "member": "Template",
+          "name": "Template",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "多级分类结果",
+          "example": "无",
+          "member": "TextType",
+          "name": "TextTypeList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "报告结构化结果",
+          "example": "无",
+          "member": "Block",
+          "name": "Block",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用Block字段",
+          "example": "无",
+          "member": "bool",
+          "name": "IsBlock",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Vaccination": {
       "document": "免疫接种记录",
       "members": [
@@ -11223,6 +13901,52 @@
           "name": "Positive",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ValueUnitItem": {
+      "document": "体检报告信息-包含单位",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目原文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Item",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PhysicalBaseItem",
+          "name": "Unit",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

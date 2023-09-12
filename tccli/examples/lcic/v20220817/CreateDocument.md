@@ -7,21 +7,22 @@ Input:
 ```
 tccli lcic CreateDocument --cli-unfold-argument  \
     --SdkAppId 1 \
-    --DocumentUrl xx \
-    --DocumentName xx \
-    --Owner xx \
+    --DocumentUrl abc \
+    --DocumentName abc \
+    --Owner abc \
     --TranscodeType 1 \
     --Permission 1 \
-    --DocumentType xx \
-    --DocumentSize 100
+    --DocumentType abc \
+    --DocumentSize 1 \
+    --AutoHandleUnsupportedElement True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DocumentId": "xx",
-        "RequestId": "213das"
+        "DocumentId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

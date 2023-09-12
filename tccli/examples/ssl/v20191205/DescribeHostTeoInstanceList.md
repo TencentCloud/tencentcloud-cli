@@ -21,7 +21,9 @@ Output:
         "InstanceList": [
             {
                 "Host": "abc",
-                "CertId": "abc"
+                "CertId": "abc",
+                "ZoneId": "abc",
+                "Status": "abc"
             }
         ],
         "TotalCount": 0,

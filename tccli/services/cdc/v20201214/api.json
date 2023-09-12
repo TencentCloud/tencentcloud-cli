@@ -1481,6 +1481,42 @@
           "name": "DedicatedClusterId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "宿主机id",
+          "example": "host-xxxxxxxx",
+          "member": "string",
+          "name": "HostId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2023-01-01 12:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无2023-01-01 12:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间范围精度，1分钟/5分钟",
+          "example": "ONE_MINUTE",
+          "member": "string",
+          "name": "Period",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1494,6 +1530,7 @@
           "example": "无",
           "member": "HostStatistic",
           "name": "HostStatisticSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2145,6 +2182,32 @@
       ],
       "type": "object"
     },
+    "DetailData": {
+      "document": "带有时间的详细数据。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Timestamps",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的具体值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0]",
+          "member": "float",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HostInfo": {
       "document": "CDC宿主机的详细信息",
       "members": [
@@ -2270,7 +2333,7 @@
           "example": "S5.21XLARGE320",
           "member": "string",
           "name": "HostType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2280,7 +2343,7 @@
           "example": "S5",
           "member": "string",
           "name": "HostFamily",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2290,7 +2353,7 @@
           "example": "84",
           "member": "uint64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2300,7 +2363,7 @@
           "example": "320",
           "member": "uint64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2310,9 +2373,79 @@
           "example": "240",
           "member": "uint64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均cpu负载百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "CpuAverage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均内存使用率百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "MemAverage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平均网络流量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "NetAverage",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cpu详细监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailData",
+          "name": "CpuDetailData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailData",
+          "name": "MemDetailData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络速率详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailData",
+          "name": "NetRateDetailData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网速包详细数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DetailData",
+          "name": "NetPacketDetailData",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

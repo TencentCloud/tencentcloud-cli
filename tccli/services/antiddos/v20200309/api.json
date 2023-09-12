@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateBoundIP": {
-      "document": "绑定IP到高防包实例，支持独享包、共享包；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
+      "document": "绑定IP到高防包实例，支持独享包、共享包（新版）；需要注意的是此接口绑定或解绑IP是异步接口，当处于绑定或解绑中时，则不允许再进行绑定或解绑，需要等待当前绑定或解绑完成。",
       "input": "CreateBoundIPRequest",
       "name": "绑定IP到高防包实例",
       "output": "CreateBoundIPResponse",
@@ -2731,7 +2731,7 @@
         {
           "disabled": false,
           "document": "资源实例ID",
-          "example": "bgp-000000xe",
+          "example": "bgp-000000x1",
           "member": "string",
           "name": "Id",
           "required": true,
@@ -7526,7 +7526,7 @@
         {
           "disabled": false,
           "document": "IP搜索，选填，当需要搜索IP请填写",
-          "example": "无",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
           "required": false,
@@ -7543,7 +7543,7 @@
         },
         {
           "disabled": false,
-          "document": "页起始偏移，取值为(页码-1)*一页条数",
+          "document": "规则偏移量，取值为(页码-1)*一页条数",
           "example": "无",
           "member": "uint64",
           "name": "Offset",

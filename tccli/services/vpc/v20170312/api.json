@@ -10463,6 +10463,15 @@
           "name": "Limit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询IP地址模板成员标识。",
+          "example": "False",
+          "member": "bool",
+          "name": "NeedMemberInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -10528,6 +10537,15 @@
           "name": "Limit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取IP地址模板成员标识。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedMemberInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -13958,6 +13976,15 @@
           "name": "Limit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取协议端口模板成员标识。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedMemberInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -14023,6 +14050,15 @@
           "name": "Limit",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取协议端口成员标识。",
+          "example": "false",
+          "member": "bool",
+          "name": "NeedMemberInfo",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

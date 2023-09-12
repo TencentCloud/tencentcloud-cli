@@ -1169,6 +1169,15 @@
           "name": "DocumentSize",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否对不支持元素开启自动处理的功能。默认关闭。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoHandleUnsupportedElement",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -1182,7 +1191,7 @@
           "example": "abc",
           "member": "string",
           "name": "DocumentId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

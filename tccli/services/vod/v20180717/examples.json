@@ -142,6 +142,14 @@
         "title": "创建开启画面令人反感的信息的内容审核模板，并指定过滤标签"
       }
     ],
+    "CreateDomainVerifyRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainVerifyRecord\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"DNSVerifyInfo\": {\n            \"SubDomain\": \"abc\",\n            \"Record\": \"abc\",\n            \"RecordType\": \"abc\"\n        },\n        \"FileVerifyInfo\": {\n            \"FileVerifyUrl\": \"abc\",\n            \"FileVerifyDomains\": [\n                \"abc\"\n            ],\n            \"FileVerifyName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "生成域名解析记录"
+      }
+    ],
     "CreateEnhanceMediaTemplate": [
       {
         "document": "创建音画质重生模板。",
@@ -1678,6 +1686,22 @@
         "input": "https://vod.tencentcloudapi.com/?Action=SplitMedia\n&FileId=5285485487985271487\n&Segments.0.StartTimeOffset=40.0\n&Segments.0.EndTimeOffset=50.0\n&Segments.1.StartTimeOffset=60.0\n&Segments.1.EndTimeOffset=70.0\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-SplitMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "对点播中的一个文件进行拆条，生成两个新的视频"
+      }
+    ],
+    "VerifyDomainOwnershipForConsole": [
+      {
+        "document": "创建域名",
+        "input": "https://vod.tencentcloudapi.com/?Action=VerifyDomainOwnershipForConsole\n&Domain=Myexample.com\n&AccelerateArea=Mainland\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
+        "title": "验证域名归属权"
+      }
+    ],
+    "VerifyDomainRecord": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyDomainRecord\n<公共请求参数>\n\n{\n    \"Domain\": \"abc.com\",\n    \"VerifyType\": \"dns\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30cca198-d096-43ae-8aec-9f87d5a0860e\",\n        \"Result\": true\n    }\n}",
+        "title": "验证域名解析"
       }
     ],
     "WeChatMiniProgramPublish": [

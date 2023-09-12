@@ -250,7 +250,7 @@
       {
         "document": "获取EdgeOne网关实例列表",
         "input": "POST / HTTP/1.1\nHost: ssl.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHostTeoInstanceList\n<公共请求参数>\n\n{\n    \"CertificateId\": \"abc\",\n    \"IsCache\": 1,\n    \"Filters\": [\n        {\n            \"FilterKey\": \"abc\",\n            \"FilterValue\": \"abc\"\n        }\n    ],\n    \"ResourceType\": \"abc\",\n    \"OldCertificateId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Host\": \"abc\",\n                \"CertId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceList\": [\n            {\n                \"Host\": \"abc\",\n                \"CertId\": \"abc\",\n                \"ZoneId\": \"abc\",\n                \"Status\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取EdgeOne实例列表"
       }
     ],

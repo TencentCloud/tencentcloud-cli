@@ -2519,6 +2519,26 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "当前时间（仅电子驾驶证支持返回该字段）",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生成时间（仅电子驾驶证支持返回该字段）",
+          "example": "无",
+          "member": "string",
+          "name": "GenerateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",

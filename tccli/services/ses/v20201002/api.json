@@ -140,6 +140,13 @@
       "output": "ListEmailTemplatesResponse",
       "status": "online"
     },
+    "ListReceiverDetails": {
+      "document": "根据收件人列表id查询收件人列表中的所有收件人邮箱地址，分页查询，可以根据收件邮箱地址来过滤查询",
+      "input": "ListReceiverDetailsRequest",
+      "name": "查询某个收件人列表详情",
+      "output": "ListReceiverDetailsResponse",
+      "status": "online"
+    },
     "ListReceivers": {
       "document": "根据条件查询收件人列表，支持分页，模糊查询，状态查询",
       "input": "ListReceiversRequest",
@@ -1424,6 +1431,80 @@
       ],
       "type": "object"
     },
+    "ListReceiverDetailsRequest": {
+      "document": "ListReceiverDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "收件人列表ID,CreateReceiver接口创建收件人列表时会返回该值",
+          "example": "123",
+          "member": "uint64",
+          "name": "ReceiverId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，整型，从0开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目，整型,不超过100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "收件人地址，长度0-50，示例：xxx@te.com，支持模糊查询",
+          "example": "xxx@te.com",
+          "member": "string",
+          "name": "Email",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListReceiverDetailsResponse": {
+      "document": "ListReceiverDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据记录",
+          "example": "无",
+          "member": "ReceiverDetail",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListReceiversRequest": {
       "document": "ListReceivers请求参数结构体",
       "members": [
@@ -1640,6 +1721,42 @@
           "example": "2021-09-28 16:40:35",
           "member": "string",
           "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReceiverDetail": {
+      "document": "收件人列表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "收件人地址",
+          "example": "123@abc.com",
+          "member": "string",
+          "name": "Email",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-09-09 12:13:14",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板参数",
+          "example": "{\"name\":\"xxx\",\"age\":\"xx\"}",
+          "member": "string",
+          "name": "TemplateData",
           "required": true,
           "type": "string",
           "value_allowed_null": false

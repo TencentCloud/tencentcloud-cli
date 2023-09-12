@@ -172,6 +172,14 @@
         "title": "获取模板列表"
       }
     ],
+    "ListReceiverDetails": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListReceiverDetails\n<公共请求参数>\n\n{\n    \"ReceiverId\": 123,\n    \"Email\": \"abc@ec.cm\",\n    \"Offset\": 1,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Data\": [\n            {\n                \"Email\": \"abc@cd.com\",\n                \"CreateTime\": \"2021-09-28 16:40:35\",\n                \"TemplateData\": \"{\\\"name\\\":\\\"1\\\"}\"\n            }\n        ],\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "title": "查询某个收件人列表详情"
+      }
+    ],
     "ListReceivers": [
       {
         "document": "",

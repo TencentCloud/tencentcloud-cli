@@ -77,6 +77,13 @@
       "output": "CreateContentReviewTemplateResponse",
       "status": "online"
     },
+    "CreateDomainVerifyRecord": {
+      "document": "该接口用于生成一条子域名解析，提示客户添加到域名解析上，用于泛域名及域名取回校验归属权。",
+      "input": "CreateDomainVerifyRecordRequest",
+      "name": "生成域名解析记录",
+      "output": "CreateDomainVerifyRecordResponse",
+      "status": "online"
+    },
     "CreateEnhanceMediaTemplate": {
       "document": "创建音画质重生模板。",
       "input": "CreateEnhanceMediaTemplateRequest",
@@ -1111,6 +1118,20 @@
       "input": "SplitMediaRequest",
       "name": "视频拆条",
       "output": "SplitMediaResponse",
+      "status": "online"
+    },
+    "VerifyDomainOwnershipForConsole": {
+      "document": "控制台验证域名归属",
+      "input": "VerifyDomainOwnershipForConsoleRequest",
+      "name": "控制台验证域名归属",
+      "output": "VerifyDomainOwnershipForConsoleResponse",
+      "status": "online"
+    },
+    "VerifyDomainRecord": {
+      "document": "该接口用于验证域名解析值。",
+      "input": "VerifyDomainRecordRequest",
+      "name": "验证域名解析",
+      "output": "VerifyDomainRecordResponse",
       "status": "online"
     },
     "WeChatMiniProgramPublish": {
@@ -9093,6 +9114,43 @@
       ],
       "type": "object"
     },
+    "CreateDomainVerifyRecordRequest": {
+      "document": "CreateDomainVerifyRecord请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateDomainVerifyRecordResponse": {
+      "document": "CreateDomainVerifyRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DNS解析信息",
+          "example": "无",
+          "member": "DNSVerifyInfo",
+          "name": "DNSVerifyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件验证信息",
+          "example": "无",
+          "member": "FileVerifyInfo",
+          "name": "FileVerifyInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateEnhanceMediaTemplateRequest": {
       "document": "CreateEnhanceMediaTemplate请求参数结构体",
       "members": [
@@ -10943,6 +11001,42 @@
         }
       ],
       "type": "object"
+    },
+    "DNSVerifyInfo": {
+      "document": "DNS解析验证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子解析。",
+          "example": "_cdnauth",
+          "member": "string",
+          "name": "SubDomain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析值。",
+          "example": "2023091115xxxxxx63d1d6c8595",
+          "member": "string",
+          "name": "Record",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解析类型。",
+          "example": "txt",
+          "member": "string",
+          "name": "RecordType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DailyPlayStatInfo": {
       "document": "播放统计信息。",
@@ -17697,6 +17791,42 @@
           "name": "MetaData",
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FileVerifyInfo": {
+      "document": "文件验证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件验证 URL 指引。",
+          "example": "http://xxx.com/verification.html",
+          "member": "string",
+          "name": "FileVerifyUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件校验域名列表。",
+          "example": "[\"xxx.com\"]",
+          "member": "string",
+          "name": "FileVerifyDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件校验文件名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "verification.html",
+          "member": "string",
+          "name": "FileVerifyName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -33545,6 +33675,7 @@
           "example": "无",
           "member": "TerrorismImgReviewTemplateInfo",
           "name": "ImgReviewInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -33555,12 +33686,13 @@
           "example": "无",
           "member": "TerrorismOcrReviewTemplateInfo",
           "name": "OcrReviewInfo",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "object",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TerrorismConfigureInfoForUpdate": {
       "document": "鉴别涉及令人不安全的信息的任务控制参数。",
@@ -33722,9 +33854,10 @@
         {
           "disabled": false,
           "document": "文本鉴别涉及令人不安全的信息的任务开关，可选值：\n<li>ON：开启文本鉴别涉及令人不安全的信息的任务；</li>\n<li>OFF：关闭文本鉴别涉及令人不安全的信息的任务。</li>",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -33732,9 +33865,10 @@
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规，不填默认为 100 分。取值范围：0~100。",
-          "example": "无",
+          "example": "80",
           "member": "int64",
           "name": "BlockConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -33742,9 +33876,10 @@
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核，不填默认为 75 分。取值范围：0~100。",
-          "example": "无",
+          "example": "75",
           "member": "int64",
           "name": "ReviewConfidence",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -34741,6 +34876,88 @@
         }
       ],
       "usage": "in"
+    },
+    "VerifyDomainOwnershipForConsoleRequest": {
+      "document": "VerifyDomainOwnershipForConsole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要接入点播的域名。",
+          "example": "abc.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要开启加速的区域： <li>Mainland: 中国大陆地区</li> <li>Internation: 海外地区及港澳台</li> <li>Global: 全球</li> 不填会根据用户注册腾讯云时的地域信息自动判断 Mainland 或 Internation\t",
+          "example": "Mainland",
+          "member": "string",
+          "name": "AccelerateArea",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDomainOwnershipForConsoleResponse": {
+      "document": "VerifyDomainOwnershipForConsole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDomainRecordRequest": {
+      "document": "VerifyDomainRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要接入点播的加速域名。",
+          "example": "abc.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "验证方式：\n<li>dns：DNS 解析验证；</li>\n<li>fIle：文件验证。</li>\n\n默认值：dns。",
+          "example": "dns",
+          "member": "string",
+          "name": "VerifyType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyDomainRecordResponse": {
+      "document": "VerifyDomainRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否验证成功。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VideoDenoiseInfo": {
       "document": "视频降噪控制参数",

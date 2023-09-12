@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeAlarmStat": [
+      {
+        "document": "空数据",
+        "input": "POST / HTTP/1.1\nHost: ssa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmStat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"AttackEvent\": []\n        },\n        \"RequestId\": \"7fe7e825-cf43-4749-a570-2912f5a62706\"\n    }\n}",
+        "title": "空数据"
+      }
+    ],
     "DescribeAssetDetail": [
       {
         "document": "",

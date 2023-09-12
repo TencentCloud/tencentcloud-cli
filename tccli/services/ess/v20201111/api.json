@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的签署链接, 暂时不支持企业端签署 <br/>\n\n`注意：`<br/>\n`1. 该接口目前仅支持签署人类型是个人签署方的场景（PERSON）。` <br/>\n`2. 该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 。` <br/>\n`3. 该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入`。<br/>\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
+      "document": "该接口用于发起合同后，生成个人用户的签署链接, 暂时不支持企业端签署 <br/>\n\n`注意：`<br/>\n`1. 该接口目前仅支持签署人类型是个人签署方的场景（PERSON）。` <br/>\n`2. 该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 。` <br/>\n`3. 该签署链接有效期为30分钟，过期后将失效，如需签署可重新创建签署链接 。` <br/>\n`4. 该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入`。<br/>\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
       "input": "CreateFlowSignUrlRequest",
       "name": "获取个人用户H5签署链接",
       "output": "CreateFlowSignUrlResponse",
@@ -169,9 +169,9 @@
       "status": "online"
     },
     "CreatePersonAuthCertificateImage": {
-      "document": "本接口（CreatePersonAuthCertificateImage）用于创建个人用户证书证明图片",
+      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  `只能获取个人用户证明图片, 企业员工的暂不支持`",
       "input": "CreatePersonAuthCertificateImageRequest",
-      "name": "创建个人用户证书证明图片",
+      "name": "获取个人用户认证证书图片",
       "output": "CreatePersonAuthCertificateImageResponse",
       "status": "online"
     },
@@ -190,7 +190,7 @@
       "status": "online"
     },
     "CreateReleaseFlow": {
-      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n\n`注意：原合同必须签署完成后，才能发起解除协议。` <br/>\n`注意：只有原合同企业类型的参与人才能发起解除协议，个人不能发起解除协议。`<br/>\n`注意：原合同个人类型参与人必须是解除协议的参与人，不能更换其他第三方个人参与解除协议。`<br/>\n`注意：如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的企业员工代为处理。`<br/>\n`注意：发起解除协议同发起其他企业合同一样，也会参与合同扣费，扣费标准同其他类型合同。`<br/>\n`注意：在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均会转变为已解除状态。`<br/>",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同（签署流程），进行解除操作。\n解除协议的模板是官方提供 ，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均变为已解除状态。</li></ul>",
       "input": "CreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "CreateReleaseFlowResponse",
@@ -274,9 +274,9 @@
       "status": "online"
     },
     "DescribeFlowBriefs": {
-      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n每个企业限制日调用量限制：100W，当日超过此限制后再调用接口返回错误",
+      "document": "查询流程基础信息\n适用场景：可用于主动查询某个合同流程的签署状态信息。可以配合回调通知使用。\n\n注: `每个企业限制日调用量限制：100W，当日超过此限制后再调用接口返回错误`",
       "input": "DescribeFlowBriefsRequest",
-      "name": "查询流程摘要",
+      "name": "查询流程基础信息",
       "output": "DescribeFlowBriefsResponse",
       "status": "online"
     },
@@ -351,9 +351,9 @@
       "status": "online"
     },
     "DescribeThirdPartyAuthCode": {
-      "document": "通过AuthCode查询用户是否实名",
+      "document": "通过AuthCode查询个人用户是否实名\n\n\n注意: \n<ul>\n<li>此接口为合作引流场景使用，使用`有白名单限制`，使用前请联系对接的客户经理沟通。</li>\n<li>`AuthCode 只能使用一次`，查询一次再次查询会返回错误</li>\n</ul>",
       "input": "DescribeThirdPartyAuthCodeRequest",
-      "name": "通过AuthCode查询用户是否实名",
+      "name": "通过AuthCode查询个人用户是否实名",
       "output": "DescribeThirdPartyAuthCodeResponse",
       "status": "online"
     },
@@ -678,6 +678,15 @@
           "name": "ApproverNeedSignReview",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "[用PDF文件创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles)时,如果设置了外层参数SignBeanTag=1(允许签署过程中添加签署控件),则可通过此参数明确规定合同所使用的签署控件类型（骑缝章、普通章法人章等）和具体的印章（印章ID）或签名方式。\n\n注：`限制印章控件或骑缝章控件情况下,仅本企业签署方可以指定具体印章（通过传递ComponentValue,支持多个），他方企业或个人只支持限制控件类型。`",
+          "example": "无",
+          "member": "ComponentLimit",
+          "name": "AddSignComponentsLimits",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -1484,6 +1493,30 @@
         }
       ],
       "usage": "both"
+    },
+    "ComponentLimit": {
+      "document": "签署控件的类型和范围限制条件，用于控制文件发起后签署人拖拽签署区时可使用的控件类型和具体的印章或签名方式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "控件类型，支持以下类型\n<ul><li>SIGN_SEAL : 印章控件</li>\n<li>SIGN_PAGING_SEAL : 骑缝章控件</li>\n<li>SIGN_LEGAL_PERSON_SEAL : 企业法定代表人控件</li>\n<li>SIGN_SIGNATURE : 用户签名控件</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署控件类型的值(可选)，用与限制签署时印章或者签名的选择范围\n\n1.当ComponentType 是 SIGN_SEAL 或者 SIGN_PAGING_SEAL 时可传入企业印章Id（支持多个）\n\n2.当ComponentType 是 SIGN_SIGNATURE 时可传入以下类型（支持多个）\n\n<ul><li>HANDWRITE : 手写签名</li>\n<li>OCR_ESIGN : OCR印章（智慧手写签名）</li>\n<li>ESIGN : 个人印章</li>\n<li>SYSTEM_ESIGN : 系统印章</li></ul>\n\n3.当ComponentType 是 SIGN_LEGAL_PERSON_SEAL 时无需传递此参数。",
+          "example": "无",
+          "member": "string",
+          "name": "ComponentValue",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "CreateBatchCancelFlowUrlRequest": {
       "document": "CreateBatchCancelFlowUrl请求参数结构体",
@@ -3447,7 +3480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3465,7 +3498,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件类型取值：\nID_CARD 身居民身份证\nPASSPORT 护照\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nFOREIGN_ID_CARD 外国人永久居留身份证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "document": "证件类型，支持以下类型\n<ul><li> ID_CARD  : 居民身份证 (默认值)</li>\n<li> PASSPORT  : 护照</li>\n<li> FOREIGN_ID_CARD  : 外国人永久居留身份证</li>\n<li> HONGKONG_AND_MACAO  : 港澳居民来往内地通行证</li>\n<li> HONGKONG_MACAO_AND_TAIWAN  : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -3474,7 +3507,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件号码",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -3483,7 +3516,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3498,8 +3531,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "个人用户证明证书的下载链接",
-          "example": "无",
+          "document": "个人用户认证证书图片下载URL，`有效期为5分钟`，超过有效期后将无法再下载。",
+          "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=fcb0d640136f8f47d28e3f4cd5fb8bac321**da99b18e29d28807fc8e",
           "member": "string",
           "name": "AuthCertUrl",
           "output_required": true,
@@ -3508,8 +3541,8 @@
         },
         {
           "disabled": false,
-          "document": "证书图片上的证书编号，20位数字\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "个人用户认证证书的编号, 为20位数字组成的字符串,  由腾讯电子签下发此编号 。\n该编号会合成到个人用户证书证明图片。\n\n注: `个人用户认证证书的编号和证明图片绑定, 获取新的证明图片编号会变动`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23090411***877319694",
           "member": "string",
           "name": "ImageCertId",
           "output_required": false,
@@ -3518,8 +3551,8 @@
         },
         {
           "disabled": false,
-          "document": "图片证明对应的CA证书序列号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "CA供应商下发给用户的证书编号，在证书到期后自动续期后此证书编号会发生变动，且不会合成到个人用户证书证明图片中。\n\n注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2206EB**4597742",
           "member": "string",
           "name": "SerialNumber",
           "output_required": false,
@@ -3528,7 +3561,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书颁发时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书颁发时间，格式为Unix标准时间戳（秒）   \n该时间格式化后会合成到个人用户证书证明图片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ValidFrom",
@@ -3538,7 +3571,7 @@
         },
         {
           "disabled": false,
-          "document": "CA证书有效截止时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "CA证书有效截止时间，格式为Unix标准时间戳（秒）\n该时间格式化后会合成到个人用户证书证明图片\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ValidTo",
@@ -3905,7 +3938,7 @@
         {
           "disabled": false,
           "document": "待解除的签署流程编号（即原签署流程的编号）。",
-          "example": "无",
+          "example": "yDwFmUUckpst10i3UubBSat8PWOt2iQF",
           "member": "string",
           "name": "NeedRelievedFlowId",
           "required": true,
@@ -3913,7 +3946,7 @@
         },
         {
           "disabled": false,
-          "document": "解除协议内容。",
+          "document": "解除协议内容, 包括解除理由等信息。",
           "example": "无",
           "member": "RelieveInfo",
           "name": "ReliveInfo",
@@ -3931,7 +3964,7 @@
         },
         {
           "disabled": false,
-          "document": "解除协议的签署人列表(如不指定该参数，默认使用原流程的签署人列表)。 <br/>\n如需更换原合同中的签署人，可通过指定该签署人的RecipientId编号更换此签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n解除协议的签署人数量不能多于原流程的签署人数量。<br/>\n\n`注意：只能更换同企业的签署人。`<br/>\n`注意：不支持更换个人类型的签署人。`<br/>",
+          "document": "替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n\n注意：\n`只能更换自己企业的签署人,  不支持更换个人类型或者其他企业的签署人。`\n`可以不指定替换签署人, 使用原流程的签署人 `",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -5087,7 +5120,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5096,8 +5129,8 @@
         },
         {
           "disabled": false,
-          "document": "需要查询的流程ID列表，限制最大100个",
-          "example": "无",
+          "document": "查询的合同流程ID列表最多支持100个流程ID。 \n如果某个合同流程ID不存在，系统会跳过此ID的查询，继续查询剩余存在的合同流程。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "[yDRCLUUgygq2xun5UuO4zjEwg0vjoimj]",
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -5105,7 +5138,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5120,7 +5153,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程列表",
+          "document": "合同流程基础信息列表，包含流程的名称、状态、创建日期等基本信息。 \n注：`与入参 FlowIds 的顺序可能存在不一致的情况。`",
           "example": "无",
           "member": "FlowBrief",
           "name": "FlowBriefs",
@@ -5574,7 +5607,7 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
+          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]，查询过滤未实名用户，Key为Status，Values为[\"NotVerified\"]\n查询某个部门的用户，Key为DepartmentId，Values为[\"DepartmentId\"]\n根据用户Id查询员工时，Key为UserId，Values为[\"UserId\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6040,7 +6073,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子签小程序跳转客户小程序时携带的授权查看码",
+          "document": "腾讯电子签小程序跳转客户企业小程序时携带的授权查看码，AuthCode由腾讯电子签小程序生成。",
           "example": "yDxMhUyKQDMFdnUyxgEv8yhSdo0ZFs8I",
           "member": "string",
           "name": "AuthCode",
@@ -6049,7 +6082,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -6058,7 +6091,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6073,8 +6106,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户是否实名，VERIFIED 为实名，UNVERIFIED 未实名",
-          "example": "VERIFIED｜UNVERIFIED",
+          "document": "AuthCode 中对应个人用户是否实名\n<ul>\n<li> **VERIFIED** : 此个人已实名</li>\n<li> **UNVERIFIED**: 此个人未实名</li></ul>",
+          "example": "VERIFIED",
           "member": "string",
           "name": "VerifyStatus",
           "output_required": true,
@@ -8925,7 +8958,7 @@
         {
           "disabled": false,
           "document": "指定签署人类型，目前仅支持\n<ul><li> **ORGANIZATION**：企业（默认值）</li>\n<li> **ENTERPRISESERVER**：企业静默签</li></ul>",
-          "example": "无",
+          "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproverType",
           "required": false,
@@ -8942,7 +8975,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方在合同中的角色是按照创建合同的时候来排序的; 解除协议默认会将第一个参与人叫甲方, 第二个叫乙方,第三个叫丙方，以此类推。如果您需要改动参与人的角色名字, 可以设置此签署方自定义控件别名字段，最大20个字。",
+          "document": "参与方在合同中的角色是按照创建合同的时候来排序的，解除协议默认会将第一个参与人叫`甲方`,第二个叫`乙方`,  第三个叫`丙方`，以此类推。\n\n如果需改动此参与人的角色名字，可用此字段指定，由汉字,英文字符,数字组成，最大20个字。\n",
           "example": "供应商",
           "member": "string",
           "name": "ApproverSignRole",
@@ -8957,53 +8990,48 @@
       "members": [
         {
           "disabled": false,
-          "document": "解除理由，最大支持200个字",
+          "document": "解除理由，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
           "example": "无",
           "member": "string",
           "name": "Reason",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "解除后仍然有效的条款，保留条款，最大支持200个字\n",
+          "document": "解除后仍然有效的条款，保留条款，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。\n",
           "example": "无",
           "member": "string",
           "name": "RemainInForceItem",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "原合同事项处理-费用结算，最大支持200个字\n",
+          "document": "原合同事项处理-费用结算，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
           "example": "无",
           "member": "string",
           "name": "OriginalExpenseSettlement",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "原合同事项处理-其他事项，最大支持200个字\n",
+          "document": "原合同事项处理-其他事项，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
           "example": "无",
           "member": "string",
           "name": "OriginalOtherSettlement",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "其他约定，最大支持200个字\n",
+          "document": "其他约定，长度不能超过200，只能由中文、字母、数字、中文标点和英文标点组成(不支持表情)。",
           "example": "无",
           "member": "string",
           "name": "OtherDeals",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

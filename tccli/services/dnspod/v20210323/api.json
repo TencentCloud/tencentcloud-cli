@@ -318,7 +318,7 @@
     "DescribeUserDetail": {
       "document": "获取帐户信息",
       "input": "DescribeUserDetailRequest",
-      "name": "获取帐户信息",
+      "name": "获取账户信息",
       "output": "DescribeUserDetailResponse",
       "status": "online"
     },
@@ -4566,10 +4566,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "帐户信息",
+          "document": "账户信息",
           "example": "无",
           "member": "UserInfo",
           "name": "UserInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

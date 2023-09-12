@@ -15,33 +15,33 @@ Output:
 {
     "Response": {
         "Result": {
+            "TotalCount": 0,
             "Content": [
                 {
-                    "Remark": "xx",
-                    "Enable": true,
+                    "RuleId": "abc",
+                    "RuleName": "abc",
+                    "Priority": 0,
+                    "Remark": "abc",
                     "RuleTagList": [
                         {
-                            "UpdateTime": 0,
-                            "TagId": "xx",
-                            "TagOperator": "xx",
-                            "TagValue": "xx",
-                            "TagName": "xx",
-                            "LaneRuleId": "xx",
-                            "CreateTime": 0
+                            "TagId": "abc",
+                            "TagName": "abc",
+                            "TagOperator": "abc",
+                            "TagValue": "abc",
+                            "LaneRuleId": "abc",
+                            "CreateTime": 0,
+                            "UpdateTime": 0
                         }
                     ],
-                    "RuleId": "xx",
-                    "RuleTagRelationship": "xx",
-                    "UpdateTime": 0,
-                    "Priority": 0,
-                    "LaneId": "xx",
-                    "RuleName": "xx",
-                    "CreateTime": 0
+                    "RuleTagRelationship": "abc",
+                    "LaneId": "abc",
+                    "Enable": true,
+                    "CreateTime": 0,
+                    "UpdateTime": 0
                 }
-            ],
-            "TotalCount": 0
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

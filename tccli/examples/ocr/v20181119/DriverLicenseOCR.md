@@ -31,6 +31,8 @@ Output:
         "RequestId": "9b0d1ee9-8fdb-4194-be58-212bee88a7fd",
         "Sex": "女",
         "StartDate": "2015-10-01",
+        "CurrentTime": "",
+        "GenerateTime": "",
         "State": ""
     }
 }
@@ -73,6 +75,8 @@ Output:
         "RequestId": "c5ceedaa-cb6f-4210-af49-0a5dee461259",
         "Sex": "男",
         "StartDate": "2011-10-01",
+        "CurrentTime": "",
+        "GenerateTime": "",
         "State": ""
     }
 }
@@ -111,6 +115,8 @@ Output:
         "RequestId": "03023a0a-cf96-4baa-8cd8-34ba9d32f3db",
         "Sex": "",
         "StartDate": "",
+        "CurrentTime": "",
+        "GenerateTime": "",
         "State": ""
     }
 }
@@ -148,6 +154,8 @@ Output:
         "RequestId": "4b67dd01-c0ba-43c0-b899-e1088fa314fe",
         "Sex": "女",
         "StartDate": "2020-01-20",
+        "CurrentTime": "",
+        "GenerateTime": "",
         "State": "未处理"
     }
 }
