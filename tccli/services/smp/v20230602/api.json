@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreatePaymentArchive": {
+      "document": "创建赔付归档记录",
+      "input": "CreatePaymentArchiveRequest",
+      "name": "创建赔付归档记录",
+      "output": "CreatePaymentArchiveResponse",
+      "status": "online"
+    },
     "DescribeProductInputType": {
       "document": "查询云产品交互类型",
       "input": "DescribeProductInputTypeRequest",
@@ -8,7 +15,7 @@
       "status": "online"
     },
     "DescribeResourcesSLAPayment": {
-      "document": "SLA赔付金额计算\n\n\n## 参数示例\n\n```\n{\n\t\"ProductCode\": \"p_cvm\",\n\t\"SubProductCode\": \"\",\n\t\"PayerUin\": \"客户UIN\",\n\t\"Operator\": \"abc\",\n\t\"Resources\": [{\n\t\t\"ResourceId\": \"资源ID\",\n\t\t\"DownMonth\": \"2023-05\",\n\t\t\"DownTime\": 10,\n\t\t\"ConsumptionBill\": [{\n\t\t\t\t\"BusinessCode\": \"p_cvm\",\n\t\t\t\t\"BusinessCodeName\": \"云服务器CVM\",\n\t\t\t\t\"CashPayAmount\": \"7.71\",\n\t\t\t\t\"ConsumptionTypeName\": \"续费分摊\",\n\t\t\t\t\"DailyTotalCost\": 0.72580645,\n\t\t\t\t\"DayDiff\": 19,\n\t\t\t\t\"FeeBeginTime\": \"2023-05-13 00:00:00\",\n\t\t\t\t\"FeeEndTime\": \"2023-05-31 23:59:59\",\n\t\t\t\t\"IncentivePayAmount\": \"0.00000000\",\n\t\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\t\"PayMode\": \"prePay\",\n\t\t\t\t\"PayModeName\": \"包年包月\",\n\t\t\t\t\"ProjectId\": \"0\",\n\t\t\t\t\"ProjectName\": \"默认项目\",\n\t\t\t\t\"RealCost\": \"13.79\",\n\t\t\t\t\"RealTotalCost\": \"7.71\",\n\t\t\t\t\"RegionId\": \"1\",\n\t\t\t\t\"RegionName\": \"华南地区（广州）\",\n\t\t\t\t\"ResourceId\": \"资源ID\",\n\t\t\t\t\"ResourceName\": \"未命名\",\n\t\t\t\t\"TransferPayAmount\": \"0.00\",\n\t\t\t\t\"VoucherPayAmount\": \"0.00000000\"\n\t\t\t}\n\t\t],\n\t\t\"DeviceDealInfo\": [{\n\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\"OrderData\": {\n\t\t\t\t\"UseBeginTime\": \"2023-03-31 10:04:23\",\n\t\t\t\t\"UseEndTime\": \"2024-03-31 23:59:59\",\n\t\t\t\t\"ResourceId\": \"资源ID\"\n\t\t\t}\n\t\t}]\n\t}]\n}\n```\n\n## 响应示例\n\n```\n{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87\n        }\n    }\n}\n\n异常响应：\n{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"RequestLimitExceeded\",\n            \"Message\": \"查询失败，用户【rockyjiepan】过去24小时内已查询超过【5】次，请稍后再重试\"\n        },\n        \"RequestId\": \"676d01f0-4082-4057-a902-95cbd734f1ef\"\n    }\n}\n```",
+      "document": "SLA赔付金额计算\n\n\n## 参数示例\n\n```\n{\n\t\"ProductCode\": \"p_cvm\",\n\t\"SubProductCode\": \"\",\n\t\"PayerUin\": \"客户UIN\",\n\t\"Operator\": \"abc\",\n\t\"Resources\": [{\n\t\t\"ResourceId\": \"资源ID\",\n\t\t\"DownMonth\": \"2023-05\",\n\t\t\"DownTime\": 10,\n\t\t\"ConsumptionBill\": [{\n\t\t\t\t\"BusinessCode\": \"p_cvm\",\n\t\t\t\t\"BusinessCodeName\": \"云服务器CVM\",\n\t\t\t\t\"CashPayAmount\": \"7.71\",\n\t\t\t\t\"ConsumptionTypeName\": \"续费分摊\",\n\t\t\t\t\"DailyTotalCost\": 0.72580645,\n\t\t\t\t\"DayDiff\": 19,\n\t\t\t\t\"FeeBeginTime\": \"2023-05-13 00:00:00\",\n\t\t\t\t\"FeeEndTime\": \"2023-05-31 23:59:59\",\n\t\t\t\t\"IncentivePayAmount\": \"0.00000000\",\n\t\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\t\"PayMode\": \"prePay\",\n\t\t\t\t\"PayModeName\": \"包年包月\",\n\t\t\t\t\"ProjectId\": \"0\",\n\t\t\t\t\"ProjectName\": \"默认项目\",\n\t\t\t\t\"RealCost\": \"13.79\",\n\t\t\t\t\"RealTotalCost\": \"7.71\",\n\t\t\t\t\"RegionId\": \"1\",\n\t\t\t\t\"RegionName\": \"华南地区（广州）\",\n\t\t\t\t\"ResourceId\": \"资源ID\",\n\t\t\t\t\"ResourceName\": \"未命名\",\n\t\t\t\t\"TransferPayAmount\": \"0.00\",\n\t\t\t\t\"VoucherPayAmount\": \"0.00000000\"\n\t\t\t}\n\t\t],\n\t\t\"DeviceDealInfo\": [{\n\t\t\t\"OrderId\": \"20230513400032203961682\",\n\t\t\t\"OrderData\": {\n\t\t\t\t\"UseBeginTime\": \"2023-03-31 10:04:23\",\n\t\t\t\t\"UseEndTime\": \"2024-03-31 23:59:59\",\n\t\t\t\t\"ResourceId\": \"资源ID\"\n\t\t\t}\n\t\t}]\n\t}]\n}\n```\n\n## 响应示例\n\n```\n{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87,\n            \"PaymentTraceId\": \"5ce2d8d5-5173-47a0-895d-4c0052d97f5f\"\n        }\n    }\n}\n\n异常响应：\n{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"RequestLimitExceeded\",\n            \"Message\": \"查询失败，用户【rockyjiepan】过去24小时内已查询超过【5】次，请稍后再重试\"\n        },\n        \"RequestId\": \"676d01f0-4082-4057-a902-95cbd734f1ef\"\n    }\n}\n```",
       "input": "DescribeResourcesSLAPaymentRequest",
       "name": "SLA赔付金额计算",
       "output": "DescribeResourcesSLAPaymentResponse",
@@ -22,6 +29,32 @@
     "serviceShortName": "smp"
   },
   "objects": {
+    "CodeMessage": {
+      "document": "CodeMessage",
+      "members": [
+        {
+          "disabled": false,
+          "document": "编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ConsumptionBill": {
       "document": "消耗账单结构",
       "members": [
@@ -334,6 +367,61 @@
       ],
       "usage": "in"
     },
+    "CreatePaymentArchiveRequest": {
+      "document": "CreatePaymentArchive请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "赔付计算结果ID",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentTraceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实际赔付金额",
+          "example": "无",
+          "member": "float",
+          "name": "RealPayAmountTotal",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "审批单号",
+          "example": "无",
+          "member": "string",
+          "name": "ApprovalNumber",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePaymentArchiveResponse": {
+      "document": "CreatePaymentArchive返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "响应data",
+          "example": "无",
+          "member": "CodeMessage",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductInputTypeRequest": {
       "document": "DescribeProductInputType请求参数结构体",
       "members": [
@@ -572,6 +660,16 @@
           "example": "无",
           "member": "string",
           "name": "Unit",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提示词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Prompt",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
@@ -818,7 +916,7 @@
           "example": "无",
           "member": "PaymentInfos",
           "name": "PaymentInfos",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -828,8 +926,18 @@
           "example": "无",
           "member": "float",
           "name": "PaymentAmountTotal",
-          "required": false,
+          "output_required": true,
           "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "赔付计算结果ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PaymentTraceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

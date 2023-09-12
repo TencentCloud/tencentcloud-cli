@@ -41,7 +41,8 @@ Output:
                     ],
                     "Required": true,
                     "Default": "Default",
-                    "Unit": ""
+                    "Unit": "",
+                    "Prompt": ""
                 },
                 {
                     "InputType": "Input",
@@ -51,7 +52,8 @@ Output:
                     "Enum": [],
                     "Required": true,
                     "Default": "",
-                    "Unit": ""
+                    "Unit": "",
+                    "Prompt": "对齐汇金账单的资源ID,可参考：https://tcb.woa.com/billingCenter/res/summary"
                 },
                 {
                     "InputType": "MonthDate",
@@ -61,7 +63,8 @@ Output:
                     "Enum": [],
                     "Required": true,
                     "Default": "",
-                    "Unit": ""
+                    "Unit": "",
+                    "Prompt": ""
                 },
                 {
                     "InputType": "Input",
@@ -71,7 +74,8 @@ Output:
                     "Enum": [],
                     "Required": true,
                     "Default": "",
-                    "Unit": "分钟"
+                    "Unit": "分钟",
+                    "Prompt": "该资源（单实例或单服务）在一个服务月度内不可用分钟数之和"
                 }
             ]
         }

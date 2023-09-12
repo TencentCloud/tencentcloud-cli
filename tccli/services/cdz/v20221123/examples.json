@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeCloudDedicatedZoneFeatures": [
+      {
+        "document": "查询专属可用区可用区级特性",
+        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudDedicatedZoneFeatures\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone-id\",\n            \"Values\": [\n                \"2000800003\"\n            ]\n        },\n        {\n            \"Name\": \"feature-key\",\n            \"Values\": [\n                \"CDZ_CLB_PUSH_SWITCH\"\n            ]\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"FeatureSet\": [\n            {\n                \"ZoneId\": \"2000800003\",\n                \"FeatureKey\": \"CDZ_CLB_PUSH_SWITCH\",\n                \"FeatureValue\": \"0\",\n                \"FeatureName\": \"负载均衡CLB不推量\",\n                \"FeatureDescription\": \"\"\n            }\n        ],\n        \"RequestId\": \"2628d149-a59c-4cf0-abc7-79ba9dc78522\"\n    }\n}",
+        "title": "查询专属可用区可用区级特性"
+      }
+    ],
     "DescribeCloudDedicatedZoneWhiteList": [
       {
         "document": "查询专属可用区白名单信息\n\n",

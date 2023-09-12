@@ -27,3 +27,29 @@ Output:
 }
 ```
 
+**Example 2: 获取批量撤销签署流程链接失败**
+
+获取批量撤销签署流程链接失败
+
+Input: 
+
+```
+tccli ess CreateBatchCancelFlowUrl --cli-unfold-argument  \
+    --Operator.UserId 1956103********520fde6a \
+    --FlowIds yDwhIUUck********Ekio7sxsMq yDwhIUUckp*******UuaXC88Rgc yDwhIUUckp*******7sySp2O5D39
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BatchCancelFlowUrl": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=yDwhIUU*****BtD1PuoS7&userId=yD******4zjEwqXwsIljA&expireOn=1690536359&login=1&verify=1",
+        "FailMessages": [
+            "合同流程Id:xxx,无法撤回，错误信息：非本企业发起的合同"
+        ],
+        "UrlExpireOn": "abc",
+        "RequestId": "abc"
+    }
+}
+```
+

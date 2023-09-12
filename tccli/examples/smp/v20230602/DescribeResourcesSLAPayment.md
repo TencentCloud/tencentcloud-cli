@@ -57,7 +57,8 @@ Output:
                     "ExceptionMsg": ""
                 }
             ],
-            "PaymentAmountTotal": 0.87
+            "PaymentAmountTotal": 0.87,
+            "PaymentTraceId": "5ce2d8d5-5173-47a0-895d-4c0052d97f5f"
         }
     }
 }

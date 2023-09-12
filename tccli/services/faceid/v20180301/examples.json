@@ -20,7 +20,7 @@
       {
         "document": "申请Web核验服务Token",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetWebFaceIDToken\n<公共请求参数>\n\n{\n    \"CompareImageBase64\": \"CompareImageBase64String\",\n    \"RedirectURL\": \"https://www.tencentcloud.com/products/faceid\",\n    \"Extra\": \"ExtraString\"\n}",
-        "output": "{\n    \"Response\": {\n        \"VerificationUrl\": \"https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"BizToken\": \"81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"RequestId\": \"b16194cd-8f52-4e66-882a-eb6bf15c016d\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"VerificationURL\": \"https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"BizToken\": \"81EEF678-28EE-4759-A82E-6CBBBE6BC442\",\n        \"RequestId\": \"b16194cd-8f52-4e66-882a-eb6bf15c016d\"\n    }\n}",
         "title": "申请Web核验服务Token"
       }
     ],

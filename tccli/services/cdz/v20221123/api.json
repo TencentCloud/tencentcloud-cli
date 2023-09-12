@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeCloudDedicatedZoneFeatures": {
+      "document": "分页返回专属可用区可用区级特性",
+      "input": "DescribeCloudDedicatedZoneFeaturesRequest",
+      "name": "查询专属可用区可用区级特性配置",
+      "output": "DescribeCloudDedicatedZoneFeaturesResponse",
+      "status": "online"
+    },
     "DescribeCloudDedicatedZoneWhiteList": {
       "document": "分页返回专属可用区信息及其白名单",
       "input": "DescribeCloudDedicatedZoneWhiteListRequest",
@@ -15,6 +22,62 @@
     "serviceShortName": "cdz"
   },
   "objects": {
+    "CloudDedicatedZoneFeatureInfo": {
+      "document": "专属可用区可用区级特性信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区Id",
+          "example": "2000800003",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区特性Key",
+          "example": "CDZ_CLB_PUSH_SWITCH",
+          "member": "string",
+          "name": "FeatureKey",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区特性值",
+          "example": "True",
+          "member": "string",
+          "name": "FeatureValue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区特性名称",
+          "example": "负载均衡CLB不推量",
+          "member": "string",
+          "name": "FeatureName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区特性描述",
+          "example": "短期方案：CLB不推量实现CDZ中不计费",
+          "member": "string",
+          "name": "FeatureDescription",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "CloudDedicatedZoneWhiteListInfo": {
       "document": "专属可用区信息",
       "members": [
@@ -101,6 +164,71 @@
       ],
       "usage": "out"
     },
+    "DescribeCloudDedicatedZoneFeaturesRequest": {
+      "document": "DescribeCloudDedicatedZoneFeatures请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "- zone-id\n\n  按照【**可用区ID**】进行过滤。专属可用区 ID 形如：2000800003。如果传入多个值，仅查询第一个可用区。\n\n  类型：String\n\n  必选：否\n\n- feature-key\n\n  按照【**可用区特性Key**】进行过滤。可用区特性 Key 形如：CDZ_CLB_PUSH_SWITCH。\n\n  类型：String\n\n  必选：否",
+          "example": "NA",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于Offset的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API 简介中的相关小节。",
+          "example": "5",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneFeaturesResponse": {
+      "document": "DescribeCloudDedicatedZoneFeatures返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区特性总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区特性详情",
+          "example": "无",
+          "member": "CloudDedicatedZoneFeatureInfo",
+          "name": "FeatureSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudDedicatedZoneWhiteListRequest": {
       "document": "DescribeCloudDedicatedZoneWhiteList请求参数结构体",
       "members": [
@@ -154,6 +282,32 @@
         }
       ],
       "type": "object"
+    },
+    "Filter": {
+      "document": "描述键值对过滤器，用于条件过滤查询。例如过滤ID、名称、状态等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要过滤的字段。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段的过滤值。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

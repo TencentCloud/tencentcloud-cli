@@ -517,6 +517,15 @@
           "name": "Extra",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义核验页面的相关配置。",
+          "example": "无",
+          "member": "WebVerificationConfigIntl",
+          "name": "Config",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -525,7 +534,7 @@
       "document": "ApplyWebVerificationBizTokenIntl返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。",
           "example": "https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
           "member": "string",
@@ -541,6 +550,16 @@
           "member": "string",
           "name": "BizToken",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本次核验流程的地址，返回给浏览器前端后打开此地址开始核验流程。",
+          "example": "https://intl.faceid.qq.com/reflect/?token=81EEF678-28EE-4759-A82E-6CBBBE6BC442",
+          "member": "string",
+          "name": "VerificationURL",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6243,6 +6262,21 @@
         }
       ],
       "usage": "out"
+    },
+    "WebVerificationConfigIntl": {
+      "document": "eKYC Web页面相关配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "验证成功时，是否跳过结果展示页面，自动跳转到RedirectURL，默认为false。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSkip",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

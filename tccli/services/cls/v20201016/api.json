@@ -10394,6 +10394,7 @@
           "example": "Group",
           "member": "string",
           "name": "ReceiverType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -10404,6 +10405,7 @@
           "example": "[0]",
           "member": "int64",
           "name": "ReceiverIds",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10414,6 +10416,7 @@
           "example": "['Sms']",
           "member": "string",
           "name": "ReceiverChannels",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10424,6 +10427,7 @@
           "example": "10:04:05",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10434,6 +10438,7 @@
           "example": "20:04:05",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -10444,6 +10449,7 @@
           "example": "1",
           "member": "int64",
           "name": "Index",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -12433,6 +12439,7 @@
           "example": "无",
           "member": "string",
           "name": "Url",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12443,6 +12450,7 @@
           "example": "WeCom",
           "member": "string",
           "name": "CallbackType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -12453,6 +12461,7 @@
           "example": "POST",
           "member": "string",
           "name": "Method",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12463,6 +12472,7 @@
           "example": "无",
           "member": "string",
           "name": "Headers",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -12473,6 +12483,7 @@
           "example": "无",
           "member": "string",
           "name": "Body",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12483,6 +12494,7 @@
           "example": "1",
           "member": "int64",
           "name": "Index",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

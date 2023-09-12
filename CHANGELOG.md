@@ -1,3 +1,249 @@
+# Release 3.0.849.1
+
+## 专属可用区(cdz) 版本：2022-11-23
+
+### 第 2 次发布
+
+发布时间：2023-09-13 01:21:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudDedicatedZoneFeatures](http://document.tencentcloudapi.woa.com/document/product/1727/81933)
+
+新增数据结构：
+
+* [CloudDedicatedZoneFeatureInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#CloudDedicatedZoneFeatureInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1727/80828#Filter)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 57 次发布
+
+发布时间：2023-09-13 01:33:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HostItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#HostItem)
+
+	* <font color="#dd0000">**修改成员**：</font>Placement, HostId, HostType, HostName, HostChargeType, RenewFlag, CreatedTime, ExpiredTime, InstanceIds, HostState, HostIp, HostResource, Tags
+
+
+
+
+## 英文作文批改(ecc) 版本：2018-12-13
+
+### 第 2 次发布
+
+发布时间：2023-09-13 01:45:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CorrectMultiImage](http://document.tencentcloudapi.woa.com/document/product/1076/41242)
+
+	* 新增出参：ResultData
+
+* [EHOCR](http://document.tencentcloudapi.woa.com/document/product/1076/35210)
+
+	* 新增出参：ResultData
+
+
+新增数据结构：
+
+* [CompositionContext](http://document.tencentcloudapi.woa.com/document/product/1076/35212#CompositionContext)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 32 次发布
+
+发布时间：2023-09-13 01:49:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateChannelSubOrganizationModifyQrCode
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 85 次发布
+
+发布时间：2023-09-13 01:50:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+
+	* 新增入参：GenerateSource, SealType, SealHorizontalText, SealStyle, SealSize
+
+	* <font color="#dd0000">**修改入参**：</font>SealImage
+
+	* 新增出参：ImageUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 37 次发布
+
+发布时间：2023-09-13 01:51:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ApplyWebVerificationBizTokenIntl](http://document.tencentcloudapi.woa.com/document/product/1007/81585)
+
+	* 新增入参：Config
+
+	* 新增出参：VerificationURL
+
+
+新增数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 5 次发布
+
+发布时间：2023-09-13 02:12:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DictItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DictItem)
+
+	* 新增成员：FtName, SpaCode, IntroPageStatus
+
+
+
+
+## 服务管理平台(smp) 版本：2023-06-02
+
+### 第 6 次发布
+
+发布时间：2023-09-13 02:17:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePaymentArchive](http://document.tencentcloudapi.woa.com/document/product/1736/81934)
+
+新增数据结构：
+
+* [CodeMessage](http://document.tencentcloudapi.woa.com/document/product/1736/80965#CodeMessage)
+
+修改数据结构：
+
+* [InputJsonData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#InputJsonData)
+
+	* 新增成员：Prompt
+
+* [SLAPaymentData](http://document.tencentcloudapi.woa.com/document/product/1736/80965#SLAPaymentData)
+
+	* 新增成员：PaymentTraceId
+
+	* <font color="#dd0000">**修改成员**：</font>PaymentInfos, PaymentAmountTotal
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 27 次发布
+
+发布时间：2023-09-13 02:18:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBackup](http://document.tencentcloudapi.woa.com/document/product/238/19946)
+
+	* 新增入参：StorageStrategy
+
+* [DescribeBackups](http://document.tencentcloudapi.woa.com/document/product/238/19943)
+
+	* 新增入参：StorageStrategy
+
+
+修改数据结构：
+
+* [Backup](http://document.tencentcloudapi.woa.com/document/product/238/19976#Backup)
+
+	* 新增成员：StorageStrategy
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 7 次发布
+
+发布时间：2023-09-13 02:30:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [OriginDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>OriginType, Origin, BackupOrigin, OriginGroupName, BackOriginGroupName, PrivateAccess, PrivateParameters
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.848.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

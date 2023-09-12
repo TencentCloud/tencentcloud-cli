@@ -4878,7 +4878,7 @@
           "example": "无",
           "member": "Placement",
           "name": "Placement",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4888,7 +4888,7 @@
           "example": "无",
           "member": "string",
           "name": "HostId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4898,7 +4898,7 @@
           "example": "无",
           "member": "string",
           "name": "HostType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4908,7 +4908,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4918,7 +4918,7 @@
           "example": "无",
           "member": "string",
           "name": "HostChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4928,7 +4928,7 @@
           "example": "无",
           "member": "string",
           "name": "RenewFlag",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4938,7 +4938,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4948,7 +4948,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4958,7 +4958,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4968,7 +4968,7 @@
           "example": "无",
           "member": "string",
           "name": "HostState",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4978,7 +4978,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4988,7 +4988,7 @@
           "example": "无",
           "member": "HostResource",
           "name": "HostResource",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4998,7 +4998,7 @@
           "example": "无",
           "member": "string",
           "name": "CageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5008,7 +5008,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

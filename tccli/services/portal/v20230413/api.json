@@ -393,6 +393,36 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品所属FT名称",
+          "example": "CSIG云与智慧产业事业群/云产品一部/国产数据库产品中心",
+          "member": "string",
+          "name": "FtName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定磐石产品代码",
+          "example": "CD004051 ",
+          "member": "string",
+          "name": "SpaCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产品介绍页状态(1:上线;2:未上线)",
+          "example": "1",
+          "member": "uint64",
+          "name": "IntroPageStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
