@@ -48,7 +48,7 @@ class BasicConfigure(BasicCommand):
         if is_exist:
             conf_data = Utils.load_json_msg(config_path)
 
-        if OptionsDefine.SysParam not in conf_data:
+        if profile_name.endswith(".configure") and OptionsDefine.SysParam not in conf_data:
             conf_data[OptionsDefine.SysParam] = {}
 
         for _sys_param in self.config_list:
@@ -390,6 +390,9 @@ class ConfigureCommand(BasicConfigure):
                 if c in cred_data and cred_data[c]:
                     cred[c] = cred_data[c]
 
+        if OptionsDefine.SysParam not in conf_data:
+            conf_data[OptionsDefine.SysParam] = {}
+
         for index, prompt_text in self.VALUES_TO_PROMPT:
             if index in config:
                 response = self._compat_input("%s[%s]: " % (prompt_text, config[index]))
@@ -423,6 +426,11 @@ class ConfigureCommand(BasicConfigure):
                 "warning": "off"
             }
         self._init_configure("default.configure", config)
+        for profile_name in os.listdir(self.cli_path):
+            if profile_name == "default.configure":
+                continue
+            if profile_name.endswith(".configure"):
+                self._init_configure(profile_name, {})
 
     def _compat_input(self, prompt):
         sys.stdout.write(prompt)
