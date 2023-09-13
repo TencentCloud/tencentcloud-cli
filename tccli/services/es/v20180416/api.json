@@ -57,7 +57,7 @@
       "status": "online"
     },
     "DeleteInstance": {
-      "document": "销毁集群实例 ",
+      "document": "销毁集群实例",
       "input": "DeleteInstanceRequest",
       "name": "销毁ES集群实例",
       "output": "DeleteInstanceResponse",
@@ -2142,7 +2142,7 @@
         {
           "disabled": false,
           "document": "集群实例ID",
-          "example": "",
+          "example": "xx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2151,7 +2151,7 @@
         {
           "disabled": false,
           "document": "日志类型，默认值为1\n<li>1, 主日志</li>\n<li>2, 搜索慢日志</li>\n<li>3, 索引慢日志</li>\n<li>4, GC日志</li>",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "LogType",
           "required": false,
@@ -2160,7 +2160,7 @@
         {
           "disabled": false,
           "document": "搜索词，支持LUCENE语法，如 level:WARN、ip:1.1.1.1、message:test-index等",
-          "example": "",
+          "example": "xx",
           "member": "string",
           "name": "SearchKey",
           "required": false,
@@ -2169,7 +2169,7 @@
         {
           "disabled": false,
           "document": "日志开始时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
-          "example": "",
+          "example": "xx",
           "member": "string",
           "name": "StartTime",
           "required": false,
@@ -2178,7 +2178,7 @@
         {
           "disabled": false,
           "document": "日志结束时间，格式为YYYY-MM-DD HH:MM:SS, 如2019-01-22 20:15:53",
-          "example": "",
+          "example": "xx",
           "member": "string",
           "name": "EndTime",
           "required": false,
@@ -2187,7 +2187,7 @@
         {
           "disabled": false,
           "document": "分页起始值, 默认值为0",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -2196,7 +2196,7 @@
         {
           "disabled": false,
           "document": "分页大小，默认值为100，最大值100",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -2205,7 +2205,7 @@
         {
           "disabled": false,
           "document": "时间排序方式，默认值为0\n<li>0, 降序</li>\n<li>1, 升序</li>",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "OrderByType",
           "required": false,
@@ -2220,18 +2220,20 @@
         {
           "disabled": false,
           "document": "返回的日志条数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志详细信息列表",
-          "example": "",
+          "example": "xx",
           "member": "InstanceLog",
           "name": "InstanceLogList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2250,7 +2252,7 @@
         {
           "disabled": false,
           "document": "集群实例ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2259,7 +2261,7 @@
         {
           "disabled": false,
           "document": "起始时间, e.g. \"2019-03-07 16:30:39\"",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -2268,7 +2270,7 @@
         {
           "disabled": false,
           "document": "结束时间, e.g. \"2019-03-30 20:18:03\"",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -2277,7 +2279,7 @@
         {
           "disabled": false,
           "document": "分页起始值",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -2286,7 +2288,7 @@
         {
           "disabled": false,
           "document": "分页大小",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -2301,18 +2303,20 @@
         {
           "disabled": false,
           "document": "操作记录总数",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作记录",
-          "example": "",
+          "example": "无",
           "member": "Operation",
           "name": "Operations",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4067,12 +4071,12 @@
       "usage": "both"
     },
     "EsPublicAcl": {
-      "document": "ES公网访问访问控制信息",
+      "document": "ES公网访问控制信息",
       "members": [
         {
           "disabled": false,
           "document": "访问黑名单",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "BlackIpList",
           "required": false,
@@ -4082,7 +4086,7 @@
         {
           "disabled": false,
           "document": "访问白名单",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "WhiteIpList",
           "required": false,
@@ -6643,7 +6647,7 @@
         {
           "disabled": false,
           "document": "操作唯一id",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Id",
           "required": true,
@@ -6653,7 +6657,7 @@
         {
           "disabled": false,
           "document": "操作开始时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -6663,7 +6667,7 @@
         {
           "disabled": false,
           "document": "操作类型",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Type",
           "required": true,
@@ -6673,7 +6677,7 @@
         {
           "disabled": false,
           "document": "操作详情",
-          "example": "",
+          "example": "无",
           "member": "OperationDetail",
           "name": "Detail",
           "required": true,
@@ -6683,7 +6687,7 @@
         {
           "disabled": false,
           "document": "操作结果",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Result",
           "required": true,
@@ -6693,7 +6697,7 @@
         {
           "disabled": false,
           "document": "流程任务信息",
-          "example": "",
+          "example": "无",
           "member": "TaskDetail",
           "name": "Tasks",
           "required": true,
@@ -6703,12 +6707,22 @@
         {
           "disabled": false,
           "document": "操作进度",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Progress",
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作者Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAccountUin",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6912,6 +6926,52 @@
           "name": "Version",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProcessDetail": {
+      "document": "任务进度详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已完成数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Completed",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Remain",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型：\n60：重启型任务\n70：分片迁移型任务\n80：节点变配任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "60",
+          "member": "int64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -8130,6 +8190,16 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务进度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProcessDetail",
+          "name": "ProcessInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8157,7 +8227,7 @@
         },
         {
           "disabled": false,
-          "document": "智能运维每天定时巡检时间",
+          "document": "智能运维每天定时巡检时间，时间格式为HH:00:00，例如15:00:00",
           "example": "10:00:00",
           "member": "string",
           "name": "CronTime",
@@ -8193,7 +8263,7 @@
         },
         {
           "disabled": false,
-          "document": "IK分词主词典COS地址",
+          "document": "安装时填IK分词主词典COS地址，删除时填词典名如test.dic",
           "example": "[https://cos_address/dict.txt]",
           "member": "string",
           "name": "IkMainDicts",
@@ -8202,7 +8272,7 @@
         },
         {
           "disabled": false,
-          "document": "IK分词停用词词典COS地址",
+          "document": "安装时填IK分词停用词词典COS地址，删除时填词典名如test.dic",
           "example": "[https://cos_address/dict.txt]",
           "member": "string",
           "name": "IkStopwords",
@@ -8211,7 +8281,7 @@
         },
         {
           "disabled": false,
-          "document": "同义词词典COS地址",
+          "document": "安装时填同义词词典COS地址，删除时填词典名如test.dic",
           "example": "[https://cos_address/dict.txt]",
           "member": "string",
           "name": "Synonym",
@@ -8220,7 +8290,7 @@
         },
         {
           "disabled": false,
-          "document": "QQ分词词典COS地址",
+          "document": "安装时填QQ分词词典COS地址，删除时填词典名如test.dic",
           "example": "[https://cos_address/dict.txt]",
           "member": "string",
           "name": "QQDict",
@@ -8644,7 +8714,7 @@
           "example": "123",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8933,7 +9003,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8942,7 +9012,7 @@
         {
           "disabled": false,
           "document": "接收请求的目标节点类型列表",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "TargetNodeTypes",
           "required": true,
@@ -9022,7 +9092,7 @@
         },
         {
           "disabled": false,
-          "document": "目标ES版本，支持：”6.4.3“, \"6.8.2\"，\"7.5.1\"",
+          "document": "目标ES版本，支持：”6.4.3“, \"6.8.2\"，\"7.5.1\", \"7.10.1\", \"7.14.2\"",
           "example": "6.4.3",
           "member": "string",
           "name": "EsVersion",
@@ -9139,7 +9209,7 @@
         },
         {
           "disabled": false,
-          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li>",
+          "document": "6.8（及以上版本）基础版是否开启xpack security认证<li>1：不开启</li><li>2：开启</li><li>不传参时会默认维持原状，传参时需注意只能由不开启变为开启，无法由开启变为不开启</li>",
           "example": "0",
           "member": "uint64",
           "name": "BasicSecurityType",
@@ -9167,7 +9237,7 @@
           "example": "123",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

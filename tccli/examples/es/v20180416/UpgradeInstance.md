@@ -1,6 +1,6 @@
 **Example 1: 升级ES集群版本**
 
-
+升级ES集群版本
 
 Input: 
 

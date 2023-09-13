@@ -18,16 +18,13 @@ Output:
     "Response": {
         "BlackList": [
             {
-                "BounceTime": "2020-09-22 00:00:00",
-                "EmailAddress": "432843@qq.com"
-            },
-            {
-                "BounceTime": "2020-10-22 12:10:00",
-                "EmailAddress": "43fdaf2843@gmail.com"
+                "BounceTime": "2023-09-06 11:21:35",
+                "EmailAddress": "xxx@gmail.com",
+                "IspDesc": "550 5.1.1 The email account that you tried to reach does not exist. Please try\n5.1.1 double-checking the recipient's email addre"
             }
         ],
-        "TotalCount": 2,
-        "RequestId": "8979fc1e-9564-4fc9-bf7d-2958ce679b72"
+        "RequestId": "e54b9d01-2bcb-43f6-83dd-55a91a3cd2bb",
+        "TotalCount": 2
     }
 }
 ```

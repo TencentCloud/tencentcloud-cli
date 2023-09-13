@@ -9340,6 +9340,46 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "OuterIpList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"127.0.0.1\"]",
+          "member": "string",
+          "name": "InnerIpList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专享实例计费信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属vpc\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UniqVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

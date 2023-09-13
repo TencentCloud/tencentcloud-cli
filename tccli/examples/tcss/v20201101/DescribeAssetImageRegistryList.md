@@ -61,7 +61,9 @@ Output:
                 "CveStatus": "NOT_SCAN",
                 "RiskStatus": "NOT_SCAN",
                 "VirusStatus": "NOT_SCAN",
-                "IsAuthorized": 0
+                "IsAuthorized": 0,
+                "ImageCreateTime": "2020-09-22T00:00:00+00:00",
+                "IsLatestImage": true
             },
             {
                 "Id": 20933905,
@@ -95,7 +97,9 @@ Output:
                 "CveStatus": "NOT_SCAN",
                 "RiskStatus": "NOT_SCAN",
                 "VirusStatus": "NOT_SCAN",
-                "IsAuthorized": 0
+                "IsAuthorized": 0,
+                "ImageCreateTime": "2020-09-22T00:00:00+00:00",
+                "IsLatestImage": true
             }
         ]
     }

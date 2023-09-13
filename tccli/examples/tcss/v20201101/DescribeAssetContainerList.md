@@ -33,7 +33,15 @@ Output:
                 "NetSubStatus": "abc",
                 "IsolateSource": "abc",
                 "IsolateTime": "abc",
-                "PodName": "abc"
+                "NodeID": "abc",
+                "PodIP": "abc",
+                "PodName": "abc",
+                "NodeType": "abc",
+                "NodeUniqueID": "abc",
+                "PodCpu": 0,
+                "PodMem": 0,
+                "ClusterName": "abc",
+                "ClusterID": "abc"
             }
         ],
         "TotalCount": 1,
