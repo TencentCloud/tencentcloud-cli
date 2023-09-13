@@ -435,9 +435,9 @@
       "status": "online"
     },
     "DescribeSparkSessionBatchSqlLog": {
-      "document": "本接口（DescribeSparkSessionBatchSqlLog）用于获取SparkSQL批任务日志",
+      "document": "本接口（DescribeSparkSessionBatchSqlLog）用于查询Spark SQL批任务日志",
       "input": "DescribeSparkSessionBatchSqlLogRequest",
-      "name": "获取SparkSQL批任务日志",
+      "name": "查询Spark SQL批任务日志",
       "output": "DescribeSparkSessionBatchSqlLogResponse",
       "status": "online"
     },
@@ -7163,10 +7163,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "状态：0：初始化、1：成功、2：失败、3：取消、4：异常；",
+          "document": "状态：0：运行中、1：成功、2：失败、3：取消、4：超时；",
           "example": "0",
           "member": "uint64",
           "name": "State",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7176,6 +7177,7 @@
           "example": "复杂类型",
           "member": "SparkSessionBatchLog",
           "name": "LogSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -1,0 +1,340 @@
+{
+  "actions": {
+    "DescribeApplicationList": {
+      "document": "查询指定空间关联的应用列表",
+      "input": "DescribeApplicationListRequest",
+      "name": "查询应用列表",
+      "output": "DescribeApplicationListResponse",
+      "status": "online"
+    },
+    "DescribeEdgeApplicationToken": {
+      "document": "查询边缘应用凭证",
+      "input": "DescribeEdgeApplicationTokenRequest",
+      "name": "查询边缘应用凭证",
+      "output": "DescribeEdgeApplicationTokenResponse",
+      "status": "online"
+    },
+    "DescribeInterfaceList": {
+      "document": "查询接口列表",
+      "input": "DescribeInterfaceListRequest",
+      "name": "查询接口列表",
+      "output": "DescribeInterfaceListResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceList": {
+      "document": "获取租户下的空间列表",
+      "input": "DescribeWorkspaceListRequest",
+      "name": "获取租户下的空间列表",
+      "output": "DescribeWorkspaceListResponse",
+      "status": "online"
+    },
+    "DescribeWorkspaceUserList": {
+      "document": "查询项目空间人员列表",
+      "input": "DescribeWorkspaceUserListRequest",
+      "name": "查询项目空间人员列表",
+      "output": "DescribeWorkspaceUserListResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-04-27",
+    "api_brief": "该云API提供控制台-项目空间管理相关操作接口。",
+    "serviceNameCN": "微瓴同业开放平台",
+    "serviceShortName": "weilingwith"
+  },
+  "objects": {
+    "DescribeApplicationListRequest": {
+      "document": "DescribeApplicationList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeApplicationListResponse": {
+      "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEdgeApplicationTokenRequest": {
+      "document": "DescribeEdgeApplicationToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEdgeApplicationTokenResponse": {
+      "document": "DescribeEdgeApplicationToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInterfaceListRequest": {
+      "document": "DescribeInterfaceList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInterfaceListResponse": {
+      "document": "DescribeInterfaceList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceListRequest": {
+      "document": "DescribeWorkspaceList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWorkspaceListResponse": {
+      "document": "DescribeWorkspaceList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceUserListRequest": {
+      "document": "DescribeWorkspaceUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkspaceUserListResponse": {
+      "document": "DescribeWorkspaceUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoTeamUserResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SsoTeamUser": {
+      "document": "部门用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否关联权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LinkFilter",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoTeamUserResult": {
+      "document": "空间用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoTeamUser",
+          "name": "Users",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

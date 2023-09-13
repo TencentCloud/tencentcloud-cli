@@ -1120,13 +1120,6 @@
       "output": "SplitMediaResponse",
       "status": "online"
     },
-    "VerifyDomainOwnershipForConsole": {
-      "document": "控制台验证域名归属",
-      "input": "VerifyDomainOwnershipForConsoleRequest",
-      "name": "控制台验证域名归属",
-      "output": "VerifyDomainOwnershipForConsoleResponse",
-      "status": "online"
-    },
     "VerifyDomainRecord": {
       "document": "该接口用于验证域名解析值。",
       "input": "VerifyDomainRecordRequest",
@@ -34876,42 +34869,6 @@
         }
       ],
       "usage": "in"
-    },
-    "VerifyDomainOwnershipForConsoleRequest": {
-      "document": "VerifyDomainOwnershipForConsole请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "需要接入点播的域名。",
-          "example": "abc.com",
-          "member": "string",
-          "name": "Domain",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要开启加速的区域： <li>Mainland: 中国大陆地区</li> <li>Internation: 海外地区及港澳台</li> <li>Global: 全球</li> 不填会根据用户注册腾讯云时的地域信息自动判断 Mainland 或 Internation\t",
-          "example": "Mainland",
-          "member": "string",
-          "name": "AccelerateArea",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "VerifyDomainOwnershipForConsoleResponse": {
-      "document": "VerifyDomainOwnershipForConsole返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "VerifyDomainRecordRequest": {
       "document": "VerifyDomainRecord请求参数结构体",

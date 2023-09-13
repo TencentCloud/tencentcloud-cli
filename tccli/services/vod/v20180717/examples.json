@@ -1688,14 +1688,6 @@
         "title": "对点播中的一个文件进行拆条，生成两个新的视频"
       }
     ],
-    "VerifyDomainOwnershipForConsole": [
-      {
-        "document": "创建域名",
-        "input": "https://vod.tencentcloudapi.com/?Action=VerifyDomainOwnershipForConsole\n&Domain=Myexample.com\n&AccelerateArea=Mainland\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
-        "title": "验证域名归属权"
-      }
-    ],
     "VerifyDomainRecord": [
       {
         "document": "",

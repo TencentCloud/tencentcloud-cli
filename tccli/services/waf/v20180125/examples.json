@@ -480,6 +480,14 @@
         "title": "DescribePolicyStatus"
       }
     ],
+    "DescribePorts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePorts\n<公共请求参数>\n\n{\n    \"InstanceID\": \"test-instance\",\n    \"Edition\": \"sass-waf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"HttpPorts\": [\n            \"80\",\n            \"8080\"\n        ],\n        \"HttpsPorts\": [\n            \"443\",\n            \"8443\"\n        ],\n        \"RequestId\": \"ae989097-a74b-448a-94e6-4e87366b173b\"\n    }\n}",
+        "title": "获取非标端口"
+      }
+    ],
     "DescribeRuleLimit": [
       {
         "document": "",

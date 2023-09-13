@@ -498,10 +498,10 @@
     ],
     "DescribeSparkSessionBatchSqlLog": [
       {
-        "document": "获取SparkSQL批任务日志",
+        "document": "查询Spark SQL批任务日志",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkSessionBatchSqlLog\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\"\n}",
         "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"LogSet\": [\n            {\n                \"Step\": \"BEG\",\n                \"Time\": \"2023-03-20 12:12:12\",\n                \"Message\": \"集群名称\",\n                \"Operate\": [\n                    {\n                        \"Text\": \"dateEngine-1\",\n                        \"Operate\": \"COPY\",\n                        \"Supplement\": [\n                            {\n                                \"Key\": \"TASKID\",\n                                \"Value\": \"d0ds1sad4-9d7e-4f64-a3f4-f385dcs6742\"\n                            }\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
-        "title": "获取SparkSQL批任务日志"
+        "title": "查询Spark SQL批任务日志"
       }
     ],
     "DescribeStoreLocation": [

@@ -4500,7 +4500,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4522,7 +4522,7 @@
           "example": "无",
           "member": "string",
           "name": "SealImage",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -4533,6 +4533,51 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传请传字段 SealImage",
+          "example": "无",
+          "member": "string",
+          "name": "GenerateSource",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "电子印章类型：\n<ul><li>OFFICIAL-公章</li>\n<li>CONTRACT-合同专用章;</li>\n<li>FINANCE-合财务专用章;</li>\n<li>PERSONNEL-人事专用章\n</li>\n<li>默认：OFFICIAL</li>\n<ul>",
+          "example": "OFFICIAL",
+          "member": "string",
+          "name": "SealType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号",
+          "example": "横向文字",
+          "member": "string",
+          "name": "SealHorizontalText",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章样式:\n\n<ul><li>cycle:圆形印章</li>\n<li>ellipse:椭圆印章</li>\n<li> 注：默认圆形印章</li></ul>",
+          "example": "cycle",
+          "member": "string",
+          "name": "SealStyle",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>\n<li> 40_40 圆形企业印章直径40mm</li>\n<li> 45_30 椭圆形印章45mm x 30mm</li>\n</ul>",
+          "example": "42_42",
+          "member": "string",
+          "name": "SealSize",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4542,13 +4587,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "印章id",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
           "example": "无",
           "member": "string",
           "name": "SealId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电子印章预览链接地址，地址默认失效时间为24小时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImageUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

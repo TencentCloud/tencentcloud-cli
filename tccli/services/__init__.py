@@ -738,6 +738,9 @@ SERVICE_VERSIONS = {
     "wedata": [
         "2021-08-20"
     ],
+    "weilingwith": [
+        "2023-04-27"
+    ],
     "wss": [
         "2018-04-26"
     ],

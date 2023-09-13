@@ -29,7 +29,7 @@
       "status": "online"
     },
     "TurnPDFToObject": {
-      "document": "将PDF格式的体检报告文件结构化,解析关键信息.",
+      "document": "将PDF格式的体检报告文件结构化，解析关键信息。\n注意：该接口是按照体检报告 PDF 页面数量统计次数，不是按照 PDF 文件数量统计次数。通过该接口传入的报告必须是体检报告，非体检报告可能无法正确解析。",
       "input": "TurnPDFToObjectRequest",
       "name": "体检报告PDF文件结构化",
       "output": "TurnPDFToObjectResponse",
@@ -13650,7 +13650,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符",
+          "document": "体检报告PDF文件信息, 目前只支持传PDF文件的Base64编码字符(PDF文件不能超过10MB，如果超过建议先压缩PDF，再转成base64)",
           "example": "无",
           "member": "PdfInfo",
           "name": "PdfInfo",
@@ -13685,7 +13685,7 @@
         },
         {
           "disabled": false,
-          "document": "报告结构化结果",
+          "document": "报告结构化结果(体检报告PDF结构化接口返回的 json 内容非常多，建议通过本地代码调用)",
           "example": "无",
           "member": "Block",
           "name": "Block",

@@ -1,0 +1,51 @@
+{
+  "actions": {
+    "DescribeApplicationList": [
+      {
+        "document": "获取应用列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ebee73c-8477-48c0-ad4d-8a748b7842a3\"\n    }\n}",
+        "title": "应用列表"
+      }
+    ],
+    "DescribeEdgeApplicationToken": [
+      {
+        "document": "获取边缘应用凭证",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeApplicationToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff7892ed-9bb5-4bb6-a5d3-23ecb1e50369\"\n    }\n}",
+        "title": "获取边缘应用凭证"
+      }
+    ],
+    "DescribeInterfaceList": [
+      {
+        "document": "查询接口列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInterfaceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cf5725d-d238-40c7-9208-dd073428ccf9\"\n    }\n}",
+        "title": "查询接口列表"
+      },
+      {
+        "document": "获取API列表请求示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInterfaceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"85b33324-1d02-45cc-8250-aa9d82e63544\"\n    }\n}",
+        "title": "获取API列表请求示例"
+      }
+    ],
+    "DescribeWorkspaceList": [
+      {
+        "document": "查询项目空间列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d04a9bab-dd91-4999-8584-bbc4d5203d50\"\n    }\n}",
+        "title": "查询项目空间列表"
+      }
+    ],
+    "DescribeWorkspaceUserList": [
+      {
+        "document": "查询项目空间人员列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceUserList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 10,\n    \"WorkspaceId\": \"1016\",\n    \"ApplicationToken\": \"o9ftuUNOFkOVf2o5etJ0nHou396ufAes\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"68f43238-01a6-46c6-9204-f23cc3983756\",\n        \"Result\": {\n            \"Total\": 19,\n            \"Users\": [\n                {\n                    \"CreateAt\": 1692081934,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"v_leecyli@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15988886666\",\n                    \"RealName\": \"v_leecyli\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"0d0a98561b3c4f72963eba5c5fcf56e1\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1691405568,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"vincent_lipc@163.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15656552256\",\n                    \"RealName\": \"能碳外部演示\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"141ca50134924143b1435919625c7662\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1691390512,\n                    \"DepartmentId\": \"32\",\n                    \"DepartmentName\": \"外部测试\",\n                    \"Email\": \"caiyitong2009@163.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"18611738364\",\n                    \"RealName\": \"运营外部体验账号\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"0f926d1a7d514629b100b3426bd3c34b\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1691139338,\n                    \"DepartmentId\": \"1\",\n                    \"DepartmentName\": \"研发部\",\n                    \"Email\": \"richardhhu@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13988889999\",\n                    \"RealName\": \"胡辉\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"baea0677027445f49ebcf0ed29480cc2\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1690784410,\n                    \"DepartmentId\": \"\",\n                    \"DepartmentName\": \"\",\n                    \"Email\": \"213132131@11.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15612345678\",\n                    \"RealName\": \"liushuang\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"d5f4b7fda1fe472887555704bc6cba0a\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1690777551,\n                    \"DepartmentId\": \"\",\n                    \"DepartmentName\": \"\",\n                    \"Email\": \"v_ashshliu@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15801198920\",\n                    \"RealName\": \"刘爽\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"a0354564529043309b1b7b72e80eb213\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1689755305,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"sineyayan@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13126071245\",\n                    \"RealName\": \"sineyayan\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"a76d972c93b44694bd22025f2d3cd359\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1689753730,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"707899536@qq.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"19121716602\",\n                    \"RealName\": \"李鹏程\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"8a9972532d4445cbb81edc27fe49d147\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1686291696,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"604035308@qq.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13713767123\",\n                    \"RealName\": \"To_Touche\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"c479269ae675480da3b7f5369ebd8618\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1686233544,\n                    \"DepartmentId\": \"21\",\n                    \"DepartmentName\": \"交付组\",\n                    \"Email\": \"v_yuymiao@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13299990000\",\n                    \"RealName\": \"苗元元\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"159ac75273614918be42b3b0a208d1ab\",\n                    \"UserType\": \"3\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询项目空间人员列表"
+      }
+    ]
+  },
+  "version": "1.0"
+}

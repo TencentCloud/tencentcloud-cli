@@ -1,6 +1,6 @@
-**Example 1: 获取SparkSQL批任务日志**
+**Example 1: 查询Spark SQL批任务日志**
 
-获取SparkSQL批任务日志
+查询Spark SQL批任务日志
 
 Input: 
 

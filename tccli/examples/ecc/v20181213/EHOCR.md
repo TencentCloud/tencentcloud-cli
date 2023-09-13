@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": {
+        "ResultData": {
             "Content": "this is compostion content",
             "CorrectData": null,
             "TaskId": null
@@ -42,7 +42,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": {
+        "ResultData": {
             "Content": "this is compostion content",
             "CorrectData": {
                 "Score": 72.39,
@@ -88,6 +88,20 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
+                                ],
+                                "ErrorCoordinates": [
+                                    {
+                                        "Coordinate": [
+                                            424,
+                                            360,
+                                            459,
+                                            359,
+                                            459,
+                                            386,
+                                            424,
+                                            387
+                                        ]
+                                    }
                                 ]
                             },
                             {
@@ -99,6 +113,20 @@ Output:
                                 "ErrorPosition": [
                                     8,
                                     8
+                                ],
+                                "ErrorCoordinates": [
+                                    {
+                                        "Coordinate": [
+                                            424,
+                                            360,
+                                            459,
+                                            359,
+                                            459,
+                                            386,
+                                            424,
+                                            387
+                                        ]
+                                    }
                                 ]
                             }
                         ]
@@ -129,7 +157,7 @@ Output:
 ```
 {
     "Response": {
-        "Data": {
+        "ResultData": {
             "Content": "",
             "CorrectData": null,
             "TaskId": "10000010"

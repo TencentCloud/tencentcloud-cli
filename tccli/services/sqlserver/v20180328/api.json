@@ -1187,7 +1187,7 @@
           "example": "auto_xxx.bak.tar",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1197,7 +1197,7 @@
           "example": "20",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1207,7 +1207,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1217,7 +1217,7 @@
           "example": "2020-04-09 00:00:00",
           "member": "datetime",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1227,7 +1227,7 @@
           "example": "http://xxx",
           "member": "string",
           "name": "InternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1237,7 +1237,7 @@
           "example": "http://xxx",
           "member": "string",
           "name": "ExternalAddr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1247,7 +1247,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1257,7 +1257,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1267,7 +1267,7 @@
           "example": "DBName",
           "member": "string",
           "name": "DBs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1277,7 +1277,17 @@
           "example": "0",
           "member": "int64",
           "name": "Strategy",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线",
+          "example": "0",
+          "member": "int64",
+          "name": "StorageStrategy",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1287,7 +1297,7 @@
           "example": "0",
           "member": "int64",
           "name": "BackupWay",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1297,7 +1307,7 @@
           "example": "mssql-dj5i29c5n",
           "member": "string",
           "name": "BackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1307,7 +1317,7 @@
           "example": "558800",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1317,7 +1327,7 @@
           "example": "pkg",
           "member": "string",
           "name": "BackupFormat",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1327,7 +1337,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1337,7 +1347,7 @@
           "example": "[]",
           "member": "CrossBackupAddr",
           "name": "CrossBackupAddr",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1347,7 +1357,7 @@
           "example": "[]",
           "member": "CrossRegionStatus",
           "name": "CrossBackupStatus",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -1916,6 +1926,15 @@
           "name": "BackupName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线，默认取值0",
+          "example": "0",
+          "member": "int64",
+          "name": "StorageStrategy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1929,6 +1948,7 @@
           "example": "5293",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5901,6 +5921,15 @@
           "name": "BackupFormat",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份存储策略 0-跟随自定义备份保留策略 1-跟随实例生命周期直到实例下线，默认取值0",
+          "example": "0",
+          "member": "int64",
+          "name": "StorageStrategy",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5914,7 +5943,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5924,7 +5953,7 @@
           "example": "无",
           "member": "Backup",
           "name": "Backups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
