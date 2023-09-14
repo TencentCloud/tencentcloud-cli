@@ -196,6 +196,13 @@
       "output": "DeleteGroupResponse",
       "status": "online"
     },
+    "DeleteInstancePost": {
+      "document": "删除后付费实例",
+      "input": "DeleteInstancePostRequest",
+      "name": "删除后付费实例",
+      "output": "DeleteInstancePostResponse",
+      "status": "online"
+    },
     "DeleteInstancePre": {
       "document": "删除预付费实例",
       "input": "DeleteInstancePreRequest",
@@ -5538,6 +5545,43 @@
           "member": "JgwOperateResponse",
           "name": "Result",
           "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePostRequest": {
+      "document": "DeleteInstancePost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ckafka-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteInstancePostResponse": {
+      "document": "DeleteInstancePost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的结果集",
+          "example": "FlowId",
+          "member": "InstanceDeleteResponse",
+          "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11252,6 +11296,22 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceDeleteResponse": {
+      "document": "删除实例返回任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除实例返回的任务Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "FlowId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

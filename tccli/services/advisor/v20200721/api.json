@@ -22,103 +22,7 @@
     "serviceShortName": "advisor"
   },
   "objects": {
-    "DescribeStrategie": {
-      "document": "评估项信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "uint64",
-          "name": "StrategyId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "云数据库（Redis）跨可用区部署",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险",
-          "member": "string",
-          "name": "Desc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项对应产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "redis",
-          "member": "string",
-          "name": "Product",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项对应产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "云数据库（Redis）",
-          "member": "string",
-          "name": "ProductDesc",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项优化建议\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tenc",
-          "member": "string",
-          "name": "Repair",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项类别ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2",
-          "member": "uint64",
-          "name": "GroupId",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项类别名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "可靠",
-          "member": "string",
-          "name": "GroupName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "评估项风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"ConditionId\":178,\"Level\":2,\"LevelDesc\":\"中风险\",\"Desc\":\"Redis 实例",
-          "member": "DescribeStrategiesCondition",
-          "name": "Conditions",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "DescribeStrategiesCondition": {
+    "Conditions": {
       "document": "评估项警告条件",
       "members": [
         {
@@ -176,9 +80,9 @@
           "disabled": false,
           "document": "评估项列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
-          "member": "DescribeStrategie",
+          "member": "Strategies",
           "name": "Strategies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -370,6 +274,102 @@
           "member": "KeyValue",
           "name": "FieldDict",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Strategies": {
+      "document": "评估项信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "评估项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StrategyId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云数据库（Redis）跨可用区部署",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "检查 Redis 实例是否跨可用区部署，如果实例未跨可用区部署，当实例出现可用区级别的灾难故障时，可能造成实例无法访问风险",
+          "member": "string",
+          "name": "Desc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项对应产品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项对应产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "云数据库（Redis）",
+          "member": "string",
+          "name": "ProductDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项优化建议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "如果业务有较高容灾需求，建议采用跨可用区部署方案，提升业务可靠性，[跨可用区分布操作指引](https://cloud.tenc",
+          "member": "string",
+          "name": "Repair",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项类别ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "GroupId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项类别名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "可靠",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评估项风险列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ConditionId\":178,\"Level\":2,\"LevelDesc\":\"中风险\",\"Desc\":\"Redis 实例",
+          "member": "Conditions",
+          "name": "Conditions",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

@@ -490,6 +490,13 @@
       "output": "GetAttackTotalCountResponse",
       "status": "online"
     },
+    "GetInstanceQpsLimit": {
+      "document": "获取套餐实例的弹性qps上限",
+      "input": "GetInstanceQpsLimitRequest",
+      "name": "获取套餐实例的弹性qps上限",
+      "output": "GetInstanceQpsLimitResponse",
+      "status": "online"
+    },
     "ModifyAccessPeriod": {
       "document": "本接口用于修改访问日志保存期限及大字段是否存储",
       "input": "ModifyAccessPeriodRequest",
@@ -1672,7 +1679,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接，仅IP回源时可以用填次参数，域名回源时这个参数无效",
+          "document": "是否开启长连接，0 短连接，1 长连接",
           "example": "1",
           "member": "string",
           "name": "IsKeepAlive",
@@ -7119,6 +7126,86 @@
       "members": [
         {
           "disabled": false,
+          "document": "域名",
+          "example": "1",
+          "member": "string",
+          "name": "Domain",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名id",
+          "example": "1",
+          "member": "string",
+          "name": "DomainId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "1",
+          "member": "string",
+          "name": "Edition",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书",
+          "example": "1",
+          "member": "string",
+          "name": "Cert",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "AI防御模式",
+          "example": "1",
+          "member": "uint64",
+          "name": "Engine",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "是否开启httpRewrite",
           "example": "1",
           "member": "uint64",
@@ -8076,6 +8163,51 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInstanceQpsLimitRequest": {
+      "document": "GetInstanceQpsLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐实例id",
+          "example": "waf_00000007",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型",
+          "example": "sp_wsm_waf_premium_clb",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetInstanceQpsLimitResponse": {
+      "document": "GetInstanceQpsLimit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性qps相关值集合",
+          "example": "详见QpsData实体",
+          "member": "QpsData",
+          "name": "QpsData",
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -11329,6 +11461,62 @@
       ],
       "usage": "both"
     },
+    "QpsData": {
+      "document": "获取弹性qps的默认相关值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性qps默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3333",
+          "member": "uint64",
+          "name": "ElasticBillingDefault",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性qps最小值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "ElasticBillingMin",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性qps最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "uint64",
+          "name": "ElasticBillingMax",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务扩展包最大qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "QPSExtendMax",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "海外业务扩展包最大qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "QPSExtendIntlMax",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RefreshAccessCheckResultRequest": {
       "document": "RefreshAccessCheckResult请求参数结构体",
       "members": [
@@ -11927,7 +12115,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段\n \n有以下枚举值：\nIP-来源IP\u000b\tIPV6-来源IPv6\u000b\tReferer-Referer\u000b\tURL-请求路径\nUserAgent-UserAgent\u000b\tHTTP_METHOD-HTTP请求方法\u000b\tQUERY_STRING-请求字符串\u000b\tGET-GET参数值\u000b\tGET_PARAMS_NAMES-GET参数名\u000b\tPOST-POST参数值\u000b\tGET_POST_NAMES-POST参数名\u000b\tPOST_BODY-完整BODY\u000b\tCOOKIE-Cookie\u000b\tGET_COOKIES_NAMES-Cookie参数名\u000b\tARGS_COOKIE-Cookie参数值\u000b\tGET_HEADERS_NAMES-Header参数名\u000b\tARGS_HEADER-Header参数值\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配字段\n\n    匹配字段不同，相应的匹配参数、逻辑符号、匹配内容有所不同\u000b具体如下所示：\n<table><thead><tr><th>匹配字段</th><th>匹配参数</th><th>逻辑符号</th><th>匹配内容</th></tr></thead><tbody><tr><td>IP（来源IP）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>多个IP以英文逗号隔开,最多20个</td></tr><tr><td>IPV6（来源IPv6）</td><td>不支持参数</td><td>ipmatch（匹配）<br/>ipnmatch（不匹配）</td><td>支持单个IPV6地址</td></tr><tr><td>Referer（Referer）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>URL（请求路径）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）<br/>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）<br/></td><td>请以/开头,512个字符以内</td></tr><tr><td>UserAgent（UserAgent）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">Referer</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>HTTP_METHOD（HTTP请求方法）</td><td>不支持参数</td><td>eq（等于）<br/>neq（不等于）</td><td>请输入方法名称,建议大写</td></tr><tr><td>QUERY_STRING（请求字符串）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET（GET参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_PARAMS_NAMES（GET参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST（POST参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_POST_NAMES（POST参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>POST_BODY（完整BODY）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">请求路径</font>逻辑符号</td><td>请输入BODY内容,512个字符以内</td></tr><tr><td>COOKIE（Cookie）</td><td>不支持参数</td><td>empty（内容为空）<br/>null（不存在）<br/>rematch（正则匹配）</td><td><font color=\"Red\">暂不支持</font></td></tr><tr><td>GET_COOKIES_NAMES（Cookie参数名）</td><td>不支持参数</td><td>同匹配字段<font color=\"Red\">GET参数名</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>ARGS_COOKIE（Cookie参数值）</td><td>支持参数录入</td><td>同匹配字段<font color=\"Red\">GET参数值</font>逻辑符号</td><td>请输入内容,512个字符以内</td></tr><tr><td>GET_HEADERS_NAMES（Header参数名）</td><td>不支持参数</td><td>exsit（存在参数）<br/>nexsit（不存在参数）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,建议小写,512个字符以内</td></tr><tr><td>ARGS_HEADER（Header参数值）</td><td>支持参数录入</td><td>contains（包含）<br/>ncontains（不包含）<br/>len_eq（长度等于）<br/>len_gt（长度大于）<br/>len_lt（长度小于）<br/>strprefix（前缀匹配）<br/>strsuffix（后缀匹配）<br/>rematch（正则匹配）</td><td>请输入内容,512个字符以内</td></tr></tbody></table>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "IP-来源IP",
           "member": "string",
           "name": "Field",
@@ -11938,7 +12126,7 @@
         },
         {
           "disabled": false,
-          "document": "逻辑符号 \n\n有以下枚举值：\nempty - 内容为空\n  \tnull - 不存在\n  \teq - 等于\n  \tneq - 不等于\n  \tcontains - 包含\n \tncontains - 不包含\n  \tstrprefix - 前缀匹配\n  \tstrsuffix - 后缀匹配\n  \tlen_eq - 长度等于\n  \tlen_gt - 长度大于\n  \tlen_lt - 长度小于\n  \tipmatch - 属于\n \tipnmatch - 不属于\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "逻辑符号 \n\n    逻辑符号一共分为以下几种类型：\n        empty （ 内容为空）\n        null （不存在）\n        eq （ 等于）\n        neq （ 不等于）\n        contains （ 包含）\n        ncontains （ 不包含）\n        strprefix （ 前缀匹配）\n        strsuffix （ 后缀匹配）\n        len_eq （ 长度等于）\n        len_gt （ 长度大于）\n        len_lt （ 长度小于）\n        ipmatch （ 属于）\n        ipnmatch （ 不属于）\n    各匹配字段对应的逻辑符号不同，详见上述匹配字段表格\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "contains - 包含",
           "member": "string",
           "name": "CompareFunc",
@@ -11949,7 +12137,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配内容\n\n目前 只有匹配字段为COOKIE-Cookie时，才不需要输入 匹配内容\u000b其他都需要\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配内容\n\n    目前 当匹配字段为COOKIE（Cookie）时，不需要输入 匹配内容\u000b其他都需要\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "/abc",
           "member": "string",
           "name": "Content",
@@ -11960,7 +12148,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配参数\n\n目前 只有匹配字段为以下4个时，匹配参数才能选择，否则置灰无法选择\t\n\nGET-GET参数值\u000b\tPOST-POST参数值\u000b\tARGS_COOKIE-Cookie参数值\u000b\tARGS_HEADER-Header参数值\u000b\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "匹配参数\n\n    配置参数一共分2种类型 不支持参数与支持参数\n    当匹配字段为以下4个时，匹配参数才能录入，否则不支持该参数\n        GET（GET参数值）\u000b\t\t\n        POST（POST参数值）\u000b\t\t\n        ARGS_COOKIE（Cookie参数值）\u000b\t\t\n        ARGS_HEADER（Header参数值）\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
           "name": "Arg",

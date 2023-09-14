@@ -78,14 +78,14 @@
       "status": "online"
     },
     "CreateFlowEvidenceReport": {
-      "document": "创建出证报告并返回报告ID。\n使用此功能需搭配出证套餐。\n注意：出证过程需一定时间，建议在调用创建出证后的24小时之后，通过DescribeFlowEvidenceReport接口进行查询。",
+      "document": "提交申请出证报告任务并返回报告ID。\n\n注意：\n<ul><li>使用此功能`需搭配出证套餐` ，使用前请联系对接的客户经理沟通。</li>\n<li>操作人必须是`发起方或者签署方企业的(非走授权书认证)法人或者超管`。</li>\n<li>合同流程必须所有参与方`已经签署完成`。</li>\n<li>出证过程需一定时间，建议在`提交出证任务后的24小时之后`，通过<a href=\"https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>接口进行查询执行结果和出证报告的下载URL。</li></ul>\n\n<svg id=\"SvgjsSvg1006\" width=\"262\" height=\"229\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1007\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1021\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1022\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"262\" height=\"229\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1009\" width=\"262\" height=\"229\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1010\" width=\"262\" height=\"229\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1011\" transform=\"translate(31.75,25)\"><path id=\"SvgjsPath1012\" d=\"M 0 0L 198 0L 198 59L 0 59Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1013\"><text id=\"SvgjsText1014\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"178px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"10.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1015\" dy=\"16\" x=\"99\"><tspan id=\"SvgjsTspan1016\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlowEvidenceReport</tspan></tspan><tspan id=\"SvgjsTspan1017\" dy=\"16\" x=\"99\"><tspan id=\"SvgjsTspan1018\" style=\"text-decoration:;fill: rgb(51, 51, 51);\">提交申请出证报告任务</tspan></tspan></text></g></g><g id=\"SvgjsG1019\"><path id=\"SvgjsPath1020\" d=\"M130.75 84.5L130.75 114.5L130.75 114.5L130.75 143.2\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1021)\"></path></g><g id=\"SvgjsG1023\" transform=\"translate(25,145)\"><path id=\"SvgjsPath1024\" d=\"M 0 0L 211.5 0L 211.5 59L 0 59Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1025\"><text id=\"SvgjsText1026\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"192px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"10.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1027\" dy=\"16\" x=\"106\"><tspan id=\"SvgjsTspan1028\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">DescribeFlowEvidenceReport</tspan></tspan><tspan id=\"SvgjsTspan1029\" dy=\"16\" x=\"106\"><tspan id=\"SvgjsTspan1030\" style=\"text-decoration:;fill: rgb(51, 51, 51);\">获取出证报告任务执行结果</tspan></tspan></text></g></g></svg>",
       "input": "CreateFlowEvidenceReportRequest",
-      "name": "创建并返回出证报告",
+      "name": "提交申请出证报告任务",
       "output": "CreateFlowEvidenceReportResponse",
       "status": "online"
     },
     "CreateFlowGroupByFiles": {
-      "document": "此接口（CreateFlowGroupByFiles）通过多文件创建合同组签署流程。<br/>\nPDF资源Id 通过上传文件接口获取\n此接口合同组中的子合同必须都是文件发起的合同",
+      "document": "此接口（CreateFlowGroupByFiles）可用于通过多个文件创建合同组签署流程。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n注意事项：使用该接口需要先依赖[多文件上传](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口返回的FileIds。",
       "input": "CreateFlowGroupByFilesRequest",
       "name": "通过多文件创建合同组签署流程",
       "output": "CreateFlowGroupByFilesResponse",
@@ -155,7 +155,7 @@
       "status": "online"
     },
     "CreateOrganizationBatchSignUrl": {
-      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。</br>\n附注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。\n- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。",
+      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。\n- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。",
       "input": "CreateOrganizationBatchSignUrlRequest",
       "name": "获取企业签署合同web页面",
       "output": "CreateOrganizationBatchSignUrlResponse",
@@ -218,7 +218,7 @@
       "status": "online"
     },
     "CreateWebThemeConfig": {
-      "document": "用来创建页面主题配置",
+      "document": "用来创建嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），该接口配合其他所有可嵌入页面接口使用\n创建配置对当前企业全局生效，如果多次调用，会以最后一次的配置为准",
       "input": "CreateWebThemeConfigRequest",
       "name": "创建页面主题配置",
       "output": "CreateWebThemeConfigResponse",
@@ -281,9 +281,9 @@
       "status": "online"
     },
     "DescribeFlowEvidenceReport": {
-      "document": "查询签署报告，返回报告 URL。需调用创建并返回出证报告接口（CreateFlowEvidenceReport）获取报告编号后调用当前接口获取报告链接。",
+      "document": "获取出证报告任务执行结果，返回报告 URL。\n\n\n\n注意：\n<ul><li>使用此功能`需搭配出证套餐` ，使用前请联系对接的客户经理沟通。</li>\n<li>需调用创建并返回出证报告接口<a href=\"https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport\" target=\"_blank\">提交申请出证报告任务</a>获取报告编号后调用当前接口获取报告链接。</li></ul>\n\n<svg id=\"SvgjsSvg1006\" width=\"262\" height=\"229\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1007\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1021\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1022\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"262\" height=\"229\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1009\" width=\"262\" height=\"229\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1010\" width=\"262\" height=\"229\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1011\" transform=\"translate(31.75,25)\"><path id=\"SvgjsPath1012\" d=\"M 0 0L 198 0L 198 59L 0 59Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1013\"><text id=\"SvgjsText1014\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"178px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"10.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1015\" dy=\"16\" x=\"99\"><tspan id=\"SvgjsTspan1016\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlowEvidenceReport</tspan></tspan><tspan id=\"SvgjsTspan1017\" dy=\"16\" x=\"99\"><tspan id=\"SvgjsTspan1018\" style=\"text-decoration:;fill: rgb(51, 51, 51);\">提交申请出证报告任务</tspan></tspan></text></g></g><g id=\"SvgjsG1019\"><path id=\"SvgjsPath1020\" d=\"M130.75 84.5L130.75 114.5L130.75 114.5L130.75 143.2\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1021)\"></path></g><g id=\"SvgjsG1023\" transform=\"translate(25,145)\"><path id=\"SvgjsPath1024\" d=\"M 0 0L 211.5 0L 211.5 59L 0 59Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1025\"><text id=\"SvgjsText1026\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"192px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"10.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1027\" dy=\"16\" x=\"106\"><tspan id=\"SvgjsTspan1028\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">DescribeFlowEvidenceReport</tspan></tspan><tspan id=\"SvgjsTspan1029\" dy=\"16\" x=\"106\"><tspan id=\"SvgjsTspan1030\" style=\"text-decoration:;fill: rgb(51, 51, 51);\">获取出证报告任务执行结果</tspan></tspan></text></g></g></svg>",
       "input": "DescribeFlowEvidenceReportRequest",
-      "name": "查询签署报告",
+      "name": "获取出证报告任务执行结果",
       "output": "DescribeFlowEvidenceReportResponse",
       "status": "online"
     },
@@ -829,7 +829,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n<li>**1**: 不使用个人自动签账号许可进行开通</li></ul>\n",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n</ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -2197,7 +2197,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "出证报告 ID，可用于DescribeFlowEvidenceReport接口查询出证PDF的下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出证报告 ID，可用于<a href=\"https://qian.tencent.com/developers/companyApis/certificate/DescribeFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>查询出证任务结果和出证PDF的下载URL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "yDx************************AyF",
           "member": "string",
           "name": "ReportId",
@@ -2207,7 +2207,7 @@
         },
         {
           "disabled": false,
-          "document": "出证任务执行的状态, 可能会有以下状态：\n\n<ul><li>EvidenceStatusExecuting：  出证任务在执行中</li>\n<li>EvidenceStatusSuccess：  出证任务执行成功</li>\n<li>EvidenceStatusFailed ： 出征任务执行失败</li></ul>",
+          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -2239,7 +2239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2248,7 +2248,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）组名称,最大长度200个字符",
+          "document": "合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
           "example": "无",
           "member": "string",
           "name": "FlowGroupName",
@@ -2266,7 +2266,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2275,7 +2275,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）组的配置项信息。包括是否通知本企业签署方，是否通知其他签署方",
+          "document": "合同（流程）组的配置项信息。\n其中包括：\n<ul>\n<li>是否通知本企业签署方</li>\n<li>是否通知其他签署方</li>\n</ul>",
           "example": "无",
           "member": "FlowGroupOptions",
           "name": "FlowGroupOptions",
@@ -3338,7 +3338,7 @@
         },
         {
           "disabled": false,
-          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。</br>\n您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。</br>\n用户将利用链接对这些合同实施批量操作。",
+          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。\n您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。\n用户将利用链接对这些合同实施批量操作。",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -3356,7 +3356,7 @@
         },
         {
           "disabled": false,
-          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。</br>\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。</br>\nUserId必须是传入合同（FlowId）中的签署人。\n- 1. 若UserId为空，Name和Mobile 必须提供。\n- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。",
+          "document": "员工在腾讯电子签平台的独特身份标识，为32位字符串。\n您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的UserId（在页面中显示为用户ID）。\nUserId必须是传入合同（FlowId）中的签署人。\n- 1. 若UserId为空，Name和Mobile 必须提供。\n- 2. 若UserId 与 Name，Mobile均存在，将优先采用UserId对应的员工。",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -3365,7 +3365,7 @@
         },
         {
           "disabled": false,
-          "document": "员工姓名，必须与手机号码一起使用。</br> 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "员工姓名，必须与手机号码一起使用。\n如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
           "example": "无",
           "member": "string",
           "name": "Name",
@@ -3374,7 +3374,7 @@
         },
         {
           "disabled": false,
-          "document": "员工手机号，必须与姓名一起使用。</br> 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
+          "document": "员工手机号，必须与姓名一起使用。\n 如果UserId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。",
           "example": "无",
           "member": "string",
           "name": "Mobile",
@@ -4525,7 +4525,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4534,7 +4534,7 @@
         },
         {
           "disabled": false,
-          "document": "主题类型\n<br/>EMBED_WEB_THEME：嵌入式主题\n<br/>目前只支持EMBED_WEB_THEME，web页面嵌入的主题风格配置",
+          "document": "主题类型，取值如下：\n<ul><li> **EMBED_WEB_THEME**：嵌入式主题（默认），web页面嵌入的主题风格配置</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "ThemeType",
@@ -4552,7 +4552,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。\t",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5180,7 +5180,7 @@
         },
         {
           "disabled": false,
-          "document": "签署报告编号",
+          "document": "签署报告编号, 由<a href=\"https://qian.tencent.com/developers/companyApis/certificate/CreateFlowEvidenceReport\" target=\"_blank\">提交申请出证报告任务</a>产生",
           "example": "无",
           "member": "string",
           "name": "ReportId",
@@ -5204,8 +5204,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "出证报告PDF的下载 URL\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://file.xxx",
+          "document": "出证报告PDF的下载 URL，`有效期为5分钟`，超过有效期后将无法再下载。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://file.ess.tencent.cn/file/yDwhIU*****kvSEnAV3Qyl2B/0/1.PDF?hkey=4a8ca49a66dc0b7651**5601d0e6b8aa9a86054c25",
           "member": "string",
           "name": "ReportUrl",
           "output_required": true,
@@ -5214,7 +5214,7 @@
         },
         {
           "disabled": false,
-          "document": "签署报告出证任务的状态\n<ul>\n<li>EvidenceStatusExecuting : 出证任务在执行中</li>\n<li>EvidenceStatusSuccess : 出证任务执行成功</li>\n<li>EvidenceStatusFailed : 出证任务执行失败</li>\n</ul>",
+          "document": "出证任务执行的状态, 状态含义如下：\n\n<ul><li>**EvidenceStatusExecuting**：  出证任务在执行中</li>\n<li>**EvidenceStatusSuccess**：  出证任务执行成功</li>\n<li>**EvidenceStatusFailed** ： 出征任务执行失败</li></ul>",
           "example": "EvidenceStatusExecuting",
           "member": "string",
           "name": "Status",
@@ -6141,7 +6141,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n<li>**1**: 不使用个人自动签账号许可进行开通</li></ul>\n",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -7331,7 +7331,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同（流程）的名称",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。",
           "example": "无",
           "member": "string",
           "name": "FlowName",
@@ -7340,7 +7340,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）的签署方信息",
+          "document": "签署流程参与者信息，最大限制50方\n注意 approver中的顺序需要和模板中的顺序保持一致， 否则会导致模板中配置的信息无效。",
           "example": "无",
           "member": "ApproverInfo",
           "name": "Approvers",
@@ -7349,7 +7349,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）的资源Id,此资源必须是PDF文件,来自UploadFiles,使用文件发起合同(流程)组时必传",
+          "document": "文件资源ID，通过多文件上传[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获得，为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。",
           "example": "无",
           "member": "string",
           "name": "FileIds",
@@ -7358,7 +7358,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）的模板Id,用模板发起合同（流程）组时必填",
+          "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。\n可登录腾讯电子签控制台，在 \"模板\"->\"模板中心\"->\"列表展示设置\"选中模板 ID 中查看某个模板的TemplateId(在页面中展示为模板ID)。",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -7367,7 +7367,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）的类型",
+          "document": "签署流程的类型(如销售合同/入职合同等)，最大长度200个字符\n示例值：劳务合同",
           "example": "无",
           "member": "string",
           "name": "FlowType",
@@ -7376,7 +7376,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）的描述",
+          "document": "签署流程描述,最大长度1000个字符",
           "example": "无",
           "member": "string",
           "name": "FlowDescription",
@@ -7385,7 +7385,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）的截止时间戳，单位秒。默认是一年",
+          "document": "签署流程的签署截止时间。\n\n值为unix时间戳,精确到秒,不传默认为当前时间一年后\n示例值：1604912664",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
@@ -7393,7 +7393,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "合同（流程）的回调地址",
           "example": "无",
           "member": "string",
@@ -7403,7 +7403,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台传递过来的信息, 限制1024字符 格式必须是base64的",
+          "document": "调用方自定义的个性化字段(可自定义此字段的值)，并以base64方式编码，支持的最大数据大小为 20480长度。\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
           "example": "无",
           "member": "string",
           "name": "UserData",
@@ -7412,7 +7412,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）的签署是否是无序签, true - 无序。 false - 有序, 默认 ",
+          "document": "发送类型：\ntrue：无序签\nfalse：有序签\n注：默认为false（有序签），请和模板中的配置保持一致\n示例值：true",
           "example": "无",
           "member": "bool",
           "name": "Unordered",
@@ -7421,7 +7421,7 @@
         },
         {
           "disabled": false,
-          "document": "合同（流程）发起方的填写控件, 由发起方进行在发起时进行填充",
+          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>动态表格等填写控件</li></ul>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -7430,7 +7430,7 @@
         },
         {
           "disabled": false,
-          "document": "本企业（发起方）是否需要签署审批，若需要审批则只允许查看不允许签署，需要您调用接口CreateFlowSignReview提交审批结果。",
+          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n若设置为true，审核结果需通过接口 [CreateFlowSignReview](https://qian.tencent.com/developers/companyApis/operateFlows/CreateFlowSignReview) 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。\n示例值：true",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -7439,7 +7439,7 @@
         },
         {
           "disabled": false,
-          "document": "本企业（发起方）自动签署，需要您在发起合同时给印章控件指定自动签的印章。",
+          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN\n示例值：E_PRESCRIPTION_AUTO_SIGN",
           "example": "无",
           "member": "string",
           "name": "AutoSignScene",
@@ -7454,7 +7454,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发起合同（流程）组的合同（流程）签署人校验方式\nVerifyCheck: 人脸识别（默认）\nMobileCheck：手机号验证\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
+          "document": "签署人校验方式,支持以下类型\n<ul><li>VerifyCheck : 人脸识别 (默认值)</li>\n<li>MobileCheck : 手机号验证</li></ul>\n参数说明：此参数仅在合同组文件发起有效，可选人脸识别或手机号验证两种方式，若选择后者，未实名个人签署方在签署合同时，无需经过实名认证和意愿确认两次人脸识别，该能力仅适用于个人签署方。",
           "example": "无",
           "member": "string",
           "name": "ApproverVerifyType",
@@ -7463,7 +7463,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型：sms--短信，none--不通知",
+          "document": "发起合同（流程）组本方企业经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SelfOrganizationApproverNotifyType",
@@ -7472,7 +7472,7 @@
         },
         {
           "disabled": false,
-          "document": "发起合同（流程）组他方经办人通知方式\n签署通知类型：sms--短信，none--不通知",
+          "document": "发起合同（流程）组他方经办人通知方式\n签署通知类型，支持以下类型\n<ul><li>sms : 短信 (默认值)</li><li>none : 不通知</li></ul>",
           "example": "无",
           "member": "string",
           "name": "OtherApproverNotifyType",
@@ -10196,7 +10196,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否显示页面底部电子签logo，取值如下：\n<ul>\n<li> **true**：页面底部显示电子签logo</li>\n<li> **false**：页面底部不显示电子签logo（默认）</li>\n</ul>",
+          "document": "是否显示页面底部电子签logo，取值如下：\n<ul><li> **true**：页面底部显示电子签logo</li>\n<li> **false**：页面底部不显示电子签logo（默认）</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "DisplaySignBrandLogo",
@@ -10205,7 +10205,7 @@
         },
         {
           "disabled": false,
-          "document": "主题颜色\n<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)",
+          "document": "主题颜色：\n支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)\n<br/>",
           "example": "#D54941",
           "member": "string",
           "name": "WebEmbedThemeColor",

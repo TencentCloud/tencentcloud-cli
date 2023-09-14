@@ -144,7 +144,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ses.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListBlackEmailAddress\n<公共请求参数>\n\n{\n    \"StartDate\": \"2020-09-22\",\n    \"EndDate\": \"2020-09-22\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"BlackList\": [\n            {\n                \"BounceTime\": \"2020-09-22 00:00:00\",\n                \"EmailAddress\": \"432843@qq.com\"\n            },\n            {\n                \"BounceTime\": \"2020-10-22 12:10:00\",\n                \"EmailAddress\": \"43fdaf2843@gmail.com\"\n            }\n        ],\n        \"TotalCount\": 2,\n        \"RequestId\": \"8979fc1e-9564-4fc9-bf7d-2958ce679b72\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"BlackList\": [\n            {\n                \"BounceTime\": \"2023-09-06 11:21:35\",\n                \"EmailAddress\": \"xxx@gmail.com\",\n                \"IspDesc\": \"550 5.1.1 The email account that you tried to reach does not exist. Please try\\n5.1.1 double-checking the recipient's email addre\"\n            }\n        ],\n        \"RequestId\": \"e54b9d01-2bcb-43f6-83dd-55a91a3cd2bb\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "获取黑名单邮箱地址"
       }
     ],

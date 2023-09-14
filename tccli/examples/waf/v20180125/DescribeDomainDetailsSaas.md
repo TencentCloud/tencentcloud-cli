@@ -17,9 +17,17 @@ Output:
     "Response": {
         "RequestId": "b4f13899-561b-46a0-a045-6ba6b72c38f2",
         "DomainsPartInfo": {
+            "Domain": "",
+            "DomainId": "",
+            "InstanceId": "",
+            "Edition": "",
+            "InstanceName": "",
+            "Cert": "",
             "CertType": 0,
             "Cls": 0,
+            "CreateTime": "",
             "Cname": "",
+            "Engine": 0,
             "SniType": 0,
             "SniHost": "",
             "ProxySendTimeout": 0,

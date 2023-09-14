@@ -357,27 +357,37 @@
       "type": "object"
     },
     "BlackEmailAddress": {
-      "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间",
+      "document": "邮箱黑名单结构，包含被拉黑的邮箱地址和被拉黑时间，以及被拉黑的理由",
       "members": [
         {
           "disabled": false,
           "document": "邮箱被拉黑时间",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "BounceTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被拉黑的邮箱地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "EmailAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被拉黑的理由\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IspDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1218,7 +1228,7 @@
         {
           "disabled": false,
           "document": "开始日期，格式为YYYY-MM-DD",
-          "example": "",
+          "example": "2023-09-01",
           "member": "date",
           "name": "StartDate",
           "required": true,
@@ -1227,7 +1237,7 @@
         {
           "disabled": false,
           "document": "结束日期，格式为YYYY-MM-DD",
-          "example": "",
+          "example": "2023-09-02",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -1236,7 +1246,7 @@
         {
           "disabled": false,
           "document": "规范，配合Offset使用",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1245,7 +1255,7 @@
         {
           "disabled": false,
           "document": "规范，配合Limit使用，Limit最大取值为100",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1254,7 +1264,7 @@
         {
           "disabled": false,
           "document": "可以指定邮箱进行查询",
-          "example": "",
+          "example": "xx@gmail.com",
           "member": "string",
           "name": "EmailAddress",
           "required": false,
@@ -1262,8 +1272,8 @@
         },
         {
           "disabled": false,
-          "document": "可以指定任务ID进行查询",
-          "example": "",
+          "document": "已废弃",
+          "example": "无",
           "member": "string",
           "name": "TaskID",
           "required": false,
@@ -1278,18 +1288,20 @@
         {
           "disabled": false,
           "document": "黑名单列表",
-          "example": "",
+          "example": "    \"BlackList\": [       {         \"BounceTime\": \"2023-09-06 11:21:35\",         \"EmailAddress\": \"xxx@gmail.com\",         \"IspDesc\": \"550 5.1.1 The email account that you tried to reach does not exist. Please try\\n5.1.1 double-checking the recipient's email addre\"       }     ]",
           "member": "BlackEmailAddress",
           "name": "BlackList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "黑名单总数",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

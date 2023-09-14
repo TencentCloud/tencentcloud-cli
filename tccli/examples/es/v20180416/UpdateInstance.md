@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
@@ -43,8 +43,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
@@ -65,8 +65,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
@@ -87,8 +87,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```
@@ -110,8 +110,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```

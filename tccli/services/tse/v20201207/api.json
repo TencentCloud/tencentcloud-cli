@@ -126,6 +126,13 @@
       "output": "DescribeCloudNativeAPIGatewayCanaryRulesResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayConfig": {
+      "document": "获取云原生API网关实例网络配置信息",
+      "input": "DescribeCloudNativeAPIGatewayConfigRequest",
+      "name": "获取云原生API网关实例网络配置信息",
+      "output": "DescribeCloudNativeAPIGatewayConfigResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGatewayNodes": {
       "document": "获取云原生网关节点列表",
       "input": "DescribeCloudNativeAPIGatewayNodesRequest",
@@ -737,6 +744,212 @@
         }
       ],
       "usage": "both"
+    },
+    "CloudNativeAPIGatewayConfig": {
+      "document": "云原生API网关配置信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "控制台类型。",
+          "example": "Kong",
+          "member": "string",
+          "name": "ConsoleType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP链接地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://127.0.0.1:8000/",
+          "member": "string",
+          "name": "HttpUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS链接地址。",
+          "example": "https://127.0.0.1:8443/",
+          "member": "string",
+          "name": "HttpsUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络类型, Open|Internal。",
+          "example": "Open",
+          "member": "string",
+          "name": "NetType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "管理员用户名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "admin",
+          "member": "string",
+          "name": "AdminUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "管理员密码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123456",
+          "member": "string",
+          "name": "AdminPassword",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络状态, Open|Closed|Updating\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Open",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络访问策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkAccessControl",
+          "name": "AccessControl",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网子网 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的规格类型，传 \"SLA\" 表示性能容量型，返回空为共享型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否多可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "MultiZoneFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "SlaveZoneId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主可用区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州一区",
+          "member": "string",
+          "name": "MasterZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "广州二区",
+          "member": "string",
+          "name": "SlaveZoneName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络 id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "network-1234xxxx",
+          "member": "string",
+          "name": "NetworkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloudNativeAPIGatewayNode": {
       "document": "云原生API网关节点信息。",
@@ -2651,6 +2864,108 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConfigRequest": {
+      "document": "DescribeCloudNativeAPIGatewayConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id，不填时为默认分组",
+          "example": "group-xxxx1234",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConfigResponse": {
+      "document": "DescribeCloudNativeAPIGatewayConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云原生API网关响应结果。",
+          "example": "无",
+          "member": "DescribeCloudNativeAPIGatewayConfigResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayConfigResult": {
+      "document": "获取云原生API网关实例网络配置结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组网络配置列表。",
+          "example": "无",
+          "member": "CloudNativeAPIGatewayConfig",
+          "name": "ConfigList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分组子网信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "GroupSubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组VPC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxx",
+          "member": "string",
+          "name": "GroupVpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group-xxx",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeCloudNativeAPIGatewayNodesRequest": {
       "document": "DescribeCloudNativeAPIGatewayNodes请求参数结构体",
@@ -6093,6 +6408,42 @@
         }
       ],
       "usage": "out"
+    },
+    "NetworkAccessControl": {
+      "document": "网络访问策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "访问模式：Whitelist|Blacklist",
+          "example": "Whitelist",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "白名单列表",
+          "example": "[\"0.0.0.0\"]",
+          "member": "string",
+          "name": "CidrWhiteList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "黑名单列表",
+          "example": "[\"100.10.0.0/24\"]",
+          "member": "string",
+          "name": "CidrBlackList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PolarisLimiterAddress": {
       "document": "查询Limiter的接入地址",

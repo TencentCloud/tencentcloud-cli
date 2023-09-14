@@ -365,9 +365,9 @@
       "status": "online"
     },
     "DescribeInstanceSpecs": {
-      "document": "本接口（DescribeInstanceSpecs）用于查询实例规格",
+      "document": "本接口（DescribeInstanceSpecs）用于查询购买页可购买的实例规格",
       "input": "DescribeInstanceSpecsRequest",
-      "name": "查询实例规格",
+      "name": "查询购买页可购买的实例规格",
       "output": "DescribeInstanceSpecsResponse",
       "status": "online"
     },
@@ -3769,7 +3769,7 @@
         {
           "disabled": false,
           "document": "安全组ID数组",
-          "example": "无",
+          "example": "sg-qwaszx",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -4865,6 +4865,16 @@
           "name": "RenewFlag",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点网络类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8355,6 +8365,7 @@
           "example": "无",
           "member": "InstanceSpec",
           "name": "InstanceSpecSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9962,7 +9973,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd12qwe",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9980,7 +9991,7 @@
         {
           "disabled": false,
           "document": "数据库表权限码数组",
-          "example": "无",
+          "example": "['CREATE','DROP']",
           "member": "string",
           "name": "DbTablePrivileges",
           "required": true,
@@ -10885,7 +10896,7 @@
         {
           "disabled": false,
           "document": "集群id，不超过32个字符",
-          "example": "xxx",
+          "example": "cynosdbmysql-asd123qw",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -16530,7 +16541,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16540,7 +16551,7 @@
           "example": "无",
           "member": "bool",
           "name": "HasStock",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16550,7 +16561,7 @@
           "example": "1",
           "member": "int64",
           "name": "StockCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

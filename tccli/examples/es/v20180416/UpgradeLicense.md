@@ -1,6 +1,6 @@
 **Example 1: 升级ES商业特性**
 
-
+升级ES商业特性
 
 Input: 
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "DealName": "xx"
+        "RequestId": "1",
+        "DealName": "1"
     }
 }
 ```

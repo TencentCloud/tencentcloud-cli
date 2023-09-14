@@ -109,7 +109,8 @@ Output:
                     "PackageType": "abc"
                 }
             ],
-            "RenewFlag": 0
+            "RenewFlag": 0,
+            "NetworkType": "abc"
         },
         "RequestId": "abc"
     }

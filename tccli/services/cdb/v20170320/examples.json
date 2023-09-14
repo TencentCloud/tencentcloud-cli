@@ -315,7 +315,7 @@
     "DescribeAuditLogFiles": [
       {
         "document": "",
-        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditLogFiles\r\n&InstanceId=cdb-qwerasdf\r\n&<公共请求参数>",
+        "input": "https://cdb.tencentcloudapi.com/?Action=DescribeAuditLogFiles\n&InstanceId=cdb-qwerasdf\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"FileName\": \"test.txt\",\n                \"Status\": \"running\",\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"FileSize\": 3,\n                \"DownloadUrl\": \"http://xxxxxx\"\n            }\n        ]\n    }\n}",
         "title": "查询审计日志文件"
       }

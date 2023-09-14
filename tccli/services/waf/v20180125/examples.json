@@ -364,7 +364,7 @@
       {
         "document": "查询单个saas域名详情",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDetailsSaas\n<公共请求参数>\n\n{\n    \"Domain\": \"lucasssli3.qcloud.com\",\n    \"DomainId\": \"20200728142847163546341\",\n    \"InstanceId\": \"waf_000000002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsPartInfo\": {\n            \"CertType\": 0,\n            \"Cls\": 0,\n            \"Cname\": \"\",\n            \"SniType\": 0,\n            \"SniHost\": \"\",\n            \"ProxySendTimeout\": 0,\n            \"ProxyReadTimeout\": 0,\n            \"Ciphers\": [\n                0\n            ],\n            \"HttpsRewrite\": 0,\n            \"HttpsUpstreamPort\": \"\",\n            \"IsKeepAlive\": 0,\n            \"IsCdn\": 0,\n            \"IsGray\": 0,\n            \"IsHttp2\": 0,\n            \"IsWebsocket\": 0,\n            \"LoadBalance\": 0,\n            \"Mode\": 0,\n            \"PrivateKey\": \"\",\n            \"SSLId\": \"\",\n            \"UpstreamDomain\": \"\",\n            \"UpstreamScheme\": \"\",\n            \"UpstreamType\": 0,\n            \"TLSVersion\": 0,\n            \"CipherTemplate\": 0,\n            \"SrcList\": [],\n            \"Ports\": [],\n            \"ActiveCheck\": 1\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsPartInfo\": {\n            \"Domain\": \"\",\n            \"DomainId\": \"\",\n            \"InstanceId\": \"\",\n            \"Edition\": \"\",\n            \"InstanceName\": \"\",\n            \"Cert\": \"\",\n            \"CertType\": 0,\n            \"Cls\": 0,\n            \"CreateTime\": \"\",\n            \"Cname\": \"\",\n            \"Engine\": 0,\n            \"SniType\": 0,\n            \"SniHost\": \"\",\n            \"ProxySendTimeout\": 0,\n            \"ProxyReadTimeout\": 0,\n            \"Ciphers\": [\n                0\n            ],\n            \"HttpsRewrite\": 0,\n            \"HttpsUpstreamPort\": \"\",\n            \"IsKeepAlive\": 0,\n            \"IsCdn\": 0,\n            \"IsGray\": 0,\n            \"IsHttp2\": 0,\n            \"IsWebsocket\": 0,\n            \"LoadBalance\": 0,\n            \"Mode\": 0,\n            \"PrivateKey\": \"\",\n            \"SSLId\": \"\",\n            \"UpstreamDomain\": \"\",\n            \"UpstreamScheme\": \"\",\n            \"UpstreamType\": 0,\n            \"TLSVersion\": 0,\n            \"CipherTemplate\": 0,\n            \"SrcList\": [],\n            \"Ports\": [],\n            \"ActiveCheck\": 1\n        }\n    }\n}",
         "title": "查询单个saas域名详情"
       }
     ],
@@ -618,6 +618,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=GetAttackTotalCount\n&StartTime=2021-02-01T00:00:00+08:00\n&EndTime=2021-02-25T23:59:59+08:00\n&Domain=xxx\n&QueryString=yyy\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 271652,\n        \"RequestId\": \"9b02bf9e-c89c-42c3-9ae1-685f968fa02d\"\n    }\n}",
         "title": "攻击总次数"
+      }
+    ],
+    "GetInstanceQpsLimit": [
+      {
+        "document": "获取qps 弹性默认值",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetInstanceQpsLimit\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"QpsData\": {\n            \"ElasticBillingDefault\": 1,\n            \"ElasticBillingMin\": 1,\n            \"ElasticBillingMax\": 1\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取qps 弹性默认值"
       }
     ],
     "ModifyAccessPeriod": [

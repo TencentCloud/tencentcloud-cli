@@ -1,6 +1,6 @@
 **Example 1: 查询ES集群实例操作记录**
 
-
+查询ES集群实例操作记录
 
 Input: 
 
@@ -33,25 +33,29 @@ Output:
                         "Name": "prepareResource",
                         "Progress": 1,
                         "FinishTime": "2019-03-07 16:31:11",
-                        "SubTasks": []
+                        "SubTasks": [],
+                        "ElapsedTime": 0
                     },
                     {
                         "Name": "deployESCluster",
                         "Progress": 1,
                         "FinishTime": "2019-03-07 16:34:32",
-                        "SubTasks": []
+                        "SubTasks": [],
+                        "ElapsedTime": 0
                     },
                     {
                         "Name": "deployKibana",
                         "Progress": 1,
                         "FinishTime": "2019-03-07 16:35:13",
-                        "SubTasks": []
+                        "SubTasks": [],
+                        "ElapsedTime": 0
                     },
                     {
                         "Name": "configLB",
                         "Progress": 1,
                         "FinishTime": "2019-03-07 16:35:15",
-                        "SubTasks": []
+                        "SubTasks": [],
+                        "ElapsedTime": 0
                     }
                 ],
                 "Progress": 1

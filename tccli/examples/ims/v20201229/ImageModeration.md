@@ -48,6 +48,7 @@ Output:
                         "Id": 0,
                         "Name": "QRCODE",
                         "Value": "https://test.com/test",
+                        "ObjectId": "",
                         "SubLabel": "QRCODE",
                         "Score": 100,
                         "Location": {
@@ -63,24 +64,7 @@ Output:
         ],
         "OcrResults": [],
         "LibResults": [],
-        "RecognitionResults": [
-            {
-                "Label": "Scene",
-                "Tags": [
-                    {
-                        "Name": "MedicalImage",
-                        "Score": 30,
-                        "Location": {
-                            "X": 0,
-                            "Y": 0,
-                            "Width": 0,
-                            "Height": 0,
-                            "Rotate": 0
-                        }
-                    }
-                ]
-            }
-        ],
+        "RecognitionResults": [],
         "Extra": ""
     }
 }

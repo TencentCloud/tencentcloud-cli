@@ -144,6 +144,14 @@
         "title": "查询云原生网关灰度规则列表"
       }
     ],
+    "DescribeCloudNativeAPIGatewayConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"ConfigList\": [\n                {\n                    \"ConsoleType\": \"abc\",\n                    \"HttpUrl\": \"abc\",\n                    \"HttpsUrl\": \"abc\",\n                    \"NetType\": \"abc\",\n                    \"AdminUser\": \"abc\",\n                    \"AdminPassword\": \"abc\",\n                    \"Status\": \"abc\",\n                    \"AccessControl\": {\n                        \"Mode\": \"abc\",\n                        \"CidrWhiteList\": [\n                            \"abc\"\n                        ],\n                        \"CidrBlackList\": [\n                            \"abc\"\n                        ]\n                    },\n                    \"SubnetId\": \"abc\",\n                    \"VpcId\": \"abc\",\n                    \"Description\": \"abc\",\n                    \"SlaType\": \"abc\",\n                    \"Vip\": \"abc\",\n                    \"InternetMaxBandwidthOut\": 1,\n                    \"MultiZoneFlag\": true,\n                    \"MasterZoneId\": \"abc\",\n                    \"SlaveZoneId\": \"abc\",\n                    \"MasterZoneName\": \"abc\",\n                    \"SlaveZoneName\": \"abc\",\n                    \"NetworkId\": \"abc\"\n                }\n            ],\n            \"GroupSubnetId\": \"abc\",\n            \"GroupVpcId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "测试获取云原生API网关配置信息"
+      }
+    ],
     "DescribeCloudNativeAPIGatewayNodes": [
       {
         "document": "",
