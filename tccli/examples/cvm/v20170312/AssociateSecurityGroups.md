@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cvm AssociateSecurityGroups --cli-unfold-argument  \
-    --InstanceIds ins-2zvpghhc ins-915zrb0p \
+    --InstanceIds ins-915zrb0p ins-2zvpghhc \
     --SecurityGroupIds sg-9id3l839
 ```
 

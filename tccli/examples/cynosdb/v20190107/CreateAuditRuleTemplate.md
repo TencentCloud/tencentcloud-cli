@@ -1,6 +1,6 @@
-**Example 1: 创建审计规则模版**
+**Example 1: 创建审计规则模板**
 
-
+创建审计规则模板
 
 Input: 
 
@@ -16,7 +16,7 @@ tccli cynosdb CreateAuditRuleTemplate --cli-unfold-argument  \
     --RuleFilters.2.Compare EQS \
     --RuleFilters.2.Value Update Delete \
     --RuleTemplateName test \
-    --Description 用于测试的规则模版
+    --Description 用于测试的规则模板
 ```
 
 Output: 

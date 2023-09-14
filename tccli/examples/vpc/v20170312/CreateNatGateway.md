@@ -50,6 +50,8 @@ Output:
                 "IsExclusive": true,
                 "StrictSnatMode": false,
                 "SmartScheduleMode": false,
+                "DedicatedClusterId": "",
+                "NatProductVersion": 1,
                 "RestrictState": "NORMAL",
                 "SourceIpTranslationNatRuleSet": [],
                 "SubnetId": "1215354",
@@ -107,7 +109,9 @@ Output:
                 "IsExclusive": false,
                 "StrictSnatMode": false,
                 "SmartScheduleMode": false,
+                "DedicatedClusterId": null,
                 "RestrictState": "NORMAL",
+                "NatProductVersion": 2,
                 "ExclusiveGatewayBandwidth": null
             }
         ],

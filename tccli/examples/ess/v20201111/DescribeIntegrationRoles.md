@@ -99,3 +99,48 @@ Output:
 }
 ```
 
+**Example 3: 示例-查询企业角色列表（返回角色对应的权限树）**
+
+通过添加过滤参数 IsReturnPermissionGroup 可返回角色对应的权限树信息。
+
+Input: 
+
+```
+tccli ess DescribeIntegrationRoles --cli-unfold-argument  \
+    --Filters.0.Key IsReturnPermissionGroup \
+    --Filters.0.Values 1 \
+    --Operator.UserId y******************5 \
+    --Limit 5 \
+    --Offset 0
+```
+
+Output: 
+```
+{
+    "Response": {
+        "IntegrateRoles": [
+            {
+                "IsGroupRole": false,
+                "RoleId": "b4******************bf",
+                "RoleName": "超级管理员",
+                "RoleStatus": 1,
+                "SubOrgIdList": [],
+                "PermissionGroups": []
+            },
+            {
+                "IsGroupRole": false,
+                "RoleId": "1**********************1",
+                "RoleName": "企业印章管理员",
+                "RoleStatus": 1,
+                "SubOrgIdList": [],
+                "PermissionGroups": []
+            }
+        ],
+        "Limit": 5,
+        "Offset": 0,
+        "RequestId": "s*******************",
+        "TotalCount": 2
+    }
+}
+```
+

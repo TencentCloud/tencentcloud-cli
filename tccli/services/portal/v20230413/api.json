@@ -163,6 +163,15 @@
           "name": "RecentReleaseTimeEnd",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文档语言(zh:中文;en:英文,默认:zh)",
+          "example": "无",
+          "member": "string",
+          "name": "DocumentLanguage",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -176,6 +185,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -185,6 +195,7 @@
           "example": "无",
           "member": "DocumentItem",
           "name": "List",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -436,7 +447,7 @@
           "example": "81874",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -446,7 +457,7 @@
           "example": "表格自适应宽度",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -456,7 +467,7 @@
           "example": "2436",
           "member": "uint64",
           "name": "CategoryId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -466,7 +477,7 @@
           "example": "表格自适应宽度",
           "member": "string",
           "name": "CategoryName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -476,7 +487,7 @@
           "example": "无",
           "member": "string",
           "name": "Markdown",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -486,7 +497,7 @@
           "example": "无",
           "member": "string",
           "name": "Html",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -496,7 +507,7 @@
           "example": "无",
           "member": "string",
           "name": "FirstReleaseTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -506,7 +517,7 @@
           "example": "无",
           "member": "string",
           "name": "RecentReleaseTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -516,7 +527,37 @@
           "example": "0",
           "member": "uint64",
           "name": "Disable",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档是否对外可见（1:是;2:否）",
+          "example": "1",
+          "member": "uint64",
+          "name": "Visible",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否展示为菜单项（1:是;2:否）",
+          "example": "1",
+          "member": "uint64",
+          "name": "InMenu",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文档分类是否对外可见（1:是;2:否）",
+          "example": "1",
+          "member": "uint64",
+          "name": "CategorySwitch",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

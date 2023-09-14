@@ -1,17 +1,17 @@
 **Example 1: 更新索引元数据**
 
-
+更新索引元数据
 
 Input: 
 
 ```
 tccli es UpdateIndex --cli-unfold-argument  \
-    --Username xx \
-    --UpdateMetaJson xx \
-    --IndexType xx \
-    --InstanceId xx \
-    --IndexName xx \
-    --Password xx
+    --Username 1 \
+    --UpdateMetaJson 1 \
+    --IndexType 1 \
+    --InstanceId 1 \
+    --IndexName 1 \
+    --Password 1
 ```
 
 Output: 

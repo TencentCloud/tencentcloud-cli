@@ -1064,7 +1064,7 @@
           "example": "lhbp-5exe07sc",
           "member": "string",
           "name": "BlueprintId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1074,7 +1074,7 @@
           "example": "Discuz! Q",
           "member": "string",
           "name": "DisplayTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1084,7 +1084,7 @@
           "example": "1.0.0",
           "member": "string",
           "name": "DisplayVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1094,7 +1094,7 @@
           "example": "discuzq",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1104,7 +1104,7 @@
           "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1114,7 +1114,7 @@
           "example": "CENTOS",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1124,7 +1124,7 @@
           "example": "LINUX_UNIX",
           "member": "string",
           "name": "PlatformType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1134,7 +1134,7 @@
           "example": "APP_OS",
           "member": "string",
           "name": "BlueprintType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1144,7 +1144,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1154,7 +1154,7 @@
           "example": "20",
           "member": "int64",
           "name": "RequiredSystemDiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1164,7 +1164,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "BlueprintState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1174,7 +1174,7 @@
           "example": "2021-02-02T09:16:16Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1184,7 +1184,7 @@
           "example": "discuzq",
           "member": "string",
           "name": "BlueprintName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1194,7 +1194,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportAutomationTools",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1204,7 +1204,7 @@
           "example": "1",
           "member": "int64",
           "name": "RequiredMemorySize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1214,7 +1214,7 @@
           "example": "img-cs2rrmp0",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1224,7 +1224,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "CommunityUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1234,7 +1234,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "GuideUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1244,7 +1244,7 @@
           "example": "[\"lhsc-123456\"]",
           "member": "string",
           "name": "SceneIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1254,9 +1254,29 @@
           "example": "20.10.5",
           "member": "string",
           "name": "DockerVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像创建来源。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PUBLIC",
+          "member": "string",
+          "name": "CreateSource",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否已共享。",
+          "example": "true",
+          "member": "bool",
+          "name": "BlueprintShared",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
