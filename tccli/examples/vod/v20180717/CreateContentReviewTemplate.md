@@ -6,13 +6,13 @@ Input:
 
 ```
 tccli vod CreateContentReviewTemplate --cli-unfold-argument  \
-    --Comment 模板3 \
+    --Comment test template \
     --PornConfigure.ImgReviewInfo.Switch ON \
     --ReviewWallSwitch OFF \
-    --Name 内容审核模板 \
+    --Name TestTemplate \
     --PoliticalConfigure.ImgReviewInfo.Switch ON \
     --TerrorismConfigure.ImgReviewInfo.Switch ON \
-    --TerrorismConfigure.OcrReviewInfo null
+    --TerrorismConfigure.OcrReviewInfo None
 ```
 
 Output: 

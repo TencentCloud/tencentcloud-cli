@@ -18,7 +18,12 @@ Output:
             {
                 "Definition": 20001,
                 "Name": "test",
+                "Type": "Preset",
                 "Comment": "",
+                "RebuildVideoInfo": null,
+                "RebuildAudioInfo": null,
+                "TargetVideoInfo": null,
+                "TargetAudioInfo": null,
                 "Container": "mp4",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,

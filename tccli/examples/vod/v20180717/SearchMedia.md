@@ -51,7 +51,9 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "StorageRegion": "ap-chongqing",
                     "Category": "Image",
@@ -76,6 +78,7 @@ Output:
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
+                            "CodecTag": "avc1",
                             "Fps": 222,
                             "DynamicRangeInfo": {
                                 "Type": "HDR",
@@ -109,6 +112,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -142,6 +146,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -175,6 +180,7 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 24,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -215,6 +221,9 @@ Output:
                         {
                             "Definition": 10,
                             "SampleType": "percent",
+                            "WaterMarkDefinition": [
+                                0
+                            ],
                             "Interval": 10,
                             "ImageUrlSet": [
                                 "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
@@ -296,6 +305,7 @@ Output:
                                     {
                                         "Width": 0,
                                         "Codec": "h264",
+                                        "CodecTag": "avc1",
                                         "Bitrate": 0,
                                         "Fps": 0,
                                         "Height": 0,
@@ -325,10 +335,14 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
+                            "Size": 10556,
                             "DrmType": "drm",
                             "Definition": 0,
                             "Url": "url",
-                            "Package": "HLS"
+                            "Package": "HLS",
+                            "SubStreamSet": [],
+                            "DigitalWatermarkType": "NONE",
+                            "CopyRightWatermarkText": "NONE"
                         }
                     ]
                 },
@@ -342,7 +356,8 @@ Output:
                             "Id": "id"
                         }
                     ]
-                }
+                },
+                "ReviewInfo": null
             }
         ]
     }
@@ -396,7 +411,9 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "StorageRegion": "ap-chongqing",
                     "Category": "Video",
@@ -421,6 +438,7 @@ Output:
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
+                            "CodecTag": "avc1",
                             "Fps": 222,
                             "DynamicRangeInfo": {
                                 "Type": "HDR",
@@ -454,6 +472,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -487,6 +506,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -520,6 +540,7 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 24,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -560,6 +581,9 @@ Output:
                         {
                             "Definition": 10,
                             "SampleType": "percent",
+                            "WaterMarkDefinition": [
+                                0
+                            ],
                             "Interval": 10,
                             "ImageUrlSet": [
                                 "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
@@ -641,6 +665,7 @@ Output:
                                     {
                                         "Width": 0,
                                         "Codec": "h264",
+                                        "CodecTag": "avc1",
                                         "Bitrate": 0,
                                         "Fps": 0,
                                         "Height": 0,
@@ -670,10 +695,14 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
+                            "Size": 10556,
                             "DrmType": "drm",
                             "Definition": 0,
                             "Url": "url",
-                            "Package": "HLS"
+                            "Package": "HLS",
+                            "SubStreamSet": [],
+                            "DigitalWatermarkType": "NONE",
+                            "CopyRightWatermarkText": "NONE"
                         }
                     ]
                 },
@@ -687,7 +716,8 @@ Output:
                             "Id": "id"
                         }
                     ]
-                }
+                },
+                "ReviewInfo": null
             }
         ]
     }
@@ -741,7 +771,9 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "StorageRegion": "ap-chongqing",
                     "Category": "Video",
@@ -766,6 +798,7 @@ Output:
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
+                            "CodecTag": "avc1",
                             "Fps": 222,
                             "DynamicRangeInfo": {
                                 "Type": "HDR",
@@ -799,6 +832,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -832,6 +866,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -865,6 +900,7 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 24,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -905,6 +941,9 @@ Output:
                         {
                             "Definition": 10,
                             "SampleType": "percent",
+                            "WaterMarkDefinition": [
+                                0
+                            ],
                             "Interval": 10,
                             "ImageUrlSet": [
                                 "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
@@ -986,6 +1025,7 @@ Output:
                                     {
                                         "Width": 0,
                                         "Codec": "h264",
+                                        "CodecTag": "avc1",
                                         "Bitrate": 0,
                                         "Fps": 0,
                                         "Height": 0,
@@ -1015,10 +1055,14 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
+                            "Size": 10556,
                             "DrmType": "drm",
                             "Definition": 0,
                             "Url": "url",
-                            "Package": "HLS"
+                            "Package": "HLS",
+                            "SubStreamSet": [],
+                            "DigitalWatermarkType": "NONE",
+                            "CopyRightWatermarkText": "NONE"
                         }
                     ]
                 },
@@ -1032,7 +1076,8 @@ Output:
                             "Id": "id"
                         }
                     ]
-                }
+                },
+                "ReviewInfo": null
             }
         ]
     }
@@ -1081,7 +1126,7 @@ Output:
                         "tag2"
                     ],
                     "SourceInfo": {
-                        "SourceType": "Upload",
+                        "SourceType": "Record",
                         "SourceContext": "",
                         "TrtcRecordInfo": {
                             "SdkAppId": 1,
@@ -1090,10 +1135,12 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "StorageRegion": "ap-chongqing",
-                    "Category": "Video",
+                    "Category": "Image",
                     "Vid": "5285485487985271487",
                     "Status": "Normal",
                     "StorageClass": "STANDARD"
@@ -1101,13 +1148,13 @@ Output:
                 "MetaData": {
                     "Size": 10556,
                     "Container": "m4a",
-                    "Duration": 3601.0,
+                    "Duration": 3601,
                     "Bitrate": 246035,
                     "Height": 480,
                     "Width": 640,
                     "Rotate": 0,
-                    "VideoDuration": 3601.0,
-                    "AudioDuration": 3601.0,
+                    "VideoDuration": 3601,
+                    "AudioDuration": 3601,
                     "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                     "VideoStreamSet": [
                         {
@@ -1115,6 +1162,7 @@ Output:
                             "Height": 480,
                             "Width": 640,
                             "Codec": "h264",
+                            "CodecTag": "avc1",
                             "Fps": 222,
                             "DynamicRangeInfo": {
                                 "Type": "HDR",
@@ -1139,7 +1187,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "m4a",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -1148,6 +1196,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -1172,7 +1221,7 @@ Output:
                             "Height": 378,
                             "Width": 672,
                             "Container": "mov",
-                            "Duration": 3601.0,
+                            "Duration": 3601,
                             "Size": 10502,
                             "Md5": "b3ae6ed07d9bf4efeeb94ed2d37ff3e3",
                             "VideoStreamSet": [
@@ -1181,6 +1230,7 @@ Output:
                                     "Height": 480,
                                     "Width": 640,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 222,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -1201,7 +1251,7 @@ Output:
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
                             "Definition": 10000,
-                            "Duration": 145.0,
+                            "Duration": 145,
                             "Size": 265,
                             "Bitrate": 2840055,
                             "Height": 1080,
@@ -1214,6 +1264,7 @@ Output:
                                     "Height": 1080,
                                     "Width": 1920,
                                     "Codec": "h264",
+                                    "CodecTag": "avc1",
                                     "Fps": 24,
                                     "DynamicRangeInfo": {
                                         "Type": "HDR",
@@ -1244,8 +1295,8 @@ Output:
                             "Bitrate": 1000000,
                             "Size": 600000,
                             "Md5": "bfcf7c6f154b1842a661f9e80b07a1d0",
-                            "StartTimeOffset": 10.0,
-                            "EndTimeOffset": 15.0
+                            "StartTimeOffset": 10,
+                            "EndTimeOffset": 15
                         }
                     ]
                 },
@@ -1254,6 +1305,9 @@ Output:
                         {
                             "Definition": 10,
                             "SampleType": "percent",
+                            "WaterMarkDefinition": [
+                                0
+                            ],
                             "Interval": 10,
                             "ImageUrlSet": [
                                 "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
@@ -1290,11 +1344,11 @@ Output:
                             "Definition": 10,
                             "PicInfoSet": [
                                 {
-                                    "TimeOffset": 0.0,
+                                    "TimeOffset": 0,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx1.jpg"
                                 },
                                 {
-                                    "TimeOffset": 1000.0,
+                                    "TimeOffset": 1000,
                                     "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/snapshotByTime/xx2.jpg"
                                 }
                             ]
@@ -1304,11 +1358,11 @@ Output:
                 "KeyFrameDescInfo": {
                     "KeyFrameDescSet": [
                         {
-                            "TimeOffset": 1.0,
+                            "TimeOffset": 1,
                             "Content": "abc"
                         },
                         {
-                            "TimeOffset": 100.0,
+                            "TimeOffset": 100,
                             "Content": "def"
                         }
                     ]
@@ -1321,7 +1375,7 @@ Output:
                             "ReviewResult": "Pass",
                             "ReviewSummary": [
                                 {
-                                    "Confidence": 0.0,
+                                    "Confidence": 0,
                                     "Type": "Porn",
                                     "Suggestion": "pass"
                                 }
@@ -1329,12 +1383,13 @@ Output:
                             "MetaData": {
                                 "Rotate": 0,
                                 "Container": "mp4",
-                                "AudioDuration": 0.0,
+                                "AudioDuration": 0,
                                 "Md5": "md5",
                                 "VideoStreamSet": [
                                     {
                                         "Width": 0,
                                         "Codec": "h264",
+                                        "CodecTag": "avc1",
                                         "Bitrate": 0,
                                         "Fps": 0,
                                         "Height": 0,
@@ -1345,9 +1400,9 @@ Output:
                                     }
                                 ],
                                 "Height": 0,
-                                "VideoDuration": 0.0,
+                                "VideoDuration": 0,
                                 "Width": 0,
-                                "Duration": 0.0,
+                                "Duration": 0,
                                 "Size": 0,
                                 "Bitrate": 0,
                                 "AudioStreamSet": [
@@ -1364,10 +1419,14 @@ Output:
                 "AdaptiveDynamicStreamingInfo": {
                     "AdaptiveDynamicStreamingSet": [
                         {
+                            "Size": 10556,
                             "DrmType": "drm",
                             "Definition": 0,
                             "Url": "url",
-                            "Package": "HLS"
+                            "Package": "HLS",
+                            "SubStreamSet": [],
+                            "DigitalWatermarkType": "NONE",
+                            "CopyRightWatermarkText": "NONE"
                         }
                     ]
                 },
@@ -1381,7 +1440,8 @@ Output:
                             "Id": "id"
                         }
                     ]
-                }
+                },
+                "ReviewInfo": null
             }
         ]
     }
@@ -1438,7 +1498,9 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "Vid": "5285890811175706012",
                     "Category": "Image",
@@ -1456,6 +1518,7 @@ Output:
                         }
                     ]
                 },
+                "ReviewInfo": null,
                 "MetaData": null,
                 "TranscodeInfo": null,
                 "AnimatedGraphicsInfo": null,
@@ -1492,7 +1555,9 @@ Output:
                             "UserIds": [
                                 "UserId"
                             ]
-                        }
+                        },
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "Vid": "5285890811175698692",
                     "Category": "Image",
@@ -1510,6 +1575,7 @@ Output:
                         }
                     ]
                 },
+                "ReviewInfo": null,
                 "MetaData": null,
                 "TranscodeInfo": null,
                 "AnimatedGraphicsInfo": null,

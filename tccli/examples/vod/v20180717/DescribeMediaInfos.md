@@ -33,7 +33,9 @@ Output:
                     "SourceInfo": {
                         "SourceType": "Record",
                         "SourceContext": "",
-                        "TrtcRecordInfo": null
+                        "TrtcRecordInfo": null,
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "Category": "Video",
                     "Vid": "",
@@ -59,7 +61,11 @@ Output:
                             "Width": 640,
                             "Codec": "h264",
                             "Fps": 222,
-                            "DynamicRangeInfo": {}
+                            "CodecTag": "",
+                            "DynamicRangeInfo": {
+                                "Type": "SDR",
+                                "HDRType": ""
+                            }
                         }
                     ],
                     "AudioStreamSet": [
@@ -90,7 +96,11 @@ Output:
                                     "Width": 640,
                                     "Codec": "h264",
                                     "Fps": 222,
-                                    "DynamicRangeInfo": {}
+                                    "CodecTag": "",
+                                    "DynamicRangeInfo": {
+                                        "Type": "SDR",
+                                        "HDRType": ""
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -99,7 +109,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "CopyRightWatermarkText": ""
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/f0.f210.m3u8",
@@ -119,7 +130,11 @@ Output:
                                     "Width": 640,
                                     "Codec": "h264",
                                     "Fps": 222,
-                                    "DynamicRangeInfo": {}
+                                    "CodecTag": "",
+                                    "DynamicRangeInfo": {
+                                        "Type": "SDR",
+                                        "HDRType": ""
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -128,7 +143,8 @@ Output:
                                     "SamplingRate": 44100,
                                     "Bitrate": 35
                                 }
-                            ]
+                            ],
+                            "CopyRightWatermarkText": ""
                         },
                         {
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
@@ -148,7 +164,11 @@ Output:
                                     "Width": 1920,
                                     "Codec": "h264",
                                     "Fps": 24,
-                                    "DynamicRangeInfo": {}
+                                    "CodecTag": "",
+                                    "DynamicRangeInfo": {
+                                        "Type": "SDR",
+                                        "HDRType": ""
+                                    }
                                 }
                             ],
                             "AudioStreamSet": [
@@ -157,7 +177,8 @@ Output:
                                     "Bitrate": 45822,
                                     "Codec": "aac"
                                 }
-                            ]
+                            ],
+                            "CopyRightWatermarkText": ""
                         }
                     ]
                 },
@@ -182,6 +203,7 @@ Output:
                         {
                             "Definition": 10,
                             "SampleType": "percent",
+                            "WaterMarkDefinition": [],
                             "Interval": 10,
                             "ImageUrlSet": [
                                 "http://125xx.vod2.myqcloud.com/xx/xx/shotup/xx1.png",
@@ -255,7 +277,11 @@ Output:
                                         "Width": 640,
                                         "Codec": "h264",
                                         "Fps": 222,
-                                        "DynamicRangeInfo": {}
+                                        "CodecTag": "",
+                                        "DynamicRangeInfo": {
+                                            "Type": "SDR",
+                                            "HDRType": ""
+                                        }
                                     }
                                 ],
                                 "Bitrate": 563477,
@@ -281,7 +307,10 @@ Output:
                             "Package": "HLS",
                             "DrmType": "None",
                             "Url": "http://xxxx.vod2.myqcloud.com/xx/xx/master_playlist.m3u8",
-                            "Size": 0
+                            "Size": 0,
+                            "DigitalWatermarkType": "",
+                            "CopyRightWatermarkText": "",
+                            "SubStreamSet": []
                         }
                     ]
                 },
@@ -362,7 +391,9 @@ Output:
                     "SourceInfo": {
                         "SourceType": "Record",
                         "SourceContext": "",
-                        "TrtcRecordInfo": null
+                        "TrtcRecordInfo": null,
+                        "WebPageRecordInfo": null,
+                        "LiveRecordInfo": null
                     },
                     "Category": "Video",
                     "Vid": "",

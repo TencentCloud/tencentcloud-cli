@@ -17,8 +17,13 @@ Output:
         "RebuildMediaTemplateSet": [
             {
                 "Definition": 20001,
+                "Type": "preset",
                 "Name": "test",
                 "Comment": "",
+                "RebuildVideoInfo": null,
+                "RebuildAudioInfo": null,
+                "TargetVideoInfo": null,
+                "TargetAudioInfo": null,
                 "Container": "mp4",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,

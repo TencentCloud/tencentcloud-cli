@@ -31,33 +31,37 @@ Output:
             "FileName": "small",
             "FileUrl": "http://12567683xx.vod2.myqcloud.com/1c1ae5d2vodgzp12567683xx/c643347c5285890784246869930/AtUCmy6gmIYA.mp4",
             "MetaData": {
-                "AudioDuration": 59.9900016784668,
+                "AudioDuration": 3601,
+                "VideoDuration": 3601,
                 "Md5": "",
-                "AudioStreamSet": [
-                    {
-                        "Bitrate": 383854,
-                        "Codec": "aac",
-                        "SamplingRate": 48000
-                    }
-                ],
-                "Bitrate": 1021028,
-                "Container": "mov,mp4,m4a,3gp,3g2,mj2",
-                "Duration": 60,
+                "Size": 10556,
+                "Container": "m4a",
+                "Duration": 3601,
+                "Bitrate": 246035,
                 "Height": 480,
+                "Width": 640,
                 "Rotate": 0,
-                "Size": 7700180,
-                "VideoDuration": 60,
                 "VideoStreamSet": [
                     {
-                        "Bitrate": 637174,
-                        "Codec": "h264",
-                        "Fps": 23,
+                        "Bitrate": 246000,
                         "Height": 480,
                         "Width": 640,
-                        "DynamicRangeInfo": {}
+                        "Codec": "h264",
+                        "Fps": 222,
+                        "CodecTag": "",
+                        "DynamicRangeInfo": {
+                            "Type": "SDR",
+                            "HDRType": ""
+                        }
                     }
                 ],
-                "Width": 640
+                "AudioStreamSet": [
+                    {
+                        "Codec": "aac",
+                        "SamplingRate": 44100,
+                        "Bitrate": 35
+                    }
+                ]
             },
             "MediaProcessResultSet": [],
             "AiContentReviewResultSet": [],
@@ -184,7 +188,45 @@ Output:
             "TaskId": "12530394xx-procedurev2-61c975da05662fd9d3bf9d89a63361c0t0",
             "Status": "FINISH",
             "ErrCode": 0,
+            "ErrCodeExt": "",
             "Message": "",
+            "Progress": 100,
+            "ReviewAudioVideoTaskId": "",
+            "SessionContext": "",
+            "SessionId": "",
+            "MetaData": {
+                "AudioDuration": 3601,
+                "VideoDuration": 3601,
+                "Md5": "",
+                "Size": 10556,
+                "Container": "m4a",
+                "Duration": 3601,
+                "Bitrate": 246035,
+                "Height": 480,
+                "Width": 640,
+                "Rotate": 0,
+                "VideoStreamSet": [
+                    {
+                        "Bitrate": 246000,
+                        "Height": 480,
+                        "Width": 640,
+                        "Codec": "h264",
+                        "Fps": 222,
+                        "CodecTag": "",
+                        "DynamicRangeInfo": {
+                            "Type": "SDR",
+                            "HDRType": ""
+                        }
+                    }
+                ],
+                "AudioStreamSet": [
+                    {
+                        "Codec": "aac",
+                        "SamplingRate": 44100,
+                        "Bitrate": 35
+                    }
+                ]
+            },
             "Input": {
                 "InputType": "Stream",
                 "FileInfoSet": [

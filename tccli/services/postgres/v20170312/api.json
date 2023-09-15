@@ -1081,7 +1081,7 @@
           "example": "postgres-xxxxxxxx",
           "member": "string",
           "name": "DBInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1091,7 +1091,7 @@
           "example": "f6adc02a-432e-536f-a5f3-3dbf40ecd683",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1101,7 +1101,7 @@
           "example": "0",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1111,7 +1111,7 @@
           "example": "0",
           "member": "string",
           "name": "BackupMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1121,7 +1121,7 @@
           "example": "0",
           "member": "string",
           "name": "BackupMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1131,7 +1131,7 @@
           "example": "0",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1141,7 +1141,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1151,7 +1151,7 @@
           "example": "0",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1161,7 +1161,7 @@
           "example": "0",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1171,7 +1171,7 @@
           "example": "0",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1711,7 +1711,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBMajorVersion、DBKernelVersion至少需要传递一个。",
+          "document": "PostgreSQL社区大版本+小版本号。\n一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新小版本号。",
           "example": "12.4",
           "member": "string",
           "name": "DBVersion",
@@ -1819,7 +1819,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL主要版本。当输入该参数时，会基于此版本创建对应的最新内核版本号实例。该参数和DBVersion、DBKernelVersion至少需要传递一个。",
+          "document": "PostgreSQL大版本号（该参数当前必传），版本信息可从[DescribeDBVersions](https://cloud.tencent.com/document/api/409/89018)获取。目前支持10，11，12，13，14，15这几个大版本，详情见[内核版本概述](https://cloud.tencent.com/document/product/409/67018)。\n输入该参数时，会基于此大版本号创建对应的最新小版本的最新内核版本号实例。",
           "example": "12",
           "member": "string",
           "name": "DBMajorVersion",
@@ -1828,7 +1828,7 @@
         },
         {
           "disabled": false,
-          "document": "PostgreSQL内核版本。当输入该参数时，会创建该内核版本号实例。该参数和DBVersion、DBMajorVersion至少需要传递一个。",
+          "document": "PostgreSQL内核版本号。\n一般场景不推荐传入该参数。如需指定，只能传当前大版本号下最新内核版本号。",
           "example": "v12.4_r1.0",
           "member": "string",
           "name": "DBKernelVersion",
@@ -1847,6 +1847,7 @@
           "example": "无",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1856,6 +1857,7 @@
           "example": "无",
           "member": "string",
           "name": "BillId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1865,6 +1867,7 @@
           "example": "无",
           "member": "string",
           "name": "DBInstanceIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3835,7 +3838,7 @@
           "example": "2022-01-01 12:00:00",
           "member": "string",
           "name": "RecoveryBeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3845,7 +3848,7 @@
           "example": "2022-01-02 12:00:00",
           "member": "string",
           "name": "RecoveryEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6912,7 +6915,7 @@
           "example": "0",
           "member": "string",
           "name": "DBInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6922,7 +6925,7 @@
           "example": "0",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6932,7 +6935,7 @@
           "example": "0",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6942,7 +6945,7 @@
           "example": "0",
           "member": "string",
           "name": "BackupMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6952,7 +6955,7 @@
           "example": "0",
           "member": "string",
           "name": "BackupMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6962,7 +6965,7 @@
           "example": "0",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6972,7 +6975,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6982,7 +6985,7 @@
           "example": "0",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6992,7 +6995,7 @@
           "example": "0",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7002,7 +7005,7 @@
           "example": "0",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -8796,7 +8799,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8806,7 +8809,7 @@
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8816,7 +8819,7 @@
           "example": "ALL",
           "member": "string",
           "name": "PortRange",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8826,7 +8829,7 @@
           "example": "icmp",
           "member": "string",
           "name": "IpProtocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8836,7 +8839,7 @@
           "example": "放通Ping服务",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

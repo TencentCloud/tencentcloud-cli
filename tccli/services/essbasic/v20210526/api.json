@@ -133,6 +133,13 @@
       "output": "ChannelCreateReleaseFlowResponse",
       "status": "online"
     },
+    "ChannelCreateRole": {
+      "document": "此接口（ChannelCreateRole）用来创建企业自定义角色。\n\n适用场景1：创建当前企业的自定义角色，并且创建时不进行权限的设置（PermissionGroups 参数不传），角色中的权限内容可通过接口 ChannelModifyRole 完成更新。\n\n适用场景2：创建当前企业的自定义角色，并且创建时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。",
+      "input": "ChannelCreateRoleRequest",
+      "name": "创建角色",
+      "output": "ChannelCreateRoleResponse",
+      "status": "online"
+    },
     "ChannelCreateSealPolicy": {
       "document": "将指定印章授权给第三方平台子客企业下的某些员工",
       "input": "ChannelCreateSealPolicyRequest",
@@ -155,10 +162,17 @@
       "status": "online"
     },
     "ChannelCreateWebThemeConfig": {
-      "document": "生成页面主题配置",
+      "document": "用来创建嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），该接口配合其他所有可嵌入页面接口使用\n创建配置对当前第三方应用全局生效，如果多次调用，会以最后一次的配置为准",
       "input": "ChannelCreateWebThemeConfigRequest",
-      "name": "生成页面主题配置",
+      "name": "创建页面主题配置",
       "output": "ChannelCreateWebThemeConfigResponse",
+      "status": "online"
+    },
+    "ChannelDeleteRole": {
+      "document": "此接口（ChannelDeleteRole）用来删除企业自定义角色。\n\n注意：系统角色不可删除。",
+      "input": "ChannelDeleteRoleRequest",
+      "name": "删除角色",
+      "output": "ChannelDeleteRoleResponse",
       "status": "online"
     },
     "ChannelDeleteRoleUsers": {
@@ -197,7 +211,7 @@
       "status": "online"
     },
     "ChannelDescribeRoles": {
-      "document": "查询角色列表，支持根据类型和状态过滤角色列表",
+      "document": "分页查询企业角色列表，法人的角色是系统保留角色，不会返回，按照角色创建时间升序排列",
       "input": "ChannelDescribeRolesRequest",
       "name": "查询角色列表",
       "output": "ChannelDescribeRolesResponse",
@@ -222,6 +236,13 @@
       "input": "ChannelGetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "ChannelGetTaskResultApiResponse",
+      "status": "online"
+    },
+    "ChannelModifyRole": {
+      "document": "此接口（ChannelModifyRole）用来更新企业自定义角色。\n\n适用场景1：更新当前企业的自定义角色的名称或描述等其他信息，更新时不进行权限的设置（PermissionGroups 参数不传）。\n\n适用场景2：更新当前企业的自定义角色的权限信息，更新时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。",
+      "input": "ChannelModifyRoleRequest",
+      "name": "更新角色",
+      "output": "ChannelModifyRoleResponse",
       "status": "online"
     },
     "ChannelUpdateSealStatus": {
@@ -2361,6 +2382,70 @@
       ],
       "type": "object"
     },
+    "ChannelCreateRoleRequest": {
+      "document": "ChannelCreateRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "角色描述，最大长度为50个字符",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出",
+          "example": "无",
+          "member": "PermissionGroup",
+          "name": "PermissionGroups",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateRoleResponse": {
+      "document": "ChannelCreateRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateSealPolicyRequest": {
       "document": "ChannelCreateSealPolicy请求参数结构体",
       "members": [
@@ -2692,6 +2777,42 @@
     },
     "ChannelCreateWebThemeConfigResponse": {
       "document": "ChannelCreateWebThemeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteRoleRequest": {
+      "document": "ChannelDeleteRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "角色id，最多20个",
+          "example": "无",
+          "member": "string",
+          "name": "RoleIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDeleteRoleResponse": {
+      "document": "ChannelDeleteRole返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3093,15 +3214,6 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
-          "example": "无",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "指定每页多少条数据，单页最大200",
           "example": "无",
           "member": "string",
@@ -3111,12 +3223,21 @@
         },
         {
           "disabled": false,
-          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色",
+          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsReturnPermissionGroup\"，Values:[\"0\"]:表示接口不返回角色对应的权限树字段，Values:[\"1\"]表示接口返回角色对应的权限树字段",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": true,
@@ -3434,6 +3555,79 @@
       ],
       "type": "object"
     },
+    "ChannelModifyRoleRequest": {
+      "document": "ChannelModifyRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称，最大长度为20个字符，仅限中文、字母、数字和下划线组成。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色Id，可通过接口 ChannelDescribeRoles 查询获取",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色描述，最大长度为50个字符",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权限树，权限树内容 PermissionGroups 可参考接口 DescribeIntegrationRoles 的输出",
+          "example": "无",
+          "member": "PermissionGroup",
+          "name": "PermissionGroups",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelModifyRoleResponse": {
+      "document": "ChannelModifyRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色id",
+          "example": "无",
+          "member": "string",
+          "name": "RoleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelRole": {
       "document": "渠道角色信息",
       "members": [
@@ -3443,7 +3637,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3453,7 +3647,7 @@
           "example": "无",
           "member": "string",
           "name": "RoleName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3463,8 +3657,18 @@
           "example": "无",
           "member": "uint64",
           "name": "RoleStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限树\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PermissionGroup",
+          "name": "PermissionGroups",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -6953,6 +7157,183 @@
       ],
       "usage": "out"
     },
+    "Permission": {
+      "document": "权限树节点权限",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限类型 1前端，2后端\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Hide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限标签 1:表示根节点，2:表示叶子结点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataLabel",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限独有，1:关联其他模块鉴权，2:表示关联自己模块鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限独有，表示数据范围，1：全公司，2:部门及下级部门，3:自己\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DataRange",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联权限, 表示这个功能权限要受哪个数据权限管控\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataTo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父级权限key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否选中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsChecked",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Permission",
+          "name": "Children",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PermissionGroup": {
+      "document": "权限树中的权限组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限组key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否隐藏分组，0否1是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Hide",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Permission",
+          "name": "Permissions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PrepareFlowsRequest": {
       "document": "PrepareFlows请求参数结构体",
       "members": [
@@ -8482,8 +8863,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "页面底部是否显示电子签logo\n<br/>true：允许在页面底部隐藏电子签logo \n<br/>默认false，不允许允许在页面底部隐藏电子签logo",
-          "example": "truw",
+          "document": "是否显示页面底部电子签logo，取值如下：\n<ul><li> **true**：页面底部显示电子签logo</li>\n<li> **false**：页面底部不显示电子签logo（默认）</li></ul>",
+          "example": "true",
           "member": "bool",
           "name": "DisplaySignBrandLogo",
           "required": false,
@@ -8491,8 +8872,8 @@
         },
         {
           "disabled": false,
-          "document": "嵌入式主题颜色\n<br/>支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)",
-          "example": "无",
+          "document": "主题颜色：\n支持十六进制颜色值以及RGB格式颜色值，例如：#D54941，rgb(213, 73, 65)\n<br/>",
+          "example": "#D54941",
           "member": "string",
           "name": "WebEmbedThemeColor",
           "required": false,

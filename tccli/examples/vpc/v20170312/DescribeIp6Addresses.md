@@ -44,7 +44,8 @@ Output:
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc"
+                "InstanceType": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"
@@ -99,7 +100,8 @@ Output:
                     }
                 ],
                 "DeadlineDate": "2020-09-22",
-                "InstanceType": "abc"
+                "InstanceType": "abc",
+                "Egress": "abc"
             }
         ],
         "RequestId": "abc"

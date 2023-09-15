@@ -469,6 +469,13 @@
       "output": "FreshAntiFakeUrlResponse",
       "status": "online"
     },
+    "GenerateDealsAndPayNew": {
+      "document": "计费资源购买、续费下单接口",
+      "input": "GenerateDealsAndPayNewRequest",
+      "name": "计费资源购买、续费下单接口",
+      "output": "GenerateDealsAndPayNewResponse",
+      "status": "online"
+    },
     "GetAttackDownloadRecords": {
       "document": "查询下载攻击日志任务记录列表",
       "input": "GetAttackDownloadRecordsRequest",
@@ -2930,6 +2937,32 @@
         }
       ],
       "type": "object"
+    },
+    "DealData": {
+      "document": "计费下单响应实体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号列表，元素个数与请求包的goods数组的元素个数一致，商品详情与订单按顺序对应",
+          "example": "[\"20211119002000712600571\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大订单号，一个大订单号下可以有多个子订单，说明是同一次下单[{},{}]",
+          "example": "20211119002000712600561",
+          "member": "string",
+          "name": "BigDealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DeleteAccessExportRequest": {
       "document": "DeleteAccessExport请求参数结构体",
@@ -8002,6 +8035,73 @@
       ],
       "type": "object"
     },
+    "GenerateDealsAndPayNewRequest": {
+      "document": "GenerateDealsAndPayNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费下单入参",
+          "example": "详见Goods实体",
+          "member": "GoodNews",
+          "name": "Goods",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GenerateDealsAndPayNewResponse": {
+      "document": "GenerateDealsAndPayNew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费下单响应结构体\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "详见DealData实体",
+          "member": "DealData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:成功，0:失败",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回message\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "返回message",
+          "member": "string",
+          "name": "ReturnMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买的实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_2kxtmtw8000jpgfv",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetAttackDownloadRecordsRequest": {
       "document": "GetAttackDownloadRecords请求参数结构体",
       "members": [],
@@ -8218,6 +8318,183 @@
         }
       ],
       "type": "object"
+    },
+    "GoodNews": {
+      "document": "计费下单接口出入参Goods",
+      "members": [
+        {
+          "disabled": false,
+          "document": "商品数量",
+          "example": "1",
+          "member": "int64",
+          "name": "GoodsNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "商品明细",
+          "example": "GoodsDetail",
+          "member": "GoodsDetailNew",
+          "name": "GoodsDetail",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）\n高级版: 102375(新购),102376(续费),102377(变配)\n企业版 : 102378(新购),102379(续费),102380(变配)\n旗舰版 : 102369(新购),102370(续费),102371(变配)\n高级版-CLB: 新购 101198  续费 101199 变配 101200\n企业版-CLB 101204(新购),101205(续费),101206(变配)\n旗舰版-CLB : 101201(新购),101202(续费),101203(变配)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "101201",
+          "member": "int64",
+          "name": "GoodsCategoryId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买waf实例区域ID\n1 表示购买大陆资源\n2表示购买非中国大陆资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "GoodsDetailNew": {
+      "document": "产品明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单位，支持m、y、d\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面\n高级版 ：sp_wsm_waf_premium\n企业版 ：sp_wsm_waf_enterprise\n旗舰版 ：sp_wsm_waf_ultimate\n高级版-CLB:sp_wsm_waf_premium_clb\n企业版-CLB : sp_wsm_waf_enterprise_clb\n旗舰版-CLB:sp_wsm_waf_ultimate_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_wsm_waf_ultimate_clb",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型\n高级版 ：1000827\n企业版 ：1000830\n旗舰版 ：1000832\n高级版-CLB:1001150\n企业版-CLB : 1001152\n旗舰版-CLB:1001154\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "int64",
+          "name": "Pid",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "waf实例名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_122345",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:自动续费，0:不自动续费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "waf购买的实际地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9",
+          "member": "int64",
+          "name": "RealRegion",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"sv_wsm_waf_package_ultimate_clb\"]",
+          "member": "string",
+          "name": "LabelTypes",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费细项标签数量，一般和SvLabelType一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1]",
+          "member": "int64",
+          "name": "LabelCounts",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变配使用，实例到期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-28 17:38:59",
+          "member": "string",
+          "name": "CurDeadline",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对存在的实例购买bot 或api 安全\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_swdq23",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "HostDel": {
       "document": "CLB-WAF删除域名参数",
@@ -12165,33 +12442,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配字段",
-          "example": "",
+          "document": "匹配条件，returncode（响应码）、keywords（关键字）、information（敏感信息）",
+          "example": "无",
           "member": "string",
           "name": "Field",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "逻辑符号",
-          "example": "",
+          "document": "逻辑符号，固定取值为contains",
+          "example": "无",
           "member": "string",
           "name": "CompareFunc",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "匹配内容",
-          "example": "",
+          "document": "匹配内容。\n以下三个对应Field为information时可取的匹配内容：\nidcard（身份证）、phone（手机号）、bankcard（银行卡）。\n以下为对应Field为returncode时可取的匹配内容：\n400（状态码400）、403（状态码403）、404（状态码404）、4xx（其它4xx状态码）、500（状态码500）、501（状态码501）、502（状态码502）、504（状态码504）、5xx（其它5xx状态码）。\n当对应Field为keywords时由用户自己输入匹配内容。\n",
+          "example": "无",
           "member": "string",
           "name": "Content",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

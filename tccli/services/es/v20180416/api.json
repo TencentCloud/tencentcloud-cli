@@ -141,14 +141,14 @@
       "status": "online"
     },
     "RestartInstance": {
-      "document": "重启ES集群实例(用于系统版本更新等操作) ",
+      "document": "重启ES集群实例(用于系统版本更新等操作)",
       "input": "RestartInstanceRequest",
       "name": "重启ES集群实例",
       "output": "RestartInstanceResponse",
       "status": "online"
     },
     "RestartKibana": {
-      "document": "重启Kibana ",
+      "document": "重启Kibana",
       "input": "RestartKibanaRequest",
       "name": "重启Kibana",
       "output": "RestartKibanaResponse",
@@ -614,7 +614,7 @@
         },
         {
           "disabled": false,
-          "document": "创建的索引元数据JSON，如mappings、settings",
+          "document": "【必填】创建的索引元数据JSON，如mappings、settings",
           "example": "{}",
           "member": "string",
           "name": "IndexMetaJson",
@@ -1445,7 +1445,7 @@
         },
         {
           "disabled": false,
-          "document": "排序顺序，支持asc、desc",
+          "document": "排序顺序，支持asc、desc，默认为desc 数据格式\"asc\",\"desc\"",
           "example": "asc",
           "member": "string",
           "name": "Order",
@@ -1464,7 +1464,7 @@
           "example": "无",
           "member": "IndexMetaField",
           "name": "IndexMetaFields",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1474,7 +1474,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1547,7 +1547,7 @@
           "example": "无",
           "member": "IndexMetaField",
           "name": "IndexMetaField",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2539,7 +2539,7 @@
         {
           "disabled": false,
           "document": "实例ID",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2554,9 +2554,10 @@
         {
           "disabled": false,
           "document": "接收请求的目标节点类型列表",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "TargetNodeTypes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5409,7 +5410,7 @@
         {
           "disabled": false,
           "document": "ES实例ID",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,

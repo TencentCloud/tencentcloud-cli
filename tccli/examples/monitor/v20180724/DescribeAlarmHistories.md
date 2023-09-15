@@ -17,102 +17,56 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 486,
+        "TotalCount": 0,
         "Histories": [
             {
-                "Dimensions": "xx",
-                "LastOccurTime": 1603162964,
-                "Namespace": "xx",
-                "Content": "xx",
-                "PolicyId": "xx",
-                "AlarmStatus": "xx",
-                "ReceiverGroups": [
-                    1544
-                ],
-                "VPC": "xx",
-                "FirstOccurTime": 1603117860,
-                "EventId": 0,
-                "PolicyName": "xx",
+                "AlarmId": "abc",
+                "MonitorType": "abc",
+                "Namespace": "abc",
+                "AlarmObject": "abc",
+                "Content": "abc",
+                "FirstOccurTime": 0,
+                "LastOccurTime": 0,
+                "AlarmStatus": "abc",
+                "PolicyId": "abc",
+                "PolicyName": "abc",
+                "VPC": "abc",
                 "ProjectId": 0,
-                "Region": "xx",
-                "AlarmObject": "xx",
-                "AlarmId": "xx",
+                "ProjectName": "abc",
+                "InstanceGroup": [
+                    {
+                        "Id": 0,
+                        "Name": "abc"
+                    }
+                ],
                 "ReceiverUids": [
                     0
                 ],
-                "OriginId": "xx",
-                "NoticeWays": [
-                    "SMS",
-                    "EMAIL",
-                    "WECHAT"
-                ],
-                "ProjectName": "xx",
-                "InstanceGroup": [
-                    {
-                        "Id": 430,
-                        "Name": "xx"
-                    }
-                ],
-                "MetricsInfo": [
-                    {
-                        "Description": "xx",
-                        "QceNamespace": "xx",
-                        "Period": 60,
-                        "Value": "xx",
-                        "MetricName": "xx"
-                    }
-                ],
-                "MonitorType": "xx",
-                "PolicyExists": 1,
-                "AlarmType": "xx"
-            },
-            {
-                "Dimensions": "xx",
-                "LastOccurTime": 1603162964,
-                "Namespace": "xx",
-                "Content": "xx",
-                "PolicyId": "xx",
-                "AlarmStatus": "xx",
                 "ReceiverGroups": [
                     0
                 ],
-                "VPC": "xx",
-                "FirstOccurTime": 1603117860,
-                "EventId": 0,
-                "PolicyName": "xx",
-                "ProjectId": 0,
-                "Region": "xx",
-                "AlarmObject": "xx",
-                "AlarmId": "xx",
-                "ReceiverUids": [
-                    0
-                ],
-                "OriginId": "xx",
                 "NoticeWays": [
-                    "xx"
+                    "abc"
                 ],
-                "ProjectName": "xx",
-                "InstanceGroup": [
-                    {
-                        "Id": 430,
-                        "Name": "xx"
-                    }
-                ],
+                "OriginId": "abc",
+                "AlarmType": "abc",
+                "EventId": 0,
+                "Region": "abc",
+                "PolicyExists": 0,
                 "MetricsInfo": [
                     {
-                        "Description": "xx",
-                        "QceNamespace": "xx",
+                        "QceNamespace": "abc",
+                        "MetricName": "abc",
                         "Period": 0,
-                        "Value": "xx",
-                        "MetricName": "xx"
+                        "Value": "abc",
+                        "Description": "abc"
                     }
                 ],
-                "MonitorType": "xx",
-                "PolicyExists": 1,
-                "AlarmType": "xx"
+                "Dimensions": "abc",
+                "AlarmLevel": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
@@ -145,84 +99,56 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "Histories": [
             {
-                "AlarmId": "c36494f8-ae38-45cb-8089-e14006bcfc67",
-                "MonitorType": "MT_QCE",
-                "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.8 (内) | 服务器01 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc01",
-                "PolicyName": "CVM告警策略1",
-                "VPC": "0",
+                "AlarmId": "abc",
+                "MonitorType": "abc",
+                "Namespace": "abc",
+                "AlarmObject": "abc",
+                "Content": "abc",
+                "FirstOccurTime": 0,
+                "LastOccurTime": 0,
+                "AlarmStatus": "abc",
+                "PolicyId": "abc",
+                "PolicyName": "abc",
+                "VPC": "abc",
                 "ProjectId": 0,
-                "ProjectName": "默认项目",
+                "ProjectName": "abc",
                 "InstanceGroup": [
                     {
-                        "Id": 430,
-                        "Name": "example-instance-group"
+                        "Id": 0,
+                        "Name": "abc"
                     }
                 ],
-                "ReceiverUids": [],
+                "ReceiverUids": [
+                    0
+                ],
                 "ReceiverGroups": [
-                    1544
+                    0
                 ],
                 "NoticeWays": [
-                    "SMS",
-                    "EMAIL",
-                    "WECHAT"
+                    "abc"
                 ],
+                "OriginId": "abc",
+                "AlarmType": "abc",
                 "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1278441",
-                "Region": "gz",
-                "PolicyExists": 1,
+                "Region": "abc",
+                "PolicyExists": 0,
                 "MetricsInfo": [
                     {
-                        "QceNamespace": "qce/cvm",
-                        "MetricName": "CpuUsage",
-                        "Period": 60,
-                        "Value": "86.5",
-                        "Description": "CPU利用率"
-                    }
-                ]
-            },
-            {
-                "AlarmId": "779d129a-40a1-4acf-b226-d9c2ae26e63b",
-                "MonitorType": "MT_QCE",
-                "Namespace": "cvm_device",
-                "AlarmObject": "10.104.126.9 (内) | 服务器02 | 基础网络",
-                "Content": "CPU利用率 >0%",
-                "FirstOccurTime": 1603117860,
-                "LastOccurTime": 1603162964,
-                "AlarmStatus": "ALARM",
-                "PolicyId": "policy-abc02",
-                "PolicyName": "CVM告警策略2",
-                "VPC": "0",
-                "ProjectId": 0,
-                "ProjectName": "默认项目",
-                "InstanceGroup": [
-                    {
-                        "Id": 430,
-                        "Name": "example-instance-group"
+                        "QceNamespace": "abc",
+                        "MetricName": "abc",
+                        "Period": 0,
+                        "Value": "abc",
+                        "Description": "abc"
                     }
                 ],
-                "ReceiverUids": [],
-                "ReceiverGroups": [],
-                "NoticeWays": [],
-                "EventId": 0,
-                "AlarmType": "METRIC",
-                "OriginId": "1276973",
-                "Region": "gz",
-                "PolicyExists": 1,
-                "MetricsInfo": null
+                "Dimensions": "abc",
+                "AlarmLevel": "abc"
             }
         ],
-        "RequestId": "4bzogxhgsgs95hgmxne5ei6y9jjxvi1f",
-        "TotalCount": 486
+        "RequestId": "abc"
     }
 }
 ```

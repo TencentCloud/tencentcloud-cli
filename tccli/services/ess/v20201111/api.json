@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateEmbedWebUrl": {
-      "document": "本接口（CreateEmbedWebUrl）用于创建嵌入web的链接 本接口支持创建：创建印章，创建模板，修改模板，预览模板，预览合同流程的web链接 进入web连接后与当前控制台操作保持一致",
+      "document": "本接口（CreateEmbedWebUrl）用于创建嵌入Web的链接，支持以下类型的Web链接创建：\n1. 创建印章\n2. 创建模板\n3. 修改模板\n4. 预览模板\n5. 预览合同流程\n\n用户可以通过这些链接快速将其集成到自己的系统中。",
       "input": "CreateEmbedWebUrlRequest",
       "name": "获取其他可嵌入web页面",
       "output": "CreateEmbedWebUrlResponse",
@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateFlowApprovers": {
-      "document": "### 适用场景\n在通过模板或者文件发起合同时，若未指定企业签署人信息，则流程发起后，可以调用此接口补充或签签署人。\n同一签署人可以补充多个员工作为或签签署人,最终实际签署人取决于谁先领取合同完成签署。\n### 限制条件\n-  本企业(发起方企业)支持通过企业微信UserId 或者 姓名+手机号补充\n- 他方企业仅支持通过姓名+手机号补充",
+      "document": "适用场景：\n当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口补充或添加签署人。同一签署人可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n1. 本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n2. 本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n3. 他方企业仅支持通过姓名+手机号进行补充。",
       "input": "CreateFlowApproversRequest",
       "name": "补充签署流程企业签署人信息",
       "output": "CreateFlowApproversResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateFlowGroupByTemplates": {
-      "document": "此接口（CreateFlowGroupByTemplates）通过多模板创建合同组签署流程。<br/>\n此接口合同组中的子合同必须都是模板发起的合同。 <br/>目前最大仅支持50个子合同",
+      "document": "此接口（CreateFlowGroupByTemplates）可用于通过多个模板创建合同组签署流程。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。",
       "input": "CreateFlowGroupByTemplatesRequest",
       "name": "通过多模板创建合同组签署流程",
       "output": "CreateFlowGroupByTemplatesResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreateIntegrationUserRoles": {
-      "document": "绑定员工与对应角色",
+      "document": "此接口用于赋予员工指定的角色权限，如需解绑请使用 DeleteIntegrationRoleUsers 接口。",
       "input": "CreateIntegrationUserRolesRequest",
       "name": "绑定员工角色",
       "output": "CreateIntegrationUserRolesResponse",
@@ -162,7 +162,7 @@
       "status": "online"
     },
     "CreatePersonAuthCertificateImage": {
-      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  `只能获取个人用户证明图片, 企业员工的暂不支持`",
+      "document": "获取个人用户认证证书图片下载URL\n\n个人用户认证证书图片样式如下图\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreatePersonAuthCertificateImage.png)\n\n注:  \n<ul>\n<li>只能获取个人用户证明图片, 企业员工的暂不支持</li>\n<li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。  </li>\n</ul>",
       "input": "CreatePersonAuthCertificateImageRequest",
       "name": "获取个人用户认证证书图片",
       "output": "CreatePersonAuthCertificateImageResponse",
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DeleteIntegrationRoleUsers": {
-      "document": "解绑员工与对应角色关系",
+      "document": "解绑员工与对应角色的关系，如需绑定请使用 CreateIntegrationUserRoles 接口。",
       "input": "DeleteIntegrationRoleUsersRequest",
       "name": "解绑员工角色",
       "output": "DeleteIntegrationRoleUsersResponse",
@@ -315,15 +315,8 @@
       "output": "DescribeIntegrationEmployeesResponse",
       "status": "online"
     },
-    "DescribeIntegrationMainOrganizationUser": {
-      "document": "集团企业统一使用主代子进行操作，无需根据子企业账号进行转化查询，该接口需要屏蔽下线\n\n通过子企业影子账号查询主企业员工账号",
-      "input": "DescribeIntegrationMainOrganizationUserRequest",
-      "name": "查询集团主企业员工账号",
-      "output": "DescribeIntegrationMainOrganizationUserResponse",
-      "status": "deprecated"
-    },
     "DescribeIntegrationRoles": {
-      "document": "分页查询企业角色列表，法人的角色是系统保留角色，不会返回，按照角色创建时间升序排列",
+      "document": "此接口（DescribeIntegrationRoles）用于分页查询企业角色列表，列表按照角色创建时间升序排列。\n\n注：`法人角色是系统保留角色，因此返回列表中不含法人角色。`",
       "input": "DescribeIntegrationRolesRequest",
       "name": "查询企业角色列表",
       "output": "DescribeIntegrationRolesResponse",
@@ -1801,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入资源类型。\n<br/>CREATE_SEAL: 生成创建印章的嵌入页面\n<br/>CREATE_TEMPLATE：生成创建模板的嵌入页面\n<br/>MODIFY_TEMPLATE：生成编辑模板的嵌入页面\n<br/>PREVIEW_TEMPLATE：生成预览模板的嵌入页面\n<br/>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面\n<br/>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面\n<br/>EXTEND_SERVICE：生成拓展服务的嵌入页面\n<br/>PREVIEW_FLOW：生成预览合同的嵌入页面\n<br/>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面\n",
+          "document": "WEB嵌入资源类型，支持以下类型\n<ul><li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成编辑模板的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成拓展服务的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同的嵌入页面</li>\n<li>PREVIEW_FLOW_DETAIL：生成查看合同详情的嵌入页面</li></ul>",
           "example": "无",
           "member": "string",
           "name": "EmbedType",
@@ -1810,7 +1803,7 @@
         },
         {
           "disabled": false,
-          "document": "WEB嵌入的业务资源ID\n<br/>PREVIEW_SEAL_DETAIL，必填，取值为印章id\n<br/>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id\n<br/>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id",
+          "document": "WEB嵌入的业务资源ID\n<ul><li>PREVIEW_SEAL_DETAIL，必填，取值为印章id</li>\n<li>MODIFY_TEMPLATE，PREVIEW_TEMPLATE，必填，取值为模板id</li>\n<li>PREVIEW_FLOW，PREVIEW_FLOW_DETAIL，必填，取值为合同id</li><ul>",
           "example": "无",
           "member": "string",
           "name": "BusinessId",
@@ -1874,7 +1867,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -1883,7 +1876,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -1892,7 +1885,7 @@
         },
         {
           "disabled": false,
-          "document": "补充签署人信息",
+          "document": "补充企业签署人信息。\n\n- 如果发起方指定的补充签署人是企业微信签署人（ApproverSource=WEWORKAPP），则需要提供企业微信UserId进行补充；\n\n- 如果不指定，则使用姓名和手机号进行补充。",
           "example": "无",
           "member": "FillApproverInfo",
           "name": "Approvers",
@@ -1901,7 +1894,7 @@
         },
         {
           "disabled": false,
-          "document": "企微消息中的发起人",
+          "document": "在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。",
           "example": "无",
           "member": "string",
           "name": "Initiator",
@@ -1910,7 +1903,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作\n\n",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2322,7 +2315,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2331,7 +2324,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组名称,最大长度200个字符",
+          "document": "合同（流程）组名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
           "example": "无",
           "member": "string",
           "name": "FlowGroupName",
@@ -2340,7 +2333,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组的子合同信息，支持2-50个子合同",
+          "document": "合同（流程）组的子合同信息，支持2-50个子合同",
           "example": "无",
           "member": "FlowGroupInfo",
           "name": "FlowGroupInfos",
@@ -2349,7 +2342,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2358,7 +2351,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组的配置信息。包括是否通知本企业签署方，是否通知其他签署方",
+          "document": "合同（流程）组的配置项信息。\n其中包括：\n<ul>\n<li>是否通知本企业签署方</li>\n<li>是否通知其他签署方</li>\n</ul>",
           "example": "无",
           "member": "FlowGroupOptions",
           "name": "FlowGroupOptions",
@@ -3128,7 +3121,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，UserId必填",
+          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3146,7 +3139,7 @@
         },
         {
           "disabled": false,
-          "document": "绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取",
+          "document": "绑定角色的角色id列表，不能重复，不能大于 100，可以通过DescribeIntegrationRoles接口获取角色信息",
           "example": "无",
           "member": "string",
           "name": "RoleIds",
@@ -3155,7 +3148,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4453,7 +4446,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "个人用户自动签的开通链接, 短链形式",
+          "document": "个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。",
           "example": "https://essurl.cn/002E4UGi8H ",
           "member": "string",
           "name": "Url",
@@ -4688,7 +4681,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "执行本接口操作的员工信息。 注: 在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4697,7 +4690,7 @@
         },
         {
           "disabled": false,
-          "document": "角色id",
+          "document": "角色id，可以通过DescribeIntegrationRoles接口获取角色信息",
           "example": "无",
           "member": "string",
           "name": "RoleId",
@@ -4715,7 +4708,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5619,48 +5612,12 @@
       ],
       "type": "object"
     },
-    "DescribeIntegrationMainOrganizationUserRequest": {
-      "document": "DescribeIntegrationMainOrganizationUser请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "操作人信息，userId必填",
-          "example": "无",
-          "member": "UserInfo",
-          "name": "Operator",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeIntegrationMainOrganizationUserResponse": {
-      "document": "DescribeIntegrationMainOrganizationUser返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "主企业员工账号信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "IntegrationMainOrganizationUser",
-          "name": "IntegrationMainOrganizationUser",
-          "type": "object",
-          "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "DescribeIntegrationRolesRequest": {
       "document": "DescribeIntegrationRoles请求参数结构体",
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，UserId必填",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5669,7 +5626,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大200",
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -5678,7 +5635,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5687,7 +5644,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsGroupRole\"，Values:[\"0\"]:查询非集团角色，Values:[\"1\"]表示查询集团角色\nKey:\"IsReturnPermissionGroup\"，Values:[\"0\"]:表示接口不返回角色对应的权限树字段，Values:[\"1\"]表示接口返回角色对应的权限树字段",
+          "document": "查询的关键字段，支持Key-Value单值查询。可选键值对如下：\n<ul>\n  <li>Key:\"RoleType\"，查询角色类型，Values可选：\n    <ul><li>**\"1\"**：查询系统角色</li><li>**\"2\"**：查询自定义角色</li></ul>\n  </li><li>Key:\"RoleStatus\"，查询角色状态，Values可选：\n    <ul><li>**\"1\"**：查询启用角色</li><li>**\"2\"**：查询禁用角色</li></ul>\n  </li><li>Key:\"IsGroupRole\"，是否查询集团角色，Values可选：\n    <ul><li>**\"0\"**：查询非集团角色</li><li>**\"1\"**：查询集团角色</li></ul>\n  </li><li>Key:\"IsReturnPermissionGroup\"，是否返回角色对应权限树，Values可选：\n    <ul><li>**\"0\"**：接口不返回角色对应的权限树字段</li><li>**\"1\"**：接口返回角色对应的权限树字段</li></ul>\n  </li>\n</ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5696,7 +5653,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大2000。",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -5711,8 +5668,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
-          "example": "无",
+          "document": "指定分页返回的页码。页码从0开始，最大为2000。",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "output_required": true,
@@ -5721,8 +5678,8 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大200",
-          "example": "无",
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "output_required": true,
@@ -5731,8 +5688,8 @@
         },
         {
           "disabled": false,
-          "document": "符合查询条件的总的角色数",
-          "example": "无",
+          "document": "符合查询条件的总角色数。",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": true,
@@ -5741,7 +5698,7 @@
         },
         {
           "disabled": false,
-          "document": "企业角色信息列表",
+          "document": "企业角色信息列表。",
           "example": "无",
           "member": "IntegrateRole",
           "name": "IntegrateRoles",
@@ -6549,11 +6506,11 @@
       "usage": "out"
     },
     "FillApproverInfo": {
-      "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填，ApproverSource设置为空",
+      "document": "补充签署人信息\n- RecipientId 必须指定\n-  通过企业微信自定义账号ID补充签署人时，ApproverSource 和 CustomUserId 必填，ApproverSource取值：WEWORKAPP\n- 通过二要素（姓名/手机号）补充签署人时，ApproverName 和 ApproverMobile 必填，ApproverSource设置为空",
       "members": [
         {
           "disabled": false,
-          "document": "对应模板中的参与方ID",
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同是，该参数无需传值。\n如果开发者后序用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
           "example": "yDwhSUUckp3lqxlpUu6Ni3SvjJPoxxxx",
           "member": "string",
           "name": "RecipientId",
@@ -6571,7 +6528,7 @@
         },
         {
           "disabled": false,
-          "document": "企业自定义账号ID\n<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企微明文的userid",
+          "document": "企业微信UserId\n<br/>当ApproverSource为WEWORKAPP的企微或签场景下，必须指企业自有应用获取企业微信的UserId",
           "example": "zhangsan",
           "member": "string",
           "name": "CustomUserId",
@@ -6580,7 +6537,7 @@
         },
         {
           "disabled": false,
-          "document": "补充签署人姓名",
+          "document": "补充企业签署人员工姓名",
           "example": "张三",
           "member": "string",
           "name": "ApproverName",
@@ -6589,7 +6546,7 @@
         },
         {
           "disabled": false,
-          "document": "补充签署人手机号",
+          "document": "补充企业签署人员工手机号",
           "example": "188xxxxxxxx",
           "member": "string",
           "name": "ApproverMobile",
@@ -7048,7 +7005,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中的参与方ID\n<br/>模板发起合同时，该参数为必填项\n<br/>文件发起合同是，该参数无序传值\n",
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同是，该参数无需传值。\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -7886,42 +7843,6 @@
           "name": "OrderNo",
           "required": false,
           "type": "int",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "out"
-    },
-    "IntegrationMainOrganizationUser": {
-      "document": "主企业员工账号信息",
-      "members": [
-        {
-          "disabled": false,
-          "document": "主企业id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MainOrganizationId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "主企业员工UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "MainUserId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "主企业员工名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "UserName",
-          "required": false,
-          "type": "string",
           "value_allowed_null": true
         }
       ],

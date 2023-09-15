@@ -595,6 +595,13 @@
       "output": "ModifyWorkGroupResponse",
       "status": "online"
     },
+    "QueryResult": {
+      "document": "获取任务结果查询",
+      "input": "QueryResultRequest",
+      "name": "获取任务结果查询",
+      "output": "QueryResultResponse",
+      "status": "online"
+    },
     "ReportHeartbeatMetaData": {
       "document": "上报元数据心跳",
       "input": "ReportHeartbeatMetaDataRequest",
@@ -10129,6 +10136,82 @@
         }
       ],
       "usage": "both"
+    },
+    "QueryResultRequest": {
+      "document": "QueryResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "20210521195919442157",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "lastReadFile为上一次读取的文件，lastReadOffset为上一次读取到的位置",
+          "example": "objectListMarker={marker}&lastReadFile={filename}&lastReadOffset",
+          "member": "string",
+          "name": "NextToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryResultResponse": {
+      "document": "QueryResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Id",
+          "example": "20210521195919442157",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果数据",
+          "example": "[         [             \"allen\",             \"27\"         ],    ",
+          "member": "string",
+          "name": "ResultSet",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "schema",
+          "example": "{\"query_id\":\"q202108191952hzb9d11f040173825\",\"columns\":[{\"c_cust",
+          "member": "Column",
+          "name": "ResultSchema",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "objectListMarker={marker}&lastReadFile={filename}&lastReadOffset",
+          "member": "string",
+          "name": "NextToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReportHeartbeatMetaDataRequest": {
       "document": "ReportHeartbeatMetaData请求参数结构体",

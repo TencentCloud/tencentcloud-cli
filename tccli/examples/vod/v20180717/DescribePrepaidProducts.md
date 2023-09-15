@@ -20,7 +20,8 @@ Output:
                 "LastConsumeDate": "2020-02-22T16:00:00Z",
                 "BindStatus": 0,
                 "ProductInstanceStatus": "Effective",
-                "ProductInstanceResourceSet": [
+                "RenewStatus": "Never",
+                "ResourceSet": [
                     {
                         "ResourceType": "Review",
                         "Amount": 18000,

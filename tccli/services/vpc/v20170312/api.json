@@ -2736,6 +2736,16 @@
         },
         {
           "disabled": false,
+          "document": "静态单线IP网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "center_egress1",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "高防包ID,当EIP类型为高防EIP时，返回EIP绑定的高防包ID.",
           "example": "无",
           "member": "string",
@@ -3104,7 +3114,7 @@
         },
         {
           "disabled": false,
-          "document": "EIP类型。默认值：EIP。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>\n<ul style=\"margin:0\"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>\n</ul>\n<ul style=\"margin:0\"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>",
+          "document": "EIP类型。默认值：EIP。\n<ul style=\"margin:0\"><li>已开通Anycast公网加速白名单的用户，可选值：<ul><li>AnycastEIP：加速IP，可参见 [Anycast 公网加速](https://cloud.tencent.com/document/product/644)</li></ul>注意：仅部分地域支持加速IP。</li></ul>\n<ul style=\"margin:0\"><li>已开通精品IP白名单的用户，可选值：<ul><li>HighQualityEIP：精品IP</li></ul>注意：仅部分地域支持精品IP。</li></ul>\n<ul style=\"margin:0\"><li>已开高防IP白名单的用户，可选值：<ul><li>AntiDDoSEIP：高防IP</li></ul>注意：仅部分地域支持高防IP。</li></ul>",
           "example": "AnycastEIP",
           "member": "string",
           "name": "AddressType",
@@ -3158,7 +3168,7 @@
         },
         {
           "disabled": false,
-          "document": "网络出口，默认是：center_egress1",
+          "document": "静态单线IP网络出口，默认值：center_egress1",
           "example": "无",
           "member": "string",
           "name": "Egress",
@@ -6706,6 +6716,7 @@
           "example": "无",
           "member": "NatGateway",
           "name": "NatGatewaySet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6715,6 +6726,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -22141,7 +22153,7 @@
           "example": "\"nat-12345678\"",
           "member": "string",
           "name": "NatGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22151,7 +22163,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "NatGatewayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22161,7 +22173,7 @@
           "example": "\"2021-05-24 19:28:31\"",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22171,7 +22183,7 @@
           "example": "\"AVAILABLE\"",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22181,7 +22193,7 @@
           "example": "10",
           "member": "uint64",
           "name": "InternetMaxBandwidthOut",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -22191,7 +22203,7 @@
           "example": "10000000",
           "member": "uint64",
           "name": "MaxConcurrentConnection",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -22201,7 +22213,7 @@
           "example": " 无",
           "member": "NatGatewayAddress",
           "name": "PublicIpAddressSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22211,7 +22223,7 @@
           "example": "\"AVAILABLE\"",
           "member": "string",
           "name": "NetworkState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22221,7 +22233,7 @@
           "example": "无",
           "member": "DestinationIpPortTranslationNatRule",
           "name": "DestinationIpPortTranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22231,7 +22243,7 @@
           "example": "\"vpc-12345678\"",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22241,7 +22253,7 @@
           "example": "\"ap-guangzhou-2\"",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22251,7 +22263,7 @@
           "example": "[\"dcg-12345678\"]",
           "member": "string",
           "name": "DirectConnectGatewayIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -22261,7 +22273,7 @@
           "example": "\"subnet-12345678\"",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22271,7 +22283,7 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22281,7 +22293,7 @@
           "example": "[\"sg-12345678\"]",
           "member": "string",
           "name": "SecurityGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -22291,7 +22303,7 @@
           "example": "无",
           "member": "SourceIpTranslationNatRule",
           "name": "SourceIpTranslationNatRuleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -22301,7 +22313,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsExclusive",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22311,7 +22323,7 @@
           "example": "50000",
           "member": "uint64",
           "name": "ExclusiveGatewayBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -22321,7 +22333,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "RestrictState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22331,8 +22343,28 @@
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否启用根据目的网段选择SNAT使用的EIP功能\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SmartScheduleMode",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NAT实例归属的专属集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-bxdip3ah",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -22347,7 +22379,7 @@
           "example": "eip-11112222",
           "member": "string",
           "name": "AddressId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22357,7 +22389,7 @@
           "example": "123.121.34.3",
           "member": "string",
           "name": "PublicIpAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22367,8 +22399,18 @@
           "example": "true",
           "member": "bool",
           "name": "IsBlocked",
-          "required": false,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源封堵类型。NORMAL表示未封禁，SECURITY表示安全封禁，USER表示用户封禁，OTHER表示其他封禁，多个原因封禁时用&连接，比如：SECURITY&USER&OTHER。",
+          "example": "SECURITY&USER",
+          "member": "string",
+          "name": "BlockType",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

@@ -168,6 +168,13 @@
       "output": "SaDivulgeDataQueryPubResponse",
       "status": "online"
     },
+    "SaDivulgeScanRuleMutate": {
+      "document": "SaDivulgeScanRuleMutate",
+      "input": "SaDivulgeScanRuleMutateRequest",
+      "name": "设置【泄露监测产品监测扫描规则策略】",
+      "output": "SaDivulgeScanRuleMutateResponse",
+      "status": "online"
+    },
     "SaEventPub": {
       "document": "安全事件通用字段",
       "input": "SaEventPubRequest",
@@ -6264,6 +6271,141 @@
         }
       ],
       "type": "object"
+    },
+    "SaDivulgeScanRuleMutateRequest": {
+      "document": "SaDivulgeScanRuleMutate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Id",
+          "example": "",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DivulgeSoure",
+          "example": "",
+          "member": "string",
+          "name": "DivulgeSoure",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DivulgeSoureUrl",
+          "example": "",
+          "member": "string",
+          "name": "DivulgeSoureUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RuleName",
+          "example": "",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RuleWord",
+          "example": "",
+          "member": "string",
+          "name": "RuleWord",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ScanStatus",
+          "example": "",
+          "member": "string",
+          "name": "ScanStatus",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DivulgeType",
+          "example": "",
+          "member": "string",
+          "name": "DivulgeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "RepairAdvice",
+          "example": "",
+          "member": "string",
+          "name": "RepairAdvice",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaDivulgeScanRuleMutateResponse": {
+      "document": "SaDivulgeScanRuleMutate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Data",
+          "example": "",
+          "member": "SaDivulgeScanRuleSetList",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SaDivulgeScanRuleSetList": {
+      "document": "设置_泄露监测产品监测扫描规则策略",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Value",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Code",
+          "example": "",
+          "member": "int64",
+          "name": "Code",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Message",
+          "example": "",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SaEventPubRequest": {
       "document": "SaEventPub请求参数结构体",

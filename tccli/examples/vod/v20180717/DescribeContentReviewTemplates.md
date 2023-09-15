@@ -13,7 +13,7 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 2,
         "ContentReviewTemplateSet": [
             {
                 "Definition": 30,
@@ -88,6 +88,99 @@ Output:
                         "LabelSet": [],
                         "BlockConfidence": 100,
                         "ReviewConfidence": 75
+                    },
+                    "FaceReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "abc"
+                        ],
+                        "BlockConfidence": 0,
+                        "ReviewConfidence": 0
+                    }
+                },
+                "ScreenshotInterval": 1,
+                "CreateTime": "2019-01-01T12:00:00Z",
+                "UpdateTime": "2019-01-01T16:00:00Z"
+            },
+            {
+                "Definition": 31,
+                "Name": "模板2",
+                "Comment": "内容审核模板",
+                "ReviewWallSwitch": "ON",
+                "PornConfigure": {
+                    "ImgReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "porn"
+                        ],
+                        "BlockConfidence": 80,
+                        "ReviewConfidence": 30
+                    },
+                    "AsrReviewInfo": {
+                        "Switch": "ON",
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    },
+                    "OcrReviewInfo": {
+                        "Switch": "ON",
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    }
+                },
+                "TerrorismConfigure": {
+                    "ImgReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [],
+                        "BlockConfidence": 80,
+                        "ReviewConfidence": 30
+                    },
+                    "OcrReviewInfo": {
+                        "Switch": "OFF",
+                        "BlockConfidence": 0,
+                        "ReviewConfidence": 0
+                    }
+                },
+                "PoliticalConfigure": {
+                    "ImgReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "politician"
+                        ],
+                        "BlockConfidence": 80,
+                        "ReviewConfidence": 30
+                    },
+                    "AsrReviewInfo": {
+                        "Switch": "ON",
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    },
+                    "OcrReviewInfo": {
+                        "Switch": "ON",
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    }
+                },
+                "ProhibitedConfigure": null,
+                "UserDefineConfigure": {
+                    "AsrReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [],
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    },
+                    "OcrReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [],
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
+                    },
+                    "FaceReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "def"
+                        ],
+                        "BlockConfidence": 0,
+                        "ReviewConfidence": 0
                     }
                 },
                 "ScreenshotInterval": 1,
@@ -191,6 +284,14 @@ Output:
                         "LabelSet": [],
                         "BlockConfidence": 100,
                         "ReviewConfidence": 75
+                    },
+                    "FaceReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "abc"
+                        ],
+                        "BlockConfidence": 0,
+                        "ReviewConfidence": 0
                     }
                 },
                 "ScreenshotInterval": 1,
@@ -204,10 +305,17 @@ Output:
                 "ReviewWallSwitch": "ON",
                 "PornConfigure": {
                     "ImgReviewInfo": {
-                        "Switch": "OFF"
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "porn"
+                        ],
+                        "BlockConfidence": 80,
+                        "ReviewConfidence": 30
                     },
                     "AsrReviewInfo": {
-                        "Switch": "OFF"
+                        "Switch": "ON",
+                        "BlockConfidence": 100,
+                        "ReviewConfidence": 75
                     },
                     "OcrReviewInfo": {
                         "Switch": "ON",
@@ -261,6 +369,14 @@ Output:
                         "LabelSet": [],
                         "BlockConfidence": 100,
                         "ReviewConfidence": 75
+                    },
+                    "FaceReviewInfo": {
+                        "Switch": "ON",
+                        "LabelSet": [
+                            "def"
+                        ],
+                        "BlockConfidence": 0,
+                        "ReviewConfidence": 0
                     }
                 },
                 "ScreenshotInterval": 1,

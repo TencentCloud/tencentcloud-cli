@@ -25,22 +25,55 @@ Output:
                     "TranscodeTaskSet": [
                         {
                             "Definition": 20,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 30,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 40,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         }
                     ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
+                    "AnimatedGraphicTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "CoverBySnapshotTaskSet": []
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
@@ -79,22 +112,55 @@ Output:
                     "TranscodeTaskSet": [
                         {
                             "Definition": 20,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 30,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 40,
-                            "WatermarkSet": null
+                            "WatermarkSet": [],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         }
                     ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
+                    "AnimatedGraphicTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "CoverBySnapshotTaskSet": []
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,
@@ -115,34 +181,67 @@ Output:
                             "WatermarkSet": [
                                 {
                                     "Definition": 15780,
-                                    "TextContent": null
+                                    "TextContent": ""
                                 }
-                            ]
+                            ],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 30,
                             "WatermarkSet": [
                                 {
                                     "Definition": 15780,
-                                    "TextContent": null
+                                    "TextContent": ""
                                 }
-                            ]
+                            ],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         },
                         {
                             "Definition": 40,
                             "WatermarkSet": [
                                 {
                                     "Definition": 15780,
-                                    "TextContent": null
+                                    "TextContent": ""
                                 }
-                            ]
+                            ],
+                            "MosaicSet": [],
+                            "TraceWatermark": {
+                                "Switch": "OFF",
+                                "Definition": 0
+                            },
+                            "StartTimeOffset": 0,
+                            "CopyRightWatermark": {
+                                "Text": ""
+                            },
+                            "HeadTailSet": [],
+                            "EndTimeOffset": 0
                         }
                     ],
-                    "AnimatedGraphicTaskSet": null,
-                    "SnapshotByTimeOffsetTaskSet": null,
-                    "SampleSnapshotTaskSet": null,
-                    "ImageSpriteTaskSet": null,
-                    "CoverBySnapshotTaskSet": null
+                    "AnimatedGraphicTaskSet": [],
+                    "SnapshotByTimeOffsetTaskSet": [],
+                    "SampleSnapshotTaskSet": [],
+                    "ImageSpriteTaskSet": [],
+                    "CoverBySnapshotTaskSet": []
                 },
                 "AiContentReviewTask": null,
                 "AiAnalysisTask": null,

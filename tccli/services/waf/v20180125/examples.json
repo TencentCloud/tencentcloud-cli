@@ -596,6 +596,14 @@
         "title": "刷新防篡改url"
       }
     ],
+    "GenerateDealsAndPayNew": [
+      {
+        "document": "公安三所下单样例",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GenerateDealsAndPayNew\n<公共请求参数>\n\n{\n    \"Goods\": [\n        {\n            \"GoodsCategoryId\": 0,\n            \"GoodsNum\": 0,\n            \"GoodsDetail\": {\n                \"TimeSpan\": 0,\n                \"TimeUnit\": \"abc\",\n                \"SubProductCode\": \"abc\",\n                \"Pid\": 0,\n                \"InstanceName\": \"abc\",\n                \"AutoRenewFlag\": 0,\n                \"RealRegion\": 0,\n                \"LabelTypes\": [\n                    \"abc\"\n                ],\n                \"LabelCounts\": [\n                    0\n                ],\n                \"CurDeadline\": \"abc\",\n                \"InstanceId\": \"abc\"\n            },\n            \"RegionId\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"DealNames\": [\n                \"abc\"\n            ],\n            \"BigDealId\": \"abc\"\n        },\n        \"Status\": 0,\n        \"ReturnMessage\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "下单样例"
+      }
+    ],
     "GetAttackDownloadRecords": [
       {
         "document": "",

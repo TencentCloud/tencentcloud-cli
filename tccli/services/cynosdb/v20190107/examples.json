@@ -98,10 +98,10 @@
     ],
     "CreateAuditRuleTemplate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRuleTemplate\n<公共请求参数>\n\n{\n    \"RuleFilters\": [\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"100.122.76.176\",\n                \"10.0.0.9\"\n            ]\n        },\n        {\n            \"Type\": \"user\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"wy\",\n                \"test\"\n            ]\n        },\n        {\n            \"Type\": \"sqlType\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"Update\",\n                \"Delete\"\n            ]\n        }\n    ],\n    \"RuleTemplateName\": \"test\",\n    \"Description\": \"用于测试的规则模版\"\n}",
+        "document": "创建审计规则模板",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAuditRuleTemplate\n<公共请求参数>\n\n{\n    \"RuleFilters\": [\n        {\n            \"Type\": \"host\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"100.122.76.176\",\n                \"10.0.0.9\"\n            ]\n        },\n        {\n            \"Type\": \"user\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"wy\",\n                \"test\"\n            ]\n        },\n        {\n            \"Type\": \"sqlType\",\n            \"Compare\": \"EQS\",\n            \"Value\": [\n                \"Update\",\n                \"Delete\"\n            ]\n        }\n    ],\n    \"RuleTemplateName\": \"test\",\n    \"Description\": \"用于测试的规则模板\"\n}",
         "output": "{\n    \"Response\": {\n        \"RuleTemplateId\": \"cynosdb-rt-ws23fwu8\",\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
-        "title": "创建审计规则模版"
+        "title": "创建审计规则模板"
       }
     ],
     "CreateBackup": [
@@ -184,10 +184,10 @@
     ],
     "DeleteAuditRuleTemplates": [
       {
-        "document": "",
+        "document": "删除审计规则模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cynosdb-rt-ws23fwu8\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
-        "title": "删除审计规则模版"
+        "title": "删除审计规则模板"
       }
     ],
     "DeleteBackup": [
@@ -242,7 +242,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditLogFiles\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-qwerasdf\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"creating\",\n                \"FileName\": \"audit_log_file\",\n                \"DownloadUrl\": \"xx\",\n                \"FileSize\": 123,\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"Status\": \"creating\",\n                \"FileName\": \"audit_log_file\",\n                \"DownloadUrl\": \"https://gz-audit-1256375829.cos.ap-guangzhou.myqcloud.com/183367353_cdb-j0skeo3t_1694001004_7113542.csv?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKID3rhYBaa9HVeKkvpd072tVt2x2khNYopc%26q-sign-time%3D1694001006%3B1694087406%26q-key-time%3D1694001006%3B1694087406%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Dbb41113d6e580050730d492886b59d730a474764\",\n                \"FileSize\": 123,\n                \"CreateTime\": \"2019-03-20 17:09:13\",\n                \"ErrMsg\": \"\"\n            }\n        ]\n    }\n}",
         "title": "创建审计日志文件"
       }
     ],
@@ -268,10 +268,10 @@
     ],
     "DescribeAuditRuleTemplates": [
       {
-        "document": "",
+        "document": "查询审计规则模板信息",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateNames\": [\n        \"template_test\"\n    ],\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateAt\": \"2022-12-06 00:54:01\",\n                \"Description\": \"all_template_des\",\n                \"RuleFilters\": [\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"sqlType\",\n                        \"Value\": [\n                            \"ALTER\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"EQS\",\n                        \"Type\": \"host\",\n                        \"Value\": [\n                            \"10.0.0.2\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"NEQ\",\n                        \"Type\": \"user\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    },\n                    {\n                        \"Compare\": \"INC\",\n                        \"Type\": \"dbName\",\n                        \"Value\": [\n                            \"test\"\n                        ]\n                    }\n                ],\n                \"RuleTemplateId\": \"cynosdb-art-lcpm4as3\",\n                \"RuleTemplateName\": \"template_test\"\n            }\n        ],\n        \"RequestId\": \"a19ebcfb-8b35-40f4-85ee-383109c9134b\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询审计规则模版信息"
+        "title": "查询审计规则模板信息"
       }
     ],
     "DescribeAuditRuleWithInstanceIds": [
@@ -674,10 +674,10 @@
     ],
     "ModifyAuditRuleTemplates": [
       {
-        "document": "",
+        "document": "修改审计规则模板",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditRuleTemplates\n<公共请求参数>\n\n{\n    \"RuleTemplateIds\": [\n        \"cynosdb-rt-ws23fwu8\"\n    ],\n    \"RuleTemplateName\": \"wy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
-        "title": "修改审计规则模版"
+        "title": "修改审计规则模板"
       }
     ],
     "ModifyAuditService": [
@@ -858,7 +858,7 @@
     ],
     "OpenAuditService": [
       {
-        "document": "",
+        "document": "开通审计",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenAuditService\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cynosdbmysql-ins-6990cckk\",\n    \"LogExpireDay\": 30,\n    \"HighLogExpireDay\": 7\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"43-12121-812w1221213-62usf9093\"\n    }\n}",
         "title": "开通审计"

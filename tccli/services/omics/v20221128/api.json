@@ -984,8 +984,8 @@
         },
         {
           "disabled": false,
-          "document": "表格文件中每列的数据类型，支持的类型包括：Int、String、File、Array[File]",
-          "example": "无",
+          "document": "表格文件中每列的数据类型，支持的类型包括：Int、Float、String、File、Boolean、Array[Int]、Array[Float]、Array[String]、Array[File]、Array[Boolean]",
+          "example": "[\"File\",\"String\",\"Int\",\"Float\",\"Boolean\",\"Array[File]\",\"Array[String]\",\"Array[Int]\",\"Array[Float]\",\"Array[Boolean]\"]",
           "member": "string",
           "name": "DataType",
           "required": true,
@@ -1012,6 +1012,7 @@
           "example": "无",
           "member": "string",
           "name": "TableId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

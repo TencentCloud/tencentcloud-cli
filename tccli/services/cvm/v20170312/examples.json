@@ -19,7 +19,7 @@
     "AssociateSecurityGroups": [
       {
         "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=AssociateSecurityGroups\n&InstanceIds.0=ins-2zvpghhc\n&InstanceIds.1=ins-915zrb0p\n&SecurityGroupIds.0=sg-9id3l839\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AssociateSecurityGroups\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-915zrb0p\",\n        \"ins-2zvpghhc\"\n    ],\n    \"SecurityGroupIds\": [\n        \"sg-9id3l839\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3385dcf2-e1f0-4ed8-a924-c296721ab65f\"\n    }\n}",
         "title": "指定多个实例绑定一个安全组"
       }
@@ -504,7 +504,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceResetInstancesType\n<公共请求参数>\n\n{\n    \"InstanceType\": \"S5.16XLARGE256\",\n    \"InstanceIds\": [\n        \"ins-xmf2ac34\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"OriginalPrice\": 8753,\n                \"DiscountPrice\": 8753\n            }\n        },\n        \"RequestId\": \"d345aa58-460a-4a13-8382-c6c99d0bc73f\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"abc\",\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"Discount\": 0,\n                \"UnitPriceDiscount\": 0,\n                \"UnitPriceSecondStep\": 0,\n                \"UnitPriceDiscountSecondStep\": 0,\n                \"UnitPriceThirdStep\": 0,\n                \"UnitPriceDiscountThirdStep\": 0,\n                \"OriginalPriceThreeYear\": 0,\n                \"DiscountPriceThreeYear\": 0,\n                \"DiscountThreeYear\": 0,\n                \"OriginalPriceFiveYear\": 0,\n                \"DiscountPriceFiveYear\": 0,\n                \"DiscountFiveYear\": 0,\n                \"OriginalPriceOneYear\": 0,\n                \"DiscountPriceOneYear\": 0,\n                \"DiscountOneYear\": 0\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0,\n                \"ChargeUnit\": \"abc\",\n                \"OriginalPrice\": 0,\n                \"DiscountPrice\": 0,\n                \"Discount\": 0,\n                \"UnitPriceDiscount\": 0,\n                \"UnitPriceSecondStep\": 0,\n                \"UnitPriceDiscountSecondStep\": 0,\n                \"UnitPriceThirdStep\": 0,\n                \"UnitPriceDiscountThirdStep\": 0,\n                \"OriginalPriceThreeYear\": 0,\n                \"DiscountPriceThreeYear\": 0,\n                \"DiscountThreeYear\": 0,\n                \"OriginalPriceFiveYear\": 0,\n                \"DiscountPriceFiveYear\": 0,\n                \"DiscountFiveYear\": 0,\n                \"OriginalPriceOneYear\": 0,\n                \"DiscountPriceOneYear\": 0,\n                \"DiscountOneYear\": 0\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "包年包月实例调整配置询价"
       }
     ],

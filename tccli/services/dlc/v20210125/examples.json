@@ -686,6 +686,14 @@
         "title": "修改工作组信息"
       }
     ],
+    "QueryResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryResult\n<公共请求参数>\n\n{\n    \"NextToken\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ResultSchema\": [\n            {\n                \"Comment\": \"xx\",\n                \"Scale\": 0,\n                \"Name\": \"xx\",\n                \"Nullable\": \"xx\",\n                \"Precision\": 0,\n                \"Type\": \"xx\"\n            }\n        ],\n        \"NextToken\": \"xx\",\n        \"ResultSet\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "title": "获取任务结果"
+      }
+    ],
     "ReportHeartbeatMetaData": [
       {
         "document": "",

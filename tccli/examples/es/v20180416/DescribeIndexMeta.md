@@ -1,64 +1,67 @@
 **Example 1: 获取索引元数据**
 
-
+获取索引元数据
 
 Input: 
 
 ```
 tccli es DescribeIndexMeta --cli-unfold-argument  \
-    --InstanceId xx \
-    --Username xx \
-    --Password xx \
-    --IndexName xx \
-    --IndexType xx
+    --InstanceId abc \
+    --Username abc \
+    --Password abc \
+    --IndexName abc \
+    --IndexType abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
         "IndexMetaField": {
+            "IndexType": "abc",
+            "IndexName": "abc",
+            "IndexStatus": "abc",
+            "IndexStorage": 0,
+            "IndexCreateTime": "abc",
             "BackingIndices": [
                 {
-                    "IndexPhrase": "xx",
-                    "IndexStatus": "xx",
+                    "IndexName": "abc",
+                    "IndexStatus": "abc",
                     "IndexStorage": 0,
-                    "IndexName": "xx",
-                    "IndexCreateTime": "xx"
+                    "IndexPhrase": "abc",
+                    "IndexCreateTime": "abc"
                 }
             ],
-            "IndexOptionsField": {
-                "WriteMode": "xx",
-                "RolloverMaxAge": "xx",
-                "ExpireMaxAge": "xx",
-                "RolloverDynamic": "xx",
-                "ExpireMaxSize": "xx",
-                "ShardNumDynamic": "xx",
-                "TimestampField": "xx"
-            },
-            "IndexName": "xx",
-            "IndexType": "xx",
+            "ClusterId": "abc",
+            "ClusterName": "abc",
+            "ClusterVersion": "abc",
             "IndexPolicyField": {
-                "WarmEnable": "xx",
-                "WarmMinAge": "xx",
-                "ColdMinAge": "xx",
-                "FrozenEnable": "xx",
-                "FrozenMinAge": "xx",
-                "ColdEnable": "xx"
+                "WarmEnable": "abc",
+                "WarmMinAge": "abc",
+                "ColdEnable": "abc",
+                "ColdMinAge": "abc",
+                "FrozenEnable": "abc",
+                "FrozenMinAge": "abc",
+                "ColdAction": "abc"
             },
-            "ClusterName": "xx",
-            "IndexStatus": "xx",
-            "ClusterId": "xx",
-            "IndexCreateTime": "xx",
-            "ClusterVersion": "xx",
-            "IndexStorage": 0,
+            "IndexOptionsField": {
+                "ExpireMaxAge": "abc",
+                "ExpireMaxSize": "abc",
+                "RolloverMaxAge": "abc",
+                "RolloverDynamic": "abc",
+                "ShardNumDynamic": "abc",
+                "TimestampField": "abc",
+                "WriteMode": "abc"
+            },
             "IndexSettingsField": {
-                "NumberOfShards": "xx",
-                "NumberOfReplicas": "xx",
-                "RefreshInterval": "xx"
-            }
-        }
+                "NumberOfShards": "abc",
+                "NumberOfReplicas": "abc",
+                "RefreshInterval": "abc"
+            },
+            "AppId": 1,
+            "IndexDocs": 1
+        },
+        "RequestId": "abc"
     }
 }
 ```

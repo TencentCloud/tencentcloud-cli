@@ -48,6 +48,9 @@ Output:
                 "Zone": "ap-guangzhou-2",
                 "ExclusiveGatewayBandwidth": 1,
                 "IsExclusive": true,
+                "SmartScheduleMode": false,
+                "DedicatedClusterId": "",
+                "NatProductVersion": 1,
                 "RestrictState": "NORMAL",
                 "SourceIpTranslationNatRuleSet": [],
                 "SubnetId": "1215354",
@@ -102,7 +105,10 @@ Output:
                 "SecurityGroupSet": [],
                 "SourceIpTranslationNatRuleSet": [],
                 "IsExclusive": false,
+                "SmartScheduleMode": false,
+                "DedicatedClusterId": null,
                 "RestrictState": "NORMAL",
+                "NatProductVersion": 2,
                 "ExclusiveGatewayBandwidth": null
             }
         ],

@@ -283,8 +283,8 @@
   },
   "metadata": {
     "apiVersion": "2020-02-10",
-    "api_brief": "介绍如何使用API对腾讯云呼叫中心进行操作，包括拉取会话记录、管理坐席信息和管理呼叫中心参数等。",
-    "serviceNameCN": "云呼叫中心",
+    "api_brief": "介绍如何使用API对腾讯云联络中心进行操作，包括拉取会话记录、管理坐席信息和管理联络中心参数等。",
+    "serviceNameCN": "云联络中心",
     "serviceShortName": "ccc"
   },
   "objects": {

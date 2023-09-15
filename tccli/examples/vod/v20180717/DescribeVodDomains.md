@@ -11,13 +11,14 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 10,
+        "TotalCount": 1,
         "DomainSet": [
             {
                 "Domain": "myexample.com",
                 "AccelerateAreaInfos": [
                     {
                         "Area": "Internation",
+                        "TencentDisableReason": "",
                         "TencentEdgeDomain": "myexmample.com.dnsv1.com"
                     }
                 ],
@@ -35,7 +36,8 @@ Output:
                     "Status": "Enabled",
                     "EncryptedKey": "acmowmeomeo13432a"
                 },
-                "CreateTime": "2019-12-23T07:25:52Z"
+                "CreateTime": "2019-12-23T07:25:52Z",
+                "QUICConfig": null
             }
         ],
         "RequestId": "aeomo-133w3-amomow-22"

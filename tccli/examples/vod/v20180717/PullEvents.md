@@ -16,6 +16,8 @@ Output:
                 "EventHandle": "EventHandle1",
                 "EventType": "ProcedureStateChanged",
                 "FileUploadEvent": null,
+                "ExtractCopyRightWatermarkCompleteEvent": null,
+                "QualityInspectCompleteEvent": null,
                 "ProcedureStateChangeEvent": {
                     "TaskId": "1256712345-Procedure-475b7237438a39560b9879a4556cb177t2",
                     "Status": "FINISH",
@@ -51,10 +53,14 @@ Output:
                             {
                                 "Bitrate": 637174,
                                 "Codec": "h264",
+                                "CodecTag": "",
                                 "Fps": 23,
                                 "Height": 480,
                                 "Width": 640,
-                                "DynamicRangeInfo": {}
+                                "DynamicRangeInfo": {
+                                    "HDRType": "",
+                                    "Type": "SDR"
+                                }
                             }
                         ],
                         "Width": 640
@@ -65,10 +71,25 @@ Output:
                             "TranscodeTask": {
                                 "Status": "SUCCESS",
                                 "ErrCode": 0,
+                                "ErrCodeExt": "",
                                 "Message": "SUCCESS",
+                                "Progress": 100,
+                                "BeginProcessTime": "2023-09-08T02:23:29Z",
+                                "FinishTime": "2023-09-08T03:23:29Z",
                                 "Input": {
                                     "Definition": 20,
-                                    "WatermarkSet": []
+                                    "WatermarkSet": [],
+                                    "TraceWatermark": {
+                                        "Switch": "ON",
+                                        "Definition": 1
+                                    },
+                                    "CopyRightWatermark": {
+                                        "Text": "copyRightxxx"
+                                    },
+                                    "MosaicSet": [],
+                                    "HeadTailSet": [],
+                                    "StartTimeOffset": 2,
+                                    "EndTimeOffset": 3
                                 },
                                 "Output": {
                                     "Url": "http://123.vod2.myqcloud.com/d042887avodtransgzp1256768367/c643347c5285890784246869930/v.f20.mp4",
@@ -83,10 +104,14 @@ Output:
                                         {
                                             "Bitrate": 503727,
                                             "Codec": "h264",
+                                            "CodecTag": "",
                                             "Fps": 24,
                                             "Height": 480,
                                             "Width": 640,
-                                            "DynamicRangeInfo": {}
+                                            "DynamicRangeInfo": {
+                                                "HDRType": "",
+                                                "Type": "SDR"
+                                            }
                                         }
                                     ],
                                     "AudioStreamSet": [
@@ -97,7 +122,8 @@ Output:
                                         }
                                     ],
                                     "Definition": 0,
-                                    "DigitalWatermarkType": "None"
+                                    "DigitalWatermarkType": "None",
+                                    "CopyRightWatermarkText": ""
                                 }
                             },
                             "AnimatedGraphicTask": null,

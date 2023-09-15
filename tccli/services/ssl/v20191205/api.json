@@ -7,6 +7,13 @@
       "output": "ApplyCertificateResponse",
       "status": "online"
     },
+    "CancelAuditCertificate": {
+      "document": "取消证书审核",
+      "input": "CancelAuditCertificateRequest",
+      "name": "取消证书审核",
+      "output": "CancelAuditCertificateResponse",
+      "status": "online"
+    },
     "CancelCertificateOrder": {
       "document": "取消证书订单。",
       "input": "CancelCertificateOrderRequest",
@@ -299,6 +306,13 @@
       "input": "ModifyCertificateProjectRequest",
       "name": "修改证书所属项目",
       "output": "ModifyCertificateProjectResponse",
+      "status": "online"
+    },
+    "ModifyCertificateResubmit": {
+      "document": "针对审核失败或审核取消的付费证书，重新发起审核",
+      "input": "ModifyCertificateResubmitRequest",
+      "name": "证书重新发起申请",
+      "output": "ModifyCertificateResubmitResponse",
       "status": "online"
     },
     "ModifyCertificatesExpiringNotificationSwitch": {
@@ -689,6 +703,43 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelAuditCertificateRequest": {
+      "document": "CancelAuditCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "abcdefg",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelAuditCertificateResponse": {
+      "document": "CancelAuditCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作是否成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CancelCertificateOrderRequest": {
       "document": "CancelCertificateOrder请求参数结构体",
@@ -6719,6 +6770,43 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificateResubmitRequest": {
+      "document": "ModifyCertificateResubmit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCertificateResubmitResponse": {
+      "document": "ModifyCertificateResubmit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书ID。",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
