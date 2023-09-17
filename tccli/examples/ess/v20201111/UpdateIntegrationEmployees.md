@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli ess UpdateIntegrationEmployees --cli-unfold-argument  \
-    --Operator.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD \
-    --Employees.0.UserId yDwgKUUcXXXXXXXXXXXXXXXXXXQZD123 \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --Employees.0.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
     --Employees.0.DisplayName 张三 \
-    --Employees.0.Mobile 187XXXX0000 \
-    --Employees.0.Email ess@qq.com
+    --Employees.0.Mobile 18888888888 \
+    --Employees.0.Email zhangsan@qq.com
 ```
 
 Output: 
@@ -20,8 +20,8 @@ Output:
         "SuccessEmployeeData": [
             {
                 "DisplayName": "张三",
-                "Mobile": "187****0000",
-                "UserId": "yDwgKUUcX*******QZD123"
+                "Mobile": "18888888888",
+                "UserId": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy"
             }
         ],
         "FailedEmployeeData": [],

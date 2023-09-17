@@ -397,8 +397,7 @@
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -407,8 +406,7 @@
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -417,18 +415,25 @@
           "member": "FaceRect",
           "name": "InputImageFaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
-          "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
+          "document": "控制台上传的素材人脸ID，不填默认取最大人脸。此字段仅适用于控制台上传素材的有素材场景。",
           "example": "string",
           "member": "string",
           "name": "TemplateFaceID",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模版图片人脸位置信息(人脸框)，不填默认取最大人脸。此字段仅适用于自定义模版素材场景。",
+          "example": "无",
+          "member": "FaceRect",
+          "name": "TemplateFaceRect",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"

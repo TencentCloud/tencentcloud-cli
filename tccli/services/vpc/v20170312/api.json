@@ -8956,7 +8956,7 @@
         },
         {
           "disabled": false,
-          "document": "NAT网关大版本号，默认值`1`",
+          "document": "NAT网关大版本号，1是传统型，2是标准型，默认是1",
           "example": "1",
           "member": "uint64",
           "name": "NatProductVersion",

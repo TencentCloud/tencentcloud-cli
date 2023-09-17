@@ -1,11 +1,11 @@
 {
   "actions": {
     "CreateInstanceHour": {
-      "document": "本接口 (CreateInstanceHour) 用于后付费创建实例（该接口已废弃，请勿使用，接口变更为CreateInstances）。",
+      "document": "该接口已废弃，需要下线\n\n本接口 (CreateInstanceHour) 用于后付费创建实例（该接口已废弃，请勿使用，接口变更为CreateInstances）。",
       "input": "CreateInstanceHourRequest",
       "name": "创建实例",
       "output": "CreateInstanceHourResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAvailableRecoveryTime": {
       "document": "数据恢复时，获取回档时间",
@@ -43,11 +43,11 @@
       "status": "online"
     },
     "ModifyInstanceHour": {
-      "document": "本接口（ModifyInstanceHour）用于后付费变配实例（该接口已废弃，请勿使用，接口变更为ModifyInstance）。",
+      "document": "该接口已废弃，需要下线\n\n本接口（ModifyInstanceHour）用于后付费变配实例（该接口已废弃，请勿使用，接口变更为ModifyInstance）。",
       "input": "ModifyInstanceHourRequest",
       "name": "原后付费变配实例",
       "output": "ModifyInstanceHourResponse",
-      "status": "online"
+      "status": "deprecated"
     }
   },
   "metadata": {

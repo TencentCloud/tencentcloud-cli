@@ -1340,10 +1340,19 @@
         },
         {
           "disabled": false,
-          "document": "cdw数据源（cvm）",
+          "document": "cdw-ck数据源（cvm）",
           "example": "无",
           "member": "DiSourceCvmCdw",
           "name": "DiSourceCvmCdw",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "cdw-doris数据源（cvm）",
+          "example": "无",
+          "member": "DiSourceCvmCdwDoris",
+          "name": "DiSourceCvmCdwDoris",
           "required": false,
           "type": "object"
         }
@@ -3646,8 +3655,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3656,8 +3664,7 @@
           "member": "string",
           "name": "CvmIds",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3666,13 +3673,36 @@
           "member": "string",
           "name": "LogPaths",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"
     },
     "DiSourceCvmCdw": {
+      "document": "serverless索引数据cdw接入数据源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "vpc id",
+          "example": "vpc-xxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "cdw集群id",
+          "example": "cdwss-xxxxx",
+          "member": "string",
+          "name": "CdwId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DiSourceCvmCdwDoris": {
       "document": "serverless索引数据cdw接入数据源",
       "members": [
         {
@@ -3756,8 +3786,7 @@
           "member": "string",
           "name": "VpcId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3766,8 +3795,7 @@
           "member": "string",
           "name": "TkeId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3776,8 +3804,7 @@
           "member": "string",
           "name": "IncludeNamespaces",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3786,8 +3813,7 @@
           "member": "string",
           "name": "ExcludeNamespaces",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3796,8 +3822,7 @@
           "member": "string",
           "name": "ContainerName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3806,8 +3831,7 @@
           "member": "string",
           "name": "LogFilters",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3816,8 +3840,7 @@
           "member": "string",
           "name": "ConfigContent",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3826,8 +3849,7 @@
           "member": "DiSourceTkePodLabel",
           "name": "PodLabel",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3836,8 +3858,7 @@
           "member": "string",
           "name": "InputType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3846,8 +3867,7 @@
           "member": "string",
           "name": "InputPath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

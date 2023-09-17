@@ -133,7 +133,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否授权",
+          "document": "是否授权：1已授权，否则未授权。\n 调用全栈式风控引擎接口服务时，客户需先明确授权\n\n",
           "example": "无",
           "member": "string",
           "name": "IsAuthorized",
@@ -143,7 +143,7 @@
         },
         {
           "disabled": false,
-          "document": "加密类型",
+          "document": "加密类型：1AES加密\n",
           "example": "无",
           "member": "string",
           "name": "CryptoType",
@@ -153,7 +153,7 @@
         },
         {
           "disabled": false,
-          "document": "加密内容",
+          "document": "加密内容，非空时接口采用加密模式。",
           "example": "无",
           "member": "string",
           "name": "CryptoContent",
@@ -261,7 +261,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "账号信息。",
+          "document": "用户账号类型（默认开通 QQ 开放账号、手机号，手机 MD5 账号类型查询。如需使用微\n信开放账号，则需要 提交工单 由腾讯云进行资格审核，审核通过后方可正常使用微信\n开放账号）： \n1：QQ 开放账号。 \n2：微信开放账号。 \n4：手机号（暂仅支持国内手机号）。 \n8：设备号（imei/imeiMD5/idfa/idfaMd5）。 \n0： 其他。 \n10004：手机号 MD5。\n",
           "example": "AccountInfo.AccountType=4",
           "member": "AccountInfo",
           "name": "Account",
@@ -431,7 +431,7 @@
         },
         {
           "disabled": false,
-          "document": "设备类型：\n1：Android\n2：IOS",
+          "document": "设备类型，账号类型为8时必填： \n0:未知 \n1:Imei;国际移动设备识别号（15-17位数字） \n2:ImeiMd5；国际移动设备识别号，通过MD5加密后32位的小写字符串 \n3:Idfa; \n4:IdfaMD5;",
           "example": "1",
           "member": "int64",
           "name": "DeviceType",
@@ -471,7 +471,7 @@
         },
         {
           "disabled": false,
-          "document": "平台: 1android",
+          "document": "1：安卓\n2：iOS \n3：H5 \n4：小程序 \n",
           "example": "1",
           "member": "string",
           "name": "Platform",
@@ -589,7 +589,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "id",
+          "document": "其它账号信息：  \nAccountType 是 4 时，填入真实的手机号（如 13123456789）。 \nAccountType 是 8 时，支持 imei、idfa、imeiMD5、idfaMD5入参。  \nAccountType 是 0 时，填入账号信息。  \nAccountType 是 10004 时，填入手机号的 MD5 值。 \n注：imeiMd5 加密方式为：  \nimei 明文小写后，进行 MD5 加密，加密后取小写值。  \nIdfaMd5 加密方式为：idfa 明文大写后，进行 MD5 加密，加密后取小写值。\n",
           "example": "无",
           "member": "string",
           "name": "AccountId",
@@ -599,7 +599,7 @@
         },
         {
           "disabled": false,
-          "document": "手机号",
+          "document": "手机号，若 AccountType 是 4（手机号）、或 10004（手机号 MD5），则无需重复填写 \n否则填入对应的手机号（如 13123456789）。",
           "example": "无",
           "member": "string",
           "name": "MobilePhone",
@@ -609,7 +609,7 @@
         },
         {
           "disabled": false,
-          "document": "id",
+          "document": "用户设备号。若 AccountType 是 8（设备号），则无需重复填写，否则填入对应的设备 \n号。 \n",
           "example": "无",
           "member": "string",
           "name": "DeviceId",

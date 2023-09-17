@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli cynosdb SetRenewFlag --cli-unfold-argument  \
-    --ResourceIds cynosdbmysql-ins-xxxxxxx \
+    --ResourceIds cynosdbmysql-xxxxxxx \
     --AutoRenewFlag 1
 ```
 
@@ -15,7 +15,7 @@ Output:
 {
     "Response": {
         "Count": 1,
-        "RequestId": 123123123
+        "RequestId": "123123123"
     }
 }
 ```

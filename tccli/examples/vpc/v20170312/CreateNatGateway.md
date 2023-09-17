@@ -35,12 +35,14 @@ Output:
                     {
                         "AddressId": "eip-9uw5fwsu",
                         "PublicIpAddress": "139.199.232.119",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     },
                     {
                         "AddressId": "eip-9uw5fsss",
                         "PublicIpAddress": "139.199.232.221",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [],

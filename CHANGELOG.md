@@ -1,3 +1,249 @@
+# Release 3.0.852.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 3 次发布
+
+发布时间：2023-09-18 01:11:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEmbedToken](http://document.tencentcloudapi.woa.com/document/product/1707/80322)
+
+	* 新增入参：UserCorpId, UserId
+
+
+修改数据结构：
+
+* [EmbedTokenInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EmbedTokenInfo)
+
+	* 新增成员：UserCorpId, UserId
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 69 次发布
+
+发布时间：2023-09-18 01:41:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDatasourceConnection](http://document.tencentcloudapi.woa.com/document/product/1342/81944)
+
+新增数据结构：
+
+* [DataSourceInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataSourceInfo)
+* [DatasourceConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatasourceConnectionConfig)
+* [DatasourceConnectionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatasourceConnectionInfo)
+* [DatasourceConnectionLocation](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatasourceConnectionLocation)
+* [ElasticsearchInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#ElasticsearchInfo)
+* [HiveInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#HiveInfo)
+* [IpPortPair](http://document.tencentcloudapi.woa.com/document/product/1342/53778#IpPortPair)
+* [KafkaInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#KafkaInfo)
+* [KerberosInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#KerberosInfo)
+* [MysqlInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#MysqlInfo)
+* [OtherDatasourceConnection](http://document.tencentcloudapi.woa.com/document/product/1342/53778#OtherDatasourceConnection)
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 37 次发布
+
+发布时间：2023-09-18 01:48:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
+
+	* 新增入参：DiSourceCvmCdwDoris
+
+
+新增数据结构：
+
+* [DiSourceCvmCdwDoris](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceCvmCdwDoris)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 35 次发布
+
+发布时间：2023-09-18 01:49:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Admin](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Admin)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Mobile
+
+* [FailedUpdateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FailedUpdateStaffData)
+
+	* <font color="#dd0000">**修改成员**：</font>DisplayName, Mobile, Reason, UserId, OpenId
+
+* [IntegrationDepartment](http://document.tencentcloudapi.woa.com/document/product/1668/79360#IntegrationDepartment)
+
+	* <font color="#dd0000">**修改成员**：</font>DeptId, DeptName, ParentDeptId, DeptOpenId, OrderNo
+
+* [SuccessUpdateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessUpdateStaffData)
+
+	* <font color="#dd0000">**修改成员**：</font>DisplayName, Mobile, UserId
+
+
+
+
+## 人脸融合(facefusion) 版本：2022-09-27
+
+### 第 3 次发布
+
+发布时间：2023-09-18 01:51:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MergeInfo](http://document.tencentcloudapi.woa.com/document/product/670/78443#MergeInfo)
+
+	* 新增成员：TemplateFaceRect
+
+
+
+
+## 人脸融合(facefusion) 版本：2018-12-01
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 7 次发布
+
+发布时间：2023-09-18 02:01:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [UpdateRecordBackupPlanModify](http://document.tencentcloudapi.woa.com/document/product/1740/81572#UpdateRecordBackupPlanModify)
+
+	* <font color="#dd0000">**修改成员**：</font>Add, Del, OrganizationId
+
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 44 次发布
+
+发布时间：2023-09-18 02:04:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PullStreamTaskInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#PullStreamTaskInfo)
+
+	* 新增成员：BackupToUrl
+
+	* <font color="#dd0000">**修改成员**：</font>RecordTemplateId
+
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 10 次发布
+
+发布时间：2023-09-18 02:21:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCommand](http://document.tencentcloudapi.woa.com/document/product/1340/52684)
+
+	* 新增入参：DefaultParameterConfs
+
+* [ModifyCommand](http://document.tencentcloudapi.woa.com/document/product/1340/52677)
+
+	* 新增入参：DefaultParameterConfs
+
+* [RunCommand](http://document.tencentcloudapi.woa.com/document/product/1340/52676)
+
+	* 新增入参：DefaultParameterConfs
+
+
+
+
+## TDSQL PostgreSQL 版(tbase) 版本：2019-09-19
+
+### 第 2 次发布
+
+发布时间：2023-09-18 02:22:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateInstanceHour
+* ModifyInstanceHour
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 38 次发布
+
+发布时间：2023-09-18 02:37:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/81949)
+* [DeleteCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/81948)
+* [DescribeCloudNativeAPIGatewayCertificateDetails](http://document.tencentcloudapi.woa.com/document/product/1364/81947)
+* [DescribeCloudNativeAPIGatewayCertificates](http://document.tencentcloudapi.woa.com/document/product/1364/81946)
+* [UpdateCloudNativeAPIGatewayCertificateInfo](http://document.tencentcloudapi.woa.com/document/product/1364/81945)
+
+新增数据结构：
+
+* [CertificateInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CertificateInfo)
+* [KongCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificate)
+* [KongCertificatesList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesList)
+* [KongCertificatesPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongCertificatesPreview)
+
+
+
 # Release 3.0.851.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
