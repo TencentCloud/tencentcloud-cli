@@ -11,13 +11,15 @@ tccli tts CreateTtsTask --cli-unfold-argument  \
     --Speed 0 \
     --ProjectId 0 \
     --ModelType 1 \
-    --VoiceType 101001 \
+    --VoiceType 301001 \
     --PrimaryLanguage 1 \
     --SampleRate 16000 \
     --Codec mp3 \
     --CallbackUrl http://www.callback.com/tts_call \
     --EnableSubtitle True \
-    --VoiceoverDialogueSplit False
+    --VoiceoverDialogueSplit False \
+    --EmotionCategory neutral \
+    --EmotionIntensity 100
 ```
 
 Output: 

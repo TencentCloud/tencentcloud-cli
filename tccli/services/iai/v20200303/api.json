@@ -552,7 +552,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "ImageA",
@@ -561,7 +561,7 @@
         },
         {
           "disabled": false,
-          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "ImageB",

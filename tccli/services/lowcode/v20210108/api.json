@@ -960,7 +960,7 @@
           "example": "MyApp",
           "member": "string",
           "name": "Title",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -970,7 +970,7 @@
           "example": "1",
           "member": "int64",
           "name": "EditStatusUse",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -980,7 +980,7 @@
           "example": "1",
           "member": "int64",
           "name": "PreviewStatusUse",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -990,7 +990,7 @@
           "example": "1",
           "member": "int64",
           "name": "OnlineStatusUse",
-          "output_required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },

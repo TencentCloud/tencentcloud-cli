@@ -295,11 +295,11 @@
       "status": "online"
     },
     "DescribeBlackWhiteIpList": {
-      "document": "获取DDoS防护的IP黑白名单",
+      "document": "接口变更\n\n获取DDoS防护的IP黑白名单",
       "input": "DescribeBlackWhiteIpListRequest",
       "name": "获取DDoS防护的IP黑白名单",
       "output": "DescribeBlackWhiteIpListResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCCLevelList": {
       "document": "获取边界防护CC防护等级列表",
@@ -463,11 +463,11 @@
       "status": "online"
     },
     "DescribeListProtectThresholdConfig": {
-      "document": "获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等",
+      "document": "接口变更\n\n获取防护阈值配置列表，包括DDoS的AI、等级、CC阈值开关等",
       "input": "DescribeListProtectThresholdConfigRequest",
       "name": "获取防护阈值配置列表",
       "output": "DescribeListProtectThresholdConfigResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeListProtocolBlockConfig": {
       "document": "获取DDoS防护的协议封禁配置列表",

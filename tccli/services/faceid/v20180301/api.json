@@ -98,6 +98,13 @@
       "output": "DeleteSDKRecordResponse",
       "status": "online"
     },
+    "DetectAIFakeFaces": {
+      "document": "提供对人脸图片/视频的AI合成、翻拍、水印等攻击痕迹的检测，增强图片/视频防伪能力",
+      "input": "DetectAIFakeFacesRequest",
+      "name": "AI人脸防护盾",
+      "output": "DetectAIFakeFacesResponse",
+      "status": "online"
+    },
     "DetectAuth": {
       "document": "每次调用人脸核身SaaS化服务前，需先调用本接口获取BizToken，用来串联核身流程，在验证完成后，用于获取验证结果信息。",
       "input": "DetectAuthRequest",
@@ -636,6 +643,22 @@
         }
       ],
       "type": "object"
+    },
+    "AttackRiskDetail": {
+      "document": "疑似攻击风险详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "疑似的攻击痕迹类型\nSuspectedSpoofingAttack：翻拍攻击\nSuspectedSynthesisImage：疑似合成图片\nSuspectedSynthesisVideo：疑似合成视频\nSuspectedeAnomalyAttack：人脸特征疑似非真人\nSuspectedAdversarialAttack：疑似对抗样本攻击\nSuspectedBlackIndustry：疑似黑产攻击\nSuspectedWatermark：疑似存在水印\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SuspectedWatermark",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BankCard2EVerificationRequest": {
       "document": "BankCard2EVerification请求参数结构体",
@@ -1701,6 +1724,62 @@
     "DeleteSDKRecordResponse": {
       "document": "DeleteSDKRecord返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectAIFakeFacesRequest": {
+      "document": "DetectAIFakeFaces请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "传入需要进行检测的带有人脸的图片或视频，使用base64编码的形式",
+          "example": "无",
+          "member": "string",
+          "name": "FaceInput",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传入的类型\n1- 传入的是图片类型\n2- 传入的是视频类型\n其他 - 返回错误码InvalidParameter",
+          "example": "true",
+          "member": "int64",
+          "name": "FaceInputType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetectAIFakeFacesResponse": {
+      "document": "DetectAIFakeFaces返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "检测到的图片是否存在攻击：\nLow：无攻击风险\nMid：中度疑似攻击\nHigh：高度疑似攻击",
+          "example": "Mid",
+          "member": "string",
+          "name": "AttackRiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "检测到疑似的攻击痕迹列表\n说明：未检测到攻击痕迹时，返回空数组\n此出参仅作为结果判断的参考，实际应用仍建议使用AttackRiskLevel的结果。",
+          "example": "[{ Type:\"SuspectedSpoofingAttack\" }]",
+          "member": "AttackRiskDetail",
+          "name": "AttackRiskDetailList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5678,11 +5757,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5692,7 +5771,7 @@
           "example": "移动",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5702,7 +5781,7 @@
           "example": "业务结果描述。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5762,11 +5841,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5776,7 +5855,7 @@
           "example": "电信",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5786,7 +5865,7 @@
           "example": "比对一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5846,11 +5925,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5860,7 +5939,7 @@
           "example": "联通",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5870,7 +5949,7 @@
           "example": "比对一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

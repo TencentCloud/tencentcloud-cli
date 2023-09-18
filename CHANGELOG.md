@@ -1,3 +1,324 @@
+# Release 3.0.853.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 47 次发布
+
+发布时间：2023-09-19 01:06:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeBlackWhiteIpList
+* DescribeListProtectThresholdConfig
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 48 次发布
+
+发布时间：2023-09-19 01:10:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Target](http://document.tencentcloudapi.woa.com/document/product/214/30694#Target)
+
+	* 新增成员：Tag
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 36 次发布
+
+发布时间：2023-09-19 01:15:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/81950)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 87 次发布
+
+发布时间：2023-09-19 01:15:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelCreateBatchSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/81951)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 38 次发布
+
+发布时间：2023-09-19 01:15:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DetectAIFakeFaces](http://document.tencentcloudapi.woa.com/document/product/1007/81952)
+
+新增数据结构：
+
+* [AttackRiskDetail](http://document.tencentcloudapi.woa.com/document/product/1007/41958#AttackRiskDetail)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 37 次发布
+
+发布时间：2023-09-19 01:19:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/862/37614)
+
+	* 新增出参：LiveScheduleTask
+
+* [EditMedia](http://document.tencentcloudapi.woa.com/document/product/862/43010)
+
+	* 新增入参：ComposeConfig
+
+* [ProcessLiveStream](http://document.tencentcloudapi.woa.com/document/product/862/39227)
+
+	* 新增入参：ScheduleId
+
+
+新增数据结构：
+
+* [ComposeAudioItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeAudioItem)
+* [ComposeAudioOperation](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeAudioOperation)
+* [ComposeAudioStream](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeAudioStream)
+* [ComposeCanvas](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeCanvas)
+* [ComposeEmptyItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeEmptyItem)
+* [ComposeImageItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeImageItem)
+* [ComposeImageOperation](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeImageOperation)
+* [ComposeMediaConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeMediaConfig)
+* [ComposeMediaItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeMediaItem)
+* [ComposeMediaTrack](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeMediaTrack)
+* [ComposeSourceMedia](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeSourceMedia)
+* [ComposeStyles](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeStyles)
+* [ComposeSubtitleItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeSubtitleItem)
+* [ComposeSubtitleStyle](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeSubtitleStyle)
+* [ComposeTargetInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeTargetInfo)
+* [ComposeTrackTime](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeTrackTime)
+* [ComposeTransitionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeTransitionItem)
+* [ComposeTransitionOperation](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeTransitionOperation)
+* [ComposeVideoItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeVideoItem)
+* [ComposeVideoStream](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeVideoStream)
+* [LiveActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveActivityResItem)
+* [LiveActivityResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveActivityResult)
+* [LiveRecordFile](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveRecordFile)
+* [LiveRecordResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveRecordResult)
+* [LiveRecordTaskInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveRecordTaskInput)
+* [LiveScheduleLiveRecordTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveScheduleLiveRecordTaskResult)
+* [LiveScheduleTask](http://document.tencentcloudapi.woa.com/document/product/862/37615#LiveScheduleTask)
+
+修改数据结构：
+
+* [ActivityResItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#ActivityResItem)
+
+	* <font color="#dd0000">**修改成员**：</font>SnapshotByTimeOffsetTask
+
+* [AiRecognitionTaskAsrFullTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskAsrFullTextResultOutput)
+
+* [AiRecognitionTaskTransTextResultOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextResultOutput)
+
+	* <font color="#dd0000">**删除成员**：</font>OutputStorage
+
+* [AudioTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Bitrate
+
+* [AudioTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#AudioTemplateInfoForUpdate)
+
+	* <font color="#dd0000">**修改成员**：</font>Bitrate
+
+* [EditMediaFileInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#EditMediaFileInfo)
+
+	* 新增成员：Id
+
+* [MediaMetaData](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaMetaData)
+
+	* 新增成员：Md5
+
+* [MediaProcessTaskSampleSnapshotResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSampleSnapshotResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime
+
+* [MediaProcessTaskSnapshotByTimeOffsetResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaProcessTaskSnapshotByTimeOffsetResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime, Progress
+
+* [ScheduleRecognitionTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleRecognitionTaskResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime
+
+* [ScheduleReviewTaskResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#ScheduleReviewTaskResult)
+
+	* <font color="#dd0000">**修改成员**：</font>BeginProcessTime, FinishTime
+
+* [SchedulesInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#SchedulesInfo)
+
+	* 新增成员：Type
+
+* [TEHDConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#TEHDConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxVideoBitrate
+
+* [TEHDConfigForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#TEHDConfigForUpdate)
+
+	* <font color="#dd0000">**修改成员**：</font>MaxVideoBitrate
+
+* [VideoTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#VideoTemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Fps, Bitrate
+
+* [VideoTemplateInfoForUpdate](http://document.tencentcloudapi.woa.com/document/product/862/37615#VideoTemplateInfoForUpdate)
+
+	* <font color="#dd0000">**修改成员**：</font>Fps, Bitrate
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 26 次发布
+
+发布时间：2023-09-19 01:19:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateOrganization](http://document.tencentcloudapi.woa.com/document/product/850/81954)
+* [DeleteOrganization](http://document.tencentcloudapi.woa.com/document/product/850/81953)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 14 次发布
+
+发布时间：2023-09-19 01:20:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AddSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81956)
+* [DeleteSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81955)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 65 次发布
+
+发布时间：2023-09-19 01:23:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQPublicAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/81959)
+* [ModifyPublicNetworkAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/81957)
+* [SetRocketMQPublicAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/81958)
+
+新增数据结构：
+
+* [PublicAccessRule](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PublicAccessRule)
+
+
+
+## 语音合成(tts) 版本：2019-08-23
+
+### 第 8 次发布
+
+发布时间：2023-09-19 01:26:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTtsTask](http://document.tencentcloudapi.woa.com/document/product/1073/57373)
+
+	* 新增入参：EmotionCategory, EmotionIntensity
+
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 6 次发布
+
+发布时间：2023-09-19 01:27:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDeviceList](http://document.tencentcloudapi.woa.com/document/product/1734/81813)
+
+	* 新增入参：GroupIdSet
+
+
+修改数据结构：
+
+* [DeviceDataInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DeviceDataInfo)
+
+	* 新增成员：GroupInfo
+
+
+
+
 # Release 3.0.852.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

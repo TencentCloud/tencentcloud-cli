@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AddSpecifyPrivateZoneVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxx\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\",\n            \"Uin\": \"334345\",\n            \"VpcName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "追加与私有域关联的vpc"
+      }
+    ],
     "CreatePrivateDNSAccount": [
       {
         "document": "",
@@ -78,6 +86,14 @@
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrivateZoneRecord\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-xxxxxx\",\n    \"RecordIdSet\": [\n        \"10001\",\n        \"20201\",\n        \"33401\",\n        \"11111\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5cd964e2-b5e6-8a35-9ce5a1085860c845\"\n    }\n}",
         "title": "删除私有域解析记录-批量"
+      }
+    ],
+    "DeleteSpecifyPrivateZoneVpc": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-gangzhou\",\n            \"Uin\": \"888774747\",\n            \"VpcName\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除私有域关联的VPC"
       }
     ],
     "DescribeAccountVpcList": [

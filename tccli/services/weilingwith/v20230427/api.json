@@ -3587,6 +3587,15 @@
           "name": "Field",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "分组id列表，非必填",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "GroupIdSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6145,6 +6154,16 @@
           "name": "FieldList",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx/xx/xx",
+          "member": "string",
+          "name": "GroupInfo",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
