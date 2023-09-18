@@ -2,16 +2,16 @@
   "actions": {
     "BindEmployeeUserIdWithClientOpenId": [
       {
-        "document": "传入OpenId",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"Channel\": \"INTEGRATE\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"*yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s166521xxxx8774974\",\n        \"Status\": 1\n    }\n}",
-        "title": "示例1"
-      },
-      {
-        "document": "传入UserId",
+        "document": "传入UserId和OpenId，绑定成功。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQxx2u1\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user2\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1665xxxxx74024539\",\n        \"Status\": 1\n    }\n}",
-        "title": "示例2"
+        "title": "员工Userid与客户系统Openid绑定"
+      },
+      {
+        "document": "调用此接口时，请确保用户ID参数未经过绑定，否则接口将返回错误信息。以传入UserId已绑定为例，接口提示不需重新绑定。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQxx2u1\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该userId已绑定该openId，无需重新绑定\"\n        },\n        \"RequestId\": \"5116xxxx-xxxx-xxxx-xxxx-xxxx5f02877b\"\n    }\n}",
+        "title": "错误示例-重复绑定"
       }
     ],
     "CancelFlow": [
@@ -342,24 +342,48 @@
     ],
     "CreateIntegrationDepartment": [
       {
-        "document": "创建部门",
+        "document": "创建部门，指定父部门ID，部门被创建至父部门节点下。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc************QZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"ParentDeptId\": \"yDwgIUUckp1g**********E8xOm12b9\",\n    \"DeptOpenId\": \"open_dept2\",\n    \"OrderNo\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"DeptId\": \"yDwgIUUckp1g********E8xOm1567\",\n        \"RequestId\": \"s1679*****21175\"\n    }\n}",
         "title": "创建部门"
+      },
+      {
+        "document": "创建部门，不指定父部门ID，部门被创建至根部门节点下。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc************QZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"DeptOpenId\": \"open_dept2\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeptId\": \"yDwgIUUckp1g********E8xOm1567\",\n        \"RequestId\": \"s1679*****21175\"\n    }\n}",
+        "title": "创建部门-不指定父部门ID"
+      },
+      {
+        "document": "创建部门，同时指定第三方平台与电子签父部门ID，系统优先使用电子签平台部门ID。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc************QZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"ParentDeptId\": \"yDwgIUUckp1g**********E8xOm12b9\",\n    \"ParentDeptOpenId\": \"dept_1\",\n    \"DeptOpenId\": \"open_dept2\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"DeptId\": \"yDwgIUUckp1g********E8xOm1567\",\n        \"RequestId\": \"s1679*****21175\"\n    }\n}",
+        "title": "创建部门-同时指定第三方平台与电子签父部门ID"
+      },
+      {
+        "document": "调用此接口时，需要按照入参描述进行相应的设置，以确保参数的合法性。如果参数设置不合法，接口将返回错误信息。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc************QZDRuD\"\n    },\n    \"DeptName\": \"运营部11111111111111111111111111111111111111111111111111111\",\n    \"ParentDeptId\": \"yDwgIUUckp1g**********E8xOm12b9\",\n    \"DeptOpenId\": \"open_dept2\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"部门名称请控制在50个字符以内\"\n        },\n        \"RequestId\": \"914axxxx-xxxx-xxxx-xxxx-xxxxxxxx70123\"\n    }\n}",
+        "title": "错误示例-参数不合法"
       }
     ],
     "CreateIntegrationEmployees": [
       {
-        "document": "创建企微员工",
+        "document": "创建企微企业员工，只需传入WeworkOpenId参数即可。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"WeworkOpenId\": \"f****f\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"\",\n                    \"Mobile\": \"\",\n                    \"Note\": \"\",\n                    \"UserId\": \"yDRGJ******wG5veA\",\n                    \"WeworkOpenId\": \"f****f\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
-        "title": "创建企微员工"
+        "title": "创建员工-企微员工"
       },
       {
-        "document": "创建非企微员工",
+        "document": "创建非企微企业的员工，传入必填参数即可。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"13545***901\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"1***********7\",\n                    \"Note\": \"\",\n                    \"UserId\": \"*******\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
-        "title": "创建 非企微员工"
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13545***901\",\n                    \"Note\": \"\",\n                    \"UserId\": \"*******\"\n                }\n            ]\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
+        "title": "创建员工-非企微员工"
+      },
+      {
+        "document": "调用此接口时，需要按照入参描述进行相应的设置，以确保参数的合法性。如果参数设置不正确，会返回创建失败结果及原因。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三（广东）\",\n            \"Mobile\": \"1***********7\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三（广东）\",\n                    \"Mobile\": \"1***********7\",\n                    \"Reason\": \"参数错误,姓名不符合规范,请修改后重试\",\n                    \"WeworkOpenId\": \"\"\n                }\n            ],\n            \"SuccessEmployeeData\": []\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
+        "title": "错误示例-入参不合法"
       }
     ],
     "CreateIntegrationRole": [
@@ -606,18 +630,36 @@
     ],
     "DeleteIntegrationDepartment": [
       {
-        "document": "删除部门",
+        "document": "删除部门，并设置了交接部门。该部门的数据将被交接至对应部门下。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc********QZDRuD\"\n    },\n    \"DeptId\": \"yDwgIUUckp1g********E8xOm12b9\",\n    \"ReceiveDeptId\": \"yDRIoUUgyg********SXSVVSJ1z\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1679******21175\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f94cxxxx-xxxx-xxxx-xxxx-xxxxxxxxb420\"\n    }\n}",
         "title": "删除部门"
+      },
+      {
+        "document": "调用此接口前，需确保用户拥有“编辑组织架构”权限。否则接口将返回错误信息。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc********QZDRuE\"\n    },\n    \"DeptId\": \"yDwgIUUckp1g********E8xOm12b9\",\n    \"ReceiveDeptId\": \"yDRIoUUgyg********SXSVVSJ1z\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作（编辑组织架构）\"\n        },\n        \"RequestId\": \"f94cxxxx-xxxx-xxxx-xxxx-xxxxxxxxb420\"\n    }\n}",
+        "title": "错误示例-未授权操作"
       }
     ],
     "DeleteIntegrationEmployees": [
       {
-        "document": "删除员工，支持离职交接",
+        "document": "删除员工，不设置交接人，员工将被直接移除。\n",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"OpenId\": \"open123\",\n                    \"Reason\": \"员工不存在\",\n                    \"UserId\": \"ywksdfisjfks***023023df\"\n                }\n            ],\n            \"SuccessEmployeeData\": [\n                {\n                    \"Mobile\": \"133*****1234\",\n                    \"UserId\": \"ywklsjf*****9shdfdsk\",\n                    \"DisplayName\": \"张*三\"\n                }\n            ]\n        },\n        \"RequestId\": \"s1290192***20323023\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13500000000\",\n                    \"UserId\": \"yDRt******************BKpnZs\"\n                }\n            ]\n        },\n        \"RequestId\": \"ee79xxxx-xxxx-xxxx-xxxx-xxxx69233c6c\"\n    }\n}",
         "title": "删除员工"
+      },
+      {
+        "document": "被删除员工存在待处理合同，且设置了交接人ReceiveUserId，调用此接口时，会先进行合同交接，然后删除员工。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxb******************MHc55R\"\n    },\n    \"Employees\": [\n        {\n            \"OpenId\": \"open123\",\n            \"ReceiveUserId\": \"yDRC******************vjoimj\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三\",\n                    \"Mobile\": \"13500000000\",\n                    \"UserId\": \"yDRt******************BKpnZs\"\n                }\n            ]\n        },\n        \"RequestId\": \"ee79xxxx-xxxx-xxxx-xxxx-xxxx69233c6c\"\n    }\n}",
+        "title": "删除员工，并设置交接人"
+      },
+      {
+        "document": "调用此接口时，若出现异常删除失败，员工信息及原因将会被返回。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxb******************MHc55R\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\": \"yDRt******************BKpnZs\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeleteEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"OpenId\": \"\",\n                    \"Reason\": \"员工不属于当前企业\",\n                    \"UserId\": \"yDRt******************BKpnZs\"\n                }\n            ],\n            \"SuccessEmployeeData\": []\n        },\n        \"RequestId\": \"ee79xxxx-xxxx-xxxx-xxxx-xxxx69233c6c\"\n    }\n}",
+        "title": "错误示例-员工不属于当前企业"
       }
     ],
     "DeleteIntegrationRoleUsers": [
@@ -730,30 +772,60 @@
     ],
     "DescribeIntegrationDepartments": [
       {
-        "document": "查询部门-查询单个部门",
+        "document": "适用于需要查询指定部门信息，且不需要子部门信息的场景。\n1. 设置查询类型QueryType为0表示查询单个部门节点；\n2. 设置DeptId表示通过部门ID查询相关部门信息。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcX******XQZDRuD\"\n    },\n    \"QueryType\": 0,\n    \"DeptId\": \"yDwgIUUckp1g******E8xOm12b9\"\n}",
         "output": "{\n    \"Response\": {\n        \"Departments\": [\n            {\n                \"DeptId\": \"yDwgIUUckp1g*****E8xOm12b9\",\n                \"DeptName\": \"测试企业\",\n                \"DeptOpenId\": \"open_dept1\",\n                \"OrderNo\": 2,\n                \"ParentDeptId\": \"yDwgIUUckp1g******E8xOm1221\"\n            }\n        ],\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
-        "title": "查询部门-查询单个部门"
+        "title": "查询单个部门信息"
       },
       {
-        "document": "查询部门-查询当前部门和一级子部门",
+        "document": "适用于需要查询指定部门及其一级子部门信息的场景。\n1. 设置查询类型QueryType为1表示查询部门节点及一级子部门节点；\n2. 设置DeptId表示通过部门ID查询相关部门信息。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc********QZDRuD\"\n    },\n    \"QueryType\": 1,\n    \"DeptId\": \"yDwgIUUckp1g******E8xOm12b9\"\n}",
         "output": "{\n    \"Response\": {\n        \"Departments\": [\n            {\n                \"DeptId\": \"yDwgIUUckp1g********E8xOm12b9\",\n                \"DeptName\": \"测试企业\",\n                \"DeptOpenId\": \"open_dept1\",\n                \"OrderNo\": 2,\n                \"ParentDeptId\": \"yDwgIUUckp1g********E8xOm1221\"\n            },\n            {\n                \"DeptId\": \"yDwgIUUckp1g********E8xOm5679\",\n                \"DeptName\": \"子部门 1\",\n                \"DeptOpenId\": \"open_dept_12\",\n                \"OrderNo\": 3,\n                \"ParentDeptId\": \"yDwgIUUckp1g*******E8xOm12b9\"\n            },\n            {\n                \"DeptId\": \"yDwgIU2331g********E8xOm12n9\",\n                \"DeptName\": \"测试部门 2\",\n                \"DeptOpenId\": \"open_dept_13\",\n                \"OrderNo\": 2,\n                \"ParentDeptId\": \"yDwgIUUckp1g********E8xOm12b9\"\n            }\n        ],\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
-        "title": "查询部门-查询当前部门和一级子部门"
+        "title": "查询当前部门和一级子部门信息"
+      },
+      {
+        "document": "适用于调用方已获取客户系统部门ID的场景。通过设置DeptOpenId参数查询部门信息。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcX******XQZDRuD\"\n    },\n    \"QueryType\": 0,\n    \"DeptOpenId\": \"open_dept1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Departments\": [\n            {\n                \"DeptId\": \"yDwgIUUckp1g*****E8xOm12b9\",\n                \"DeptName\": \"测试企业\",\n                \"DeptOpenId\": \"open_dept1\",\n                \"OrderNo\": 2,\n                \"ParentDeptId\": \"yDwgIUUckp1g******E8xOm1221\"\n            }\n        ],\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
+        "title": "查询部门信息（根据客户系统部门ID）"
+      },
+      {
+        "document": "当调用方同时设置了部门DeptId和客户系统部门DeptOpenId时，系统优先使用DeptId查询部门信息，DeptOpenId不生效。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcX******XQZDRuD\"\n    },\n    \"QueryType\": 0,\n    \"DeptId\": \"yDwgIUUckp1g*****E8xOm12b9\",\n    \"DeptOpenId\": \"open_dept2\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Departments\": [\n            {\n                \"DeptId\": \"yDwgIUUckp1g*****E8xOm12b9\",\n                \"DeptName\": \"测试企业\",\n                \"DeptOpenId\": \"open_dept1\",\n                \"OrderNo\": 2,\n                \"ParentDeptId\": \"yDwgIUUckp1g******E8xOm1221\"\n            }\n        ],\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
+        "title": "查询部门信息（系统优先使用部门ID查询）"
+      },
+      {
+        "document": "当部门DeptId和客户系统部门DeptOpenId都未设置时，系统默认返回根部门节点信息。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcX******XQZDRuD\"\n    },\n    \"QueryType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Departments\": [\n            {\n                \"DeptId\": \"yDwgIUUckp1g*****E8xOm12b9\",\n                \"DeptName\": \"测试企业\",\n                \"DeptOpenId\": \"open_dept1\",\n                \"OrderNo\": 0,\n                \"ParentDeptId\": \"0\"\n            }\n        ],\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
+        "title": "查询部门信息（系统默认返回根部门节点信息）"
+      },
+      {
+        "document": "设置了非法的部门查询类型QueryType，查询失败。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationDepartments\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcX******XQZDRuD\"\n    },\n    \"QueryType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"部门查询类型不存在，请核对参数\"\n        },\n        \"RequestId\": \"s168603******44722\"\n    }\n}",
+        "title": "错误示例-部门查询类型不存在"
       }
     ],
     "DescribeIntegrationEmployees": [
       {
-        "document": "查询员工列表",
+        "document": "查询已实名员工列表\n1. Filter参数Key设置为\"Status\";\n2. Filter参数Values设置为\"IsVerified\"，表示查询已实名员工；\n3. 设置Limit和Offset参数，从首页开始，每页查询20条数据返回。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234********************678901\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"Status\",\n            \"Values\": [\n                \"IsVerified\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Employees\": [\n            {\n                \"CreatedOn\": 1658114069,\n                \"Department\": {\n                    \"DepartmentId\": \"dp**********************155f2\",\n                    \"DepartmentName\": \"**企业\"\n                },\n                \"DisplayName\": \"**\",\n                \"Email\": \"\",\n                \"Mobile\": \"123****4567\",\n                \"OpenId\": \"\",\n                \"Roles\": [\n                    {\n                        \"RoleId\": \"ea4ab3******************a6902\",\n                        \"RoleName\": \"法人\"\n                    },\n                    {\n                        \"RoleId\": \"4fcbf3******************ea6c63\",\n                        \"RoleName\": \"超级管理员\"\n                    },\n                    {\n                        \"RoleId\": \"9b7d******************cf8e9\",\n                        \"RoleName\": \"业务员\"\n                    },\n                    {\n                        \"RoleId\": \"4dff1******************10b\",\n                        \"RoleName\": \"企业员工\"\n                    }\n                ],\n                \"UserId\": \"yDRt******************BKpnZs\",\n                \"Verified\": true,\n                \"VerifiedOn\": 1658114065,\n                \"QuiteJob\": 0,\n                \"ReceiveOpenId\": \"\",\n                \"ReceiveUserId\": \"\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1663******************195\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "查询员工列表"
+        "output": "{\n    \"Response\": {\n        \"Employees\": [\n            {\n                \"CreatedOn\": 1658114069,\n                \"Department\": {\n                    \"DepartmentId\": \"dp**********************155f2\",\n                    \"DepartmentName\": \"测试企业\"\n                },\n                \"DisplayName\": \"张三\",\n                \"Email\": \"\",\n                \"Mobile\": \"13300001233\",\n                \"OpenId\": \"\",\n                \"QuiteJob\": 0,\n                \"ReceiveOpenId\": \"\",\n                \"ReceiveUserId\": \"\",\n                \"Roles\": [\n                    {\n                        \"RoleId\": \"ea4ab3******************a6902\",\n                        \"RoleName\": \"法人\"\n                    },\n                    {\n                        \"RoleId\": \"9b7d******************cf8e9\",\n                        \"RoleName\": \"业务员\"\n                    },\n                    {\n                        \"RoleId\": \"4dff1******************10b\",\n                        \"RoleName\": \"企业员工\"\n                    }\n                ],\n                \"UserId\": \"yDRt******************BKpnZs\",\n                \"Verified\": true,\n                \"VerifiedOn\": 1658114065,\n                \"WeworkOpenId\": \"\"\n            },\n            {\n                \"CreatedOn\": 1658114000,\n                \"Department\": {\n                    \"DepartmentId\": \"dp**********************155f2\",\n                    \"DepartmentName\": \"测试企业\"\n                },\n                \"DisplayName\": \"李四\",\n                \"Email\": \"\",\n                \"Mobile\": \"13500001234\",\n                \"OpenId\": \"\",\n                \"QuiteJob\": 0,\n                \"ReceiveOpenId\": \"\",\n                \"ReceiveUserId\": \"\",\n                \"Roles\": [\n                    {\n                        \"RoleId\": \"4fcbf3******************ea6c63\",\n                        \"RoleName\": \"超级管理员\"\n                    }\n                ],\n                \"UserId\": \"yDwJ******************BGQyov\",\n                \"Verified\": true,\n                \"VerifiedOn\": 1658114066,\n                \"WeworkOpenId\": \"\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1663******************195\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询员工列表（查询已实名员工列表）"
       },
       {
-        "document": "根据企微账号查询员工",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234********************678901\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"UserWeWorkOpenId\",\n            \"Values\": [\n                \"fxxxxxxxf\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Employees\": [\n            {\n                \"CreatedOn\": 1658114069,\n                \"Department\": {\n                    \"DepartmentId\": \"dp**********************155f2\",\n                    \"DepartmentName\": \"**企业\"\n                },\n                \"DisplayName\": \"**\",\n                \"Email\": \"\",\n                \"Mobile\": \"123****4567\",\n                \"OpenId\": \"\",\n                \"Roles\": [\n                    {\n                        \"RoleId\": \"ea4ab3******************a6902\",\n                        \"RoleName\": \"法人\"\n                    },\n                    {\n                        \"RoleId\": \"4fcbf3******************ea6c63\",\n                        \"RoleName\": \"超级管理员\"\n                    },\n                    {\n                        \"RoleId\": \"9b7d******************cf8e9\",\n                        \"RoleName\": \"业务员\"\n                    },\n                    {\n                        \"RoleId\": \"4dff1******************10b\",\n                        \"RoleName\": \"企业员工\"\n                    }\n                ],\n                \"UserId\": \"yDRt******************BKpnZs\",\n                \"Verified\": true,\n                \"VerifiedOn\": 1658114065,\n                \"WeworkOpenId\": \"fxxxxxxxf\",\n                \"QuiteJob\": 0,\n                \"ReceiveOpenId\": \"\",\n                \"ReceiveUserId\": \"\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1663******************195\",\n        \"TotalCount\": 1\n    }\n}",
-        "title": "根据企微账号查询员工"
+        "document": "接口支持指定ID查询员工，此处以企微账号ID为例查询指定员工\n1. Filter参数Key设置为\"UserWeWorkOpenId\";\n2. Filter参数Values设置为具体的企微账号ID；\n3. 设置Limit和Offset参数，从首页开始，每页查询20条数据返回。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234********************678901\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"UserWeWorkOpenId\",\n            \"Values\": [\n                \"axxxxxxxa\"\n            ]\n        }\n    ],\n    \"Limit\": 20,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Employees\": [\n            {\n                \"CreatedOn\": 1658114069,\n                \"Department\": {\n                    \"DepartmentId\": \"dp**********************155f2\",\n                    \"DepartmentName\": \"**企业\"\n                },\n                \"DisplayName\": \"**\",\n                \"Email\": \"\",\n                \"Mobile\": \"123****4567\",\n                \"OpenId\": \"\",\n                \"QuiteJob\": 0,\n                \"ReceiveOpenId\": \"\",\n                \"ReceiveUserId\": \"\",\n                \"Roles\": [\n                    {\n                        \"RoleId\": \"ea4ab3******************a6902\",\n                        \"RoleName\": \"法人\"\n                    },\n                    {\n                        \"RoleId\": \"4fcbf3******************ea6c63\",\n                        \"RoleName\": \"超级管理员\"\n                    },\n                    {\n                        \"RoleId\": \"9b7d******************cf8e9\",\n                        \"RoleName\": \"业务员\"\n                    },\n                    {\n                        \"RoleId\": \"4dff1******************10b\",\n                        \"RoleName\": \"企业员工\"\n                    }\n                ],\n                \"UserId\": \"yDRt******************BKpnZs\",\n                \"Verified\": true,\n                \"VerifiedOn\": 1658114065,\n                \"WeworkOpenId\": \"axxxxxxxa\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1663******************195\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询员工列表（查询指定ID的员工）"
+      },
+      {
+        "document": "在使用此接口时，需要按照入参描述进行相应的设置，以确保参数的合法性。如果参数设置不合法，此接口将返回错误信息。\n1. 将Limit参数设置为21，超过最大值20。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234********************678901\"\n    },\n    \"Filters\": [\n        {\n            \"Key\": \"Status\",\n            \"Values\": [\n                \"IsVerified\"\n            ]\n        }\n    ],\n    \"Limit\": 21,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"参数Limit不正确\"\n        },\n        \"RequestId\": \"3b506b8a-xxxx-xxxx-xxxx-xxxxx9eaaadd\"\n    }\n}",
+        "title": "错误示例-参数不合法"
       }
     ],
     "DescribeIntegrationRoles": [
@@ -779,9 +851,15 @@
     "DescribeOrganizationGroupOrganizations": [
       {
         "document": "查询集团下所有成员企业",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeOrganizationGroupOrganizations\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y******************g\"\n    },\n    \"Export\": false,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"ActivatedTotal\": 1,\n        \"ExportUrl\": \"\",\n        \"JoinedTotal\": 11,\n        \"List\": [\n            {\n                \"AdminInfo\": {\n                    \"Mobile\": \"150****7992\",\n                    \"Name\": \"王*新\"\n                },\n                \"Alias\": \"\",\n                \"FlowEngineEnable\": true,\n                \"IdCardNumber\": \"9***************F\",\n                \"IsMainOrganization\": false,\n                \"JoinTime\": 1673166251,\n                \"License\": \"\",\n                \"LicenseExpireTime\": 0,\n                \"Name\": \"王*新测试企业一\",\n                \"OrganizationId\": \"y******************C\",\n                \"Status\": 2,\n                \"UpdateTime\": 1673232933\n            }\n        ],\n        \"RequestId\": \"s16753***7361364\",\n        \"Total\": 1\n    }\n}",
-        "title": "示例1"
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeOrganizationGroupOrganizations\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxbWUyKQDx7OZUuO4zjESvEkRMHc55R\"\n    },\n    \"Export\": false,\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivatedTotal\": 1,\n        \"ExportUrl\": \"\",\n        \"JoinedTotal\": 1,\n        \"List\": [\n            {\n                \"AdminInfo\": {\n                    \"Mobile\": \"150****7992\",\n                    \"Name\": \"王*新\"\n                },\n                \"Alias\": \"\",\n                \"FlowEngineEnable\": true,\n                \"IdCardNumber\": \"9***************F\",\n                \"IsMainOrganization\": false,\n                \"JoinTime\": 1673166251,\n                \"License\": \"\",\n                \"LicenseExpireTime\": 0,\n                \"Name\": \"王*新测试企业一\",\n                \"OrganizationId\": \"y******************C\",\n                \"Status\": 2,\n                \"UpdateTime\": 1673232933\n            }\n        ],\n        \"RequestId\": \"s16753***7361364\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询集团下所有成员企业"
+      },
+      {
+        "document": "查询子企业信息的时候，Limit 传了一个大于 1000 的数值，报错信息如下",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOrganizationGroupOrganizations\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxbWUyKQDx7OZUuO4zjESvEkRMHc55R\"\n    },\n    \"Limit\": 2000,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"分页大小应该大于0小于等于1000\"\n        },\n        \"RequestId\": \"s12919239kjdksfj****klsdf\"\n    }\n}",
+        "title": "错误示例：Limit 超过了限制"
       }
     ],
     "DescribeOrganizationSeals": [
@@ -852,10 +930,22 @@
     ],
     "ModifyIntegrationDepartment": [
       {
-        "document": "更新部门",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUc************QZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"DeptId\": \"yDwgIUUckp1g********E8xOm12b9\",\n    \"DeptOpenId\": \"open_dept1\",\n    \"OrderNo\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1679*******21175\"\n    }\n}",
-        "title": "更新部门"
+        "document": "更新部门ID对应部门的部门名称、客户系统部门ID和排序号。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXQZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"DeptId\": \"yDwgIUUckp1gXXXXXXXXE8xOm12b9\",\n    \"DeptOpenId\": \"open_dept1\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"072125ef-xxxx-xxxx-xxxx-xxxxxx45dab9\"\n    }\n}",
+        "title": "更新企业部门信息"
+      },
+      {
+        "document": "在使用此接口时，需要按照入参描述进行相应的设置，以确保参数的合法性。如果参数设置不合法，此接口将返回错误信息。\n1. 客户系统部门ID超过限制长度（64字符）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXQZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"DeptId\": \"yDwgIUUckp1gXXXXXXXXE8xOm12b9\",\n    \"DeptOpenId\": \"abcdefghijklmnopqrstuvwxyz-abcdefghijklmnopqrstuvwxyz-abcdefghijklmnopqrstuvwxyz\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"部门openId请控制在64个字符以内\"\n        },\n        \"RequestId\": \"072125ef-xxxx-xxxx-xxxx-xxxxxx45dab9\"\n    }\n}",
+        "title": "错误示例-参数不合法"
+      },
+      {
+        "document": "在使用此接口时，请确认入参部门ID正确无误。如果参数设置不正确，此接口将返回错误信息。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntegrationDepartment\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXQZDRuD\"\n    },\n    \"DeptName\": \"运营部\",\n    \"DeptId\": \"yDwgIUUckp1gXXXXXXXXE8xOm12b9\",\n    \"DeptOpenId\": \"1234\",\n    \"OrderNo\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.DataNotFound\",\n            \"Message\": \"父部门不存在，请核对后重试\"\n        },\n        \"RequestId\": \"072125ef-xxxx-xxxx-xxxx-xxxxxx45dab9\"\n    }\n}",
+        "title": "错误示例-数据不存在"
       }
     ],
     "ModifyIntegrationRole": [
@@ -894,24 +984,30 @@
     ],
     "UnbindEmployeeUserIdWithClientOpenId": [
       {
-        "document": "传入OpenId",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"Channel\": \"INTEGRATE\",\n        \"OpenId\": \"12345\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16653xxxxx98336866\",\n        \"Status\": 1\n    }\n}",
-        "title": "示例1"
+        "document": "传入经过绑定的员工UserId与客户系统OpenId，调用此接口解绑成功，返回值Status为1。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj\"\n    },\n    \"UserId\": \"yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy\",\n    \"OpenId\": \"open_user1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16652185xxx032958\",\n        \"Status\": 1\n    }\n}",
+        "title": "解除员工UserId与客户系统OpenId的绑定"
       },
       {
-        "document": "传入userId",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"*yDwgKUUcXXXXXXXXXXXXXXXXXXQZxxs32\"\n    },\n    \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\",\n    \"OpenId\": \"open_user1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s16652185xxx032958\",\n        \"Status\": 1\n    }\n}",
-        "title": "示例2"
+        "document": "在调用此接口时，需确保OpenId已通过调用<a href=\"https://qian.tencent.com/developers/companyApis/staffs/BindEmployeeUserIdWithClientOpenId\" target=\"_blank\">BindEmployeeUserIdWithClientOpenId</a>接口与电子签系统的UserId绑定过。",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnbindEmployeeUserIdWithClientOpenId\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUXXXXXXXXXXXX4zjEwg0vjoimj\"\n    },\n    \"UserId\": \"yDxVwUyXXXXXXXXXXXXjEyQOAgwvr4Zy\",\n    \"OpenId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"该openId并未绑定企业员工\"\n        },\n        \"RequestId\": \"dec22fb5-xxxx-xxxx-xxxx-xxxxxxc514d6\"\n    }\n}",
+        "title": "错误示例-OpenId未经过绑定"
       }
     ],
     "UpdateIntegrationEmployees": [
       {
         "document": "更新员工名称，手机号",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZDRuD\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\": \"yDwgKUUcXXXXXXXXXXXXXXXXXXQZD123\",\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"187XXXX0000\",\n            \"Email\": \"ess@qq.com\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessEmployeeData\": [\n            {\n                \"DisplayName\": \"张三\",\n                \"Mobile\": \"187****0000\",\n                \"UserId\": \"yDwgKUUcX*******QZD123\"\n            }\n        ],\n        \"FailedEmployeeData\": [],\n        \"RequestId\": \"s18mds3kjkld*****fssfsdfdsf\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\",\n            \"DisplayName\": \"张三\",\n            \"Mobile\": \"18888888888\",\n            \"Email\": \"zhangsan@qq.com\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessEmployeeData\": [\n            {\n                \"DisplayName\": \"张三\",\n                \"Mobile\": \"18888888888\",\n                \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n            }\n        ],\n        \"FailedEmployeeData\": [],\n        \"RequestId\": \"s18mds3kjkld*****fssfsdfdsf\"\n    }\n}",
         "title": "更新员工信息"
+      },
+      {
+        "document": "如果 Operator 里面的 UserId 没有对应的组织架构权限，则会报错没有 API 权限",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n\n\n{\n\t\"Operator\": {\n\t\t\"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n\t},\n\t\"Employees\": [{\n\t\t\t\"UserId\": \"yDxbWUyKQDx7OZUuO4zjESvEkRMHc55R\",\n\t\t\t\"DisplayName\": \"李四\",\n\t\t\t\"Mobile\": \"15100000000\",\n\t\t\t\"Email\": \"lisi@qq.com\"\n\t\t}\n\n\t]\n\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.NoApiAuth\",\n            \"Message\": \"没有API权限\"\n        },\n        \"RequestId\": \"s2df9ddsk*****kfjdsklfjs\"\n    }\n}",
+        "title": "错误示例：没有接口调用权限"
       }
     ],
     "UploadFiles": [

@@ -178,6 +178,24 @@
           "name": "ExtraParam",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用者企业Id(仅用于多用户)",
+          "example": "无",
+          "member": "string",
+          "name": "UserCorpId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "使用者Id(仅用于多用户)",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -335,6 +353,26 @@
           "name": "ExpireTime",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者企业Id(仅用于多用户)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "UserCorpId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用者Id(仅用于多用户)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

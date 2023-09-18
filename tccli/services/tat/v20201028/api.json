@@ -631,6 +631,15 @@
         },
         {
           "disabled": false,
+          "document": "自定义参数数组。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。",
+          "example": "[ { \"ParameterName\": \"test01\",  \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test01\"         }, {  \"ParameterName\": \"test02\", \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test02\"}     ]",
+          "member": "DefaultParameterConf",
+          "name": "DefaultParameterConfs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "为命令关联的标签，列表长度不超过10。",
           "example": "无",
           "member": "Tag",
@@ -677,7 +686,7 @@
           "example": "无",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2128,7 +2137,7 @@
         },
         {
           "disabled": false,
-          "document": "待执行命令的实例ID列表，上限100。",
+          "document": "待执行命令的实例ID列表，上限200。",
           "example": "[\"lhins-ar5wyn40\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -2201,7 +2210,7 @@
           "example": "inv-8xgjrytm",
           "member": "string",
           "name": "InvocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2460,6 +2469,15 @@
           "name": "DefaultParameters",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数数组。\n如果InvokeCommand时未提供参数取值，将使用这里的默认值进行替换。\n自定义参数最多20个。",
+          "example": "[ { \"ParameterName\": \"test01\",  \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test01\"         }, {  \"ParameterName\": \"test02\", \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test02\"}     ]",
+          "member": "DefaultParameterConf",
+          "name": "DefaultParameterConfs",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2956,7 +2974,7 @@
         },
         {
           "disabled": false,
-          "document": "待执行命令的实例ID列表，上限100。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
+          "document": "待执行命令的实例ID列表，上限200。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
@@ -3010,8 +3028,8 @@
         },
         {
           "disabled": false,
-          "document": "是否保存命令，取值范围：\n<li> True：保存\n<li> False：不保存\n默认为 False。",
-          "example": "无",
+          "document": "是否保存命令，取值范围：\n<li> true：保存\n<li> false：不保存\n默认为 false。",
+          "example": "false",
           "member": "bool",
           "name": "SaveCommand",
           "required": false,
@@ -3019,7 +3037,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n默认值：false。",
+          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n取值范围：\n<li> true：启用\n<li> false：不启用\n默认值：false。",
           "example": "false",
           "member": "bool",
           "name": "EnableParameter",
@@ -3034,6 +3052,15 @@
           "name": "DefaultParameters",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义参数数组。 如果 Parameters 未提供，将使用这里的默认值进行替换。 自定义参数最多20个。",
+          "example": "[ { \"ParameterName\": \"test01\",  \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test01\"         }, {  \"ParameterName\": \"test02\", \"ParameterValue\": \"12345\",  \"ParameterDescription\": \"for test02\"}     ]",
+          "member": "DefaultParameterConf",
+          "name": "DefaultParameterConfs",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": false,
@@ -3092,7 +3119,7 @@
           "example": "无",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3102,7 +3129,7 @@
           "example": "无",
           "member": "string",
           "name": "InvocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3202,23 +3229,23 @@
         },
         {
           "disabled": false,
-          "document": "命令执行开始时间。",
+          "document": "命令执行开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecStartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "命令执行结束时间。",
+          "document": "命令执行结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecEndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

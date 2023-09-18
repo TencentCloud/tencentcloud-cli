@@ -13879,7 +13879,7 @@
           "example": "12345",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13889,7 +13889,7 @@
           "example": "PullLivePushLive",
           "member": "string",
           "name": "SourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13899,7 +13899,7 @@
           "example": "http://test.domain/live/test.flv?txSecret=xx&txTime=xxx",
           "member": "string",
           "name": "SourceUrls",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13909,7 +13909,7 @@
           "example": "5000.livepush.qcloud.com",
           "member": "string",
           "name": "DomainName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13919,7 +13919,7 @@
           "example": "live",
           "member": "string",
           "name": "AppName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13929,7 +13929,7 @@
           "example": "teststream",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13939,7 +13939,7 @@
           "example": "secret=abc&time=F7F78AE7",
           "member": "string",
           "name": "PushArgs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13949,7 +13949,7 @@
           "example": "2021-02-24T00:00:00Z",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13959,7 +13959,7 @@
           "example": "2021-02-28T00:00:00Z",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13969,7 +13969,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13979,7 +13979,7 @@
           "example": "-1",
           "member": "int64",
           "name": "VodLoopTimes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13989,7 +13989,7 @@
           "example": "ImmediateNewSource",
           "member": "string",
           "name": "VodRefreshType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13999,7 +13999,7 @@
           "example": "2021-02-23T00:00:00Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14009,7 +14009,7 @@
           "example": "2021-02-24T10:00:00Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14019,7 +14019,7 @@
           "example": "admin",
           "member": "string",
           "name": "CreateBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14029,7 +14029,7 @@
           "example": "admin",
           "member": "string",
           "name": "UpdateBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14039,7 +14039,7 @@
           "example": "http://you.callback.url",
           "member": "string",
           "name": "CallbackUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14049,7 +14049,7 @@
           "example": "无",
           "member": "string",
           "name": "CallbackEvents",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14059,7 +14059,7 @@
           "example": "无",
           "member": "string",
           "name": "CallbackInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14069,7 +14069,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14079,7 +14079,7 @@
           "example": "enable",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14089,7 +14089,7 @@
           "example": "无",
           "member": "RecentPullInfo",
           "name": "RecentPullInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14099,7 +14099,7 @@
           "example": "直播活动任务",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14109,7 +14109,7 @@
           "example": "PullLivePushLive",
           "member": "string",
           "name": "BackupSourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14119,7 +14119,7 @@
           "example": "http://test.domain/live/test.flv?txSecret=xx&txTime=xxx",
           "member": "string",
           "name": "BackupSourceUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14129,7 +14129,7 @@
           "example": "无",
           "member": "PullPushWatermarkInfo",
           "name": "WatermarkList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14139,7 +14139,7 @@
           "example": "0",
           "member": "int64",
           "name": "VodLocalMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14149,7 +14149,17 @@
           "example": "123",
           "member": "string",
           "name": "RecordTemplateId",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "新增的推流地址。用于单任务推两路场景。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rtmp://5000.livepush.myqcloud.com/live/vinback?txSecret=6e9797ce",
+          "member": "string",
+          "name": "BackupToUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

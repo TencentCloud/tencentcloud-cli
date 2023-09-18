@@ -4951,6 +4951,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4961,6 +4962,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -4971,16 +4973,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIds",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "指定母机IP生产子机",
-          "example": "无",
-          "member": "string",
-          "name": "HostIps",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -4991,6 +4984,7 @@
           "example": "无",
           "member": "string",
           "name": "HostId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

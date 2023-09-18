@@ -9356,10 +9356,10 @@
           "disabled": false,
           "document": "要新增的设备通道（Json数组，没有新增时，不需要该字段，一次添加通道总数不超过5000个，包括组织目录下的通道数量）",
           "example": "无",
-          "member": "string",
+          "member": "ChannelInfo",
           "name": "Add",
           "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9368,7 +9368,7 @@
           "member": "string",
           "name": "Del",
           "required": false,
-          "type": "string"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9377,7 +9377,7 @@
           "member": "string",
           "name": "OrganizationId",
           "required": false,
-          "type": "string"
+          "type": "list"
         }
       ],
       "usage": "in"

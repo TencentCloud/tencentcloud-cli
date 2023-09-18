@@ -7002,7 +7002,7 @@
         {
           "disabled": false,
           "document": "字幕的唯一标识。",
-          "example": "123",
+          "example": "[\"123\"]",
           "member": "string",
           "name": "SubtitleIds",
           "required": true,
@@ -8106,7 +8106,7 @@
         {
           "disabled": false,
           "document": "事件句柄，即 [拉取事件通知](/document/product/266/33433) 接口输出参数中的 EventSet. EventHandle 字段。\n数组长度限制：16。",
-          "example": "123abc",
+          "example": "[\"123abc\"]",
           "member": "string",
           "name": "EventHandles",
           "required": true,
@@ -12437,7 +12437,7 @@
         {
           "disabled": false,
           "document": "用户所属运营商信息，Area 为 Chinese Mainland 时，取值为以下运营商信息。当 Area 为其它值时忽略 Isps 参数。\n<li>China Telecom：中国电信。 </li>\n<li>China Unicom：中国联通。 </li>\n<li>CERNET：教育网。</li>\n<li>Great Wall Broadband Network：长城宽带。</li>\n<li>China Mobile：中国移动。</li>\n<li>China Mobile Tietong：中国铁通。</li>\n<li>ISPs outside Chinese Mainland：海外运营商。</li>\n<li>Other ISPs：其他运营商。</li>",
-          "example": "[\"Chinese Mainland \"]",
+          "example": "[\"Chinese Mainland\"]",
           "member": "string",
           "name": "Isps",
           "required": false,
@@ -12538,7 +12538,7 @@
         {
           "disabled": false,
           "document": "域名列表。一次最多查询20个域名的用量数据。可以指定多个域名，查询这些域名叠加的用量数据。默认返回所有域名叠加的用量数据。",
-          "example": "无",
+          "example": "[\"myexample.com\",\"myexample2.com\"]",
           "member": "string",
           "name": "DomainNames",
           "required": false,
@@ -12556,7 +12556,7 @@
           "example": "1440",
           "member": "int64",
           "name": "DataInterval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12566,7 +12566,7 @@
           "example": "无",
           "member": "StatDataItem",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13847,7 +13847,7 @@
         {
           "disabled": false,
           "document": "媒体文件 ID 列表，N 从 0 开始取值，最大 19。",
-          "example": "[\"5285485487985271487\\n\",\"5285485487985271488\\n\"]",
+          "example": "[\"5285485487985271487\",\"5285485487985271488\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -14956,7 +14956,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedInfrequentStorage：低频存储提前删除量。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n默认值为 TotalStorage。",
+          "document": "查询的存储类型，有效值：\n<li>TotalStorage：存储总量，标准、低频、归档和深度归档存储量之和，不含提前删除量。</li>\n<li>StandardStorage：标准存储。</li>\n<li>InfrequentStorage：低频存储。</li>\n<li>ArchiveStorage：归档存储。</li>\n<li>DeepArchiveStorage：深度归档存储。</li>\n<li>DeletedInfrequentStorage：低频存储提前删除量。</li>\n<li>DeletedArchiveStorage：归档提前删除量。</li>\n<li>DeletedDeepArchiveStorage：深度归档提前删除量。\n<li>ArchiveStandardRetrieval：归档标准取回量。</li>\n<li>ArchiveExpeditedRetrieval：归档快速取回量。</li>\n<li>ArchiveBulkRetrieval：归档批量取回量。</li>\n<li>DeepArchiveStandardRetrieval：深度归档标准取回量。</li>\n<li>DeepArchiveBulkRetrieval：深度归档批量取回量。</li>\n<li>InfrequentRetrieval：低频存储取回量。</li>\n默认值为 TotalStorage。",
           "example": "StandardStorage",
           "member": "string",
           "name": "StorageType",
@@ -14984,7 +14984,7 @@
           "example": "无",
           "member": "StatDataItem",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23692,7 +23692,7 @@
         {
           "disabled": false,
           "document": "要删除的一组视频打点信息的时间偏移，单位：秒。同一个请求里，AddKeyFrameDescs 的时间偏移参数必须与 DeleteKeyFrameDescs 都不同。",
-          "example": "[\"5\"]",
+          "example": "[5]",
           "member": "float",
           "name": "DeleteKeyFrameDescs",
           "required": false,
@@ -27140,7 +27140,7 @@
         {
           "disabled": false,
           "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "无",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -27185,7 +27185,7 @@
         {
           "disabled": false,
           "document": "任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "TasksPriority",
           "required": false,
@@ -27194,7 +27194,7 @@
         {
           "disabled": false,
           "document": "任务流状态变更通知模式，可取值有 Finish，Change 和 None，不填代表 Finish。",
-          "example": "无",
+          "example": "Finish",
           "member": "string",
           "name": "TasksNotifyMode",
           "required": false,
@@ -27203,7 +27203,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "example": "SessionContext",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -27212,7 +27212,7 @@
         {
           "disabled": false,
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "无",
+          "example": "SessionId",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -27221,7 +27221,7 @@
         {
           "disabled": false,
           "document": "保留字段，特殊用途时使用。",
-          "example": "无",
+          "example": "ExtInfo",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -27239,6 +27239,7 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27967,7 +27968,7 @@
         {
           "disabled": false,
           "document": "预热的 URL 列表，单次最多指定20个 URL。",
-          "example": "[xxx/1.mp4, xxx/2.mp4]",
+          "example": "[\"xxx/1.mp4\", \"xxx/2.mp4\"]",
           "member": "string",
           "name": "Urls",
           "required": true,
@@ -30061,7 +30062,7 @@
         {
           "disabled": false,
           "document": "用于校验的 Referer 列表，最大支持20个 Referer。当 Status 取值为 Enabled 时， Referers 不能为空数组。Referer 的格式参考域名的格式。",
-          "example": "abc.test.com",
+          "example": "[\"abc.test.com\"]",
           "member": "string",
           "name": "Referers",
           "output_required": true,
@@ -30543,7 +30544,7 @@
         {
           "disabled": false,
           "document": "媒体文件唯一标识列表，最大长度：100。",
-          "example": "[5285485487985271487, 5285485487985271488]",
+          "example": "[\"5285485487985271487\", \"5285485487985271488\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -30691,7 +30692,7 @@
         {
           "disabled": false,
           "document": "审核的内容，可选值有：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>\n不填或填空数组时，默认为审核 Media。",
-          "example": "Media",
+          "example": "[\"Media\", \"Cover\"]",
           "member": "string",
           "name": "ReviewContents",
           "required": false,
@@ -31005,7 +31006,7 @@
         {
           "disabled": false,
           "document": "审核的内容，可选值：\n<li>Media：原始音视频；</li>\n<li>Cover：封面。</li>",
-          "example": "Media",
+          "example": "[\"Media\"]",
           "member": "string",
           "name": "ReviewContents",
           "output_required": true,
@@ -31334,7 +31335,7 @@
         {
           "disabled": false,
           "document": "审核类型，当 Suggestion 为 review 或 block 时有效，格式为：Form.Label。\nForm 表示违禁的形式，取值范围：\n<li>Image：画面上的人物或图标；</li>\n<li>OCR：画面上的文字；</li>\n<li>ASR：语音中的文字；</li>\n<li>Voice：声音。</li>\nLabel 表示违禁的标签，取值范围：\n<li>Porn：色情；</li>\n<li>Terror：暴力；</li>\n<li>Polity：不适宜的信息；</li>\n<li>Ad：广告；</li>\n<li>Illegal：违法；</li>\n<li>Abuse：谩骂；</li>\n<li>Moan：娇喘。</li>",
-          "example": "Image",
+          "example": "[\"Image\"]",
           "member": "string",
           "name": "TypeSet",
           "output_required": true,
@@ -31820,7 +31821,7 @@
         {
           "disabled": false,
           "document": "文件 ID 集合，匹配集合中的任意元素。\n<li>数组长度限制：10。</li>\n<li>单个 ID 长度限制：40个字符。</li>",
-          "example": "[5285485487985271487]",
+          "example": "[\"5285485487985271487\"]",
           "member": "string",
           "name": "FileIds",
           "required": false,
@@ -31829,7 +31830,7 @@
         {
           "disabled": false,
           "document": "文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。\n<li>单个文件名长度限制：100个字符。</li>\n<li>数组长度限制：10。</li>",
-          "example": "[abc.mp4]",
+          "example": "[\"abc.mp4\"]",
           "member": "string",
           "name": "Names",
           "required": false,
@@ -31838,7 +31839,7 @@
         {
           "disabled": false,
           "document": "文件名前缀，前缀匹配媒体文件的文件名。\n<li>单个文件名前缀长度限制：100个字符。</li>\n<li>数组长度限制：10。</li>",
-          "example": "[abc]",
+          "example": "[\"abc\"]",
           "member": "string",
           "name": "NamePrefixes",
           "required": false,
@@ -31865,7 +31866,7 @@
         {
           "disabled": false,
           "document": "标签集合，匹配集合中任意元素。\n<li>单个标签长度限制：32个字符。</li>\n<li>数组长度限制：16。</li>",
-          "example": "[Sports, Food]",
+          "example": "[\"Sports\", \"Food\"]",
           "member": "string",
           "name": "Tags",
           "required": false,
@@ -31874,7 +31875,7 @@
         {
           "disabled": false,
           "document": "文件类型。匹配集合中的任意元素：\n<li>Video: 视频文件</li>\n<li>Audio: 音频文件</li>\n<li>Image: 图片文件</li>",
-          "example": "[Video]",
+          "example": "[\"Video\"]",
           "member": "string",
           "name": "Categories",
           "required": false,
@@ -31883,7 +31884,7 @@
         {
           "disabled": false,
           "document": "媒体文件来源集合，来源取值参见 [SourceType](https://cloud.tencent.com/document/product/266/31773#MediaSourceData)。\n<li>数组长度限制：10。</li>",
-          "example": "[Record]",
+          "example": "[\"Record\"]",
           "member": "string",
           "name": "SourceTypes",
           "required": false,
@@ -31892,7 +31893,7 @@
         {
           "disabled": false,
           "document": "推流直播码集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>",
-          "example": "[StreamId1]",
+          "example": "[\"StreamId1\"]",
           "member": "string",
           "name": "StreamIds",
           "required": false,
@@ -31937,7 +31938,7 @@
         {
           "disabled": false,
           "document": "媒体文件封装格式集合，匹配集合中任意元素。\n<li>数组长度限制：10。</li>",
-          "example": "[mp4]",
+          "example": "[\"mp4\"]",
           "member": "string",
           "name": "MediaTypes",
           "required": false,
@@ -31946,7 +31947,7 @@
         {
           "disabled": false,
           "document": "媒体文件状态，匹配集合中任意元素。\n<li> Normal：正常；</li>\n<li> SystemForbidden：平台封禁；</li>\n<li> Forbidden：主动封禁。</li>",
-          "example": "[Normal]",
+          "example": "[\"Normal\"]",
           "member": "string",
           "name": "Status",
           "required": false,
@@ -31955,7 +31956,7 @@
         {
           "disabled": false,
           "document": "媒体文件审核结果，匹配集合中任意元素。\n<li> pass：审核通过；</li>\n<li> review：疑似违规，建议复审；</li>\n<li> block：确认违规，建议封禁；</li>\n<li> notModerated：未审核。</li>",
-          "example": "[pass]",
+          "example": "[\"pass\"]",
           "member": "string",
           "name": "ReviewResults",
           "required": false,
@@ -31964,7 +31965,7 @@
         {
           "disabled": false,
           "document": "TRTC 应用 ID 集合。匹配集合中的任意元素。\n<li>数组长度限制：10。</li>",
-          "example": "[TrtcSdkAppId1]",
+          "example": "[123]",
           "member": "uint64",
           "name": "TrtcSdkAppIds",
           "required": false,
@@ -31973,7 +31974,7 @@
         {
           "disabled": false,
           "document": "TRTC 房间 ID 集合。匹配集合中的任意元素。\n<li>单个房间 ID 长度限制：64个字符；</li>\n<li>数组长度限制：10。</li>",
-          "example": "[TrtcRoomId1]",
+          "example": "[\"TrtcRoomId1\"]",
           "member": "string",
           "name": "TrtcRoomIds",
           "required": false,
@@ -31982,7 +31983,7 @@
         {
           "disabled": false,
           "document": "指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：\n<li>basicInfo（视频基础信息）。</li>\n<li>metaData（视频元信息）。</li>\n<li>transcodeInfo（视频转码结果信息）。</li>\n<li>animatedGraphicsInfo（视频转动图结果信息）。</li>\n<li>imageSpriteInfo（视频雪碧图信息）。</li>\n<li>snapshotByTimeOffsetInfo（视频指定时间点截图信息）。</li>\n<li>sampleSnapshotInfo（采样截图信息）。</li>\n<li>keyFrameDescInfo（打点信息）。</li>\n<li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>\n<li>miniProgramReviewInfo（小程序审核信息）。</li>",
-          "example": "[basicInfo]",
+          "example": "[\"basicInfo\"]",
           "member": "string",
           "name": "Filters",
           "required": false,
@@ -34744,42 +34745,38 @@
         {
           "disabled": false,
           "document": "用户自定语音审核任务开关，可选值：\n<li>ON：开启自定义语音审核任务；</li>\n<li>OFF：关闭自定义语音审核任务。</li>",
-          "example": "无",
+          "example": "ON",
           "member": "string",
           "name": "Switch",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "用户自定义语音过滤标签，审核结果包含选择的标签则返回结果，如果过滤标签为空，则审核结果全部返回。如果要使用标签过滤功能，添加自定义语音关键词素材时需要添加对应标签。\n标签个数最多 10 个，每个标签长度最多 16 个字符。",
-          "example": "无",
+          "example": "[\"语音过滤标签1\"]",
           "member": "string",
           "name": "LabelSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
           "document": "判定涉嫌违规的分数阈值，当审核达到该分数以上，认为涉嫌违规。取值范围：0~100。",
-          "example": "无",
+          "example": "75",
           "member": "int64",
           "name": "BlockConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "判定需人工复核是否违规的分数阈值，当审核达到该分数以上，认为需人工复核。取值范围：0~100。",
-          "example": "无",
+          "example": "75",
           "member": "int64",
           "name": "ReviewConfidence",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

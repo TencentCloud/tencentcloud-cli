@@ -1,9 +1,9 @@
 {
   "actions": {
     "BindEmployeeUserIdWithClientOpenId": {
-      "document": "将电子签系统员工userId与客户系统员工openId进行绑定",
+      "document": "此接口（BindEmployeeUserIdWithClientOpenId）用于将电子签系统员工UserId与客户系统员工OpenId进行绑定。",
       "input": "BindEmployeeUserIdWithClientOpenIdRequest",
-      "name": "员工userid与客户系统openid绑定",
+      "name": "员工Userid与客户系统Openid绑定",
       "output": "BindEmployeeUserIdWithClientOpenIdResponse",
       "status": "online"
     },
@@ -120,14 +120,14 @@
       "status": "online"
     },
     "CreateIntegrationDepartment": {
-      "document": "通过此接口，创建企业的部门，支持绑定客户系统部门ID。",
+      "document": "此接口（CreateIntegrationDepartment）用于创建企业的部门信息，支持绑定客户系统部门ID。",
       "input": "CreateIntegrationDepartmentRequest",
       "name": "创建企业部门",
       "output": "CreateIntegrationDepartmentResponse",
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "创建员工,此接口会发送提醒员工实名的短信，如果通过手机号发现员工已经创建，则不会重新创建，会发送短信提醒员工实名\n注意：此接口支持企微组织架构的 openid 创建员工，这种场景下传递明文的企微 openid 到WeworkOpenId字段即可（企微明文的 openid 一定要在应用的可见范围内才行），通过企微创建的员工，会发送企微消息去提醒实名",
+      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。调用成功后会给员工发送提醒员工实名的短信。若通过手机号发现员工已经创建，则不会重新创建，但会发送短信提醒员工实名。另外，此接口还支持通过企微组织架构的openid 创建员工（将WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内），该场景下，员工会接收到提醒实名的企微消息。",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -225,14 +225,14 @@
       "status": "online"
     },
     "DeleteIntegrationDepartment": {
-      "document": "通过此接口，删除企业的部门。",
+      "document": "此接口（DeleteIntegrationDepartment）用于删除企业的部门信息。",
       "input": "DeleteIntegrationDepartmentRequest",
       "name": "删除企业部门",
       "output": "DeleteIntegrationDepartmentResponse",
       "status": "online"
     },
     "DeleteIntegrationEmployees": {
-      "document": "移除员工\n这里分两个场景\n如果不传交接人的ReceiveUserId或者ReceiveOpenId，则会直接把这个人进行离职\n如果传了交接人，会把离职人未处理完的合同交接给交接人后再离职",
+      "document": "该接口（DeleteIntegrationEmployees）用于移除企业员工，同时可选择是否进行离职交接。\n-  如果不设置交接人的ReceiveUserId或ReceiveOpenId，则该员工将被直接移除而不进行交接操作。\n-  如果设置了ReceiveUserId或ReceiveOpenId，该员工未处理的合同将会被系统交接给设置的交接人，然后再对该员工进行离职操作。\n\n注：`1. 超管或法人身份的员工不能被删除。2. 员工存在待处理合同且无人交接时不能被删除。`",
       "input": "DeleteIntegrationEmployeesRequest",
       "name": "移除企业员工",
       "output": "DeleteIntegrationEmployeesResponse",
@@ -302,16 +302,16 @@
       "status": "online"
     },
     "DescribeIntegrationDepartments": {
-      "document": "通过此接口，查询企业的部门，支持查询单个部门节点或单个部门节点及一级子节点部门列表。",
+      "document": "此接口（DescribeIntegrationDepartments）用于查询企业的部门信息列表，支持查询单个部门节点或单个部门节点及一级子节点部门列表。",
       "input": "DescribeIntegrationDepartmentsRequest",
-      "name": "获取企业部门列表",
+      "name": "获取企业部门信息列表",
       "output": "DescribeIntegrationDepartmentsResponse",
       "status": "online"
     },
     "DescribeIntegrationEmployees": {
-      "document": "查询企业员工列表，每次返回的数据量最大为20",
+      "document": "此接口（DescribeIntegrationEmployees）用于分页查询企业员工信息列表，支持设置过滤条件以筛选员工查询结果。",
       "input": "DescribeIntegrationEmployeesRequest",
-      "name": "查询企业员工列表",
+      "name": "查询企业员工信息列表",
       "output": "DescribeIntegrationEmployeesResponse",
       "status": "online"
     },
@@ -323,7 +323,7 @@
       "status": "online"
     },
     "DescribeOrganizationGroupOrganizations": {
-      "document": "此API接口用户查询加入集团的成员企业",
+      "document": "此API接口用来查询加入集团的成员企业信息\n适用场景：子企业在加入集团后，主企业可能通过此接口获取到所有的子企业列表，方便进行展示和统计",
       "input": "DescribeOrganizationGroupOrganizationsRequest",
       "name": "查询集团企业列表",
       "output": "DescribeOrganizationGroupOrganizationsResponse",
@@ -372,9 +372,9 @@
       "status": "online"
     },
     "ModifyIntegrationDepartment": {
-      "document": "通过此接口，更新企业的部门信息，支持更新部门名、客户系统部门ID、部门序列号。",
+      "document": "此接口（ModifyIntegrationDepartment）用于更新企业的部门信息，支持更新部门名称、客户系统部门ID和部门序号等信息。",
       "input": "ModifyIntegrationDepartmentRequest",
-      "name": "更新企业部门",
+      "name": "更新企业部门信息",
       "output": "ModifyIntegrationDepartmentResponse",
       "status": "online"
     },
@@ -393,9 +393,9 @@
       "status": "online"
     },
     "UnbindEmployeeUserIdWithClientOpenId": {
-      "document": "将存在绑定关系的电子签系统员工userId与客户系统员工openId进行解绑",
+      "document": "此接口（UnbindEmployeeUserIdWithClientOpenId）用于解除电子签系统员工UserId与客户系统员工OpenId之间的绑定关系。\n\n注：`在调用此接口时，需确保OpenId已通过调用`<a href=\"https://qian.tencent.com/developers/companyApis/staffs/BindEmployeeUserIdWithClientOpenId\" target=\"_blank\">BindEmployeeUserIdWithClientOpenId</a>`接口与电子签系统的UserId绑定过。若OpenId未经过绑定，则无法使用此接口进行解绑操作。`",
       "input": "UnbindEmployeeUserIdWithClientOpenIdRequest",
-      "name": "员工userid与客户系统openid解绑",
+      "name": "解除员工UserId与客户系统OpenId的绑定",
       "output": "UnbindEmployeeUserIdWithClientOpenIdResponse",
       "status": "online"
     },
@@ -437,17 +437,17 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "超管手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "超管手机号，打码显示\n示例值：138****1569\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -837,7 +837,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定。（参数参考示例）",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -846,7 +846,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签系统员工UserId",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)；或者通过<a href=\"https://qian.tencent.com/developers/companyApis/staffs/DescribeIntegrationEmployees\" target=\"_blank\">DescribeIntegrationEmployees</a>接口获取。",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -855,7 +855,7 @@
         },
         {
           "disabled": false,
-          "document": "客户系统OpenId",
+          "document": "员工在贵司业务系统中的唯一身份标识，用于与腾讯电子签账号进行映射，确保在同一企业内不会出现重复。 该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -864,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -879,7 +879,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定是否成功，1表示成功，0表示失败",
+          "document": "绑定是否成功。\n<ul><li>**0**：失败</li><li>**1**：成功</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "Status",
@@ -2893,7 +2893,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称，不超过50个字符",
+          "document": "部门名称，最大长度为50个字符。",
           "example": "无",
           "member": "string",
           "name": "DeptName",
@@ -2902,7 +2902,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2911,7 +2911,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签父部门ID，与ParentDeptOpenId二选一,优先ParentDeptId,都为空时自动填充至根节点下",
+          "document": "电子签父部门ID。\n注：`如果同时指定了ParentDeptId与ParentDeptOpenId参数，系统将优先使用ParentDeptId。当二者都未指定时，创建的新部门将自动填充至根节点部门下。`",
           "example": "无",
           "member": "string",
           "name": "ParentDeptId",
@@ -2920,7 +2920,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台中父部门ID,与ParentDeptId二选一,优先ParentDeptId,都为空时自动填充至根节点下",
+          "document": "第三方平台中父部门ID。\n注：`如果同时指定了ParentDeptId与ParentDeptOpenId参数，系统将优先使用ParentDeptId。当二者都未指定时，创建的新部门将自动填充至根节点部门下。`",
           "example": "无",
           "member": "string",
           "name": "ParentDeptOpenId",
@@ -2929,7 +2929,7 @@
         },
         {
           "disabled": false,
-          "document": "客户系统部门ID，不超过64个字符",
+          "document": "客户系统部门ID，最大长度为64个字符。",
           "example": "无",
           "member": "string",
           "name": "DeptOpenId",
@@ -2938,7 +2938,7 @@
         },
         {
           "disabled": false,
-          "document": "排序号,1~30000范围内",
+          "document": "排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。",
           "example": "无",
           "member": "uint64",
           "name": "OrderNo",
@@ -2953,7 +2953,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子签部门ID",
+          "document": "电子签部门ID。建议开发者保存此部门ID，方便后续查询或修改部门信息。",
           "example": "无",
           "member": "string",
           "name": "DeptId",
@@ -2975,7 +2975,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2984,7 +2984,7 @@
         },
         {
           "disabled": false,
-          "document": "待创建员工的信息，不超过20个。\n所有类型的企业支持的入参：Mobile和DisplayName必填,OpenId、Email和Department.DepartmentId选填，其他字段暂不支持。\n企微类型的企业特有支持的入参：WeworkOpenId，传入此字段无需在传入其他信息",
+          "document": "待创建员工的信息，最多不超过20个。\n其中入参Mobile和DisplayName必填，OpenId、Email和Department.DepartmentId选填，其他字段暂不支持设置。\n在创建企微企业员工场景下，只需传入WeworkOpenId，无需再传其他信息。",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -2993,7 +2993,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3008,7 +3008,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建员工的结果",
+          "document": "创建员工的结果。包含创建成功的数据与创建失败数据。",
           "example": "无",
           "member": "CreateStaffResult",
           "name": "CreateEmployeeResult",
@@ -4581,7 +4581,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签中的部门id,通过DescribeIntegrationDepartments接口可获得",
+          "document": "电子签中的部门ID，通过<a href=\"https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments\" target=\"_blank\">DescribeIntegrationDepartments</a>接口可获得。",
           "example": "无",
           "member": "string",
           "name": "DeptId",
@@ -4599,7 +4599,7 @@
         },
         {
           "disabled": false,
-          "document": "交接部门ID。待删除部门中的合同、印章和模板数据，交接至该部门ID下，未填写交接至公司根部门。",
+          "document": "交接部门ID。\n待删除部门中的合同、印章和模板数据，将会被交接至该部门ID下；若未填写则交接至公司根部门。",
           "example": "无",
           "member": "string",
           "name": "ReceiveDeptId",
@@ -4626,7 +4626,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4635,7 +4635,7 @@
         },
         {
           "disabled": false,
-          "document": "待移除员工的信息，userId和openId二选一，必填一个，如果需要指定交接人的话，ReceiveUserId或者ReceiveOpenId字段二选一",
+          "document": "待移除员工的信息。应符合以下规则：\n<ul><li>UserId和OpenId不可同时为空。</li>\n<li>若需要进行离职交接，交接人信息ReceiveUserId和ReceiveOpenId不可同时为空。否则视为不进行离职交接。</li></ul>",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -4644,7 +4644,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4659,7 +4659,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "员工删除数据",
+          "document": "员工删除结果。包含成功数据与失败数据。\n<ul><li>**成功数据**：展示员工姓名、手机号与电子签平台UserId</li>\n<li>**失败数据**：展示员工电子签平台UserId、第三方平台OpenId和失败原因</li></ul>",
           "example": "无",
           "member": "DeleteStaffsResult",
           "name": "DeleteEmployeeResult",
@@ -4830,12 +4830,12 @@
       "usage": "out"
     },
     "Department": {
-      "document": "集成版员工部门信息",
+      "document": "集成版员工部门信息。",
       "members": [
         {
           "disabled": false,
-          "document": "部门id",
-          "example": "无",
+          "document": "部门ID。",
+          "example": "dp**********************155f2",
           "member": "string",
           "name": "DepartmentId",
           "output_required": true,
@@ -4845,8 +4845,8 @@
         },
         {
           "disabled": false,
-          "document": "部门名称",
-          "example": "无",
+          "document": "部门名称。",
+          "example": "测试部门",
           "member": "string",
           "name": "DepartmentName",
           "output_required": true,
@@ -5450,7 +5450,7 @@
         },
         {
           "disabled": false,
-          "document": "查询类型 0-查询单个部门节点 1-单个部门节点及一级子节点部门列表",
+          "document": "查询类型，支持以下类型：\n<ul><li>**0**：查询单个部门节点列表，不包含子节点部门信息</li>\n<li>**1**：查询单个部门节点级一级子节点部门信息列表</li></ul>",
           "example": "无",
           "member": "uint64",
           "name": "QueryType",
@@ -5468,7 +5468,7 @@
         },
         {
           "disabled": false,
-          "document": "部门ID,与DeptOpenId二选一,优先DeptId,都为空时获取根节点数据",
+          "document": "查询的部门ID。\n注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`",
           "example": "无",
           "member": "string",
           "name": "DeptId",
@@ -5477,7 +5477,7 @@
         },
         {
           "disabled": false,
-          "document": "客户系统部门ID,与DeptId二选一,优先DeptId,都为空时获取根节点数据",
+          "document": "查询的客户系统部门ID。\n注：`如果同时指定了DeptId与DeptOpenId参数，系统将优先使用DeptId参数进行查询。当二者都未指定时，系统将返回根节点部门数据。`",
           "example": "无",
           "member": "string",
           "name": "DeptOpenId",
@@ -5492,7 +5492,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "部门列表",
+          "document": "部门信息列表。部门信息根据部门排序号OrderNo降序排列，根据部门创建时间升序排列。",
           "example": "无",
           "member": "IntegrationDepartment",
           "name": "Departments",
@@ -5514,7 +5514,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5523,7 +5523,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大20",
+          "document": "指定分页每页返回的数据条数，单页最大支持 20。",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -5532,7 +5532,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5541,7 +5541,7 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]，查询过滤未实名用户，Key为Status，Values为[\"NotVerified\"]\n查询某个部门的用户，Key为DepartmentId，Values为[\"DepartmentId\"]\n根据用户Id查询员工时，Key为UserId，Values为[\"UserId\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]",
+          "document": "查询的关键字段，支持Key-Values查询。可选键值如下：\n<ul>\n  <li>Key:**\"Status\"**，根据实名状态查询员工，Values可选：\n    <ul><li>**[\"IsVerified\"]**：查询已实名的员工</li><li>**[\"NotVerified\"]**：查询未实名的员工</li></ul></li>\n  <li>Key:**\"DepartmentId\"**，根据部门ID查询部门下的员工，Values为指定的部门ID：**[\"DepartmentId\"]**</li>\n  <li>Key:**\"UserId\"**，根据用户ID查询员工，Values为指定的用户ID：**[\"UserId\"]**</li>\n  <li>Key:**\"UserWeWorkOpenId\"**，根据用户企微账号ID查询员工，Values为指定用户的企微账号ID：**[\"UserWeWorkOpenId\"]**</li>\n  <li>Key:**\"StaffOpenId\"**，根据第三方系统用户OpenId查询员工，Values为第三方系统用户OpenId列表：**[\"OpenId1\",\"OpenId2\",...]**</li>\n</ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5550,7 +5550,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大20000。",
           "example": "无",
           "member": "int64",
           "name": "Offset",
@@ -5565,7 +5565,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "员工数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -5575,8 +5575,8 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "output_required": true,
@@ -5585,8 +5585,8 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大20",
-          "example": "无",
+          "document": "指定分页每页返回的数据条数，单页最大支持 20。",
+          "example": "15",
           "member": "int64",
           "name": "Limit",
           "output_required": true,
@@ -5595,8 +5595,8 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的员工数量",
-          "example": "无",
+          "document": "符合条件的员工数量。",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -5720,7 +5720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作人信息，userId必填",
+          "document": "执行本接口操作的员工信息,userId必填。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5729,7 +5729,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大1000",
+          "document": "指定分页每页返回的数据条数，单页最大1000",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -5738,7 +5738,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -5756,7 +5756,7 @@
         },
         {
           "disabled": false,
-          "document": "成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入",
+          "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>",
           "example": "无",
           "member": "uint64",
           "name": "Status",
@@ -5765,7 +5765,7 @@
         },
         {
           "disabled": false,
-          "document": "是否导出当前成员企业数据",
+          "document": "是否导出当前成员企业数据\n<ul><li> **false**：不导出（默认值）</li>\n<li> **true**：导出</li></ul>",
           "example": "无",
           "member": "bool",
           "name": "Export",
@@ -5774,7 +5774,7 @@
         },
         {
           "disabled": false,
-          "document": "成员企业机构 ID，在PC控制台 集团管理可获取",
+          "document": "成员企业机构 ID，32 位字符串，在PC控制台 集团管理可获取",
           "example": "无",
           "member": "string",
           "name": "Id",
@@ -5789,7 +5789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询到的符合条件的成员企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "符合查询条件的资源实例总数量。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Total",
@@ -5799,7 +5799,7 @@
         },
         {
           "disabled": false,
-          "document": "已授权待激活的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已授权待激活的子企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "JoinedTotal",
@@ -5839,7 +5839,7 @@
         },
         {
           "disabled": false,
-          "document": "已加入的企业数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "已加入的子企业总数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "ActivatedTotal",
@@ -6382,17 +6382,17 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户传入的手机号",
+          "document": "用户传入的手机号，明文展示",
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6402,17 +6402,17 @@
           "example": "无",
           "member": "string",
           "name": "Reason",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户Id",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6422,7 +6422,7 @@
           "example": "无",
           "member": "string",
           "name": "OpenId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7597,7 +7597,7 @@
         },
         {
           "disabled": false,
-          "document": "成员企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业id，为 32 位字符串，可在电子签PC 控制台，企业设置->企业电子签账号 获取\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "OrganizationId",
@@ -7607,7 +7607,7 @@
         },
         {
           "disabled": false,
-          "document": "更新时间，时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "记录更新时间， unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "UpdateTime",
@@ -7617,7 +7617,7 @@
         },
         {
           "disabled": false,
-          "document": "成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业加入集团的当前状态\n<ul><li> **1**：待授权</li>\n<li> **2**：已授权待激活</li>\n<li> **3**：拒绝授权</li>\n<li> **4**：已解除</li>\n<li> **5**：已加入</li>\n</ul>\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "Status",
@@ -7657,7 +7657,7 @@
         },
         {
           "disabled": false,
-          "document": "企业许可证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业许可证Id，此字段暂时不需要关注\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "License",
@@ -7667,7 +7667,7 @@
         },
         {
           "disabled": false,
-          "document": "企业许可证过期时间，时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业许可证过期时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "LicenseExpireTime",
@@ -7677,7 +7677,7 @@
         },
         {
           "disabled": false,
-          "document": "成员企业加入集团时间，时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "成员企业加入集团时间，unix时间戳，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "JoinTime",
@@ -7687,7 +7687,7 @@
         },
         {
           "disabled": false,
-          "document": "是否使用自建审批流引擎（即不是企微审批流引擎），true-是，false-否\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否使用自建审批流引擎（即不是企微审批流引擎）\n<ul><li> **true**：是</li>\n<li> **false**：否</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "FlowEngineEnable",
@@ -7797,51 +7797,51 @@
       "members": [
         {
           "disabled": false,
-          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "部门ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dp**********************155f2",
           "member": "string",
           "name": "DeptId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "部门名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "部门名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试部门",
           "member": "string",
           "name": "DeptName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "父部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "yD**********************m1221",
           "member": "string",
           "name": "ParentDeptId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "客户系统部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "dept_open_1",
           "member": "string",
           "name": "DeptOpenId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "序列号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "序列号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "OrderNo",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7916,7 +7916,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签部门ID,通过DescribeIntegrationDepartments接口可以获取",
+          "document": "电子签部门ID，通过<a href=\"https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments\" target=\"_blank\">DescribeIntegrationDepartments</a>接口获得。",
           "example": "无",
           "member": "string",
           "name": "DeptId",
@@ -7934,7 +7934,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签父部门ID，通过DescribeIntegrationDepartments接口可以获取",
+          "document": "电子签父部门ID，通过<a href=\"https://qian.tencent.com/developers/companyApis/organizations/DescribeIntegrationDepartments\" target=\"_blank\">DescribeIntegrationDepartments</a>接口获得。",
           "example": "无",
           "member": "string",
           "name": "ParentDeptId",
@@ -7943,7 +7943,7 @@
         },
         {
           "disabled": false,
-          "document": "部门名称，不超过50个字符",
+          "document": "部门名称，最大长度为50个字符。",
           "example": "无",
           "member": "string",
           "name": "DeptName",
@@ -7952,7 +7952,7 @@
         },
         {
           "disabled": false,
-          "document": "客户系统部门ID，不超过64个字符",
+          "document": "客户系统部门ID，最大长度为64个字符。",
           "example": "无",
           "member": "string",
           "name": "DeptOpenId",
@@ -7961,7 +7961,7 @@
         },
         {
           "disabled": false,
-          "document": "排序号,1~30000范围内",
+          "document": "排序号，支持设置的数值范围为1~30000。同一父部门下，排序号越大，部门顺序越靠前。",
           "example": "无",
           "member": "uint64",
           "name": "OrderNo",
@@ -9067,12 +9067,12 @@
       "usage": "out"
     },
     "Staff": {
-      "document": "企业员工信息",
+      "document": "企业员工信息。",
       "members": [
         {
           "disabled": false,
-          "document": "用户在电子签平台的id\n注：创建和更新场景无需填写",
-          "example": "无",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n注：`创建和更新场景无需填写。`",
+          "example": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj",
           "member": "string",
           "name": "UserId",
           "output_required": true,
@@ -9082,8 +9082,8 @@
         },
         {
           "disabled": false,
-          "document": "显示的用户名/昵称",
-          "example": "无",
+          "document": "显示的用户名/昵称。",
+          "example": "张三",
           "member": "string",
           "name": "DisplayName",
           "output_required": true,
@@ -9093,8 +9093,8 @@
         },
         {
           "disabled": false,
-          "document": "用户手机号",
-          "example": "无",
+          "document": "用户手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。",
+          "example": "13200000000",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -9104,8 +9104,8 @@
         },
         {
           "disabled": false,
-          "document": "用户邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户邮箱。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testtest@tencent.com",
           "member": "string",
           "name": "Email",
           "output_required": true,
@@ -9115,8 +9115,8 @@
         },
         {
           "disabled": false,
-          "document": "用户在第三方平台id，如需在此接口提醒员工实名，该参数不传\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户在第三方平台ID。\n注：`如需在此接口提醒员工实名，该参数不传。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "open_user1",
           "member": "string",
           "name": "OpenId",
           "output_required": true,
@@ -9126,7 +9126,7 @@
         },
         {
           "disabled": false,
-          "document": "员工角色\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工角色信息。\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "StaffRole",
           "name": "Roles",
@@ -9137,7 +9137,7 @@
         },
         {
           "disabled": false,
-          "document": "员工部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工部门信息。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Department",
           "name": "Department",
@@ -9148,8 +9148,8 @@
         },
         {
           "disabled": false,
-          "document": "员工是否实名\n注：创建和更新场景无需填写",
-          "example": "无",
+          "document": "员工是否实名。\n注：`创建和更新场景无需填写。`",
+          "example": "false",
           "member": "bool",
           "name": "Verified",
           "output_required": true,
@@ -9159,8 +9159,8 @@
         },
         {
           "disabled": false,
-          "document": "员工创建时间戳，单位秒\n注：创建和更新场景无需填写",
-          "example": "无",
+          "document": "员工创建时间戳，单位秒。\n注：`创建和更新场景无需填写。`",
+          "example": "1691563315",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -9170,8 +9170,8 @@
         },
         {
           "disabled": false,
-          "document": "员工实名时间戳，单位秒\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "员工实名时间戳，单位秒。\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1691563315",
           "member": "int64",
           "name": "VerifiedOn",
           "output_required": true,
@@ -9181,8 +9181,8 @@
         },
         {
           "disabled": false,
-          "document": "员工是否离职：0-未离职，1-离职\n注：创建和更新场景无需填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "员工是否离职：\n<ul><li>**0**：未离职</li><li>**1**：离职</li></ul>\n注：`创建和更新场景无需填写。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
           "member": "int64",
           "name": "QuiteJob",
           "output_required": true,
@@ -9192,8 +9192,8 @@
         },
         {
           "disabled": false,
-          "document": "员工离职交接人用户id\n注：创建和更新场景无需填写",
-          "example": "无",
+          "document": "员工离职交接人用户ID。\n注：`创建和更新场景无需填写。`",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
           "member": "string",
           "name": "ReceiveUserId",
           "output_required": true,
@@ -9203,8 +9203,8 @@
         },
         {
           "disabled": false,
-          "document": "员工离职交接人用户OpenId\n注：创建和更新场景无需填写",
-          "example": "无",
+          "document": "员工离职交接人用户OpenId。\n注：`创建和更新场景无需填写。`",
+          "example": "open_user2",
           "member": "string",
           "name": "ReceiveOpenId",
           "output_required": true,
@@ -9214,8 +9214,8 @@
         },
         {
           "disabled": false,
-          "document": "企业微信用户账号ID\n注：仅企微类型的企业创建员工接口支持该字段\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业微信用户账号ID。\n注：`仅企微类型的企业创建员工接口支持该字段。`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wework_open1",
           "member": "string",
           "name": "WeworkOpenId",
           "output_required": false,
@@ -9227,12 +9227,12 @@
       "usage": "both"
     },
     "StaffRole": {
-      "document": "集成版企业角色信息",
+      "document": "集成版企业角色信息。",
       "members": [
         {
           "disabled": false,
-          "document": "角色id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "角色ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4dff1******************10b",
           "member": "string",
           "name": "RoleId",
           "output_required": true,
@@ -9242,8 +9242,8 @@
         },
         {
           "disabled": false,
-          "document": "角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "角色名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "业务员",
           "member": "string",
           "name": "RoleName",
           "output_required": true,
@@ -9428,27 +9428,27 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "传入的手机号",
+          "document": "传入的手机号，没有打码",
           "example": "无",
           "member": "string",
           "name": "Mobile",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "用户Id",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -9708,7 +9708,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户信息，OpenId与UserId二选一必填一个，OpenId是第三方客户ID，userId是用户实名后的电子签生成的ID,当传入客户系统openId，传入的openId需与电子签员工userId绑定，且参数Channel必填，Channel值为INTEGRATE；当传入参数UserId，Channel无需指定(参数用法参考示例)",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9717,7 +9717,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签系统员工UserId",
+          "document": "员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
           "example": "无",
           "member": "string",
           "name": "UserId",
@@ -9726,7 +9726,7 @@
         },
         {
           "disabled": false,
-          "document": "客户系统OpenId",
+          "document": "员工在贵司业务系统中的唯一身份标识，用于与腾讯电子签账号进行映射，确保在同一企业内不会出现重复。\n该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。",
           "example": "无",
           "member": "string",
           "name": "OpenId",
@@ -9735,7 +9735,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -9750,8 +9750,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "解绑是否成功，1表示成功，0表示失败",
-          "example": "无",
+          "document": "解绑是否成功。\n<ul><li> **0**：失败 </li>\n<li> **1**：成功 </li></ul>",
+          "example": "1",
           "member": "int64",
           "name": "Status",
           "output_required": true,
@@ -9772,7 +9772,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前用户信息，UserId必填",
+          "document": "执行本接口操作的员工信息,UserId必填。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -9790,7 +9790,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",

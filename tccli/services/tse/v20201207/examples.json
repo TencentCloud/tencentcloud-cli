@@ -16,6 +16,14 @@
         "title": "创建灰度规则"
       }
     ],
+    "CreateCloudNativeAPIGatewayCertificate": [
+      {
+        "document": "创建云原生网关证书",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Name\": \"a\",\n    \"Key\": \"-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----\",\n    \"Crt\": \"-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----\",\n    \"BindDomains\": [\n        \"bbc.com\"\n    ],\n    \"CertId\": \"12412rew43-5fdsf35\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "创建云原生网关证书"
+      }
+    ],
     "CreateCloudNativeAPIGatewayRoute": [
       {
         "document": "创建云原生网关路由",
@@ -80,6 +88,14 @@
         "title": "删除灰度规则"
       }
     ],
+    "DeleteCloudNativeAPIGatewayCertificate": [
+      {
+        "document": "删除云原生网关证书",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b70\",\n    \"Id\": \"6190e57f-f5b2-4295-a8c0-34d4a6d0e6e5\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "删除云原生网关证书"
+      }
+    ],
     "DeleteCloudNativeAPIGatewayRoute": [
       {
         "document": "删除云原生网关路由",
@@ -142,6 +158,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCanaryRules\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"ServiceId\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"CanaryRuleList\": [\n                {\n                    \"Priority\": 0,\n                    \"Enabled\": true,\n                    \"ConditionList\": [\n                        {\n                            \"Type\": \"abc\",\n                            \"Key\": \"abc\",\n                            \"Operator\": \"abc\",\n                            \"Value\": \"abc\",\n                            \"Delimiter\": \"abc\",\n                            \"GlobalConfigId\": \"abc\",\n                            \"GlobalConfigName\": \"abc\"\n                        }\n                    ],\n                    \"BalancedServiceList\": [\n                        {\n                            \"ServiceID\": \"abc\",\n                            \"ServiceName\": \"abc\",\n                            \"UpstreamName\": \"abc\",\n                            \"Percent\": 0\n                        }\n                    ],\n                    \"ServiceId\": \"abc\",\n                    \"ServiceName\": \"abc\"\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询云原生网关灰度规则列表"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayCertificateDetails": [
+      {
+        "document": "查询云原生网关单个证书详情",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCertificateDetails\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Id\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Cert\": {\n                \"Name\": \"abc\",\n                \"Id\": \"abc\",\n                \"BindDomains\": [\n                    \"abc\"\n                ],\n                \"Status\": \"abc\",\n                \"Crt\": \"abc\",\n                \"Key\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"IssueTime\": \"abc\",\n                \"CertSource\": \"abc\",\n                \"CertId\": \"abc\"\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询云原生网关单个证书详情"
+      }
+    ],
+    "DescribeCloudNativeAPIGatewayCertificates": [
+      {
+        "document": "查询云原生网关证书列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCertificates\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Filters\": [\n        {\n            \"Key\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Total\": 0,\n            \"CertificatesList\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Id\": \"abc\",\n                    \"BindDomains\": [\n                        \"abc\"\n                    ],\n                    \"Status\": \"abc\",\n                    \"Crt\": \"abc\",\n                    \"Key\": \"abc\",\n                    \"ExpireTime\": \"abc\",\n                    \"CreateTime\": \"abc\",\n                    \"IssueTime\": \"abc\",\n                    \"CertSource\": \"abc\",\n                    \"CertId\": \"abc\"\n                }\n            ],\n            \"Pages\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询云原生网关证书列表"
       }
     ],
     "DescribeCloudNativeAPIGatewayConfig": [
@@ -326,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"Name\": \"<Name>\",\n    \"Description\": \"<Description>\",\n    \"GroupId\": \"<GroupId>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\"\n    }\n}",
         "title": "修改云原生API网关实例分组基础信息"
+      }
+    ],
+    "UpdateCloudNativeAPIGatewayCertificateInfo": [
+      {
+        "document": "修改云原生网关证书信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateCloudNativeAPIGatewayCertificateInfo\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Id\": \"abc\",\n    \"Name\": \"abc\",\n    \"BindDomains\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改云原生网关证书信息"
       }
     ],
     "UpdateCloudNativeAPIGatewaySpec": [

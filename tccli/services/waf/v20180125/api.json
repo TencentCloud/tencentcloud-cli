@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DeleteSpartaProtection": {
-      "document": "waf斯巴达-删除防护域名",
+      "document": "SAASWAF删除防护域名",
       "input": "DeleteSpartaProtectionRequest",
-      "name": "waf斯巴达-删除防护域名",
+      "name": "删除SAASWAF防护域名",
       "output": "DeleteSpartaProtectionResponse",
       "status": "online"
     },
@@ -635,6 +635,34 @@
       "input": "ModifyHostStatusRequest",
       "name": "设置防护域名WAF开关",
       "output": "ModifyHostStatusResponse",
+      "status": "online"
+    },
+    "ModifyInstanceElasticMode": {
+      "document": "修改实例的QPS弹性计费开关",
+      "input": "ModifyInstanceElasticModeRequest",
+      "name": "修改实例的QPS弹性计费开关",
+      "output": "ModifyInstanceElasticModeResponse",
+      "status": "online"
+    },
+    "ModifyInstanceName": {
+      "document": "修改实例的名称",
+      "input": "ModifyInstanceNameRequest",
+      "name": "修改实例名称",
+      "output": "ModifyInstanceNameResponse",
+      "status": "online"
+    },
+    "ModifyInstanceQpsLimit": {
+      "document": "设置套餐实例的弹性qps上限",
+      "input": "ModifyInstanceQpsLimitRequest",
+      "name": "设置套餐实例的弹性qps上限",
+      "output": "ModifyInstanceQpsLimitResponse",
+      "status": "online"
+    },
+    "ModifyInstanceRenewFlag": {
+      "document": "修改实例的自动续费开关",
+      "input": "ModifyInstanceRenewFlagRequest",
+      "name": "修改实例的自动续费开关",
+      "output": "ModifyInstanceRenewFlagResponse",
       "status": "online"
     },
     "ModifyProtectionStatus": {
@@ -3479,7 +3507,7 @@
         {
           "disabled": false,
           "document": "域名列表",
-          "example": "",
+          "example": "[\"a.com\",\"b.com\"]",
           "member": "string",
           "name": "Domains",
           "required": true,
@@ -3488,7 +3516,7 @@
         {
           "disabled": false,
           "document": "版本",
-          "example": "",
+          "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
@@ -3497,7 +3525,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "waf_2hw5hdpw0828ohd1",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -8346,7 +8374,7 @@
         },
         {
           "disabled": false,
-          "document": "订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）\n高级版: 102375(新购),102376(续费),102377(变配)\n企业版 : 102378(新购),102379(续费),102380(变配)\n旗舰版 : 102369(新购),102370(续费),102371(变配)\n高级版-CLB: 新购 101198  续费 101199 变配 101200\n企业版-CLB 101204(新购),101205(续费),101206(变配)\n旗舰版-CLB : 101201(新购),101202(续费),101203(变配)\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "订单类型ID，用来唯一标识一个业务的一种场景（总共三种场景：新购、配置变更、续费）\n高级版: 102375(新购),102376(续费),102377(变配)\n企业版 : 102378(新购),102379(续费),102380(变配)\n旗舰版 : 102369(新购),102370(续费),102371(变配)\n域名包 : 102372(新购),102373(续费),102374(变配)\n业务扩展包 : 101040(新购),101041(续费),101042(变配)\n\n高级版-CLB: 新购 101198  续费 101199 变配 101200\n企业版-CLB 101204(新购),101205(续费),101206(变配)\n旗舰版-CLB : 101201(新购),101202(续费),101203(变配)\n域名包-CLB: 101207(新购),101208(续费),101209(变配)\n业务扩展包-CLB: 101210(新购),101211(续费),101212(变配)\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101201",
           "member": "int64",
           "name": "GoodsCategoryId",
@@ -8357,7 +8385,7 @@
         },
         {
           "disabled": false,
-          "document": "购买waf实例区域ID\n1 表示购买大陆资源\n2表示购买非中国大陆资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "购买waf实例区域ID\n1 表示购买大陆资源;\n9表示购买非中国大陆资源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RegionId",
@@ -8385,7 +8413,7 @@
         },
         {
           "disabled": false,
-          "document": "单位，支持m、y、d\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "单位，支持购买d、m、y 即（日、月、年）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
@@ -8396,7 +8424,7 @@
         },
         {
           "disabled": false,
-          "document": "子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面\n高级版 ：sp_wsm_waf_premium\n企业版 ：sp_wsm_waf_enterprise\n旗舰版 ：sp_wsm_waf_ultimate\n高级版-CLB:sp_wsm_waf_premium_clb\n企业版-CLB : sp_wsm_waf_enterprise_clb\n旗舰版-CLB:sp_wsm_waf_ultimate_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "子产品标签,。新购，续费必传，变配时放在oldConfig newConfig里面\n\nSaas 高级版 ：sp_wsm_waf_premium\nSaas企业版 ：sp_wsm_waf_enterprise\nSaas旗舰版 ：sp_wsm_waf_ultimate\nSaas 业务扩展包：sp_wsm_waf_qpsep\nSaas 域名扩展包：sp_wsm_waf_domain\n\n高级版-CLB:sp_wsm_waf_premium_clb\n企业版-CLB : sp_wsm_waf_enterprise_clb\n旗舰版-CLB:sp_wsm_waf_ultimate_clb\n 业务扩展包-CLB：sp_wsm_waf_qpsep_clb\n域名扩展包-CLB：sp_wsm_waf_domain_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sp_wsm_waf_ultimate_clb",
           "member": "string",
           "name": "SubProductCode",
@@ -8407,7 +8435,7 @@
         },
         {
           "disabled": false,
-          "document": "业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型\n高级版 ：1000827\n企业版 ：1000830\n旗舰版 ：1000832\n高级版-CLB:1001150\n企业版-CLB : 1001152\n旗舰版-CLB:1001154\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "业务产品申请的pid（对应一个定价公式），通过pid计费查询到定价模型\n高级版 ：1000827\n企业版 ：1000830\n旗舰版 ：1000832\n域名包 : 1000834\n业务扩展包 : 1000481\n高级版-CLB:1001150\n企业版-CLB : 1001152\n旗舰版-CLB:1001154\n域名包-CLB: 1001156\n业务扩展包-CLB : 1001160\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12345",
           "member": "int64",
           "name": "Pid",
@@ -8451,7 +8479,7 @@
         },
         {
           "disabled": false,
-          "document": "计费细项标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "计费细项标签数组\nSaas 高级版  sv_wsm_waf_package_premium \nSaas 企业版  sv_wsm_waf_package_enterprise\nSaas 旗舰版  sv_wsm_waf_package_ultimate \nSaas 非中国大陆高级版  sv_wsm_waf_package_premium_intl\nSaas 非中国大陆企业版   sv_wsm_waf_package_enterprise_intl\nSaas 非中国大陆旗舰版  sv_wsm_waf_package_ultimate _intl\nSaas 业务扩展包  sv_wsm_waf_qps_ep\nSaas 域名扩展包  sv_wsm_waf_domain\n\n高级版CLB   sv_wsm_waf_package_premium_clb\n企业版CLB  sv_wsm_waf_package_enterprise_clb\n旗舰版CLB   sv_wsm_waf_package_ultimate_clb\n非中国大陆高级版 CLB sv_wsm_waf_package_premium_clb_intl\n非中国大陆企业版CLB   sv_wsm_waf_package_premium_clb_intl\n非中国大陆旗舰版CLB  sv_wsm_waf_package_ultimate_clb _intl\n业务扩展包CLB sv_wsm_waf_qps_ep_clb\n域名扩展包CLB  sv_wsm_waf_domain_clb\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"sv_wsm_waf_package_ultimate_clb\"]",
           "member": "string",
           "name": "LabelTypes",
@@ -10723,6 +10751,159 @@
           "type": "object",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceElasticModeRequest": {
+      "document": "ModifyInstanceElasticMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_000001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "弹性计费开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceElasticModeResponse": {
+      "document": "ModifyInstanceElasticMode返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameRequest": {
+      "document": "ModifyInstanceName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceNameResponse": {
+      "document": "ModifyInstanceName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改状态：0为成功",
+          "example": "",
+          "member": "int64",
+          "name": "ModifyCode",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceQpsLimitRequest": {
+      "document": "ModifyInstanceQpsLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "套餐实例id",
+          "example": "waf_00000007",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "qps上限",
+          "example": "99999",
+          "member": "int64",
+          "name": "QpsLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceQpsLimitResponse": {
+      "document": "ModifyInstanceQpsLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceRenewFlagRequest": {
+      "document": "ModifyInstanceRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "waf_000001",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费开关",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceRenewFlagResponse": {
+      "document": "ModifyInstanceRenewFlag返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

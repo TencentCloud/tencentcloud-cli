@@ -14,6 +14,13 @@
       "output": "CreateCloudNativeAPIGatewayCanaryRuleResponse",
       "status": "online"
     },
+    "CreateCloudNativeAPIGatewayCertificate": {
+      "document": "创建云原生网关证书",
+      "input": "CreateCloudNativeAPIGatewayCertificateRequest",
+      "name": "创建云原生网关证书",
+      "output": "CreateCloudNativeAPIGatewayCertificateResponse",
+      "status": "online"
+    },
     "CreateCloudNativeAPIGatewayRoute": {
       "document": "创建云原生网关路由",
       "input": "CreateCloudNativeAPIGatewayRouteRequest",
@@ -70,6 +77,13 @@
       "output": "DeleteCloudNativeAPIGatewayCanaryRuleResponse",
       "status": "online"
     },
+    "DeleteCloudNativeAPIGatewayCertificate": {
+      "document": "删除云原生网关证书",
+      "input": "DeleteCloudNativeAPIGatewayCertificateRequest",
+      "name": "删除云原生网关证书",
+      "output": "DeleteCloudNativeAPIGatewayCertificateResponse",
+      "status": "online"
+    },
     "DeleteCloudNativeAPIGatewayRoute": {
       "document": "删除云原生网关路由",
       "input": "DeleteCloudNativeAPIGatewayRouteRequest",
@@ -124,6 +138,20 @@
       "input": "DescribeCloudNativeAPIGatewayCanaryRulesRequest",
       "name": "查询云原生网关灰度规则列表",
       "output": "DescribeCloudNativeAPIGatewayCanaryRulesResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayCertificateDetails": {
+      "document": "查询云原生网关单个证书详情",
+      "input": "DescribeCloudNativeAPIGatewayCertificateDetailsRequest",
+      "name": "查询云原生网关单个证书详情",
+      "output": "DescribeCloudNativeAPIGatewayCertificateDetailsResponse",
+      "status": "online"
+    },
+    "DescribeCloudNativeAPIGatewayCertificates": {
+      "document": "查询云原生网关证书列表",
+      "input": "DescribeCloudNativeAPIGatewayCertificatesRequest",
+      "name": "查询云原生网关证书列表",
+      "output": "DescribeCloudNativeAPIGatewayCertificatesResponse",
       "status": "online"
     },
     "DescribeCloudNativeAPIGatewayConfig": {
@@ -285,6 +313,13 @@
       "input": "ModifyNativeGatewayServerGroupRequest",
       "name": "修改云原生API网关实例分组基础信息",
       "output": "ModifyNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "UpdateCloudNativeAPIGatewayCertificateInfo": {
+      "document": "修改云原生网关证书信息",
+      "input": "UpdateCloudNativeAPIGatewayCertificateInfoRequest",
+      "name": "修改云原生网关证书信息",
+      "output": "UpdateCloudNativeAPIGatewayCertificateInfoResponse",
       "status": "online"
     },
     "UpdateCloudNativeAPIGatewaySpec": {
@@ -526,6 +561,22 @@
         }
       ],
       "usage": "both"
+    },
+    "CertificateInfo": {
+      "document": "证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201\t",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CloudAPIGatewayCanaryRuleList": {
       "document": "灰度规则列表",
@@ -1611,6 +1662,88 @@
       ],
       "type": "object"
     },
+    "CreateCloudNativeAPIGatewayCertificateRequest": {
+      "document": "CreateCloudNativeAPIGatewayCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的域名",
+          "example": "[\"abc.com\"]",
+          "member": "string",
+          "name": "BindDomains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ssl平台证书 Id",
+          "example": "12412rew43-5fdsf35",
+          "member": "string",
+          "name": "CertId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书私钥",
+          "example": "-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书pem格式",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "Crt",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayCertificateResponse": {
+      "document": "CreateCloudNativeAPIGatewayCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建证书结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudNativeAPIGatewayRequest": {
       "document": "CreateCloudNativeAPIGateway请求参数结构体",
       "members": [
@@ -2468,6 +2601,42 @@
       ],
       "type": "object"
     },
+    "DeleteCloudNativeAPIGatewayCertificateRequest": {
+      "document": "DeleteCloudNativeAPIGatewayCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书Id",
+          "example": "6190e57f-f5b2-4295-a8c0-34d4a6d0e6e5",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayCertificateResponse": {
+      "document": "DeleteCloudNativeAPIGatewayCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCloudNativeAPIGatewayRequest": {
       "document": "DeleteCloudNativeAPIGateway请求参数结构体",
       "members": [
@@ -2852,6 +3021,114 @@
           "document": "灰度规则列表",
           "example": "无",
           "member": "CloudAPIGatewayCanaryRuleList",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCertificateDetailsRequest": {
+      "document": "DescribeCloudNativeAPIGatewayCertificateDetails请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书Id",
+          "example": "6190e57f-f5b2-4295-a8c0-34d4a6d0e6e5",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCertificateDetailsResponse": {
+      "document": "DescribeCloudNativeAPIGatewayCertificateDetails返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongCertificate",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCertificatesRequest": {
+      "document": "DescribeCloudNativeAPIGatewayCertificates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "列表数量",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，多个过滤条件之间是与的关系，支持BindDomain ，Name",
+          "example": "[]",
+          "member": "ListFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayCertificatesResponse": {
+      "document": "DescribeCloudNativeAPIGatewayCertificates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "KongCertificatesList",
           "name": "Result",
           "type": "object",
           "value_allowed_null": false
@@ -4931,6 +5208,174 @@
       ],
       "usage": "out"
     },
+    "KongCertificate": {
+      "document": "云原生网关证书",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongCertificatesPreview",
+          "name": "Cert",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KongCertificatesList": {
+      "document": "kong证书列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongCertificatesPreview",
+          "name": "CertificatesList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "证书列表总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "Pages",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "KongCertificatesPreview": {
+      "document": "云原生网关证书预览信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"abc.com\"]",
+          "member": "string",
+          "name": "BindDomains",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书状态：expired(已过期)\n                   active(生效中)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "expired",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书pem格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "Crt",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书私钥\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-31 05:45:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书上传时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-21 13:56:20",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书签发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-08-21 05:45:00",
+          "member": "string",
+          "name": "IssueTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书来源：native(kong自定义证书)\n                    ssl(ssl平台证书)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ssl",
+          "member": "string",
+          "name": "CertSource",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ssl平台证书Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6767a862a4-8ce4",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "KongRoutePreview": {
       "document": "云原生网关路由信息",
       "members": [
@@ -6947,6 +7392,60 @@
         }
       ],
       "usage": "both"
+    },
+    "UpdateCloudNativeAPIGatewayCertificateInfoRequest": {
+      "document": "UpdateCloudNativeAPIGatewayCertificateInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书id",
+          "example": "f931336a-44f8-4381-bcc2-c9340f0239c9",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的域名列表",
+          "example": "[\"abc.com\"]",
+          "member": "string",
+          "name": "BindDomains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "证书名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateCloudNativeAPIGatewayCertificateInfoResponse": {
+      "document": "UpdateCloudNativeAPIGatewayCertificateInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateCloudNativeAPIGatewayResult": {
       "document": "更新云原生API网关响应结果。",

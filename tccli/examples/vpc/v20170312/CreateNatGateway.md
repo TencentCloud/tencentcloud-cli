@@ -35,12 +35,14 @@ Output:
                     {
                         "AddressId": "eip-9uw5fwsu",
                         "PublicIpAddress": "139.199.232.119",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     },
                     {
                         "AddressId": "eip-9uw5fsss",
                         "PublicIpAddress": "139.199.232.221",
-                        "IsBlocked": false
+                        "IsBlocked": false,
+                        "BlockType": "NORMAL"
                     }
                 ],
                 "DestinationIpPortTranslationNatRuleSet": [],
@@ -79,7 +81,8 @@ tccli vpc CreateNatGateway --cli-unfold-argument  \
     --SubnetId subnet-q1b8fsg \
     --AddressCount 1 \
     --NatGatewayName xiaooliang_test \
-    --VpcId vpc-bohigpb7
+    --VpcId vpc-bohigpb7 \
+    --NatProductVersion 2
 ```
 
 Output: 
