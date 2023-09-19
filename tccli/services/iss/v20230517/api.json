@@ -315,6 +315,13 @@
       "output": "DescribeRecordRetrieveTaskResponse",
       "status": "online"
     },
+    "DescribeRecordSlice": {
+      "document": "平台支持将数据以TS切片的形式存入客户自有COS桶，该接口用于支持客户快捷查询切片信息列表\n（注意：只支持标准存储类型的查询）",
+      "input": "DescribeRecordSliceRequest",
+      "name": "查询云端录像切片信息列表",
+      "output": "DescribeRecordSliceResponse",
+      "status": "online"
+    },
     "DescribeRecordTemplate": {
       "document": "用于查询实时上云模板详情",
       "input": "DescribeRecordTemplateRequest",
@@ -5194,6 +5201,61 @@
       ],
       "type": "object"
     },
+    "DescribeRecordSliceRequest": {
+      "document": "DescribeRecordSlice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检索开始时间，UTC秒数，例如：1662114146，开始和结束时间段最长为一天，且不能跨天",
+          "example": "无",
+          "member": "uint64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "检索结束时间，UTC秒数，例如：1662114246，开始和结束时间段最长为一天，且不能跨天",
+          "example": "无",
+          "member": "uint64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRecordSliceResponse": {
+      "document": "DescribeRecordSlice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云录像切片信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RecordSliceInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRecordTemplateRequest": {
       "document": "DescribeRecordTemplate请求参数结构体",
       "members": [
@@ -8037,6 +8099,32 @@
           "name": "ChannelCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RecordSliceInfo": {
+      "document": "录像切片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计划ID",
+          "example": "无",
+          "member": "string",
+          "name": "PlanId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录像切片开始和结束时间列表",
+          "example": "无",
+          "member": "RecordTimeLine",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],

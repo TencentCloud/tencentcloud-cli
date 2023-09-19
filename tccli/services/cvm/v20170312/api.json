@@ -3397,6 +3397,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "云梯参数，类型为 json string。",
+          "example": "无",
+          "member": "string",
+          "name": "YuntiParameters",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3410,7 +3419,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3420,7 +3429,7 @@
           "example": "无",
           "member": "InstanceTypeConfigStatus",
           "name": "InstanceTypeConfigStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

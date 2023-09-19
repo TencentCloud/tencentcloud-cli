@@ -1,14 +1,14 @@
 **Example 1: 查询指定实例支持调整的机型配置**
 
-
+查询指定实例支持调整的机型配置
 
 Input: 
 
 ```
 tccli cvm DescribeInstancesModification --cli-unfold-argument  \
-    --InstanceIds xx \
+    --Filters.0.Values SELL \
     --Filters.0.Name status \
-    --Filters.0.Values SELL
+    --InstanceIds ins-bzps2kwdg
 ```
 
 Output: 
@@ -24,7 +24,7 @@ Output:
                     "InstanceFamily": "SA2",
                     "InstanceType": "SA2.MEDIUM4",
                     "Memory": 4,
-                    "GPU": 0,
+                    "GpuCount": 0,
                     "CPU": 2
                 },
                 "Message": null

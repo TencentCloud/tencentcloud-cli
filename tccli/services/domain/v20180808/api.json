@@ -1076,6 +1076,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1086,6 +1087,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1096,6 +1098,7 @@
           "example": "无",
           "member": "string",
           "name": "ImgUrl",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1106,6 +1109,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginImgUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1116,6 +1120,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrantCertificateCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1126,6 +1131,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrantCertificateType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1136,6 +1142,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrantImgUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

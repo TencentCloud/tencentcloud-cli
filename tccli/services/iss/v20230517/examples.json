@@ -450,6 +450,20 @@
         "title": "成功"
       }
     ],
+    "DescribeRecordSlice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordSlice\n<公共请求参数>\n\n{\n    \"StartTime\": 1692374400,\n    \"EndTime\": 1692457260,\n    \"ChannelId\": \"223d7c52-****-4a12-****-82e983dfc08f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"712711ca-6ef2-4b15-aa74-74c289621b2a\"\n    }\n}",
+        "title": "无录像切片"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: iss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRecordSlice\n<公共请求参数>\n\n{\n    \"StartTime\": 1692374400,\n    \"EndTime\": 1692457260,\n    \"ChannelId\": \"223d7c52-****-4a12-****-82e983dfc08f\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"List\": [\n                    {\n                        \"Begin\": 1692374406,\n                        \"End\": 1692374426\n                    },\n                    {\n                        \"Begin\": 1692374426,\n                        \"End\": 1692374446\n                    },\n                    {\n                        \"Begin\": 1692374446,\n                        \"End\": 1692374466\n                    },\n                    {\n                        \"Begin\": 1692374466,\n                        \"End\": 1692374486\n                    },\n                    {\n                        \"Begin\": 1692374486,\n                        \"End\": 1692374506\n                    }\n                ],\n                \"PlanId\": \"572fa953e07********94c0387397748\"\n            }\n        ],\n        \"RequestId\": \"fba7981b-d6a4-4177-b11d-e53a6110e4cd\"\n    }\n}",
+        "title": "有录像切片"
+      }
+    ],
     "DescribeRecordTemplate": [
       {
         "document": " ",

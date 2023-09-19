@@ -1,3 +1,263 @@
+# Release 3.0.854.1
+
+## 云硬盘(cbs) 版本：2017-03-12
+
+### 第 29 次发布
+
+发布时间：2023-09-20 01:18:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CdcSize](http://document.tencentcloudapi.woa.com/document/product/362/15669#CdcSize)
+
+	* 新增成员：DiskAvailable
+
+	* <font color="#dd0000">**删除成员**：</font>DiskAavilable
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 49 次发布
+
+发布时间：2023-09-20 01:29:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [InquiryPriceCreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/81965)
+* [InquiryPriceModifyLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/81964)
+* [InquiryPriceRefundLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/81962)
+* [InquiryPriceRenewLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/81963)
+
+新增数据结构：
+
+* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/214/30694#ItemPrice)
+* [Price](http://document.tencentcloudapi.woa.com/document/product/214/30694#Price)
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 5 次发布
+
+发布时间：2023-09-20 01:30:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIndustryTrees](http://document.tencentcloudapi.woa.com/document/product/1626/81966)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 58 次发布
+
+发布时间：2023-09-20 01:38:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeInstancesModification](http://document.tencentcloudapi.woa.com/document/product/213/60294)
+
+	* 新增入参：YuntiParameters
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 72 次发布
+
+发布时间：2023-09-20 01:39:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAttackEvents](http://document.tencentcloudapi.woa.com/document/product/296/81968)
+* [DescribeMachineRiskCnt](http://document.tencentcloudapi.woa.com/document/product/296/81967)
+* [DescribeSecurityBroadcasts](http://document.tencentcloudapi.woa.com/document/product/296/81970)
+* [ModifyLicenseOrder](http://document.tencentcloudapi.woa.com/document/product/296/81969)
+
+新增数据结构：
+
+* [Broadcasts](http://document.tencentcloudapi.woa.com/document/product/296/19867#Broadcasts)
+* [NetAttackEvent](http://document.tencentcloudapi.woa.com/document/product/296/19867#NetAttackEvent)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 62 次发布
+
+发布时间：2023-09-20 01:52:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48094)
+
+	* 新增出参：LogicCrossRegionsConfigUpdateTime
+
+* [DescribeBackupList](http://document.tencentcloudapi.woa.com/document/product/1003/48093)
+
+	* 新增入参：BackupRegion, IsCrossRegionsBackup
+
+* [ModifyBackupConfig](http://document.tencentcloudapi.woa.com/document/product/1003/48090)
+
+	* 新增入参：LogicBackupConfig, DeleteAutoLogicBackup
+
+	* <font color="#dd0000">**修改入参**：</font>ReserveDuration
+
+
+新增数据结构：
+
+* [LogicBackupConfigInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#LogicBackupConfigInfo)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 16 次发布
+
+发布时间：2023-09-20 01:54:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyCmdTemplate](http://document.tencentcloudapi.woa.com/document/product/1492/81971)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 37 次发布
+
+发布时间：2023-09-20 02:07:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* 新增入参：InitiatorComponents
+
+* [VerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1668/79295)
+
+	* 新增入参：Agent
+
+
+
+
+## 智能视图计算平台(iss) 版本：2023-05-17
+
+### 第 8 次发布
+
+发布时间：2023-09-20 02:20:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRecordSlice](http://document.tencentcloudapi.woa.com/document/product/1740/81972)
+
+新增数据结构：
+
+* [RecordSliceInfo](http://document.tencentcloudapi.woa.com/document/product/1740/81572#RecordSliceInfo)
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 38 次发布
+
+发布时间：2023-09-20 02:27:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskNotifyConfig](http://document.tencentcloudapi.woa.com/document/product/862/37615#TaskNotifyConfig)
+
+	* 新增成员：NotifyKey
+
+
+
+
+## 集团账号管理(organization) 版本：2021-03-31
+
+### 第 27 次发布
+
+发布时间：2023-09-20 02:30:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QuitOrganization](http://document.tencentcloudapi.woa.com/document/product/850/81973)
+
+
+
+## 集团账号管理(organization) 版本：2018-12-25
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 7 次发布
+
+发布时间：2023-09-20 03:10:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAlarmList](http://document.tencentcloudapi.woa.com/document/product/1734/81815)
+
+	* 新增入参：GroupIdSet
+
+
+
+
 # Release 3.0.853.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

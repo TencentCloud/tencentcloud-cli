@@ -2969,6 +2969,15 @@
           "name": "ProcessorSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "GroupIdSet",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

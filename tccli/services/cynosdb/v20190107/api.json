@@ -2085,7 +2085,7 @@
           "example": "无",
           "member": "uint64",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2095,7 +2095,7 @@
           "example": "无",
           "member": "string",
           "name": "FileName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2105,7 +2105,7 @@
           "example": "无",
           "member": "uint64",
           "name": "FileSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2115,7 +2115,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2125,7 +2125,7 @@
           "example": "无",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2135,7 +2135,7 @@
           "example": "无",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2145,7 +2145,7 @@
           "example": "无",
           "member": "string",
           "name": "BackupMethod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2155,7 +2155,7 @@
           "example": "无",
           "member": "string",
           "name": "BackupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2165,7 +2165,7 @@
           "example": "无",
           "member": "string",
           "name": "SnapshotTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2175,7 +2175,7 @@
           "example": "无",
           "member": "int64",
           "name": "BackupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2185,7 +2185,7 @@
           "example": "无",
           "member": "string",
           "name": "SnapShotType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2195,7 +2195,7 @@
           "example": "无",
           "member": "string",
           "name": "BackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3158,7 +3158,7 @@
           "example": "12345",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7427,7 +7427,7 @@
           "example": "7200",
           "member": "uint64",
           "name": "BackupTimeBeg",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7437,7 +7437,7 @@
           "example": "21600",
           "member": "uint64",
           "name": "BackupTimeEnd",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7447,7 +7447,7 @@
           "example": "604800",
           "member": "uint64",
           "name": "ReserveDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7457,7 +7457,7 @@
           "example": "[\"full\",\"increment\",\"increment\",\"increment\",\"increment\",\"increment\",\"increment\"]",
           "member": "string",
           "name": "BackupFreq",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7467,7 +7467,17 @@
           "example": "\"snapshot\"",
           "member": "string",
           "name": "BackupType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域逻辑备份配置修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2023-07-12 12:00:00\"",
+          "member": "string",
+          "name": "LogicCrossRegionsConfigUpdateTime",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7645,6 +7655,24 @@
           "name": "SnapshotIdList",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "备份地域",
+          "example": "无",
+          "member": "string",
+          "name": "BackupRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否跨地域备份",
+          "example": "无",
+          "member": "string",
+          "name": "IsCrossRegionsBackup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7658,7 +7686,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7668,7 +7696,7 @@
           "example": "无",
           "member": "BackupFileInfo",
           "name": "BackupList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11384,6 +11412,78 @@
       ],
       "usage": "out"
     },
+    "LogicBackupConfigInfo": {
+      "document": "逻辑备份配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启自动逻辑备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OFF",
+          "member": "string",
+          "name": "LogicBackupEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动逻辑备份开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LogicBackupTimeBeg",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动逻辑备份结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LogicBackupTimeEnd",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动逻辑备份保留时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "LogicReserveDuration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启跨地域逻辑备份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogicCrossRegionsEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "逻辑备份所跨地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogicCrossRegions",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "MigrateInstanceInfo": {
       "document": "迁移实例的信息",
       "members": [
@@ -11820,15 +11920,6 @@
         },
         {
           "disabled": false,
-          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000",
-          "example": "604800",
-          "member": "uint64",
-          "name": "ReserveDuration",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200",
           "example": "7200",
           "member": "uint64",
@@ -11842,6 +11933,15 @@
           "example": "21600",
           "member": "uint64",
           "name": "BackupTimeEnd",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000",
+          "example": "604800",
+          "member": "uint64",
+          "name": "ReserveDuration",
           "required": false,
           "type": "int"
         },
@@ -11862,6 +11962,24 @@
           "name": "BackupType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "逻辑备份配置",
+          "example": "无",
+          "member": "LogicBackupConfigInfo",
+          "name": "LogicBackupConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否删除自动逻辑备份",
+          "example": "无",
+          "member": "bool",
+          "name": "DeleteAutoLogicBackup",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
