@@ -40,6 +40,20 @@
         "title": "根据签署流程id创建批量撤回url"
       }
     ],
+    "ChannelCreateBatchSignUrl": [
+      {
+        "document": "按照合同发起时候填入的信息生成批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"IdCardNumber\": \"610000000000000000\",\n    \"IdCardType\": \"ID_CARD\",\n    \"Name\": \"小明\",\n    \"NotifyType\": \"SMS\",\n    \"Mobile\": \"1234567890\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684899114,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"SignUrl\": \"https://ess.url.cn/FuP**Swc\",\n        \"MiniAppPath\": \"pages/guide/index?shortKey=FuP3**wc\"\n    }\n}",
+        "title": "生成个人小程序批量签署链接"
+      },
+      {
+        "document": "按照合同发起时候填入的信息生成企业经办人批量签署链接，并通过FlowIds参数对用户可以批签的合同进行限制",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchSignUrl\n<公共请求参数>\n\n{\n    \"IdCardNumber\": \"610000000000000000\",\n    \"IdCardType\": \"ID_CARD\",\n    \"Name\": \"小明\",\n    \"NotifyType\": \"SMS\",\n    \"Mobile\": \"1234567890\",\n    \"OrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"test_open_id\"\n        },\n        \"ProxyOrganizationOpenId\": \"test_org_open_id\",\n        \"AppId\": \"yDxbWUyKQ*******4zjEB8mxCcDjAyF\"\n    },\n    \"FlowIds\": [\n        \"yDwFdUUckpsw******yQ0af8bHosXQtb\",\n        \"yDR1AUUgygj******uO4zjE8gTG7xvgH\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1684899114,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"SignUrl\": \"https://ess.url.cn/FuP**Swc\",\n        \"MiniAppPath\": \"pages/guide/index?shortKey=FuP3**wc\"\n    }\n}",
+        "title": "生成企业经办人小程序批量签署链接"
+      }
+    ],
     "ChannelCreateBoundFlows": [
       {
         "document": "领取未归属的合同",

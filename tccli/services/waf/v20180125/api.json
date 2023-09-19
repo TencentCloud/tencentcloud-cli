@@ -2620,7 +2620,7 @@
           "example": "1",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2630,7 +2630,7 @@
           "example": "1",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2640,7 +2640,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2650,7 +2650,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2660,7 +2660,7 @@
           "example": "1",
           "member": "string",
           "name": "Edition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2670,7 +2670,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IsCdn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2680,7 +2680,7 @@
           "example": "11",
           "member": "LoadBalancerPackageNew",
           "name": "LoadBalancerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2690,7 +2690,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2700,7 +2700,7 @@
           "example": "1",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2710,7 +2710,7 @@
           "example": "clb",
           "member": "string",
           "name": "AlbType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2720,7 +2720,7 @@
           "example": "[\"x-real-ip\"]",
           "member": "string",
           "name": "IpHeaders",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2730,7 +2730,17 @@
           "example": "\"cluster-asd\"",
           "member": "string",
           "name": "CdcClusters",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云类型:public:公有云；private:私有云;hybrid:混合云\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"public”",
+          "member": "string",
+          "name": "CloudType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8569,6 +8579,7 @@
           "example": "\"test.qcloudwaf.com\"",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8579,6 +8590,7 @@
           "example": "\"waf-Bz0Wntsz\"",
           "member": "string",
           "name": "DomainId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8589,16 +8601,18 @@
           "example": "\"qcloudwaf.com\"",
           "member": "string",
           "name": "MainDomain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "waf模式，同saas waf保持一致",
+          "document": "规则引擎防护模式，0 观察模式，1拦截模式",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8609,6 +8623,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8619,16 +8634,18 @@
           "example": "1",
           "member": "uint64",
           "name": "State",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "使用的规则，同saas waf保持一致",
+          "document": "规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式",
           "example": "20",
           "member": "uint64",
           "name": "Engine",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8639,6 +8656,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsCdn",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8649,6 +8667,7 @@
           "example": "{}",
           "member": "LoadBalancer",
           "name": "LoadBalancerSet",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -8659,6 +8678,7 @@
           "example": "\"gz\"",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8669,6 +8689,7 @@
           "example": "\"clb-waf\"",
           "member": "string",
           "name": "Edition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8679,6 +8700,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FlowMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8689,6 +8711,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ClsStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8699,6 +8722,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Level",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -8709,6 +8733,7 @@
           "example": "[\"\t cluster-o41khj88\",\"\t cluster-o41khj99\"]",
           "member": "string",
           "name": "CdcClusters",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8719,6 +8744,7 @@
           "example": "clb",
           "member": "string",
           "name": "AlbType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -8729,6 +8755,7 @@
           "example": "[\"x-real-ip\"]",
           "member": "string",
           "name": "IpHeaders",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8739,8 +8766,20 @@
           "example": "1",
           "member": "int64",
           "name": "EngineType",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云类型:public:公有云；private:私有云;hybrid:混合云\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"public\"",
+          "member": "string",
+          "name": "CloudType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9332,6 +9371,7 @@
           "example": "lb-xx",
           "member": "string",
           "name": "LoadBalancerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9342,6 +9382,7 @@
           "example": "test",
           "member": "string",
           "name": "LoadBalancerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9352,6 +9393,7 @@
           "example": "lbl-xx",
           "member": "string",
           "name": "ListenerId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9362,6 +9404,7 @@
           "example": "test",
           "member": "string",
           "name": "ListenerName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9372,6 +9415,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9382,6 +9426,7 @@
           "example": "80",
           "member": "uint64",
           "name": "Vport",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -9392,6 +9437,7 @@
           "example": "gz",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9402,6 +9448,7 @@
           "example": "http",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9412,6 +9459,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9422,6 +9470,7 @@
           "example": "1",
           "member": "int64",
           "name": "NumericalVpcId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -9432,6 +9481,18 @@
           "example": "OPEN 公网； INTERNAL 内网",
           "member": "string",
           "name": "LoadBalancerType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LoadBalancerDomain",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9560,6 +9621,17 @@
           "name": "LoadBalancerType",
           "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡器的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "LoadBalancerDomain",
+          "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -10801,8 +10873,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "新名称",
+          "example": "test1.qcloud.com",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "实例id",
-          "example": "",
+          "example": "aaaaa",
           "member": "string",
           "name": "InstanceID",
           "required": true,
@@ -10811,7 +10892,7 @@
         {
           "disabled": false,
           "document": "版本",
-          "example": "",
+          "example": "aaaaa",
           "member": "string",
           "name": "Edition",
           "required": true,
@@ -10826,9 +10907,10 @@
         {
           "disabled": false,
           "document": "修改状态：0为成功",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "ModifyCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11305,7 +11387,7 @@
         },
         {
           "disabled": false,
-          "document": "0:关闭xff重置；1:开启xff重置",
+          "document": "0:关闭xff重置；1:开启xff重置，只有在IsCdn=0时可以开启",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -13136,7 +13218,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Appid",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13146,7 +13228,7 @@
           "example": "1",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13156,7 +13238,7 @@
           "example": "1",
           "member": "string",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13166,7 +13248,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13176,7 +13258,7 @@
           "example": "1",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13186,7 +13268,7 @@
           "example": "1",
           "member": "string",
           "name": "Edition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13196,7 +13278,7 @@
           "example": "1",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13206,7 +13288,7 @@
           "example": "{\"EnableBody\": 1,\"EnableHeaders\":1}",
           "member": "string",
           "name": "WriteConfig",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13216,8 +13298,18 @@
           "example": "1",
           "member": "uint64",
           "name": "Cls",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标记是否是混合云接入。hybrid表示混合云接入域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"hybrid\"",
+          "member": "string",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

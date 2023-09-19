@@ -3325,7 +3325,7 @@
         },
         {
           "disabled": false,
-          "document": "运行sql",
+          "document": "运行sql，需要base64编码。",
           "example": "select 1;",
           "member": "string",
           "name": "ExecuteSQL",
@@ -3406,7 +3406,7 @@
         },
         {
           "disabled": false,
-          "document": "是否继承集群的资源类配置：0：自定义（默认），1：继承集群；",
+          "document": "是否继承集群的资源类配置：0：不继承（默认），1：继承集群；",
           "example": "0",
           "member": "int64",
           "name": "IsInherit",

@@ -19,6 +19,9 @@ Output:
             {
                 "TaskId": "taskId1",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -26,6 +29,9 @@ Output:
             {
                 "TaskId": "taskId2",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -33,6 +39,9 @@ Output:
             {
                 "TaskId": "taskId3",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -40,6 +49,9 @@ Output:
             {
                 "TaskId": "taskId4",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -47,6 +59,9 @@ Output:
             {
                 "TaskId": "taskId5",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"
@@ -79,6 +94,9 @@ Output:
             {
                 "TaskId": "taskId7",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "0000-00-00T00:00:00Z"
@@ -112,6 +130,9 @@ Output:
             {
                 "TaskId": "taskId6",
                 "TaskType": "WorkflowTask",
+                "SubTaskTypes": [
+                    "action-trans"
+                ],
                 "CreateTime": "2018-12-27T13:57:15Z",
                 "BeginProcessTime": "2018-12-27T13:57:15Z",
                 "FinishTime": "2018-12-27T13:57:15Z"

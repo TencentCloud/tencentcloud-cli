@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "ModifyCode": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

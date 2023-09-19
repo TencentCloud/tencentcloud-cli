@@ -824,7 +824,7 @@
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=ModifyInstanceName\n&InstanceName=test1.qcloud.com\n&InstanceID=aaaaa\n&Edition=aaaaa\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"ModifyCode\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ModifyCode\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "修改实例名称"
       }
     ],

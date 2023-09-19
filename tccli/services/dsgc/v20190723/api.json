@@ -1394,6 +1394,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1512,9 +1522,21 @@
           "example": "task-d8ja93kr",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "评估任务的自增ID\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100024",
+          "member": "int64",
+          "name": "TaskUid",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1522,6 +1544,7 @@
           "example": "SSM自动化评估",
           "member": "string",
           "name": "TaskName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1532,6 +1555,7 @@
           "example": "SSM",
           "member": "string",
           "name": "BusinessName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1542,6 +1566,7 @@
           "example": "云鼎",
           "member": "string",
           "name": "BusinessDept",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1552,6 +1577,7 @@
           "example": "Bob",
           "member": "string",
           "name": "BusinessOwner",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1562,6 +1588,7 @@
           "example": "template-9rm28d4",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1572,6 +1599,7 @@
           "example": "个人信息保护法",
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1582,6 +1610,7 @@
           "example": "1",
           "member": "int64",
           "name": "ComplianceGroupId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1592,6 +1621,7 @@
           "example": "个人信息保护法",
           "member": "string",
           "name": "ComplianceGroupName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1602,6 +1632,7 @@
           "example": "2",
           "member": "int64",
           "name": "ControlItemCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1612,6 +1643,7 @@
           "example": "1",
           "member": "int64",
           "name": "RiskCount",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1622,6 +1654,7 @@
           "example": "2022-04-22 18:57:02",
           "member": "string",
           "name": "FinishedTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1632,6 +1665,7 @@
           "example": "2022-04-20 15:59:42",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1642,6 +1676,7 @@
           "example": "0",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1652,6 +1687,7 @@
           "example": "无",
           "member": "RiskCountInfo",
           "name": "RiskCountInfoList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1662,6 +1698,7 @@
           "example": "无",
           "member": "DiscoveryCondition",
           "name": "DiscoveryCondition",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -1672,12 +1709,35 @@
           "example": "无",
           "member": "string",
           "name": "ErrorInfo",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模版主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateUid",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "进度百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "ProgressPercent",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "AssessmentTemplate": {
       "document": "DSPA评估模版",
@@ -1800,6 +1860,16 @@
           "name": "IsASMTemplate",
           "output_required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规组id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IdentifyComplianceId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6011,6 +6081,15 @@
           "name": "RiskSide",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ASC 正序，DESC倒叙",
+          "example": "ASC",
+          "member": "string",
+          "name": "TimeSort",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -16940,6 +17019,28 @@
           "example": "无",
           "member": "string",
           "name": "RiskSide",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API安全风险链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://",
+          "member": "string",
+          "name": "APIRiskLinkURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
           "output_required": false,
           "required": false,
           "type": "string",

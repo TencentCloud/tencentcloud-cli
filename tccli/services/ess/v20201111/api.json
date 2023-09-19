@@ -35,6 +35,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateBatchSignUrl": {
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
+      "input": "CreateBatchSignUrlRequest",
+      "name": "获取小程序批量签署链接",
+      "output": "CreateBatchSignUrlResponse",
+      "status": "online"
+    },
     "CreateConvertTaskApi": {
       "document": "此接口（CreateConvertTaskApi）用来将word、excel、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "CreateConvertTaskApiRequest",
@@ -106,9 +113,9 @@
       "status": "online"
     },
     "CreateFlowSignReview": {
-      "document": "提交企业签署流程审批结果\n适用场景: \n在通过接口(CreateFlow 或者CreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true，且发起方企业作为签署方参与了流程签署，则可以调用此接口提交企业内部签署审批结果。\n若签署流程状态正常，且本企业存在签署方未签署，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
+      "document": "提交签署流程审批结果的适用场景包括：\n1. 在使用模板（CreateFlow）或文件（CreateFlowByFiles）创建签署流程时，若指定了参数NeedSignReview为true，且发起方企业作为签署方参与了流程签署，则可以调用此接口提交企业内部签署审批结果。自动签署也需要进行审核通过才会进行签署。\n2. 若签署流程状态正常，同一签署流程可以多次提交签署审批结果，签署时的最后一个“审批结果”有效。",
       "input": "CreateFlowSignReviewRequest",
-      "name": "提交企业签署流程审批结果",
+      "name": "提交签署流程审批结果",
       "output": "CreateFlowSignReviewResponse",
       "status": "online"
     },
@@ -1579,6 +1586,144 @@
       ],
       "type": "object"
     },
+    "CreateBatchSignUrlRequest": {
+      "document": "CreateBatchSignUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`请确保和合同中填入的一致`",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)。\n请确认手机号所有方为此业务通知方。\n\n注：`请确保和合同中填入的一致,  若无法保持一致，请确保在发起和生成批量签署链接时传入相同的参与方证件信息`",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>\n\n注：`请确保和合同中填入的一致`",
+          "example": "无",
+          "member": "string",
+          "name": "IdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通知用户方式：\n<ul>\n<li>**NONE** : 不通知（默认）</li>\n<li>**SMS** : 短信通知（发送短信通知到Mobile参数所传的手机号）</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次需要批量签署的合同流程ID列表。\n可以不传,  如不传则是发给对方的所有待签署合同流程。\n",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否直接跳转至合同内容页面进行签署\n<ul>\n<li>**false**: 会跳转至批量合同流程的列表,  点击需要批量签署合同后进入合同内容页面进行签署(默认)</li>\n<li>**true**: 跳过合同流程列表, 直接进入合同内容页面进行签署</li>\n</ul>",
+          "example": "无",
+          "member": "bool",
+          "name": "JumpToDetail",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchSignUrlResponse": {
+      "document": "CreateBatchSignUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n\n注: `非小程序和APP集成使用`",
+          "example": "无",
+          "member": "string",
+          "name": "SignUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，默认生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n\n注: `小程序和APP集成使用`",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateConvertTaskApiRequest": {
       "document": "CreateConvertTaskApi请求参数结构体",
       "members": [
@@ -2721,7 +2866,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2730,7 +2875,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程编号",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -2739,7 +2884,7 @@
         },
         {
           "disabled": false,
-          "document": "企业内部审核结果\nPASS: 通过 \nREJECT: 拒绝",
+          "document": "企业审核结果\n<ul><li>PASS: 通过</li> \n<li>REJECT: 拒绝</li></ul>",
           "example": "无",
           "member": "string",
           "name": "ReviewType",
@@ -2748,7 +2893,7 @@
         },
         {
           "disabled": false,
-          "document": "审核原因 \n当ReviewType 是REJECT 时此字段必填,字符串长度不超过200",
+          "document": "审核结果原因，\n字符串长度不超过200\n当ReviewType 是拒绝（REJECT） 时此字段必填。\n",
           "example": "无",
           "member": "string",
           "name": "ReviewMessage",
@@ -2766,7 +2911,7 @@
         },
         {
           "disabled": false,
-          "document": "审核签署节点使用 非必填 如果填写则审核该签署节点。给个人审核时必填。",
+          "document": "审核签署节点人标识，\n用来标识审核的签署方。\n如果签署审核节点是个人， 此参数必填。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",
@@ -2775,7 +2920,7 @@
         },
         {
           "disabled": false,
-          "document": "操作类型：（接口通过该字段区分操作类型）\n\nSignReview:签署审核\nCreateReview:发起审核\n\n默认：SignReview；SignReview:签署审核\n\n该字段不传或者为空，则默认为SignReview签署审核，走签署审核流程\n若发起个人审核，则指定该字段为：SignReview",
+          "document": "操作类型：（接口通过该字段区分不同的操作类型）\n\n<ul><li>SignReview: 签署审核（默认）</li>\n<li>CreateReview: 创建审核</li></ul>\n\n如果审核节点是个人，则操作类型只能为SignReview。",
           "example": "无",
           "member": "string",
           "name": "OperateType",

@@ -490,6 +490,13 @@
       "output": "DescribeRocketMQNamespacesResponse",
       "status": "online"
     },
+    "DescribeRocketMQPublicAccessPoint": {
+      "document": "接口用于查询RocketMQ实例的公网接入信息",
+      "input": "DescribeRocketMQPublicAccessPointRequest",
+      "name": "查询RocketMQ实例公网接入点信息",
+      "output": "DescribeRocketMQPublicAccessPointResponse",
+      "status": "online"
+    },
     "DescribeRocketMQTopicMsgs": {
       "document": "rocketmq 消息查询",
       "input": "DescribeRocketMQTopicMsgsRequest",
@@ -586,6 +593,13 @@
       "input": "ModifyEnvironmentRoleRequest",
       "name": "修改环境角色授权",
       "output": "ModifyEnvironmentRoleResponse",
+      "status": "online"
+    },
+    "ModifyPublicNetworkAccessPoint": {
+      "document": "RabbitMQ专享版修改公网管控台，vpc15672开关",
+      "input": "ModifyPublicNetworkAccessPointRequest",
+      "name": "RabbitMQ专享版修改公网管控台，vpc15672开关",
+      "output": "ModifyPublicNetworkAccessPointResponse",
       "status": "online"
     },
     "ModifyRabbitMQUser": {
@@ -726,6 +740,13 @@
       "input": "SendRocketMQMessageRequest",
       "name": "发送RocketMQ消息",
       "output": "SendRocketMQMessageResponse",
+      "status": "online"
+    },
+    "SetRocketMQPublicAccessPoint": {
+      "document": "该接口用于开启关闭公网访问、设置安全访问策略",
+      "input": "SetRocketMQPublicAccessPointRequest",
+      "name": "设置RocketMQ实例公网访问接入点",
+      "output": "SetRocketMQPublicAccessPointResponse",
       "status": "online"
     },
     "UnbindCmqDeadLetter": {
@@ -7213,6 +7234,93 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQPublicAccessPointRequest": {
+      "document": "DescribeRocketMQPublicAccessPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID，当前只支持专享集群",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQPublicAccessPointResponse": {
+      "document": "DescribeRocketMQPublicAccessPoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "公网接入点状态：\n0， 已开启\n1， 已关闭\n2，开启中\n3，关闭中\n4，修改中",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "支付状态：\n0, 未知\n1，正常\n2，欠费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入点地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "AccessUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全访问规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicAccessRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQTopicMsgsRequest": {
       "document": "DescribeRocketMQTopicMsgs请求参数结构体",
       "members": [
@@ -8981,6 +9089,88 @@
       ],
       "type": "object"
     },
+    "ModifyPublicNetworkAccessPointRequest": {
+      "document": "ModifyPublicNetworkAccessPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名字",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启",
+          "example": "true/false",
+          "member": "bool",
+          "name": "PublicNetworkAccessPointStatus",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "必填，公网控制台的开关/Vpc控制台的开关，示例值，Public/Vpc",
+          "example": "Public/Vpc",
+          "member": "string",
+          "name": "SwitchOwner",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vpc",
+          "example": "VpcId",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网",
+          "example": "SubnetId",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网下面指定ip作为vpc接入点",
+          "example": "10.1.0.1",
+          "member": "string",
+          "name": "SelectIp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPublicNetworkAccessPointResponse": {
+      "document": "ModifyPublicNetworkAccessPoint返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改结果",
+          "example": "修改成功/修改失败",
+          "member": "string",
+          "name": "ModifyResult",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyRabbitMQUserRequest": {
       "document": "ModifyRabbitMQUser请求参数结构体",
       "members": [
@@ -9859,6 +10049,42 @@
         }
       ],
       "usage": "out"
+    },
+    "PublicAccessRule": {
+      "document": "公网访问安全规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip网段信息",
+          "example": "0.0.0.0/0",
+          "member": "string",
+          "name": "IpRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许或者拒绝",
+          "example": "true",
+          "member": "bool",
+          "name": "Allow",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PublishCmqMsgRequest": {
       "document": "PublishCmqMsg请求参数结构体",
@@ -13338,6 +13564,69 @@
           "type": "string",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRocketMQPublicAccessPointRequest": {
+      "document": "SetRocketMQPublicAccessPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID，当前只支持专享集群",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启或关闭访问",
+          "example": "true",
+          "member": "bool",
+          "name": "Enabled",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "带宽大小，开启或者调整公网时必须指定，Mbps为单位",
+          "example": "10",
+          "member": "uint64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费模式，开启公网时必须指定，0为按小时计费，1为包年包月，当前只支持按小时计费",
+          "example": "0",
+          "member": "uint64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "公网访问安全规则列表，Enabled为true时必须传入",
+          "example": "无",
+          "member": "PublicAccessRule",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "SetRocketMQPublicAccessPointResponse": {
+      "document": "SetRocketMQPublicAccessPoint返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

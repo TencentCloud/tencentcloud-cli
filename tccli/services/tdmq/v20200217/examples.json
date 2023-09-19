@@ -572,6 +572,14 @@
         "title": "获取用户命名空间列表"
       }
     ],
+    "DescribeRocketMQPublicAccessPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQPublicAccessPoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rocketmq-jxj3wj5j8e7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"086e9401-0674-41f1-a381-9c6a8ba702ea\",\n        \"Status\": 0,\n        \"PayStatus\": 1,\n        \"AccessUrl\": \"rocketmq-jxj3wj5j8e7.mock-test.com\",\n        \"PayMode\": 0,\n        \"Bandwidth\": 0,\n        \"Rules\": [\n            {\n                \"IpRule\": \"0.0.0.0/0\",\n                \"Allow\": true,\n                \"Remark\": \"test\"\n            }\n        ]\n    }\n}",
+        "title": "获取公网接入点信息"
+      }
+    ],
     "DescribeRocketMQTopicMsgs": [
       {
         "document": "查询topic 最近的100条消息",
@@ -682,6 +690,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentRole\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"RoleName\": \"abc\",\n    \"Permissions\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"gggxxxx\"\n    }\n}",
         "title": "修改环境角色授权"
+      }
+    ],
+    "ModifyPublicNetworkAccessPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyPublicNetworkAccessPoint\n<公共请求参数>\n\n{\n    \"ClusterId\": \"amqp-testtesttest\",\n    \"PublicNetworkAccessPointStatus\": true,\n    \"SwitchOwner\": \"Public\",\n    \"VpcId\": \"vpc\",\n    \"SubnetId\": \"subnetID\",\n    \"SelectIp\": \"10.1.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcd\",\n        \"ModifyResult\": \"修改成功\"\n    }\n}",
+        "title": "RabbitMQ专享版修改公网管控台，数据流开关"
       }
     ],
     "ModifyRabbitMQUser": [
@@ -842,6 +858,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRocketMQMessage\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgKey\": \"xx\",\n    \"MsgTag\": \"xx\",\n    \"MsgBody\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Result\": true,\n        \"MsgId\": \"7F0000013AEC18B4AAC278B640D30002\"\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "SetRocketMQPublicAccessPoint": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetRocketMQPublicAccessPoint\n<公共请求参数>\n\n{\n    \"Rules\": [\n        {\n            \"Remark\": \"test\",\n            \"IpRule\": \"0.0.0.0/0\",\n            \"Allow\": \"true\"\n        }\n    ],\n    \"PayMode\": \"0\",\n    \"Bandwidth\": \"10\",\n    \"InstanceId\": \"rocketmq-jxj3wj5j8e7\",\n    \"Enabled\": \"true\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b28ad6c3-059f-4c38-8a97-a66b3b136a3e\"\n    }\n}",
+        "title": "开启公网接入点"
       }
     ],
     "UnbindCmqDeadLetter": [

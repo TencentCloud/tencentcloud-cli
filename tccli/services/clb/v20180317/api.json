@@ -1014,8 +1014,7 @@
           "member": "string",
           "name": "ListenerId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1024,8 +1023,7 @@
           "member": "int64",
           "name": "Port",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1034,8 +1032,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1044,8 +1041,7 @@
           "member": "string",
           "name": "EniIp",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1054,8 +1050,7 @@
           "member": "int64",
           "name": "Weight",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1064,8 +1059,7 @@
           "member": "string",
           "name": "LocationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -10336,6 +10330,7 @@
           "example": "80",
           "member": "int64",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -10346,6 +10341,7 @@
           "example": "CVM",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10356,6 +10352,7 @@
           "example": "lb-cuxw****",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10366,6 +10363,7 @@
           "example": "10",
           "member": "int64",
           "name": "Weight",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -10376,6 +10374,7 @@
           "example": "ip6-199z****",
           "member": "string",
           "name": "EniIp",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

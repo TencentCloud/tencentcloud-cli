@@ -484,7 +484,7 @@
       "status": "online"
     },
     "EditMedia": {
-      "document": "对视频进行编辑（剪辑、拼接等），生成一个新的点播视频。编辑的功能包括：\n\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。",
+      "document": "对视频进行编辑，生成一个新的视频。编辑的功能包括：\n  \n\n一、**剪辑任务**：简单的视频剪辑，如剪辑、拼接等\n1. 对一个文件进行剪辑，生成一个新的视频；\n2. 对多个文件进行拼接，生成一个新的视频；\n3. 对多个文件进行剪辑，然后再拼接，生成一个新的视频。\n\n二、**合成任务**：通过接口描述信息，合成一个新的视频。\n1. 多轨道（视频、音频、字幕）、多类型元素（视频、图片、音频、文字、空）\n2. 图像级别：贴图、缩放、任意角度旋转、镜像等\n3. 音频级别：音量控制、淡入淡出、混音等\n4. 视频级别：转场、倍数播放、拼接、剪切、字幕、画中画、音画分离、出入场动效等",
       "input": "EditMediaRequest",
       "name": "编辑视频",
       "output": "EditMediaResponse",
@@ -652,7 +652,7 @@
       "status": "online"
     },
     "ProcessLiveStream": {
-      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译）。\n\n直播流处理事件通知实时写入用户指定的消息队列 CMQ 中，用户需要从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
+      "document": "对直播流媒体发起处理任务，功能包括：\n\n* 智能内容审核（画面鉴黄、敏感信息检测、声音鉴黄）；\n* 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词、语音实时翻译、物体识别、游戏打点）。\n* 智能内容分析（新闻实时拆条）。\n* 质检（直播流格式诊断、音画内容检测（抖动、模糊、低光照、过曝光、黑边、白边、黑屏、白屏、花屏、噪点、马赛克、二维码等）、无参考打分）。\n* 录制\n\n直播流处理事件通知支持HTTP回调，也支持实时写入用户指定的消息队列 CMQ 中，用户从消息队列 CMQ 中获取事件通知结果，同时处理过程中存在输出文件的，会写入用户指定的输出文件的目标存储中。",
       "input": "ProcessLiveStreamRequest",
       "name": "对直播流发起处理",
       "output": "ProcessLiveStreamResponse",
@@ -991,6 +991,7 @@
           "example": "无",
           "member": "TranscodeTaskInput",
           "name": "TranscodeTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1001,6 +1002,7 @@
           "example": "无",
           "member": "AnimatedGraphicTaskInput",
           "name": "AnimatedGraphicTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1011,6 +1013,7 @@
           "example": "无",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "SnapshotByTimeOffsetTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1021,6 +1024,7 @@
           "example": "无",
           "member": "SampleSnapshotTaskInput",
           "name": "SampleSnapshotTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1031,6 +1035,7 @@
           "example": "无",
           "member": "ImageSpriteTaskInput",
           "name": "ImageSpriteTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1041,6 +1046,7 @@
           "example": "无",
           "member": "AdaptiveDynamicStreamingTaskInput",
           "name": "AdaptiveDynamicStreamingTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1051,6 +1057,7 @@
           "example": "无",
           "member": "AiContentReviewTaskInput",
           "name": "AiContentReviewTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1061,6 +1068,7 @@
           "example": "无",
           "member": "AiAnalysisTaskInput",
           "name": "AiAnalysisTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1071,6 +1079,7 @@
           "example": "无",
           "member": "AiRecognitionTaskInput",
           "name": "AiRecognitionTask",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1087,7 +1096,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskTranscodeResult",
           "name": "TranscodeTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1097,7 +1106,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskAnimatedGraphicResult",
           "name": "AnimatedGraphicTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1105,9 +1114,9 @@
           "disabled": false,
           "document": "时间点截图任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
-          "member": "MediaProcessTaskSampleSnapshotResult",
+          "member": "MediaProcessTaskSnapshotByTimeOffsetResult",
           "name": "SnapshotByTimeOffsetTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1117,7 +1126,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskSampleSnapshotResult",
           "name": "SampleSnapshotTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1127,7 +1136,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskImageSpriteResult",
           "name": "ImageSpriteTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1137,7 +1146,7 @@
           "example": "NULL",
           "member": "MediaProcessTaskAdaptiveDynamicStreamingResult",
           "name": "AdaptiveDynamicStreamingTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1147,7 +1156,7 @@
           "example": "NULL",
           "member": "ScheduleRecognitionTaskResult",
           "name": "RecognitionTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1157,7 +1166,7 @@
           "example": "NULL",
           "member": "ScheduleReviewTaskResult",
           "name": "ReviewTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1167,7 +1176,7 @@
           "example": "NULL",
           "member": "ScheduleAnalysisTaskResult",
           "name": "AnalysisTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1631,7 +1640,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1641,7 +1650,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1651,7 +1660,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1661,7 +1670,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1671,7 +1680,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskClassificationInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1681,7 +1690,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskClassificationOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1739,7 +1748,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1749,7 +1758,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1759,7 +1768,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1769,7 +1778,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1779,7 +1788,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskCoverInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1789,7 +1798,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskCoverOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1837,7 +1846,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1847,7 +1856,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1857,7 +1866,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1867,7 +1876,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1877,7 +1886,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskFrameTagInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1887,7 +1896,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskFrameTagOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1916,22 +1925,22 @@
         {
           "disabled": false,
           "document": "视频智能精彩片段列表。",
-          "example": "",
+          "example": "无",
           "member": "MediaAiAnalysisHighlightItem",
           "name": "HighlightSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "精彩片段的存储位置。",
-          "example": "",
+          "document": "精彩片段的存储位置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1942,50 +1951,50 @@
         {
           "disabled": false,
           "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误码，0：成功，其他值：失败。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "错误信息。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩片段任务输入。",
-          "example": "",
+          "example": "无",
           "member": "AiAnalysisTaskHighlightInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩片段任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AiAnalysisTaskHighlightOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2059,7 +2068,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2069,7 +2078,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2079,7 +2088,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2089,7 +2098,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2099,7 +2108,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskTagInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2109,7 +2118,7 @@
           "example": "NULL",
           "member": "AiAnalysisTaskTagOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2379,7 +2388,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2389,7 +2398,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2399,7 +2408,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2409,7 +2418,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2419,7 +2428,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2429,7 +2438,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2458,30 +2467,30 @@
         {
           "disabled": false,
           "document": "语音全文识别片段列表。",
-          "example": "",
+          "example": "无",
           "member": "AiRecognitionTaskAsrFullTextSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字幕文件地址。",
-          "example": "",
+          "example": "http://lily-1256342427.cos.ap-shanghai.myqcloud.com/3109868718.vtt",
           "member": "string",
           "name": "SubtitlePath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "字幕文件存储位置。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         }
@@ -2543,7 +2552,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2553,7 +2562,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2563,7 +2572,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2573,7 +2582,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2583,7 +2592,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2593,7 +2602,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2703,7 +2712,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2713,7 +2722,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2723,7 +2732,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2733,7 +2742,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2743,7 +2752,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskFaceResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2753,7 +2762,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskFaceResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -2785,7 +2794,7 @@
           "example": "9527",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2795,7 +2804,7 @@
           "example": "Default",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2805,7 +2814,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2815,7 +2824,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskFaceSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2825,7 +2834,7 @@
           "example": "Male",
           "member": "string",
           "name": "Gender",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2835,7 +2844,7 @@
           "example": "1953年6月",
           "member": "string",
           "name": "Birthday",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2845,7 +2854,7 @@
           "example": "歌手",
           "member": "string",
           "name": "Profession",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2855,7 +2864,7 @@
           "example": "清华大学",
           "member": "string",
           "name": "SchoolOfGraduation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2865,7 +2874,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Abstract",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2875,7 +2884,7 @@
           "example": "湖北武汉",
           "member": "string",
           "name": "PlaceOfBirth",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2885,7 +2894,7 @@
           "example": "Politician",
           "member": "string",
           "name": "PersonType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2895,7 +2904,7 @@
           "example": "Normal",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2905,7 +2914,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2999,7 +3008,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3009,7 +3018,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3019,7 +3028,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3029,7 +3038,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3039,7 +3048,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3049,7 +3058,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3169,7 +3178,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3179,7 +3188,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3189,7 +3198,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3199,7 +3208,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3209,7 +3218,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3219,7 +3228,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3339,7 +3348,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3349,7 +3358,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3359,7 +3368,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3369,7 +3378,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3379,7 +3388,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskTransTextResultInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3389,7 +3398,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskTransTextResultOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3421,28 +3430,18 @@
           "example": "NULL",
           "member": "AiRecognitionTaskTransTextSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "字幕文件地址。",
-          "example": "/xx.webvtt",
+          "example": "http://lily-1256342427.cos.ap-shanghai.myqcloud.com/3109868718.vtt",
           "member": "string",
           "name": "SubtitlePath",
-          "required": true,
+          "output_required": false,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "字幕文件存储位置。",
-          "example": "NULL",
-          "member": "TaskOutputStorage",
-          "name": "OutputStorage",
-          "required": true,
-          "type": "object",
           "value_allowed_null": false
         }
       ],
@@ -3779,16 +3778,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "鉴黄模板 ID。",
-          "example": "",
+          "document": "鉴黄模板 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AiReviewPornTaskOutput": {
       "document": "鉴黄结果信息",
@@ -3949,7 +3949,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3959,7 +3959,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3969,7 +3969,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3979,7 +3979,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3989,7 +3989,7 @@
           "example": "无",
           "member": "AiReviewPoliticalAsrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3999,7 +3999,7 @@
           "example": "NULL",
           "member": "AiReviewPoliticalAsrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4015,7 +4015,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4025,7 +4025,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4035,7 +4035,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4045,7 +4045,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4055,7 +4055,7 @@
           "example": "无",
           "member": "AiReviewPoliticalOcrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4065,7 +4065,7 @@
           "example": "NULL",
           "member": "AiReviewPoliticalOcrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4081,7 +4081,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4091,7 +4091,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4101,7 +4101,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4111,7 +4111,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4121,7 +4121,7 @@
           "example": "无",
           "member": "AiReviewPoliticalTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4131,7 +4131,7 @@
           "example": "NULL",
           "member": "AiReviewPoliticalTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4147,7 +4147,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4157,7 +4157,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4167,7 +4167,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4177,7 +4177,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4187,7 +4187,7 @@
           "example": "NULL",
           "member": "AiReviewPornAsrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4197,7 +4197,7 @@
           "example": "NULL",
           "member": "AiReviewPornAsrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4213,7 +4213,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4223,7 +4223,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4233,7 +4233,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4243,7 +4243,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4253,7 +4253,7 @@
           "example": "NULL",
           "member": "AiReviewPornOcrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4263,7 +4263,7 @@
           "example": "NULL",
           "member": "AiReviewPornOcrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4279,7 +4279,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4289,7 +4289,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4299,7 +4299,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4309,7 +4309,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4319,7 +4319,7 @@
           "example": "NULL",
           "member": "AiReviewPornTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4329,7 +4329,7 @@
           "example": "NULL",
           "member": "AiReviewPornTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4345,7 +4345,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4355,7 +4355,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4365,7 +4365,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4375,7 +4375,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4385,7 +4385,7 @@
           "example": "NULL",
           "member": "AiReviewProhibitedAsrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4395,7 +4395,7 @@
           "example": "NULL",
           "member": "AiReviewProhibitedAsrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4411,7 +4411,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4421,7 +4421,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4431,7 +4431,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4441,7 +4441,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4451,7 +4451,7 @@
           "example": "NULL",
           "member": "AiReviewProhibitedOcrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4461,7 +4461,7 @@
           "example": "NULL",
           "member": "AiReviewProhibitedOcrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4477,7 +4477,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4487,7 +4487,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4497,7 +4497,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4507,7 +4507,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4517,7 +4517,7 @@
           "example": "NULL",
           "member": "AiReviewTerrorismOcrTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4527,7 +4527,7 @@
           "example": "NULL",
           "member": "AiReviewTerrorismOcrTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -4543,7 +4543,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4553,7 +4553,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4563,7 +4563,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4573,7 +4573,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4583,7 +4583,7 @@
           "example": "NULL",
           "member": "AiReviewTerrorismTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -4593,7 +4593,7 @@
           "example": "NULL",
           "member": "AiReviewTerrorismTaskOutput",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -5481,6 +5481,7 @@
           "example": "libfdk_aac",
           "member": "string",
           "name": "Codec",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5489,8 +5490,9 @@
           "disabled": false,
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，表示音频码率和原始音频保持一致。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Bitrate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5501,6 +5503,7 @@
           "example": "44100",
           "member": "uint64",
           "name": "SampleRate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -5511,6 +5514,7 @@
           "example": "2",
           "member": "int64",
           "name": "AudioChannel",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5536,7 +5540,7 @@
           "disabled": false,
           "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。 当取值为 0，表示音频码率和原始音频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Bitrate",
           "output_required": false,
           "required": false,
@@ -5660,46 +5664,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "SQS 队列区域。",
+          "document": "SQS 队列区域。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ap-southeast-1",
           "member": "string",
           "name": "SQSRegion",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SQS 队列名称。",
+          "document": "SQS 队列名称。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "SQSQueueName",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "读写SQS的秘钥id。",
+          "document": "读写SQS的秘钥id。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "S3SecretId",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "读写SQS的秘钥key。",
+          "document": "读写SQS的秘钥key。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "S3SecretKey",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "BatchDeleteStreamLinkFlowRequest": {
       "document": "BatchDeleteStreamLinkFlow请求参数结构体",
@@ -5866,6 +5874,810 @@
         }
       ],
       "usage": "both"
+    },
+    "ComposeAudioItem": {
+      "document": "视频编辑/合成任务 音频元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素对应媒体信息。",
+          "example": "无",
+          "member": "ComposeSourceMedia",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "元素在轨道时间轴上的时间信息，不填则紧跟上一个元素。",
+          "example": "无",
+          "member": "ComposeTrackTime",
+          "name": "TrackTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "对音频进行操作，如静音等。",
+          "example": "无",
+          "member": "ComposeAudioOperation",
+          "name": "AudioOperations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeAudioOperation": {
+      "document": "视频编辑/合成任务 音频操作。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频操作类型，取值有：\n<li>Volume：音量调节。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 当 Type = Volume 时有效。音量调节参数，取值范围: 0~5。 \n<li>0 表示静音。</li>\n<li>小于1 表示降低音量。</li>\n<li>1 表示不变。</li>\n<li>大于1表示升高音量。</li>",
+          "example": "无",
+          "member": "float",
+          "name": "Volume",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeAudioStream": {
+      "document": "视频编辑/合成任务 音频流信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音频流的编码方式，可选值：\n<li>AAC：AAC 编码（默认），用于容器为 mp4。</li>\n<li>MP3：mp3 编码，用于容器为 mp3。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音频流的采样率，单位：Hz，可选值：\n<li>16000（默认）</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "SampleRate",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "声道数，可选值：\n<li>1：单声道 。</li>\n<li>2：双声道（默认）。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "AudioChannel",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeCanvas": {
+      "document": "视频编辑/合成任务画布信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "背景颜色对应的 RGB 参考值，取值格式： #RRGGBB，如 #F0F0F0 。 \n默认值：#000000（黑色）。",
+          "example": "无",
+          "member": "string",
+          "name": "Color",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "画布宽度，即输出视频的宽度，取值范围：0~ 3840，单位：px。  \n默认值：0，表示和第一个视频宽度一致。",
+          "example": "无",
+          "member": "int64",
+          "name": "Width",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "画布高度，即输出视频的高度，取值范围：0~ 3840，单位：px。  \n默认值：0，表示和第一个视频高度一致。",
+          "example": "无",
+          "member": "int64",
+          "name": "Height",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeEmptyItem": {
+      "document": "视频编辑/合成任务 空白占位元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素时长，时间支持：\n<li>以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Duration",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeImageItem": {
+      "document": "视频编辑/合成任务 图片元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素对应媒体信息。",
+          "example": "无",
+          "member": "ComposeSourceMedia",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "元素在轨道时间轴上的时间信息，不填则紧跟上一个元素。",
+          "example": "无",
+          "member": "ComposeTrackTime",
+          "name": "TrackTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "元素中心点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认：50%。",
+          "example": "无",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素中心点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认：50%。",
+          "example": "无",
+          "member": "string",
+          "name": "YPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对图像画面进行的操作，如图像旋转等。",
+          "example": "无",
+          "member": "ComposeImageOperation",
+          "name": "ImageOperations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeImageOperation": {
+      "document": "视频编辑/合成任务 视频图像转换操作。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型，取值有：\n<li>Rotate：图像旋转。</li>\n<li>Flip：图像翻转。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当 Type = Rotate 时有效。图像以中心点为原点进行旋转的角度，取值范围0~360。",
+          "example": "无",
+          "member": "float",
+          "name": "RotateAngle",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "当 Type = Flip 时有效。图像翻转动作，取值有： \n<li>Horizental：水平翻转，即左右镜像。</li>\n<li>Vertical：垂直翻转，即上下镜像。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FlipType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeMediaConfig": {
+      "document": "视频编辑/合成任务 信息。\n\n关于 轨道、元素、时间轴 关系示意图：\n\n![image](https://ie-mps-1258344699.cos.ap-nanjing.tencentcos.cn/common/cloud/EditMedia-Compose-Track-Item.png)",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合成目标视频信息。",
+          "example": "无",
+          "member": "ComposeTargetInfo",
+          "name": "TargetInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合成目标视频的画布信息。",
+          "example": "无",
+          "member": "ComposeCanvas",
+          "name": "Canvas",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "全局样式，和轨道 Tracks 配合使用，用于定于样式，如字幕样式。",
+          "example": "无",
+          "member": "ComposeStyles",
+          "name": "Styles",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于描述合成视频的轨道列表，包括：视频、音频、图片、文字等元素组成的多个轨道信息。关于轨道和时间：\n<ul><li>轨道时间轴即为目标视频时间轴。</li><li>时间轴上相同时间点的不同轨道上的元素会重叠：</li><ul><li>视频、图片、文字：按轨道顺序进行图像的叠加，轨道顺序靠前的在上面。</li><li>音频 ：进行混音。</li></ul></ul>注意：同一轨道中各个元素（除字幕元素外）的轨道时间不能重叠。",
+          "example": "无",
+          "member": "ComposeMediaTrack",
+          "name": "Tracks",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeMediaItem": {
+      "document": "视频编辑/合成任务 轨道元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素类型。取值有：\n<li>Video：视频元素。</li>\n<li>Audio：音频元素。</li>\n<li>Image：图片元素。</li>\n<li>Transition：转场元素。</li>\n<li>Subtitle：字幕元素。</li>\n<li>Empty：空白元素。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频元素，当 Type = Video 时有效。",
+          "example": "无",
+          "member": "ComposeVideoItem",
+          "name": "Video",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "音频元素，当 Type = Audio 时有效。",
+          "example": "无",
+          "member": "ComposeAudioItem",
+          "name": "Audio",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片元素，当 Type = Image 时有效。",
+          "example": "无",
+          "member": "ComposeImageItem",
+          "name": "Image",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "转场元素，当 Type = Transition 时有效。",
+          "example": "无",
+          "member": "ComposeTransitionItem",
+          "name": "Transition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "字幕元素，当 Type = Subtitle 是有效。",
+          "example": "无",
+          "member": "ComposeSubtitleItem",
+          "name": "Subtitle",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "空白元素，当 Type = Empty 时有效。用于时间轴的占位。",
+          "example": "无",
+          "member": "ComposeEmptyItem",
+          "name": "Empty",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeMediaTrack": {
+      "document": "视频编辑/合成任务 轨道信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "轨道类型，取值有：<ul><li>Video ：视频轨道。视频轨道可由以下元素组成：</li><ul><li>Video 元素</li><li>Image 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Audio ：音频轨道。音频轨道可由以下元素组成：</li><ul><li>Audio 元素</li><li>Transition 元素</li><li>Empty 元素</li></ul><li>Title：文字轨道。文字轨道可由以下元素组成：</li><ul><li>Subtitle 元素</li></ul>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "轨道上的元素列表。",
+          "example": "无",
+          "member": "ComposeMediaItem",
+          "name": "Items",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeSourceMedia": {
+      "document": "视频编辑/合成任务  媒体素材源信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体对应的素材ID，即 FileInfos 列表中对应素材的 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体位于素材的起始时间，时间点支持 s、% 两种格式：\n<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n<li>当字符串以 % 结尾，表示时间点为素材时长的百分比大小，如10%表示时间点为素材第10% 的时刻。</li>\n默认：0s",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体位于素材的结束时间，和 StartTime 构成媒体在源素材的时间区间，时间点支持 s、% 两种格式：\n<li>当字符串以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n<li>当字符串以 % 结尾，表示时间点为素材时长的百分比大小，如10%表示时间点为素材第10%的时间。</li>\n默认：如果对应轨道时长有设置，则默认轨道时长，否则为素材时长，无时长的素材默认为 1 秒。\n注意：至少需要大于 StartTime 0.02 秒。\n",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeStyles": {
+      "document": "视频编辑/合成任务 样式信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "样式 Id，用于和轨道元素中的样式关联。\n注意：允许字母、数字、-、_ 组合，最长 32 字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "样式类型，取值有：\n<li>Subtitle：字幕样式。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕样式信息，当 Type = Subtitle 时有效。",
+          "example": "无",
+          "member": "ComposeSubtitleStyle",
+          "name": "Subtitle",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeSubtitleItem": {
+      "document": "视频编辑/合成任务 字幕元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕样式，Styles 列表中对应的 Subtitle样式的 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "StyleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕文本。",
+          "example": "无",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素在轨道时间轴上的时间信息，不填则紧跟上一个元素。\t",
+          "example": "无",
+          "member": "ComposeTrackTime",
+          "name": "TrackTime",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeSubtitleStyle": {
+      "document": "视频编辑/合成任务 字幕样式。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字幕高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示为画布高度的百分比大小，如 10% 表示为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示单位为像素，如 100px 表示为100像素。</li>\n默认为 FontSize 大小。",
+          "example": "无",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字幕距离下边框距离，支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示为画布高度的百分比大小，如 10% 表示为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示单位为像素，如 100px 表示为100像素。</li>\n默认：0px",
+          "example": "无",
+          "member": "string",
+          "name": "MarginBottom",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字体类型，支持：\n<li>SimHei：黑体（默认）。</li>\n<li>SimSun：宋体。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FontType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字体大小，支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示为画布高度的百分比大小，如 10% 表示为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示单位为像素，如 100px 表示为100像素。</li>\n默认：2%",
+          "example": "无",
+          "member": "string",
+          "name": "FontSize",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用粗体，和字体相关，可选值：\n<li>0：否（默认）。</li>\n<li>1：是。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "FontBold",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否使用斜体，和字体相关，可选值：\n<li>0：否（默认）。</li>\n<li>1：是。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "FontItalic",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "字体颜色，格式：#RRGGBBAA。  \n默认值：0x000000FF（黑色）。  \n注意：其中 AA 部分指的是透明度，为可选。\n",
+          "example": "无",
+          "member": "string",
+          "name": "FontColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文字对齐方式：\n<li>Center：居中（默认）。</li>\n<li>Left：左对齐。</li>\n<li>Right：右对齐。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FontAlign",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于字幕对齐留白：\n<li>FontAlign=Left 时，表示距离左边距离。</li>\n<li>FontAlign=Right时，表示距离右边距离。</li>\n支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示为画布宽度的百分比大小，如 10% 表示为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示单位为像素，如 100px 表示为100像素。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "FontAlignMargin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "字体边框宽度，支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示为画布高度的百分比大小，如 10% 表示为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示单位为像素，如 100px 表示为100像素。</li>\n默认： 0，表示不需要边框。",
+          "example": "无",
+          "member": "string",
+          "name": "BorderWidth",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "边框颜色，当 BorderWidth 不为 0 时生效，其值格式和 FontColor 一致。",
+          "example": "无",
+          "member": "string",
+          "name": "BorderColor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文字底色，其值格式和 FontColor 一致。  \n默认为空， 表示不使用底色。",
+          "example": "无",
+          "member": "string",
+          "name": "BottomColor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeTargetInfo": {
+      "document": "视频编辑/合成任务 目标视频信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "封装容器格式，可选值：\n<li>mp4：视频文件（默认）。</li>\n<li>mp3：纯音频文件。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Container",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除视频数据，可选值：\n<li>0：保留（默认）。</li>\n<li>1：去除。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveVideo",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否去除音频数据，可选值：\n<li>0：保留（默认）。</li>\n<li>1：去除。</li>",
+          "example": "无",
+          "member": "int64",
+          "name": "RemoveAudio",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出视频流信息。",
+          "example": "无",
+          "member": "ComposeVideoStream",
+          "name": "VideoStream",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "输出音频流信息。",
+          "example": "无",
+          "member": "ComposeAudioStream",
+          "name": "AudioStream",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeTrackTime": {
+      "document": "视频编辑/合成任务 对应元素在目标视频轨道上的时间信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素在轨道上的起始时间，时间点支持：\n<li>以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n注意：不填则默认为前一个元素的结束时间，此时可以通过 ComposeEmptyItem 元素来进行占位，实现轨道起始时间设置。",
+          "example": "无",
+          "member": "string",
+          "name": "Start",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素时长，时间支持：\n<li>以 s 结尾，表示时间点单位为秒，如 3.5s 表示时间点为第3.5秒；</li>\n默认：取对应 ComposeSourceMedia 媒体的有效时长（即 EndTime-StartTime），没有 ComposeSourceMedia 则默认为 1 秒。",
+          "example": "无",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeTransitionItem": {
+      "document": "视频编辑/合成任务 转场元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素时长，时间支持：<li>以 s 结尾，表示时间点单位为秒，如 3s 表示时间点为第3秒。</li>\n默认：1s\n注意：\n<li>必须是整数s，否则向下取整。</li>\n<li>转场 前后必须紧挨着两个不为 Empty 的元素。</li>\n<li>转场 Duration 必须小于前一个元素的 Duration，同时必须小于后一个元素的 Duration。</li>\n<li>进行转场处理的两个元素，第二个元素在轨道上的起始时间会自动调整为前一个元素的结束时间减去转场的 Duration。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Duration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "转场操作列表。\n默认：淡入淡出。\n注意：图像转场操作和音频转场操作各自最多支持一个。",
+          "example": "无",
+          "member": "ComposeTransitionOperation",
+          "name": "Transitions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeTransitionOperation": {
+      "document": "视频编辑/合成任务 元素转场信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "转场类型。\n\n图像的转场操作，用于两个视频片段图像间的转场处理：\n<li>ImageFadeInFadeOut：图像淡入淡出。</li>\n<li>BowTieHorizontal：水平蝴蝶结。</li>\n<li>BowTieVertical：垂直蝴蝶结。</li>\n<li>ButterflyWaveScrawler：晃动。</li>\n<li>Cannabisleaf：枫叶。</li>\n<li>Circle：弧形收放。</li>\n<li>CircleCrop：圆环聚拢。</li>\n<li>Circleopen：椭圆聚拢。</li>\n<li>Crosswarp：横向翘曲。</li>\n<li>Cube：立方体。</li>\n<li>DoomScreenTransition：幕布。</li>\n<li>Doorway：门廊。</li>\n<li>Dreamy：波浪。</li>\n<li>DreamyZoom：水平聚拢。</li>\n<li>FilmBurn：火烧云。</li>\n<li>GlitchMemories：抖动。</li>\n<li>Heart：心形。</li>\n<li>InvertedPageCurl：翻页。</li>\n<li>Luma：腐蚀。</li>\n<li>Mosaic：九宫格。</li>\n<li>Pinwheel：风车。</li>\n<li>PolarFunction：椭圆扩散。</li>\n<li>PolkaDotsCurtain：弧形扩散。</li>\n<li>Radial：雷达扫描。</li>\n<li>RotateScaleFade：上下收放。</li>\n<li>Squeeze：上下聚拢。</li>\n<li>Swap：放大切换。</li>\n<li>Swirl：螺旋。</li>\n<li>UndulatingBurnOutSwirl：水流蔓延。</li>\n<li>Windowblinds：百叶窗。</li>\n<li>WipeDown：向下收起。</li>\n<li>WipeLeft：向左收起。</li>\n<li>WipeRight：向右收起。</li>\n<li>WipeUp：向上收起。</li>\n<li>ZoomInCircles：水波纹。</li> \n音频的转场操作，用于两个音频片段间的转场处理：\n<li>AudioFadeInFadeOut：声音淡入淡出。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeVideoItem": {
+      "document": "视频编辑/合成任务 视频元素信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元素对应媒体信息。",
+          "example": "无",
+          "member": "ComposeSourceMedia",
+          "name": "SourceMedia",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "元素在轨道时间轴上的时间信息，不填则紧跟上一个元素。",
+          "example": "无",
+          "member": "ComposeTrackTime",
+          "name": "TrackTime",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "元素中心点距离画布原点的水平位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 XPos 为画布宽度指定百分比的位置，如 10% 表示 XPos 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 XPos 单位为像素，如 100px 表示 XPos 为100像素。</li>\n默认：50%。",
+          "example": "无",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素中心点距离画布原点的垂直位置。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 YPos 为画布高度指定百分比的位置，如 10% 表示 YPos 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 YPos 单位为像素，如 100px 表示 YPos 为100像素。</li>\n默认：50%。",
+          "example": "无",
+          "member": "string",
+          "name": "YPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频片段的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Width 为画布宽度的百分比大小，如 10% 表示 Width 为画布宽度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Width 单位为像素，如 100px 表示 Width 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "元素的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示元素 Height 为画布高度的百分比大小，如 10% 表示 Height 为画布高度的 10%。</li>\n<li>当字符串以 px 结尾，表示元素 Height 单位为像素，如 100px 表示 Height 为100像素。</li>\n为空（或0） 的场景：\n<li>当 Width、Height 均为空，则 Width 和 Height 取源素材本身的 Width、Height。</li>\n<li>当 Width 为空，Height 非空，则 Width 按源素材比例缩放。</li>\n<li>当 Width 非空，Height 为空，则 Height 按源素材比例缩放。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对图像画面进行的操作，如图像旋转等。",
+          "example": "无",
+          "member": "ComposeImageOperation",
+          "name": "ImageOperations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "对音频进行操作，如静音等。",
+          "example": "无",
+          "member": "ComposeAudioOperation",
+          "name": "AudioOperations",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
+    },
+    "ComposeVideoStream": {
+      "document": "视频编辑/合成任务 视频流信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频流的编码方式，可选值：\n<li>H.264：H.264 编码（默认）。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频帧率，取值范围：[0, 60]，单位：Hz。  \n默认值：0，表示和第一个视频帧率一致。",
+          "example": "无",
+          "member": "int64",
+          "name": "Fps",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "ContentReviewTemplateItem": {
       "document": "内容审核模板详情",
@@ -10464,6 +11276,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10473,6 +11286,7 @@
           "example": "无",
           "member": "SchedulesInfo",
           "name": "ScheduleInfoSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11424,6 +12238,7 @@
           "example": "WorkflowTask",
           "member": "string",
           "name": "TaskType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11433,6 +12248,7 @@
           "example": "FINISH",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11442,6 +12258,7 @@
           "example": "2019-07-16T06:21:27Z",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11451,6 +12268,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11460,6 +12278,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11469,6 +12288,7 @@
           "example": "无",
           "member": "EditMediaTask",
           "name": "EditMediaTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11478,6 +12298,7 @@
           "example": "无",
           "member": "WorkflowTask",
           "name": "WorkflowTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11487,6 +12308,7 @@
           "example": "无",
           "member": "LiveStreamProcessTask",
           "name": "LiveStreamProcessTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11496,6 +12318,7 @@
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11505,6 +12328,7 @@
           "example": "0",
           "member": "int64",
           "name": "TasksPriority",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11514,6 +12338,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "SessionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11523,6 +12348,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "SessionContext",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11532,6 +12358,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ExtInfo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11541,6 +12368,17 @@
           "example": "无",
           "member": "ScheduleTask",
           "name": "ScheduleTask",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播编排处理任务信息，仅当 TaskType 为 LiveScheduleTask，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveScheduleTask",
+          "name": "LiveScheduleTask",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11595,7 +12433,7 @@
           "example": "无",
           "member": "TaskSimpleInfo",
           "name": "TaskSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11605,7 +12443,7 @@
           "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11615,7 +12453,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12110,32 +12948,46 @@
         {
           "disabled": false,
           "document": "视频的输入信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaInputInfo",
           "name": "InputInfo",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频剪辑的起始时间偏移，单位：秒。",
-          "example": "",
+          "document": "【剪辑】任务生效，视频剪辑的起始时间偏移，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频剪辑的结束时间偏移，单位：秒。",
-          "example": "",
+          "document": "【剪辑】任务生效，视频剪辑的结束时间偏移，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "【合成】任务必选，用于轨道元素中媒体关联源素材 ID。\n\n注意：允许字母、数字、-、_ ，最长 32 字符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12145,26 +12997,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。",
+          "document": "封装格式，可选值：mp4、hls、mov、flv、avi。默认是 mp4。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Container",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "剪辑模式，可选值 normal、fast。默认是精确剪辑 normal",
+          "document": "剪辑模式，可选值 normal、fast。默认是精确剪辑 normal\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "fast",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "EditMediaRequest": {
       "document": "EditMedia请求参数结构体",
@@ -12189,7 +13043,7 @@
         },
         {
           "disabled": false,
-          "document": "媒体处理输出文件的目标路径。",
+          "document": "媒体处理输出文件的目标路径。\n\n注意：对于复杂合成任务，路径中的文件名只可为数字、字母、-、_ 的组合，最长 64 个字符。\n",
           "example": "/clip_result/clip_WildAnimal.{format}",
           "member": "string",
           "name": "OutputObjectPath",
@@ -12198,10 +13052,19 @@
         },
         {
           "disabled": false,
-          "document": "编辑后生成的文件配置。",
+          "document": "【剪辑】任务生成的文件配置。",
           "example": "无",
           "member": "EditMediaOutputConfig",
           "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "【合成】任务配置。\n\n注意：当其不为空时，认为是合成任务，否则按剪辑任务处理。",
+          "example": "无",
+          "member": "ComposeMediaConfig",
+          "name": "ComposeConfig",
           "required": false,
           "type": "object"
         },
@@ -12253,7 +13116,7 @@
           "example": "125xxx88-EditMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12338,10 +13201,10 @@
         {
           "disabled": false,
           "document": "输入的视频文件信息。",
-          "example": "",
+          "example": "无",
           "member": "EditMediaFileInfo",
           "name": "FileInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -13565,26 +14428,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "片头列表。",
+          "document": "片头列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[   {     \"Type\": \"URL\",     \"UrlInputInfo\": {       \"Url\": \"htt",
           "member": "MediaInputInfo",
           "name": "HeadSet",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "片尾列表。",
+          "document": "片尾列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[   {     \"Type\": \"URL\",     \"UrlInputInfo\": {       \"Url\": \"htt",
           "member": "MediaInputInfo",
           "name": "TailSet",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "HighlightSegmentItem": {
       "document": "智能精彩集锦片段列表。",
@@ -14020,6 +14885,321 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveActivityResItem": {
+      "document": "直播编排子任务输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播录制任务输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveScheduleLiveRecordTaskResult",
+          "name": "LiveRecordTask",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveActivityResult": {
+      "document": "直播编排任务输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "原子任务类型。\n<li>LiveRecord：直播录制。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ActivityType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "原子任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveActivityResItem",
+          "name": "LiveActivityResItem",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveRecordFile": {
+      "document": "直播录制输出文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播录制文件地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制文件大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制文件时长\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Duration",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制文件开始时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制文件结束时间，使用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveRecordResult": {
+      "document": "直播录制结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播录制文件的目标存储。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制文件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveRecordFile",
+          "name": "FileList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveRecordTaskInput": {
+      "document": "直播录制任务输入参数类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播录制模板 ID。",
+          "example": "10",
+          "member": "int64",
+          "name": "Definition",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播录制后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制后文件的输出路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "OutputObjectPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "LiveScheduleLiveRecordTaskResult": {
+      "document": "直播编排直播录制任务结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "PROCESSING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [媒体处理类错误码](https://cloud.tencent.com/document/product/862/50369#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败（该字段已不推荐使用，建议使用新的错误码字段 ErrCodeExt）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveRecordTaskInput",
+          "name": "Input",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播录制任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveRecordResult",
+          "name": "Output",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务开始执行的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BeginProcessTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务执行完毕的时间，采用 [ISO 日期格式](https://cloud.tencent.com/document/product/862/37710#52)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LiveScheduleTask": {
+      "document": "直播编排任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "直播编排任务 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源异常时返回对应异常Message，否则请使用各个具体任务的 Message。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播流 URL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播编排任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LiveActivityResult",
+          "name": "LiveActivityResultSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15017,6 +16197,7 @@
           "example": "Queue",
           "member": "string",
           "name": "CmqModel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15027,6 +16208,7 @@
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15037,6 +16219,7 @@
           "example": "test",
           "member": "string",
           "name": "QueueName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15047,6 +16230,7 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15057,6 +16241,7 @@
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15067,6 +16252,7 @@
           "example": "http://www.qq.com/callback",
           "member": "string",
           "name": "NotifyUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -15352,50 +16538,50 @@
         {
           "disabled": false,
           "document": "智能精彩集锦地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "HighlightPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩集锦封面地址。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CovImgPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩集锦的可信度，取值范围是 0 到 100。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩集锦持续时间。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "智能精彩集锦子片段列表。",
-          "example": "",
+          "example": "无",
           "member": "HighlightSegmentItem",
           "name": "SegmentSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -16052,110 +17238,110 @@
         {
           "disabled": false,
           "document": "上传的媒体文件大小（视频为 HLS 时，大小是 m3u8 和 ts 文件大小的总和），单位：字节。",
-          "example": "",
+          "example": "3771548",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "容器类型，例如 m4a，mp4 等。",
-          "example": "",
+          "example": "flv",
           "member": "string",
           "name": "Container",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流码率平均值与音频流码率平均值之和，单位：bps。",
-          "example": "",
+          "example": "611594",
           "member": "int64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流高度的最大值，单位：px。",
-          "example": "",
+          "example": "480",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流宽度的最大值，单位：px。",
-          "example": "",
+          "example": "854",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长，单位：秒。",
-          "example": "",
+          "example": "49.334",
           "member": "float",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频拍摄时的选择角度，单位：度。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "Rotate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频流信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaVideoStreamItem",
           "name": "VideoStreamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频流信息。",
-          "example": "",
+          "example": "无",
           "member": "MediaAudioStreamItem",
           "name": "AudioStreamSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "视频时长，单位：秒。",
-          "example": "",
+          "example": "49.334",
           "member": "float",
           "name": "VideoDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频时长，单位：秒。",
-          "example": "",
+          "example": "49.334",
           "member": "float",
           "name": "AudioDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         }
@@ -16571,7 +17757,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16581,7 +17767,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16591,7 +17777,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16601,7 +17787,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16611,7 +17797,7 @@
           "example": "NULL",
           "member": "SampleSnapshotTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16621,7 +17807,7 @@
           "example": "NULL",
           "member": "MediaSampleSnapshotItem",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16631,7 +17817,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16641,7 +17827,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -16657,7 +17843,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16667,7 +17853,7 @@
           "example": "NULL",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16677,7 +17863,7 @@
           "example": "NULL",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16687,7 +17873,7 @@
           "example": "NULL",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16697,7 +17883,7 @@
           "example": "NULL",
           "member": "SnapshotByTimeOffsetTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16707,7 +17893,7 @@
           "example": "NULL",
           "member": "MediaSnapshotByTimeOffsetItem",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16717,7 +17903,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16727,7 +17913,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -20043,6 +21229,15 @@
           "name": "SessionContext",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "直播编排ID。\n注意1：对于OutputStorage、OutputDir参数：\n<li>当服务编排中子任务节点配置了OutputStorage、OutputDir时，该子任务节点中配置的输出作为子任务的输出。</li>\n<li>当服务编排中子任务节点没有配置OutputStorage、OutputDir时，若对直播流发起处理（ProcessLiveStream）有输出，将覆盖原有编排的默认输出。</li>\n注意2：对于TaskNotifyConfig参数，若创建任务接口（ProcessLiveStream）有设置，将覆盖原有编排的默认回调。",
+          "example": "无",
+          "member": "int64",
+          "name": "ScheduleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -20056,6 +21251,7 @@
           "example": "125xxxxxx07-live-procedure-813dc41e6fdc22dcf24aa6e9c61cp92",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -20472,7 +21668,7 @@
           "example": "100",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20482,7 +21678,7 @@
           "example": "12.3",
           "member": "float",
           "name": "StartTimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -20492,7 +21688,7 @@
           "example": "15.7",
           "member": "float",
           "name": "EndTimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -20502,7 +21698,7 @@
           "example": "无",
           "member": "int64",
           "name": "AreaCoordSet",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }
@@ -21205,9 +22401,10 @@
         {
           "disabled": false,
           "document": "采样截图模板 ID。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -21215,9 +22412,10 @@
         {
           "disabled": false,
           "document": "水印列表，支持多张图片或文字水印，最大可支持 10 张。",
-          "example": "",
+          "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -21225,9 +22423,10 @@
         {
           "disabled": false,
           "document": "采样截图后文件的目标存储，不填则继承上层的 OutputStorage 值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -21235,9 +22434,10 @@
         {
           "disabled": false,
           "document": "采样截图后图片文件的输出路径，可以为相对路径或者绝对路径。如果不填，则默认为相对路径：`{inputName}_sampleSnapshot_{definition}_{number}.{format}`。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "OutputObjectPath",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -21245,9 +22445,10 @@
         {
           "disabled": false,
           "document": "采样截图后输出路径中的`{number}`变量的规则。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "NumberFormat",
           "name": "ObjectNumberFormat",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -21486,7 +22687,7 @@
           "example": "PROCESSING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21496,7 +22697,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21506,7 +22707,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21516,7 +22717,7 @@
           "example": "\"xx\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21526,7 +22727,7 @@
           "example": "NULL",
           "member": "AiQualityControlTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -21536,7 +22737,7 @@
           "example": "NULL",
           "member": "QualityControlData",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -21552,7 +22753,7 @@
           "example": "PROCESSING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21562,7 +22763,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21572,7 +22773,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21582,7 +22783,7 @@
           "example": "\"xx\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21592,7 +22793,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -21602,7 +22803,7 @@
           "example": "NULL",
           "member": "AiRecognitionResult",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -21612,7 +22813,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21622,7 +22823,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -21638,7 +22839,7 @@
           "example": "PROCESSING",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21648,7 +22849,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrCodeExt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21658,7 +22859,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21668,7 +22869,7 @@
           "example": "\"xx\"",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -21678,7 +22879,7 @@
           "example": "NULL",
           "member": "AiContentReviewTaskInput",
           "name": "Input",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -21688,7 +22889,7 @@
           "example": "NULL",
           "member": "AiContentReviewResult",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -21698,7 +22899,7 @@
           "example": "2019-07-16T06:21:28Z",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21708,7 +22909,7 @@
           "example": "2019-07-16T06:21:46Z",
           "member": "string",
           "name": "FinishTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -21800,7 +23001,7 @@
           "example": "0",
           "member": "int64",
           "name": "ScheduleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -21810,7 +23011,17 @@
           "example": "“”",
           "member": "string",
           "name": "ScheduleName",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "编排类型，可选值：\n <li>Preset：系统预置编排；</li>\n<li>Custom：用户自定义编排。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21820,7 +23031,7 @@
           "example": "“”",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21830,7 +23041,7 @@
           "example": "无",
           "member": "WorkflowTrigger",
           "name": "Trigger",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21840,7 +23051,7 @@
           "example": "无",
           "member": "Activity",
           "name": "Activities",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -21850,7 +23061,7 @@
           "example": "无",
           "member": "TaskOutputStorage",
           "name": "OutputStorage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21860,7 +23071,7 @@
           "example": "“”",
           "member": "string",
           "name": "OutputDir",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21870,7 +23081,7 @@
           "example": "无",
           "member": "TaskNotifyConfig",
           "name": "TaskNotifyConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21880,7 +23091,7 @@
           "example": "“”",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -21890,7 +23101,7 @@
           "example": "“”",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -22465,6 +23676,7 @@
           "example": "TEHD-100",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -22473,8 +23685,9 @@
           "disabled": false,
           "document": "视频码率上限，当 Type 指定了极速高清类型时有效。\n不填或填0表示不设视频码率上限。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "MaxVideoBitrate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -22500,7 +23713,7 @@
           "disabled": false,
           "document": "视频码率上限，不填代表不修改。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "MaxVideoBitrate",
           "output_required": false,
           "required": false,
@@ -22547,6 +23760,36 @@
       "members": [
         {
           "disabled": false,
+          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
+          "example": "URL",
+          "member": "string",
+          "name": "NotifyType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。",
+          "example": "Finish ",
+          "member": "string",
+          "name": "NotifyMode",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTP回调地址，NotifyType为URL时必填。",
+          "example": "http://www.qq.com/callback",
+          "member": "string",
+          "name": "NotifyUrl",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "CMQ或TDMQ-CMQ 的模型，有 Queue 和 Topic 两种。",
           "example": "Queue ",
           "member": "string",
@@ -22581,36 +23824,6 @@
           "example": "\"\"",
           "member": "string",
           "name": "QueueName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "工作流通知的模式，可取值有 Finish 和 Change，不填代表 Finish。",
-          "example": "Finish ",
-          "member": "string",
-          "name": "NotifyMode",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "通知类型，可选值：\n<li>CMQ：已下线，建议切换到TDMQ-CMQ</li>\n<li>TDMQ-CMQ：消息队列</li>\n<li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>\n<li>SCF：不推荐使用，需要在控制台额外配置SCF</li>\n<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>\n<font color=\"red\"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>",
-          "example": "URL",
-          "member": "string",
-          "name": "NotifyType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "HTTP回调地址，NotifyType为URL时必填。",
-          "example": "http://www.qq.com/callback",
-          "member": "string",
-          "name": "NotifyUrl",
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -22673,7 +23886,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22683,7 +23896,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22693,7 +23906,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22703,7 +23916,7 @@
           "example": "无",
           "member": "string",
           "name": "BeginProcessTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22713,7 +23926,7 @@
           "example": "无",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -22723,7 +23936,7 @@
           "example": "无",
           "member": "string",
           "name": "SubTaskTypes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -23906,7 +25119,7 @@
           "disabled": false,
           "document": "视频帧率，取值范围：[0, 120]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。\n注意：自适应码率时取值范围是 [0, 60]",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Fps",
           "output_required": true,
           "required": true,
@@ -23917,7 +25130,7 @@
           "disabled": false,
           "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Bitrate",
           "output_required": true,
           "required": true,
@@ -24011,7 +25224,7 @@
           "disabled": false,
           "document": "视频帧率，取值范围：[0, 120]，单位：Hz。\n当取值为 0，表示帧率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Fps",
           "output_required": false,
           "required": false,
@@ -24022,7 +25235,7 @@
           "disabled": false,
           "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
-          "member": "uint64",
+          "member": "int64",
           "name": "Bitrate",
           "output_required": false,
           "required": false,

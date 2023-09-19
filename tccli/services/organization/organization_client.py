@@ -903,7 +903,7 @@ def doCancelOrganizationInvitation(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doGetOrganizationMember(args, parsed_globals):
+def doDeleteOrganization(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -932,11 +932,11 @@ def doGetOrganizationMember(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.GetOrganizationMemberRequest()
+    model = models.DeleteOrganizationRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.GetOrganizationMember(model)
+        rsp = client.DeleteOrganization(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -1111,7 +1111,7 @@ def doDescribeOrganizationFinancialByMember(args, parsed_globals):
     FormatOutput.output("action", json_obj, g_param[OptionsDefine.Output], g_param[OptionsDefine.Filter])
 
 
-def doDeleteOrganization(args, parsed_globals):
+def doGetOrganizationMember(args, parsed_globals):
     g_param = parse_global_arg(parsed_globals)
 
     if g_param[OptionsDefine.UseCVMRole.replace('-', '_')]:
@@ -1140,11 +1140,11 @@ def doDeleteOrganization(args, parsed_globals):
     client = mod.OrganizationClient(cred, g_param[OptionsDefine.Region], profile)
     client._sdkVersion += ("_CLI_" + __version__)
     models = MODELS_MAP[g_param[OptionsDefine.Version]]
-    model = models.DeleteOrganizationRequest()
+    model = models.GetOrganizationMemberRequest()
     model.from_json_string(json.dumps(args))
     start_time = time.time()
     while True:
-        rsp = client.DeleteOrganization(model)
+        rsp = client.GetOrganizationMember(model)
         result = rsp.to_json_string()
         try:
             json_obj = json.loads(result)
@@ -2233,11 +2233,11 @@ ACTION_MAP = {
     "DeleteOrganizationNodes": doDeleteOrganizationNodes,
     "DescribeOrganizationMemberPolicies": doDescribeOrganizationMemberPolicies,
     "CancelOrganizationInvitation": doCancelOrganizationInvitation,
-    "GetOrganizationMember": doGetOrganizationMember,
+    "DeleteOrganization": doDeleteOrganization,
     "CancelOrganizationMemberAuthAccount": doCancelOrganizationMemberAuthAccount,
     "SendOrganizationInvitation": doSendOrganizationInvitation,
     "DescribeOrganizationFinancialByMember": doDescribeOrganizationFinancialByMember,
-    "DeleteOrganization": doDeleteOrganization,
+    "GetOrganizationMember": doGetOrganizationMember,
     "DescribeOrganization": doDescribeOrganization,
     "MoveOrganizationNodeMembers": doMoveOrganizationNodeMembers,
     "ListOrganizationMembers": doListOrganizationMembers,

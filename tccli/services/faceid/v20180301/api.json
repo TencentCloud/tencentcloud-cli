@@ -4238,11 +4238,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4252,7 +4252,7 @@
           "example": "移动",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4262,7 +4262,7 @@
           "example": "业务结果描述。",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4322,11 +4322,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4336,7 +4336,7 @@
           "example": "电信",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4346,7 +4346,7 @@
           "example": "比对一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4406,11 +4406,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-10: 认证未通过\n-11: 验证中心服务繁忙",
+          "document": "认证结果码，收费情况如下。\n收费结果码：\n0: 认证通过\n-4: 信息不一致（手机号已实名，但姓名和身份证号与实名信息不一致）\n不收费结果码：\n-6: 手机号码不合法\n-7: 身份证号码有误\n-8: 姓名校验不通过\n-9: 没有记录\n-11: 验证中心服务繁忙",
           "example": "0",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4420,7 +4420,7 @@
           "example": "联通",
           "member": "string",
           "name": "Isp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4430,7 +4430,7 @@
           "example": "比对一致",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
