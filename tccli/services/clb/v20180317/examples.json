@@ -528,6 +528,56 @@
         "title": "解绑规则与目标组的关联关系"
       }
     ],
+    "InquiryPriceCreateLoadBalancer": [
+      {
+        "document": "查询LB按量计费，网络按量计费的费用",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&InternetAccessible.InternetChargeType=TRAFFIC_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.8,\n                \"ChargeUnit\": \"GB\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"f4953b5c-990c-49fa-9937-7aebef241d42\"\n    }\n}",
+        "title": "查询LB按量计费，网络按量计费的费用"
+      },
+      {
+        "document": "查询创建LB按量计费，网络按带宽计费的价格",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&InternetAccessible.InternetChargeType=BANDWIDTH_POSTPAID_BY_HOUR\n&InternetAccessible.InternetMaxBandwidthOut=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 0.04,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"835f9cd8-6af1-4ac6-8fc3-2a9f900b7fff\"\n    }\n}",
+        "title": "查询创建LB按量计费，网络按带宽计费的价格"
+      },
+      {
+        "document": "查询创建LB按量计费，网络按带宽包计费",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=POSTPAID\n&GoodsNum=1\n&InternetAccessible.InternetChargeType=BANDWIDTH_PACKAGE\n&InternetAccessible.BandwidthpkgSubType=SINGLEISP\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.02,\n                \"ChargeUnit\": \"HOUR\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"BandwidthPrice\": {\n                \"UnitPrice\": 48,\n                \"ChargeUnit\": \"Mbps/MONTH\",\n                \"OriginalPrice\": null,\n                \"DiscountPrice\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"19a2e45d-ed96-4f60-a954-99a4d41752f3\"\n    }\n}",
+        "title": "查询创建LB按量计费，网络按带宽包计费"
+      },
+      {
+        "document": "查询创建预付费负载均衡价格",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceCreateLoadBalancer\n&LoadBalancerType=OPEN\n&LoadBalancerChargeType=PREPAID\n&GoodsNum=1\n&InternetAccessible.InternetChargeType=BANDWIDTH_PREPAID\n&InternetAccessible.InternetMaxBandwidthOut=1\n&LoadBalancerChargePrepaid.Period=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"OriginalPrice\": 37.4,\n                \"DiscountPrice\": 37.4,\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null\n            },\n            \"LcuPrice\": null\n        },\n        \"RequestId\": \"52f22ea7-3592-4ff0-9d63-a5cc14b79859\"\n    }\n}",
+        "title": "查询创建预付费负载均衡价格"
+      }
+    ],
+    "InquiryPriceModifyLoadBalancer": [
+      {
+        "document": "查询负载均衡修改带宽的费用",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceModifyLoadBalancer\n&LoadBalancerId=lb-dr0mo6w4\n&InternetAccessible.InternetChargeType=BANDWIDTH_PREPAID\n&InternetAccessible.InternetMaxBandwidthOut=20\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"OriginalPrice\": 4494.57,\n                \"DiscountPrice\": 4494.57,\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null\n            }\n        },\n        \"RequestId\": \"4c588312-edeb-4ea0-b8a4-b3024d9b8043\"\n    }\n}",
+        "title": "查询负载均衡修改带宽的费用"
+      }
+    ],
+    "InquiryPriceRefundLoadBalancer": [
+      {
+        "document": "负载均衡退费询价",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceRefundLoadBalancer\n&LoadBalancerId=lb-56hl5sy2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null,\n                \"OriginalPrice\": 79.02,\n                \"DiscountPrice\": null\n            }\n        },\n        \"RequestId\": \"06cdb8b7-1d26-4195-9d41-f3fc861d9530\"\n    }\n}",
+        "title": "负载均衡退费询价"
+      }
+    ],
+    "InquiryPriceRenewLoadBalancer": [
+      {
+        "document": "查询某个预付费负载均衡的价格的续费价格",
+        "input": "https://clb.tencentcloudapi.com/?Action=InquiryPriceRenewLoadBalancer\n&LoadBalancerId=lb-dr0mo6w4\n&LoadBalancerChargePrepaid.Period=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"BandwidthPrice\": null,\n            \"InstancePrice\": {\n                \"OriginalPrice\": 37.4,\n                \"DiscountPrice\": 37.4,\n                \"UnitPrice\": null,\n                \"ChargeUnit\": null\n            }\n        },\n        \"RequestId\": \"2eff0c82-61a2-48e5-ae17-2037901dd17c\"\n    }\n}",
+        "title": "查询某个预付费负载均衡的价格的续费价格"
+      }
+    ],
     "ManualRewrite": [
       {
         "document": "",

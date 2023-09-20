@@ -536,6 +536,14 @@
         "title": "获取Web服务关联进程列表"
       }
     ],
+    "DescribeAttackEvents": [
+      {
+        "document": "网络攻击检测列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackEvents\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Count\": 6,\n                \"DstPort\": 8080,\n                \"Id\": 3,\n                \"Location\": \"\",\n                \"MachineExtraInfo\": {\n                    \"HostName\": \"\",\n                    \"InstanceID\": \"ins-0cvonrya\",\n                    \"NetworkName\": \"\",\n                    \"NetworkType\": 0,\n                    \"PrivateIP\": \"10.0.0.5\",\n                    \"WanIP\": \"106.52.29.133\"\n                },\n                \"MergeTime\": \"2023-05-23T19:21:46+08:00\",\n                \"PayVersion\": 2,\n                \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"SrcIP\": \"127.0.0.1\",\n                \"Status\": 0,\n                \"Type\": 0,\n                \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"VulDefenceStatus\": 0,\n                \"VulId\": 101824,\n                \"VulName\": \"Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)\",\n                \"VulSupportDefense\": 1\n            },\n            {\n                \"Count\": 5,\n                \"DstPort\": 8080,\n                \"Id\": 2,\n                \"Location\": \"局域网\",\n                \"MachineExtraInfo\": {\n                    \"HostName\": \"\",\n                    \"InstanceID\": \"ins-0cvonrya\",\n                    \"NetworkName\": \"\",\n                    \"NetworkType\": 0,\n                    \"PrivateIP\": \"10.0.0.5\",\n                    \"WanIP\": \"106.52.29.133\"\n                },\n                \"MergeTime\": \"2023-05-23T14:43:28+08:00\",\n                \"PayVersion\": 2,\n                \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"SrcIP\": \"10.0.0.14\",\n                \"Status\": 0,\n                \"Type\": 0,\n                \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"VulDefenceStatus\": 0,\n                \"VulId\": 101824,\n                \"VulName\": \"Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)\",\n                \"VulSupportDefense\": 1\n            },\n            {\n                \"Count\": 5,\n                \"DstPort\": 8080,\n                \"Id\": 1,\n                \"Location\": \"局域网\",\n                \"MachineExtraInfo\": {\n                    \"HostName\": \"\",\n                    \"InstanceID\": \"ins-0cvonrya\",\n                    \"NetworkName\": \"\",\n                    \"NetworkType\": 0,\n                    \"PrivateIP\": \"10.0.0.5\",\n                    \"WanIP\": \"106.52.29.133\"\n                },\n                \"MergeTime\": \"2023-05-23T14:37:51+08:00\",\n                \"PayVersion\": 2,\n                \"Quuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"SrcIP\": \"10.0.0.5\",\n                \"Status\": 0,\n                \"Type\": 0,\n                \"Uuid\": \"05f0bcab-726c-4ea4-8109-bcd03d5598f7\",\n                \"VulDefenceStatus\": 0,\n                \"VulId\": 101824,\n                \"VulName\": \"Apache log4j2 远程代码执行漏洞 (CVE-2021-44228)\",\n                \"VulSupportDefense\": 1\n            }\n        ],\n        \"RequestId\": \"dcdbc4d6-54c1-45d5-ab8e-4a7c9275c168\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "网络攻击检测列表"
+      }
+    ],
     "DescribeAttackLogInfo": [
       {
         "document": "网络攻击日志详情",
@@ -1168,6 +1176,14 @@
         "title": "获取机器地域列表"
       }
     ],
+    "DescribeMachineRiskCnt": [
+      {
+        "document": "查询主机入侵检测事件统计",
+        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMachineRiskCnt\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"PrivilegeEscalation\": 1,\n        \"Malware\": 1,\n        \"ReverseShell\": 1,\n        \"BruteAttack\": 1,\n        \"MaliciousRequest\": 1,\n        \"HostLogin\": 1,\n        \"RequestId\": \"dfeffewafewahr4325fs\",\n        \"Bash\": 1\n    }\n}",
+        "title": "查询主机入侵检测事件统计"
+      }
+    ],
     "DescribeMachines": [
       {
         "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
@@ -1430,6 +1446,14 @@
         "input": "https://cwp.tencentcloudapi.com/?Action=DescribeSearchTemplates\n&Offset=0\n&Limit=10\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"List\": [\n            {\n                \"Id\": 17,\n                \"Name\": \"kbtest\",\n                \"LogType\": \"malware\",\n                \"Condition\": \"src_ip 匹配字符: 193.27.228.98\",\n                \"TimeRange\": \"2020-07-31 00:00:00 至 2020-07-31 23:59:59\",\n                \"Query\": \"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1596124800000,\\\"lte\\\":1596211199999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"193.27.228.98\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"30m\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n                \"Flag\": \"simple\",\n                \"DisplayData\": \"[{\\\"id\\\":14401398135,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"193.27.228.98\\\"}]\"\n            },\n            {\n                \"Id\": 13,\n                \"Name\": \"test\",\n                \"LogType\": \"malware\",\n                \"Condition\": \"src_ip 匹配字符: 10.0.0.1\",\n                \"TimeRange\": \"2020-06-13 00:00:00 至 2020-07-13 23:59:59\",\n                \"Query\": \"{\\\"index\\\":[\\\"malware\\\"],\\\"body\\\":{\\\"query\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"bool\\\":{\\\"filter\\\":{\\\"range\\\":{\\\"timestamp\\\":{\\\"gte\\\":1591977600000,\\\"lte\\\":1594655999999}}},\\\"must\\\":[{\\\"term\\\":{\\\"src_ip\\\":\\\"10.0.0.1\\\"}}],\\\"must_not\\\":[],\\\"should\\\":[]}}}},\\\"aggs\\\":{\\\"count_stats\\\":{\\\"date_histogram\\\":{\\\"field\\\":\\\"timestamp\\\",\\\"interval\\\":\\\"12h\\\",\\\"time_zone\\\":\\\"Asia/Shanghai\\\",\\\"min_doc_count\\\":1}}},\\\"highlight\\\":{\\\"fields\\\":{\\\"*\\\":{}}}},\\\"sort\\\":[{\\\"timestamp\\\":\\\"desc\\\"}]}\",\n                \"Flag\": \"simple\",\n                \"DisplayData\": \"[{\\\"id\\\":449375484687,\\\"patternsField\\\":\\\"src_ip\\\",\\\"selectedtype\\\":\\\"is\\\",\\\"selectedOptionsMap\\\":{\\\"is\\\":\\\"匹配字符\\\",\\\"like\\\":\\\"模糊匹配字符\\\",\\\"not\\\":\\\"不包含字符\\\",\\\"is_one_of\\\":\\\"匹配以下任意字符\\\",\\\"not_one_of\\\":\\\"不包含以下任意字符\\\"},\\\"selectedTypeList\\\":[\\\"is\\\",\\\"like\\\",\\\"not\\\",\\\"is_one_of\\\",\\\"not_one_of\\\"],\\\"third_cat\\\":\\\"input\\\",\\\"value\\\":\\\"10.0.0.1\\\"}]\"\n            }\n        ],\n        \"RequestId\": \"252ab6a8-3d45-414d-a31e-fb668e99864c\"\n    }\n}",
         "title": "获取快速检索列表"
+      }
+    ],
+    "DescribeSecurityBroadcasts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityBroadcasts\n<公共请求参数>\n\n{\n    \"EndDate\": \"xx\",\n    \"BeginDate\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Subtitle\": \"xx\",\n                \"Level\": 1,\n                \"Title\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"Type\": 1,\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"5b49dea4-0d0e-400f-8d11-2fdf1707c51a \"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeSecurityDynamics": [
@@ -2018,6 +2042,14 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicenseBinds\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xxxxxxxx\",\n    \"LicenseType\": 0,\n    \"IsAll\": true,\n    \"QuuidList\": []\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a11d268f-1601-4f63-9131-0382537b9ebf\",\n        \"TaskId\": 1\n    }\n}",
         "title": "示例"
+      }
+    ],
+    "ModifyLicenseOrder": [
+      {
+        "document": "修改订单容量&别名&项目ID",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrModifyLicenseOrder\n<公共请求参数>\n\n{\n    \"Alias\": \"别名\",\n    \"ProjectId\": 0,\n    \"ResourceId\": \"cwplic-xxxxxxxx\",\n    \"InquireNum\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfcd9422-e824-4651-8fe3-1af96781ce6e\",\n        \"DealNames\": [],\n        \"ResourceIds\": [\n            \"cwplic-xxxxxxxx\"\n        ]\n    }\n}",
+        "title": "编辑订单"
       }
     ],
     "ModifyLicenseUnBinds": [

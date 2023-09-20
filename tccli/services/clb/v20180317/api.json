@@ -378,6 +378,34 @@
       "output": "DisassociateTargetGroupsResponse",
       "status": "online"
     },
+    "InquiryPriceCreateLoadBalancer": {
+      "document": "InquiryPriceCreateLoadBalancer接口查询创建负载均衡的价格。",
+      "input": "InquiryPriceCreateLoadBalancerRequest",
+      "name": "创建负载均衡实例询价",
+      "output": "InquiryPriceCreateLoadBalancerResponse",
+      "status": "online"
+    },
+    "InquiryPriceModifyLoadBalancer": {
+      "document": "InquiryPriceModifyLoadBalancer接口修改负载均衡配置询价。",
+      "input": "InquiryPriceModifyLoadBalancerRequest",
+      "name": "修改负载均衡配置询价",
+      "output": "InquiryPriceModifyLoadBalancerResponse",
+      "status": "online"
+    },
+    "InquiryPriceRefundLoadBalancer": {
+      "document": "InquiryPriceRefundLoadBalancer接口查询负载均衡退费价格。",
+      "input": "InquiryPriceRefundLoadBalancerRequest",
+      "name": "退还负载均衡实例询价",
+      "output": "InquiryPriceRefundLoadBalancerResponse",
+      "status": "online"
+    },
+    "InquiryPriceRenewLoadBalancer": {
+      "document": "InquiryPriceRenewLoadBalancer接口查询对负载均衡续费的价格，只支持预付费负载均衡续费。",
+      "input": "InquiryPriceRenewLoadBalancerRequest",
+      "name": "续费预付费负载均衡实例询价",
+      "output": "InquiryPriceRenewLoadBalancerResponse",
+      "status": "online"
+    },
     "ManualRewrite": {
       "document": "用户手动配置原访问地址和重定向地址，系统自动将原访问地址的请求重定向至对应路径的目的地址。同一域名下可以配置多条路径作为重定向策略，实现http/https之间请求的自动跳转。设置重定向时，需满足如下约束条件：若A已经重定向至B，则A不能再重定向至C（除非先删除老的重定向关系，再建立新的重定向关系），B不能重定向至任何其它地址。\n本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。",
       "input": "ManualRewriteRequest",
@@ -6036,6 +6064,241 @@
       ],
       "usage": "out"
     },
+    "InquiryPriceCreateLoadBalancerRequest": {
+      "document": "InquiryPriceCreateLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "询价的负载均衡类型，OPEN为公网类型，INTERNAL为内网类型",
+          "example": "OPEN",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "询价的收费类型，POSTPAID为按量计费，\"PREPAID\"为预付费包年包月",
+          "example": "POSTPAID",
+          "member": "string",
+          "name": "LoadBalancerChargeType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "询价的收费周期",
+          "example": "无",
+          "member": "LBChargePrepaid",
+          "name": "LoadBalancerChargePrepaid",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "询价的网络计费方式",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "询价的负载均衡实例个数，默认为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "GoodsNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定可用区询价。如：ap-guangzhou-1",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "包年包月询价时传性能容量型规格，如：clb.c3.small。按量付费询价时传SLA",
+          "example": "clb.c3.small",
+          "member": "string",
+          "name": "SlaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP版本，可取值：IPV4、IPV6、IPv6FullChain，不区分大小写，默认值 IPV4。说明：取值为IPV6表示为IPV6 NAT64版本；取值为IPv6FullChain，表示为IPv6版本。",
+          "example": "IPV4",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "仅适用于公网负载均衡。CMCC | CTCC | CUCC，分别对应 移动 | 电信 | 联通，如果不指定本参数，则默认使用BGP。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "VipIsp",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceCreateLoadBalancerResponse": {
+      "document": "InquiryPriceCreateLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该参数表示对应的价格。",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceModifyLoadBalancerRequest": {
+      "document": "InquiryPriceModifyLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID",
+          "example": "lb-dr0mo6w4",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的网络带宽信息",
+          "example": "无",
+          "member": "InternetAccessible",
+          "name": "InternetAccessible",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceModifyLoadBalancerResponse": {
+      "document": "InquiryPriceModifyLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述价格信息",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRefundLoadBalancerRequest": {
+      "document": "InquiryPriceRefundLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID",
+          "example": "lb-xxxxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRefundLoadBalancerResponse": {
+      "document": "InquiryPriceRefundLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该参数表示对应的价格。",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewLoadBalancerRequest": {
+      "document": "InquiryPriceRenewLoadBalancer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例ID",
+          "example": "lb-xxxxxxxx",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费周期",
+          "example": "无",
+          "member": "LBChargePrepaid",
+          "name": "LoadBalancerChargePrepaid",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "InquiryPriceRenewLoadBalancerResponse": {
+      "document": "InquiryPriceRenewLoadBalancer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示续费价格",
+          "example": "无",
+          "member": "Price",
+          "name": "Price",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InternetAccessible": {
       "document": "网络计费模式，最大出带宽",
       "members": [
@@ -6074,6 +6337,72 @@
         }
       ],
       "usage": "both"
+    },
+    "ItemPrice": {
+      "document": "描述了单项的价格信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后付费单价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "UnitPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后续计价单元，可取值范围： \nHOUR：表示计价单元是按每小时来计算。当前涉及该计价单元的场景有：实例按小时后付费（POSTPAID_BY_HOUR）、带宽按小时后付费（BANDWIDTH_POSTPAID_BY_HOUR）；\nGB：表示计价单元是按每GB来计算。当前涉及该计价单元的场景有：流量按小时后付费（TRAFFIC_POSTPAID_BY_HOUR）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HOUR",
+          "member": "string",
+          "name": "ChargeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预支费用的原价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "OriginalPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预支费用的折扣价，单位：元。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "DiscountPrice",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后付费的折扣单价，单位:元\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "float",
+          "name": "UnitPriceDiscount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "折扣，如20.0代表2折。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "float",
+          "name": "Discount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "LBChargePrepaid": {
       "document": "lb实例包年包月相关配置属性",
@@ -8948,6 +9277,42 @@
         }
       ],
       "usage": "in"
+    },
+    "Price": {
+      "document": "表示负载均衡的价格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "描述了实例价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "InstancePrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述了网络价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "BandwidthPrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述了lcu价格。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ItemPrice",
+          "name": "LcuPrice",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Quota": {
       "document": "描述配额信息，所有配额均指当前地域下的配额。",

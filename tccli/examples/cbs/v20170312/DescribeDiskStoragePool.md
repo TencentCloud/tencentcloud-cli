@@ -24,7 +24,6 @@ Output:
                 "Zone": "ap-chongqing-1",
                 "CdcName": "untitled",
                 "CdcResource": {
-                    "DiskAavilable": 1,
                     "DiskTotal": 10
                 },
                 "CdcId": "cdc-xxx",

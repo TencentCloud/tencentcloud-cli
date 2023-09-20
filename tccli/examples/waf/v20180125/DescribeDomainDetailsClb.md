@@ -1,4 +1,4 @@
-**Example 1: 查询单个clb域名详情**
+**Example 1: 查询单个clbwaf域名详情**
 
 
 
@@ -34,9 +34,17 @@ Output:
                     "Region": "gz",
                     "Vip": "203.195.250.6",
                     "Vport": 5803,
-                    "Zone": ""
+                    "Zone": "",
+                    "NumericalVpcId": 0,
+                    "LoadBalancerType": "abc"
                 }
-            ]
+            ],
+            "State": 0,
+            "AlbType": "abc",
+            "IpHeaders": [
+                "abc"
+            ],
+            "CdcClusters": "abc"
         }
     }
 }

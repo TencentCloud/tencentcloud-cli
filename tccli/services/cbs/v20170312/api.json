@@ -890,23 +890,23 @@
       "members": [
         {
           "disabled": false,
-          "document": "独享集群的可用容量大小，单位GiB",
-          "example": "100000",
+          "document": "独享集群的总容量大小，单位GiB",
+          "example": "200",
           "member": "uint64",
-          "name": "DiskAavilable",
-          "required": true,
+          "name": "DiskTotal",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "独享集群的总容量大小，单位GiB",
-          "example": "200",
+          "document": "独享集群的可用容量大小，单位GiB\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
           "member": "uint64",
-          "name": "DiskTotal",
-          "required": true,
+          "name": "DiskAvailable",
+          "output_required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

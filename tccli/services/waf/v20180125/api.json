@@ -36,9 +36,9 @@
       "status": "online"
     },
     "AddSpartaProtection": {
-      "document": "添加Spart防护域名",
+      "document": "添加SaaS型WAF防护域名",
       "input": "AddSpartaProtectionRequest",
-      "name": "添加SAAS-WAF防护域名",
+      "name": "添加SaaS型WAF防护域名",
       "output": "AddSpartaProtectionResponse",
       "status": "online"
     },
@@ -50,9 +50,9 @@
       "status": "online"
     },
     "CreateHost": {
-      "document": "clb-waf中添加防护的域名",
+      "document": "clb-waf中添加防护域名",
       "input": "CreateHostRequest",
-      "name": "添加防护域名",
+      "name": "添加负载均衡型WAF防护域名",
       "output": "CreateHostResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DeleteSpartaProtection": {
-      "document": "SAASWAF删除防护域名",
+      "document": "Saas型WAF删除防护域名",
       "input": "DeleteSpartaProtectionRequest",
-      "name": "删除SAASWAF防护域名",
+      "name": "删除Saas型WAF防护域名",
       "output": "DeleteSpartaProtectionResponse",
       "status": "online"
     },
@@ -239,7 +239,7 @@
       "status": "online"
     },
     "DescribeCiphersDetail": {
-      "document": "查询加密套件信息",
+      "document": "Saas型WAF接入查询加密套件信息",
       "input": "DescribeCiphersDetailRequest",
       "name": "查询加密套件信息",
       "output": "DescribeCiphersDetailResponse",
@@ -267,16 +267,16 @@
       "status": "online"
     },
     "DescribeDomainDetailsClb": {
-      "document": "获取一个clb域名详情",
+      "document": "获取一个clbwaf域名详情",
       "input": "DescribeDomainDetailsClbRequest",
-      "name": "获取一个clb域名详情",
+      "name": "获取负载均衡型WAF域名详情",
       "output": "DescribeDomainDetailsClbResponse",
       "status": "online"
     },
     "DescribeDomainDetailsSaas": {
-      "document": "查询单个saas域名详情",
+      "document": "查询单个saaswaf域名详情",
       "input": "DescribeDomainDetailsSaasRequest",
-      "name": "查询单个saas域名详情",
+      "name": "查询单个Saas型WAF域名详情",
       "output": "DescribeDomainDetailsSaasResponse",
       "status": "online"
     },
@@ -379,9 +379,9 @@
       "status": "online"
     },
     "DescribePorts": {
-      "document": "获取非标端口列表",
+      "document": "获取Saas型WAF防护端口列表",
       "input": "DescribePortsRequest",
-      "name": "获取非标端口列表",
+      "name": "获取Saas型WAF防护端口列表",
       "output": "DescribePortsResponse",
       "status": "online"
     },
@@ -589,9 +589,9 @@
       "status": "online"
     },
     "ModifyDomainIpv6Status": {
-      "document": "修改ipv6开关",
+      "document": "切换ipv6开关",
       "input": "ModifyDomainIpv6StatusRequest",
-      "name": "修改ipv6开关",
+      "name": "切换ipv6开关",
       "output": "ModifyDomainIpv6StatusResponse",
       "status": "online"
     },
@@ -740,6 +740,13 @@
       "input": "SwitchDomainRulesRequest",
       "name": "切换域名的规则开关",
       "output": "SwitchDomainRulesResponse",
+      "status": "online"
+    },
+    "SwitchElasticMode": {
+      "document": "切换弹性的开关",
+      "input": "SwitchElasticModeRequest",
+      "name": "切换弹性QPS的开关",
+      "output": "SwitchElasticModeResponse",
       "status": "online"
     },
     "UpsertCCRule": {
@@ -1534,8 +1541,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要防御的域名",
-          "example": "test1.qcloud.com",
+          "document": "需要防护的域名",
+          "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1543,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "证书类型，0表示没有证书，CertType=1表示自有证书,2 为托管证书",
+          "document": "证书类型。\n0：仅配置HTTP监听端口，没有证书\n1：证书来源为自有证书\n2：证书来源为托管证书",
           "example": "0",
           "member": "int64",
           "name": "CertType",
@@ -1552,7 +1559,7 @@
         },
         {
           "disabled": false,
-          "document": "表示是否开启了CDN代理，1：有部署CDN，0：未部署CDN",
+          "document": "waf前是否部署有七层代理服务。\n0：没有部署代理服务\n1：有部署代理服务，waf将使用XFF获取客户端IP\n2：有部署代理服务，waf将使用remote_addr获取客户端IP\n3：有部署代理服务，waf将使用ip_headers中的自定义header获取客户端IP",
           "example": "0",
           "member": "int64",
           "name": "IsCdn",
@@ -1561,7 +1568,7 @@
         },
         {
           "disabled": false,
-          "document": "回源类型，0表示通过IP回源,1 表示通过域名回源",
+          "document": "回源类型。\n0：通过IP回源\n1：通过域名回源",
           "example": "0",
           "member": "int64",
           "name": "UpstreamType",
@@ -1570,7 +1577,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启WebSocket支持，1表示开启，0不开启",
+          "document": "是否开启WebSocket支持。\n0：关闭\n1：开启",
           "example": "0",
           "member": "int64",
           "name": "IsWebsocket",
@@ -1579,7 +1586,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡策略，0表示轮询，1表示IP hash",
+          "document": "回源负载均衡策略。\n0：轮询\n1：IP hash\n2：加权轮询",
           "example": "0",
           "member": "string",
           "name": "LoadBalance",
@@ -1588,8 +1595,8 @@
         },
         {
           "disabled": false,
-          "document": "值为1时，需要填次参数，表示证书内容",
-          "example": "sldfjsl",
+          "document": "CertType为1时，需要填充此参数，表示自有证书的证书链",
+          "example": "-----BEGIN CERTIFICATE----- xxx -----END CERTIFICATE-----",
           "member": "string",
           "name": "Cert",
           "required": false,
@@ -1597,8 +1604,8 @@
         },
         {
           "disabled": false,
-          "document": "CertType=1时，需要填次参数，表示证书的私钥",
-          "example": "jskljflks",
+          "document": "CertType为1时，需要填充此参数，表示自有证书的私钥",
+          "example": "-----BEGIN RSA PRIVATE KEY----- xxx -----END RSA PRIVATE KEY-----",
           "member": "string",
           "name": "PrivateKey",
           "required": false,
@@ -1606,8 +1613,8 @@
         },
         {
           "disabled": false,
-          "document": "CertType=2时，需要填次参数，表示证书的ID",
-          "example": "23424",
+          "document": "CertType为2时，需要填充此参数，表示腾讯云SSL平台托管的证书id",
+          "example": "cKnKQLJ",
           "member": "string",
           "name": "SSLId",
           "required": false,
@@ -1615,8 +1622,8 @@
         },
         {
           "disabled": false,
-          "document": "Waf的资源ID",
-          "example": "slkdfjsldk",
+          "document": "待废弃，可不填。Waf的资源ID。",
+          "example": "waf_2kl62zgs0108e8j3",
           "member": "string",
           "name": "ResourceId",
           "required": false,
@@ -1624,7 +1631,16 @@
         },
         {
           "disabled": false,
-          "document": "HTTPS回源协议，填http或者https",
+          "document": "IsCdn为3时，需要填此参数，表示自定义header",
+          "example": "[\"x-real-ip\"]",
+          "member": "string",
+          "name": "IpHeaders",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "服务配置有HTTPS端口时，HTTPS的回源协议。\nhttp：使用http协议回源，和HttpsUpstreamPort配合使用\nhttps：使用https协议回源",
           "example": "https",
           "member": "string",
           "name": "UpstreamScheme",
@@ -1642,7 +1658,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启灰度，0表示不开启灰度",
+          "document": "待废弃，可不填。是否开启灰度，0表示不开启灰度。",
           "example": "0",
           "member": "int64",
           "name": "IsGray",
@@ -1651,7 +1667,7 @@
         },
         {
           "disabled": false,
-          "document": "灰度的地区",
+          "document": "待废弃，可不填。灰度的地区",
           "example": "[\"gz\",\"bj\"]",
           "member": "string",
           "name": "GrayAreas",
@@ -1660,34 +1676,7 @@
         },
         {
           "disabled": false,
-          "document": "UpstreamType=1时，填次字段表示回源域名",
-          "example": "www.qq.com",
-          "member": "string",
-          "name": "UpstreamDomain",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "UpstreamType=0时，填次字段表示回源IP",
-          "example": "[\"1.1.1.1\\n\"]",
-          "member": "string",
-          "name": "SrcList",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "是否开启HTTP2,开启HTTP2需要HTTPS支持",
-          "example": "0",
-          "member": "int64",
-          "name": "IsHttp2",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "表示是否强制跳转到HTTPS，1强制跳转Https，0不强制跳转",
+          "document": "是否开启HTTP强制跳转到HTTPS。\n0：不强制跳转\n1：开启强制跳转",
           "example": "1",
           "member": "int64",
           "name": "HttpsRewrite",
@@ -1696,7 +1685,34 @@
         },
         {
           "disabled": false,
-          "document": "服务有多端口需要设置此字段",
+          "document": "域名回源时的回源域名。UpstreamType为1时，需要填充此字段",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "UpstreamDomain",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段",
+          "example": "[\"1.1.1.1\\n\"]",
+          "member": "string",
+          "name": "SrcList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启HTTP2，需要开启HTTPS协议支持。\n0：关闭\n1：开启",
+          "example": "0",
+          "member": "int64",
+          "name": "IsHttp2",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "服务端口列表配置。\nNginxServerId：新增域名时填'0'\nPort：监听端口号\nProtocol：端口协议\nUpstreamPort：与Port相同\nUpstreamProtocol：与Protocol相同",
           "example": "无",
           "member": "PortItem",
           "name": "Ports",
@@ -1705,7 +1721,7 @@
         },
         {
           "disabled": false,
-          "document": "WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力",
+          "document": "待废弃，可不填。WAF实例类型。\nsparta-waf：SAAS型WAF\nclb-waf：负载均衡型WAF\ncdn-waf：CDN上的Web防护能力",
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
@@ -1714,7 +1730,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启长连接，0 短连接，1 长连接",
+          "document": "是否开启长连接。\n0： 短连接\n1： 长连接",
           "example": "1",
           "member": "string",
           "name": "IsKeepAlive",
@@ -1723,8 +1739,8 @@
         },
         {
           "disabled": false,
-          "document": "实例id，上线之后带上此字段",
-          "example": "waf-sldfjsl",
+          "document": "域名所属实例id",
+          "example": "waf_2kl62zgs0108e8j3",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -1732,7 +1748,7 @@
         },
         {
           "disabled": false,
-          "document": "anycast IP类型开关： 0 普通IP 1 Anycast IP",
+          "document": "待废弃，目前填0即可。anycast IP类型开关： 0 普通IP 1 Anycast IP",
           "example": "0",
           "member": "int64",
           "name": "Anycast",
@@ -1741,8 +1757,8 @@
         },
         {
           "disabled": false,
-          "document": "src权重",
-          "example": "[1.1.1]",
+          "document": "回源IP列表各IP的权重，和SrcList一一对应。当且仅当UpstreamType为0，并且SrcList有多个IP，并且LoadBalance为2时需要填写，否则填 []",
+          "example": "[10,10,10]",
           "member": "int64",
           "name": "Weights",
           "required": false,
@@ -1750,7 +1766,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启主动健康检测，1表示开启，0表示不开启",
+          "document": "是否开启主动健康检测。\n0：不开启\n1：开启",
           "example": "1",
           "member": "int64",
           "name": "ActiveCheck",
@@ -1768,16 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "加密套件信息",
-          "example": "[1，1]",
-          "member": "int64",
-          "name": "Ciphers",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "0:不支持选择：默认模版  1:通用型模版 2:安全型模版 3:自定义模版",
+          "document": "加密套件模板。\n0：不支持选择，使用默认模版  \n1：通用型模版 \n2：安全型模版 \n3：自定义模版",
           "example": "0",
           "member": "int64",
           "name": "CipherTemplate",
@@ -1786,7 +1793,16 @@
         },
         {
           "disabled": false,
-          "document": "300s",
+          "document": "自定义的加密套件列表。CipherTemplate为3时需要填此字段，表示自定义的加密套件，值通过DescribeCiphersDetail接口获取。",
+          "example": "[1,2,15]",
+          "member": "int64",
+          "name": "Ciphers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "WAF与源站的读超时时间，默认300s。",
           "example": "300",
           "member": "int64",
           "name": "ProxyReadTimeout",
@@ -1795,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "300s",
+          "document": "WAF与源站的写超时时间，默认300s。",
           "example": "300",
           "member": "int64",
           "name": "ProxySendTimeout",
@@ -1804,7 +1820,7 @@
         },
         {
           "disabled": false,
-          "document": "0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；",
+          "document": "WAF回源时的SNI类型。\n0：关闭SNI，不配置client_hello中的server_name\n1：开启SNI，client_hello中的server_name为防护域名\n2：开启SNI，SNI为域名回源时的源站域名\n3：开启SNI，SNI为自定义域名",
           "example": "2",
           "member": "int64",
           "name": "SniType",
@@ -1813,7 +1829,7 @@
         },
         {
           "disabled": false,
-          "document": "SniType=3时，需要填此参数，表示自定义的host；",
+          "document": "SniType为3时，需要填此参数，表示自定义的SNI；",
           "example": "test.com",
           "member": "string",
           "name": "SniHost",
@@ -1822,16 +1838,7 @@
         },
         {
           "disabled": false,
-          "document": "is_cdn=3时，需要填此参数，表示自定义header",
-          "example": "[\"x-real-ip\"]",
-          "member": "string",
-          "name": "IpHeaders",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "0:关闭xff重置；1:开启xff重置",
+          "document": "是否开启XFF重置。\n0：关闭\n1：开启",
           "example": "0",
           "member": "int64",
           "name": "XFFReset",
@@ -2945,7 +2952,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "aaaa",
+          "example": "waf_2kl34sf9ads9ad3s",
           "member": "string",
           "name": "InstanceID",
           "required": false,
@@ -2960,7 +2967,7 @@
         {
           "disabled": false,
           "document": "新增防护域名ID",
-          "example": "无",
+          "example": "45gfdstrtewsdfw3asd3",
           "member": "string",
           "name": "DomainId",
           "output_required": true,
@@ -3525,7 +3532,7 @@
         },
         {
           "disabled": false,
-          "document": "版本",
+          "document": "实例类型",
           "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
@@ -4700,7 +4707,7 @@
           "example": "[1,1,TLS_EDCHE_RSA_WITH_AES_MD5]",
           "member": "TLSCiphers",
           "name": "Ciphers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5086,7 +5093,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "1",
+          "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5095,7 +5102,7 @@
         {
           "disabled": false,
           "document": "域名id",
-          "example": "1",
+          "example": "7d58ebf3db7e5f7e8f91eb017c6a7b31",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -5104,7 +5111,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "1",
+          "example": "waf_2kw30zgy0102e8j7",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5122,7 +5129,7 @@
           "example": "无",
           "member": "ClbDomainsInfo",
           "name": "DomainsClbPartInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5141,7 +5148,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "1",
+          "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -5150,7 +5157,7 @@
         {
           "disabled": false,
           "document": "域名id",
-          "example": "1",
+          "example": "7d58ebf3db7e5f7e8f91eb047c6a7b32",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -5159,7 +5166,7 @@
         {
           "disabled": false,
           "document": "实例id",
-          "example": "1",
+          "example": "waf_2kw31jgy0928e5j1",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -5177,6 +5184,7 @@
           "example": "无",
           "member": "DomainsPartInfo",
           "name": "DomainsPartInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6338,19 +6346,19 @@
       "members": [
         {
           "disabled": false,
-          "document": "版本",
-          "example": "clb-waf",
+          "document": "实例ID",
+          "example": "waf_2ka80zly0702e8j3",
           "member": "string",
-          "name": "Edition",
+          "name": "InstanceID",
           "required": false,
           "type": "string"
         },
         {
           "disabled": false,
-          "document": "实例ID",
-          "example": "无",
+          "document": "实例类型",
+          "example": "sparta-waf",
           "member": "string",
-          "name": "InstanceID",
+          "name": "Edition",
           "required": false,
           "type": "string"
         }
@@ -6366,7 +6374,7 @@
           "example": "[\"80\",\"8080\"]",
           "member": "string",
           "name": "HttpPorts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6376,7 +6384,7 @@
           "example": "[\"443\",\"8443\"]",
           "member": "string",
           "name": "HttpsPorts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6512,7 +6520,7 @@
           "example": "无",
           "member": "CdcRegion",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6539,7 +6547,7 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10438,7 +10446,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名所属的实例ID",
-          "example": "waf",
+          "example": "waf_2kw29zgy7108e8j3",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -10447,7 +10455,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名",
-          "example": "waf",
+          "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -10456,7 +10464,7 @@
         {
           "disabled": false,
           "document": "需要修改的域名ID",
-          "example": "waf",
+          "example": "7d58ebf3db7e5f7e8f91eb017c6a7b31",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -10483,7 +10491,7 @@
           "example": "1",
           "member": "int64",
           "name": "Ipv6Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12063,7 +12071,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "test.qcloud.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -12777,6 +12785,51 @@
     },
     "SwitchDomainRulesResponse": {
       "document": "SwitchDomainRules返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchElasticModeRequest": {
+      "document": "SwitchElasticMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本，只能是sparta-waf, clb-waf, cdn-waf",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0代表关闭，1代表打开",
+          "example": "0",
+          "member": "int64",
+          "name": "Mode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "实例id",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchElasticModeResponse": {
+      "document": "SwitchElasticMode返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

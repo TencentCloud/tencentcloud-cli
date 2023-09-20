@@ -23764,6 +23764,7 @@
           "example": "URL",
           "member": "string",
           "name": "NotifyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23774,6 +23775,7 @@
           "example": "Finish ",
           "member": "string",
           "name": "NotifyMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23784,6 +23786,7 @@
           "example": "http://www.qq.com/callback",
           "member": "string",
           "name": "NotifyUrl",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23794,6 +23797,7 @@
           "example": "Queue ",
           "member": "string",
           "name": "CmqModel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23804,6 +23808,7 @@
           "example": "sh",
           "member": "string",
           "name": "CmqRegion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23814,6 +23819,7 @@
           "example": "test",
           "member": "string",
           "name": "TopicName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23824,6 +23830,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "QueueName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -23834,8 +23841,20 @@
           "example": "NULL",
           "member": "AwsSQS",
           "name": "AwsSQS",
+          "output_required": true,
           "required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于生成回调签名的key。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NotifyKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

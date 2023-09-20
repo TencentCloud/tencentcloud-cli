@@ -106,7 +106,7 @@
     ],
     "CreateBackup": [
       {
-        "document": "",
+        "document": "创建备份",
         "input": "https://cynosdb.tencentcloudapi.com/?Action=CreateBackup\n&ClusterId=cynosdbpg-45knmnra\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\",\n        \"FlowId\": 12345\n    }\n}",
         "title": "创建备份"
@@ -300,9 +300,9 @@
     ],
     "DescribeBackupList": [
       {
-        "document": "",
+        "document": "查询备份文件列表",
         "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupList\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"ClusterId\": \"cynosdbpg-ilgo90hu\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 10000,\n                \"SnapshotTime\": \"xx\",\n                \"FileName\": \"snap\",\n                \"FileSize\": 20190215,\n                \"StartTime\": \"2019-01-20 01:10:12\",\n                \"FinishTime\": \"2019-01-20 02:10:12\",\n                \"BackupType\": \"snapshot\",\n                \"BackupMethod\": \"auto\",\n                \"BackupStatus\": \"success\",\n                \"SnapShotType\": \"full\",\n                \"BackupName\": \"desc123\",\n                \"BackupId\": 100\n            }\n        ],\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"BackupList\": [\n            {\n                \"SnapshotId\": 1,\n                \"FileName\": \"abc\",\n                \"FileSize\": 1,\n                \"StartTime\": \"abc\",\n                \"FinishTime\": \"abc\",\n                \"BackupType\": \"abc\",\n                \"BackupMethod\": \"abc\",\n                \"BackupStatus\": \"abc\",\n                \"SnapshotTime\": \"abc\",\n                \"BackupId\": 0,\n                \"SnapShotType\": \"abc\",\n                \"BackupName\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询备份文件列表"
       }
     ],

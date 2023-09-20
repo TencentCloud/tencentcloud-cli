@@ -38,7 +38,7 @@
     "CreateBatchSignUrl": {
       "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
       "input": "CreateBatchSignUrlRequest",
-      "name": "获取小程序批量签署链接",
+      "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "CreateBatchSignUrlResponse",
       "status": "online"
     },
@@ -50,7 +50,7 @@
       "status": "online"
     },
     "CreateDocument": {
-      "document": "创建签署流程电子文档\n适用场景：见创建签署流程接口。\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用, 具体逻辑可以参考下图:\n\n<svg id=\"SvgjsSvg1077\" width=\"304\" height=\"505\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1078\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1096\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1097\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1108\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1109\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1120\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1121\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1140\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1141\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"304\" height=\"505\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1080\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1081\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1082\" transform=\"translate(58,121)\"><path id=\"SvgjsPath1083\" d=\"M 0 0L 221 0L 221 262L 0 262Z\" stroke-dasharray=\"3,4\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1084\"><text id=\"SvgjsText1085\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"201px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"120.375\" transform=\"rotate(0)\"></text></g></g><g id=\"SvgjsG1086\" transform=\"translate(88,140.00000000000006)\"><path id=\"SvgjsPath1087\" d=\"M 0 0L 161 0L 161 48L 0 48Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1088\"><text id=\"SvgjsText1089\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"141px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"4.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1090\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1091\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlow</tspan></tspan><tspan id=\"SvgjsTspan1092\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1093\" style=\"text-decoration:;\">创建签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1094\"><path id=\"SvgjsPath1095\" d=\"M168.5 188.50000000000006L168.5 200.83333333333337L168.5 200.83333333333337L168.5 211.86666666666667\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1096)\"></path></g><g id=\"SvgjsG1098\" transform=\"translate(104.25,213.66666666666669)\"><path id=\"SvgjsPath1099\" d=\"M 0 0L 128.5 0L 128.5 55L 0 55Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1100\"><text id=\"SvgjsText1101\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"109px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1102\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1103\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateDocument</tspan></tspan><tspan id=\"SvgjsTspan1104\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1105\" style=\"text-decoration:;\">创建电子文档</tspan></tspan></text></g></g><g id=\"SvgjsG1106\"><path id=\"SvgjsPath1107\" d=\"M168.5 269.16666666666674L168.5 281.5L168.5 281.5L168.5 292.5333333333334\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1108)\"></path></g><g id=\"SvgjsG1110\" transform=\"translate(96.75,294.33333333333337)\"><path id=\"SvgjsPath1111\" d=\"M 0 0L 143.5 0L 143.5 65L 0 65Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1112\"><text id=\"SvgjsText1113\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"124px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"13.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1114\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1115\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">StartFlow</tspan></tspan><tspan id=\"SvgjsTspan1116\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1117\" style=\"text-decoration:;\">发起签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1118\"><path id=\"SvgjsPath1119\" d=\"M168.5 359.83333333333337L168.5 392.16666666666674L168.5 392.16666666666674L168.5 423.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1120)\"></path></g><g id=\"SvgjsG1122\" transform=\"translate(106.25,425)\"><path id=\"SvgjsPath1123\" d=\"M 0 0L 124.5 0L 124.5 55L 0 55Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1124\"><text id=\"SvgjsText1125\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"105px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1126\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1127\" style=\"text-decoration:;\">开始签署</tspan></tspan><tspan id=\"SvgjsTspan1128\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1129\" style=\"text-decoration:;\">(小程序/H5等)</tspan></tspan></text></g></g><g id=\"SvgjsG1130\" transform=\"translate(120.5,25)\"><path id=\"SvgjsPath1131\" d=\"M 0 0L 96 0L 96 54L 0 54Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1132\"><text id=\"SvgjsText1133\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"76px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"7.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1134\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1135\" style=\"text-decoration:;\">控制台创建</tspan></tspan><tspan id=\"SvgjsTspan1136\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1137\" style=\"text-decoration:;\">模板</tspan></tspan></text></g></g><g id=\"SvgjsG1138\"><path id=\"SvgjsPath1139\" d=\"M168.5 79.5L168.5 109.5L168.5 109.5L168.5 138.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1140)\"></path></g><g id=\"SvgjsG1142\" transform=\"translate(25,114)\"><path id=\"SvgjsPath1143\" d=\"M 0 0L 100 0L 100 40L 0 40Z\" stroke=\"none\" fill=\"none\"></path><g id=\"SvgjsG1144\"><text id=\"SvgjsText1145\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"100px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"9.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1146\" dy=\"16\" x=\"50\"><tspan id=\"SvgjsTspan1147\" style=\"text-decoration:;\">API</tspan></tspan></text></g></g></svg>",
+      "document": "创建签署流程电子文档<br />\n适用场景：见创建签署流程接口。<br />\n点击查看<a href=\"https://qian.tencent.com/developers/startFlows/CreateFlow\" target=\"_blank\">通过模板创建签署流程</a>\n<a href=\"https://qian.tencent.com/developers/startFlows/CreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>。<br />\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n<svg id=\"SvgjsSvg1077\" width=\"304\" height=\"505\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1078\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1096\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1097\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1108\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1109\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1120\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1121\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1140\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1141\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"304\" height=\"505\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1080\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1081\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1082\" transform=\"translate(58,121)\"><path id=\"SvgjsPath1083\" d=\"M 0 0L 221 0L 221 262L 0 262Z\" stroke-dasharray=\"3,4\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1084\"><text id=\"SvgjsText1085\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"201px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"120.375\" transform=\"rotate(0)\"></text></g></g><g id=\"SvgjsG1086\" transform=\"translate(88,140.00000000000006)\"><path id=\"SvgjsPath1087\" d=\"M 0 0L 161 0L 161 48L 0 48Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1088\"><text id=\"SvgjsText1089\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"141px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"4.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1090\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1091\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlow</tspan></tspan><tspan id=\"SvgjsTspan1092\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1093\" style=\"text-decoration:;\">创建签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1094\"><path id=\"SvgjsPath1095\" d=\"M168.5 188.50000000000006L168.5 200.83333333333337L168.5 200.83333333333337L168.5 211.86666666666667\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1096)\"></path></g><g id=\"SvgjsG1098\" transform=\"translate(104.25,213.66666666666669)\"><path id=\"SvgjsPath1099\" d=\"M 0 0L 128.5 0L 128.5 55L 0 55Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1100\"><text id=\"SvgjsText1101\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"109px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1102\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1103\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateDocument</tspan></tspan><tspan id=\"SvgjsTspan1104\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1105\" style=\"text-decoration:;\">创建电子文档</tspan></tspan></text></g></g><g id=\"SvgjsG1106\"><path id=\"SvgjsPath1107\" d=\"M168.5 269.16666666666674L168.5 281.5L168.5 281.5L168.5 292.5333333333334\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1108)\"></path></g><g id=\"SvgjsG1110\" transform=\"translate(96.75,294.33333333333337)\"><path id=\"SvgjsPath1111\" d=\"M 0 0L 143.5 0L 143.5 65L 0 65Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1112\"><text id=\"SvgjsText1113\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"124px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"13.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1114\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1115\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">StartFlow</tspan></tspan><tspan id=\"SvgjsTspan1116\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1117\" style=\"text-decoration:;\">发起签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1118\"><path id=\"SvgjsPath1119\" d=\"M168.5 359.83333333333337L168.5 392.16666666666674L168.5 392.16666666666674L168.5 423.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1120)\"></path></g><g id=\"SvgjsG1122\" transform=\"translate(106.25,425)\"><path id=\"SvgjsPath1123\" d=\"M 0 0L 124.5 0L 124.5 55L 0 55Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1124\"><text id=\"SvgjsText1125\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"105px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1126\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1127\" style=\"text-decoration:;\">开始签署</tspan></tspan><tspan id=\"SvgjsTspan1128\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1129\" style=\"text-decoration:;\">(小程序/H5等)</tspan></tspan></text></g></g><g id=\"SvgjsG1130\" transform=\"translate(120.5,25)\"><path id=\"SvgjsPath1131\" d=\"M 0 0L 96 0L 96 54L 0 54Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1132\"><text id=\"SvgjsText1133\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"76px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"7.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1134\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1135\" style=\"text-decoration:;\">控制台创建</tspan></tspan><tspan id=\"SvgjsTspan1136\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1137\" style=\"text-decoration:;\">模板</tspan></tspan></text></g></g><g id=\"SvgjsG1138\"><path id=\"SvgjsPath1139\" d=\"M168.5 79.5L168.5 109.5L168.5 109.5L168.5 138.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1140)\"></path></g><g id=\"SvgjsG1142\" transform=\"translate(25,114)\"><path id=\"SvgjsPath1143\" d=\"M 0 0L 100 0L 100 40L 0 40Z\" stroke=\"none\" fill=\"none\"></path><g id=\"SvgjsG1144\"><text id=\"SvgjsText1145\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"100px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"9.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1146\" dy=\"16\" x=\"50\"><tspan id=\"SvgjsTspan1147\" style=\"text-decoration:;\">API</tspan></tspan></text></g></g></svg>",
       "input": "CreateDocumentRequest",
       "name": "模板发起合同-创建电子文档",
       "output": "CreateDocumentResponse",
@@ -176,9 +176,9 @@
       "status": "online"
     },
     "CreatePrepareFlow": {
-      "document": "创建快速发起流程\n<br/>适用场景：用户通过API 合同文件及签署信息，并可通过我们返回的URL在页面完成签署控件等信息的编辑与确认，快速发起合同.\n<br/>注：该接口文件的resourceId 是通过上传文件之后获取的。",
+      "document": "创建发起流程web页面\n<br/>适用场景：通过该接口（CreatePrepareFlow）传入合同文件/模板编号及签署人信息，可获得发起流程的可嵌入页面，在页面完成签署控件等信息的编辑与确认后，快速发起流程。\n<br/>注：该接口包含模板/文件发起流程的全部功能，调用接口后不会立即发起，需在可嵌入页面点击按钮进行发起流程。",
       "input": "CreatePrepareFlowRequest",
-      "name": "获取发起合同web页面",
+      "name": "创建发起流程web页面",
       "output": "CreatePrepareFlowResponse",
       "status": "online"
     },
@@ -211,9 +211,9 @@
       "status": "online"
     },
     "CreateSealPolicy": {
-      "document": "对企业员工进行印章授权",
+      "document": "本接口（CreateSealPolicy）用于对企业员工进行印章授权",
       "input": "CreateSealPolicyRequest",
-      "name": "创建印章授权",
+      "name": "创建企业员工印章授权",
       "output": "CreateSealPolicyResponse",
       "status": "online"
     },
@@ -225,9 +225,9 @@
       "status": "online"
     },
     "CreateWebThemeConfig": {
-      "document": "用来创建嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），该接口配合其他所有可嵌入页面接口使用\n创建配置对当前企业全局生效，如果多次调用，会以最后一次的配置为准",
+      "document": "用来设置本企业嵌入式页面个性化主题配置（例如是否展示电子签logo、定义主题色等），设置后获取的web签署界面都会使用此配置进行展示。\n\n如果多次调用，会以最后一次的配置为准",
       "input": "CreateWebThemeConfigRequest",
-      "name": "创建页面主题配置",
+      "name": "设置本企业嵌入式页面主题配置",
       "output": "CreateWebThemeConfigResponse",
       "status": "online"
     },
@@ -253,9 +253,9 @@
       "status": "online"
     },
     "DeleteSealPolicies": {
-      "document": "撤销员工持有的印章权限",
+      "document": "本接口（DeleteSealPolicies）用于撤销企业员工持有的印章权限",
       "input": "DeleteSealPoliciesRequest",
-      "name": "撤销印章授权",
+      "name": "撤销企业员工的印章授权",
       "output": "DeleteSealPoliciesResponse",
       "status": "online"
     },
@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DescribeFileUrls": {
-      "document": "查询文件下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。",
+      "document": "本接口（DescribeFileUrls）用于查询文件的下载URL。\n适用场景：通过传参合同流程编号，下载对应的合同PDF文件流到本地。",
       "input": "DescribeFileUrlsRequest",
       "name": "查询文件下载URL",
       "output": "DescribeFileUrlsResponse",
@@ -281,7 +281,7 @@
       "status": "online"
     },
     "DescribeFlowComponents": {
-      "document": "查询流程填写控件内容，可以根据流程Id查询该流程相关联的填写控件信息和填写内容。",
+      "document": "查询流程填写控件内容，可以根据合同流程ID查询该合同流程相关联的填写控件信息和填写内容。",
       "input": "DescribeFlowComponentsRequest",
       "name": "查询流程填写控件内容",
       "output": "DescribeFlowComponentsResponse",
@@ -295,14 +295,14 @@
       "status": "online"
     },
     "DescribeFlowInfo": {
-      "document": "查询合同详情\n适用场景：可用于主动查询某个合同详情信息。",
+      "document": "接口用户查询合同流程的详情信息, 支持查询多个(数量不能超过100)\n\n适用场景：可用于主动查询某个合同详情信息。",
       "input": "DescribeFlowInfoRequest",
-      "name": "查询合同详情",
+      "name": "查询合同流程的详情信息",
       "output": "DescribeFlowInfoResponse",
       "status": "online"
     },
     "DescribeFlowTemplates": {
-      "document": "本接口用于查询本企业模板列表。\n\n当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。\n\n> **适用场景** \n>\n>  该接口常用来配合“模板发起合同-创建电子文档”接口作为前置的接口使用。 \n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos",
+      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。\n\n适用场景：\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。",
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板",
       "output": "DescribeFlowTemplatesResponse",
@@ -421,7 +421,7 @@
       "status": "online"
     },
     "VerifyPdf": {
-      "document": "对流程的合同文件进行数字签名验证，判断文件是否被篡改。",
+      "document": "对合同流程文件进行数字签名验证，判断数字签名是否有效，合同文件内容是否被篡改。",
       "input": "VerifyPdfRequest",
       "name": "流程文件验签",
       "output": "VerifyPdfResponse",
@@ -1856,7 +1856,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>",
+          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>\n注: `当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`",
           "example": "无",
           "member": "bool",
           "name": "NeedPreview",
@@ -1908,7 +1908,7 @@
         },
         {
           "disabled": false,
-          "document": "合同预览链接URL。\n\n注：如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同预览链接URL。\n\n注: `1.如果是预览模式(即NeedPreview设置为true)时, 才会有此预览链接URL`\n`2.当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "PreviewFileUrl",
@@ -2543,7 +2543,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。\n<br/>true：允许编辑（默认），<br/>false：不允许编辑<br/>默认：false：不允许编辑",
+          "document": "是否允许修改发起合同时确认弹窗的合同信息（合同名称、合同类型、签署截止时间），若不允许编辑，则表单字段将被禁止输入。\n<br/>true：允许编辑<br/>false：不允许编辑（默认值）<br/>",
           "example": "true",
           "member": "bool",
           "name": "CanEditFlow",
@@ -2552,7 +2552,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许编辑模板控件\n<br/>true:允许编辑模板控件信息\n<br/>false:不允许编辑模板控件信息\n<br/>默认false:不允许编辑模板控件信息",
+          "document": "是否允许编辑模板控件\n<br/>true:允许编辑模板控件信息\n<br/>false:不允许编辑模板控件信息（默认值）\n<br/>",
           "example": "true",
           "member": "bool",
           "name": "CanEditFormField",
@@ -2561,7 +2561,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同名称展示\n<br/>true:发起页面隐藏合同名称展示\n<br/>false:发起页面不隐藏合同名称展示\n<br/>默认false:发起页面不隐藏合同名称展示",
+          "document": "发起页面隐藏合同名称展示\n<br/>true:发起页面隐藏合同名称展示\n<br/>false:发起页面不隐藏合同名称展示（默认值）\n<br/>",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowName",
@@ -2570,7 +2570,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同类型展示\n<br/>true:发起页面隐藏合同类型展示\n<br/>false:发起页面不隐藏合同类型展示\n<br/>默认false:发起页面不隐藏合同类型展示\n",
+          "document": "发起页面隐藏合同类型展示\n<br/>true:发起页面隐藏合同类型展示\n<br/>false:发起页面不隐藏合同类型展示（默认值）\n<br/>\n",
           "example": "true",
           "member": "bool",
           "name": "HideShowFlowType",
@@ -2579,7 +2579,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面隐藏合同截止日期展示\n<br/>true:发起页面隐藏合同截止日期展示\n<br/>false:发起页面不隐藏合同截止日期展示\n<br/>默认false:发起页面不隐藏合同截止日期展示",
+          "document": "发起页面隐藏合同截止日期展示\n<br/>true:发起页面隐藏合同截止日期展示\n<br/>false:发起页面不隐藏合同截止日期展示（默认值）\n<br/>",
           "example": "true",
           "member": "bool",
           "name": "HideShowDeadline",
@@ -2588,7 +2588,7 @@
         },
         {
           "disabled": false,
-          "document": "发起页面允许跳过添加签署人环节\n<br/>true:发起页面允许跳过添加签署人环节\n<br/>false:发起页面不允许跳过添加签署人环节\n<br/>默认false:发起页面不允许跳过添加签署人环节\n",
+          "document": "发起页面允许跳过添加签署人环节\n<br/>true:发起页面允许跳过添加签署人环节\n<br/>false:发起页面不允许跳过添加签署人环节（默认值）\n<br/>\n",
           "example": "true",
           "member": "bool",
           "name": "CanSkipAddApprover",
@@ -2597,7 +2597,7 @@
         },
         {
           "disabled": false,
-          "document": "文件发起页面跳过文件上传步骤\n<br/>true:文件发起页面跳过文件上传步骤\n<br/>false:文件发起页面不跳过文件上传步骤\n<br/>默认false:文件发起页面不跳过文件上传步骤",
+          "document": "文件发起页面跳过文件上传步骤\n<br/>true:文件发起页面跳过文件上传步骤\n<br/>false:文件发起页面不跳过文件上传步骤（默认值）\n<br/>",
           "example": "true",
           "member": "bool",
           "name": "SkipUploadFile",
@@ -2606,7 +2606,7 @@
         },
         {
           "disabled": false,
-          "document": "禁止编辑填写控件\n<br/>true:禁止编辑填写控件\n<br/>false:允许编辑填写控件\n<br/>默认false:允许编辑填写控件",
+          "document": "禁止编辑填写控件\n<br/>true:禁止编辑填写控件\n<br/>false:允许编辑填写控件（默认值）\n<br/>",
           "example": "true",
           "member": "bool",
           "name": "ForbidEditFillComponent",
@@ -2615,8 +2615,8 @@
         },
         {
           "disabled": false,
-          "document": "定制化发起合同弹窗的描述信息，描述信息最长500\n",
-          "example": "“”",
+          "document": "定制化发起合同弹窗的描述信息，描述信息最长500字符\n",
+          "example": "\"\"",
           "member": "string",
           "name": "CustomCreateFlowDescription",
           "required": false,
@@ -3672,7 +3672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。使用此接口时，必须填写userId。\n支持填入集团子公司经办人 userId 代发合同。\n\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3681,7 +3681,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType对应",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -3690,7 +3690,7 @@
         },
         {
           "disabled": false,
-          "document": "合同名称",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n",
           "example": "无",
           "member": "string",
           "name": "FlowName",
@@ -3699,7 +3699,7 @@
         },
         {
           "disabled": false,
-          "document": "是否顺序签署\ntrue:无序签\nfalse:顺序签",
+          "document": "合同流程的签署顺序类型：\n<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>\n<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>",
           "example": "true",
           "member": "bool",
           "name": "Unordered",
@@ -3708,7 +3708,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒\n不传默认为当前时间一年后",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n",
           "example": "无",
           "member": "int64",
           "name": "Deadline",
@@ -3717,7 +3717,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义合同类型Id\n\n该id为电子签企业内的合同类型id， 可以在自定义合同类型处获取",
+          "document": "用户自定义合同类型Id\n\n该id为电子签企业内的合同类型id， 可以在控制台-合同-自定义合同类型处获取\n注: `该参数如果和FlowType同时传，以该参数优先生效`",
           "example": "无",
           "member": "string",
           "name": "UserFlowTypeId",
@@ -3726,7 +3726,7 @@
         },
         {
           "disabled": false,
-          "document": "合同类型名称\n该字段用于客户自定义合同类型\n建议使用时指定合同类型，便于之后合同分类以及查看\n如果合同类型与自定义的合同类型描述一致，会自动归类到自定义的合同类型处，如果不一致，则会创建一个新的自定义合同类型",
+          "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。",
           "example": "\"劳动合同\"",
           "member": "string",
           "name": "FlowType",
@@ -3735,7 +3735,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程参与者信息，最大限制50方",
+          "document": "合同流程的参与方列表，最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的ApproverInfo结构体。\n\n如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序，请确保列表中参与人的顺序符合实际签署顺序。",
           "example": "无",
           "member": "FlowCreateApprover",
           "name": "Approvers",
@@ -3744,7 +3744,7 @@
         },
         {
           "disabled": false,
-          "document": "打开智能添加填写区\n默认开启，打开:\"OPEN\"\n 关闭：\"CLOSE\"",
+          "document": "开启或者关闭智能添加填写区：\n<ul><li> **OPEN**：开启（默认值）</li>\n<li> **CLOSE**：关闭</li></ul>",
           "example": "OPEN",
           "member": "string",
           "name": "IntelligentStatus",
@@ -3753,7 +3753,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，\n1：模板\n2：文件，\n不传默认为2：文件",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
           "example": "1",
           "member": "int64",
           "name": "ResourceType",
@@ -3762,7 +3762,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方填写控件\n该类型控件由发起方完成填写",
+          "document": "该字段已废弃，请使用InitiatorComponents",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -3780,7 +3780,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启发起方签署审核\ntrue:开启发起方签署审核\nfalse:不开启发起方签署审核\n默认false:不开启发起方签署审核",
+          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -3789,7 +3789,7 @@
         },
         {
           "disabled": false,
-          "document": "开启发起方发起合同审核\ntrue:开启发起方发起合同审核\nfalse:不开启发起方发起合同审核\n默认false:不开启发起方发起合同审核",
+          "document": "发起方企业的签署人进行发起操作是否需要企业内部审批。使用此功能需要发起方企业有参与签署。\n\n若设置为true，发起审核结果需通过接口 CreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行发起操作，否则会阻塞其发起操作。\n\n",
           "example": "无",
           "member": "bool",
           "name": "NeedCreateReview",
@@ -3798,7 +3798,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义参数",
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
           "example": "无",
           "member": "string",
           "name": "UserData",
@@ -3807,7 +3807,7 @@
         },
         {
           "disabled": false,
-          "document": "合同id,用于通过已web页面发起的合同id快速生成一个web发起合同链接",
+          "document": "合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接\n注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -3816,12 +3816,21 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填\t",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n",
+          "example": "无",
+          "member": "Component",
+          "name": "InitiatorComponents",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3831,7 +3840,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "快速发起预览链接，有效期5分钟",
+          "document": "发起流程的web页面链接，有效期5分钟",
           "example": "无",
           "member": "string",
           "name": "Url",
@@ -3862,7 +3871,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件号码",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -3871,7 +3880,7 @@
         },
         {
           "disabled": false,
-          "document": "印章名称",
+          "document": "印章名称，长度1-50个字。",
           "example": "无",
           "member": "string",
           "name": "SealName",
@@ -3880,7 +3889,7 @@
         },
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填。支持填入集团子公司经办人 userId代发合同。",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3889,7 +3898,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件类型:\nID_CARD 身份证\nPASSPORT 护照\nHONGKONG_AND_MACAO 中国香港\nFOREIGN_ID_CARD 境外身份\nHONGKONG_MACAO_AND_TAIWAN 中国台湾",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -3943,7 +3952,7 @@
         },
         {
           "disabled": false,
-          "document": "是否处理印章\n默认不做印章处理。\n取值：false：不做任何处理；\ntrue：做透明化处理和颜色增强。",
+          "document": "是否处理印章，默认不做印章处理。\n取值如下：\n<ul>\n<li>false：不做任何处理；</li>\n<li>true：做透明化处理和颜色增强。</li>\n</ul>",
           "example": "false",
           "member": "bool",
           "name": "ProcessSeal",
@@ -3961,7 +3970,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3985,7 +3994,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入生成的印章ID",
+          "document": "导入生成的印章ID，为32位字符串。\n建议开发者保存此印章ID，开头实名认证后，通过此 ID查询导入的印章。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -4225,7 +4234,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4243,7 +4252,7 @@
         },
         {
           "disabled": false,
-          "document": "印章ID",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -4279,7 +4288,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4294,10 +4303,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "最终授权成功的。其他的跳过的是已经授权了的",
+          "document": "最终授权成功的用户ID，在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4351,7 +4361,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型：\nOFFICIAL-公章；\nCONTRACT-合同专用章;\nFINANCE-合财务专用章;\nPERSONNEL-人事专用章.",
+          "document": "电子印章类型：\n<ul>\n<li>OFFICIAL-公章；</li>\n<li>CONTRACT-合同专用章;</li>\n<li>FINANCE-合财务专用章;</li>\n<li>PERSONNEL-人事专用章.</li>\n</ul>",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
@@ -4441,7 +4451,7 @@
         },
         {
           "disabled": false,
-          "document": "印章样式:\n\ncycle:圆形印章;\nellipse:椭圆印章;\n注：默认圆形印章",
+          "document": "印章样式，取值如下:\n\n<ul>\n<li>cycle:圆形印章;</li>\n<li>ellipse:椭圆印章;</li>\n<li>注：默认圆形印章</li>\n</ul>",
           "example": "cycle",
           "member": "string",
           "name": "SealStyle",
@@ -4450,7 +4460,7 @@
         },
         {
           "disabled": false,
-          "document": "印章尺寸取值描述：\n42_42 圆形企业公章直径42mm；\n40_40 圆形企业印章直径40mm；\n45_30 椭圆形印章45mm x 30mm;",
+          "document": "印章尺寸取值描述：\n<ul>\n<li>42_42 圆形企业公章直径42mm；</li>\n<li>40_40 圆形企业印章直径40mm；</li>\n<li>45_30 椭圆形印章45mm x 30mm;</li>\n</ul>",
           "example": "42_42",
           "member": "string",
           "name": "SealSize",
@@ -4465,7 +4475,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子印章编号",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
           "example": "429b82b40900a9f870a90d45c715bad7",
           "member": "string",
           "name": "SealId",
@@ -4681,7 +4691,7 @@
         },
         {
           "disabled": false,
-          "document": "主题配置",
+          "document": "电子签logo是否展示，主体颜色等配置项",
           "example": "无",
           "member": "WebThemeConfig",
           "name": "WebThemeConfig",
@@ -4890,7 +4900,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -4908,7 +4918,7 @@
         },
         {
           "disabled": false,
-          "document": "印章ID。这个参数跟上面的PolicyIds其中一个必填，另外一个可选填",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。\n注：印章ID。这个参数跟上面的PolicyIds其中一个必填，另外一个可选填。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -4917,7 +4927,7 @@
         },
         {
           "disabled": false,
-          "document": "待授权的员工ID",
+          "document": "待授权的员工ID，员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -4926,7 +4936,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5062,7 +5072,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，UserId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5071,7 +5081,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的业务类型，目前支持：\n- 流程 \"FLOW\"，如需下载合同文件请选择此项\n- 模板 \"TEMPLATE\"\n- 文档 \"DOCUMENT\"\n- 印章  “SEAL”",
+          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>FLOW 如需下载合同文件请选择此项</li>\n<li>TEMPLATE 如需下载模板文件请选择此项</li>\n<li>DOCUMENT 如需下载文档文件请选择此项</li>\n<li>SEAL 如需下载印章图片请选择此项</li>\n</ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
@@ -5080,7 +5090,7 @@
         },
         {
           "disabled": false,
-          "document": "业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId\n最大支持20个资源",
+          "document": "业务编号的数组，取值如下：\n<ul>\n<li>流程编号</li>\n<li>模板编号</li>\n<li>文档编号</li>\n<li>印章编号</li>\n<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>\n</ul>",
           "example": "[\"11114444\",\"11114444555\",\"12315215515\",\"12415251512\"]",
           "member": "string",
           "name": "BusinessIds",
@@ -5098,7 +5108,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型，\"JPG\", \"PDF\",\"ZIP\"等",
+          "document": "要下载的文件类型，取值如下：\n<ul>\n<li>JPG</li>\n<li>PDF</li>\n<li>ZIP</li>\n</ul>",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -5107,7 +5117,7 @@
         },
         {
           "disabled": false,
-          "document": "指定资源起始偏移量，默认0",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 1000。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -5116,7 +5126,7 @@
         },
         {
           "disabled": false,
-          "document": "指定资源数量，查询全部资源则传入-1",
+          "document": "指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 100。",
           "example": "0",
           "member": "int64",
           "name": "Limit",
@@ -5254,7 +5264,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作者信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5263,7 +5273,7 @@
         },
         {
           "disabled": false,
-          "document": "流程(合同)的编号",
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -5272,7 +5282,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5287,7 +5297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程关联的填写控件信息，按照参与方进行分类返回。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同流程关联的填写控件信息，按照参与方进行分类返回。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecipientComponentInfo",
           "name": "RecipientComponentInfos",
@@ -5374,7 +5384,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。 注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`\t",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5384,7 +5394,7 @@
         {
           "disabled": false,
           "document": "需要查询的流程ID列表，限制最大100个\n\n如果查询合同组的信息,不要传此参数",
-          "example": "无",
+          "example": "[\"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"]",
           "member": "string",
           "name": "FlowIds",
           "required": false,
@@ -5392,7 +5402,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。\t",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5402,7 +5412,7 @@
         {
           "disabled": false,
           "document": "合同组ID, 如果传此参数会忽略FlowIds入参\n 所以如传此参数不要传FlowIds参数\n",
-          "example": "无",
+          "example": "\"yDwJKUUckpk3cp9kUybilmdvXgzy4Gv4\"",
           "member": "string",
           "name": "FlowGroupId",
           "required": false,
@@ -5426,7 +5436,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组ID",
+          "document": "合同组ID，为32位字符串",
           "example": "无",
           "member": "string",
           "name": "FlowGroupId",
@@ -5458,7 +5468,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方员工/经办人信息\nUserId 必填，在企业控制台组织架构中可以查到员工的UserId\n注：请保证员工有相关的角色权限",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -5467,7 +5477,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息\n如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5476,7 +5486,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容类型\n0-模板列表及详情（默认）\n1-仅模板列表",
+          "document": "查询内容控制\n\n<ul><li>**0**：模板列表及详情（默认）</li>\n<li>**1**：仅模板列表</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "ContentType",
@@ -5485,8 +5495,8 @@
         },
         {
           "disabled": false,
-          "document": "搜索条件，本字段用于指定模板Id进行查询。\nKey：template-id\nValues：需要查询的模板Id列表",
-          "example": "无",
+          "document": "搜索条件，本字段用于指定模板Id进行查询。\nKey：template-id Values：需要查询的模板Id列表",
+          "example": "Filters",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -5494,7 +5504,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。",
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。\n\n注：`1.offset从0开始，即第一页为0。`\n`2.默认从第一页返回。`",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
@@ -5503,7 +5513,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，如果不传默认为20，单页最大200。",
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注：`1.默认值为20，单页做大值为200。`",
           "example": "20",
           "member": "uint64",
           "name": "Limit",
@@ -5512,7 +5522,7 @@
         },
         {
           "disabled": false,
-          "document": "用于查询指定应用号下单模板列表。\nApplicationId不为空，查询指定应用下的模板列表\nApplicationId为空，查询所有应用下的模板列表",
+          "document": "指定查询的应用号，指定后查询该应用号下的模板列表。\n\n注：`1.ApplicationId为空时，查询所有应用下的模板列表。`",
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
@@ -5554,7 +5564,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板详情列表",
+          "document": "模板详情列表数据",
           "example": "无",
           "member": "TemplateInfo",
           "name": "Templates",
@@ -5564,7 +5574,7 @@
         },
         {
           "disabled": false,
-          "document": "查询到的总数",
+          "document": "查询到的模板总数",
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
@@ -6006,7 +6016,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -6015,7 +6025,7 @@
         },
         {
           "disabled": false,
-          "document": "返回最大数量，最大为100",
+          "document": "指定分页每页返回的数据条数，如果不传默认为 20，单页最大支持 200。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -6024,7 +6034,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0，最大为20000",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0，最大 20000。",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -6033,7 +6043,7 @@
         },
         {
           "disabled": false,
-          "document": "查询信息类型，为0时不返回授权用户，为1时返回",
+          "document": "查询信息类型，取值如下：\n<ul>\n<li>0不返回授权用户</li>\n<li>1返回授权用户信息</li>\n</ul>",
           "example": "1",
           "member": "int64",
           "name": "InfoType",
@@ -6051,7 +6061,7 @@
         },
         {
           "disabled": false,
-          "document": "印章类型列表（都是组织机构印章）。\n为空时查询所有类型的印章。\n目前支持以下类型：\nOFFICIAL：企业公章；\nCONTRACT：合同专用章；\nORGANIZATION_SEAL：企业印章(图片上传创建)；\nLEGAL_PERSON_SEAL：法定代表人章",
+          "document": "印章类型列表（都是组织机构印章）。\n为空时查询所有类型的印章。\n目前支持以下类型：\n<ul>\n<li>OFFICIAL：企业公章；</li>\n<li>CONTRACT：合同专用章；</li>\n<li>ORGANIZATION_SEAL：企业印章(图片上传创建)；</li>\n<li>LEGAL_PERSON_SEAL：法定代表人章</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "SealTypes",
@@ -6060,7 +6070,7 @@
         },
         {
           "disabled": false,
-          "document": "代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6069,7 +6079,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的印章状态列表。\n取值为空，只查询启用状态的印章；\n取值ALL，查询所有状态的印章；\n取值CHECKING，查询待审核的印章；\n取值SUCCESS，查询启用状态的印章；\n取值FAIL，查询印章审核拒绝的印章；\n取值DISABLE，查询已停用的印章；\n取值STOPPED，查询已终止的印章；\n取值VOID，查询已作废的印章；\n取值INVALID，查询已失效的印章；\n",
+          "document": "查询的印章状态列表。\n<ul>\n<li>空，只查询启用状态的印章；</li>\n<li>ALL，查询所有状态的印章；</li>\n<li>CHECKING，查询待审核的印章；</li>\n<li>SUCCESS，查询启用状态的印章；</li>\n<li>FAIL，查询印章审核拒绝的印章；</li>\n<li>DISABLE，查询已停用的印章；</li>\n<li>STOPPED，查询已终止的印章；</li>\n<li>VOID，查询已作废的印章；</li>\n<li>INVALID，查询已失效的印章；</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "SealStatuses",
@@ -7327,8 +7337,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同(流程)的ID",
-          "example": "无",
+          "document": "合同流程ID，为32位字符串。",
+          "example": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -7337,8 +7347,8 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的名字",
-          "example": "无",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "example": "测试合同-1\t",
           "member": "string",
           "name": "FlowName",
           "output_required": true,
@@ -7347,8 +7357,8 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "合同流程的类别分类（如销售合同/入职合同等）。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "入职合同\t",
           "member": "string",
           "name": "FlowType",
           "output_required": true,
@@ -7357,8 +7367,8 @@
         },
         {
           "disabled": false,
-          "document": "流程状态\n- 0 还没有发起\n- 1 待签署\n- 2 部分签署\n- 3 已拒签\n- 4 已签署\n- 5 已过期\n- 6 已撤销\n- 7 还没有预发起\n- 8 等待填写\n- 9 部分填写\n- 10 拒填\n- 21 已解除",
-          "example": "无",
+          "document": "合同流程当前的签署状态, 会存在下列的状态值 <ul><li> **0** : 未开启流程(合同中不存在填写环节)</li> <li> **1** : 待签署</li> <li> **2** : 部分签署</li> <li> **3** : 已拒签</li> <li> **4** : 已签署</li> <li> **5** : 已过期</li> <li> **6** : 已撤销</li> <li> **7** : 未开启流程(合同中存在填写环节)</li> <li> **8** : 等待填写</li> <li> **9** : 部分填写</li> <li> **10** : 已拒填</li> <li> **21** : 已解除</li></ul>\t",
+          "example": "1",
           "member": "int64",
           "name": "FlowStatus",
           "output_required": true,
@@ -7367,8 +7377,8 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "当合同流程状态为已拒签（即 FlowStatus=3）或已撤销（即 FlowStatus=6）时，此字段 FlowMessage 为拒签或撤销原因。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "因合同中的预付款金额错误所以撤销此合同\t",
           "member": "string",
           "name": "FlowMessage",
           "output_required": true,
@@ -7377,8 +7387,8 @@
         },
         {
           "disabled": false,
-          "document": "流程的描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "合同流程描述信息。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试流程的描述信息\t",
           "member": "string",
           "name": "FlowDescription",
           "output_required": true,
@@ -7387,8 +7397,8 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的创建时间戳，单位秒",
-          "example": "无",
+          "document": "合同流程的创建时间戳，格式为Unix标准时间戳（秒）。\t",
+          "example": "1606910798",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -7397,7 +7407,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的签署方数组",
+          "document": "合同流程的签署方数组",
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "FlowApproverInfos",
@@ -7407,7 +7417,7 @@
         },
         {
           "disabled": false,
-          "document": "合同(流程)的关注方信息列表",
+          "document": "合同流程的关注方信息数组",
           "example": "无",
           "member": "FlowApproverDetail",
           "name": "CcInfos",
@@ -7417,8 +7427,8 @@
         },
         {
           "disabled": false,
-          "document": "合同发起人UserId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "合同流程发起方的员工编号, 即员工在腾讯电子签平台的唯一身份标识。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\t",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -8868,7 +8878,7 @@
         },
         {
           "disabled": false,
-          "document": "参与方填写状态\n0-未填写\n1-已填写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "参与方填写状态\n<ul><li>0-未填写</li>\n<li>1-已填写</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RecipientFillStatus",
@@ -8878,7 +8888,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为发起方\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否为发起方\n<ul><li>true-发起方</li>\n<li>false-参与方</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "IsPromoter",
@@ -10196,7 +10206,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程ID",
+          "document": "合同流程ID，为32位字符串。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -10205,10 +10215,19 @@
         },
         {
           "disabled": false,
-          "document": "调用方用户信息，userId 必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
           "required": false,
           "type": "object"
         }
@@ -10220,7 +10239,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "验签结果，1-文件未被篡改，全部签名在腾讯电子签完成； 2-文件未被篡改，部分签名在腾讯电子签完成；3-文件被篡改；4-异常：文件内没有签名域；5-异常：文件签名格式错误",
+          "document": "验签结果代码，代码的含义如下：\n\n<ul><li>**1**：文件未被篡改，全部签名在腾讯电子签完成。</li>\n<li>**2**：文件未被篡改，部分签名在腾讯电子签完成。</li>\n<li>**3**：文件被篡改。</li>\n<li>**4**：异常：文件内没有签名域。</li>\n<li>**5**：异常：文件签名格式错误。</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "VerifyResult",
@@ -10230,7 +10249,7 @@
         },
         {
           "disabled": false,
-          "document": "验签结果详情，每个签名域对应的验签结果。状态值：1-验签成功，在电子签签署；2-验签成功，在其他平台签署；3-验签失败；4-pdf文件没有签名域；5-文件签名格式错误",
+          "document": "验签结果详情，每个签名域对应的验签结果。状态值如下\n<ul><li> **1** :验签成功，在电子签签署</li>\n<li> **2** :验签成功，在其他平台签署</li>\n<li> **3** :验签失败</li>\n<li> **4** :pdf文件没有签名域</li>\n<li> **5** :文件签名格式错误</li></ul>",
           "example": "无",
           "member": "PdfVerifyResult",
           "name": "PdfVerifyResults",
@@ -10240,7 +10259,7 @@
         },
         {
           "disabled": false,
-          "document": "验签序列号",
+          "document": "验签序列号, 为11为数组组成的字符串",
           "example": "无",
           "member": "string",
           "name": "VerifySerialNo",

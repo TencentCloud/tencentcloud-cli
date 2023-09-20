@@ -85,7 +85,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateHost\n<公共请求参数>\n\n{\n    \"InstanceID\": \"aabbcc\",\n    \"Host\": {\n        \"Status\": \"1\",\n        \"Engine\": \"1\",\n        \"Domain\": \"1\",\n        \"DomainId\": \"1\",\n        \"LoadBalancerSet\": [\n            {\n                \"Protocol\": \"1\",\n                \"Zone\": \"1\",\n                \"Region\": \"gz\",\n                \"LoadBalancerName\": \"1\",\n                \"ListenerId\": \"1\",\n                \"Vip\": \"1\",\n                \"ListenerName\": \"1\",\n                \"LoadBalancerId\": \"1\",\n                \"Vport\": \"1\"\n            }\n        ],\n        \"Level\": \"1\",\n        \"MainDomain\": \"snv.vom\",\n        \"Region\": \"cd\",\n        \"FlowMode\": \"1\",\n        \"State\": \"1\",\n        \"ClsStatus\": \"1\",\n        \"IsCdn\": \"1\",\n        \"Mode\": \"1\",\n        \"Edition\": \"clb-waf\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"97720395-7456-4a21-bcd9-1f32a7deaa90\",\n        \"Error\": {\n            \"Code\": \"ResourceInUse\",\n            \"Message\": \"DomainExisted\"\n        }\n    }\n}",
-        "title": "添加域名"
+        "title": "添加负载均衡型WAF域名"
       }
     ],
     "DeleteAccessExport": [
@@ -189,7 +189,7 @@
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=DeleteSpartaProtection\n&Edition=sparta-waf\n&Domains.0=www.test.com\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"afa27f36-13f0-4c2c-b36b-bc70e79b4896\"\n    }\n}",
-        "title": "waf斯巴达-删除防护域名"
+        "title": "Saas型WAF删除防护域名"
       }
     ],
     "DescribeAccessExports": [
@@ -319,7 +319,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCiphersDetail\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"767bb64b-0c26-4797-b77d-3242a63199b9\",\n        \"Ciphers\": [\n            {\n                \"VersionId\": 0,\n                \"CipherId\": 0,\n                \"CipherName\": \"DES-CBC3-SHA（支持版本：TLS 1.0,TLS 1.1,TLS 1.2）\"\n            }\n        ]\n    }\n}",
-        "title": "describecipher"
+        "title": "Saas型WAF接入域名查询加密套件信息"
       }
     ],
     "DescribeCustomRuleList": [
@@ -356,16 +356,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDetailsClb\n<公共请求参数>\n\n{\n    \"Domain\": \"lucasssli3.qcloud.com\",\n    \"DomainId\": \"20200728142847163546341\",\n    \"InstanceId\": \"waf_000000002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsClbPartInfo\": {\n            \"Domain\": \"pea.qcloudwaf.com\",\n            \"DomainId\": \"waf-xOmbLKVc\",\n            \"InstanceId\": \"waf_0000001ll\",\n            \"Edition\": \"clb-waf\",\n            \"InstanceName\": \"3211111\",\n            \"IsCdn\": 1,\n            \"FlowMode\": 1,\n            \"LoadBalancerSet\": [\n                {\n                    \"ListenerId\": \"lbl-p08ll1la\",\n                    \"ListenerName\": \"pea.qcloudwaf.com\",\n                    \"LoadBalancerId\": \"lb-azo6s2m8\",\n                    \"LoadBalancerName\": \"lb-6017c5bd\",\n                    \"Protocol\": \"HTTP\",\n                    \"Region\": \"gz\",\n                    \"Vip\": \"203.195.250.6\",\n                    \"Vport\": 5803,\n                    \"Zone\": \"\"\n                }\n            ]\n        }\n    }\n}",
-        "title": "查询单个clb域名详情"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsClbPartInfo\": {\n            \"Domain\": \"pea.qcloudwaf.com\",\n            \"DomainId\": \"waf-xOmbLKVc\",\n            \"InstanceId\": \"waf_0000001ll\",\n            \"Edition\": \"clb-waf\",\n            \"InstanceName\": \"3211111\",\n            \"IsCdn\": 1,\n            \"FlowMode\": 1,\n            \"LoadBalancerSet\": [\n                {\n                    \"ListenerId\": \"lbl-p08ll1la\",\n                    \"ListenerName\": \"pea.qcloudwaf.com\",\n                    \"LoadBalancerId\": \"lb-azo6s2m8\",\n                    \"LoadBalancerName\": \"lb-6017c5bd\",\n                    \"Protocol\": \"HTTP\",\n                    \"Region\": \"gz\",\n                    \"Vip\": \"203.195.250.6\",\n                    \"Vport\": 5803,\n                    \"Zone\": \"\",\n                    \"NumericalVpcId\": 0,\n                    \"LoadBalancerType\": \"abc\"\n                }\n            ],\n            \"State\": 0,\n            \"AlbType\": \"abc\",\n            \"IpHeaders\": [\n                \"abc\"\n            ],\n            \"CdcClusters\": \"abc\"\n        }\n    }\n}",
+        "title": "查询单个clbwaf域名详情"
       }
     ],
     "DescribeDomainDetailsSaas": [
       {
-        "document": "查询单个saas域名详情",
+        "document": "查询单个saaswaf域名详情",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainDetailsSaas\n<公共请求参数>\n\n{\n    \"Domain\": \"lucasssli3.qcloud.com\",\n    \"DomainId\": \"20200728142847163546341\",\n    \"InstanceId\": \"waf_000000002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsPartInfo\": {\n            \"Domain\": \"\",\n            \"DomainId\": \"\",\n            \"InstanceId\": \"\",\n            \"Edition\": \"\",\n            \"InstanceName\": \"\",\n            \"Cert\": \"\",\n            \"CertType\": 0,\n            \"Cls\": 0,\n            \"CreateTime\": \"\",\n            \"Cname\": \"\",\n            \"Engine\": 0,\n            \"SniType\": 0,\n            \"SniHost\": \"\",\n            \"ProxySendTimeout\": 0,\n            \"ProxyReadTimeout\": 0,\n            \"Ciphers\": [\n                0\n            ],\n            \"HttpsRewrite\": 0,\n            \"HttpsUpstreamPort\": \"\",\n            \"IsKeepAlive\": 0,\n            \"IsCdn\": 0,\n            \"IsGray\": 0,\n            \"IsHttp2\": 0,\n            \"IsWebsocket\": 0,\n            \"LoadBalance\": 0,\n            \"Mode\": 0,\n            \"PrivateKey\": \"\",\n            \"SSLId\": \"\",\n            \"UpstreamDomain\": \"\",\n            \"UpstreamScheme\": \"\",\n            \"UpstreamType\": 0,\n            \"TLSVersion\": 0,\n            \"CipherTemplate\": 0,\n            \"SrcList\": [],\n            \"Ports\": [],\n            \"ActiveCheck\": 1\n        }\n    }\n}",
-        "title": "查询单个saas域名详情"
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"DomainsPartInfo\": {\n            \"Domain\": \"\",\n            \"DomainId\": \"\",\n            \"InstanceId\": \"\",\n            \"Edition\": \"\",\n            \"InstanceName\": \"\",\n            \"Cert\": \"\",\n            \"CertType\": 0,\n            \"Cls\": 0,\n            \"CreateTime\": \"\",\n            \"Cname\": \"\",\n            \"Engine\": 0,\n            \"SniType\": 0,\n            \"SniHost\": \"\",\n            \"ProxySendTimeout\": 0,\n            \"ProxyReadTimeout\": 0,\n            \"Ciphers\": [\n                0\n            ],\n            \"HttpsRewrite\": 0,\n            \"HttpsUpstreamPort\": \"\",\n            \"IsKeepAlive\": 0,\n            \"IsCdn\": 0,\n            \"IsGray\": 0,\n            \"IsHttp2\": 0,\n            \"IsWebsocket\": 0,\n            \"LoadBalance\": 0,\n            \"Mode\": 0,\n            \"PrivateKey\": \"\",\n            \"SSLId\": \"\",\n            \"UpstreamDomain\": \"\",\n            \"UpstreamScheme\": \"\",\n            \"UpstreamType\": 0,\n            \"TLSVersion\": 0,\n            \"CipherTemplate\": 0,\n            \"SrcList\": [],\n            \"Ports\": [],\n            \"ActiveCheck\": 1,\n            \"Weights\": [\n                \"10,10,10\"\n            ],\n            \"IpHeaders\": [\n                \"abc\"\n            ],\n            \"XFFReset\": 0\n        }\n    }\n}",
+        "title": "查询单个saaswaf域名详情"
       }
     ],
     "DescribeDomainVerifyResult": [
@@ -485,7 +485,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePorts\n<公共请求参数>\n\n{\n    \"InstanceID\": \"test-instance\",\n    \"Edition\": \"sass-waf\"\n}",
         "output": "{\n    \"Response\": {\n        \"HttpPorts\": [\n            \"80\",\n            \"8080\"\n        ],\n        \"HttpsPorts\": [\n            \"443\",\n            \"8443\"\n        ],\n        \"RequestId\": \"ae989097-a74b-448a-94e6-4e87366b173b\"\n    }\n}",
-        "title": "获取非标端口"
+        "title": "获取防护端口列表"
       }
     ],
     "DescribeRuleLimit": [
@@ -761,7 +761,7 @@
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=ModifyDomainIpv6Status\n&InstanceId=waf_xxx\n&Status=1\n&Domain=waf_xxx\n&DomainId=waf_xxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\",\n        \"Ipv6Status\": 1\n    }\n}",
-        "title": "ModifyDomainIpv6Status"
+        "title": "切换域名ipv6开关"
       }
     ],
     "ModifyDomainWhiteRule": [
@@ -928,7 +928,7 @@
       {
         "document": "",
         "input": "https://waf.tencentcloudapi.com/?Action=RefreshAccessCheckResult\r\n&Domain=www.test.com\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {}\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\"\n    }\n}",
         "title": "刷新接入配置检查结果"
       }
     ],
@@ -954,6 +954,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDomainRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\",\n    \"Ids\": [\n        1,\n        2,\n        3\n    ],\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-efg\"\n    }\n}",
         "title": "切换域名的规则开关"
+      }
+    ],
+    "SwitchElasticMode": [
+      {
+        "document": "切换弹性的开关",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchElasticMode\n<公共请求参数>\n\n{\n    \"Edition\": \"clb-waf\",\n    \"Mode\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
+        "title": "切换弹性的开关"
       }
     ],
     "UpsertCCRule": [

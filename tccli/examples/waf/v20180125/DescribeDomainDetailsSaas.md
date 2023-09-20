@@ -1,6 +1,6 @@
-**Example 1: 查询单个saas域名详情**
+**Example 1: 查询单个saaswaf域名详情**
 
-查询单个saas域名详情
+查询单个saaswaf域名详情
 
 Input: 
 
@@ -53,7 +53,14 @@ Output:
             "CipherTemplate": 0,
             "SrcList": [],
             "Ports": [],
-            "ActiveCheck": 1
+            "ActiveCheck": 1,
+            "Weights": [
+                "10,10,10"
+            ],
+            "IpHeaders": [
+                "abc"
+            ],
+            "XFFReset": 0
         }
     }
 }

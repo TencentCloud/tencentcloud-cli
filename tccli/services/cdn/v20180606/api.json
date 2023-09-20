@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CreateDiagnoseUrl": {
-      "document": "CreateDiagnoseUrl 用于添加域名诊断任务URL， <font color=red>将于 **2023年5月31日** 下线</font><br>",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nCreateDiagnoseUrl 用于添加域名诊断任务URL。",
       "input": "CreateDiagnoseUrlRequest",
-      "name": "添加诊断URL(即将下线)",
+      "name": "添加诊断URL(已废弃)",
       "output": "CreateDiagnoseUrlResponse",
       "status": "online"
     },
@@ -120,9 +120,9 @@
       "status": "online"
     },
     "DescribeCdnOriginIp": {
-      "document": "本接口（DescribeCdnOriginIp）用于查询 CDN 回源节点的IP信息。（注：此接口即将下线，不再进行维护，请通过DescribeIpStatus 接口进行查询）",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\n本接口（DescribeCdnOriginIp）用于查询 CDN 回源节点的IP信息。（注：替换接口为DescribeIpStatus）",
       "input": "DescribeCdnOriginIpRequest",
-      "name": "查询回源节点",
+      "name": "查询回源节点(已废弃)",
       "output": "DescribeCdnOriginIpResponse",
       "status": "online"
     },
@@ -141,9 +141,9 @@
       "status": "online"
     },
     "DescribeDiagnoseReport": {
-      "document": "DescribeDiagnoseReport 用于获取指定报告id的内容， <font color=red>将于 **2023年5月31日** 下线</font><br>",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nDescribeDiagnoseReport 用于获取指定报告id的内容。",
       "input": "DescribeDiagnoseReportRequest",
-      "name": "获取诊断报告(即将下线)",
+      "name": "获取诊断报告(已废弃)",
       "output": "DescribeDiagnoseReportResponse",
       "status": "online"
     },
@@ -330,9 +330,9 @@
       "status": "online"
     },
     "DisableCaches": {
-      "document": "DisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。（注：接口尚在内测中，暂未全量开放；封禁URL并非无限期永久封禁）",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nDisableCaches 用于禁用 CDN 上指定 URL 的访问，禁用完成后，中国境内访问会直接返回 403。",
       "input": "DisableCachesRequest",
-      "name": "禁用 URL",
+      "name": "禁用 URL(已废弃)",
       "output": "DisableCachesResponse",
       "status": "online"
     },
@@ -351,9 +351,9 @@
       "status": "online"
     },
     "EnableCaches": {
-      "document": "EnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。（接口尚在内测中，暂未全量开放使用）",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nEnableCaches 用于解禁手工封禁的 URL，解禁成功后，全网生效时间约 5~10 分钟。",
       "input": "EnableCachesRequest",
-      "name": "解禁 URL",
+      "name": "解禁 URL(已废弃)",
       "output": "EnableCachesResponse",
       "status": "online"
     },
@@ -365,9 +365,9 @@
       "status": "online"
     },
     "GetDisableRecords": {
-      "document": "GetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。（接口尚在内测中，暂未全量开放使用）",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nGetDisableRecords 用于查询资源禁用历史，及 URL 当前状态。",
       "input": "GetDisableRecordsRequest",
-      "name": "禁用历史查询",
+      "name": "禁用历史查询(已废弃)",
       "output": "GetDisableRecordsResponse",
       "status": "online"
     },
@@ -386,9 +386,9 @@
       "status": "online"
     },
     "ListDiagnoseReport": {
-      "document": "ListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情， <font color=red>将于 **2023年5月31日** 下线</font><br>",
+      "document": "### <font color=red>**该接口已废弃** </font><br>\nListDiagnoseReport 用于获取用户诊断URL访问后各个子任务的简要详情。",
       "input": "ListDiagnoseReportRequest",
-      "name": "获取诊断任务列表(即将下线)",
+      "name": "获取诊断任务列表(已废弃)",
       "output": "ListDiagnoseReportResponse",
       "status": "online"
     },
@@ -4045,7 +4045,7 @@
           "example": "http://cdn.cloud.tencent.com/self_diagnose/a49ecccd",
           "member": "string",
           "name": "DiagnoseLink",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5310,7 +5310,7 @@
           "example": "无",
           "member": "OriginIp",
           "name": "Ips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5320,7 +5320,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5497,7 +5497,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "BaskInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5507,7 +5507,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "CnameInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5517,7 +5517,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "ClientInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5527,7 +5527,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "DnsInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5537,7 +5537,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "NetworkInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5547,7 +5547,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "OcNodeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5557,7 +5557,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "MidNodeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5567,7 +5567,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "OriginInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -5577,7 +5577,7 @@
           "example": "无",
           "member": "DiagnoseData",
           "name": "PurgeInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8808,7 +8808,7 @@
           "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -8818,7 +8818,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9393,7 +9393,7 @@
           "example": "无",
           "member": "CacheOptResult",
           "name": "CacheOptResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -9403,7 +9403,7 @@
           "example": "1632627566746100176",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9725,7 +9725,7 @@
           "example": "无",
           "member": "UrlRecord",
           "name": "UrlRecordList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9735,7 +9735,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10888,7 +10888,7 @@
           "example": "无",
           "member": "DiagnoseInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

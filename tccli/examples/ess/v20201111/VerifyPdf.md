@@ -1,13 +1,14 @@
 **Example 1: 示例**
 
-对流程进行验证
+1.对流程合同yDwFdUUckpsveo27UEQPEVo14KnASuGI进行数字签名验证
+2.流程合同yDwFdUUckpsveo27UEQPEVo14KnASuGI验证正常
 
 Input: 
 
 ```
 tccli ess VerifyPdf --cli-unfold-argument  \
-    --Operator.UserId yDxoQUxxxxxxjEyd1h2hnnR \
-    --FlowId yDRINUUgxxxx4zjEReF3rOOwb
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowId yDwFdUUckpsveo27UEQPEVo14KnASuGI
 ```
 
 Output: 
@@ -53,16 +54,17 @@ Output:
 }
 ```
 
-**Example 2: 示例1**
+**Example 2: 对流程合同文件进行验签-验签失败（文件被篡改）**
 
-对流程进行验证
+1.对流程合同yDwFdUUckpsvet4jUEn0aFRxtu5TdalM进行数字签名验证
+2.流程合同yDwFdUUckpsvet4jUEn0aFRxtu5TdalM的文件被篡改，验证失败
 
 Input: 
 
 ```
 tccli ess VerifyPdf --cli-unfold-argument  \
-    --Operator.UserId yDxoQUUgydjfxxxxEyd1h2hnnR \
-    --FlowId yDRIKUUgyxxxxUuO4zjExhs82XeuX
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowId yDwFdUUckpsvet4jUEn0aFRxtu5TdalM
 ```
 
 Output: 
@@ -83,7 +85,7 @@ Output:
                 "SignPlatform": "腾讯电子签",
                 "SignTime": 1663238861000,
                 "SignerName": "深圳市腾讯计算机系统有限公司",
-                "VerifyResult": 1
+                "VerifyResult": 3
             },
             {
                 "CertNotAfter": 166300032000,
@@ -98,12 +100,12 @@ Output:
                 "SignPlatform": "腾讯电子签",
                 "SignTime": 1663238861000,
                 "SignerName": "深圳xxxxx限公司",
-                "VerifyResult": 1
+                "VerifyResult": 3
             }
         ],
         "RequestId": "57151f15-2xxxxxx46418d4b72a",
         "VerifySerialNo": "16698630779",
-        "VerifyResult": 1
+        "VerifyResult": 3
     }
 }
 ```

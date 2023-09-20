@@ -290,9 +290,9 @@
     ],
     "DescribeInstancesModification": [
       {
-        "document": "",
-        "input": "https://cvm.tencentcloudapi.com/?Action=DescribeInstancesModification\n&InstanceIds.0=xx\n&Filters.0.Name=status\n&Filters.0.Values.0=SELL\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigStatusSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"InstanceTypeConfig\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"FPGA\": 0,\n                    \"InstanceFamily\": \"SA2\",\n                    \"InstanceType\": \"SA2.MEDIUM4\",\n                    \"Memory\": 4,\n                    \"GPU\": 0,\n                    \"CPU\": 2\n                },\n                \"Message\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
+        "document": "查询指定实例支持调整的机型配置",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesModification\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"SELL\"\n            ],\n            \"Name\": \"status\"\n        }\n    ],\n    \"InstanceIds\": [\n        \"ins-bzps2kwdg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeConfigStatusSet\": [\n            {\n                \"Status\": \"SELL\",\n                \"InstanceTypeConfig\": {\n                    \"Zone\": \"ap-guangzhou-2\",\n                    \"FPGA\": 0,\n                    \"InstanceFamily\": \"SA2\",\n                    \"InstanceType\": \"SA2.MEDIUM4\",\n                    \"Memory\": 4,\n                    \"GpuCount\": 0,\n                    \"CPU\": 2\n                },\n                \"Message\": null\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"62DDFFC6-FDB5-44F7-20A6-59152E3D129A\"\n    }\n}",
         "title": "查询指定实例支持调整的机型配置"
       }
     ],

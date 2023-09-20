@@ -208,6 +208,14 @@
         "title": "移动成员到指定企业组织节点"
       }
     ],
+    "QuitOrganization": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuitOrganization\n<公共请求参数>\n\n{\n    \"OrgId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "退出企业组织"
+      }
+    ],
     "UpdateOrganizationMember": [
       {
         "document": "更新组织成员信息",

@@ -1,4 +1,4 @@
-**Example 1: waf斯巴达-删除防护域名**
+**Example 1: Saas型WAF删除防护域名**
 
 
 

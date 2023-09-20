@@ -1,163 +1,255 @@
-**Example 1: 模板查询接口**
+**Example 1: 模板查询接口-指定模板Id查询模板信息**
 
-查询企业模板列表
+1.指定Filters中的Key通过template-id过滤
+2.指定Filter中的Value为yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWX
+3.指定Limit为最多返回20条数据
 
 Input: 
 
 ```
 tccli ess DescribeFlowTemplates --cli-unfold-argument  \
-    --Operator.UserId string \
+    --Operator.Channel YUFU \
+    --Operator.ClientIp 8.8.8.8 \
+    --Operator.OpenId  \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
     --Offset 0 \
     --Limit 20 \
-    --ContentType 0 \
+    --ApplicationId  \
     --Filters.0.Key template-id \
-    --Filters.0.Values 16250***********49e047d8
+    --Filters.0.Values yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWX
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "s16951208061xxxx3957",
         "Templates": [
             {
-                "TemplateId": "162509******b1949e047d8",
-                "TemplateName": "string",
-                "Description": "test",
-                "CreatedOn": 1690438900,
-                "Published": true,
-                "Creator": "yD****id",
-                "TemplateType": 3,
-                "TemplateVersion": "0",
-                "OrganizationId": "yD***Id",
-                "PreviewUrl": "",
-                "TemplateSeals": [],
-                "Available": 1,
+                "AttachmentResourceIds": [],
+                "Available": 2,
+                "Components": [],
+                "CreatedOn": 1693967458,
+                "Creator": "测试人",
+                "Description": "",
                 "DocumentResourceIds": [
-                    "123456******7812345678"
+                    "yDwJ0UUckpk2079mUxgm9jJ8EZp3aAc0"
                 ],
                 "FileInfos": [
                     {
-                        "CreatedOn": 1234567890,
-                        "FileId": "0410049******2494f43bb",
-                        "FileName": "7530fbd040c*********26aaf-verify.pdf",
-                        "FileSize": 45435
+                        "CreatedOn": 1693967456,
+                        "FileId": "yDwJ0UUckpk2079mUxgm9jJ8EZp3aAc0",
+                        "FileName": "test.pdf",
+                        "FileSize": 65259
                     }
                 ],
-                "AttachmentResourceIds": [
-                    "string"
-                ],
+                "OrganizationId": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
+                "PreviewUrl": "",
                 "Promoter": {
-                    "RecipientId": "0",
+                    "DeliveryMethod": "EMAIL",
+                    "Description": "",
+                    "Email": "",
+                    "Mobile": "",
+                    "RecipientExtra": "",
+                    "RecipientId": "yDwJBUUckpk5469kUu9cFsf1x6ZYgfu5",
                     "RecipientType": "PROMOTER",
-                    "Description": "发起人角色",
+                    "RequireDelivery": false,
+                    "RequireSign": false,
+                    "RequireValidation": false,
                     "RoleName": "发起人",
-                    "RequireValidation": "False",
-                    "RequireSign": "False",
                     "RoutingOrder": 0,
-                    "RequireDelivery": "False",
-                    "Email": "123@tencent.com",
-                    "Mobile": "12332112345",
-                    "UserId": "",
-                    "DeliveryMethod": "email",
-                    "RecipientExtra": ""
+                    "UserId": ""
                 },
-                "SignOrder": [
-                    0,
-                    1
-                ],
+                "Published": true,
                 "Recipients": [
                     {
-                        "RecipientId": "1",
-                        "RecipientType": "enterprise",
+                        "DeliveryMethod": "EMAIL",
                         "Description": "",
-                        "RoleName": "企业",
-                        "RequireValidation": "False",
-                        "RequireSign": "True",
-                        "RoutingOrder": 0,
-                        "RequireDelivery": "True",
-                        "Email": "123@tencent.com",
-                        "Mobile": "12332112345",
-                        "UserId": "",
-                        "DeliveryMethod": "email",
-                        "RecipientExtra": ""
+                        "Email": "",
+                        "Mobile": "",
+                        "RecipientExtra": "{\"RecipientEnterpriseType\":1,\"SameWithPromoter\":true}",
+                        "RecipientId": "yDwJ0UUckpk2077lUxgm9jJ9eZgZChJe",
+                        "RecipientType": "ENTERPRISE",
+                        "RequireDelivery": false,
+                        "RequireSign": false,
+                        "RequireValidation": false,
+                        "RoleName": "张三示例企业",
+                        "RoutingOrder": 1,
+                        "UserId": ""
                     },
                     {
-                        "RecipientId": "2",
-                        "RecipientType": "enterprise",
+                        "DeliveryMethod": "EMAIL",
                         "Description": "",
-                        "RoleName": "企业HR",
-                        "RequireValidation": "False",
-                        "RequireSign": "True",
-                        "RoutingOrder": 0,
-                        "RequireDelivery": "True",
-                        "Email": "123@tencent.com",
-                        "Mobile": "12332112345",
-                        "UserId": "",
-                        "DeliveryMethod": "email",
-                        "RecipientExtra": ""
+                        "Email": "",
+                        "Mobile": "",
+                        "RecipientExtra": "{}",
+                        "RecipientId": "yDxZzUyKQDKuihUuO4zjEy09jfapyHjn",
+                        "RecipientType": "INDIVIDUAL",
+                        "RequireDelivery": false,
+                        "RequireSign": false,
+                        "RequireValidation": false,
+                        "RoleName": "乙方",
+                        "RoutingOrder": 2,
+                        "UserId": ""
                     }
                 ],
-                "Components": [
-                    {
-                        "ComponentRecipientId": "1",
-                        "ComponentId": "string",
-                        "ComponentName": "string",
-                        "ComponentType": "string",
-                        "ComponentRequired": true,
-                        "ComponentWidth": 1.1,
-                        "ComponentHeight": 12.142,
-                        "ComponentPage": 1,
-                        "ComponentPosX": 1241.15,
-                        "ComponentPosY": 125.12,
-                        "ComponentExtra": "string",
-                        "ComponentValue": "value",
-                        "IsFormType": true,
-                        "KeywordPage": 0,
-                        "ChannelComponentId": "yD***id",
-                        "GenerateMode": "KEYWORD",
-                        "ComponentDateFontSize": 12,
-                        "OffsetY": 0,
-                        "OffsetX": 0,
-                        "RelativeLocation": "",
-                        "KeywordOrder": "",
-                        "KeywordIndexes": [],
-                        "ChannelComponentSource": 0,
-                        "FileIndex": 0
-                    }
-                ],
+                "Seals": [],
                 "SignComponents": [
                     {
-                        "ComponentRecipientId": "1",
-                        "ComponentId": "string",
-                        "ComponentName": "string",
-                        "ComponentType": "string",
-                        "ComponentRequired": true,
-                        "ComponentWidth": 1.1,
-                        "ComponentHeight": 12.142,
-                        "ComponentPage": 1,
-                        "ComponentPosX": 1241.15,
-                        "ComponentPosY": 125.12,
-                        "ComponentExtra": "string",
-                        "ComponentValue": "value",
-                        "IsFormType": true,
-                        "KeywordPage": 0,
-                        "ChannelComponentId": "yD***id",
-                        "GenerateMode": "KEYWORD",
-                        "ComponentDateFontSize": 12,
-                        "OffsetY": 0,
-                        "OffsetX": 0,
-                        "RelativeLocation": "",
-                        "KeywordOrder": "",
-                        "KeywordIndexes": [],
+                        "ChannelComponentId": "",
                         "ChannelComponentSource": 0,
-                        "FileIndex": 0
+                        "ComponentDateFontSize": 0,
+                        "ComponentExtra": "{\"Date\":true,\"isAfterCut\":false}",
+                        "ComponentHeight": 43,
+                        "ComponentId": "ComponentId_4",
+                        "ComponentName": "个人签名/印章",
+                        "ComponentPage": 1,
+                        "ComponentPosX": 10.5,
+                        "ComponentPosY": 27,
+                        "ComponentRecipientId": "yDxZzUyKQDKuihUuO4zjEy09jfapyHjn",
+                        "ComponentRequired": true,
+                        "ComponentType": "SIGN_SIGNATURE",
+                        "ComponentValue": "",
+                        "ComponentWidth": 119,
+                        "FileIndex": 0,
+                        "ForbidMoveAndDelete": false,
+                        "GenerateMode": "",
+                        "KeywordIndexes": [],
+                        "KeywordOrder": "",
+                        "KeywordPage": 0,
+                        "LockComponentValue": false,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "RelativeLocation": "",
+                        "IsFormType": false
+                    },
+                    {
+                        "ChannelComponentId": "",
+                        "ChannelComponentSource": 0,
+                        "ComponentDateFontSize": 0,
+                        "ComponentExtra": "{\"Format\":\"yyyy年m月d日\",\"Gaps\":\"2,2\",\"FontSize\":12,\"FontAlign\":\"Center\",\"Font\":\"黑体\",\"isAfterCut\":false}",
+                        "ComponentHeight": 20,
+                        "ComponentId": "ComponentId_5",
+                        "ComponentName": "签署日期",
+                        "ComponentPage": 1,
+                        "ComponentPosX": 10.5,
+                        "ComponentPosY": 70,
+                        "ComponentRecipientId": "yDxZzUyKQDKuihUuO4zjEy09jfapyHjn",
+                        "ComponentRequired": true,
+                        "ComponentType": "SIGN_DATE",
+                        "ComponentValue": "",
+                        "ComponentWidth": 119,
+                        "FileIndex": 0,
+                        "ForbidMoveAndDelete": false,
+                        "GenerateMode": "",
+                        "KeywordIndexes": [],
+                        "KeywordOrder": "",
+                        "KeywordPage": 0,
+                        "LockComponentValue": false,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "RelativeLocation": "",
+                        "IsFormType": false
+                    },
+                    {
+                        "ChannelComponentId": "",
+                        "ChannelComponentSource": 0,
+                        "ComponentDateFontSize": 0,
+                        "ComponentExtra": "{\"Date\":true,\"isAfterCut\":false,\"PageRanges\":[]}",
+                        "ComponentHeight": 119,
+                        "ComponentId": "ComponentId_7",
+                        "ComponentName": "企业印章",
+                        "ComponentPage": 1,
+                        "ComponentPosX": 140.5,
+                        "ComponentPosY": 27,
+                        "ComponentRecipientId": "yDwJ0UUckpk2077lUxgm9jJ9eZgZChJe",
+                        "ComponentRequired": true,
+                        "ComponentType": "SIGN_SEAL",
+                        "ComponentValue": "",
+                        "ComponentWidth": 119,
+                        "FileIndex": 0,
+                        "ForbidMoveAndDelete": false,
+                        "GenerateMode": "",
+                        "KeywordIndexes": [],
+                        "KeywordOrder": "",
+                        "KeywordPage": 0,
+                        "LockComponentValue": false,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "RelativeLocation": "",
+                        "IsFormType": false
+                    },
+                    {
+                        "ChannelComponentId": "",
+                        "ChannelComponentSource": 0,
+                        "ComponentDateFontSize": 0,
+                        "ComponentExtra": "{\"Format\":\"yyyy年m月d日\",\"Gaps\":\"2,2\",\"FontSize\":12,\"FontAlign\":\"Center\",\"Font\":\"黑体\",\"isAfterCut\":false}",
+                        "ComponentHeight": 20,
+                        "ComponentId": "ComponentId_8",
+                        "ComponentName": "签署日期1",
+                        "ComponentPage": 1,
+                        "ComponentPosX": 140.5,
+                        "ComponentPosY": 146,
+                        "ComponentRecipientId": "yDwJ0UUckpk2077lUxgm9jJ9eZgZChJe",
+                        "ComponentRequired": true,
+                        "ComponentType": "SIGN_DATE",
+                        "ComponentValue": "",
+                        "ComponentWidth": 119,
+                        "FileIndex": 0,
+                        "ForbidMoveAndDelete": false,
+                        "GenerateMode": "",
+                        "KeywordIndexes": [],
+                        "KeywordOrder": "",
+                        "KeywordPage": 0,
+                        "LockComponentValue": false,
+                        "OffsetX": 0,
+                        "OffsetY": 0,
+                        "RelativeLocation": "",
+                        "IsFormType": false
                     }
                 ],
-                "Status": 0
+                "SignOrder": [
+                    -1
+                ],
+                "Status": 1,
+                "TemplateId": "yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWX",
+                "TemplateName": "e2eTest-启停用模板_88433",
+                "TemplateSeals": [],
+                "TemplateType": 3,
+                "TemplateVersion": "20230906002"
             }
         ],
-        "TotalCount": 10,
-        "RequestId": "test"
+        "TotalCount": 1
+    }
+}
+```
+
+**Example 2: 魔板查询接口-通过不存在的模板Id查询模板信息**
+
+1.指定一个不存在的模板ID进行查询
+
+Input: 
+
+```
+tccli ess DescribeFlowTemplates --cli-unfold-argument  \
+    --Operator.Channel YUFU \
+    --Operator.ClientIp 8.8.8.8 \
+    --Operator.OpenId  \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --Offset 0 \
+    --Limit 20 \
+    --ApplicationId  \
+    --Filters.0.Key template-id \
+    --Filters.0.Values yDRS4UUgygqdcjjhUuO4zjEBpXdcsHWw
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1695125479063466836",
+        "Templates": [],
+        "TotalCount": 0
     }
 }
 ```

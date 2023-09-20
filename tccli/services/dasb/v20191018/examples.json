@@ -322,6 +322,14 @@
         "title": "修改访问权限"
       }
     ],
+    "ModifyCmdTemplate": [
+      {
+        "document": "修改高危命令模版",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmdTemplate\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"模版a\",\n    \"CmdList\": \"cd /root\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"sada123\"\n    }\n}",
+        "title": "修改高危命令模板"
+      }
+    ],
     "ModifyDevice": [
       {
         "document": "修改资产信息",

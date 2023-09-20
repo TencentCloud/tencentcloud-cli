@@ -469,6 +469,13 @@
       "output": "DescribeAssetWebServiceProcessListResponse",
       "status": "online"
     },
+    "DescribeAttackEvents": {
+      "document": "按分页形式展示网络攻击检测事件列表",
+      "input": "DescribeAttackEventsRequest",
+      "name": "网络攻击检测事件列表",
+      "output": "DescribeAttackEventsResponse",
+      "status": "online"
+    },
     "DescribeAttackLogInfo": {
       "document": "网络攻击日志详情",
       "input": "DescribeAttackLogInfoRequest",
@@ -1001,6 +1008,13 @@
       "output": "DescribeMachineRegionsResponse",
       "status": "online"
     },
+    "DescribeMachineRiskCnt": {
+      "document": "查询主机入侵检测事件统计",
+      "input": "DescribeMachineRiskCntRequest",
+      "name": "查询主机入侵检测事件统计",
+      "output": "DescribeMachineRiskCntResponse",
+      "status": "online"
+    },
     "DescribeMachines": {
       "document": "本接口 (DescribeMachines) 用于获取区域主机列表。",
       "input": "DescribeMachinesRequest",
@@ -1230,6 +1244,13 @@
       "input": "DescribeSearchTemplatesRequest",
       "name": "获取快速检索列表",
       "output": "DescribeSearchTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeSecurityBroadcasts": {
+      "document": "安全播报列表页",
+      "input": "DescribeSecurityBroadcastsRequest",
+      "name": "安全播报列表",
+      "output": "DescribeSecurityBroadcastsResponse",
       "status": "online"
     },
     "DescribeSecurityDynamics": {
@@ -1734,6 +1755,13 @@
       "input": "ModifyLicenseBindsRequest",
       "name": "授权批量绑定",
       "output": "ModifyLicenseBindsResponse",
+      "status": "online"
+    },
+    "ModifyLicenseOrder": {
+      "document": "编辑《主机安全-按量计费》授权订单",
+      "input": "ModifyLicenseOrderRequest",
+      "name": "编辑授权订单",
+      "output": "ModifyLicenseOrderResponse",
       "status": "online"
     },
     "ModifyLicenseUnBinds": {
@@ -9782,6 +9810,72 @@
       ],
       "usage": "out"
     },
+    "Broadcasts": {
+      "document": "安全播报列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文章名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "漏洞爆发",
+          "member": "string",
+          "name": "Title",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型：0=紧急通知，1=功能更新，2=行业荣誉，3=版本发布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "副标题",
+          "example": "新版本支持漏洞修复",
+          "member": "string",
+          "name": "Subtitle",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布时间",
+          "example": "2021-03-30 19:17:28",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文章唯一id",
+          "example": "12",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "危险程度  0：无， 1：严重， 2: 高危， 3:中危， 4: 低危",
+          "example": "1",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "BruteAttackInfo": {
       "document": "密码破解列表实体",
       "members": [
@@ -14280,6 +14374,87 @@
           "member": "uint64",
           "name": "Total",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackEventsRequest": {
+      "document": "DescribeAttackEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数量，最大值为100。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": " 过滤条件。\n<li>Type - String 攻击状态 0: 尝试攻击 1: 攻击成功 - 是否必填: 否</li>\n<li>Status - String 事件处理状态 0：待处理 1：已处理 2： 已加白 3： 已忽略 4：已删除  - 是否必填: 否</li>\n<li>SrcIP - String 来源IP - 是否必填: 否</li>\n<li>Uuids - String 主机安全uuid - 是否必填: 否</li>\n<li>Quuids - String cvm uuid - 是否必填: 否</li>\n<li>DstPort - String 攻击目标端口 - 是否必填: 否</li>\n<li>MachineName - String 主机名称 - 是否必填: 否</li>\n<li>InstanceID - String 主机实例ID - 是否必填: 否</li>\n<li>AttackTimeBegin - String 攻击开始时间 - 是否必填: 否</li>\n<li>AttackTimeEnd - String 攻击结束时间 - 是否必填: 否</li>\n<li>VulSupportDefense - String 漏洞是否支持防御 0不支持，1支持 - 是否必填: 否</li>\n",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "xxx",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式 ASC,DESC",
+          "example": "xxx",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackEventsResponse": {
+      "document": "DescribeAttackEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "攻击事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "NetAttackEvent",
+          "name": "List",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
           "type": "int",
           "value_allowed_null": false
         },
@@ -19899,6 +20074,103 @@
       ],
       "type": "object"
     },
+    "DescribeMachineRiskCntRequest": {
+      "document": "DescribeMachineRiskCnt请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>Uuids- String - 是否必填：否 - 主机uuid</li>",
+          "example": "[]",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMachineRiskCntResponse": {
+      "document": "DescribeMachineRiskCnt返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异地登录",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostLogin",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码破解",
+          "example": "1",
+          "member": "uint64",
+          "name": "BruteAttack",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "恶意请求",
+          "example": "1",
+          "member": "uint64",
+          "name": "MaliciousRequest",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "反弹shell",
+          "example": "1",
+          "member": "uint64",
+          "name": "ReverseShell",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危命令",
+          "example": "1",
+          "member": "uint64",
+          "name": "Bash",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地提权",
+          "example": "1",
+          "member": "uint64",
+          "name": "PrivilegeEscalation",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "木马",
+          "example": "1",
+          "member": "uint64",
+          "name": "Malware",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMachinesRequest": {
       "document": "DescribeMachines请求参数结构体",
       "members": [
@@ -22290,6 +22562,89 @@
           "name": "List",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityBroadcastsRequest": {
+      "document": "DescribeSecurityBroadcasts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10 ，0=全部",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选发布日期：开始时间",
+          "example": "2021-03-30",
+          "member": "string",
+          "name": "BeginDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选发布日期：结束时间",
+          "example": "2021-03-30",
+          "member": "string",
+          "name": "EndDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤安全播报类型：0-紧急通知，1-功能更新，2-行业荣誉，3-版本发布",
+          "example": "0",
+          "member": "string",
+          "name": "BroadcastType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityBroadcastsResponse": {
+      "document": "DescribeSecurityBroadcasts返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "Broadcasts",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总共多少条",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -30157,6 +30512,80 @@
       ],
       "type": "object"
     },
+    "ModifyLicenseOrderRequest": {
+      "document": "ModifyLicenseOrder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "cwplic-xxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "预期值,如果当前为10,扩容则输入原来大的值, 缩容则比原来小的值(缩容时不允许预期值比使用量小),如果保持不变则填写原值,",
+          "example": "1",
+          "member": "uint64",
+          "name": "InquireNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID,不修改则输入原值.",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资源别名,不修改则输入原值.",
+          "example": "别名",
+          "member": "string",
+          "name": "Alias",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyLicenseOrderResponse": {
+      "document": "ModifyLicenseOrder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "无",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyLicenseUnBindsRequest": {
       "document": "ModifyLicenseUnBinds请求参数结构体",
       "members": [
@@ -30702,6 +31131,182 @@
           "name": "ModifyTime",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "NetAttackEvent": {
+      "document": "网络攻击事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "无",
+          "member": "string",
+          "name": "Uuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标端口",
+          "example": "无",
+          "member": "uint64",
+          "name": "DstPort",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源IP",
+          "example": "无",
+          "member": "string",
+          "name": "SrcIP",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源地",
+          "example": "无",
+          "member": "string",
+          "name": "Location",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞id",
+          "example": "无",
+          "member": "uint64",
+          "name": "VulId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "无",
+          "member": "string",
+          "name": "VulName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击时间",
+          "example": "无",
+          "member": "string",
+          "name": "MergeTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MachineExtraInfo",
+          "name": "MachineExtraInfo",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击状态，0: 尝试攻击 1: 实锤攻击(攻击成功)",
+          "example": "0",
+          "member": "uint64",
+          "name": "Type",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处理状态，0 待处理 1 已处理 2 已加白  3 已忽略 4 已删除 5: 已开启防御",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞是否支持防御，0:不支持 1:支持",
+          "example": "无",
+          "member": "uint64",
+          "name": "VulSupportDefense",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启漏洞防御，0关1开",
+          "example": "无",
+          "member": "uint64",
+          "name": "VulDefenceStatus",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器付费版本，0 基础版，1专业版，2旗舰版，3普惠版",
+          "example": "无",
+          "member": "uint64",
+          "name": "PayVersion",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cvm uuid",
+          "example": "无",
+          "member": "string",
+          "name": "Quuid",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "攻击次数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否今日新增主机",
+          "example": "false",
+          "member": "bool",
+          "name": "New",
+          "required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

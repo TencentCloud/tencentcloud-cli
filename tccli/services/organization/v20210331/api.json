@@ -182,6 +182,13 @@
       "output": "MoveOrganizationNodeMembersResponse",
       "status": "online"
     },
+    "QuitOrganization": {
+      "document": "退出企业组织",
+      "input": "QuitOrganizationRequest",
+      "name": "退出企业组织",
+      "output": "QuitOrganizationResponse",
+      "status": "online"
+    },
     "UpdateOrganizationMember": {
       "document": "更新组织成员信息",
       "input": "UpdateOrganizationMemberRequest",
@@ -2753,6 +2760,33 @@
         }
       ],
       "usage": "out"
+    },
+    "QuitOrganizationRequest": {
+      "document": "QuitOrganization请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业组织ID",
+          "example": "1234",
+          "member": "uint64",
+          "name": "OrgId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QuitOrganizationResponse": {
+      "document": "QuitOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateOrganizationMemberEmailBindRequest": {
       "document": "UpdateOrganizationMemberEmailBind请求参数结构体",

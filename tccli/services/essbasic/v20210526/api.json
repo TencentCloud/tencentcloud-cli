@@ -38,7 +38,7 @@
     "ChannelCreateBatchSignUrl": {
       "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
       "input": "ChannelCreateBatchSignUrlRequest",
-      "name": "获取小程序批量签署链接",
+      "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
       "status": "online"
     },
