@@ -1694,14 +1694,6 @@
         "title": "登记挂账"
       }
     ],
-    "RevResigterBillSupportWithdraw": [
-      {
-        "document": "",
-        "input": "https://cpdp.tencentcloudapi.com/?Action=RevResigterBillSupportWithdraw\r\n&Placement.Zone=ap-guangzhou-2\r\n&ImageId=img-pmqg1cw7\r\n&<公共请求参数>\r\n&MrchCode=1234&TranNetMemberCode= YAPI100007&OldOrderNo= O2019110603&CancelAmt=5000&TranFee=0.0",
-        "output": "{\n    \"Response\": {\n        \"TxnReturnCode\": \"000000\",\n        \"RequestId\": \"10f464bc-01bf-478d-af7a-75b782887fd1\",\n        \"TxnReturnMsg\": \"交易成功\",\n        \"FrontSeqNo\": \"1911060076971280\",\n        \"ReservedMsg\": \"\",\n        \"CnsmrSeqNo\": \"U862831911061573026066\"\n    }\n}",
-        "title": "登记挂账撤销"
-      }
-    ],
     "ReviseMbrProperty": [
       {
         "document": "",

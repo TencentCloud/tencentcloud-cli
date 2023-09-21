@@ -32,6 +32,14 @@
         "title": "开始云端推流"
       }
     ],
+    "StartPublishStreamWithURL": [
+      {
+        "document": "开始云端推流到指定URL示例",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartPublishStreamWithURL\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\",\n    \"PublishStreamURL\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "开始云端推流到指定URL示例"
+      }
+    ],
     "StopPublishStream": [
       {
         "document": "",

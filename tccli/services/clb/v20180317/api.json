@@ -6567,7 +6567,7 @@
           "example": "lbl-odt45qxx",
           "member": "string",
           "name": "ListenerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6577,7 +6577,7 @@
           "example": "HTTP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6587,7 +6587,7 @@
           "example": "80",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6597,7 +6597,7 @@
           "example": "无",
           "member": "CertificateOutput",
           "name": "Certificate",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6607,7 +6607,7 @@
           "example": "无",
           "member": "HealthCheck",
           "name": "HealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6617,7 +6617,7 @@
           "example": "WRR",
           "member": "string",
           "name": "Scheduler",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6627,17 +6627,17 @@
           "example": "0",
           "member": "int64",
           "name": "SessionExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SniSwitch",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6647,7 +6647,7 @@
           "example": "无",
           "member": "RuleOutput",
           "name": "Rules",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6657,7 +6657,7 @@
           "example": "Name",
           "member": "string",
           "name": "ListenerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6667,7 +6667,7 @@
           "example": "2021-03-01 15:27:04",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6677,7 +6677,7 @@
           "example": "0",
           "member": "int64",
           "name": "EndPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6687,7 +6687,7 @@
           "example": "NODE",
           "member": "string",
           "name": "TargetType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6697,7 +6697,7 @@
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroup",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6707,7 +6707,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "SessionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6717,7 +6717,7 @@
           "example": "0",
           "member": "int64",
           "name": "KeepaliveEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6727,7 +6727,7 @@
           "example": "false",
           "member": "bool",
           "name": "Toa",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6737,7 +6737,7 @@
           "example": "false",
           "member": "bool",
           "name": "DeregisterTargetRst",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -6747,7 +6747,7 @@
           "example": "Stop",
           "member": "string",
           "name": "AttrFlags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6757,7 +6757,7 @@
           "example": "无",
           "member": "BasicTargetGroupInfo",
           "name": "TargetGroupList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6767,7 +6767,7 @@
           "example": "-1",
           "member": "int64",
           "name": "MaxConn",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6777,7 +6777,7 @@
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6787,7 +6787,7 @@
           "example": "900",
           "member": "int64",
           "name": "IdleConnectTimeout",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7958,7 +7958,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否开启SNI特性，1：表示开启，0：表示不开启（本参数仅对于HTTPS监听器有意义）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "SniSwitch",

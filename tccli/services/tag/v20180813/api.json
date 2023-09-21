@@ -106,7 +106,7 @@
       "status": "online"
     },
     "DescribeTagKeys": {
-      "document": "用于查询已建立的标签列表中的标签键。\n",
+      "document": "用于查询已建立的标签列表中的标签键。",
       "input": "DescribeTagKeysRequest",
       "name": "查询标签键",
       "output": "DescribeTagKeysResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "DescribeTags": {
-      "document": "用于查询已建立的标签列表。\n",
+      "document": "用于查询已建立的标签列表。",
       "input": "DescribeTagsRequest",
       "name": "查询标签列表",
       "output": "DescribeTagsResponse",
@@ -629,7 +629,7 @@
         {
           "disabled": false,
           "document": "业务类型",
-          "example": "",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -638,7 +638,7 @@
         {
           "disabled": false,
           "document": "资源前缀",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
           "required": true,
@@ -647,7 +647,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，大小不超过50",
-          "example": "",
+          "example": "ins-12345",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -656,7 +656,7 @@
         {
           "disabled": false,
           "document": "资源所在地域",
-          "example": "",
+          "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
           "required": true,
@@ -665,7 +665,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -674,11 +674,20 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -689,36 +698,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "[]",
           "member": "TagResource",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1344,7 +1357,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "",
+          "example": "1486445011xxx",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1353,7 +1366,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1361,8 +1374,8 @@
         },
         {
           "disabled": false,
-          "document": "每页大小，默认为 15",
-          "example": "",
+          "document": "每页大小，默认为 15，最大1000",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -1371,11 +1384,20 @@
         {
           "disabled": false,
           "document": "是否展现项目",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "ShowProject",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1386,36 +1408,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "9",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "[\"test2\",\"test1\",\"0\",\"\\u5b57\\u7b26\\u4e32\",\"test\",\"abcbbbb\",\"abcaaaaa\",\"abc\",\"\\u6d4b\\u8bd5\"]",
           "member": "string",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1434,7 +1460,7 @@
         {
           "disabled": false,
           "document": "标签键列表",
-          "example": "",
+          "example": "testKey",
           "member": "string",
           "name": "TagKeys",
           "required": true,
@@ -1443,7 +1469,7 @@
         {
           "disabled": false,
           "document": "创建者用户 Uin，不传或为空只将 Uin 作为条件查询",
-          "example": "",
+          "example": "12345",
           "member": "uint64",
           "name": "CreateUin",
           "required": false,
@@ -1452,7 +1478,7 @@
         {
           "disabled": false,
           "document": "数据偏移量，默认为 0, 必须为Limit参数的整数倍",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -1461,11 +1487,20 @@
         {
           "disabled": false,
           "document": "每页大小，默认为 15",
-          "example": "",
+          "example": "15",
           "member": "uint64",
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1476,36 +1511,40 @@
         {
           "disabled": false,
           "document": "结果总数",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "数据位移偏量",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "每页大小",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签列表",
-          "example": "",
+          "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1686,7 +1725,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1696,7 +1735,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1706,7 +1745,7 @@
           "example": "15",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1716,7 +1755,7 @@
           "example": "无",
           "member": "TagWithDelete",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2039,6 +2078,15 @@
           "name": "MaxResults",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2052,7 +2100,7 @@
           "example": "无",
           "member": "string",
           "name": "PaginationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2062,7 +2110,7 @@
           "example": "无",
           "member": "string",
           "name": "TagKeys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2104,6 +2152,15 @@
           "name": "MaxResults",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2117,7 +2174,7 @@
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
           "name": "PaginationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2127,7 +2184,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2169,6 +2226,15 @@
           "name": "TagKeys",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2182,7 +2248,7 @@
           "example": "POzXXYGXh2fRDHxx7PGaJnLApcyIuAYBC5HX25gKI4Sz2R*********",
           "member": "string",
           "name": "PaginationToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2192,7 +2258,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2492,9 +2558,10 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2502,12 +2569,24 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "All",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2560,60 +2639,70 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签键MD5值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagKeyMd5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签值MD5值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValueMd5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2625,7 +2714,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源六段式列表。腾讯云使用资源六段式描述一个资源。可参考[访问管理](https://cloud.tencent.com/document/product/598/67350)-概览-接口列表-资源六段式信息\n例如：ResourceList.1 = qcs::${ServiceType}:${Region}:uin/${Account}:${ResourcePrefix}/${ResourceId}。\nN取值范围：0~9",
+          "document": "待绑定的云资源，用标准的资源六段式表示。正确的资源六段式请参考：[标准的资源六段式](https://cloud.tencent.com/document/product/598/10606)和[支持标签的云产品及资源描述方式](https://cloud.tencent.com/document/product/651/89122)。\nN取值范围：0~9",
           "example": "qcs::cvm:ap-beijing:uin/1234567:instance/ins-123",
           "member": "string",
           "name": "ResourceList",
@@ -2653,6 +2742,7 @@
           "example": "无",
           "member": "FailedResource",
           "name": "FailedResources",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2671,32 +2761,42 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否可以删除",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "CanDelete",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签类型。取值： Custom：自定义标签。 System：系统标签。 All：全部标签。 默认值：All。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Category",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

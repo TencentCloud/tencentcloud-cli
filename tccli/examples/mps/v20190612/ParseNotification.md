@@ -25,7 +25,9 @@ Output:
                     "Bucket": "TopRankVideo-125xxx88",
                     "Region": "ap-chongqing",
                     "Object": "/movie/201907/WildAnimal.mov"
-                }
+                },
+                "UrlInputInfo": null,
+                "S3InputInfo": null
             },
             "MetaData": {
                 "AudioDuration": 59.990001678467,
@@ -35,7 +37,8 @@ Output:
                         "SamplingRate": 48000,
                         "Codec": "aac",
                         "Channel": 0,
-                        "Loudness": 0
+                        "Loudness": 0,
+                        "Codecs": "abc"
                     }
                 ],
                 "Bitrate": 1021028,
@@ -55,7 +58,8 @@ Output:
                         "ColorPrimaries": "abc",
                         "ColorSpace": "abc",
                         "ColorTransfer": "abc",
-                        "HdrType": "abc"
+                        "HdrType": "abc",
+                        "Codecs": "abc"
                     }
                 ],
                 "Width": 640
@@ -71,7 +75,17 @@ Output:
                         "Progress": 0,
                         "Input": {
                             "Definition": 20,
-                            "WatermarkSet": null
+                            "WatermarkSet": null,
+                            "OutputObjectPath": "",
+                            "RawParameter": null,
+                            "StartTimeOffset": 0,
+                            "EndTimeOffset": 0,
+                            "OverrideParameter": null,
+                            "ObjectNumberFormat": null,
+                            "OutputStorage": null,
+                            "SegmentObjectName": "",
+                            "HeadTailParameter": null,
+                            "MosaicSet": []
                         },
                         "Output": {
                             "Path": "/movie/201907/WildAnimal_transcode_20.mp4",
@@ -92,7 +106,8 @@ Output:
                                     "ColorPrimaries": "abc",
                                     "ColorSpace": "abc",
                                     "ColorTransfer": "abc",
-                                    "HdrType": "abc"
+                                    "HdrType": "abc",
+                                    "Codecs": "abc"
                                 }
                             ],
                             "AudioStreamSet": [
@@ -101,7 +116,8 @@ Output:
                                     "Codec": "aac",
                                     "SamplingRate": 44100,
                                     "Channel": 0,
-                                    "Loudness": 0
+                                    "Loudness": 0,
+                                    "Codecs": "abc"
                                 }
                             ],
                             "Definition": 0

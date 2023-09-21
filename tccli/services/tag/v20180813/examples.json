@@ -129,7 +129,7 @@
     "DescribeTagKeys": [
       {
         "document": "",
-        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagKeys\r\n&<公共请求参数>",
+        "input": "https://tag.tencentcloudapi.com/?Action=DescribeTagKeys\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 9,\n        \"Offset\": 0,\n        \"Limit\": 15,\n        \"Tags\": [\n            \"test2\",\n            \"test1\",\n            \"0\",\n            \"字符串\",\n            \"test\",\n            \"abcbbbb\",\n            \"abcaaaaa\",\n            \"abc\",\n            \"测试\"\n        ],\n        \"RequestId\": \"cec4f865-bc87-4858-994e-80771644094d\"\n    }\n}",
         "title": "查询标签键"
       }

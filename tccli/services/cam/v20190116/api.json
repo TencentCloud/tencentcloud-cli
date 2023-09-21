@@ -941,7 +941,7 @@
         {
           "disabled": false,
           "document": "策略 id",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -950,7 +950,7 @@
         {
           "disabled": false,
           "document": "用户组 id",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "AttachGroupId",
           "required": true,
@@ -1680,7 +1680,7 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -1689,7 +1689,7 @@
         {
           "disabled": false,
           "document": "策略文本信息",
-          "example": "",
+          "example": "{\"strategyInfo\":{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":[\"cam:GetRole\"],\"resource\":[\"*\"]}]}}",
           "member": "string",
           "name": "PolicyDocument",
           "required": true,
@@ -1698,7 +1698,7 @@
         {
           "disabled": false,
           "document": "是否设置为当前策略的版本",
-          "example": "",
+          "example": "true",
           "member": "bool",
           "name": "SetAsDefault",
           "required": true,
@@ -1713,9 +1713,10 @@
         {
           "disabled": false,
           "document": "策略版本号\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "VersionId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2159,7 +2160,7 @@
         {
           "disabled": false,
           "document": "数组，数组成员是策略 id，支持批量删除策略",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -2186,7 +2187,7 @@
         {
           "disabled": false,
           "document": "策略ID",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -2195,7 +2196,7 @@
         {
           "disabled": false,
           "document": "策略版本号",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "VersionId",
           "required": true,
@@ -2958,7 +2959,7 @@
         {
           "disabled": false,
           "document": "策略 id",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -2967,7 +2968,7 @@
         {
           "disabled": false,
           "document": "用户组 id",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "DetachGroupId",
           "required": true,
@@ -3048,7 +3049,7 @@
         {
           "disabled": false,
           "document": "策略 id",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "PolicyId",
           "required": true,
@@ -3057,7 +3058,7 @@
         {
           "disabled": false,
           "document": "子账号 uin",
-          "example": "",
+          "example": "1000",
           "member": "uint64",
           "name": "DetachUin",
           "required": true,
@@ -6699,7 +6700,7 @@
           "example": "10041",
           "member": "uint64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

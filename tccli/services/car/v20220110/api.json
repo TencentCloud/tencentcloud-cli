@@ -28,6 +28,13 @@
       "output": "StartPublishStreamResponse",
       "status": "online"
     },
+    "StartPublishStreamWithURL": {
+      "document": "开始云端推流到指定URL",
+      "input": "StartPublishStreamWithURLRequest",
+      "name": "开始云端推流到指定URL",
+      "output": "StartPublishStreamWithURLResponse",
+      "status": "online"
+    },
     "StopPublishStream": {
       "document": "停止云端推流",
       "input": "StopPublishStreamRequest",
@@ -250,6 +257,42 @@
     },
     "StartPublishStreamResponse": {
       "document": "StartPublishStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamWithURLRequest": {
+      "document": "StartPublishStreamWithURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。",
+          "example": "abc123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流地址，仅支持rtmp协议。",
+          "example": "rtmp://live.stream.com/publish",
+          "member": "string",
+          "name": "PublishStreamURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamWithURLResponse": {
+      "document": "StartPublishStreamWithURL返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

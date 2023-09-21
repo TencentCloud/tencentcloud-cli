@@ -539,7 +539,7 @@
         },
         {
           "disabled": false,
-          "document": "语音数据来源\n0：语音 URL；\n1：语音数据（post body）",
+          "document": "音频数据来源\n0：音频URL；\n1：音频数据（post body）",
           "example": "0",
           "member": "uint64",
           "name": "SourceType",
@@ -548,7 +548,7 @@
         },
         {
           "disabled": false,
-          "document": "语音数据base64编码\n**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**\n\n注意：音频数据要小于5MB（含）",
+          "document": "音频数据base64编码\n**当 SourceType 值为 1 时须填写该字段，为 0 时不需要填写**\n\n注意：音频数据要小于5MB（含）",
           "example": "无",
           "member": "string",
           "name": "Data",
@@ -566,7 +566,7 @@
         },
         {
           "disabled": false,
-          "document": "语音URL的地址（需要公网环境浏览器可下载）\n**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**\n\n注意：\n1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；\n2. 请保证文件的下载速度，否则可能下载失败",
+          "document": "音频URL的地址（需要公网环境浏览器可下载）\n**当 SourceType 值为 0 时须填写该字段，为 1 时不需要填写**\n\n注意：\n1. 请确保录音文件时长在5个小时（含）之内，否则可能识别失败；\n2. 请保证文件的下载速度，否则可能下载失败",
           "example": "https://audio.cos.ap-guangzhou.myqcloud.com/example.wav",
           "member": "string",
           "name": "Url",

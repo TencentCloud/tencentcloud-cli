@@ -14635,7 +14635,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14645,7 +14645,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ParamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14655,7 +14655,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "OldValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14665,17 +14665,17 @@
           "example": "\"\"",
           "member": "string",
           "name": "NewValue",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "参数是否修改成功",
           "example": "true",
           "member": "bool",
           "name": "IsSucess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -14685,8 +14685,18 @@
           "example": "\"\"",
           "member": "string",
           "name": "ModifyTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数是否修改成功",
+          "example": "true",
+          "member": "bool",
+          "name": "IsSuccess",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],

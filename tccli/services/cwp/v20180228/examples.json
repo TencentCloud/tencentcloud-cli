@@ -2047,7 +2047,7 @@
     "ModifyLicenseOrder": [
       {
         "document": "修改订单容量&别名&项目ID",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrModifyLicenseOrder\n<公共请求参数>\n\n{\n    \"Alias\": \"别名\",\n    \"ProjectId\": 0,\n    \"ResourceId\": \"cwplic-xxxxxxxx\",\n    \"InquireNum\": 10\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLicenseOrder\n<公共请求参数>\n\n{\n    \"Alias\": \"别名\",\n    \"ProjectId\": 0,\n    \"ResourceId\": \"cwplic-xxxxxxxx\",\n    \"InquireNum\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfcd9422-e824-4651-8fe3-1af96781ce6e\",\n        \"DealNames\": [],\n        \"ResourceIds\": [\n            \"cwplic-xxxxxxxx\"\n        ]\n    }\n}",
         "title": "编辑订单"
       }

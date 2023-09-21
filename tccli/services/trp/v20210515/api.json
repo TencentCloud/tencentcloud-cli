@@ -747,7 +747,7 @@
           "example": "aba",
           "member": "string",
           "name": "PackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -757,7 +757,7 @@
           "example": "1",
           "member": "int64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -767,7 +767,7 @@
           "example": "aba",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -777,7 +777,7 @@
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -787,7 +787,7 @@
           "example": "2021-12-06T07:13:35.000Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -797,7 +797,7 @@
           "example": "aba",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -807,7 +807,7 @@
           "example": "[time] xx",
           "member": "string",
           "name": "Log",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -817,7 +817,7 @@
           "example": "1",
           "member": "string",
           "name": "CreateUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -827,7 +827,7 @@
           "example": "1",
           "member": "int64",
           "name": "Amount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -837,7 +837,7 @@
           "example": "1",
           "member": "int64",
           "name": "CodeLength",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -847,7 +847,7 @@
           "example": "aba",
           "member": "string",
           "name": "CodeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -857,7 +857,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cipher",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -867,7 +867,7 @@
           "example": "aba",
           "member": "string",
           "name": "TextUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -877,7 +877,7 @@
           "example": "aba",
           "member": "string",
           "name": "PackUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -887,7 +887,7 @@
           "example": "aba",
           "member": "string",
           "name": "MerchantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -897,7 +897,7 @@
           "example": "0",
           "member": "int64",
           "name": "RuleType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -907,7 +907,7 @@
           "example": "xxx",
           "member": "string",
           "name": "CustomId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -917,7 +917,7 @@
           "example": "0",
           "member": "int64",
           "name": "PackType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -927,7 +927,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PackLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -937,9 +937,49 @@
           "example": " 无",
           "member": "PackSpec",
           "name": "PackSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品规格\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductSpecification",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "商品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "码关系是否预关联\n0:否, 1:是",
+          "example": "1",
+          "member": "int64",
+          "name": "RelateType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -953,6 +993,7 @@
           "example": "码段",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -963,6 +1004,7 @@
           "example": "0",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -973,6 +1015,7 @@
           "example": "abc",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -983,6 +1026,7 @@
           "example": "10",
           "member": "uint64",
           "name": "Length",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -993,12 +1037,13 @@
           "example": "str",
           "member": "string",
           "name": "Ext",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CorpQuota": {
       "document": "渠道商的子企业额度使用情况",
@@ -1264,6 +1309,24 @@
           "name": "SerialType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关联产品ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "层级码时是否提前生成关联关系，默认为 1",
+          "example": "1",
+          "member": "int64",
+          "name": "RelateType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1277,7 +1340,7 @@
           "example": "abc",
           "member": "string",
           "name": "PackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1491,6 +1554,24 @@
           "name": "SerialType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "无",
+          "member": "string",
+          "name": "ProductId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否预生成码关系\n0: 否, 1:是\n默认为1，仅对层级码有效",
+          "example": "1",
+          "member": "int64",
+          "name": "RelateType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1504,7 +1585,7 @@
           "example": "abc",
           "member": "string",
           "name": "PackId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -28,6 +28,13 @@
       "output": "DescribeGeneralMetricDataResponse",
       "status": "online"
     },
+    "DescribeGeneralSpanList": {
+      "document": "通用查询调用链列表",
+      "input": "DescribeGeneralSpanListRequest",
+      "name": "通用查询调用链列表",
+      "output": "DescribeGeneralSpanListResponse",
+      "status": "online"
+    },
     "DescribeMetricRecords": {
       "document": "拉取通用指标列表",
       "input": "DescribeMetricRecordsRequest",
@@ -912,6 +919,116 @@
       ],
       "type": "object"
     },
+    "DescribeGeneralSpanListRequest": {
+      "document": "DescribeGeneralSpanList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表项个数",
+          "example": "15",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "{}",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "span查询开始时间戳（单位:秒）",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通用过滤参数",
+          "example": "{}",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "业务自身服务名",
+          "example": "tdmq",
+          "member": "string",
+          "name": "BusinessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "span查询结束时间戳（单位:秒）",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralSpanListResponse": {
+      "document": "DescribeGeneralSpanList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Span分页列表",
+          "example": "{}",
+          "member": "Span",
+          "name": "Spans",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMetricRecordsRequest": {
       "document": "DescribeMetricRecords请求参数结构体",
       "members": [
@@ -1526,6 +1643,246 @@
         }
       ],
       "usage": "in"
+    },
+    "Span": {
+      "document": "Span对象\n\n",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Trace Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7a23429a8f7d6685",
+          "member": "string",
+          "name": "TraceID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SpanLog",
+          "name": "Logs",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SpanTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上报应用服务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "SpanProcess",
+          "name": "Process",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产生时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1621843224175",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Span名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "span_foo3",
+          "member": "string",
+          "name": "OperationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联关系\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SpanReference",
+          "name": "References",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产生时间戳(微秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1621843224175963",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "持续耗时(微妙)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "500098",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Span Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7a23429a8f7d6685",
+          "member": "string",
+          "name": "SpanID",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产生时间戳(毫秒)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1621843224175",
+          "member": "int64",
+          "name": "StartTimeMillis",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SpanLog": {
+      "document": "Span日志部分\n\n",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志时间戳",
+          "example": "1621843224175",
+          "member": "int64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "tags[]",
+          "member": "SpanTag",
+          "name": "Fields",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpanProcess": {
+      "document": "服务相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用服务名称",
+          "example": "broker-gz-test",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Tags 标签数组",
+          "example": "tags[]",
+          "member": "SpanTag",
+          "name": "Tags",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpanReference": {
+      "document": "Span上下游关联关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关联关系类型",
+          "example": "CHILD_OF",
+          "member": "string",
+          "name": "RefType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Span ID",
+          "example": "7a23429a8f7d6685",
+          "member": "string",
+          "name": "SpanID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Trace ID",
+          "example": "7a23429a8f7d6685",
+          "member": "string",
+          "name": "TraceID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "SpanTag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签类型",
+          "example": "string",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "status.code\"",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TerminateApmInstanceRequest": {
       "document": "TerminateApmInstance请求参数结构体",

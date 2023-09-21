@@ -3514,6 +3514,15 @@
           "name": "PdfPageNumber",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文本检测开关，默认为true。设置为false可直接进行单行识别，适用于仅包含正向单行文本的图片场景。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableDetectText",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3527,7 +3536,18 @@
           "example": "无",
           "member": "TextDetection",
           "name": "TextDetections",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
+          "example": "0",
+          "member": "float",
+          "name": "Angel",
+          "output_required": true,
+          "type": "float",
           "value_allowed_null": false
         },
         {
@@ -3535,7 +3555,8 @@
           "document": "图片旋转角度（角度制），文本的水平方向为0°；顺时针为正，逆时针为负。点击查看<a href=\"https://cloud.tencent.com/document/product/866/45139\">如何纠正倾斜文本</a>",
           "example": "0",
           "member": "float",
-          "name": "Angel",
+          "name": "Angle",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },

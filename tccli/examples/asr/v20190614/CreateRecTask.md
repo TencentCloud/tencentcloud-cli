@@ -1,6 +1,6 @@
-**Example 1: 通过语音Url来调用接口**
+**Example 1: 通过音频Url来调用接口**
 
-用户通过语音Url的方式（SourceType为0）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）
+用户通过音频Url的方式（SourceType为0）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）
 
 Input: 
 
@@ -25,9 +25,9 @@ Output:
 }
 ```
 
-**Example 2: 通过语音数据来调用接口**
+**Example 2: 通过音频数据来调用接口**
 
-用户通过上传语音数据（Data）的方式（SourceType为1）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）
+用户通过上传音频数据（Data）的方式（SourceType为1）请求录音识别服务，请求模型为16k中文 （EngineModelType = 16k_zh），音频格式为wav（采样率为16k，单声道）
 
 Input: 
 
