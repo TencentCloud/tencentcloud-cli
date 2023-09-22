@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeFlowInfo": {
-      "document": "接口用户查询合同流程的详情信息, 支持查询多个(数量不能超过100)\n\n适用场景：可用于主动查询某个合同详情信息。",
+      "document": "此接口用于查询合同流程的详情信息，支持查询多个（数量不能超过100）。\n\n适用场景：可用于主动查询某个合同详情信息。",
       "input": "DescribeFlowInfoRequest",
       "name": "查询合同流程的详情信息",
       "output": "DescribeFlowInfoResponse",
@@ -341,6 +341,13 @@
       "input": "DescribeOrganizationSealsRequest",
       "name": "查询企业电子印章",
       "output": "DescribeOrganizationSealsResponse",
+      "status": "online"
+    },
+    "DescribePersonCertificate": {
+      "document": "此接口（DescribePersonCertificate）用于查询个人数字证书信息。<br />注：`1.目前仅用于查询开通了医疗自动签署功能的个人数字证书。`<br />`2.调用此接口需要开通白名单，使用前请联系相关人员开通白名单。`",
+      "input": "DescribePersonCertificateRequest",
+      "name": "查询个人证书接口",
+      "output": "DescribePersonCertificateResponse",
       "status": "online"
     },
     "DescribeThirdPartyAuthCode": {
@@ -503,6 +510,30 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ApproverComponentLimitType": {
+      "document": "签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人控件类型是个人印章签署控件（SIGN_SIGNATURE） 时，可选的签名方式，可多选\n\n签名方式：\n<ul>\n<li>HANDWRITE-手写签名</li>\n<li>ESIGN-个人印章类型</li>\n<li>OCR_ESIGN-AI智能识别手写签名</li>\n<li>SYSTEM_ESIGN-系统签名</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -2460,7 +2491,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3426,6 +3457,15 @@
           "name": "ApproverRestrictions",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定签署方在使用个人印章签署控件（SIGN_SIGNATURE） 时可使用的签署方式：自由书写、正楷临摹、系统签名、个人印章。",
+          "example": "[         {             \"RecipientId\": \"yDwJNUUckpkojrssUxTFHk6xvcX2xigb\",             \"Values\": [                 \"HANDWRITE\",                 \"SYSTEM_ESIGN\"             ]         },         {             \"RecipientId\": \"yDwJNUUckpkojrsqUxTFHk6yndh20CpW\",             \"Values\": [                 \"OCR_ESIGN\"             ]         }     ]",
+          "member": "ApproverComponentLimitType",
+          "name": "ApproverComponentLimitTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5393,7 +5433,7 @@
         },
         {
           "disabled": false,
-          "document": "需要查询的流程ID列表，限制最大100个\n\n如果查询合同组的信息,不要传此参数",
+          "document": "需要查询的流程ID列表，最多可传入100个ID。\n如果要查询合同组的信息，则不需要传入此参数，只需传入 FlowGroupId 参数即可。",
           "example": "[\"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"]",
           "member": "string",
           "name": "FlowIds",
@@ -5411,8 +5451,8 @@
         },
         {
           "disabled": false,
-          "document": "合同组ID, 如果传此参数会忽略FlowIds入参\n 所以如传此参数不要传FlowIds参数\n",
-          "example": "\"yDwJKUUckpk3cp9kUybilmdvXgzy4Gv4\"",
+          "document": "需要查询的流程组ID，如果传入此参数，则会忽略 FlowIds 参数。该合同组由<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowGroupByFiles\" target=\"_blank\">通过多文件创建合同组签署流程</a>等接口创建。",
+          "example": "yDwJKUUckpk3cp9kUybilmdvXgzy4Gv4",
           "member": "string",
           "name": "FlowGroupId",
           "required": false,
@@ -5426,7 +5466,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署流程信息",
+          "document": "合同流程的详细信息。\n如果查询的是合同组信息，则返回的是组内所有子合同流程的详细信息。",
           "example": "无",
           "member": "FlowDetailInfo",
           "name": "FlowDetailInfos",
@@ -5436,7 +5476,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组ID，为32位字符串",
+          "document": "合同组ID，只有在查询合同组信息时才会返回。",
           "example": "无",
           "member": "string",
           "name": "FlowGroupId",
@@ -5446,7 +5486,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组名称",
+          "document": "合同组名称，只有在查询合同组信息时才会返回。",
           "example": "无",
           "member": "string",
           "name": "FlowGroupName",
@@ -6110,6 +6150,70 @@
           "name": "Seals",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePersonCertificateRequest": {
+      "document": "DescribePersonCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "个人用户的三要素信息：\n<ul><li>姓名</li>\n<li>证件号</li>\n<li>证件类型</li></ul>",
+          "example": "无",
+          "member": "UserThreeFactor",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "证书使用场景，可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** : 电子处方场景</li></ul>\n注: `现在仅支持电子处方场景`",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
+          "member": "string",
+          "name": "SceneKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePersonCertificateResponse": {
+      "document": "DescribePersonCertificate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书的Base64",
+          "example": "无",
+          "member": "string",
+          "name": "Cert",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

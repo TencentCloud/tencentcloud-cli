@@ -4043,6 +4043,7 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

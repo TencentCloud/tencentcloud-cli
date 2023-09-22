@@ -4024,7 +4024,17 @@
     },
     "DescribeCustomHeaderRequest": {
       "document": "DescribeCustomHeader请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "rule-18vhg67",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeCustomHeaderResponse": {

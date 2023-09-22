@@ -441,6 +441,13 @@
       "output": "DescribeSparkAppTasksResponse",
       "status": "online"
     },
+    "DescribeSparkSessionBatchSQL": {
+      "document": "本接口（DescribeSparkSessionBatchSQL）用于查询Spark SQL批任务运行状态",
+      "input": "DescribeSparkSessionBatchSQLRequest",
+      "name": "获取Spark SQL批任务运行状态",
+      "output": "DescribeSparkSessionBatchSQLResponse",
+      "status": "online"
+    },
     "DescribeSparkSessionBatchSqlLog": {
       "document": "本接口（DescribeSparkSessionBatchSqlLog）用于查询Spark SQL批任务日志",
       "input": "DescribeSparkSessionBatchSqlLogRequest",
@@ -1238,6 +1245,42 @@
         }
       ],
       "type": "object"
+    },
+    "BatchSqlTask": {
+      "document": "SparkSQL批任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SQL子任务唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3a0e3e8b-3cb0-46cd-b126-1ab9837acfc6",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行SQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1;",
+          "member": "string",
+          "name": "ExecuteSQL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务信息，成功则返回：Task Success!，失败则返回异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Task Success!",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BindWorkGroupsToUserRequest": {
       "document": "BindWorkGroupsToUser请求参数结构体",
@@ -7669,6 +7712,63 @@
           "name": "SparkAppTasks",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkSessionBatchSQLRequest": {
+      "document": "DescribeSparkSessionBatchSQL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SparkSQL唯一标识",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "BatchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSparkSessionBatchSQLResponse": {
+      "document": "DescribeSparkSessionBatchSQL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态：0：运行中、1：成功、2：失败、3：取消、4：超时；",
+          "example": "0",
+          "member": "uint64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL子任务列表，仅展示运行完成的子任务，若某个任务运行失败，后续其它子任务不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型数组",
+          "member": "BatchSqlTask",
+          "name": "Tasks",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非sql运行的异常事件信息，包含资源创建失败、调度异常，JOB超时等，正常运行下该Event值为空",
+          "example": "init session fail",
+          "member": "string",
+          "name": "Event",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

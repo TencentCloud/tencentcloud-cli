@@ -1695,7 +1695,7 @@
         {
           "disabled": false,
           "document": "IP回源时的回源IP列表。UpstreamType为0时，需要填充此字段",
-          "example": "[\"1.1.1.1\\n\"]",
+          "example": "[\"1.1.1.1\",\"8.8.8.8\"]",
           "member": "string",
           "name": "SrcList",
           "required": false,

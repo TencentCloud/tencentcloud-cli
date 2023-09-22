@@ -24,6 +24,22 @@
         "title": "创建风险中心扫描任务"
       }
     ],
+    "DeleteDomainAndIp": [
+      {
+        "document": "空示例",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainAndIp\n<公共请求参数>\n\n{\n    \"Content\": [\n        {\n            \"Asset\": \"abc\"\n        }\n    ],\n    \"RetainPath\": 0,\n    \"IgnoreAsset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": 0,\n        \"RequestId\": \"\"\n    }\n}",
+        "title": "空示例"
+      }
+    ],
+    "DeleteRiskScanTask": [
+      {
+        "document": "删除风险中心扫描任务",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"TaskIdList\": [\n    {\n      \"TaskId\": \"xx\",\n      \"TargetAppId\": \"xx\"\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "删除风险中心扫描任务"
+      }
+    ],
     "DescribeCVMAssetInfo": [
       {
         "document": "接口测试",
@@ -158,6 +174,14 @@
         "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"2021-01-01 00:00:00\",\n    \"EndTime\": \"2021-01-01 00:00:00\"\n  }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Subnet\": 1,\n                \"ConnectedVpc\": 1,\n                \"AssetId\": \"xx\",\n                \"Region\": \"xx\",\n                \"CVM\": 1,\n                \"Tag\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DNS\": [\n                    \"xx\"\n                ],\n                \"AssetName\": \"xx\",\n                \"CIDR\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"Nick\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"VpcList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"AppIdList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "空示例"
+      }
+    ],
+    "StopRiskCenterTask": [
+      {
+        "document": "停止扫风险中心扫描任务",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"TaskIdList\": [\n    {\n      \"TaskId\": \"xx\",\n      \"TargetAppId\": \"xx\"\n    }\n  ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "停止扫风险中心扫描任务"
       }
     ]
   },

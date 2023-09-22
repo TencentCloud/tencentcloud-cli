@@ -394,9 +394,9 @@
     ],
     "CreateRefreshTask": [
       {
-        "document": "",
+        "document": "创建刷新任务示例",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRefreshTask\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"345da107-dfdf-48f0-9796-e6723bdc102e\",\n        \"TaskId\": 32501,\n        \"CreateResult\": \"Succ\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"CreateResult\": \"abc\",\n        \"NewTaskID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建刷新任务示例"
       }
     ],

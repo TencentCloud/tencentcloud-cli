@@ -21,6 +21,20 @@
       "output": "CreateRiskCenterScanTaskResponse",
       "status": "online"
     },
+    "DeleteDomainAndIp": {
+      "document": "删除域名和ip请求",
+      "input": "DeleteDomainAndIpRequest",
+      "name": "删除域名和ip请求",
+      "output": "DeleteDomainAndIpResponse",
+      "status": "online"
+    },
+    "DeleteRiskScanTask": {
+      "document": "删除风险中心扫描任务",
+      "input": "DeleteRiskScanTaskRequest",
+      "name": "删除风险中心扫描任务",
+      "output": "DeleteRiskScanTaskResponse",
+      "status": "online"
+    },
     "DescribeCVMAssetInfo": {
       "document": "cvm详情",
       "input": "DescribeCVMAssetInfoRequest",
@@ -138,6 +152,13 @@
       "input": "DescribeVpcAssetsRequest",
       "name": "vpc列表",
       "output": "DescribeVpcAssetsResponse",
+      "status": "online"
+    },
+    "StopRiskCenterTask": {
+      "document": "停止扫风险中心扫描任务",
+      "input": "StopRiskCenterTaskRequest",
+      "name": "停止扫风险中心扫描任务",
+      "output": "StopRiskCenterTaskResponse",
       "status": "online"
     }
   },
@@ -2827,6 +2848,88 @@
       ],
       "usage": "out"
     },
+    "DeleteDomainAndIpRequest": {
+      "document": "DeleteDomainAndIp请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "-",
+          "example": "无",
+          "member": "PublicIpDomainListKey",
+          "name": "Content",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否保留路径配置，1：保留，其他：不保留，默认不传为不保留",
+          "example": "无",
+          "member": "int64",
+          "name": "RetainPath",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "以后是否忽略该资产，，1：忽略，其他：不忽略，默认不传为忽略",
+          "example": "无",
+          "member": "int64",
+          "name": "IgnoreAsset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainAndIpResponse": {
+      "document": "DeleteDomainAndIp返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除的资产数量",
+          "example": "1",
+          "member": "int64",
+          "name": "Data",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRiskScanTaskRequest": {
+      "document": "DeleteRiskScanTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id 列表",
+          "example": "无",
+          "member": "TaskIdListKey",
+          "name": "TaskIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRiskScanTaskResponse": {
+      "document": "DeleteRiskScanTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCVMAssetInfoRequest": {
       "document": "DescribeCVMAssetInfo请求参数结构体",
       "members": [
@@ -4880,6 +4983,22 @@
       ],
       "usage": "out"
     },
+    "PublicIpDomainListKey": {
+      "document": "公网IP和域名资产列表key",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资产值",
+          "example": "x",
+          "member": "string",
+          "name": "Asset",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "ReportItemKey": {
       "document": "报告项key",
       "members": [
@@ -5418,6 +5537,42 @@
       ],
       "usage": "out"
     },
+    "StopRiskCenterTaskRequest": {
+      "document": "StopRiskCenterTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id 列表",
+          "example": "无",
+          "member": "TaskIdListKey",
+          "name": "TaskIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "StopRiskCenterTaskResponse": {
+      "document": "StopRiskCenterTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Status为0， 停止成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SubnetAsset": {
       "document": "子网资产",
       "members": [
@@ -5815,6 +5970,22 @@
           "name": "Enable",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "TaskIdListKey": {
+      "document": "任务ID列表Key",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "x",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

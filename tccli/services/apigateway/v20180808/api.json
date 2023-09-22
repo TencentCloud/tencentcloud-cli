@@ -11168,7 +11168,7 @@
           "example": "10",
           "member": "int64",
           "name": "InternetMaxBandwidthOut",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11178,7 +11178,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableInternetInbound",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11188,7 +11188,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableInternetOutbound",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11198,7 +11198,7 @@
           "example": "[\"10.10.10.10\"]",
           "member": "string",
           "name": "InboundIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11208,7 +11208,7 @@
           "example": "[\"10.10.10.10\"]",
           "member": "string",
           "name": "OutboundIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

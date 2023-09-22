@@ -259,6 +259,13 @@
       "output": "DescribeAccountStatisticsResponse",
       "status": "online"
     },
+    "DescribeAgentInstallCommand": {
+      "document": "获取agent安装命令",
+      "input": "DescribeAgentInstallCommandRequest",
+      "name": "获取agent安装命令",
+      "output": "DescribeAgentInstallCommandResponse",
+      "status": "online"
+    },
     "DescribeAlarmIncidentNodes": {
       "document": "获取告警点所在事件的所有节点信息",
       "input": "DescribeAlarmIncidentNodesRequest",
@@ -11836,6 +11843,147 @@
       ],
       "type": "object"
     },
+    "DescribeAgentInstallCommandRequest": {
+      "document": "DescribeAgentInstallCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否腾讯云",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCloud",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型：basic-基础网络，private-VPC, public-公网，direct-专线",
+          "example": "private",
+          "member": "string",
+          "name": "NetType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域标示, NetType=direct时必填",
+          "example": "gz",
+          "member": "string",
+          "name": "RegionCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VpcId, NetType=direct时必填",
+          "example": "vpc-1234",
+          "member": "string",
+          "name": "VpcId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签ID列表，IsCloud=false时才会生效",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "TagIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "命令有效期，非腾讯云时必填",
+          "example": "2021-06-17",
+          "member": "date",
+          "name": "ExpireDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理方式接入的vip",
+          "example": "111.93.22.12",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAgentInstallCommandResponse": {
+      "document": "DescribeAgentInstallCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "linux系统安装命令",
+          "example": "wfwfw",
+          "member": "string",
+          "name": "LinuxCommand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "windows系统安装命令（windows2008及以上）",
+          "example": "xxx",
+          "member": "string",
+          "name": "WindowsCommand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "windows系统安装命令第一步（windows2003）",
+          "example": "xxx",
+          "member": "string",
+          "name": "WindowsStepOne",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "windows系统安装命令第二步（windows2003）",
+          "example": "xxx",
+          "member": "string",
+          "name": "WindowsStepTwo",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "windows版agent下载链接",
+          "example": "xxx",
+          "member": "string",
+          "name": "WindowsDownloadUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Arm安装命令\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ARMCommand",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAlarmIncidentNodesRequest": {
       "document": "DescribeAlarmIncidentNodes请求参数结构体",
       "members": [
@@ -20212,7 +20360,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>",
+          "document": "过滤条件。\n<li>Ips - String - 是否必填：否 - 通过ip查询 </li>\n<li>Names - String - 是否必填：否 - 通过实例名查询 </li>\n<li>InstanceIds - String - 是否必填：否 - 通过实例id查询 </li>\n<li>Status - String - 是否必填：否 - 客户端在线状态（OFFLINE: 离线/关机 | ONLINE: 在线 | UNINSTALLED：未安装 | AGENT_OFFLINE 离线| AGENT_SHUTDOWN 已关机）</li>\n<li>Version - String  是否必填：否 - 当前防护版本（ PRO_VERSION：专业版 | BASIC_VERSION：基础版 | Flagship : 旗舰版 | ProtectedMachines: 专业版+旗舰版）</li>\n<li>Risk - String 是否必填: 否 - 风险主机( yes ) </li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )\n每个过滤条件只支持一个值，暂不支持多个值“或”关系查询\n<li>Quuid - String - 是否必填: 否 - 云服务器uuid  最大100条.</li>\n<li>AddedOnTheFifteen- String 是否必填: 否 - 是否只查询15天内新增的主机( 1：是) </li>\n<li> TagId- String 是否必填: 否 - 查询指定标签关联的主机列表 </li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -20240,7 +20388,7 @@
           "example": "[]",
           "member": "Machine",
           "name": "Machines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -20250,7 +20398,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

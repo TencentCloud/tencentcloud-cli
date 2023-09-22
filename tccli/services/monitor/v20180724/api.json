@@ -5678,7 +5678,7 @@
         {
           "disabled": false,
           "document": "根据告警对象过滤 字符串模糊搜索",
-          "example": "无",
+          "example": "tdsqlshard-h2phzy69",
           "member": "string",
           "name": "AlarmObject",
           "required": false,
@@ -5731,7 +5731,7 @@
         },
         {
           "disabled": false,
-          "document": "根据策略名称模糊搜索",
+          "document": "根据策略名称模糊搜索,不支持大小写区分",
           "example": "无",
           "member": "string",
           "name": "PolicyName",
@@ -5776,7 +5776,7 @@
         },
         {
           "disabled": false,
-          "document": "告警等级",
+          "document": "告警等级,取值范围：Remind、Serious、Warn",
           "example": "[\"Warn\"]",
           "member": "string",
           "name": "AlarmLevels",

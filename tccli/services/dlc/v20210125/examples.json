@@ -504,6 +504,14 @@
         "title": "查询Spark作业的运行任务列表"
       }
     ],
+    "DescribeSparkSessionBatchSQL": [
+      {
+        "document": "获取SparkSQL批任务运行状态",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSparkSessionBatchSqlLog\n<公共请求参数>\n\n{\n    \"BatchId\": \"d3018ad4-9a7e-4f64-a3f4-fsjr37c69742\"\n}",
+        "output": "{\n    \"Response\": {\n        \"State\": 0,\n        \"Event\": \"\",\n        \"Tasks\": [\n            {\n                \"TaskId\": \"b8sdsdds-ekd4-4e5e-993e-e87js4fa21c1\",\n                \"ExecuteSQL\": \"select 1;\",\n                \"Message\": \"Task Success!\"\n            }\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "获取SparkSQL批任务运行状态"
+      }
+    ],
     "DescribeSparkSessionBatchSqlLog": [
       {
         "document": "查询Spark SQL批任务日志",

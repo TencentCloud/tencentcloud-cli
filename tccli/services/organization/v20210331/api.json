@@ -134,9 +134,9 @@
       "status": "online"
     },
     "DescribeOrganizationMemberAuthIdentities": {
-      "document": "获取组织成员可被管理的身份列表",
+      "document": "获取组织成员访问授权列表",
       "input": "DescribeOrganizationMemberAuthIdentitiesRequest",
-      "name": "获取组织成员可被管理的身份列表",
+      "name": "获取组织成员访问授权列表",
       "output": "DescribeOrganizationMemberAuthIdentitiesResponse",
       "status": "online"
     },
@@ -224,7 +224,7 @@
         {
           "disabled": false,
           "document": "成员Uin",
-          "example": "1234",
+          "example": "111111111111",
           "member": "int64",
           "name": "MemberUin",
           "required": true,
@@ -233,7 +233,7 @@
         {
           "disabled": false,
           "document": "邮箱地址",
-          "example": "123@qq.com",
+          "example": "12***@qq.com",
           "member": "string",
           "name": "Email",
           "required": true,
@@ -251,7 +251,7 @@
         {
           "disabled": false,
           "document": "手机号",
-          "example": "18776541432",
+          "example": "18***32",
           "member": "string",
           "name": "Phone",
           "required": true,
@@ -263,6 +263,16 @@
     "AddOrganizationMemberEmailResponse": {
       "document": "AddOrganizationMemberEmail返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "绑定Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BindId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1263,11 +1273,20 @@
         },
         {
           "disabled": false,
-          "document": "组织成员Uin。",
+          "document": "组织成员Uin。入参MemberUin与IdentityId至少填写一个",
           "example": "11111111111",
           "member": "int64",
           "name": "MemberUin",
-          "required": true,
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "身份ID。入参MemberUin与IdentityId至少填写一个",
+          "example": "123",
+          "member": "uint64",
+          "name": "IdentityId",
+          "required": false,
           "type": "int"
         }
       ],
@@ -1282,6 +1301,7 @@
           "example": "无",
           "member": "OrgMemberAuthIdentity",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1291,6 +1311,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1841,23 +1862,47 @@
       "members": [
         {
           "disabled": false,
-          "document": "策略ID",
+          "document": "CAM预设策略ID。PolicyType 为预设策略时有效且必选",
           "example": "1",
           "member": "uint64",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "策略名称",
+          "document": "CAM预设策略名称。PolicyType 为预设策略时有效且必选",
           "example": "AdministratorAccess",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型。取值 1-自定义策略  2-预设策略；默认值2\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "PolicyType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义策略内容，遵循CAM策略语法。PolicyType 为自定义策略时有效且必选\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"version\": \"2.0\",   \"statement\": [     {       \"effect\": \"allow\",       \"action\": [         \"vpc:*\"       ],       \"resource\": [         \"*\"       ]     }   ] }",
+          "member": "string",
+          "name": "PolicyDocument",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2086,7 +2131,7 @@
           "example": "10",
           "member": "int64",
           "name": "IdentityId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2096,7 +2141,7 @@
           "example": "test",
           "member": "string",
           "name": "IdentityAliasName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2106,7 +2151,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2116,7 +2161,7 @@
           "example": "无",
           "member": "IdentityPolicy",
           "name": "IdentityPolicy",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2126,7 +2171,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IdentityType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2136,7 +2181,7 @@
           "example": "2021-02-12 12:12:10",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2424,7 +2469,7 @@
           "example": "111",
           "member": "int64",
           "name": "IdentityId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2434,7 +2479,7 @@
           "example": "test",
           "member": "string",
           "name": "IdentityRoleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2444,48 +2489,78 @@
           "example": "test",
           "member": "string",
           "name": "IdentityRoleAliasName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份描述。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "首次配置成功的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最后一次配置成功的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-02-12 12:12:10",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "身份类型。取值： 1-预设  2-自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份类型。取值： 1-预设身份  2-自定义身份\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "IdentityType",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置状态。取值：1-配置完成 2-需重新配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员Uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "member_test",
+          "member": "string",
+          "name": "MemberName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
