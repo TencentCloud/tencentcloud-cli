@@ -1,67 +1,102 @@
 **Example 1: 查询用户站点信息列表**
 
-
+精确查询站点名称为“example.com”的站点信息。
 
 Input: 
 
 ```
 tccli teo DescribeZones --cli-unfold-argument  \
-    --Limit 20 \
-    --Filters.0.Fuzzy False \
-    --Filters.0.Values example.com \
     --Filters.0.Name zone-name \
-    --Offset 0
+    --Filters.0.Values example.com \
+    --Filters.0.Fuzzy False
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Zones": [
             {
-                "ZoneId": "zone-27q0p0bali16",
+                "ZoneId": "zone-2noz3g48ev6k",
                 "ZoneName": "example.com",
-                "OriginalNameServers": [
-                    "ns1.example.com.",
-                    "ns2.example.com."
-                ],
+                "ActiveStatus": "inactive",
+                "AliasZoneName": "",
+                "Area": "global",
+                "CnameSpeedUp": "enabled",
+                "CnameStatus": "pending",
+                "CreatedOn": "2023-09-18T07:41:05Z",
+                "IsFake": 0,
+                "LockStatus": "enable",
+                "ModifiedOn": "2023-09-18T07:41:50Z",
                 "NameServers": [
                     "ns1.teodns.com.",
                     "ns2.teodns.com."
                 ],
-                "VanityNameServers": {
-                    "Switch": "on",
-                    "Servers": [
-                        "ns1.example.com",
-                        "ns2.example.com"
-                    ]
-                },
-                "VanityNameServersIps": [
-                    {
-                        "Name": "ns1.example.com",
-                        "IPv4": "1.1.1.1"
-                    }
+                "OriginalNameServers": [
+                    "ns1.example.com.",
+                    "ns2.example.com."
                 ],
-                "Status": "active",
-                "Type": "full",
                 "Paused": false,
-                "CnameSpeedUp": "enabled",
-                "CnameStatus": "finished",
-                "Tags": [
+                "Resources": [
                     {
-                        "TagKey": "test",
-                        "TagValue": "example"
+                        "Area": "global",
+                        "AutoRenewFlag": 0,
+                        "CreateTime": "2023-09-18T07:41:18Z",
+                        "EnableTime": "2023-09-18T07:41:18Z",
+                        "ExpireTime": "2099-12-31T15:59:59Z",
+                        "Group": "plan",
+                        "Id": "edgeone-2noz3qqkvqth",
+                        "PayMode": 0,
+                        "PlanId": "edgeone-2noz3qqkvqth",
+                        "Status": "normal",
+                        "Sv": [
+                            {
+                                "Key": "sv_edgeone_plan_sec_ent_flatfee_cm",
+                                "Value": "1",
+                                "InstanceId": "",
+                                "Pack": "",
+                                "ProtectionSpecs": ""
+                            }
+                        ]
+                    },
+                    {
+                        "Area": "global",
+                        "AutoRenewFlag": 0,
+                        "CreateTime": "2023-09-18T07:41:18Z",
+                        "EnableTime": "2023-09-18T07:41:18Z",
+                        "ExpireTime": "2099-12-31T15:59:59Z",
+                        "Group": "pay-as-you-go",
+                        "Id": "edgeone-2noz3t4be7xw",
+                        "PayMode": 0,
+                        "PlanId": "edgeone-2noz3qqkvqth",
+                        "Status": "normal",
+                        "Sv": [
+                            {
+                                "Key": "sv_edgeone_sec_request_queries_month",
+                                "Value": "1",
+                                "InstanceId": "",
+                                "Pack": "",
+                                "ProtectionSpecs": ""
+                            },
+                            {
+                                "Key": "sv_edgeone_va_unit_month",
+                                "Value": "1",
+                                "InstanceId": "",
+                                "Pack": "",
+                                "ProtectionSpecs": ""
+                            }
+                        ]
                     }
                 ],
-                "Resources": [],
-                "ModifiedOn": "2020-09-22T00:00:00+00:00",
-                "CreatedOn": "2020-09-22T00:00:00+00:00",
-                "Area": "mainland",
-                "ActiveStatus": "active"
+                "Status": "pending",
+                "Tags": [],
+                "Type": "full",
+                "VanityNameServers": null,
+                "VanityNameServersIps": []
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "fd9d86df-b7e8-4469-b928-18cb7fd1d341"
+        "RequestId": "641a08e3-2ef7-407c-9c2f-2a9928741df5"
     }
 }
 ```

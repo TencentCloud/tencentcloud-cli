@@ -856,7 +856,7 @@
           "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -866,17 +866,17 @@
           "example": "0",
           "member": "uint64",
           "name": "International",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "申请模板状态，其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
+          "document": "申请模板状态，其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。注：只有状态值为0时该模板才能使用。",
           "example": "0",
           "member": "int64",
           "name": "StatusCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -886,7 +886,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ReviewReply",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -896,7 +896,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -906,7 +906,7 @@
           "example": "1620640474",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -916,7 +916,7 @@
           "example": "验证码是{1}",
           "member": "string",
           "name": "TemplateContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2138,7 +2138,7 @@
         {
           "disabled": false,
           "document": "发送数据统计响应包体。",
-          "example": "\"SmsPackagesStatisticsSet\": [       {         \"PackageCreateT",
+          "example": "\"SmsPackagesStatisticsSet\":<br/> [<br/>     {<br/>         \"PackageCreateTime\": 1617292800,<br/>         \"PackageExpiredTime\": 1617292800,<br/>         \"PackageEffectiveTime\": 1619884800,<br/>         \"PackageType\": 1,<br/>         \"CurrentUsage\": 1000,<br/>         \"PackageId\": 1000791745,<br/>         \"PackageAmount\": 1000<br/>     }<br/> ]",
           "member": "SmsPackagesStatistics",
           "name": "SmsPackagesStatisticsSet",
           "output_required": true,

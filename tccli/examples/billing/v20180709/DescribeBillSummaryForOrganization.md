@@ -5,7 +5,7 @@
 Input: 
 
 ```
-tccli billing DescribeBillSummary --cli-unfold-argument  \
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
     --Month 2023-04 \
     --GroupType business
 ```
@@ -51,7 +51,7 @@ Output:
 Input: 
 
 ```
-tccli billing DescribeBillSummary --cli-unfold-argument  \
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
     --Month 2023-04 \
     --GroupType region
 ```
@@ -151,7 +151,7 @@ Output:
 Input: 
 
 ```
-tccli billing DescribeBillSummary --cli-unfold-argument  \
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
     --Month 2023-05 \
     --GroupType tag \
     --TagKey 测试键 部门分类
@@ -370,7 +370,7 @@ Output:
 Input: 
 
 ```
-tccli billing DescribeBillSummary --cli-unfold-argument  \
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
     --Month 2023-04 \
     --GroupType payMode
 ```
@@ -458,7 +458,7 @@ Output:
 Input: 
 
 ```
-tccli billing DescribeBillSummary --cli-unfold-argument  \
+tccli billing DescribeBillSummaryForOrganization --cli-unfold-argument  \
     --Month 2023-04 \
     --GroupType project
 ```

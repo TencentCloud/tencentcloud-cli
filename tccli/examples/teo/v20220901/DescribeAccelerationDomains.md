@@ -1,18 +1,16 @@
-**Example 1: acceleration_domains**
+**Example 1: 查询指定站点下的域名信息**
 
-查询指定domain-id的加速域名信息。
+查询指定 zone-id 的下的源站类型为 IP_DOMAIN 的所有加速域名的信息，并将结果按照创建时间降序排列。
 
 Input: 
 
 ```
 tccli teo DescribeAccelerationDomains --cli-unfold-argument  \
-    --Direction desc \
     --ZoneId zone-20hyebgyfsko \
-    --Limit 0 \
     --Filters.0.Fuzzy True \
-    --Filters.0.Values domain-3d5dg39c \
-    --Filters.0.Name domain-id \
-    --Offset 0 \
+    --Filters.0.Values IP_DOMAIN \
+    --Filters.0.Name origin-type \
+    --Direction desc \
     --Order created_on \
     --Match all
 ```
@@ -21,23 +19,28 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
-        "RequestId": "3c140219-cfe9-470e-b241-907877d6fb03",
+        "TotalCount": 1,
         "AccelerationDomains": [
             {
-                "DomainName": "example.qq.com",
-                "ModifiedOn": "2020-09-22T00:00:00+00:00",
-                "CreatedOn": "2020-09-22T00:00:00+00:00",
-                "DomainStatus": "online",
                 "ZoneId": "zone-20hyebgyfsko",
-                "Cname": "example.qq.com.cname.com",
+                "DomainName": "www.qq.com",
+                "DomainStatus": "online",
                 "OriginDetail": {
-                    "Origin": "qq.com",
-                    "OriginType": "ip_domain",
-                    "BackupOrigin": ""
-                }
+                    "OriginType": "IP_DOMAIN",
+                    "Origin": "origin.qq.com",
+                    "BackupOrigin": "",
+                    "PrivateParameters": [],
+                    "PrivateAccess": "",
+                    "OriginGroupName": "",
+                    "BackOriginGroupName": ""
+                },
+                "IdentificationStatus": "finished",
+                "Cname": "www.qq.com.eo.dnse3.com",
+                "CreatedOn": "2020-09-22T00:00:00+00:00",
+                "ModifiedOn": "2020-09-22T00:00:00+00:00"
             }
-        ]
+        ],
+        "RequestId": "5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7"
     }
 }
 ```

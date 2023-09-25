@@ -22,6 +22,14 @@
         "title": "创建实例"
       }
     ],
+    "CreateRole": [
+      {
+        "document": "添加角色",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Role\": \"testRole\",\n    \"Remark\": \"testRemark\",\n    \"PermWrite\": true,\n    \"PermRead\": true\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"0bb79e96-2531-4088-8d90-e1372c15518a\",\n        \"Role\": \"testRole\"\n    }\n}",
+        "title": "添加角色"
+      }
+    ],
     "CreateTopic": [
       {
         "document": "创建主题",
@@ -44,6 +52,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-xxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除实例"
+      }
+    ],
+    "DeleteRole": [
+      {
+        "document": "删除角色",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Role\": \"testRole\"\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"c6e5472a-231d-4bd0-84cf-447f76a8216e\"\n    }\n}",
+        "title": "删除角色"
       }
     ],
     "DeleteTopic": [
@@ -76,6 +92,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceList\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ExpiryTime\": 0,\n                \"GroupNum\": 0,\n                \"GroupNumLimit\": 500,\n                \"InstanceId\": \"rmq-4knx4z7p\",\n                \"InstanceName\": \"tag-test\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"EXPERIMENT\",\n                \"MaxMessageDelay\": 48,\n                \"MessageRetention\": 72,\n                \"PayMode\": \"POSTPAID\",\n                \"Remark\": \"aabb\",\n                \"ScaledTpsLimit\": 0,\n                \"SkuCode\": \"experiment_500\",\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"test-key\",\n                        \"TagValue\": \"tag-value\"\n                    }\n                ],\n                \"TopicNum\": 0,\n                \"TopicNumLimit\": 50,\n                \"TpsLimit\": 500,\n                \"Version\": \"5.0\"\n            },\n            {\n                \"ExpiryTime\": 0,\n                \"GroupNum\": 6,\n                \"GroupNumLimit\": 500,\n                \"InstanceId\": \"rmq-72mo3a9o\",\n                \"InstanceName\": \"breatche-test\",\n                \"InstanceStatus\": \"RUNNING\",\n                \"InstanceType\": \"EXPERIMENT\",\n                \"MaxMessageDelay\": 48,\n                \"MessageRetention\": 24,\n                \"PayMode\": \"POSTPAID\",\n                \"Remark\": \"cddf\",\n                \"ScaledTpsLimit\": 0,\n                \"SkuCode\": \"experiment_500\",\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"tagkey\",\n                        \"TagValue\": \"aa\"\n                    }\n                ],\n                \"TopicNum\": 6,\n                \"TopicNumLimit\": 50,\n                \"TpsLimit\": 500,\n                \"Version\": \"5.0\"\n            }\n        ],\n        \"RequestId\": \"561a34ff-965b-4a2d-852e-973c0b2a6f01\",\n        \"TotalCount\": 2\n    }\n}",
         "title": "查询实例列表"
+      }
+    ],
+    "DescribeRoleList": [
+      {
+        "document": "查询角色列表",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoleList\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AccessKey\": \"eyJrZXlJZCI6InJtcS03Mm1vM2E5byIsImFsZyI6IkhTMjU2In0.eyJzdWIiOiJybXEtNzJtbzNhOW9fdGVzdFJvbGUifQ.vrdHDzzfeDsX1c5rhaFcLpJBd_dGIWQIlAPLOuOEDfM\",\n                \"CreatedTime\": 1683615280000,\n                \"ModifiedTime\": 1683615280000,\n                \"PermRead\": true,\n                \"PermWrite\": true,\n                \"Remark\": \"testRemark\",\n                \"RoleName\": \"testRole\",\n                \"SecretKey\": \"/tuS7zTKFNmsApaUvq4l5kTnV/GSWJ2m4bGhR62kVYY=\"\n            }\n        ],\n        \"RequestId\": \"346f63a2-dd66-439e-9abc-338a56f6523c\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询角色列表"
       }
     ],
     "DescribeTopic": [
@@ -116,6 +140,14 @@
         "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Remark\": \"tests\",\n    \"MessageRetention\": 25\n}",
         "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"becc23c2-b5e1-4df4-9df1-22ba8e5b20c3\"\n    }\n}",
         "title": "修改实例配置"
+      }
+    ],
+    "ModifyRole": [
+      {
+        "document": "修改角色",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRole\n<公共请求参数>\n\n{\n    \"InstanceId\": \"rmq-72mo3a9o\",\n    \"Role\": \"testRole\",\n    \"Remark\": \"test\",\n    \"PermRead\": true,\n    \"PermWrite\": true\n}",
+        "output": "{\n    \"Error\": null,\n    \"RequestId\": null,\n    \"Response\": {\n        \"RequestId\": \"0608515b-cde2-41d6-933c-169d0d1849c5\"\n    }\n}",
+        "title": "修改角色"
       }
     ],
     "ModifyTopic": [

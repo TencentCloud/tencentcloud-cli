@@ -1396,8 +1396,8 @@
         },
         {
           "disabled": false,
-          "document": "配置名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "config-demo",
+          "document": "配置名称, 如果是卷类型的configmap或secret，此值将作为volume name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "log",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -1407,10 +1407,21 @@
         },
         {
           "disabled": false,
-          "document": "配置版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应的 camp 配置项名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "config-demo",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应的 camp 配置项版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "v0.1.0",
           "member": "string",
-          "name": "Version",
+          "name": "ConfigVersion",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1473,10 +1484,10 @@
         },
         {
           "disabled": false,
-          "document": "Volume 名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "SubPath\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "VolumeName",
+          "name": "SubPath",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -1484,10 +1495,21 @@
         },
         {
           "disabled": false,
-          "document": "SubPath\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "配置版本 Deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v0.1.0",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Volume 名 Deprecated\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
-          "name": "SubPath",
+          "name": "VolumeName",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -6381,6 +6403,73 @@
       ],
       "usage": "both"
     },
+    "NFSVolumeSource": {
+      "document": "NFS 存储结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络文件系统地址",
+          "example": "无",
+          "member": "string",
+          "name": "Server",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "路径",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "挂载版本\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否只读模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReadOnly",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "NetworkQosTrait": {
+      "document": "网络服务质量配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络质量类型",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ObjectMeta": {
       "document": "资源对象信息",
       "members": [
@@ -6730,58 +6819,58 @@
       "members": [
         {
           "disabled": false,
-          "document": "北极星 trait 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星 trait 名称",
           "example": "无",
           "member": "string",
           "name": "Name",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "北极星命名空间\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星命名空间\t",
           "example": "Production",
           "member": "string",
           "name": "PolarisNamespace",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "北极星服务名字\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星服务名字\t",
           "example": "test-svc-bj",
           "member": "string",
           "name": "PolarisName",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "北极星认证token\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "北极星认证token\t",
           "example": "db74e1f403e0446ea6cf3852d4a736aa",
           "member": "string",
           "name": "Token",
           "output_required": true,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "默认权重\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认权重\t",
           "example": "100",
           "member": "int64",
           "name": "Weight",
           "output_required": true,
           "required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -6800,7 +6889,7 @@
           "example": "无",
           "member": "string",
           "name": "SyncMode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6811,20 +6900,9 @@
           "example": "无",
           "member": "string",
           "name": "SiteZone",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "TTL 时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "int64",
-          "name": "TTL",
-          "output_required": true,
-          "required": false,
-          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -6833,7 +6911,7 @@
           "example": "无",
           "member": "Label",
           "name": "InstanceLabel",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6844,7 +6922,7 @@
           "example": "无",
           "member": "Label",
           "name": "Selector",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6855,9 +6933,20 @@
           "example": "无",
           "member": "Custom",
           "name": "CustomWeight",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端心跳上报间隔秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TTL",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6908,6 +6997,7 @@
           "example": "无",
           "member": "PolarisConfig",
           "name": "Objects",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7503,7 +7593,7 @@
           "example": "无",
           "member": "UpdateStrategyTrait",
           "name": "UpdateStrategy",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7514,7 +7604,7 @@
           "example": "无",
           "member": "PolarisTrait",
           "name": "Polaris",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7525,7 +7615,7 @@
           "example": "无",
           "member": "ReplicasTrait",
           "name": "Replicas",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7536,7 +7626,7 @@
           "example": "无",
           "member": "HPATrait",
           "name": "HPA",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7547,7 +7637,7 @@
           "example": "无",
           "member": "CLSTrait",
           "name": "CLS",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7558,7 +7648,7 @@
           "example": "无",
           "member": "ZhiyanLogTrait",
           "name": "ZhiyanLog",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7569,7 +7659,7 @@
           "example": "无",
           "member": "ServiceTrait",
           "name": "Service",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7613,6 +7703,17 @@
           "example": "无",
           "member": "PreAuthTrait",
           "name": "PreAuth",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络服务质量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NetworkQosTrait",
+          "name": "NetworkQos",
           "output_required": false,
           "required": false,
           "type": "object",
@@ -8048,6 +8149,17 @@
           "example": "无",
           "member": "CBSVolumeSource",
           "name": "CBS",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络文件系统存储卷\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NFSVolumeSource",
+          "name": "NFS",
           "output_required": false,
           "required": false,
           "type": "object",
