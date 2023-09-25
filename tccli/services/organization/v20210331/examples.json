@@ -3,8 +3,8 @@
     "AddOrganizationMemberEmail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganizationMemberEmail\n<公共请求参数>\n\n{\n    \"MemberUin\": 12726,\n    \"Email\": \"123@qq.com\",\n    \"CountryCode\": \"86\",\n    \"Phone\": \"18726545611\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddOrganizationMemberEmail\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111,\n    \"Email\": \"12***@qq.com\",\n    \"CountryCode\": \"86\",\n    \"Phone\": \"18***11\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BindId\": 1,\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "添加组织成员邮箱"
       }
     ],

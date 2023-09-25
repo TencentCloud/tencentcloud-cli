@@ -1382,6 +1382,7 @@
           "example": "mybucket-1250000",
           "member": "string",
           "name": "BucketName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1392,6 +1393,7 @@
           "example": "/",
           "member": "string",
           "name": "FileSystemPath",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1402,6 +1404,7 @@
           "example": "无",
           "member": "string",
           "name": "DataRepositoryTaskAutoStrategy",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1412,6 +1415,7 @@
           "example": "x-rule-1",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1422,6 +1426,40 @@
           "example": "this rule is for picture bucket",
           "member": "string",
           "name": "RuleDescription",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "桶关联状态 0：关联中 1：关联完成",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否使用全球加速域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AccelerateFlag",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "桶所在的园区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "BucketRegion",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -126,6 +126,13 @@
       "output": "StartPublishStreamResponse",
       "status": "online"
     },
+    "StartPublishStreamWithURL": {
+      "document": "开始云端推流到指定URL",
+      "input": "StartPublishStreamWithURLRequest",
+      "name": "开始云端推流到指定URL",
+      "output": "StartPublishStreamWithURLResponse",
+      "status": "online"
+    },
     "StopPublishStream": {
       "document": "停止云端推流",
       "input": "StopPublishStreamRequest",
@@ -172,6 +179,17 @@
           "example": "\"application class\"",
           "member": "string",
           "name": "WindowClassName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用窗口捕捉模式",
+          "example": "\"HOOK|DDA_CUT\"",
+          "member": "string",
+          "name": "WindowCaptureMode",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -805,7 +823,7 @@
         },
         {
           "disabled": false,
-          "document": "Cos Session",
+          "document": "Cos SessionToken",
           "example": "\"xxx\"",
           "member": "string",
           "name": "SessionToken",
@@ -913,7 +931,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤值集合（当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无]）",
+          "document": "过滤值集合（当过滤 Name 为 ApplicationRunStatus 时，Values 取值为 [ApplicationDeleting 应用删除中、ApplicationCreateFail 应用创建失败、ApplicationCreating 应用创建中、ApplicationRunning 正常运行、applicationStatusNoConfigured 主执行程序路径未配置 ]。当过滤 Name 为 ApplicationUpdateStatus 时，Values 取值 [ApplicationUpdateCreating 版本创建中、ApplicationUpdateCreateFail 版本创建失败、ApplicationUpdateNoReleased 版本待发布、ApplicationUpdateReleased 版本发布完成、applicationUpdateStatusNormal 无]）",
           "example": "\"\"",
           "member": "string",
           "name": "Values",
@@ -1121,6 +1139,42 @@
     },
     "StartPublishStreamResponse": {
       "document": "StartPublishStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamWithURLRequest": {
+      "document": "StartPublishStreamWithURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一用户身份标识，由业务方自定义，平台不予理解。",
+          "example": "abc123",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "推流地址，仅支持rtmp协议。",
+          "example": "rtmp://live.stream.com/publish",
+          "member": "string",
+          "name": "PublishStreamURL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartPublishStreamWithURLResponse": {
+      "document": "StartPublishStreamWithURL返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

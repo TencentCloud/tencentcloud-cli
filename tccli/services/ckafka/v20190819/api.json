@@ -14602,8 +14602,7 @@
           "member": "string",
           "name": "Database",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14612,8 +14611,7 @@
           "member": "string",
           "name": "Table",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14622,8 +14620,7 @@
           "member": "string",
           "name": "Resource",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14632,8 +14629,7 @@
           "member": "string",
           "name": "SnapshotMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14642,8 +14638,7 @@
           "member": "string",
           "name": "DdlTopic",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14652,8 +14647,7 @@
           "member": "string",
           "name": "DataSourceMonitorMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14662,8 +14656,7 @@
           "member": "string",
           "name": "DataSourceMonitorResource",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14672,8 +14665,7 @@
           "member": "string",
           "name": "DataSourceIncrementMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14682,8 +14674,7 @@
           "member": "string",
           "name": "DataSourceIncrementColumn",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14692,8 +14683,7 @@
           "member": "string",
           "name": "DataSourceStartFrom",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14702,8 +14692,7 @@
           "member": "string",
           "name": "DataTargetInsertMode",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14712,8 +14701,7 @@
           "member": "string",
           "name": "DataTargetPrimaryKeyField",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14722,8 +14710,7 @@
           "member": "RecordMapping",
           "name": "DataTargetRecordMapping",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -14732,8 +14719,7 @@
           "member": "string",
           "name": "TopicRegex",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14742,8 +14728,7 @@
           "member": "string",
           "name": "TopicReplacement",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14752,8 +14737,7 @@
           "member": "string",
           "name": "KeyColumns",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14762,8 +14746,7 @@
           "member": "bool",
           "name": "DropInvalidMessage",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -14772,8 +14755,7 @@
           "member": "DropCls",
           "name": "DropCls",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -14782,8 +14764,7 @@
           "member": "string",
           "name": "OutputFormat",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14792,8 +14773,7 @@
           "member": "bool",
           "name": "IsTablePrefix",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -14802,8 +14782,7 @@
           "member": "string",
           "name": "IncludeContentChanges",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14812,8 +14791,7 @@
           "member": "bool",
           "name": "IncludeQuery",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -14822,8 +14800,7 @@
           "member": "bool",
           "name": "RecordWithSchema",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -14832,8 +14809,7 @@
           "member": "string",
           "name": "SignalDatabase",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -14842,8 +14818,7 @@
           "member": "bool",
           "name": "IsTableRegular",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -14852,8 +14827,7 @@
           "member": "string",
           "name": "SignalTable",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

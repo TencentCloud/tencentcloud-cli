@@ -7643,7 +7643,7 @@
           "example": "eins-8jpj27jc",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7653,7 +7653,7 @@
           "example": "无",
           "member": "ResourceInfo",
           "name": "UsedResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7663,7 +7663,7 @@
           "example": "无",
           "member": "ResourceInfo",
           "name": "TotalResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7673,7 +7673,7 @@
           "example": "RUNNING",
           "member": "string",
           "name": "InstanceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7683,7 +7683,7 @@
           "example": "123",
           "member": "string",
           "name": "SubUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7693,7 +7693,7 @@
           "example": "2021-12-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7703,7 +7703,7 @@
           "example": "2021-12-11 12:00:00",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7713,7 +7713,7 @@
           "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7723,7 +7723,7 @@
           "example": "sv_xx",
           "member": "string",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7733,9 +7733,19 @@
           "example": "8C40G V100*1",
           "member": "string",
           "name": "SpecAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费项特性列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "string",
+          "name": "SpecFeatures",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

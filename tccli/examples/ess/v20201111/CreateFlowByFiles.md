@@ -638,3 +638,53 @@ Output:
 }
 ```
 
+**Example 12: 标书场景下，需要创建一份本方企业和个人签署的标书文件，要求本方企业的印章控件需要在每一页都进行盖章。**
+
+1. 签署方包括本方企业和个人（Approvers中有两个ApproverInfo元素）。
+2. 本方企业的签署区仅具有一个印章签署控件：印章（SignComponents中有一个Component元素，印章（SIGN_SEAL）使用绝对定位方式，即指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式）。
+3. 本方企业的印章签署区需要在所有的页面上面进行加盖，即设置"ComponentExtra":"{\"PageRanges\":[{\"BeginPage\":1,\"EndPage\":-1}]}",
+4. C端参与者仅具有一个签名签署控件（SignComponents中仅有一个Component元素，且该元素的ComponentType为SIGN_SIGNATURE，使用绝对定位方式，即指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式）。
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --FlowName 标书文件合同示例 \
+    --FlowType 示例合同 \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.OrganizationName 典子谦示例企业 \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.SignComponents.0.ComponentPosY 360 \
+    --Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SEAL \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 60 \
+    --Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --Approvers.0.SignComponents.0.ComponentExtra {"PageRanges":[{"BeginPage":1,"EndPage":-1}]} \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.SignComponents.0.ComponentPosY 260 \
+    --Approvers.1.SignComponents.0.ComponentWidth 100 \
+    --Approvers.1.SignComponents.0.FileIndex 0 \
+    --Approvers.1.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.1.SignComponents.0.ComponentPage 1 \
+    --Approvers.1.SignComponents.0.ComponentPosX 160 \
+    --Approvers.1.SignComponents.0.ComponentHeight 100 \
+    --FileIds yDR4yUUgyg1qqlj7UuO4zjES3G9Shoxk
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz",
+        "PreviewUrl": "",
+        "RequestId": "s1665674603446404796"
+    }
+}
+```
+

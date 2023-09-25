@@ -171,7 +171,7 @@
           "example": "无",
           "member": "string",
           "name": "PageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -181,7 +181,7 @@
           "example": "无",
           "member": "string",
           "name": "PageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -191,7 +191,7 @@
           "example": "无",
           "member": "bool",
           "name": "AccessAble",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -201,8 +201,18 @@
           "example": "无",
           "member": "string",
           "name": "PageKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为全局配置权限",
+          "example": "false",
+          "member": "bool",
+          "name": "IsGlobalConfig",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -3439,36 +3449,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询key",
+          "document": "查询key\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"key\"",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "search 表示模糊搜索 字段key 中包含 value 的记录, 使用正则匹配实现\n 'eq' | 'neq' | 'lt' | 'gt' | 'gte' | 'lte' | 'in' | 'nin' | 'search'",
+          "document": "search 表示模糊搜索 字段key 中包含 value 的记录, 使用正则匹配实现\n 'eq' | 'neq' | 'lt' | 'gt' | 'gte' | 'lte' | 'in' | 'nin' | 'search'\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": " \"eq\"",
           "member": "string",
           "name": "Rel",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "查询值",
+          "document": "查询值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"val\"",
           "member": "string",
           "name": "Val",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "RelationField": {
       "document": "数据源关联的的信息",

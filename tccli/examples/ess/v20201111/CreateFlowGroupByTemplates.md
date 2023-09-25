@@ -64,15 +64,15 @@ Output:
 
 **Example 2: 创建一个有两份子合同的合同组签署流程（B2B、B2C），并且通过参数FlowGroupOptions控制签署人通知方式。**
 
-子合同1为B2C合同，Approvers中包含两个ApproverInfo元素，C端签署人ApproverType为1，企业签署人ApproverType为0。
+1.子合同1为B2C合同，Approvers中包含两个ApproverInfo元素，C端签署人ApproverType为1，企业签署人ApproverType为0。
 
-子合同2为B2B合同，Approvers中包含两个ApproverInfo元素，企业签署人ApproverType为0。
+2.子合同2为B2B合同，Approvers中包含两个ApproverInfo元素，企业签署人ApproverType为0。
 
-此合同组下所有子合同，C端签署人使用手机号验证校验方式（FlowGroupOptions.ApproverVerifyType设置为MobileCheck）。
+3.此合同组下所有子合同，C端签署人使用手机号验证校验方式（FlowGroupOptions.ApproverVerifyType设置为MobileCheck）。
 
-此合同组下所有子合同，发起方企业经办人不通知，需要发起方自行通知（FlowGroupOptions.SelfOrganizationApproverNotifyType设置为none）。
+4.此合同组下所有子合同，发起方企业经办人不通知，需要发起方自行通知（FlowGroupOptions.SelfOrganizationApproverNotifyType设置为none）。
 
-此合同组下所有子合同，他方企业经办人通过短信通知（FlowGroupOptions.OtherApproverNotifyType设置为sms）。
+5.此合同组下所有子合同，他方企业经办人通过短信通知（FlowGroupOptions.OtherApproverNotifyType设置为sms）。
 
 Input: 
 

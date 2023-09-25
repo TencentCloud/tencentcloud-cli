@@ -1,6 +1,6 @@
-**Example 1: 速算题目批改-同步模式**
+**Example 1: 速算题目批改**
 
-同步模式，直接返回结果，TaskId 为空
+传入速算图像url，返回批改结果
 
 Input: 
 
@@ -45,33 +45,7 @@ Output:
                 "QuestionId": ""
             }
         ],
-        "RequestId": "17c1a0ba-0b66-4b28-892f-f248dcc5f548",
-        "TaskId": ""
-    }
-}
-```
-
-**Example 2: 速算题目批改-异步模式**
-
-异步模式，只返回 TaskId
-
-Input: 
-
-```
-tccli hcm Evaluation --cli-unfold-argument  \
-    --SessionId stress_test_956938 \
-    --Url xxx \
-    --IsAsync 1
-```
-
-Output: 
-```
-{
-    "Response": {
-        "SessionId": "1112asdfasdf1",
-        "Items": null,
-        "TaskId": "1000010",
-        "RequestId": "55ad4928-fa5-415c-2cb-868d5e3171431"
+        "RequestId": "17c1a0ba-0b66-4b28-892f-f248dcc5f548"
     }
 }
 ```

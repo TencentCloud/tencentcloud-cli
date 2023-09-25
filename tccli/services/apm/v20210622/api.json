@@ -35,6 +35,13 @@
       "output": "DescribeGeneralMetricDataResponse",
       "status": "online"
     },
+    "DescribeGeneralSpanList": {
+      "document": "通用查询调用链列表",
+      "input": "DescribeGeneralSpanListRequest",
+      "name": "通用查询调用链列表",
+      "output": "DescribeGeneralSpanListResponse",
+      "status": "online"
+    },
     "DescribeMetricRecords": {
       "document": "拉取通用指标列表",
       "input": "DescribeMetricRecordsRequest",
@@ -1001,6 +1008,116 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralSpanListRequest": {
+      "document": "DescribeGeneralSpanList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "列表项个数",
+          "example": "15",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序",
+          "example": "{}",
+          "member": "OrderBy",
+          "name": "OrderBy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "span查询开始时间戳（单位:秒）",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例名",
+          "example": "52Dpv13GR",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通用过滤参数",
+          "example": "{}",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "业务自身服务名",
+          "example": "tdmq",
+          "member": "string",
+          "name": "BusinessName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "span查询结束时间戳（单位:秒）",
+          "example": "1617123538",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeGeneralSpanListResponse": {
+      "document": "DescribeGeneralSpanList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量",
+          "example": "200",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Span分页列表",
+          "example": "{}",
+          "member": "Span",
+          "name": "Spans",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

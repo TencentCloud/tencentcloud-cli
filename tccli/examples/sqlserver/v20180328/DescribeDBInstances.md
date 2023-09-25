@@ -84,7 +84,9 @@ Output:
                 "VpcId": 5350471,
                 "Vport": 1433,
                 "Zone": "ap-guangzhou-3",
-                "ZoneId": 100003
+                "ZoneId": 100003,
+                "Architecture": "SINGLE",
+                "Style": "SHARED"
             }
         ],
         "RequestId": "de641788-0565-4617-a7f4-639de128772b",

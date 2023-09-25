@@ -10086,7 +10086,26 @@
     },
     "CreateRefreshTaskRequest": {
       "document": "CreateRefreshTask请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定集群列表,若为空则标识同步所有集群",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否只同步列表",
+          "example": "无",
+          "member": "bool",
+          "name": "IsSyncListOnly",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "CreateRefreshTaskResponse": {
@@ -10098,7 +10117,7 @@
           "example": "123456",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10108,7 +10127,17 @@
           "example": "\"Succ\"",
           "member": "string",
           "name": "CreateResult",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回创建的新集群检查任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "NewTaskID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

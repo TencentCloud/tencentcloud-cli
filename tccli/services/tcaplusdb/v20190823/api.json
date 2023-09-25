@@ -3593,23 +3593,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "kafaka address",
+          "document": "Kafka address",
           "example": "ckafka-3azrwxvw.ap-shanghai.ckafka.tencentcloudmq.com:6006",
           "member": "string",
           "name": "Address",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "kafaka topic",
+          "document": "Kafka topic",
           "example": "tcapstream",
           "member": "string",
           "name": "Topic",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3618,8 +3616,7 @@
           "member": "string",
           "name": "User",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3628,8 +3625,7 @@
           "member": "string",
           "name": "Password",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3638,8 +3634,7 @@
           "member": "string",
           "name": "Instance",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3648,8 +3643,7 @@
           "member": "int64",
           "name": "IsVpc",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

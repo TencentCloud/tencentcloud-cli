@@ -16,6 +16,14 @@
         "title": "活动商品下单取消扣减商品配额"
       }
     ],
+    "CheckDictInActivity": [
+      {
+        "document": "批量查询dictid是否在某个活动中",
+        "input": "POST / HTTP/1.1\nHost: opc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDictInActivity\n<公共请求参数>\n\n{\n    \"DictIds\": [\n        2011,\n        2321,\n        2000\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"78c6a62e-e0c1-474f-802d-42a341e24c8b\",\n        \"Result\": [\n            {\n                \"DictId\": 2000,\n                \"Result\": false\n            },\n            {\n                \"DictId\": 2321,\n                \"Result\": false\n            },\n            {\n                \"DictId\": 2011,\n                \"Result\": false\n            }\n        ]\n    }\n}",
+        "title": "批量查询"
+      }
+    ],
     "CheckUinFollower": [
       {
         "document": "判断CheckUin和OAAccountId在TCC中是否有关联关系",

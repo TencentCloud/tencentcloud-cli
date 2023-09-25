@@ -38,9 +38,10 @@ Output:
                     }
                 ],
                 "ApplicationBaseInfo": {
-                    "WindowUseType": "xxx",
+                    "WindowUseType": "ApplicationWindow",
                     "WindowName": "xxx",
-                    "WindowClassName": "xxx"
+                    "WindowClassName": "xxx",
+                    "WindowCaptureMode": "HOOK"
                 },
                 "ApplicationNature": "PUBLIC",
                 "ApplicationStores": [

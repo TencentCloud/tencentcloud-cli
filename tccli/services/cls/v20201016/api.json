@@ -596,16 +596,16 @@
       "status": "online"
     },
     "QueryMetric": {
-      "document": "时序日志主题查询",
+      "document": "查询指定时刻指标的最新值",
       "input": "QueryMetricRequest",
-      "name": "时序日志主题查询",
+      "name": "指标查询（最新值查询）",
       "output": "QueryMetricResponse",
       "status": "online"
     },
     "QueryRangeMetric": {
-      "document": "时序范围检索",
+      "document": "查询指定时间范围内指标的变化趋势",
       "input": "QueryRangeMetricRequest",
-      "name": "时序范围检索",
+      "name": "指标查询（范围查询）",
       "output": "QueryRangeMetricResponse",
       "status": "online"
     },
@@ -4150,6 +4150,7 @@
           "example": "xxxx-xx-xx-xx-xxxxxxxx",
           "member": "string",
           "name": "TopicId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10875,7 +10876,35 @@
     },
     "QueryMetricRequest": {
       "document": "QueryMetric请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询语句，使用PromQL语法\t",
+          "example": "access_evaluation_duration_bucket",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指标主题ID",
+          "example": "8e7c3bd9-ef13-4981-xxxx-207971e1f80f",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间，秒级Unix时间戳\t",
+          "example": "1695197431",
+          "member": "uint64",
+          "name": "Time",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "QueryMetricResponse": {
@@ -10883,19 +10912,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "Metric结果类型",
+          "document": "指标查询结果类型",
           "example": "vector",
           "member": "string",
           "name": "ResultType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Metric结果集",
-          "example": "[{\"metric\":{\"__name__\":\"up\",\"job\":\"prometheus\",\"instance\":\"local",
+          "document": "指标查询结果",
+          "example": "无",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10910,12 +10941,78 @@
     },
     "QueryRangeMetricRequest": {
       "document": "QueryRangeMetric请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标主题ID",
+          "example": "8e7c3bd9-ef13-4981-xxxx-207971e1f80f",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询语句，使用PromQL语法",
+          "example": "access_evaluation_duration_bucket",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始时间，秒级Unix时间戳",
+          "example": "1695193830",
+          "member": "uint64",
+          "name": "Start",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间，秒级Unix时间戳",
+          "example": "1695197431",
+          "member": "uint64",
+          "name": "End",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间间隔，单位秒",
+          "example": "15",
+          "member": "uint64",
+          "name": "Step",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "QueryRangeMetricResponse": {
       "document": "QueryRangeMetric返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "指标查询结果类型",
+          "example": "matrix",
+          "member": "string",
+          "name": "ResultType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标查询结果",
+          "example": "无",
+          "member": "string",
+          "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

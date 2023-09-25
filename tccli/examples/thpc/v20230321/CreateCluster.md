@@ -9,7 +9,7 @@ tccli thpc CreateCluster --cli-unfold-argument  \
     --ManagerNodeCount 1 \
     --Placement.Zone ap-guangzhou-2 \
     --SchedulerType SLURM \
-    --ImageId img-3la7wgnt \
+    --ImageId img-l8og963d \
     --ComputeNode.InstanceChargeType SPOTPAID \
     --ComputeNode.InstanceType S2.SMALL2 \
     --ComputeNodeCount 2 \

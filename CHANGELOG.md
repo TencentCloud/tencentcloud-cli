@@ -1,3 +1,142 @@
+# Release 3.0.855.1
+
+## 应用云渲染(car) 版本：2022-01-10
+
+### 第 5 次发布
+
+发布时间：2023-09-25 01:08:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApplicationBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1710/81862#ApplicationBaseInfo)
+
+	* 新增成员：WindowCaptureMode
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 9 次发布
+
+发布时间：2023-09-25 01:12:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRiskCenterAssetViewCFGRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81990)
+* [DescribeRiskCenterAssetViewWeakPasswordRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81989)
+* [DescribeRiskCenterServerRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81988)
+* [DescribeRiskCenterWebsiteRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/81987)
+
+新增数据结构：
+
+* [AssetViewCFGRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewCFGRisk)
+* [AssetViewWeakPassRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewWeakPassRisk)
+* [ServerRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServerRisk)
+* [ServerRiskSuggestion](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ServerRiskSuggestion)
+* [WebsiteRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#WebsiteRisk)
+
+
+
+## 数据加速器 GooseFS(goosefs) 版本：2022-05-19
+
+### 第 6 次发布
+
+发布时间：2023-09-25 01:16:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MappedBucket](http://document.tencentcloudapi.woa.com/document/product/1716/81241#MappedBucket)
+
+	* 新增成员：Status, AccelerateFlag, BucketRegion
+
+
+
+
+## 数学作业批改(hcm) 版本：2018-11-06
+
+### 第 2 次发布
+
+发布时间：2023-09-25 01:17:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [Evaluation](http://document.tencentcloudapi.woa.com/document/product/1004/30616)
+
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 28 次发布
+
+发布时间：2023-09-25 01:23:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDBInstances](http://document.tencentcloudapi.woa.com/document/product/238/19969)
+
+	* 新增入参：PaginationType
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 39 次发布
+
+发布时间：2023-09-25 01:27:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/81949)
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 107 次发布
+
+发布时间：2023-09-25 01:28:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBandwidthPackage](http://document.tencentcloudapi.woa.com/document/product/215/19212)
+
+	* 新增入参：Egress
+
+
+
+
 # Release 3.0.854.1
 
 ## 云硬盘(cbs) 版本：2017-03-12

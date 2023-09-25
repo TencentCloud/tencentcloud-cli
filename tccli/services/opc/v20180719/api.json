@@ -14,6 +14,13 @@
       "output": "CancelActivityGoodsQuotaDeductionResponse",
       "status": "online"
     },
+    "CheckDictInActivity": {
+      "document": "检查字典id是否在某个活动下有售卖",
+      "input": "CheckDictInActivityRequest",
+      "name": "检查某个产品是否在某个活动下有售卖",
+      "output": "CheckDictInActivityResponse",
+      "status": "online"
+    },
     "CheckUinFollower": {
       "document": "校验uin和OA账号在tcc系统中是否有关联关系",
       "input": "CheckUinFollowerRequest",
@@ -226,6 +233,69 @@
         }
       ],
       "type": "object"
+    },
+    "CheckDictInActivityRequest": {
+      "document": "CheckDictInActivity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "官网产品对应的字典ID,一次最大10个",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DictIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDictInActivityResponse": {
+      "document": "CheckDictInActivity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "[{\"2000\": false}, {\"2486\": false}]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"2000\": false}, {\"2486\": false}]",
+          "member": "CheckDictInActivityResult",
+          "name": "Result",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDictInActivityResult": {
+      "document": "当前dictid是否在某个活动下",
+      "members": [
+        {
+          "disabled": false,
+          "document": "官网字典id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2000",
+          "member": "uint64",
+          "name": "DictId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true存在否则不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Result",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CheckUinFollowerRequest": {
       "document": "CheckUinFollower请求参数结构体",

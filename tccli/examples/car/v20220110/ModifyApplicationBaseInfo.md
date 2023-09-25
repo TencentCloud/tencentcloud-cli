@@ -14,6 +14,7 @@ tccli car ModifyApplicationBaseInfo --cli-unfold-argument  \
     --ApplicationBaseInfo.WindowUseType ApplicationDesktop \
     --ApplicationBaseInfo.WindowName xxx \
     --ApplicationBaseInfo.WindowClassName xxx \
+    --ApplicationBaseInfo.WindowCaptureMode  \
     --ApplicationStores.0.CosBucket bucket-123456 \
     --ApplicationStores.0.CosRegion ap-guangzhou \
     --ApplicationStores.0.StoreType ARCHIVE \

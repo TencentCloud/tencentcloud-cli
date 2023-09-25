@@ -582,11 +582,11 @@
       "status": "online"
     },
     "ModifyPublicIPSwitchStatus": {
-      "document": "单个修改互联网边界防火墙开关",
+      "document": "已上新接口，支持串行\n\n单个修改互联网边界防火墙开关",
       "input": "ModifyPublicIPSwitchStatusRequest",
       "name": "单个修改互联网边界防火墙开关",
       "output": "ModifyPublicIPSwitchStatusResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyResourceGroup": {
       "document": "ModifyResourceGroup-资产中心资产组信息修改\n\n",
