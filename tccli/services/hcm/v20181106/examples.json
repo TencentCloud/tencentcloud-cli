@@ -2,16 +2,10 @@
   "actions": {
     "Evaluation": [
       {
-        "document": "同步模式，直接返回结果，TaskId 为空",
+        "document": "传入速算图像url，返回批改结果",
         "input": "https://hcm.tencentcloudapi.com/?Action=Evaluation\n&SessionId=s_1596611058609_2868392\n&Url=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SessionId\": \"s_1596611058609_2868392\",\n        \"Items\": [\n            {\n                \"Item\": \"YES\",\n                \"ItemString\": \"600*5=6*500\",\n                \"ItemConf\": 0,\n                \"ItemCoord\": {\n                    \"Height\": 130,\n                    \"Width\": 531,\n                    \"X\": 1135,\n                    \"Y\": 953\n                },\n                \"Answer\": \"\",\n                \"ExpressionType\": \"1\",\n                \"QuestionId\": \"\"\n            },\n            {\n                \"Item\": \"YES\",\n                \"ItemString\": \"4厘米=(40)毫米\",\n                \"ItemConf\": 0,\n                \"ItemCoord\": {\n                    \"Height\": 125,\n                    \"Width\": 579,\n                    \"X\": 1489,\n                    \"Y\": 800\n                },\n                \"Answer\": \"\",\n                \"ExpressionType\": \"7\",\n                \"QuestionId\": \"\"\n            }\n        ],\n        \"RequestId\": \"17c1a0ba-0b66-4b28-892f-f248dcc5f548\",\n        \"TaskId\": \"\"\n    }\n}",
-        "title": "速算题目批改-同步模式"
-      },
-      {
-        "document": "异步模式，只返回 TaskId",
-        "input": "https://hcm.tencentcloudapi.com/?Action=Evaluation\n&SessionId=stress_test_956938\n&Url=xxx\n&IsAsync=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"SessionId\": \"1112asdfasdf1\",\n        \"Items\": null,\n        \"TaskId\": \"1000010\",\n        \"RequestId\": \"55ad4928-fa5-415c-2cb-868d5e3171431\"\n    }\n}",
-        "title": "速算题目批改-异步模式"
+        "output": "{\n    \"Response\": {\n        \"SessionId\": \"s_1596611058609_2868392\",\n        \"Items\": [\n            {\n                \"Item\": \"YES\",\n                \"ItemString\": \"600*5=6*500\",\n                \"ItemConf\": 0,\n                \"ItemCoord\": {\n                    \"Height\": 130,\n                    \"Width\": 531,\n                    \"X\": 1135,\n                    \"Y\": 953\n                },\n                \"Answer\": \"\",\n                \"ExpressionType\": \"1\",\n                \"QuestionId\": \"\"\n            },\n            {\n                \"Item\": \"YES\",\n                \"ItemString\": \"4厘米=(40)毫米\",\n                \"ItemConf\": 0,\n                \"ItemCoord\": {\n                    \"Height\": 125,\n                    \"Width\": 579,\n                    \"X\": 1489,\n                    \"Y\": 800\n                },\n                \"Answer\": \"\",\n                \"ExpressionType\": \"7\",\n                \"QuestionId\": \"\"\n            }\n        ],\n        \"RequestId\": \"17c1a0ba-0b66-4b28-892f-f248dcc5f548\"\n    }\n}",
+        "title": "速算题目批改"
       }
     ]
   },

@@ -6903,7 +6903,7 @@
         },
         {
           "disabled": false,
-          "document": "规则防御模式,0观察模式 1拦截模式",
+          "document": "规则引擎防护模式,0观察模式 1拦截模式",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -6914,7 +6914,7 @@
         },
         {
           "disabled": false,
-          "document": "AI防御模式,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式",
+          "document": "规则引擎和AI引擎防护模式联合状态,10规则引擎观察&&AI引擎关闭模式 11规则引擎观察&&AI引擎观察模式 12规则引擎观察&&AI引擎拦截模式 20规则引擎拦截&&AI引擎关闭模式 21规则引擎拦截&&AI引擎观察模式 22规则引擎拦截&&AI引擎拦截模式",
           "example": "1",
           "member": "uint64",
           "name": "Engine",
@@ -7106,6 +7106,17 @@
           "member": "string",
           "name": "SgDetail",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名类型:hybrid表示混合云域名，public表示公有云域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CloudType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10472,7 +10483,7 @@
         },
         {
           "disabled": false,
-          "document": "修改域名的Ipv6开关为Status （0:关闭 1:开启）",
+          "document": "修改域名的Ipv6开关为Status （1:开启 2:关闭）",
           "example": "1",
           "member": "int64",
           "name": "Status",

@@ -4112,7 +4112,7 @@
           "example": "bwp-xxxxxx",
           "member": "string",
           "name": "BandwidthPackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4122,7 +4122,7 @@
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4132,7 +4132,7 @@
           "example": "TOP5_POSTPAID_BY_MONTH",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4142,7 +4142,7 @@
           "example": "未命名",
           "member": "string",
           "name": "BandwidthPackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4152,7 +4152,7 @@
           "example": "2021-04-27T09:06:07Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4162,7 +4162,7 @@
           "example": "CREATED",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4172,7 +4172,7 @@
           "example": "无",
           "member": "Resource",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4182,9 +4182,19 @@
           "example": "10",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络出口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Egress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5739,7 +5749,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>",
+          "document": "带宽包类型, 默认值: BGP, 可选值:\n<li>BGP: 普通BGP共享带宽包</li>\n<li>HIGH_QUALITY_BGP: 精品BGP共享带宽包</li>\n<li>SINGLEISP_CMCC: 中国移动共享带宽包</li>\n<li>SINGLEISP_CTCC: 中国电信共享带宽包</li>\n<li>SINGLEISP_CUCC: 中国联通共享带宽包</li>",
           "example": "BGP",
           "member": "string",
           "name": "NetworkType",
@@ -5808,6 +5818,15 @@
           "name": "TimeSpan",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "网络出口，默认值：center_egress1",
+          "example": "center_egress1",
+          "member": "string",
+          "name": "Egress",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

@@ -105,9 +105,11 @@ Output:
 
 **Example 4: 创建指定了签署方签名方式的签署二维码**
 
-1.使用B2C模板 yDRscUUgyg1zr7wnUyJ8QMwwnHc4OOcQ 创建了一个签署二维码
-2.指定RecipientId 为 yDRscUUgyg3zr9vfUyJ8QKwCN7z9YcOh 的签署人在签名时可以手写（HANDWRITE） 或者使用系统签名 (SYSTEM_ESIGN)
-3.指定RecipientId 为 yDwJNUUckpkojrmqUxTFHk0yndh70CpW 的签署人在签名时只能使用AI智能识别手写签名（OCR_ESIGN）
+1. 使用B2C模板 yDRscUUgyg1zr7wnUyJ8QMwwnHc4OOcQ 创建了一个签署二维码。
+
+2.指定RecipientId 为 yDRscUUgyg3zr9vfUyJ8QKwCN7z9YcOh 的签署人在签名时可以手写（HANDWRITE） 或者使用系统签名 (SYSTEM_ESIGN)。
+
+3.指定RecipientId 为 yDwJNUUckpkojrmqUxTFHk0yndh70CpW 的签署人在签名时只能使用AI智能识别手写签名（OCR_ESIGN）。
 
 Input: 
 

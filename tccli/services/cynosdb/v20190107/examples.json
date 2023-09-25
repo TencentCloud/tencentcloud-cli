@@ -161,8 +161,8 @@
     "CreateResourcePackage": [
       {
         "document": "新购资源包",
-        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSourcePackage\n<公共请求参数>\n\n{\n    \"InstanceType\": \"abc\",\n    \"PackageRegion\": \"abc\",\n    \"PackageType\": \"abc\",\n    \"PackageVersion\": \"abc\",\n    \"PackageSpec\": 0,\n    \"ExpireDay\": 0,\n    \"PackageName\": \"abc\",\n    \"PackageCount\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"abc\"\n        ],\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSourcePackage\n<公共请求参数>\n\n{\n    \"InstanceType\": \"cynosdb-serverless\",\n    \"PackageRegion\": \"overseas\",\n    \"PackageType\": \"CCU\",\n    \"PackageVersion\": \"base\",\n    \"PackageSpec\": 50,\n    \"ExpireDay\": 180,\n    \"PackageName\": \"计算资源包-1\",\n    \"PackageCount\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"BigDealIds\": [\n            \"20230921633039500xxxxxx\"\n        ],\n        \"DealNames\": [\n            \"20230921633039500xxxxxx\"\n        ],\n        \"RequestId\": \"a62d07af-xxxx-xxxx-xxxx-44b05196b40f\"\n    }\n}",
         "title": "新购资源包"
       }
     ],

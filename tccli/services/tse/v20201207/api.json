@@ -1702,7 +1702,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "证书私钥",
           "example": "-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----",
           "member": "string",
@@ -1711,7 +1711,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "证书pem格式",
           "example": "-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----",
           "member": "string",

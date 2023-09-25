@@ -73,7 +73,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "异步模式标识，0：同步模式，1：异步模式。默认为同步模式",
           "example": "0",
           "member": "int64",
@@ -147,6 +147,7 @@
           "example": "17c1a0ba-0b66-4b28-892f-f248dcc5f548",
           "member": "string",
           "name": "SessionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -156,15 +157,17 @@
           "example": "[{ \t\t\t\t\"Item\": \"YES\", \t\t\t\t\"ItemString\": \"600*5=6*500\", \t\t\t\t\"Item",
           "member": "Item",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "任务 id，用于查询接口",
           "example": "\"\"",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

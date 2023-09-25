@@ -2123,7 +2123,7 @@
         {
           "disabled": false,
           "document": "资源包唯一ID",
-          "example": "pkg-test",
+          "example": "package-abcd1234",
           "member": "string",
           "name": "PackageIds",
           "required": true,
@@ -3923,7 +3923,7 @@
         {
           "disabled": false,
           "document": "实例类型",
-          "example": "cdb",
+          "example": "cynosdb-serverless",
           "member": "string",
           "name": "InstanceType",
           "required": true,

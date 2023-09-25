@@ -184,25 +184,25 @@
   },
   "objects": {
     "AsyncRecognitionTaskInfo": {
-      "document": "音频流异步识别任务信息",
+      "document": "[音频流异步识别](https://cloud.tencent.com/document/api/1093/37824#AsyncRecognitionTasks)任务信息",
       "members": [
         {
           "disabled": false,
           "document": "任务ID",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "音频流Url",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -210,15 +210,15 @@
       "usage": "out"
     },
     "AsyncRecognitionTasks": {
-      "document": "音频流异步识别任务列表",
+      "document": "[音频流异步识别任务列表](https://cloud.tencent.com/document/product/1093/52060#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
           "document": "任务列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "AsyncRecognitionTaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1190,7 +1190,7 @@
       "type": "object"
     },
     "HotWord": {
-      "document": "热词的词和权重",
+      "document": "[热词的词和权重](https://cloud.tencent.com/document/product/1093/41111#2.-.E8.BE.93.E5.85.A5.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
@@ -1218,7 +1218,7 @@
       "usage": "both"
     },
     "Model": {
-      "document": "自学习模型信息",
+      "document": "[自学习模型信息](https://cloud.tencent.com/document/product/1093/90813#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
@@ -1226,7 +1226,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1236,7 +1236,7 @@
           "example": "无",
           "member": "string",
           "name": "DictName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1246,7 +1246,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1256,7 +1256,7 @@
           "example": "无",
           "member": "string",
           "name": "ModelType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1266,7 +1266,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1276,7 +1276,7 @@
           "example": "无",
           "member": "int64",
           "name": "ModelState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1286,7 +1286,7 @@
           "example": "无",
           "member": "string",
           "name": "AtUpdated",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1296,7 +1296,7 @@
           "example": "无",
           "member": "string",
           "name": "TagInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1759,35 +1759,35 @@
       "type": "object"
     },
     "SentenceWord": {
-      "document": "一句话识别返回的词时间戳",
+      "document": "[一句话识别](https://cloud.tencent.com/document/product/1093/35646#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)返回的词时间戳",
       "members": [
         {
           "disabled": false,
           "document": "词结果",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Word",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词在音频中的开始时间",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词在音频中的结束时间",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1877,7 +1877,7 @@
       "type": "object"
     },
     "Task": {
-      "document": "录音文件识别、实时语音异步识别请求的返回数据",
+      "document": "[录音文件识别](https://cloud.tencent.com/document/product/1093/37823#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)、[实时语音异步识别](https://cloud.tencent.com/document/product/1093/52061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)请求的返回数据",
       "members": [
         {
           "disabled": false,
@@ -1885,7 +1885,7 @@
           "example": "400000000",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -1893,7 +1893,7 @@
       "usage": "out"
     },
     "TaskStatus": {
-      "document": "获取录音识别结果的返回参数",
+      "document": "[获取录音识别结果的返回参数](https://cloud.tencent.com/document/product/1093/37822#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
@@ -1901,7 +1901,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1911,7 +1911,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1921,7 +1921,7 @@
           "example": "waiting",
           "member": "string",
           "name": "StatusStr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1931,7 +1931,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1941,7 +1941,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1951,7 +1951,7 @@
           "example": "无",
           "member": "SentenceDetail",
           "name": "ResultDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1961,7 +1961,7 @@
           "example": "1.2",
           "member": "float",
           "name": "AudioDuration",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         }
@@ -2042,85 +2042,85 @@
       "type": "object"
     },
     "Vocab": {
-      "document": "词表内容",
+      "document": "[词表内容](https://cloud.tencent.com/document/product/1093/41484#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
           "document": "热词表名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表描述",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "VocabId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词权重列表",
-          "example": "",
+          "example": "无",
           "member": "HotWord",
           "name": "WordWeights",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词表创建时间",
-          "example": "",
+          "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "词表更新时间",
-          "example": "",
+          "example": "无",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "热词表状态，1为默认状态即在识别时默认加载该热词表进行识别，0为初始状态",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "标签数组\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -2128,7 +2128,7 @@
       "usage": "out"
     },
     "VoicePrintBaseData": {
-      "document": "说话人基础数据，包括说话人id和说话人昵称",
+      "document": "[说话人基础数据](https://cloud.tencent.com/document/product/1093/94483#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)，包括说话人id和说话人昵称",
       "members": [
         {
           "disabled": false,
@@ -2154,7 +2154,7 @@
       "usage": "out"
     },
     "VoicePrintCountData": {
-      "document": "统计返回注册数量结构",
+      "document": "统计返回[说话人注册数量](https://cloud.tencent.com/document/product/1093/96061#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
@@ -2371,7 +2371,7 @@
       "type": "object"
     },
     "VoicePrintVerifyData": {
-      "document": "说话人验证数据",
+      "document": "[说话人验证数据](https://cloud.tencent.com/document/product/1093/94481#3.-.E8.BE.93.E5.87.BA.E5.8F.82.E6.95.B0)",
       "members": [
         {
           "disabled": false,
