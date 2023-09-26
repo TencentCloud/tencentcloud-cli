@@ -41,7 +41,8 @@ Output:
                 "ScanMode": "medium",
                 "ScanStatus": 0,
                 "EndpointId": "vpce-xxxxxxxx",
-                "EndpointIp": "10.10.10.10"
+                "EndpointIp": "10.10.10.10",
+                "SwitchWeight": 100
             }
         ],
         "Total": 10,

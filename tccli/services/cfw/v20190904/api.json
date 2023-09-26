@@ -1390,7 +1390,17 @@
           "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1400,7 +1410,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ioc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1410,7 +1420,7 @@
           "example": "未知",
           "member": "string",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1420,7 +1430,7 @@
           "example": "封禁列表命中",
           "member": "string",
           "name": "EventName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1430,7 +1440,7 @@
           "example": "1",
           "member": "int64",
           "name": "Direction",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1440,7 +1450,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1450,7 +1460,7 @@
           "example": "中国广东省广州",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1460,7 +1470,7 @@
           "example": "1",
           "member": "int64",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1470,7 +1480,7 @@
           "example": "2021-09-21 12:00:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1480,7 +1490,7 @@
           "example": "3000-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1490,7 +1500,7 @@
           "example": "0",
           "member": "string",
           "name": "IgnoreReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1500,7 +1510,7 @@
           "example": "手动添加",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1510,7 +1520,7 @@
           "example": "UniqueId",
           "member": "string",
           "name": "UniqueId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1520,7 +1530,7 @@
           "example": "1",
           "member": "int64",
           "name": "MatchTimes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1530,7 +1540,7 @@
           "example": "中国",
           "member": "string",
           "name": "Country",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1540,7 +1550,7 @@
           "example": "comment",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1852,6 +1862,15 @@
           "member": "int64",
           "name": "RuleType",
           "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否覆盖重复数据，1覆盖，非1不覆盖，跳过重复数据",
+          "example": "无",
+          "member": "int64",
+          "name": "CoverDuplicate",
+          "required": false,
           "type": "int"
         }
       ],
@@ -6804,6 +6823,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "SwitchWeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8334,11 +8363,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "0 关闭开关\n1 打开开关",
+          "document": "0 关闭开关\n1 打开开关\n2 不操作开关，此次切换模式",
           "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -8349,6 +8378,24 @@
           "name": "EdgeIpSwitchLst",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0 不自动选择子网\n1 自动选择子网创建私有连接",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoChooseSubnet",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0 切换为旁路\n1 切换为串行\n2 不切换模式，此次操作开关",
+          "example": "0",
+          "member": "int64",
+          "name": "SwitchMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9740,6 +9787,16 @@
           "example": "0",
           "member": "int64",
           "name": "UpdateEnable",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是的需要升级引擎 支持 nat拨测 1需要 0不需要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedProbeEngineUpdate",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

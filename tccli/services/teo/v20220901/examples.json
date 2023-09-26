@@ -18,16 +18,16 @@
     ],
     "CreateAccelerationDomain": [
       {
-        "document": "创建加速域名",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"qq.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"qq.com\",\n        \"BackupOrigin\": \"\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "创建加速域名"
+        "document": "创建源站类型为 AWS S3，开启私有访问，鉴权算法版本为 AWS signature v2 的加速域名。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"qq.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"AWS_S3\",\n        \"Origin\": \"https://test.s3.ap-east-1.amazonaws.com\",\n        \"PrivateAccess\": \"on\",\n        \"PrivateParameters\": [\n            {\n                \"Name\": \"AccessKeyId\",\n                \"Value\": \"AKIDdDva7VjFk7LQJ0X5WnbKE7mQTest\"\n            },\n            {\n                \"Name\": \"SecretAccessKey\",\n                \"Value\": \"nMirpdWhhT6bxPsaFwYM1SzQrTest\"\n            },\n            {\n                \"Name\": \"SignatureVersion\",\n                \"Value\": \"v2\"\n            },\n            {\n                \"Name\": \"Region\",\n                \"Value\": \"ap-east-1\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
+        "title": "创建源站类型为 AWS S3 的加速域名"
       },
       {
-        "document": "创建源站类型为S3兼容，鉴权版本为AWS signature v2的加速域名",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"DomainName\": \"qq.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"OriginInfo\": {\n        \"OriginType\": \"AWS_S3\",\n        \"Origin\": \"https://teo.cos.ap-beijing.myqcloud.com\",\n        \"PrivateParameters\": [\n            {\n                \"Name\": \"AccessKeyId\",\n                \"Value\": \"AKIDdDva7VjFk7LQJ0X5WnbKE7mQTest\"\n            },\n            {\n                \"Name\": \"SecretAccessKey\",\n                \"Value\": \"nMirpdWhhT6bxPsaFwYM1SzQrTest\"\n            },\n            {\n                \"Name\": \"SignatureVersion\",\n                \"Value\": \"v2\"\n            },\n            {\n                \"Name\": \"Region\",\n                \"Value\": \"ap-beijing\"\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a703\"\n    }\n}",
-        "title": "创建AWS signature v2鉴权类型的加速域名"
+        "document": "创建源站类型为域名的加速域名。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAccelerationDomain\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"DomainName\": \"qq.com\",\n    \"OriginInfo\": {\n        \"OriginType\": \"ip_domain\",\n        \"Origin\": \"www.test.com\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "创建源站类型为域名的加速域名"
       }
     ],
     "CreateAliasDomain": [
@@ -184,10 +184,22 @@
     ],
     "CreateZone": [
       {
-        "document": "正常创建站点。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"JumpStart\": false,\n    \"Type\": \"full\",\n    \"ZoneName\": \"example.com\",\n    \"AllowDuplicates\": false,\n    \"AliasZoneName\": \"zone-example\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"RequestId\": \"2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建站点"
+        "document": "创建 CNAME 接入类型的站点 example.com，服务区域为全球可用区，绑定套餐 edgeone-37q0w6qali10。接口将返回站点 ID 和站点归属权验证信息。您可以对站点进行归属权验证，可参考 [站点/域名归属权验证](https://cloud.tencent.com/document/product/1552/70789)。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"Type\": \"partial\",\n    \"ZoneName\": \"example.com\",\n    \"Area\": \"global\",\n    \"PlanId\": \"edgeone-37q0w6qali10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"OwnershipVerification\": {\n            \"DnsVerification\": {\n                \"Subdomain\": \"edgeonereclaim\",\n                \"RecordType\": \"TXT\",\n                \"RecordValue\": \"reclaim-a24aba2420cf4ce8b7bff7c8be6d337f\"\n            },\n            \"FileVerification\": {\n                \"Path\": \"/.well-known/teo-verification/vd4ewuqa9n.txt\",\n                \"Content\": \"88v24mnnljwbhaohrpfx80f63duhdnjx\"\n            },\n            \"NsVerification\": null\n        },\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "创建 CNAME 接入类型的站点"
+      },
+      {
+        "document": "创建NS接入模式站点 example.com，服务区域为中国大陆可用区，绑定套餐 edgeone-37q0w6qali10。接口将返回 DNS 服务器信息，您需要前往域名注册商处修改，可参考 [修改 DNS 服务器](https://cloud.tencent.com/document/product/1552/90452)。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"Type\": \"full\",\n    \"ZoneName\": \"example.com\",\n    \"Area\": \"mainland\",\n    \"PlanId\": \"edgeone-37q0w6qali10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"OwnershipVerification\": {\n            \"DnsVerification\": null,\n            \"FileVerification\": null,\n            \"NsVerification\": {\n                \"NameServers\": [\n                    \"ns1.teodns.com\",\n                    \"ns2.teodns.com\"\n                ]\n            }\n        },\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "创建 NS 接入类型的站点 "
+      },
+      {
+        "document": "创建无域名接入模式站点，绑定套餐 edgeone-37q0w6qali10。接口将返回站点 ID。有关无域名接入模式的相关信息，可参考 [快速启用四层代理服务](https://cloud.tencent.com/document/product/1552/96051)。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateZone\n<公共请求参数>\n\n{\n    \"Type\": \"noDomainAccess\",\n    \"PlanId\": \"edgeone-37q0w6qali10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"zone-27q0p0bali16\",\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "创建无域名接入模式站点"
       }
     ],
     "DeleteAccelerationDomains": [
@@ -256,10 +268,10 @@
     ],
     "DescribeAccelerationDomains": [
       {
-        "document": "查询指定domain-id的加速域名信息。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerationDomains\n<公共请求参数>\n\n{\n    \"Direction\": \"desc\",\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Limit\": 0,\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"domain-3d5dg39c\"\n            ],\n            \"Name\": \"domain-id\"\n        }\n    ],\n    \"Offset\": 0,\n    \"Order\": \"created_on\",\n    \"Match\": \"all\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\",\n        \"AccelerationDomains\": [\n            {\n                \"DomainName\": \"example.qq.com\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"DomainStatus\": \"online\",\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"Cname\": \"example.qq.com.cname.com\",\n                \"OriginDetail\": {\n                    \"Origin\": \"qq.com\",\n                    \"OriginType\": \"ip_domain\",\n                    \"BackupOrigin\": \"\"\n                }\n            }\n        ]\n    }\n}",
-        "title": "acceleration_domains"
+        "document": "查询指定 zone-id 的下的源站类型为 IP_DOMAIN 的所有加速域名的信息，并将结果按照创建时间降序排列。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAccelerationDomains\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-20hyebgyfsko\",\n    \"Filters\": [\n        {\n            \"Fuzzy\": true,\n            \"Values\": [\n                \"IP_DOMAIN\"\n            ],\n            \"Name\": \"origin-type\"\n        }\n    ],\n    \"Direction\": \"desc\",\n    \"Order\": \"created_on\",\n    \"Match\": \"all\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AccelerationDomains\": [\n            {\n                \"ZoneId\": \"zone-20hyebgyfsko\",\n                \"DomainName\": \"www.qq.com\",\n                \"DomainStatus\": \"online\",\n                \"OriginDetail\": {\n                    \"OriginType\": \"IP_DOMAIN\",\n                    \"Origin\": \"origin.qq.com\",\n                    \"BackupOrigin\": \"\",\n                    \"PrivateParameters\": [],\n                    \"PrivateAccess\": \"\",\n                    \"OriginGroupName\": \"\",\n                    \"BackOriginGroupName\": \"\"\n                },\n                \"IdentificationStatus\": \"finished\",\n                \"Cname\": \"www.qq.com.eo.dnse3.com\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
+        "title": "查询指定站点下的域名信息"
       }
     ],
     "DescribeAliasDomains": [
@@ -532,9 +544,9 @@
     ],
     "DescribeZones": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{\n    \"Limit\": 20,\n    \"Filters\": [\n        {\n            \"Fuzzy\": false,\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Name\": \"zone-name\"\n        }\n    ],\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Zones\": [\n            {\n                \"ZoneId\": \"zone-27q0p0bali16\",\n                \"ZoneName\": \"example.com\",\n                \"OriginalNameServers\": [\n                    \"ns1.example.com.\",\n                    \"ns2.example.com.\"\n                ],\n                \"NameServers\": [\n                    \"ns1.teodns.com.\",\n                    \"ns2.teodns.com.\"\n                ],\n                \"VanityNameServers\": {\n                    \"Switch\": \"on\",\n                    \"Servers\": [\n                        \"ns1.example.com\",\n                        \"ns2.example.com\"\n                    ]\n                },\n                \"VanityNameServersIps\": [\n                    {\n                        \"Name\": \"ns1.example.com\",\n                        \"IPv4\": \"1.1.1.1\"\n                    }\n                ],\n                \"Status\": \"active\",\n                \"Type\": \"full\",\n                \"Paused\": false,\n                \"CnameSpeedUp\": \"enabled\",\n                \"CnameStatus\": \"finished\",\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"test\",\n                        \"TagValue\": \"example\"\n                    }\n                ],\n                \"Resources\": [],\n                \"ModifiedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"CreatedOn\": \"2020-09-22T00:00:00+00:00\",\n                \"Area\": \"mainland\",\n                \"ActiveStatus\": \"active\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"fd9d86df-b7e8-4469-b928-18cb7fd1d341\"\n    }\n}",
+        "document": "精确查询站点名称为“example.com”的站点信息。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZones\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone-name\",\n            \"Values\": [\n                \"example.com\"\n            ],\n            \"Fuzzy\": false\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Zones\": [\n            {\n                \"ZoneId\": \"zone-2noz3g48ev6k\",\n                \"ZoneName\": \"example.com\",\n                \"ActiveStatus\": \"inactive\",\n                \"AliasZoneName\": \"\",\n                \"Area\": \"global\",\n                \"CnameSpeedUp\": \"enabled\",\n                \"CnameStatus\": \"pending\",\n                \"CreatedOn\": \"2023-09-18T07:41:05Z\",\n                \"IsFake\": 0,\n                \"LockStatus\": \"enable\",\n                \"ModifiedOn\": \"2023-09-18T07:41:50Z\",\n                \"NameServers\": [\n                    \"ns1.teodns.com.\",\n                    \"ns2.teodns.com.\"\n                ],\n                \"OriginalNameServers\": [\n                    \"ns1.example.com.\",\n                    \"ns2.example.com.\"\n                ],\n                \"Paused\": false,\n                \"Resources\": [\n                    {\n                        \"Area\": \"global\",\n                        \"AutoRenewFlag\": 0,\n                        \"CreateTime\": \"2023-09-18T07:41:18Z\",\n                        \"EnableTime\": \"2023-09-18T07:41:18Z\",\n                        \"ExpireTime\": \"2099-12-31T15:59:59Z\",\n                        \"Group\": \"plan\",\n                        \"Id\": \"edgeone-2noz3qqkvqth\",\n                        \"PayMode\": 0,\n                        \"PlanId\": \"edgeone-2noz3qqkvqth\",\n                        \"Status\": \"normal\",\n                        \"Sv\": [\n                            {\n                                \"Key\": \"sv_edgeone_plan_sec_ent_flatfee_cm\",\n                                \"Value\": \"1\",\n                                \"InstanceId\": \"\",\n                                \"Pack\": \"\",\n                                \"ProtectionSpecs\": \"\"\n                            }\n                        ]\n                    },\n                    {\n                        \"Area\": \"global\",\n                        \"AutoRenewFlag\": 0,\n                        \"CreateTime\": \"2023-09-18T07:41:18Z\",\n                        \"EnableTime\": \"2023-09-18T07:41:18Z\",\n                        \"ExpireTime\": \"2099-12-31T15:59:59Z\",\n                        \"Group\": \"pay-as-you-go\",\n                        \"Id\": \"edgeone-2noz3t4be7xw\",\n                        \"PayMode\": 0,\n                        \"PlanId\": \"edgeone-2noz3qqkvqth\",\n                        \"Status\": \"normal\",\n                        \"Sv\": [\n                            {\n                                \"Key\": \"sv_edgeone_sec_request_queries_month\",\n                                \"Value\": \"1\",\n                                \"InstanceId\": \"\",\n                                \"Pack\": \"\",\n                                \"ProtectionSpecs\": \"\"\n                            },\n                            {\n                                \"Key\": \"sv_edgeone_va_unit_month\",\n                                \"Value\": \"1\",\n                                \"InstanceId\": \"\",\n                                \"Pack\": \"\",\n                                \"ProtectionSpecs\": \"\"\n                            }\n                        ]\n                    }\n                ],\n                \"Status\": \"pending\",\n                \"Tags\": [],\n                \"Type\": \"full\",\n                \"VanityNameServers\": null,\n                \"VanityNameServersIps\": []\n            }\n        ],\n        \"RequestId\": \"641a08e3-2ef7-407c-9c2f-2a9928741df5\"\n    }\n}",
         "title": "查询用户站点信息列表"
       }
     ],
@@ -628,10 +640,16 @@
     ],
     "ModifyHostsCertificate": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-asdfasc\",\n    \"Hosts\": [\n        \"xxx.test.com\"\n    ],\n    \"ServerCertInfo\": [\n        {\n            \"CertId\": \"EO-sddafcasf\"\n        }\n    ]\n}",
+        "document": "针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置 SSL 证书（CertId 为 cert-244ffgv7m17xw）。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Hosts\": [\n        \"abc.test.com\"\n    ],\n    \"Mode\": \"sslcert\",\n    \"ServerCertInfo\": [\n        {\n            \"CertId\": \"cert-244ffgv7m17xw\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e5a0d0f-52f3-4bad-9bd3-dcf1d5c954e7\"\n    }\n}",
+        "title": "配置 SSL 证书"
+      },
+      {
+        "document": "针对站点（ZoneId 为 zone-2fgd17m17xw）下的域名（abc.test.com）配置免费证书。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Hosts\": [\n        \"abc.test.com\"\n    ],\n    \"Mode\": \"eofreecert\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
-        "title": "修改域名证书配置"
+        "title": "配置免费证书"
       }
     ],
     "ModifyOriginGroup": [

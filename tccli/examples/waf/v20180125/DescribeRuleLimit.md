@@ -25,7 +25,7 @@ Output:
             "AI": 0,
             "CustomWhite": 0
         },
-        "RequestId": "xx"
+        "RequestId": "123"
     }
 }
 ```

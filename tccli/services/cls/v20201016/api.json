@@ -3270,6 +3270,15 @@
           "name": "Format",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "语法规则,  默认值为0。\n0：Lucene语法，1：CQL语法。",
+          "example": "1",
+          "member": "uint64",
+          "name": "SyntaxRule",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3283,7 +3292,7 @@
           "example": "57196a6a-7622-47be-bc92-d2ebea959a0f",
           "member": "string",
           "name": "ExportId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

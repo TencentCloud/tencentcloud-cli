@@ -18,6 +18,7 @@ Output:
         "RequestId": "db6f4a8c-c8b3-4d86-836a-b0897e772b22",
         "SummaryDetail": [
             {
+                "Business": null,
                 "CashPayAmount": "5661.16",
                 "GroupKey": "p_rav",
                 "GroupValue": "实时音视频",
@@ -28,6 +29,7 @@ Output:
                 "VoucherPayAmount": "0.00"
             },
             {
+                "Business": null,
                 "CashPayAmount": "4783.65",
                 "GroupKey": "p_cvm",
                 "GroupValue": "云服务器CVM",

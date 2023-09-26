@@ -14,6 +14,13 @@
       "output": "CreateInstanceResponse",
       "status": "online"
     },
+    "CreateRole": {
+      "document": "添加角色",
+      "input": "CreateRoleRequest",
+      "name": "添加角色",
+      "output": "CreateRoleResponse",
+      "status": "online"
+    },
     "CreateTopic": {
       "document": "创建主题",
       "input": "CreateTopicRequest",
@@ -33,6 +40,13 @@
       "input": "DeleteInstanceRequest",
       "name": "删除实例",
       "output": "DeleteInstanceResponse",
+      "status": "online"
+    },
+    "DeleteRole": {
+      "document": "删除角色",
+      "input": "DeleteRoleRequest",
+      "name": "删除角色",
+      "output": "DeleteRoleResponse",
       "status": "online"
     },
     "DeleteTopic": {
@@ -61,6 +75,13 @@
       "input": "DescribeInstanceListRequest",
       "name": "获取实例列表",
       "output": "DescribeInstanceListResponse",
+      "status": "online"
+    },
+    "DescribeRoleList": {
+      "document": "查询角色列表，Filter参数使用说明如下：\n\n1. RoleName，角色名称模糊搜索",
+      "input": "DescribeRoleListRequest",
+      "name": "查询角色列表",
+      "output": "DescribeRoleListResponse",
       "status": "online"
     },
     "DescribeTopic": {
@@ -96,6 +117,13 @@
       "input": "ModifyInstanceRequest",
       "name": "修改实例属性",
       "output": "ModifyInstanceResponse",
+      "status": "online"
+    },
+    "ModifyRole": {
+      "document": "修改角色",
+      "input": "ModifyRoleRequest",
+      "name": "修改角色",
+      "output": "ModifyRoleResponse",
       "status": "online"
     },
     "ModifyTopic": {
@@ -320,6 +348,78 @@
       ],
       "type": "object"
     },
+    "CreateRoleRequest": {
+      "document": "CreateRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启生产权限",
+          "example": "无",
+          "member": "bool",
+          "name": "PermWrite",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费权限",
+          "example": "无",
+          "member": "bool",
+          "name": "PermRead",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRoleResponse": {
+      "document": "CreateRole返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTopicRequest": {
       "document": "CreateTopic请求参数结构体",
       "members": [
@@ -454,6 +554,42 @@
     },
     "DeleteInstanceResponse": {
       "document": "DeleteInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleRequest": {
+      "document": "DeleteRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteRoleResponse": {
+      "document": "DeleteRole返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -912,6 +1048,78 @@
           "member": "string",
           "name": "PayMode",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleListRequest": {
+      "document": "DescribeRoleList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoleListResponse": {
+      "document": "DescribeRoleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "角色信息列表",
+          "example": "无",
+          "member": "RoleItem",
+          "name": "Data",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -1642,6 +1850,69 @@
       ],
       "type": "object"
     },
+    "ModifyRoleRequest": {
+      "document": "ModifyRole请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费",
+          "example": "无",
+          "member": "bool",
+          "name": "PermRead",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启生产",
+          "example": "无",
+          "member": "bool",
+          "name": "PermWrite",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyRoleResponse": {
+      "document": "ModifyRole返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyTopicRequest": {
       "document": "ModifyTopic请求参数结构体",
       "members": [
@@ -1695,6 +1966,92 @@
         }
       ],
       "type": "object"
+    },
+    "RoleItem": {
+      "document": "角色信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "test",
+          "member": "string",
+          "name": "RoleName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Access Key",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Secret Key",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费",
+          "example": "无",
+          "member": "bool",
+          "name": "PermRead",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启生产",
+          "example": "无",
+          "member": "bool",
+          "name": "PermWrite",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，秒为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，秒为单位",
+          "example": "无",
+          "member": "int64",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SubscriptionData": {
       "document": "主题与消费组的订阅关系数据",

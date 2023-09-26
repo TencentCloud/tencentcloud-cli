@@ -13,13 +13,17 @@ tccli waf UpsertSession --cli-unfold-argument  \
     --Source get \
     --StartOffset -1 \
     --EndOffset -1 \
-    --Edition clb-waf
+    --Edition clb-waf \
+    --SessionName 测试SESSION
 ```
 
 Output: 
 ```
 {
-    "Data": null
+    "Response": {
+        "Data": "",
+        "RequestId": "abc"
+    }
 }
 ```
 

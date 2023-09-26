@@ -7911,7 +7911,7 @@
         {
           "disabled": false,
           "document": "节点计费模式。取值范围：\n<li>PREPAID：预付费，即包年包月。</li>\n<li>POSTPAID_BY_HOUR：按小时后付费。</li>\n<li>SPOTPAID：竞价付费（仅支持TASK节点）。</li>",
-          "example": "\"\"",
+          "example": "\"SPOTPAID\"",
           "member": "string",
           "name": "InstanceChargeType",
           "required": true,
@@ -7920,7 +7920,7 @@
         {
           "disabled": false,
           "document": "集群实例ID。",
-          "example": "无",
+          "example": "\"emr-ge0vrqkl\"",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -7938,7 +7938,7 @@
         {
           "disabled": false,
           "document": "唯一随机标识，时效5分钟，需要调用者指定 防止客户端重新创建资源，例如 a9a90aa6-751a-41b6-aad6-fae36063280",
-          "example": "\"\"",
+          "example": "\"a9a90aa6-751a-41b6-aad6-fae36063280\"",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -7964,7 +7964,7 @@
         },
         {
           "disabled": false,
-          "document": "扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，此参数仅填写HDFS、YARN",
+          "document": "扩容部署服务，新增节点将默认继承当前节点类型中所部署服务，部署服务含默认可选服务，该参数仅支持可选服务填写，如：存量task节点已部署HDFS、YARN、impala；使用api扩容task节不部署impala时，部署服务仅填写HDFS、YARN。[组件名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
           "example": "无",
           "member": "int64",
           "name": "SoftDeployInfo",
@@ -7973,7 +7973,7 @@
         },
         {
           "disabled": false,
-          "document": "部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，此参数信息可填写：\tDataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor",
+          "document": "部署进程，默认部署扩容服务的全部进程，支持修改部署进程，如：当前task节点部署服务为：HDFS、YARN、impala，默认部署服务为：DataNode,NodeManager,ImpalaServer，若用户需修改部署进程信息，部署进程：\tDataNode,NodeManager,ImpalaServerCoordinator或DataNode,NodeManager,ImpalaServerExecutor。[进程名对应的映射关系表](https://cloud.tencent.com/document/product/589/98760)。",
           "example": "无",
           "member": "int64",
           "name": "ServiceNodeInfo",
@@ -8091,7 +8091,7 @@
           "example": "emr-5n3l5c83",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8101,7 +8101,7 @@
           "example": "无",
           "member": "string",
           "name": "ClientToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8111,7 +8111,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

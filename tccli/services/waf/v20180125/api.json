@@ -1134,7 +1134,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1143,7 +1143,7 @@
         {
           "disabled": false,
           "document": "名称",
-          "example": "",
+          "example": "防篡改规则",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1152,7 +1152,7 @@
         {
           "disabled": false,
           "document": "uri",
-          "example": "",
+          "example": "/index.html",
           "member": "string",
           "name": "Uri",
           "required": true,
@@ -1167,9 +1167,20 @@
         {
           "disabled": false,
           "document": "结果",
-          "example": "",
+          "example": "success",
           "member": "string",
           "name": "Result",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "123",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1188,7 +1199,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.qcloudwaf.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1196,8 +1207,8 @@
         },
         {
           "disabled": false,
-          "document": "名称",
-          "example": "",
+          "document": "规则名称",
+          "example": "防泄露规则",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -1205,8 +1216,8 @@
         },
         {
           "disabled": false,
-          "document": "动作",
-          "example": "",
+          "document": "动作，0（告警）、1（替换）、2（仅显示前四位）、3（仅显示后四位）、4（阻断）",
+          "example": "4",
           "member": "uint64",
           "name": "ActionType",
           "required": true,
@@ -1215,7 +1226,7 @@
         {
           "disabled": false,
           "document": "策略详情",
-          "example": "",
+          "example": "{CompareFunc: \"contains\", Content: \"sd\", Field: \"keywords\"}",
           "member": "StrategyForAntiInfoLeak",
           "name": "Strategies",
           "required": true,
@@ -1224,7 +1235,7 @@
         {
           "disabled": false,
           "document": "网址",
-          "example": "",
+          "example": "/index.html",
           "member": "string",
           "name": "Uri",
           "required": false,
@@ -1236,6 +1247,16 @@
     "AddAntiInfoLeakRulesResponse": {
       "document": "AddAntiInfoLeakRules返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "无",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2003,11 +2024,21 @@
       "members": [
         {
           "disabled": false,
+          "document": "mongo表自增Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64f9ad91ca22cf647117e44d",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "黑名单42或白名单40",
           "example": "42",
           "member": "int64",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2017,7 +2048,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2027,7 +2058,7 @@
           "example": "备注",
           "member": "string",
           "name": "Note",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2037,7 +2068,7 @@
           "example": "batch",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2047,7 +2078,7 @@
           "example": "1651044385000",
           "member": "uint64",
           "name": "TsVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2057,7 +2088,7 @@
           "example": "2019571199",
           "member": "int64",
           "name": "ValidTs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2067,7 +2098,7 @@
           "example": "\"www.a.com\",\"www.b.com\"",
           "member": "string",
           "name": "Hosts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -2083,6 +2114,7 @@
           "example": "sada",
           "member": "string",
           "name": "ResourceIds",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2093,6 +2125,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2103,6 +2136,7 @@
           "example": "1",
           "member": "int64",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2113,6 +2147,7 @@
           "example": "2021-01-05",
           "member": "string",
           "name": "BeginTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2123,6 +2158,7 @@
           "example": "2021-01-05",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2133,6 +2169,7 @@
           "example": "1",
           "member": "int64",
           "name": "InquireNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2143,6 +2180,7 @@
           "example": "0",
           "member": "int64",
           "name": "UsedNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2153,6 +2191,7 @@
           "example": "sp_wsm_waf_bot",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2163,6 +2202,7 @@
           "example": "1",
           "member": "uint64",
           "name": "RenewFlag",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3150,7 +3190,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.testxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -3159,7 +3199,7 @@
         {
           "disabled": false,
           "document": "规则名称",
-          "example": "",
+          "example": "testRule",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -3168,11 +3208,20 @@
         {
           "disabled": false,
           "document": "clb-waf或者sparta-waf",
-          "example": "",
+          "example": "clb-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "19000001",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3183,11 +3232,22 @@
         {
           "disabled": false,
           "document": "一般为null\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "“”",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作的规则Id",
+          "example": "19000001",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3421,6 +3481,15 @@
         },
         {
           "disabled": false,
+          "document": "若IsId字段为True，则Items列表元素需为Id，否则为IP",
+          "example": "false",
+          "member": "bool",
+          "name": "IsId",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
           "document": "是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单",
           "example": "无",
           "member": "bool",
@@ -3492,6 +3561,15 @@
           "name": "Edition",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的SessionID",
+          "example": "1",
+          "member": "int64",
+          "name": "SessionID",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3505,7 +3583,7 @@
           "example": "无",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3675,6 +3753,24 @@
           "name": "FieldName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段,升序asc,降序desc，默认降序desc ",
+          "example": "\"desc\"",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回的top数，默认返回top5",
+          "example": "5",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4383,6 +4479,36 @@
           "example": "100",
           "member": "uint64",
           "name": "ApiRiskEventCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "黑名单总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "IPBlackCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防篡改总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TamperCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息泄露总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "LeakCount",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5921,6 +6047,15 @@
           "name": "Ip",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生效状态",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidStatus",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5934,6 +6069,7 @@
           "example": "{       \"Res\": [         {           \"ActionType\": 40,           \"Ip\": \"1.1.1.234\",           \"Note\": \"测试白\",           \"Source\": \"custom\",           \"TsVersion\": 1675087938186,           \"ValidTs\": 2019571199         }       ],       \"TotalCount\": 1     },     \"RequestId\": \"4afdae60-51ec-44f0-b09b-faf904ae6c6b\"   }",
           "member": "IpAccessControlData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6131,7 +6267,7 @@
         },
         {
           "disabled": false,
-          "document": "十三个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nStatusServerError-WAF返回给客户端状态码次数趋势图\nStatusClientError-WAF返回给客户端状态码次数趋势图\nStatusRedirect-WAF返回给客户端状态码次数趋势图\nStatusOk-WAF返回给客户端状态码次数趋势图\nUpstreamServerError-源站返回给WAF状态码次数趋势图\nUpstreamClientError-源站返回给WAF状态码次数趋势图\nUpstreamRedirect-源站返回给WAF状态码次数趋势图",
+          "document": "十一个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nbw-黑IP攻击总数趋势图\ntamper-防篡改攻击总数趋势图\nleak-防泄露攻击总数趋势图\nacl-访问控制攻击总数趋势图\nhttp_status-状态码各次数趋势图",
           "example": "access",
           "member": "string",
           "name": "MetricName",
@@ -6150,7 +6286,7 @@
           "example": "无",
           "member": "PeakPointsItem",
           "name": "Points",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6408,6 +6544,15 @@
           "name": "Domain",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "waf_2kxq5hru00n2dxmx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6421,7 +6566,7 @@
           "example": "\"\"",
           "member": "WafRuleLimit",
           "name": "Res",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6634,6 +6779,15 @@
           "name": "Domain",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "'waf_2kw7u81k00kp0oyd'",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6647,7 +6801,7 @@
           "example": "无",
           "member": "int64",
           "name": "AttackThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6657,7 +6811,7 @@
           "example": "无",
           "member": "int64",
           "name": "TimeThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6667,7 +6821,7 @@
           "example": "无",
           "member": "int64",
           "name": "DenyTimeThreshold",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6677,7 +6831,17 @@
           "example": "无",
           "member": "int64",
           "name": "DefenseStatus",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重保护网域名状态",
+          "example": "1",
+          "member": "int64",
+          "name": "HWState",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8850,6 +9014,100 @@
       ],
       "usage": "in"
     },
+    "HybridPkg": {
+      "document": "混合云节点资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceInfo": {
       "document": "一个实例的详细信息",
       "members": [
@@ -9193,6 +9451,28 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重保包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "详情",
+          "member": "MajorEventsPkg",
+          "name": "MajorEventsPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "混合云子节点包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "详情",
+          "member": "HybridPkg",
+          "name": "HybridPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -9228,63 +9508,83 @@
       "members": [
         {
           "disabled": false,
+          "document": "mongo表自增Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64f9ad91ca22cf647117e44d",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "动作",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "ip",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Ip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Note",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "来源",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "TsVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "有效截止时间戳",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "ValidTs",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -9682,6 +9982,122 @@
         }
       ],
       "usage": "out"
+    },
+    "MajorEventsPkg": {
+      "document": "重保防护资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_wsm_waf_scene_major_events_basic",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "护网包状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HWState",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyAccessPeriodRequest": {
       "document": "ModifyAccessPeriod请求参数结构体",
@@ -11609,7 +12025,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11619,7 +12035,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Access",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11629,7 +12045,7 @@
           "example": "4",
           "member": "uint64",
           "name": "Up",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11639,7 +12055,7 @@
           "example": "7",
           "member": "uint64",
           "name": "Down",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11649,7 +12065,7 @@
           "example": "8",
           "member": "uint64",
           "name": "Attack",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11659,7 +12075,7 @@
           "example": "9",
           "member": "uint64",
           "name": "Cc",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11669,77 +12085,117 @@
           "example": "100",
           "member": "uint64",
           "name": "BotAccess",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF返回给客户端状态码5xx次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "StatusServerError",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF返回给客户端状态码4xx次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "StatusClientError",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF返回给客户端状态码302次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "uint64",
           "name": "StatusRedirect",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "WAF返回给客户端状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "WAF返回给客户端状态码202次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3",
           "member": "uint64",
           "name": "StatusOk",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源站返回给WAF状态码5xx次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "uint64",
           "name": "UpstreamServerError",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源站返回给WAF状态码4xx次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "5",
           "member": "uint64",
           "name": "UpstreamClientError",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "源站返回给WAF状态码次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "源站返回给WAF状态码302次数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "6",
           "member": "uint64",
           "name": "UpstreamRedirect",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "黑名单次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BlackIP",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防篡改次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Tamper",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "信息防泄露次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Leak",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问控制 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ACL",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -13074,6 +13530,24 @@
           "name": "EventId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则需要启用的SessionID",
+          "example": "[0,1]",
+          "member": "int64",
+          "name": "SessionApplied",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则ID，新增时填0",
+          "example": "19000001",
+          "member": "int64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13087,9 +13561,19 @@
           "example": "\"\"",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作的RuleId",
+          "example": "19000001",
+          "member": "int64",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13120,6 +13604,15 @@
           "name": "Items",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "waf_2kxq5hru00n2dxmx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -13180,7 +13673,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.testxxx.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -13189,7 +13682,7 @@
         {
           "disabled": false,
           "document": "session来源位置",
-          "example": "",
+          "example": "none",
           "member": "string",
           "name": "Source",
           "required": true,
@@ -13198,7 +13691,7 @@
         {
           "disabled": false,
           "document": "提取类别",
-          "example": "",
+          "example": "match",
           "member": "string",
           "name": "Category",
           "required": true,
@@ -13207,7 +13700,7 @@
         {
           "disabled": false,
           "document": "提取key或者起始匹配模式",
-          "example": "",
+          "example": "key_a=",
           "member": "string",
           "name": "KeyOrStartMat",
           "required": true,
@@ -13216,7 +13709,7 @@
         {
           "disabled": false,
           "document": "结束匹配模式",
-          "example": "",
+          "example": "none",
           "member": "string",
           "name": "EndMat",
           "required": true,
@@ -13225,7 +13718,7 @@
         {
           "disabled": false,
           "document": "起始偏移位置",
-          "example": "",
+          "example": "-1",
           "member": "string",
           "name": "StartOffset",
           "required": true,
@@ -13234,7 +13727,7 @@
         {
           "disabled": false,
           "document": "结束偏移位置",
-          "example": "",
+          "example": "-1",
           "member": "string",
           "name": "EndOffset",
           "required": true,
@@ -13243,11 +13736,29 @@
         {
           "disabled": false,
           "document": "版本",
-          "example": "",
+          "example": "sparta-waf",
           "member": "string",
           "name": "Edition",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Session名",
+          "example": "小程序SESSION",
+          "member": "string",
+          "name": "SessionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Session对应ID",
+          "example": "SessionID",
+          "member": "int64",
+          "name": "SessionID",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -13258,9 +13769,10 @@
         {
           "disabled": false,
           "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "Data",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

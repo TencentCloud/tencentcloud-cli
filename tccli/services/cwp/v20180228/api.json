@@ -3322,7 +3322,7 @@
           "example": "1",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3332,7 +3332,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3342,7 +3342,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3352,7 +3352,7 @@
           "example": "1",
           "member": "string",
           "name": "User",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3362,7 +3362,7 @@
           "example": "1",
           "member": "string",
           "name": "Path",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3372,7 +3372,7 @@
           "example": "1",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3382,7 +3382,7 @@
           "example": "1",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3392,7 +3392,7 @@
           "example": "1",
           "member": "string",
           "name": "OsInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3402,7 +3402,7 @@
           "example": "12341234-1234123-13241234",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3412,7 +3412,7 @@
           "example": "12341234-1234123-13241234",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3422,7 +3422,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3432,7 +3432,7 @@
           "example": "2022-07-15 11:27:01",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3442,7 +3442,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsNew",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3452,7 +3452,7 @@
           "example": "43.156.40.46",
           "member": "string",
           "name": "MachineWanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3462,9 +3462,19 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开机自启动[0:否|1:是]",
+          "example": "无",
+          "member": "int64",
+          "name": "IsAutoRun",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -12975,7 +12985,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>Status- string - 是否必填：否 - 默认启用状态：0未启用， 1启用 仅linux</li>\n<li>Type- string - 是否必填：否 - 类型：类型 仅windows：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录</li>",
+          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>\n<li>IsAutoRun - string - 是否必填：否 - 是否开机自启动：0否，1是</li>\n<li>Status- string - 是否必填：否 - 默认启用状态：0未启用， 1启用 仅linux</li>\n<li>Type- string - 是否必填：否 - 类型：类型 仅windows：\n1:编码器\n2:IE插件\n3:网络提供者\n4:镜像劫持\n5:LSA提供者\n6:KnownDLLs\n7:启动执行\n8:WMI\n9:计划任务\n10:Winsock提供者\n11:打印监控器\n12:资源管理器\n13:驱动服务\n14:登录</li>",
           "example": "1",
           "member": "AssetFilters",
           "name": "Filters",
@@ -13030,7 +13040,7 @@
           "example": "1",
           "member": "AssetInitServiceBaseInfo",
           "name": "Services",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13040,7 +13050,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

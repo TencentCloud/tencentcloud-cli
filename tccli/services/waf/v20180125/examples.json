@@ -492,7 +492,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleLimit\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Res\": {\n            \"CC\": 0,\n            \"CustomRule\": 0,\n            \"IPControl\": 0,\n            \"AntiLeak\": 0,\n            \"AntiTamper\": 0,\n            \"AutoCC\": 0,\n            \"AreaBan\": 0,\n            \"CCSession\": 0,\n            \"AI\": 0,\n            \"CustomWhite\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Res\": {\n            \"CC\": 0,\n            \"CustomRule\": 0,\n            \"IPControl\": 0,\n            \"AntiLeak\": 0,\n            \"AntiTamper\": 0,\n            \"AutoCC\": 0,\n            \"AreaBan\": 0,\n            \"CCSession\": 0,\n            \"AI\": 0,\n            \"CustomWhite\": 0\n        },\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "DescribeRuleLimit"
       }
     ],
@@ -560,7 +560,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafAutoDenyRules\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TimeThreshold\": 0,\n        \"DenyTimeThreshold\": 0,\n        \"AttackThreshold\": 0,\n        \"DefenseStatus\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TimeThreshold\": 0,\n        \"DenyTimeThreshold\": 0,\n        \"AttackThreshold\": 0,\n        \"DefenseStatus\": 0,\n        \"RequestId\": \"1234\",\n        \"HWState\": 1\n    }\n}",
         "title": "获取ip惩罚详细信息"
       }
     ],
@@ -995,8 +995,8 @@
     "UpsertSession": [
       {
         "document": "",
-        "input": "https://waf.tencentcloudapi.com/?Action=UpsertSession\n&Domain=test.com\n&Category=match\n&KeyOrStartMat=hashId\n&EndMat=12\n&Source=get\n&StartOffset=-1\n&EndOffset=-1\n&Edition=clb-waf\n&<公共请求参数>",
-        "output": "{\r\n \"Data\":null\r\n}",
+        "input": "https://waf.tencentcloudapi.com/?Action=UpsertSession\n&Domain=test.com\n&Category=match\n&KeyOrStartMat=hashId\n&EndMat=12\n&Source=get\n&StartOffset=-1\n&EndOffset=-1\n&Edition=clb-waf\n&SessionName=测试SESSION\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "Waf  会话定义 Upsert接口"
       }
     ]

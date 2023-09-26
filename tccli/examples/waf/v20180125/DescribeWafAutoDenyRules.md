@@ -17,7 +17,8 @@ Output:
         "DenyTimeThreshold": 0,
         "AttackThreshold": 0,
         "DefenseStatus": 0,
-        "RequestId": "xx"
+        "RequestId": "1234",
+        "HWState": 1
     }
 }
 ```

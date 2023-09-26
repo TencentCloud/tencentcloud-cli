@@ -5816,243 +5816,298 @@
       "members": [
         {
           "disabled": false,
-          "document": "Host",
+          "document": "Host\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8.8.8.8",
           "member": "string",
           "name": "Host",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "Port",
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "权重",
+          "document": "权重\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "Weight",
+          "output_required": false,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "健康状态",
+          "document": "健康状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Health",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "创建时间",
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CreatedTime",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Target的来源",
+          "document": "Target的来源\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Source",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "KongUpstreamInfo": {
       "document": "服务的后端配置",
       "members": [
         {
           "disabled": false,
-          "document": "IP或域名",
+          "document": "IP或域名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "www.test.com",
           "member": "string",
           "name": "Host",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "端口",
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "80",
           "member": "int64",
           "name": "Port",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务来源ID",
+          "document": "服务来源ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ins-102555d0",
           "member": "string",
           "name": "SourceID",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "命名空间",
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Default",
           "member": "string",
           "name": "Namespace",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务（注册中心或Kubernetes中的服务）名字",
+          "document": "服务（注册中心或Kubernetes中的服务）名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "demo-service",
           "member": "string",
           "name": "ServiceName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务后端类型是IPList时提供",
+          "document": "服务后端类型是IPList时提供\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "KongTarget",
           "name": "Targets",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务来源类型",
+          "document": "服务来源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TKE",
           "member": "string",
           "name": "SourceType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SCF函数类型",
+          "document": "SCF函数类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "event",
           "member": "string",
           "name": "ScfType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SCF函数命名空间",
+          "document": "SCF函数命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Default",
           "member": "string",
           "name": "ScfNamespace",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SCF函数名",
+          "document": "SCF函数名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "helloworld",
           "member": "string",
           "name": "ScfLambdaName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "SCF函数版本",
+          "document": "SCF函数版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "$LATEST",
           "member": "string",
           "name": "ScfLambdaQualifier",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "冷启动时间，单位秒",
+          "document": "冷启动时间，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "int64",
           "name": "SlowStart",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing",
+          "document": "负载均衡算法，默认为 round-robin，还支持 least-connections，consisten_hashing\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "round-robin",
           "member": "string",
           "name": "Algorithm",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CVM弹性伸缩组ID",
+          "document": "CVM弹性伸缩组ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AutoScalingGroupID",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CVM弹性伸缩组端口",
+          "document": "CVM弹性伸缩组端口\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "AutoScalingCvmPort",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CVM弹性伸缩组使用的CVM TAT命令状态",
+          "document": "CVM弹性伸缩组使用的CVM TAT命令状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "AutoScalingTatCmdStatus",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "CVM弹性伸缩组生命周期挂钩状态",
+          "document": "CVM弹性伸缩组生命周期挂钩状态\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "AutoScalingHookStatus",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "服务来源的名字",
+          "document": "服务来源的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SourceName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "精确的服务来源类型，新建服务来源时候传入的类型",
+          "document": "精确的服务来源类型，新建服务来源时候传入的类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "RealSourceType",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "upstream健康状态HEALTHY（健康）, UNHEALTHY（异常）, HEALTHCHECKS_OFF（未开启）和NONE（不支持健康检查）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HealthStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ListCloudNativeAPIGatewayResult": {
       "document": "获取云原生API网关实例列表响应结果。",

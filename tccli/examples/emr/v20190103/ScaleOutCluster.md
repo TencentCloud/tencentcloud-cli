@@ -6,73 +6,73 @@ Input:
 
 ```
 tccli emr ScaleOutCluster --cli-unfold-argument  \
-    --PodSpecInfo.PodParameter.InstanceId xx \
-    --PodSpecInfo.PodParameter.Parameter xx \
-    --PodSpecInfo.PodParameter.Config xx \
-    --PodSpecInfo.PodSpec.VpcId xx \
-    --PodSpecInfo.PodSpec.ResourceProviderIdentifier xx \
-    --PodSpecInfo.PodSpec.EnableDynamicSpecFlag True \
-    --PodSpecInfo.PodSpec.ResourceProviderType xx \
-    --PodSpecInfo.PodSpec.NodeFlag xx \
-    --PodSpecInfo.PodSpec.DynamicPodSpec.LimitMemory 0.0 \
-    --PodSpecInfo.PodSpec.DynamicPodSpec.RequestMemory 0.0 \
-    --PodSpecInfo.PodSpec.DynamicPodSpec.LimitCpu 0.0 \
-    --PodSpecInfo.PodSpec.DynamicPodSpec.RequestCpu 0.0 \
-    --PodSpecInfo.PodSpec.PodName xx \
-    --PodSpecInfo.PodSpec.Memory 1 \
-    --PodSpecInfo.PodSpec.SubnetId xx \
-    --PodSpecInfo.PodSpec.CpuType xx \
-    --PodSpecInfo.PodSpec.PodVolumes.0.VolumeType xx \
-    --PodSpecInfo.PodSpec.PodVolumes.0.HostVolume.VolumePath xx \
-    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskSize 1 \
-    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskNum 0 \
-    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskType xx \
-    --PodSpecInfo.PodSpec.Cpu 1 \
-    --ResourceSpec.DataDisk.0.Count 0 \
-    --ResourceSpec.DataDisk.0.DiskSize 0 \
-    --ResourceSpec.DataDisk.0.DiskType xx \
-    --ResourceSpec.SystemDisk.0.Count 0 \
-    --ResourceSpec.SystemDisk.0.DiskSize 0 \
-    --ResourceSpec.SystemDisk.0.DiskType xx \
-    --ResourceSpec.LocalDataDisk.0.Count 0 \
-    --ResourceSpec.LocalDataDisk.0.DiskSize 0 \
-    --ResourceSpec.LocalDataDisk.0.DiskType xx \
-    --ResourceSpec.InstanceType xx \
-    --ResourceSpec.Tags.0.TagKey xx \
-    --ResourceSpec.Tags.0.TagValue xx \
-    --SoftDeployInfo 0 \
-    --Zone xx \
-    --ScriptBootstrapActionConfig.0.CosFileName xx \
-    --ScriptBootstrapActionConfig.0.Args xx \
-    --ScriptBootstrapActionConfig.0.CosFileURI xx \
-    --ScriptBootstrapActionConfig.0.ExecutionMoment xx \
-    --Tags.0.TagKey xx \
-    --Tags.0.TagValue xx \
-    --InstanceId xx \
-    --ClickHouseClusterName xx \
-    --YarnNodeLabel xx \
-    --ClickHouseClusterType xx \
-    --ServiceNodeInfo 0 \
-    --InstanceChargeType xx \
-    --HardwareSourceType xx \
-    --ScaleOutNodeConfig.NodeCount 1 \
-    --ScaleOutNodeConfig.NodeFlag xx \
-    --ClientToken xx \
-    --SubnetId xx \
-    --InstanceChargePrepaid.RenewFlag True \
+    --ClientToken  \
+    --InstanceChargeType SPOTPAID \
     --InstanceChargePrepaid.Period 0 \
+    --InstanceChargePrepaid.RenewFlag True \
+    --ScriptBootstrapActionConfig.0.CosFileURI https://devops-private-1251949819.cos.na-ashburn.myqcloud.com/emr/shell/emr_init.sh \
+    --ScriptBootstrapActionConfig.0.Args abc \
+    --ScriptBootstrapActionConfig.0.CosFileName emr_init \
+    --ScriptBootstrapActionConfig.0.ExecutionMoment resourceAfter \
+    --InstanceId emr-ge0vrqkl \
+    --SoftDeployInfo 1 2 \
+    --ServiceNodeInfo 7 \
+    --DisasterRecoverGroupIds abc \
+    --Tags.0.TagKey Team \
+    --Tags.0.TagValue data \
+    --HardwareSourceType host \
+    --PodSpecInfo.PodSpec.ResourceProviderIdentifier cls-a1cd23fa \
+    --PodSpecInfo.PodSpec.ResourceProviderType tke \
+    --PodSpecInfo.PodSpec.NodeFlag TASK \
+    --PodSpecInfo.PodSpec.Cpu 1 \
+    --PodSpecInfo.PodSpec.Memory 1 \
+    --PodSpecInfo.PodSpec.CpuType intel \
+    --PodSpecInfo.PodSpec.PodVolumes.0.VolumeType abc \
+    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskSize 1 \
+    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskType abc \
+    --PodSpecInfo.PodSpec.PodVolumes.0.PVCVolume.DiskNum 0 \
+    --PodSpecInfo.PodSpec.PodVolumes.0.HostVolume.VolumePath abc \
+    --PodSpecInfo.PodSpec.EnableDynamicSpecFlag True \
+    --PodSpecInfo.PodSpec.DynamicPodSpec.RequestCpu 0 \
+    --PodSpecInfo.PodSpec.DynamicPodSpec.LimitCpu 0 \
+    --PodSpecInfo.PodSpec.DynamicPodSpec.RequestMemory 0 \
+    --PodSpecInfo.PodSpec.DynamicPodSpec.LimitMemory 0 \
+    --PodSpecInfo.PodSpec.VpcId vpc-d1c351hq \
+    --PodSpecInfo.PodSpec.SubnetId subnet-lnejfj4p \
+    --PodSpecInfo.PodSpec.PodName podeee \
+    --PodSpecInfo.PodParameter.InstanceId abc \
+    --PodSpecInfo.PodParameter.Config abc \
+    --PodSpecInfo.PodParameter.Parameter abc \
+    --ClickHouseClusterName abc \
+    --ClickHouseClusterType new \
+    --YarnNodeLabel abc \
     --EnableStartServiceFlag True \
-    --DisasterRecoverGroupIds xx
+    --ResourceSpec.Tags.0.TagKey abc \
+    --ResourceSpec.Tags.0.TagValue abc \
+    --ResourceSpec.InstanceType SA2.4XLARGE64 \
+    --ResourceSpec.SystemDisk.0.Count 1 \
+    --ResourceSpec.SystemDisk.0.DiskType CLOUD_PREMIUM \
+    --ResourceSpec.SystemDisk.0.DiskSize 70 \
+    --ResourceSpec.DataDisk.0.Count 1 \
+    --ResourceSpec.DataDisk.0.DiskType CLOUD_HSSD \
+    --ResourceSpec.DataDisk.0.DiskSize 70 \
+    --ResourceSpec.LocalDataDisk.0.Count 1 \
+    --ResourceSpec.LocalDataDisk.0.DiskType CLOUD_HSSD \
+    --ResourceSpec.LocalDataDisk.0.DiskSize 100 \
+    --Zone ap-shanghai-5 \
+    --SubnetId subnet-lnejfj4p \
+    --ScaleOutNodeConfig.NodeFlag CORE \
+    --ScaleOutNodeConfig.NodeCount 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "InstanceId": "xx",
+        "InstanceId": "emr-ge0vrqkl",
+        "ClientToken": "",
         "FlowId": 0,
-        "RequestId": "xx",
-        "ClientToken": "xx"
+        "RequestId": "1e5c1189-bd1d-4cd7-ab49-72ed158c482c"
     }
 }
 ```
