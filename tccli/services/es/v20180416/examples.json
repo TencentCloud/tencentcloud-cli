@@ -288,6 +288,14 @@
         "title": "Serverless索引查询内部接口"
       }
     ],
+    "SearchServerlessInstance": [
+      {
+        "document": "SearchServerlessInstance-SQLGroupBY",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchServerlessInstance\n<公共请求参数>\n\n{\n    \"Query\": \"select host.ip,count(*) from \\\\\\\"zxw-cvm-01-lgn9an13\\\\\\\" group by host.ip\",\n    \"QueryType\": 1,\n    \"TimeStampFrom\": \"2023-03-08T11:06:07.000Z\",\n    \"TimeStampTo\": \"2023-09-25T11:06:07.000Z\",\n    \"ServerlessId\": \"index-1u6t05yf\",\n    \"Preference\": \"ddd\",\n    \"Username\": \"elastic\",\n    \"Password\": \"W*Fk=L?!62K38J_g51a7\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Columns\": [\n            {\n                \"Name\": \"host.ip\",\n                \"Type\": \"text\"\n            },\n            {\n                \"Name\": \"count(*)\",\n                \"Type\": \"long\"\n            }\n        ],\n        \"Count\": 0,\n        \"Cursor\": \"y+ezAwFaAWMBE3p4dy1jdm0tMDEtbGduOWFuMTOHAQEBCWNvbXBvc2l0ZQdncm91cGJ5AAD/AQAIYTVlOTQwN2EBD2hvc3QuaXAua2V5d29yZAAAAQAAZAEKAQhhNWU5NDA3YQAXZmU4MDo6NTA1NDpmZjpmZTc4Ojg4NWIAAgEAAAAAAP////8PAAAAAAAAAAAAAAAAAVoDAAICAAAAAAAAAAAKAP////8PAgFrCGE1ZTk0MDdhAAABawhhNWU5NDA3YQEAAQMA\",\n        \"RequestId\": \"ae052ed0-0335-4f07-a5df-e2364f82de10\",\n        \"Results\": null,\n        \"Rows\": [\n            \"[null,21297]\",\n            \"[\\\"172.16.43.21\\\",4272328]\",\n            \"[\\\"fe80::5054:ff:fe78:885b\\\",4272328]\"\n        ],\n        \"SearchAfterKeyFirst\": null,\n        \"SearchAfterKeyLast\": null\n    }\n}",
+        "title": "SearchServerlessInstance-SQLGroupBY"
+      }
+    ],
     "StartLogstashPipelines": [
       {
         "document": "",

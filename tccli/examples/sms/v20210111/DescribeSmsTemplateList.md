@@ -19,7 +19,7 @@ Output:
                 "TemplateName": "验证码",
                 "TemplateId": 1110,
                 "International": 0,
-                "ReviewReply": "xxxx",
+                "ReviewReply": "",
                 "CreateTime": 1617379200,
                 "TemplateContent": "您的验证码是{1}",
                 "StatusCode": 0
@@ -28,7 +28,7 @@ Output:
                 "TemplateName": "通知",
                 "TemplateId": 1111,
                 "International": 0,
-                "ReviewReply": "xxxx",
+                "ReviewReply": "",
                 "CreateTime": 1617508800,
                 "TemplateContent": "请尽快参加{1}会议",
                 "StatusCode": 0

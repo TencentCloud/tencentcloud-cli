@@ -71,9 +71,9 @@
       "status": "online"
     },
     "DescribeDbAssets": {
-      "document": "资产列表",
+      "document": "数据库资产列表",
       "input": "DescribeDbAssetsRequest",
-      "name": "资产列表",
+      "name": "数据库资产列表",
       "output": "DescribeDbAssetsResponse",
       "status": "online"
     },
@@ -847,7 +847,7 @@
           "example": "-",
           "member": "string",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -857,7 +857,7 @@
           "example": "无",
           "member": "string",
           "name": "CFGName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -867,7 +867,7 @@
           "example": "无",
           "member": "string",
           "name": "CheckType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -877,7 +877,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -887,7 +887,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -897,7 +897,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -907,7 +907,7 @@
           "example": "无",
           "member": "string",
           "name": "AffectAsset",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -917,7 +917,7 @@
           "example": "无",
           "member": "string",
           "name": "Level",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -927,7 +927,7 @@
           "example": "无",
           "member": "string",
           "name": "FirstTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -937,7 +937,7 @@
           "example": "无",
           "member": "string",
           "name": "RecentTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -947,7 +947,7 @@
           "example": "无",
           "member": "string",
           "name": "From",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -957,7 +957,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -967,7 +967,7 @@
           "example": "无",
           "member": "string",
           "name": "CFGSTD",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -977,7 +977,7 @@
           "example": "无",
           "member": "string",
           "name": "CFGDescribe",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -987,7 +987,7 @@
           "example": "无",
           "member": "string",
           "name": "CFGFix",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -997,7 +997,7 @@
           "example": "无",
           "member": "string",
           "name": "CFGHelpURL",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1007,7 +1007,7 @@
           "example": "无",
           "member": "string",
           "name": "Index",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1017,7 +1017,7 @@
           "example": "无",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1027,7 +1027,7 @@
           "example": "无",
           "member": "string",
           "name": "Nick",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1037,7 +1037,7 @@
           "example": "无",
           "member": "string",
           "name": "Uin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3747,6 +3747,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产类型:MYSQL/MARIADB/REDIS/MONGODB/POSTGRES/CTS/ES/KAFKA/COS/CBS/CFS",
+          "example": "[\"MYSQL\",\"MARIADB\"]",
+          "member": "string",
+          "name": "AssetTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3760,6 +3769,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3769,6 +3779,7 @@
           "example": "无",
           "member": "DBAssetVO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3778,6 +3789,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3787,6 +3799,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AssetTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3796,6 +3809,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "VpcList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3805,6 +3819,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AppIdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6027,7 +6042,7 @@
         },
         {
           "disabled": false,
-          "document": "corn\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "cron格式\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "* * * * 1 *",
           "member": "string",
           "name": "ScanPlanContent",
@@ -6117,7 +6132,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描状态 0 初始值  1正在扫描  2扫描完成  3扫描出错\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扫描状态, 0-初始值，1-正在扫描，2-扫描完成，3-扫描出错，4-停止扫描\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "ScanStatus",
@@ -6381,6 +6396,16 @@
           "example": "1",
           "member": "int64",
           "name": "IsDelete",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务源类型，0-默认，1-小助手，2-体检项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SourceType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6973,6 +6998,7 @@
           "example": "cfw",
           "member": "string",
           "name": "AssetName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6983,6 +7009,7 @@
           "example": "cvm",
           "member": "string",
           "name": "InstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6993,6 +7020,7 @@
           "example": "cvm",
           "member": "string",
           "name": "AssetType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7003,6 +7031,7 @@
           "example": "x.x.x.x",
           "member": "string",
           "name": "Asset",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7013,6 +7042,18 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多云资产唯一id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Arn",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7118,8 +7159,7 @@
           "member": "string",
           "name": "TaskId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

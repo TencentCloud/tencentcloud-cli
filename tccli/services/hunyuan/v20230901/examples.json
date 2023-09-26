@@ -1,0 +1,19 @@
+{
+  "actions": {
+    "ChatFeedback": [
+      {
+        "document": "反馈成功",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatFeedback\n<公共请求参数>\n\n{\n    \"ReqId\": \"c8cce39c-9d06-4a95-8f41-84044d28c59d\",\n    \"Rate\": 10,\n    \"Feedback\": \"效果不错\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"450fb6a1-0cd3-4d2a-8038-db0443c22021\"\n    }\n}",
+        "title": "反馈成功"
+      },
+      {
+        "document": "任务不存在",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatFeedback\n<公共请求参数>\n\n{\n    \"ReqId\": \"26e63394-8045-4afa-b624-f5c1f752acae呃问我\",\n    \"Rate\": 1,\n    \"Feedback\": \"12434343434\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation.NoSuchRequest\",\n            \"Message\": \"\"\n        },\n        \"RequestId\": \"6710ff5f-45dc-494b-bf9e-915e3134c071\"\n    }\n}",
+        "title": "请求失败"
+      }
+    ]
+  },
+  "version": "1.0"
+}

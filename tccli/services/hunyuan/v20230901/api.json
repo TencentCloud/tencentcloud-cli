@@ -1,0 +1,65 @@
+{
+  "actions": {
+    "ChatFeedback": {
+      "document": "用户反馈",
+      "input": "ChatFeedbackRequest",
+      "name": "用户反馈",
+      "output": "ChatFeedbackResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-09-01",
+    "api_brief": "腾讯混元大模型是由腾讯自研的大语言模型，具备跨领域知识和自然语言理解能力，实现基于人机自然语言对话的方式，理解用户指令并执行任务，适用场景可以包含智能对话、内容创作、分析理解等",
+    "serviceNameCN": "腾讯混元大模型",
+    "serviceShortName": "hunyuan"
+  },
+  "objects": {
+    "ChatFeedbackRequest": {
+      "document": "ChatFeedback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/chat/completions接口的输出参数 id",
+          "example": "无",
+          "member": "string",
+          "name": "ReqId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "打分,取值范围[0,10]",
+          "example": "无",
+          "member": "int64",
+          "name": "Rate",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "反馈内容",
+          "example": "无",
+          "member": "string",
+          "name": "Feedback",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatFeedbackResponse": {
+      "document": "ChatFeedback返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    }
+  },
+  "version": "1.0"
+}

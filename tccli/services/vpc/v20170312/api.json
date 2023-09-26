@@ -24383,6 +24383,7 @@
           "example": "20",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -24392,6 +24393,7 @@
           "example": "无",
           "member": "PeerConnection",
           "name": "PeerConnectionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -35411,7 +35413,7 @@
           "example": "vpc-test1234",
           "member": "string",
           "name": "SourceVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35421,7 +35423,7 @@
           "example": "vpc-test5678",
           "member": "string",
           "name": "PeerVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35431,7 +35433,7 @@
           "example": "pcx-test1234",
           "member": "string",
           "name": "PeeringConnectionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35441,7 +35443,7 @@
           "example": "Example",
           "member": "string",
           "name": "PeeringConnectionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35451,7 +35453,7 @@
           "example": "PEDNING",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35461,7 +35463,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsNgw",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -35471,7 +35473,7 @@
           "example": "10",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -35481,7 +35483,7 @@
           "example": "gz",
           "member": "string",
           "name": "SourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35491,7 +35493,7 @@
           "example": "sh",
           "member": "string",
           "name": "DestinationRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35501,7 +35503,7 @@
           "example": "2019-01-15 11:07:15",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35511,7 +35513,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -35521,7 +35523,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "PeerAppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -35531,7 +35533,7 @@
           "example": "POSTPAID_BY_DAY_MAX",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -35541,7 +35543,7 @@
           "example": "1307774067",
           "member": "int64",
           "name": "SourceUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -35551,7 +35553,7 @@
           "example": "1307774067",
           "member": "int64",
           "name": "DestinationUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -35561,7 +35563,7 @@
           "example": "[{\"Key\": \"test\", \"Value\":\"test\"}]",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -35571,7 +35573,7 @@
           "example": "AU",
           "member": "string",
           "name": "QosLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -35581,7 +35583,7 @@
           "example": "VPC_PEER",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

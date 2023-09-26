@@ -13,29 +13,35 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "PeerConnectionSet": [
             {
-                "SourceVpcId": "vpc-ebmfbrg7",
-                "PeeringConnectionId": "pcx-b050bu7c",
-                "PeeringConnectionName": "andytesttong",
-                "State": "PENDING",
-                "IsNgw": false,
-                "Bandwidth": 10,
-                "SourceRegion": "ca",
-                "DestinationRegion": "gz",
-                "CreateTime": "2021-12-08 14:56:35",
-                "AppId": 1255486055,
-                "PeerAppId": 1254277469,
-                "ChargeType": "POSTPAID_BY_DAY_MAX",
-                "SourceUin": 100002840660,
-                "DestinationUin": 100001332514,
-                "QosLevel": "",
-                "Type": "VPC_BM_PEER",
-                "TagSet": []
+                "SourceVpcId": "abc",
+                "PeerVpcId": "abc",
+                "PeeringConnectionId": "abc",
+                "PeeringConnectionName": "abc",
+                "State": "abc",
+                "IsNgw": true,
+                "Bandwidth": 0,
+                "SourceRegion": "abc",
+                "DestinationRegion": "abc",
+                "CreateTime": "abc",
+                "AppId": 0,
+                "PeerAppId": 0,
+                "ChargeType": "abc",
+                "SourceUin": 0,
+                "DestinationUin": 0,
+                "TagSet": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "QosLevel": "abc",
+                "Type": "abc"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96"
+        "RequestId": "abc"
     }
 }
 ```

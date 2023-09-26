@@ -176,6 +176,20 @@
         "title": "修改项目"
       }
     ],
+    "ModifyUserRole": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"RoleIdList\": [\n        \"100090\"\n    ],\n    \"UserId\": \"joshshzho\",\n    \"Email\": \"abc@qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"933660c5-a247-4068-a852-c3eaf0e93684\",\n        \"Extra\": \"\",\n        \"Data\": null,\n        \"Msg\": \"success\"\n    }\n}",
+        "title": "修改用户角色信息"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserRole\n<公共请求参数>\n\n{\n    \"UserName\": \"tommyho\",\n    \"AreaCode\": \"086\",\n    \"UserId\": \"tommyho\",\n    \"PhoneNumber\": \"123456\",\n    \"RoleIdList\": [\n        \"100099\"\n    ],\n    \"Email\": \"123@qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"6b573965-cda5-4c95-a66a-fd1bd6d77c5c\",\n        \"Extra\": \"\",\n        \"Data\": null\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "ModifyUserRoleProject": [
       {
         "document": "",

@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeConsoleServiceEventList": {
+      "document": "控制台查询服务事件列表",
+      "input": "DescribeConsoleServiceEventListRequest",
+      "name": "控制台查询服务事件列表",
+      "output": "DescribeConsoleServiceEventListResponse",
+      "status": "online"
+    },
     "DescribeEvents": {
       "document": "本接口用于查询腾讯云健康看板的可用性事件信息，可以通过产品列表、地域列表和事件发生日期进行过滤查询。",
       "input": "DescribeEventsRequest",
@@ -15,6 +22,23 @@
     "serviceShortName": "tchd"
   },
   "objects": {
+    "DescribeConsoleServiceEventListRequest": {
+      "document": "DescribeConsoleServiceEventList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeConsoleServiceEventListResponse": {
+      "document": "DescribeConsoleServiceEventList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeEventsRequest": {
       "document": "DescribeEvents请求参数结构体",
       "members": [

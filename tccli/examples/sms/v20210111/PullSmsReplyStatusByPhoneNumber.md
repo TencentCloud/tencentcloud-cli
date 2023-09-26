@@ -22,7 +22,7 @@ Output:
         "PullSmsReplyStatusSet": [
             {
                 "CountryCode": "86",
-                "ReplyContent": "xxxxxx",
+                "ReplyContent": "1",
                 "SubscriberNumber": "15291996666",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734188,
@@ -31,7 +31,7 @@ Output:
             },
             {
                 "CountryCode": "86",
-                "ReplyContent": "xxxxxx",
+                "ReplyContent": "2",
                 "SubscriberNumber": "15291996666",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734189,

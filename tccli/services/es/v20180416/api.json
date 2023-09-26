@@ -252,6 +252,13 @@
       "output": "SearchServerlessDataResponse",
       "status": "online"
     },
+    "SearchServerlessInstance": {
+      "document": "Severless通用搜索接口",
+      "input": "SearchServerlessInstanceRequest",
+      "name": "Severless通用搜索接口",
+      "output": "SearchServerlessInstanceResponse",
+      "status": "online"
+    },
     "StartLogstashPipelines": {
       "document": "用于启动Logstash管道",
       "input": "StartLogstashPipelinesRequest",
@@ -7169,6 +7176,34 @@
       ],
       "type": "object"
     },
+    "SQLColumn": {
+      "document": "搜索接口SQL列",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SaveAndDeployLogstashPipelineRequest": {
       "document": "SaveAndDeployLogstashPipeline请求参数结构体",
       "members": [
@@ -7213,6 +7248,81 @@
         }
       ],
       "type": "object"
+    },
+    "SearchFilterRange": {
+      "document": "全文检索range filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "Upper",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "Lower",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "bool",
+          "name": "IncludeUpper",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "bool",
+          "name": "IncludeLower",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "SearchFilterTerms": {
+      "document": "全文检索terms filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "SearchServerlessDataFile": {
       "document": "SearchServerlessDataFile",
@@ -7496,6 +7606,280 @@
         }
       ],
       "usage": "out"
+    },
+    "SearchServerlessHitDataString": {
+      "document": "搜索结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Sort",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SearchServerlessInstanceRequest": {
+      "document": "SearchServerlessInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "搜索query",
+          "example": "/",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0: query_string类型, 1: SQL类型",
+          "example": "/",
+          "member": "uint64",
+          "name": "QueryType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间戳起始时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeStampFrom",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询时间戳终止时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeStampTo",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Serverless索引id",
+          "example": "无",
+          "member": "string",
+          "name": "ServerlessId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询路由preference，可以传递数据源集群id，保持查询排序稳定",
+          "example": "无",
+          "member": "string",
+          "name": "Preference",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名，建议创建内部专用用户",
+          "example": "无",
+          "member": "string",
+          "name": "Username",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于filter.terms的过滤条件",
+          "example": "无",
+          "member": "SearchFilterTerms",
+          "name": "SearchFilterTermsList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于filter.range的过滤条件",
+          "example": "无",
+          "member": "SearchFilterRange",
+          "name": "SearchFilterRangeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于sort的字段",
+          "example": "无",
+          "member": "SearchSort",
+          "name": "SearchSortList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "上次查询的search_after的锚点，没有携带则为第一次请求",
+          "example": "无",
+          "member": "string",
+          "name": "SearchAfterKey",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "单页数据条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "类似SearchAfterKey, SQL类型的查询中用于分页",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchServerlessInstanceResponse": {
+      "document": "SearchServerlessInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "SearchAfterKeyFirst",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "SearchAfterKeyLast",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据total hit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "uint64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "SearchServerlessHitDataString",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "SQLColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Rows",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Cursor",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchSort": {
+      "document": "搜索排序参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "FieldName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "/",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ServerlessDi": {
       "document": "创建serverless索引时创建数据接入",

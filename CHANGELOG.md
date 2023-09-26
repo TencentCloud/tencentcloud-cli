@@ -1,3 +1,255 @@
+# Release 3.0.857.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 5 次发布
+
+发布时间：2023-09-27 01:11:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyUserRole](http://document.tencentcloudapi.woa.com/document/product/1707/82038)
+
+
+
+## 云数据仓库 for Apache Doris(cdwdoris) 版本：2021-12-28
+
+### 第 2 次发布
+
+发布时间：2023-09-27 01:21:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceNode)
+
+	* 新增成员：Status, Rip, FeRole
+
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 51 次发布
+
+发布时间：2023-09-27 01:25:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeQuota](http://document.tencentcloudapi.woa.com/document/product/214/47704)
+
+	* 新增入参：Filters, ResourceQuota
+
+
+修改数据结构：
+
+* [Quota](http://document.tencentcloudapi.woa.com/document/product/214/30694#Quota)
+
+	* 新增成员：ResourceId
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 10 次发布
+
+发布时间：2023-09-27 01:32:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDbAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80802)
+
+	* 新增入参：AssetTypes
+
+
+修改数据结构：
+
+* [AssetViewCFGRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewCFGRisk)
+
+	* <font color="#dd0000">**修改成员**：</font>Id, CFGName, CheckType, InstanceId, InstanceName, InstanceType, AffectAsset, Level, FirstTime, RecentTime, From, Status, CFGSTD, CFGDescribe, CFGFix, CFGHelpURL, Index, AppId, Nick, Uin
+
+* [ScanTaskInfoList](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ScanTaskInfoList)
+
+	* 新增成员：SourceType
+
+* [TaskAssetObject](http://document.tencentcloudapi.woa.com/document/product/1726/80814#TaskAssetObject)
+
+	* 新增成员：Arn
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 39 次发布
+
+发布时间：2023-09-27 01:50:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDocument](http://document.tencentcloudapi.woa.com/document/product/1668/79351)
+
+	* 新增出参：Approvers
+
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增入参：FillApproverType
+
+* [CreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1668/79349)
+
+	* 新增出参：Approvers
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：RecipientId
+
+	* 新增出参：SchemeQrcodeUrl
+
+* [UploadFiles](http://document.tencentcloudapi.woa.com/document/product/1668/79309)
+
+	* 新增入参：Agent
+
+
+新增数据结构：
+
+* [ApproverItem](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverItem)
+
+修改数据结构：
+
+* [ApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverInfo)
+
+	* 新增成员：ApproverRoleName
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
+
+	* 新增成员：FillType
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillApproverInfo)
+
+	* 新增成员：OrganizationName
+
+* [FlowApproverDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowApproverDetail)
+
+	* 新增成员：ApproverRoleName
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 89 次发布
+
+发布时间：2023-09-27 01:51:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowByFiles](http://document.tencentcloudapi.woa.com/document/product/1595/75257)
+
+	* 新增出参：Approvers
+
+* [CreateFlowsByTemplates](http://document.tencentcloudapi.woa.com/document/product/1595/75250)
+
+	* 新增出参：FlowApprovers
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：RecipientIds
+
+* [ModifyExtendedService](http://document.tencentcloudapi.woa.com/document/product/1595/76939)
+
+	* 新增入参：Endpoint
+
+
+新增数据结构：
+
+* [ApproverItem](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverItem)
+* [FlowApproverItem](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverItem)
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)
+
+	* 新增成员：FillType
+
+* [FlowApproverDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverDetail)
+
+	* 新增成员：ApproverRoleName
+
+* [FlowApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverInfo)
+
+	* 新增成员：ApproverRoleName
+
+* [SignUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#SignUrlInfo)
+
+	* 新增成员：SignQrcodeUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云健康看板(tchd) 版本：2023-03-06
+
+### 第 2 次发布
+
+发布时间：2023-09-27 02:23:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeConsoleServiceEventList](http://document.tencentcloudapi.woa.com/document/product/1737/82040)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 9 次发布
+
+发布时间：2023-09-27 02:30:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [VerifyOwnership](http://document.tencentcloudapi.woa.com/document/product/1738/82041)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.856.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

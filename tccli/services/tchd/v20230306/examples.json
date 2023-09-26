@@ -1,5 +1,13 @@
 {
   "actions": {
+    "DescribeConsoleServiceEventList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tchd.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsoleServiceEventList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d11ef357-27e0-477c-a763-b166aa67bd0f\"\n    }\n}",
+        "title": "查询服务事件列表接口示例"
+      }
+    ],
     "DescribeEvents": [
       {
         "document": "查询2023年6月9日发生在广州和上海地域的所有云产品可用性事件",

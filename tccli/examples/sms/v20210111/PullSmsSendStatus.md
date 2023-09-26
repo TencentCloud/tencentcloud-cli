@@ -7,7 +7,7 @@ Input:
 ```
 tccli sms PullSmsSendStatus --cli-unfold-argument  \
     --SmsSdkAppId 1400006874 \
-    --Limit 2
+    --Limit 100
 ```
 
 Output: 

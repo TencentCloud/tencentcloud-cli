@@ -462,6 +462,8 @@ tccli/services/hcm/__init__.py
 tccli/services/hcm/hcm_client.py
 tccli/services/hcm/v20181106/api.json
 tccli/services/hcm/v20181106/examples.json
+tccli/services/hunyuan/__init__.py
+tccli/services/hunyuan/hunyuan_client.py
 tccli/services/iaf/__init__.py
 tccli/services/iaf/iaf_client.py
 tccli/services/iai/__init__.py
