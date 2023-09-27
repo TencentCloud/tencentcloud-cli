@@ -203,6 +203,20 @@
       "output": "DescribeHealthScoreResponse",
       "status": "online"
     },
+    "DescribeIndexRecommendAggregationSlowLogs": {
+      "document": "查询某张表的慢查模板概览",
+      "input": "DescribeIndexRecommendAggregationSlowLogsRequest",
+      "name": "慢查模板概览",
+      "output": "DescribeIndexRecommendAggregationSlowLogsResponse",
+      "status": "online"
+    },
+    "DescribeIndexRecommendInfo": {
+      "document": "查询实例的索引推荐信息，包括索引统计相关信息，推荐索引列表，无效索引列表等。",
+      "input": "DescribeIndexRecommendInfoRequest",
+      "name": "查询实例的索引推荐信息",
+      "output": "DescribeIndexRecommendInfoResponse",
+      "status": "online"
+    },
     "DescribeMailProfile": {
       "document": "获取发送邮件的配置， 包括数据库巡检的邮件配置以及定期生成健康报告的邮件发送配置。",
       "input": "DescribeMailProfileRequest",
@@ -236,6 +250,13 @@
       "input": "DescribeProxySessionKillTasksRequest",
       "name": "查询代理节点 kill 会话任务执行状态",
       "output": "DescribeProxySessionKillTasksResponse",
+      "status": "online"
+    },
+    "DescribeRedisProcessList": {
+      "document": "获取 Redis 实例所有 proxy 节点的实时会话详情列表。",
+      "input": "DescribeRedisProcessListRequest",
+      "name": "获取Redis实例proxy实时会话详情",
+      "output": "DescribeRedisProcessListResponse",
       "status": "online"
     },
     "DescribeRedisTopBigKeys": {
@@ -468,6 +489,62 @@
         }
       ],
       "type": "object"
+    },
+    "Aggregation": {
+      "document": "mongodb慢查模板概览明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "平均执行时间（ms）。",
+          "example": "1233",
+          "member": "int64",
+          "name": "AvgExecTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平均扫描行数。",
+          "example": "348",
+          "member": "int64",
+          "name": "AvgDocsExamined",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "产生慢查次数（/天）。",
+          "example": "1",
+          "member": "int64",
+          "name": "SlowLogCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存排序次数。",
+          "example": "0",
+          "member": "int64",
+          "name": "SortCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢查模板概览。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\\\"type\\\":\\\"command\\\",\\\"ns\\\":\\\"welabel.ground_truth_data\\\",\\\"appName\\\":\\\"MongoDB Compass\\\",\\\"command\\\":{\\\"aggregate\\\":\\\"ground_truth_data\\\",\\\"pipeline\\\":[{\\\"$match\\\":{\\\"is_skip\\\":{\\\"$ne\\\":true}}},{\\\"$project\\\":{\\\"labels\\\":{\\\"$filter\\\":{\\\"input\\\":\\\"$comments.data.error_labels\\\",\\\"as\\\":\\\"com\\\",\\\"cond\\\":{\\\"$eq\\\":[\\\"$$com.questionType\\\",\\\"single\\\"]}}},\\\"ground_truth_id\\\":1}},{\\\"$unwind\\\":{\\\"path\\\":\\\"$labels\\\"}}",
+          "member": "string",
+          "name": "SlowLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AlarmProfileList": {
       "document": "通知模板",
@@ -3191,6 +3268,175 @@
       ],
       "type": "object"
     },
+    "DescribeIndexRecommendAggregationSlowLogsRequest": {
+      "document": "DescribeIndexRecommendAggregationSlowLogs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mongodb\" - 云数据库 。",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cmgo-2jrxxlx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "test",
+          "member": "string",
+          "name": "Db",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表明。",
+          "example": "test.collection",
+          "member": "string",
+          "name": "Collection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签名。",
+          "example": "d6e6fe0025c258592dd6f442312f26ww",
+          "member": "string",
+          "name": "Signs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexRecommendAggregationSlowLogsResponse": {
+      "document": "DescribeIndexRecommendAggregationSlowLogs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询实例慢查询聚合结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "Aggregation",
+          "name": "Aggregation",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexRecommendInfoRequest": {
+      "document": "DescribeIndexRecommendInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括：\"mongodb\" - 云数据库 。",
+          "example": "mongodb",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cmgo-2jrxxlx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIndexRecommendInfoResponse": {
+      "document": "DescribeIndexRecommendInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引推荐的集合数量。",
+          "example": "100",
+          "member": "int64",
+          "name": "CollectionNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引推荐的索引数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "IndexNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引项。",
+          "example": " ",
+          "member": "MongoDBIndex",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优化级别，1-4，优先级从高到低。",
+          "example": "1",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "历史优化数。",
+          "example": "11",
+          "member": "int64",
+          "name": "Optimized",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "累计优化条数。",
+          "example": "33",
+          "member": "int64",
+          "name": "OptimizedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeMailProfileRequest": {
       "document": "DescribeMailProfile请求参数结构体",
       "members": [
@@ -3653,6 +3899,80 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisProcessListRequest": {
+      "document": "DescribeRedisProcessList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Redis 实例ID。",
+          "example": "crs-qylqkl4f",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
+          "example": "redis",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的Proxy节点数量上限，默认值为20，最大值为50。",
+          "example": "50",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Proxy节点的偏移量，默认值为0。",
+          "example": "50",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRedisProcessListResponse": {
+      "document": "DescribeRedisProcessList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该实例的Proxy节点数量，可用于分页查询。",
+          "example": "198",
+          "member": "int64",
+          "name": "ProxyCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实时会话详情列表。",
+          "example": "无",
+          "member": "Process",
+          "name": "Processes",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -5458,6 +5778,138 @@
       ],
       "usage": "out"
     },
+    "IndexesToBuild": {
+      "document": "推荐的索引",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引id，唯一标识一个索引。",
+          "example": "2344052",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建索引命令。",
+          "example": "db.ground_truth_data.createIndex({ data.3d_point_set.labels: 1, label_result_url: 1 }, { background: true })",
+          "member": "string",
+          "name": "IndexCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引字符串。",
+          "example": "{ data.3d_point_set.labels: 1, label_result_url: 1 }",
+          "member": "string",
+          "name": "IndexStr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优化级别，1-4，优先级从高到低。",
+          "example": "4",
+          "member": "int64",
+          "name": "Level",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引得分。",
+          "example": "20",
+          "member": "int64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名。",
+          "example": "无",
+          "member": "string",
+          "name": "Signs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0-待创建；1-创建中。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IndexesToDrop": {
+      "document": "无效索引",
+      "members": [
+        {
+          "disabled": false,
+          "document": "索引字符串。",
+          "example": "{ data.3d_point_set.labels: 1, label_result_url: 1 }",
+          "member": "string",
+          "name": "IndexStr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引得分。",
+          "example": "20",
+          "member": "int64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效原因。",
+          "example": "重复创建",
+          "member": "string",
+          "name": "Reason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "删除索引命令。",
+          "example": "db.ground_truth_data.createIndex({ data.3d_point_set.labels: 1, label_result_url: 1 }, { background: true })",
+          "member": "string",
+          "name": "IndexCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "索引名。",
+          "example": "test",
+          "member": "string",
+          "name": "IndexName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceBasicInfo": {
       "document": "实例基础信息。",
       "members": [
@@ -6429,6 +6881,82 @@
       ],
       "type": "object"
     },
+    "MongoDBIndex": {
+      "document": "Mongodb索引项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id。",
+          "example": "cmgo-2jrxxrlx",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表名。",
+          "example": "ground_truth_data",
+          "member": "string",
+          "name": "Collection",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "库名。",
+          "example": "test",
+          "member": "string",
+          "name": "Db",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优化级别，1-4，优先级从高到低。",
+          "example": "4",
+          "member": "int64",
+          "name": "Level",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "得分。",
+          "example": "800",
+          "member": "int64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐索引列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexesToBuild",
+          "name": "IndexesToBuild",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无效索引列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IndexesToDrop",
+          "name": "IndexesToDrop",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MonitorFloatMetric": {
       "document": "监控数据（浮点型）",
       "members": [
@@ -6711,6 +7239,92 @@
         }
       ],
       "type": "object"
+    },
+    "Process": {
+      "document": "实时会话详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话 ID。",
+          "example": "-12630381964471452",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问来源，IP 地址和端口号。",
+          "example": "100.1.232.215:3006",
+          "member": "string",
+          "name": "Address",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件描述符。",
+          "example": "15",
+          "member": "int64",
+          "name": "FileDescriptor",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话名称，使用 CLIENT SETNAME 命令设置。",
+          "example": "dbbrain",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次执行的命令。",
+          "example": "setnx",
+          "member": "string",
+          "name": "LastCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话存活时间，单位：秒。",
+          "example": "175498",
+          "member": "int64",
+          "name": "Age",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后一次执行命令后空闲的时间，单位：秒。",
+          "example": "2",
+          "member": "int64",
+          "name": "Idle",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会话所属的 Proxy节点 ID。",
+          "example": "66eb6c7d56608685c13c2f63cb7373bd95f27ae6",
+          "member": "string",
+          "name": "ProxyId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ProcessStatistic": {
       "document": "实时会话统计详情。",

@@ -1,12 +1,12 @@
 **Example 1: DescribeTRTCMarketQualityData**
 
-查询TRTC数据大盘质量数据
+查询TRTC数据大盘质量相关数据
 
 Input: 
 
 ```
 tccli trtc DescribeTRTCMarketQualityData --cli-unfold-argument  \
-    --SdkAppId abc \
+    --SdkAppId 1400xxxxxx \
     --StartTime 2020-09-22 \
     --EndTime 2020-09-22 \
     --Period d

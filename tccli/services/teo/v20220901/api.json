@@ -601,9 +601,47 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名证书信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AccelerationDomainCertificate",
+          "name": "Certificate",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "AccelerationDomainCertificate": {
+      "document": "加速域名所对应的证书信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置证书的模式，取值有： <li>disable：不配置证书；</li> <li>eofreecert：配置 EdgeOne 免费证书；</li> <li>sslcert：配置 SSL 证书。</li>",
+          "example": "\"ssl\"",
+          "member": "string",
+          "name": "Mode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CertificateInfo",
+          "name": "List",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AclCondition": {
       "document": "精准防护条件",
@@ -2128,6 +2166,82 @@
         }
       ],
       "usage": "both"
+    },
+    "CertificateInfo": {
+      "document": "https 服务端证书配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务器证书 ID。",
+          "example": "EO-dsfdsf",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书备注名。",
+          "example": "默认证书",
+          "member": "string",
+          "name": "Alias",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书类型，取值有：\n<li>default：默认证书；</li>\n<li>upload：用户上传；</li>\n<li>managed：腾讯云托管。</li>",
+          "example": "default",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书过期时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书部署时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "DeployTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签名算法。",
+          "example": "RSA",
+          "member": "string",
+          "name": "SignAlgo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书状态，取值有：\n<li>deployed：已部署；</li>\n<li>processing：部署中；</li>\n<li>applying：申请中；</li>\n<li>failed：申请失败；</li>\n<li>issued：绑定失败。</li>",
+          "example": "deployed",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CheckCnameStatusRequest": {
       "document": "CheckCnameStatus请求参数结构体",

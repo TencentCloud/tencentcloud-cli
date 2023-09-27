@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "CreateInstanceByApi": [
+      {
+        "document": "创建集群",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceName\": \"abc\",\n    \"Zone\": \"abc\",\n    \"UserVPCId\": \"abc\",\n    \"UserSubnetId\": \"abc\",\n    \"ChargeProperties\": {\n        \"PayMode\": 0,\n        \"RenewFlag\": 0,\n        \"TimeSpan\": 0,\n        \"TimeUnit\": \"abc\",\n        \"ChargeType\": \"abc\"\n    },\n    \"AdminPassword\": \"abc\",\n    \"Tags\": {\n        \"TagKey\": \"abc\",\n        \"TagValue\": \"abc\"\n    },\n    \"Resources\": [\n        {\n            \"SpecName\": \"abc\",\n            \"Count\": 0,\n            \"DiskSpec\": {\n                \"DiskType\": \"abc\",\n                \"DiskSize\": 0,\n                \"DiskCount\": 0\n            },\n            \"Type\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"InstanceId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建集群"
+      }
+    ],
+    "DestroyInstanceByApi": [
+      {
+        "document": "销毁集群",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "销毁集群"
+      }
+    ]
+  },
+  "version": "1.0"
+}

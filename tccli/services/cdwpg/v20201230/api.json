@@ -1,0 +1,354 @@
+{
+  "actions": {
+    "CreateInstanceByApi": {
+      "document": "创建集群",
+      "input": "CreateInstanceByApiRequest",
+      "name": "创建集群",
+      "output": "CreateInstanceByApiResponse",
+      "status": "online"
+    },
+    "DestroyInstanceByApi": {
+      "document": "销毁集群",
+      "input": "DestroyInstanceByApiRequest",
+      "name": "销毁集群",
+      "output": "DestroyInstanceByApiResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2020-12-30",
+    "api_brief": "官网对外接口",
+    "serviceNameCN": "云数据仓库 PostgreSQL",
+    "serviceShortName": "cdwpg"
+  },
+  "objects": {
+    "CBSSpec": {
+      "document": "磁盘规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "盘类型",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "大小",
+          "example": "20",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "个数",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "ChargeProperties": {
+      "document": "计费时间参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1-需要自动续期",
+          "example": "1",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单时间范围",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间单位，一般为h和m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费类型0-按量计费，1-包年包月",
+          "example": "0",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PREPAID、POSTPAID_BY_HOUR",
+          "example": "PREPAID",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateInstanceByApiRequest": {
+      "document": "CreateInstanceByApi请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "cdwpg-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-beijing-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私有网络",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "UserVPCId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网",
+          "example": "subnet-xxx",
+          "member": "string",
+          "name": "UserSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费方式",
+          "example": "无",
+          "member": "ChargeProperties",
+          "name": "ChargeProperties",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集群密码",
+          "example": "无",
+          "member": "string",
+          "name": "AdminPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源信息",
+          "example": "无",
+          "member": "ResourceSpecNew",
+          "name": "Resources",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceByApiResponse": {
+      "document": "CreateInstanceByApi返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwpg-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceByApiRequest": {
+      "document": "DestroyInstanceByApi请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名称，例如\"cdwpg-xxxx\"",
+          "example": "\"cdwpg-xxxx\"",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceByApiResponse": {
+      "document": "DestroyInstanceByApi返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "销毁流程Id",
+          "example": "\"123\"",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "\"xx\"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceSpecNew": {
+      "document": "资源规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称",
+          "example": "nc2.large",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源数",
+          "example": "200",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "磁盘信息",
+          "example": "{ \"DiskType\": \"CLOUD_HSSD\", \"DiskSize\": 20, \"DiskCount\": 10 }",
+          "member": "CBSSpec",
+          "name": "DiskSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，DATA",
+          "example": "Local",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "Tag": {
+      "document": "标签描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的键",
+          "example": "标签一",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签的值",
+          "example": "内容一",
+          "member": "string",
+          "name": "TagValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}
