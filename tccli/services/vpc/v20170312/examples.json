@@ -1774,7 +1774,7 @@
       {
         "document": "根据资源ID查询实例信息",
         "input": "https://vpc.tencentcloudapi.com/?Action=DescribeVpcPeeringConnections\n&PeeringConnectionIds.0=pcx-test1234\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"PeerConnectionSet\": [\n            {\n                \"SourceVpcId\": \"abc\",\n                \"PeerVpcId\": \"abc\",\n                \"PeeringConnectionId\": \"abc\",\n                \"PeeringConnectionName\": \"abc\",\n                \"State\": \"abc\",\n                \"IsNgw\": true,\n                \"Bandwidth\": 0,\n                \"SourceRegion\": \"abc\",\n                \"DestinationRegion\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"AppId\": 0,\n                \"PeerAppId\": 0,\n                \"ChargeType\": \"abc\",\n                \"SourceUin\": 0,\n                \"DestinationUin\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"QosLevel\": \"abc\",\n                \"Type\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "根据资源ID查询实例信息"
       }
     ],

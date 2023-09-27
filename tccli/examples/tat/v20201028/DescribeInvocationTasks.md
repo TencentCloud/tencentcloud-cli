@@ -27,7 +27,9 @@ Output:
                     "CommandType": "SHELL",
                     "Timeout": 1,
                     "Username": "root",
-                    "WorkingDirectory": "/root/"
+                    "WorkingDirectory": "/root/",
+                    "OutputCOSBucketUrl": "abc",
+                    "OutputCOSKeyPrefix": "abc"
                 },
                 "InvocationId": "inv-1vll7hda",
                 "InvocationTaskId": "invt-afwuqts2",
@@ -43,7 +45,7 @@ Output:
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
                 "ErrorInfo": "",
-                "InvocationSource": "xx",
+                "InvocationSource": "abc",
                 "StartTime": "2020-11-05T07:49:58+00:00",
                 "EndTime": "2020-11-05T07:50:04+00:00",
                 "CreatedTime": "2020-11-05T07:49:56+00:00",
@@ -56,7 +58,9 @@ Output:
                     "CommandType": "SHELL",
                     "Timeout": 1,
                     "Username": "root",
-                    "WorkingDirectory": "/root/"
+                    "WorkingDirectory": "/root/",
+                    "OutputCOSBucketUrl": "abc",
+                    "OutputCOSKeyPrefix": "abc"
                 },
                 "InvocationId": "inv-1vll7hda",
                 "InvocationTaskId": "invt-08oe5fe2",
@@ -72,7 +76,7 @@ Output:
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
                 "ErrorInfo": "",
-                "InvocationSource": "xx",
+                "InvocationSource": "abc",
                 "StartTime": "2020-11-05T07:49:58+00:00",
                 "EndTime": "2020-11-05T07:50:04+00:00",
                 "CreatedTime": "2020-11-05T07:49:56+00:00",
@@ -85,7 +89,9 @@ Output:
                     "CommandType": "SHELL",
                     "Timeout": 1,
                     "Username": "root",
-                    "WorkingDirectory": "/root/"
+                    "WorkingDirectory": "/root/",
+                    "OutputCOSBucketUrl": "abc",
+                    "OutputCOSKeyPrefix": "abc"
                 },
                 "InvocationId": "inv-1vll7hda",
                 "InvocationTaskId": "invt-91cpqs22",
@@ -101,7 +107,7 @@ Output:
                     "ExecEndTime": "2020-11-05T07:50:04+00:00"
                 },
                 "ErrorInfo": "",
-                "InvocationSource": "xx",
+                "InvocationSource": "abc",
                 "StartTime": "2020-11-05T07:49:58+00:00",
                 "EndTime": "2020-11-05T07:50:04+00:00",
                 "CreatedTime": "2020-11-05T07:49:56+00:00",

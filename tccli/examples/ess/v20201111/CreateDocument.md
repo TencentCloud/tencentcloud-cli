@@ -83,7 +83,7 @@ tccli ess CreateDocument --cli-unfold-argument  \
     --ClientToken  \
     --NeedPreview False \
     --FormFields.0.ComponentValue 123456 \
-    --FormFields.0.ComponentId 单行文本1
+    --FormFields.0.ComponentId 单行文本
 ```
 
 Output: 

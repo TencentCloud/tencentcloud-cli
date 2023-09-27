@@ -43,14 +43,14 @@
       "status": "online"
     },
     "DescribeSmsSignList": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629),如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 查询短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信签名，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629),如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 查询短信签名。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "DescribeSmsSignListRequest",
       "name": "短信签名状态查询",
       "output": "DescribeSmsSignListResponse",
       "status": "online"
     },
     "DescribeSmsTemplateList": {
-      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "⚠️注意：个人认证用户不支持使用 API 查询短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "DescribeSmsTemplateListRequest",
       "name": "短信模板状态查询",
       "output": "DescribeSmsTemplateListResponse",
@@ -64,35 +64,35 @@
       "status": "online"
     },
     "ModifySmsTemplate": {
-      "document": "1. 修改短信正文模板，修改之前请先认真参阅 [腾讯云短信正文模板审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信正文模板。\n3. 修改短信模板，仅当正文模板为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的正文模板不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "1. 修改短信正文模板，修改之前请先认真参阅 [腾讯云短信正文模板审核标准](https://cloud.tencent.com/document/product/382/39023)。\n2. ⚠️注意：个人认证用户不支持使用 API 修改短信正文模板，请参阅了解 [实名认证基本介绍](https://cloud.tencent.com/document/product/378/3629)，如果为个人认证请登录 [控制台](https://console.cloud.tencent.com/smsv2) 修改短信正文模板。\n3. 修改短信模板，仅当正文模板为**待审核**或**已拒绝**状态时，才能进行修改，**已审核通过**的正文模板不支持修改。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2019-07-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "ModifySmsTemplateRequest",
       "name": "修改短信模板",
       "output": "ModifySmsTemplateResponse",
       "status": "online"
     },
     "PullSmsReplyStatus": {
-      "document": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "PullSmsReplyStatusRequest",
       "name": "拉取短信回复状态",
       "output": "PullSmsReplyStatusResponse",
       "status": "online"
     },
     "PullSmsReplyStatusByPhoneNumber": {
-      "document": "拉取单个号码短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取单个号码短信回复状态。\n目前也支持 [配置回复回调](https://cloud.tencent.com/document/product/382/42907) 的方式来获取上行回复。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "PullSmsReplyStatusByPhoneNumberRequest",
       "name": "拉取单个号码短信回复状态",
       "output": "PullSmsReplyStatusByPhoneNumberResponse",
       "status": "online"
     },
     "PullSmsSendStatus": {
-      "document": "拉取短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：此接口需要联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81) 开通。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "PullSmsSendStatusRequest",
       "name": "拉取短信下发状态",
       "output": "PullSmsSendStatusResponse",
       "status": "online"
     },
     "PullSmsSendStatusByPhoneNumber": {
-      "document": "拉取单个号码短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "拉取单个号码短信下发状态。\n目前也支持 [配置回调](https://cloud.tencent.com/document/product/382/37809#.E8.AE.BE.E7.BD.AE.E4.BA.8B.E4.BB.B6.E5.9B.9E.E8.B0.83.E9.85.8D.E7.BD.AE) 的方式来获取下发状态。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "PullSmsSendStatusByPhoneNumberRequest",
       "name": "拉取单个号码短信下发状态",
       "output": "PullSmsSendStatusByPhoneNumberResponse",
@@ -113,7 +113,7 @@
       "status": "online"
     },
     "SendStatusStatistics": {
-      "document": "统计用户发送短信的数据。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。\n",
+      "document": "统计用户发送短信的数据。\n>- 注：由于云 **API3.0 安全性**有所提升，所以**接口鉴权**较为复杂，建议使用 SDK 来使用云短信服务。\n>- 您可以在 [API 3.0 Explorer](https://console.cloud.tencent.com/api/explorer?Product=sms&Version=2021-01-11&Action=SendSms) 中直接运行该接口，可以先免去签名计算步骤。运行成功后，API Explorer可以**自动生成**SDK代码示例。",
       "input": "SendStatusStatisticsRequest",
       "name": "发送短信数据统计",
       "output": "SendStatusStatisticsResponse",
@@ -156,7 +156,7 @@
         {
           "disabled": false,
           "document": "签名名称。\n注：不能重复申请已通过或待审核的签名。",
-          "example": "test",
+          "example": "腾讯云",
           "member": "string",
           "name": "SignName",
           "required": true,
@@ -192,7 +192,7 @@
         {
           "disabled": false,
           "document": "签名用途：\n0：自用。\n1：他用。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "SignPurpose",
           "required": true,
@@ -201,7 +201,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -210,7 +210,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 SignPurpose 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 SignPurpose 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -219,7 +219,7 @@
         {
           "disabled": false,
           "document": "签名的申请备注。",
-          "example": "xxx",
+          "example": "业务自用申请",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -234,10 +234,10 @@
         {
           "disabled": false,
           "document": "添加签名响应",
-          "example": "\"AddSignStatus\": {       \"SignId\": 1110,       \"SignApplyId\"",
+          "example": "{\"SignId\":1110}",
           "member": "AddSignStatus",
           "name": "AddSignStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -256,7 +256,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "腾讯云",
+          "example": "验证码",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -265,7 +265,7 @@
         {
           "disabled": false,
           "document": "模板内容。",
-          "example": "xxx",
+          "example": "您的验证码是{1}",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -292,7 +292,7 @@
         {
           "disabled": false,
           "document": "模板备注，例如申请原因，使用场景等。",
-          "example": "xxx",
+          "example": "业务验证码",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -307,10 +307,10 @@
         {
           "disabled": false,
           "document": "添加短信模板响应包体",
-          "example": "   \"AddTemplateStatus\": {       \"TemplateId\": 1110,       \"Reque",
+          "example": "{\"TemplateId\":\"1110\"}",
           "member": "AddTemplateStatus",
           "name": "AddTemplateStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -492,10 +492,10 @@
         {
           "disabled": false,
           "document": "回执数据统计响应包体。",
-          "example": "  \"CallbackStatusStatistics\": {       \"CallbackCount\": 1745,  ",
+          "example": "{\"CallbackCount\":1745,\"RequestSuccessCount\":1880,\"CallbackFailCount\":401,\"CallbackSuccessCount\":1344,\"InternalErrorCount\":0,\"InvalidNumberCount\":0,\"ShutdownErrorCount\":401,\"BlackListCount\":0,\"FrequencyLimitCount\":0}",
           "member": "CallbackStatusStatistics",
           "name": "CallbackStatusStatistics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -513,26 +513,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "删除状态信息。",
-          "example": "",
+          "document": "删除状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "DeleteStatus",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "删除时间，UNIX 时间戳（单位：秒）。",
-          "example": "",
+          "document": "删除时间，UNIX 时间戳（单位：秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "DeleteTime",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DeleteSmsSignRequest": {
       "document": "DeleteSmsSign请求参数结构体",
@@ -540,7 +542,7 @@
         {
           "disabled": false,
           "document": "待删除的签名 ID。",
-          "example": "12345",
+          "example": "1110",
           "member": "uint64",
           "name": "SignId",
           "required": true,
@@ -555,10 +557,10 @@
         {
           "disabled": false,
           "document": "删除签名响应",
-          "example": " \"DeleteTemplateStatus\": {       \"DeleteTime\": 1578988506,   ",
+          "example": "{\"DeleteTime\":1578988506,\"DeleteStatus\":\"return successfully!\"}",
           "member": "DeleteSignStatus",
           "name": "DeleteSignStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -577,7 +579,7 @@
         {
           "disabled": false,
           "document": "待删除的模板 ID。",
-          "example": "1234",
+          "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
           "required": true,
@@ -592,10 +594,10 @@
         {
           "disabled": false,
           "document": "删除模板响应",
-          "example": "  \"DeleteTemplateStatus\": {       \"DeleteTime\": 1578988506,     ",
+          "example": "{\"DeleteTime\":1578988506,\"DeleteStatus\":\"return successfully!\"}",
           "member": "DeleteTemplateStatus",
           "name": "DeleteTemplateStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -680,7 +682,7 @@
           "example": "1110",
           "member": "uint64",
           "name": "SignId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -690,7 +692,7 @@
           "example": "0",
           "member": "uint64",
           "name": "International",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -700,17 +702,17 @@
           "example": "0",
           "member": "int64",
           "name": "StatusCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "ReviewReply",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -720,7 +722,7 @@
           "example": "腾讯云",
           "member": "string",
           "name": "SignName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -730,7 +732,7 @@
           "example": "1620734188",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -743,7 +745,7 @@
         {
           "disabled": false,
           "document": "签名 ID 数组。\n注：默认数组最大长度100。",
-          "example": "1110",
+          "example": "[1110]",
           "member": "uint64",
           "name": "SignIdSet",
           "required": true,
@@ -767,10 +769,10 @@
         {
           "disabled": false,
           "document": "获取签名信息响应",
-          "example": "\"DescribeSignListStatusSet\": [       {         \"SignId\": 111",
+          "example": "[{\"SignName\":\"腾讯云\",\"International\":0,\"SignId\":1110,\"ReviewReply\":\"\",\"CreateTime\":1617508800,\"StatusCode\":0}]",
           "member": "DescribeSignListStatus",
           "name": "DescribeSignListStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -798,7 +800,7 @@
         {
           "disabled": false,
           "document": "模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。\n<dx-alert infotype=\"notice\" title=\"注意\">默认数组长度最大100</dx-alert>",
-          "example": "1110",
+          "example": "[1110]",
           "member": "uint64",
           "name": "TemplateIdSet",
           "required": false,
@@ -831,10 +833,10 @@
         {
           "disabled": false,
           "document": "获取短信模板信息响应",
-          "example": "\"DescribeTemplateStatusSet\": [       {         \"TemplateId\":",
+          "example": "[{\"TemplateName\":\"验证码\",\"TemplateId\":1110,\"International\":0,\"ReviewReply\":\"\",\"CreateTime\":1617379200,\"TemplateContent\":\"您的验证码是{1}\",\"StatusCode\":0}]",
           "member": "DescribeTemplateListStatus",
           "name": "DescribeTemplateStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -862,7 +864,7 @@
         },
         {
           "disabled": false,
-          "document": "是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信。",
+          "document": "是否国际/港澳台短信，其中0表示国内短信，1表示国际/港澳台短信，3表示该模板既支持国内短信也支持国际/港澳台短信。",
           "example": "0",
           "member": "uint64",
           "name": "International",
@@ -883,7 +885,7 @@
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "xxx",
+          "example": "无",
           "member": "string",
           "name": "ReviewReply",
           "output_required": true,
@@ -893,7 +895,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "xxx",
+          "example": "业务验证码",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -990,7 +992,7 @@
         {
           "disabled": false,
           "document": "签名用途：\n0：自用。\n1：他用。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "SignPurpose",
           "required": true,
@@ -999,7 +1001,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "xxxx",
+          "example": "无",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -1008,7 +1010,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 SignPurpose 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 SignPurpose 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "xxxx",
+          "example": "无",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -1017,7 +1019,7 @@
         {
           "disabled": false,
           "document": "签名的申请备注。",
-          "example": "xxxx",
+          "example": "自用业务申请",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -1032,9 +1034,10 @@
         {
           "disabled": false,
           "document": "修改签名响应",
-          "example": "   \"ModifySignStatus\": {       \"SignId\": 1110,       \"SignApplyI",
+          "example": "{\"SignId\":1110}",
           "member": "ModifySignStatus",
           "name": "ModifySignStatus",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1071,7 +1074,7 @@
         {
           "disabled": false,
           "document": "新的模板内容。",
-          "example": "xxx",
+          "example": "您的验证码是{1}",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -1098,7 +1101,7 @@
         {
           "disabled": false,
           "document": "模板备注，例如申请原因，使用场景等。",
-          "example": "xxx",
+          "example": "业务验证码",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -1113,10 +1116,10 @@
         {
           "disabled": false,
           "document": "修改模板参数响应",
-          "example": "\"ModifyTemplateStatus\": {       \"TemplateId\": 1110     }",
+          "example": "{\"TemplateId\":1110}",
           "member": "ModifyTemplateStatus",
           "name": "ModifyTemplateStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1363,10 +1366,10 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "    \"PullSmsReplyStatusSet\": [       {         \"ExtendCode\": \"11",
+          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"15291996666\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8615291996666\",\"SignName\":\"腾讯云\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1385,7 +1388,7 @@
         {
           "disabled": false,
           "document": "拉取最大条数，最多100条。",
-          "example": "2",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1409,10 +1412,10 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": " \"PullSmsReplyStatusSet\": [       {         \"ExtendCode\": \"11",
+          "example": "[{\"CountryCode\":\"86\",\"ReplyContent\":\"1\",\"SubscriberNumber\":\"15291990000\",\"ExtendCode\":\"11\",\"ReplyTime\":1620734188,\"PhoneNumber\":\"+8615291990000\",\"SignName\":\"腾讯云\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1577,10 +1580,10 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "\"PullSmsSendStatusSet\": [       {         \"UserReceiveTime\": \"20",
+          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"15291996666\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8615291996666\",\"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\",\"UserReceiveTime\":1620734188}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1599,7 +1602,7 @@
         {
           "disabled": false,
           "document": "拉取最大条数，最多100条。",
-          "example": "2",
+          "example": "100",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1623,10 +1626,10 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "\"PullSmsSendStatusSet\": [       {         \"UserReceiveTime\": \"20",
+          "example": "[{\"Description\":\"DELIVRD\",\"CountryCode\":\"86\",\"SubscriberNumber\":\"15291990000\",\"ReportStatus\":\"SUCCESS\",\"PhoneNumber\":\"+8615291990000\",\"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\",\"UserReceiveTime\":1620734188}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1663,7 +1666,7 @@
         {
           "disabled": false,
           "document": "用户回填时间，UNIX 时间戳（单位：秒）。",
-          "example": "1357702710187",
+          "example": "1658310430",
           "member": "uint64",
           "name": "ConversionTime",
           "required": false,
@@ -1681,7 +1684,7 @@
           "example": "无",
           "member": "ReportConversionStatus",
           "name": "ReportConversionStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1744,7 +1747,7 @@
         {
           "disabled": false,
           "document": "模板 ID，必须填写已审核通过的模板 ID。模板 ID 可前往 [国内短信](https://console.cloud.tencent.com/smsv2/csms-template) 或 [国际/港澳台短信](https://console.cloud.tencent.com/smsv2/isms-template) 的正文模板管理查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。",
-          "example": "1234",
+          "example": "1110",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -1762,7 +1765,7 @@
         {
           "disabled": false,
           "document": "模板参数，若无模板参数，则设置为空。\n<dx-alert infotype=\"notice\" title=\"注意\">模板参数的个数需要与 TemplateId 对应模板的变量个数保持一致。</dx-alert>",
-          "example": "12345",
+          "example": "[1234]",
           "member": "string",
           "name": "TemplateParamSet",
           "required": false,
@@ -1771,7 +1774,7 @@
         {
           "disabled": false,
           "document": "短信码号扩展号，默认未开通，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "1400006666",
+          "example": "无",
           "member": "string",
           "name": "ExtendCode",
           "required": false,
@@ -1789,7 +1792,7 @@
         {
           "disabled": false,
           "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "test",
+          "example": "无",
           "member": "string",
           "name": "SenderId",
           "required": false,
@@ -1804,7 +1807,7 @@
         {
           "disabled": false,
           "document": "短信发送状态。",
-          "example": "\"SendStatusSet\": [       {         \"SerialNo\": \"5000:10457106691",
+          "example": "[{\"SerialNo\":\"5000:1045710669157053657849499619\",\"PhoneNumber\":\"+8618511122233\",\"Fee\":1,\"SessionContext\":\"test\",\"Code\":\"Ok\",\"Message\":\"send success\",\"IsoCode\":\"CN\"}]",
           "member": "SendStatus",
           "name": "SendStatusSet",
           "output_required": true,
@@ -1974,7 +1977,7 @@
         {
           "disabled": false,
           "document": "偏移量。\n注：目前固定设置为0。",
-          "example": "1",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1989,10 +1992,10 @@
         {
           "disabled": false,
           "document": "发送数据统计响应包体。",
-          "example": "\"SendStatusStatistics\": {       \"FeeCount\": 1880,       \"Requ",
+          "example": "{\"FeeCount\":1880,\"RequestCount\":1880,\"RequestSuccessCount\":1880}",
           "member": "SendStatusStatistics",
           "name": "SendStatusStatistics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2138,7 +2141,7 @@
         {
           "disabled": false,
           "document": "发送数据统计响应包体。",
-          "example": "\"SmsPackagesStatisticsSet\":<br/> [<br/>     {<br/>         \"PackageCreateTime\": 1617292800,<br/>         \"PackageExpiredTime\": 1617292800,<br/>         \"PackageEffectiveTime\": 1619884800,<br/>         \"PackageType\": 1,<br/>         \"CurrentUsage\": 1000,<br/>         \"PackageId\": 1000791745,<br/>         \"PackageAmount\": 1000<br/>     }<br/> ]",
+          "example": "[{\"PackageCreateTime\":1617292800,\"PackageExpiredTime\":1617292800,\"PackageEffectiveTime\":1619884800,\"PackageType\":1,\"CurrentUsage\":1000,\"PackageId\":1000791745,\"PackageAmount\":1000}]",
           "member": "SmsPackagesStatistics",
           "name": "SmsPackagesStatisticsSet",
           "output_required": true,

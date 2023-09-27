@@ -1209,7 +1209,7 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏输出，取值范围：<br><li>True：隐藏输出 <br><li>False：不隐藏 <br>默认为 True。",
+          "document": "是否隐藏输出，取值范围：<br><li>true：隐藏输出 <br><li>false：不隐藏 <br>默认为 false。",
           "example": "false",
           "member": "bool",
           "name": "HideOutput",
@@ -1228,7 +1228,7 @@
           "example": "3",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1238,7 +1238,7 @@
           "example": "无",
           "member": "InvocationTask",
           "name": "InvocationTaskSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2016,23 +2016,23 @@
         },
         {
           "disabled": false,
-          "document": "执行任务开始时间。",
-          "example": "无",
+          "document": "执行任务开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "执行任务结束时间。",
-          "example": "无",
+          "document": "执行任务结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,

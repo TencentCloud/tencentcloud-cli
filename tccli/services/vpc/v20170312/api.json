@@ -15474,6 +15474,26 @@
       "document": "DescribeVpcPeeringConnections返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "满足条件的对等连接实例个数。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对等连接实例列表。",
+          "example": "无",
+          "member": "PeerConnection",
+          "name": "PeerConnectionSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -23425,6 +23445,192 @@
         }
       ],
       "type": "object"
+    },
+    "PeerConnection": {
+      "document": "对等连接实例信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本端VPC唯一ID。",
+          "example": "vpc-test1234",
+          "member": "string",
+          "name": "SourceVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端VPC唯一ID。",
+          "example": "vpc-test5678",
+          "member": "string",
+          "name": "PeerVpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": "pcx-test1234",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对等连接名称。",
+          "example": "Example",
+          "member": "string",
+          "name": "PeeringConnectionName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对等连接状态，PENDING，投放中；ACTIVE，使用中；REJECTED，已拒绝‘DELETED，已删除；FAILED，失败；EXPIRED，已过期；ISOLATED，隔离中。",
+          "example": "PEDNING",
+          "member": "string",
+          "name": "State",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是新控制器，true: 是NewAfc；false:不是。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsNgw",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对等连接带宽值。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本端地域。",
+          "example": "gz",
+          "member": "string",
+          "name": "SourceRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端地域。",
+          "example": "sh",
+          "member": "string",
+          "name": "DestinationRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2019-01-15 11:07:15",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本端APPID。",
+          "example": "123456789",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端APPID。",
+          "example": "123456789",
+          "member": "int64",
+          "name": "PeerAppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费类型，POSTPAID_BY_DAY_MAX：日峰值计费；POSTPAID_BY_MONTH_95：月95计费。",
+          "example": "POSTPAID_BY_DAY_MAX",
+          "member": "string",
+          "name": "ChargeType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本端UIN。",
+          "example": "1307774067",
+          "member": "int64",
+          "name": "SourceUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对端UIN。",
+          "example": "1307774067",
+          "member": "int64",
+          "name": "DestinationUin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源标签数据。",
+          "example": "[{\"Key\": \"test\", \"Value\":\"test\"}]",
+          "member": "Tag",
+          "name": "TagSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "服务分级：PT、AU、AG。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AU",
+          "member": "string",
+          "name": "QosLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VPC_PEER",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Price": {
       "document": "价格",

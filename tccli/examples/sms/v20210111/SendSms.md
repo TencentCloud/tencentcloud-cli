@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli sms SendSms --cli-unfold-argument  \
-    --PhoneNumberSet +8618511122266 +8618511122233 \
+    --PhoneNumberSet +8618511122233 +8618511122266 \
     --SmsSdkAppId 1400006666 \
     --SignName 腾讯云 \
-    --TemplateId 1234 \
-    --TemplateParamSet 12345 \
+    --TemplateId 1110 \
+    --TemplateParamSet 1234 \
     --SessionContext test
 ```
 

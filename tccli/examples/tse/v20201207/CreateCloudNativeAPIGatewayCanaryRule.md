@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse CreateCloudNativeAPIGatewayCanaryRule --cli-unfold-argument  \
-    --GatewayId gateway-xxx \
-    --ServiceId xxxx \
+    --GatewayId gateway-18f786a \
+    --ServiceId 6abf620f-c6b9-4440-b90c-56c165225cfc \
     --CanaryRule.Priority 10 \
     --CanaryRule.Enabled True \
     --CanaryRule.ConditionList.0.Type query \

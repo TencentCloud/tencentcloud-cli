@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DescribeCloudNativeAPIGatewayCanaryRules --cli-unfold-argument  \
-    --GatewayId abc \
-    --ServiceId abc \
+    --GatewayId gateway-18f786a \
+    --ServiceId 6abf620f-c6b9-4440-b90c-56c165225cfc \
     --Limit 0 \
     --Offset 0
 ```
@@ -23,9 +23,9 @@ Output:
                     "Enabled": true,
                     "ConditionList": [
                         {
-                            "Type": "abc",
+                            "Type": "query",
                             "Key": "abc",
-                            "Operator": "abc",
+                            "Operator": "==",
                             "Value": "abc",
                             "Delimiter": "abc",
                             "GlobalConfigId": "abc",
@@ -34,19 +34,19 @@ Output:
                     ],
                     "BalancedServiceList": [
                         {
-                            "ServiceID": "abc",
-                            "ServiceName": "abc",
+                            "ServiceID": "6abf620f-c6b9-4440-b90c-56c165225cfc",
+                            "ServiceName": "svc1",
                             "UpstreamName": "abc",
                             "Percent": 0
                         }
                     ],
-                    "ServiceId": "abc",
-                    "ServiceName": "abc"
+                    "ServiceId": "6abf620f-c6b9-4440-b90c-56c165225cfc",
+                    "ServiceName": "svc1"
                 }
             ],
-            "TotalCount": 0
+            "TotalCount": 1
         },
-        "RequestId": "abc"
+        "RequestId": "741e4e82-371d-48de-a843-867c69ff114d"
     }
 }
 ```

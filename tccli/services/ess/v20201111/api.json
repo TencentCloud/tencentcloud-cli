@@ -8,9 +8,9 @@
       "status": "online"
     },
     "CancelFlow": {
-      "document": "用于撤销签署流程<br/>\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n`注意：如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同。`",
+      "document": "用于撤销合同流程<br/>\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n\n注:\n`如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，`签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/companyApis/operateFlows/CreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。",
       "input": "CancelFlowRequest",
-      "name": "撤销单个签署流程",
+      "name": "撤销单个合同流程",
       "output": "CancelFlowResponse",
       "status": "online"
     },
@@ -73,7 +73,7 @@
     "CreateFlowApprovers": {
       "document": "适用场景：\n当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口补充或添加签署人。同一签署人可补充多个员工作为或签署人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n1. 本企业（发起方企业）企业微信签署人仅支持通过企业微信UserId或姓名+手机号进行补充。\n2. 本企业（发起方企业）非企业微信签署人仅支持通过姓名+手机号进行补充。\n3. 他方企业仅支持通过姓名+手机号进行补充。",
       "input": "CreateFlowApproversRequest",
-      "name": "补充签署流程企业签署人信息",
+      "name": "补充签署流程签署人信息",
       "output": "CreateFlowApproversResponse",
       "status": "online"
     },
@@ -372,7 +372,7 @@
       "status": "online"
     },
     "GetTaskResultApi": {
-      "document": "查询转换任务的状态。转换任务Id通过发起转换任务接口（CreateConvertTaskApi）获取。\n注意：大文件转换所需的时间可能会比较长。",
+      "document": "此接口（GetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`",
       "input": "GetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "GetTaskResultApiResponse",
@@ -421,9 +421,9 @@
       "status": "online"
     },
     "UploadFiles": {
-      "document": "此接口（UploadFiles）用于文件上传。<br/>\n适用场景：用于生成pdf资源编号（FileIds）来配合“用PDF创建流程”接口使用，使用场景可详见“用PDF创建流程”接口说明。<br/>\n\n其中上传的文件，图片类型(png/jpg/jpeg)大小限制为5M，其他大小限制为60M。<br/>\n调用时需要设置Domain/接口请求域名为 file.ess.tencent.cn,代码示例：<br/>\nHttpProfile httpProfile = new HttpProfile();<br/>\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");<br/>",
+      "document": "此接口（UploadFiles）文件上传。<br/>\n\n适用场景：用于合同，印章的文件上传。文件上传以后，\n如果是PDF格式文件可配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>接口进行合同流程的发起\n如果是其他类型可以配合<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>接口转换成PDF文件\n\n注: \n1. `图片类型(png/jpg/jpeg)限制大小为5M以下, PDF/word/excel等其他格式限制大小为60M以下`\n2. `联调开发环境调用时需要设置Domain接口请求域名为 file.test.ess.tencent.cn，正式环境需要设置为file.ess.tencent.cn，代码示例`\n```\nHttpProfile httpProfile = new HttpProfile();\nhttpProfile.setEndpoint(\"file.test.ess.tencent.cn\");\n```",
       "input": "UploadFilesRequest",
-      "name": "多文件上传",
+      "name": "上传文件",
       "output": "UploadFilesResponse",
       "status": "online"
     },
@@ -624,6 +624,15 @@
         },
         {
           "disabled": false,
+          "document": "自定义签署人角色名：收款人、开具人、见证人",
+          "example": "string",
+          "member": "string",
+          "name": "ApproverRoleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "签署意愿确认渠道，默认为WEIXINAPP:人脸识别\n\n注: 将要废弃, 用ApproverSignTypes签署人签署合同时的认证方式代替, 新客户可请用ApproverSignTypes来设置",
           "example": "[\"WEIXINAPP\"]",
           "member": "string",
@@ -715,6 +724,42 @@
       ],
       "usage": "in"
     },
+    "ApproverItem": {
+      "document": "签署方信息，发起合同后可获取到对应的签署方信息，如角色ID，角色名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverRoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ApproverOption": {
       "document": "签署人个性化能力信息",
       "members": [
@@ -735,6 +780,15 @@
           "name": "NoTransfer",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>\n</ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -1036,7 +1090,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程ID, 为32位字符串。\n建议开发者保存此流程ID方便后续其他操作。",
+          "document": "合同流程ID, 为32位字符串。\n\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
           "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
@@ -1045,8 +1099,8 @@
         },
         {
           "disabled": false,
-          "document": "撤销此合同(流程)的原因，最长200个字。",
-          "example": "cancel",
+          "document": "撤销此合同流程的原因，最多支持200个字符长度。只能由中文、字母、数字、中文标点和英文标点组成（不支持表情）。",
+          "example": "这个合同里边的付款金额写错",
           "member": "string",
           "name": "CancelMessage",
           "required": true,
@@ -1948,6 +2002,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "签署方信息，如角色ID、角色名称等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproverItem",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2085,6 +2149,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署人信息补充方式\n\n<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>\n<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillApproverType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2317,6 +2390,16 @@
           "name": "PreviewUrl",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方信息，如角色ID、角色名称等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproverItem",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4243,6 +4326,15 @@
           "name": "Hides",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署节点ID，用于生成动态签署人链接完成领取",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4257,6 +4349,16 @@
           "member": "string",
           "name": "SchemeUrl",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "二维码，在生成动态签署人跳转封面页链接时返回",
+          "example": "无",
+          "member": "string",
+          "name": "SchemeQrcodeUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5121,7 +5223,7 @@
         },
         {
           "disabled": false,
-          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>FLOW 如需下载合同文件请选择此项</li>\n<li>TEMPLATE 如需下载模板文件请选择此项</li>\n<li>DOCUMENT 如需下载文档文件请选择此项</li>\n<li>SEAL 如需下载印章图片请选择此项</li>\n</ul>",
+          "document": "文件对应的业务类型，目前支持：\n<ul>\n<li>**FLOW ** : 如需下载合同文件请选择此项</li>\n<li>**TEMPLATE ** : 如需下载模板文件请选择此项</li>\n<li>**DOCUMENT  **: 如需下载文档文件请选择此项</li>\n<li>**SEAL  **: 如需下载印章图片请选择此项</li>\n</ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
@@ -5131,7 +5233,7 @@
         {
           "disabled": false,
           "document": "业务编号的数组，取值如下：\n<ul>\n<li>流程编号</li>\n<li>模板编号</li>\n<li>文档编号</li>\n<li>印章编号</li>\n<li>如需下载合同文件请传入FlowId，最大支持20个资源</li>\n</ul>",
-          "example": "[\"11114444\",\"11114444555\",\"12315215515\",\"12415251512\"]",
+          "example": "[\"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\",\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"]",
           "member": "string",
           "name": "BusinessIds",
           "required": true,
@@ -5140,7 +5242,7 @@
         {
           "disabled": false,
           "document": "下载后的文件命名，只有FileType为zip的时候生效",
-          "example": "西安合同",
+          "example": "张三的入职合同",
           "member": "string",
           "name": "FileName",
           "required": false,
@@ -5217,7 +5319,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件URL信息；\n链接不是永久链接，有效期5分钟后链接失效。",
+          "document": "文件URL信息；\n链接不是永久链接,  过期时间收UrlTtl入参的影响,  默认有效期5分钟后,  到期后链接失效。",
           "example": "无",
           "member": "FileUrl",
           "name": "FileUrls",
@@ -6811,6 +6913,15 @@
           "name": "ApproverMobile",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补充企业动态签署人时，需要指定对应企业名称",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -7046,6 +7157,16 @@
           "example": "yDw**************************y0S",
           "member": "string",
           "name": "SignId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义签署人角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverRoleName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7742,7 +7863,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务Id，通过接口CreateConvertTaskApi或CreateMergeFileTask得到的返回任务id",
+          "document": "转换任务Id，通过接口<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>或<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateMergeFileTask\" target=\"_blank\">创建多文件转换任务接口</a>\n得到的转换任务id",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -7751,7 +7872,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息,UserId必填",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7760,7 +7881,7 @@
         },
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。 在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7794,7 +7915,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，需要关注的状态\n0  :NeedTranform   - 任务已提交\n4  :Processing     - 文档转换中\n8  :TaskEnd        - 任务处理完成\n-2 :DownloadFailed - 下载失败\n-6 :ProcessFailed  - 转换失败\n-13:ProcessTimeout - 转换文件超时",
+          "document": "任务状态，需要关注的状态\n<ul><li>**0**  :NeedTranform   - 任务已提交</li>\n<li>**4**  :Processing     - 文档转换中</li>\n<li>**8**  :TaskEnd        - 任务处理完成</li>\n<li>**-2** :DownloadFailed - 下载失败</li>\n<li>**-6** :ProcessFailed  - 转换失败</li>\n<li>**-13**:ProcessTimeout - 转换文件超时</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
@@ -7804,7 +7925,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述，需要关注的状态\nNeedTranform   - 任务已提交\nProcessing     - 文档转换中\nTaskEnd        - 任务处理完成\nDownloadFailed - 下载失败\nProcessFailed  - 转换失败\nProcessTimeout - 转换文件超时",
+          "document": "状态描述，需要关注的状态\n<ul><li> **NeedTranform** : 任务已提交</li>\n<li> **Processing** : 文档转换中</li>\n<li> **TaskEnd** : 任务处理完成</li>\n<li> **DownloadFailed** : 下载失败</li>\n<li> **ProcessFailed** : 转换失败</li>\n<li> **ProcessTimeout** : 转换文件超时</li></ul>",
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
@@ -10120,8 +10241,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件对应业务类型\n1. TEMPLATE - 模板； 文件类型：.pdf/.doc/.docx/.html\n2. DOCUMENT - 签署过程及签署后的合同文档/图片控件 文件类型：.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html\n3. SEAL - 印章； 文件类型：.jpg/.jpeg/.png",
-          "example": "TEMPLATE",
+          "document": "文件对应业务类型,可以选择的类型如下\n<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>\n<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>",
+          "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",
           "required": true,
@@ -10129,8 +10250,8 @@
         },
         {
           "disabled": false,
-          "document": "调用方信息，其中OperatorId为必填字段，即用户的UserId",
-          "example": "Caller",
+          "document": "执行本接口操作的员工信息。其中OperatorId为必填字段，即用户的UserId。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yDRCLUUgygq2xun5UuO4zjEwg0vjoimj",
           "member": "Caller",
           "name": "Caller",
           "required": false,
@@ -10138,7 +10259,7 @@
         },
         {
           "disabled": false,
-          "document": "上传文件内容数组，最多支持20个文件",
+          "document": "上传文件内容数组，最多支持上传20个文件。",
           "example": "FileInfos",
           "member": "UploadFile",
           "name": "FileInfos",
@@ -10147,7 +10268,7 @@
         },
         {
           "disabled": false,
-          "document": "文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。\n如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF",
+          "document": "文件类型， 默认通过文件内容和文件后缀一起解析得到文件类型，调用接口时可以显示的指定上传文件的类型。\n可支持的指定类型如下:\n<ul><li>pdf</li>\n<li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>html</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li></ul>\n如：pdf 表示上传的文件 张三入职合同.pdf的文件类型是 pdf",
           "example": "PDF",
           "member": "string",
           "name": "FileType",
@@ -10156,7 +10277,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白\ntrue--是，处理置白\n默认为false--否，不处理",
+          "document": "此参数仅对上传的PDF文件有效。其主要作用是确定是否将PDF中的灰色矩阵置为白色。\n<ul><li>**true**：将灰色矩阵置为白色。</li>\n<li>**false**：无需处理，不会将灰色矩阵置为白色（默认）。</li></ul>\n\n注: `该参数仅在关键字定位时，需要去除关键字所在的灰框场景下使用。`",
           "example": "true",
           "member": "bool",
           "name": "CoverRect",
@@ -10165,7 +10286,7 @@
         },
         {
           "disabled": false,
-          "document": "用户自定义ID数组，与上传文件一一对应",
+          "document": "用户自定义ID数组，与上传文件一一对应\n\n注: `历史遗留问题，已经废弃，调用接口时不用赋值`",
           "example": "无",
           "member": "string",
           "name": "CustomIds",
@@ -10180,6 +10301,15 @@
           "name": "FileUrls",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10189,8 +10319,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件id数组",
-          "example": "d54e3caec25ad0ea6be24406762b7562",
+          "document": "文件资源ID数组，每个文件资源ID为32位字符串。\n建议开发者保存此资源ID，后续创建合同或创建合同流程需此资源ID。",
+          "example": "yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT",
           "member": "string",
           "name": "FileIds",
           "output_required": true,

@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tse DeleteCloudNativeAPIGatewayCanaryRule --cli-unfold-argument  \
-    --GatewayId gateway-xxx \
-    --ServiceId xxxx \
+    --GatewayId gateway-18f786a \
+    --ServiceId 6abf620f-c6b9-4440-b90c-56c165225cfc \
     --Priority 10
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "abc"
+        "RequestId": "741e4e82-371d-48de-a843-867c69ff114d"
     }
 }
 ```

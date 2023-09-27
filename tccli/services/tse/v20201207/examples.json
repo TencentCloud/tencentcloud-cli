@@ -11,7 +11,7 @@
     "CreateCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "创建灰度规则",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"ServiceId\": \"xxxx\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"q1\",\n                \"Operator\": \"==\",\n                \"Value\": \"xxx\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"xxxx\",\n                \"ServiceName\": \"xxxx\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"q1\",\n                \"Operator\": \"==\",\n                \"Value\": \"xxx\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"xxxx\",\n                \"ServiceName\": \"xxxx\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建灰度规则"
       }
@@ -83,8 +83,8 @@
     "DeleteCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "删除灰度规则",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"ServiceId\": \"xxxx\",\n    \"Priority\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"Priority\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除灰度规则"
       }
     ],
@@ -155,8 +155,8 @@
     "DescribeCloudNativeAPIGatewayCanaryRules": [
       {
         "document": "查询云原生网关灰度规则列表",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCanaryRules\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"ServiceId\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"CanaryRuleList\": [\n                {\n                    \"Priority\": 0,\n                    \"Enabled\": true,\n                    \"ConditionList\": [\n                        {\n                            \"Type\": \"abc\",\n                            \"Key\": \"abc\",\n                            \"Operator\": \"abc\",\n                            \"Value\": \"abc\",\n                            \"Delimiter\": \"abc\",\n                            \"GlobalConfigId\": \"abc\",\n                            \"GlobalConfigName\": \"abc\"\n                        }\n                    ],\n                    \"BalancedServiceList\": [\n                        {\n                            \"ServiceID\": \"abc\",\n                            \"ServiceName\": \"abc\",\n                            \"UpstreamName\": \"abc\",\n                            \"Percent\": 0\n                        }\n                    ],\n                    \"ServiceId\": \"abc\",\n                    \"ServiceName\": \"abc\"\n                }\n            ],\n            \"TotalCount\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudNativeAPIGatewayCanaryRules\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"CanaryRuleList\": [\n                {\n                    \"Priority\": 0,\n                    \"Enabled\": true,\n                    \"ConditionList\": [\n                        {\n                            \"Type\": \"query\",\n                            \"Key\": \"abc\",\n                            \"Operator\": \"==\",\n                            \"Value\": \"abc\",\n                            \"Delimiter\": \"abc\",\n                            \"GlobalConfigId\": \"abc\",\n                            \"GlobalConfigName\": \"abc\"\n                        }\n                    ],\n                    \"BalancedServiceList\": [\n                        {\n                            \"ServiceID\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n                            \"ServiceName\": \"svc1\",\n                            \"UpstreamName\": \"abc\",\n                            \"Percent\": 0\n                        }\n                    ],\n                    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n                    \"ServiceName\": \"svc1\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "查询云原生网关灰度规则列表"
       }
     ],
@@ -243,16 +243,16 @@
     "DescribeNacosReplicas": [
       {
         "document": "查询Nacos类型引擎实例副本信息",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosReplicas\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Replicas\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Role\": \"xx\",\n                \"SubnetId\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosReplicas\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-123456\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Replicas\": [\n            {\n                \"Name\": \"abc\",\n                \"Role\": \"abc\",\n                \"Status\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"Zone\": \"abc\",\n                \"ZoneId\": \"abc\",\n                \"VpcId\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询Nacos类型引擎实例副本信息"
       }
     ],
     "DescribeNacosServerInterfaces": [
       {
         "document": "查询nacos服务接口列表",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Content\": [\n            {\n                \"Interface\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNacosServerInterfaces\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-123456\",\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Content\": [\n            {\n                \"Interface\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询nacos服务接口列表"
       }
     ],
@@ -292,8 +292,8 @@
       {
         "document": "",
         "input": "https://tse.tencentcloudapi.com/?Action=DescribeZookeeperReplicas\n&InstanceId=ers-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"Replicas\": [\n            {\n                \"Status\": \"xx\",\n                \"Name\": \"xx\",\n                \"Zone\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Role\": \"xx\",\n                \"SubnetId\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "查询consul类型注册引擎实例副本信息"
+        "output": "{\n    \"Response\": {\n        \"Replicas\": [\n            {\n                \"Name\": \"abc\",\n                \"Role\": \"Leader\",\n                \"Status\": \"running\",\n                \"SubnetId\": \"subnet-xxx\",\n                \"Zone\": \"ap-guangzhou-1\",\n                \"ZoneId\": \"100000\",\n                \"AliasName\": \"abc\",\n                \"VpcId\": \"vpc-xxx\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询 Zookeeper 类型注册引擎实例副本信息"
       }
     ],
     "DescribeZookeeperServerInterfaces": [
@@ -315,8 +315,8 @@
     "ModifyCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "编辑灰度规则",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxx\",\n    \"ServiceId\": \"xxx\",\n    \"Priority\": 10,\n    \"CanaryRule\": {\n        \"Priority\": 20,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"body\",\n                \"Key\": \"b1\",\n                \"Operator\": \"==\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"xxx\",\n                \"ServiceName\": \"abc\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 10\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"Priority\": 10,\n    \"CanaryRule\": {\n        \"Priority\": 20,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"body\",\n                \"Key\": \"b1\",\n                \"Operator\": \"==\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n                \"ServiceName\": \"svc1\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 10\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "编辑灰度规则"
       }
     ],

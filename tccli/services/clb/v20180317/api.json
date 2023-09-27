@@ -5086,7 +5086,7 @@
           "example": "无",
           "member": "Quota",
           "name": "QuotaSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9323,7 +9323,7 @@
           "example": "TOTAL_OPEN_CLB_QUOTA",
           "member": "string",
           "name": "QuotaId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9333,7 +9333,7 @@
           "example": "null",
           "member": "int64",
           "name": "QuotaCurrent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9343,7 +9343,7 @@
           "example": "3",
           "member": "int64",
           "name": "QuotaLimit",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

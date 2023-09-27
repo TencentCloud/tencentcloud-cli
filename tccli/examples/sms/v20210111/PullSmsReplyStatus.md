@@ -7,7 +7,7 @@ Input:
 ```
 tccli sms PullSmsReplyStatus --cli-unfold-argument  \
     --SmsSdkAppId 1400006874 \
-    --Limit 2
+    --Limit 100
 ```
 
 Output: 
@@ -18,7 +18,7 @@ Output:
         "PullSmsReplyStatusSet": [
             {
                 "CountryCode": "86",
-                "ReplyContent": "xxxxxx",
+                "ReplyContent": "1",
                 "SubscriberNumber": "15291990000",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734188,
@@ -27,7 +27,7 @@ Output:
             },
             {
                 "CountryCode": "86",
-                "ReplyContent": "xxxxxx",
+                "ReplyContent": "2",
                 "SubscriberNumber": "15291990001",
                 "ExtendCode": "11",
                 "ReplyTime": 1620734189,

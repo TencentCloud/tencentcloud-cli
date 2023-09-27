@@ -105,3 +105,33 @@ Output:
 }
 ```
 
+**Example 4: 查询的文件没有权限**
+
+
+
+Input: 
+
+```
+tccli ess DescribeFileUrls --cli-unfold-argument  \
+    --Operator.UserId yDxM6UyK********QDV8dJUuO4zjEu \
+    --FileType PDF \
+    --BusinessType FLOW \
+    --FileName 合同 \
+    --Limit 0 \
+    --Offset 0 \
+    --BusinessIds 11114444 11114444555 12315215515 12415251512
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "ResourceNotFound",
+            "Message": "资源不存在或无权限"
+        },
+        "RequestId": "s166*******3046"
+    }
+}
+```
+

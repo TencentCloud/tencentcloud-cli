@@ -13,7 +13,35 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "c9f0e94c-3e0c-4d39-8155-fcf5ba13ec96"
+        "TotalCount": 0,
+        "PeerConnectionSet": [
+            {
+                "SourceVpcId": "abc",
+                "PeerVpcId": "abc",
+                "PeeringConnectionId": "abc",
+                "PeeringConnectionName": "abc",
+                "State": "abc",
+                "IsNgw": true,
+                "Bandwidth": 0,
+                "SourceRegion": "abc",
+                "DestinationRegion": "abc",
+                "CreateTime": "abc",
+                "AppId": 0,
+                "PeerAppId": 0,
+                "ChargeType": "abc",
+                "SourceUin": 0,
+                "DestinationUin": 0,
+                "TagSet": [
+                    {
+                        "Key": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "QosLevel": "abc",
+                "Type": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

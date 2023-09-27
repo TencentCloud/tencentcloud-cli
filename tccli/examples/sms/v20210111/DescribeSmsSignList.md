@@ -20,7 +20,7 @@ Output:
                 "SignName": "腾讯云",
                 "International": 0,
                 "SignId": 1110,
-                "ReviewReply": "xxx",
+                "ReviewReply": "",
                 "CreateTime": 1617508800,
                 "StatusCode": 0
             },
@@ -28,7 +28,7 @@ Output:
                 "SignName": "腾讯云",
                 "International": 1,
                 "SignId": 1111,
-                "ReviewReply": "xxx",
+                "ReviewReply": "",
                 "CreateTime": 1617508801,
                 "StatusCode": 0
             }

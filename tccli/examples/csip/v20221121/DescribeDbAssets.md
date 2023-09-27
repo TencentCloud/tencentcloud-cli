@@ -1,6 +1,6 @@
-**Example 1: 接口示例**
+**Example 1: 所有db资产示例**
 
-接口示例
+所有db资产示例
 
 Input: 
 
@@ -13,119 +13,312 @@ Output:
     "Response": {
         "AppIdList": [
             {
-                "Text": "1300448058",
-                "Value": "1300448058"
+                "Text": "1300846651",
+                "Value": "1300846651"
             }
         ],
         "AssetTypeList": [
+            {
+                "Text": "COS",
+                "Value": "COS"
+            },
             {
                 "Text": "MySQL",
                 "Value": "MYSQL"
             },
             {
-                "Text": "CKafka",
-                "Value": "KAFKA"
+                "Text": "CFS",
+                "Value": "CFS"
             },
             {
-                "Text": "MongoDB",
-                "Value": "MONGODB"
+                "Text": "CBS",
+                "Value": "CBS"
             }
         ],
         "Data": [
             {
-                "AssetId": "cdb-nbq22l65",
-                "AssetName": "cdb379810",
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2023-08-31 19:37:18",
+                "AssetId": "cdb-pxwani6r",
+                "AssetName": "cdb115086",
                 "AssetType": "MYSQL",
-                "VpcId": "vpc-ds7fl5xn",
-                "VpcName": "illnggao-test01",
-                "Region": "ap-guangzhou",
-                "Domain": "",
-                "AssetCreateTime": "2023-01-18 09:42:24",
-                "LastScanTime": "2023-02-01 15:43:45",
                 "Attack": 0,
-                "Access": 0,
-                "ScanTask": 3,
-                "AppId": 1300448058,
-                "Uin": "100011616646",
-                "NickName": "天空之蓝-现网",
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 1,
+                "IsNewAsset": 0,
+                "LastScanTime": "-",
+                "NickName": "焦糖小蛋糕",
                 "Port": 0,
-                "Tag": null,
-                "PrivateIp": "192.168.1.11:3306",
+                "PrivateIp": "10.25.25.2:3306",
                 "PublicIp": "",
+                "Region": "ap-chongqing",
+                "ScanTask": 0,
                 "Status": 1,
-                "ConfigurationRisk": 0
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "vpc-h2i9m8xh",
+                "VpcName": "fengqqian"
             },
             {
-                "AssetId": "ckafka-5k7va8zv",
-                "AssetName": "未命名",
-                "AssetType": "KAFKA",
-                "VpcId": "vpc-imk763v1",
-                "VpcName": "Default-VPC",
-                "Region": "ap-guangzhou",
-                "Domain": "",
-                "AssetCreateTime": "2023-01-30 18:29:44",
-                "LastScanTime": "2023-02-01 15:43:45",
-                "Attack": 0,
                 "Access": 0,
-                "ScanTask": 2,
-                "AppId": 1300448058,
-                "Uin": "100011616646",
-                "NickName": "天空之蓝-现网",
+                "AppId": 1300846651,
+                "AssetCreateTime": "2023-08-31 10:15:36",
+                "AssetId": "disk-51a0diaa",
+                "AssetName": "未命名_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "-",
+                "NickName": "焦糖小蛋糕",
                 "Port": 0,
-                "Tag": null,
-                "PrivateIp": "172.16.64.4:9092",
+                "PrivateIp": "",
                 "PublicIp": "",
+                "Region": "ap-chongqing",
+                "ScanTask": 0,
                 "Status": 1,
-                "ConfigurationRisk": 0
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
             },
             {
-                "AssetId": "cmgo-prgxqi85",
-                "AssetName": "11",
-                "AssetType": "MONGODB",
-                "VpcId": "vpc-9qn7jrvs",
-                "VpcName": "安全组性能vpc",
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2020-10-09 16:46:52",
+                "AssetId": "disk-jckoxu4h",
+                "AssetName": "NAT_VPC autotest,勿删_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
                 "Region": "ap-shanghai",
-                "Domain": "",
-                "AssetCreateTime": "2022-12-08 17:24:57",
-                "LastScanTime": "2023-02-02 11:42:10",
-                "Attack": 0,
-                "Access": 0,
-                "ScanTask": 10,
-                "AppId": 1300448058,
-                "Uin": "100011616646",
-                "NickName": "天空之蓝-现网",
-                "Port": 0,
-                "Tag": null,
-                "PrivateIp": "192.168.2.205;192.168.2.120;192.168.1.189:27017",
-                "PublicIp": "",
+                "ScanTask": 14,
                 "Status": 1,
-                "ConfigurationRisk": 0
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2022-12-05 10:39:35",
+                "AssetId": "disk-hq4yircx",
+                "AssetName": "数据盘漏扫测试",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-beijing",
+                "ScanTask": 14,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2020-10-16 17:30:35",
+                "AssetId": "disk-haamhu15",
+                "AssetName": "VPC-autotest2,勿删_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-shanghai",
+                "ScanTask": 14,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2023-08-31 19:15:48",
+                "AssetId": "disk-g3lx4gh0",
+                "AssetName": "私有网络广州3区v_tximtantest_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "-",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-guangzhou",
+                "ScanTask": 0,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2023-06-30 15:06:08",
+                "AssetId": "disk-dh874mht",
+                "AssetName": "未命名_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-beijing",
+                "ScanTask": 12,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2023-08-30 18:10:46",
+                "AssetId": "disk-dcyyxrhk",
+                "AssetName": " v_tximtantest_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "-",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-guangzhou",
+                "ScanTask": 0,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2020-10-16 17:20:32",
+                "AssetId": "disk-d5emuwa3",
+                "AssetName": "VPC-autotest,勿删_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-shanghai",
+                "ScanTask": 14,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
+            },
+            {
+                "Access": 0,
+                "AppId": 1300846651,
+                "AssetCreateTime": "2020-06-18 17:24:02",
+                "AssetId": "disk-8ve9yxot",
+                "AssetName": "未命名_系统盘",
+                "AssetType": "CBS",
+                "Attack": 0,
+                "ConfigurationRisk": 0,
+                "Domain": "",
+                "IsCore": 2,
+                "IsNewAsset": 0,
+                "LastScanTime": "2023-09-04 16:59:17",
+                "NickName": "焦糖小蛋糕",
+                "Port": 0,
+                "PrivateIp": "",
+                "PublicIp": "",
+                "Region": "ap-shanghai",
+                "ScanTask": 14,
+                "Status": 1,
+                "Tag": null,
+                "Uin": "100011949846",
+                "VpcId": "",
+                "VpcName": ""
             }
         ],
         "RegionList": [
+            {
+                "Text": "上海",
+                "Value": "ap-shanghai"
+            },
+            {
+                "Text": "重庆",
+                "Value": "ap-chongqing"
+            },
             {
                 "Text": "广州",
                 "Value": "ap-guangzhou"
             },
             {
-                "Text": "上海",
-                "Value": "ap-shanghai"
+                "Text": "中国香港",
+                "Value": "ap-hongkong"
+            },
+            {
+                "Text": "北京",
+                "Value": "ap-beijing"
+            },
+            {
+                "Text": "南京",
+                "Value": "ap-nanjing"
             }
         ],
-        "RequestId": "ddec8747-5f31-4eec-9343-ef7fc337fa4f",
-        "Total": 3,
+        "RequestId": "7899491b-9407-4bca-8363-ddddbbb3486c",
+        "Total": 29,
         "VpcList": [
             {
-                "Text": "illnggao-test01",
-                "Value": "vpc-ds7fl5xn"
-            },
-            {
-                "Text": "Default-VPC",
-                "Value": "vpc-imk763v1"
-            },
-            {
-                "Text": "安全组性能vpc",
-                "Value": "vpc-9qn7jrvs"
+                "Text": "fengqqian",
+                "Value": "vpc-h2i9m8xh"
             }
         ]
     }

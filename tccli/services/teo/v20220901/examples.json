@@ -743,6 +743,26 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7sd20b24-7dc5-98f4-96ce-95825dcd34sa\"\n    }\n}",
         "title": "切换站点状态"
       }
+    ],
+    "VerifyOwnership": [
+      {
+        "document": "验证域名 test.example.com 的归属权。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyOwnership\n<公共请求参数>\n\n{\n    \"Domain\": \"test.example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"success\",\n        \"Result\": \"\",\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "CNAME 接入时，验证域名归属权"
+      },
+      {
+        "document": "验证站点 example.com (站点ID: zone-xxxxx) 的归属权。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyOwnership\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"fail\",\n        \"Result\": \"解析 xx 得到 类型 xx 的内容 xx。\\n 访问 http://xxx/.. 解析 xx 无法连接\",\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "CNAME 接入时，验证站点归属权"
+      },
+      {
+        "document": "验证 example.com 的 DNS 服务器是否已经切换成功。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyOwnership\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"fail\",\n        \"Result\": \"当前域名的 DNS 服务器为 xxx，与预期服务器 xxx 不符合\",\n        \"RequestId\": \"9kl50bew-89ga-44f4-91ce-78125d53vd2a\"\n    }\n}",
+        "title": "NS 接入时，查询 DNS 服务器是否切换成功"
+      }
     ]
   },
   "version": "1.0"

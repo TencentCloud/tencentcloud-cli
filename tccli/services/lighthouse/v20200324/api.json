@@ -3864,8 +3864,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘\n- FIREWALL_RULE 防火墙规则",
-          "example": "[\"GENERAL_BUNDLE_INSTANCE\\n\"]",
+          "document": "资源名列表，可取值:\n- GENERAL_BUNDLE_INSTANCE 通用型套餐实例\n- STORAGE_BUNDLE_INSTANCE 存储型套餐实例 \n- ENTERPRISE_BUNDLE_INSTANCE 企业型套餐实例 \n- EXCLUSIVE_BUNDLE_INSTANCE 专属型套餐实例\n- BEFAST_BUNDLE_INSTANCE 蜂驰型套餐实例\n- STARTER_BUNDLE_INSTANCE 入门型套餐实例\n- HK_EXCLUSIVE_BUNDLE_INSTANCE 香港专属型套餐实例\n- CAREFREE_BUNDLE_INSTANCE 无忧型套餐实例\n- USER_KEY_PAIR 密钥对\n- SNAPSHOT 快照\n- BLUEPRINT 自定义镜像\n- FREE_BLUEPRINT 免费自定义镜像\n- DATA_DISK 数据盘\n- FIREWALL_RULE 防火墙规则",
+          "example": "[\"GENERAL_BUNDLE_INSTANCE\"]",
           "member": "string",
           "name": "ResourceNames",
           "required": true,
@@ -3883,7 +3883,7 @@
           "example": "无",
           "member": "GeneralResourceQuota",
           "name": "GeneralResourceQuotaSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

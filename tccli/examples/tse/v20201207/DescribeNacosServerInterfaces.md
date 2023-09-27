@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tse DescribeNacosServerInterfaces --cli-unfold-argument  \
-    --InstanceId xx \
+    --InstanceId ins-123456 \
     --Limit 1 \
     --Offset 1
 ```
@@ -15,13 +15,13 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 1,
         "Content": [
             {
-                "Interface": "xx"
+                "Interface": "abc"
             }
         ],
-        "TotalCount": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -34359,6 +34359,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34369,6 +34370,7 @@
           "example": "无",
           "member": "WatermarkInput",
           "name": "WatermarkSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -34379,6 +34381,7 @@
           "example": "无",
           "member": "TraceWatermarkInput",
           "name": "TraceWatermark",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -34389,6 +34392,7 @@
           "example": "无",
           "member": "CopyRightWatermarkInput",
           "name": "CopyRightWatermark",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -34399,6 +34403,7 @@
           "example": "无",
           "member": "MosaicInput",
           "name": "MosaicSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -34409,6 +34414,7 @@
           "example": "无",
           "member": "HeadTailTaskInput",
           "name": "HeadTailSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -34419,6 +34425,7 @@
           "example": "2",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -34429,6 +34436,7 @@
           "example": "3",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -35559,9 +35567,10 @@
         {
           "disabled": false,
           "document": "水印模板 ID。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -35569,9 +35578,10 @@
         {
           "disabled": false,
           "document": "文字内容，长度不超过100个字符。仅当水印类型为文字水印时填写。\n文字水印不支持截图打水印。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TextContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35579,9 +35589,10 @@
         {
           "disabled": false,
           "document": "SVG 内容。长度不超过 2000000 个字符。仅当水印类型为 SVG 水印时填写。\nSVG 水印不支持截图打水印。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SvgContent",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35589,9 +35600,10 @@
         {
           "disabled": false,
           "document": "水印的起始时间偏移，单位：秒。不填或填0，表示水印从画面出现时开始显现。\n<li>不填或填0，表示水印从画面开始就出现；</li>\n<li>当数值大于0时（假设为 n），表示水印从画面开始的第 n 秒出现；</li>\n<li>当数值小于0时（假设为 -n），表示水印从离画面结束 n 秒前开始出现。</li>",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -35599,9 +35611,10 @@
         {
           "disabled": false,
           "document": "水印的结束时间偏移，单位：秒。\n<li>不填或填0，表示水印持续到画面结束；</li>\n<li>当数值大于0时（假设为 n），表示水印持续到第 n 秒时消失；</li>\n<li>当数值小于0时（假设为 -n），表示水印持续到离画面结束 n 秒前消失。</li>",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false

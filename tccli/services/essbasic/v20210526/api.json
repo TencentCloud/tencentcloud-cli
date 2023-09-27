@@ -351,7 +351,7 @@
       "status": "online"
     },
     "ModifyExtendedService": {
-      "document": "修改（操作）企业扩展服务 ，企业经办人需要是企业超管或者法人",
+      "document": "修改（操作）企业扩展服务 ，企业经办人需要是企业超管或者法人。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。\n\n2. 客户App直接跳转到小程序-->腾讯电子签小程序操作完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->腾讯电子签小程序操作完成--->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n设置EndPoint为APP，得到path。\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "ModifyExtendedServiceRequest",
       "name": "修改企业扩展服务",
       "output": "ModifyExtendedServiceResponse",
@@ -475,6 +475,42 @@
       ],
       "usage": "in"
     },
+    "ApproverItem": {
+      "document": "签署方信息，发起合同后可获取到对应的签署方信息，如角色ID，角色名称",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方角色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverRoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ApproverOption": {
       "document": "签署人个性化能力信息",
       "members": [
@@ -486,6 +522,15 @@
           "name": "HideOneKeySign",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "签署人信息补充类型，默认无需补充。\n\n<ul><li> **1** : ( 动态签署人（可发起合同后再补充签署人信息）</li>\n</ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -1643,6 +1688,16 @@
           "name": "FlowId",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方信息，如角色ID、角色名称等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproverItem",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -4869,6 +4924,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "签署方信息，如角色ID、角色名称等",
+          "example": "无",
+          "member": "FlowApproverItem",
+          "name": "FlowApprovers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -5122,6 +5187,15 @@
           "example": "无",
           "member": "int64",
           "name": "Hides",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientIds",
           "required": false,
           "type": "list"
         }
@@ -6017,12 +6091,22 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义签署人角色\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverRoleName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识\n1-个人：Name、Mobile必传\n2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；\n3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；\n4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。\n\n其他身份标识\n\n<ul><li>1-个人：Name、Mobile必传</li>\n<li>2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；</li>\n<li>3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；</li>\n<li>4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。",
       "members": [
         {
           "disabled": false,
@@ -6230,9 +6314,44 @@
           "name": "AddSignComponentsLimits",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义签署方角色名称",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverRoleName",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
+    },
+    "FlowApproverItem": {
+      "document": "签署方信息，如角色ID、角色名称等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "签署方信息，如角色ID、角色名称等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApproverItem",
+          "name": "Approvers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FlowApproverUrlInfo": {
       "document": "签署人签署链接信息",
@@ -6849,6 +6968,15 @@
           "member": "string",
           "name": "Operate",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接跳转类型，支持以下类型\n<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>",
+          "example": "APP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
           "type": "string"
         }
       ],
@@ -8228,6 +8356,16 @@
           "member": "string",
           "name": "FlowGroupId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二维码，在生成动态签署人跳转封面页链接时返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SignQrcodeUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
