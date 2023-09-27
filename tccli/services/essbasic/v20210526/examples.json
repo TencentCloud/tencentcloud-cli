@@ -366,6 +366,26 @@
         "title": "创建并返回出证报告"
       }
     ],
+    "CreateChannelOrganizationInfoChangeUrl": [
+      {
+        "document": "设置changeType为2，创建企业信息变更链接。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38be082e-08c4-4f37-a0b7-cd47cf9982b5\"\n    }\n}",
+        "title": "创建企业信息变更链接"
+      },
+      {
+        "document": "设置changeType为1，创建企业超管变更链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\"\n    }\n}",
+        "title": "创建超管变更链接"
+      },
+      {
+        "document": "设置changeType为3，接口将返回错误信息。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"不支持的变更类型:3,请确认后重新\"\n        },\n        \"RequestId\": \"30cc3f4a-8f8c-4ec7-a6fb-66a82590c546\"\n    }\n}",
+        "title": "错误示例-变更类型不合法"
+      }
+    ],
     "CreateConsoleLoginUrl": [
       {
         "document": "生成默认的控制台链接",

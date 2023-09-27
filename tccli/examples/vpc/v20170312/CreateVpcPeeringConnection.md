@@ -21,7 +21,8 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e4008f6c-4bd9-42a7-9e6f-83043db431b2"
+        "PeeringConnectionId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

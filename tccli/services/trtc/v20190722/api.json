@@ -94,7 +94,7 @@
     "DescribeTRTCMarketQualityData": {
       "document": "查询TRTC监控仪表盘-数据大盘质量指标（包括下列指标）\njoinSuccessRate：加入频道成功率。\njoinSuccessIn5sRate：5s内加入频道成功率。\naudioFreezeRate：音频卡顿率。\nvideoFreezeRate：视频卡顿率。\nnetworkDelay ：网络延迟率。\n注意：\n1.调用接口需开通监控仪表盘【基础版】和【进阶版】，监控仪表盘【免费版】不支持调用，监控仪表盘版本功能和计费说明：https://cloud.tencent.com/document/product/647/81331。\n2.查询时间范围根据监控仪表盘功能版本而定，【基础版】可查近30天，【进阶版】可查近60天。",
       "input": "DescribeTRTCMarketQualityDataRequest",
-      "name": "查询TRTC数据大盘质量数据",
+      "name": "查询TRTC数据大盘质量相关数据",
       "output": "DescribeTRTCMarketQualityDataResponse",
       "status": "online"
     },

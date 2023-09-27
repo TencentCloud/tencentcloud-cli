@@ -10776,6 +10776,7 @@
           "example": "pcx-xxxxxx",
           "member": "string",
           "name": "PeeringConnectionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -36035,7 +36036,17 @@
     },
     "RejectVpcPeeringConnectionRequest": {
       "document": "RejectVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RejectVpcPeeringConnectionResponse": {

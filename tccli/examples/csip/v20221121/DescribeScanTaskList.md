@@ -69,7 +69,9 @@ Output:
                 "AppId": "abc",
                 "UIN": "abc",
                 "UserName": "abc",
-                "TaskMode": 0
+                "TaskMode": 0,
+                "ScanFrom": "abc",
+                "IsFree": 0
             }
         ],
         "UINList": [

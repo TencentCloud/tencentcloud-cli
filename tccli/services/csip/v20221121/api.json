@@ -4641,6 +4641,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4650,6 +4651,7 @@
           "example": "无",
           "member": "ScanTaskInfoList",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4659,6 +4661,7 @@
           "example": "无",
           "member": "string",
           "name": "UINList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4668,6 +4671,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "TaskModeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

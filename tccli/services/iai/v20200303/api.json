@@ -204,7 +204,7 @@
       "status": "online"
     },
     "SearchFacesReturnsByGroup": {
-      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，按照**人员库的维度**以人员相似度从大到小顺序排列。\n\n支持一次性识别图片中的最多 10 张人脸，支持跨人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n\n>     \n- 不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。\n",
+      "document": "用于对一张待识别的人脸图片，在一个或多个人员库中识别出最相似的 TopK 人员，按照**人员库的维度**以人员相似度从大到小顺序排列。\n\n支持一次性识别图片中的最多 10 张人脸，支持跨人员库（Group）搜索。\n\n单次搜索的人员库人脸总数量和人员库的算法模型版本（FaceModelVersion）相关。算法模型版本为2.0的人员库，单次搜索人员库人脸总数量不得超过 100 万张；算法模型版本为3.0的人员库，单次搜索人员库人脸总数量不得超过 300 万张。\n\n与[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口不同的是，本接口将该人员（Person）下的每个人脸（Face）都作为单独个体进行验证，而[人员搜索](https://cloud.tencent.com/document/product/867/44992)及[人员搜索按库返回](https://cloud.tencent.com/document/product/867/44991)接口 会将该人员（Person）下的所有人脸（Face）进行融合特征处理，即若某个Person下有4张 Face，本接口会将4张 Face 的特征进行融合处理，生成对应这个 Person 的特征，使搜索更加准确。\n\n本接口需与[人员库管理相关接口](https://cloud.tencent.com/document/product/867/45015)结合使用。\n\n>     \n- 公共参数中的签名方式请使用V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。\n\n>     \n- 不可同时搜索不同算法模型版本（FaceModelVersion）的人员库。",
       "input": "SearchFacesReturnsByGroupRequest",
       "name": "人脸搜索分库返回",
       "output": "SearchFacesReturnsByGroupResponse",
@@ -259,7 +259,7 @@
         {
           "disabled": false,
           "document": "检测模式。0 为检测所有出现的人脸， 1 为检测面积最大的人脸。 \n默认为 0。 \n最多返回 5 张人脸的五官定位（人脸关键点）具体信息。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "Mode",
           "required": false,
@@ -267,8 +267,8 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "无",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -276,8 +276,8 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。  \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。  \n非腾讯云存储的Url速度和稳定性可能受一定影响。  \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -286,7 +286,7 @@
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
           "required": false,
@@ -295,7 +295,7 @@
         {
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -310,36 +310,40 @@
         {
           "disabled": false,
           "document": "请求的图片宽度。",
-          "example": "",
+          "example": "550",
           "member": "int64",
           "name": "ImageWidth",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "请求的图片高度。",
-          "example": "",
+          "example": "336",
           "member": "int64",
           "name": "ImageHeight",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "稠密人脸关键点具体信息。",
-          "example": "",
+          "example": "无",
           "member": "DenseFaceShape",
           "name": "DenseFaceShapeSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别服务所用的算法模型版本。本接口仅支持 “3.0“ 输入。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -366,7 +370,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -375,7 +379,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
@@ -412,7 +416,7 @@
           "example": "550",
           "member": "uint64",
           "name": "ImageWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -422,7 +426,7 @@
           "example": "366",
           "member": "uint64",
           "name": "ImageHeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -432,7 +436,7 @@
           "example": "无",
           "member": "FaceShape",
           "name": "FaceShapeSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -442,7 +446,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -552,7 +556,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "ImageA",
@@ -561,7 +565,7 @@
         },
         {
           "disabled": false,
-          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n若图片中包含多张人脸，只选取其中置信度最高的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "ImageB",
@@ -570,7 +574,7 @@
         },
         {
           "disabled": false,
-          "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "UrlA",
@@ -579,7 +583,7 @@
         },
         {
           "disabled": false,
-          "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "UrlB",
@@ -653,7 +657,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "A 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "XyE7l...",
           "member": "string",
           "name": "ImageA",
@@ -662,7 +666,7 @@
         },
         {
           "disabled": false,
-          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "B 图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "XyE7l...",
           "member": "string",
           "name": "ImageB",
@@ -671,7 +675,7 @@
         },
         {
           "disabled": false,
-          "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "A 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nA 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "UrlA",
@@ -680,7 +684,7 @@
         },
         {
           "disabled": false,
-          "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "B 图片的 Url ，对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nB 图片的 Url、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "UrlB",
@@ -808,7 +812,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Images",
@@ -817,7 +821,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。\n人员人脸总数量不可超过5张。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。",
           "example": "[\"http:\\/\\/test.image.myqcloud.com\\/testA.jpg\"]",
           "member": "string",
           "name": "Urls",
@@ -1049,7 +1053,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -1058,7 +1062,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
@@ -1104,7 +1108,7 @@
           "example": "3454816969590585885",
           "member": "string",
           "name": "FaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1114,7 +1118,7 @@
           "example": "无",
           "member": "FaceRect",
           "name": "FaceRect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1124,7 +1128,7 @@
           "example": "无",
           "member": "string",
           "name": "SimilarPersonId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1134,7 +1138,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1491,7 +1495,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。 所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -1500,7 +1504,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。 \n对应图片 base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。 \n对应图片 base64 编码后大小不可超过5M。 \njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。 \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。 \n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
@@ -1546,7 +1550,7 @@
           "example": "550",
           "member": "uint64",
           "name": "ImageWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1556,7 +1560,7 @@
           "example": "366",
           "member": "uint64",
           "name": "ImageHeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1566,7 +1570,7 @@
           "example": "无",
           "member": "FaceDetailInfo",
           "name": "FaceDetailInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1576,7 +1580,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1612,7 +1616,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -1621,7 +1625,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "https://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
@@ -3804,7 +3808,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -3813,7 +3817,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。  \n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。 \n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
@@ -3942,7 +3946,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -3951,7 +3955,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
@@ -4033,7 +4037,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FaceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4043,7 +4047,7 @@
           "example": "无",
           "member": "ResultsReturnsByGroup",
           "name": "ResultsReturnsByGroup",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4053,7 +4057,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4080,7 +4084,7 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n若图片中包含多张人脸，只选取其中人脸面积最大的人脸。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "无",
           "member": "string",
           "name": "Image",
@@ -4089,7 +4093,7 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
           "example": "http://test.image.myqcloud.com/testA.jpg",
           "member": "string",
           "name": "Url",
@@ -4171,7 +4175,7 @@
           "example": "无",
           "member": "Result",
           "name": "Results",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4181,7 +4185,7 @@
           "example": "5",
           "member": "uint64",
           "name": "PersonNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4191,7 +4195,7 @@
           "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4210,7 +4214,7 @@
         {
           "disabled": false,
           "document": "希望搜索的人员库列表，上限60个。数组元素取值为创建人员库接口中的GroupId",
-          "example": "",
+          "example": "TencentShenZhenEmployee",
           "member": "string",
           "name": "GroupIds",
           "required": true,
@@ -4218,8 +4222,8 @@
         },
         {
           "disabled": false,
-          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片 base64 数据，base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Image",
           "required": false,
@@ -4227,8 +4231,8 @@
         },
         {
           "disabled": false,
-          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
-          "example": "",
+          "document": "图片的 Url 。对应图片 base64 编码后大小不可超过5M。\njpg格式长边像素不可超过4000，其他格式图片长边像素不可超2000。所有格式的图片短边像素不小于64。\nUrl、Image必须提供一个，如果都提供，只使用 Url。\n图片存储于腾讯云的Url可保障更高下载速度和稳定性，建议图片存储于腾讯云。\n非腾讯云存储的Url速度和稳定性可能受一定影响。\n支持PNG、JPG、JPEG、BMP，不支持 GIF 图片。",
+          "example": "http://test.image.myqcloud.com/testB.jpg",
           "member": "string",
           "name": "Url",
           "required": false,
@@ -4237,7 +4241,7 @@
         {
           "disabled": false,
           "document": "最多识别的人脸数目。默认值为1（仅检测图片中面积最大的那张人脸），最大值为10。\nMaxFaceNum用于，当输入的待识别图片包含多张人脸时，设定要搜索的人脸的数量。\n例：输入的Image或Url中的图片包含多张人脸，设MaxFaceNum=5，则会识别图片中面积最大的5张人脸。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "MaxFaceNum",
           "required": false,
@@ -4246,7 +4250,7 @@
         {
           "disabled": false,
           "document": "人脸长和宽的最小尺寸，单位为像素。默认为34。低于34将影响搜索精度。建议设置为80。",
-          "example": "",
+          "example": "80",
           "member": "uint64",
           "name": "MinFaceSize",
           "required": false,
@@ -4255,7 +4259,7 @@
         {
           "disabled": false,
           "document": "被检测到的人脸，对应最多返回的最相似人员数目。默认值为5，最大值为10。  \n例，设MaxFaceNum为3，MaxPersonNumPerGroup为5，GroupIds长度为3，则最多可能返回3*5*3=45个人员。",
-          "example": "",
+          "example": "5",
           "member": "uint64",
           "name": "MaxPersonNumPerGroup",
           "required": false,
@@ -4264,7 +4268,7 @@
         {
           "disabled": false,
           "document": "图片质量控制。 \n0: 不进行控制； \n1:较低的质量要求，图像存在非常模糊，眼睛鼻子嘴巴遮挡至少其中一种或多种的情况； \n2: 一般的质量要求，图像存在偏亮，偏暗，模糊或一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，至少其中三种的情况； \n3: 较高的质量要求，图像存在偏亮，偏暗，一般模糊，眉毛遮挡，脸颊遮挡，下巴遮挡，其中一到两种的情况； \n4: 很高的质量要求，各个维度均为最好或最多在某一维度上存在轻微问题； \n默认 0。 \n若图片质量不满足要求，则返回结果中会提示图片质量检测不符要求。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "QualityControl",
           "required": false,
@@ -4273,7 +4277,7 @@
         {
           "disabled": false,
           "document": "出参Score中，只有超过FaceMatchThreshold值的结果才会返回。默认为0。",
-          "example": "",
+          "example": "0",
           "member": "float",
           "name": "FaceMatchThreshold",
           "required": false,
@@ -4282,7 +4286,7 @@
         {
           "disabled": false,
           "document": "是否返回人员具体信息。0 为关闭，1 为开启。默认为 0。其他非0非1值默认为0",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "NeedPersonInfo",
           "required": false,
@@ -4291,7 +4295,7 @@
         {
           "disabled": false,
           "document": "是否开启图片旋转识别支持。0为不开启，1为开启。默认为0。本参数的作用为，当图片中的人脸被旋转且图片没有exif信息时，如果不开启图片旋转识别支持则无法正确检测、识别图片中的人脸。若您确认图片包含exif信息或者您确认输入图中人脸不会出现被旋转情况，请不要开启本参数。开启后，整体耗时将可能增加数百毫秒。",
-          "example": "",
+          "example": "0",
           "member": "uint64",
           "name": "NeedRotateDetection",
           "required": false,
@@ -4306,27 +4310,30 @@
         {
           "disabled": false,
           "document": "搜索的人员库中包含的人员数。若输入图片中所有人脸均不符合质量要求，则返回0。",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "PersonNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "识别结果。",
-          "example": "",
+          "example": "无",
           "member": "ResultsReturnsByGroup",
           "name": "ResultsReturnsByGroup",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "人脸识别所用的算法模型版本。",
-          "example": "",
+          "example": "3.0",
           "member": "string",
           "name": "FaceModelVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

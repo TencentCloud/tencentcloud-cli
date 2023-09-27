@@ -6,8 +6,10 @@ Input:
 
 ```
 tccli vpc ModifyVpcPeeringConnection --cli-unfold-argument  \
-    --PeeringConnectionName 测试 \
-    --Bandwidth 10
+    --PeeringConnectionId abc \
+    --PeeringConnectionName abc \
+    --Bandwidth 0 \
+    --ChargeType abc
 ```
 
 Output: 

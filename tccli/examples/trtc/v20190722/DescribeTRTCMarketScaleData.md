@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli trtc DescribeTRTCMarketScaleData --cli-unfold-argument  \
-    --SdkAppId abc \
-    --StartTime 2020-09-22 \
-    --EndTime 2020-09-22 \
-    --Period abc
+    --SdkAppId 1400xxxxxx \
+    --StartTime 2023-09-20 \
+    --EndTime 2023-09-23 \
+    --Period d
 ```
 
 Output: 
@@ -22,64 +22,46 @@ Output:
                 {
                     "Columns": [
                         "time",
+                        "peakCurrentUsers",
+                        "peakCurrentChannels",
                         "userCount",
                         "roomCount"
                     ],
                     "Values": [
                         {
                             "RowValue": [
-                                1692935050,
-                                1,
-                                1
+                                1695139200,
+                                55,
+                                37,
+                                784,
+                                572
                             ]
                         },
                         {
                             "RowValue": [
-                                1692935060,
-                                1,
-                                1
+                                1695225600,
+                                62,
+                                46,
+                                848,
+                                614
                             ]
                         },
                         {
                             "RowValue": [
-                                1692935070,
-                                1,
-                                1
+                                1695312000,
+                                47,
+                                45,
+                                950,
+                                695
                             ]
                         },
                         {
                             "RowValue": [
-                                1692935080,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935090,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935100,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935110,
-                                1,
-                                1
-                            ]
-                        },
-                        {
-                            "RowValue": [
-                                1692935120,
-                                1,
-                                1
+                                1695398400,
+                                36,
+                                35,
+                                378,
+                                313
                             ]
                         }
                     ]
@@ -87,7 +69,7 @@ Output:
             ],
             "Total": 1
         },
-        "RequestId": "4mry45x5sslfsee3vfl5n99oz4u9u-8w"
+        "RequestId": "kp38ibciayx-elqqjdfrf7umkvpbvowt"
     }
 }
 ```
