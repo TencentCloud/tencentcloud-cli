@@ -1,3 +1,24 @@
+# Release 3.0.859.1
+
+## 服务管理平台(smp) 版本：2023-06-02
+
+### 第 7 次发布
+
+发布时间：2023-09-29 02:20:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ConsumptionBill](http://document.tencentcloudapi.woa.com/document/product/1736/80965#ConsumptionBill)
+
+	* 新增成员：ComponentConfig
+
+
+
+
 # Release 3.0.858.1
 
 ## 弹性伸缩(as) 版本：2018-04-19
