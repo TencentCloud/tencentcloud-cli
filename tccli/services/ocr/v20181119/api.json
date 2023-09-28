@@ -5131,7 +5131,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5141,7 +5141,7 @@
           "example": "无",
           "member": "int64",
           "name": "Confidence",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5151,17 +5151,17 @@
           "example": "无",
           "member": "Rect",
           "name": "Rect",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。",
+          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。",
           "example": "无",
           "member": "string",
           "name": "Color",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5201,6 +5201,7 @@
           "example": "京N0L9U8",
           "member": "string",
           "name": "Number",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5210,6 +5211,7 @@
           "example": "99",
           "member": "int64",
           "name": "Confidence",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5219,15 +5221,17 @@
           "example": "无",
           "member": "Rect",
           "name": "Rect",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”。",
+          "document": "识别出的车牌颜色，目前支持颜色包括 “白”、“黑”、“蓝”、“绿“、“黄”、“黄绿”、“临牌”、“喷漆”、“其它”。",
           "example": "红",
           "member": "string",
           "name": "Color",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5237,6 +5241,7 @@
           "example": "无",
           "member": "LicensePlateInfo",
           "name": "LicensePlateInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

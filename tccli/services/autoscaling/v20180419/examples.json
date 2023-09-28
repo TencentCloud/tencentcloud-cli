@@ -22,6 +22,14 @@
         "title": "将应用型负载均衡器lb-23aejgcv（监听器为lbl-ncw704sn，转发路径为loc-l3hmaev9）添加到伸缩组"
       }
     ],
+    "CancelInstanceRefresh": [
+      {
+        "document": "取消伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
+        "title": "取消实例刷新活动"
+      }
+    ],
     "ClearLaunchConfigurationAttributes": [
       {
         "document": "指定启动配置asc-kr4beurf，入参ClearDataDisks设置为true，接口调用后启动配置中的数据盘信息被清空，后续基于asc-kr4beurf创建的云主机将不再分配任何数据盘",
@@ -316,6 +324,14 @@
         "title": "查询通知"
       }
     ],
+    "DescribeRefreshActivities": [
+      {
+        "document": "使用Filters查询刷新活动 asr-cs0fxpcu。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRefreshActivities\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"refresh-activity-id\",\n            \"Values\": [\n                \"asr-cs0fxpcu\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RefreshActivitySet\": [\n            {\n                \"Status\": \"SUCCESSFUL\",\n                \"RefreshBatchSet\": [\n                    {\n                        \"RefreshBatchNum\": 3,\n                        \"EndTime\": \"2023-09-07T16:32:56Z\",\n                        \"RefreshBatchRelatedInstanceSet\": [\n                            {\n                                \"InstanceId\": \"ins-w188n53l\",\n                                \"InstanceStatusMessage\": \"success\",\n                                \"LastActivityId\": \"asa-pb2y1bna\",\n                                \"InstanceStatus\": \"SUCCESSFUL\"\n                            }\n                        ],\n                        \"StartTime\": \"2023-09-07T16:31:44Z\",\n                        \"RefreshBatchStatus\": \"SUCCESSFUL\"\n                    },\n                    {\n                        \"RefreshBatchNum\": 2,\n                        \"EndTime\": \"2023-09-07T16:31:44Z\",\n                        \"RefreshBatchRelatedInstanceSet\": [\n                            {\n                                \"InstanceId\": \"ins-w1824wre\",\n                                \"InstanceStatusMessage\": \"success\",\n                                \"LastActivityId\": \"asa-e8dqz8r6\",\n                                \"InstanceStatus\": \"SUCCESSFUL\"\n                            },\n                            {\n                                \"InstanceId\": \"ins-w188n53m\",\n                                \"InstanceStatusMessage\": \"success\",\n                                \"LastActivityId\": \"asa-e8dqz8r6\",\n                                \"InstanceStatus\": \"SUCCESSFUL\"\n                            }\n                        ],\n                        \"StartTime\": \"2023-09-07T16:29:56Z\",\n                        \"RefreshBatchStatus\": \"SUCCESSFUL\"\n                    },\n                    {\n                        \"RefreshBatchNum\": 1,\n                        \"EndTime\": \"2023-09-07T16:29:55Z\",\n                        \"RefreshBatchRelatedInstanceSet\": [\n                            {\n                                \"InstanceId\": \"ins-w188n53k\",\n                                \"InstanceStatusMessage\": \"success\",\n                                \"LastActivityId\": \"asa-e0o3uxsu\",\n                                \"InstanceStatus\": \"SUCCESSFUL\"\n                            },\n                            {\n                                \"InstanceId\": \"ins-w188n53n\",\n                                \"InstanceStatusMessage\": \"success\",\n                                \"LastActivityId\": \"asa-e0o3uxsu\",\n                                \"InstanceStatus\": \"SUCCESSFUL\"\n                            }\n                        ],\n                        \"StartTime\": \"2023-09-07T16:27:49Z\",\n                        \"RefreshBatchStatus\": \"SUCCESSFUL\"\n                    }\n                ],\n                \"RefreshMode\": \"ROLLING_UPDATE_RESET\",\n                \"AutoScalingGroupId\": \"asg-kgujlegg\",\n                \"ActivityType\": \"NORMAL\",\n                \"RefreshSettings\": {\n                    \"CheckInstanceTargetHealth\": true,\n                    \"RollingUpdateSettings\": {\n                        \"BatchNumber\": 3,\n                        \"BatchPause\": \"AUTOMATIC\"\n                    }\n                },\n                \"OriginRefreshActivityId\": \"\",\n                \"CurrentRefreshBatchNum\": 3,\n                \"RefreshActivityId\": \"asr-cs0fxpcu\",\n                \"StartTime\": \"2023-09-07T16:27:49Z\",\n                \"CreatedTime\": \"2023-09-07T16:27:49Z\",\n                \"EndTime\": \"2023-09-07T16:32:56Z\"\n            }\n        ],\n        \"RequestId\": \"48869660-f1df-4085-a62c-1f9636cbe030\"\n    }\n}",
+        "title": "使用Filters查看刷新活动列表"
+      }
+    ],
     "DescribeScalingPolicies": [
       {
         "document": "指定策略ID查询简单类型告警触发策略",
@@ -376,6 +392,14 @@
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExecuteScalingPolicy\n<公共请求参数>\n\n{\n    \"HonorCooldown\": \"false\",\n    \"AutoScalingPolicyId\": \"asp-f59pppuh\"\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-o4v87ae9\",\n        \"RequestId\": \"116213d6-2269-44cc-af76-c4a8dc7dbdf9\"\n    }\n}",
         "title": "触发伸缩策略"
+      }
+    ],
+    "ExitStandby": [
+      {
+        "document": "伸缩组 asg-boz1qhnk 中实例 ins-osckfnm7, ins-cri8d02t 退出备用中状态",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExitStandby\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-q59zikez\",\n        \"RequestId\": \"5b039ee6-e8ff-4605-bb24-b45337747431\"\n    }\n}",
+        "title": "伸缩组内实例退出备用中状态"
       }
     ],
     "ModifyAutoScalingGroup": [
@@ -488,6 +512,22 @@
         "title": "从伸缩组删除实例"
       }
     ],
+    "ResumeInstanceRefresh": [
+      {
+        "document": "恢复伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr，使其重试当前批次中刷新失败的实例。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\",\n    \"ResumeMode\": \"RETRY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
+        "title": "恢复实例刷新活动"
+      }
+    ],
+    "RollbackInstanceRefresh": [
+      {
+        "document": "对伸缩组 asg-9dn1a5y6 的实例刷新活动 asr-i8u7tytd 进行回滚。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE\",\n    \"OriginRefreshActivityId\": \"asr-i8u7tytd\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RefreshActivityId\": \"asr-y67t5r4e\",\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
+        "title": "滚动更新方式回滚实例刷新活动"
+      }
+    ],
     "ScaleInInstances": [
       {
         "document": "",
@@ -520,12 +560,28 @@
         "title": "开启 CVM 实例"
       }
     ],
+    "StartInstanceRefresh": [
+      {
+        "document": "将伸缩组 asg-9dn1a5y6 中的实例分成 3 个批次进行滚动更新，批次间会自动暂停。",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-9dn1a5y6\",\n    \"RefreshMode\": \"ROLLING_UPDATE\",\n    \"RefreshSettings\": {\n        \"RollingUpdateSettings\": {\n            \"BatchNumber\": 3,\n            \"BatchPause\": \"BATCH_INTERVAL_PAUSE\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RefreshActivityId\": \"asr-y67t5r4e\",\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
+        "title": "滚动更新方式进行实例刷新"
+      }
+    ],
     "StopAutoScalingInstances": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopAutoScalingInstances\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-boz1qhnk\",\n    \"StoppedMode\": \"STOP_CHARGING\",\n    \"InstanceIds\": [\n        \"ins-osckfnm7\",\n        \"ins-cri8d02t\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"ActivityId\": \"asa-m1ebiskl\",\n        \"RequestId\": \"f3e2873c-af7c-43ee-8aa7-53565d4181c2\"\n    }\n}",
         "title": "按关机不收费模式关闭伸缩组内实例"
+      }
+    ],
+    "StopInstanceRefresh": [
+      {
+        "document": "暂停伸缩组 asg-h7tgd87d 的实例刷新活动 asr-juhf6ytr",
+        "input": "POST / HTTP/1.1\nHost: as.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstanceRefresh\n<公共请求参数>\n\n{\n    \"AutoScalingGroupId\": \"asg-h7tgd87d\",\n    \"RefreshActivityId\": \"img-juhf6ytr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c4190090-bc60-4f48-b9d4-48095b9596db\"\n    }\n}",
+        "title": "暂停实例刷新活动"
       }
     ],
     "UpgradeLaunchConfiguration": [

@@ -5,13 +5,24 @@
 Input: 
 
 ```
-tccli vpc CreateVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc CreateVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionName 测试 \
+    --DestinationUin 100002840663 \
+    --ChargeType POSTPAID_BY_DAY_MAX \
+    --SourceVpcId vpc-938r310k \
+    --Bandwidth 0 \
+    --DestinationVpcId vpc-938r310k \
+    --QosLevel AU \
+    --Type VPC_BM_PEER \
+    --DestinationRegion ap-guangzhou
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "e4008f6c-4bd9-42a7-9e6f-83043db431b2"
+        "PeeringConnectionId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

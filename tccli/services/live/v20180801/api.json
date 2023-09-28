@@ -918,7 +918,7 @@
       "status": "online"
     },
     "ModifyLivePullStreamTask": {
-      "document": "更新直播拉流任务。 \n1. 不支持修改目标地址，如需推到新地址，请创建新任务。\n2. 不支持修改拉流源类型，如需更换，请创建新任务。",
+      "document": "更新直播拉流任务。 \n1. 不支持修改拉流源类型，如需更换，请创建新任务。",
       "input": "ModifyLivePullStreamTaskRequest",
       "name": "更新直播拉流任务",
       "output": "ModifyLivePullStreamTaskResponse",
@@ -12312,6 +12312,15 @@
           "name": "OffsetTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标 Url。\n换目标地址，会断流重推到新地址。",
+          "example": "rtmp://5000.livepush.myqcloud.com/live/vin1333?txSecret=6e9797ce",
+          "member": "string",
+          "name": "ToUrl",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

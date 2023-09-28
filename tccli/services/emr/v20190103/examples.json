@@ -202,7 +202,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyResourcesTags\n<公共请求参数>\n\n{\n    \"ModifyType\": \"abc\",\n    \"ModifyResourceTagsInfoList\": [\n        {\n            \"ResourceId\": \"abc\",\n            \"Resource\": \"abc\",\n            \"ResourcePrefix\": \"abc\",\n            \"ResourceRegion\": \"abc\",\n            \"ServiceType\": \"abc\",\n            \"DeleteTags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"AddTags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"ModifyTags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessList\": [\n            \"abc\"\n        ],\n        \"FailList\": [\n            \"abc\"\n        ],\n        \"PartSuccessList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterToFlowIdList\": [\n            {\n                \"ClusterId\": \"emr-2qhwmqln\",\n                \"FlowId\": 79\n            }\n        ],\n        \"SuccessList\": [\n            \"abc\"\n        ],\n        \"FailList\": [\n            \"abc\"\n        ],\n        \"PartSuccessList\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
       }
     ],

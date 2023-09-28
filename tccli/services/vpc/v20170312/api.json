@@ -7966,12 +7966,104 @@
     },
     "CreateVpcPeeringConnectionRequest": {
       "document": "CreateVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "本端VPC唯一ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "SourceVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对等连接名称。",
+          "example": "test",
+          "member": "string",
+          "name": "PeeringConnectionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端VPC唯一ID。",
+          "example": "vpc-12345678",
+          "member": "string",
+          "name": "DestinationVpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端用户UIN。",
+          "example": "568722665",
+          "member": "string",
+          "name": "DestinationUin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对端地域。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DestinationRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽上限，单位Mbps。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "互通类型，VPC_PEER：VPC间互通；VPC_BM_PEER：VPC与黑石网络互通。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，日峰值POSTPAID_BY_DAY_MAX，月95POSTPAID_BY_MONTH_95。",
+          "example": "POSTPAID_BY_DAY_MAX",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务分级：PT、AU、AG。",
+          "example": "PT",
+          "member": "string",
+          "name": "QosLevel",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateVpcPeeringConnectionResponse": {
       "document": "CreateVpcPeeringConnection返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "对等连接ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pcx-xxxxxx",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -21851,7 +21943,44 @@
     },
     "ModifyVpcPeeringConnectionRequest": {
       "document": "ModifyVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "对等连接名称。",
+          "example": "test",
+          "member": "string",
+          "name": "PeeringConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "带宽上限，单位Mbps。",
+          "example": "10",
+          "member": "int64",
+          "name": "Bandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式，日峰值POSTPAID_BY_DAY_MAX，月95 POSTPAID_BY_MONTH_95。",
+          "example": "POSTPAID_BY_DAY_MAX",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "ModifyVpcPeeringConnectionResponse": {
@@ -23955,7 +24084,17 @@
     },
     "RejectVpcPeeringConnectionRequest": {
       "document": "RejectVpcPeeringConnection请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "对等连接唯一ID。",
+          "example": " pcx-0npfx81k",
+          "member": "string",
+          "name": "PeeringConnectionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RejectVpcPeeringConnectionResponse": {

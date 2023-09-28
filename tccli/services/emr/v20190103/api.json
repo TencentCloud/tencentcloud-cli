@@ -741,6 +741,32 @@
       ],
       "usage": "out"
     },
+    "ClusterIDToFlowID": {
+      "document": "集群id与流程id的mapping",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "流程id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ClusterInstancesInfo": {
       "document": "集群实例信息",
       "members": [
@@ -1785,7 +1811,7 @@
         },
         {
           "disabled": false,
-          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_NEW_META：表示集群默认创建</li>\n<li>EMR_EXIT_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
+          "document": "hive共享元数据库类型。取值范围：\n<li>EMR_DEFAULT_META：表示集群默认创建</li>\n<li>EMR_EXIST_META：表示集群使用指定EMR-MetaDB。</li>\n<li>USER_CUSTOM_META：表示集群使用自定义MetaDB。</li>",
           "example": "EMR_EXIT_META",
           "member": "string",
           "name": "MetaType",
@@ -1876,7 +1902,7 @@
           "example": "emr-xxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5610,6 +5636,16 @@
           "member": "string",
           "name": "PartSuccessList",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群id与流程id的映射列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"ClusterId\":\"emr-2qhwmqln\",\"FlowId\":79}]",
+          "member": "ClusterIDToFlowID",
+          "name": "ClusterToFlowIdList",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },

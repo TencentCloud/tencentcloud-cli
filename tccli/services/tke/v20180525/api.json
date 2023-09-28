@@ -238,6 +238,13 @@
       "output": "CreatePrometheusTemplateResponse",
       "status": "online"
     },
+    "CreateReservedInstances": {
+      "document": "预留券实例的购买会预先扣除本次实例购买所需金额，在调用本接口前请确保账户余额充足。",
+      "input": "CreateReservedInstancesRequest",
+      "name": "购买预留券实例",
+      "output": "CreateReservedInstancesResponse",
+      "status": "online"
+    },
     "CreateTKEEdgeCluster": {
       "document": "创建边缘计算集群",
       "input": "CreateTKEEdgeClusterRequest",
@@ -432,6 +439,13 @@
       "input": "DeletePrometheusTemplateSyncRequest",
       "name": "取消模板同步",
       "output": "DeletePrometheusTemplateSyncResponse",
+      "status": "online"
+    },
+    "DeleteReservedInstances": {
+      "document": "预留券实例如符合退还规则，可通过本接口主动退还。",
+      "input": "DeleteReservedInstancesRequest",
+      "name": "退还预留券实例",
+      "output": "DeleteReservedInstancesResponse",
       "status": "online"
     },
     "DeleteTKEEdgeCluster": {
@@ -791,6 +805,27 @@
       "output": "DescribeImagesResponse",
       "status": "online"
     },
+    "DescribePodDeductionRate": {
+      "document": "查询各个规格的 Pod 的抵扣率",
+      "input": "DescribePodDeductionRateRequest",
+      "name": "查询Pod 抵扣率",
+      "output": "DescribePodDeductionRateResponse",
+      "status": "online"
+    },
+    "DescribePodsBySpec": {
+      "document": "查询可以用预留券抵扣的 Pod 信息。",
+      "input": "DescribePodsBySpecRequest",
+      "name": "根据规格查询 Pod 信息",
+      "output": "DescribePodsBySpecResponse",
+      "status": "online"
+    },
+    "DescribePostNodeResources": {
+      "document": "包括 Pod 资源统计和绑定的预留券资源统计。",
+      "input": "DescribePostNodeResourcesRequest",
+      "name": "查询按量计费超级节点上的资源详情",
+      "output": "DescribePostNodeResourcesResponse",
+      "status": "online"
+    },
     "DescribePrometheusAgentInstances": {
       "document": "获取关联目标集群的实例列表",
       "input": "DescribePrometheusAgentInstancesRequest",
@@ -924,11 +959,25 @@
       "output": "DescribePrometheusTemplatesResponse",
       "status": "online"
     },
+    "DescribeRIUtilizationDetail": {
+      "document": "预留实例用量查询",
+      "input": "DescribeRIUtilizationDetailRequest",
+      "name": "预留实例用量查询",
+      "output": "DescribeRIUtilizationDetailResponse",
+      "status": "online"
+    },
     "DescribeRegions": {
       "document": "获取容器服务支持的所有地域",
       "input": "DescribeRegionsRequest",
       "name": "查询地域列表",
       "output": "DescribeRegionsResponse",
+      "status": "online"
+    },
+    "DescribeReservedInstances": {
+      "document": "查询预留实例列表",
+      "input": "DescribeReservedInstancesRequest",
+      "name": "查询预留实例列表",
+      "output": "DescribeReservedInstancesResponse",
       "status": "online"
     },
     "DescribeResourceUsage": {
@@ -1267,11 +1316,25 @@
       "output": "ModifyPrometheusTemplateResponse",
       "status": "online"
     },
+    "ModifyReservedInstanceScope": {
+      "document": "修改预留券的抵扣范围，抵扣范围取值：Region、Zone 和 Node。",
+      "input": "ModifyReservedInstanceScopeRequest",
+      "name": "修改预留券的抵扣范围",
+      "output": "ModifyReservedInstanceScopeResponse",
+      "status": "online"
+    },
     "RemoveNodeFromNodePool": {
       "document": "移出节点池节点，但保留在集群内",
       "input": "RemoveNodeFromNodePoolRequest",
       "name": "移出节点池节点",
       "output": "RemoveNodeFromNodePoolResponse",
+      "status": "online"
+    },
+    "RenewReservedInstances": {
+      "document": "续费时请确保账户余额充足。",
+      "input": "RenewReservedInstancesRequest",
+      "name": "续费预留券实例",
+      "output": "RenewReservedInstancesResponse",
       "status": "online"
     },
     "RestartEKSContainerInstances": {
@@ -2024,42 +2087,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "cuDNN的版本",
+          "document": "cuDNN的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "7.5.0",
           "member": "string",
           "name": "Version",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的名字",
+          "document": "cuDNN的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的Doc名字",
+          "document": "cuDNN的Doc名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7-doc_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "DocName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "cuDNN的Dev名字",
+          "document": "cuDNN的Dev名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "libcudnn7-dev_7.5.0.56-1+cuda10.1_amd64.deb",
           "member": "string",
           "name": "DevName",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CancelClusterReleaseRequest": {
       "document": "CancelClusterRelease请求参数结构体",
@@ -6335,6 +6406,79 @@
       ],
       "type": "object"
     },
+    "CreateReservedInstancesRequest": {
+      "document": "CreateReservedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券实例规格。",
+          "example": "无",
+          "member": "ReservedInstanceSpec",
+          "name": "ReservedInstanceSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量，一次最大购买数量为300。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "预留券名称。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateReservedInstancesResponse": {
+      "document": "CreateReservedInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券实例 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ReservedInstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTKEEdgeClusterRequest": {
       "document": "CreateTKEEdgeCluster请求参数结构体",
       "members": [
@@ -7700,6 +7844,33 @@
       ],
       "type": "object"
     },
+    "DeleteReservedInstancesRequest": {
+      "document": "DeleteReservedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券实例ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ReservedInstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteReservedInstancesResponse": {
+      "document": "DeleteReservedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteTKEEdgeClusterRequest": {
       "document": "DeleteTKEEdgeCluster请求参数结构体",
       "members": [
@@ -8786,6 +8957,7 @@
           "example": "无",
           "member": "NodePool",
           "name": "NodePool",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8831,7 +9003,7 @@
           "example": "无",
           "member": "NodePool",
           "name": "NodePoolSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8841,7 +9013,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10835,6 +11007,236 @@
       ],
       "type": "object"
     },
+    "DescribePodDeductionRateRequest": {
+      "document": "DescribePodDeductionRate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 节点名称",
+          "example": "eklet-subnet-0j105iya",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodDeductionRateResponse": {
+      "document": "DescribePodDeductionRate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "各个规格的 可被预留券抵扣的Pod 抵扣率",
+          "example": "无",
+          "member": "PodDeductionRate",
+          "name": "PodDeductionRateSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodsBySpecRequest": {
+      "document": "DescribePodsBySpec请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "2",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "卡数，有0.25、0.5、1、2、4等",
+          "example": "0.25",
+          "member": "string",
+          "name": "GpuNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "eklet-subnet-0j105iya",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "pod-type\n按照**【Pod 类型**】进行过滤。资源类型：intel、amd、v100、t4、a10\\*gnv4、a10\\*gnv4v等。\n类型：String\n必选：否\n\npod-deduct\n按照**【上个周期抵扣的Pod**】进行过滤。Values可不设置。\n必选：否\n\npod-not-deduct\n按照**【上个周期未抵扣的Pod**】进行过滤。Values可不设置。\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePodsBySpecResponse": {
+      "document": "DescribePodsBySpec返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod 总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod 节点信息",
+          "example": "无",
+          "member": "PodNodeInfo",
+          "name": "PodSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostNodeResourcesRequest": {
+      "document": "DescribePostNodeResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 节点名称",
+          "example": "eklet-subnet-12345678",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePostNodeResourcesResponse": {
+      "document": "DescribePostNodeResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod详情",
+          "example": "无",
+          "member": "SuperNodeResource",
+          "name": "PodSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留券详情",
+          "example": "无",
+          "member": "SuperNodeResource",
+          "name": "ReservedInstanceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusAgentInstancesRequest": {
       "document": "DescribePrometheusAgentInstances请求参数结构体",
       "members": [
@@ -12060,6 +12462,71 @@
       ],
       "type": "object"
     },
+    "DescribeRIUtilizationDetailRequest": {
+      "document": "DescribeRIUtilizationDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "reserved-instance-id\n按照**【预留实例ID**】进行过滤。预留实例ID形如：eksri-xxxxxxxx。\n类型：String\n必选：否\n\nbegin-time\n按照**【抵扣开始时间**】进行过滤。形如：2023-06-28 15:27:40。\n类型：String\n必选：否\n\nend-time\n按照**【抵扣结束时间**】进行过滤。形如：2023-06-28 15:27:40。\n类型：String\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRIUtilizationDetailResponse": {
+      "document": "DescribeRIUtilizationDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情。",
+          "example": "无",
+          "member": "RIUtilizationDetail",
+          "name": "RIUtilizationDetailSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
       "members": [],
@@ -12085,6 +12552,89 @@
           "name": "RegionInstanceSet",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReservedInstancesRequest": {
+      "document": "DescribeReservedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "偏移量，默认0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "status\n按照**【状态**】进行过滤。状态：Creating、Active、Expired、Refunded。\n类型：String\n必选：否\n\nresource-type\n按照**【资源类型**】进行过滤。资源类型：common、amd、v100、t4、a10\\*gnv4、a10\\*gnv4v等，common表示通用类型。\n类型：String\n必选：否\n\ncpu\n按照**【核数**】进行过滤。\n类型：String\n必选：否\n\nmemory\n按照**【内存**】进行过滤。\n类型：String\n必选：否\n\ngpu\n按照**【GPU卡数**】进行过滤，取值有0.25、0.5、1、2、4等。\n类型：String\n必选：否\n\ncluster-id\n按照**【集群ID**】进行过滤。\n类型：String\n必选：否\n\nnode-name\n按照**【节点名称**】进行过滤。\n类型：String\n必选：否\n\nscope\n按照**【可用区**】进行过滤。比如：ap-guangzhou-2，为空字符串表示地域抵扣范围。如果只过滤可用区抵扣范围，需要同时将cluster-id、node-name设置为空字符串。\n类型：String\n必选：否\n\nreserved-instance-id\n按照**【预留实例ID**】进行过滤。预留实例ID形如：eksri-xxxxxxxx。\n类型：String\n必选：否\n\nreserved-instance-name\n按照**【预留实例名称**】进行过滤。\n类型：String\n必选：否\n\nreserved-instance-deduct\n按照**【上个周期抵扣的预留券**】进行过滤。Values可不设置。\n必选：否\n\nreserved-instance-not-deduct\n按照**【上个周期未抵扣的预留券**】进行过滤。Values可不设置。\n必选：否",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。支持CreatedAt、ActiveAt、ExpireAt。默认值CreatedAt。",
+          "example": "CreatedAt",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方法。顺序：ASC，倒序：DESC。默认值DESC。",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeReservedInstancesResponse": {
+      "document": "DescribeReservedInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留实例列表。",
+          "example": "无",
+          "member": "ReservedInstance",
+          "name": "ReservedInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12912,24 +13462,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的版本",
+          "document": "GPU驱动或者CUDA的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "418.126.02",
           "member": "string",
           "name": "Version",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "GPU驱动或者CUDA的名字",
+          "document": "GPU驱动或者CUDA的名字\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NVIDIA-Linux-x86_64-418.126.02.run",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ECMEnhancedService": {
       "document": "ECM增强服务",
@@ -15786,6 +16340,34 @@
       ],
       "usage": "both"
     },
+    "InstanceChargePrepaid": {
+      "document": "包年包月配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Period",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。取值范围：\nNOTIFY_AND_AUTO_RENEW：通知过期且自动续费\nNOTIFY_AND_MANUAL_RENEW：通知过期不自动续费\nDISABLE_NOTIFY_AND_MANUAL_RENEW：不通知过期不自动续费\n\n默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
+          "member": "string",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceDataDiskMountSetting": {
       "document": "CVM实例数据盘挂载配置",
       "members": [
@@ -17201,6 +17783,15 @@
           "name": "DockerGraphPath",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "base64编码后的自定义脚本",
+          "example": "dG91Y2ggL3RtcC9iZWZvcmU=",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -17730,6 +18321,42 @@
       ],
       "type": "object"
     },
+    "ModifyReservedInstanceScopeRequest": {
+      "document": "ModifyReservedInstanceScope请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券唯一 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ReservedInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预留券抵扣范围信息",
+          "example": "无",
+          "member": "ReservedInstanceScope",
+          "name": "ReservedInstanceScope",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyReservedInstanceScopeResponse": {
+      "document": "ModifyReservedInstanceScope返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "NfsVolume": {
       "document": "EKS Instance Nfs Volume",
       "members": [
@@ -17811,7 +18438,7 @@
           "example": "np-xxx",
           "member": "string",
           "name": "NodePoolId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17821,7 +18448,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17831,7 +18458,7 @@
           "example": "cls-xxx",
           "member": "string",
           "name": "ClusterInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17841,7 +18468,7 @@
           "example": "normal",
           "member": "string",
           "name": "LifeState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17851,7 +18478,7 @@
           "example": "asc-xxx",
           "member": "string",
           "name": "LaunchConfigurationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17861,7 +18488,7 @@
           "example": "asg-xxx",
           "member": "string",
           "name": "AutoscalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17871,7 +18498,7 @@
           "example": "无",
           "member": "Label",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17881,7 +18508,7 @@
           "example": "无",
           "member": "Taint",
           "name": "Taints",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17891,7 +18518,7 @@
           "example": "{\"AutoscalingAdded\":{\"Initializing\":0,\"Joining\":0,\"Normal\":1,\"Sh",
           "member": "NodeCountSummary",
           "name": "NodeCountSummary",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -17901,7 +18528,7 @@
           "example": "enabled",
           "member": "string",
           "name": "AutoscalingGroupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17911,7 +18538,7 @@
           "example": "5",
           "member": "int64",
           "name": "MaxNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17921,7 +18548,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17931,7 +18558,7 @@
           "example": "3",
           "member": "int64",
           "name": "DesiredNodesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17941,7 +18568,7 @@
           "example": "tlinux2.4x86_64",
           "member": "string",
           "name": "NodePoolOs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17951,7 +18578,7 @@
           "example": "GENERAL",
           "member": "string",
           "name": "OsCustomizeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17961,7 +18588,7 @@
           "example": "img-xxx",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17971,7 +18598,7 @@
           "example": "16",
           "member": "int64",
           "name": "DesiredPodNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17981,7 +18608,7 @@
           "example": "无",
           "member": "string",
           "name": "UserScript",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17991,7 +18618,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -18001,8 +18628,68 @@
           "example": "false",
           "member": "bool",
           "name": "DeletionProtection",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"MountTarget\":\"\",\"DataDiskPartition\":null,\"DockerGraphPath\":\"\",",
+          "member": "InstanceExtraArgs",
+          "name": "ExtraArgs",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GPU驱动相关参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GPUArgs",
+          "name": "GPUArgs",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "dockerd --graph 指定值, 默认为 /var/lib/docker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/var/lib/docker",
+          "member": "string",
+          "name": "DockerGraphPath",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多盘数据盘挂载信息：新建节点时请确保购买CVM的参数传递了购买多个数据盘的信息，如CreateClusterInstances API的RunInstancesPara下的DataDisks也需要设置购买多个数据盘, 具体可以参考CreateClusterInstances接口的添加集群节点(多块数据盘)样例；添加已有节点时，请确保填写的分区信息在节点上真实存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DataDisk",
+          "name": "DataDisks",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否不可调度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Unschedulable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义脚本,在UserScript前执行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PreStartUserScript",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -18156,6 +18843,72 @@
       ],
       "usage": "out"
     },
+    "PodDeductionRate": {
+      "document": "可被预留券抵扣的 Pod 某种规格的抵扣率",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod的 CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod 的内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "float",
+          "name": "Memory",
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " Pod 的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "intel",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " Pod 的 GPU 卡数，Pod 类型为 GPU 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "GpuNum",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "这种规格的 Pod总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "这种规格的 Pod被预留券抵扣的数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeductionNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PodLimitsByType": {
       "document": "某机型可支持的最大 VPC-CNI 模式的 Pod 数量",
       "members": [
@@ -18233,6 +18986,62 @@
           "name": "PodLimits",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PodNodeInfo": {
+      "document": "Pod所在的节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eklet-subnet-0j105iya",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " Pod 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-0",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -20202,6 +21011,122 @@
       ],
       "usage": "both"
     },
+    "RIUtilizationDetail": {
+      "document": "预留券抵扣详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券ID",
+          "example": "eksri-xxxxxxxx",
+          "member": "string",
+          "name": "ReservedInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod唯一ID",
+          "example": "eks-xxxxxxxx",
+          "member": "string",
+          "name": "EksId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxxxxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载类型",
+          "example": "pod",
+          "member": "string",
+          "name": "Kind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载名称",
+          "example": "test",
+          "member": "string",
+          "name": "KindName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod的uid",
+          "example": "4c243e72-1322-409d-a352-5c2e3495cd40",
+          "member": "string",
+          "name": "Uid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量开始时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量结束时间",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣资源所属产品",
+          "example": "eks",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RegionInstance": {
       "document": "地域属性信息",
       "members": [
@@ -20676,6 +21601,301 @@
         }
       ],
       "type": "object"
+    },
+    "RenewReservedInstancesRequest": {
+      "document": "RenewReservedInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留券实例ID，每次请求实例的上限为100。",
+          "example": "无",
+          "member": "string",
+          "name": "ReservedInstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的续费时长、是否设置自动续费等属性。",
+          "example": "无",
+          "member": "InstanceChargePrepaid",
+          "name": "InstanceChargePrepaid",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewReservedInstancesResponse": {
+      "document": "RenewReservedInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReservedInstance": {
+      "document": "预留实例",
+      "members": [
+        {
+          "disabled": false,
+          "document": "预留实例ID",
+          "example": "eksri-xxxxxxxx",
+          "member": "string",
+          "name": "ReservedInstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "ReservedInstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留券状态",
+          "example": "Active",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效期，单位：月",
+          "example": "1",
+          "member": "uint64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣资源类型",
+          "example": "amd",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源核数",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源内存，单位：Gi",
+          "example": "2",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预留券的范围，默认值region。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-03-22 19:41:53",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效时间",
+          "example": "2021-03-22 19:00:00",
+          "member": "string",
+          "name": "ActiveAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "2021-04-22 23:59:59",
+          "member": "string",
+          "name": "ExpireAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GPU卡数",
+          "example": "\"0.5\"",
+          "member": "string",
+          "name": "GpuCount",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "cls-12345678",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "eklet-subnet-12345678",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": " 上个周期预留券的抵扣状态，Deduct、NotDeduct",
+          "example": "Deduct",
+          "member": "string",
+          "name": "DeductStatus",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ReservedInstanceScope": {
+      "document": "预留券抵扣范围的描述信息，当抵扣范围为 Region 时，表示地域抵扣，其他参数不需要传；当抵扣范围为 Zone 时，表示可用区抵扣，Zone 参数必传；当抵扣范围为 Node 时，表示节点抵扣，参数 Zone、ClusterId和NodeName均必传。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "抵扣范围，取值：Region、Zone 和 Node",
+          "example": "Region",
+          "member": "string",
+          "name": "Scope",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群 ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReservedInstanceSpec": {
+      "document": "预留券规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型：common、amd、v100、t4、a10\\*gnv4、a10\\*gnv4v、a10\\*pnv4、windows-common、windows-amd，common表示通用类型。",
+          "example": "amd",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "核数",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "2",
+          "member": "float",
+          "name": "Memory",
+          "required": true,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "GPU卡数，当Type为GPU类型时设置。",
+          "example": "0.5",
+          "member": "float",
+          "name": "Gpu",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "usage": "in"
     },
     "ResourceDeleteOption": {
       "document": "资源删除选项",
@@ -21428,6 +22648,62 @@
         }
       ],
       "usage": "in"
+    },
+    "SuperNodeResource": {
+      "document": "超级节点上的资源统计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "节点名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eklet-subnet-12345678",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点上的资源总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Num",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点上的总核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "Cpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点上的总内存数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "float",
+          "name": "Memory",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点上的总 GPU 卡数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "Gpu",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SyncPrometheusTempRequest": {
       "document": "SyncPrometheusTemp请求参数结构体",

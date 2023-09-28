@@ -14,6 +14,13 @@
       "output": "AttachLoadBalancersResponse",
       "status": "online"
     },
+    "CancelInstanceRefresh": {
+      "document": "取消伸缩组的实例刷新活动。\n* 已刷新/正在刷新的批次不受影响，待刷新批次被取消\n* 刷新失败的实例保持备用中状态，需用户手动处理后尝试退出备用中状态或销毁\n* 取消后不允许回滚操作，也不支持恢复操作",
+      "input": "CancelInstanceRefreshRequest",
+      "name": "取消实例刷新",
+      "output": "CancelInstanceRefreshResponse",
+      "status": "online"
+    },
     "ClearLaunchConfigurationAttributes": {
       "document": "本接口（ClearLaunchConfigurationAttributes）用于将启动配置内的特定属性完全清空。",
       "input": "ClearLaunchConfigurationAttributesRequest",
@@ -182,6 +189,13 @@
       "output": "DescribeNotificationConfigurationsResponse",
       "status": "online"
     },
+    "DescribeRefreshActivities": {
+      "document": "本接口（DescribeRefreshActivities）用于查询伸缩组的实例刷新活动记录。",
+      "input": "DescribeRefreshActivitiesRequest",
+      "name": "查询实例刷新活动",
+      "output": "DescribeRefreshActivitiesResponse",
+      "status": "online"
+    },
     "DescribeScalingPolicies": {
       "document": "本接口（DescribeScalingPolicies）用于查询告警触发策略。",
       "input": "DescribeScalingPoliciesRequest",
@@ -229,6 +243,13 @@
       "input": "ExecuteScalingPolicyRequest",
       "name": "触发伸缩策略",
       "output": "ExecuteScalingPolicyResponse",
+      "status": "online"
+    },
+    "ExitStandby": {
+      "document": "伸缩组内实例退出备用中状态。\n* 备用中状态的实例负载均衡器权重值为 0，退出备用中状态后，权重值也会恢复\n* 对备用中状态实例进行开关机操作也会使其退出备用中状态",
+      "input": "ExitStandbyRequest",
+      "name": "实例退出备用中状态",
+      "output": "ExitStandbyResponse",
       "status": "online"
     },
     "ModifyAutoScalingGroup": {
@@ -301,6 +322,20 @@
       "output": "RemoveInstancesResponse",
       "status": "online"
     },
+    "ResumeInstanceRefresh": {
+      "document": "恢复暂停状态的实例刷新活动，使其重试当前批次刷新失败实例或继续刷新后续批次，非暂停状态下调用该接口无效。",
+      "input": "ResumeInstanceRefreshRequest",
+      "name": "恢复实例刷新",
+      "output": "ResumeInstanceRefreshResponse",
+      "status": "online"
+    },
+    "RollbackInstanceRefresh": {
+      "document": "回滚操作会生成一个新的实例刷新活动，该活动也支持分批次刷新以及暂停、恢复、取消操作，接口返回回滚活动的 RefreshActivityId。\n* 原活动中待刷新实例变更为已取消，忽略不存在实例，其他状态实例进入回滚流程\n* 原活动中正在刷新的实例不会立刻终止，刷新结束后再执行回滚活动\n* 暂停状态或最近一次成功的刷新活动支持回滚，其他状态不支持回滚\n* 原活动刷新方式为重装实例时，对于 ImageId参数，会自动恢复到回滚前镜像 ID；对于 UserData、EnhancedService、LoginSettings、 HostName 参数，依然会从启动配置中读取，需用户在回滚前自行修改启动配置",
+      "input": "RollbackInstanceRefreshRequest",
+      "name": "回滚实例刷新",
+      "output": "RollbackInstanceRefreshResponse",
+      "status": "online"
+    },
     "ScaleInInstances": {
       "document": "为伸缩组指定数量缩容实例，返回缩容活动的 ActivityId。\n* 伸缩组需要未处于活动中\n* 伸缩组处于停用状态时，该接口也会生效，可参考[停用伸缩组](https://cloud.tencent.com/document/api/377/20435)文档查看伸缩组停用状态的影响范围\n* 根据伸缩组的`TerminationPolicies`策略，选择被缩容的实例，可参考[缩容处理](https://cloud.tencent.com/document/product/377/8563)\n* 接口只会选择`IN_SERVICE`实例缩容，如果需要缩容其他状态实例，可以使用 [DetachInstances](https://cloud.tencent.com/document/api/377/20436) 或 [RemoveInstances](https://cloud.tencent.com/document/api/377/20431) 接口\n* 接口会减少期望实例数，新的期望实例数需要大于等于最小实例数\n* 缩容如果失败或者部分成功，最后期望实例数只会扣减实际缩容成功的实例数量",
       "input": "ScaleInInstancesRequest",
@@ -329,11 +364,25 @@
       "output": "StartAutoScalingInstancesResponse",
       "status": "online"
     },
+    "StartInstanceRefresh": {
+      "document": "根据启动配置中参数，刷新伸缩组内运行中状态 CVM 实例，返回实例刷新活动的 RefreshActivityId。\n* 对于重装实例的刷新方式（目前仅支持重装），重装时仅会从启动配置中获取 ImageId、UserData、EnhancedService、 HostName、LoginSettings 参数进行刷新，实例的其他参数不会刷新\n* 实例刷新期间（包括暂停状态），伸缩组会被停用。不建议刷新期间修改关联启动配置，否则会影响刷新参数，造成实例配置不一致\n* 滚动更新模式会分成多批次进行刷新实例，单批次中若存在刷新失败实例，活动会进入失败暂停状态\n* 若待刷新实例被移出或销毁，会被标记为 NOT_FOUND 状态，不阻塞实例刷新活动\n* 运行中状态实例与最新启动配置参数一致，实例也会再次刷新",
+      "input": "StartInstanceRefreshRequest",
+      "name": "启动实例刷新",
+      "output": "StartInstanceRefreshResponse",
+      "status": "online"
+    },
     "StopAutoScalingInstances": {
       "document": "本接口（StopAutoScalingInstances）用于关闭伸缩组内 CVM 实例。\n* 关机方式采用`SOFT_FIRST`方式，表示在正常关闭失败后进行强制关闭\n* 关闭`IN_SERVICE`状态的实例，会减少期望实例数，期望实例数不可低于设置的最小值\n* 使用`STOP_CHARGING`选项关机，待关机的实例需要满足[关机不收费条件](https://cloud.tencent.com/document/product/213/19918)\n* 本接口支持批量操作，每次请求关机实例的上限为100",
       "input": "StopAutoScalingInstancesRequest",
       "name": "关闭伸缩组内 CVM 实例",
       "output": "StopAutoScalingInstancesResponse",
+      "status": "online"
+    },
+    "StopInstanceRefresh": {
+      "document": "暂停正在执行的实例刷新活动。\n* 暂停状态下，伸缩组也会处于停用中状态\n* 当前正在更新的实例不会暂停，待更新的实例会暂停更新",
+      "input": "StopInstanceRefreshRequest",
+      "name": "暂停实例刷新",
+      "output": "StopInstanceRefreshResponse",
       "status": "online"
     },
     "UpgradeLaunchConfiguration": {
@@ -1150,6 +1199,42 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelInstanceRefreshRequest": {
+      "document": "CancelInstanceRefresh请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组ID。",
+          "example": "asg-u7dy6t5r",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动ID。",
+          "example": "asr-dhwt6r54",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelInstanceRefreshResponse": {
+      "document": "CancelInstanceRefresh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ClearLaunchConfigurationAttributesRequest": {
       "document": "ClearLaunchConfigurationAttributes请求参数结构体",
@@ -3091,6 +3176,80 @@
       ],
       "type": "object"
     },
+    "DescribeRefreshActivitiesRequest": {
+      "document": "DescribeRefreshActivities请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新活动ID列表。ID形如：`asr-5l2ejpfo`。每次请求的上限为100。参数不支持同时指定`RefreshActivityIds`和`Filters`。",
+          "example": "[\"asr-aaaabbbb\"]",
+          "member": "string",
+          "name": "RefreshActivityIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li> auto-scaling-group-id - String - 是否必填：否 -（过滤条件）按照伸缩组ID过滤。</li>\n<li> refresh-activity-status-code - String - 是否必填：否 -（过滤条件）按照刷新活动状态过滤。（INIT：初始化中 | RUNNING：运行中 | SUCCESSFUL：活动成功 | FAILED_PAUSE：失败暂停 | AUTO_PAUSE：自动暂停 | MANUAL_PAUSE：手动暂停 | CANCELLED：活动取消 | FAILED：活动失败）</li>\n<li> refresh-activity-type - String - 是否必填：否 -（过滤条件）按照刷新活动类型过滤。（NORMAL：正常刷新活动 | ROLLBACK：回滚刷新活动）</li>\n<li> refresh-activity-id - String - 是否必填：否 -（过滤条件）按照刷新活动ID过滤。</li>\n<li> 每次请求的Filters的上限为10，Filter.Values的上限为5。参数不支持同时指定RefreshActivityIds和Filters。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，最大值为100。关于`Limit`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。关于`Offset`的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小节。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRefreshActivitiesResponse": {
+      "document": "DescribeRefreshActivities返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的刷新活动数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的刷新活动信息集合。",
+          "example": "无",
+          "member": "RefreshActivity",
+          "name": "RefreshActivitySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeScalingPoliciesRequest": {
       "document": "DescribeScalingPolicies请求参数结构体",
       "members": [
@@ -3558,6 +3717,52 @@
           "name": "ActivityId",
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExitStandbyRequest": {
+      "document": "ExitStandby请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组 ID。",
+          "example": "asg-boz1qhnk",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备用中状态 CVM 实例列表。",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ExitStandbyResponse": {
+      "document": "ExitStandby返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩活动ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asa-q59zikez",
+          "member": "string",
+          "name": "ActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5773,6 +5978,262 @@
       ],
       "usage": "both"
     },
+    "RefreshActivity": {
+      "document": "实例刷新活动。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组 ID。",
+          "example": "asg-t67yhy7u",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动 ID。",
+          "example": "asr-v8dd7er6",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原始刷新活动ID，仅在回滚刷新活动中存在。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asr-v8dd7er6",
+          "member": "string",
+          "name": "OriginRefreshActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新批次信息列表。",
+          "example": "无",
+          "member": "RefreshBatch",
+          "name": "RefreshBatchSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新模式。",
+          "example": "ROLLING_UPDATE",
+          "member": "string",
+          "name": "RefreshMode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例更新设置参数。",
+          "example": "无",
+          "member": "RefreshSettings",
+          "name": "RefreshSettings",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动类型。取值如下：<br><li>NORMAL：正常刷新活动</li><li>ROLLBACK：回滚刷新活动",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ActivityType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动状态。取值如下：<br><li>INIT：初始化中</li><li>RUNNING：运行中</li><li>SUCCESSFUL：活动成功</li><li>FAILED_PAUSE：因刷新批次失败暂停</li><li>AUTO_PAUSE：因暂停策略自动暂停</li><li>MANUAL_PAUSE：手动暂停</li><li>CANCELLED：活动取消</li><li>FAILED：活动失败",
+          "example": "RUNNING",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前刷新批次序号。例如，2 表示当前活动正在刷新第二批次的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "CurrentRefreshBatchNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-04T11:42:46Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-04T11:42:46Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-04T11:42:46Z",
+          "member": "datetime_iso",
+          "name": "CreatedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RefreshBatch": {
+      "document": "实例刷新批次信息，包含该批次的刷新状态、实例、起止时间等信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新批次序号。例如，2 表示当前批次实例会在第二批次进行实例刷新。",
+          "example": "2",
+          "member": "uint64",
+          "name": "RefreshBatchNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新批次状态。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED:  刷新失败</li><li>PARTIALLY_SUCCESSFUL：批次部分成功</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功",
+          "example": "WAITING",
+          "member": "string",
+          "name": "RefreshBatchStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新批次关联实例列表。",
+          "example": "无",
+          "member": "RefreshBatchRelatedInstance",
+          "name": "RefreshBatchRelatedInstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新批次开始时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-31T11:46:40Z",
+          "member": "datetime_iso",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "刷新批次结束时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-31T11:46:40Z",
+          "member": "datetime_iso",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RefreshBatchRelatedInstance": {
+      "document": "刷新批次关联实例，包含单个实例的刷新活动状态、对应伸缩活动等信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID。",
+          "example": "ins-d73gg3yt",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "刷新实例状态。如果在刷新时实例被移出或销毁，状态会更新为 NOT_FOUND。取值如下：<br><li>WAITING：待刷新</li><li>INIT：初始化中</li><li>RUNNING：刷新中</li><li>FAILED：刷新失败</li><li>CANCELLED：已取消</li><li>SUCCESSFUL：刷新成功</li><li>NOT_FOUND：实例不存在",
+          "example": "WAITING",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例刷新中最近一次伸缩活动 ID，可通过 DescribeAutoScalingActivities 接口查询。\n需注意伸缩活动与实例刷新活动不同，一次实例刷新活动可能包括多次伸缩活动。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "asa-7y5rey56",
+          "member": "string",
+          "name": "LastActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例刷新状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "InstanceStatusMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RefreshSettings": {
+      "document": "实例刷新设置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "滚动更新设置参数。RefreshMode 为滚动更新该参数必须填写。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RollingUpdateSettings",
+          "name": "RollingUpdateSettings",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例后端服务健康状态检查，默认为 FALSE。仅针对绑定应用型负载均衡器的伸缩组生效，开启该检查后，如刷新后实例未通过检查，负载均衡器端口权重始终为 0，且标记为刷新失败。取值范围如下：<br><li>TRUE：开启检查</li><li>FALSE：不开启检查",
+          "example": "TRUE",
+          "member": "bool",
+          "name": "CheckInstanceTargetHealth",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "RelatedInstance": {
       "document": "与本次伸缩活动相关的实例信息。",
       "members": [
@@ -5844,6 +6305,143 @@
         }
       ],
       "type": "object"
+    },
+    "ResumeInstanceRefreshRequest": {
+      "document": "ResumeInstanceRefresh请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组ID。",
+          "example": "asg-u7dy6t5r",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动ID。",
+          "example": "asr-dhwt6r54",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前批次刷新失败实例的恢复方式，如不存在失败实例，该参数无效。默认值为RETRY，取值范围如下：<br><li>RETRY: 重试当前批次刷新失败实例</li><li>CONTINUE: 跳过当前批次刷新失败实例",
+          "example": "RETRY",
+          "member": "string",
+          "name": "ResumeMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeInstanceRefreshResponse": {
+      "document": "ResumeInstanceRefresh返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackInstanceRefreshRequest": {
+      "document": "RollbackInstanceRefresh请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组ID。",
+          "example": "asg-12yqet78",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新设置。",
+          "example": "无",
+          "member": "RefreshSettings",
+          "name": "RefreshSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "原始刷新活动 ID。",
+          "example": "无",
+          "member": "string",
+          "name": "OriginRefreshActivityId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。",
+          "example": "ROLLING_UPDATE_RESET",
+          "member": "string",
+          "name": "RefreshMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackInstanceRefreshResponse": {
+      "document": "RollbackInstanceRefresh返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新活动 ID。",
+          "example": "asr-6t7y8u5r",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollingUpdateSettings": {
+      "document": "滚动更新设置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批次数量。批次数量为大于 0 的正整数，但不能大于待刷新实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "BatchNumber",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批次间暂停策略。默认值为 Automatic，取值范围如下：<br><li>FIRST_BATCH_PAUSE：第一批次更新完成后暂停</li><li>BATCH_INTERVAL_PAUSE：批次间暂停</li><li>AUTOMATIC：不暂停",
+          "example": "Automatic",
+          "member": "string",
+          "name": "BatchPause",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "RunAutomationServiceEnabled": {
       "document": "描述了 “自动化助手” 服务相关的信息",
@@ -6445,6 +7043,61 @@
       ],
       "type": "object"
     },
+    "StartInstanceRefreshRequest": {
+      "document": "StartInstanceRefresh请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组ID。",
+          "example": "asg-12yqet78",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新设置。",
+          "example": "无",
+          "member": "RefreshSettings",
+          "name": "RefreshSettings",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "刷新模式，目前仅支持滚动更新，默认值为 ROLLING_UPDATE_RESET。",
+          "example": "ROLLING_UPDATE_RESET",
+          "member": "string",
+          "name": "RefreshMode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartInstanceRefreshResponse": {
+      "document": "StartInstanceRefresh返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刷新活动 ID。",
+          "example": "asr-6t7y8u5r",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StopAutoScalingInstancesRequest": {
       "document": "StopAutoScalingInstances请求参数结构体",
       "members": [
@@ -6491,6 +7144,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstanceRefreshRequest": {
+      "document": "StopInstanceRefresh请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "伸缩组ID。",
+          "example": "asg-u7dy6t5r",
+          "member": "string",
+          "name": "AutoScalingGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "刷新活动ID。",
+          "example": "asr-dhwt6r54",
+          "member": "string",
+          "name": "RefreshActivityId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StopInstanceRefreshResponse": {
+      "document": "StopInstanceRefresh返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

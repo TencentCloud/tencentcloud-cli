@@ -11,8 +11,8 @@
     "CreateCloudNativeAPIGatewayCanaryRule": [
       {
         "document": "创建灰度规则",
-        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"q1\",\n                \"Operator\": \"==\",\n                \"Value\": \"xxx\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"xxxx\",\n                \"ServiceName\": \"xxxx\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayCanaryRule\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-18f786a\",\n    \"ServiceId\": \"6abf620f-c6b9-4440-b90c-56c165225cfc\",\n    \"CanaryRule\": {\n        \"Priority\": 10,\n        \"Enabled\": true,\n        \"ConditionList\": [\n            {\n                \"Type\": \"query\",\n                \"Key\": \"q1\",\n                \"Operator\": \"==\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"BalancedServiceList\": [\n            {\n                \"ServiceID\": \"6abf620f-c6b9-4440-b90c-56c165225cf\",\n                \"ServiceName\": \"svc1\",\n                \"UpstreamName\": \"\",\n                \"Percent\": 100\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "创建灰度规则"
       }
     ],

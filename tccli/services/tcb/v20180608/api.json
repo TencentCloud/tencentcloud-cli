@@ -4173,6 +4173,23 @@
       ],
       "type": "object"
     },
+    "CustomHeader": {
+      "document": "安全网关自定义头部",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求添加头部配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomRequestToAdd",
+          "name": "RequestToAddList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CustomLogConfig": {
       "document": "安全网关自定义日志配置",
       "members": [
@@ -4238,6 +4255,45 @@
         }
       ],
       "usage": "in"
+    },
+    "CustomRequestToAdd": {
+      "document": "安全网关请求自定义头部",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Header名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Header值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Header类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "APPEND_IF_EXISTS_OR_ADD",
+          "member": "string",
+          "name": "AppendAction",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DatabasesInfo": {
       "document": "数据库资源信息",
@@ -13066,6 +13122,16 @@
           "name": "GatewayRoutePathMatchType",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "安全网关自定义头部\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomHeader",
+          "name": "CustomHeader",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

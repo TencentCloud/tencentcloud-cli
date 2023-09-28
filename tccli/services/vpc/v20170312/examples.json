@@ -621,8 +621,8 @@
     "CreateVpcPeeringConnection": [
       {
         "document": "创建对等连接",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcPeeringConnection\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionName\": \"测试\",\n    \"DestinationUin\": \"100002840663\",\n    \"ChargeType\": \"POSTPAID_BY_DAY_MAX\",\n    \"SourceVpcId\": \"vpc-938r310k\",\n    \"Bandwidth\": 0,\n    \"DestinationVpcId\": \"vpc-938r310k\",\n    \"QosLevel\": \"AU\",\n    \"Type\": \"VPC_BM_PEER\",\n    \"DestinationRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PeeringConnectionId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建对等连接"
       }
     ],
@@ -2587,7 +2587,7 @@
     "ModifyVpcPeeringConnection": [
       {
         "document": "修改对等连接",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"abc\",\n    \"PeeringConnectionName\": \"abc\",\n    \"Bandwidth\": 0,\n    \"ChargeType\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
         "title": "修改对等连接"
       }
@@ -2657,7 +2657,7 @@
     "RejectVpcPeeringConnection": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectVpcPeeringConnection\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RejectVpcPeeringConnection\n<公共请求参数>\n\n{\n    \"PeeringConnectionId\": \"pcx-aw8hzt6c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e4008f6c-4bd9-42a7-9e6f-83043db431b2\"\n    }\n}",
         "title": "拒绝对等连接请求"
       }

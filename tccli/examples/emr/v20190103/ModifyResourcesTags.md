@@ -24,6 +24,12 @@ Output:
 ```
 {
     "Response": {
+        "ClusterToFlowIdList": [
+            {
+                "ClusterId": "emr-2qhwmqln",
+                "FlowId": 79
+            }
+        ],
         "SuccessList": [
             "abc"
         ],

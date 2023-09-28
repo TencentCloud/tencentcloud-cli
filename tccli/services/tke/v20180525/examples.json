@@ -296,6 +296,14 @@
         "title": "创建一个模板"
       }
     ],
+    "CreateReservedInstances": [
+      {
+        "document": "创建的预留券是地域抵扣范围，如需修改抵扣范围，请调用修改抵扣范围接口。",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceSpec\": {\n        \"Type\": \"common\",\n        \"Cpu\": 1,\n        \"Memory\": 2\n    },\n    \"InstanceCount\": 1,\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\"\n    },\n    \"ClientToken\": \"my-unique-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"adbb030e-163e-44c6-a940-fb42190d0d56\",\n        \"ReservedInstanceIds\": [\n            \"eksri-mloz4700\"\n        ]\n    }\n}",
+        "title": "创建通用型预留券"
+      }
+    ],
     "CreateTKEEdgeCluster": [
       {
         "document": "创建边缘计算集群",
@@ -520,6 +528,20 @@
         "title": "解除模板同步"
       }
     ],
+    "DeleteReservedInstances": [
+      {
+        "document": "返回NotFound",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"not-found\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"resources:[]string{\\\"not-found\\\"} not found\"\n        },\n        \"RequestId\": \"e15cab8e-926a-4119-a4e5-208868d6821a\"\n    }\n}",
+        "title": "退还一个不存在的资源"
+      },
+      {
+        "document": "同时会退还预留券相应的费用。",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-epmr2bww\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d996a6f-5b4a-4e18-8fd1-cb258b2ce21f\"\n    }\n}",
+        "title": "退还预留券实例"
+      }
+    ],
     "DeleteTKEEdgeCluster": [
       {
         "document": "删除边缘计算集群",
@@ -676,15 +698,15 @@
       {
         "document": "查询节点池详情",
         "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterNodePoolDetail\n&ClusterId=cls-xxxxxx\n&NodePoolId=np-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"NodePoolId\": \"xx\",\n            \"Name\": \"xx\",\n            \"ClusterInstanceId\": \"xx\",\n            \"LifeState\": \"xx\",\n            \"LaunchConfigurationId\": \"xx\",\n            \"AutoscalingGroupId\": \"xx\",\n            \"Labels\": [\n                {\n                    \"Name\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"Taints\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\",\n                    \"Effect\": \"xx\"\n                }\n            ],\n            \"NodeCountSummary\": {\n                \"ManuallyAdded\": {\n                    \"Joining\": 0,\n                    \"Initializing\": 0,\n                    \"Normal\": 0,\n                    \"Total\": 0\n                },\n                \"AutoscalingAdded\": {\n                    \"Joining\": 0,\n                    \"Initializing\": 0,\n                    \"Normal\": 0,\n                    \"Total\": 0\n                }\n            },\n            \"AutoscalingGroupStatus\": \"xx\",\n            \"MaxNodesNum\": 0,\n            \"MinNodesNum\": 0,\n            \"DesiredNodesNum\": 0,\n            \"NodePoolOs\": \"xx\",\n            \"OsCustomizeType\": \"xx\",\n            \"ImageId\": \"xx\",\n            \"DesiredPodNum\": 0,\n            \"UserScript\": \"xx\",\n            \"Tags\": [\n                {\n                    \"Key\": \"xx\",\n                    \"Value\": \"xx\"\n                }\n            ],\n            \"DeletionProtection\": true\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePool\": {\n            \"AutoscalingGroupId\": \"asg-xxx\",\n            \"AutoscalingGroupStatus\": \"disabled\",\n            \"ClusterInstanceId\": \"cls-xxx\",\n            \"DataDisks\": null,\n            \"DeletionProtection\": true,\n            \"DesiredNodesNum\": 2,\n            \"DesiredPodNum\": 64,\n            \"DockerGraphPath\": \"\",\n            \"ExtraArgs\": {\n                \"Kubelet\": []\n            },\n            \"GPUArgs\": {\n                \"CUDA\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CUDNN\": {\n                    \"DevName\": \"\",\n                    \"DocName\": \"\",\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"CustomDriver\": {\n                    \"Address\": \"\"\n                },\n                \"Driver\": {\n                    \"Name\": \"\",\n                    \"Version\": \"\"\n                },\n                \"MIGEnable\": false\n            },\n            \"ImageId\": \"\",\n            \"Labels\": [],\n            \"LaunchConfigurationId\": \"asc-xxx\",\n            \"LifeState\": \"normal\",\n            \"MaxNodesNum\": 3,\n            \"MinNodesNum\": 0,\n            \"Name\": \"xxx\",\n            \"NodeCountSummary\": {\n                \"AutoscalingAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 2,\n                    \"Total\": 2\n                },\n                \"ManuallyAdded\": {\n                    \"Initializing\": 0,\n                    \"Joining\": 0,\n                    \"Normal\": 1,\n                    \"Total\": 1\n                }\n            },\n            \"NodePoolId\": \"np-xxx\",\n            \"NodePoolOs\": \"tlinux_xxx\",\n            \"OsCustomizeType\": \"GENERAL\",\n            \"PreStartUserScript\": \"#!/bin/sh\\ntouch /tmp/before\",\n            \"Tags\": null,\n            \"Taints\": [],\n            \"Unschedulable\": 0,\n            \"UserScript\": \"#!/bin/sh\\ntouch /tmp/after\"\n        },\n        \"RequestId\": \"68b7b080-7c57-4869-bc54-a518b4902b2d\"\n    }\n}",
         "title": "查询节点池详情"
       }
     ],
     "DescribeClusterNodePools": [
       {
-        "document": "",
+        "document": "查询节点池列表",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNodePools\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxxxxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"AutoscalingGroupId\": \"\",\n                \"AutoscalingGroupStatus\": \"\",\n                \"ClusterInstanceId\": \"cls-69hshd30\",\n                \"DeletionProtection\": false,\n                \"DesiredNodesNum\": 1,\n                \"DesiredPodNum\": 0,\n                \"ImageId\": \"\",\n                \"Labels\": [],\n                \"LaunchConfigurationId\": \"\",\n                \"LifeState\": \"normal\",\n                \"MaxNodesNum\": 1,\n                \"MinNodesNum\": 0,\n                \"Name\": \"test\",\n                \"NodeCountSummary\": {\n                    \"AutoscalingAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 0\n                    },\n                    \"ManuallyAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 0,\n                        \"Total\": 1\n                    }\n                },\n                \"NodePoolId\": \"np-5tx2l4de\",\n                \"NodePoolOs\": \"\",\n                \"OsCustomizeType\": \"\",\n                \"Tags\": null,\n                \"Taints\": [],\n                \"UserScript\": \"\"\n            }\n        ],\n        \"RequestId\": \"efb810cb-d5a2-4147-88ec-cd1e28c5202e\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NodePoolSet\": [\n            {\n                \"AutoscalingGroupId\": \"asg-xxx\",\n                \"AutoscalingGroupStatus\": \"disabled\",\n                \"ClusterInstanceId\": \"cls-xxxx\",\n                \"DataDisks\": null,\n                \"DeletionProtection\": true,\n                \"DesiredNodesNum\": 2,\n                \"DesiredPodNum\": 64,\n                \"DockerGraphPath\": \"\",\n                \"ExtraArgs\": {\n                    \"Kubelet\": []\n                },\n                \"GPUArgs\": {\n                    \"CUDA\": {\n                        \"Name\": \"\",\n                        \"Version\": \"\"\n                    },\n                    \"CUDNN\": {\n                        \"DevName\": \"\",\n                        \"DocName\": \"\",\n                        \"Name\": \"\",\n                        \"Version\": \"\"\n                    },\n                    \"CustomDriver\": {\n                        \"Address\": \"\"\n                    },\n                    \"Driver\": {\n                        \"Name\": \"\",\n                        \"Version\": \"\"\n                    },\n                    \"MIGEnable\": false\n                },\n                \"ImageId\": \"\",\n                \"Labels\": [],\n                \"LaunchConfigurationId\": \"asc-xxx\",\n                \"LifeState\": \"normal\",\n                \"MaxNodesNum\": 3,\n                \"MinNodesNum\": 0,\n                \"Name\": \"xxx\",\n                \"NodeCountSummary\": {\n                    \"AutoscalingAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 2,\n                        \"Total\": 2\n                    },\n                    \"ManuallyAdded\": {\n                        \"Initializing\": 0,\n                        \"Joining\": 0,\n                        \"Normal\": 1,\n                        \"Total\": 1\n                    }\n                },\n                \"NodePoolId\": \"np-xxx\",\n                \"NodePoolOs\": \"tlinux_xxx\",\n                \"OsCustomizeType\": \"GENERAL\",\n                \"PreStartUserScript\": \"#!/bin/sh\\ntouch /tmp/before\",\n                \"Tags\": null,\n                \"Taints\": [],\n                \"Unschedulable\": 0,\n                \"UserScript\": \"#!/bin/sh\\ntouch /tmp/after\"\n            }\n        ],\n        \"RequestId\": \"efb810cb-d5a2-4147-88ec-cd1e28c5202e\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询节点池列表"
       }
     ],
@@ -928,6 +950,48 @@
         "title": "获取镜像信息"
       }
     ],
+    "DescribePodDeductionRate": [
+      {
+        "document": "可被预留券抵扣的 Pod 的抵扣率查询",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodDeductionRate\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0be873cf-014f-408b-8527-03c25c32725b\",\n        \"PodDeductionRateSet\": [\n            {\n                \"DeductionNum\": 0,\n                \"TotalNum\": 1,\n                \"Cpu\": 0.5,\n                \"Memory\": 1,\n                \"Type\": \"intel\",\n                \"GpuNum\": \"\"\n            },\n            {\n                \"DeductionNum\": 0,\n                \"TotalNum\": 2,\n                \"Cpu\": 1,\n                \"Memory\": 1,\n                \"Type\": \"intel\",\n                \"GpuNum\": \"\"\n            },\n            {\n                \"DeductionNum\": 0,\n                \"TotalNum\": 5,\n                \"Cpu\": 1,\n                \"Memory\": 2,\n                \"Type\": \"intel\",\n                \"GpuNum\": \"\"\n            },\n            {\n                \"DeductionNum\": 0,\n                \"TotalNum\": 4,\n                \"Cpu\": 1,\n                \"Memory\": 2,\n                \"Type\": \"amd\",\n                \"GpuNum\": \"\"\n            },\n            {\n                \"DeductionNum\": 0,\n                \"TotalNum\": 1,\n                \"Cpu\": 2,\n                \"Memory\": 4,\n                \"Type\": \"amd\",\n                \"GpuNum\": \"\"\n            },\n            {\n                \"DeductionNum\": 1,\n                \"TotalNum\": 1,\n                \"Cpu\": 8,\n                \"Memory\": 16,\n                \"Type\": \"intel\",\n                \"GpuNum\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "查询各个 规格Pod 的抵扣率"
+      }
+    ],
+    "DescribePodsBySpec": [
+      {
+        "document": "可被预留券抵扣的 Pod 信息",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"PodSet\": [],\n        \"RequestId\": \"3bd23fef-56bf-4d61-a2f2-5ea6adef1508\",\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询满足规格的 Pod 信息"
+      },
+      {
+        "document": "Filter Name只支持文档中的示例值",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"3323e599-cc1f-481b-95a7-dec3f145d158\"\n    }\n}",
+        "title": "Filter Name值不支持"
+      },
+      {
+        "document": "可通过 Filter中的 pod-type 指定查询某些类型的 Pod",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"PodSet\": [\n            {\n                \"ClusterId\": \"cls-3dkzu9z2\",\n                \"Name\": \"nginx-6456b5b94c-8z5c5\",\n                \"Namespace\": \"default\",\n                \"NodeName\": \"eklet-subnet-f0ed0d6e-24k6ucw0\",\n                \"Zone\": \"ap-guangzhou-2\"\n            }\n        ],\n        \"RequestId\": \"3ee798bf-2e16-437a-8248-b00bf8113729\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "不传 Filter 时默认查 intel 类型的 Pod 列表"
+      },
+      {
+        "document": "查询指定规格类型为 intel 的所有 pod 列表",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePodsBySpec\n<公共请求参数>\n\n{\n    \"Cpu\": 1,\n    \"Memory\": 2,\n    \"Filters\": [\n        {\n            \"Name\": \"pod-type\",\n            \"Values\": [\n                \"intel\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PodSet\": [\n            {\n                \"ClusterId\": \"cls-3dkzu9z2\",\n                \"Name\": \"nginx-6456b5b94c-8z5c5\",\n                \"Namespace\": \"default\",\n                \"NodeName\": \"eklet-subnet-f0ed0d6e-24k6ucw0\",\n                \"Zone\": \"ap-guangzhou-2\"\n            }\n        ],\n        \"RequestId\": \"850b62dd-7f50-49f5-97df-1a960d3d6360\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询指定规格类型为 intel 的所有 pod 列表"
+      }
+    ],
+    "DescribePostNodeResources": [
+      {
+        "document": "查询集群内所有按量计费超级节点资源",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePostNodeResources\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-0nki77pa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PodSet\": [\n            {\n                \"Cpu\": 0.25,\n                \"Gpu\": 0,\n                \"Memory\": 0.5,\n                \"NodeName\": \"eklet-subnet-r5yx1t9w-o155cxns\",\n                \"Num\": 1\n            }\n        ],\n        \"RequestId\": \"6b806a51-fea7-4928-9e91-8d7cbb4680ca\",\n        \"ReservedInstanceSet\": [\n            {\n                \"Cpu\": 2,\n                \"Gpu\": 1,\n                \"Memory\": 2,\n                \"NodeName\": \"eklet-subnet-0j105iya\",\n                \"Num\": 2\n            }\n        ]\n    }\n}",
+        "title": "查询按量计费超级节点资源信息"
+      }
+    ],
     "DescribePrometheusAgentInstances": [
       {
         "document": "",
@@ -1086,12 +1150,70 @@
         "title": "拉取模板列表"
       }
     ],
+    "DescribeRIUtilizationDetail": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeRIUtilizationDetail\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RIUtilizationDetailSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "DescribeRIUtilizationDetail"
+      },
+      {
+        "document": "Filter Name只支持文档中的示例值",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRIUtilizationDetail\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"e6a4cb0c-defc-4829-8c12-784f300cea6a\"\n    }\n}",
+        "title": "Filter Name值不支持"
+      },
+      {
+        "document": "查询时间范围内的抵扣记录",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRIUtilizationDetail\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"begin-time\",\n            \"Values\": [\n                \"2023-08-09 00:00:00\"\n            ]\n        },\n        {\n            \"Name\": \"end-time\",\n            \"Values\": [\n                \"2023-08-09 01:00:00\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RIUtilizationDetailSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "查询时间范围内的抵扣记录"
+      }
+    ],
     "DescribeRegions": [
       {
         "document": "获取地域列表",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RegionInstanceSet\": [\n            {\n                \"RegionName\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"Status\": \"\",\n                \"FeatureGates\": \"\",\n                \"Alias\": \"gz\",\n                \"Remark\": \"\"\n            }\n        ],\n        \"RequestId\": \"d367ff5c-3871-4f1b-b8f1-4d51ea689e29\"\n    }\n}",
         "title": "获取地域列表"
+      }
+    ],
+    "DescribeReservedInstances": [
+      {
+        "document": "查询预留券列表",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeReservedInstances\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "DescribeReservedInstances"
+      },
+      {
+        "document": "Filter Name只支持文档中的示例值",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"not-support-filter-name\",\n            \"Values\": [\n                \"value\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Filter Name:not-support-filter-name not supported\"\n        },\n        \"RequestId\": \"b31166bd-80d6-4868-b13a-952bc1cdc74c\"\n    }\n}",
+        "title": "Filter Name值不支持"
+      },
+      {
+        "document": "支持的 Filter Name示例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"Active\"\n            ]\n        },\n        {\n            \"Name\": \"scope\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        },\n        {\n            \"Name\": \"cluster-id\",\n            \"Values\": [\n                \"cls-3dkzu9z2\"\n            ]\n        },\n        {\n            \"Name\": \"node-name\",\n            \"Values\": [\n                \"eklet-subnet-9hxmgam6-790879\"\n            ]\n        },\n        {\n            \"Name\": \"cpu\",\n            \"Values\": [\n                \"2\"\n            ]\n        },\n        {\n            \"Name\": \"memory\",\n            \"Values\": [\n                \"4\"\n            ]\n        },\n        {\n            \"Name\": \"resource-type\",\n            \"Values\": [\n                \"common\"\n            ]\n        },\n        {\n            \"Name\": \"gpu\",\n            \"Values\": [\n                \"\"\n            ]\n        },\n        {\n            \"Name\": \"reserved-instance-id\",\n            \"Values\": [\n                \"eksri-f9rwc82i\"\n            ]\n        },\n        {\n            \"Name\": \"reserved-instance-name\",\n            \"Values\": [\n                \"c\"\n            ]\n        },\n        {\n            \"Name\": \"reserved-instance-not-deduct\"\n        }\n    ],\n    \"OrderField\": \"ExpireAt\",\n    \"OrderDirection\": \"ASC\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "支持的 Filter Name示例"
+      },
+      {
+        "document": "只查询可用区抵扣的需要设置cluster-id和node-name 为空字符串",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"Active\"\n            ]\n        },\n        {\n            \"Name\": \"scope\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        },\n        {\n            \"Name\": \"cluster-id\",\n            \"Values\": [\n                \"\"\n            ]\n        },\n        {\n            \"Name\": \"node-name\",\n            \"Values\": [\n                \"\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e49fe7f4-16f3-4640-839d-514edd3e897a\",\n        \"ReservedInstanceSet\": [],\n        \"TotalCount\": 0\n    }\n}",
+        "title": "查询可用区范围的预留券"
+      },
+      {
+        "document": "查询地域抵扣范围预留券",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"Active\"\n            ]\n        },\n        {\n            \"Name\": \"scope\",\n            \"Values\": [\n                \"\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "查询地域抵扣范围预留券"
+      },
+      {
+        "document": "查询节点抵扣范围的预留券",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedInstances\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"status\",\n            \"Values\": [\n                \"Active\"\n            ]\n        },\n        {\n            \"Name\": \"scope\",\n            \"Values\": [\n                \"ap-guangzhou-2\"\n            ]\n        },\n        {\n            \"Name\": \"cluster-id\",\n            \"Values\": [\n                \"cls-3dkzu9z2\"\n            ]\n        },\n        {\n            \"Name\": \"node-name\",\n            \"Values\": [\n                \"eklet-subnet-9hxmgam6-790879\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ReservedInstanceSet\": [],\n        \"RequestId\": \"a1be36f0-1aa4-4af2-a289-da021bcef89f\"\n    }\n}",
+        "title": "查询节点抵扣范围的预留券"
       }
     ],
     "DescribeResourceUsage": [
@@ -1484,12 +1606,52 @@
         "title": "修改模板描述"
       }
     ],
+    "ModifyReservedInstanceScope": [
+      {
+        "document": "Scope 输入错误示例",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"regio\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Scope must be in [Region, Zone, Node]\"\n        },\n        \"RequestId\": \"e88f8640-0e36-4154-a3bf-907b01aa62f0\"\n    }\n}",
+        "title": "Scope 输入错误示例"
+      },
+      {
+        "document": "设置预留券抵扣范围为地域",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"Region\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9544ca07-e5da-4bde-8c27-807cf018e2f5\"\n    }\n}",
+        "title": "抵扣范围为地域"
+      },
+      {
+        "document": "抵扣范围为可用区时，Zone 必传，如：ap-guangzhou-2",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"Zone\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError.Param\",\n            \"Message\": \"Zone invalid\"\n        },\n        \"RequestId\": \"e949558d-f637-4223-8305-047cb2d5bf06\"\n    }\n}",
+        "title": "设置抵扣范围为可用区"
+      },
+      {
+        "document": "设置抵扣范围为节点",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf76\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"Node\",\n        \"Zone\": \"ap-guangzhou-2\",\n        \"ClusterId\": \"cls-3dkzu9z2\",\n        \"NodeName\": \"eklet-subnet-f0ed0d6e-24k6ucw0\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"67a932f4-1823-4cea-a16b-0744828dc597\"\n    }\n}",
+        "title": "设置抵扣范围为节点"
+      },
+      {
+        "document": "输入的资源 ID不存在",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyReservedInstanceScope\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-762dtf7\"\n    ],\n    \"ReservedInstanceScope\": {\n        \"Scope\": \"region\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.NotFound\",\n            \"Message\": \"ReservedInstanceIds:[]string{\\\"eksri-762dtf7\\\"} not found\"\n        },\n        \"RequestId\": \"134fa43d-83a5-4b8d-8ea9-293a96515b68\"\n    }\n}",
+        "title": "资源 ID 不存在"
+      }
+    ],
     "RemoveNodeFromNodePool": [
       {
         "document": "移出节点池节点",
         "input": "https://tke.tencentcloudapi.com/?Action=RemoveNodeFromNodePool\n&ClusterId=cls-hca1bmif\n&NodePoolId=np-5tx2jmn9\n&InstanceIds.0=ins-74mbca66\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b9d6bcd-bbfd-4b2d-9b5d-ab8dfbbd4bed\"\n    }\n}",
         "title": "移出节点池节点"
+      }
+    ],
+    "RenewReservedInstances": [
+      {
+        "document": "续费结果请调用查询接口检验。",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewReservedInstances\n<公共请求参数>\n\n{\n    \"ReservedInstanceIds\": [\n        \"eksri-103ypth4\",\n        \"eksri-mloz4700\"\n    ],\n    \"InstanceChargePrepaid\": {\n        \"Period\": 1,\n        \"RenewFlag\": \"DISABLE_NOTIFY_AND_MANUAL_RENEW\"\n    },\n    \"ClientToken\": \"renew-unique-token\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cabe1292-b7f9-43bc-aeac-f50e59521be1\"\n    }\n}",
+        "title": "续费预留券实例"
       }
     ],
     "RestartEKSContainerInstances": [

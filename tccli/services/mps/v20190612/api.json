@@ -7528,8 +7528,7 @@
           "member": "string",
           "name": "InputName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7538,8 +7537,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7548,8 +7546,7 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7558,8 +7555,7 @@
           "member": "string",
           "name": "AllowIpList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7568,8 +7564,7 @@
           "member": "CreateInputSRTSettings",
           "name": "SRTSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7578,8 +7573,7 @@
           "member": "CreateInputRTPSettings",
           "name": "RTPSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7588,8 +7582,7 @@
           "member": "string",
           "name": "FailOver",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7598,8 +7591,7 @@
           "member": "CreateInputRTMPPullSettings",
           "name": "RTMPPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7608,8 +7600,7 @@
           "member": "CreateInputRTSPPullSettings",
           "name": "RTSPPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7618,8 +7609,7 @@
           "member": "CreateInputHLSPullSettings",
           "name": "HLSPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7628,8 +7618,16 @@
           "member": "ResilientStreamConf",
           "name": "ResilientStream",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输入安全组 ID。 ",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -7814,8 +7812,7 @@
           "member": "string",
           "name": "OutputName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7824,8 +7821,7 @@
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7834,8 +7830,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7844,8 +7839,7 @@
           "member": "string",
           "name": "OutputRegion",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7854,8 +7848,7 @@
           "member": "CreateOutputSRTSettings",
           "name": "SRTSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7864,8 +7857,7 @@
           "member": "CreateOutputRTMPSettings",
           "name": "RTMPSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7874,8 +7866,7 @@
           "member": "CreateOutputInfoRTPSettings",
           "name": "RTPSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -7884,8 +7875,7 @@
           "member": "string",
           "name": "AllowIpList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7894,8 +7884,16 @@
           "member": "uint64",
           "name": "MaxConcurrent",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输入安全组 ID。 ",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -10192,7 +10190,7 @@
           "example": "id",
           "member": "string",
           "name": "InputId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10202,7 +10200,7 @@
           "example": "inputName",
           "member": "string",
           "name": "InputName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10212,7 +10210,7 @@
           "example": "description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10222,7 +10220,7 @@
           "example": "SRT",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10232,7 +10230,7 @@
           "example": "0",
           "member": "InputAddress",
           "name": "InputAddressList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10242,7 +10240,7 @@
           "example": "0",
           "member": "string",
           "name": "AllowIpList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10252,7 +10250,7 @@
           "example": "0",
           "member": "DescribeInputSRTSettings",
           "name": "SRTSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10262,7 +10260,7 @@
           "example": "0",
           "member": "DescribeInputRTPSettings",
           "name": "RTPSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10272,7 +10270,7 @@
           "example": "ap-hongkong",
           "member": "string",
           "name": "InputRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10282,7 +10280,7 @@
           "example": "0",
           "member": "DescribeInputRTMPSettings",
           "name": "RTMPSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10292,7 +10290,7 @@
           "example": "CLOSE",
           "member": "string",
           "name": "FailOver",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10302,7 +10300,7 @@
           "example": "无",
           "member": "DescribeInputRTMPPullSettings",
           "name": "RTMPPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10312,7 +10310,7 @@
           "example": "无",
           "member": "DescribeInputRTSPPullSettings",
           "name": "RTSPPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10322,7 +10320,7 @@
           "example": "无",
           "member": "DescribeInputHLSPullSettings",
           "name": "HLSPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10332,8 +10330,18 @@
           "example": "无",
           "member": "ResilientStreamConf",
           "name": "ResilientStream",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输入安全组 ID。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -10580,7 +10588,7 @@
           "example": "AB342ED131CE",
           "member": "string",
           "name": "OutputId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10590,7 +10598,7 @@
           "example": "OutputName",
           "member": "string",
           "name": "OutputName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10600,7 +10608,7 @@
           "example": "Internet",
           "member": "string",
           "name": "OutputType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10610,7 +10618,7 @@
           "example": "Description",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10620,7 +10628,7 @@
           "example": "RTMP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10630,7 +10638,7 @@
           "example": "无",
           "member": "OutputAddress",
           "name": "OutputAddressList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10640,7 +10648,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "OutputRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10650,7 +10658,7 @@
           "example": "无",
           "member": "DescribeOutputSRTSettings",
           "name": "SRTSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10660,7 +10668,7 @@
           "example": "无",
           "member": "DescribeOutputRTPSettings",
           "name": "RTPSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10670,7 +10678,7 @@
           "example": "无",
           "member": "DescribeOutputRTMPSettings",
           "name": "RTMPSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10680,7 +10688,7 @@
           "example": "无",
           "member": "DescribeOutputRTMPPullSettings",
           "name": "RTMPPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10690,7 +10698,7 @@
           "example": "无",
           "member": "string",
           "name": "AllowIpList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10700,7 +10708,7 @@
           "example": "无",
           "member": "DescribeOutputRTSPPullSettings",
           "name": "RTSPPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10710,7 +10718,7 @@
           "example": "无",
           "member": "DescribeOutputHLSPullSettings",
           "name": "HLSPullSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10720,9 +10728,19 @@
           "example": "1",
           "member": "uint64",
           "name": "MaxConcurrent",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "绑定的安全组 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -18953,8 +18971,7 @@
           "member": "string",
           "name": "InputId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -18963,8 +18980,7 @@
           "member": "string",
           "name": "InputName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -18973,8 +18989,7 @@
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -18983,8 +18998,7 @@
           "member": "string",
           "name": "AllowIpList",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -18993,8 +19007,7 @@
           "member": "CreateInputSRTSettings",
           "name": "SRTSettings",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19003,8 +19016,7 @@
           "member": "CreateInputRTPSettings",
           "name": "RTPSettings",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19013,8 +19025,7 @@
           "member": "string",
           "name": "Protocol",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19023,8 +19034,7 @@
           "member": "string",
           "name": "FailOver",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19033,8 +19043,7 @@
           "member": "CreateInputRTMPPullSettings",
           "name": "RTMPPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19043,8 +19052,7 @@
           "member": "CreateInputRTSPPullSettings",
           "name": "RTSPPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19053,8 +19061,7 @@
           "member": "CreateInputHLSPullSettings",
           "name": "HLSPullSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19063,8 +19070,16 @@
           "member": "ResilientStreamConf",
           "name": "ResilientStream",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的输入安全组 ID。 仅支持关联一组安全组。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -19079,8 +19094,7 @@
           "member": "string",
           "name": "OutputId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19089,8 +19103,7 @@
           "member": "string",
           "name": "OutputName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19099,8 +19112,7 @@
           "member": "string",
           "name": "Description",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19109,8 +19121,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -19119,8 +19130,7 @@
           "member": "CreateOutputSRTSettings",
           "name": "SRTSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19129,8 +19139,7 @@
           "member": "CreateOutputInfoRTPSettings",
           "name": "RTPSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19139,8 +19148,7 @@
           "member": "CreateOutputRTMPSettings",
           "name": "RTMPSettings",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -19149,8 +19157,7 @@
           "member": "string",
           "name": "AllowIpList",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -19159,8 +19166,16 @@
           "member": "uint64",
           "name": "MaxConcurrent",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "绑定的安全组 ID。 仅支持关联一组安全组。\t",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -20196,26 +20211,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "监听IP。",
+          "document": "监听IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "监听端口。",
+          "document": "监听端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "65535",
           "member": "int64",
           "name": "Port",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "OverrideTranscodeParameter": {
       "document": "自定义转码的规格参数。用于覆盖模板中对应参数值。",
@@ -22401,26 +22418,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "对端IP。",
+          "document": "对端IP。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "Ip",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对端端口。",
+          "document": "对端端口。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "65535",
           "member": "int64",
           "name": "Port",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "SampleSnapshotTaskInput": {
       "document": "对视频做采样截图任务输入参数类型。",

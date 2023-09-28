@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli vpc ModifyVpcPeeringConnection --cli-unfold-argument ```
+tccli vpc ModifyVpcPeeringConnection --cli-unfold-argument  \
+    --PeeringConnectionId abc \
+    --PeeringConnectionName abc \
+    --Bandwidth 0 \
+    --ChargeType abc
+```
 
 Output: 
 ```
