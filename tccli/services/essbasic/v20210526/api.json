@@ -141,7 +141,7 @@
       "status": "online"
     },
     "ChannelCreateRole": {
-      "document": "此接口（ChannelCreateRole）用来创建企业自定义角色。\n\n适用场景1：创建当前企业的自定义角色，并且创建时不进行权限的设置（PermissionGroups 参数不传），角色中的权限内容可通过接口 ChannelModifyRole 完成更新。\n\n适用场景2：创建当前企业的自定义角色，并且创建时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。",
+      "document": "此接口（ChannelCreateRole）用来创建企业自定义角色。\n\n适用场景1：创建当前企业的自定义角色，并且创建时不进行权限的设置（PermissionGroups 参数不传），角色中的权限内容可通过接口 ChannelModifyRole 完成更新。\n\n适用场景2：创建当前企业的自定义角色，并且创建时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。此处注意权限树内容可能会更新，需尽量拉取最新的权限树内容，并且权限树内容 PermissionGroups 必须是一颗完整的权限树。",
       "input": "ChannelCreateRoleRequest",
       "name": "创建角色",
       "output": "ChannelCreateRoleResponse",
@@ -246,7 +246,7 @@
       "status": "online"
     },
     "ChannelModifyRole": {
-      "document": "此接口（ChannelModifyRole）用来更新企业自定义角色。\n\n适用场景1：更新当前企业的自定义角色的名称或描述等其他信息，更新时不进行权限的设置（PermissionGroups 参数不传）。\n\n适用场景2：更新当前企业的自定义角色的权限信息，更新时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。",
+      "document": "此接口（ChannelModifyRole）用来更新企业自定义角色。\n\n适用场景1：更新当前企业的自定义角色的名称或描述等其他信息，更新时不进行权限的设置（PermissionGroups 参数不传）。\n\n适用场景2：更新当前企业的自定义角色的权限信息，更新时进行权限的设置（PermissionGroups 参数要传），权限树内容 PermissionGroups 可参考接口 ChannelDescribeRoles 的输出。此处注意权限树内容可能会更新，需尽量拉取最新的权限树内容，并且权限树内容 PermissionGroups 必须是一颗完整的权限树。",
       "input": "ChannelModifyRoleRequest",
       "name": "更新角色",
       "output": "ChannelModifyRoleResponse",
@@ -302,7 +302,7 @@
       "status": "online"
     },
     "CreateSignUrls": {
-      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "创建跳转小程序查看或签署的链接。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。（与短信提醒用户签署形式一样）。\n\n2. 通过链接Url打开H5引导页-->点击跳转到小程序-->签署完退出小程序-->回到H5引导页-->跳转到指定JumpUrl\n设置EndPoint为CHANNEL，指定JumpUrl，得到链接打开即可。\n\n3. 客户App直接跳转到小程序-->小程序签署完成-->返回App\n跳转到小程序的实现，参考官方文档\nhttps://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n4. 客户小程序直接跳到电子签小程序-->签署完成退出电子签小程序-->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为全屏、半屏两种方式）\n全屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html ）\n半屏方式：\n（https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html ）\n其中小程序的原始Id，请联系<对接技术人员>获取，或者查看小程序信息自助获取。\n使用CreateSignUrls，设置EndPoint为APP，得到path。\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转小程序查看或签署链接",
       "output": "CreateSignUrlsResponse",
@@ -4621,12 +4621,51 @@
     },
     "CreateChannelOrganizationInfoChangeUrlRequest": {
       "document": "CreateChannelOrganizationInfoChangeUrl请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "企业信息变更类型，可选类型如下：\n<ul><li>**1**：企业超管变更</li><li>**2**：企业基础信息变更</li></ul>",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChangeType",
+          "required": true,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "CreateChannelOrganizationInfoChangeUrlResponse": {
       "document": "CreateChannelOrganizationInfoChangeUrl返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "创建的企业信息变更链接。",
+          "example": "https://essurl.cn/000S6UE3mJ ",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间。链接7天有效。",
+          "example": "1695713654",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

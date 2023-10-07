@@ -369,19 +369,19 @@
     "CreateChannelOrganizationInfoChangeUrl": [
       {
         "document": "设置changeType为2，创建企业信息变更链接。",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"38be082e-08c4-4f37-a0b7-cd47cf9982b5\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 2\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798606,\n        \"RequestId\": \"38be082e-08c4-4f37-a0b7-cd47cf9982b5\",\n        \"Url\": \"https://test.essurl.cn/CvEXWU6RkKW\"\n    }\n}",
         "title": "创建企业信息变更链接"
       },
       {
         "document": "设置changeType为1，创建企业超管变更链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798287,\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\",\n        \"Url\": \"https://test.essurl.cn/zG0sxU6zl\"\n    }\n}",
         "title": "创建超管变更链接"
       },
       {
         "document": "设置changeType为3，接口将返回错误信息。",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"不支持的变更类型:3,请确认后重新\"\n        },\n        \"RequestId\": \"30cc3f4a-8f8c-4ec7-a6fb-66a82590c546\"\n    }\n}",
         "title": "错误示例-变更类型不合法"
       }
