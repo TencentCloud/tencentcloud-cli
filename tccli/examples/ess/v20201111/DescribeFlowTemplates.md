@@ -94,6 +94,7 @@ Output:
                     }
                 ],
                 "Seals": [],
+                "ShareTemplateId": "",
                 "SignComponents": [
                     {
                         "ChannelComponentId": "",

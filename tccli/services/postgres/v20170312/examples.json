@@ -801,6 +801,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2b376d28-d5fd-40b0-9bdc-d992f8fed15d\"\n    }\n}",
         "title": "升级版本号"
       }
+    ],
+    "UpgradeDBInstanceMajorVersion": [
+      {
+        "document": "实例当前大版本号为10，需要使用PostgreSQL 15的相关特性，则可以通过大版本升级功能将实例的内核版本从10升级到15，并在指定时间窗内执行升级。",
+        "input": "POST / HTTP/1.1\nHost: postgres.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDBInstanceMajorVersion\n<公共请求参数>\n\n{\n    \"DBInstanceId\": \"postgres-qwe12k98\",\n    \"TargetDBKernelVersion\": \"v15.1_r1.6\",\n    \"UpgradeCheck\": false,\n    \"BackupBeforeUpgrade\": true,\n    \"StatisticsRefreshOption\": 0,\n    \"ExtensionUpgradeOption\": 0,\n    \"UpgradeTimeOption\": 1,\n    \"UpgradeTimeBegin\": \"01:00:00\",\n    \"UpgradeTimeEnd\": \"02:00:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"93b86d2d-0d4e-4c83-9322-70f45b039012\"\n    }\n}",
+        "title": "升级实例内核大版本"
+      }
     ]
   },
   "version": "1.0"

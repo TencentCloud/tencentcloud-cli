@@ -622,6 +622,13 @@
       "name": "升级实例内核版本号",
       "output": "UpgradeDBInstanceKernelVersionResponse",
       "status": "online"
+    },
+    "UpgradeDBInstanceMajorVersion": {
+      "document": "本接口（UpgradeDBInstanceMajorVersion）用于升级实例内核大版本，例如从PostgreSQL 12升级到PostgreSQL 15。",
+      "input": "UpgradeDBInstanceMajorVersionRequest",
+      "name": "升级实例内核大版本",
+      "output": "UpgradeDBInstanceMajorVersionResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -10132,6 +10139,105 @@
     },
     "UpgradeDBInstanceKernelVersionResponse": {
       "document": "UpgradeDBInstanceKernelVersion返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceMajorVersionRequest": {
+      "document": "UpgradeDBInstanceMajorVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "postgres-klj12ina",
+          "member": "string",
+          "name": "DBInstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标内核版本号，可以通过API DescribeDBVersions获取可以升级的目标内核版本号。",
+          "example": "无",
+          "member": "string",
+          "name": "TargetDBKernelVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为校验模式，若UpgradeCheck为True，表示仅进行内核版本兼容性检查，不会进行实质性的升级操作，对原实例无影响。检查结果可以通过升级日志查看。",
+          "example": "无",
+          "member": "bool",
+          "name": "UpgradeCheck",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "升级前备份选项。True，表示升级前需要创建全量备份，False，表示升级前不需要创建全量备份。当实例已有备份集可以恢复到升级前的状态时，可选择False，否则需要指定为True。UpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "bool",
+          "name": "BackupBeforeUpgrade",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "统计信息收集选项，对主例运行 ANALYZE 以在升级后更新系统统计信息。可选值包括，\n0：不需要收集统计信息；\n1：实例恢复写之前收集统计信息；\n3：实例恢复写之后收集统计信息。\nUpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "int64",
+          "name": "StatisticsRefreshOption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "插件升级选项，pg_upgrade不会升级任何插件，需要在升级完成后在创建过插件的库上执行\"ALTER EXTENSION UPDATE\"。发起升级实例大版本时可以指定在实例恢复写前/后是否需要升级任务自动升级插件版本。可选值包括：\n0：不需要自动升级插件；\n1：恢复写之前升级插件；\n2：恢复写之后升级插件。\nUpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExtensionUpgradeOption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "升级时间选项，升级过程中会有一段时间实例只读，并会有一次秒级闪断，发起升级时需要选择这段影响的时间窗。可选值包括：\n0：自动执行，不需要指定时间窗；\n1：指定本次升级任务的时间窗，通过参数UpgradeTimeBegin和UpgradeTimeEnd设置；\n2：在实例运维时间窗内执行。\nUpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpgradeTimeOption",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "升级时间窗开始时间，时间格式：HH:MM:SS，例如：01:00:00。当UpgradeTimeOption为1时，该参数有效。\nUpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "string",
+          "name": "UpgradeTimeBegin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "升级时间窗截止时间，时间格式：HH:MM:SS，例如：02:00:00。当UpgradeTimeOption为1时，该参数有效。\nUpgradeCheck为True时，此参数无效。",
+          "example": "无",
+          "member": "string",
+          "name": "UpgradeTimeEnd",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDBInstanceMajorVersionResponse": {
+      "document": "UpgradeDBInstanceMajorVersion返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
