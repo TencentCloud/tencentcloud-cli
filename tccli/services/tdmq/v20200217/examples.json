@@ -582,10 +582,10 @@
     ],
     "DescribeRocketMQTopicMsgs": [
       {
-        "document": "查询topic 最近的100条消息",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopicMsgs\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"Limit\": 1,\n    \"StartTime\": \"xx\",\n    \"Offset\": 1,\n    \"EndTime\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgKey\": \"xx\",\n    \"QueryDlqMsg\": false,\n    \"NumOfLatestMsg\": 100\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskRequestId\": \"xx\",\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"TopicMsgLogSets\": [\n            {\n                \"PulsarMsgId\": \"xx\",\n                \"MsgId\": \"xx\",\n                \"MsgTag\": \"xx\",\n                \"ProduceTime\": \"xx\",\n                \"MsgKey\": \"xx\",\n                \"ProducerAddr\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "示例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQTopicMsgs\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-zpz97455xwap\",\n    \"EnvironmentId\": \"namespace\",\n    \"TopicName\": \"test_topic\",\n    \"MsgId\": \"\",\n    \"MsgKey\": \"\",\n    \"StartTime\": \"2023-10-08 15:44:59\",\n    \"EndTime\": \"2023-10-08 16:14:59\",\n    \"Offset\": 0,\n    \"Limit\": 20,\n    \"TaskRequestId\": \"abc\",\n    \"QueryDlqMsg\": true,\n    \"NumOfLatestMsg\": 0,\n    \"Tag\": \"\",\n    \"QueryDeadLetterMessage\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3bba45e-876a-4107-ad5d-88006c1ddba2\",\n        \"TotalCount\": 25,\n        \"TopicMsgLogSets\": [\n            {\n                \"MsgId\": \"092BAE5A1656070DEA4E276DF0760089\",\n                \"MsgTag\": \"msgTag\",\n                \"MsgKey\": \"msgKey\",\n                \"ProducerAddr\": \"9.43.174.90\",\n                \"ProduceTime\": \"2023-10-08 15:45:16\",\n                \"PulsarMsgId\": \"092BAE5A1656070DEA4E276DF0760089\",\n                \"DeadLetterResendTimes\": null,\n                \"ResendSuccessCount\": null\n            }\n        ],\n        \"TaskRequestId\": \"df71cc0a-3057-416b-b878-f0fe015e9913\"\n    }\n}",
+        "title": "获取消息列表"
       }
     ],
     "DescribeRocketMQTopics": [

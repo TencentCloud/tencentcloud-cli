@@ -16158,29 +16158,32 @@
         {
           "disabled": false,
           "document": "视频的 ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FileId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频剪辑的起始偏移时间偏移，单位：秒。",
-          "example": "",
+          "document": "视频剪辑起始的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "StartTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "视频剪辑的起始结束时间偏移，单位：秒。",
-          "example": "",
+          "document": "视频剪辑结束的偏移时间，单位：秒。",
+          "example": "无",
           "member": "float",
           "name": "EndTimeOffset",
+          "output_required": true,
           "required": false,
           "type": "float",
           "value_allowed_null": false

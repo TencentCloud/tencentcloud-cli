@@ -7415,7 +7415,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "死信查询时该值为true，只对Rocketmq有效",
           "example": "false",
           "member": "bool",
@@ -7431,6 +7431,24 @@
           "name": "NumOfLatestMsg",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "TAG表达式",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "死信查询时该值为true，只对Rocketmq有效",
+          "example": "false",
+          "member": "bool",
+          "name": "QueryDeadLetterMessage",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -7444,6 +7462,7 @@
           "example": "20",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7453,6 +7472,7 @@
           "example": "无",
           "member": "RocketMQMsgLog",
           "name": "TopicMsgLogSets",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7462,6 +7482,7 @@
           "example": "2e5ecbb3-f2d6-49d3-9c82-8648f8ed8748",
           "member": "string",
           "name": "TaskRequestId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12819,6 +12840,152 @@
       ],
       "usage": "out"
     },
+    "RocketMQSubscription": {
+      "document": "RocketMQ消费组订阅信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "topic",
+          "member": "string",
+          "name": "Topic",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型：\nNormal 普通,\nGlobalOrder 全局顺序,\nPartitionedOrder 局部顺序,\nTransaction 事务消息,\nDelayScheduled 延时消息,\nRetry 重试,\nDeadLetter 死信\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "DeadLetter",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤模式，TAG，SQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TAG",
+          "member": "string",
+          "name": "ExpressionType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "SubString",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅状态：\n0，订阅关系一致\n1，订阅关系不一致\n2，未知\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费堆积数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "ConsumerLag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否在线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsOnline",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsumeType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅一致性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Consistency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后消费进度更新时间，秒为单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxRetryTimes",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQTopic": {
       "document": "RocketMQ主题信息",
       "members": [
@@ -12828,7 +12995,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12838,7 +13005,7 @@
           "example": "Default",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12848,7 +13015,7 @@
           "example": "无",
           "member": "uint64",
           "name": "GroupNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12858,7 +13025,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12868,7 +13035,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PartitionNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12878,7 +13045,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12888,9 +13055,39 @@
           "example": "100000",
           "member": "uint64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后写入时间，单位为秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LastUpdateTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SubscriptionCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅关系列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQSubscription",
+          "name": "SubscriptionData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

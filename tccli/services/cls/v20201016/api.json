@@ -428,9 +428,9 @@
       "status": "online"
     },
     "GetAlarmLog": {
-      "document": "本接口用于获取告警任务历史",
+      "document": "本接口用于获取告警策略执行详情",
       "input": "GetAlarmLogRequest",
-      "name": "获取告警任务历史记录",
+      "name": "获取告警策略执行详情",
       "output": "GetAlarmLogResponse",
       "status": "online"
     },
@@ -7217,8 +7217,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的日志的起始时间，Unix时间戳，单位ms",
-          "example": "1676614187496",
+          "document": "要查询的执行详情的起始时间，Unix时间戳，单位ms",
+          "example": "1676615187496",
           "member": "int64",
           "name": "From",
           "required": true,
@@ -7226,7 +7226,7 @@
         },
         {
           "disabled": false,
-          "document": "要查询的日志的结束时间，Unix时间戳，单位ms",
+          "document": "要查询的执行详情的结束时间，Unix时间戳，单位ms",
           "example": "1676617787496",
           "member": "int64",
           "name": "To",
@@ -7235,7 +7235,7 @@
         },
         {
           "disabled": false,
-          "document": "查询语句，语句长度最大为1024",
+          "document": "查询过滤条件，例如：\n- 按告警策略ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\"`\n- 按监控对象ID查询：`monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\") `\n- 按告警策略ID及监控对象ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\" AND monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\")`",
           "example": "alert_id:notice-c0960eb3-6454-4eef-xxxx-8feb766a9fbd",
           "member": "string",
           "name": "Query",
@@ -7244,7 +7244,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询返回的日志条数，最大值为1000",
+          "document": "单次查询返回的执行详情条数，最大值为1000",
           "example": "100",
           "member": "int64",
           "name": "Limit",
@@ -7253,7 +7253,7 @@
         },
         {
           "disabled": false,
-          "document": "加载更多日志时使用，透传上次返回的Context值，获取后续的日志内容",
+          "document": "加载更多详情时使用，透传上次返回的Context值，获取后续的执行详情",
           "example": "context",
           "member": "string",
           "name": "Context",
@@ -7262,7 +7262,7 @@
         },
         {
           "disabled": false,
-          "document": "日志接口是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
+          "document": "执行详情是否按时间排序返回；可选值：asc(升序)、desc(降序)，默认为 desc",
           "example": "asc",
           "member": "string",
           "name": "Sort",
@@ -7271,7 +7271,7 @@
         },
         {
           "disabled": false,
-          "document": "为true代表使用新检索,响应参数AnalysisRecords和Columns有效， 为false时代表使用老检索方式, AnalysisResults和ColNames有效",
+          "document": "如果Query包含SQL语句，UseNewAnalysis为true时响应参数AnalysisRecords和Columns有效， UseNewAnalysis为false时响应参数AnalysisResults和ColNames有效",
           "example": "false",
           "member": "bool",
           "name": "UseNewAnalysis",
@@ -7286,7 +7286,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "加载后续内容的Context",
+          "document": "加载后续详情的Context",
           "example": "xx",
           "member": "string",
           "name": "Context",
@@ -7295,7 +7295,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询结果是否全部返回",
+          "document": "指定时间范围内的告警执行详情是否完整返回",
           "example": "false",
           "member": "bool",
           "name": "ListOver",
@@ -7304,7 +7304,7 @@
         },
         {
           "disabled": false,
-          "document": "返回的是否为分析结果",
+          "document": "返回的结果是否为SQL分析结果",
           "example": "1",
           "member": "bool",
           "name": "Analysis",
@@ -7322,7 +7322,7 @@
         },
         {
           "disabled": false,
-          "document": "日志查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
@@ -7331,7 +7331,7 @@
         },
         {
           "disabled": false,
-          "document": "日志分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情统计分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
@@ -7340,7 +7340,7 @@
         },
         {
           "disabled": false,
-          "document": "新的日志分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情统计分析结果; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
           "name": "AnalysisRecords",
@@ -7349,7 +7349,7 @@
         },
         {
           "disabled": false,
-          "document": "日志分析的列属性; UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析结果的列名， UseNewAnalysis为true有效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Column",
           "name": "Columns",

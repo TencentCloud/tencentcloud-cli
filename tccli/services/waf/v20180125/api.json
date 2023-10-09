@@ -238,6 +238,13 @@
       "output": "DescribeCCRuleListResponse",
       "status": "online"
     },
+    "DescribeCertificateVerifyResult": {
+      "document": "获取证书的检查结果",
+      "input": "DescribeCertificateVerifyResultRequest",
+      "name": "获取证书的检查结果",
+      "output": "DescribeCertificateVerifyResultResponse",
+      "status": "online"
+    },
     "DescribeCiphersDetail": {
       "document": "Saas型WAF接入查询加密套件信息",
       "input": "DescribeCiphersDetailRequest",
@@ -4830,6 +4837,109 @@
           "member": "CCRuleData",
           "name": "Data",
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateVerifyResultRequest": {
+      "document": "DescribeCertificateVerifyResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test1.qcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书类型",
+          "example": "1",
+          "member": "int64",
+          "name": "CertType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "证书公钥",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "Certificate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书ID",
+          "example": "D3a93",
+          "member": "string",
+          "name": "CertID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥信息",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCertificateVerifyResultResponse": {
+      "document": "DescribeCertificateVerifyResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态码",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误详情",
+          "example": "[\"xx\"]",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "xx",
+          "member": "string",
+          "name": "NotAfter",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书是否改变:1有改变，0没有改变\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Changed",
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         },
         {

@@ -9981,6 +9981,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -9991,6 +9992,7 @@
           "example": "rewrew",
           "member": "string",
           "name": "Http2",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10001,6 +10003,7 @@
           "example": "123456",
           "member": "string",
           "name": "OcspStapling",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10011,6 +10014,7 @@
           "example": "dsadsa",
           "member": "string",
           "name": "VerifyClient",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10021,6 +10025,7 @@
           "example": "无",
           "member": "ServerCert",
           "name": "CertInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10031,6 +10036,7 @@
           "example": "无",
           "member": "ClientCert",
           "name": "ClientCertInfo",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -10041,6 +10047,7 @@
           "example": "dfdf",
           "member": "string",
           "name": "Spdy",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10051,6 +10058,7 @@
           "example": "closed",
           "member": "string",
           "name": "SslStatus",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10061,16 +10069,18 @@
           "example": "无",
           "member": "Hsts",
           "name": "Hsts",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSV1.1, TLSV1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Tls版本设置，仅支持部分Advance域名，支持设置 TLSv1, TLSv1.1, TLSv1.2, TLSv1.3，修改时必须开启连续的版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"TLSv1\"]",
           "member": "string",
           "name": "TlsVersion",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

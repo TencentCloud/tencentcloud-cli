@@ -288,11 +288,11 @@
       "status": "online"
     },
     "HostCertificate": {
-      "document": "云资源托管",
+      "document": "证书托管接口已重构， 旧接口预下线， 近30天无请求\n\n云资源托管",
       "input": "HostCertificateRequest",
       "name": "云资源托管",
       "output": "HostCertificateResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyCertificateAlias": {
       "document": "用户传入证书id和备注来修改证书备注。",

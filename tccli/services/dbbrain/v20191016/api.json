@@ -1634,6 +1634,7 @@
           "example": "5",
           "member": "int64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1643,6 +1644,7 @@
           "example": "-",
           "member": "TimeSlice",
           "name": "TimeSeries",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1652,6 +1654,7 @@
           "example": "-",
           "member": "MonitorMetricSeriesData",
           "name": "SeriesData",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

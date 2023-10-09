@@ -285,6 +285,7 @@
           "example": "true",
           "member": "bool",
           "name": "Enable",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -295,6 +296,7 @@
           "example": "mesh-xxx",
           "member": "string",
           "name": "LogSet",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -305,6 +307,7 @@
           "example": "accesslog",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -315,9 +318,21 @@
           "example": "false",
           "member": "bool",
           "name": "NeedDelete",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cls 主题创建的地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sh",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

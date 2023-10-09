@@ -3309,6 +3309,7 @@
           "example": "无",
           "member": "bool",
           "name": "ReleaseAddress",
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -3319,6 +3320,7 @@
           "example": "无",
           "member": "string",
           "name": "UnsupportNetworks",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -3329,6 +3331,7 @@
           "example": "无",
           "member": "StorageBlock",
           "name": "StorageBlockAttr",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -3797,6 +3800,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述库存情况。取值范围： <br><li> UnderStock：表示对应库存即将售罄<br><li> NormalStock：表示对应库存供应有保障<br><li> EnoughStock：表示对应库存非常充足<br><li> WithoutStock：表示对应库存已经售罄\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusCategory",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -63,6 +63,13 @@
       "output": "ChannelCreateEmbedWebUrlResponse",
       "status": "online"
     },
+    "ChannelCreateFlowApprovers": {
+      "document": "适用场景：\n当通过模板或文件发起合同时，若未指定企业签署人信息，则可调用此接口动态补充签署人。同一签署人只允许补充一人，最终实际签署人取决于谁先领取合同完成签署。\n\n限制条件：\n1. 本企业（发起方企业）企业签署人仅支持通过企业名称+姓名+手机号进行补充。\n2. 个人签署人仅支持通过姓名+手机号进行补充。",
+      "input": "ChannelCreateFlowApproversRequest",
+      "name": "补充签署流程签署人信息",
+      "output": "ChannelCreateFlowApproversResponse",
+      "status": "online"
+    },
     "ChannelCreateFlowByFiles": {
       "document": "接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，请联系客户经理申请使用",
       "input": "ChannelCreateFlowByFilesRequest",
@@ -110,6 +117,13 @@
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
+      "status": "online"
+    },
+    "ChannelCreateOrganizationBatchSignUrl": {
+      "document": "通过此接口，创建小程序批量签署链接，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。\n\n注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方或者领取方。\n- 仅支持传入待签署或者待领取的合同，待填写暂不支持。\n- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章，暂不支持签批控件",
+      "input": "ChannelCreateOrganizationBatchSignUrlRequest",
+      "name": "获取企业签署合同web页面",
+      "output": "ChannelCreateOrganizationBatchSignUrlResponse",
       "status": "online"
     },
     "ChannelCreateOrganizationModifyQrCode": {
@@ -1507,6 +1521,69 @@
       ],
       "type": "object"
     },
+    "ChannelCreateFlowApproversRequest": {
+      "document": "ChannelCreateFlowApprovers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "渠道应用相关信息",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "合同唯一编号",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "补充企业签署人信息。\n\n- 如果发起方指定的补充签署人是企业签署人，则需要提供企业名称或者企业OpenId；\n\n- 如果不指定，则使用姓名和手机号进行补充。",
+          "example": "无",
+          "member": "FillApproverInfo",
+          "name": "Approvers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作人信息",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署人信息补充方式\n\n<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>\n<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillApproverType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateFlowApproversResponse": {
+      "document": "ChannelCreateFlowApprovers返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateFlowByFilesRequest": {
       "document": "ChannelCreateFlowByFiles请求参数结构体",
       "members": [
@@ -2209,6 +2286,89 @@
           "name": "SignUrls",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateOrganizationBatchSignUrlRequest": {
+      "document": "ChannelCreateOrganizationBatchSignUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括子客企业及应用编、号等详细内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "请指定需执行批量签署的流程ID，数量范围为1-100。 您可登录腾讯电子签控制台，浏览 \"合同\"->\"合同中心\" 以查阅某一合同的FlowId（在页面中显示为合同ID）。 用户将利用链接对这些合同实施批量操作。\t",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "第三方应用平台的用户openid。 您可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查阅某位员工的OpenId。 OpenId必须是传入合同（FlowId）中的签署人。 - 1. 若OpenId为空，Name和Mobile 必须提供。 - 2. 若OpenId 与 Name，Mobile均存在，将优先采用OpenId对应的员工。\t",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n\n注：`请确保和合同中填入的一致`",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "员工手机号，必须与姓名一起使用。 如果OpenId为空，则此字段不能为空。同时，姓名和手机号码必须与传入合同（FlowId）中的签署人信息一致。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Mobile",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateOrganizationBatchSignUrlResponse": {
+      "document": "ChannelCreateOrganizationBatchSignUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署入口链接，用户可使用这个链接跳转到控制台页面对合同进行签署操作。\t",
+          "example": "无",
+          "member": "string",
+          "name": "SignUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5165,7 +5325,7 @@
         },
         {
           "disabled": false,
-          "document": "签署链接生成类型，可以选择的类型如下\n\n- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)\n- CHANNEL：第三方平台子客企业企业\n- NOT_CHANNEL：非第三方平台子客企业企业\n- PERSON：个人\n- FOLLOWER：关注方，目前是合同抄送方",
+          "document": "签署链接生成类型，可以选择的类型如下\n\n- ALL：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接(默认类型)\n- CHANNEL：第三方平台子客企业企业\n- NOT_CHANNEL：非第三方平台子客企业企业\n- PERSON：个人\n- FOLLOWER：关注方，目前是合同抄送方\n- RECIPIENT：获取RecipientId对应的签署链接，可用于生成动态签署人补充链接",
           "example": "CHANNEL",
           "member": "string",
           "name": "GenerateType",
@@ -5255,7 +5415,7 @@
         },
         {
           "disabled": false,
-          "document": "签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致",
+          "document": "签署节点ID，用于补充动态签署人，使用此参数需要与flow_ids数量一致并且一一对应",
           "example": "无",
           "member": "string",
           "name": "RecipientIds",
@@ -5959,6 +6119,75 @@
         }
       ],
       "usage": "out"
+    },
+    "FillApproverInfo": {
+      "document": "指定补充签署人信息\n- RecipientId 必须指定",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定企业经办签署人OpenId",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署人手机号码",
+          "example": "无",
+          "member": "string",
+          "name": "ApproverMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业名称",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业OpenId",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "签署企业非渠道子客，默认为false，即表示同一渠道下的企业；如果为true，则目前表示接收方企业为SaaS企业, 为渠道子客时，organization_open_id+open_id 必传",
+          "example": "无",
+          "member": "string",
+          "name": "NotChannelOrganization",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "FilledComponent": {
       "document": "文档内的填充控件返回结构体，返回控件的基本信息和填写内容值",

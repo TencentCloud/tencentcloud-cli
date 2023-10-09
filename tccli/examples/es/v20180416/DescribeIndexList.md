@@ -23,6 +23,7 @@ Output:
             {
                 "IndexType": "abc",
                 "IndexName": "abc",
+                "IndexMetaJson": "abc",
                 "IndexStatus": "abc",
                 "IndexStorage": 0,
                 "IndexCreateTime": "abc",

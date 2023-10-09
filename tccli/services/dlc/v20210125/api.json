@@ -84,6 +84,27 @@
       "output": "CancelTaskResponse",
       "status": "online"
     },
+    "CheckDataEngineConfigPairsValidity": {
+      "document": "本接口（CheckDataEngineConfigPairsValidity）用于检查引擎用户自定义参数的有效性",
+      "input": "CheckDataEngineConfigPairsValidityRequest",
+      "name": "检查引擎用户自定义参数的有效性",
+      "output": "CheckDataEngineConfigPairsValidityResponse",
+      "status": "online"
+    },
+    "CheckDataEngineImageCanBeRollback": {
+      "document": "本接口（CheckDataEngineImageCanBeRollback）用于查看集群是否能回滚。",
+      "input": "CheckDataEngineImageCanBeRollbackRequest",
+      "name": "查看集群是否能回滚",
+      "output": "CheckDataEngineImageCanBeRollbackResponse",
+      "status": "online"
+    },
+    "CheckDataEngineImageCanBeUpgrade": {
+      "document": "本接口（CheckDataEngineImageCanBeUpgrade）用于查看集群镜像是否能够升级。",
+      "input": "CheckDataEngineImageCanBeUpgradeRequest",
+      "name": "查看集群镜像是否能够升级",
+      "output": "CheckDataEngineImageCanBeUpgradeResponse",
+      "status": "online"
+    },
     "CheckLockMetaData": {
       "document": "元数据锁检查",
       "input": "CheckLockMetaDataRequest",
@@ -245,6 +266,13 @@
       "output": "CreateWorkGroupResponse",
       "status": "online"
     },
+    "DeleteDataEngine": {
+      "document": "删除数据引擎",
+      "input": "DeleteDataEngineRequest",
+      "name": "删除数据引擎",
+      "output": "DeleteDataEngineResponse",
+      "status": "online"
+    },
     "DeleteNotebookSession": {
       "document": "本接口（DeleteNotebookSession）用于删除交互式session（notebook）",
       "input": "DeleteNotebookSessionRequest",
@@ -313,6 +341,27 @@
       "input": "DescribeDMSTablesRequest",
       "name": "DMS元数据获取表列表",
       "output": "DescribeDMSTablesResponse",
+      "status": "online"
+    },
+    "DescribeDataEngine": {
+      "document": "本接口根据名称用于获取数据引擎详细信息",
+      "input": "DescribeDataEngineRequest",
+      "name": "获取数据引擎详细信息",
+      "output": "DescribeDataEngineResponse",
+      "status": "online"
+    },
+    "DescribeDataEngineImageVersions": {
+      "document": "本接口（DescribeDataEngineImageVersions）用于获取独享集群大版本镜像列表。",
+      "input": "DescribeDataEngineImageVersionsRequest",
+      "name": "获取独享集群大版本镜像列表",
+      "output": "DescribeDataEngineImageVersionsResponse",
+      "status": "online"
+    },
+    "DescribeDataEnginePythonSparkImages": {
+      "document": "本接口（DescribeDataEnginePythonSparkImages）用于获取PYSPARK镜像列表",
+      "input": "DescribeDataEnginePythonSparkImagesRequest",
+      "name": "获取PYSPARK镜像列表",
+      "output": "DescribeDataEnginePythonSparkImagesResponse",
       "status": "online"
     },
     "DescribeDataEngines": {
@@ -490,11 +539,32 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeUserDataEngineConfig": {
+      "document": "查询用户自定义引擎参数",
+      "input": "DescribeUserDataEngineConfigRequest",
+      "name": "查询用户自定义引擎参数",
+      "output": "DescribeUserDataEngineConfigResponse",
+      "status": "online"
+    },
+    "DescribeUserInfo": {
+      "document": "获取用户详细信息",
+      "input": "DescribeUserInfoRequest",
+      "name": "获取用户详细信息",
+      "output": "DescribeUserInfoResponse",
+      "status": "online"
+    },
     "DescribeUserRoles": {
       "document": "列举用户角色信息",
       "input": "DescribeUserRolesRequest",
       "name": "列举用户角色信息",
       "output": "DescribeUserRolesResponse",
+      "status": "online"
+    },
+    "DescribeUserType": {
+      "document": "获取用户类型",
+      "input": "DescribeUserTypeRequest",
+      "name": "获取用户类型",
+      "output": "DescribeUserTypeResponse",
       "status": "online"
     },
     "DescribeUsers": {
@@ -509,6 +579,13 @@
       "input": "DescribeViewsRequest",
       "name": "查询视图列表",
       "output": "DescribeViewsResponse",
+      "status": "online"
+    },
+    "DescribeWorkGroupInfo": {
+      "document": "获取工作组详细信息",
+      "input": "DescribeWorkGroupInfoRequest",
+      "name": "获取工作组详细信息",
+      "output": "DescribeWorkGroupInfoResponse",
       "status": "online"
     },
     "DescribeWorkGroups": {
@@ -574,6 +651,13 @@
       "output": "LockMetaDataResponse",
       "status": "online"
     },
+    "ModifyDataEngineDescription": {
+      "document": "修改引擎描述信息",
+      "input": "ModifyDataEngineDescriptionRequest",
+      "name": "修改引擎描述信息",
+      "output": "ModifyDataEngineDescriptionResponse",
+      "status": "online"
+    },
     "ModifyGovernEventRule": {
       "document": "修改数据治理事件阈值",
       "input": "ModifyGovernEventRuleRequest",
@@ -602,6 +686,13 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
+    "ModifyUserType": {
+      "document": "修改用户类型。只有管理员用户能够调用该接口进行操作",
+      "input": "ModifyUserTypeRequest",
+      "name": "修改用户类型",
+      "output": "ModifyUserTypeResponse",
+      "status": "online"
+    },
     "ModifyWorkGroup": {
       "document": "修改工作组信息",
       "input": "ModifyWorkGroupRequest",
@@ -616,11 +707,32 @@
       "output": "QueryResultResponse",
       "status": "online"
     },
+    "RenewDataEngine": {
+      "document": "续费数据引擎",
+      "input": "RenewDataEngineRequest",
+      "name": "续费包年包月数据引擎",
+      "output": "RenewDataEngineResponse",
+      "status": "online"
+    },
     "ReportHeartbeatMetaData": {
       "document": "上报元数据心跳",
       "input": "ReportHeartbeatMetaDataRequest",
       "name": "上报元数据心跳",
       "output": "ReportHeartbeatMetaDataResponse",
+      "status": "online"
+    },
+    "RestartDataEngine": {
+      "document": "重启引擎",
+      "input": "RestartDataEngineRequest",
+      "name": "重启引擎",
+      "output": "RestartDataEngineResponse",
+      "status": "online"
+    },
+    "RollbackDataEngineImage": {
+      "document": "回滚引擎镜像版本",
+      "input": "RollbackDataEngineImageRequest",
+      "name": "回滚引擎镜像版本",
+      "output": "RollbackDataEngineImageResponse",
       "status": "online"
     },
     "SuspendResumeDataEngine": {
@@ -637,6 +749,13 @@
       "output": "SwitchDataEngineResponse",
       "status": "online"
     },
+    "SwitchDataEngineImage": {
+      "document": "切换引擎镜像版本",
+      "input": "SwitchDataEngineImageRequest",
+      "name": "切换引擎镜像版本",
+      "output": "SwitchDataEngineImageResponse",
+      "status": "online"
+    },
     "UnbindWorkGroupsFromUser": {
       "document": "解绑用户上的用户组",
       "input": "UnbindWorkGroupsFromUserRequest",
@@ -651,11 +770,39 @@
       "output": "UnlockMetaDataResponse",
       "status": "online"
     },
+    "UpdateDataEngine": {
+      "document": "本接口用于更新数据引擎配置",
+      "input": "UpdateDataEngineRequest",
+      "name": "更新数据引擎配置",
+      "output": "UpdateDataEngineResponse",
+      "status": "online"
+    },
+    "UpdateDataEngineConfig": {
+      "document": "用户某种操作，触发引擎配置修改",
+      "input": "UpdateDataEngineConfigRequest",
+      "name": "修改引擎配置",
+      "output": "UpdateDataEngineConfigResponse",
+      "status": "online"
+    },
     "UpdateRowFilter": {
       "document": "此接口用于更新行过滤规则。注意只能更新过滤规则，不能更新规格对象catalog，database和table。",
       "input": "UpdateRowFilterRequest",
       "name": "更新行过滤规则",
       "output": "UpdateRowFilterResponse",
+      "status": "online"
+    },
+    "UpdateUserDataEngineConfig": {
+      "document": "修改用户引擎自定义配置",
+      "input": "UpdateUserDataEngineConfigRequest",
+      "name": "修改用户引擎自定义配置",
+      "output": "UpdateUserDataEngineConfigResponse",
+      "status": "online"
+    },
+    "UpgradeDataEngineImage": {
+      "document": "升级引擎镜像",
+      "input": "UpgradeDataEngineImageRequest",
+      "name": "升级引擎镜像",
+      "output": "UpgradeDataEngineImageResponse",
       "status": "online"
     }
   },
@@ -1508,6 +1655,173 @@
     "CancelTaskResponse": {
       "document": "CancelTask返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineConfigPairsValidityRequest": {
+      "document": "CheckDataEngineConfigPairsValidity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎小版本ID",
+          "example": "dfa996c5-719c-4177-8096-d2562d6ad8b3",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义参数",
+          "example": "[“ConfigItem”:\"key\",\"ConfigValue\":\"value\"]",
+          "member": "DataEngineConfigPair",
+          "name": "DataEngineConfigPairs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎大版本ID，存在小版本ID时仅需传入小版本ID，不存在时会获取当前大版本下最新的小版本ID。",
+          "example": "dfdsadc5-719c-4177-8096-d2562d6ad8b3",
+          "member": "string",
+          "name": "ImageVersionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineConfigPairsValidityResponse": {
+      "document": "CheckDataEngineConfigPairsValidity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数有效性：ture:有效，false:至少存在一个无效参数；",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAvailable",
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "无效参数集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"key\",\"key1\"]",
+          "member": "string",
+          "name": "UnavailableConfig",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineImageCanBeRollbackRequest": {
+      "document": "CheckDataEngineImageCanBeRollback请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎唯一id",
+          "example": "DataEngine-1",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineImageCanBeRollbackResponse": {
+      "document": "CheckDataEngineImageCanBeRollback返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回滚后日志记录id",
+          "example": "89570c65-49de-4bbd-ac0a-a67c724fc80f",
+          "member": "string",
+          "name": "ToRecordId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回滚前日志记录id",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "FromRecordId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否能够回滚",
+          "example": "false",
+          "member": "bool",
+          "name": "IsRollback",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineImageCanBeUpgradeRequest": {
+      "document": "CheckDataEngineImageCanBeUpgrade请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "DataEngine-1",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckDataEngineImageCanBeUpgradeResponse": {
+      "document": "CheckDataEngineImageCanBeUpgrade返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前大版本下，可升级的集群镜像小版本id",
+          "example": "d3ftghd4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否能够升级",
+          "example": "true",
+          "member": "bool",
+          "name": "IsUpgrade",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4508,6 +4822,102 @@
       "members": [],
       "usage": "both"
     },
+    "DataEngineImageVersion": {
+      "document": "集群大版本镜像信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像大版本ID",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ImageVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像大版本名称",
+          "example": "SuperSQL",
+          "member": "string",
+          "name": "ImageVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像大版本描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试版本",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为公共版本：1：公共；2：私有",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsPublic",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型：SparkSQL/PrestoSQL/SparkBatch",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态：1：初始化；2：上线；3：下线",
+          "example": "1",
+          "member": "uint64",
+          "name": "IsSharedEngine",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态：1：初始化；2：上线；3：下线",
+          "example": "2",
+          "member": "uint64",
+          "name": "State",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插入时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "InsertTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DataEngineInfo": {
       "document": "DataEngine详细信息",
       "members": [
@@ -5602,6 +6012,33 @@
       ],
       "usage": "both"
     },
+    "DeleteDataEngineRequest": {
+      "document": "DeleteDataEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除虚拟集群的名称数组",
+          "example": "[\"xxx\"]",
+          "member": "string",
+          "name": "DataEngineNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDataEngineResponse": {
+      "document": "DeleteDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteNotebookSessionRequest": {
       "document": "DeleteNotebookSession请求参数结构体",
       "members": [
@@ -6411,6 +6848,124 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineImageVersionsRequest": {
+      "document": "DescribeDataEngineImageVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎类型：SQL、SparkBatch",
+          "example": "SQL",
+          "member": "string",
+          "name": "EngineType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineImageVersionsResponse": {
+      "document": "DescribeDataEngineImageVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群大版本镜像信息列表",
+          "example": "复杂类型",
+          "member": "DataEngineImageVersion",
+          "name": "ImageParentVersions",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEnginePythonSparkImagesRequest": {
+      "document": "DescribeDataEnginePythonSparkImages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群镜像小版本ID",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEnginePythonSparkImagesResponse": {
+      "document": "DescribeDataEnginePythonSparkImages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "PYSPARK镜像信息列表",
+          "example": "复杂类型",
+          "member": "PythonSparkImage",
+          "name": "PythonSparkImages",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineRequest": {
+      "document": "DescribeDataEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "House名称",
+          "example": "testHouse",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineResponse": {
+      "document": "DescribeDataEngine返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据引擎详细信息",
+          "example": "无",
+          "member": "DataEngineInfo",
+          "name": "DataEngine",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8218,6 +8773,114 @@
       ],
       "type": "object"
     },
+    "DescribeUserDataEngineConfigRequest": {
+      "document": "DescribeUserDataEngineConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeUserDataEngineConfigResponse": {
+      "document": "DescribeUserDataEngineConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoRequest": {
+      "document": "DescribeUserInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id",
+          "example": "123098736",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的信息类型，Group：工作组 DataAuth：数据权限 EngineAuth:引擎权限",
+          "example": "Group",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的过滤条件。\n\n当Type为Group时，支持Key为workgroup-name的模糊搜索；\n\n当Type为DataAuth时，支持key：\n\npolicy-type：权限类型。\n\npolicy-source：数据来源。\n\ndata-name：库表的模糊搜索。\n\n当Type为EngineAuth时，支持key：\n\npolicy-type：权限类型。\n\npolicy-source：数据来源。\n\nengine-name：库表的模糊搜索。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。\n\n当Type为Group时，支持create-time、group-name\n\n当Type为DataAuth时，支持create-time\n\n当Type为EngineAuth时，支持create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认20，最大值100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserInfoResponse": {
+      "document": "DescribeUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserDetailInfo",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeUserRolesRequest": {
       "document": "DescribeUserRoles请求参数结构体",
       "members": [
@@ -8291,6 +8954,43 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserTypeRequest": {
+      "document": "DescribeUserType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID（UIN），如果不填默认为调用方的子UIN",
+          "example": "12345678",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserTypeResponse": {
+      "document": "DescribeUserType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户类型。ADMIN：管理员 COMMON：普通用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ADMIN",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8502,6 +9202,97 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkGroupInfoRequest": {
+      "document": "DescribeWorkGroupInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作组Id",
+          "example": "21",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询信息类型：User：用户信息 DataAuth：数据权限 EngineAuth：引擎权限",
+          "example": "User",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的过滤条件。\n\n当Type为User时，支持Key为user-name的模糊搜索；\n\n当Type为DataAuth时，支持key：\n\npolicy-type：权限类型。\n\npolicy-source：数据来源。\n\ndata-name：库表的模糊搜索。\n\n当Type为EngineAuth时，支持key：\n\npolicy-type：权限类型。\n\npolicy-source：数据来源。\n\nengine-name：库表的模糊搜索。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。\n\n当Type为User时，支持create-time、user-name\n\n当Type为DataAuth时，支持create-time\n\n当Type为EngineAuth时，支持create-time",
+          "example": "create-time",
+          "member": "string",
+          "name": "SortBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式，desc表示正序，asc表示反序， 默认为asc",
+          "example": "desc",
+          "member": "string",
+          "name": "Sorting",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认20，最大值100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkGroupInfoResponse": {
+      "document": "DescribeWorkGroupInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作组详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkGroupDetailInfo",
+          "name": "WorkGroupInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9648,6 +10439,42 @@
       ],
       "type": "object"
     },
+    "ModifyDataEngineDescriptionRequest": {
+      "document": "ModifyDataEngineDescription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要修改的引擎的名称",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎的描述信息，最大长度为250",
+          "example": "test-engine",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDataEngineDescriptionResponse": {
+      "document": "ModifyDataEngineDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyGovernEventRuleRequest": {
       "document": "ModifyGovernEventRule请求参数结构体",
       "members": [],
@@ -10060,6 +10887,42 @@
     },
     "ModifyUserResponse": {
       "document": "ModifyUser返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserTypeRequest": {
+      "document": "ModifyUserType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID",
+          "example": "18274209342",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户要修改到的类型，ADMIN：管理员，COMMON：一般用户。",
+          "example": "ADMIN",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserTypeResponse": {
+      "document": "ModifyUserType返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11106,6 +11969,32 @@
       ],
       "usage": "both"
     },
+    "Policys": {
+      "document": "策略集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "PolicySet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrestoMonitorMetrics": {
       "document": "Presto监控指标",
       "members": [
@@ -11157,6 +12046,72 @@
         }
       ],
       "usage": "both"
+    },
+    "PythonSparkImage": {
+      "document": "python-spark镜像信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "spark镜像唯一id",
+          "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "SparkImageId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群小版本镜像id",
+          "example": "d3dfgtr4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "ChildImageVersionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark镜像名称",
+          "example": "test",
+          "member": "string",
+          "name": "SparkImageVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "spark镜像描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2020-01-01 01:01:01",
+          "member": "string",
+          "name": "UpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QueryResultRequest": {
       "document": "QueryResult请求参数结构体",
@@ -11234,6 +12189,69 @@
       ],
       "type": "object"
     },
+    "RenewDataEngineRequest": {
+      "document": "RenewDataEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CU队列名称",
+          "example": "test_engine",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "续费时长，单位月，最少续费1一个月",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "付费类型，默认为1，预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单位，默认m，仅能填m",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标志，0，初始状态，默认不自动续费，若用户有预付费不停服特权，自动续费。1：自动续费。2：明确不自动续费。不传该参数默认为0",
+          "example": "0",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RenewDataEngineResponse": {
+      "document": "RenewDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReportHeartbeatMetaDataRequest": {
       "document": "ReportHeartbeatMetaData请求参数结构体",
       "members": [
@@ -11269,6 +12287,40 @@
     },
     "ReportHeartbeatMetaDataResponse": {
       "document": "ReportHeartbeatMetaData返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartDataEngineRequest": {
+      "document": "RestartDataEngine请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RestartDataEngineResponse": {
+      "document": "RestartDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RollbackDataEngineImageRequest": {
+      "document": "RollbackDataEngineImage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RollbackDataEngineImageResponse": {
+      "document": "RollbackDataEngineImage返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -12169,6 +13221,23 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchDataEngineImageRequest": {
+      "document": "SwitchDataEngineImage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SwitchDataEngineImageResponse": {
+      "document": "SwitchDataEngineImage返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13479,6 +14548,176 @@
       ],
       "type": "object"
     },
+    "UpdateDataEngineConfigRequest": {
+      "document": "UpdateDataEngineConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateDataEngineConfigResponse": {
+      "document": "UpdateDataEngineConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataEngineRequest": {
+      "document": "UpdateDataEngine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最小资源",
+          "example": "1",
+          "member": "int64",
+          "name": "MinClusters",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最大资源",
+          "example": "10",
+          "member": "int64",
+          "name": "MaxClusters",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开启自动刷新：true：开启、false（默认）：关闭",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoResume",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎名称",
+          "example": "testHouse",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "相关信息",
+          "example": "xxx",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自定挂起集群：false（默认）：不自动挂起、true：自动挂起",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoSuspend",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "定时启停集群策略：0（默认）：关闭定时策略、1：开启定时策略（注：定时启停策略与自动挂起策略互斥）",
+          "example": "1",
+          "member": "int64",
+          "name": "CrontabResumeSuspend",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定时启停策略，复杂类型：包含启停时间、挂起集群策略",
+          "example": "复杂类型",
+          "member": "CrontabResumeSuspendStrategy",
+          "name": "CrontabResumeSuspendStrategy",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "单个集群最大并发任务数，默认5",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxConcurrency",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可容忍的排队时间，默认0。当任务排队的时间超过可容忍的时间时可能会触发扩容。如果该参数为0，则表示一旦有任务排队就可能立即触发扩容。",
+          "example": "0",
+          "member": "int64",
+          "name": "TolerableQueueTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群自动挂起时间",
+          "example": "10",
+          "member": "int64",
+          "name": "AutoSuspendTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "spark jar 包年包月集群是否开启弹性",
+          "example": "false",
+          "member": "bool",
+          "name": "ElasticSwitch",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "spark jar 包年包月集群弹性上限",
+          "example": "0",
+          "member": "int64",
+          "name": "ElasticLimit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Spark批作业集群Session资源配置模板",
+          "example": "无",
+          "member": "SessionResourceTemplate",
+          "name": "SessionResourceTemplate",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateDataEngineResponse": {
+      "document": "UpdateDataEngine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateRowFilterRequest": {
       "document": "UpdateRowFilter请求参数结构体",
       "members": [
@@ -13514,6 +14753,136 @@
         }
       ],
       "type": "object"
+    },
+    "UpdateUserDataEngineConfigRequest": {
+      "document": "UpdateUserDataEngineConfig请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateUserDataEngineConfigResponse": {
+      "document": "UpdateUserDataEngineConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpgradeDataEngineImageRequest": {
+      "document": "UpgradeDataEngineImage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpgradeDataEngineImageResponse": {
+      "document": "UpgradeDataEngineImage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UserDetailInfo": {
+      "document": "用户详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1208763821",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回的信息类型，Group：返回的当前用户的工作组信息；DataAuth：返回的当前用户的数据权限信息；EngineAuth：返回的当前用户的引擎权限信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Group",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型：ADMIN：管理员 COMMON：一般用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ADMIN",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testUser",
+          "member": "string",
+          "name": "UserDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "DataPolicyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "EnginePolicyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定到该用户的工作组集合信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkGroups",
+          "name": "WorkGroupInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户别名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testname",
+          "member": "string",
+          "name": "UserAlias",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行过滤集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "RowFilterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "UserIdSetOfWorkGroupId": {
       "document": "绑定到同一个工作组的用户Id的集合",
@@ -13799,6 +15168,32 @@
       ],
       "usage": "out"
     },
+    "Users": {
+      "document": "用户信息集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserMessage",
+          "name": "UserSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ViewBaseInfo": {
       "document": "视图基本配置信息",
       "members": [
@@ -13897,6 +15292,92 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkGroupDetailInfo": {
+      "document": "工作组详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作组Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "int64",
+          "name": "WorkGroupId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testGroup",
+          "member": "string",
+          "name": "WorkGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包含的信息类型。User：用户信息；DataAuth：数据权限；EngineAuth:引擎权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "User",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作组上绑定的用户集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Users",
+          "name": "UserInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "DataPolicyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎权限集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "EnginePolicyInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作组描述信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group for admin",
+          "member": "string",
+          "name": "WorkGroupDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行过滤信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policys",
+          "name": "RowFilterInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -14065,6 +15546,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkGroups": {
+      "document": "工作组集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作组信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkGroupMessage",
+          "name": "WorkGroupSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作组总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

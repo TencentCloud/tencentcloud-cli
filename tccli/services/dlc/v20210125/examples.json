@@ -96,6 +96,30 @@
         "title": "取消任务"
       }
     ],
+    "CheckDataEngineConfigPairsValidity": [
+      {
+        "document": "本接口用于检查引擎用户自定义参数的有效性。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDataEngineConfigPairsValidity\n<公共请求参数>\n\n{\n    \"ChildImageVersionId\": \"b8sddsad7-ekd4-4e5e-993e-e5db64fa21c1\",\n    \"ImageVersionId\": \"\",\n    \"DataEngineConfigPairs\": [\n        {}\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IsAvailable\": true,\n        \"UnavailableConfig\": [\n            \"key\"\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "检查引擎用户自定义参数的有效性"
+      }
+    ],
+    "CheckDataEngineImageCanBeRollback": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDataEngineImageCanBeRollback\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FromRecordId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n        \"ToRecordId\": \"89570c65-49de-4bbd-ac0a-a67c724fc80f\",\n        \"IsRollback\": true,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "查看集群是否能回滚"
+      }
+    ],
+    "CheckDataEngineImageCanBeUpgrade": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDataEngineImageCanBeUpgrade\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ChildImageVersionId\": \"d3ftghd4-9a7e-4f64-a3f4-f38507c69742\",\n        \"IsUpgrade\": true,\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
+        "title": "查看集群镜像是否能够升级"
+      }
+    ],
     "CheckLockMetaData": [
       {
         "document": "",
@@ -280,6 +304,14 @@
         "title": "创建工作组"
       }
     ],
+    "DeleteDataEngine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineNames\": [\n        \"xx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DeleteNotebookSession": [
       {
         "document": "删除交互式session（notebook）",
@@ -358,6 +390,30 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDMSTables\n<公共请求参数>\n\n{\n    \"Name\": \"xx\",\n    \"Keyword\": \"xx\",\n    \"Pattern\": \"xx\",\n    \"Catalog\": \"xx\",\n    \"SchemaName\": \"xx\",\n    \"Type\": \"xx\",\n    \"DbName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"TableList\": [\n            {\n                \"Table\": {\n                    \"PartitionKeys\": [\n                        {\n                            \"Name\": \"xx\",\n                            \"BizParams\": [\n                                {\n                                    \"Value\": \"xx\",\n                                    \"Key\": \"xx\"\n                                }\n                            ],\n                            \"IsPartition\": true,\n                            \"Params\": [\n                                {\n                                    \"Value\": \"xx\",\n                                    \"Key\": \"xx\"\n                                }\n                            ],\n                            \"Position\": 0,\n                            \"Type\": \"xx\",\n                            \"Description\": \"xx\"\n                        }\n                    ],\n                    \"Sds\": {\n                        \"OutputFormat\": \"xx\",\n                        \"SortCols\": {\n                            \"Col\": \"xx\",\n                            \"Order\": 0\n                        },\n                        \"InputFormat\": \"xx\",\n                        \"SerdeLib\": \"xx\",\n                        \"Cols\": [\n                            {\n                                \"Name\": \"xx\",\n                                \"BizParams\": [\n                                    {\n                                        \"Value\": \"xx\",\n                                        \"Key\": \"xx\"\n                                    }\n                                ],\n                                \"IsPartition\": true,\n                                \"Position\": 0,\n                                \"Type\": \"xx\",\n                                \"Description\": \"xx\"\n                            }\n                        ],\n                        \"Location\": \"xx\",\n                        \"NumBuckets\": 0,\n                        \"Compressed\": true,\n                        \"SerdeName\": \"xx\",\n                        \"StoredAsSubDirectories\": true,\n                        \"BucketCols\": [\n                            \"xx\"\n                        ]\n                    },\n                    \"RecordCount\": 0,\n                    \"StructUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Partitions\": [\n                        {\n                            \"Sds\": {\n                                \"OutputFormat\": \"xx\",\n                                \"SortCols\": {\n                                    \"Col\": \"xx\",\n                                    \"Order\": 0\n                                },\n                                \"InputFormat\": \"xx\",\n                                \"SerdeLib\": \"xx\",\n                                \"Cols\": [\n                                    {\n                                        \"IsPartition\": true,\n                                        \"Type\": \"xx\",\n                                        \"Description\": \"xx\",\n                                        \"Position\": 0,\n                                        \"Name\": \"xx\"\n                                    }\n                                ],\n                                \"Location\": \"xx\",\n                                \"NumBuckets\": 0,\n                                \"Compressed\": true,\n                                \"SerdeName\": \"xx\",\n                                \"StoredAsSubDirectories\": true,\n                                \"BucketCols\": [\n                                    \"xx\"\n                                ]\n                            },\n                            \"Name\": \"xx\",\n                            \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"DataVersion\": 0,\n                            \"RecordCount\": 0,\n                            \"TableName\": \"xx\",\n                            \"LastAccessTime\": \"2020-09-22T00:00:00+00:00\",\n                            \"Values\": [\n                                \"xx\"\n                            ],\n                            \"DatabaseName\": \"xx\",\n                            \"SchemaName\": \"xx\",\n                            \"StorageSize\": 0,\n                            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n                        }\n                    ],\n                    \"DataUpdateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"ViewOriginalText\": \"xx\",\n                    \"LifeTime\": 0,\n                    \"StorageSize\": 0,\n                    \"ViewExpandedText\": \"xx\",\n                    \"SchemaName\": \"xx\",\n                    \"LastAccessTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Type\": \"xx\",\n                    \"DbName\": \"xx\",\n                    \"Retention\": 0\n                },\n                \"Asset\": {\n                    \"Description\": \"xx\",\n                    \"ModifiedTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"DataVersion\": 0,\n                    \"OwnerAccount\": \"xx\",\n                    \"CreateTime\": \"2020-09-22T00:00:00+00:00\",\n                    \"Catalog\": \"xx\",\n                    \"DatasourceId\": 0,\n                    \"Owner\": \"xx\",\n                    \"Guid\": \"xx\",\n                    \"Id\": 0,\n                    \"Name\": \"xx\"\n                }\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "DMS查询表列表"
+      }
+    ],
+    "DescribeDataEngine": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngine\": {\n            \"MaxClusters\": 0,\n            \"DefaultDataEngine\": true,\n            \"UpdateTime\": 0,\n            \"SpendAfter\": 0,\n            \"DataEngineId\": \"xx\",\n            \"CidrBlock\": \"xx\",\n            \"SubAccountUin\": \"xx\",\n            \"AutoResume\": true,\n            \"ClusterType\": \"xx\",\n            \"QuotaId\": \"xx\",\n            \"State\": 0,\n            \"DataEngineName\": \"xx\",\n            \"Mode\": 0,\n            \"Message\": \"xx\",\n            \"CreateTime\": 0,\n            \"EngineType\": \"xx\",\n            \"MinClusters\": 0,\n            \"Size\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeDataEngineImageVersions": [
+      {
+        "document": "本接口用于获取独享集群大版本镜像列表",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngineImageVersions\n<公共请求参数>\n\n{\n    \"EngineType\": \"SQL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"Total\": 1,\n        \"ImageParentVersions\": [\n            {\n                \"UpdateTime\": \"2020-01-01:00:00:00\",\n                \"Description\": \"测试\",\n                \"IsSharedEngine\": 1,\n                \"ImageVersionId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n                \"IsPublic\": 1,\n                \"State\": 1,\n                \"InsertTime\": \"2020-01-01:00:00:00\",\n                \"ImageVersion\": \"SuperSQL\",\n                \"EngineType\": \"SparkSQL\"\n            }\n        ]\n    }\n}",
+        "title": "获取独享集群大版本镜像列表"
+      }
+    ],
+    "DescribeDataEnginePythonSparkImages": [
+      {
+        "document": "本接口用于获取PYSPARK镜像列表。",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEnginePythonSparkImages\n<公共请求参数>\n\n{\n    \"ChildImageVersionId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\",\n        \"PythonSparkImages\": [\n            {\n                \"UpdateTime\": \"2020-01-01:00:00:00\",\n                \"Description\": \"测试\",\n                \"ChildImageVersionId\": \"d3ksjed4-9a7e-4f64-a3f4-f38507c69742\",\n                \"SparkImageId\": \"d3018ad4-9a7e-4f64-a3f4-f38507c69742\",\n                \"SparkImageVersion\": \"测试镜像\",\n                \"CreateTime\": \"2020-01-01:00:00:00\"\n            }\n        ]\n    }\n}",
+        "title": "获取PYSPARK镜像列表"
       }
     ],
     "DescribeDataEngines": [
@@ -560,6 +616,22 @@
         "title": "查询任务列表"
       }
     ],
+    "DescribeUserDataEngineConfig": [
+      {
+        "document": "查询用户自定义引擎参数",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDataEngineConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询用户自定义引擎参数"
+      }
+    ],
+    "DescribeUserInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UserInfo\": {\n            \"UserId\": \"123108743\",\n            \"UserAlias\": \"testname\",\n            \"UserType\": \"ADMIN\",\n            \"UserDescription\": \"test\",\n            \"Type\": \"Group\"\n        },\n        \"RequestId\": \"1231sad-sadsd121-fvmkl23-f124\"\n    }\n}",
+        "title": "获取用户详细信息"
+      }
+    ],
     "DescribeUserRoles": [
       {
         "document": "",
@@ -572,6 +644,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRoles\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Fuzzy\": \"abc\",\n    \"SortBy\": \"abc\",\n    \"Sorting\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"UserRoles\": [\n            {\n                \"RoleId\": 0,\n                \"AppId\": \"abc\",\n                \"Uin\": \"abc\",\n                \"Arn\": \"abc\",\n                \"ModifyTime\": 0,\n                \"Desc\": \"abc\",\n                \"RoleName\": \"abc\",\n                \"Creator\": \"abc\",\n                \"CosPermissionList\": [\n                    {\n                        \"CosPath\": \"abc\",\n                        \"Permissions\": [\n                            \"abc\"\n                        ]\n                    }\n                ],\n                \"PermissionJson\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DescribeUserType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserType\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"UserType\": \"ADMIN\",\n        \"RequestId\": \"1312-j1jf1920fl023na9sa-vanc\"\n    }\n}",
+        "title": "获取用户类型"
       }
     ],
     "DescribeUsers": [
@@ -588,6 +668,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeViews\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 0,\n    \"DatabaseName\": \"testdb\",\n    \"Sort\": \"name\",\n    \"Asc\": true,\n    \"StartTime\": \"2021-11-11 00:00:00\",\n    \"EndTime\": \"2021-11-18 00:00:00\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"c1d840f1-2df8-4ef4-9e44-02db58f24475\",\n        \"TotalCount\": 1,\n        \"ViewList\": [\n            {\n                \"ViewBaseInfo\": {\n                    \"DatabaseName\": \"testdb\",\n                    \"ViewName\": \"v1\",\n                    \"UserAlias\": \"testUser\",\n                    \"UserSubUin\": \"100019878767\"\n                },\n                \"Columns\": [],\n                \"Properties\": [\n                    {\n                        \"Key\": \"presto_view\",\n                        \"Value\": \"true\"\n                    },\n                    {\n                        \"Key\": \"presto_query_id\",\n                        \"Value\": \"20210901_123510_00000_9jg5j\"\n                    },\n                    {\n                        \"Key\": \"transient_lastDdlTime\",\n                        \"Value\": \"1630499714051\"\n                    },\n                    {\n                        \"Key\": \"comment\",\n                        \"Value\": \"Presto View\"\n                    },\n                    {\n                        \"Key\": \"presto_version\",\n                        \"Value\": \"0.242.1-DLC-rc11-6fe2f42\"\n                    }\n                ],\n                \"CreateTime\": \"1630499714000\",\n                \"ModifiedTime\": \"1630499714000\"\n            }\n        ]\n    }\n}",
         "title": "查询视图列表"
+      }
+    ],
+    "DescribeWorkGroupInfo": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkGroupInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"WorkGroupInfo\": {\n            \"WorkGroupId\": 12,\n            \"WorkGroupName\": \"testGroup\",\n            \"Type\": \"User\"\n        },\n        \"RequestId\": \"gsdf-213kjs9sf-f11fafsaf-12e1k\"\n    }\n}",
+        "title": "获取工作组详细信息"
       }
     ],
     "DescribeWorkGroups": [
@@ -662,6 +750,14 @@
         "title": "元数据加锁"
       }
     ],
+    "ModifyDataEngineDescription": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDataEngineDescription\n<公共请求参数>\n\n{\n    \"Message\": \"test-message\",\n    \"DataEngineName\": \"DataEngine-xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"jslaciaif-1lfsva9fal-12r1fca9fasef4\"\n    }\n}",
+        "title": "修改引擎描述信息"
+      }
+    ],
     "ModifyGovernEventRule": [
       {
         "document": "",
@@ -694,6 +790,14 @@
         "title": "修改用户信息"
       }
     ],
+    "ModifyUserType": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserType\n<公共请求参数>\n\n{\n    \"UserType\": \"xx\",\n    \"UserId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ks1141-dasd8ca1-acds81fa\"\n    }\n}",
+        "title": "修改用户类型"
+      }
+    ],
     "ModifyWorkGroup": [
       {
         "document": "修改工作组信息",
@@ -710,12 +814,36 @@
         "title": "获取任务结果"
       }
     ],
+    "RenewDataEngine": [
+      {
+        "document": "续费数据引擎",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewDataEngine\n<公共请求参数>\n\n{\n    \"PayMode\": 0,\n    \"TimeUnit\": \"m\",\n    \"DataEngineName\": \"test_house\",\n    \"TimeSpan\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1ESASFA-121DSAD\"\n    }\n}",
+        "title": "续费数据引擎"
+      }
+    ],
     "ReportHeartbeatMetaData": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportHeartbeatMetaData\n<公共请求参数>\n\n{\n    \"LockId\": 0,\n    \"TxnId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b577857e-041f-46c7-b5cf-4b3d3f50bc51\"\n    }\n}",
         "title": "元数据心跳上报"
+      }
+    ],
+    "RestartDataEngine": [
+      {
+        "document": "重启集群",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDataEngine\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "重启集群"
+      }
+    ],
+    "RollbackDataEngineImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackDataEngineImage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "升级引擎镜像版本"
       }
     ],
     "SuspendResumeDataEngine": [
@@ -734,6 +862,14 @@
         "title": "test"
       }
     ],
+    "SwitchDataEngineImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDataEngineImage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "升级引擎镜像版本"
+      }
+    ],
     "UnbindWorkGroupsFromUser": [
       {
         "document": "",
@@ -750,12 +886,44 @@
         "title": "元数据解锁"
       }
     ],
+    "UpdateDataEngine": [
+      {
+        "document": "引擎变配",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngine\n<公共请求参数>\n\n{\n    \"MaxClusters\": 0,\n    \"CrontabResumeSuspend\": 0,\n    \"AutoSuspend\": true,\n    \"CrontabResumeSuspendStrategy\": {\n        \"SuspendTime\": \"0\",\n        \"SuspendStrategy\": 0,\n        \"ResumeTime\": \"0\"\n    },\n    \"AutoResume\": true,\n    \"DataEngineName\": \"test\",\n    \"Message\": \"modify\",\n    \"MinClusters\": 0,\n    \"Size\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx-xxxx-xxx-xxxx\"\n    }\n}",
+        "title": "引擎变配"
+      }
+    ],
+    "UpdateDataEngineConfig": [
+      {
+        "document": "更新指定引擎的结果桶配置信息",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngineConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "更新指定引擎的结果桶配置信息"
+      }
+    ],
     "UpdateRowFilter": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRowFilter\n<公共请求参数>\n\n{\n    \"Policy\": {\n        \"Table\": \"TableName\",\n        \"Catalog\": \"COSDataCatalog\",\n        \"Operation\": \"ALL\",\n        \"Database\": \"DatabaseName\"\n    },\n    \"PolicyId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1287310-badou889lodj-1231jk12\"\n    }\n}",
         "title": "更新行过滤策略信息"
+      }
+    ],
+    "UpdateUserDataEngineConfig": [
+      {
+        "document": "修改用户集群自定义配置",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserDataEngineConfig\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdfwdsf\"\n    }\n}",
+        "title": "修改用户集群自定义配置"
+      }
+    ],
+    "UpgradeDataEngineImage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDataEngineImage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "升级引擎镜像版本"
       }
     ]
   },

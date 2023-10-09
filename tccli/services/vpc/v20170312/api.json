@@ -24115,7 +24115,7 @@
         {
           "disabled": false,
           "document": "标识 EIP 的唯一 ID 列表。EIP 唯一 ID 形如：`eip-11112222`。",
-          "example": "[\"eip-gzc5rgr2\\r\\n\"]",
+          "example": "[\"eip-gzc5rgr2\"]",
           "member": "string",
           "name": "AddressIds",
           "required": true,
@@ -24133,6 +24133,7 @@
           "example": "12331420",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

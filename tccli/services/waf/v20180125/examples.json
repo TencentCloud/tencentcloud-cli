@@ -314,6 +314,14 @@
         "title": "test1"
       }
     ],
+    "DescribeCertificateVerifyResult": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCertificateVerifyResult\n&Domain=test1.qcloud.com\n&CertType=1\n&CertID=D3a93\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Changed\": 0,\n        \"Detail\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\",\n        \"NotAfter\": \"xx\"\n    }\n}",
+        "title": "获取证书校验结果"
+      }
+    ],
     "DescribeCiphersDetail": [
       {
         "document": "",

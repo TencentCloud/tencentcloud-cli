@@ -17616,7 +17616,7 @@
           "example": "无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17626,7 +17626,7 @@
           "example": "无",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17636,7 +17636,7 @@
           "example": "无",
           "member": "int64",
           "name": "ZoneState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17646,7 +17646,7 @@
           "example": "无",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17656,9 +17656,19 @@
           "example": "无",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区资源状态(0:资源不足，不可使用；1:资源足够)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ZoneResourceState",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -9242,6 +9242,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9252,12 +9253,13 @@
           "example": "xxx",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TerminateDisksRequest": {
       "document": "TerminateDisks请求参数结构体",
