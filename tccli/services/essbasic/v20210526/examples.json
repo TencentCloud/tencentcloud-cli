@@ -84,6 +84,14 @@
         "title": "获取创建印章的嵌入WEB链接"
       }
     ],
+    "ChannelCreateFlowApprovers": [
+      {
+        "document": "补充签署流程签署人信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"FlowId\": \"111111***22222\",\n    \"Approvers\": [\n        {\n            \"RecipientId\": \"111***222\",\n            \"ApproverName\": \"张三\",\n            \"ApproverMobile\": \"14****00000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
+        "title": "补充签署流程签署人信息"
+      }
+    ],
     "ChannelCreateFlowByFiles": [
       {
         "document": "使用文件创建签署流程",
@@ -220,6 +228,20 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignEnableUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"AutoSignConfig\": {\n        \"UserInfo\": {\n            \"Name\": \"小明\",\n            \"IdCardType\": \"ID_CARD\",\n            \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\"\n        },\n        \"CertInfoCallback\": true,\n        \"UserDefineSeal\": false,\n        \"SealImgCallback\": false,\n        \"CallbackUrl\": \"\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"AppId\": \"wxa02378y4jruwye1d\",\n        \"AppOriginalId\": \"gh_da87293fsd87987\",\n        \"Path\": \"page?abc=123&def=456\",\n        \"QrCode\": \"EBAQAAAAAAAAAAAQIDBAUGBwgJCgsQAAIBAwMCBAMFBQQEAAABfQECAwAEEQUSITFBBhNRYQcicRQygZGhCCN\",\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\",\n        \"Url\": \"https://xxx.xxx/abc123\",\n        \"UrlType\": \"\"\n    }\n}",
         "title": "获取跳转链接"
+      }
+    ],
+    "ChannelCreateUserAutoSignSealUrl": [
+      {
+        "document": "1. 企业已经开通自动签功能。\n2. 个人已经开通自动签。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignSealUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\",\n        \"IdCardType\": \"ID_CARD\",\n        \"Name\": \"小明\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"wxa023******e1d\",\n        \"AppOriginalId\": \"gh_da87*******987\",\n        \"Path\": \"page?abc=123&def=456\",\n        \"QrCode\": \"EBAQAAAAAAAAAAAQIDBAUGBwgxxxxxwAEEQUSITFBBhNRYQcicRQygZGhCCN\",\n        \"RequestId\": \"s1695****69\",\n        \"Url\": \"https://essurl.cn/vg****6YYG\"\n    }\n}",
+        "title": "获取设置个人自动签印章的小程序链接。"
+      },
+      {
+        "document": "1. 企业开通自动签。\n2. 个人没有开通自动签。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignSealUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\",\n        \"IdCardType\": \"ID_CARD\",\n        \"Name\": \"小明\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"用户未开通自动签\"\n        },\n        \"RequestId\": \"s169***148251031\"\n    }\n}",
+        "title": "错误示例-获取设置个人自动签印章链接，个人没有开通自动签。"
       }
     ],
     "ChannelCreateUserRoles": [

@@ -1318,7 +1318,7 @@
           "example": "{\"EipList\":[\"175.27.164.158\"],\"InstanceId\":\"bgp-0000015a\"}",
           "member": "InstanceRelation",
           "name": "InstanceDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1328,7 +1328,7 @@
           "example": "{\"ProtectBandwidth\":30000,\"ProtectCountLimit\":10,\"ProtectIPNumbe",
           "member": "BGPInstanceSpecification",
           "name": "SpecificationLimit",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1338,7 +1338,7 @@
           "example": "{\"ProtectCountUsage\":0,\"ProtectIPNumberUsage\":1,\"Last7DayAttackC",
           "member": "BGPInstanceUsages",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1348,7 +1348,7 @@
           "example": "{\"Region\":\"ap-nanjing\"}",
           "member": "RegionInfo",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1358,7 +1358,7 @@
           "example": "idle",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1368,7 +1368,7 @@
           "example": "2021-04-25 23:04:10",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1378,7 +1378,7 @@
           "example": "2021-07-25 23:04:10",
           "member": "datetime",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1388,7 +1388,7 @@
           "example": "“”",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1398,7 +1398,7 @@
           "example": "null",
           "member": "PackInfo",
           "name": "PackInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1408,7 +1408,7 @@
           "example": "[{\"Ip\":\"175.27.164.158\",\"BizType\":\"public\",\"DeviceType\":\"cvm\",\"I",
           "member": "EipProductInfo",
           "name": "EipProductInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1418,7 +1418,7 @@
           "example": "idle",
           "member": "string",
           "name": "BoundStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1428,7 +1428,7 @@
           "example": "defalut",
           "member": "string",
           "name": "DDoSLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1438,7 +1438,7 @@
           "example": "1",
           "member": "int64",
           "name": "CCEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1448,7 +1448,7 @@
           "example": "null",
           "member": "TagInfo",
           "name": "TagInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1458,7 +1458,7 @@
           "example": "1",
           "member": "uint64",
           "name": "IpCountNewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1468,7 +1468,7 @@
           "example": "1",
           "member": "uint64",
           "name": "VitalityVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1478,7 +1478,17 @@
           "example": "1",
           "member": "uint64",
           "name": "Line",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不计费的业务带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "FreeServiceBandwidth",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1488,7 +1498,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ElasticServiceBandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1498,7 +1508,7 @@
           "example": "50",
           "member": "int64",
           "name": "GiftServiceBandWidth",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1508,7 +1518,7 @@
           "example": "无",
           "member": "string",
           "name": "ModifyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1518,7 +1528,7 @@
           "example": "1",
           "member": "uint64",
           "name": "BasicPlusFlag",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }

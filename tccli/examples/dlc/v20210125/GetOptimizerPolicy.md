@@ -1,0 +1,89 @@
+**Example 1: test**
+
+
+
+Input: 
+
+```
+tccli dlc GetOptimizerPolicy --cli-unfold-argument  \
+    --SmartPolicy.BaseInfo.Uin abc \
+    --SmartPolicy.BaseInfo.PolicyType abc \
+    --SmartPolicy.BaseInfo.Catalog abc \
+    --SmartPolicy.BaseInfo.Database abc \
+    --SmartPolicy.BaseInfo.Table abc \
+    --SmartPolicy.BaseInfo.AppId abc \
+    --SmartPolicy.Policy.Inherit abc \
+    --SmartPolicy.Policy.Resources.0.AttributionType abc \
+    --SmartPolicy.Policy.Resources.0.ResourceType abc \
+    --SmartPolicy.Policy.Resources.0.Name abc \
+    --SmartPolicy.Policy.Resources.0.Instance abc \
+    --SmartPolicy.Policy.Resources.0.Favor.0.Priority 0 \
+    --SmartPolicy.Policy.Resources.0.Favor.0.Catalog abc \
+    --SmartPolicy.Policy.Resources.0.Favor.0.DataBase abc \
+    --SmartPolicy.Policy.Resources.0.Favor.0.Table abc \
+    --SmartPolicy.Policy.Resources.0.Status 0 \
+    --SmartPolicy.Policy.Written.WrittenEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.CompactEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.DeleteEnable abc \
+    --SmartPolicy.Policy.Written.AdvancePolicy.MinInputFiles 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.TargetFileSizeBytes 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.RetainLast 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.BeforeDays 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.ExpiredSnapshotsIntervalMin 0 \
+    --SmartPolicy.Policy.Written.AdvancePolicy.RemoveOrphanIntervalMin 0 \
+    --SmartPolicy.Policy.Lifecycle.LifecycleEnable abc \
+    --SmartPolicy.Policy.Lifecycle.Expiration 0 \
+    --SmartPolicy.Policy.Lifecycle.DropTable True \
+    --SmartPolicy.Policy.Index.IndexEnable abc
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SmartOptimizerPolicy": {
+            "Inherit": "abc",
+            "Resources": [
+                {
+                    "AttributionType": "abc",
+                    "ResourceType": "abc",
+                    "Name": "abc",
+                    "Instance": "abc",
+                    "Favor": [
+                        {
+                            "Priority": 0,
+                            "Catalog": "abc",
+                            "DataBase": "abc",
+                            "Table": "abc"
+                        }
+                    ],
+                    "Status": 0
+                }
+            ],
+            "Written": {
+                "WrittenEnable": "abc",
+                "AdvancePolicy": {
+                    "CompactEnable": "abc",
+                    "DeleteEnable": "abc",
+                    "MinInputFiles": 0,
+                    "TargetFileSizeBytes": 0,
+                    "RetainLast": 0,
+                    "BeforeDays": 0,
+                    "ExpiredSnapshotsIntervalMin": 0,
+                    "RemoveOrphanIntervalMin": 0
+                }
+            },
+            "Lifecycle": {
+                "LifecycleEnable": "abc",
+                "Expiration": 0,
+                "DropTable": true
+            },
+            "Index": {
+                "IndexEnable": "abc"
+            }
+        },
+        "RequestId": "abc"
+    }
+}
+```
+

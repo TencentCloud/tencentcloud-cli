@@ -175,6 +175,13 @@
       "output": "ModifyResourcesTagsResponse",
       "status": "online"
     },
+    "ModifyUserManagerPwd": {
+      "document": "修改用户密码（用户管理）",
+      "input": "ModifyUserManagerPwdRequest",
+      "name": "修改用户密码（用户管理）",
+      "output": "ModifyUserManagerPwdResponse",
+      "status": "online"
+    },
     "RunJobFlow": {
       "document": "创建流程作业",
       "input": "RunJobFlowRequest",
@@ -5649,6 +5656,51 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserManagerPwdRequest": {
+      "document": "ModifyUserManagerPwd请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "emr-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "emr",
+          "member": "string",
+          "name": "UserName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "pwd-test-123",
+          "member": "string",
+          "name": "PassWord",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserManagerPwdResponse": {
+      "document": "ModifyUserManagerPwd返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
