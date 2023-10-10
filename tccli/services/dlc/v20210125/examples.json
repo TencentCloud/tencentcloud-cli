@@ -734,6 +734,14 @@
         "title": "创建托管存储内表"
       }
     ],
+    "GetOptimizerPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOptimizerPolicy\n<公共请求参数>\n\n{\n    \"SmartPolicy\": {\n        \"BaseInfo\": {\n            \"Uin\": \"abc\",\n            \"PolicyType\": \"abc\",\n            \"Catalog\": \"abc\",\n            \"Database\": \"abc\",\n            \"Table\": \"abc\",\n            \"AppId\": \"abc\"\n        },\n        \"Policy\": {\n            \"Inherit\": \"abc\",\n            \"Resources\": [\n                {\n                    \"AttributionType\": \"abc\",\n                    \"ResourceType\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Instance\": \"abc\",\n                    \"Favor\": [\n                        {\n                            \"Priority\": 0,\n                            \"Catalog\": \"abc\",\n                            \"DataBase\": \"abc\",\n                            \"Table\": \"abc\"\n                        }\n                    ],\n                    \"Status\": 0\n                }\n            ],\n            \"Written\": {},\n            \"Lifecycle\": {\n                \"LifecycleEnable\": \"abc\",\n                \"Expiration\": 0,\n                \"DropTable\": true\n            },\n            \"Index\": {\n                \"IndexEnable\": \"abc\"\n            }\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"SmartOptimizerPolicy\": {\n            \"Inherit\": \"abc\",\n            \"Resources\": [\n                {\n                    \"AttributionType\": \"abc\",\n                    \"ResourceType\": \"abc\",\n                    \"Name\": \"abc\",\n                    \"Instance\": \"abc\",\n                    \"Favor\": [\n                        {\n                            \"Priority\": 0,\n                            \"Catalog\": \"abc\",\n                            \"DataBase\": \"abc\",\n                            \"Table\": \"abc\"\n                        }\n                    ],\n                    \"Status\": 0\n                }\n            ],\n            \"Written\": {},\n            \"Lifecycle\": {\n                \"LifecycleEnable\": \"abc\",\n                \"Expiration\": 0,\n                \"DropTable\": true\n            },\n            \"Index\": {\n                \"IndexEnable\": \"abc\"\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "ListTaskJobLogDetail": [
       {
         "document": "查询spark 作业任务的日志详情",

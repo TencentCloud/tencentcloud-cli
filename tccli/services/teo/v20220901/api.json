@@ -42,13 +42,6 @@
       "output": "CreateApplicationProxyRuleResponse",
       "status": "online"
     },
-    "CreateOriginGroup": {
-      "document": "创建源站组",
-      "input": "CreateOriginGroupRequest",
-      "name": "创建源站组",
-      "output": "CreateOriginGroupResponse",
-      "status": "online"
-    },
     "CreatePlanForZone": {
       "document": "为未购买套餐的站点购买套餐",
       "input": "CreatePlanForZoneRequest",
@@ -124,13 +117,6 @@
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则",
       "output": "DeleteApplicationProxyRuleResponse",
-      "status": "online"
-    },
-    "DeleteOriginGroup": {
-      "document": "删除源站组",
-      "input": "DeleteOriginGroupRequest",
-      "name": "删除源站组",
-      "output": "DeleteOriginGroupResponse",
       "status": "online"
     },
     "DeleteRules": {
@@ -411,13 +397,6 @@
       "input": "ModifyHostsCertificateRequest",
       "name": "配置域名证书",
       "output": "ModifyHostsCertificateResponse",
-      "status": "online"
-    },
-    "ModifyOriginGroup": {
-      "document": "修改源站组",
-      "input": "ModifyOriginGroupRequest",
-      "name": "修改源站组",
-      "output": "ModifyOriginGroupResponse",
       "status": "online"
     },
     "ModifyRule": {
@@ -2791,88 +2770,6 @@
       ],
       "type": "object"
     },
-    "CreateOriginGroupRequest": {
-      "document": "CreateOriginGroup请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站类型，取值有：\n<li>self：自有源站；</li>\n<li>third_party：第三方源站；</li>\n<li>cos：腾讯云COS源站。</li>",
-          "example": "self",
-          "member": "string",
-          "name": "OriginType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站组名称。",
-          "example": "name",
-          "member": "string",
-          "name": "OriginGroupName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站配置类型，当OriginType=self时，取值有：\n<li>area：按区域配置；</li>\n<li>weight： 按权重配置；</li>\n<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。",
-          "example": "area",
-          "member": "string",
-          "name": "ConfigurationType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站记录信息。",
-          "example": "无",
-          "member": "OriginRecord",
-          "name": "OriginRecords",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "回源Host，仅当OriginType=self时可以设置。",
-          "example": "www.tencent.com",
-          "member": "string",
-          "name": "HostHeader",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOriginGroupResponse": {
-      "document": "CreateOriginGroup返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreatePlanForZoneRequest": {
       "document": "CreatePlanForZone请求参数结构体",
       "members": [
@@ -3792,42 +3689,6 @@
     },
     "DeleteApplicationProxyRuleResponse": {
       "document": "DeleteApplicationProxyRule返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOriginGroupRequest": {
-      "document": "DeleteOriginGroup请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站组ID。",
-          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOriginGroupResponse": {
-      "document": "DeleteOriginGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8257,87 +8118,6 @@
     },
     "ModifyHostsCertificateResponse": {
       "document": "ModifyHostsCertificate返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyOriginGroupRequest": {
-      "document": "ModifyOriginGroup请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "站点ID。",
-          "example": "zone-27q0p0bali16",
-          "member": "string",
-          "name": "ZoneId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站组ID。",
-          "example": "origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
-          "member": "string",
-          "name": "OriginGroupId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站类型，取值有：\n<li>self：自有源站；</li>\n<li>third_party：第三方源站；</li>\n<li>cos：腾讯云COS源站。</li>",
-          "example": "self",
-          "member": "string",
-          "name": "OriginType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站组名称。",
-          "example": "name",
-          "member": "string",
-          "name": "OriginGroupName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站配置类型，当OriginType=self时，取值有：\n<li>area：按区域配置；</li>\n<li>weight： 按权重配置；</li>\n<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。",
-          "example": "area",
-          "member": "string",
-          "name": "ConfigurationType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "源站记录信息。",
-          "example": "[]",
-          "member": "OriginRecord",
-          "name": "OriginRecords",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "回源Host，仅当OriginType=self时可以设置。\n不填写，表示使用已有配置。",
-          "example": "www.tencent.com",
-          "member": "string",
-          "name": "HostHeader",
-          "required": false,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyOriginGroupResponse": {
-      "document": "ModifyOriginGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

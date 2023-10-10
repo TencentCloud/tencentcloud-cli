@@ -230,6 +230,20 @@
         "title": "获取跳转链接"
       }
     ],
+    "ChannelCreateUserAutoSignSealUrl": [
+      {
+        "document": "1. 企业已经开通自动签功能。\n2. 个人已经开通自动签。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignSealUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\",\n        \"IdCardType\": \"ID_CARD\",\n        \"Name\": \"小明\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"AppId\": \"wxa023******e1d\",\n        \"AppOriginalId\": \"gh_da87*******987\",\n        \"Path\": \"page?abc=123&def=456\",\n        \"QrCode\": \"EBAQAAAAAAAAAAAQIDBAUGBwgxxxxxwAEEQUSITFBBhNRYQcicRQygZGhCCN\",\n        \"RequestId\": \"s1695****69\",\n        \"Url\": \"https://essurl.cn/vg****6YYG\"\n    }\n}",
+        "title": "获取设置个人自动签印章的小程序链接。"
+      },
+      {
+        "document": "1. 企业开通自动签。\n2. 个人没有开通自动签。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateUserAutoSignSealUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"UserInfo\": {\n        \"IdCardNumber\": \"1xxxxxxxxxxxxxx0\",\n        \"IdCardType\": \"ID_CARD\",\n        \"Name\": \"小明\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"用户未开通自动签\"\n        },\n        \"RequestId\": \"s169***148251031\"\n    }\n}",
+        "title": "错误示例-获取设置个人自动签印章链接，个人没有开通自动签。"
+      }
+    ],
     "ChannelCreateUserRoles": [
       {
         "document": "绑定用户角色",

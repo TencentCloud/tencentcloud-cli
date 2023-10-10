@@ -8650,15 +8650,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键更新新证书ID",
-          "example": "无",
-          "member": "string",
-          "name": "CertificateId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "一键更新原证书ID",
           "example": "无",
           "member": "string",
@@ -8674,6 +8665,15 @@
           "name": "ResourceTypes",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "一键更新新证书ID",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": true,
@@ -8692,6 +8692,69 @@
           "name": "ResourceTypesRegions",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "证书公钥， 若上传证书公钥， 则CertificateId不用传",
+          "example": "无",
+          "member": "string",
+          "name": "CertificatePublicKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书私钥，若上传证书公钥， 则证书私钥必填",
+          "example": "无",
+          "member": "string",
+          "name": "CertificatePrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知",
+          "example": "无",
+          "member": "uint64",
+          "name": "ExpiringNotificationSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数",
+          "example": "无",
+          "member": "bool",
+          "name": "Repeatable",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否允许下载，若上传证书公钥， 则可以配置该参数",
+          "example": "无",
+          "member": "bool",
+          "name": "AllowDownload",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表，若上传证书公钥， 则可以配置该参数",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目 ID，若上传证书公钥， 则可以配置该参数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -17,27 +17,35 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 0,
         "CodeBatchs": [
             {
-                "MpTpl": "xx",
-                "Status": 0,
-                "Remark": "xx",
-                "MerchantName": "xx",
+                "BatchId": "abc",
                 "CorpId": 0,
-                "UpdateTime": "xx",
-                "ProductName": "xx",
-                "BatchId": "xx",
-                "Ext": 0,
-                "BatchCode": "xx",
+                "BatchCode": "abc",
                 "CodeCnt": 0,
+                "MerchantId": "abc",
+                "ProductId": "abc",
                 "BatchType": 0,
-                "CreateTime": "xx",
-                "MerchantId": "xx",
-                "ProductId": "xx"
+                "Remark": "abc",
+                "MpTpl": "abc",
+                "Status": 0,
+                "CreateTime": "abc",
+                "UpdateTime": "abc",
+                "MerchantName": "abc",
+                "ProductName": "abc",
+                "Ext": {},
+                "TplName": "abc",
+                "Job": {
+                    "JobId": 0,
+                    "Status": "abc"
+                },
+                "ProductionDate": "abc",
+                "ValidDate": "abc",
+                "Attrs": []
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

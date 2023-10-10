@@ -11,8 +11,8 @@
     "AddSmsTemplate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"xx\",\n    \"TemplateContent\": \"xx\",\n    \"TemplateName\": \"腾讯云\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AddTemplateStatus\": {\n            \"TemplateId\": 1110\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: sms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSmsTemplate\n<公共请求参数>\n\n{\n    \"SmsType\": 0,\n    \"International\": 0,\n    \"Remark\": \"test\",\n    \"TemplateContent\": \"your code is {1}\",\n    \"TemplateName\": \"腾讯云\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AddTemplateStatus\": {\n            \"TemplateId\": \"1110\"\n        },\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\"\n    }\n}",
         "title": "请求示例"
       }
     ],
@@ -44,7 +44,7 @@
       {
         "document": "",
         "input": "https://sms.tencentcloudapi.com/?Action=DescribeSmsSignList\n&SignIdSet.0=1110\n&SignIdSet.1=1111\n&International=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"xx\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"xx\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"xx\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"xx\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f36e4f00-605e-49b1-ad0d-bfaba81c7325\",\n        \"DescribeSignListStatusSet\": [\n            {\n                \"SignName\": \"腾讯云\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            },\n            {\n                \"SignName\": \"Tencent\",\n                \"International\": 1,\n                \"SignId\": 1,\n                \"ReviewReply\": \"\",\n                \"CreateTime\": 1,\n                \"StatusCode\": 0\n            }\n        ]\n    }\n}",
         "title": "请求示例"
       }
     ],

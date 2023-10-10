@@ -637,6 +637,13 @@
       "output": "GenerateCreateMangedTableSqlResponse",
       "status": "online"
     },
+    "GetOptimizerPolicy": {
+      "document": "GetOptimizerPolicy",
+      "input": "GetOptimizerPolicyRequest",
+      "name": "获取策略",
+      "output": "GetOptimizerPolicyResponse",
+      "status": "online"
+    },
     "ListTaskJobLogDetail": {
       "document": "本接口（ListTaskJobLogDetail）用于获取spark 作业任务日志详情",
       "input": "ListTaskJobLogDetailRequest",
@@ -5449,6 +5456,7 @@
           "example": "Customize",
           "member": "string",
           "name": "RuleType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5459,6 +5467,7 @@
           "example": "DataEngine-",
           "member": "string",
           "name": "GovernEngine",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9740,6 +9749,56 @@
       ],
       "usage": "out"
     },
+    "FavorInfo": {
+      "document": "FavorInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "优先事项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Priority",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DataBase名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataBase",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Table名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filter": {
       "document": "查询列表过滤条件参数",
       "members": [
@@ -9826,6 +9885,43 @@
           "example": "无",
           "member": "Execution",
           "name": "Execution",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOptimizerPolicyRequest": {
+      "document": "GetOptimizerPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "无",
+          "member": "SmartPolicy",
+          "name": "SmartPolicy",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOptimizerPolicyResponse": {
+      "document": "GetOptimizerPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能优化策略",
+          "example": "无",
+          "member": "SmartOptimizerPolicy",
+          "name": "SmartOptimizerPolicy",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12297,6 +12393,78 @@
       ],
       "type": "object"
     },
+    "ResourceInfo": {
+      "document": "ResourceInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "归属类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "group",
+          "member": "string",
+          "name": "AttributionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-sql",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "引擎名称",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "如资源类型为spark-sql 取值为Name, 如为spark-batch 取值为session app_name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "spark-sql",
+          "member": "string",
+          "name": "Instance",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "亲和性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FavorInfo",
+          "name": "Favor",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "RestartDataEngineRequest": {
       "document": "RestartDataEngine请求参数结构体",
       "members": [],
@@ -12464,6 +12632,228 @@
           "name": "ExecutorMaxNumbers",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartOptimizerIndexPolicy": {
+      "document": "SmartOptimizerIndexPolicy",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none/enable/disable/default",
+          "member": "string",
+          "name": "IndexEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartOptimizerLifecyclePolicy": {
+      "document": "SmartOptimizerLifecyclePolicy",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生命周期启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "none/enable/disable/default",
+          "member": "string",
+          "name": "LifecycleEnable",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Expiration",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否删表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "DropTable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartOptimizerPolicy": {
+      "document": "SmartOptimizerPolicy",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否继承\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Inherit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ResourceInfo\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SmartOptimizerWrittenPolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartOptimizerWrittenPolicy",
+          "name": "Written",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SmartOptimizerLifecyclePolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartOptimizerLifecyclePolicy",
+          "name": "Lifecycle",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SmartOptimizerIndexPolicy\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartOptimizerIndexPolicy",
+          "name": "Index",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartOptimizerWrittenPolicy": {
+      "document": "SmartOptimizerWrittenPolicy",
+      "members": [],
+      "usage": "both"
+    },
+    "SmartPolicy": {
+      "document": "SmartPolicyRequest",
+      "members": [
+        {
+          "disabled": false,
+          "document": "基础信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartPolicyBaseInfo",
+          "name": "BaseInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "策略描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartOptimizerPolicy",
+          "name": "Policy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SmartPolicyBaseInfo": {
+      "document": "SmartPolicyBaseInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100011282005",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Catalog/Database/Table\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Table",
+          "member": "string",
+          "name": "PolicyType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": " DataLakeCatalog",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dbtest",
+          "member": "string",
+          "name": "Database",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tbtest",
+          "member": "string",
+          "name": "Table",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "AppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -13434,6 +13824,7 @@
           "example": "database1",
           "member": "string",
           "name": "DatabaseName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13444,6 +13835,7 @@
           "example": "table",
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13454,6 +13846,7 @@
           "example": "CosDataCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13464,6 +13857,7 @@
           "example": "test",
           "member": "string",
           "name": "TableComment",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13474,6 +13868,7 @@
           "example": "table",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13484,6 +13879,7 @@
           "example": "hive",
           "member": "string",
           "name": "TableFormat",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13494,6 +13890,7 @@
           "example": "test",
           "member": "string",
           "name": "UserAlias",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13504,6 +13901,7 @@
           "example": "100019878767",
           "member": "string",
           "name": "UserSubUin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13514,6 +13912,7 @@
           "example": "无",
           "member": "DataGovernPolicy",
           "name": "GovernPolicy",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -13524,8 +13923,20 @@
           "example": "fasle",
           "member": "string",
           "name": "DbGovernPolicyIsDisable",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "智能数据治理配置项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SmartPolicy",
+          "name": "SmartPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

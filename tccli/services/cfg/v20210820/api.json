@@ -104,6 +104,45 @@
       ],
       "usage": "in"
     },
+    "ApmServiceInfo": {
+      "document": "应用性能观测产品中应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apm-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceNameList",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RegionId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CreateTaskFromTemplateRequest": {
       "document": "CreateTaskFromTemplate请求参数结构体",
       "members": [
@@ -360,6 +399,33 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "演练ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联应用ID筛选",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "关联应用筛选",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -420,7 +486,7 @@
           "example": "无",
           "member": "Task",
           "name": "Task",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -430,7 +496,7 @@
           "example": "无",
           "member": "TaskReportInfo",
           "name": "ReportInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -586,7 +652,7 @@
           "example": "无",
           "member": "Template",
           "name": "Template",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -813,6 +879,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -823,6 +890,7 @@
           "example": "任务标题",
           "member": "string",
           "name": "TaskTitle",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -833,6 +901,7 @@
           "example": "任务描述",
           "member": "string",
           "name": "TaskDescription",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -843,6 +912,7 @@
           "example": "自定义标签",
           "member": "string",
           "name": "TaskTag",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -853,6 +923,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -863,6 +934,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskStatusType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -873,6 +945,7 @@
           "example": "{}",
           "member": "string",
           "name": "TaskProtectStrategy",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -883,6 +956,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskCreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -893,6 +967,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskUpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -903,6 +978,7 @@
           "example": "无",
           "member": "TaskGroup",
           "name": "TaskGroups",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -913,6 +989,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskStartTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -923,6 +1000,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "TaskEndTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -933,6 +1011,7 @@
           "example": "是否符合预期",
           "member": "int64",
           "name": "TaskExpect",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -943,6 +1022,7 @@
           "example": "演习记录",
           "member": "string",
           "name": "TaskSummary",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -953,6 +1033,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskMode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -963,6 +1044,7 @@
           "example": "60",
           "member": "int64",
           "name": "TaskPauseDuration",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -973,6 +1055,7 @@
           "example": "6000000000",
           "member": "string",
           "name": "TaskOwnerUin",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -983,6 +1066,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskRegionId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -993,6 +1077,7 @@
           "example": "无",
           "member": "TaskMonitor",
           "name": "TaskMonitors",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1003,6 +1088,7 @@
           "example": "无",
           "member": "DescribePolicy",
           "name": "TaskPolicy",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -1013,6 +1099,7 @@
           "example": "无",
           "member": "TagWithDescribe",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1023,6 +1110,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskPlanId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1033,8 +1121,53 @@
           "example": "无",
           "member": "string",
           "name": "TaskPlanTitle",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的告警指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的APM服务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmServiceInfo",
+          "name": "ApmServiceList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -1794,6 +1927,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联应用名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2102,6 +2255,26 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "apm应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApmServiceInfo",
+          "name": "ApmServiceList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AlarmPolicy",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2115,6 +2288,7 @@
           "example": "1",
           "member": "int64",
           "name": "TemplateGroupId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2125,6 +2299,7 @@
           "example": "无",
           "member": "TemplateGroupAction",
           "name": "TemplateGroupActions",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2135,6 +2310,7 @@
           "example": "1",
           "member": "string",
           "name": "Title",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2145,6 +2321,7 @@
           "example": "1",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2155,6 +2332,7 @@
           "example": "1",
           "member": "int64",
           "name": "Order",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2165,6 +2343,7 @@
           "example": "1",
           "member": "int64",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2175,6 +2354,7 @@
           "example": "1",
           "member": "int64",
           "name": "ObjectTypeId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -2185,6 +2365,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -2195,6 +2376,7 @@
           "example": "\"2021-08-17 20:05:04\"",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

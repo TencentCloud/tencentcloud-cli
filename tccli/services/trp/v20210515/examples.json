@@ -144,11 +144,19 @@
         "title": "查询批次信息"
       }
     ],
+    "DescribeCodeBatches": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeBatches\n<公共请求参数>\n\n{\n    \"CorpId\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"CodeBatches\": [\n            {\n                \"BatchId\": \"abc\",\n                \"CorpId\": 0,\n                \"BatchCode\": \"abc\",\n                \"CodeCnt\": 0,\n                \"MerchantId\": \"abc\",\n                \"ProductId\": \"abc\",\n                \"BatchType\": 0,\n                \"Remark\": \"abc\",\n                \"MpTpl\": \"abc\",\n                \"Status\": 0,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"MerchantName\": \"abc\",\n                \"ProductName\": \"abc\",\n                \"Ext\": {},\n                \"TplName\": \"abc\",\n                \"Job\": {\n                    \"JobId\": 0,\n                    \"Status\": \"abc\"\n                },\n                \"ProductionDate\": \"abc\",\n                \"ValidDate\": \"abc\",\n                \"Attrs\": []\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询批次列表"
+      }
+    ],
     "DescribeCodeBatchs": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCodeBatchs\n<公共请求参数>\n\n{\n    \"MerchantId\": \"eqdmnz7020bmtvi9\",\n    \"ProductId\": \"\",\n    \"Keyword\": \"20121212000001\",\n    \"PageSize\": 10,\n    \"PageNumber\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"CodeBatchs\": [\n            {\n                \"MpTpl\": \"xx\",\n                \"Status\": 0,\n                \"Remark\": \"xx\",\n                \"MerchantName\": \"xx\",\n                \"CorpId\": 0,\n                \"UpdateTime\": \"xx\",\n                \"ProductName\": \"xx\",\n                \"BatchId\": \"xx\",\n                \"Ext\": 0,\n                \"BatchCode\": \"xx\",\n                \"CodeCnt\": 0,\n                \"BatchType\": 0,\n                \"CreateTime\": \"xx\",\n                \"MerchantId\": \"xx\",\n                \"ProductId\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CodeBatchs\": [\n            {\n                \"BatchId\": \"abc\",\n                \"CorpId\": 0,\n                \"BatchCode\": \"abc\",\n                \"CodeCnt\": 0,\n                \"MerchantId\": \"abc\",\n                \"ProductId\": \"abc\",\n                \"BatchType\": 0,\n                \"Remark\": \"abc\",\n                \"MpTpl\": \"abc\",\n                \"Status\": 0,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\",\n                \"MerchantName\": \"abc\",\n                \"ProductName\": \"abc\",\n                \"Ext\": {},\n                \"TplName\": \"abc\",\n                \"Job\": {\n                    \"JobId\": 0,\n                    \"Status\": \"abc\"\n                },\n                \"ProductionDate\": \"abc\",\n                \"ValidDate\": \"abc\",\n                \"Attrs\": []\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询批次列表"
       }
     ],

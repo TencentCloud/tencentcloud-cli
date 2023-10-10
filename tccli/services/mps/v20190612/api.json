@@ -717,7 +717,7 @@
           "example": "0",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -727,7 +727,7 @@
           "example": "“”",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -737,7 +737,7 @@
           "example": "“”",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -747,7 +747,7 @@
           "example": "无",
           "member": "ClassificationConfigureInfo",
           "name": "ClassificationConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -757,7 +757,7 @@
           "example": "无",
           "member": "TagConfigureInfo",
           "name": "TagConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -767,7 +767,7 @@
           "example": "无",
           "member": "CoverConfigureInfo",
           "name": "CoverConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -777,7 +777,7 @@
           "example": "无",
           "member": "FrameTagConfigureInfo",
           "name": "FrameTagConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -787,7 +787,7 @@
           "example": "“”",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -797,7 +797,7 @@
           "example": "“”",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -807,7 +807,7 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -823,7 +823,7 @@
           "example": "0",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -833,7 +833,7 @@
           "example": "“”",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -843,7 +843,7 @@
           "example": "“”",
           "member": "string",
           "name": "Comment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -853,7 +853,7 @@
           "example": "无",
           "member": "FaceConfigureInfo",
           "name": "FaceConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -863,7 +863,7 @@
           "example": "无",
           "member": "OcrFullTextConfigureInfo",
           "name": "OcrFullTextConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -873,7 +873,7 @@
           "example": "无",
           "member": "OcrWordsConfigureInfo",
           "name": "OcrWordsConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -883,7 +883,7 @@
           "example": "无",
           "member": "AsrFullTextConfigureInfo",
           "name": "AsrFullTextConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -893,9 +893,19 @@
           "example": "无",
           "member": "AsrWordsConfigureInfo",
           "name": "AsrWordsConfigure",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "语音翻译控制参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TranslateConfigureInfo",
+          "name": "TranslateConfigure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -903,7 +913,7 @@
           "example": "“”",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -913,7 +923,7 @@
           "example": "“”",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -923,7 +933,7 @@
           "example": "“”",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7005,7 +7015,7 @@
           "example": "30",
           "member": "int64",
           "name": "Definition",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9596,7 +9606,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9606,7 +9616,7 @@
           "example": "无",
           "member": "AIAnalysisTemplateItem",
           "name": "AIAnalysisTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

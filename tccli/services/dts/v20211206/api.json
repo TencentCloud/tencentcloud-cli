@@ -6763,7 +6763,7 @@
           "example": "无",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6773,7 +6773,7 @@
           "example": "无",
           "member": "string",
           "name": "JobName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6783,7 +6783,7 @@
           "example": "无",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6793,7 +6793,7 @@
           "example": "无",
           "member": "string",
           "name": "RunMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6803,7 +6803,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpectRunTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6813,7 +6813,7 @@
           "example": "无",
           "member": "string",
           "name": "AllActions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6823,7 +6823,7 @@
           "example": "无",
           "member": "string",
           "name": "Actions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6833,7 +6833,7 @@
           "example": "无",
           "member": "Options",
           "name": "Options",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6843,7 +6843,7 @@
           "example": "无",
           "member": "Objects",
           "name": "Objects",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6853,7 +6853,7 @@
           "example": "无",
           "member": "string",
           "name": "Specification",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6863,7 +6863,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6873,7 +6873,7 @@
           "example": "无",
           "member": "string",
           "name": "SrcRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6883,7 +6883,7 @@
           "example": "无",
           "member": "string",
           "name": "SrcDatabaseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6893,7 +6893,7 @@
           "example": "无",
           "member": "string",
           "name": "SrcAccessType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6903,7 +6903,7 @@
           "example": "无",
           "member": "Endpoint",
           "name": "SrcInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6913,7 +6913,7 @@
           "example": "cluster",
           "member": "string",
           "name": "SrcNodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6923,7 +6923,7 @@
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "SrcInfos",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6933,7 +6933,7 @@
           "example": "无",
           "member": "string",
           "name": "DstRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6943,7 +6943,7 @@
           "example": "无",
           "member": "string",
           "name": "DstDatabaseType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6953,7 +6953,7 @@
           "example": "无",
           "member": "string",
           "name": "DstAccessType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6963,7 +6963,7 @@
           "example": "无",
           "member": "Endpoint",
           "name": "DstInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6973,7 +6973,7 @@
           "example": "cluster",
           "member": "string",
           "name": "DstNodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6983,7 +6983,7 @@
           "example": "无",
           "member": "SyncDBEndpointInfos",
           "name": "DstInfos",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6993,7 +6993,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7003,7 +7003,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7013,7 +7013,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7023,7 +7023,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7033,7 +7033,7 @@
           "example": "无",
           "member": "TagItem",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7043,7 +7043,7 @@
           "example": "无",
           "member": "SyncDetailInfo",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7053,7 +7053,7 @@
           "example": "Normal",
           "member": "string",
           "name": "TradeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7063,7 +7063,7 @@
           "example": "medium",
           "member": "string",
           "name": "InstanceClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7073,7 +7073,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7083,7 +7083,7 @@
           "example": "无",
           "member": "string",
           "name": "OfflineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7093,7 +7093,7 @@
           "example": "5",
           "member": "int64",
           "name": "AutoRetryTimeRangeMinutes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7103,7 +7103,7 @@
           "example": "yes",
           "member": "string",
           "name": "DumperResumeCtrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

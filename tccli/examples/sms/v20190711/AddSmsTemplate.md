@@ -8,8 +8,8 @@ Input:
 tccli sms AddSmsTemplate --cli-unfold-argument  \
     --SmsType 0 \
     --International 0 \
-    --Remark xx \
-    --TemplateContent xx \
+    --Remark test \
+    --TemplateContent your code is {1} \
     --TemplateName 腾讯云
 ```
 
@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "AddTemplateStatus": {
-            "TemplateId": 1110
+            "TemplateId": "1110"
         },
         "RequestId": "f36e4f00-605e-49b1-ad0d-bfaba81c7325"
     }

@@ -287,6 +287,13 @@
       "output": "DescribeDomainDetailsSaasResponse",
       "status": "online"
     },
+    "DescribeDomainRules": {
+      "document": "拉取域名的防护规则列表",
+      "input": "DescribeDomainRulesRequest",
+      "name": "拉取域名的防护规则列表",
+      "output": "DescribeDomainRulesResponse",
+      "status": "online"
+    },
     "DescribeDomainVerifyResult": {
       "document": "获取添加域名操作的结果",
       "input": "DescribeDomainVerifyResultRequest",
@@ -432,6 +439,13 @@
       "input": "DescribeUserDomainInfoRequest",
       "name": "查询saas和clb的域名信息",
       "output": "DescribeUserDomainInfoResponse",
+      "status": "online"
+    },
+    "DescribeUserSignatureRule": {
+      "document": "获取用户特征规则列表",
+      "input": "DescribeUserSignatureRuleRequest",
+      "name": "获取用户特征规则列表",
+      "output": "DescribeUserSignatureRuleResponse",
       "status": "online"
     },
     "DescribeVipInfo": {
@@ -672,6 +686,13 @@
       "output": "ModifyInstanceRenewFlagResponse",
       "status": "online"
     },
+    "ModifyModuleStatus": {
+      "document": "设置某个domain下基础安全模块的开关",
+      "input": "ModifyModuleStatusRequest",
+      "name": "设置某个domain下基础安全模块的开关",
+      "output": "ModifyModuleStatusResponse",
+      "status": "online"
+    },
     "ModifyProtectionStatus": {
       "document": "waf斯巴达-waf开关",
       "input": "ModifyProtectionStatusRequest",
@@ -693,6 +714,20 @@
       "output": "ModifySpartaProtectionModeResponse",
       "status": "online"
     },
+    "ModifyUserLevel": {
+      "document": "修改用户防护规则等级",
+      "input": "ModifyUserLevelRequest",
+      "name": "修改用户防护规则等级",
+      "output": "ModifyUserLevelResponse",
+      "status": "online"
+    },
+    "ModifyUserSignatureRule": {
+      "document": "修改用户防护规则，开启关闭具体的某条规则",
+      "input": "ModifyUserSignatureRuleRequest",
+      "name": "修改用户防护规则",
+      "output": "ModifyUserSignatureRuleResponse",
+      "status": "online"
+    },
     "ModifyWafAutoDenyRules": {
       "document": "修改ip惩罚规则",
       "input": "ModifyWafAutoDenyRulesRequest",
@@ -712,6 +747,13 @@
       "input": "ModifyWafThreatenIntelligenceRequest",
       "name": "配置WAF威胁情报封禁模块详情",
       "output": "ModifyWafThreatenIntelligenceResponse",
+      "status": "online"
+    },
+    "ModifyWebshellStatus": {
+      "document": "设置域名的webshell状态。",
+      "input": "ModifyWebshellStatusRequest",
+      "name": "设置webshell状态",
+      "output": "ModifyWebshellStatusResponse",
       "status": "online"
     },
     "PostAttackDownloadTask": {
@@ -5455,6 +5497,43 @@
       ],
       "type": "object"
     },
+    "DescribeDomainRulesRequest": {
+      "document": "DescribeDomainRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "无",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainRulesResponse": {
+      "document": "DescribeDomainRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则列表详情",
+          "example": "无",
+          "member": "Rule",
+          "name": "Rules",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDomainVerifyResultRequest": {
       "document": "DescribeDomainVerifyResult请求参数结构体",
       "members": [
@@ -6854,6 +6933,98 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSignatureRuleRequest": {
+      "document": "DescribeUserSignatureRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持 signature_id, modify_time",
+          "example": "signature_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持 MainClassName，SubClassID ,CveID, Status, ID;  ID为规则id",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserSignatureRuleResponse": {
+      "document": "DescribeUserSignatureRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserSignatureRule",
+          "name": "Rules",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11573,6 +11744,23 @@
       ],
       "type": "object"
     },
+    "ModifyModuleStatusRequest": {
+      "document": "ModifyModuleStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyModuleStatusResponse": {
+      "document": "ModifyModuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyProtectionStatusRequest": {
       "document": "ModifyProtectionStatus请求参数结构体",
       "members": [
@@ -11987,6 +12175,96 @@
       ],
       "type": "object"
     },
+    "ModifyUserLevelRequest": {
+      "document": "ModifyUserLevel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护规则等级 300=standard，400=extended",
+          "example": "300",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserLevelResponse": {
+      "document": "ModifyUserLevel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureRuleRequest": {
+      "document": "ModifyUserSignatureRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主类id",
+          "example": "010000000",
+          "member": "string",
+          "name": "MainClassID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主类开关0=关闭，1=开启，2=只告警",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "下发修改的规则列表",
+          "example": "无",
+          "member": "ReqUserRule",
+          "name": "RuleID",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserSignatureRuleResponse": {
+      "document": "ModifyUserSignatureRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyWafAutoDenyRulesRequest": {
       "document": "ModifyWafAutoDenyRules请求参数结构体",
       "members": [
@@ -12121,6 +12399,42 @@
           "member": "WafThreatenIntelligenceDetails",
           "name": "WafThreatenIntelligenceDetails",
           "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebshellStatusRequest": {
+      "document": "ModifyWebshellStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名webshell状态",
+          "example": "",
+          "member": "WebshellStatus",
+          "name": "Webshell",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWebshellStatusResponse": {
+      "document": "ModifyWebshellStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成功的状态码，需要JSON解码后再使用，返回的格式是{\"域名\":\"状态\"}，成功的状态码为Success，其它的为失败的状态码（yunapi定义的错误码）",
+          "example": "",
+          "member": "ResponseCode",
+          "name": "Success",
           "type": "object",
           "value_allowed_null": false
         },
@@ -12702,6 +13016,42 @@
       ],
       "type": "object"
     },
+    "ReqUserRule": {
+      "document": "用户规则更新输出规则子项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特征序号",
+          "example": "010000001",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关\n0：关\n1：开\n2：只告警",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改原因\n0：无(兼容记录为空)\n1：业务自身特性误报避免\n2：规则误报上报\n3：核心业务规则灰度\n4：其它",
+          "example": "1",
+          "member": "int64",
+          "name": "Reason",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "ResponseCode": {
       "document": "响应体的返回码",
       "members": [
@@ -12727,6 +13077,92 @@
         }
       ],
       "usage": "out"
+    },
+    "Rule": {
+      "document": "规则列表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "-",
+          "member": "uint64",
+          "name": "Id",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则等级",
+          "example": "-",
+          "member": "string",
+          "name": "Level",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则防护的CVE编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "CVE",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则的状态",
+          "example": "-",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则修改的时间",
+          "example": "-",
+          "member": "string",
+          "name": "ModifyTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "门神规则新增/更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "AddTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RuleList": {
       "document": "规则白名单",
@@ -14034,6 +14470,122 @@
       ],
       "usage": "out"
     },
+    "UserSignatureRule": {
+      "document": "用户特征规则描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "特征ID",
+          "example": "010000001",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则开关",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主类ID",
+          "example": "010000000",
+          "member": "string",
+          "name": "MainClassID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子类ID",
+          "example": "000000000",
+          "member": "string",
+          "name": "SubClassID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVE ID",
+          "example": "reference item1 <#BID-28277::http://www.securityfocus.com/bid/28",
+          "member": "string",
+          "name": "CveID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "2021-11-24 19:55:55",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主类名字，根据Language字段输出中文/英文",
+          "example": "Cross Site Scripting",
+          "member": "string",
+          "name": "MainClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子类名字，根据Language字段输出中文/英文，若子类id为00000000，此字段为空",
+          "example": "Signatures for Database",
+          "member": "string",
+          "name": "SubClassName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则描述",
+          "example": "rule description",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0/1",
+          "example": "reason",
+          "member": "int64",
+          "name": "Reason",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "VipInfo": {
       "document": "Vip信息",
       "members": [
@@ -14231,6 +14783,32 @@
         }
       ],
       "usage": "both"
+    },
+    "WebshellStatus": {
+      "document": "域名的webshell开启状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "webshell开关，1：开。0：关。2：观察",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

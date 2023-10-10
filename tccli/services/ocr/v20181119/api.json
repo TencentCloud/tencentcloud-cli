@@ -13398,7 +13398,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13408,7 +13408,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13418,7 +13418,7 @@
           "example": "无",
           "member": "string",
           "name": "DateGetOn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13428,7 +13428,7 @@
           "example": "无",
           "member": "string",
           "name": "TimeGetOn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13438,7 +13438,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13448,7 +13448,7 @@
           "example": "无",
           "member": "string",
           "name": "StationGetOn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13458,7 +13458,7 @@
           "example": "无",
           "member": "string",
           "name": "StationGetOff",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13468,7 +13468,7 @@
           "example": "无",
           "member": "string",
           "name": "Seat",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13478,7 +13478,7 @@
           "example": "无",
           "member": "string",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13488,7 +13488,7 @@
           "example": "无",
           "member": "string",
           "name": "Kind",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13498,7 +13498,7 @@
           "example": "无",
           "member": "string",
           "name": "SerialNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13508,7 +13508,7 @@
           "example": "无",
           "member": "string",
           "name": "UserID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13518,7 +13518,7 @@
           "example": "无",
           "member": "string",
           "name": "GateNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13528,7 +13528,7 @@
           "example": "无",
           "member": "string",
           "name": "TrainNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13538,7 +13538,7 @@
           "example": "无",
           "member": "string",
           "name": "HandlingFee",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13548,7 +13548,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginalFare",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13558,7 +13558,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalCn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13568,7 +13568,7 @@
           "example": "无",
           "member": "string",
           "name": "SeatNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13578,7 +13578,7 @@
           "example": "无",
           "member": "string",
           "name": "PickUpAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13588,7 +13588,7 @@
           "example": "无",
           "member": "string",
           "name": "TicketChange",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13598,7 +13598,7 @@
           "example": "无",
           "member": "string",
           "name": "AdditionalFare",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13608,7 +13608,7 @@
           "example": "无",
           "member": "string",
           "name": "ReceiptNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13618,7 +13618,7 @@
           "example": "无",
           "member": "int64",
           "name": "QRCodeMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13628,7 +13628,17 @@
           "example": "无",
           "member": "int64",
           "name": "ReimburseOnlyMark",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有退票费标识（0：没有，1：有）",
+          "example": "无",
+          "member": "int64",
+          "name": "RefundMark",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

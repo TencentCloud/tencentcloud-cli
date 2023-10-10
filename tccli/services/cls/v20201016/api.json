@@ -9986,7 +9986,7 @@
         },
         {
           "disabled": false,
-          "document": "webtracking开关； false: 关闭 true: 开启",
+          "document": "免鉴权开关； false: 关闭 true: 开启",
           "example": "false",
           "member": "bool",
           "name": "IsWebTracking",

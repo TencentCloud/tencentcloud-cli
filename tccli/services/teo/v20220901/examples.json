@@ -54,50 +54,6 @@
         "title": "创建应用代理规则"
       }
     ],
-    "CreateOriginGroup": [
-      {
-        "document": "此源站组可以给四层代理规则和负载均衡使用，其中四层代理规则源站组OriginType只能为self，且源站必须填写端口。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforl4\",\n    \"ConfigurationType\": \"weight\",\n    \"OriginType\": \"self\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"1.2.3.4\",\n            \"Weight\": 50,\n            \"Port\": 80\n        },\n        {\n            \"Record\": \"1.2.3.5\",\n            \"Weight\": 50,\n            \"Port\": 80\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建按权重回源的自有源站组"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。参数中未填写Weight值，将按照轮询的方式，即平均分配权重的方式回源。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"weight\",\n    \"OriginType\": \"self\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"1.2.3.4\"\n        },\n        {\n            \"Record\": \"1.2.3.5\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建按权重回源的自有源站组（默认端口）"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"proto\",\n    \"OriginType\": \"self\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"1.2.3.4\",\n            \"Proto\": \"http\",\n            \"Port\": 80\n        },\n        {\n            \"Record\": \"1.2.3.5\",\n            \"Proto\": \"https\",\n            \"Port\": 443\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建按协议回源的自有源站组（指定协议和端口）"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"\",\n    \"OriginType\": \"third_party\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"your-name.s3.us-east-1.amazonaws.com\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建公有鉴权的AWS对象存储源站组"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"\",\n    \"OriginType\": \"third_party\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"your-name.s3.us-east-1.amazonaws.com\",\n            \"Private\": true,\n            \"PrivateParameters\": [\n                {\n                    \"Name\": \"AccessKeyId\",\n                    \"Value\": \"your aws access key id\"\n                },\n                {\n                    \"Name\": \"SecretAccessKey\",\n                    \"Value\": \"your aws secret access key\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建私有鉴权的AWS对象存储源站组"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。\n注意：依赖COS产品部分操作对Edgeone产品的授权，可在控制台上相应模块进行授权。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"\",\n    \"OriginType\": \"cos\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"your-name.cos.ap-nanjing.myqcloud.com\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建公有鉴权的腾讯云COS源站组"
-      },
-      {
-        "document": "此源站组适合负载均衡使用。\n注意：依赖COS产品部分操作对Edgeone产品的授权，可在控制台上相应模块进行授权。",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupName\": \"origingroupforloadbalancing\",\n    \"ConfigurationType\": \"\",\n    \"OriginType\": \"cos\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"your-name.cos.ap-nanjing.myqcloud.com\",\n            \"Private\": true\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\",\n        \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n    }\n}",
-        "title": "创建私有鉴权的腾讯云COS源站组"
-      }
-    ],
     "CreatePlanForZone": [
       {
         "document": "",
@@ -232,14 +188,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteApplicationProxyRule\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-276zs184g93m\",\n    \"ProxyId\": \"proxy-19389e5dwwxfs\",\n    \"RuleId\": \"rule-19389e5a-118b-11ed-9951-525400655ede\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "删除应用代理规则"
-      }
-    ],
-    "DeleteOriginGroup": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupId\": \"orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "删除源站组"
       }
     ],
     "DeleteRules": [
@@ -650,14 +598,6 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyHostsCertificate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2fgd17m17xw\",\n    \"Hosts\": [\n        \"abc.test.com\"\n    ],\n    \"Mode\": \"eofreecert\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"084d5612-67a7-4aca-aac9-827aa3662b2d\"\n    }\n}",
         "title": "配置免费证书"
-      }
-    ],
-    "ModifyOriginGroup": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyOriginGroup\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-27q0p0bali16\",\n    \"OriginGroupId\": \"origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a\",\n    \"OriginGroupName\": \"renameorigingroup\",\n    \"ConfigurationType\": \"weight\",\n    \"OriginType\": \"self\",\n    \"OriginRecords\": [\n        {\n            \"Record\": \"1.2.3.4\",\n            \"Weight\": 50,\n            \"Port\": 80\n        },\n        {\n            \"Record\": \"1.2.3.5\",\n            \"Weight\": 50,\n            \"Port\": 80\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "修改源站组信息"
       }
     ],
     "ModifyRule": [
