@@ -5,7 +5,10 @@
 Input: 
 
 ```
-tccli dlc UpdateDataEngineConfig --cli-unfold-argument ```
+tccli dlc UpdateDataEngineConfig --cli-unfold-argument  \
+    --DataEngineIds DataEngine-xxx \
+    --DataEngineConfigCommand UpdateSparkSQLResultPath
+```
 
 Output: 
 ```

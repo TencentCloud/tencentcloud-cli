@@ -8,7 +8,7 @@ Input:
 tccli monitor InstallPlugins --cli-unfold-argument  \
     --InstanceId grafana-abcdefgh \
     --Plugins.0.PluginId grafana-clock-panel \
-    --Plugins.0.Version xx
+    --Plugins.0.Version 1.2.0
 ```
 
 Output: 
@@ -16,9 +16,9 @@ Output:
 {
     "Response": {
         "PluginIds": [
-            "xx"
+            "grafana-clock-panel"
         ],
-        "RequestId": "xx"
+        "RequestId": "requestid"
     }
 }
 ```

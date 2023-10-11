@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli dlc RestartDataEngine --cli-unfold-argument ```
+tccli dlc RestartDataEngine --cli-unfold-argument  \
+    --DataEngineId abc \
+    --ForcedOperation True
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

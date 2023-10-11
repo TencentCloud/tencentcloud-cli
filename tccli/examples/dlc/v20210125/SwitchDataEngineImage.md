@@ -5,13 +5,16 @@
 Input: 
 
 ```
-tccli dlc SwitchDataEngineImage --cli-unfold-argument ```
+tccli dlc SwitchDataEngineImage --cli-unfold-argument  \
+    --DataEngineId DataEngine-xx \
+    --NewImageVersionId xxxxxx
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

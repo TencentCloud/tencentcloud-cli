@@ -1,3 +1,286 @@
+# Release 3.0.862.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 29 次发布
+
+发布时间：2023-10-11 01:07:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/82324)
+* [DescribeMeasureDetailTotal](http://document.tencentcloudapi.woa.com/document/product/555/82326)
+* [DescribeMeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/82323)
+
+新增数据结构：
+
+* [DescribeMeasureDeductionDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetails)
+* [DescribeMeasureDeductionDetailsData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDeductionDetailsData)
+* [DescribeMeasureDetailAttr](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailAttr)
+* [DescribeMeasureDetailTotalRes](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailTotalRes)
+* [DescribeResourceDetailsData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeResourceDetailsData)
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 11 次发布
+
+发布时间：2023-10-11 01:11:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeExtendServiceItem](http://document.tencentcloudapi.woa.com/document/product/1726/82327)
+
+新增数据结构：
+
+* [ExtendServiceItem](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ExtendServiceItem)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 17 次发布
+
+发布时间：2023-10-11 01:14:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateResource](http://document.tencentcloudapi.woa.com/document/product/1492/82329)
+* [ModifyResource](http://document.tencentcloudapi.woa.com/document/product/1492/82328)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 73 次发布
+
+发布时间：2023-10-11 01:14:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestartDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/82065)
+
+	* 新增入参：DataEngineId, ForcedOperation
+
+* [RollbackDataEngineImage](http://document.tencentcloudapi.woa.com/document/product/1342/82064)
+
+	* 新增入参：DataEngineId, FromRecordId, ToRecordId
+
+* [SwitchDataEngineImage](http://document.tencentcloudapi.woa.com/document/product/1342/82063)
+
+	* 新增入参：DataEngineId, NewImageVersionId
+
+* [UpdateDataEngineConfig](http://document.tencentcloudapi.woa.com/document/product/1342/82062)
+
+	* 新增入参：DataEngineIds, DataEngineConfigCommand
+
+* [UpdateUserDataEngineConfig](http://document.tencentcloudapi.woa.com/document/product/1342/82061)
+
+	* 新增入参：DataEngineId, DataEngineConfigPairs, SessionResourceTemplate
+
+* [UpgradeDataEngineImage](http://document.tencentcloudapi.woa.com/document/product/1342/82060)
+
+	* 新增入参：DataEngineId
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 43 次发布
+
+发布时间：2023-10-11 01:16:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1668/79339)
+
+	* 新增出参：FillError
+
+
+新增数据结构：
+
+* [FillError](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FillError)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 93 次发布
+
+发布时间：2023-10-11 01:17:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowApprovers](http://document.tencentcloudapi.woa.com/document/product/1595/82321)
+
+	* 新增出参：FillError
+
+
+新增数据结构：
+
+* [FillError](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillError)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 59 次发布
+
+发布时间：2023-10-11 16:21:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribePrometheusRegions](http://document.tencentcloudapi.woa.com/document/product/248/82334)
+* [GetMonitorDataInternal](http://document.tencentcloudapi.woa.com/document/product/248/82333)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* PutMonitorData
+
+修改接口：
+
+* [DescribeAlarmHistories](http://document.tencentcloudapi.woa.com/document/product/248/48684)
+
+	* 新增入参：AlarmLevels
+
+
+新增数据结构：
+
+* [PrometheusRegionItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusRegionItem)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* MetricDatum
+
+修改数据结构：
+
+* [AlarmHistory](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHistory)
+
+	* 新增成员：AlarmLevel
+
+* [PrometheusZoneItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusZoneItem)
+
+	* 新增成员：ZoneResourceState
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 42 次发布
+
+发布时间：2023-10-11 01:21:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AiAnalysisTaskDelLogoInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDelLogoInput)
+* [AiAnalysisTaskDelLogoOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDelLogoOutput)
+* [AiAnalysisTaskDelLogoResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDelLogoResult)
+
+修改数据结构：
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：DeLogoTask
+
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 11 次发布
+
+发布时间：2023-10-11 01:25:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteCommands](http://document.tencentcloudapi.woa.com/document/product/1340/82332)
+* [DescribeQuotas](http://document.tencentcloudapi.woa.com/document/product/1340/82331)
+
+新增数据结构：
+
+* [GeneralResourceQuotaSet](http://document.tencentcloudapi.woa.com/document/product/1340/52687#GeneralResourceQuotaSet)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 12 次发布
+
+发布时间：2023-10-11 01:27:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AclUserRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#AclUserRule)
+
+	* 新增成员：CustomResponseId
+
+* [BotUserRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BotUserRule)
+
+	* 新增成员：Name, CustomResponseId, ResponseCode, RedirectUrl
+
+* [DropPageDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DropPageDetail)
+
+	* 新增成员：CustomResponseId
+
+* [RateLimitUserRule](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitUserRule)
+
+	* 新增成员：Name, CustomResponseId, ResponseCode, RedirectUrl
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.861.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

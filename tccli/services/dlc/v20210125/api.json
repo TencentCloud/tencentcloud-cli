@@ -13063,7 +13063,26 @@
     },
     "RestartDataEngineRequest": {
       "document": "RestartDataEngine请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制重启，忽略任务",
+          "example": "false",
+          "member": "bool",
+          "name": "ForcedOperation",
+          "required": false,
+          "type": "bool"
+        }
+      ],
       "type": "object"
     },
     "RestartDataEngineResponse": {
@@ -13136,7 +13155,35 @@
     },
     "RollbackDataEngineImageRequest": {
       "document": "RollbackDataEngineImage请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检查是否能回滚的接口返回的FromRecordId参数",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "FromRecordId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "检查是否能回滚的接口返回的ToRecordId参数",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "ToRecordId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RollbackDataEngineImageResponse": {
@@ -14343,7 +14390,26 @@
     },
     "SwitchDataEngineImageRequest": {
       "document": "SwitchDataEngineImage请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新镜像版本ID",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "NewImageVersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "SwitchDataEngineImageResponse": {
@@ -15758,7 +15824,26 @@
     },
     "UpdateDataEngineConfigRequest": {
       "document": "UpdateDataEngineConfig请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎配置命令，支持UpdateSparkSQLLakefsPath（更新原生表配置）、UpdateSparkSQLResultPath（更新结果路径配置）",
+          "example": "UpdateSparkSQLLakefsPath",
+          "member": "string",
+          "name": "DataEngineConfigCommand",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "UpdateDataEngineConfigResponse": {
@@ -15964,7 +16049,35 @@
     },
     "UpdateUserDataEngineConfigRequest": {
       "document": "UpdateUserDataEngineConfig请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎配置项",
+          "example": "无",
+          "member": "DataEngineConfigPair",
+          "name": "DataEngineConfigPairs",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "作业引擎资源配置模版",
+          "example": "无",
+          "member": "SessionResourceTemplate",
+          "name": "SessionResourceTemplate",
+          "required": false,
+          "type": "object"
+        }
+      ],
       "type": "object"
     },
     "UpdateUserDataEngineConfigResponse": {
@@ -15981,7 +16094,17 @@
     },
     "UpgradeDataEngineImageRequest": {
       "document": "UpgradeDataEngineImage请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎ID",
+          "example": "DataEngine-xxx",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "UpgradeDataEngineImageResponse": {

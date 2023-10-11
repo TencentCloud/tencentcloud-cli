@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tbase DescribeBackupSpace --cli-unfold-argument  \
-    --OrderBy xx \
-    --OrderByType xx \
-    --InstanceIds xx
+    --OrderBy total_capacity \
+    --OrderByType DESC \
+    --InstanceIds tdpg-test123
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "TotalCount": 0,
-        "RequestId": "xx",
+        "RequestId": "68458160-670f-11ee-922e-a382ae347b69",
         "BackupSpaces": [
             {
                 "WALBackupCount": 1,

@@ -96,6 +96,14 @@
         "title": "接口示例"
       }
     ],
+    "DescribeExtendServiceItem": [
+      {
+        "document": "查询用户订单信息",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendServiceItem\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"Order\": \"abc\",\n        \"By\": \"abc\",\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"OperatorType\": 0\n            }\n        ],\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"Data\": [\n            {\n                \"ResourceID\": \"abc\",\n                \"InquireKey\": \"abc\",\n                \"LeftNum\": 0,\n                \"InquireUsed\": 0,\n                \"BeginTime\": \"abc\",\n                \"OrderStatus\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询用户订单信息"
+      }
+    ],
     "DescribeListenerList": [
       {
         "document": "示例1",

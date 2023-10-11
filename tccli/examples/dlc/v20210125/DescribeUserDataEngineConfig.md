@@ -6,12 +6,12 @@ Input:
 
 ```
 tccli dlc DescribeUserDataEngineConfig --cli-unfold-argument  \
-    --Sorting xx \
+    --Sorting abc \
     --Limit 0 \
     --Offset 0 \
-    --SortBy xx \
-    --Filters.0.Name xx \
-    --Filters.0.Values xx
+    --SortBy abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc
 ```
 
 Output: 

@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli monitor UpdateGrafanaConfig --cli-unfold-argument  \
-    --InstanceId xx \
-    --Config {"server":{"root_url":"http://balaba"},"server_haha":"heihei"}
+    --InstanceId abc \
+    --Config {"server":{"root_url":"http://abc"},"server_a":"abc"}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
