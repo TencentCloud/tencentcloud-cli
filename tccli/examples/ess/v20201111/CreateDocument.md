@@ -28,6 +28,18 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "****有限公司",
+                "RecipientId": "yDRvoUUgygqoh024UuO4zjE8OBoGfRNr",
+                "SignId": "yDw7hUUckpkmkwraUunP4DaSHZaRRhKP"
+            },
+            {
+                "ApproverRoleName": "个人签署方1",
+                "RecipientId": "yDRvoUUgygqoh02bUuO4zjE8VMs79RJy",
+                "SignId": "yDw7hUUckpkmkwryUunP4Dau01y5xJRN"
+            }
+        ],
         "RequestId": "18b53278-xxxx-xxxx-xxxx-06aa59796573",
         "DocumentId": "yDxZ1UyKQDSIMfUuO4zjEw2TyqzKEs16",
         "PreviewFileUrl": ""
@@ -40,6 +52,8 @@ Output:
 1.设置流程合同ID为yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
 2.设置文档模板ID为yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc
 3.设置模板内的图片填写控件值为yDxZ1UyKQDSIMXUuO4zjERbwQIfGw4TK
+注：
+`若发起合同时不确定具体的签署人，即发起了含有动态签署人的合同，需保留对应的签署角色编号（即RecipientId），后续进行补充时需指定对应的RecipientId`
 
 
 Input: 
@@ -60,6 +74,18 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "ApproverRoleName": "****有限公司",
+                "RecipientId": "yDRvoUUgygqoh024UuO4zjE8OBoGfRNr",
+                "SignId": "yDw7hUUckpkmkwraUunP4DaSHZaRRhKP"
+            },
+            {
+                "ApproverRoleName": "个人签署方1",
+                "RecipientId": "yDRvoUUgygqoh02bUuO4zjE8VMs79RJy",
+                "SignId": "yDw7hUUckpkmkwryUunP4Dau01y5xJRN"
+            }
+        ],
         "RequestId": "956d7f8d-xxxx-xxxx-xxxx-4e48d923ecf0",
         "DocumentId": "yDxZ1UyKQDSIMaUuO5zjEypPWudeHbnG",
         "PreviewFileUrl": ""

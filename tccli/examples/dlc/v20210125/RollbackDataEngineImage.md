@@ -5,13 +5,17 @@
 Input: 
 
 ```
-tccli dlc RollbackDataEngineImage --cli-unfold-argument ```
+tccli dlc RollbackDataEngineImage --cli-unfold-argument  \
+    --DataEngineId DataEngine-xx \
+    --FromRecordId xxxxxx \
+    --ToRecordId xxxxxx
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abv"
     }
 }
 ```

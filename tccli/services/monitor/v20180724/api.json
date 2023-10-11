@@ -12153,26 +12153,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例维度名称",
-          "example": "",
+          "document": "实例维度名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实例维度值",
-          "example": "",
+          "document": "实例维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "DimensionNew": {
       "document": "策略类型的维度信息",

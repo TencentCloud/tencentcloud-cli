@@ -134,3 +134,69 @@ Output:
 }
 ```
 
+**Example 5: B2C签署，批量补充两方动态签署人信息**
+
+在B2C签署中，双方签署方未指定具体签署人时，需要进行补充。
+注:`补充动态签署人时FillApproverType传值为1 `
+
+Input: 
+
+```
+tccli ess CreateFlowApprovers --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm \
+    --FillApproverType 1 \
+    --Approvers.0.RecipientId yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.1.RecipientId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1234345677xxxx"
+    }
+}
+```
+
+**Example 6: B2C签署，批量补充两方动态签署人信息时重复补充报错**
+
+在B2C签署中，双方签署方未指定具体签署人时，需要进行补充。当重复补充同一个签署节点时，会进行部分补充报错。
+注:`补充动态签署人时FillApproverType传值为1 `
+
+Input: 
+
+```
+tccli ess CreateFlowApprovers --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm \
+    --FillApproverType 1 \
+    --Approvers.0.RecipientId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --Approvers.0.ApproverName 典子谦 \
+    --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.OrganizationName ***有限公司 \
+    --Approvers.1.RecipientId yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc \
+    --Approvers.1.ApproverName 张三 \
+    --Approvers.1.ApproverMobile 18888888888
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FillError": [
+            {
+                "ErrMessage": "个人信息已补充，请勿重复补充",
+                "RecipientId": "yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc"
+            }
+        ],
+        "RequestId": "s1696921563375938822"
+    }
+}
+```
+

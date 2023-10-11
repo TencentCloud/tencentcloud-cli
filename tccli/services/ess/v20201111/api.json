@@ -2180,6 +2180,16 @@
       "document": "CreateFlowApprovers返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "批量补充签署人时，补充失败的报错说明\n\n注:`目前仅补充动态签署人时会返回补充失败的原因`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FillError",
+          "name": "FillError",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7118,6 +7128,32 @@
       ],
       "usage": "in"
     },
+    "FillError": {
+      "document": "批量补充签署人时，补充失败的报错说明",
+      "members": [
+        {
+          "disabled": false,
+          "document": "为签署方经办人在签署合同中的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。与入参中补充的签署人角色ID对应，批量补充部分失败返回对应的错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecipientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补充失败错误说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FilledComponent": {
       "document": "文档内的填充控件返回结构体，返回控件的基本信息和填写内容值",
       "members": [
@@ -7577,7 +7613,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同是，该参数无需传值。\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
+          "document": "签署方经办人在模板中配置的参与方ID，与控件绑定，是控件的归属方，ID为32位字符串。\n模板发起合同时，该参数为必填项。\n文件发起合同时，该参数无需传值。\n如果开发者后续用合同模板发起合同，建议保存此值，在用合同模板发起合同中需此值绑定对应的签署经办人 。",
           "example": "无",
           "member": "string",
           "name": "RecipientId",

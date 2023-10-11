@@ -99,7 +99,7 @@
     "CheckDataEngineConfigPairsValidity": [
       {
         "document": "本接口用于检查引擎用户自定义参数的有效性。",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDataEngineConfigPairsValidity\n<公共请求参数>\n\n{\n    \"ChildImageVersionId\": \"b8sddsad7-ekd4-4e5e-993e-e5db64fa21c1\",\n    \"ImageVersionId\": \"\",\n    \"DataEngineConfigPairs\": [\n        {}\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckDataEngineConfigPairsValidity\n<公共请求参数>\n\n{\n    \"ChildImageVersionId\": \"b8sddsad7-ekd4-4e5e-993e-e5db64fa21c1\",\n    \"ImageVersionId\": \"\",\n    \"DataEngineConfigPairs\": [\n        {\n            \"ConfigItem\": \"key\",\n            \"ConfigValue\": \"value\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"IsAvailable\": true,\n        \"UnavailableConfig\": [\n            \"key\"\n        ],\n        \"RequestId\": \"b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1\"\n    }\n}",
         "title": "检查引擎用户自定义参数的有效性"
       }
@@ -619,8 +619,8 @@
     "DescribeUserDataEngineConfig": [
       {
         "document": "查询用户自定义引擎参数",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDataEngineConfig\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserDataEngineConfig\n<公共请求参数>\n\n{\n    \"Sorting\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"SortBy\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineConfigInstanceInfos\": [\n            {\n                \"DataEngineId\": \"abc\",\n                \"DataEngineConfigPairs\": [\n                    {\n                        \"ConfigItem\": \"abc\",\n                        \"ConfigValue\": \"abc\"\n                    }\n                ],\n                \"SessionResourceTemplate\": {\n                    \"DriverSize\": \"abc\",\n                    \"ExecutorSize\": \"abc\",\n                    \"ExecutorNums\": 1,\n                    \"ExecutorMaxNumbers\": 1\n                }\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询用户自定义引擎参数"
       }
     ],
@@ -841,16 +841,16 @@
     "RestartDataEngine": [
       {
         "document": "重启集群",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDataEngine\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartDataEngine\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"abc\",\n    \"ForcedOperation\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "重启集群"
       }
     ],
     "RollbackDataEngineImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackDataEngineImage\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RollbackDataEngineImage\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-xx\",\n    \"FromRecordId\": \"xxxxxx\",\n    \"ToRecordId\": \"xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abv\"\n    }\n}",
         "title": "升级引擎镜像版本"
       }
     ],
@@ -873,8 +873,8 @@
     "SwitchDataEngineImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDataEngineImage\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchDataEngineImage\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-xx\",\n    \"NewImageVersionId\": \"xxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "升级引擎镜像版本"
       }
     ],
@@ -905,7 +905,7 @@
     "UpdateDataEngineConfig": [
       {
         "document": "更新指定引擎的结果桶配置信息",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngineConfig\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateDataEngineConfig\n<公共请求参数>\n\n{\n    \"DataEngineIds\": [\n        \"DataEngine-xxx\"\n    ],\n    \"DataEngineConfigCommand\": \"UpdateSparkSQLResultPath\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新指定引擎的结果桶配置信息"
       }
@@ -921,7 +921,7 @@
     "UpdateUserDataEngineConfig": [
       {
         "document": "修改用户集群自定义配置",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserDataEngineConfig\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUserDataEngineConfig\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"abc\",\n    \"DataEngineConfigPairs\": [\n        {\n            \"ConfigItem\": \"abc\",\n            \"ConfigValue\": \"abc\"\n        }\n    ],\n    \"SessionResourceTemplate\": {\n        \"DriverSize\": \"abc\",\n        \"ExecutorSize\": \"abc\",\n        \"ExecutorNums\": 1,\n        \"ExecutorMaxNumbers\": 1\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"asdfwdsf\"\n    }\n}",
         "title": "修改用户集群自定义配置"
       }
@@ -929,8 +929,8 @@
     "UpgradeDataEngineImage": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDataEngineImage\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeDataEngineImage\n<公共请求参数>\n\n{\n    \"DataEngineId\": \"DataEngine-xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "升级引擎镜像版本"
       }
     ]

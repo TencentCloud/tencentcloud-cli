@@ -35,6 +35,13 @@
       "output": "DeleteCommandResponse",
       "status": "online"
     },
+    "DeleteCommands": {
+      "document": "批量删除命令接口",
+      "input": "DeleteCommandsRequest",
+      "name": "批量删除命令",
+      "output": "DeleteCommandsResponse",
+      "status": "online"
+    },
     "DeleteInvoker": {
       "document": "此接口用于删除执行器。",
       "input": "DeleteInvokerRequest",
@@ -96,6 +103,13 @@
       "input": "DescribeInvokersRequest",
       "name": "查询执行器",
       "output": "DescribeInvokersResponse",
+      "status": "online"
+    },
+    "DescribeQuotas": {
+      "document": "此接口用于获取配额信息",
+      "input": "DescribeQuotasRequest",
+      "name": "获取配额信息",
+      "output": "DescribeQuotasResponse",
       "status": "online"
     },
     "DescribeRegions": {
@@ -939,6 +953,33 @@
       ],
       "type": "object"
     },
+    "DeleteCommandsRequest": {
+      "document": "DeleteCommands请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待删除命令id",
+          "example": "[\"cmd-0v4tysy3\",\"cmd-0v4tysy4\"]",
+          "member": "string",
+          "name": "CommandIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCommandsResponse": {
+      "document": "DeleteCommands返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteInvokerRequest": {
       "document": "DeleteInvoker请求参数结构体",
       "members": [
@@ -1464,6 +1505,43 @@
       ],
       "type": "object"
     },
+    "DescribeQuotasRequest": {
+      "document": "DescribeQuotas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称，目前有\"COMMAND\",\"REGISTER_CODE\" 这两个指标",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceNames",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeQuotasResponse": {
+      "document": "DescribeQuotas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源额度列表",
+          "example": "无",
+          "member": "GeneralResourceQuotaSet",
+          "name": "GeneralResourceQuotaSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRegionsRequest": {
       "document": "DescribeRegions请求参数结构体",
       "members": [],
@@ -1744,6 +1822,45 @@
         }
       ],
       "usage": "in"
+    },
+    "GeneralResourceQuotaSet": {
+      "document": "GeneralResourceQuotaSet数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已使用额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ResourceQuotaUsed",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总额度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ResourceQuotaTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Invocation": {
       "document": "执行活动详情。",

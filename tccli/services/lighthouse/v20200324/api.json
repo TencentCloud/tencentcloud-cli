@@ -2027,7 +2027,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区列表。默认为随机可用区",
+          "document": "可用区列表。\n不填此参数，表示为随机可用区。",
           "example": "[\"ap-beijing-1\"]",
           "member": "string",
           "name": "Zones",
@@ -2054,7 +2054,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录密码信息配置。本字段目前仅支持WINDOWS实例进行密码设置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
+          "document": "实例登录密码信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码。",
           "example": "无",
           "member": "LoginConfiguration",
           "name": "LoginConfiguration",
@@ -2087,6 +2087,15 @@
           "name": "FirewallTemplateId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签键和标签值。\n如果指定多个标签，则会为指定资源同时创建并绑定该多个标签。\n同一个资源上的同一个标签键只能对应一个标签值。如果您尝试添加已有标签键，则对应的标签值会更新为新值。\n如果标签不存在会为您自动创建标签。\n数组最多支持10个元素。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

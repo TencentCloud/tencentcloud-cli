@@ -5,13 +5,15 @@
 Input: 
 
 ```
-tccli dlc UpgradeDataEngineImage --cli-unfold-argument ```
+tccli dlc UpgradeDataEngineImage --cli-unfold-argument  \
+    --DataEngineId DataEngine-xx
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

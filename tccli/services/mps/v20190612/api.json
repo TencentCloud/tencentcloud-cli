@@ -1552,7 +1552,7 @@
           "example": "Classification",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1562,7 +1562,7 @@
           "example": "无",
           "member": "AiAnalysisTaskClassificationResult",
           "name": "ClassificationTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1572,7 +1572,7 @@
           "example": "无",
           "member": "AiAnalysisTaskCoverResult",
           "name": "CoverTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1582,7 +1582,7 @@
           "example": "无",
           "member": "AiAnalysisTaskTagResult",
           "name": "TagTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1592,7 +1592,7 @@
           "example": "无",
           "member": "AiAnalysisTaskFrameTagResult",
           "name": "FrameTagTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1602,7 +1602,17 @@
           "example": "无",
           "member": "AiAnalysisTaskHighlightResult",
           "name": "HighlightTask",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频内容分析去水印任务的查询结果，当任务类型为 DeLogo 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskDelLogoResult",
+          "name": "DeLogoTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -1807,6 +1817,104 @@
           "document": "智能封面任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "AiAnalysisTaskCoverOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDelLogoInput": {
+      "document": "智能去水印任务输入类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频智能去水印模板 ID。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDelLogoOutput": {
+      "document": "智能去水印结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "去水印后文件的路径。",
+          "example": "无",
+          "member": "string",
+          "name": "Path",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "去水印后文件的存储位置。",
+          "example": "无",
+          "member": "TaskOutputStorage",
+          "name": "OutputStorage",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDelLogoResult": {
+      "document": "智能去水印结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0：成功，其他值：失败。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能去水印任务输入。",
+          "example": "无",
+          "member": "AiAnalysisTaskDelLogoInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能去水印任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskDelLogoOutput",
           "name": "Output",
           "output_required": true,
           "type": "object",

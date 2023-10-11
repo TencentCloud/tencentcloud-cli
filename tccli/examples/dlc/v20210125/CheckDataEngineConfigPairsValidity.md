@@ -7,7 +7,9 @@ Input:
 ```
 tccli dlc CheckDataEngineConfigPairsValidity --cli-unfold-argument  \
     --ChildImageVersionId b8sddsad7-ekd4-4e5e-993e-e5db64fa21c1 \
-    --ImageVersionId 
+    --ImageVersionId  \
+    --DataEngineConfigPairs.0.ConfigItem key \
+    --DataEngineConfigPairs.0.ConfigValue value
 ```
 
 Output: 

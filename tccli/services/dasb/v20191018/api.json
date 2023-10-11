@@ -70,6 +70,13 @@
       "output": "CreateDeviceGroupResponse",
       "status": "online"
     },
+    "CreateResource": {
+      "document": "创建堡垒机实例",
+      "input": "CreateResourceRequest",
+      "name": "创建堡垒机实例",
+      "output": "CreateResourceResponse",
+      "status": "online"
+    },
     "CreateUser": {
       "document": "新建用户",
       "input": "CreateUserRequest",
@@ -285,6 +292,13 @@
       "input": "ModifyDeviceGroupRequest",
       "name": "修改资产组",
       "output": "ModifyDeviceGroupResponse",
+      "status": "online"
+    },
+    "ModifyResource": {
+      "document": "资源变配",
+      "input": "ModifyResourceRequest",
+      "name": "资源变配",
+      "output": "ModifyResourceResponse",
       "status": "online"
     },
     "ModifyUser": {
@@ -1671,6 +1685,42 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceRequest": {
+      "document": "CreateResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部署堡垒机的VpcId",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "部署堡垒机的SubnetId",
+          "example": "subnet-xxxxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateResourceResponse": {
+      "document": "CreateResource返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4445,6 +4495,105 @@
     },
     "ModifyDeviceResponse": {
       "document": "ModifyDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceRequest": {
+      "document": "ModifyResource请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要开通服务的资源ID",
+          "example": "bh-saas-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "已废弃",
+          "example": "无",
+          "member": "string",
+          "name": "ModuleSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例版本",
+          "example": "standard",
+          "member": "string",
+          "name": "ResourceEdition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源节点数",
+          "example": "50",
+          "member": "int64",
+          "name": "ResourceNode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "带宽扩展包个数(4M)",
+          "example": "1",
+          "member": "int64",
+          "name": "PackageBandwidth",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "授权点数扩展包个数(50点)",
+          "example": "1",
+          "member": "int64",
+          "name": "PackageNode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "日志投递",
+          "example": "1",
+          "member": "int64",
+          "name": "LogDelivery",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyResourceResponse": {
+      "document": "ModifyResource返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

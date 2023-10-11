@@ -46,6 +46,14 @@
         "title": "删除命令"
       }
     ],
+    "DeleteCommands": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCommands\n<公共请求参数>\n\n{\n    \"CommandIds\": [\n        \"cmd-7efujjs6\",\n        \"cmd-7efujjs7\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f79b764-bc0f-471b-89c1-ca1b93cf7e8d\"\n    }\n}",
+        "title": "批量删除命令"
+      }
+    ],
     "DeleteInvoker": [
       {
         "document": "",
@@ -134,6 +142,14 @@
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInvokers\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"invoker-id\",\n            \"Values\": [\n                \"ivk-b7s3qa5l\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4c828cf-31c9-42d2-a558-2ad340a76ef0\",\n        \"TotalCount\": 1,\n        \"InvokerSet\": [\n            {\n                \"InvokerId\": \"ivk-b7s3qa5l\",\n                \"Name\": \"test-invoker\",\n                \"Type\": \"SCHEDULE\",\n                \"CommandId\": \"cmd-m7uma92n\",\n                \"Username\": \"root\",\n                \"Parameters\": \"{\\\"var\\\": \\\"1\\\"}\",\n                \"InstanceIds\": [\n                    \"ins-yx05ky8j\"\n                ],\n                \"Enable\": false,\n                \"ScheduleSettings\": {\n                    \"Policy\": \"ONCE\",\n                    \"Recurrence\": \"\",\n                    \"InvokeTime\": \"\"\n                },\n                \"CreatedTime\": \"2021-08-30T06:42:02Z\",\n                \"UpdatedTime\": \"2021-09-09T12:07:00Z\"\n            }\n        ]\n    }\n}",
         "title": "查询执行器"
+      }
+    ],
+    "DescribeQuotas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeQuotas\n<公共请求参数>\n\n{\n    \"ResourceNames\": [\n        \"COMMAND\",\n        \"REGISTER_CODE\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"321a2144-8e11-419e-b33c-6f6bfc25be4d\",\n        \"GeneralResourceQuotaSet\": [\n            {\n                \"ResourceName\": \"COMMAND\",\n                \"ResourceQuotaUsed\": 26,\n                \"ResourceQuotaTotal\": 509\n            },\n            {\n                \"ResourceName\": \"REGISTER_CODE\",\n                \"ResourceQuotaUsed\": 12,\n                \"ResourceQuotaTotal\": 5000\n            }\n        ]\n    }\n}",
+        "title": "查询\"COMMAND\",\"REGISTER_CODE\"资源"
       }
     ],
     "DescribeRegions": [

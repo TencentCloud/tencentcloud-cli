@@ -5,7 +5,15 @@
 Input: 
 
 ```
-tccli dlc UpdateUserDataEngineConfig --cli-unfold-argument ```
+tccli dlc UpdateUserDataEngineConfig --cli-unfold-argument  \
+    --DataEngineId abc \
+    --DataEngineConfigPairs.0.ConfigItem abc \
+    --DataEngineConfigPairs.0.ConfigValue abc \
+    --SessionResourceTemplate.DriverSize abc \
+    --SessionResourceTemplate.ExecutorSize abc \
+    --SessionResourceTemplate.ExecutorNums 1 \
+    --SessionResourceTemplate.ExecutorMaxNumbers 1
+```
 
 Output: 
 ```

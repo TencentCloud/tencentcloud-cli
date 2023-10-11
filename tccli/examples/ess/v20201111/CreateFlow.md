@@ -73,3 +73,37 @@ Output:
 }
 ```
 
+**Example 3: 创建含有动态签署人流程，签署方不指定具体的签署人**
+
+创建一个B2C流程，两方签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
+
+Input: 
+
+```
+tccli ess CreateFlow --cli-unfold-argument  \
+    --Operator.UserId 1956103********520fde6a \
+    --FlowName 测试 \
+    --Unordered False \
+    --DeadLine 1604912664 \
+    --CustomShowMap 合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署方2:  {签署方2企业}{签署方2姓名};签署方3:  {签署方3姓名} \
+    --Approvers.0.ApproverType 0 \
+    --Approvers.0.Required True \
+    --Approvers.0.ApproverOption.FillType 1 \
+    --Approvers.1.ApproverType 1 \
+    --Approvers.1.Required True \
+    --Approvers.1.ApproverOption.FillType 1
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "2fb48c3945****65aaedf6",
+        "RequestId": "s1234345677xxxx"
+    }
+}
+```
+

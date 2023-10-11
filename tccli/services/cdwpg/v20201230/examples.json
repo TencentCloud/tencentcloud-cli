@@ -8,6 +8,14 @@
         "title": "创建集群"
       }
     ],
+    "DescribeSimpleInstances": [
+      {
+        "document": "集群列表",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSimpleInstances\n<公共请求参数>\n\n{\n    \"SearchInstanceId\": \"abc\",\n    \"SearchInstanceName\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchTags\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"ID\": 0,\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Version\": \"abc\",\n                \"Region\": \"abc\",\n                \"RegionId\": 0,\n                \"RegionDesc\": \"abc\",\n                \"Zone\": \"abc\",\n                \"ZoneId\": 0,\n                \"ZoneDesc\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"AccessInfo\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"RenewFlag\": true\n            }\n        ],\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "集群列表new"
+      }
+    ],
     "DestroyInstanceByApi": [
       {
         "document": "销毁集群",
