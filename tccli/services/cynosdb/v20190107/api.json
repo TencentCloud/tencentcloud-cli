@@ -2055,7 +2055,7 @@
         },
         {
           "disabled": false,
-          "document": "模版状态。0-无任务 ，1-修改中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板状态。0-无任务 ，1-修改中。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Status",
@@ -11006,7 +11006,7 @@
           "example": "ro",
           "member": "string",
           "name": "InstanceGroupType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11016,7 +11016,7 @@
           "example": "cynosdbmysql-grp-qwertyui",
           "member": "string",
           "name": "InstanceGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11026,7 +11026,7 @@
           "example": "vpc-qwerty",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11036,7 +11036,7 @@
           "example": "subnet-qwerty",
           "member": "string",
           "name": "SubnetId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11046,7 +11046,7 @@
           "example": "1",
           "member": "int64",
           "name": "NetType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11056,7 +11056,7 @@
           "example": "123.123.123.1",
           "member": "string",
           "name": "Vip",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11066,7 +11066,7 @@
           "example": "1234",
           "member": "int64",
           "name": "Vport",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11076,17 +11076,17 @@
           "example": "aa.com",
           "member": "string",
           "name": "WanDomain",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "外网Ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "外网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "12.12.23.3",
           "member": "string",
           "name": "WanIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11096,7 +11096,7 @@
           "example": "12345",
           "member": "int64",
           "name": "WanPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11106,7 +11106,7 @@
           "example": "init",
           "member": "string",
           "name": "WanStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

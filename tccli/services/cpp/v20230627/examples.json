@@ -1,0 +1,29 @@
+{
+  "actions": {
+    "AddTaskWorks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddTaskWorks\n<公共请求参数>\n\n{\n    \"Works\": [\n        {\n            \"WorksName\": \"abc\",\n            \"PublishTime\": \"abc\",\n            \"MediaType\": 0,\n            \"WorksAuthor\": \"abc\",\n            \"Url\": \"abc\",\n            \"WorksTag\": [\n                \"abc\"\n            ],\n            \"WorksType\": \"abc\",\n            \"ExtraInfo\": {\n                \"Description\": \"abc\"\n            },\n            \"TaskId\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"WorkId\": \"abc\",\n                \"WorkName\": \"abc\",\n                \"Url\": \"abc\",\n                \"TaskId\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "AddTaskWorks"
+      }
+    ],
+    "CreateTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"MonitorPlatform\": \"abc\",\n    \"WhiteList\": [\n        {\n            \"Type\": \"abc\",\n            \"Name\": \"abc\",\n            \"Platform\": \"abc\"\n        }\n    ],\n    \"MediaType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CreateTask"
+      }
+    ],
+    "QueryTask": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryTask\n<公共请求参数>\n\n{\n    \"WorkId\": \"abc\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Results\": [\n                {\n                    \"InfringeId\": 0,\n                    \"Author\": \"abc\",\n                    \"AuthorId\": \"abc\",\n                    \"CrawlTime\": \"abc\",\n                    \"Duration\": \"abc\",\n                    \"InfringeTitle\": \"abc\",\n                    \"WorkName\": \"abc\",\n                    \"PlatformName\": \"abc\",\n                    \"PlayNum\": \"abc\",\n                    \"PublishTime\": \"abc\",\n                    \"ReceiveTime\": \"abc\",\n                    \"TaskId\": \"abc\",\n                    \"Url\": \"abc\",\n                    \"WorkId\": \"abc\",\n                    \"MediaType\": 0,\n                    \"Similarity\": 0,\n                    \"ExtraInfo\": {\n                        \"IpCompany\": \"abc\",\n                        \"IpPubtime\": \"abc\",\n                        \"IpScene\": \"abc\"\n                    }\n                }\n            ],\n            \"Offset\": 0,\n            \"Sum\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "QueryTask"
+      }
+    ]
+  },
+  "version": "1.0"
+}

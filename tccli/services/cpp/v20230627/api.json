@@ -1,0 +1,637 @@
+{
+  "actions": {
+    "AddTaskWorks": {
+      "document": "追加审核作品",
+      "input": "AddTaskWorksRequest",
+      "name": "追加审核作品",
+      "output": "AddTaskWorksResponse",
+      "status": "online"
+    },
+    "CreateTask": {
+      "document": "创建审核任务",
+      "input": "CreateTaskRequest",
+      "name": "创建审核任务",
+      "output": "CreateTaskResponse",
+      "status": "online"
+    },
+    "QueryTask": {
+      "document": "查询审核任务",
+      "input": "QueryTaskRequest",
+      "name": "查询审核任务",
+      "output": "QueryTaskResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-06-27",
+    "api_brief": "主要针对全网内容平台的用户生产的内容（文字、图片、文章、视频、音频等）进行内容巡检过滤，客户通过API接口送审内容，基于API接口返回的结果获取内容所属的合规/不合规标签。",
+    "serviceNameCN": "版权保护平台",
+    "serviceShortName": "cpp"
+  },
+  "objects": {
+    "AddTaskWorksRequest": {
+      "document": "AddTaskWorks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核作品",
+          "example": "无",
+          "member": "TaskWork",
+          "name": "Works",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddTaskWorksResponse": {
+      "document": "AddTaskWorks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核作品信息",
+          "example": "无",
+          "member": "ResAddTaskWorkVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskRequest": {
+      "document": "CreateTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "视频",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务结束时间",
+          "example": "2023-10-09 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务开始时间",
+          "example": "2023-10-08 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测平台",
+          "example": "全部平台",
+          "member": "string",
+          "name": "MonitorPlatform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型。100：视频，200：音频，300：文本，400：图片，500：图文",
+          "example": "100",
+          "member": "int64",
+          "name": "MediaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "白名单",
+          "example": "无",
+          "member": "WhiteInfo",
+          "name": "WhiteList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateTaskResponse": {
+      "document": "CreateTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTaskRequest": {
+      "document": "QueryTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核作品ID",
+          "example": "无",
+          "member": "string",
+          "name": "WorkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回的结果数量",
+          "example": "5",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryTaskResponse": {
+      "document": "QueryTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测结果",
+          "example": "无",
+          "member": "QueryWorkVo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryWorkVo": {
+      "document": "监测结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Sum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResAddTaskWorkVO": {
+      "document": "新建监测任务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TaskWork": {
+      "document": "监测作品",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作品名称",
+          "example": "节目名称",
+          "member": "string",
+          "name": "WorksName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作品发布时间",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "PublishTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型。100：视频，200：音频，300：文本，400：图片，500：图文",
+          "example": "100",
+          "member": "int64",
+          "name": "MediaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "作者",
+          "example": "作者",
+          "member": "string",
+          "name": "WorksAuthor",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作品链接",
+          "example": "https://v.qq.com/x/cover/mzc003m069pge61/r35097uc0qk.html",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "关键词",
+          "member": "string",
+          "name": "WorksTag",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "作品类型。MediaType为100时，取值范围为 10101：新闻 10102：游戏 10103：综合 10201：电视剧 10202：院线电影 10203：网络大电影 10204：综艺 10205：纪录片 10206：动漫 10207：少儿 10208：体育赛事 10209：新闻 10210：直播 10211：游戏 10212：生活 10213：时尚 10214：音乐mv 10215：娱乐 103：商品宣传片 104：课件视频 105：其他 MediaType为200时，取值范围为 201：音乐 202：有声读物 203：其他 MediaType为300时，取值范围为 301：原创文章 302：文学小说 303：新闻资讯 304：其他 MediaType为400时，取值范围为 401：照片 402：设计图 403：商业图片 404：漫画 405：其他 MediaType为500时，取值范围为 601：其他",
+          "example": "10103",
+          "member": "string",
+          "name": "WorksType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测任务ID，由【创建监测任务】接口生成",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "无",
+          "member": "WorkExtraInfo",
+          "name": "ExtraInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "WhiteInfo": {
+      "document": "白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单类型，取值为URL或ACCOUT，表示链接白名单或账号白名单",
+          "example": "URL",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单网址/账号",
+          "example": ".qq.com",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "白名单平台",
+          "example": "无",
+          "member": "string",
+          "name": "Platform",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkExtraInfo": {
+      "document": "监测作品额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WorkResult": {
+      "document": "监测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "侵权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "55561",
+          "member": "int64",
+          "name": "InfringeId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权作者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Author",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权作者ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-04 17:42:03",
+          "member": "string",
+          "name": "CrawlTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权内容时长，单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "满满续约",
+          "member": "string",
+          "name": "InfringeTitle",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "梦娃呓语 随机掉落的沙雕小故事•城市妖怪的自我修养（1）",
+          "member": "string",
+          "name": "WorkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权平台\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "麒麟文学网_麒麟文学网",
+          "member": "string",
+          "name": "PlatformName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权播放量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "PlayNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品发布时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-03-03 14:00:00",
+          "member": "string",
+          "name": "PublishTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品接收时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-04 17:45:07",
+          "member": "string",
+          "name": "ReceiveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "T23279",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://m.bfbwz.com/news/22535.html",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "W39355",
+          "member": "string",
+          "name": "WorkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300",
+          "member": "int64",
+          "name": "MediaType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "相似度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.93",
+          "member": "float",
+          "name": "Similarity",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "额外信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WorkResultExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkResultExtraInfo": {
+      "document": "作品监测结果额外信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP所属公司\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpCompany",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP宣发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpPubtime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpScene",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

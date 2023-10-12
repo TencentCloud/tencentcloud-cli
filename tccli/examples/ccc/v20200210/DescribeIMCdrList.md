@@ -1,11 +1,11 @@
 **Example 1: 查询在线客服记录示例**
 
-获取包括全媒体和文本会话两种类型的服务记录。
+获取包括全媒体和文本会话两种类型的服务记录
 
 Input: 
 
 ```
-tccli ccc DescribeIMCdrs --cli-unfold-argument  \
+tccli ccc DescribeIMCdrList --cli-unfold-argument  \
     --SdkAppId 1400000000 \
     --StartTimestamp 1603877878 \
     --EndTimestamp 1603877879

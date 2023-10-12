@@ -7332,7 +7332,29 @@
       ],
       "type": "object"
     },
-    "DescribeMeasureDetailTotalRes": {
+    "DescribeMeasureDetailTotalResponse": {
+      "document": "DescribeMeasureDetailTotal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总量结果",
+          "example": "无",
+          "member": "DescribeMeasureDetailTotalResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDetailTotalResult": {
       "document": "计量明细总量结果",
       "members": [
         {
@@ -7377,28 +7399,6 @@
         }
       ],
       "usage": "out"
-    },
-    "DescribeMeasureDetailTotalResponse": {
-      "document": "DescribeMeasureDetailTotal返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "总量结果",
-          "example": "无",
-          "member": "DescribeMeasureDetailTotalRes",
-          "name": "Data",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "DescribeMeasurePackageListData": {
       "document": "DescribeMeasureResource正常出参",

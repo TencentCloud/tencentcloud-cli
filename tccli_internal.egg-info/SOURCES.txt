@@ -282,6 +282,8 @@ tccli/services/cpdp/__init__.py
 tccli/services/cpdp/cpdp_client.py
 tccli/services/cpdp/v20190820/api.json
 tccli/services/cpdp/v20190820/examples.json
+tccli/services/cpp/__init__.py
+tccli/services/cpp/cpp_client.py
 tccli/services/csip/__init__.py
 tccli/services/csip/csip_client.py
 tccli/services/csxg/__init__.py
