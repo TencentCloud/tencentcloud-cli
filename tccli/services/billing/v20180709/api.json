@@ -189,6 +189,20 @@
       "output": "DescribeMeasureDeductionDetailsResponse",
       "status": "online"
     },
+    "DescribeMeasureDetailAggregation": {
+      "document": "查询计量聚合用量明细",
+      "input": "DescribeMeasureDetailAggregationRequest",
+      "name": "查询计量聚合用量明细",
+      "output": "DescribeMeasureDetailAggregationResponse",
+      "status": "online"
+    },
+    "DescribeMeasureDetailList": {
+      "document": "查询计量用量明细List",
+      "input": "DescribeMeasureDetailListRequest",
+      "name": "查询计量用量明细列表",
+      "output": "DescribeMeasureDetailListResponse",
+      "status": "online"
+    },
     "DescribeMeasureDetailTotal": {
       "document": "查询计量用量明细总量",
       "input": "DescribeMeasureDetailTotalRequest",
@@ -6672,7 +6686,185 @@
       ],
       "type": "object"
     },
-    "DescribeMeasureDetailAttr": {
+    "DescribeMeasureDetailAggregationCustom": {
+      "document": "用量明细-自定义聚合规则",
+      "members": [
+        {
+          "disabled": false,
+          "document": "聚合时间粒度。\nday指按天聚合。\nall则将所有时间处理为1条",
+          "example": "day",
+          "member": "string",
+          "name": "Period",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "聚合空间粒度",
+          "example": "[\"regionId\"]",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "聚合函数；支持sum/max/min/avg",
+          "example": "sum",
+          "member": "string",
+          "name": "Function",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DescribeMeasureDetailAggregationRequest": {
+      "document": "DescribeMeasureDetailAggregation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入计量产品一层",
+          "example": "p_ccc",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量用量类型",
+          "example": "tccc_valueadded_tts",
+          "member": "string",
+          "name": "DosageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量用量版本",
+          "example": "1",
+          "member": "string",
+          "name": "DosageVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量使用开始时间",
+          "example": "2023-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量使用结束时间",
+          "example": "2023-08-02 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量明细配置名称，该名称由计量侧提供。",
+          "example": "valueAddedByDay",
+          "member": "string",
+          "name": "DetailName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义聚合参数",
+          "example": "无",
+          "member": "DescribeMeasureDetailAggregationCustom",
+          "name": "Aggregation",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "计量订购关系id；部分存量产品只sdkAppId或者业务侧资源id",
+          "example": "144008921",
+          "member": "string",
+          "name": "SerialId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品二层",
+          "example": "sp_ccc_valueadded_fee",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品三层",
+          "example": "v_ccc_valueadded_tts",
+          "member": "string",
+          "name": "BillingItemCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品四层",
+          "example": "sv_ccc_valueadded_tts_realtime_custom",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量策略映射code。部分产品用量四层下不唯一，需要该参数进行区分。",
+          "example": "无",
+          "member": "string",
+          "name": "MeasureCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询属性",
+          "example": "无",
+          "member": "DescribeMeasureDetailAttribute",
+          "name": "Attribute",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDetailAggregationResponse": {
+      "document": "DescribeMeasureDetailAggregation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询明细数据",
+          "example": "无",
+          "member": "DescribeMeasureDetailListResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDetailAttribute": {
       "document": "计量用量明细自定义属性",
       "members": [
         {
@@ -6699,6 +6891,332 @@
         }
       ],
       "usage": "both"
+    },
+    "DescribeMeasureDetailListRequest": {
+      "document": "DescribeMeasureDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "接入计量产品一层",
+          "example": "p_ccc",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量用量类型",
+          "example": "tccc_valueadded_tts",
+          "member": "string",
+          "name": "DosageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量用量版本",
+          "example": "1",
+          "member": "string",
+          "name": "DosageVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量使用开始时间",
+          "example": "2023-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量使用结束时间",
+          "example": "2023-08-02 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量明细配置名称，该名称由计量侧提供。",
+          "example": "valueAddedByDay",
+          "member": "string",
+          "name": "DetailName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "单页数据条数",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计量订购关系id；部分存量产品只sdkAppId或者业务侧资源id",
+          "example": "144008921",
+          "member": "string",
+          "name": "SerialId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品二层",
+          "example": "sp_ccc_valueadded_fee",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品三层",
+          "example": "v_ccc_valueadded_tts",
+          "member": "string",
+          "name": "BillingItemCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品四层",
+          "example": "sv_ccc_valueadded_tts_realtime_custom",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计量策略映射code。部分产品用量四层下不唯一，需要该参数进行区分。",
+          "example": "无",
+          "member": "string",
+          "name": "MeasureCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页token；解决深度分页性能问题，从上一页响应结果获取，首次查询时传空",
+          "example": "122331876",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询属性",
+          "example": "无",
+          "member": "DescribeMeasureDetailAttribute",
+          "name": "Attribute",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDetailListResponse": {
+      "document": "DescribeMeasureDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询明细数据",
+          "example": "无",
+          "member": "DescribeMeasureDetailListResult",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMeasureDetailListResult": {
+      "document": "计量用量明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量明细行",
+          "example": "无",
+          "member": "DescribeMeasureDetailListResultItem",
+          "name": "DetailList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分页token；查询下一页时必须带该参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "112443",
+          "member": "string",
+          "name": "PageToken",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMeasureDetailListResultItem": {
+      "document": "计量明细返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主账号UIN",
+          "example": "110420300",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量使用开始时间",
+          "example": "2023-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用量使用结束时间",
+          "example": "2023-08-02 23:59:59",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入计量产品一层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_ccc",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品二层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_ccc_valueadded_fee",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品三层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_ccc_valueadded_tts",
+          "member": "string",
+          "name": "BillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量计费产品四层\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_ccc_valueadded_tts_realtime_custom",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计量策略映射code。部分产品用量四层下不唯一，需要该参数进行区分。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MeasureCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计量订购关系id；部分存量产品只sdkAppId或者业务侧资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "144008921",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总使用量",
+          "example": "1",
+          "member": "string",
+          "name": "TotalDosage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣余量",
+          "example": "1",
+          "member": "string",
+          "name": "RemainDosage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "抵扣量",
+          "example": "1",
+          "member": "string",
+          "name": "DeductDosage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeMeasureDetailAttribute",
+          "name": "Attribute",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询AppId",
+          "example": "1253333236",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DescribeMeasureDetailTotalRequest": {
       "document": "DescribeMeasureDetailTotal请求参数结构体",
@@ -6806,7 +7324,7 @@
           "disabled": false,
           "document": "查询属性",
           "example": "无",
-          "member": "DescribeMeasureDetailAttr",
+          "member": "DescribeMeasureDetailAttribute",
           "name": "Attribute",
           "required": false,
           "type": "list"

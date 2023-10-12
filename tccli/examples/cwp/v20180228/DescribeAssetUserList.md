@@ -14,33 +14,45 @@ Output:
         "Total": 1,
         "Users": [
             {
-                "Uuid": "xx",
-                "Gid": "xx",
-                "LastLoginTime": "xx",
-                "MachineIp": "xx",
-                "IsSshLogin": 1,
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "MachineName": "abc",
+                "OsInfo": "abc",
+                "Uuid": "abc",
+                "Quuid": "abc",
+                "Uid": "abc",
+                "Gid": "abc",
                 "Status": 1,
-                "Shell": "xx",
-                "MachineWanIp": "xx",
-                "MachineName": "xx",
-                "LoginType": 1,
-                "PasswordDueTime": "xx",
-                "UserType": 1,
-                "PasswordChangeTime": "xx",
-                "HomePath": "xx",
-                "OsInfo": "xx",
-                "IsSudo": 1,
-                "Name": "xx",
-                "ProjectId": 1,
-                "IsDomain": 1,
-                "Uid": "xx",
                 "IsRoot": 1,
-                "Quuid": "xx",
-                "PasswordLockDays": 1,
-                "ShellLoginStatus": 1
+                "LoginType": 1,
+                "LastLoginTime": "abc",
+                "Name": "abc",
+                "ProjectId": 1,
+                "UserType": 1,
+                "IsDomain": 1,
+                "IsSudo": 1,
+                "IsSshLogin": 1,
+                "HomePath": "abc",
+                "Shell": "abc",
+                "ShellLoginStatus": 1,
+                "PasswordChangeTime": "abc",
+                "PasswordDueTime": "abc",
+                "PasswordLockDays": 0,
+                "PasswordStatus": 0,
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -14,32 +14,44 @@ Output:
         "Total": 1,
         "Locations": [
             {
-                "OsInfo": "xx",
-                "ServiceType": "xx",
+                "Uuid": "abc",
+                "Quuid": "abc",
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "MachineName": "abc",
+                "OsInfo": "abc",
+                "Name": "abc",
+                "Port": "abc",
+                "Proto": "abc",
+                "ServiceType": "abc",
                 "PathCount": 1,
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
-                "MainPathOwner": "xx",
-                "Proto": "xx",
-                "MachineName": "xx",
-                "Permission": "xx",
-                "Port": 1,
-                "MainPath": "xx",
+                "User": "abc",
+                "MainPath": "abc",
+                "MainPathOwner": "abc",
+                "Permission": "abc",
+                "ProjectId": 1,
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "ProjectId": 1,
-                "User": "xx",
-                "MachineIp": "xx",
-                "Name": "xx"
+                "Id": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

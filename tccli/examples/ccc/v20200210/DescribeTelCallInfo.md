@@ -18,7 +18,7 @@ Output:
         "TelCallOutCount": 0,
         "TelCallInCount": 0,
         "SeatUsedCount": 0,
-        "VoipCallInCount": 0,
+        "VOIPCallInCount": 0,
         "AsrOfflineCount": 0,
         "AsrRealtimeCount": 0,
         "RequestId": "abc"

@@ -14,38 +14,49 @@ Output:
         "Total": 1,
         "Ports": [
             {
-                "Uuid": "xx",
-                "Proto": "xx",
-                "Param": "xx",
-                "ProcessVersion": "xx",
-                "MachineIp": "xx",
-                "Teletype": "xx",
-                "Ppid": "xx",
-                "MachineWanIp": "xx",
-                "MachineName": "xx",
-                "User": "xx",
-                "BindIp": "xx",
-                "Md5": "xx",
-                "OsInfo": "xx",
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "OsInfo": "abc",
                 "ProjectId": 1,
-                "GroupName": "xx",
-                "ProcessPath": "xx",
-                "ProcessName": "xx",
-                "ParentProcessName": "xx",
-                "Pid": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "StartTime": "xx",
-                "Port": "xx"
+                "ProcessName": "abc",
+                "ProcessVersion": "abc",
+                "ProcessPath": "abc",
+                "Pid": "abc",
+                "User": "abc",
+                "StartTime": "abc",
+                "Param": "abc",
+                "Teletype": "abc",
+                "Port": "abc",
+                "GroupName": "abc",
+                "Md5": "abc",
+                "Ppid": "abc",
+                "ParentProcessName": "abc",
+                "Proto": "abc",
+                "BindIp": "abc",
+                "MachineName": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

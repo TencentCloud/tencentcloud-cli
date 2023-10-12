@@ -6668,6 +6668,26 @@
       "members": [
         {
           "disabled": false,
+          "document": "原始数据",
+          "example": "无",
+          "member": "string",
+          "name": "Raw",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "pod UID",
+          "example": "300c3800-ac28-410d-816c-fd2a35ea1a39",
+          "member": "string",
+          "name": "UID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "名称",
           "example": "nginx-1",
           "member": "string",
@@ -6728,6 +6748,26 @@
         },
         {
           "disabled": false,
+          "document": "VPC信息",
+          "example": "vpc-xxx",
+          "member": "string",
+          "name": "VPC",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名字空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "可用区",
           "example": "ap-guangzhou-1",
           "member": "string",
@@ -6742,6 +6782,26 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "IP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "弹性IP",
+          "example": "无",
+          "member": "string",
+          "name": "EIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6768,6 +6828,56 @@
         },
         {
           "disabled": false,
+          "document": "PVC信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PVC",
+          "name": "PVCs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新状态",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateState",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前版本",
+          "example": "无",
+          "member": "string",
+          "name": "CurrentRevision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新版本",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateRevision",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WebShell链接",
+          "example": "无",
+          "member": "string",
+          "name": "WebShell",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "创建时间",
           "example": "2022-11-16T04:03:38+00:00",
           "member": "datetime_iso",
@@ -6775,43 +6885,8 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "pod UID",
-          "example": "300c3800-ac28-410d-816c-fd2a35ea1a39",
-          "member": "string",
-          "name": "UID",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "状态信息",
-          "example": "无",
-          "member": "PodStatus",
-          "name": "Status",
-          "output_required": true,
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "PVC信息",
-          "example": "无",
-          "member": "PVC",
-          "name": "PVCs",
-          "output_required": true,
-          "type": "list",
-          "value_allowed_null": false
         }
       ],
-      "usage": "out"
-    },
-    "PodStatus": {
-      "document": "Pod状态信息",
-      "members": [],
       "usage": "out"
     },
     "PolarisConfig": {

@@ -11,34 +11,46 @@ Output:
 ```
 {
     "Response": {
+        "Total": 1,
         "WebApps": [
             {
-                "OsInfo": "xx",
-                "Domain": "xx",
-                "Id": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "OsInfo": "abc",
                 "ProjectId": 1,
-                "RootPath": "xx",
-                "PluginCount": 1,
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Version": "xx",
-                "Quuid": "xx",
-                "Desc": "xx",
-                "VirtualPath": "xx",
-                "ServiceType": "xx",
-                "MachineIp": "xx",
-                "Name": "xx"
+                "Name": "abc",
+                "Version": "abc",
+                "RootPath": "abc",
+                "ServiceType": "abc",
+                "Domain": "abc",
+                "VirtualPath": "abc",
+                "PluginCount": 1,
+                "Id": "abc",
+                "Desc": "abc",
+                "MachineName": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "Total": 1,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

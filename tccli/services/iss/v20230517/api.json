@@ -350,6 +350,13 @@
       "output": "DescribeUserDeviceResponse",
       "status": "online"
     },
+    "DescribeVideoBitRate": {
+      "document": "用于获取视频通道的码率信息",
+      "input": "DescribeVideoBitRateRequest",
+      "name": "视频通道码率查询",
+      "output": "DescribeVideoBitRateResponse",
+      "status": "online"
+    },
     "DescribeVideoDownloadUrl": {
       "document": "用于获取云录像下载 url",
       "input": "DescribeVideoDownloadUrlRequest",
@@ -2332,6 +2339,32 @@
         }
       ],
       "type": "object"
+    },
+    "BitRateInfo": {
+      "document": "视频通道码率返回结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ffefbe2f-a5a2-4659-a56f-7596a0e13900\"",
+          "member": "string",
+          "name": "ChannelId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "码率,单位:kbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "15.23",
+          "member": "float",
+          "name": "Bitrate",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BodyAIResultInfo": {
       "document": "人体识别结果详情",
@@ -5466,6 +5499,59 @@
           "document": "返回结果",
           "example": "无",
           "member": "DescribeDeviceData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoBitRateList": {
+      "document": "查询视频通道码率的返回结果列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道码率列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BitRateInfo",
+          "name": "BitRates",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeVideoBitRateRequest": {
+      "document": "DescribeVideoBitRate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通道ID列表",
+          "example": "[\"ffefbe2f-a5a2-4659-a56f-7596a0e13900\",\"ffd25236-a057-4c30-a3dc-91b1aee8cbc0\"]",
+          "member": "string",
+          "name": "ChannelIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoBitRateResponse": {
+      "document": "DescribeVideoBitRate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "DescribeVideoBitRateList",
           "name": "Data",
           "output_required": true,
           "type": "object",

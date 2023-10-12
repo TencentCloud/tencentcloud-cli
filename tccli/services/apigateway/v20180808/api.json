@@ -1882,6 +1882,16 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SCF Event异步调用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "ServiceScfEventIsAsyncCall",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3745,6 +3755,15 @@
           "name": "ServiceScfFunctionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SCF Event异步调用。",
+          "example": "true",
+          "member": "bool",
+          "name": "ServiceScfEventIsAsyncCall",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -10353,6 +10372,15 @@
           "name": "ServiceScfFunctionType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SCF Event异步调用。",
+          "example": "false",
+          "member": "bool",
+          "name": "ServiceScfEventIsAsyncCall",
+          "required": false,
+          "type": "bool"
         },
         {
           "disabled": false,

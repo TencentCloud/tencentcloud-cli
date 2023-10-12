@@ -18,157 +18,169 @@ Output:
 {
     "Response": {
         "TotalCount": 2,
-        "TelCdrs": [
+        "TelCdrList": [
             {
-                "ProtectedCaller": "xx",
+                "ProtectedCaller": "abc",
                 "EndStatus": 1,
-                "SessionId": "xx",
-                "CustomRecordURL": "xx",
+                "SessionId": "abc",
+                "CustomRecordURL": "abc",
                 "SkillGroupId": 100,
                 "Direction": 0,
                 "StartTimestamp": 1590547606,
-                "AsrUrl": "xx",
-                "HungUpSide": "xx",
+                "AsrUrl": "abc",
+                "HungUpSide": "abc",
                 "ServeParticipants": [
                     {
-                        "TransferTo": "xx",
-                        "EndStatusString": "xx",
-                        "RecordURL": "xx",
-                        "TransferToType": "xx",
+                        "TransferTo": "abc",
+                        "TransferFromType": "abc",
+                        "EndStatusString": "abc",
+                        "RecordURL": "abc",
+                        "TransferToType": "abc",
                         "AcceptTimestamp": 0,
-                        "RecordId": "xx",
-                        "TransferFrom": "xx",
+                        "RecordId": "abc",
+                        "TransferFrom": "abc",
                         "EndedTimestamp": 0,
                         "Sequence": 0,
-                        "Phone": "xx",
-                        "SkillGroupName": "xx",
-                        "Mail": "xx",
+                        "Phone": "abc",
+                        "SkillGroupName": "abc",
+                        "Mail": "abc",
                         "RingTimestamp": 0,
-                        "Type": "xx",
+                        "Type": "abc",
                         "StartTimestamp": 0,
-                        "CustomRecordURL": "xx",
+                        "CustomRecordURL": "abc",
                         "SkillGroupId": 0
                     }
                 ],
                 "PostIVRKeyPressed": [
                     {
-                        "Key": "xx",
-                        "Label": "xx"
+                        "Key": "abc",
+                        "Label": "abc"
                     }
                 ],
-                "EndStatusString": "xx",
-                "Uui": "xx",
+                "EndStatusString": "abc",
+                "UUI": "abc",
                 "QueuedSkillGroupId": 100,
                 "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
                 "EndedTimestamp": 1590547606,
-                "Caller": "xx",
-                "CallerLocation": "xx",
+                "Caller": "abc",
+                "CallerLocation": "abc",
                 "Time": 1590547606,
-                "Callee": "xx",
+                "Callee": "abc",
                 "SeatUser": {
-                    "Name": "xx",
-                    "Phone": "xx",
-                    "UserId": "xx",
-                    "Nick": "xx",
-                    "StaffNumber": "xx",
-                    "Mail": "xx",
+                    "Name": "abc",
+                    "Phone": "abc",
+                    "UserId": "abc",
+                    "Nick": "abc",
+                    "StaffNumber": "abc",
+                    "Mail": "abc",
                     "SkillGroupNameList": [
-                        "xx"
+                        "abc"
                     ]
                 },
-                "RecordURL": "xx",
+                "RecordURL": "abc",
                 "QueuedTimestamp": 1610627284,
-                "ProtectedCallee": "xx",
+                "ProtectedCallee": "abc",
                 "IVRDuration": 5,
-                "SkillGroup": "xx",
+                "SkillGroup": "abc",
                 "Duration": 60,
                 "IVRKeyPressed": [
                     "5"
                 ],
                 "IVRKeyPressedEx": [
                     {
-                        "Key": "xx",
-                        "Label": "xx"
+                        "Key": "abc",
+                        "Label": "abc"
                     }
+                ],
+                "Remark": "abc",
+                "QueuedSkillGroupName": "abc",
+                "VoicemailRecordURL": [
+                    "abc"
                 ]
             },
             {
-                "ProtectedCaller": "xx",
+                "ProtectedCaller": "abc",
                 "EndStatus": 1,
-                "SessionId": "xx",
-                "CustomRecordURL": "xx",
+                "SessionId": "abc",
+                "CustomRecordURL": "abc",
                 "SkillGroupId": 100,
                 "Direction": 0,
                 "StartTimestamp": 1590547630,
-                "AsrUrl": "xx",
-                "HungUpSide": "xx",
+                "AsrUrl": "abc",
+                "HungUpSide": "abc",
                 "ServeParticipants": [
                     {
-                        "TransferTo": "xx",
-                        "RecordURL": "xx",
-                        "TransferToType": "xx",
+                        "TransferTo": "abc",
+                        "TransferFromType": "abc",
+                        "RecordURL": "abc",
+                        "TransferToType": "abc",
                         "AcceptTimestamp": 0,
-                        "RecordId": "xx",
-                        "TransferFrom": "xx",
+                        "RecordId": "abc",
+                        "TransferFrom": "abc",
                         "EndedTimestamp": 0,
                         "Sequence": 0,
-                        "Phone": "xx",
-                        "EndStatusString": "xx",
-                        "SkillGroupName": "xx",
-                        "Mail": "xx",
+                        "Phone": "abc",
+                        "EndStatusString": "abc",
+                        "SkillGroupName": "abc",
+                        "Mail": "abc",
                         "RingTimestamp": 0,
-                        "Type": "xx",
+                        "Type": "abc",
                         "StartTimestamp": 0,
-                        "CustomRecordURL": "xx",
+                        "CustomRecordURL": "abc",
                         "SkillGroupId": 0
                     }
                 ],
                 "PostIVRKeyPressed": [
                     {
-                        "Key": "xx",
-                        "Label": "xx"
+                        "Key": "abc",
+                        "Label": "abc"
                     }
                 ],
-                "EndStatusString": "xx",
-                "Uui": "xx",
+                "EndStatusString": "abc",
+                "UUI": "abc",
                 "QueuedSkillGroupId": 100,
                 "RingTimestamp": 1590547606,
                 "AcceptTimestamp": 1590547606,
                 "EndedTimestamp": 1590547606,
-                "Caller": "xx",
-                "CallerLocation": "xx",
+                "Caller": "abc",
+                "CallerLocation": "abc",
                 "Time": 1590547630,
-                "Callee": "xx",
+                "Callee": "abc",
                 "SeatUser": {
-                    "Name": "xx",
-                    "Nick": "xx",
-                    "UserId": "xx",
-                    "Phone": "xx",
-                    "StaffNumber": "xx",
-                    "Mail": "xx",
+                    "Name": "abc",
+                    "Nick": "abc",
+                    "UserId": "abc",
+                    "Phone": "abc",
+                    "StaffNumber": "abc",
+                    "Mail": "abc",
                     "SkillGroupNameList": [
-                        "xx"
+                        "abc"
                     ]
                 },
-                "RecordURL": "xx",
+                "RecordURL": "abc",
                 "QueuedTimestamp": 1610627284,
-                "ProtectedCallee": "xx",
+                "ProtectedCallee": "abc",
                 "IVRDuration": 5,
-                "SkillGroup": "xx",
+                "SkillGroup": "abc",
                 "Duration": 62,
                 "IVRKeyPressed": [
                     "5"
                 ],
                 "IVRKeyPressedEx": [
                     {
-                        "Key": "xx",
-                        "Label": "xx"
+                        "Key": "abc",
+                        "Label": "abc"
                     }
+                ],
+                "Remark": "abc",
+                "QueuedSkillGroupName": "abc",
+                "VoicemailRecordURL": [
+                    "abc"
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -41,7 +41,6 @@ Output:
                 "State": "abc",
                 "CreatedAt": "2020-09-22T00:00:00+00:00",
                 "UID": "abc",
-                "Status": {},
                 "PVCs": [
                     {
                         "Name": "abc",
