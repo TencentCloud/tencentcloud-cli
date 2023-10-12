@@ -1254,17 +1254,17 @@
           "example": "C60",
           "member": "string",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "容量单位是GB, 比如4608(4.5TB)",
+          "document": "容量单位是GB, 例如4608(4.5TB)",
           "example": "4608",
           "member": "uint64",
           "name": "Capacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1274,7 +1274,7 @@
           "example": "无",
           "member": "MappedBucket",
           "name": "MappedBucketList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1284,7 +1284,7 @@
           "example": "无",
           "member": "ClientClusterManagerNodeInfo",
           "name": "ClientManagerNodeList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -1301,18 +1301,16 @@
           "member": "string",
           "name": "Model",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "容量单位是GB, 比如4608(4.5TB)",
+          "document": "容量单位是GB, 例如4608(4.5TB)",
           "example": "4608",
           "member": "uint64",
           "name": "Capacity",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1321,8 +1319,7 @@
           "member": "MappedBucket",
           "name": "MappedBucketList",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

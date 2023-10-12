@@ -6,38 +6,49 @@ Input:
 
 ```
 tccli cwp DescribeAssetCoreModuleList --cli-unfold-argument  \
-    --Uuid xx \
+    --Uuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
     --Order asc \
     --Limit 1 \
-    --Quuid xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
+    --Quuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
     --Offset 1 \
-    --By xx
+    --By Size
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 1,
         "Modules": [
             {
-                "OsInfo": "xx",
-                "Name": "xx",
-                "MachineName": "xx",
-                "Id": "xx",
-                "Version": "xx",
-                "ModuleCount": 1,
-                "ProcessCount": 1,
-                "Path": "xx",
+                "Name": "abc",
+                "Desc": "abc",
+                "Path": "abc",
+                "Version": "abc",
+                "MachineIp": "abc",
+                "MachineName": "abc",
+                "OsInfo": "abc",
                 "Size": 1,
-                "MachineIp": "xx",
-                "Desc": 1
+                "ProcessCount": 1,
+                "ModuleCount": 1,
+                "Id": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineWanIp": "abc",
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "abc"
     }
 }
 ```

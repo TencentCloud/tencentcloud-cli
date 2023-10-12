@@ -1,6 +1,6 @@
 **Example 1: 查询资产管理数据库列表**
 
-
+查询资产管理数据库列表
 
 Input: 
 
@@ -11,39 +11,52 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
-        "RequestId": "xx",
         "Databases": [
             {
-                "OsInfo": "xx",
-                "Version": "xx",
-                "MachineWanIp": "xx",
-                "ErrorLogPath": "xx",
-                "Proto": "xx",
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "OsInfo": "abc",
                 "ProjectId": 1,
-                "Permission": "xx",
-                "LogPath": "xx",
-                "DataPath": "xx",
-                "Param": "xx",
-                "ConfigPath": "xx",
-                "BinPath": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "PlugInPath": "xx",
-                "Ip": "xx",
-                "Uuid": "xx",
-                "Name": "xx",
-                "Port": "xx",
-                "MachineIp": "xx",
-                "User": "xx"
+                "Name": "abc",
+                "Version": "abc",
+                "Port": "abc",
+                "Proto": "abc",
+                "User": "abc",
+                "Ip": "abc",
+                "ConfigPath": "abc",
+                "LogPath": "abc",
+                "DataPath": "abc",
+                "Permission": "abc",
+                "ErrorLogPath": "abc",
+                "PlugInPath": "abc",
+                "BinPath": "abc",
+                "Param": "abc",
+                "Id": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineName": "abc",
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
-        ]
+        ],
+        "Total": 1,
+        "RequestId": "abc"
     }
 }
 ```

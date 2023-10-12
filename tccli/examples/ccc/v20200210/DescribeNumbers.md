@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli ccc DescribeNumbers --cli-unfold-argument ```
+tccli ccc DescribeNumbers --cli-unfold-argument  \
+    --SdkAppId 1400000000 \
+    --PageNumber 0 \
+    --PageSize 10
+```
 
 Output: 
 ```
@@ -15,12 +19,13 @@ Output:
         "Numbers": [
             {
                 "Number": "0086075512345678",
+                "State": 1,
                 "CallOutSkillGroupIds": [
                     1
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

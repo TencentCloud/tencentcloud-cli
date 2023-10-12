@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "UserId": "xx",
-        "RequestId": "xx"
+        "UserId": "100000000",
+        "RequestId": "requestid"
     }
 }
 ```

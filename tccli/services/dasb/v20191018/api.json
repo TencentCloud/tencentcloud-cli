@@ -1699,6 +1699,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "部署region",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DeployRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "部署堡垒机的VpcId",
           "example": "vpc-xxxxxxxx",
           "member": "string",
@@ -1713,6 +1722,69 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型。取值:standard/pro",
+          "example": "standard",
+          "member": "string",
+          "name": "ResourceEdition",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源节点数",
+          "example": "2",
+          "member": "int64",
+          "name": "ResourceNode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计费周期",
+          "example": "m",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费时长",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式 1预付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部署zone",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "DeployZone",
+          "required": false,
           "type": "string"
         }
       ],

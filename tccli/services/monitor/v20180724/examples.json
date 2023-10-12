@@ -82,17 +82,29 @@
     ],
     "CreateGrafanaIntegration": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Content\": \"xx\",\n    \"Kind\": \"tencent-cloud-prometheus\"\n}",
-        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建 Grafana 集成配置"
+        "document": "创建 Kong 集成配置（name 和 url 必填，user、password、labels、organizationIds 都是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cloud-kong\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-kong\\\",\\\"url\\\":\\\"http://10.0.0.0:9090/\\\",\\\"user\\\":\\\"user\\\",\\\"password\\\":\\\"password\\\",\\\"labels\\\":{\\\"label\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\",\n    \"Kind\": \"tencent-cloud-prometheus\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"integration-test\",\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "创建 Kong 集成配置"
+      },
+      {
+        "document": "创建 Prometheus 集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencentcloud-monitor-app\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencentcloud-monitor-app\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-monitor\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"integration-test\",\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "创建 Prometheus 集成-使用密钥"
+      },
+      {
+        "document": "创建日志服务集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencent-cls-grafana-datasource-v2\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cls-grafana-datasource-v2\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-cls\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IntegrationId\": \"integration-test\",\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "创建日志服务集成-使用密钥"
       }
     ],
     "CreateGrafanaNotificationChannel": [
       {
         "document": "创建 Grafana 告警通道",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelName\": \"test\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelName\": \"test\",\n    \"OrgId\": 0,\n    \"Receivers\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建 Grafana 告警通道"
       }
     ],
@@ -200,7 +212,7 @@
       {
         "document": "Grafana实例授权其他腾讯云用户",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSSOAccount\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"UserId\": \"100000000\",\n    \"Role\": [\n        {\n            \"Organization\": \"Org\",\n            \"Role\": \"Admin\"\n        }\n    ],\n    \"Notes\": \"授权该用户\"\n}",
-        "output": "{\n    \"Response\": {\n        \"UserId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"UserId\": \"100000000\",\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "授权腾讯云用户"
       }
     ],
@@ -264,7 +276,7 @@
       {
         "document": "删除 Grafana 告警通道",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"ChannelIDs\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除 Grafana 告警通道"
       }
     ],
@@ -522,7 +534,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeGrafanaChannels\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelState\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"ChannelName\": \"test\",\n    \"ChannelIds\": [\n        \"nchannel-abcd1234\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"xx\"\n                ],\n                \"ChannelId\": \"nchannel-abcd1234\",\n                \"OrganizationIds\": [\n                    \"xx\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"test\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"NotificationChannelSet\": [\n            {\n                \"Receivers\": [\n                    \"123\"\n                ],\n                \"ChannelId\": \"nchannel-abcd1234\",\n                \"OrganizationIds\": [\n                    \"1\"\n                ],\n                \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n                \"ChannelName\": \"test\",\n                \"CreatedAt\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "列出 Grafana 告警通道"
       }
     ],
@@ -899,8 +911,8 @@
     "InstallPlugins": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"xx\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"PluginIds\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InstallPlugins\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-abcdefgh\",\n    \"Plugins\": [\n        {\n            \"PluginId\": \"grafana-clock-panel\",\n            \"Version\": \"1.2.0\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PluginIds\": [\n            \"grafana-clock-panel\"\n        ],\n        \"RequestId\": \"requestid\"\n    }\n}",
         "title": "安装 Grafana 插件"
       }
     ],
@@ -1155,25 +1167,37 @@
     "UpdateGrafanaConfig": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"xx\",\n    \"Config\": \"{\\\"server\\\":{\\\"root_url\\\":\\\"http://balaba\\\"},\\\"server_haha\\\":\\\"heihei\\\"}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaConfig\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"Config\": \"{\\\"server\\\":{\\\"root_url\\\":\\\"http://abc\\\"},\\\"server_a\\\":\\\"abc\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新 Grafana 配置"
       }
     ],
     "UpdateGrafanaEnvironments": [
       {
         "document": "更新 Grafana 环境变量",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Envs\": \"{}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaEnvironments\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Envs\": \"{\\\"key1\\\":\\\"key2\\\"}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab\"\n    }\n}",
         "title": "更新 Grafana 环境变量"
       }
     ],
     "UpdateGrafanaIntegration": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"IntegrationId\": \"integration-abcd1234\",\n    \"InstanceId\": \"grafana-12345678\",\n    \"Kind\": \"tencent-cloud-prometheus\",\n    \"Content\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "更新 Grafana 集成配置"
+        "document": "更新 Kong 集成配置（name 和 url 必填，user、password、labels、organizationIds 都是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cloud-kong\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-kong\\\",\\\"url\\\":\\\"http://10.0.0.0:9090/\\\",\\\"user\\\":\\\"user\\\",\\\"password\\\":\\\"password\\\",\\\"labels\\\":{\\\"label\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\",\n    \"Kind\": \"tencent-cloud-prometheus\",\n    \"IntegrationId\": \"integration-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": " 更新 Kong 集成配置"
+      },
+      {
+        "document": "更新 Prometheus 集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencentcloud-monitor-app\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencentcloud-monitor-app\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-monitor\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\",\n    \"IntegrationId\": \"integration-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "更新 Prometheus 集成-使用密钥"
+      },
+      {
+        "document": "更新日志服务集成-使用密钥（name、secretId 和 secretKey 必填，organizationIds 是选填，选填的字段如果不填可直接删除）",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-test\",\n    \"Kind\": \"tencent-cls-grafana-datasource-v2\",\n    \"Content\": \"{\\\"kind\\\":\\\"tencent-cls-grafana-datasource-v2\\\",\\\"spec\\\":{\\\"dataSourceSpec\\\":{\\\"name\\\":\\\"prometheus-cls\\\",\\\"authProvider\\\":{\\\"__anyOf\\\":\\\"使用密钥\\\",\\\"secretId\\\":\\\"AKIDtest\\\",\\\"secretKey\\\":\\\"test\\\"}},\\\"grafanaSpec\\\":{\\\"organizationIds\\\":[\\\"2\\\"]}}}\",\n    \"IntegrationId\": \"integration-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"requestid\"\n    }\n}",
+        "title": "更新日志服务集成-使用密钥"
       }
     ],
     "UpdateGrafanaNotificationChannel": [
@@ -1244,7 +1268,7 @@
       {
         "document": "升级 Grafana 实例",
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpgradeGrafanaInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"Alias\": \"v7.4.2\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "升级 Grafana 实例"
       }
     ]

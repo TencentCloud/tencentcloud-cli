@@ -71,7 +71,7 @@
       "status": "online"
     },
     "CreateGrafanaIntegration": {
-      "document": "创建 Grafana 集成配置",
+      "document": "创建 Grafana 集成配置，其中 Prometheus 集成不通过该接口创建，可参考 BindPrometheusManagedGrafana 接口",
       "input": "CreateGrafanaIntegrationRequest",
       "name": "创建 Grafana 集成配置",
       "output": "CreateGrafanaIntegrationResponse",
@@ -3399,7 +3399,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "VPC ID (私有网络 ID)",
           "example": "vpc-id",
           "member": "string",
           "name": "VpcId",
@@ -3408,7 +3408,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID 数组",
+          "document": "子网 ID 数组(VPC ID下的子网 ID，只取第一个)",
           "example": "[\"subnet-id1\"]",
           "member": "string",
           "name": "SubnetIds",
@@ -3426,7 +3426,7 @@
         },
         {
           "disabled": false,
-          "document": "Grafana 初始密码",
+          "document": "Grafana 初始密码(国际站用户必填，国内站用户可不填，不填时会生成随机密码并给主账号发送通知)",
           "example": "admin",
           "member": "string",
           "name": "GrafanaInitPassword",
@@ -3454,6 +3454,7 @@
           "example": "my-grafana",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3480,7 +3481,7 @@
         },
         {
           "disabled": false,
-          "document": "集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus",
+          "document": "集成类型(接口DescribeGrafanaIntegrationOverviews返回的集成信息中的Code字段)",
           "example": "grafana",
           "member": "string",
           "name": "Kind",
@@ -3508,7 +3509,7 @@
           "example": "integration-xxxxxxxx",
           "member": "string",
           "name": "IntegrationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3544,7 +3545,7 @@
         },
         {
           "disabled": false,
-          "document": "默认为1，已废弃，请使用 OrganizationIds",
+          "document": "默认为1，建议使用 OrganizationIds",
           "example": "1",
           "member": "int64",
           "name": "OrgId",
@@ -3553,7 +3554,7 @@
         },
         {
           "disabled": false,
-          "document": "接受告警通道 ID 数组",
+          "document": "接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID ",
           "example": "[]",
           "member": "string",
           "name": "Receivers",
@@ -3590,6 +3591,7 @@
           "example": "channel-xxxxxxxx",
           "member": "string",
           "name": "ChannelId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4428,8 +4430,8 @@
         },
         {
           "disabled": false,
-          "document": "权限",
-          "example": "无",
+          "document": "权限(只取数组中的第一个，其中 Organization 暂未使用，可不填)",
+          "example": "\"\"",
           "member": "GrafanaAccountRole",
           "name": "Role",
           "required": true,
@@ -4456,7 +4458,7 @@
           "example": "无",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4762,7 +4764,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例名数组",
+          "document": "实例ID数组",
           "example": "[\"instance-id\"]",
           "member": "string",
           "name": "InstanceIDs",
@@ -4825,7 +4827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "通道 ID 数组。例如：nchannel-abcd1234",
+          "document": "通道 ID 数组。例如：nchannel-abcd1234，通过 DescribeGrafanaChannels 获取",
           "example": "[]",
           "member": "string",
           "name": "ChannelIDs",
@@ -7632,7 +7634,7 @@
         },
         {
           "disabled": false,
-          "document": "告警通道状态",
+          "document": "告警通道状态(不用填写，目前只有可用和删除状态，默认只能查询可用的告警通道)",
           "example": "1",
           "member": "int64",
           "name": "ChannelState",
@@ -7651,7 +7653,7 @@
           "example": "[]",
           "member": "GrafanaChannel",
           "name": "NotificationChannelSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12784,16 +12786,18 @@
           "example": "Org",
           "member": "string",
           "name": "Organization",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "权限",
+          "document": "权限(Admin、Editor、Viewer)",
           "example": "Admin",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13246,7 +13250,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "插件信息",
+          "document": "插件信息(可通过 DescribePluginOverviews 接口获取)",
           "example": "无",
           "member": "GrafanaPlugin",
           "name": "Plugins",
@@ -13274,7 +13278,7 @@
           "example": "[\"grafana-piechart\"]",
           "member": "string",
           "name": "PluginIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -19150,8 +19154,8 @@
         },
         {
           "disabled": false,
-          "document": "JSON 编码后的字符串",
-          "example": "\"{\"server\":{\"root_url\":\"http://balabalahahaha\"}}\"",
+          "document": "JSON 编码后的字符串，如 \"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
+          "example": "\"{\"server\":{\"root_url\":\"http://custom.domain\"}}\"",
           "member": "string",
           "name": "Config",
           "required": true,
@@ -19186,7 +19190,7 @@
         },
         {
           "disabled": false,
-          "document": "环境变量字符串",
+          "document": "JSON 序列化后的环境变量字符串，如 \"{\\\"key1\\\":\\\"key2\\\"}\"\n",
           "example": "{}",
           "member": "string",
           "name": "Envs",
@@ -19240,7 +19244,7 @@
         },
         {
           "disabled": false,
-          "document": "集成内容",
+          "document": "集成内容，请查看示例",
           "example": "'{}'",
           "member": "string",
           "name": "Content",
@@ -19348,8 +19352,8 @@
         },
         {
           "disabled": false,
-          "document": "白名单数组，输入公网域名 IP ，例如：127.0.0.1，可通过接口 DescribeGrafanaWhiteList 查看",
-          "example": "[\"\"]",
+          "document": "白名单数组，输入白名单 IP 或 CIDR，如：127.0.0.1或127.0.0.1/24\n如有多个 IP 可换行输入",
+          "example": "[\"0.0.0.0/0\"]",
           "member": "string",
           "name": "Whitelist",
           "required": true,
@@ -19718,7 +19722,7 @@
         },
         {
           "disabled": false,
-          "document": "版本别名，例如：v7.4.2",
+          "document": "版本别名，目前固定为 v9.1.5",
           "example": "my-instance",
           "member": "string",
           "name": "Alias",

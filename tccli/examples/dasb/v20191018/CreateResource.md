@@ -6,8 +6,16 @@ Input:
 
 ```
 tccli dasb CreateResource --cli-unfold-argument  \
+    --DeployRegion ap-guanghzou \
+    --DeployZone ap-guangzhou-1 \
     --VpcId vpc-xxxxxxxx \
-    --SubnetId subnet-xxxxxxxx
+    --SubnetId subnet-xxxxxxxx \
+    --ResourceEdition free \
+    --ResourceNode 2 \
+    --TimeUnit m \
+    --TimeSpan 1 \
+    --PayMode 1 \
+    --AutoRenewFlag 1
 ```
 
 Output: 

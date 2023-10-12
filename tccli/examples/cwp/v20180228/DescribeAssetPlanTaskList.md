@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cwp DescribeAssetPlanTaskList --cli-unfold-argument  \
-    --Uuid xx \
+    --Uuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
     --Limit 1 \
-    --Quuid xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Quuid 65ce6db8-a914-4349-a8b9-d756236686d2 \
+    --Filters.0.Values 10.0.0.1 \
+    --Filters.0.Name IP \
     --Filters.0.ExactMatch True \
     --Offset 1
 ```
@@ -22,19 +22,31 @@ Output:
         "Tasks": [
             {
                 "Status": 1,
-                "OsInfo": "xx",
-                "MachineName": "xx",
-                "ConfigPath": "xx",
-                "Command": "xx",
-                "User": "xx",
-                "MachineIp": "xx",
-                "Cycle": "xx",
-                "Quuid": "xxxx-xxxx-xxxx-xxxx",
-                "Uuid": "xxxx-xxxx-xxxx-xxxx"
+                "Cycle": "abc",
+                "Command": "abc",
+                "User": "abc",
+                "ConfigPath": "abc",
+                "MachineIp": "abc",
+                "MachineName": "abc",
+                "OsInfo": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineWanIp": "abc",
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx",
-        "Total": 1
+        "Total": 1,
+        "RequestId": "abc"
     }
 }
 ```

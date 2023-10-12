@@ -14,27 +14,39 @@ Output:
         "Total": 1,
         "WebFrames": [
             {
-                "OsInfo": "xx",
-                "Lang": "xx",
-                "ServiceType": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
+                "MachineIp": "abc",
+                "MachineWanIp": "abc",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "OsInfo": "abc",
                 "ProjectId": 1,
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Version": "xx",
-                "Quuid": "xx",
-                "MachineName": "xx",
-                "MachineIp": "xx",
-                "Name": "xx"
+                "Name": "abc",
+                "Version": "abc",
+                "Lang": "abc",
+                "ServiceType": "abc",
+                "MachineName": "abc",
+                "UpdateTime": "abc",
+                "FirstTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                },
+                "Path": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

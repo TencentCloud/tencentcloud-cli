@@ -5171,7 +5171,7 @@
         {
           "disabled": false,
           "document": "播放域名列表，若不填，表示总体数据。",
-          "example": "[\"5000.playdomain.com\\n\"]",
+          "example": "[\"5000.playdomain.com\"]",
           "member": "string",
           "name": "PlayDomains",
           "required": false,

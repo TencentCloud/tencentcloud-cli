@@ -1165,11 +1165,20 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "自定义数据，长度限制 1024 字节",
           "example": "dGhpcyBpcyBhIGV4YW1wbGU=",
           "member": "string",
           "name": "Uui",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义数据，长度限制 1024 字节",
+          "example": "dGhpcyBpcyBhIGV4YW1wbGU",
+          "member": "string",
+          "name": "UUI",
           "required": false,
           "type": "string"
         }
@@ -1185,6 +1194,7 @@
           "example": "adcf61b8-dbb9-4c20-87bf-c0744c04bade",
           "member": "string",
           "name": "SessionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2497,6 +2507,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2506,6 +2517,7 @@
           "example": "无",
           "member": "NumberInfo",
           "name": "Numbers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2643,8 +2655,18 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "话单记录",
+          "example": "无",
+          "member": "TelCdrInfo",
+          "name": "TelCdrs",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -2652,8 +2674,8 @@
           "document": "话单记录",
           "example": "无",
           "member": "TelCdrInfo",
-          "name": "TelCdrs",
-          "required": true,
+          "name": "TelCdrList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2951,6 +2973,7 @@
           "example": "10",
           "member": "int64",
           "name": "TelCallOutCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2960,6 +2983,7 @@
           "example": "10",
           "member": "int64",
           "name": "TelCallInCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2969,6 +2993,17 @@
           "example": "50",
           "member": "int64",
           "name": "SeatUsedCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "音频套餐包消耗分钟数",
+          "example": "10",
+          "member": "int64",
+          "name": "VoipCallInCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2977,7 +3012,8 @@
           "document": "音频套餐包消耗分钟数",
           "example": "10",
           "member": "int64",
-          "name": "VoipCallInCount",
+          "name": "VOIPCallInCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2987,6 +3023,7 @@
           "example": "1",
           "member": "int64",
           "name": "AsrOfflineCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2996,6 +3033,7 @@
           "example": "1",
           "member": "int64",
           "name": "AsrRealtimeCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3030,7 +3068,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "实例 ID（废弃）",
           "example": "11",
           "member": "int64",
@@ -3113,8 +3151,18 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "话单记录",
+          "example": "无",
+          "member": "TelCdrInfo",
+          "name": "TelCdrs",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -3122,8 +3170,8 @@
           "document": "话单记录",
           "example": "无",
           "member": "TelCdrInfo",
-          "name": "TelCdrs",
-          "required": true,
+          "name": "TelCdrList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3833,7 +3881,7 @@
           "example": "0086075512345678",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3843,8 +3891,18 @@
           "example": "[1,2,3]",
           "member": "uint64",
           "name": "CallOutSkillGroupIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "号码状态，1-正常，2-欠费停用，4-管理员停用，5-违规停用",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -5418,11 +5476,21 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "whatever",
           "member": "string",
           "name": "Uui",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户自定义数据（User-to-User Interface）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "whatever",
+          "member": "string",
+          "name": "UUI",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true

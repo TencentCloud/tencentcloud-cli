@@ -83,7 +83,7 @@
     "CreateResource": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"DeployRegion\": \"ap-guanghzou\",\n    \"DeployZone\": \"ap-guangzhou-1\",\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\",\n    \"ResourceEdition\": \"free\",\n    \"ResourceNode\": 2,\n    \"TimeUnit\": \"m\",\n    \"TimeSpan\": 1,\n    \"PayMode\": 1,\n    \"AutoRenewFlag\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffb59145-70f9-45e6-99be-fc0a8db82f45\"\n    }\n}",
         "title": "创建堡垒机实例"
       }

@@ -21,18 +21,18 @@ Output:
         "NotificationChannelSet": [
             {
                 "Receivers": [
-                    "xx"
+                    "123"
                 ],
                 "ChannelId": "nchannel-abcd1234",
                 "OrganizationIds": [
-                    "xx"
+                    "1"
                 ],
                 "UpdatedAt": "2020-09-22T00:00:00+00:00",
                 "ChannelName": "test",
                 "CreatedAt": "2020-09-22T00:00:00+00:00"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "requestid"
     }
 }
 ```

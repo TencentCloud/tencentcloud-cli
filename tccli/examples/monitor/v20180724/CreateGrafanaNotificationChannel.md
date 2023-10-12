@@ -9,15 +9,15 @@ tccli monitor CreateGrafanaNotificationChannel --cli-unfold-argument  \
     --InstanceId grafana-abcdefgh \
     --ChannelName test \
     --OrgId 0 \
-    --Receivers xx
+    --Receivers abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ChannelId": "xx",
-        "RequestId": "xx"
+        "ChannelId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

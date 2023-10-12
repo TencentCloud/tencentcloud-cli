@@ -472,6 +472,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeObjects": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeObjects\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ClbObjects\": [\n            {\n                \"ObjectId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"PreciseDomains\": [\n                    \"abc\"\n                ],\n                \"Status\": 0,\n                \"ClsStatus\": 0,\n                \"VirtualDomain\": \"abc\",\n                \"ObjectName\": \"abc\",\n                \"PublicIp\": [\n                    \"abc\"\n                ],\n                \"PrivateIp\": [\n                    \"abc\"\n                ],\n                \"VpcName\": \"abc\",\n                \"Vpc\": \"abc\",\n                \"InstanceLevel\": 0,\n                \"PostCLSStatus\": 0,\n                \"PostCKafkaStatus\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查看对象列表"
+      }
+    ],
     "DescribePeakPoints": [
       {
         "document": "",
@@ -874,6 +882,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModuleStatus\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-edf\"\n    }\n}",
         "title": "修改模块状态"
+      }
+    ],
+    "ModifyObject": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyObject\n<公共请求参数>\n\n{\n    \"Status\": 0,\n    \"InstanceId\": \"xx\",\n    \"ObjectId\": \"xx\",\n    \"OpType\": \"Status\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
+        "title": "修改实例ID"
       }
     ],
     "ModifyProtectionStatus": [

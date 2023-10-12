@@ -13916,6 +13916,26 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表示整个 numeric 的长度,取值1-38",
+          "example": "无",
+          "member": "int64",
+          "name": "Precision",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表示小数部分的长度\nScale小于Precision",
+          "example": "无",
+          "member": "int64",
+          "name": "Scale",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "in"

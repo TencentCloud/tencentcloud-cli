@@ -8,6 +8,14 @@
         "title": "创建集群"
       }
     ],
+    "DescribeInstanceState": [
+      {
+        "document": "需要展现集群状态以及操作进度",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwpg-exs8Mnql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowName\": \"xx\",\n        \"FlowMsg\": \"xx\",\n        \"FlowProgress\": 0.0,\n        \"ProcessName\": \"xx\",\n        \"InstanceState\": \"xx\",\n        \"FlowCreateTime\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"InstanceStateDesc\": \"xx\",\n        \"BackupStatus\": 1\n    }\n}",
+        "title": "获取集群状态"
+      }
+    ],
     "DescribeSimpleInstances": [
       {
         "document": "集群列表",
@@ -22,6 +30,14 @@
         "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstanceByApi\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"abc\",\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "销毁集群"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "用户修改实例名称",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-12345678\",\n    \"InstanceName\": \"cdwch-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
+        "title": "修改实例信息"
       }
     ]
   },

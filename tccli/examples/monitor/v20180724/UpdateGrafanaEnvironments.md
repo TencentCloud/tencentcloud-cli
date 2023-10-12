@@ -7,14 +7,14 @@ Input:
 ```
 tccli monitor UpdateGrafanaEnvironments --cli-unfold-argument  \
     --InstanceId grafana-12345678 \
-    --Envs {}
+    --Envs {"key1":"key2"}
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "ab"
     }
 }
 ```

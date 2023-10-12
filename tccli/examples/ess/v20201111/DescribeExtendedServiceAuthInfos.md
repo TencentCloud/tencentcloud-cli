@@ -55,7 +55,7 @@ Output:
                         "UserId": "yDRC*********g0vjoimj"
                     }
                 ],
-                "Name": "企业静默签（自动签署）",
+                "Name": "企业自动签（自动签署）",
                 "OperateOn": 1681289048,
                 "OperatorUserId": "yDRC*********g0vjoimj",
                 "Status": "ENABLE",
@@ -144,7 +144,7 @@ Output:
                         "UserId": "yDR*****oimj"
                     }
                 ],
-                "Name": "企业静默签（自动签署）",
+                "Name": "企业自动签（自动签署）",
                 "OperateOn": 1681289048,
                 "OperatorUserId": "yDR*****oimj",
                 "Status": "ENABLE",

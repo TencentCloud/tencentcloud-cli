@@ -7,6 +7,13 @@
       "output": "CreateInstanceByApiResponse",
       "status": "online"
     },
+    "DescribeInstanceState": {
+      "document": "集群详情页中显示集群状态、流程进度等",
+      "input": "DescribeInstanceStateRequest",
+      "name": "获取集群实例状态",
+      "output": "DescribeInstanceStateResponse",
+      "status": "online"
+    },
     "DescribeSimpleInstances": {
       "document": "获取集群实例列表",
       "input": "DescribeSimpleInstancesRequest",
@@ -19,6 +26,13 @@
       "input": "DestroyInstanceByApiRequest",
       "name": "销毁集群",
       "output": "DestroyInstanceByApiResponse",
+      "status": "online"
+    },
+    "ModifyInstance": {
+      "document": "修改实例信息，目前为实例名称",
+      "input": "ModifyInstanceRequest",
+      "name": "修改实例信息",
+      "output": "ModifyInstanceResponse",
       "status": "online"
     }
   },
@@ -230,6 +244,105 @@
           "name": "ErrorMsg",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStateRequest": {
+      "document": "DescribeInstanceState请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例名称",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStateResponse": {
+      "document": "DescribeInstanceState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群状态，例如：Serving",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceState",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群操作创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群操作名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群操作进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "float",
+          "name": "FlowProgress",
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态描述，例如：运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群流程错误信息，例如：“创建失败，资源不足”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowMsg",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤的名称，例如：”购买资源中“\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "ProcessName",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群备份任务开启状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "BackupStatus",
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -553,6 +666,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新修改的实例名称",
+          "example": "cdwch-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResourceSpecNew": {
       "document": "资源规格",

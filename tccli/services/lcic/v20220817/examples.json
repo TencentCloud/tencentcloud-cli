@@ -304,6 +304,14 @@
         "title": "示例"
       }
     ],
+    "DescribeScoreList": [
+      {
+        "document": "获取课堂评分列表示例",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScoreList\n<公共请求参数>\n\n{\n    \"RoomId\": 371267013\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8199adb3-d33c-43a5-826c-ace5bdbc95e1\",\n        \"Scores\": [],\n        \"Total\": 0\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeSdkAppIdUsers": [
       {
         "document": "获取应用下用户列表",

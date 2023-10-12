@@ -11,32 +11,44 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
         "Apps": [
             {
-                "OsInfo": "xx",
-                "Version": "xx",
-                "MachineWanIp": "xx",
-                "Uuid": "xx",
+                "MachineIp": "abc",
+                "MachineName": "abc",
+                "MachineWanIp": "abc",
+                "Uuid": "abc",
+                "Quuid": "abc",
                 "ProjectId": 1,
-                "ConfigPath": "xx",
-                "BinPath": "xx",
                 "Tag": [
                     {
-                        "TagId": 1,
                         "Rid": 0,
-                        "Name": "xx"
+                        "Name": "abc",
+                        "TagId": 1
                     }
                 ],
-                "Quuid": "xx",
-                "ProcessCount": 1,
-                "Desc": "xx",
+                "Name": "abc",
                 "Type": 1,
-                "MachineIp": "xx",
-                "Name": "xx"
+                "BinPath": "abc",
+                "OsInfo": "abc",
+                "ProcessCount": 1,
+                "Desc": "abc",
+                "Version": "abc",
+                "ConfigPath": "abc",
+                "FirstTime": "abc",
+                "UpdateTime": "abc",
+                "IsNew": 0,
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
         ],
-        "RequestId": "xx"
+        "Total": 1,
+        "RequestId": "abc"
     }
 }
 ```

@@ -371,6 +371,13 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeObjects": {
+      "document": "查看防护对象列表",
+      "input": "DescribeObjectsRequest",
+      "name": "查看防护对象列表",
+      "output": "DescribeObjectsResponse",
+      "status": "online"
+    },
     "DescribePeakPoints": {
       "document": "查询业务和攻击概要趋势",
       "input": "DescribePeakPointsRequest",
@@ -691,6 +698,13 @@
       "input": "ModifyModuleStatusRequest",
       "name": "设置某个domain下基础安全模块的开关",
       "output": "ModifyModuleStatusResponse",
+      "status": "online"
+    },
+    "ModifyObject": {
+      "document": "修改防护对象",
+      "input": "ModifyObjectRequest",
+      "name": "修改防护对象",
+      "output": "ModifyObjectResponse",
       "status": "online"
     },
     "ModifyProtectionStatus": {
@@ -2956,6 +2970,162 @@
         }
       ],
       "usage": "in"
+    },
+    "ClbObject": {
+      "document": "Clb类型防护对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象ID",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "精准域名列表",
+          "example": "无",
+          "member": "string",
+          "name": "PreciseDomains",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF功能开关状态，0关闭1开启",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WAF日志开关状态，0关闭1开启",
+          "example": "无",
+          "member": "int64",
+          "name": "ClsStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CLB对象对应的虚拟域名",
+          "example": "无",
+          "member": "string",
+          "name": "VirtualDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象名称",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网地址",
+          "example": "无",
+          "member": "string",
+          "name": "PublicIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网地址",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateIp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC名称",
+          "example": "无",
+          "member": "string",
+          "name": "VpcName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC ID",
+          "example": "无",
+          "member": "string",
+          "name": "Vpc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "waf实例等级，如果未绑定实例为0",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "clb投递开关",
+          "example": "无",
+          "member": "int64",
+          "name": "PostCLSStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "kafka投递开关",
+          "example": "无",
+          "member": "int64",
+          "name": "PostCKafkaStatus",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "CreateAccessExportRequest": {
       "document": "CreateAccessExport请求参数结构体",
@@ -6418,6 +6588,43 @@
           "name": "Data",
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeObjectsRequest": {
+      "document": "DescribeObjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "支持的过滤器:\n\tObjectId: clb实例ID\n\tVIP: clb实例的公网IP\n\tInstanceId: waf实例ID\n\tDomain: 精准域名\n\tStatus: waf防护开关状态: 0关闭，1开启\n\tClsStatus: waf日志开关: 0关闭，1开启",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeObjectsResponse": {
+      "document": "DescribeObjects返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "对象列表",
+          "example": "无",
+          "member": "ClbObject",
+          "name": "ClbObjects",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11751,6 +11958,60 @@
     },
     "ModifyModuleStatusResponse": {
       "document": "ModifyModuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyObjectRequest": {
+      "document": "ModifyObject请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "修改对象标识",
+          "example": "无",
+          "member": "string",
+          "name": "ObjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "改动作类型:Status修改开关，InstanceId绑定实例",
+          "example": "无",
+          "member": "string",
+          "name": "OpType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新的Waf开关状态，如果和已有状态相同认为修改成功",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新的实例ID，如果和已绑定的实例相同认为修改成功",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyObjectResponse": {
+      "document": "ModifyObject返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

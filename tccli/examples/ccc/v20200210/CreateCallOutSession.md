@@ -8,7 +8,7 @@ Input:
 tccli ccc CreateCallOutSession --cli-unfold-argument  \
     --IsForceUseMobile true \
     --Callee 008612300000000 \
-    --Uui fooandbar \
+    --UUI fooandbar \
     --UserId FooOrBar@tencent.com \
     --SdkAppId 1400000000
 ```

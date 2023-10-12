@@ -245,6 +245,13 @@
       "output": "DescribeRoomStatisticsResponse",
       "status": "online"
     },
+    "DescribeScoreList": {
+      "document": "获取课堂评分列表",
+      "input": "DescribeScoreListRequest",
+      "name": "获取课堂评分列表",
+      "output": "DescribeScoreListResponse",
+      "status": "online"
+    },
     "DescribeSdkAppIdUsers": {
       "document": "此接口用于获取指定应用ID下用户列表",
       "input": "DescribeSdkAppIdUsersRequest",
@@ -1094,6 +1101,62 @@
         }
       ],
       "type": "object"
+    },
+    "ClassScoreItem": {
+      "document": "课堂评分字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "课堂iD\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "评分时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "课堂评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Score",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "课堂评价\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScoreMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateDocumentRequest": {
       "document": "CreateDocument请求参数结构体",
@@ -3127,6 +3190,71 @@
           "name": "MicCount",
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScoreListRequest": {
+      "document": "DescribeScoreList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "课堂ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询当前页数，从1开始递增",
+          "example": "无",
+          "member": "uint64",
+          "name": "Page",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "默认是10条",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeScoreListResponse": {
+      "document": "DescribeScoreList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "课堂评分列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClassScoreItem",
+          "name": "Scores",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

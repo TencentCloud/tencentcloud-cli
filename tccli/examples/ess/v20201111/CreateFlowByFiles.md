@@ -46,6 +46,7 @@ Output:
 3. 本方企业的签署区仅具有一个印章签署控件：印章（SignComponents中有一个Component元素，印章（SIGN_SEAL）使用绝对定位方式，即指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式）。
 4. C端参与者仅具有一个签名签署控件（SignComponents中仅有一个Component元素，且该元素的ComponentType为SIGN_SIGNATURE，使用绝对定位方式，即指定具体ComponentHeight/ComponentWidth/ComponentPosX/ComponentPosY/ComponentPage的方式）。
 5. 本流程包含两个抄送人，抄送人可查看合同信息（CcInfos中有两个CcInfo的信息）。
+6. 指定每个签署方的角色名称。
 
 Input: 
 
@@ -59,6 +60,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.0.OrganizationName 典子谦示例企业 \
     --Approvers.0.ApproverName 典子谦 \
     --Approvers.0.ApproverMobile 13200000000 \
+    --Approvers.0.ApproverRoleName 甲方 \
     --Approvers.0.NotifyType NONE \
     --Approvers.0.PreReadTime 10 \
     --Approvers.0.SignComponents.0.ComponentPosY 260 \
@@ -72,6 +74,7 @@ tccli ess CreateFlowByFiles --cli-unfold-argument  \
     --Approvers.1.NotifyType NONE \
     --Approvers.1.ApproverName 张三 \
     --Approvers.1.ApproverMobile 18888888888 \
+    --Approvers.1.ApproverRoleName 乙方 \
     --Approvers.1.SignComponents.0.ComponentPosY 260 \
     --Approvers.1.SignComponents.0.ComponentWidth 100 \
     --Approvers.1.SignComponents.0.FileIndex 0 \
@@ -91,6 +94,18 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmt1u6Um8eW68pzwLGTld6",
+                "ApproverRoleName": "甲方"
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmt1uzUm8eW6CchGlBHFwy",
+                "ApproverRoleName": "乙方"
+            }
+        ],
         "FlowId": "yDwqoUUckp3bkmc7UuPTimaxVoB5m1iD",
         "PreviewUrl": "",
         "RequestId": "s1692184714668577966"
@@ -181,6 +196,23 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtv3xURxlqRxuNInLC9Kh",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtv3uURxlqRxxIBOdNTfT",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmt17kUm8eW6SG8c7HRoJR",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDwqoUUckp3bkmmbUuPTimaq7zNEvxoX",
         "PreviewUrl": "",
         "RequestId": "s1692265794625568498"
@@ -262,6 +294,23 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtvt0URxlqRxSQ0CRRaG8",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtvtgURxlqRxyACZnBnZq",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmt19bUm8eW68mThldYiee",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
         "PreviewUrl": "",
         "RequestId": "s1665674603446404796"
@@ -366,6 +415,23 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtvyqURxlqRxRRQF8HT1m",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmtvyhURxlqRxSEfd0ag4h",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmt1ffUm8eW6u0kLIxrZpw",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDwqoUUckp3bkmc7UuPTimaxVoB5m1iD",
         "PreviewUrl": "",
         "RequestId": "s1692184714668577966"
@@ -466,6 +532,13 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDRsDUUgyg1aczxtUuNAW8Cx4WsAiEB5",
         "PreviewUrl": "",
         "RequestId": "43b9474a-c909-4d89-aa7b-3632f02fa8a4"
@@ -529,6 +602,18 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": ""
+            },
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo43jUunP4DaSlfnawIyd",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDRsDUUgyg1aczxtUuNAW8Cx4WsAiEB5",
         "PreviewUrl": "",
         "RequestId": "43b9474a-c909-4d89-aa7b-3632f02fa8a4"
@@ -578,6 +663,13 @@ Output:
 ```
 {
     "Response": {
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": ""
+            }
+        ],
         "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
         "PreviewUrl": "",
         "RequestId": "s1665674603446404796"
@@ -683,6 +775,64 @@ Output:
     "Response": {
         "FlowId": "yDwFkUUckpstin4sUuZjBEY5Ia2XB7sz",
         "PreviewUrl": "",
+        "RequestId": "s1665674603446404796"
+    }
+}
+```
+
+**Example 13: 创建含有动态签署人流程，签署方不指定具体的签署人**
+
+创建一个B2C流程，两方签署方不指定具体的签署人
+注：
+`1.签署人相关信息为空，如：姓名、手机号码等`
+`2.FillType需传值为1，表示为动态签署人（不确定具体的签署人），需后续进行补充。`
+`3.需保留对应的角色编号，即RecipientId，后续补充具体的签署人时需指定对应的RecipientId`
+
+Input: 
+
+```
+tccli ess CreateFlowByFiles --cli-unfold-argument  \
+    --Operator.UserId 19561039c99fe825a934a132520fde6a \
+    --Agent.ProxyOrganizationId yDwFdUUckpsvm3ciUyVYxhuSAkZziLk7 \
+    --FlowName 发起动态签署人合同示例 \
+    --FlowType 合同 \
+    --Approvers.0.ApproverType 1 \
+    --Approvers.0.ApproverName  \
+    --Approvers.0.ApproverMobile  \
+    --Approvers.0.NotifyType NONE \
+    --Approvers.0.ApproverSignTypes 1 \
+    --Approvers.0.ApproverRoleName 甲方 \
+    --Approvers.0.ApproverOption.FillType 1 \
+    --Approvers.0.SignComponents.0.ComponentPosX 160 \
+    --Approvers.0.SignComponents.0.ComponentPosY 260 \
+    --Approvers.0.SignComponents.0.ComponentWidth 100 \
+    --Approvers.0.SignComponents.0.FileIndex 0 \
+    --Approvers.0.SignComponents.0.ComponentType SIGN_SIGNATURE \
+    --Approvers.0.SignComponents.0.ComponentPage 1 \
+    --Approvers.0.SignComponents.0.ComponentHeight 100 \
+    --Approvers.0.SignComponents.1.ComponentPosX 160 \
+    --Approvers.0.SignComponents.1.ComponentPosY 360 \
+    --Approvers.0.SignComponents.1.ComponentWidth 50 \
+    --Approvers.0.SignComponents.1.ComponentHeight 50 \
+    --Approvers.0.SignComponents.1.FileIndex 0 \
+    --Approvers.0.SignComponents.1.ComponentType SIGN_DATE \
+    --Approvers.0.SignComponents.1.ComponentPage 1 \
+    --FileIds yDR4yUUgyg1qqlj7UuO4zjES3G9Shoxk
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDR4yUUgyg1qh6szUxt1qOK1Jy90khKS",
+        "PreviewUrl": "",
+        "Approvers": [
+            {
+                "SignId": "",
+                "RecipientId": "yDw7hUUckpkmo432UunP4DaCo2sOe2oP",
+                "ApproverRoleName": "甲方"
+            }
+        ],
         "RequestId": "s1665674603446404796"
     }
 }

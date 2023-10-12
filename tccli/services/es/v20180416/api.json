@@ -1184,7 +1184,7 @@
           "example": "ls-xxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2282,7 +2282,7 @@
           "example": "ClusterView",
           "member": "ClusterView",
           "name": "ClusterView",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2292,7 +2292,7 @@
           "example": "NodesView",
           "member": "NodeView",
           "name": "NodesView",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2302,7 +2302,7 @@
           "example": "KibanasView",
           "member": "KibanaView",
           "name": "KibanasView",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5027,6 +5027,16 @@
           "member": "bool",
           "name": "Hidden",
           "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否充当协调节点的角色",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCoordinationNode",
+          "required": false,
           "type": "bool",
           "value_allowed_null": false
         }

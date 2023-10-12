@@ -625,7 +625,7 @@
     "ModifyInstancesProject": [
       {
         "document": "本示例用于修改两个实例所属的项目为指定的项目。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1045\",\n    \"InstanceIds\": [\n        \"ins-5d8a23rs\",\n        \"ins-r8hr2upy\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstancesProject\n<公共请求参数>\n\n{\n    \"ProjectId\": 1045,\n    \"InstanceIds\": [\n        \"ins-5d8a23rs\",\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改两个实例所属的项目"
       }

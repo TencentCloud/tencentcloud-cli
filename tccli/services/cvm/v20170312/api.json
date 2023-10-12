@@ -498,7 +498,7 @@
       "status": "online"
     },
     "ModifyInstancesProject": {
-      "document": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[`DeregisterInstancesFromLoadBalancer`](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesProject) 用于修改实例所属项目。\n\n* 项目为一个虚拟概念，用户可以在一个账户下面建立多个项目，每个项目中管理不同的资源；将多个不同实例分属到不同项目中，后续使用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口查询实例，项目ID可用于过滤结果。\n* 绑定负载均衡的实例不支持修改实例所属项目，请先使用[DeregisterInstancesFromLoadBalancer](https://cloud.tencent.com/document/api/214/1258)接口解绑负载均衡。\n* 支持批量操作。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesProjectRequest",
       "name": "修改实例所属项目",
       "output": "ModifyInstancesProjectResponse",
@@ -3211,7 +3211,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。实例类型形如：S5.12XLARGE128、S5.12XLARGE96等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例类型</strong>】进行过滤。实例类型形如：S5.12XLARGE128、S5.12XLARGE96等。具体取值参见[实例规格](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为1。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3230,6 +3230,7 @@
           "example": "无",
           "member": "InstanceTypeConfig",
           "name": "InstanceTypeConfigSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4176,7 +4177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认机型为S1.SMALL1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 )</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
+          "document": "<li><strong>zone</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>可用区</strong>】进行过滤。可用区形如：ap-guangzhou-1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p><p style=\"padding-left: 30px;\">可选项：<a href=\"https://cloud.tencent.com/document/product/213/6091\">可用区列表</a></p>\n<li><strong>instance-family</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型系列</strong>】进行过滤。实例机型系列形如：S1、I1、M1等。具体取值参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例机型</strong>】进行过滤。不同实例机型指定了不同的资源规格，具体取值可通过调用接口 [DescribeInstanceTypeConfigs](https://cloud.tencent.com/document/product/213/15749) 来获得最新的规格表或参见[实例类型](https://cloud.tencent.com/document/product/213/11518)描述。若不指定该参数，则默认机型为S1.SMALL1。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>instance-charge-type</strong></li>\n<p style=\"padding-left: 30px;\">按照【<strong>实例计费模式</strong>】进行过滤。(PREPAID：表示预付费，即包年包月 | POSTPAID_BY_HOUR：表示后付费，即按量计费 )</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n<li><strong>sort-keys</strong></li>\n<p style=\"padding-left: 30px;\">按关键字进行排序,格式为排序字段加排序方式，中间用冒号分隔。 例如： 按cpu数逆序排序 \"cpu:desc\", 按mem大小顺序排序 \"mem:asc\"</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4195,6 +4196,7 @@
           "example": "无",
           "member": "InstanceTypeQuotaItem",
           "name": "InstanceTypeQuotaSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8278,7 +8280,7 @@
         {
           "disabled": false,
           "document": "接收共享镜像的账号Id列表，array型参数的格式可以参考[API简介](/document/api/213/568)。账号ID不同于QQ号，查询用户账号ID请查看[账号信息](https://console.cloud.tencent.com/developer)中的账号ID栏。",
-          "example": "[\"1038493875\\r\\n\"]",
+          "example": "[\"103849387508\"]",
           "member": "string",
           "name": "AccountIds",
           "required": true,
@@ -8403,8 +8405,8 @@
         },
         {
           "disabled": false,
-          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>TRUE：表示开启实例保护，不允许通过api接口删除实例<br><li>FALSE：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：FALSE。",
-          "example": "False",
+          "document": "实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：<br><li>true：表示开启实例保护，不允许通过api接口删除实例<br><li>false：表示关闭实例保护，允许通过api接口删除实例<br><br>默认取值：false。",
+          "example": "false",
           "member": "bool",
           "name": "DisableApiTermination",
           "required": false,
@@ -8493,8 +8495,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
-          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -10976,8 +10978,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
-          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
