@@ -25,7 +25,7 @@
   "metadata": {
     "apiVersion": "2020-07-20",
     "api_brief": "介绍如何使用API对备案进行操作，包括提交备案、查看备案信息、创建备案授权码等。",
-    "serviceNameCN": "网站备案",
+    "serviceNameCN": "ICP备案",
     "serviceShortName": "ba"
   },
   "objects": {

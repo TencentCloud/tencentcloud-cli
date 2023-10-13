@@ -22,6 +22,14 @@
         "title": "添加信息防泄漏规则"
       }
     ],
+    "AddAttackWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Rules\": [\n        {\n            \"MatchField\": \"xx\",\n            \"MatchContent\": \"xx\",\n            \"MatchMethod\": \"xx\"\n        }\n    ],\n    \"Domain\": \"xx\",\n    \"SignatureId\": \"xx\",\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
+      }
+    ],
     "AddCustomRule": [
       {
         "document": "增加访问控制（自定义策略）",
@@ -118,6 +126,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackDownloadRecord\n<公共请求参数>\n\n{\n    \"Id\": \"60001\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
         "title": "删除攻击日志下载任务记录"
+      }
+    ],
+    "DeleteAttackWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Ids\": [\n        1,\n        2\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailIds\": [\n            1,\n            2\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
       }
     ],
     "DeleteCCRule": [
@@ -268,6 +284,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackOverview\n<公共请求参数>\n\n{\n    \"FromTime\": \"2023-02-06 00:00:00\",\n    \"ToTime\": \"2023-02-06 23:59:59\"\n}",
         "output": "{\n    \"Response\": {\n        \"AccessCount\": 158,\n        \"AttackCount\": 98,\n        \"ACLCount\": 0,\n        \"CCCount\": 0,\n        \"BotCount\": 0,\n        \"ApiAssetsCount\": 1,\n        \"RequestId\": \"8a3b7134-77f9-4ee5-b30e-73809ccad10f\"\n    }\n}",
         "title": "获取指定时间段内请求总数"
+      }
+    ],
+    "DescribeAttackWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Order\": \"xx\",\n    \"By\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"List\": [\n            {\n                \"Status\": 0,\n                \"MatchField\": \"xx\",\n                \"MatchMethod\": \"xx\",\n                \"MatchContent\": \"xx\",\n                \"SignatureId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"WhiteRuleId\": 1,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            },\n            {\n                \"Status\": 1,\n                \"MatchField\": \"xx\",\n                \"MatchMethod\": \"xx\",\n                \"MatchContent\": \"xx\",\n                \"SignatureId\": \"xx\",\n                \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n                \"WhiteRuleId\": 1,\n                \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询示例"
       }
     ],
     "DescribeAutoDenyIP": [
@@ -734,6 +758,14 @@
         "input": "https://waf.tencentcloudapi.com/?Action=ModifyAreaBanStatus\r\n&Domain=test.qcloudwaf.com\r\n&Status=1\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d630afc-0da8-43f6-862a-045e21ebfdba\"\n    }\n}",
         "title": "设置域名的地域封禁状态"
+      }
+    ],
+    "ModifyAttackWhiteRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAttackWhiteRule\n<公共请求参数>\n\n{\n    \"Status\": 1,\n    \"Rules\": [\n        {\n            \"MatchField\": \"xx\",\n            \"MatchContent\": \"xx\",\n            \"MatchMethod\": \"xx\"\n        }\n    ],\n    \"Domain\": \"xx\",\n    \"SignatureId\": \"xx\",\n    \"RuleId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RuleId\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改示例"
       }
     ],
     "ModifyBotStatus": [

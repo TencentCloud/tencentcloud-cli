@@ -282,6 +282,12 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": 1683270000,\n    \"Type\": \"ckuv\",\n    \"EndTime\": 1683356400,\n    \"ID\": 120000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"85acc203-d239-4e47-bc04-195cb09e9e83\",\n        \"Result\": \"{\\\"request_id\\\":\\\"85acc203-d239-4e47-bc04-195cb09e9e83\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
         "title": "测试"
+      },
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataPvUrlStatistics\n<公共请求参数>\n\n{\n    \"StartTime\": 1697078966,\n    \"Type\": \"ckuv\",\n    \"EndTime\": 1697093366,\n    \"ID\": 120000\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\",\n        \"Result\": \"{\\\"request_id\\\":\\\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\\\",\\\"results\\\":[{\\\"statement_id\\\":0,\\\"total\\\":0,\\\"offset\\\":\\\"\\\"}]}\"\n    }\n}",
+        "title": "1"
       }
     ],
     "DescribeDataReportCount": [

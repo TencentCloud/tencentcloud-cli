@@ -280,6 +280,13 @@
       "output": "ModifyCloudNativeAPIGatewayCanaryRuleResponse",
       "status": "online"
     },
+    "ModifyCloudNativeAPIGatewayCertificate": {
+      "document": "更新云原生网关证书",
+      "input": "ModifyCloudNativeAPIGatewayCertificateRequest",
+      "name": "更新云原生网关证书",
+      "output": "ModifyCloudNativeAPIGatewayCertificateResponse",
+      "status": "online"
+    },
     "ModifyCloudNativeAPIGatewayRoute": {
       "document": "修改云原生网关路由",
       "input": "ModifyCloudNativeAPIGatewayRouteRequest",
@@ -6206,6 +6213,96 @@
     },
     "ModifyCloudNativeAPIGatewayCanaryRuleResponse": {
       "document": "ModifyCloudNativeAPIGatewayCanaryRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayCertificateRequest": {
+      "document": "ModifyCloudNativeAPIGatewayCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书id",
+          "example": "f9a5d230-4fa6-4f45-86c3-c5f49d6ffc83",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "证书名称，即将废弃",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书私钥，CertSource为native时必填。",
+          "example": "-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEGCCqGSM49AwEHBG0wawIBAQQgokysviOMJk43IY6s\\nQpD6VUUAM8aU5RPyFTNUuJXN+JuhRANCAATJWrcGNiaU94X8JFEornursRSbx0VY\\nT2XqoJyK+g2TdRdDQw8t9su9IQD5FAYwR+Uh5TNeIqJNq0DWLOcovUQ+\\n-----END PRIVATE KEY-----",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书pem格式，CertSource为native时必填。",
+          "example": "-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/MMu4SMSqDKEHmagHTg7kHO4wCQYHKoZIzj0EATAx\\nMRAwDgYDVQQDDAdhYmMuY29tMRAwDgYDVQQKDAdhYmMuY29tMQswCQYDVQQGEwJD\\nTjAeFw0yMjA4MTgwMjEwMDBaFw0yMjA4MzEwNTQ1MDBaMFYxCzAJBgNVBAYTAkNO\\nMRIwEAYDVQQIDAlndWFuZ2RvbmcxEzARBgNVBAcMCmd1YW5nemhvdSAxDDAKBgNV\\nBAoMA2FiYzEQMA4GA1UEAwwHYWJjLmNvbTBZMBMGByqGSM49AgEGCCqGSM49AwEH\\nA0IABMlatwY2JpT3hfwkUSiue6uxFJvHRVhPZeqgnIr6DZN1F0NDDy32y70hAPkU\\nBjBH5SHlM14iok2rQNYs5yi9RD6jHTAbMAsGA1UdEQQEMAKCADAMBgNVHRMBAf8E\\nAjAAMAkGByqGSM49BAEDSQAwRgIhAILkENW+azqYYHCdWCMLGjvc5ii3N/57so5o\\nz0T+lKkIAiEA4u+2vUZIjMffqLND3ecLx3lNj+CSo4EF31yBTEEkfMM=\\n-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "Crt",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": "绑定的域名，即将废弃",
+          "example": "[\"abc.com\"]",
+          "member": "string",
+          "name": "BindDomains",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "ssl平台证书 Id，CertSource为ssl时必填。",
+          "example": "8RTlvcjR",
+          "member": "string",
+          "name": "CertId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书来源\n- ssl (ssl平台证书)，默认值\n- native (kong自定义证书) \n",
+          "example": "native",
+          "member": "string",
+          "name": "CertSource",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCloudNativeAPIGatewayCertificateResponse": {
+      "document": "ModifyCloudNativeAPIGatewayCertificate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

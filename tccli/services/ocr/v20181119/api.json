@@ -11507,7 +11507,7 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证",
+          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版",
           "example": "无",
           "member": "string",
           "name": "ConfigId",
@@ -16383,7 +16383,7 @@
         },
         {
           "disabled": false,
-          "document": "销方税号，通用机打电子发票必填",
+          "document": "销方税号，通用机打电子发票必填，区块链发票时必填",
           "example": "无",
           "member": "string",
           "name": "SellerTaxCode",
@@ -16411,6 +16411,7 @@
           "example": "无",
           "member": "VatInvoice",
           "name": "Invoice",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16420,6 +16421,7 @@
           "example": "无",
           "member": "VehicleInvoiceInfo",
           "name": "VehicleInvoiceInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16429,6 +16431,7 @@
           "example": "无",
           "member": "UsedVehicleInvoiceInfo",
           "name": "UsedVehicleInvoiceInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -16438,6 +16441,7 @@
           "example": "无",
           "member": "PassInvoiceInfo",
           "name": "PassInvoiceInfoList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16694,7 +16698,7 @@
           "example": "轿车",
           "member": "string",
           "name": "CarType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16704,7 +16708,7 @@
           "example": "斯柯达牌SVW71419AL",
           "member": "string",
           "name": "PlateModel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16714,7 +16718,7 @@
           "example": "上海",
           "member": "string",
           "name": "ProduceAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16724,7 +16728,7 @@
           "example": "WAE0X17041xxxxx",
           "member": "string",
           "name": "CertificateNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16734,7 +16738,7 @@
           "example": "无",
           "member": "string",
           "name": "ImportNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16744,7 +16748,7 @@
           "example": "车架号码/车辆识别代号",
           "member": "string",
           "name": "VinNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16754,7 +16758,7 @@
           "example": "无",
           "member": "string",
           "name": "PayTaxesNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16764,7 +16768,7 @@
           "example": "1.92",
           "member": "string",
           "name": "Tonnage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16774,7 +16778,7 @@
           "example": "5",
           "member": "string",
           "name": "LimitCount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16784,7 +16788,7 @@
           "example": "328xxx",
           "member": "string",
           "name": "EngineNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16794,7 +16798,7 @@
           "example": "无",
           "member": "string",
           "name": "BizCheckFormNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16804,7 +16808,7 @@
           "example": "16101984500",
           "member": "string",
           "name": "TaxtationOrgCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16814,7 +16818,7 @@
           "example": "高新技术产业开发区国家税务局新型工业园税务所",
           "member": "string",
           "name": "TaxtationOrgName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16824,27 +16828,27 @@
           "example": "17",
           "member": "string",
           "name": "MotorTaxRate",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "银行账号",
+          "example": "宁夏银行西安分行营业部",
+          "member": "string",
+          "name": "MotorBankName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "开户行",
-          "example": "宁夏银行西安分行营业部",
-          "member": "string",
-          "name": "MotorBankName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "账号",
           "example": "5100014080000xxxx",
           "member": "string",
           "name": "MotorBankAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16854,7 +16858,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16864,7 +16868,7 @@
           "example": "10987765",
           "member": "string",
           "name": "SellerTel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16874,7 +16878,7 @@
           "example": "xx",
           "member": "string",
           "name": "BuyerNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

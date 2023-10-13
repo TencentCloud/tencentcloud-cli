@@ -560,22 +560,22 @@
     ],
     "ModifyExtendedService": [
       {
-        "document": "开通企业静默签署扩展服务",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"CLOSE\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"\",\n        \"RequestId\": \"s1673342276656659884\"\n    }\n}",
-        "title": "关闭静默签署"
-      },
-      {
-        "document": "开通企业静默签署扩展服务",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"OPEN\"\n}",
-        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1\",\n        \"RequestId\": \"s1673342132009427709\"\n    }\n}",
-        "title": "开通企业静默签署"
-      },
-      {
         "document": "开通骑缝章扩展服务",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"PAGING_SEAL\",\n    \"Operate\": \"OPEN\"\n}",
         "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"\",\n        \"RequestId\": \"s1673342239896659883\"\n    }\n}",
         "title": "开通骑缝章"
+      },
+      {
+        "document": "关闭企业静默签署扩展服务",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"CLOSE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"\",\n        \"RequestId\": \"s1673342276656659884\"\n    }\n}",
+        "title": "关闭自动签署"
+      },
+      {
+        "document": "开通企业自动签署扩展服务",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1\",\n        \"RequestId\": \"s1673342132009427709\"\n    }\n}",
+        "title": "开通企业自动签署"
       }
     ],
     "OperateChannelTemplate": [

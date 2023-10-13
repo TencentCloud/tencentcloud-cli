@@ -14,6 +14,13 @@
       "output": "AddAntiInfoLeakRulesResponse",
       "status": "online"
     },
+    "AddAttackWhiteRule": {
+      "document": "供用户控制台调用，增加Tiga规则引擎白名单。",
+      "input": "AddAttackWhiteRuleRequest",
+      "name": "增加规则引擎白名单",
+      "output": "AddAttackWhiteRuleResponse",
+      "status": "online"
+    },
     "AddCustomRule": {
       "document": "增加访问控制（自定义策略）",
       "input": "AddCustomRuleRequest",
@@ -82,6 +89,13 @@
       "input": "DeleteAttackDownloadRecordRequest",
       "name": "删除攻击日志下载任务记录",
       "output": "DeleteAttackDownloadRecordResponse",
+      "status": "online"
+    },
+    "DeleteAttackWhiteRule": {
+      "document": "供用户控制台调用，删除Tiga规则引擎白名单。",
+      "input": "DeleteAttackWhiteRuleRequest",
+      "name": "删除规则引擎白名单",
+      "output": "DeleteAttackWhiteRuleResponse",
       "status": "online"
     },
     "DeleteCCRule": {
@@ -208,6 +222,13 @@
       "input": "DescribeAttackOverviewRequest",
       "name": "攻击总览",
       "output": "DescribeAttackOverviewResponse",
+      "status": "online"
+    },
+    "DescribeAttackWhiteRule": {
+      "document": "获取用户规则白名单列表",
+      "input": "DescribeAttackWhiteRuleRequest",
+      "name": "获取用户规则白名单列表",
+      "output": "DescribeAttackWhiteRuleResponse",
       "status": "online"
     },
     "DescribeAutoDenyIP": {
@@ -579,6 +600,13 @@
       "input": "ModifyAreaBanStatusRequest",
       "name": "修改地域封禁状态",
       "output": "ModifyAreaBanStatusResponse",
+      "status": "online"
+    },
+    "ModifyAttackWhiteRule": {
+      "document": "供用户控制台调用，修改Tiga规则引擎白名单。",
+      "input": "ModifyAttackWhiteRuleRequest",
+      "name": "修改规则引擎白名单",
+      "output": "ModifyAttackWhiteRuleResponse",
       "status": "online"
     },
     "ModifyBotStatus": {
@@ -1317,6 +1345,79 @@
           "member": "int64",
           "name": "RuleId",
           "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAttackWhiteRuleRequest": {
+      "document": "AddAttackWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "1",
+          "member": "string",
+          "name": "SignatureId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则项列表",
+          "example": "无",
+          "member": "UserWhiteRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则序号",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AddAttackWhiteRuleResponse": {
+      "document": "AddAttackWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3425,6 +3526,52 @@
       ],
       "type": "object"
     },
+    "DeleteAttackWhiteRuleRequest": {
+      "document": "DeleteAttackWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则序号组",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "Ids",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用户域名",
+          "example": "www.xx.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAttackWhiteRuleResponse": {
+      "document": "DeleteAttackWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "删除失败的规则序号组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "FailIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteCCRuleRequest": {
       "document": "DeleteCCRule请求参数结构体",
       "members": [
@@ -4752,6 +4899,98 @@
           "name": "LeakCount",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackWhiteRuleRequest": {
+      "document": "DescribeAttackWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持user_id, signature_id, modify_time",
+          "example": "signature_id",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件，支持SignatureId, MatchContent",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackWhiteRuleResponse": {
+      "document": "DescribeAttackWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则白名单列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserWhiteRule",
+          "name": "List",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         },
         {
@@ -10989,6 +11228,79 @@
       ],
       "type": "object"
     },
+    "ModifyAttackWhiteRuleRequest": {
+      "document": "ModifyAttackWhiteRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则序号",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则Id",
+          "example": "1",
+          "member": "string",
+          "name": "SignatureId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "匹配规则项列表",
+          "example": "无",
+          "member": "UserWhiteRuleItem",
+          "name": "Rules",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAttackWhiteRuleResponse": {
+      "document": "ModifyAttackWhiteRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "RuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyBotStatusRequest": {
       "document": "ModifyBotStatus请求参数结构体",
       "members": [
@@ -14842,6 +15154,128 @@
           "name": "Reason",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserWhiteRule": {
+      "document": "用户规则白名单",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单的id",
+          "example": "1",
+          "member": "uint64",
+          "name": "WhiteRuleId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则id",
+          "example": "010000030",
+          "member": "string",
+          "name": "SignatureId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配域",
+          "example": "URL",
+          "member": "string",
+          "name": "MatchField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配方法",
+          "example": "eq",
+          "member": "string",
+          "name": "MatchMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配内容",
+          "example": "/api",
+          "member": "string",
+          "name": "MatchContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2021-11-19T19:53:53+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间",
+          "example": "2021-11-19T19:53:53+08:00",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UserWhiteRuleItem": {
+      "document": "用户规则白名单规则子项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "匹配域",
+          "example": "URL",
+          "member": "string",
+          "name": "MatchField",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配方法",
+          "example": "eq",
+          "member": "string",
+          "name": "MatchMethod",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配内容",
+          "example": "/api",
+          "member": "string",
+          "name": "MatchContent",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

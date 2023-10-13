@@ -320,6 +320,14 @@
         "title": "编辑灰度规则"
       }
     ],
+    "ModifyCloudNativeAPIGatewayCertificate": [
+      {
+        "document": "更新云原生网关证书",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b79\",\n    \"Key\": \"-----BEGIN PRIVATE KEY-----\\nMIGHAgEAMBMGByqGSM49AgEG-END PRIVATE KEY-----\",\n    \"Crt\": \"-----BEGIN CERTIFICATE-----\\nMIIBpTCCAUugAwIBAgIUVHl/M-----END CERTIFICATE-----\",\n    \"CertId\": \"8RTlvcjR\",\n    \"Id\": \"f9a5d230-4fa6-4f45-86c3-c5f49d6ffc83\",\n    \"CertSource\": \"ssl\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"69515cd4-2ff3-45f8-a311-7f2d84cd4e0b\"\n    }\n}",
+        "title": "更新云原生网关证书"
+      }
+    ],
     "ModifyCloudNativeAPIGatewayRoute": [
       {
         "document": "修改云原生网关路由",

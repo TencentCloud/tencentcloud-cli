@@ -62,3 +62,27 @@ Output:
 }
 ```
 
+**Example 3: 1**
+
+1
+
+Input: 
+
+```
+tccli rum DescribeDataPvUrlStatistics --cli-unfold-argument  \
+    --StartTime 1697078966 \
+    --Type ckuv \
+    --EndTime 1697093366 \
+    --ID 120000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5",
+        "Result": "{\"request_id\":\"4f93b7fc-1857-4f4d-b3ac-eb63719a8bc5\",\"results\":[{\"statement_id\":0,\"total\":0,\"offset\":\"\"}]}"
+    }
+}
+```
+

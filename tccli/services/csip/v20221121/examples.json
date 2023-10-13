@@ -136,12 +136,28 @@
         "title": "空示例"
       }
     ],
+    "DescribeRiskCenterPortViewPortRiskList": [
+      {
+        "document": "空示例",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"xx\",\n    \"EndTime\": \"xx\"\n  }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"NoHandleCount\": 0,\n                \"Level\": \"xx\",\n                \"Protocol\": \"xx\",\n                \"Component\": \"xx\",\n                \"Port\": 0,\n                \"RecentTime\": \"xx\",\n                \"FirstTime\": \"xx\",\n                \"Suggestion\": 1,\n                \"AffectAssetCount\": \"xx\",\n                \"Id\": \"xx\",\n                \"From\": \"xx\",\n                \"Index\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Nick\": \"xx\",\n                \"Uin\": \"xx\",\n                \"Service\": \"xx\"\n            }\n        ],\n        \"LevelLists\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"SuggestionLists\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"FromLists\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "空示例"
+      }
+    ],
     "DescribeRiskCenterServerRiskList": [
       {
         "document": "获取风险服务列表",
         "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskCenterServerRiskList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"Order\": \"abc\",\n        \"By\": \"abc\",\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"OperatorType\": 0\n            }\n        ],\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"ServiceTag\": \"abc\",\n                \"Port\": 1,\n                \"AffectAsset\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"InstanceType\": \"abc\",\n                \"Level\": \"abc\",\n                \"Protocol\": \"abc\",\n                \"Component\": \"abc\",\n                \"Service\": \"abc\",\n                \"RecentTime\": \"abc\",\n                \"FirstTime\": \"abc\",\n                \"RiskDetails\": \"abc\",\n                \"Suggestion\": \"abc\",\n                \"Status\": 1,\n                \"Id\": \"abc\",\n                \"AppId\": \"abc\",\n                \"Nick\": \"abc\",\n                \"Uin\": \"abc\",\n                \"ServiceSnapshot\": \"abc\",\n                \"Url\": \"abc\",\n                \"Index\": \"abc\",\n                \"RiskList\": [\n                    {\n                        \"Title\": \"abc\",\n                        \"Body\": \"abc\"\n                    }\n                ],\n                \"SuggestionList\": [\n                    {\n                        \"Title\": \"abc\",\n                        \"Body\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"InstanceTypeLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取风险服务列表"
+      }
+    ],
+    "DescribeRiskCenterVULViewVULRiskList": [
+      {
+        "document": "获取漏洞视角的漏洞风险列表",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRiskCenterVULViewVULRiskList\n<公共请求参数>\n\n{\n    \"Filter\": {\n        \"Limit\": 0,\n        \"Offset\": 0,\n        \"Order\": \"abc\",\n        \"By\": \"abc\",\n        \"Filters\": [\n            {\n                \"Name\": \"abc\",\n                \"Values\": [\n                    \"abc\"\n                ],\n                \"OperatorType\": 0\n            }\n        ],\n        \"StartTime\": \"abc\",\n        \"EndTime\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Data\": [\n            {\n                \"Port\": \"abc\",\n                \"NoHandleCount\": 0,\n                \"Level\": \"abc\",\n                \"Component\": \"abc\",\n                \"RecentTime\": \"abc\",\n                \"FirstTime\": \"abc\",\n                \"AffectAssetCount\": 1,\n                \"Id\": \"abc\",\n                \"From\": \"abc\",\n                \"Index\": \"abc\",\n                \"VULType\": \"abc\",\n                \"VULName\": \"abc\",\n                \"CVE\": \"abc\",\n                \"Describe\": \"abc\",\n                \"Payload\": \"abc\",\n                \"AppName\": \"abc\",\n                \"References\": \"abc\",\n                \"AppVersion\": \"abc\",\n                \"VULURL\": \"abc\",\n                \"Nick\": \"abc\",\n                \"AppId\": \"abc\",\n                \"Uin\": \"abc\",\n                \"Fix\": \"abc\"\n            }\n        ],\n        \"LevelLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"FromLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"VULTypeLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取漏洞视角的漏洞风险列表"
       }
     ],
     "DescribeRiskCenterWebsiteRiskList": [
@@ -206,6 +222,14 @@
         "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"2021-01-01 00:00:00\",\n    \"EndTime\": \"2021-01-01 00:00:00\"\n  }\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Subnet\": 1,\n                \"ConnectedVpc\": 1,\n                \"AssetId\": \"xx\",\n                \"Region\": \"xx\",\n                \"CVM\": 1,\n                \"Tag\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"DNS\": [\n                    \"xx\"\n                ],\n                \"AssetName\": \"xx\",\n                \"CIDR\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"AppId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"Nick\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"VpcList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RegionList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"AppIdList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "空示例"
+      }
+    ],
+    "ModifyRiskCenterRiskStatus": [
+      {
+        "document": "修改风险中心风险状态",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRiskCenterRiskStatus\n<公共请求参数>\n\n{\n    \"RiskStatusKeys\": [\n        {\n            \"Id\": \"abc\",\n            \"PublicIPDomain\": \"abc\",\n            \"InstanceId\": \"abc\",\n            \"AppId\": \"abc\"\n        }\n    ],\n    \"Status\": 1,\n    \"Type\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改风险中心风险状态"
       }
     ],
     "StopRiskCenterTask": [

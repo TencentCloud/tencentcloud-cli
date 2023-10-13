@@ -9820,7 +9820,7 @@
         },
         {
           "disabled": false,
-          "document": "分区数，必须大于或者等于原分区数，若想维持原分区数请输入原数目，修改分区数仅对非全局顺序消息起效果，不允许超过128个分区。",
+          "document": "分区数，必须大于或者等于原分区数，若想维持原分区数请输入原数目，修改分区数仅对非全局顺序消息起效果，不允许超过32个分区。",
           "example": "3",
           "member": "uint64",
           "name": "Partitions",
@@ -11824,7 +11824,7 @@
           "example": "pulsar-ge3n43v3wj",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "required": true,
           "type": "string"
         }
       ],
@@ -11839,7 +11839,7 @@
           "example": "true",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

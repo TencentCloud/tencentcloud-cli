@@ -783,7 +783,7 @@
         },
         {
           "disabled": false,
-          "document": "记录ID",
+          "document": "记录ID（调用DescribePrivateZoneRecordList可获取到RecordId）",
           "example": "2323",
           "member": "string",
           "name": "RecordId",

@@ -798,8 +798,8 @@
     ],
     "ResetMsgSubOffsetByTimestamp": [
       {
-        "document": "",
-        "input": "https://tdmq.tencentcloudapi.com/?Action=ResetMsgSubOffsetByTimestamp\n&EnvironmentId=default\n&TopicName=cloud_test\n&Subscription=cloud_sub\n&ToTimestamp=1585901708600\n&<公共请求参数>",
+        "document": "{\n  \"EnvironmentId\": \"abc\",\n  \"TopicName\": \"abc\",\n  \"Subscription\": \"abc\",\n  \"ToTimestamp\": 1,\n  \"ClusterId\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetMsgSubOffsetByTimestamp\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"TopicName\": \"abc\",\n    \"Subscription\": \"abc\",\n    \"ToTimestamp\": 1,\n    \"ClusterId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"3593f784-fcfb-4f23-b3dd-4751cba3aec7\"\n    }\n}",
         "title": "回溯消息"
       }

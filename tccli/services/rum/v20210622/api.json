@@ -4119,7 +4119,7 @@
         },
         {
           "disabled": false,
-          "document": "是否海外",
+          "document": "显示是否海外",
           "example": "1",
           "member": "string",
           "name": "IsAbroad",
@@ -4159,6 +4159,15 @@
           "example": "1",
           "member": "int64",
           "name": "GroupByType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "无需关注，是否查询zhiyan",
+          "example": "无",
+          "member": "int64",
+          "name": "IsNewData",
           "required": false,
           "type": "int"
         }
