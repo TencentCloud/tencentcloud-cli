@@ -1,3 +1,80 @@
+# Release 3.0.865.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 13 次发布
+
+发布时间：2023-10-16 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/80809)
+
+	* 新增入参：ScanFrom
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 30 次发布
+
+发布时间：2023-10-16 01:15:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAutoScaleRecords](http://document.tencentcloudapi.woa.com/document/product/589/82360)
+
+新增数据结构：
+
+* [AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord)
+* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/589/33981#KeyValue)
+
+
+
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 26 次发布
+
+发布时间：2023-10-16 01:18:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetDeviceSumStatistics](http://document.tencentcloudapi.woa.com/document/product/1081/82361)
+
+
+
+## 智聆口语评测(soe) 版本：2018-07-24
+
+### 第 4 次发布
+
+发布时间：2023-10-16 01:22:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TransmitOralProcessWithInit](http://document.tencentcloudapi.woa.com/document/product/884/32605)
+
+	* 新增入参：COSBucketURL
+
+
+
+
 # Release 3.0.864.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -1,62 +1,29 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 31 次发布
-
-发布时间：2023-10-13 01:07:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeMeasureDetailTotal](http://document.tencentcloudapi.woa.com/document/product/555/82326)
-
-	* <font color="#dd0000">**修改出参**：</font>Data
-
-
-新增数据结构：
-
-* [DescribeMeasureDetailTotalResult](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailTotalResult)
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* DescribeMeasureDetailTotalRes
-
-
-
-## 云联络中心(ccc) 版本：2020-02-10
-
-### 第 43 次发布
-
-发布时间：2023-10-13 01:08:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeIMCdrList](http://document.tencentcloudapi.woa.com/document/product/679/77288)
-
-修改接口：
-
-* [DescribeChatMessages](http://document.tencentcloudapi.woa.com/document/product/679/49676)
-
-* [DescribeIMCdrs](http://document.tencentcloudapi.woa.com/document/product/679/49675)
-
-	* 新增出参：IMCdrList
-
-
-
-
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 12 次发布
+### 第 13 次发布
 
-发布时间：2023-10-13 01:12:22
+发布时间：2023-10-16 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/80809)
+
+	* 新增入参：ScanFrom
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 30 次发布
+
+发布时间：2023-10-16 01:15:58
 
 本次发布包含了以下内容：
 
@@ -64,103 +31,20 @@
 
 新增接口：
 
-* [DescribeRiskCenterPortViewPortRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82358)
-* [DescribeRiskCenterVULViewVULRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82357)
-* [ModifyRiskCenterRiskStatus](http://document.tencentcloudapi.woa.com/document/product/1726/82356)
+* [DescribeAutoScaleRecords](http://document.tencentcloudapi.woa.com/document/product/589/82360)
 
 新增数据结构：
 
-* [PortViewPortRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#PortViewPortRisk)
-* [RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey)
-* [VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk)
+* [AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord)
+* [KeyValue](http://document.tencentcloudapi.woa.com/document/product/589/33981#KeyValue)
 
 
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## 物联网开发平台(iotexplorer) 版本：2019-04-23
 
-### 第 63 次发布
+### 第 26 次发布
 
-发布时间：2023-10-13 01:13:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceNetInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceNetInfo)
-
-	* <font color="#dd0000">**修改成员**：</font>InstanceGroupType, InstanceGroupId, VpcId, SubnetId, NetType, Vip, Vport, WanDomain, WanIP, WanPort, WanStatus
-
-
-
-
-## 云直播CSS(live) 版本：2018-08-01
-
-### 第 46 次发布
-
-发布时间：2023-10-13 01:20:06
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56245)
-
-	* 新增入参：SpecifyTaskId
-
-* [ModifyLivePullStreamTask](http://document.tencentcloudapi.woa.com/document/product/267/56242)
-
-	* 新增入参：SpecifyTaskId
-
-
-
-
-## 前端性能监控(rum) 版本：2021-06-22
-
-### 第 27 次发布
-
-发布时间：2023-10-13 01:22:56
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDataPvUrlStatistics](http://document.tencentcloudapi.woa.com/document/product/1464/65768)
-
-	* 新增入参：IsNewData
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 67 次发布
-
-发布时间：2023-10-13 01:25:50
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ResetMsgSubOffsetByTimestamp](http://document.tencentcloudapi.woa.com/document/product/1179/46083)
-
-	* <font color="#dd0000">**修改入参**：</font>ClusterId
-
-
-
-
-## 微服务引擎 TSE(tse) 版本：2020-12-07
-
-### 第 41 次发布
-
-发布时间：2023-10-13 01:27:52
+发布时间：2023-10-16 01:18:08
 
 本次发布包含了以下内容：
 
@@ -168,7 +52,26 @@
 
 新增接口：
 
-* [ModifyCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/82359)
+* [GetDeviceSumStatistics](http://document.tencentcloudapi.woa.com/document/product/1081/82361)
+
+
+
+## 智聆口语评测(soe) 版本：2018-07-24
+
+### 第 4 次发布
+
+发布时间：2023-10-16 01:22:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TransmitOralProcessWithInit](http://document.tencentcloudapi.woa.com/document/product/884/32605)
+
+	* 新增入参：COSBucketURL
+
 
 
 
@@ -5374,7 +5277,7 @@
 
 新增数据结构：
 
-* [[DescribeMeasureDetailTotalResult](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailTotalResult)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[DescribeMeasureDetailTotalResult](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailTotalResult))
+* [DescribeMeasureDetailTotalResult](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureDetailTotalResult)
 
 <font color="#dd0000">**删除数据结构**：</font>
 
@@ -9110,7 +9013,7 @@
 
 新增接口：
 
-* [[DescribeIMCdrList](http://document.tencentcloudapi.woa.com/document/product/679/77288)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeIMCdrList](http://document.tencentcloudapi.woa.com/document/product/679/77288)
 
 修改接口：
 
@@ -22050,6 +21953,21 @@
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
+### 第 13 次发布
+
+发布时间：2023-10-16 01:11:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateRiskCenterScanTask](http://document.tencentcloudapi.woa.com/document/product/1726/80809)
+
+	* 新增入参：ScanFrom
+
+
 ### 第 12 次发布
 
 发布时间：2023-10-13 01:12:22
@@ -22060,15 +21978,15 @@
 
 新增接口：
 
-* [[DescribeRiskCenterPortViewPortRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82358)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRiskCenterVULViewVULRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82357)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyRiskCenterRiskStatus](http://document.tencentcloudapi.woa.com/document/product/1726/82356)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeRiskCenterPortViewPortRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82358)
+* [DescribeRiskCenterVULViewVULRiskList](http://document.tencentcloudapi.woa.com/document/product/1726/82357)
+* [ModifyRiskCenterRiskStatus](http://document.tencentcloudapi.woa.com/document/product/1726/82356)
 
 新增数据结构：
 
-* [[PortViewPortRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#PortViewPortRisk)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[PortViewPortRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#PortViewPortRisk))
-* [[RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey))
-* [[VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk))
+* [PortViewPortRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#PortViewPortRisk)
+* [RiskCenterStatusKey](http://document.tencentcloudapi.woa.com/document/product/1726/80814#RiskCenterStatusKey)
+* [VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk)
 
 ### 第 11 次发布
 
@@ -34189,6 +34107,23 @@
 
 ## 弹性 MapReduce(emr) 版本：2019-01-03
 
+### 第 30 次发布
+
+发布时间：2023-10-16 01:15:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAutoScaleRecords](http://document.tencentcloudapi.woa.com/document/product/589/82360)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[AutoScaleRecord](http://document.tencentcloudapi.woa.com/document/product/589/33981#AutoScaleRecord))
+* [[KeyValue](http://document.tencentcloudapi.woa.com/document/product/589/33981#KeyValue)](http://document.tencentcloudapi.woa.com/document/product/589/33981#[KeyValue](http://document.tencentcloudapi.woa.com/document/product/589/33981#KeyValue))
+
 ### 第 29 次发布
 
 发布时间：2023-10-10 01:33:58
@@ -43246,6 +43181,18 @@
 
 
 ## 物联网开发平台(iotexplorer) 版本：2019-04-23
+
+### 第 26 次发布
+
+发布时间：2023-10-16 01:18:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetDeviceSumStatistics](http://document.tencentcloudapi.woa.com/document/product/1081/82361)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 25 次发布
 
@@ -61060,6 +61007,21 @@
 
 ## 智聆口语评测(soe) 版本：2018-07-24
 
+### 第 4 次发布
+
+发布时间：2023-10-16 01:22:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TransmitOralProcessWithInit](http://document.tencentcloudapi.woa.com/document/product/884/32605)
+
+	* 新增入参：COSBucketURL
+
+
 ### 第 3 次发布
 
 发布时间：2023-07-10 01:38:55
@@ -76081,7 +76043,7 @@
 
 新增接口：
 
-* [[ModifyCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/82359)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyCloudNativeAPIGatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/1364/82359)
 
 ### 第 40 次发布
 

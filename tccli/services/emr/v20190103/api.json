@@ -28,6 +28,13 @@
       "output": "DeleteUserManagerUserListResponse",
       "status": "online"
     },
+    "DescribeAutoScaleRecords": {
+      "document": "获取集群的自动扩缩容的详细记录",
+      "input": "DescribeAutoScaleRecordsRequest",
+      "name": "获取自动扩缩容记录",
+      "output": "DescribeAutoScaleRecordsResponse",
+      "status": "online"
+    },
     "DescribeClusterNodes": {
       "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
@@ -470,6 +477,122 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AutoScaleRecord": {
+      "document": "弹性扩缩容记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩缩容规则名。",
+          "example": "测试策略",
+          "member": "string",
+          "name": "StrategyName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "\"SCALE_OUT\"和\"SCALE_IN\"，分别表示扩容和缩容。",
+          "example": "SCALE_OUT",
+          "member": "string",
+          "name": "ScaleAction",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "取值为\"SUCCESS\",\"FAILED\",\"PART_SUCCESS\",\"IN_PROCESS\"，分别表示成功、失败、部分成功和流程中。",
+          "example": "IN_PROCESS",
+          "member": "string",
+          "name": "ActionStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流程触发时间。",
+          "example": "2021-07-21 00:00:00",
+          "member": "string",
+          "name": "ActionTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容相关描述信息。",
+          "example": "扩容成功5个",
+          "member": "string",
+          "name": "ScaleInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "只在ScaleAction为SCALE_OUT时有效。",
+          "example": "1",
+          "member": "int64",
+          "name": "ExpectScaleNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流程结束时间。",
+          "example": "2021-07-21 00:01:00",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略类型，按负载或者按时间，1表示负载伸缩，2表示时间伸缩",
+          "example": "1",
+          "member": "int64",
+          "name": "StrategyType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩容时所使用规格信息。",
+          "example": "四核八G。",
+          "member": "string",
+          "name": "SpecInfo",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "补偿扩容，0表示不开启，1表示开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompensateFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "补偿次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CompensateCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2128,6 +2251,80 @@
         }
       ],
       "usage": "in"
+    },
+    "DescribeAutoScaleRecordsRequest": {
+      "document": "DescribeAutoScaleRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "emr-3ap64zl6",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录过滤参数，目前仅能为“StartTime”,“EndTime”和“StrategyName”。StartTime和EndTime支持2006-01-02 15:04:05 或者2006/01/02 15:04:05的时间格式",
+          "example": "无",
+          "member": "KeyValue",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数。最大支持100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAutoScaleRecordsResponse": {
+      "document": "DescribeAutoScaleRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总扩缩容记录数。",
+          "example": "11",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录列表。",
+          "example": "无",
+          "member": "AutoScaleRecord",
+          "name": "RecordList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeClusterNodesRequest": {
       "document": "DescribeClusterNodes请求参数结构体",
@@ -5267,6 +5464,32 @@
           "member": "string",
           "name": "ApplicationId",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KeyValue": {
+      "document": "键值对，主要用来做Filter",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Value",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
