@@ -1,3 +1,205 @@
+# Release 3.0.866.1
+
+## 二进制软件成分分析(bsca) 版本：2021-08-11
+
+### 第 4 次发布
+
+发布时间：2023-10-17 01:08:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeKBComponentVersionList](http://document.tencentcloudapi.woa.com/document/product/1693/82363)
+* [SearchKBComponent](http://document.tencentcloudapi.woa.com/document/product/1693/82362)
+
+新增数据结构：
+
+* [ComponentVersion](http://document.tencentcloudapi.woa.com/document/product/1693/79883#ComponentVersion)
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 19 次发布
+
+发布时间：2023-10-17 01:08:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [DestroyPodDetail](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DestroyPodDetail)
+* [DestroyPodsTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DestroyPodsTrait)
+
+修改数据结构：
+
+* [TraitProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TraitProperties)
+
+	* 新增成员：DestroyPods
+
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 19 次发布
+
+发布时间：2023-10-17 01:17:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6Addresses](http://document.tencentcloudapi.woa.com/document/product/1108/51094)
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 39 次发布
+
+发布时间：2023-10-17 01:18:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CompareFaceLiveness](http://document.tencentcloudapi.woa.com/document/product/1007/82364)
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 60 次发布
+
+发布时间：2023-10-17 01:22:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+
+	* 新增成员：IsSupportAlarmTag
+
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 5 次发布
+
+发布时间：2023-10-17 01:23:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateEncryptInstance](http://document.tencentcloudapi.woa.com/document/product/1617/81395)
+
+	* 新增入参：IOSInfo
+
+
+新增数据结构：
+
+* [IOSInfo](http://document.tencentcloudapi.woa.com/document/product/1617/78369#IOSInfo)
+
+修改数据结构：
+
+* [IOSResult](http://document.tencentcloudapi.woa.com/document/product/1617/78369#IOSResult)
+
+	* 新增成员：OpUin, EncryptType, ResourceId, EncryptState, EncryptErrno, EncryptErrDesc, CreatTime, StartTime, EndTime, CostTime, EncryptPkgUrl
+
+	* <font color="#dd0000">**修改成员**：</font>ResultId
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 33 次发布
+
+发布时间：2023-10-17 01:24:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [FetchSqlGatewayStatementResult](http://document.tencentcloudapi.woa.com/document/product/849/82366)
+* [RunSqlGatewayStatement](http://document.tencentcloudapi.woa.com/document/product/849/82365)
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 42 次发布
+
+发布时间：2023-10-17 01:30:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSREInstanceAccessAddress](http://document.tencentcloudapi.woa.com/document/product/1364/54941)
+
+	* 新增出参：CLBMultiRegion
+
+
+新增数据结构：
+
+* [CLBMultiRegion](http://document.tencentcloudapi.woa.com/document/product/1364/54942#CLBMultiRegion)
+* [PolarisCLSTopicInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#PolarisCLSTopicInfo)
+* [StorageOption](http://document.tencentcloudapi.woa.com/document/product/1364/54942#StorageOption)
+
+修改数据结构：
+
+* [BoundK8SInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#BoundK8SInfo)
+
+	* 新增成员：BindRegion
+
+* [DescribeInstanceRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeInstanceRegionInfo)
+
+	* 新增成员：ConsoleIntranetVpcInfos, LimiterIntranetVpcInfos, MainRegion, EKSClusterID
+
+* [EngineRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EngineRegionInfo)
+
+	* 新增成员：MainRegion, SpecId
+
+* [EnvAddressInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#EnvAddressInfo)
+
+	* 新增成员：CLBMultiRegion
+
+	* <font color="#dd0000">**修改成员**：</font>EnableConfigIntranet, InternetBandWidth
+
+* [SREInstance](http://document.tencentcloudapi.woa.com/document/product/1364/54942#SREInstance)
+
+	* 新增成员：StorageOption
+
+* [ServiceGovernanceInfo](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ServiceGovernanceInfo)
+
+	* 新增成员：CLSTopics
+
+
+
+
 # Release 3.0.865.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

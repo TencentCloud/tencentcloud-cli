@@ -13,26 +13,33 @@ Output:
 ```
 {
     "Response": {
+        "IntranetAddress": "abc",
+        "InternetAddress": "abc",
         "EnvAddressInfos": [
             {
+                "EnvName": "abc",
                 "EnableConfigInternet": true,
-                "EnvName": "xx",
-                "ConfigIntranetAddress": "xx",
-                "ConfigInternetServiceIp": "xx"
+                "ConfigInternetServiceIp": "abc",
+                "ConfigIntranetAddress": "abc",
+                "EnableConfigIntranet": true,
+                "InternetBandWidth": 0
             }
         ],
+        "ConsoleInternetAddress": "abc",
+        "ConsoleIntranetAddress": "abc",
+        "InternetBandWidth": 0,
+        "ConsoleInternetBandWidth": 0,
         "LimiterAddressInfos": [
             {
-                "IntranetAddress": "xx"
+                "IntranetAddress": "abc"
             }
         ],
-        "IntranetAddress": "xx",
-        "InternetAddress": "xx",
-        "ConsoleInternetBandWidth": 0,
-        "ConsoleIntranetAddress": "xx",
-        "RequestId": "xx",
-        "ConsoleInternetAddress": "xx",
-        "InternetBandWidth": 0
+        "CLBMultiRegion": {
+            "CLBMultiZoneFlag": true,
+            "CLBMasterZone": "abc",
+            "CLBSlaveZone": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

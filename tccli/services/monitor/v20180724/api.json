@@ -1627,7 +1627,7 @@
           "example": "无",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1637,7 +1637,7 @@
           "example": "无",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1647,7 +1647,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1657,7 +1657,7 @@
           "example": "无",
           "member": "string",
           "name": "MonitorType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1667,7 +1667,7 @@
           "example": "无",
           "member": "int64",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1677,7 +1677,7 @@
           "example": "无",
           "member": "int64",
           "name": "UseSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1687,7 +1687,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1697,7 +1697,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1707,7 +1707,7 @@
           "example": "无",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1717,7 +1717,7 @@
           "example": "无",
           "member": "string",
           "name": "ConditionTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1727,7 +1727,7 @@
           "example": "无",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1737,7 +1737,7 @@
           "example": "无",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1747,7 +1747,7 @@
           "example": "无",
           "member": "string",
           "name": "NoticeIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1757,7 +1757,7 @@
           "example": "无",
           "member": "AlarmNotice",
           "name": "Notices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1767,7 +1767,7 @@
           "example": "无",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1777,7 +1777,7 @@
           "example": "无",
           "member": "ConditionsTemp",
           "name": "ConditionsTemp",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1787,7 +1787,7 @@
           "example": "无",
           "member": "string",
           "name": "LastEditUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1797,7 +1797,7 @@
           "example": "无",
           "member": "int64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1807,7 +1807,7 @@
           "example": "无",
           "member": "int64",
           "name": "InsertTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1817,7 +1817,7 @@
           "example": "无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1827,7 +1827,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceShowName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1837,7 +1837,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1847,7 +1847,7 @@
           "example": "无",
           "member": "int64",
           "name": "CanSetDefault",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1857,7 +1857,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1867,7 +1867,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceSum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1877,7 +1877,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1887,7 +1887,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1897,7 +1897,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1907,7 +1907,7 @@
           "example": "无",
           "member": "TagInstance",
           "name": "TagInstances",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1917,7 +1917,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "FilterDimensionsParam",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1927,7 +1927,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsOneClick",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1937,7 +1937,7 @@
           "example": "无",
           "member": "int64",
           "name": "OneClickStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1947,7 +1947,7 @@
           "example": "0",
           "member": "int64",
           "name": "AdvancedMetricNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1957,7 +1957,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsBindAll",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1967,8 +1967,18 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持告警标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IsSupportAlarmTag",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -6363,6 +6373,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6372,6 +6383,7 @@
           "example": "无",
           "member": "AlarmPolicy",
           "name": "Policies",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

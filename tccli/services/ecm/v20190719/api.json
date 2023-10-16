@@ -1486,7 +1486,7 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "该字段没有使用（已过期）。",
           "example": "无",
           "member": "string",

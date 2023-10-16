@@ -577,6 +577,7 @@
           "example": "cls-xxxxxx",
           "member": "string",
           "name": "BoundClusterId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -587,6 +588,7 @@
           "example": "eks",
           "member": "string",
           "name": "BoundClusterType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -597,12 +599,60 @@
           "example": "demand",
           "member": "string",
           "name": "SyncMode",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定的kubernetes集群所在地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-beijing",
+          "member": "string",
+          "name": "BindRegion",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "both"
+    },
+    "CLBMultiRegion": {
+      "document": "CLB多可用区信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用多可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "CLBMultiZoneFlag",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CLBMasterZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CLBSlaveZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CertificateInfo": {
       "document": "证书信息",
@@ -4313,7 +4363,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "EngineRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4323,7 +4373,7 @@
           "example": "1",
           "member": "int64",
           "name": "Replica",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4333,17 +4383,27 @@
           "example": "spec-xxx",
           "member": "string",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "客户端内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "VpcInfo",
           "name": "IntranetVpcInfos",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "控制台内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "ConsoleIntranetVpcInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4353,8 +4413,38 @@
           "example": "true",
           "member": "bool",
           "name": "EnableClientInternet",
-          "required": true,
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "限流客户端内网的网络信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcInfo",
+          "name": "LimiterIntranetVpcInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为主地域，仅在服务治理中心多地域有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "MainRegion",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域所在的EKS集群\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EKSClusterID",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -4732,7 +4822,7 @@
           "example": "10.1.8.15",
           "member": "string",
           "name": "IntranetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4742,7 +4832,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "InternetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4752,7 +4842,7 @@
           "example": "无",
           "member": "EnvAddressInfo",
           "name": "EnvAddressInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4762,7 +4852,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "ConsoleInternetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4772,7 +4862,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "ConsoleIntranetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4782,7 +4872,7 @@
           "example": "10",
           "member": "int64",
           "name": "InternetBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4792,7 +4882,7 @@
           "example": "10",
           "member": "int64",
           "name": "ConsoleInternetBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4802,8 +4892,18 @@
           "example": "无",
           "member": "PolarisLimiterAddress",
           "name": "LimiterAddressInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "InternetAddress 的公网 CLB 多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBMultiRegion",
+          "name": "CLBMultiRegion",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -4875,7 +4975,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4885,7 +4985,7 @@
           "example": "无",
           "member": "SREInstance",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5074,8 +5174,7 @@
           "member": "string",
           "name": "EngineRegion",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5084,8 +5183,7 @@
           "member": "int64",
           "name": "Replica",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5094,8 +5192,25 @@
           "member": "VpcInfo",
           "name": "VpcInfos",
           "required": true,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否为主地域",
+          "example": "true",
+          "member": "bool",
+          "name": "MainRegion",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "引擎规格ID",
+          "example": "SPEC_1C2G",
+          "member": "string",
+          "name": "SpecId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5109,7 +5224,7 @@
           "example": "dev",
           "member": "string",
           "name": "EnvName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5119,7 +5234,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableConfigInternet",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5129,7 +5244,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "ConfigInternetServiceIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5139,7 +5254,7 @@
           "example": "10.0.0.1:8080",
           "member": "string",
           "name": "ConfigIntranetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5149,7 +5264,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableConfigIntranet",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5159,8 +5274,18 @@
           "example": "1",
           "member": "int64",
           "name": "InternetBandWidth",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客户端公网CLB多可用区信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBMultiRegion",
+          "name": "CLBMultiRegion",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -7429,6 +7554,56 @@
       ],
       "usage": "both"
     },
+    "PolarisCLSTopicInfo": {
+      "document": "北极星日志主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志集名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "LogSetName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "PolarisLimiterAddress": {
       "document": "查询Limiter的接入地址",
       "members": [
@@ -7888,6 +8063,16 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储额外配置选项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StorageOption",
+          "name": "StorageOption",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7901,6 +8086,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7911,6 +8097,7 @@
           "example": "无",
           "member": "BoundK8SInfo",
           "name": "BoundK8SInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7921,6 +8108,7 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "VpcInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7931,6 +8119,7 @@
           "example": "true",
           "member": "bool",
           "name": "AuthOpen",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -7941,6 +8130,7 @@
           "example": "[\"Auth\"]",
           "member": "string",
           "name": "Features",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7951,6 +8141,7 @@
           "example": "主账户密码",
           "member": "string",
           "name": "MainPassword",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7961,6 +8152,7 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "PgwVpcInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -7971,9 +8163,57 @@
           "example": "无",
           "member": "VpcInfo",
           "name": "LimiterVpcInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎关联CLS日志主题信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolarisCLSTopicInfo",
+          "name": "CLSTopics",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "StorageOption": {
+      "document": "存储的额外选项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储对象，分为snap和txn两种\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "snap",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储类型，分为三类CLOUD_PREMIUM/CLOUD_SSD/CLOUD_SSD_PLUS，分别对应高性能云硬盘、SSD云硬盘、增强型SSD云硬盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储容量，[50, 3200]的范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "uint64",
+          "name": "Capacity",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -8177,6 +8417,7 @@
           "example": "vpc-xxxxxxxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8187,6 +8428,7 @@
           "example": "subnet-xxxxxxxx",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8197,6 +8439,7 @@
           "example": "xxxx.xx.xx.xx",
           "member": "string",
           "name": "IntranetAddress",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

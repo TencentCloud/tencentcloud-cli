@@ -4830,6 +4830,51 @@
       ],
       "usage": "both"
     },
+    "DestroyPodDetail": {
+      "document": "要销毁的Pod",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod 名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DestroyPodsTrait": {
+      "document": "期望销毁的 Pod 列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要销毁的Pod列表",
+          "example": "无",
+          "member": "DestroyPodDetail",
+          "name": "Pods",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "EnvKeyVar": {
       "document": "配置环境变量 KV",
       "members": [
@@ -7789,6 +7834,17 @@
           "example": "无",
           "member": "NetworkQosTrait",
           "name": "NetworkQos",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销毁 Pods\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DestroyPodsTrait",
+          "name": "DestroyPods",
           "output_required": false,
           "required": false,
           "type": "object",

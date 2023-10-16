@@ -127,3 +127,48 @@ Output:
 }
 ```
 
+**Example 4: iOS混淆示例**
+
+POST / HTTP/1.1
+Host: ms.tencentcloudapi.com
+Content-Type: application/json
+X-TC-Action: CreateEncryptInstance
+<公共请求参数>
+
+{
+        "PlatformType": 2,
+        "OrderType": 1,
+        "EncryptOpType": 1,
+        "ResourceId":"xxxxxxxxxxxxxxxxxx",
+  "IOSInfo": {
+    "InfoPListUrl": "http://xxxxxxxxxxxxxxxxxxx.zip",
+    "InfoPListSize": 100,
+    "InfoPListMd5": "881ac0a49b3ae9967022217730cc0da8",
+    "BuildType": "release"
+  }
+}
+
+Input: 
+
+```
+tccli ms CreateEncryptInstance --cli-unfold-argument  \
+    --PlatformType 2 \
+    --OrderType 1 \
+    --EncryptOpType 1 \
+    --ResourceId xxxxxxxxxxxxxxxxxx \
+    --IOSInfo.InfoPListUrl http://xxxxxxxxxxxxxxxxxxx.zip \
+    --IOSInfo.InfoPListSize 100 \
+    --IOSInfo.InfoPListMd5 881ac0a49b3ae9967022217730cc0da8 \
+    --IOSInfo.BuildType release
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "6ef4eac9-badc-40d9-9796-569741849f95",
+        "ResultId": "6ef4eac9-badc-40d9-9796-569741849f95"
+    }
+}
+```
+
