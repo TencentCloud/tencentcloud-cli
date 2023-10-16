@@ -2289,8 +2289,8 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>TRUE：加密\n<li>FALSE：不加密<br>\n默认取值：FALSE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "数据盘是加密。取值范围：\n<li>true：加密\n<li>false：不加密<br>\n默认取值：false<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
           "member": "bool",
           "name": "Encrypt",
           "output_required": true,
@@ -10517,10 +10517,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：FALSE。",
-          "example": "TRUE",
+          "document": "是否开启云自动化助手。取值范围：<br><li>true：表示开启云自动化助手服务<br><li>false：表示不开启云自动化助手服务<br><br>默认取值：false。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -10813,12 +10814,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。",
-          "example": "",
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>true：表示开启云监控服务<br><li>false：表示不开启云监控服务<br><br>默认取值：true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11339,6 +11342,7 @@
           "example": "vpc-2ij",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -11349,16 +11353,18 @@
           "example": "subnet-2ks",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>TRUE：表示用作公网网关<br><li>FALSE：表示不作为公网网关<br><br>默认取值：FALSE。",
-          "example": "FALSE",
+          "document": "是否用作公网网关。公网网关只有在实例拥有公网IP以及处于私有网络下时才能正常使用。取值范围：<br><li>true：表示用作公网网关<br><li>false：表示不作为公网网关<br><br>默认取值：false。",
+          "example": "false",
           "member": "bool",
           "name": "AsVpcGateway",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -11366,9 +11372,10 @@
         {
           "disabled": false,
           "document": "私有网络子网 IP 数组，在创建实例、修改实例vpc属性操作中可使用此参数。当前仅批量创建多台实例时支持传入相同子网的多个 IP。",
-          "example": "[]",
+          "example": "[\"10.0.0.1\"]",
           "member": "string",
           "name": "PrivateIpAddresses",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -11379,6 +11386,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Ipv6AddressCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

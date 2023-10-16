@@ -19,7 +19,7 @@
     "CreateRiskCenterScanTask": [
       {
         "document": "创建风险中心扫描任务",
-        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRiskCenterScanTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"Assets\": [\n        {\n            \"AssetName\": \"abc\",\n            \"InstanceType\": \"abc\",\n            \"AssetType\": \"abc\",\n            \"Asset\": \"abc\",\n            \"Region\": \"abc\"\n        }\n    ],\n    \"ScanAssetType\": 0,\n    \"ScanItem\": [\n        \"abc\"\n    ],\n    \"ScanPlanType\": 0,\n    \"ScanPlanContent\": \"abc\",\n    \"SelfDefiningAssets\": [\n        \"abc\"\n    ],\n    \"TaskAdvanceCFG\": {},\n    \"TaskMode\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRiskCenterScanTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"Assets\": [\n        {\n            \"AssetName\": \"abc\",\n            \"InstanceType\": \"abc\",\n            \"AssetType\": \"abc\",\n            \"Asset\": \"abc\",\n            \"Region\": \"abc\"\n        }\n    ],\n    \"ScanAssetType\": 0,\n    \"ScanItem\": [\n        \"abc\"\n    ],\n    \"ScanPlanType\": 0,\n    \"ScanPlanContent\": \"abc\",\n    \"SelfDefiningAssets\": [\n        \"abc\"\n    ],\n    \"ScanFrom\": \"abc\",\n    \"TaskAdvanceCFG\": {},\n    \"TaskMode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TaskId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建风险中心扫描任务"
       }

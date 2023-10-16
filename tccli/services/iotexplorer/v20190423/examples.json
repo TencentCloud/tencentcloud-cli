@@ -506,6 +506,14 @@
         "title": "GetDeviceLocationHistory"
       }
     ],
+    "GetDeviceSumStatistics": [
+      {
+        "document": "",
+        "input": "https://iotexplorer.tencentcloudapi.com/?Action=GetDeviceSumStatistics\r\n&ProjectId=prj-zunfat46\r\n&ProductIds=[4GDIU5HTEN]\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActivationBeforeWeekDayCount\": 100,\n        \"ActiveBeforeWeekDayCount\": 60,\n        \"RequestId\": \"6b6e765c-1625-49e6-9743-452e6ce15caa\"\n    }\n}",
+        "title": "拉取设备统计汇总数据示例"
+      }
+    ],
     "GetFamilyDeviceUserList": [
       {
         "document": "获取设备绑定的用户列表成功示例",

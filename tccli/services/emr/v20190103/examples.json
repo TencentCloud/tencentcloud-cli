@@ -32,6 +32,14 @@
         "title": "test"
       }
     ],
+    "DescribeAutoScaleRecords": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: emr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutoScaleRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"emr-3ap64zl6\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"RecordList\": [\n            {\n                \"StrategyName\": \"abc\",\n                \"ScaleAction\": \"abc\",\n                \"ActionStatus\": \"abc\",\n                \"ActionTime\": \"abc\",\n                \"ScaleInfo\": \"abc\",\n                \"ExpectScaleNum\": 0,\n                \"EndTime\": \"abc\",\n                \"StrategyType\": 0,\n                \"SpecInfo\": \"abc\",\n                \"CompensateFlag\": 0,\n                \"CompensateCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取弹性扩缩容历史示例"
+      }
+    ],
     "DescribeClusterNodes": [
       {
         "document": "通过emr集群ID获取硬件节点信息",

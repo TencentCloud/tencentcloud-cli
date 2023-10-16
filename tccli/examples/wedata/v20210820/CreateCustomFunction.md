@@ -6,19 +6,21 @@ Input:
 
 ```
 tccli wedata CreateCustomFunction --cli-unfold-argument  \
-    --ClusterIdentifier xx \
-    --Type xx \
-    --Kind xx \
-    --Name xx
+    --ProjectId abc \
+    --Type HIVE \
+    --Kind ANALYSIS \
+    --ClusterIdentifier abc \
+    --DbName abc \
+    --Name abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ErrorMessage": "xx",
-        "FunctionId": "xx",
-        "RequestId": "xx"
+        "ErrorMessage": "abc",
+        "FunctionId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

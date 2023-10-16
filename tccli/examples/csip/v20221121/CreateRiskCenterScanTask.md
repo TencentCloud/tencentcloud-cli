@@ -17,6 +17,7 @@ tccli csip CreateRiskCenterScanTask --cli-unfold-argument  \
     --ScanPlanType 0 \
     --ScanPlanContent abc \
     --SelfDefiningAssets abc \
+    --ScanFrom abc \
     --TaskMode 0
 ```
 

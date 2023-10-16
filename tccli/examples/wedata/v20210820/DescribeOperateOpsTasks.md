@@ -1,6 +1,6 @@
-**Example 1: 任务列表**
+**Example 1: 任务列表查询**
 
-任务运维-任务列表
+任务列表查询
 
 Input: 
 
@@ -25,7 +25,8 @@ tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
     --SourceServiceType abc \
     --TargetServiceId abc \
     --TargetServiceType abc \
-    --AlarmType abc
+    --AlarmType abc \
+    --ExecutorGroupIdList abc
 ```
 
 Output: 
@@ -128,7 +129,11 @@ Output:
                     "SourceServiceId": "abc",
                     "SourceServiceType": "abc",
                     "TargetServiceId": "abc",
-                    "TargetServiceType": "abc"
+                    "TargetServiceType": "abc",
+                    "TasksStr": "abc",
+                    "Submit": true,
+                    "ExecutorGroupId": "abc",
+                    "ExecutorGroupName": "abc"
                 }
             ],
             "TotalPage": 1,

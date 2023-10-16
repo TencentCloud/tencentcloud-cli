@@ -22210,10 +22210,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启云自动化助手。取值范围：<br><li>TRUE：表示开启云自动化助手服务<br><li>FALSE：表示不开启云自动化助手服务<br><br>默认取值：FALSE。",
-          "example": "TRUE",
+          "document": "是否开启云自动化助手。取值范围：<br><li>true：表示开启云自动化助手服务<br><li>false：表示不开启云自动化助手服务<br><br>默认取值：false。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -22262,12 +22263,14 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>TRUE：表示开启云监控服务<br><li>FALSE：表示不开启云监控服务<br><br>默认取值：TRUE。",
-          "example": "",
+          "document": "是否开启[云监控](/document/product/248)服务。取值范围：<br><li>true：表示开启云监控服务<br><li>false：表示不开启云监控服务<br><br>默认取值：true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
