@@ -33,7 +33,7 @@ log = init('tccli.main')
 
 def main():
     cli_version = __version__.rsplit(".", 1)[0]
-    if sdkVersion < cli_version:
+    if int(sdkVersion.split(".")[-1]) < int(cli_version.split(".")[-1]):
         sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
         return
     try:
