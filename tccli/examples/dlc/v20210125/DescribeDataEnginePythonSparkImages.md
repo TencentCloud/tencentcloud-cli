@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli dlc DescribeDataEnginePythonSparkImages --cli-unfold-argument  \
-    --ChildImageVersionId xx
+    --ChildImageVersionId abc
 ```
 
 Output: 

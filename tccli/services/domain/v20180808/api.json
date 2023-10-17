@@ -42,6 +42,13 @@
       "output": "CheckIntlDomainNewResponse",
       "status": "online"
     },
+    "CreateCustomDnsHost": {
+      "document": "创建自定义DNS Host",
+      "input": "CreateCustomDnsHostRequest",
+      "name": "创建自定义DNS Host",
+      "output": "CreateCustomDnsHostResponse",
+      "status": "online"
+    },
     "CreateDomainBatch": {
       "document": "本接口 ( CreateDomainBatch ) 用于批量域名注册 。",
       "input": "CreateDomainBatchRequest",
@@ -1667,6 +1674,61 @@
         }
       ],
       "usage": "both"
+    },
+    "CreateCustomDnsHostRequest": {
+      "document": "CreateCustomDnsHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名实例ID",
+          "example": "domain-7312mrgq",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Dns名称",
+          "example": "ns1",
+          "member": "string",
+          "name": "DnsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP地址列表",
+          "example": "1.2.4.8",
+          "member": "string",
+          "name": "IpSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCustomDnsHostResponse": {
+      "document": "CreateCustomDnsHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "6543",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CreateDomainBatchRequest": {
       "document": "CreateDomainBatch请求参数结构体",

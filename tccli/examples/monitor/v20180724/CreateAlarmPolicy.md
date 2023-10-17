@@ -14,7 +14,7 @@ tccli monitor CreateAlarmPolicy --cli-unfold-argument  \
     --ProjectId 0 \
     --Namespace cvm_device \
     --Condition.IsUnionRule 1 \
-    --Condition.Rules.0.MetricName cpu_usage \
+    --Condition.Rules.0.MetricName CvmDiskUsage \
     --Condition.Rules.0.Period 60 \
     --Condition.Rules.0.Operator ge \
     --Condition.Rules.0.Value 99.9 \

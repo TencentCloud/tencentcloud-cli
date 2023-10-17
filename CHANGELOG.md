@@ -1,3 +1,261 @@
+# Release 3.0.867.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 31 次发布
+
+发布时间：2023-10-18 01:06:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyAPIDoc](http://document.tencentcloudapi.woa.com/document/product/628/54947)
+
+	* <font color="#dd0000">**修改入参**：</font>ApiDocName, ServiceId, Environment, ApiIds
+
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 78 次发布
+
+发布时间：2023-10-18 01:09:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AutoStrategy](http://document.tencentcloudapi.woa.com/document/product/236/15878#AutoStrategy)
+
+	* 新增成员：ExpandThreshold, ExpandPeriod, ShrinkThreshold, ShrinkPeriod
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 76 次发布
+
+发布时间：2023-10-18 01:12:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetMachineDetail](http://document.tencentcloudapi.woa.com/document/product/296/19867#AssetMachineDetail)
+
+	* 新增成员：CpuLoadVul, FirstTime
+
+	* <font color="#dd0000">**修改成员**：</font>Quuid, Uuid, MachineIp, MachineName, OsInfo, Cpu, MemSize, MemLoad, DiskSize, DiskLoad, PartitionCount, MachineWanIp, CpuSize, CpuLoad, ProtectLevel, RiskStatus, ProtectDays, BuyTime, EndTime, CoreVersion, OsType, AgentVersion, InstallTime, BootTime, LastLiveTime, Producer, SerialNumber, NetCards, Disks, Status, ProjectId, DeviceVersion, OfflineTime, InstanceId, UpdateTime, MachineExtraInfo
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 75 次发布
+
+发布时间：2023-10-18 01:15:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：AutoAuthorization
+
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：AutoAuthorization
+
+* [DataFormat](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataFormat)
+
+	* <font color="#dd0000">**修改成员**：</font>TextFile, CSV, Json, Parquet, ORC, AVRO
+
+* [DatabaseResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DatabaseResponseInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>Comment, Properties, CreateTime, ModifiedTime
+
+* [Other](http://document.tencentcloudapi.woa.com/document/product/1342/53778#Other)
+
+	* <font color="#dd0000">**修改成员**：</font>Format
+
+* [Partition](http://document.tencentcloudapi.woa.com/document/product/1342/53778#Partition)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, Type, Comment, Transform, TransformArgs, CreateTime
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>MapMaterializedViewName
+
+* [TextFile](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TextFile)
+
+	* <font color="#dd0000">**修改成员**：</font>Format, Regex
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 17 次发布
+
+发布时间：2023-10-18 01:16:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82367)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 45 次发布
+
+发布时间：2023-10-18 01:17:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [VerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1668/79295)
+
+	* 新增出参：PdfResourceMd5
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 95 次发布
+
+发布时间：2023-10-18 01:17:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelVerifyPdf](http://document.tencentcloudapi.woa.com/document/product/1595/76372)
+
+	* 新增出参：VerifySerialNo, PdfResourceMd5
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 云直播CSS(live) 版本：2018-08-01
+
+### 第 47 次发布
+
+发布时间：2023-10-18 01:20:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupStreamList](http://document.tencentcloudapi.woa.com/document/product/267/82371)
+* [EnableOptimalSwitching](http://document.tencentcloudapi.woa.com/document/product/267/82370)
+* [SwitchBackupStream](http://document.tencentcloudapi.woa.com/document/product/267/82369)
+
+新增数据结构：
+
+* [BackupStreamDetailData](http://document.tencentcloudapi.woa.com/document/product/267/20474#BackupStreamDetailData)
+* [BackupStreamGroupInfo](http://document.tencentcloudapi.woa.com/document/product/267/20474#BackupStreamGroupInfo)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 34 次发布
+
+发布时间：2023-10-18 01:22:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [FetchSqlGatewayStatementResult](http://document.tencentcloudapi.woa.com/document/product/849/82366)
+
+	* 新增入参：ClusterId, SessionId, OperationHandleId, ResultUri
+
+	* 新增出参：ErrorMessage, ResultType, IsQueryResult, ResultKind, Results, NextResultUri
+
+* [RunSqlGatewayStatement](http://document.tencentcloudapi.woa.com/document/product/849/82365)
+
+	* 新增入参：ClusterId, Sql, SessionId
+
+	* 新增出参：ErrorMessage, SessionId, OperationHandleId
+
+
+新增数据结构：
+
+* [LogicalType](http://document.tencentcloudapi.woa.com/document/product/849/52010#LogicalType)
+* [ResultColumn](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResultColumn)
+* [ResultData](http://document.tencentcloudapi.woa.com/document/product/849/52010#ResultData)
+* [StatementResult](http://document.tencentcloudapi.woa.com/document/product/849/52010#StatementResult)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 68 次发布
+
+发布时间：2023-10-18 01:26:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeRocketMQMigratingTopicList](http://document.tencentcloudapi.woa.com/document/product/1179/82378)
+* [DescribeRocketMQSmoothMigrationTask](http://document.tencentcloudapi.woa.com/document/product/1179/82373)
+* [DescribeRocketMQSmoothMigrationTaskList](http://document.tencentcloudapi.woa.com/document/product/1179/82372)
+* [DescribeRocketMQSourceClusterGroupList](http://document.tencentcloudapi.woa.com/document/product/1179/82377)
+* [DescribeRocketMQSourceClusterTopicList](http://document.tencentcloudapi.woa.com/document/product/1179/82376)
+* [ImportRocketMQConsumerGroups](http://document.tencentcloudapi.woa.com/document/product/1179/82375)
+* [ImportRocketMQTopics](http://document.tencentcloudapi.woa.com/document/product/1179/82374)
+
+新增数据结构：
+
+* [MigrateTopic](http://document.tencentcloudapi.woa.com/document/product/1179/46089#MigrateTopic)
+* [RocketMQGroupConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQGroupConfig)
+* [RocketMQGroupConfigOutput](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQGroupConfigOutput)
+* [RocketMQMigrationTopicDistribution](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQMigrationTopicDistribution)
+* [RocketMQSmoothMigrationTaskItem](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQSmoothMigrationTaskItem)
+* [RocketMQTopicConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQTopicConfig)
+* [RocketMQTopicConfigOutput](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQTopicConfigOutput)
+
+
+
 # Release 3.0.866.1
 
 ## 二进制软件成分分析(bsca) 版本：2021-08-11

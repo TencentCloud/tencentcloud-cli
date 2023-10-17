@@ -79,7 +79,9 @@ Output:
             }
         ],
         "RequestId": "8a8ba2e4-XXXX-XXXX-8dfcf4eb9bb3",
-        "VerifyResult": 1
+        "VerifyResult": 1,
+        "VerifySerialNo": "16975225351676",
+        "PdfResourceMd5": "C39BBA405153FB9A0705BEF095351CBD"
     }
 }
 ```

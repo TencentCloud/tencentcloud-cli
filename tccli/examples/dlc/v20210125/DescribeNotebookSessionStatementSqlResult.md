@@ -15,21 +15,25 @@ Output:
 ```
 {
     "Response": {
+        "TaskId": "abc",
+        "ResultSet": "abc",
         "ResultSchema": [
             {
-                "Comment": "xx",
-                "Scale": 0,
-                "Name": "xx",
-                "Nullable": "xx",
+                "Name": "abc",
+                "Type": "abc",
+                "Comment": "abc",
                 "Precision": 0,
-                "Type": "xx"
+                "Scale": 0,
+                "Nullable": "abc",
+                "Position": 0,
+                "CreateTime": "abc",
+                "ModifiedTime": "abc",
+                "IsPartition": true
             }
         ],
-        "NextToken": "xx",
-        "ResultSet": "xx",
-        "OutputPath": "cosn:xx",
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "NextToken": "abc",
+        "OutputPath": "abc",
+        "RequestId": "abc"
     }
 }
 ```

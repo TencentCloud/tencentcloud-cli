@@ -24,6 +24,8 @@ Output:
                     "Progress": 0,
                     "StatementId": "ksiked7-ekd4-4e5e-993e-e5db64fa21c1",
                     "TaskId": "d301fsdd4-9a7e-4f64-a3dj-f38507c697dj",
+                    "Code": "select 1",
+                    "BatchId": "eiosldd7-ekd4-4e5e-993e-e5db64fa21c1",
                     "State": "available",
                     "OutPut": {
                         "ExecutionCount": 0,

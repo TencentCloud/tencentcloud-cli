@@ -3262,12 +3262,109 @@
     },
     "FetchSqlGatewayStatementResultRequest": {
       "document": "FetchSqlGatewayStatementResult请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-lq6dtnk5",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Sql Gateway会话ID",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql的查询id",
+          "example": "f613c399-e1c7-4ab9-a07f-ee08a782b546",
+          "member": "string",
+          "name": "OperationHandleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一条结果的获取url，首次获取执行结果时可以为空，当获取下一批查询结果时需要传递",
+          "example": "/v1/sessions/b523f113-aa32-40cc-9665-5884a1dd480d/operations/f613c399-e1c7-4ab9-a07f-ee08a782b546/result/1",
+          "member": "string",
+          "name": "ResultUri",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "FetchSqlGatewayStatementResultResponse": {
       "document": "FetchSqlGatewayStatementResult返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PAYLOAD",
+          "member": "string",
+          "name": "ResultType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否DQL结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryResult",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ResultKind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatementResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下一次请求的uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/v1/sessions/1c7a1105-4759-46d4-b35f-3a21f7a7cf8d/operations/a675de79-58c7-44cf-910f-bdae095041bf/result/1",
+          "member": "string",
+          "name": "NextResultUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4115,6 +4212,42 @@
       ],
       "usage": "out"
     },
+    "LogicalType": {
+      "document": "SqlGateway返回LogicalType类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VARCHAR",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NullAble",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2147483647",
+          "member": "int64",
+          "name": "Length",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ModifyJobRequest": {
       "document": "ModifyJob请求参数结构体",
       "members": [
@@ -4854,6 +4987,68 @@
       ],
       "usage": "out"
     },
+    "ResultColumn": {
+      "document": "Sql Gateway返回Column类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "result",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogicalType",
+          "name": "LogicalType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultData": {
+      "document": "Sql Gateway返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INSERT",
+          "member": "string",
+          "name": "Kind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[OK]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RoleAuth": {
       "document": "角色授权信息",
       "members": [
@@ -5096,12 +5291,70 @@
     },
     "RunSqlGatewayStatementRequest": {
       "document": "RunSqlGatewayStatement请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-lq6dtnk5",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要执行的sql，该sql会被Sql Gateway执行，当前支持的是paimon修改需求，因此主要是DDL语句",
+          "example": "select 1",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RunSqlGatewayStatementResponse": {
       "document": "RunSqlGatewayStatement返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回执行id，可以根据该执行id和会话id获取执行结果",
+          "example": "操作ID",
+          "member": "string",
+          "name": "OperationHandleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5428,6 +5681,42 @@
           "example": "无",
           "member": "Property",
           "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StatementResult": {
+      "document": "Sql Gateway 返回Result结构类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResultColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JSON",
+          "member": "string",
+          "name": "RowFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResultData",
+          "name": "Data",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true

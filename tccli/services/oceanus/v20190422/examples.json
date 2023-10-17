@@ -227,8 +227,8 @@
     "FetchSqlGatewayStatementResult": [
       {
         "document": "查询Statement执行结果",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchSqlGatewayStatementResult\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchSqlGatewayStatementResult\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"OperationHandleId\": \"abc\",\n    \"ResultUri\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"ResultType\": \"abc\",\n        \"IsQueryResult\": true,\n        \"ResultKind\": \"abc\",\n        \"Results\": {\n            \"Columns\": [\n                {\n                    \"Name\": \"abc\",\n                    \"LogicalType\": {\n                        \"Type\": \"abc\",\n                        \"NullAble\": true,\n                        \"Length\": 0\n                    },\n                    \"Comment\": \"abc\"\n                }\n            ],\n            \"RowFormat\": \"abc\",\n            \"Data\": [\n                {\n                    \"Kind\": \"abc\",\n                    \"Fields\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"NextResultUri\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询Statement执行结果"
       }
     ],
@@ -251,8 +251,8 @@
     "RunSqlGatewayStatement": [
       {
         "document": "执行Statement",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"Sql\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"SessionId\": \"abc\",\n        \"OperationHandleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "执行Statement"
       }
     ],

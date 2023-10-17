@@ -38,6 +38,9 @@ Output:
                     },
                     "VoiceMessage": {
                         "Status": 1
+                    },
+                    "TextTranslate": {
+                        "Status": 1
                     }
                 },
                 "BizId": 1400000000,
