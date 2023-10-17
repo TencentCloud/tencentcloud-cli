@@ -286,6 +286,14 @@
         "title": "获取指定时间段内请求总数"
       }
     ],
+    "DescribeAttackType": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeAttackType\n&Host=www.test.com\n&FromTime=2020-02-24 00:00:00\n&ToTime=2020-02-24 19:00:00\n&Edition=clb-waf\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\",\n        \"Piechart\": []\n    }\n}",
+        "title": "查询Bot数量"
+      }
+    ],
     "DescribeAttackWhiteRule": [
       {
         "document": "",
@@ -448,6 +456,14 @@
         "title": "获取流量趋势数据"
       }
     ],
+    "DescribeHistogram": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeHistogram\n&Host=www.test.com\n&FromTime=2019-12-30 00:00:00\n&ToTime=2019-12-31 00:00:00\n&Edition=clb-waf\n&QueryField=ip\n&Source=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9ee8be5b-6caa-4c39-ab70-890e0e673515\",\n        \"Histogram\": []\n    }\n}",
+        "title": "查询Bot数量"
+      }
+    ],
     "DescribeHost": [
       {
         "document": "",
@@ -570,6 +586,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTlsVersion\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d05712e6-2229-4c15-a56d-86480e5c62b3\",\n        \"TLS\": [\n            {\n                \"VersionId\": 0,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 1,\n                \"VersionName\": \"TLSv1.1;TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 2,\n                \"VersionName\": \"TLSv1.2;TLSv1.3\"\n            },\n            {\n                \"VersionId\": 3,\n                \"VersionName\": \"TLSv1.0;TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 4,\n                \"VersionName\": \"TLSv1.1;TLSv1.2\"\n            },\n            {\n                \"VersionId\": 5,\n                \"VersionName\": \"TLSv1.2\"\n            }\n        ]\n    }\n}",
         "title": "TLS版本"
+      }
+    ],
+    "DescribeTopAttackDomain": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeTopAttackDomain\n&FromTime=2020-02-20 00:00:00\n&ToTime=2020-02-21 00:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"CC\": [],\n        \"Web\": [],\n        \"RequestId\": \"a4010dd1-d24b-43f5-bab4-8a6b204835b7\"\n    }\n}",
+        "title": "查询Top5的攻击域名"
       }
     ],
     "DescribeUserCdcClbWafRegions": [

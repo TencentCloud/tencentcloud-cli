@@ -161,6 +161,13 @@
       "output": "DescribeWorkSpacesResponse",
       "status": "online"
     },
+    "FetchSqlGatewayStatementResult": {
+      "document": "查询Sql Gateway的Statement执行结果",
+      "input": "FetchSqlGatewayStatementResultRequest",
+      "name": "查询Statement执行结果",
+      "output": "FetchSqlGatewayStatementResultResponse",
+      "status": "online"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
@@ -173,6 +180,13 @@
       "input": "RunJobsRequest",
       "name": "运行作业",
       "output": "RunJobsResponse",
+      "status": "online"
+    },
+    "RunSqlGatewayStatement": {
+      "document": "通过Sql gateway执行satement",
+      "input": "RunSqlGatewayStatementRequest",
+      "name": "执行Statement",
+      "output": "RunSqlGatewayStatementResponse",
       "status": "online"
     },
     "StopJobs": {
@@ -3124,6 +3138,23 @@
       ],
       "usage": "both"
     },
+    "FetchSqlGatewayStatementResultRequest": {
+      "document": "FetchSqlGatewayStatementResult请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "FetchSqlGatewayStatementResultResponse": {
+      "document": "FetchSqlGatewayStatementResult返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Filter": {
       "document": "查询作业列表时的过滤器",
       "members": [
@@ -4931,6 +4962,23 @@
     },
     "RunJobsResponse": {
       "document": "RunJobs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RunSqlGatewayStatementRequest": {
+      "document": "RunSqlGatewayStatement请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "RunSqlGatewayStatementResponse": {
+      "document": "RunSqlGatewayStatement返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

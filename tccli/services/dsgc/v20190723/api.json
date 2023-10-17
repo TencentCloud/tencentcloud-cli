@@ -1039,8 +1039,8 @@
   },
   "metadata": {
     "apiVersion": "2019-07-23",
-    "api_brief": "数据安全中心接口",
-    "serviceNameCN": "数据安全中心",
+    "api_brief": "数据安全治理中心接口",
+    "serviceNameCN": "数据安全治理中心",
     "serviceShortName": "dsgc"
   },
   "objects": {

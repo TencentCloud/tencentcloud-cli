@@ -7,6 +7,13 @@
       "output": "DescribeKBComponentResponse",
       "status": "online"
     },
+    "DescribeKBComponentVersionList": {
+      "document": "查询特定组件的版本列表",
+      "input": "DescribeKBComponentVersionListRequest",
+      "name": "查询组件的版本列表",
+      "output": "DescribeKBComponentVersionListResponse",
+      "status": "online"
+    },
     "DescribeKBComponentVulnerability": {
       "document": "本接口(DescribeKBComponentVulnerability)用于在知识库中查询开源组件的漏洞信息。",
       "input": "DescribeKBComponentVulnerabilityRequest",
@@ -33,6 +40,13 @@
       "input": "MatchKBPURLListRequest",
       "name": "匹配知识库组件列表",
       "output": "MatchKBPURLListResponse",
+      "status": "online"
+    },
+    "SearchKBComponent": {
+      "document": "根据输入的组件名、组件类型搜索相应的组件，返回符合条件的组件列表",
+      "input": "SearchKBComponentRequest",
+      "name": "搜索组件",
+      "output": "SearchKBComponentResponse",
       "status": "online"
     }
   },
@@ -281,6 +295,32 @@
       ],
       "usage": "out"
     },
+    "ComponentVersion": {
+      "document": "描述组件的一条版本信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该组件的PURL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该组件版本的许可证表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mit",
+          "member": "string",
+          "name": "LicenseExpression",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ComponentVulnerabilitySummary": {
       "document": "与输入组件相关的漏洞信息摘要信息。",
       "members": [
@@ -399,6 +439,43 @@
           "name": "Component",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBComponentVersionListRequest": {
+      "document": "DescribeKBComponentVersionList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询的组件 PURL",
+          "example": "无",
+          "member": "PURL",
+          "name": "PURL",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKBComponentVersionListResponse": {
+      "document": "DescribeKBComponentVersionList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该组件的版本列表信息",
+          "example": "无",
+          "member": "ComponentVersion",
+          "name": "VersionList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -842,6 +919,80 @@
         }
       ],
       "usage": "both"
+    },
+    "SearchKBComponentRequest": {
+      "document": "SearchKBComponent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要搜索的组件名",
+          "example": "openssl",
+          "member": "string",
+          "name": "Query",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要搜索的组件类型",
+          "example": "generic",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，从 0 开始",
+          "example": "0",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，设置每页返回的结果数量",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "SearchKBComponentResponse": {
+      "document": "SearchKBComponent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "满足搜索条件的组件列表",
+          "example": "无",
+          "member": "Component",
+          "name": "ComponentList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "满足搜索条件的总个数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VulnerabilityDetail": {
       "document": "描述漏洞详细信息。",

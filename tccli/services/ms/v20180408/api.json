@@ -1,7 +1,7 @@
 {
   "actions": {
     "CancelEncryptTask": {
-      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务。",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，取消渠道合作加固中的任务",
       "input": "CancelEncryptTaskRequest",
       "name": "取消渠道合作加固任务",
       "output": "CancelEncryptTaskResponse",
@@ -71,7 +71,7 @@
       "status": "online"
     },
     "DescribeEncryptInstances": {
-      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点：1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制，用于查询加固任务，入参中的条件过滤字段均为精准匹配。支持功能点: 1. 多任务分页查询  2.根据任务Id唯一值查询单记录",
       "input": "DescribeEncryptInstancesRequest",
       "name": "查询渠道合作加固任务",
       "output": "DescribeEncryptInstancesResponse",
@@ -85,7 +85,7 @@
       "status": "online"
     },
     "DescribeOrderInstances": {
-      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配。\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
+      "document": "该接口供渠道合作应用加固使用，接口调用有白名单用户限制。 接口返回的结果为：创建订单后，订单审批状态信息，以及与订单关联的资源状态等信息，入参中的条件过滤字段均为精准匹配.\n接口功能点：\n1.支持多订单分页查询；\n2.支持唯一订单号精准匹配查询；\n3.支持唯一资源号精准匹配查询；",
       "input": "DescribeOrderInstancesRequest",
       "name": "查询渠道合作应用加固订单信息",
       "output": "DescribeOrderInstancesResponse",
@@ -1218,6 +1218,7 @@
           "example": "无",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1474,6 +1475,15 @@
           "example": "无",
           "member": "AppletInfo",
           "name": "AppletInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "iOS混淆信息",
+          "example": "无",
+          "member": "IOSInfo",
+          "name": "IOSInfo",
           "required": false,
           "type": "object"
         }
@@ -3008,6 +3018,48 @@
       ],
       "usage": "in"
     },
+    "IOSInfo": {
+      "document": "iOS加固信息\n\n\tInfoPListUrl  string `json:\"InfoPListUrl\"`  //info.plist的url，必须保证不用权限校验就可以下载\n\tInfoPListSize int64  `json:\"InfoPListSize\"` //info.plist文件的大小\n\tInfoPListMd5  string `json:\"InfoPListMd5\"`  //info.plist文件的md5\n\tBuildType     string `json:\"BuildType\"`     //release: 需要INFO-PLIST文件，会生成工具部署安装包，并带有license文件，绑定机器；nobind不需要INFO-PLIST文件，不绑定机器",
+      "members": [
+        {
+          "disabled": false,
+          "document": "info.plist的url，必须保证不用权限校验就可以下载",
+          "example": "http://xxxxxx",
+          "member": "string",
+          "name": "InfoPListUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "info.plist文件的大小",
+          "example": "无",
+          "member": "int64",
+          "name": "InfoPListSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "info.plist文件的md5",
+          "example": "无",
+          "member": "string",
+          "name": "InfoPListMd5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "release: 需要INFO-PLIST文件，会生成工具部署安装包，并带有license文件，绑定机器；nobind不需要INFO-PLIST文件，不绑定机器",
+          "example": "无",
+          "member": "string",
+          "name": "BuildType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "IOSPlan": {
       "document": "渠道合作IOS源码混淆配置",
       "members": [
@@ -3029,13 +3081,123 @@
       "members": [
         {
           "disabled": false,
-          "document": "加固任务结果Id",
+          "document": "加固任务结果Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ResultId",
-          "required": false,
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户uid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "uid",
+          "member": "int64",
+          "name": "OpUin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加固类型，这里为ios\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ios",
+          "member": "string",
+          "name": "EncryptType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加固状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0等待，1成功，2任务中，3失败，4重试中",
+          "member": "int64",
+          "name": "EncryptState",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务错误码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "EncryptErrno",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptErrDesc",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加固（混淆）包结果url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptPkgUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

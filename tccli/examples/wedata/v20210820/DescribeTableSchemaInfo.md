@@ -19,13 +19,13 @@ Output:
     "Response": {
         "SchemaInfoList": [
             {
-                "ColumnKey": "xx",
-                "Type": "xx",
-                "Description": "xx",
-                "Name": "xx"
+                "ColumnKey": "abc",
+                "Description": "abc",
+                "Name": "abc",
+                "Type": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

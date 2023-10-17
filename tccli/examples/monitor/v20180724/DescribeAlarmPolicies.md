@@ -267,7 +267,8 @@ Output:
                         "Key": "abc",
                         "Value": "abc"
                     }
-                ]
+                ],
+                "IsSupportAlarmTag": 0
             }
         ],
         "RequestId": "abc"
@@ -518,7 +519,8 @@ Output:
                         "Key": "abc",
                         "Value": "abc"
                     }
-                ]
+                ],
+                "IsSupportAlarmTag": 0
             }
         ],
         "RequestId": "abc"

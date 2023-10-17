@@ -19,13 +19,17 @@ Output:
     "Response": {
         "DatabaseInfo": [
             {
-                "DatabaseId": null,
-                "DatabaseName": "",
-                "OriginDatabaseName": "test",
-                "OriginSchemaName": null
+                "DatasourceName": "abc",
+                "DatasourceId": "abc",
+                "DatabaseName": "abc",
+                "DatabaseId": "abc",
+                "InstanceId": "abc",
+                "DatasourceType": 1,
+                "OriginDatabaseName": "abc",
+                "OriginSchemaName": "abc"
             }
         ],
-        "RequestId": "21cf31f1-f8fd-4ecd-9217-594bba69d8ab"
+        "RequestId": "abc"
     }
 }
 ```

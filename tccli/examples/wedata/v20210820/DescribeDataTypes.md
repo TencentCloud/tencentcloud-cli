@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli wedata DescribeDataTypes --cli-unfold-argument  \
-    --DatasourceType xx \
-    --ProjectId 1
+    --DatasourceType abc \
+    --ProjectId abc
 ```
 
 Output: 

@@ -1807,7 +1807,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com\n如需填写发件人说明，请按照如下方式： \n别名 <邮箱地址>",
+          "document": "发信邮件地址。请填写发件人邮箱地址，例如：noreply@mail.qcloud.com\n如需填写发件人说明，请按照如下方式(别名与邮箱地址之间使用一个空格隔开)： \n别名 <邮箱地址>",
           "example": "noreply@mail.qcloud.com",
           "member": "string",
           "name": "FromEmailAddress",
@@ -1916,6 +1916,7 @@
           "example": "qcloud-ses-messageid",
           "member": "string",
           "name": "MessageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

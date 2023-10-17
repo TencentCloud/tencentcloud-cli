@@ -71,9 +71,9 @@
       "status": "online"
     },
     "ChannelCreateFlowByFiles": {
-      "document": "接口（ChannelCreateFlowByFiles）用于通过文件创建签署流程。此接口静默签能力不可直接使用，请联系客户经理申请使用",
+      "document": "接口（ChannelCreateFlowByFiles）用PDF文件创建签署流程。\n\n注: `此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "ChannelCreateFlowByFilesRequest",
-      "name": "通过文件创建签署流程",
+      "name": "用PDF文件创建签署流程",
       "output": "ChannelCreateFlowByFilesResponse",
       "status": "online"
     },
@@ -508,7 +508,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署方唯一编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署方唯一编号\n\n在动态签署人场景下，可以用此编号确定参与方\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SignId",
@@ -1606,7 +1606,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1615,8 +1615,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程名称，长度不超过200个字符",
-          "example": "\"xxx\"",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "example": "张三的入职合同",
           "member": "string",
           "name": "FlowName",
           "required": false,
@@ -1624,8 +1624,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的描述，长度不超过1000个字符",
-          "example": "\"xxx\"",
+          "document": "合同流程描述信息(可自定义此描述)，最大长度1000个字符。",
+          "example": "张三2023年入职市场部的合同",
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程签约方列表，最多不超过50个参与方",
+          "document": "合同流程的参与方列表, 最多可支持50个参与方，可在列表中指定企业B端签署方和个人C端签署方的联系和认证方式等信息，具体定义可以参考开发者中心的<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#flowapproverinfo\" target=\"_blank\">FlowApproverInfo结构体</a>。\n\n如果合同流程是有序签署，Approvers列表中参与人的顺序就是默认的签署顺序, 请确保列表中参与人的顺序符合实际签署顺序。",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
@@ -1642,8 +1642,8 @@
         },
         {
           "disabled": false,
-          "document": "签署文件资源Id列表，目前仅支持单个文件",
-          "example": "[\"xxx\"]",
+          "document": "本合同流程需包含的PDF文件资源编号列表，通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取PDF文件资源编号。\n\n注: `目前，此接口仅支持单个文件发起。`",
+          "example": "[\"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\"]",
           "member": "string",
           "name": "FileIds",
           "required": false,
@@ -1651,7 +1651,7 @@
         },
         {
           "disabled": false,
-          "document": "签署文件中的发起方的填写控件，需要在发起的时候进行填充",
+          "document": "模板或者合同中的填写控件列表，列表中可支持下列多种填写控件，控件的详细定义参考开发者中心的Component结构体\n<ul><li>单行文本控件</li>\n<li>多行文本控件</li>\n<li>勾选框控件</li>\n<li>数字控件</li>\n<li>图片控件</li>\n<li>数据表格等填写控件</li></ul>",
           "example": "无",
           "member": "Component",
           "name": "Components",
@@ -1660,7 +1660,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。\n值为unix时间戳,精确到秒,不传默认为当前时间一年后\n不能早于当前时间",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
           "example": "1691574041",
           "member": "int64",
           "name": "Deadline",
@@ -1669,8 +1669,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程回调地址，长度不超过255个字符\n如果不传递回调地址， 则默认是配置应用号时候使用的回调地址",
-          "example": "\"xxx\"",
+          "document": "执行结果的回调URL，长度不超过255个字符，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性。\n腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_data_types\" target=\"_blank\">回调通知</a>模块。\n\n注:\n`如果不传递回调地址， 则默认是配置应用号时候使用的回调地址`",
+          "example": "https://capi.toa.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -1678,7 +1678,7 @@
         },
         {
           "disabled": false,
-          "document": "合同签署顺序类型\ntrue - 无序签,\nfalse - 顺序签，\n默认为false，即有序签署。\n有序签署时以传入FlowApprovers数组的顺序作为签署顺序",
+          "document": "合同流程的签署顺序类型：\n<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>\n<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>\n\n注\n`有序签署时以传入FlowApprovers数组的顺序作为签署顺序`",
           "example": "false",
           "member": "bool",
           "name": "Unordered",
@@ -1687,8 +1687,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的类型，长度不超过255个字符",
-          "example": "\"xxx\"",
+          "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为255个字符，仅限中文、字母、数字和下划线组成。",
+          "example": "入职合同",
           "member": "string",
           "name": "FlowType",
           "required": false,
@@ -1696,7 +1696,7 @@
         },
         {
           "disabled": false,
-          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
           "member": "string",
           "name": "CustomShowMap",
@@ -1705,8 +1705,8 @@
         },
         {
           "disabled": false,
-          "document": "业务信息，最大长度1000个字符。",
-          "example": "\"xxx\"",
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 1000长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign\" target=\"_blank\">回调通知</a>模块。",
+          "example": "eyJpZCI6ImNvbWVmIiwibmFtZSI6IuWRseWRseWPqyJ9",
           "member": "string",
           "name": "CustomerData",
           "required": false,
@@ -1714,7 +1714,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。 若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。  注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过ChannelCreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
           "example": "无",
           "member": "bool",
           "name": "NeedSignReview",
@@ -1732,7 +1732,7 @@
         },
         {
           "disabled": false,
-          "document": "标识是否允许发起后添加控件。\n0为不允许\n1为允许。\n如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件",
+          "document": "签署方签署控件（印章/签名等）的生成方式：\n<ul><li> **0**：在合同流程发起时，由发起人指定签署方的签署控件的位置和数量。</li>\n<li> **1**：签署方在签署时自行添加签署控件，可以拖动位置和控制数量。</li></ul>\n\n注:\n`发起后添加控件功能不支持添加签批控件`",
           "example": "0",
           "member": "int64",
           "name": "SignBeanTag",
@@ -1741,7 +1741,7 @@
         },
         {
           "disabled": false,
-          "document": "被抄送人信息列表",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -1750,7 +1750,7 @@
         },
         {
           "disabled": false,
-          "document": "给关注人发送短信通知的类型，\n0-合同发起时通知 \n1-签署完成后通知",
+          "document": "可以设置以下时间节点来给抄送人发送短信通知来查看合同内容：\n<ul><li> **0**：合同发起时通知（默认值）</li>\n<li> **1**：签署完成后通知</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "CcNotifyType",
@@ -1759,7 +1759,7 @@
         },
         {
           "disabled": false,
-          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>\n注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",
@@ -1784,7 +1784,7 @@
         {
           "disabled": false,
           "document": "合同签署流程ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "xxx",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -4644,7 +4644,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展参数：\n为JSON格式。\n不同类型的控件会有部分非通用参数\n\nComponentType为TEXT、MULTI_LINE_TEXT时，支持以下参数：\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n4 FontColor：字符串类型，格式为RGB颜色数字\n参数样例：    \"ComponentExtra\": \"{\\\"FontColor\\\":\\\"255,0,0\\\",\\\"FontSize\\\":12}\"\n\nTEXT/MULTI_LINE_TEXT控件可以指定\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n例如：{\"FontSize\":12}\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例： \"ComponentExtra\": \"{\"Format\":“yyyy m d”,\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例： \"ComponentExtra\":\"{\"PageRange\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"",
+          "document": "扩展参数：\n为JSON格式。\n不同类型的控件会有部分非通用参数\n\nComponentType为TEXT、MULTI_LINE_TEXT时，支持以下参数：\n1 Font：目前只支持黑体、宋体\n2 FontSize： 范围12-72\n3 FontAlign： Left/Right/Center，左对齐/居中/右对齐\n4 FontColor：字符串类型，格式为RGB颜色数字\n参数样例：{\\\"FontColor\\\":\\\"255,0,0\\\",\\\"FontSize\\\":12}\n\nComponentType为FILL_IMAGE时，支持以下参数：\nNotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中\nFillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放\n\nComponentType为SIGN_SIGNATURE类型可以控制签署方式\n{“ComponentTypeLimit”: [“xxx”]}\nxxx可以为：\nHANDWRITE – 手写签名\nOCR_ESIGN -- AI智能识别手写签名\nESIGN -- 个人印章类型\nSYSTEM_ESIGN -- 系统签名（该类型可以在用户签署时根据用户姓名一键生成一个签名来进行签署）\n如：{“ComponentTypeLimit”: [“SYSTEM_ESIGN”]}\n\nComponentType为SIGN_DATE时，支持以下参数：\n1 Font：字符串类型目前只支持\"黑体\"、\"宋体\"，如果不填默认为\"黑体\"\n2 FontSize： 数字类型，范围6-72，默认值为12\n3 FontAlign： 字符串类型，可取Left/Right/Center，对应左对齐/居中/右对齐\n4 Format： 字符串类型，日期格式，必须是以下五种之一 “yyyy m d”，”yyyy年m月d日”，”yyyy/m/d”，”yyyy-m-d”，”yyyy.m.d”。\n5 Gaps:： 字符串类型，仅在Format为“yyyy m d”时起作用，格式为用逗号分开的两个整数，例如”2,2”，两个数字分别是日期格式的前后两个空隙中的空格个数\n如果extra参数为空，默认为”yyyy年m月d日”格式的居中日期\n特别地，如果extra中Format字段为空或无法被识别，则extra参数会被当作默认值处理（Font，FontSize，Gaps和FontAlign都不会起效）\n参数样例： \"ComponentExtra\": \"{\"Format\":“yyyy m d”,\"FontSize\":12,\"Gaps\":\"2,2\", \"FontAlign\":\"Right\"}\"\n\nComponentType为SIGN_SEAL类型时，支持以下参数：\n1.PageRanges：PageRange的数组，通过PageRanges属性设置该印章在PDF所有页面上盖章（适用于标书在所有页面盖章的情况）\n参数样例： \"ComponentExtra\":\"{\"PageRange\":[{\"BeginPage\":1,\"EndPage\":-1}]}\"",
           "example": "ComponentExtra",
           "member": "string",
           "name": "ComponentExtra",
@@ -6554,11 +6554,11 @@
       "usage": "out"
     },
     "FlowApproverInfo": {
-      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。\n\n其他身份标识\n\n<ul><li>1-个人：Name、Mobile必传</li>\n<li>2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；</li>\n<li>3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；</li>\n<li>4-非第三方平台子客企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。",
+      "document": "创建签署流程签署人入参。\n\n其中签署方FlowApproverInfo需要传递的参数\n非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。\n\n其他身份标识，注：`如果发起的是动态签署方（即ApproverOption.FillType指定为1），可以不指定具体签署人信息`\n\n<ul><li>1-个人：Name、Mobile必传</li>\n<li>2-第三方平台子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；</li>\n<li>3-第三方平台子客企业不指定经办人：OrgName必传、OrgOpenId必传；</li>\n<li>4-非第三方平台子客企业(平台企业)：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。</li></ul>\n\nRecipientId参数：\n从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId。",
       "members": [
         {
           "disabled": false,
-          "document": "签署人姓名，最大长度50个字符",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
           "example": "张三",
           "member": "string",
           "name": "Name",
@@ -6567,7 +6567,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人的证件类型\n1.ID_CARD 居民身份证\n2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证\n3.HONGKONG_AND_MACAO 港澳居民来往内地通行证\n4.OTHER_CARD_TYPE 其他（需要使用该类型请先联系运营经理）",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他证件</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -6576,7 +6576,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人证件号（长度不超过18位）",
+          "document": "签署方经办人的证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "110101192008317114",
           "member": "string",
           "name": "IdCardNumber",
@@ -6585,7 +6585,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人手机号，脱敏显示。大陆手机号为11位，暂不支持海外手机号。",
+          "document": "签署方经办人手机号码， 支持国内手机号11位数字(无需加+86前缀或其他字符)， 不支持海外手机号。\n请确认手机号所有方为此合同签署方。",
           "example": "13888888888",
           "member": "string",
           "name": "Mobile",
@@ -6594,8 +6594,8 @@
         },
         {
           "disabled": false,
-          "document": "企业签署方工商营业执照上的企业名称，签署方为非发起方企业场景下必传，最大长度64个字符；",
-          "example": "\"xxx\"",
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
           "required": false,
@@ -6603,7 +6603,7 @@
         },
         {
           "disabled": false,
-          "document": "指定签署人非第三方平台子客企业下员工，在ApproverType为ORGANIZATION时指定。\n默认为false，即签署人位于同一个第三方平台应用号下；默认为false，即签署人位于同一个第三方应用号下；",
+          "document": "指定签署人非第三方平台子客企业下员工还是SaaS平台企业，在ApproverType为ORGANIZATION时指定。\n<ul>\n<li>false: 默认值，第三方平台子客企业下员工</li>\n<li>true: SaaS平台企业下的员工</li>\n</ul>\n",
           "example": "false",
           "member": "bool",
           "name": "NotChannelOrganization",
@@ -6612,8 +6612,8 @@
         },
         {
           "disabled": false,
-          "document": "用户侧第三方id，最大长度64个字符\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程",
-          "example": "open_test_id",
+          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成\n\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程",
+          "example": "userdianziqian",
           "member": "string",
           "name": "OpenId",
           "required": false,
@@ -6621,8 +6621,8 @@
         },
         {
           "disabled": false,
-          "document": "企业签署方在同一第三方平台应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符；",
-          "example": "\"xxx\"",
+          "document": "同应用下第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样，签署方为非发起方企业场景下必传，最大长度64个字符",
+          "example": "orgtencent",
           "member": "string",
           "name": "OrganizationOpenId",
           "required": false,
@@ -6630,7 +6630,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人类型\nPERSON-个人/自然人；\nPERSON_AUTO_SIGN-个人自动签署，适用于个人自动签场景\n注: 个人自动签场景为白名单功能, 使用前请联系对接的客户经理沟通。\nORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；\nENTERPRISESERVER-企业自动签（他方企业自动签署或文件发起时的本方企业自动签）\n\n若要实现他方企业（同一应用下）自动签，需要满足3个条件：\n条件1：ApproverType 设置为ENTERPRISESERVER\n条件2：子客之间完成授权\n条件3：联系对接的客户经理沟通",
+          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n<ul><li> **PERSON** :个人/自然人</li>\n<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>\n<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>\n<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>\n\n注:  \n`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`\n`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`\n<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>\n<li>条件2：子客之间完成授权</li>\n<li>条件3：联系对接的客户经理沟通如何使用</li></ul>",
           "example": "PERSON",
           "member": "string",
           "name": "ApproverType",
@@ -6640,7 +6640,7 @@
         {
           "disabled": false,
           "document": "签署流程签署人在模板中对应的签署人Id；在非单方签署、以及非B2C签署的场景下必传，用于指定当前签署方在签署流程中的位置；",
-          "example": "\"xxx\"",
+          "example": "yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS",
           "member": "string",
           "name": "RecipientId",
           "required": false,
@@ -6648,7 +6648,7 @@
         },
         {
           "disabled": false,
-          "document": "签署截止时间戳，默认一年",
+          "document": "本签署人在此合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
           "example": "1689688460",
           "member": "int64",
           "name": "Deadline",
@@ -6684,7 +6684,7 @@
         },
         {
           "disabled": false,
-          "document": "合同的强制预览时间：3~300s，未指定则按合同页数计算",
+          "document": "签署方在签署合同之前，需要强制阅读合同的时长，可指定为3秒至300秒之间的任意值。\n\n若未指定阅读时间，则会按照合同页数大小计算阅读时间，计算规则如下：\n<ul>\n<li>合同页数少于等于2页，阅读时间为3秒；</li>\n<li>合同页数为3到5页，阅读时间为5秒；</li>\n<li>合同页数大于等于6页，阅读时间为10秒。</li>\n</ul>",
           "example": "3",
           "member": "int64",
           "name": "PreReadTime",
@@ -6694,7 +6694,7 @@
         {
           "disabled": false,
           "document": "签署完前端跳转的url，此字段的用法场景请联系客户经理确认",
-          "example": "https://qq.com",
+          "example": "https://www.qq.com/success",
           "member": "string",
           "name": "JumpUrl",
           "required": false,
@@ -6702,7 +6702,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人个性化能力值",
+          "document": "可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。\n详细操作可以参考开发者中心的ApproverOption结构体。",
           "example": "无",
           "member": "ApproverOption",
           "name": "ApproverOption",
@@ -6747,7 +6747,7 @@
         },
         {
           "disabled": false,
-          "document": "SMS: 短信(需确保“电子签短信通知签署方”功能是开启状态才能生效); NONE: 不发信息\n默认为SMS(签署方为子客时该字段不生效)",
+          "document": "通知签署方经办人的方式, 有以下途径:\n<ul><li> **SMS** :(默认)短信</li>\n<li> **NONE** : 不通知</li></ul>\n\n注: `签署方为第三方子客企业时会被置为NONE,   不会发短信通知`",
           "example": "SMS",
           "member": "string",
           "name": "NotifyType",
@@ -6765,7 +6765,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义签署方角色名称",
+          "document": "自定义签署人角色名，如收款人、开具人、见证人等",
           "example": "无",
           "member": "string",
           "name": "ApproverRoleName",

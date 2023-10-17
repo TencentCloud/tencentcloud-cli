@@ -4833,7 +4833,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "TaskIds",
           "required": true,
@@ -4841,8 +4841,8 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
-          "example": "无",
+          "document": "任务类型, 201为实时任务，202为离线任务",
+          "example": "201",
           "member": "int64",
           "name": "TaskType",
           "required": true,
@@ -4851,7 +4851,7 @@
         {
           "disabled": false,
           "document": "项目id",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -4869,7 +4869,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4879,7 +4879,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4889,7 +4889,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8009,7 +8009,7 @@
           "example": "123",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13080,7 +13080,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据源类型，MYSQL|KAFKA等",
+          "document": "数据源类型，MYSQL|HIVE|KAFKA|POSTGRE|CDW|ORACLE|SQLSERVER|FTP|HDFS|ICEBERG|HBASE|TDSQL|TDSQLC|SPARK|VIRTUAL|TBASE|DB2|DM|GAUSSDB|GBASE|IMPALA|ES|S3_DATAINSIGHT|GREENPLUM|PHOENIX|SAP_HANA|SFTP|OCEANBASE|CLICKHOUSE|KUDU|VERTICA|REDIS|COS|DLC|DORIS|CKAFKA|MONGODB|FTP_FILE|HDFS_FILE|DTS_KAFKA|REST_API|FILE|TIDB|SYBASE|TCHOUSE_X 等",
           "example": "MYSQL",
           "member": "string",
           "name": "DatasourceType",
@@ -13108,7 +13108,7 @@
           "example": "无",
           "member": "Label",
           "name": "TypeInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13135,7 +13135,7 @@
         },
         {
           "disabled": false,
-          "document": "如果是hive这里写rpc，如果是其他类型不传",
+          "document": "连接类型",
           "example": "rpc",
           "member": "string",
           "name": "ConnectionType",
@@ -13154,6 +13154,7 @@
           "example": "无",
           "member": "DatabaseInfo",
           "name": "DatabaseInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -16774,7 +16775,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型：201. stream,   202. offline",
+          "document": "任务类型，201: 实时集成任务,   202：离线集成任务，不传默认值为201 实时任务类型",
           "example": "201. stream, 202. offline",
           "member": "uint64",
           "name": "TaskType",
@@ -21638,8 +21639,8 @@
         },
         {
           "disabled": false,
-          "document": "表类型",
-          "example": "mysql",
+          "document": "数据源的类型（例如MYSQL、HIVE、KAFKA等）",
+          "example": "MYSQL",
           "member": "string",
           "name": "MsType",
           "required": true,
@@ -21656,7 +21657,7 @@
         },
         {
           "disabled": false,
-          "document": "HIVE传rpc",
+          "document": "连接类型（示例值rpc）",
           "example": "rpc",
           "member": "string",
           "name": "ConnectionType",
@@ -21684,7 +21685,7 @@
           "example": "无",
           "member": "SchemaDetail",
           "name": "SchemaInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -34023,6 +34024,7 @@
           "example": "名称",
           "member": "string",
           "name": "WorkflowName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34033,6 +34035,7 @@
           "example": "依赖",
           "member": "string",
           "name": "DependencyWorkflow",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34043,6 +34046,7 @@
           "example": "开始时间",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34053,6 +34057,7 @@
           "example": "结束时间",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34063,6 +34068,7 @@
           "example": "周期",
           "member": "uint64",
           "name": "CycleType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34073,6 +34079,7 @@
           "example": "周期间隔",
           "member": "uint64",
           "name": "CycleStep",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34083,6 +34090,7 @@
           "example": "延迟时间",
           "member": "uint64",
           "name": "DelayTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34093,6 +34101,7 @@
           "example": "crontab",
           "member": "string",
           "name": "CrontabExpression",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -34103,6 +34112,7 @@
           "example": "重试等待",
           "member": "uint64",
           "name": "RetryWait",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34113,6 +34123,7 @@
           "example": "是否可以重试",
           "member": "uint64",
           "name": "Retriable",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34123,6 +34134,7 @@
           "example": "重试限制",
           "member": "uint64",
           "name": "TryLimit",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34133,6 +34145,7 @@
           "example": "优先级",
           "member": "uint64",
           "name": "RunPriority",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34143,6 +34156,7 @@
           "example": "产品名称",
           "member": "string",
           "name": "ProductName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34153,6 +34167,7 @@
           "example": "依赖类型",
           "member": "uint64",
           "name": "SelfDepend",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -34163,6 +34178,7 @@
           "example": "每周周几 或 每月几号",
           "member": "string",
           "name": "TaskAction",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -34173,6 +34189,7 @@
           "example": "调度执行结束时间",
           "member": "string",
           "name": "ExecutionEndTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -34183,6 +34200,29 @@
           "example": "调度执行开始时间",
           "member": "string",
           "name": "ExecutionStartTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动提交\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "TaskAutoSubmit",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例初始化策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceInitStrategy",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

@@ -224,6 +224,13 @@
       "output": "DescribeAttackOverviewResponse",
       "status": "online"
     },
+    "DescribeAttackType": {
+      "document": "查询指定域名TOP N攻击类型",
+      "input": "DescribeAttackTypeRequest",
+      "name": "查询TOP N攻击类型",
+      "output": "DescribeAttackTypeResponse",
+      "status": "online"
+    },
     "DescribeAttackWhiteRule": {
       "document": "获取用户规则白名单列表",
       "input": "DescribeAttackWhiteRuleRequest",
@@ -350,6 +357,13 @@
       "output": "DescribeFlowTrendResponse",
       "status": "online"
     },
+    "DescribeHistogram": {
+      "document": "查询多种条件的聚类分析",
+      "input": "DescribeHistogramRequest",
+      "name": "查询多种聚类分析",
+      "output": "DescribeHistogramResponse",
+      "status": "online"
+    },
     "DescribeHost": {
       "document": "clb-waf获取防护域名详情",
       "input": "DescribeHostRequest",
@@ -446,6 +460,13 @@
       "input": "DescribeTlsVersionRequest",
       "name": "查询用户TLS版本",
       "output": "DescribeTlsVersionResponse",
+      "status": "online"
+    },
+    "DescribeTopAttackDomain": {
+      "document": "查询Top5的攻击域名",
+      "input": "DescribeTopAttackDomainRequest",
+      "name": "查询Top5的攻击域名",
+      "output": "DescribeTopAttackDomainResponse",
       "status": "online"
     },
     "DescribeUserCdcClbWafRegions": {
@@ -4910,6 +4931,88 @@
       ],
       "type": "object"
     },
+    "DescribeAttackTypeRequest": {
+      "document": "DescribeAttackType请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2020-02-24 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2020-02-24 19:00:00",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "兼容Host，逐步淘汰Host字段",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名过滤，不传则不过滤，用于替代Host字段，逐步淘汰Host",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAttackTypeResponse": {
+      "document": "DescribeAttackType返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "无",
+          "member": "PiechartItem",
+          "name": "Piechart",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAttackWhiteRuleRequest": {
       "document": "DescribeAttackWhiteRule请求参数结构体",
       "members": [
@@ -6299,6 +6402,106 @@
       ],
       "type": "object"
     },
+    "DescribeHistogramRequest": {
+      "document": "DescribeHistogram请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "2019-12-30 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2019-12-31 00:00:00",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "聚类字段，ip为ip聚合，art为响应耗时聚合，url为url聚合，local为ip转化的城市聚合",
+          "example": "ip",
+          "member": "string",
+          "name": "QueryField",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "条件，access为访问日志，attack为攻击日志",
+          "example": "0",
+          "member": "string",
+          "name": "Source",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "兼容Host，逐步淘汰Host字段",
+          "example": "www.test.com",
+          "member": "string",
+          "name": "Host",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名过滤，不传则不过滤，用于替代Host字段，逐步淘汰Host",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Domain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeHistogramResponse": {
+      "document": "DescribeHistogram返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "统计数据",
+          "example": "[]",
+          "member": "string",
+          "name": "Histogram",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeHostLimitRequest": {
       "document": "DescribeHostLimit请求参数结构体",
       "members": [
@@ -7295,6 +7498,89 @@
           "example": "{1:TLS 1.0}",
           "member": "TLSVersion",
           "name": "TLS",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopAttackDomainRequest": {
+      "document": "DescribeTopAttackDomain请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始时间",
+          "example": "2020-02-20 00:00:00",
+          "member": "datetime",
+          "name": "FromTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "2020-02-21 00:00:00",
+          "member": "datetime",
+          "name": "ToTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "TOP N,可从0-10选择，默认是10",
+          "example": "5",
+          "member": "uint64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "只有两个值有效，sparta-waf，clb-waf，不传则不过滤",
+          "example": "sparta-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF实例ID，不传则不过滤",
+          "example": "waf_000q3t12p",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopAttackDomainResponse": {
+      "document": "DescribeTopAttackDomain返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CC攻击域名列表",
+          "example": "无",
+          "member": "KVInt",
+          "name": "CC",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Web攻击域名列表",
+          "example": "无",
+          "member": "KVInt",
+          "name": "Web",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10441,6 +10727,32 @@
       ],
       "usage": "out"
     },
+    "KVInt": {
+      "document": "Key-Value的形式，Value为Int",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Key",
+          "example": "",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Value",
+          "example": "",
+          "member": "uint64",
+          "name": "Value",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "LoadBalancer": {
       "document": "负载均衡的监听器",
       "members": [
@@ -13228,6 +13540,32 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "PiechartItem": {
+      "document": "饼图数据类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

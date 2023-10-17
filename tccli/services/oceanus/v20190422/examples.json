@@ -208,6 +208,14 @@
         "title": "授权空间列表"
       }
     ],
+    "FetchSqlGatewayStatementResult": [
+      {
+        "document": "查询Statement执行结果",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchSqlGatewayStatementResult\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询Statement执行结果"
+      }
+    ],
     "ModifyJob": [
       {
         "document": "",
@@ -222,6 +230,14 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunJobs\n<公共请求参数>\n\n{\n    \"RunJobDescriptions\": [\n        {\n            \"RunType\": 0,\n            \"JobConfigVersion\": 1,\n            \"StartMode\": \"xx\",\n            \"JobId\": \"xx\",\n            \"SavepointId\": \"cql-asdf5678\",\n            \"SavepointPath\": \"cosn://xxxx\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"18e0bde4-3922-42ca-8bfd-a36eaa035da4\"\n    }\n}",
         "title": "运行作业示例"
+      }
+    ],
+    "RunSqlGatewayStatement": [
+      {
+        "document": "执行Statement",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "执行Statement"
       }
     ],
     "StopJobs": [
