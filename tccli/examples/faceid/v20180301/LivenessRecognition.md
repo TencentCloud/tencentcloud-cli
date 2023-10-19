@@ -20,7 +20,7 @@ Output:
         "Description": "成功",
         "BestFrameBase64": "<Imagebase64>",
         "BestFrameList": [
-            "xx"
+            "123"
         ],
         "Sim": 89.88,
         "RequestId": "f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a"

@@ -382,6 +382,14 @@
         "title": "DescribeIPStrategysStatus"
       }
     ],
+    "DescribeInstancesNetworkConfig": [
+      {
+        "document": "获取专享实例网络配置列表",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstancesNetworkConfig\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f2bee379-c9e4-4ffb-a18b-56ba15ea6af9\",\n        \"Result\": {\n            \"InstanceNetworkConfSet\": [\n                {\n                    \"InstanceId\": \"instance-xxxxxx\",\n                    \"InstanceName\": \"test\",\n                    \"OuterIpList\": [\n                        \"127.0.0.1\"\n                    ],\n                    \"Region\": \"ap-chongqing\"\n                }\n            ],\n            \"TotalCount\": 1\n        }\n    }\n}",
+        "title": "获取专享实例网络配置列表"
+      }
+    ],
     "DescribeLogSearch": [
       {
         "document": "LogQuerys 表示日志检索条件，\n其中: LogQuerys.0.Name=api_id&LogQuerys.0.Operator==&LogQuerys.0.Value=api-55rj9ide\n表示检索api_id=api-55rj9ide的日志",
@@ -554,6 +562,14 @@
         "input": "https://apigateway.tencentcloudapi.com/?Action=DescribeUsagePlansStatus\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"TotalCount\": 1,\n            \"UsagePlanStatusSet\": [\n                {\n                    \"UsagePlanId\": \"usagePlan-3datbg1f\",\n                    \"UsagePlanName\": \"test\",\n                    \"UsagePlanDesc\": \"\",\n                    \"MaxRequestNumPreSec\": -1,\n                    \"MaxRequestNum\": -1,\n                    \"CreatedTime\": \"2020-03-21T13:17:42Z\",\n                    \"ModifiedTime\": \"2020-03-21T13:17:42Z\"\n                }\n            ]\n        },\n        \"RequestId\": \"e14fecd2-81eb-47ea-b947-993a93234fd8\"\n    }\n}",
         "title": "DescribeUsagePlansStatus"
+      }
+    ],
+    "DescribeUserInfoByInstanceIP": [
+      {
+        "document": "获取专享实例用户信息",
+        "input": "POST / HTTP/1.1\nHost: apigateway.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserInfoByInstanceIP\n<公共请求参数>\n\n{\n    \"IP\": \"119.0.0.1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44f6a1fc-c29e-4109-8a52-3f5b5ecd72e8\",\n        \"Result\": {\n            \"AppId\": 12000000,\n            \"BaradAppId\": 13000000,\n            \"InstanceId\": \"instance-xxxxx\",\n            \"InstanceName\": \"test\",\n            \"Uin\": \"1000000009\"\n        }\n    }\n}",
+        "title": "获取专享实例用户信息"
       }
     ],
     "DetachPlugin": [

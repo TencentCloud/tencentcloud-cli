@@ -368,6 +368,15 @@
           "name": "ExtraInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户传入的回调地址",
+          "example": "无",
+          "member": "string",
+          "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

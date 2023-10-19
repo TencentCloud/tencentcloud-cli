@@ -146,6 +146,14 @@
         "title": "demo"
       }
     ],
+    "DescribeUserRoleProjectList": [
+      {
+        "document": "项目内-用户角色列表",
+        "input": "POST / HTTP/1.1\nHost: bi.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserRoleProjectList\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"PageNo\": \"0\",\n    \"PageSize\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Extra\": \"abc\",\n        \"Data\": {\n            \"Total\": 0,\n            \"TotalPages\": 0,\n            \"List\": [\n                {\n                    \"Id\": 1,\n                    \"RoleList\": [\n                        {\n                            \"RoleName\": \"abc\",\n                            \"RoleId\": 0,\n                            \"ProjectId\": 0,\n                            \"ProjectName\": \"abc\",\n                            \"ScopeType\": 0,\n                            \"ModuleCollection\": \"abc\"\n                        }\n                    ],\n                    \"RoleIdList\": [\n                        1\n                    ],\n                    \"UserId\": \"abc\",\n                    \"UserName\": \"abc\",\n                    \"CorpId\": \"abc\",\n                    \"Email\": \"abc\",\n                    \"CreatedUser\": \"abc\",\n                    \"CreatedAt\": \"abc\",\n                    \"UpdatedUser\": \"abc\",\n                    \"UpdatedAt\": \"abc\",\n                    \"LastLogin\": \"2020-09-22T00:00:00+00:00\",\n                    \"Status\": 0,\n                    \"PhoneNumber\": \"abc\",\n                    \"AreaCode\": \"abc\",\n                    \"RootAccount\": true,\n                    \"CorpAdmin\": true\n                }\n            ]\n        },\n        \"Msg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "项目内-用户角色列表"
+      }
+    ],
     "ModifyDatasource": [
       {
         "document": "",

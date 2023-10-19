@@ -112,6 +112,13 @@
       "output": "DescribeUsersForUserManagerResponse",
       "status": "online"
     },
+    "DescribeYarnApplicationList": {
+      "document": "获取Yarn作业列表",
+      "input": "DescribeYarnApplicationListRequest",
+      "name": "获取Yarn作业列表",
+      "output": "DescribeYarnApplicationListResponse",
+      "status": "online"
+    },
     "DescribeYarnApplications": {
       "document": "DescribeYarnApplications",
       "input": "DescribeYarnApplicationsRequest",
@@ -3312,6 +3319,107 @@
       ],
       "type": "object"
     },
+    "DescribeYarnApplicationListRequest": {
+      "document": "DescribeYarnApplicationList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件",
+          "example": "无",
+          "member": "DynamicFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间",
+          "example": "1621570097000",
+          "member": "int64",
+          "name": "StartTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1621590097000",
+          "member": "int64",
+          "name": "EndTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索内容",
+          "example": "word",
+          "member": "string",
+          "name": "SearchContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页号",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页容量",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeYarnApplicationListResponse": {
+      "document": "DescribeYarnApplicationList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "3",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Yarn作业列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "YarnApplicationBrief",
+          "name": "YarnApplicationList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeYarnApplicationsRequest": {
       "document": "DescribeYarnApplications请求参数结构体",
       "members": [
@@ -3482,6 +3590,39 @@
         }
       ],
       "usage": "both"
+    },
+    "DynamicFilter": {
+      "document": "自定义筛选和排序的字段值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列名",
+          "example": "finalStatus",
+          "member": "string",
+          "name": "ColumnId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选值",
+          "example": "无",
+          "member": "string",
+          "name": "FilterList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "0-不排序, 1-倒序, 2-正序",
+          "example": "无",
+          "member": "int64",
+          "name": "Sort",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
     },
     "DynamicPodSpec": {
       "document": "POD浮动规格",
@@ -10102,6 +10243,112 @@
           "name": "HDFSBytesRead",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "YarnApplicationBrief": {
+      "document": "Yarn Application简要信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "YARN作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application_1697016895773_0033",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hadoop",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Yarn作业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Yarn队列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default",
+          "member": "string",
+          "name": "Queue",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACCEPTED",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最终状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCEEDED",
+          "member": "string",
+          "name": "FinalStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SPARK",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1697385600000",
+          "member": "string",
+          "name": "StartedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1697471999000",
+          "member": "string",
+          "name": "FinishedTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "持续时间，单位毫秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "36000",
+          "member": "string",
+          "name": "ElapsedTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

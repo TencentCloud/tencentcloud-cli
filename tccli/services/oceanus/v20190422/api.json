@@ -56,6 +56,27 @@
       "output": "CreateResourceConfigResponse",
       "status": "online"
     },
+    "CreateWorkSpace": {
+      "document": "创建工作空间",
+      "input": "CreateWorkSpaceRequest",
+      "name": "创建工作空间",
+      "output": "CreateWorkSpaceResponse",
+      "status": "online"
+    },
+    "DeleteFolders": {
+      "document": "作业列表删除文件夹",
+      "input": "DeleteFoldersRequest",
+      "name": "删除文件夹",
+      "output": "DeleteFoldersResponse",
+      "status": "online"
+    },
+    "DeleteJobConfigs": {
+      "document": "删除作业配置",
+      "input": "DeleteJobConfigsRequest",
+      "name": "删除作业配置",
+      "output": "DeleteJobConfigsResponse",
+      "status": "online"
+    },
     "DeleteJobs": {
       "document": "批量删除作业接口，批量操作数量上限20",
       "input": "DeleteJobsRequest",
@@ -182,11 +203,25 @@
       "output": "FetchSqlGatewayStatementResultResponse",
       "status": "online"
     },
+    "ModifyFolder": {
+      "document": "自定义树状结构页面拖拽文件夹",
+      "input": "ModifyFolderRequest",
+      "name": "拖拽文件夹",
+      "output": "ModifyFolderResponse",
+      "status": "online"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
       "name": "更新作业",
       "output": "ModifyJobResponse",
+      "status": "online"
+    },
+    "ModifyWorkSpace": {
+      "document": "修改工作空间",
+      "input": "ModifyWorkSpaceRequest",
+      "name": "修改工作空间",
+      "output": "ModifyWorkSpaceResponse",
       "status": "online"
     },
     "RunJobs": {
@@ -1864,6 +1899,151 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkSpaceRequest": {
+      "document": "CreateWorkSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "MySpace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间备注",
+          "example": "default0",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "wedata项目id",
+          "example": "0",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkSpaceResponse": {
+      "document": "CreateWorkSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFoldersRequest": {
+      "document": "DeleteFolders请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需删除的文件夹唯一ID",
+          "example": "[\"folder-xxxxxxxx\"]",
+          "member": "string",
+          "name": "FolderIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
+          "example": "0",
+          "member": "int64",
+          "name": "FolderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFoldersResponse": {
+      "document": "DeleteFolders返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobConfigsRequest": {
+      "document": "DeleteJobConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID",
+          "example": "cql-ses24dtd",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业配置版本数组",
+          "example": "[\"1\\n\",\"2\\n\"]",
+          "member": "int64",
+          "name": "JobConfigVersions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobConfigsResponse": {
+      "document": "DeleteJobConfigs返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4248,6 +4428,78 @@
       ],
       "usage": "out"
     },
+    "ModifyFolderRequest": {
+      "document": "ModifyFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件夹ID（必填）",
+          "example": "folder-aaaaaaaa",
+          "member": "string",
+          "name": "SourceFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如需拖拽文件夹，需传入目标文件夹ID",
+          "example": "folder-bbbbbbbb",
+          "member": "string",
+          "name": "TargetFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如需修改文件夹名，需传入FolderName字段",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "FolderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
+          "example": "0",
+          "member": "int64",
+          "name": "FolderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批量移动的作业serial id 列表",
+          "example": "无",
+          "member": "string",
+          "name": "SourceJobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFolderResponse": {
+      "document": "ModifyFolder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyJobRequest": {
       "document": "ModifyJob请求参数结构体",
       "members": [
@@ -4301,6 +4553,51 @@
     },
     "ModifyJobResponse": {
       "document": "ModifyJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkSpaceRequest": {
+      "document": "ModifyWorkSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的工作空间名称",
+          "example": "MySpace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的工作空间备注",
+          "example": "default0",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkSpaceResponse": {
+      "document": "ModifyWorkSpace返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

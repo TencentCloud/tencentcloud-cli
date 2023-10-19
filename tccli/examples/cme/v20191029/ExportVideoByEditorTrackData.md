@@ -6,13 +6,14 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform default_platform \
+    --Platform 1000000009 \
     --Definition 10 \
     --ExportDestination VOD \
-    --TrackData track_data_xxxx \
+    --TrackData {"id":"baa03b1c-6773-4459-a7b3-7f1e8b9e5b56","type":"video","items":[{"id":"f244311c-ca04-447a-b49a-1226356d46ba","start_time":0,"duration":3000,"type":"image","asset_id":"6503fd9d17509729a6100011","filter_asset_id":"","operations":[{"type":"image_rotate","params":{"angle":0}}],"width":540,"height":540,"position":{"x":480,"y":300},"section":{"from":0,"to":3000}}]} \
     --VODExportInfo.Name 在线编辑视频 \
     --VODExportInfo.ClassId 10 \
-    --Operator user_id_9394392053f8405394299d8
+    --ExportExtensionArgs.FrameRate 30 \
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -33,14 +34,14 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform test \
-    --AspectRatio 16:9 \
-    --TrackData track_data_xxxx \
+    --Platform 1000000009 \
     --Definition 10 \
     --ExportDestination VOD \
+    --AspectRatio 16:9 \
+    --TrackData {"id":"baa03b1c-6773-4459-a7b3-7f1e8b9e5b56","type":"video","items":[{"id":"f244311c-ca04-447a-b49a-1226356d46ba","start_time":0,"duration":3000,"type":"image","asset_id":"6503fd9d17509729a6100011","filter_asset_id":"","operations":[{"type":"image_rotate","params":{"angle":0}}],"width":540,"height":540,"position":{"x":480,"y":300},"section":{"from":0,"to":3000}}]} \
     --VODExportInfo.Name 在线编辑视频 \
     --VODExportInfo.ClassId 10 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -61,11 +62,11 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform test \
-    --AspectRatio 16:9 \
-    --TrackData track_data_xxxx \
+    --Platform 1000000009 \
     --Definition 10 \
     --ExportDestination VOD \
+    --TrackData {"id":"baa03b1c-6773-4459-a7b3-7f1e8b9e5b56","type":"video","items":[{"id":"f244311c-ca04-447a-b49a-1226356d46ba","start_time":0,"duration":3000,"type":"image","asset_id":"6503fd9d17509729a6100011","filter_asset_id":"","operations":[{"type":"image_rotate","params":{"angle":0}}],"width":540,"height":540,"position":{"x":480,"y":300},"section":{"from":0,"to":3000}}]} \
+    --AspectRatio 16:9 \
     --VODExportInfo.Name 在线编辑视频 \
     --VODExportInfo.ClassId 10 \
     --VODExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId 5fd8ad3d628dc30001bd0895 \
@@ -73,15 +74,15 @@ tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description 新闻 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags 娱乐 \
     --VODExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category 100 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "e86c730b-97c8-4e7d-b4a1-f5b28291e2b3",
-        "TaskId": "181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb7t"
+        "TaskId": "e86c730b-97c8-4e7d-b4a1-f5b28291e2b3",
+        "RequestId": "181xxxxxx01-FusionCME-c85bf7f3b9b4c594fbd558800a6fecb7t"
     }
 }
 ```
@@ -94,15 +95,16 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform test \
-    --AspectRatio 16:9 \
-    --TrackData track_data_xxx \
-    --Definition 10 \
+    --Platform 1000000009 \
+    --Definition 1 \
     --ExportDestination CME \
+    --AspectRatio 16:9 \
+    --TrackData {"id":"baa03b1c-6773-4459-a7b3-7f1e8b9e5b56","type":"video","items":[{"id":"f244311c-ca04-447a-b49a-1226356d46ba","start_time":0,"duration":3000,"type":"image","asset_id":"6503fd9d17509729a6100011","filter_asset_id":"","operations":[{"type":"image_rotate","params":{"angle":0}}],"width":540,"height":540,"position":{"x":480,"y":300},"section":{"from":0,"to":3000}}]} \
     --CMEExportInfo.Owner.Type PERSON \
-    --CMEExportInfo.Owner.Id ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0 \
+    --CMEExportInfo.Owner.Id 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0 \
     --CMEExportInfo.Name 新建项目 \
-    --CMEExportInfo.ClassPath /成片
+    --CMEExportInfo.ClassPath /成片 \
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 
@@ -123,13 +125,13 @@ Input:
 
 ```
 tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
-    --Platform test \
-    --AspectRatio 16:9 \
-    --TrackData track_data_xxxx \
-    --Definition 10 \
+    --Platform 1000000009 \
+    --Definition 1 \
     --ExportDestination CME \
+    --AspectRatio 16:9 \
+    --TrackData {"id":"baa03b1c-6773-4459-a7b3-7f1e8b9e5b56","type":"video","items":[{"id":"f244311c-ca04-447a-b49a-1226356d46ba","start_time":0,"duration":3000,"type":"image","asset_id":"6503fd9d17509729a6100011","filter_asset_id":"","operations":[{"type":"image_rotate","params":{"angle":0}}],"width":540,"height":540,"position":{"x":480,"y":300},"section":{"from":0,"to":3000}}]} \
     --CMEExportInfo.Owner.Type PERSON \
-    --CMEExportInfo.Owner.Id ed3fa411-73e6-4fd0-abe2-498bf5f9e7f0 \
+    --CMEExportInfo.Owner.Id 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0 \
     --CMEExportInfo.Name 新建项目 \
     --CMEExportInfo.ClassPath /成片 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.ChannelMaterialId 5fd8ad3d628dc30001bd0895 \
@@ -137,7 +139,7 @@ tccli cme ExportVideoByEditorTrackData --cli-unfold-argument  \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Description 新闻 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Tags 娱乐 \
     --CMEExportInfo.ThirdPartyPublishInfos.0.PenguinMediaPlatformPublishInfo.Category 100 \
-    --Operator user_id_9394392053f8405394299d8
+    --Operator 9b92a8e7-a5ef-4e28-d72e-4eff571fabf0
 ```
 
 Output: 

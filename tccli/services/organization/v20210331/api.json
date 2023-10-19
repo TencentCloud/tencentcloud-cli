@@ -42,6 +42,13 @@
       "output": "CreateOrganizationResponse",
       "status": "online"
     },
+    "CreateOrganizationIdentity": {
+      "document": "添加组织身份",
+      "input": "CreateOrganizationIdentityRequest",
+      "name": "添加组织身份",
+      "output": "CreateOrganizationIdentityResponse",
+      "status": "online"
+    },
     "CreateOrganizationMember": {
       "document": "创建组织成员",
       "input": "CreateOrganizationMemberRequest",
@@ -63,11 +70,25 @@
       "output": "CreateOrganizationMemberPolicyResponse",
       "status": "online"
     },
+    "CreateOrganizationMembersPolicy": {
+      "document": "创建组织成员访问策略",
+      "input": "CreateOrganizationMembersPolicyRequest",
+      "name": "创建组织成员访问策略",
+      "output": "CreateOrganizationMembersPolicyResponse",
+      "status": "online"
+    },
     "DeleteOrganization": {
       "document": "删除企业组织",
       "input": "DeleteOrganizationRequest",
       "name": "删除企业组织",
       "output": "DeleteOrganizationResponse",
+      "status": "online"
+    },
+    "DeleteOrganizationIdentity": {
+      "document": "删除组织身份",
+      "input": "DeleteOrganizationIdentityRequest",
+      "name": "删除组织身份",
+      "output": "DeleteOrganizationIdentityResponse",
       "status": "online"
     },
     "DeleteOrganizationMemberAuthIdentity": {
@@ -201,6 +222,13 @@
       "input": "QuitOrganizationRequest",
       "name": "退出企业组织",
       "output": "QuitOrganizationResponse",
+      "status": "online"
+    },
+    "UpdateOrganizationIdentity": {
+      "document": "更新组织身份",
+      "input": "UpdateOrganizationIdentityRequest",
+      "name": "更新组织身份",
+      "output": "UpdateOrganizationIdentityResponse",
       "status": "online"
     },
     "UpdateOrganizationMember": {
@@ -513,6 +541,61 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationIdentityRequest": {
+      "document": "CreateOrganizationIdentity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份名称",
+          "example": "test",
+          "member": "string",
+          "name": "IdentityAliasName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份策略",
+          "example": "无",
+          "member": "IdentityPolicy",
+          "name": "IdentityPolicy",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "身份描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationIdentityResponse": {
+      "document": "CreateOrganizationIdentity返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "uint64",
+          "name": "IdentityId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationMemberAuthIdentityRequest": {
       "document": "CreateOrganizationMemberAuthIdentity请求参数结构体",
       "members": [
@@ -731,6 +814,69 @@
       ],
       "type": "object"
     },
+    "CreateOrganizationMembersPolicyRequest": {
+      "document": "CreateOrganizationMembersPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员Uin列表。最多10个",
+          "example": "[111111111111]",
+          "member": "int64",
+          "name": "MemberUins",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "策略名。长度1～128个字符，支持英文字母、数字、符号+=,.@_-",
+          "example": "test",
+          "member": "string",
+          "name": "PolicyName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "成员访问身份ID。",
+          "example": "11",
+          "member": "int64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "策略描述。最大长度为128个字符",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOrganizationMembersPolicyResponse": {
+      "document": "CreateOrganizationMembersPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateOrganizationRequest": {
       "document": "CreateOrganization请求参数结构体",
       "members": [],
@@ -759,6 +905,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationIdentityRequest": {
+      "document": "DeleteOrganizationIdentity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOrganizationIdentityResponse": {
+      "document": "DeleteOrganizationIdentity返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3030,6 +3203,51 @@
     },
     "QuitOrganizationResponse": {
       "document": "QuitOrganization返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationIdentityRequest": {
+      "document": "UpdateOrganizationIdentity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "身份ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "IdentityId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "身份描述",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "身份策略",
+          "example": "无",
+          "member": "IdentityPolicy",
+          "name": "IdentityPolicy",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateOrganizationIdentityResponse": {
+      "document": "UpdateOrganizationIdentity返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

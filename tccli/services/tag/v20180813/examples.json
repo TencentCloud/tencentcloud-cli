@@ -16,6 +16,14 @@
         "title": "给标签关联资源"
       }
     ],
+    "AttachPolicy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AttachPolicy\n<公共请求参数>\n\n{\n    \"TargetId\": \"100000548134\",\n    \"PolicyId\": \"10004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a556c773-e6d3-4d3a-86d4-8243a2d9a295\"\n    }\n}",
+        "title": "绑定策略到目标节点"
+      }
+    ],
     "AttachResourceProject": [
       {
         "document": "为资源关联项目。",
@@ -40,6 +48,14 @@
         "title": "查询异步修改资源标签任务执行状态"
       }
     ],
+    "CreatePolicy": [
+      {
+        "document": "创建标签策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePolicy\n<公共请求参数>\n\n{\n    \"Content\": \"{\\\"tags\\\":{\\\"Region\\\":{\\\"tag_value\\\":{\\\"@@assign\\\":[\\\"ap-guangzhou\\\",\\\"ap-beijing\\\"]},\\\"tag_key\\\":{\\\"@@assign\\\":\\\"Region\\\"}}}}\",\n    \"DryRun\": \"false\",\n    \"Name\": \"地域标签\",\n    \"Description\": \"地域标签\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 10001,\n        \"RequestId\": \"74736f60-084c-46ca-8366-93aa7830f9c8\"\n    }\n}",
+        "title": "创建标签策略"
+      }
+    ],
     "CreateTag": [
       {
         "document": "",
@@ -54,6 +70,14 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTags\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092211\"\n        },\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092212\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eb60900d-8e00-4bfd-bb92-64a*********\"\n    }\n}",
         "title": "创建标签"
+      }
+    ],
+    "DeletePolicy": [
+      {
+        "document": "删除标签策略ID为1001的标签策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"1001\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88578c49-eb83-4208-a547-50c905f262bc\"\n    }\n}",
+        "title": "删除标签策略"
       }
     ],
     "DeleteResourceTag": [
@@ -78,6 +102,22 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteTags\n<公共请求参数>\n\n{\n    \"Tags\": [\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092211\"\n        },\n        {\n            \"TagKey\": \"09221\",\n            \"TagValue\": \"092212\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"131fd253-b2de-4190-a1c1-13ce*********\"\n    }\n}",
         "title": "删除标签"
+      }
+    ],
+    "DescribeEffectivePolicy": [
+      {
+        "document": "获取目标节点的有效策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEffectivePolicy\n<公共请求参数>\n\n{\n    \"TargetId\": 10001\n}",
+        "output": "{\n    \"Response\": {\n        \"EffectivePolicy\": {\n            \"LastUpdatedTimestamp\": 1680239025,\n            \"PolicyContent\": \"{\\\"tags\\\":{\\\"Region\\\":{\\\"tag_key\\\":\\\"Region\\\",\\\"tag_value\\\":[\\\"ap-guangzhou\\\"]}}}\",\n            \"TargetId\": 100000000000\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取目标节点的有效策略"
+      }
+    ],
+    "DescribePolicy": [
+      {
+        "document": "获取标签策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePolicy\n<公共请求参数>\n\n{\n    \"PolicyId\": \"10004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 10004,\n        \"Name\": \"地域标签\",\n        \"Description\": \"地域标签\",\n        \"Content\": \"{\\\"tags\\\":{\\\"Region\\\":{\\\"tag_key\\\":{\\\"@@assign\\\":\\\"Region\\\"},\\\"tag_value\\\":{\\\"@@assign\\\":[\\\"ap-guangzhou\\\"]}}}}\",\n        \"RequestId\": \"b53af52d-082f-4b74-b7da-310b41c78ade\"\n    }\n}",
+        "title": "获取标签策略"
       }
     ],
     "DescribeProjects": [
@@ -190,6 +230,14 @@
         "title": "查询标签"
       }
     ],
+    "DetachPolicy": [
+      {
+        "document": "从目标节点解绑标签策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DetachPolicy\n<公共请求参数>\n\n{\n    \"TargetId\": \"100000548134\",\n    \"PolicyId\": \"10004\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37198911-6131-4754-adfb-71a187637ce8\"\n    }\n}",
+        "title": "从目标节点解绑标签策略"
+      }
+    ],
     "DetachResourceProject": [
       {
         "document": "解绑资源和项目的关联关系。",
@@ -244,6 +292,14 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTags\n<公共请求参数>\n\n{\n    \"PaginationToken\": \"Ab9jDQQcwdAXTyU2IUabQzkIKltlrX19nJCB8MIuJD9Ck8*********\",\n    \"MaxResults\": \"2\"\n}",
         "output": "{\n    \"Response\": {\n        \"PaginationToken\": \"t1eWpVGSKbAxvaIwRPttZIQq-Eu7e2hWKvN5iMyULmtF*********\",\n        \"Tags\": [\n            {\n                \"TagKey\": \"key1\",\n                \"TagValue\": \"value1\"\n            },\n            {\n                \"TagKey\": \"key2\",\n                \"TagValue\": \"value2\"\n            }\n        ],\n        \"RequestId\": \"0ba573a8-0fdc-44eb-96d7-8f7f*********\"\n    }\n}",
         "title": "查询标签列表"
+      }
+    ],
+    "ListTargetsForPolicy": [
+      {
+        "document": "查询标签策略已绑定的对象",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListTargetsForPolicy\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"PolicyId\": \"10004\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Targets\": [\n            {\n                \"TargetId\": 100000548134\n            }\n        ],\n        \"RequestId\": \"8c2d5819-320a-4193-99ce-f52999fae113\"\n    }\n}",
+        "title": "查询标签策略已绑定的对象"
       }
     ],
     "ModifyResourceTags": [
@@ -306,6 +362,14 @@
         "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UnTagResources\n<公共请求参数>\n\n{\n    \"ResourceList\": [\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\",\n        \"qcs::cvm:ap-beijing:uin/10000055****:instance/****\"\n    ],\n    \"TagKeys\": [\n        \"RWFGaltFlR\",\n        \"LbDKGjeagV\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FailedResources\": [],\n        \"RequestId\": \"cbc7b26c-3fff-4a3c-82f0-c6ebc2ff31e3\"\n    }\n}",
         "title": "为资源解绑标签"
+      }
+    ],
+    "UpdatePolicy": [
+      {
+        "document": "更新策略",
+        "input": "POST / HTTP/1.1\nHost: tag.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePolicy\n<公共请求参数>\n\n{\n    \"Name\": \"地域标签\",\n    \"Description\": \"地域标签\",\n    \"Content\": \"{\\\"tags\\\":{\\\"Region\\\":{\\\"tag_value\\\":{\\\"@@assign\\\":[\\\"ap-guangzhou\\\",\\\"ap-beijing\\\"]},\\\"tag_key\\\":{\\\"@@assign\\\":\\\"Region\\\"}}}}\",\n    \"DryRun\": true,\n    \"PolicyId\": 10001\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"74736f60-084c-46ca-8366-93aa7xxxxxx\"\n    }\n}",
+        "title": "更新策略"
       }
     ],
     "UpdateProject": [

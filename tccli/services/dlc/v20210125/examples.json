@@ -504,6 +504,14 @@
         "title": "示例一"
       }
     ],
+    "DescribeLakeFsTaskResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLakeFsTaskResult\n<公共请求参数>\n\n{\n    \"FsPath\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessToken\": {\n            \"SecretId\": \"abc\",\n            \"SecretKey\": \"abc\",\n            \"Token\": \"abc\",\n            \"ExpiredTime\": 0,\n            \"IssueTime\": 0,\n            \"AppId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "实例一"
+      }
+    ],
     "DescribeNotebookSession": [
       {
         "document": "查询交互式 session详情信息",

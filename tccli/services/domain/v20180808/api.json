@@ -98,6 +98,13 @@
       "output": "CreateTemplateResponse",
       "status": "online"
     },
+    "DeleteCustomDnsHost": {
+      "document": "删除自定义DNS Host",
+      "input": "DeleteCustomDnsHostRequest",
+      "name": "删除自定义DNS Host",
+      "output": "DeleteCustomDnsHostResponse",
+      "status": "online"
+    },
     "DeleteIntlPhoneEmail": {
       "document": "国际站-删除手机或邮箱",
       "input": "DeleteIntlPhoneEmailRequest",
@@ -138,6 +145,13 @@
       "input": "DescribeBatchOperationLogsRequest",
       "name": "批量操作日志列表",
       "output": "DescribeBatchOperationLogsResponse",
+      "status": "online"
+    },
+    "DescribeCustomDnsHostSet": {
+      "document": "查询自定义DNS Host",
+      "input": "DescribeCustomDnsHostSetRequest",
+      "name": "查询自定义DNS Host",
+      "output": "DescribeCustomDnsHostSetResponse",
       "status": "online"
     },
     "DescribeDomainBaseInfo": {
@@ -259,6 +273,13 @@
       "output": "DescribeTemplateListResponse",
       "status": "online"
     },
+    "ModifyCustomDnsHost": {
+      "document": "修改自定义DNS Host",
+      "input": "ModifyCustomDnsHostRequest",
+      "name": "修改自定义DNS Host",
+      "output": "ModifyCustomDnsHostResponse",
+      "status": "online"
+    },
     "ModifyDomainDNSBatch": {
       "document": "本接口 ( ModifyDomainDNSBatch) 用于批量域名 DNS 修改 。",
       "input": "ModifyDomainDNSBatchRequest",
@@ -271,6 +292,13 @@
       "input": "ModifyDomainOwnerBatchRequest",
       "name": "批量账号间转移",
       "output": "ModifyDomainOwnerBatchResponse",
+      "status": "online"
+    },
+    "ModifyIntlCustomDnsHost": {
+      "document": "国际站-修改DNS Host",
+      "input": "ModifyIntlCustomDnsHostRequest",
+      "name": "修改DNS Host",
+      "output": "ModifyIntlCustomDnsHostResponse",
       "status": "online"
     },
     "ModifyOwnerIntlBatch": {
@@ -320,6 +348,13 @@
       "input": "SetIntlDomainAutoRenewRequest",
       "name": "设置自动续费",
       "output": "SetIntlDomainAutoRenewResponse",
+      "status": "online"
+    },
+    "SyncCustomDnsHost": {
+      "document": "同步自定义DNS Host",
+      "input": "SyncCustomDnsHostRequest",
+      "name": "同步自定义DNS Host",
+      "output": "SyncCustomDnsHostResponse",
       "status": "online"
     },
     "TransferInDomainBatch": {
@@ -2200,6 +2235,78 @@
       ],
       "type": "object"
     },
+    "CustomDnsHost": {
+      "document": "自定义DNS Host",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DNS名称",
+          "example": "ns1",
+          "member": "string",
+          "name": "DnsName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP地址列表",
+          "example": "1.2.4.8,2.2.2.2",
+          "member": "string",
+          "name": "IpSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DeleteCustomDnsHostRequest": {
+      "document": "DeleteCustomDnsHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名实例ID",
+          "example": "domain-7312mrgq",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS名称",
+          "example": "ns1",
+          "member": "string",
+          "name": "DnsName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCustomDnsHostResponse": {
+      "document": "DeleteCustomDnsHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "6543",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteIntlPhoneEmailRequest": {
       "document": "DeleteIntlPhoneEmail请求参数结构体",
       "members": [
@@ -2437,6 +2544,71 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomDnsHostSetRequest": {
+      "document": "DescribeCustomDnsHostSet请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名实例ID",
+          "example": "domain-7312mrgq",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为20，取值范围[1,100]",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "20",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCustomDnsHostSetResponse": {
+      "document": "DescribeCustomDnsHostSet返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义DNS Host 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CustomDnsHost",
+          "name": "DnsHostSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义DNS Host总数",
+          "example": "15",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4635,6 +4807,61 @@
       ],
       "usage": "out"
     },
+    "ModifyCustomDnsHostRequest": {
+      "document": "ModifyCustomDnsHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名实例ID",
+          "example": "domain-7312mrgq",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS名称",
+          "example": "ns1",
+          "member": "string",
+          "name": "DnsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP地址列表",
+          "example": "1.2.4.8,2.2.2.2",
+          "member": "string",
+          "name": "IpSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCustomDnsHostResponse": {
+      "document": "ModifyCustomDnsHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "6543",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDomainDNSBatchRequest": {
       "document": "ModifyDomainDNSBatch请求参数结构体",
       "members": [
@@ -4731,6 +4958,61 @@
           "document": "日志id",
           "example": "425",
           "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIntlCustomDnsHostRequest": {
+      "document": "ModifyIntlCustomDnsHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "xx",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DNS Host",
+          "example": "xx",
+          "member": "string",
+          "name": "DnsName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "[\"1.1.1.1\"]",
+          "member": "string",
+          "name": "IpSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyIntlCustomDnsHostResponse": {
+      "document": "ModifyIntlCustomDnsHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "1",
+          "member": "int64",
           "name": "LogId",
           "required": true,
           "type": "int",
@@ -5403,6 +5685,43 @@
     "SetIntlDomainAutoRenewResponse": {
       "document": "SetIntlDomainAutoRenew返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncCustomDnsHostRequest": {
+      "document": "SyncCustomDnsHost请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名实例ID",
+          "example": "domain-7312mrgqs\t",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SyncCustomDnsHostResponse": {
+      "document": "SyncCustomDnsHost返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务ID",
+          "example": "6543",
+          "member": "uint64",
+          "name": "LogId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

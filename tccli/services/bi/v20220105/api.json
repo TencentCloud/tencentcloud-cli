@@ -112,6 +112,13 @@
       "output": "DescribeUserRoleListResponse",
       "status": "online"
     },
+    "DescribeUserRoleProjectList": {
+      "document": "项目内-用户角色列表",
+      "input": "DescribeUserRoleProjectListRequest",
+      "name": "项目内-用户角色列表",
+      "output": "DescribeUserRoleProjectListResponse",
+      "status": "online"
+    },
     "ModifyDatasource": {
       "document": "更新数据源",
       "input": "ModifyDatasourceRequest",
@@ -2320,6 +2327,81 @@
     },
     "DescribeUserRoleListResponse": {
       "document": "DescribeUserRoleList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩展\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Extra",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UserRoleListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRoleProjectListRequest": {
+      "document": "DescribeUserRoleProjectList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID",
+          "example": "1",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserRoleProjectListResponse": {
+      "document": "DescribeUserRoleProjectList返回参数结构体",
       "members": [
         {
           "disabled": false,

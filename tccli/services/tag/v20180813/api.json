@@ -14,6 +14,13 @@
       "output": "AddResourceTagResponse",
       "status": "online"
     },
+    "AttachPolicy": {
+      "document": "将标签策略绑定到目标节点。",
+      "input": "AttachPolicyRequest",
+      "name": "绑定标签策略",
+      "output": "AttachPolicyResponse",
+      "status": "online"
+    },
     "AttachResourceProject": {
       "document": "本接口用于给资源关联项目。",
       "input": "AttachResourceProjectRequest",
@@ -35,6 +42,13 @@
       "output": "CheckAsyncBatchModifyResourcesTaskResponse",
       "status": "online"
     },
+    "CreatePolicy": {
+      "document": "创建标签策略。",
+      "input": "CreatePolicyRequest",
+      "name": "创建标签策略",
+      "output": "CreatePolicyResponse",
+      "status": "online"
+    },
     "CreateTag": {
       "document": "本接口用于创建一对标签键和标签值",
       "input": "CreateTagRequest",
@@ -47,6 +61,13 @@
       "input": "CreateTagsRequest",
       "name": "批量创建标签",
       "output": "CreateTagsResponse",
+      "status": "online"
+    },
+    "DeletePolicy": {
+      "document": "删除标签策略。",
+      "input": "DeletePolicyRequest",
+      "name": "删除标签策略",
+      "output": "DeletePolicyResponse",
       "status": "online"
     },
     "DeleteResourceTag": {
@@ -68,6 +89,20 @@
       "input": "DeleteTagsRequest",
       "name": "批量删除标签",
       "output": "DeleteTagsResponse",
+      "status": "online"
+    },
+    "DescribeEffectivePolicy": {
+      "document": "查询目标节点的有效策略。",
+      "input": "DescribeEffectivePolicyRequest",
+      "name": "查询目标节点的有效策略",
+      "output": "DescribeEffectivePolicyResponse",
+      "status": "online"
+    },
+    "DescribePolicy": {
+      "document": "查询标签策略详情。",
+      "input": "DescribePolicyRequest",
+      "name": "查询标签策略详情",
+      "output": "DescribePolicyResponse",
       "status": "online"
     },
     "DescribeProjects": {
@@ -161,6 +196,13 @@
       "output": "DescribeTagsSeqResponse",
       "status": "online"
     },
+    "DetachPolicy": {
+      "document": "将标签策略从目标节点解绑。",
+      "input": "DetachPolicyRequest",
+      "name": "解绑标签策略",
+      "output": "DetachPolicyResponse",
+      "status": "online"
+    },
     "DetachResourceProject": {
       "document": "本接口用于解除资源和项目的关联关系。",
       "input": "DetachResourceProjectRequest",
@@ -210,6 +252,13 @@
       "output": "GetTagsResponse",
       "status": "online"
     },
+    "ListTargetsForPolicy": {
+      "document": "查询标签策略已绑定的对象。",
+      "input": "ListTargetsForPolicyRequest",
+      "name": "查询标签策略已绑定的对象",
+      "output": "ListTargetsForPolicyResponse",
+      "status": "online"
+    },
     "ModifyResourceTags": {
       "document": "本接口用于修改资源关联的所有标签",
       "input": "ModifyResourceTagsRequest",
@@ -257,6 +306,13 @@
       "input": "UnTagResourcesRequest",
       "name": "为资源解绑标签",
       "output": "UnTagResourcesResponse",
+      "status": "online"
+    },
+    "UpdatePolicy": {
+      "document": "更新标签策略。",
+      "input": "UpdatePolicyRequest",
+      "name": "更新标签策略",
+      "output": "UpdatePolicyResponse",
       "status": "online"
     },
     "UpdateProject": {
@@ -377,6 +433,42 @@
     },
     "AddResourceTagResponse": {
       "document": "AddResourceTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPolicyRequest": {
+      "document": "AttachPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略ID。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标节点ID。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "AttachPolicyResponse": {
+      "document": "AttachPolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -562,6 +654,69 @@
       ],
       "type": "object"
     },
+    "CreatePolicyRequest": {
+      "document": "CreatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略名称。\n长度为1~128个字符，可以包含汉字、英文字母、数字和下划线（_），其中一个汉字占用3个字符，超出长度限制会报错。",
+          "example": "policy_name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签策略内容。长度为0~2048个字符，格式符合[标签策略语法](https://cloud.tencent.com/document/product/651/90310)规范。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签策略描述。\n长度为0~512个字符，可以包含汉字、英文字母、数字和下划线（_），其中一个汉字占用3个字符，超出长度限制会报错。",
+          "example": "policy_desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否空跑。取值：\nfalse（默认值）：否。会按请求参数执行操作。\ntrue：是。仅校验请求参数，不真正执行操作。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePolicyResponse": {
+      "document": "CreatePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略Id，DryRun运行时返回为0。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateTagRequest": {
       "document": "CreateTag请求参数结构体",
       "members": [
@@ -615,6 +770,33 @@
     },
     "CreateTagsResponse": {
       "document": "CreateTags返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyRequest": {
+      "document": "DeletePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略唯一标识符ID。取值范围大于0。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePolicyResponse": {
+      "document": "DeletePolicy返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -715,6 +897,105 @@
     "DeleteTagsResponse": {
       "document": "DeleteTags返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEffectivePolicyRequest": {
+      "document": "DescribeEffectivePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标节点的唯一标识符ID。取值范围大于0。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEffectivePolicyResponse": {
+      "document": "DescribeEffectivePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效策略。",
+          "example": "无",
+          "member": "EffectivePolicy",
+          "name": "EffectivePolicy",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyRequest": {
+      "document": "DescribePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略的唯一标识符ID。取值范围大于0。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePolicyResponse": {
+      "document": "DescribePolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略ID",
+          "example": "10001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略名称",
+          "example": "policy name",
+          "member": "string",
+          "name": "Name",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略描述",
+          "example": "policy desc",
+          "member": "string",
+          "name": "Description",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "策略内容",
+          "example": "policy content",
+          "member": "string",
+          "name": "Content",
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2172,6 +2453,42 @@
       ],
       "type": "object"
     },
+    "DetachPolicyRequest": {
+      "document": "DetachPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略的唯一标识符ID。取值范围大于0。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标节点的唯一标识符ID。取值范围大于0。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DetachPolicyResponse": {
+      "document": "DetachPolicy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DetachResourceProjectRequest": {
       "document": "DetachResourceProject请求参数结构体",
       "members": [
@@ -2270,6 +2587,42 @@
         }
       ],
       "type": "object"
+    },
+    "EffectivePolicy": {
+      "document": "有效策略。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "有效策略更新时间，格式为时间戳",
+          "example": "1668394639",
+          "member": "uint64",
+          "name": "LastUpdatedTimestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效策略内容。长度为0~2048个字符，格式符合[标签策略语法](https://cloud.tencent.com/document/product/651/90310)规范",
+          "example": "无",
+          "member": "string",
+          "name": "PolicyContent",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标的唯一标识符ID。取值范围大于0。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "FailedResource": {
       "document": "失败资源信息。\n绑定或解绑资源标签时失败返回",
@@ -2662,6 +3015,80 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTargetsForPolicyRequest": {
+      "document": "ListTargetsForPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "策略的唯一标识符ID。取值范围大于0。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页条数，取值范围[1, 200]。缺省值20。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，取值范围[0, 500]。缺省值0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目标节点的唯一标识符ID。取值范围大于0。如果传入则只返回命中的目标节点。",
+          "example": "10001",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListTargetsForPolicyResponse": {
+      "document": "ListTargetsForPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标节点总数。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标节点列表。",
+          "example": "无",
+          "member": "Target",
+          "name": "Targets",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -3470,6 +3897,22 @@
       ],
       "usage": "out"
     },
+    "Target": {
+      "document": "标签策略目标节点。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目标节点的唯一标识符ID。取值范围大于0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TargetId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "UnTagResourcesRequest": {
       "document": "UnTagResources请求参数结构体",
       "members": [
@@ -3507,6 +3950,69 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyRequest": {
+      "document": "UpdatePolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签策略的唯一标识符ID。取值范围大于0。",
+          "example": "100001",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签策略名称。\n长度为1~128个字符，可以包含汉字、英文字母、数字和下划线（_），其中一个汉字占用3个字符，超出长度限制会报错。",
+          "example": "policy_name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签策略描述。\n长度为0~512个字符，可以包含汉字、英文字母、数字和下划线（_），其中一个汉字占用3个字符，超出长度限制会报错。",
+          "example": "policy_desc",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签策略内容。长度为0~2048个字符，格式符合[标签策略语法](https://cloud.tencent.com/document/product/651/90310)规范",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否空跑。取值：\nfalse（默认值）：否。会按请求参数执行操作。\ntrue：是。仅校验请求参数，不真正执行操作。",
+          "example": "true",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePolicyResponse": {
+      "document": "UpdatePolicy返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

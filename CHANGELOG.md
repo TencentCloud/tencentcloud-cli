@@ -1,3 +1,169 @@
+# Release 3.0.868.1
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 6 次发布
+
+发布时间：2023-10-20 01:11:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUserRoleProjectList](http://document.tencentcloudapi.woa.com/document/product/1707/82404)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 53 次发布
+
+发布时间：2023-10-20 01:25:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Backend](http://document.tencentcloudapi.woa.com/document/product/214/30694#Backend)
+
+	* 新增成员：Tag
+
+
+
+
+## 版权保护平台(cpp) 版本：2023-06-27
+
+### 第 2 次发布
+
+发布时间：2023-10-20 01:33:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TaskWork](http://document.tencentcloudapi.woa.com/document/product/1745/82344#TaskWork)
+
+	* 新增成员：CallbackUrl
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 77 次发布
+
+发布时间：2023-10-20 01:44:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLakeFsTaskResult](http://document.tencentcloudapi.woa.com/document/product/1342/82382)
+
+	* 新增入参：FsPath
+
+	* 新增出参：AccessToken
+
+
+新增数据结构：
+
+* [LakeFileSystemToken](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystemToken)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 18 次发布
+
+发布时间：2023-10-20 01:46:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82408)
+* [DescribeCustomDnsHostSet](http://document.tencentcloudapi.woa.com/document/product/242/82407)
+* [ModifyCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82406)
+* [ModifyIntlCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82409)
+* [SyncCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82405)
+
+新增数据结构：
+
+* [CustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/38895#CustomDnsHost)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 46 次发布
+
+发布时间：2023-10-20 01:52:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
+
+	* 新增成员：FlowReadLimit
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 96 次发布
+
+发布时间：2023-10-20 01:53:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)
+
+	* 新增成员：FlowReadLimit
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 44 次发布
+
+发布时间：2023-10-20 02:41:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstancePort](http://document.tencentcloudapi.woa.com/document/product/1364/54942#InstancePort)
+
+	* 新增成员：TcpPort, UdpPort
+
+
+
+
 # Release 3.0.867.1
 
 ## API 网关(apigateway) 版本：2018-08-08

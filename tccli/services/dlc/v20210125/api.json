@@ -441,6 +441,13 @@
       "output": "DescribeLakeFsInfoResponse",
       "status": "online"
     },
+    "DescribeLakeFsTaskResult": {
+      "document": "获取LakeFs上task执行结果访问信息",
+      "input": "DescribeLakeFsTaskResultRequest",
+      "name": "获取LakeFs上task执行结果访问信息",
+      "output": "DescribeLakeFsTaskResultResponse",
+      "status": "online"
+    },
     "DescribeNotebookSession": {
       "document": "本接口（DescribeNotebookSession）用于查询交互式 session详情信息",
       "input": "DescribeNotebookSessionRequest",
@@ -7866,6 +7873,43 @@
       ],
       "type": "object"
     },
+    "DescribeLakeFsTaskResultRequest": {
+      "document": "DescribeLakeFsTaskResult请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要访问的任务结果路径",
+          "example": "无",
+          "member": "string",
+          "name": "FsPath",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLakeFsTaskResultResponse": {
+      "document": "DescribeLakeFsTaskResult返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路径的访问实例",
+          "example": "无",
+          "member": "LakeFileSystemToken",
+          "name": "AccessToken",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeNotebookSessionLogRequest": {
       "document": "DescribeNotebookSessionLog请求参数结构体",
       "members": [
@@ -10820,6 +10864,72 @@
         }
       ],
       "usage": "both"
+    },
+    "LakeFileSystemToken": {
+      "document": "LakeFileSystem使用的临时token",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Token使用的临时秘钥的ID",
+          "example": "无",
+          "member": "string",
+          "name": "SecretId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token使用的临时秘钥",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Token信息",
+          "example": "无",
+          "member": "string",
+          "name": "Token",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpiredTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "颁布时间",
+          "example": "无",
+          "member": "int64",
+          "name": "IssueTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问的App ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ListTaskJobLogDetailRequest": {
       "document": "ListTaskJobLogDetail请求参数结构体",

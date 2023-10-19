@@ -6002,7 +6002,7 @@
         {
           "disabled": false,
           "document": "Cpu负载",
-          "example": "11",
+          "example": "中",
           "member": "string",
           "name": "CpuLoad",
           "output_required": true,
@@ -15105,6 +15105,7 @@
           "example": "''",
           "member": "OrderResource",
           "name": "Resource",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -26562,6 +26563,7 @@
           "example": "1",
           "member": "VersionWhiteConfig",
           "name": "FlagShip",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -26571,6 +26573,7 @@
           "example": "1",
           "member": "VersionWhiteConfig",
           "name": "Professional",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -26580,6 +26583,7 @@
           "example": "1",
           "member": "VersionWhiteConfig",
           "name": "PrattWhitney",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
