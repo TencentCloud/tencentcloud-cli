@@ -364,6 +364,20 @@
       "output": "RegisterUserResponse",
       "status": "online"
     },
+    "SendRoomNormalMessage": {
+      "document": "1、按照指定身份发送消息，目前支持表情消息、图片消息、文本消息。",
+      "input": "SendRoomNormalMessageRequest",
+      "name": "指定用户给房间中发送消息",
+      "output": "SendRoomNormalMessageResponse",
+      "status": "online"
+    },
+    "SendRoomNotificationMessage": {
+      "document": "App 管理员可以通过该接口在群组中发送通知、公告等。目前仅支持文本消息。",
+      "input": "SendRoomNotificationMessageRequest",
+      "name": "房间中发送系统通知",
+      "output": "SendRoomNotificationMessageResponse",
+      "status": "online"
+    },
     "SetAppCustomContent": {
       "document": "设置应用的自定义内容，包括应用图标，自定义的代码等。如果已存在，则为更新。更新js、css内容后，要生效也需要调用该接口",
       "input": "SetAppCustomContentRequest",
@@ -395,8 +409,8 @@
   },
   "metadata": {
     "apiVersion": "2022-08-17",
-    "api_brief": "介绍如何使用API对低代码互动课堂进行操作，包括课堂管理，用户管理，应用管理等",
-    "serviceNameCN": "低代码互动课堂",
+    "api_brief": "介绍如何使用API对实时互动-教育版进行操作，包括课堂管理，用户管理，应用管理等",
+    "serviceNameCN": "实时互动-教育版",
     "serviceShortName": "lcic"
   },
   "objects": {
@@ -3811,6 +3825,30 @@
       ],
       "usage": "out"
     },
+    "FaceMsgContent": {
+      "document": "表情消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表情索引，用户自定义。",
+          "example": "1",
+          "member": "int64",
+          "name": "Index",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "额外数据。",
+          "example": "\"face\"",
+          "member": "string",
+          "name": "Data",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "GetRoomEventRequest": {
       "document": "GetRoomEvent请求参数结构体",
       "members": [
@@ -4193,6 +4231,90 @@
         }
       ],
       "usage": "out"
+    },
+    "ImageInfo": {
+      "document": "单张图片信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片类型：\n1-原图\n2-大图\n3-缩略图\n",
+          "example": "2",
+          "member": "uint64",
+          "name": "Type",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片数据大小，单位：字节。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "Size",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片宽度，单位为像素。",
+          "example": "2448",
+          "member": "uint64",
+          "name": "Width",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片高度，单位为像素。",
+          "example": "3264",
+          "member": "uint64",
+          "name": "Height",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片下载地址。",
+          "example": "http://xxx/3200490432214177468_144115198371610486_D61040894AC3DE44CDFFFB3EC7EB720F/198",
+          "member": "string",
+          "name": "URL",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageMsgContent": {
+      "document": "图片消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片的唯一标识，客户端用于索引图片的键值。",
+          "example": "1853095_D61040894AC3DE44CDFFFB3EC7EB720F",
+          "member": "string",
+          "name": "UUID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "图片格式。\nJPG = 1\nGIF = 2\nPNG = 3\nBMP = 4\n其他 = 255\n",
+          "example": "3",
+          "member": "uint64",
+          "name": "ImageFormat",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "图片信息",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "ImageInfoList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "KickUserFromRoomRequest": {
       "document": "KickUserFromRoom请求参数结构体",
@@ -5009,6 +5131,48 @@
       ],
       "type": "object"
     },
+    "MsgBody": {
+      "document": "自定义消息结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TIM 消息对象类型，目前支持的消息对象包括：\nTIMTextElem（文本消息）\nTIMFaceElem（表情消息）\nTIMImageElem（图像消息）",
+          "example": "TIMImageElem",
+          "member": "string",
+          "name": "MsgType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文本消息，当MsgType 为TIMTextElem（文本消息）必选。",
+          "example": "无",
+          "member": "TextMsgContent",
+          "name": "TextMsgContent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表情消息，当MsgType 为TIMFaceElem（表情消息）必选。",
+          "example": "无",
+          "member": "FaceMsgContent",
+          "name": "FaceMsgContent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图像消息，当MsgType为TIMImageElem（图像消息）必选。",
+          "example": "无",
+          "member": "ImageMsgContent",
+          "name": "ImageMsgContent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
     "QuestionInfo": {
       "document": "房间问答问题详情",
       "members": [
@@ -5534,6 +5698,114 @@
       "members": [],
       "usage": "out"
     },
+    "SendRoomNormalMessageRequest": {
+      "document": "SendRoomNormalMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "12222",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "1212457",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "管理员指定消息发送方账号（若需设置 FromAccount 信息，则该参数取值不能为空）",
+          "example": "\"121212\"",
+          "member": "string",
+          "name": "FromAccount",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义消息",
+          "example": "无",
+          "member": "MsgBody",
+          "name": "MsgBody",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）。",
+          "example": "\"your cloud custom data\"",
+          "member": "string",
+          "name": "CloudCustomData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRoomNormalMessageResponse": {
+      "document": "SendRoomNormalMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRoomNotificationMessageRequest": {
+      "document": "SendRoomNotificationMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "112367",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID。\n",
+          "example": "12567",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息。",
+          "example": "\"大家好\"",
+          "member": "string",
+          "name": "MsgContent",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRoomNotificationMessageResponse": {
+      "document": "SendRoomNotificationMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SetAppCustomContentRequest": {
       "document": "SetAppCustomContent请求参数结构体",
       "members": [
@@ -5766,6 +6038,21 @@
         }
       ],
       "usage": "out"
+    },
+    "TextMsgContent": {
+      "document": "文本消息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文本消息。",
+          "example": "\"你好\"",
+          "member": "string",
+          "name": "Text",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "UnbindDocumentFromRoomRequest": {
       "document": "UnbindDocumentFromRoom请求参数结构体",

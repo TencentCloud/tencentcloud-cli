@@ -31,7 +31,7 @@ Output:
                 "Type": "MOBILE_CHECK_APPROVER"
             },
             {
-                "Name": "企业静默签（自动签署）",
+                "Name": "企业自动签（自动签署）",
                 "OperateOn": 1672989237,
                 "OperatorOpenId": "admin-open-id",
                 "Status": "DISABLE",
@@ -50,9 +50,42 @@ Output:
                 "OperatorOpenId": "admin-openid",
                 "Status": "DISABLE",
                 "Type": "PAGING_SEAL"
+            },
+            {
+                "Name": "拓宽合同签署年龄",
+                "OperateOn": 0,
+                "OperatorOpenId": "",
+                "Status": "ENABLE",
+                "Type": "EXPANSION_AGE_LIMIT"
             }
         ],
         "RequestId": "s16733xxx81"
+    }
+}
+```
+
+**Example 2: 无权限的openid调用此接口**
+
+查询企业扩展服务授权信息，经办人openid不是超管或者法人，会报错返回
+
+Input: 
+
+```
+tccli essbasic DescribeExtendedServiceAuthInfo --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId normal-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID12344556667777777
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "OperationDenied",
+            "Message": "操作被拒绝。"
+        },
+        "RequestId": "s1**********72"
     }
 }
 ```

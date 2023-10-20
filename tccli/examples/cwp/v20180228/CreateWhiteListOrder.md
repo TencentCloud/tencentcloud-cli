@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli cwp CreateWhiteListOrder --cli-unfold-argument ```
+tccli cwp CreateWhiteListOrder --cli-unfold-argument  \
+    --LicenseType 1 \
+    --LicenseNum 10 \
+    --Deadline 10 \
+    --RuleName asset_center
+```
 
 Output: 
 ```

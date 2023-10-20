@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli cwp DescribeLicenseWhiteConfig --cli-unfold-argument ```
+tccli cwp DescribeLicenseWhiteConfig --cli-unfold-argument  \
+    --RuleName cwp
+```
 
 Output: 
 ```

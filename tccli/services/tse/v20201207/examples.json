@@ -391,6 +391,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改引擎公网访问配置"
       }
+    ],
+    "UpdateUpstreamTargets": [
+      {
+        "document": "更新网关服务上游实例列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUpstreamTargets\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"Name\": \"aaaaaa-bbbb-cccc-dddd-eeeeeeee\",\n    \"Targets\": [\n        {\n            \"Host\": \"10.0.0.1\",\n            \"Port\": 80,\n            \"Weight\": 100\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-yyyy-zzzz\",\n        \"Result\": true\n    }\n}",
+        "title": "更新实例列表"
+      }
     ]
   },
   "version": "1.0"

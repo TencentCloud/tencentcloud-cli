@@ -49,7 +49,8 @@ Output:
         ],
         "RequestId": "79900a28xxxxxx-4af8a90f7292",
         "VerifySerialNo": "16698630779",
-        "VerifyResult": 1
+        "VerifyResult": 1,
+        "PdfResourceMd5": "8879F721C764ABC918FD862B748F691C"
     }
 }
 ```
@@ -105,7 +106,8 @@ Output:
         ],
         "RequestId": "57151f15-2xxxxxx46418d4b72a",
         "VerifySerialNo": "16698630779",
-        "VerifyResult": 3
+        "VerifyResult": 3,
+        "PdfResourceMd5": "49649219B8771ACB538D418810983716"
     }
 }
 ```

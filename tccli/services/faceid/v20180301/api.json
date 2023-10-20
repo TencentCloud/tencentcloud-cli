@@ -1049,7 +1049,7 @@
         },
         {
           "disabled": false,
-          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-zA-Z0-9组合。最长长度32位。",
+          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
           "example": "无",
           "member": "string",
           "name": "IdCard",
@@ -2391,7 +2391,7 @@
         },
         {
           "disabled": false,
-          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-zA-Z0-9组合。最长长度32位。",
+          "document": "身份标识（未使用OCR服务时，必须传入）。\n规则：a-z，A-Z，0-9组合。最长长度32位。",
           "example": "无",
           "member": "string",
           "name": "IdCard",
@@ -2455,7 +2455,7 @@
           "example": "CE661F1A-0F1E-45BD-BE13-34C05CEA7681",
           "member": "string",
           "name": "EidToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2465,7 +2465,7 @@
           "example": "https://www.qq.com",
           "member": "string",
           "name": "Url",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3092,7 +3092,7 @@
           "example": "89.88",
           "member": "float",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3102,7 +3102,7 @@
           "example": "Success",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3112,7 +3112,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3596,7 +3596,7 @@
           "example": "<Imagebase64>",
           "member": "string",
           "name": "BestFrameBase64",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3606,7 +3606,7 @@
           "example": "89.88",
           "member": "float",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -3616,7 +3616,7 @@
           "example": "Success",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3626,7 +3626,7 @@
           "example": "成功",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3636,7 +3636,7 @@
           "example": "无",
           "member": "string",
           "name": "BestFrameList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

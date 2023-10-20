@@ -408,6 +408,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeBackupStreamList": [
+      {
+        "document": "查询在推的主备流。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBackupStreamList\n<公共请求参数>\n\n{\n    \"StreamName\": \"stream1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4b3d1d04-6f79-4f56-a8e7-46de97de1713\",\n        \"StreamInfoList\": [\n            {\n                \"StreamName\": \"stream1\",\n                \"BackupList\": [\n                    {\n                        \"DomainName\": \"5000.livepush.com\",\n                        \"AppName\": \"live\",\n                        \"PublishTime\": \"2018-06-29T19:00:00Z\",\n                        \"UpstreamSequence\": \"710313341080024595\",\n                        \"SourceFrom\": \"直推流\",\n                        \"MasterFlag\": 0\n                    },\n                    {\n                        \"DomainName\": \"5000.livepush.com\",\n                        \"AppName\": \"gifshow\",\n                        \"PublishTime\": \"2018-06-29T19:00:00Z\",\n                        \"UpstreamSequence\": \"710313341080024599\",\n                        \"SourceFrom\": \"拉流转推(123)\",\n                        \"MasterFlag\": 1\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "DescribeBillBandwidthAndFluxList": [
       {
         "document": "直播播放带宽和流量数据查询。",
@@ -1008,6 +1016,14 @@
         "title": "启用域名"
       }
     ],
+    "EnableOptimalSwitching": [
+      {
+        "document": "对该主备流启用择优调度。",
+        "input": "POST / HTTP/1.1\nHost:live.tencentcloudapi.com\nContent-Type:application/json\nX-TC-Action: EnableOptimalSwitching\n<公共请求参数>\n\n{\n    \"StreamName\": \"abc\",\n    \"EnableSwitch\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
     "ForbidLiveDomain": [
       {
         "document": "",
@@ -1205,6 +1221,14 @@
         "document": "",
         "input": "https://live.tencentcloudapi.com/?Action=StopScreenshotTask\n&TaskId=UZZUVbQ1FSQFlvKxYBxUVGzwcBB00UETZU5QRlNURlhR1FDUVBFUWpCUkbUUBKb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3c140219-cfe9-470e-b241-907877d6fb03\"\n    }\n}",
+        "title": "请求示例"
+      }
+    ],
+    "SwitchBackupStream": [
+      {
+        "document": "对主备流进行切换。",
+        "input": "POST / HTTP/1.1\nHost: live.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchBackupStream\n<公共请求参数>\n\n{\n    \"PushDomainName\": \"abc\",\n    \"AppName\": \"abc\",\n    \"StreamName\": \"abc\",\n    \"UpstreamSequence\": \"843110096313761792\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "请求示例"
       }
     ],

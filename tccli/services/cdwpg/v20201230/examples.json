@@ -24,6 +24,14 @@
         "title": "获取集群状态"
       }
     ],
+    "DescribeInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"SearchTags\": [\n        {\n            \"AllValue\": 0,\n            \"TagKey\": \"test\",\n            \"TagValue\": \"test\"\n        }\n    ],\n    \"SearchInstanceId\": \"test\",\n    \"SearchInstanceName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"Status\": \"xx\",\n                \"InstanceID\": \"xx\",\n                \"InstanceType\": \"xx\",\n                \"InstanceStateInfo\": {\n                    \"FlowName\": \"xx\",\n                    \"FlowMsg\": \"xx\",\n                    \"FlowProgress\": 0,\n                    \"ProcessName\": \"xx\",\n                    \"InstanceState\": \"xx\",\n                    \"FlowCreateTime\": \"xx\",\n                    \"InstanceStateDesc\": \"xx\"\n                },\n                \"StatusDesc\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"ID\": 0\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"ErrorMsg\": \"xx\"\n    }\n}",
+        "title": "查询云原生实例列表"
+      }
+    ],
     "DescribeSimpleInstances": [
       {
         "document": "集群列表",

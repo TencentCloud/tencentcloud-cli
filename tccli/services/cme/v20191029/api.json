@@ -704,48 +704,43 @@
           "member": "Entity",
           "name": "Owner",
           "required": true,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
           "document": "导出的媒体名称，不得超过30个字符。",
-          "example": "无",
+          "example": "素材",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "导出的媒体信息，不得超过50个字符。",
-          "example": "无",
+          "example": "素材",
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "导出的媒体分类路径，长度不能超过15字符。不存在默认创建。",
-          "example": "无",
+          "example": "/素材",
           "member": "string",
           "name": "ClassPath",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "导出的媒体标签，单个标签不得超过10个字符。",
-          "example": "无",
+          "example": "[\"素材\"]",
           "member": "string",
           "name": "TagSet",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -754,8 +749,7 @@
           "member": "ThirdPartyPublishInfo",
           "name": "ThirdPartyPublishInfos",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -962,42 +956,38 @@
         {
           "disabled": false,
           "document": "发布生成的对象存储文件所在的 COS Bucket 名，如 TopRankVideo-125xxx88。",
-          "example": "无",
+          "example": "Video-125xxx88",
           "member": "string",
           "name": "Bucket",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "发布生成的对象存储文件所在的 COS Bucket 所属园区，如 ap-chongqing。",
-          "example": "无",
+          "example": "ap-chongqing",
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "发布生成的视频在 COS 存储的对象键。对象键（ObjectKey）是对象（Object）在存储桶（Bucket）中的唯一标识。",
-          "example": "无",
+          "example": "fadd70539811.mp4",
           "member": "string",
           "name": "VideoKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "发布生成的封面在 COS 存储的对象键。",
-          "example": "无",
+          "example": "fadd70539812.png",
           "member": "string",
           "name": "CoverKey",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3106,7 +3096,7 @@
         {
           "disabled": false,
           "document": "平台 Id，指定访问的平台。关于平台概念，请参见文档 [平台](https://cloud.tencent.com/document/product/1156/43767)。",
-          "example": "test",
+          "example": "1000000009",
           "member": "string",
           "name": "Platform",
           "required": true,
@@ -3177,8 +3167,17 @@
         },
         {
           "disabled": false,
+          "document": "视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。",
+          "example": "无",
+          "member": "VideoExportExtensionArgs",
+          "name": "ExportExtensionArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，轨道数据中使用的媒资该操作者需要拥有使用权限。",
-          "example": "b64e98ad",
+          "example": "9b92a8e7-a5ef-4e28-d72e-4eff571fabf0",
           "member": "string",
           "name": "Operator",
           "required": false,
@@ -3277,6 +3276,15 @@
         },
         {
           "disabled": false,
+          "document": "视频导出扩展参数。可以覆盖导出模板中的参数，灵活的指定导出规格及参数。",
+          "example": "无",
+          "member": "VideoExportExtensionArgs",
+          "name": "ExportExtensionArgs",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
           "document": "操作者。如不填，默认为 `cmeid_system`，表示平台管理员操作，无权限限制。如果指定操作者，则操作者需要有替换媒体及剪辑模板的权限。",
           "example": "60097a8a8ea83d00017b484b",
           "member": "string",
@@ -3296,6 +3304,7 @@
           "example": "1250000000-tfusion-32f87637061242508eb10d6e4ecd0cd6",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5790,22 +5799,20 @@
         {
           "disabled": false,
           "document": "预处理操作的类型，取值范围：\n<li>ImageTextMask：图片文字遮罩。</li>",
-          "example": "无",
+          "example": "ImageTextMask",
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "预处理操作参数。\n当 Type 取值 ImageTextMask 时，参数为要保留的文字。",
-          "example": "无",
+          "example": "[\"文字\"]",
           "member": "string",
           "name": "Args",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5816,12 +5823,11 @@
         {
           "disabled": false,
           "document": "替换的媒体类型，取值有：\n<li>CMEMaterialId：替换的媒体类型为媒体 ID；</li>\n<li>ImageUrl：替换的媒体类型为图片 URL；</li>\n\n注：默认为 CMEMaterialId 。",
-          "example": "无",
+          "example": "ImageUrl",
           "member": "string",
           "name": "MediaType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5830,18 +5836,16 @@
           "member": "string",
           "name": "MaterialId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "媒体 URL。\n当媒体类型取值为 ImageUrl 时有效，\n图片仅支持 jpg、png 格式，且大小不超过 2M 。",
-          "example": "无",
+          "example": "http://cme.vod2.myqcloud.com/123/f0.jpg",
           "member": "string",
           "name": "MediaUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5850,8 +5854,7 @@
           "member": "float",
           "name": "StartTimeOffset",
           "required": false,
-          "type": "float",
-          "value_allowed_null": false
+          "type": "float"
         },
         {
           "disabled": false,
@@ -5860,8 +5863,7 @@
           "member": "MediaPreprocessOperation",
           "name": "PreprocessOperation",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -8023,12 +8025,11 @@
         {
           "disabled": false,
           "document": "替换的文本信息。",
-          "example": "无",
+          "example": "文字",
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -8055,12 +8056,11 @@
         {
           "disabled": false,
           "document": "发布通道  ID。",
-          "example": "无",
+          "example": "9d64a35169404c4a250d",
           "member": "string",
           "name": "ChannelMaterialId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -8069,8 +8069,7 @@
           "member": "PenguinMediaPlatformPublishInfo",
           "name": "PenguinMediaPlatformPublishInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -8079,8 +8078,7 @@
           "member": "WeiboPublishInfo",
           "name": "WeiboPublishInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -8089,8 +8087,7 @@
           "member": "KuaishouPublishInfo",
           "name": "KuaishouPublishInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -8099,8 +8096,7 @@
           "member": "CosPublishInputInfo",
           "name": "CosPublishInfo",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         }
       ],
       "usage": "in"

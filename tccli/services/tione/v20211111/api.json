@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChatCompletion": {
-      "document": "该接口支持与两种类型大模型的聊天。\n1. 与多行业多场景大模型的在线体验聊天\n2. 与自行部署的开源大模型的聊天",
+      "document": "该接口支持与自行部署的大模型的聊天。",
       "input": "ChatCompletionRequest",
       "name": "与大模型聊天",
       "output": "ChatCompletionResponse",
@@ -1399,7 +1399,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "对话的目标模型ID。\n多行业多场景大模型在线体验聊天：tj_llm_clm-v1。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。",
+          "document": "对话的目标模型ID。\n自行部署的开源大模型聊天：部署的模型服务组ID，形如ms-xxyyzz。",
           "example": "无",
           "member": "string",
           "name": "Model",
@@ -10730,7 +10730,7 @@
         },
         {
           "disabled": false,
-          "document": "会话模型版本。\n多行业多场景大模型：填写 tj_llm_clm-v1。\n多行业客服大模型：填写demo_big_model_version_id。\n默认为demo_big_model_version_id，即多行业客服大模型。",
+          "document": "会话模型版本。\n多行业客服大模型：填写demo_big_model_version_id。\n默认为demo_big_model_version_id，即多行业客服大模型。",
           "example": "demo_big_model_version_id",
           "member": "string",
           "name": "ModelVersion",

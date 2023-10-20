@@ -49,6 +49,27 @@
       "output": "CreateResourceConfigResponse",
       "status": "online"
     },
+    "CreateWorkSpace": {
+      "document": "创建工作空间",
+      "input": "CreateWorkSpaceRequest",
+      "name": "创建工作空间",
+      "output": "CreateWorkSpaceResponse",
+      "status": "online"
+    },
+    "DeleteFolders": {
+      "document": "作业列表删除文件夹",
+      "input": "DeleteFoldersRequest",
+      "name": "删除文件夹",
+      "output": "DeleteFoldersResponse",
+      "status": "online"
+    },
+    "DeleteJobConfigs": {
+      "document": "删除作业配置",
+      "input": "DeleteJobConfigsRequest",
+      "name": "删除作业配置",
+      "output": "DeleteJobConfigsResponse",
+      "status": "online"
+    },
     "DeleteJobs": {
       "document": "批量删除作业接口，批量操作数量上限20",
       "input": "DeleteJobsRequest",
@@ -168,11 +189,25 @@
       "output": "FetchSqlGatewayStatementResultResponse",
       "status": "online"
     },
+    "ModifyFolder": {
+      "document": "自定义树状结构页面拖拽文件夹",
+      "input": "ModifyFolderRequest",
+      "name": "拖拽文件夹",
+      "output": "ModifyFolderResponse",
+      "status": "online"
+    },
     "ModifyJob": {
       "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
       "input": "ModifyJobRequest",
       "name": "更新作业",
       "output": "ModifyJobResponse",
+      "status": "online"
+    },
+    "ModifyWorkSpace": {
+      "document": "修改工作空间",
+      "input": "ModifyWorkSpaceRequest",
+      "name": "修改工作空间",
+      "output": "ModifyWorkSpaceResponse",
       "status": "online"
     },
     "RunJobs": {
@@ -1797,6 +1832,142 @@
       ],
       "type": "object"
     },
+    "CreateWorkSpaceRequest": {
+      "document": "CreateWorkSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间名称",
+          "example": "MySpace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间备注",
+          "example": "default0",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWorkSpaceResponse": {
+      "document": "CreateWorkSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFoldersRequest": {
+      "document": "DeleteFolders请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需删除的文件夹唯一ID",
+          "example": "[\"folder-xxxxxxxx\"]",
+          "member": "string",
+          "name": "FolderIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
+          "example": "0",
+          "member": "int64",
+          "name": "FolderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteFoldersResponse": {
+      "document": "DeleteFolders返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobConfigsRequest": {
+      "document": "DeleteJobConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业ID",
+          "example": "cql-ses24dtd",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作业配置版本数组",
+          "example": "[\"1\\n\",\"2\\n\"]",
+          "member": "int64",
+          "name": "JobConfigVersions",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJobConfigsResponse": {
+      "document": "DeleteJobConfigs返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteJobsRequest": {
       "document": "DeleteJobs请求参数结构体",
       "members": [
@@ -3140,12 +3311,109 @@
     },
     "FetchSqlGatewayStatementResultRequest": {
       "document": "FetchSqlGatewayStatementResult请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-lq6dtnk5",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Sql Gateway会话ID",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql的查询id",
+          "example": "f613c399-e1c7-4ab9-a07f-ee08a782b546",
+          "member": "string",
+          "name": "OperationHandleId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "下一条结果的获取url，首次获取执行结果时可以为空，当获取下一批查询结果时需要传递",
+          "example": "/v1/sessions/b523f113-aa32-40cc-9665-5884a1dd480d/operations/f613c399-e1c7-4ab9-a07f-ee08a782b546/result/1",
+          "member": "string",
+          "name": "ResultUri",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "FetchSqlGatewayStatementResultResponse": {
       "document": "FetchSqlGatewayStatementResult返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "返回类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PAYLOAD",
+          "member": "string",
+          "name": "ResultType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否DQL结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsQueryResult",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "ResultKind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "StatementResult",
+          "name": "Results",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下一次请求的uri\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/v1/sessions/1c7a1105-4759-46d4-b35f-3a21f7a7cf8d/operations/a675de79-58c7-44cf-910f-bdae095041bf/result/1",
+          "member": "string",
+          "name": "NextResultUri",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3993,6 +4261,114 @@
       ],
       "usage": "out"
     },
+    "LogicalType": {
+      "document": "SqlGateway返回LogicalType类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VARCHAR",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "NullAble",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2147483647",
+          "member": "int64",
+          "name": "Length",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModifyFolderRequest": {
+      "document": "ModifyFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件夹ID（必填）",
+          "example": "folder-aaaaaaaa",
+          "member": "string",
+          "name": "SourceFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如需拖拽文件夹，需传入目标文件夹ID",
+          "example": "folder-bbbbbbbb",
+          "member": "string",
+          "name": "TargetFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如需修改文件夹名，需传入FolderName字段",
+          "example": "xxxxxxx",
+          "member": "string",
+          "name": "FolderName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型，0是任务文件夹，1是依赖文件夹",
+          "example": "0",
+          "member": "int64",
+          "name": "FolderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "批量移动的作业serial id 列表",
+          "example": "无",
+          "member": "string",
+          "name": "SourceJobIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyFolderResponse": {
+      "document": "ModifyFolder返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyJobRequest": {
       "document": "ModifyJob请求参数结构体",
       "members": [
@@ -4046,6 +4422,51 @@
     },
     "ModifyJobResponse": {
       "document": "ModifyJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkSpaceRequest": {
+      "document": "ModifyWorkSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的工作空间名称",
+          "example": "MySpace",
+          "member": "string",
+          "name": "WorkSpaceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待修改的工作空间备注",
+          "example": "default0",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyWorkSpaceResponse": {
+      "document": "ModifyWorkSpace返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4732,6 +5153,68 @@
       ],
       "usage": "out"
     },
+    "ResultColumn": {
+      "document": "Sql Gateway返回Column类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "result",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本地类型描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogicalType",
+          "name": "LogicalType",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResultData": {
+      "document": "Sql Gateway返回数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "INSERT",
+          "member": "string",
+          "name": "Kind",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[OK]",
+          "member": "string",
+          "name": "Fields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RoleAuth": {
       "document": "角色授权信息",
       "members": [
@@ -4974,12 +5457,70 @@
     },
     "RunSqlGatewayStatementRequest": {
       "document": "RunSqlGatewayStatement请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cluster-lq6dtnk5",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要执行的sql，该sql会被Sql Gateway执行，当前支持的是paimon修改需求，因此主要是DDL语句",
+          "example": "select 1",
+          "member": "string",
+          "name": "Sql",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Sql Gateway会话ID，可不填，如果不填则会自动创建一个会话ID，每个会话ID都有一个存活时间，测试环境为10分钟，线上默认是30分钟",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "RunSqlGatewayStatementResponse": {
       "document": "RunSqlGatewayStatement返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话id，若入参未传，则返回自动创建的会话id，若入参已经传递，则返回值与原传入值一致",
+          "example": "b523f113-aa32-40cc-9665-5884a1dd480d",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回执行id，可以根据该执行id和会话id获取执行结果",
+          "example": "操作ID",
+          "member": "string",
+          "name": "OperationHandleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5306,6 +5847,42 @@
           "example": "无",
           "member": "Property",
           "name": "Properties",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StatementResult": {
+      "document": "Sql Gateway 返回Result结构类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回结果列\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResultColumn",
+          "name": "Columns",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JSON",
+          "member": "string",
+          "name": "RowFormat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResultData",
+          "name": "Data",
           "output_required": false,
           "type": "list",
           "value_allowed_null": true

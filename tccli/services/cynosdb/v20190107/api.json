@@ -8049,8 +8049,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例组ID",
-          "example": "cynosdbpg-ins-jhi2gdi0",
+          "document": "实例组ID。可以通过接口DescribeClusterInstanceGrps获取。",
+          "example": "cynosdbmysql-grp-jhi2gdi0",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -8068,7 +8068,7 @@
           "example": "无",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

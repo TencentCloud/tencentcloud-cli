@@ -446,6 +446,22 @@
         "title": "注册用户"
       }
     ],
+    "SendRoomNormalMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRoomNormalMessage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 352320437,\n    \"FromAccount\": \"2WqeRoOMJKQqnnL1lILRFHpdFla\",\n    \"MsgBody\": [\n        {\n            \"MsgType\": \"TIMTextElem\",\n            \"TextMsgContent\": {\n                \"Text\": \"abc\"\n            },\n            \"FaceMsgContent\": {\n                \"Index\": 1,\n                \"Data\": \"abc\"\n            },\n            \"ImageMsgContent\": {\n                \"UUID\": \"494d1feab\",\n                \"ImageFormat\": 1,\n                \"ImageInfoList\": [\n                    {\n                        \"Type\": 1,\n                        \"Size\": 12033,\n                        \"Width\": 2048,\n                        \"Height\": 800,\n                        \"URL\": \"https://grg-1258699.cos.ap-shanghai.myqcloud.com/room_messages.png\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"CloudCustomData\": \"abcsd\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfbe8b70-f8cf-43c8-bd78-0f8b9c24daa4\"\n    }\n}",
+        "title": "指定用户给房间中发送消息"
+      }
+    ],
+    "SendRoomNotificationMessage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRoomNotificationMessage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 352320437,\n    \"MsgContent\": \"你好\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfbe8b70-f8cf-43c8-bd78-0f8b9c24daa4\"\n    }\n}",
+        "title": "房间中发送群公告"
+      }
+    ],
     "SetAppCustomContent": [
       {
         "document": "设置应用自定义内容",

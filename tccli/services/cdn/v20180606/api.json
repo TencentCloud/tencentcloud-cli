@@ -1299,9 +1299,10 @@
         {
           "disabled": false,
           "document": "用于计算签名的密钥，只允许字母和数字，长度6-32字节。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SecretKey",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1309,9 +1310,10 @@
         {
           "disabled": false,
           "document": "uri串中签名的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SignParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1319,9 +1321,10 @@
         {
           "disabled": false,
           "document": "uri串中时间的字段名，字母，数字或下划线构成，同时必须以字母开头。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TimeParam",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1329,9 +1332,10 @@
         {
           "disabled": false,
           "document": "过期时间，单位秒。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "ExpireTime",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1339,19 +1343,21 @@
         {
           "disabled": false,
           "document": "是否必须提供过期时间参数。",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "ExpireTimeRequired",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Url组成格式，如：${private_key}${schema}${host}${full_uri。",
-          "example": "",
+          "document": "URL 组成格式，如：${private_key}${schema}${host}${full_uri}。",
+          "example": "无",
           "member": "string",
           "name": "Format",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1359,9 +1365,10 @@
         {
           "disabled": false,
           "document": "时间格式，dec，hex分别表示十进制，十六进制。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TimeFormat",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1369,9 +1376,10 @@
         {
           "disabled": false,
           "document": "鉴权失败时返回的状态码。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "FailCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1379,9 +1387,10 @@
         {
           "disabled": false,
           "document": "链接过期时返回的状态码。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "ExpireCode",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -1389,9 +1398,10 @@
         {
           "disabled": false,
           "document": "需要鉴权的url路径列表。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RulePaths",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -1399,9 +1409,10 @@
         {
           "disabled": false,
           "document": "保留字段。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Transformation",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -1922,7 +1933,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "匹配关键字：\nprotocol：HTTP协议\nhttpVersion：HTTP版本\nmethod：请求方法\nip：请求源IP\nipAsn：请求源IP自治域号\nipCountry：请求源IP所在国家\nipArea：请求源IP所在大区\nxForwardFor：请求头X-Forward-For\ndirectory：路径\nindex：首页\npath：文件全路径\nfile：文件扩展名\nparam：请求参数\nreferer：请求头Referer\ncookie：请求头Cookie\nuserAgent：请求头User-Agent\nhead：自定义请求头",
+          "document": "匹配关键字，可取值有：\n<li>protocol：HTTP协议</li>\n<li>httpVersion：HTTP版本</li>\n<li>method：请求方法</li>\n<li>ip：请求源IP</li>\n<li>ipAsn：请求源IP自治域号</li>\n<li>ipCountry：请求源IP所在国家</li>\n<li>ipArea：请求源IP所在大区</li>\n<li>xForwardFor：请求头X-Forwarded-For</li>\n<li>directory：路径</li>\n<li>index：首页</li>\n<li>path：文件全路径</li>\n<li>file：文件扩展名</li>\n<li>param：请求参数</li>\n<li>referer：请求头Referer</li>\n<li>cookie：请求头Cookie</li>\n<li>userAgent：请求头User-Agent</li>\n<li>head：自定义请求头</li>",
           "example": "无",
           "member": "string",
           "name": "MatchKey",
@@ -9303,17 +9314,17 @@
           "example": "test.apk",
           "member": "string",
           "name": "Apk",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "输出目录",
-          "example": "/ext/test.apk",
+          "example": "/ext/",
           "member": "string",
           "name": "DstDir",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9323,7 +9334,7 @@
           "example": "2023-01-10T18:51:44+08:00",
           "member": "datetime_iso",
           "name": "UploadTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9333,17 +9344,17 @@
           "example": "created",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "上传目录",
-          "example": "[\"/src/test.apk\"]",
+          "example": "/src/",
           "member": "string",
           "name": "SrcDir",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9353,7 +9364,7 @@
           "example": "APK 签名不一致",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

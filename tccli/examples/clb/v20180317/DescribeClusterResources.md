@@ -21,7 +21,7 @@ Output:
                 "ClusterId": "tgw-12345678",
                 "Vip": "1.1.1.1",
                 "LoadBalancerId": null,
-                "Idle": true,
+                "Idle": "True",
                 "Isp": "BGP",
                 "ClustersZone": {
                     "MasterZone": [
@@ -37,7 +37,7 @@ Output:
                 "ClusterId": "tgw-12345678",
                 "Vip": "1.1.1.2",
                 "LoadBalancerId": "lb-12345678",
-                "Idle": false,
+                "Idle": "False",
                 "Isp": "BGP",
                 "ClustersZone": {
                     "MasterZone": [

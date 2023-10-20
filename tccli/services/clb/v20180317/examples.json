@@ -24,6 +24,14 @@
         "title": "解绑弹性网卡"
       }
     ],
+    "BatchModifyTargetTag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchModifyTargetTag\n<公共请求参数>\n\n{\n    \"LoadBalancerId\": \"lb-xxxxxxxx\",\n    \"ModifyList\": [\n        {\n            \"ListenerId\": \"lbl-yyyyyyyy\",\n            \"Targets\": [\n                {\n                    \"Port\": 1000,\n                    \"EniIp\": \"1.1.1.1\",\n                    \"Tag\": \"xxxx\"\n                }\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置标签"
+      }
+    ],
     "BatchModifyTargetWeight": [
       {
         "document": "针对负载均衡实例(lb-dx98lwo0)， 将其监听器 lbl-4b5hnc9a 下的转发规则 loc-o8cnyw6c 所绑定的后端服务 ins-19404pl5（端口为110）权重修改为 50，以及将监听器 lbl-20jjtaaw 下的转发规则 loc-8c5pdrb8 所绑定的后端服务 ins-19411tzv（端口为80）权重修改为 30",
@@ -300,7 +308,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: clb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterResources\n<公共请求参数>\n\n{\n    \"Limit\": \"20\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ClusterResourceSet\": [\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.1\",\n                \"LoadBalancerId\": null,\n                \"Idle\": true,\n                \"Isp\": \"BGP\",\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                }\n            },\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.2\",\n                \"LoadBalancerId\": \"lb-12345678\",\n                \"Idle\": false,\n                \"Isp\": \"BGP\",\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"ClusterResourceSet\": [\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.1\",\n                \"LoadBalancerId\": null,\n                \"Idle\": \"True\",\n                \"Isp\": \"BGP\",\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                }\n            },\n            {\n                \"ClusterName\": \"cluster-1\",\n                \"ClusterId\": \"tgw-12345678\",\n                \"Vip\": \"1.1.1.2\",\n                \"LoadBalancerId\": \"lb-12345678\",\n                \"Idle\": \"False\",\n                \"Isp\": \"BGP\",\n                \"ClustersZone\": {\n                    \"MasterZone\": [\n                        \"ap-hongkong-1\"\n                    ],\n                    \"SlaveZone\": [\n                        \"ap-hongkong-2\"\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"49e44bf9-1357-420b-87ba-3c827209af67\"\n    }\n}",
         "title": "查询集群资源列表"
       }
     ],

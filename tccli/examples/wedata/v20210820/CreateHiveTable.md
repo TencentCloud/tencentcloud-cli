@@ -11,7 +11,7 @@ tccli wedata CreateHiveTable --cli-unfold-argument  \
     --Incharge 1 \
     --DatasourceId 1 \
     --Privilege 0 \
-    --DDLSql create table if not exist test_table(id int)
+    --DDLSql Y3JlYXRlIHRhYmxlIHRlc3QxKGlkIGJpZ2ludCkK
 ```
 
 Output: 

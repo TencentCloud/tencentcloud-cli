@@ -74,6 +74,30 @@
         "title": "创建资源配置示例"
       }
     ],
+    "CreateWorkSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWorkSpace\n<公共请求参数>\n\n{\n    \"WorkSpaceName\": \"abc\",\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkSpaceId\": \"space-xxxxx\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "创建项目空间"
+      }
+    ],
+    "DeleteFolders": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DeleteFolders\n<公共请求参数>\n\n{\n    \"FolderIds\": [\n        \"joylyu-test\"\n    ],\n    \"FolderType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "删除文件夹"
+      }
+    ],
+    "DeleteJobConfigs": [
+      {
+        "document": "",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteJobConfigs\n&JobId=cql-ses24dtd\n&JobConfigVersions.0=1\n&JobConfigVersions.1=2\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
+        "title": "删除作业配置样例"
+      }
+    ],
     "DeleteJobs": [
       {
         "document": "",
@@ -211,9 +235,23 @@
     "FetchSqlGatewayStatementResult": [
       {
         "document": "查询Statement执行结果",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchSqlGatewayStatementResult\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: FetchSqlGatewayStatementResult\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"OperationHandleId\": \"abc\",\n    \"ResultUri\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"ResultType\": \"abc\",\n        \"IsQueryResult\": true,\n        \"ResultKind\": \"abc\",\n        \"Results\": {\n            \"Columns\": [\n                {\n                    \"Name\": \"abc\",\n                    \"LogicalType\": {\n                        \"Type\": \"abc\",\n                        \"NullAble\": true,\n                        \"Length\": 0\n                    },\n                    \"Comment\": \"abc\"\n                }\n            ],\n            \"RowFormat\": \"abc\",\n            \"Data\": [\n                {\n                    \"Kind\": \"abc\",\n                    \"Fields\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"NextResultUri\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询Statement执行结果"
+      }
+    ],
+    "ModifyFolder": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyFolder\n<公共请求参数>\n\n{\n    \"SourceFolderId\": \"folder-aaaaaaaa\",\n    \"TargetFolderId\": \"folder-bbbbbbbb\",\n    \"FolderName\": \"\",\n    \"FolderType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "拖拽文件夹"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:ModifyFolder\n<公共请求参数>\n\n{\n    \"SourceFolderId\": \"folder-aaaaaaaa\",\n    \"TargetFolderId\": \"\",\n    \"FolderName\": \"joylyutest\",\n    \"FolderType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
+        "title": "修改文件夹名"
       }
     ],
     "ModifyJob": [
@@ -222,6 +260,14 @@
         "input": "https://oceanus.tencentcloudapi.com/?Action=ModifyJob\n&JobId=cql-6iaginqp\n&Name=test\n&Remark=测试\n&TargetFolderId=folder-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
         "title": "更新作业示例"
+      }
+    ],
+    "ModifyWorkSpace": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWorkSpace\n<公共请求参数>\n\n{\n    \"WorkSpaceId\": \"workspace-xxx\",\n    \"WorkSpaceName\": \"MySpace0\",\n    \"Description\": \"default0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改项目空间"
       }
     ],
     "RunJobs": [
@@ -235,8 +281,8 @@
     "RunSqlGatewayStatement": [
       {
         "document": "执行Statement",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunSqlGatewayStatement\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"SessionId\": \"abc\",\n    \"Sql\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": [\n            \"abc\"\n        ],\n        \"SessionId\": \"abc\",\n        \"OperationHandleId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "执行Statement"
       }
     ],

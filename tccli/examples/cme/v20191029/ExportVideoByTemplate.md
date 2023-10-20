@@ -38,19 +38,20 @@ Input:
 
 ```
 tccli cme ExportVideoByTemplate --cli-unfold-argument  \
-    --Platform test \
+    --Platform 123000111 \
     --TemplateId 60498a50adaf8f000164a07b@prod@12500000 \
     --SlotReplacements.0.Id 1 \
-    --SlotReplacements.0.ReplacementType VIDEO \
+    --SlotReplacements.0.ReplacementType IMAGE \
     --SlotReplacements.0.MediaReplacementInfo.MediaType CMEMaterialId \
-    --SlotReplacements.0.MediaReplacementInfo.MaterialId 5fc4ad7f69ec74000179072345 \
-    --SlotReplacements.0.MediaReplacementInfo.StartTimeOffset 0 \
+    --SlotReplacements.0.MediaReplacementInfo.MaterialId becff2c5e7d77a9e0353 \
     --Definition 10 \
     --ExportDestination CME \
-    --CMEExportInfo.Owner.Type PERSION \
-    --CMEExportInfo.Owner.Id 119993993939390 \
-    --CMEExportInfo.Name 测试视频 \
-    --CMEExportInfo.ClassPath /成片 \
+    --CMEExportInfo.Owner.Type PERSON \
+    --CMEExportInfo.Owner.Id 1a69f09d-1a28-4437-a71a \
+    --CMEExportInfo.Name 模版测试1009 \
+    --CMEExportInfo.ClassPath /媒资 \
+    --ExportExtensionArgs.VideoBitrate 102400 \
+    --ExportExtensionArgs.FrameRate 30 \
     --Operator user_id_9394392053f8405394299d8
 ```
 

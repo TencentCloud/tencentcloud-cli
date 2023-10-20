@@ -1115,7 +1115,7 @@
     "StartCpuExpand": [
       {
         "document": "客户可调用该接口，一次性为实例扩容 CPU 核心数。",
-        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCpuExpand\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartCpuExpand\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-test\",\n    \"Type\": \"manual\",\n    \"ExpandCpu\": 4\n}",
         "output": "{\n    \"Response\": {\n        \"AsyncRequestId\": \"xxxxxxxxxxxxxx-xxxxxxxxxxx\",\n        \"RequestId\": \"xxxxxxxxxxxxxxxxxxxxxxxx\"\n    }\n}",
         "title": "开启弹性扩容"
       }

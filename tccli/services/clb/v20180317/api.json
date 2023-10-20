@@ -21,6 +21,13 @@
       "output": "BatchDeregisterTargetsResponse",
       "status": "online"
     },
+    "BatchModifyTargetTag": {
+      "document": "BatchModifyTargetTag 接口用于批量修改负载均衡监听器绑定的后端机器的标签。批量修改的资源数量上限为500。本接口为同步接口。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。",
+      "input": "BatchModifyTargetTagRequest",
+      "name": "批量修改监听器绑定的后端机器的标签",
+      "output": "BatchModifyTargetTagResponse",
+      "status": "online"
+    },
     "BatchModifyTargetWeight": {
       "document": "BatchModifyTargetWeight 接口用于批量修改负载均衡监听器绑定的后端机器的转发权重。批量修改的资源数量上限为500。本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 DescribeTaskStatus 接口查询本次任务是否成功。<br/>负载均衡的4层和7层监听器支持此接口，传统型负载均衡不支持。\n",
       "input": "BatchModifyTargetWeightRequest",
@@ -36,7 +43,7 @@
       "status": "online"
     },
     "CloneLoadBalancer": {
-      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n实例属性维度限制\n  仅支持克隆按量计费实例，不支持包年包月实例。\n  不支持克隆未关联实例计费项的 CLB。\n  不支持克隆传统型负载均衡实例和高防 CLB。\n  不支持克隆基础网络类型的实例。\n  不支持克隆 IPv6、IPv6 NAT64 版本以及混绑的实例。\n  个性化配置、重定向配置、安全组默认放通开关的配置将不会被克隆，需重新配置。\n  执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n监听器维度限制\n  不支持克隆监听器为 QUIC 类型和端口段的实例。\n  不支持监听器为 TCP_SSL 的内网型负载均衡的实例。\n  不支持克隆七层监听器没有转发规则的实例。\n  当实例的监听器个数超过50个时，不支持克隆。\n后端服务维度限制\n  不支持克隆绑定的后端服务类型为目标组和 SCF 云函数的实例。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，[申请开通](https://console.cloud.tencent.com/workorder/category?level1_id=6&level2_id=163&source=0&data_title=%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%20CLB&step=1)。",
+      "document": "克隆负载均衡实例，根据指定的负载均衡实例，复制出相同规则和绑定关系的负载均衡实例。克隆接口为异步操作，克隆的数据以调用CloneLoadBalancer时为准，如果调用CloneLoadBalancer后克隆CLB发生变化，变化规则不会克隆。\n\n限制说明：\n实例属性维度限制\n  仅支持克隆按量计费实例，不支持包年包月实例。\n  不支持克隆未关联实例计费项的 CLB。\n  不支持克隆传统型负载均衡实例和高防 CLB。\n  不支持克隆基础网络类型的实例。\n  不支持克隆 IPv6、IPv6 NAT64 版本以及混绑的实例。\n  个性化配置、重定向配置、安全组默认放通开关的配置将不会被克隆，需重新配置。\n  执行克隆操作前，请确保实例上没有使用已过期证书，否则会导致克隆失败。\n监听器维度限制\n  不支持克隆监听器为 QUIC 类型和端口段的实例。\n  不支持监听器为 TCP_SSL 的内网型负载均衡的实例。\n  不支持克隆七层监听器没有转发规则的实例。\n  当实例的监听器个数超过50个时，不支持克隆。\n后端服务维度限制\n  不支持克隆绑定的后端服务类型为目标组和 SCF 云函数的实例。\n\n通过接口调用：\nBGP带宽包必须传带宽包id\n独占集群克隆必须传对应的参数，否则按共享型创建\n功能内测中，请提交 [内测申请](https://cloud.tencent.com/apply/p/1akuvsmyn0g)。",
       "input": "CloneLoadBalancerRequest",
       "name": "克隆负载均衡实例",
       "output": "CloneLoadBalancerResponse",
@@ -787,11 +794,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "后端服务的类型，可取：CVM、ENI",
+          "document": "后端服务的类型，可取：CVM、ENI、CCN",
           "example": "CVM",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -801,7 +808,7 @@
           "example": "ins-abcd1234",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -811,7 +818,7 @@
           "example": "80",
           "member": "int64",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -821,7 +828,7 @@
           "example": "10",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -831,7 +838,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "PublicIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -841,7 +848,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "PrivateIpAddresses",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -851,7 +858,7 @@
           "example": "test-cvm",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -861,7 +868,7 @@
           "example": "2021-12-29 14:38:50",
           "member": "string",
           "name": "RegisteredTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -871,7 +878,17 @@
           "example": "eni-1234abcd",
           "member": "string",
           "name": "EniId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -941,6 +958,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTargetTagRequest": {
+      "document": "BatchModifyTargetTag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例 ID。",
+          "example": "lb-dx98lwo0",
+          "member": "string",
+          "name": "LoadBalancerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要批量修改标签的列表。",
+          "example": "无",
+          "member": "RsTagRule",
+          "name": "ModifyList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchModifyTargetTagResponse": {
+      "document": "BatchModifyTargetTag返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -1086,6 +1139,15 @@
           "example": "lbl-4apy****",
           "member": "string",
           "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
           "required": false,
           "type": "string"
         }
@@ -4142,7 +4204,7 @@
         },
         {
           "disabled": false,
-          "document": "查询集群中资源列表条件，详细的过滤条件如下：\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照vip过滤。</li>\n<li> loadblancer-id - String - 是否必填：否 - （过滤条件）按照负载均衡唯一ID过滤。</li>\n<li> idle - String 是否必填：否 - （过滤条件）按照是否闲置过滤，如\"True\",\"False\"。</li>",
+          "document": "查询集群中资源列表条件，详细的过滤条件如下：\n<li> cluster-id - String - 是否必填：否 - （过滤条件）按照 集群 的唯一ID过滤，如 ：\"tgw-12345678\",\"stgw-12345678\",\"vpcgw-12345678\"。</li>\n<li> vip - String - 是否必填：否 - （过滤条件）按照vip过滤。</li>\n<li> loadbalancer-id - String - 是否必填：否 - （过滤条件）按照负载均衡唯一ID过滤。</li>\n<li> idle - String 是否必填：否 - （过滤条件）按照是否闲置过滤，如\"True\",\"False\"。</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4161,7 +4223,7 @@
           "example": "无",
           "member": "ClusterResource",
           "name": "ClusterResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4171,7 +4233,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9781,6 +9843,48 @@
       ],
       "usage": "out"
     },
+    "RsTagRule": {
+      "document": "修改节点标签的数据类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡监听器 ID。",
+          "example": "lis-cuxw****",
+          "member": "string",
+          "name": "ListenerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要修改标签的后端机器列表。",
+          "example": "无",
+          "member": "Target",
+          "name": "Targets",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "转发规则的ID，七层规则时需要此参数，4层规则不需要。",
+          "example": "loc-o8cn****",
+          "member": "string",
+          "name": "LocationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "后端服务修改后的标签。此参数的优先级低于前述[Target](https://cloud.tencent.com/document/api/214/30694#Target)中的Tag参数，即最终的标签以Target中的Tag参数值为准，仅当Target中的Weight参数为空时，才以RsTagRule中的Tag参数为准。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "RsWeightRule": {
       "document": "修改节点权重的数据类型",
       "members": [
@@ -10740,6 +10844,17 @@
           "member": "string",
           "name": "EniIp",
           "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

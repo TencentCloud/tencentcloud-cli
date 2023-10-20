@@ -462,11 +462,25 @@
       "output": "DescribeRocketMQClustersResponse",
       "status": "online"
     },
+    "DescribeRocketMQConsumerConnections": {
+      "document": "获取指定消费组下当前客户端的连接情况",
+      "input": "DescribeRocketMQConsumerConnectionsRequest",
+      "name": "获取指定消费组下当前客户端的连接情况",
+      "output": "DescribeRocketMQConsumerConnectionsResponse",
+      "status": "online"
+    },
     "DescribeRocketMQGroups": {
       "document": "获取RocketMQ消费组列表",
       "input": "DescribeRocketMQGroupsRequest",
       "name": "获取RocketMQ消费组列表",
       "output": "DescribeRocketMQGroupsResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQMigratingTopicList": {
+      "document": "查询Topic迁移状态列表，源集群和目标集群客户端数量信息需要配合DescribeRocketMQSmoothMigrationTaskTopicInsNum接口查询",
+      "input": "DescribeRocketMQMigratingTopicListRequest",
+      "name": "平滑迁移：查询Topic迁移状态列表",
+      "output": "DescribeRocketMQMigratingTopicListResponse",
       "status": "online"
     },
     "DescribeRocketMQMsg": {
@@ -495,6 +509,34 @@
       "input": "DescribeRocketMQPublicAccessPointRequest",
       "name": "查询RocketMQ实例公网接入点信息",
       "output": "DescribeRocketMQPublicAccessPointResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQSmoothMigrationTask": {
+      "document": "用于获取RocketMQ平滑迁移任务详情",
+      "input": "DescribeRocketMQSmoothMigrationTaskRequest",
+      "name": "获取RocketMQ平滑迁移任务详情",
+      "output": "DescribeRocketMQSmoothMigrationTaskResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQSmoothMigrationTaskList": {
+      "document": "用于查询RocketMQ平滑迁移任务列表",
+      "input": "DescribeRocketMQSmoothMigrationTaskListRequest",
+      "name": "获取RocketMQ平滑迁移任务列表",
+      "output": "DescribeRocketMQSmoothMigrationTaskListResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQSourceClusterGroupList": {
+      "document": "平滑迁移过程获取源集群group列表接口",
+      "input": "DescribeRocketMQSourceClusterGroupListRequest",
+      "name": "平滑迁移：获取源集群的group列表",
+      "output": "DescribeRocketMQSourceClusterGroupListResponse",
+      "status": "online"
+    },
+    "DescribeRocketMQSourceClusterTopicList": {
+      "document": "平滑迁移过程获取源集群topic列表接口",
+      "input": "DescribeRocketMQSourceClusterTopicListRequest",
+      "name": "平滑迁移：获取源集群的topic列表",
+      "output": "DescribeRocketMQSourceClusterTopicListResponse",
       "status": "online"
     },
     "DescribeRocketMQTopicMsgs": {
@@ -544,6 +586,20 @@
       "input": "DescribeTopicsRequest",
       "name": "查询主题列表",
       "output": "DescribeTopicsResponse",
+      "status": "online"
+    },
+    "ImportRocketMQConsumerGroups": {
+      "document": "输入迁移任务id和要导入的Group，导入后台",
+      "input": "ImportRocketMQConsumerGroupsRequest",
+      "name": "平滑迁移：导入消费者组列表",
+      "output": "ImportRocketMQConsumerGroupsResponse",
+      "status": "online"
+    },
+    "ImportRocketMQTopics": {
+      "document": "导入topic列表",
+      "input": "ImportRocketMQTopicsRequest",
+      "name": "平滑迁移：导入topic列表",
+      "output": "ImportRocketMQTopicsResponse",
       "status": "online"
     },
     "ModifyAMQPCluster": {
@@ -6807,6 +6863,117 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQConsumerConnectionsRequest": {
+      "document": "DescribeRocketMQConsumerConnections请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组ID",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "对查询结果排序，此为排序字段，目前支持Accumulative（消息堆积量）",
+          "example": "Accumulative",
+          "member": "string",
+          "name": "SortedBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果排序规则，ASC为升序，DESC为降序",
+          "example": "ASC",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQConsumerConnectionsResponse": {
+      "document": "DescribeRocketMQConsumerConnections返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数目",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在线消费者信息",
+          "example": "无",
+          "member": "RocketMQConsumerConnection",
+          "name": "Connections",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQGroup",
+          "name": "GroupDetail",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQGroupsRequest": {
       "document": "DescribeRocketMQGroups请求参数结构体",
       "members": [
@@ -6921,6 +7088,80 @@
           "example": "无",
           "member": "RocketMQGroup",
           "name": "Groups",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQMigratingTopicListRequest": {
+      "document": "DescribeRocketMQMigratingTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤器，支持topicname、MigrationStatus查询",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQMigratingTopicListResponse": {
+      "document": "DescribeRocketMQMigratingTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "迁移topic列表",
+          "example": "无",
+          "member": "MigrateTopic",
+          "name": "MigrateTopics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7311,6 +7552,396 @@
           "required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSmoothMigrationTaskListRequest": {
+      "document": "DescribeRocketMQSmoothMigrationTaskList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询起始偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询最大数量",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤器，\n支持的字段如下\nTaskStatus, 支持多选\nConnectionType，支持多选\nClusterId，精确搜索\nTaskName，支持模糊搜索",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSmoothMigrationTaskListResponse": {
+      "document": "DescribeRocketMQSmoothMigrationTaskList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务总数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务列表",
+          "example": "无",
+          "member": "RocketMQSmoothMigrationTaskItem",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSmoothMigrationTaskRequest": {
+      "document": "DescribeRocketMQSmoothMigrationTask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSmoothMigrationTaskResponse": {
+      "document": "DescribeRocketMQSmoothMigrationTask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目标集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源集群名称",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络连接类型，\nPUBLIC 公网\nVPC 私有网络\nOTHER 其它",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源集群NameServer地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterNameServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群所在私有网络ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群所在子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启ACL",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableACL",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源集群AccessKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元集群SecretKey\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置源集群时发生的错误\nTIMEOUT 连接超时，\nSERVER_ERROR 服务错误，\nINTERNAL_ERROR 内部错误，\nCONNECT_NAMESERVER_ERROR 连接nameserver错误\nCONNECT_BROKER_ERROR 连接broker错误\nACL_WRONG ACL信息不正确\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskError",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态\nConfiguration 迁移配置\nSourceConnecting 连接源集群中\nSourceConnectionFailure 连接源集群失败\nMetaDataImport 元数据导入\nEndpointSetup 切换接入点\nServiceMigration 切流中\nCompleted 已完成\nCancelled 已取消",
+          "example": "无",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQTopicDistribution",
+          "name": "TopicTypeDistribution",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题迁移进度分布情况\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQMigrationTopicDistribution",
+          "name": "TopicStageDistribution",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSourceClusterGroupListRequest": {
+      "document": "DescribeRocketMQSourceClusterGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤器，支持字段groupName，imported",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSourceClusterGroupListResponse": {
+      "document": "DescribeRocketMQSourceClusterGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "group列表",
+          "example": "无",
+          "member": "RocketMQGroupConfigOutput",
+          "name": "Groups",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSourceClusterTopicListRequest": {
+      "document": "DescribeRocketMQSourceClusterTopicList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "迁移任务名",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询过滤器，支持字段如下\nTopicName,\nType，Imported",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQSourceClusterTopicListResponse": {
+      "document": "DescribeRocketMQSourceClusterTopicList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "topic层列表",
+          "example": "无",
+          "member": "RocketMQTopicConfigOutput",
+          "name": "Topics",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8285,6 +8916,78 @@
       ],
       "usage": "in"
     },
+    "ImportRocketMQConsumerGroupsRequest": {
+      "document": "ImportRocketMQConsumerGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入topic",
+          "example": "无",
+          "member": "RocketMQGroupConfig",
+          "name": "Groups",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportRocketMQConsumerGroupsResponse": {
+      "document": "ImportRocketMQConsumerGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportRocketMQTopicsRequest": {
+      "document": "ImportRocketMQTopics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "导入topic",
+          "example": "无",
+          "member": "RocketMQTopicConfig",
+          "name": "Topics",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportRocketMQTopicsResponse": {
+      "document": "ImportRocketMQTopics返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceNodeDistribution": {
       "document": "实例节点分布信息",
       "members": [
@@ -8542,6 +9245,62 @@
           "name": "PublicAccessEnabled",
           "required": true,
           "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "MigrateTopic": {
+      "document": "迁移topic列表数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "topic名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "AAA",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "迁移状态\nS_RW_D_NA 源集群读写\nS_RW_D_R 源集群读写目标集群读\nS_RW_D_RW 源集群读写目标集群读写\nS_R_D_RW 源集群读目标集群读写\nS_NA_D_RW 目标集群读写\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "S_RW_D_NA",
+          "member": "string",
+          "name": "MigrationStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否完成健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "HealthCheckPassed",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上次健康检查返回的错误信息，仅在HealthCheckPassed为false时有效。\nNotChecked 未执行检查，\nUnknown 未知错误,\nTopicNotImported 主题未导入,\n TopicNotExistsInSourceCluster  主题在源集群中不存在,\n    TopicNotExistsInTargetCluster 主题在目标集群中不存在,\n    ConsumerConnectedOnTarget 目标集群上存在消费者连接,\n    SourceTopicHasNewMessagesIn5Minutes 源集群主题前5分钟内有新消息写入,\nTargetTopicHasNewMessagesIn5Minutes 目标集群主题前5分钟内有新消息写入,\n    SourceTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入,\nTargetTopicHasNoMessagesIn5Minutes 源集群前5分钟内没有新消息写入,\n    ConsumerGroupCountNotMatch 订阅组数量不一致,\n    SourceTopicHasUnconsumedMessages 源集群主题存在未消费消息,\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HealthCheckError",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -12350,6 +13109,62 @@
       ],
       "usage": "out"
     },
+    "RocketMQConsumerConnection": {
+      "document": "在线消费者情况",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费者实例ID",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "ClientId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者实例的地址和端口",
+          "example": "192.168.0.1:5555",
+          "member": "string",
+          "name": "ClientAddr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者应用的语言版本",
+          "example": "JAVA",
+          "member": "string",
+          "name": "Language",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息堆积量",
+          "example": "100",
+          "member": "int64",
+          "name": "Accumulative",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端版本",
+          "example": "4.80",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQGroup": {
       "document": "RocketMQ消费组信息",
       "members": [
@@ -12501,6 +13316,112 @@
           "name": "RetryMaxTimes",
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQGroupConfig": {
+      "document": "RocketMQ消费组配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启广播消费",
+          "example": "false",
+          "member": "bool",
+          "name": "ConsumeBroadcastEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费",
+          "example": "false",
+          "member": "bool",
+          "name": "ConsumeEnable",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "协议类型，支持以下枚举值\nTCP;\nHTTP;",
+          "example": "TCP",
+          "member": "string",
+          "name": "ConsumerGroupType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RocketMQGroupConfigOutput": {
+      "document": "RocketMQ消费组配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "bool",
+          "name": "Imported",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "remark\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -12678,6 +13599,32 @@
       ],
       "usage": "out"
     },
+    "RocketMQMigrationTopicDistribution": {
+      "document": "迁移主题的阶段分布",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移主题阶段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Stage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RocketMQMsgLog": {
       "document": "rocketmq消息日志",
       "members": [
@@ -12834,6 +13781,82 @@
           "member": "string",
           "name": "InternalEndpoint",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQSmoothMigrationTaskItem": {
+      "document": "RocketMQ平滑迁移任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络连接类型，\nPUBLIC 公网\nVPC 私有网络\nOTHER 其他\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConnectionType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源集群NameServer地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SourceNameServer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务状态\nConfiguration 迁移配置\nSourceConnecting 连接源集群中\nMetaDataImport 元数据导入\nEndpointSetup 切换接入点\nServiceMigration 切流中\nCompleted 已完成\nCancelled 已取消\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -13087,6 +14110,123 @@
           "name": "SubscriptionData",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQTopicConfig": {
+      "document": "RocketMQ主题配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题类型：\nNormal，普通\nPartitionedOrder, 分区顺序\nTransaction，事务消息\nDelayScheduled，延迟/定时消息",
+          "example": "Normal",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分区个数",
+          "example": "1",
+          "member": "int64",
+          "name": "Partitions",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备注信息",
+          "example": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "RocketMQTopicConfigOutput": {
+      "document": "RocketMQ主题配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题类型：\nNormal，普通\nGlobalOrder， 全局顺序\nPartitionedOrder, 分区顺序\nTransaction，事务消息\nDelayScheduled，延迟/定时消息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Partitions",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "备注信息",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否导入\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "bool",
+          "name": "Imported",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

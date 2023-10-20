@@ -5,12 +5,21 @@
 Input: 
 
 ```
-tccli oceanus RunSqlGatewayStatement --cli-unfold-argument ```
+tccli oceanus RunSqlGatewayStatement --cli-unfold-argument  \
+    --ClusterId abc \
+    --SessionId abc \
+    --Sql abc
+```
 
 Output: 
 ```
 {
     "Response": {
+        "ErrorMessage": [
+            "abc"
+        ],
+        "SessionId": "abc",
+        "OperationHandleId": "abc",
         "RequestId": "abc"
     }
 }

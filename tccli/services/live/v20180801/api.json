@@ -336,6 +336,13 @@
       "output": "DescribeAreaBillBandwidthAndFluxListResponse",
       "status": "online"
     },
+    "DescribeBackupStreamList": {
+      "document": "返回正在直播中的流列表。适用于推流成功后查询在线流信息。\n\n注意：\n1. 该接口仅提供辅助查询在线流列表功能，业务重要场景不可强依赖该接口。\n2. 该接口仅适用于流数少于2万路的情况，对于流数较大用户请联系售后。",
+      "input": "DescribeBackupStreamListRequest",
+      "name": "查询直播中的主备流",
+      "output": "DescribeBackupStreamListResponse",
+      "status": "online"
+    },
     "DescribeBillBandwidthAndFluxList": {
       "document": "直播播放带宽和流量数据查询。",
       "input": "DescribeBillBandwidthAndFluxListRequest",
@@ -861,6 +868,13 @@
       "output": "EnableLiveDomainResponse",
       "status": "online"
     },
+    "EnableOptimalSwitching": {
+      "document": "启用择优调度。\n注意：流维度的择优调度，当主备流结束后自动失效。",
+      "input": "EnableOptimalSwitchingRequest",
+      "name": "启用择优调度",
+      "output": "EnableOptimalSwitchingResponse",
+      "status": "online"
+    },
     "ForbidLiveDomain": {
       "document": "停止使用某个直播域名。",
       "input": "ForbidLiveDomainRequest",
@@ -1034,6 +1048,13 @@
       "input": "StopScreenshotTaskRequest",
       "name": "终止截图任务",
       "output": "StopScreenshotTaskResponse",
+      "status": "online"
+    },
+    "SwitchBackupStream": {
+      "document": "调用该接口实现切换当前播放所使用的主备流。",
+      "input": "SwitchBackupStreamRequest",
+      "name": "直播备用流切换",
+      "output": "SwitchBackupStreamResponse",
       "status": "online"
     },
     "UnBindLiveDomainCert": {
@@ -1357,6 +1378,118 @@
         }
       ],
       "type": "object"
+    },
+    "BackupStreamDetailData": {
+      "document": "主备流详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流域名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5000.livepush.com",
+          "member": "string",
+          "name": "DomainName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流路径。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " UTC 格式，例如：2018-06-29T19:00:00Z。\n注意：和北京时间相差8小时。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2018-06-29T19:00:00Z",
+          "member": "string",
+          "name": "PublishTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流唯一标识。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "710313341080024599",
+          "member": "string",
+          "name": "UpstreamSequence",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流来源。示例：\n直推流；\n拉流转推(1234)；\n注意：拉流转推来源括号中为拉流转推的任务 \n ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "直推流",
+          "member": "string",
+          "name": "SourceFrom",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主备标识。\n当前流为主流：1，\n当前流为备流: 0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MasterFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BackupStreamGroupInfo": {
+      "document": "主备流分组信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test1",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主备流信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupStreamDetailData",
+          "name": "BackupList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否对该流开启了择优调度。\n0 - 未开启。\n1 - 已开启。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "OptimalEnable",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名分组的分组名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "groupname",
+          "member": "string",
+          "name": "HostGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "BandwidthInfo": {
       "document": "带宽信息",
@@ -5266,6 +5399,42 @@
           "required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStreamListRequest": {
+      "document": "DescribeBackupStreamList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流名称，用于精确查询。",
+          "example": "mystream",
+          "member": "string",
+          "name": "StreamName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStreamListResponse": {
+      "document": "DescribeBackupStreamList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主备流分组信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BackupStreamGroupInfo",
+          "name": "StreamInfoList",
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10801,6 +10970,51 @@
       ],
       "type": "object"
     },
+    "EnableOptimalSwitchingRequest": {
+      "document": "EnableOptimalSwitching请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "针对该流 ID 启用择优调度。",
+          "example": "mystream",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "启用开关，默认为启用。\n0 - 禁用。\n1 - 启用。",
+          "example": "1",
+          "member": "int64",
+          "name": "EnableSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要启用自动择优的流所属的域名分组名称。",
+          "example": "groupname",
+          "member": "string",
+          "name": "HostGroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnableOptimalSwitchingResponse": {
+      "document": "EnableOptimalSwitching返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "FlvSpecialParam": {
       "document": "flv格式特殊配置",
       "members": [
@@ -15911,6 +16125,60 @@
         }
       ],
       "usage": "out"
+    },
+    "SwitchBackupStreamRequest": {
+      "document": "SwitchBackupStream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "推流域名。",
+          "example": "5000.livepush.com",
+          "member": "string",
+          "name": "PushDomainName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "live",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流名称。",
+          "example": "test",
+          "member": "string",
+          "name": "StreamName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询接口获取到该流所有在推的上行 Sequence。指定要切到的目标上行 Sequence。",
+          "example": "843110096313761792",
+          "member": "string",
+          "name": "UpstreamSequence",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchBackupStreamResponse": {
+      "document": "SwitchBackupStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TaskStatusInfo": {
       "document": "直播拉流任务状态信息。",

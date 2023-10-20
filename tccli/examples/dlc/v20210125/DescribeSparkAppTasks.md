@@ -52,7 +52,28 @@ Output:
             "DriverSize": "abc",
             "ExecutorSize": "abc",
             "ExecutorNums": 1,
-            "ExecutorMaxNumbers": 1
+            "ExecutorMaxNumbers": 1,
+            "CommonMetrics": {
+                "CreateTaskTime": 0,
+                "ProcessTime": 0,
+                "QueueTime": 0,
+                "ExecutionTime": 0,
+                "IsResultCacheHit": true,
+                "MatchedMVBytes": 0,
+                "MatchedMVs": "abc",
+                "AffectedBytes": "abc",
+                "AffectedRows": 0,
+                "ProcessedBytes": 0,
+                "ProcessedRows": 0
+            },
+            "SparkMonitorMetrics": {
+                "ShuffleWriteBytesCos": 0,
+                "ShuffleWriteBytesTotal": 0
+            },
+            "PrestoMonitorMetrics": {
+                "LocalCacheHitRate": 0,
+                "FragmentCacheHitRate": 0
+            }
         },
         "TotalCount": 0,
         "SparkAppTasks": [
@@ -93,7 +114,28 @@ Output:
                 "DriverSize": "abc",
                 "ExecutorSize": "abc",
                 "ExecutorNums": 1,
-                "ExecutorMaxNumbers": 1
+                "ExecutorMaxNumbers": 1,
+                "CommonMetrics": {
+                    "CreateTaskTime": 0,
+                    "ProcessTime": 0,
+                    "QueueTime": 0,
+                    "ExecutionTime": 0,
+                    "IsResultCacheHit": true,
+                    "MatchedMVBytes": 0,
+                    "MatchedMVs": "abc",
+                    "AffectedBytes": "abc",
+                    "AffectedRows": 0,
+                    "ProcessedBytes": 0,
+                    "ProcessedRows": 0
+                },
+                "SparkMonitorMetrics": {
+                    "ShuffleWriteBytesCos": 0,
+                    "ShuffleWriteBytesTotal": 0
+                },
+                "PrestoMonitorMetrics": {
+                    "LocalCacheHitRate": 0,
+                    "FragmentCacheHitRate": 0
+                }
             }
         ],
         "RequestId": "abc"

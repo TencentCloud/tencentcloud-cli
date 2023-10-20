@@ -45,7 +45,7 @@
     "CreateAlarmPolicy": {
       "document": "创建告警策略",
       "input": "CreateAlarmPolicyRequest",
-      "name": "创建告警策略",
+      "name": "创建云监控告警策略",
       "output": "CreateAlarmPolicyResponse",
       "status": "online"
     },
@@ -3192,6 +3192,7 @@
           "example": "policy-hi498gw3h2",
           "member": "string",
           "name": "PolicyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3201,6 +3202,7 @@
           "example": "1234556",
           "member": "string",
           "name": "OriginId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4613,7 +4615,7 @@
         {
           "disabled": false,
           "document": "通知模板与策略绑定关系",
-          "example": "无",
+          "example": "[{\"NoticeId\":\"notice-8ixu28js\",\"PolicyIds\":[\"policy-sdsdsd\"]}]",
           "member": "NoticeBindPolicys",
           "name": "NoticeBindPolicys",
           "required": false,
@@ -14414,7 +14416,7 @@
         {
           "disabled": false,
           "document": "告警策略触发任务列表，空数据代表解绑",
-          "example": "无",
+          "example": "         {             \"Type\": \"AS\",             \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\"         }     ]",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,

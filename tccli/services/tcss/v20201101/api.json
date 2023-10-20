@@ -32882,7 +32882,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "全部同步",
+          "document": "全部同步，俩参数必选一个 All优先",
           "example": "无",
           "member": "bool",
           "name": "All",
@@ -32891,7 +32891,7 @@
         },
         {
           "disabled": false,
-          "document": "要同步的主机列表 两个参数必选一个 All优先",
+          "document": "要同步的主机列表uuid ，俩参数必选一个 All优先",
           "example": "无",
           "member": "string",
           "name": "Hosts",

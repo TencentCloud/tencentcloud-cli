@@ -169,7 +169,7 @@
       "status": "online"
     },
     "CreateOrganizationInfoChangeUrl": {
-      "document": "此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。",
+      "document": "此接口（CreateOrganizationInfoChangeUrl）用于创建企业信息变更链接，支持创建企业超管变更链接或企业基础信息变更链接，通过入参ChangeType指定。\n\n\n<h3 id=\"1-企业超管变更\">1. 企业超管变更</h3>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h3 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h3>\n\n<h4 id=\"可以变动\">可以变动</h4>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h4 id=\"不可变动\">不可变动</h4>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章和合同专用章,  然后用新企业名称生成新的机构公章 和合同专用章,  而法人章, 财务专用章和人事专用章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>",
       "input": "CreateOrganizationInfoChangeUrlRequest",
       "name": "创建企业信息变更链接",
       "output": "CreateOrganizationInfoChangeUrlResponse",
@@ -204,7 +204,7 @@
       "status": "online"
     },
     "CreateSchemeUrl": {
-      "document": "获取跳转至腾讯电子签小程序的签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n注：\n`1. 如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署`\n`2. 签署链接的有效期为90天，超过有效期链接不可用`\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "获取跳转至腾讯电子签小程序的签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n注：\n`1. 如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署`\n`2. 签署链接的有效期为90天，超过有效期链接不可用`\n`3. 如果需跳转详情页（即PathType值为1）进行填写或签署合同，需指定签署方信息：姓名、手机号码、企业名称等，才能生成正确的跳转链接`\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateSchemeUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的签署链接",
       "output": "CreateSchemeUrlResponse",
@@ -812,6 +812,15 @@
           "name": "FillType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "签署人阅读合同限制参数\n <br/>取值：\n<ul>\n<li> LimitReadTimeAndBottom，阅读合同必须限制阅读时长并且必须阅读到底</li>\n<li> LimitReadTime，阅读合同仅限制阅读时长</li>\n<li> LimitBottom，阅读合同仅限制必须阅读到底</li>\n<li> NoReadTimeAndBottom，阅读合同不限制阅读时长且不限制阅读到底（白名单功能，请联系客户经理开白使用）</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "FlowReadLimit",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -10746,6 +10755,16 @@
           "member": "string",
           "name": "VerifySerialNo",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同文件MD5哈希值",
+          "example": "C39BBA405153FB9A0705BEF095351CBD",
+          "member": "string",
+          "name": "PdfResourceMd5",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

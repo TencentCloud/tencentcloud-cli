@@ -23,6 +23,8 @@ Output:
                     "StatementId": "ksiked7-ekd4-4e5e-993e-e5db64fa21c1",
                     "TaskId": "d301fsdd4-9a7e-4f64-a3dj-f38507c697dj",
                     "State": "available",
+                    "Code": "select 1",
+                    "BatchId": "eiosldd7-ekd4-4e5e-993e-e5db64fa21c1",
                     "OutPut": {
                         "ExecutionCount": 0,
                         "Data": [
@@ -38,12 +40,12 @@ Output:
                             "testErrorMessage"
                         ],
                         "SQLResult": "result"
-                    },
-                    "BatchId": "eiosldd7-ekd4-4e5e-993e-e5db64fa21c1"
+                    }
                 }
             ],
             "IsAvailable": true,
-            "SessionId": "ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1"
+            "SessionId": "ksjeldd7-ekd4-4e5e-993e-e5db64fa21c1",
+            "BatchId": "eiosldd7-ekd4-4e5e-993e-e5db64fa21c1"
         },
         "RequestId": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1"
     }

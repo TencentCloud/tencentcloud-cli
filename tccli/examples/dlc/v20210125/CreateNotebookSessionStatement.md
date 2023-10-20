@@ -16,18 +16,17 @@ Output:
 {
     "Response": {
         "NotebookSessionStatement": {
-            "Started": 1662635695652,
             "Completed": 1662635695652,
-            "State": "running",
+            "Started": 1662635695652,
+            "Progress": 0,
             "StatementId": "d3018ad4-9a7e-4f64-a3dj-f38507c697dj",
-            "TaskId": "d301fsdd4-9a7e-4f64-a3dj-f38507c697dj",
-            "Progress": 100,
+            "State": "running",
             "OutPut": {
                 "ExecutionCount": 1,
                 "Data": [
                     {
-                        "Value": "value",
-                        "Key": "key"
+                        "Key": "key",
+                        "Value": "value"
                     }
                 ],
                 "Status": "ok",
@@ -36,8 +35,11 @@ Output:
                 "ErrorMessage": [
                     "Error"
                 ],
-                "SQLResult": "result"
-            }
+                "SQLResult": "cosn://"
+            },
+            "BatchId": "d301s2dd4-9a7e-4f64-a3dj-f38507c697dj",
+            "Code": "select 1",
+            "TaskId": "d301fsdd4-9a7e-4f64-a3dj-f38507c697dj"
         },
         "RequestId": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1"
     }

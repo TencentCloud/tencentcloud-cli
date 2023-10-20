@@ -455,6 +455,13 @@
       "output": "DescribeSessionResponse",
       "status": "online"
     },
+    "DescribeSpartaProtectionInfo": {
+      "document": "waf斯巴达-获取防护域名信息",
+      "input": "DescribeSpartaProtectionInfoRequest",
+      "name": "waf斯巴达-获取防护域名信息",
+      "output": "DescribeSpartaProtectionInfoResponse",
+      "status": "online"
+    },
     "DescribeTlsVersion": {
       "document": "查询用户TLS版本",
       "input": "DescribeTlsVersionRequest",
@@ -488,6 +495,13 @@
       "input": "DescribeUserDomainInfoRequest",
       "name": "查询saas和clb的域名信息",
       "output": "DescribeUserDomainInfoResponse",
+      "status": "online"
+    },
+    "DescribeUserLevel": {
+      "document": "获取用户防护规则等级",
+      "input": "DescribeUserLevelRequest",
+      "name": "获取用户防护规则等级",
+      "output": "DescribeUserLevelResponse",
       "status": "online"
     },
     "DescribeUserSignatureRule": {
@@ -530,6 +544,13 @@
       "input": "DescribeWafThreatenIntelligenceRequest",
       "name": "描述WAF威胁情报封禁模块配置详情",
       "output": "DescribeWafThreatenIntelligenceResponse",
+      "status": "online"
+    },
+    "DescribeWebshellStatus": {
+      "document": "获取域名的webshell状态",
+      "input": "DescribeWebshellStatusRequest",
+      "name": "获取域名webshell状态",
+      "output": "DescribeWebshellStatusResponse",
       "status": "online"
     },
     "FreshAntiFakeUrl": {
@@ -3245,6 +3266,52 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ClbWafRegionItem": {
+      "document": "Clb-waf地域信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"gz\"",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域中文说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"广州\"",
+          "member": "string",
+          "name": "Text",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域英文全拼\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“1”",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7484,6 +7551,311 @@
       ],
       "type": "object"
     },
+    "DescribeSpartaProtectionInfoRequest": {
+      "document": "DescribeSpartaProtectionInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "clb-waf",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例",
+          "example": "aaaaa",
+          "member": "string",
+          "name": "InstanceID",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpartaProtectionInfoResponse": {
+      "document": "DescribeSpartaProtectionInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "2334",
+          "member": "string",
+          "name": "DomainId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cname取值",
+          "example": "sdfsfsdfsdf",
+          "member": "string",
+          "name": "Cname",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "2",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源IP地址列表",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SrcList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书类型",
+          "example": "2",
+          "member": "string",
+          "name": "CertType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证书",
+          "example": "sdfsfsdfsdf",
+          "member": "string",
+          "name": "Cert",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有密钥",
+          "example": "sdfsdfsdfs",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "ssl的id",
+          "example": "123",
+          "member": "string",
+          "name": "Sslid",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是cdn",
+          "example": "1",
+          "member": "string",
+          "name": "IsCdn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "灰度区域列表",
+          "example": "gz",
+          "member": "string",
+          "name": "GrayAreas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎",
+          "example": "10",
+          "member": "string",
+          "name": "Engine",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS重写",
+          "example": "1",
+          "member": "string",
+          "name": "HttpsRewrite",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "upstreamType取值",
+          "example": "2",
+          "member": "string",
+          "name": "UpstreamType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "upstreamDomain取值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "UpstreamDomain",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "upstreamScheme取值",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "UpstreamScheme",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否是HTTP2",
+          "example": "2",
+          "member": "string",
+          "name": "IsHttp2",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否含有websocket",
+          "example": "1",
+          "member": "string",
+          "name": "IsWebsocket",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "loadBalance信息",
+          "example": "1",
+          "member": "string",
+          "name": "LoadBalance",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "httpsUpstreamPort取值",
+          "example": "80",
+          "member": "string",
+          "name": "HttpsUpstreamPort",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "port信息",
+          "example": "80",
+          "member": "PortItem",
+          "name": "Ports",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否灰度",
+          "example": "1",
+          "member": "string",
+          "name": "IsGray",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模式",
+          "example": "1",
+          "member": "string",
+          "name": "Mode",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防御等级,100,200,300",
+          "example": "4",
+          "member": "string",
+          "name": "Level",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "与源站是否保持长连接",
+          "example": "1",
+          "member": "string",
+          "name": "IsKeepAlive",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：BGP 1：Anycast\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Anycast",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTlsVersionRequest": {
       "document": "DescribeTlsVersion请求参数结构体",
       "members": [],
@@ -7640,6 +8012,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "包含详细属性的地域信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ClbWafRegionItem",
+          "name": "RichDatas",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -7664,6 +8046,43 @@
           "name": "UsersInfo",
           "required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserLevelRequest": {
+      "document": "DescribeUserLevel请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "xx.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserLevelResponse": {
+      "document": "DescribeUserLevel返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "300:正常 400:严格",
+          "example": "300",
+          "member": "uint64",
+          "name": "Level",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7976,6 +8395,51 @@
           "name": "WafThreatenIntelligenceDetails",
           "required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebshellStatusRequest": {
+      "document": "DescribeWebshellStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWebshellStatusResponse": {
+      "document": "DescribeWebshellStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "webshell域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开关状态",
+          "example": "",
+          "member": "uint64",
+          "name": "Status",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -8393,6 +8857,7 @@
           "example": "luca.qcloud.com",
           "member": "string",
           "name": "Domain",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -8403,9 +8868,21 @@
           "example": "clb-waf",
           "member": "string",
           "name": "Edition",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "waf_2kxu92323432d",
+          "member": "string",
+          "name": "InstanceID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

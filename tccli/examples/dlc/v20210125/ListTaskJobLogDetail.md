@@ -28,7 +28,8 @@ Output:
                 "Time": 0,
                 "TopicId": "abc",
                 "TopicName": "abc",
-                "LogJson": "abc"
+                "LogJson": "abc",
+                "PkgLogId": "abc"
             }
         ],
         "LogUrl": "abc",

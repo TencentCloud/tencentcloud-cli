@@ -5868,7 +5868,7 @@
           "example": "12341234-1234123-13241234",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5878,7 +5878,7 @@
           "example": "12341234-1234123-13241234",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5888,7 +5888,7 @@
           "example": "11.22.33.44",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5898,7 +5898,7 @@
           "example": "xx",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5908,7 +5908,7 @@
           "example": "centos",
           "member": "string",
           "name": "OsInfo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5918,7 +5918,7 @@
           "example": "xx",
           "member": "string",
           "name": "Cpu",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5928,7 +5928,7 @@
           "example": "11",
           "member": "uint64",
           "name": "MemSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5938,7 +5938,7 @@
           "example": "11",
           "member": "string",
           "name": "MemLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5948,7 +5948,7 @@
           "example": "11",
           "member": "uint64",
           "name": "DiskSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5958,7 +5958,7 @@
           "example": "11",
           "member": "string",
           "name": "DiskLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5968,7 +5968,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PartitionCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5978,7 +5978,7 @@
           "example": "1.2.3.4",
           "member": "string",
           "name": "MachineWanIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5988,17 +5988,17 @@
           "example": "2",
           "member": "uint64",
           "name": "CpuSize",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Cpu使用率百分比",
-          "example": "11",
+          "document": "Cpu负载",
+          "example": "中",
           "member": "string",
           "name": "CpuLoad",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6008,7 +6008,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectLevel",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6018,7 +6018,7 @@
           "example": "RISK",
           "member": "string",
           "name": "RiskStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6028,7 +6028,7 @@
           "example": "11",
           "member": "uint64",
           "name": "ProtectDays",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6038,7 +6038,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "BuyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6048,7 +6048,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6058,7 +6058,7 @@
           "example": "xx",
           "member": "string",
           "name": "CoreVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6068,7 +6068,7 @@
           "example": "linux",
           "member": "string",
           "name": "OsType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6078,7 +6078,7 @@
           "example": "1.2.3.1",
           "member": "string",
           "name": "AgentVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6088,7 +6088,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "InstallTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6098,7 +6098,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "BootTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6108,7 +6108,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "LastLiveTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6118,7 +6118,7 @@
           "example": "xx",
           "member": "string",
           "name": "Producer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6128,7 +6128,7 @@
           "example": "xx",
           "member": "string",
           "name": "SerialNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6138,7 +6138,7 @@
           "example": "xx",
           "member": "AssetNetworkCardInfo",
           "name": "NetCards",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6148,7 +6148,7 @@
           "example": "xx",
           "member": "AssetDiskPartitionInfo",
           "name": "Disks",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6158,7 +6158,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6168,7 +6168,7 @@
           "example": "xx",
           "member": "uint64",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6178,7 +6178,7 @@
           "example": "xx",
           "member": "string",
           "name": "DeviceVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6188,7 +6188,7 @@
           "example": "2021-12-21",
           "member": "string",
           "name": "OfflineTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6198,7 +6198,7 @@
           "example": "cvm-112234",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6208,7 +6208,7 @@
           "example": "2011-11-11 12:12:12",
           "member": "string",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6218,8 +6218,28 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CpuLoadVul\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CpuLoadVul",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FirstTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14992,7 +15012,62 @@
     },
     "CreateWhiteListOrderRequest": {
       "document": "CreateWhiteListOrder请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "授权数量,最小为1 最大99999",
+          "example": "1",
+          "member": "uint64",
+          "name": "LicenseNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "到期时间,最小为1",
+          "example": "1",
+          "member": "uint64",
+          "name": "Deadline",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "规则名称,大资产中心:asset_center",
+          "example": "cwp",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "地域, 1 广州 9新加坡, 默认为 1. 非必要情况不要选9",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "额外参数,json字符串,包含ResourceId 资源ID,LicenseType 授权类型",
+          "example": "无",
+          "member": "string",
+          "name": "ExtraParam",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "CreateWhiteListOrderResponse": {
@@ -15004,6 +15079,7 @@
           "example": "''",
           "member": "OrderResource",
           "name": "Resource",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -26439,7 +26515,17 @@
     },
     "DescribeLicenseWhiteConfigRequest": {
       "document": "DescribeLicenseWhiteConfig请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则名称,例如: cwp",
+          "example": "cwp",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeLicenseWhiteConfigResponse": {

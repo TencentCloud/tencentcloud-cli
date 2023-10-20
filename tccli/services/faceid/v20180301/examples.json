@@ -244,7 +244,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: faceid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LivenessRecognition\n<公共请求参数>\n\n{\n    \"IdCard\": \"11204416541220243X\",\n    \"LivenessType\": \"SILENT\",\n    \"Name\": \"韦小宝\",\n    \"VideoBase64\": \"<VideoBase64>\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"BestFrameList\": [\n            \"xx\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"Success\",\n        \"Description\": \"成功\",\n        \"BestFrameBase64\": \"<Imagebase64>\",\n        \"BestFrameList\": [\n            \"123\"\n        ],\n        \"Sim\": 89.88,\n        \"RequestId\": \"f904f4cf-75db-4f8f-a5ec-dc4f942c7f7a\"\n    }\n}",
         "title": "静默活体人脸核身"
       }
     ],

@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli cdb StartCpuExpand --cli-unfold-argument ```
+tccli cdb StartCpuExpand --cli-unfold-argument  \
+    --InstanceId cdb-test \
+    --Type manual \
+    --ExpandCpu 4
+```
 
 Output: 
 ```

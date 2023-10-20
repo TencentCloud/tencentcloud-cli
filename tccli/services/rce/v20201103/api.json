@@ -763,7 +763,7 @@
           "example": "13112345678",
           "member": "string",
           "name": "UserId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -773,7 +773,7 @@
           "example": "1614760549",
           "member": "uint64",
           "name": "PostTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -783,7 +783,7 @@
           "example": "13112345678",
           "member": "string",
           "name": "AssociateAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -793,7 +793,7 @@
           "example": "14.1.2.3",
           "member": "string",
           "name": "UserIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -803,7 +803,7 @@
           "example": "reject",
           "member": "string",
           "name": "RiskLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -813,7 +813,7 @@
           "example": "[101,201]",
           "member": "int64",
           "name": "RiskType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -823,7 +823,7 @@
           "example": "7BCF1420708B26034880B789",
           "member": "string",
           "name": "ConstId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

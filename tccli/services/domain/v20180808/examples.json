@@ -24,6 +24,14 @@
         "title": "检测域名是否可注册"
       }
     ],
+    "CreateCustomDnsHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esfdhgfgdhigq\",\n    \"DnsName\": \"ccc\",\n    \"IpSet\": [\n        \"8.8.9.9\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 510694,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "title": "创建自定义DNS Host任务"
+      }
+    ],
     "CreateDomainBatch": [
       {
         "document": "",
@@ -56,6 +64,14 @@
         "title": "创建模板"
       }
     ],
+    "DeleteCustomDnsHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esydsfsdq\",\n    \"DnsName\": \"ccc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 510708,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "title": "创建删除自定义DNS Host任务"
+      }
+    ],
     "DeletePhoneEmail": [
       {
         "document": "",
@@ -86,6 +102,14 @@
         "input": "https://domain.tencentcloudapi.com/?Action=DescribeBatchOperationLogs\n&Offset=1\n&Limit=20\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 204,\n        \"DomainBatchLogSet\": [\n            {\n                \"LogId\": 318,\n                \"CreatedOn\": \"2020-06-10 20:08:43\",\n                \"Number\": 12,\n                \"Status\": \"doing\"\n            }\n        ],\n        \"RequestId\": \"1af07f55-2b13-4076-a301-74c2480f7af7\"\n    },\n    \"ResultStatus\": true\n}",
         "title": "批量操作日志"
+      }
+    ],
+    "DescribeCustomDnsHostSet": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomDnsHostSet\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esysdasdgq\",\n    \"Offset\": 0,\n    \"Limit\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 2,\n        \"RequestId\": \"bd4fc5332-23a2-49bd-8cab-48cfe5963651\",\n        \"DnsHostSet\": [\n            {\n                \"IpSet\": [\n                    \"2.2.2.2\"\n                ],\n                \"DnsName\": \"bbbb\"\n            },\n            {\n                \"IpSet\": [\n                    \"8.8.9.9\",\n                    \"3.3.3.3\"\n                ],\n                \"DnsName\": \"aaa\"\n            }\n        ]\n    }\n}",
+        "title": "查询自定义DNS Host列表"
       }
     ],
     "DescribeDomainBaseInfo": [
@@ -144,6 +168,14 @@
         "title": "信息模板列表"
       }
     ],
+    "ModifyCustomDnsHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-esyfsdfgq\",\n    \"DnsName\": \"ccc\",\n    \"IpSet\": [\n        \"2.2.2.2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 510702,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "title": "创建修改自定义DNS Host任务"
+      }
+    ],
     "ModifyDomainDNSBatch": [
       {
         "document": "",
@@ -158,6 +190,14 @@
         "input": "POST / HTTP/1.1\nHost:domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainOwnerBatch\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"h101.tencent.com\"\n    ],\n    \"NewOwnerUin\": \"123456\"\n}",
         "output": "{\n    \"Response\": {\n        \"LogId\": 425,\n        \"RequestId\": \"3c59eccc-efca-4109-1111-37e2e2bce25f\"\n    }\n}",
         "title": "域名过户"
+      }
+    ],
+    "ModifyIntlCustomDnsHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyIntlCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-222222q\",\n    \"DnsName\": \"ns1\",\n    \"IpSet\": [\n        \"26.36.56.66\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 200,\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459398\"\n    }\n}",
+        "title": "修改自定义DNS"
       }
     ],
     "RenewDomainBatch": [
@@ -182,6 +222,14 @@
         "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetDomainAutoRenew\n<公共请求参数>\n\n{\n    \"AutoRenew\": \"1\",\n    \"DomainId\": \"域名ID\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1b76dd88-64d0-4bd1-9cb8-c20de11c3686\"\n    }\n}",
         "title": "设置域名自动续费"
+      }
+    ],
+    "SyncCustomDnsHost": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: domain.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncCustomDnsHost\n<公共请求参数>\n\n{\n    \"DomainId\": \"domain-eszczxcigq\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogId\": 510718,\n        \"RequestId\": \"d4fc5332-23a2-49bd-8cab-48cfe5963651\"\n    }\n}",
+        "title": "创建同步自定义DNS Host任务"
       }
     ],
     "TransferInDomainBatch": [

@@ -40,6 +40,14 @@
         "title": "创建企业组织"
       }
     ],
+    "CreateOrganizationIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationIdentity\n<公共请求参数>\n\n{\n    \"Description\": \"\",\n    \"IdentityAliasName\": \"test\",\n    \"IdentityPolicy\": [\n        {\n            \"PolicyId\": 1,\n            \"PolicyName\": \"AdministratorAccess\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"IdentityId\": 123,\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "添加组织身份"
+      }
+    ],
     "CreateOrganizationMember": [
       {
         "document": "",
@@ -64,12 +72,28 @@
         "title": "创建组织成员访问授权策略"
       }
     ],
+    "CreateOrganizationMembersPolicy": [
+      {
+        "document": "创建组织成员访问策略",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMembersPolicy\n<公共请求参数>\n\n{\n    \"MemberUins\": [\n        111111111111\n    ],\n    \"PolicyName\": \"test\",\n    \"IdentityId\": 11,\n    \"Description\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PolicyId\": 123,\n        \"RequestId\": \"3840f6f4-3976-4b44-9ecc-cb0578129059\"\n    }\n}",
+        "title": "创建组织成员访问策略"
+      }
+    ],
     "DeleteOrganization": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganization\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "删除企业组织"
+      }
+    ],
+    "DeleteOrganizationIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteOrganizationIdentity\n<公共请求参数>\n\n{\n    \"IdentityId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "删除组织身份"
       }
     ],
     "DeleteOrganizationMemberAuthIdentity": [
@@ -214,6 +238,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QuitOrganization\n<公共请求参数>\n\n{\n    \"OrgId\": \"123\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "退出企业组织"
+      }
+    ],
+    "UpdateOrganizationIdentity": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationIdentity\n<公共请求参数>\n\n{\n    \"Description\": \"\",\n    \"IdentityId\": 1,\n    \"IdentityPolicy\": [\n        {\n            \"PolicyId\": 1,\n            \"PolicyName\": \"AdministratorAccess\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
+        "title": "更新组织身份"
       }
     ],
     "UpdateOrganizationMember": [

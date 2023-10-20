@@ -342,6 +342,13 @@
       "name": "修改引擎公网访问配置",
       "output": "UpdateEngineInternetAccessResponse",
       "status": "online"
+    },
+    "UpdateUpstreamTargets": {
+      "document": "更新网关上游实例列表，仅支持IPList服务类型",
+      "input": "UpdateUpstreamTargetsRequest",
+      "name": "更新网关上游实例列表",
+      "output": "UpdateUpstreamTargetsResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -968,11 +975,21 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的规格类型，传 \"SLA\" 表示性能容量型，返回空为共享型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "负载均衡的规格类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SlaType",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb规格名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SlaName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2344,6 +2361,16 @@
       "document": "CreateCloudNativeAPIGatewayService返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "网关服务创建结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CreateGatewayServiceResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2522,6 +2549,22 @@
         }
       ],
       "type": "object"
+    },
+    "CreateGatewayServiceResult": {
+      "document": "创建云原生网关服务结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateNativeGatewayServerGroupRequest": {
       "document": "CreateNativeGatewayServerGroup请求参数结构体",
@@ -5181,6 +5224,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监听的 tcp 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TcpPort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监听的 udp 端口范围。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UdpPort",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -5252,7 +5315,7 @@
         },
         {
           "disabled": false,
-          "document": "负载均衡的规格类型，传 \"SLA\" 表示性能容量型，不传为共享型。",
+          "document": "负载均衡的规格类型，支持clb.c2.medium、clb.c3.small、clb.c3.medium、clb.c4.small、clb.c4.medium、clb.c4.large、clb.c4.xlarge，不传为共享型。",
           "example": "无",
           "member": "string",
           "name": "SlaType",
@@ -7967,6 +8030,61 @@
     "UpdateEngineInternetAccessResponse": {
       "document": "UpdateEngineInternetAccess返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUpstreamTargetsRequest": {
+      "document": "UpdateUpstreamTargets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称或ID",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例列表",
+          "example": "无",
+          "member": "KongTarget",
+          "name": "Targets",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUpstreamTargetsResponse": {
+      "document": "UpdateUpstreamTargets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否更新成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
