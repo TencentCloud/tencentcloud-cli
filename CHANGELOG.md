@@ -1,3 +1,150 @@
+# Release 3.0.869.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 79 次发布
+
+发布时间：2023-10-23 01:04:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82411)
+* [ModifyDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82410)
+
+新增数据结构：
+
+* [LogToCLSConfig](http://document.tencentcloudapi.woa.com/document/product/236/15878#LogToCLSConfig)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 64 次发布
+
+发布时间：2023-10-23 01:09:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceIndexMode
+
+	* <font color="#dd0000">**修改成员**：</font>DbMode, MasterZone, SlaveZones, InstanceNetInfo, ResourcePackages
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 78 次发布
+
+发布时间：2023-10-23 01:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82413)
+* [ModifyAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82412)
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 20 次发布
+
+发布时间：2023-10-23 01:11:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ISPCounter](http://document.tencentcloudapi.woa.com/document/product/1108/42574#ISPCounter)
+
+	* 新增成员：ProviderInstanceNum
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 6 次发布
+
+发布时间：2023-10-23 01:13:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
+
+	* 新增入参：Extend
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 36 次发布
+
+发布时间：2023-10-23 01:17:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteWorkSpace](http://document.tencentcloudapi.woa.com/document/product/849/82414)
+
+修改数据结构：
+
+* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
+
+	* 新增成员：ClusterGroupSerialId, AppId, OwnerUin, CreatorUin, Region, Zone, Status, CuNum, FlinkVersion, WebUIUrl, Properties, JobManagerCuSpec, TaskManagerCuSpec, TaskManagerNum, CreateTime, UpdateTime
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 42 次发布
+
+发布时间：2023-10-23 01:19:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificateBindResourceTaskDetail](http://document.tencentcloudapi.woa.com/document/product/400/81792)
+
+	* 新增出参：TSE
+
+
+新增数据结构：
+
+* [GatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41679#GatewayCertificate)
+* [TSEInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceDetail)
+* [TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList)
+
+
+
 # Release 3.0.868.1
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05

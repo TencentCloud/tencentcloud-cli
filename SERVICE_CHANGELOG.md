@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 商业智能分析 BI(bi) 版本：2022-01-05
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 6 次发布
+### 第 79 次发布
 
-发布时间：2023-10-20 01:11:34
+发布时间：2023-10-23 01:04:09
 
 本次发布包含了以下内容：
 
@@ -12,34 +12,20 @@
 
 新增接口：
 
-* [DescribeUserRoleProjectList](http://document.tencentcloudapi.woa.com/document/product/1707/82404)
+* [DescribeDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82411)
+* [ModifyDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82410)
+
+新增数据结构：
+
+* [LogToCLSConfig](http://document.tencentcloudapi.woa.com/document/product/236/15878#LogToCLSConfig)
 
 
 
-## 负载均衡(clb) 版本：2018-03-17
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
-### 第 53 次发布
+### 第 64 次发布
 
-发布时间：2023-10-20 01:25:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Backend](http://document.tencentcloudapi.woa.com/document/product/214/30694#Backend)
-
-	* 新增成员：Tag
-
-
-
-
-## 版权保护平台(cpp) 版本：2023-06-27
-
-### 第 2 次发布
-
-发布时间：2023-10-20 01:33:18
+发布时间：2023-10-23 01:09:18
 
 本次发布包含了以下内容：
 
@@ -47,18 +33,56 @@
 
 修改数据结构：
 
-* [TaskWork](http://document.tencentcloudapi.woa.com/document/product/1745/82344#TaskWork)
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
 
-	* 新增成员：CallbackUrl
+	* 新增成员：InstanceIndexMode
+
+	* <font color="#dd0000">**修改成员**：</font>DbMode, MasterZone, SlaveZones, InstanceNetInfo, ResourcePackages
 
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 77 次发布
+### 第 78 次发布
 
-发布时间：2023-10-20 01:44:49
+发布时间：2023-10-23 01:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82413)
+* [ModifyAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82412)
+
+
+
+## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 20 次发布
+
+发布时间：2023-10-23 01:11:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ISPCounter](http://document.tencentcloudapi.woa.com/document/product/1108/42574#ISPCounter)
+
+	* 新增成员：ProviderInstanceNum
+
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 6 次发布
+
+发布时间：2023-10-23 01:13:58
 
 本次发布包含了以下内容：
 
@@ -66,24 +90,18 @@
 
 修改接口：
 
-* [DescribeLakeFsTaskResult](http://document.tencentcloudapi.woa.com/document/product/1342/82382)
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
 
-	* 新增入参：FsPath
-
-	* 新增出参：AccessToken
-
-
-新增数据结构：
-
-* [LakeFileSystemToken](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystemToken)
+	* 新增入参：Extend
 
 
 
-## 域名注册(domain) 版本：2018-08-08
 
-### 第 18 次发布
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-发布时间：2023-10-20 01:46:59
+### 第 36 次发布
+
+发布时间：2023-10-23 01:17:48
 
 本次发布包含了以下内容：
 
@@ -91,76 +109,39 @@
 
 新增接口：
 
-* [DeleteCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82408)
-* [DescribeCustomDnsHostSet](http://document.tencentcloudapi.woa.com/document/product/242/82407)
-* [ModifyCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82406)
-* [ModifyIntlCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82409)
-* [SyncCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82405)
+* [DeleteWorkSpace](http://document.tencentcloudapi.woa.com/document/product/849/82414)
+
+修改数据结构：
+
+* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
+
+	* 新增成员：ClusterGroupSerialId, AppId, OwnerUin, CreatorUin, Region, Zone, Status, CuNum, FlinkVersion, WebUIUrl, Properties, JobManagerCuSpec, TaskManagerCuSpec, TaskManagerNum, CreateTime, UpdateTime
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 42 次发布
+
+发布时间：2023-10-23 01:19:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificateBindResourceTaskDetail](http://document.tencentcloudapi.woa.com/document/product/400/81792)
+
+	* 新增出参：TSE
+
 
 新增数据结构：
 
-* [CustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/38895#CustomDnsHost)
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 46 次发布
-
-发布时间：2023-10-20 01:52:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1668/79360#ApproverOption)
-
-	* 新增成员：FlowReadLimit
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 96 次发布
-
-发布时间：2023-10-20 01:53:37
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ApproverOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ApproverOption)
-
-	* 新增成员：FlowReadLimit
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
-
-
-## 微服务引擎 TSE(tse) 版本：2020-12-07
-
-### 第 44 次发布
-
-发布时间：2023-10-20 02:41:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstancePort](http://document.tencentcloudapi.woa.com/document/product/1364/54942#InstancePort)
-
-	* 新增成员：TcpPort, UdpPort
-
+* [GatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41679#GatewayCertificate)
+* [TSEInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceDetail)
+* [TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList)
 
 
 
@@ -5271,7 +5252,7 @@
 
 新增接口：
 
-* [[DescribeUserRoleProjectList](http://document.tencentcloudapi.woa.com/document/product/1707/82404)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeUserRoleProjectList](http://document.tencentcloudapi.woa.com/document/product/1707/82404)
 
 ### 第 5 次发布
 
@@ -10029,6 +10010,23 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 79 次发布
+
+发布时间：2023-10-23 01:04:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82411)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyDBInstanceLogToCLS](http://document.tencentcloudapi.woa.com/document/product/236/82410)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[LogToCLSConfig](http://document.tencentcloudapi.woa.com/document/product/236/15878#LogToCLSConfig)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[LogToCLSConfig](http://document.tencentcloudapi.woa.com/document/product/236/15878#LogToCLSConfig))
 
 ### 第 78 次发布
 
@@ -26233,6 +26231,23 @@
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
 
+### 第 64 次发布
+
+发布时间：2023-10-23 01:09:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceIndexMode
+
+	* <font color="#dd0000">**修改成员**：</font>DbMode, MasterZone, SlaveZones, InstanceNetInfo, ResourcePackages
+
+
 ### 第 63 次发布
 
 发布时间：2023-10-13 01:13:52
@@ -29774,6 +29789,19 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 78 次发布
+
+发布时间：2023-10-23 01:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82413)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyAdvancedStoreLocation](http://document.tencentcloudapi.woa.com/document/product/1342/82412)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 77 次发布
 
 发布时间：2023-10-20 01:44:49
@@ -29793,7 +29821,7 @@
 
 新增数据结构：
 
-* [[LakeFileSystemToken](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystemToken)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[LakeFileSystemToken](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystemToken))
+* [LakeFileSystemToken](http://document.tencentcloudapi.woa.com/document/product/1342/53778#LakeFileSystemToken)
 
 ### 第 76 次发布
 
@@ -32131,15 +32159,15 @@
 
 新增接口：
 
-* [[DeleteCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82408)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCustomDnsHostSet](http://document.tencentcloudapi.woa.com/document/product/242/82407)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82406)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyIntlCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82409)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[SyncCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82405)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82408)
+* [DescribeCustomDnsHostSet](http://document.tencentcloudapi.woa.com/document/product/242/82407)
+* [ModifyCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82406)
+* [ModifyIntlCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82409)
+* [SyncCustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/82405)
 
 新增数据结构：
 
-* [[CustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/38895#CustomDnsHost)](http://document.tencentcloudapi.woa.com/document/product/242/38895#[CustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/38895#CustomDnsHost))
+* [CustomDnsHost](http://document.tencentcloudapi.woa.com/document/product/242/38895#CustomDnsHost)
 
 ### 第 17 次发布
 
@@ -33431,6 +33459,21 @@
 
 
 ## 边缘计算机器(ecm) 版本：2019-07-19
+
+### 第 20 次发布
+
+发布时间：2023-10-23 01:11:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ISPCounter](http://document.tencentcloudapi.woa.com/document/product/1108/42574#ISPCounter)
+
+	* 新增成员：ProviderInstanceNum
+
 
 ### 第 19 次发布
 
@@ -42984,6 +43027,21 @@
 
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 6 次发布
+
+发布时间：2023-10-23 01:13:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
+
+	* 新增入参：Extend
+
 
 ### 第 5 次发布
 
@@ -54152,6 +54210,25 @@
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
+### 第 36 次发布
+
+发布时间：2023-10-23 01:17:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DeleteWorkSpace](http://document.tencentcloudapi.woa.com/document/product/849/82414)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改数据结构：
+
+* [ClusterSession](http://document.tencentcloudapi.woa.com/document/product/849/52010#ClusterSession)
+
+	* 新增成员：ClusterGroupSerialId, AppId, OwnerUin, CreatorUin, Region, Zone, Status, CuNum, FlinkVersion, WebUIUrl, Properties, JobManagerCuSpec, TaskManagerCuSpec, TaskManagerNum, CreateTime, UpdateTime
+
+
 ### 第 35 次发布
 
 发布时间：2023-10-19 16:13:09
@@ -62896,6 +62973,27 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 42 次发布
+
+发布时间：2023-10-23 01:19:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificateBindResourceTaskDetail](http://document.tencentcloudapi.woa.com/document/product/400/81792)
+
+	* 新增出参：TSE
+
+
+新增数据结构：
+
+* [[GatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41679#GatewayCertificate)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[GatewayCertificate](http://document.tencentcloudapi.woa.com/document/product/400/41679#GatewayCertificate))
+* [[TSEInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceDetail)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[TSEInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceDetail))
+* [[TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[TSEInstanceList](http://document.tencentcloudapi.woa.com/document/product/400/41679#TSEInstanceList))
 
 ### 第 41 次发布
 

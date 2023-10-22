@@ -744,9 +744,9 @@
     ],
     "DescribeAssetMachineList": [
       {
-        "document": "",
+        "document": "获取资源监控列表",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetMachineList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"Machines\": [\n            {\n                \"OsInfo\": \"xx\",\n                \"Uuid\": \"xx\",\n                \"MemLoad\": 0.0,\n                \"MachineName\": \"xx\",\n                \"MachineIp\": \"xx\",\n                \"DiskLoad\": 0.0,\n                \"DiskSize\": 1,\n                \"Quuid\": \"xx\",\n                \"MemSize\": 1,\n                \"PartitionCount\": 1,\n                \"Cpu\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"Machines\": [\n            {\n                \"Quuid\": \"abc\",\n                \"Uuid\": \"abc\",\n                \"MachineIp\": \"abc\",\n                \"MachineName\": \"abc\",\n                \"OsInfo\": \"abc\",\n                \"Cpu\": \"abc\",\n                \"MemSize\": 1,\n                \"MemLoad\": \"abc\",\n                \"DiskSize\": 1,\n                \"DiskLoad\": \"abc\",\n                \"PartitionCount\": 1,\n                \"MachineWanIp\": \"abc\",\n                \"ProjectId\": 1,\n                \"CpuSize\": 1,\n                \"CpuLoad\": \"abc\",\n                \"Tag\": [\n                    {\n                        \"Rid\": 0,\n                        \"Name\": \"abc\",\n                        \"TagId\": 1\n                    }\n                ],\n                \"UpdateTime\": \"abc\",\n                \"IsNew\": 0,\n                \"FirstTime\": \"abc\",\n                \"MachineExtraInfo\": {\n                    \"WanIP\": \"abc\",\n                    \"PrivateIP\": \"abc\",\n                    \"NetworkType\": 0,\n                    \"NetworkName\": \"abc\",\n                    \"InstanceID\": \"abc\",\n                    \"HostName\": \"abc\"\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取资源监控列表"
       }
     ],
