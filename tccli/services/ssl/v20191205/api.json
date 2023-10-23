@@ -3076,6 +3076,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "关联tse资源详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TSEInstanceList",
+          "name": "TSE",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6363,6 +6373,62 @@
       ],
       "usage": "in"
     },
+    "GatewayCertificate": {
+      "document": "云原生网关证书信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BindDomains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertSource",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前绑定的SSL证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "HostCertificateRequest": {
       "document": "HostCertificate请求参数结构体",
       "members": [
@@ -8343,6 +8409,78 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TSEInstanceDetail": {
+      "document": "tse实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GatewayName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网关证书列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GatewayCertificate",
+          "name": "CertificateList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TSEInstanceList": {
+      "document": "TSE实例详情 - 异步关联云资源数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TSE实例详情\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TSEInstanceDetail",
+          "name": "InstanceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该地域下TSE实例总数\t",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "地域\t",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

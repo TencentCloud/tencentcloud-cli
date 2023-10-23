@@ -18260,7 +18260,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>IpOrAlias - String - 是否必填：否 - 主机ip或别名筛选</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "document": "过滤条件。\n<li>MachineName  主机名称\n\n\n\nInstanceID  实例ID  \n\n \n\nIP   内网IP或公网IP</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -18315,7 +18315,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -18325,7 +18325,7 @@
           "example": "[]",
           "member": "AssetMachineBaseInfo",
           "name": "Machines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

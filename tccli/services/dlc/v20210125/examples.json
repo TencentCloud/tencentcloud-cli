@@ -360,6 +360,14 @@
         "title": "删除工作组"
       }
     ],
+    "DescribeAdvancedStoreLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAdvancedStoreLocation\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"StoreLocation\": \"xx\",\n        \"HasLakeFs\": false,\n        \"Enable\": 1,\n        \"LakeFsStatus\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询高级设置"
+      }
+    ],
     "DescribeDMSDatabase": [
       {
         "document": "",
@@ -764,6 +772,14 @@
         "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LockMetaData\n<公共请求参数>\n\n{\n    \"LockComponentList\": [\n        {\n            \"DataOperationType\": \"xx\",\n            \"IsDynamicPartitionWrite\": true,\n            \"LockLevel\": \"xx\",\n            \"Partition\": \"xx\",\n            \"TableName\": \"xx\",\n            \"LockType\": \"xx\",\n            \"IsAcid\": true,\n            \"DbName\": \"xx\"\n        }\n    ],\n    \"TxnId\": 0,\n    \"DatasourceConnectionName\": \"xx\"\n}",
         "output": "{\n    \"Response\": {\n        \"LockId\": 0,\n        \"LockState\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "元数据加锁"
+      }
+    ],
+    "ModifyAdvancedStoreLocation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAdvancedStoreLocation\n<公共请求参数>\n\n{\n    \"StoreLocation\": \"\",\n    \"Enable\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "修改高级设置"
       }
     ],
     "ModifyDataEngineDescription": [

@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DescribeCdnIp": {
-      "document": "DescribeCdnIp 用于查询 CDN IP 归属。\n（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）  ",
+      "document": "DescribeCdnIp 用于查询 CDN IP 归属。\n（注意：此接口请求频率限制以 CDN 侧限制为准：200次/10分钟）",
       "input": "DescribeCdnIpRequest",
       "name": "IP 归属查询",
       "output": "DescribeCdnIpResponse",
@@ -5185,7 +5185,7 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，如 2019-09-04 00:00:00",
+          "document": "开始时间",
           "example": "2021-02-01 00:00:00",
           "member": "datetime",
           "name": "StartTime",
@@ -5194,7 +5194,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，如 2019-09-04 12:00:00",
+          "document": "结束时间",
           "example": "2021-02-01 01:00:00",
           "member": "datetime",
           "name": "EndTime",
@@ -5221,7 +5221,7 @@
         },
         {
           "disabled": false,
-          "document": "指定区域下载日志\nmainland：获取境内加速日志包下载链接\noverseas：获取境外加速日志包下载链接\nglobal：同时获取境内、境外加速日志包下载链接（分开打包）\n不指定时默认为 mainland",
+          "document": "指定区域下载日志，默认为 mainland，可取值有：\n<li>mainland：获取境内加速日志包下载链接</li>\n<li>overseas：获取境外加速日志包下载链接</li>\n<li>global：同时获取境内、境外加速日志包下载链接（分开打包）</li>",
           "example": "mainland",
           "member": "string",
           "name": "Area",
@@ -5230,7 +5230,7 @@
         },
         {
           "disabled": false,
-          "document": "指定下载日志的类型，目前仅支持访问日志（access）。\naccess：访问日志",
+          "document": "指定下载日志的类型，可取值有：\n<li>access：访问日志</li>",
           "example": "access",
           "member": "string",
           "name": "LogType",
@@ -5249,6 +5249,7 @@
           "example": "无",
           "member": "DomainLog",
           "name": "DomainLogs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5258,6 +5259,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5276,7 +5278,7 @@
         {
           "disabled": false,
           "document": "需要查询的 IP 列表",
-          "example": "[\"1.1.1.1\\n\"]",
+          "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Ips",
           "required": true,
@@ -5294,7 +5296,7 @@
           "example": "无",
           "member": "CdnIp",
           "name": "Ips",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5855,7 +5857,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "xxx",
+          "example": "2020-09-22T00:00:00+00:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -5864,7 +5866,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "xxx",
+          "example": "2020-09-22T01:00:00+00:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -5909,7 +5911,7 @@
           "example": "无",
           "member": "EdgePackTaskStatus",
           "name": "EdgePackTaskStatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5919,7 +5921,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

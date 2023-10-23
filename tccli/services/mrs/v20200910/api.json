@@ -917,6 +917,42 @@
       ],
       "usage": "out"
     },
+    "BlockTitle": {
+      "document": "块标题",
+      "members": [
+        {
+          "disabled": false,
+          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "src\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Src",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "BloodPressureBlock": {
       "document": "血压",
       "members": [
@@ -1170,7 +1206,7 @@
           "example": "object",
           "member": "Desc",
           "name": "Desc",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1180,8 +1216,18 @@
           "example": "object",
           "member": "Summary",
           "name": "Summary",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检查报告块标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlockTitle",
+          "name": "BlockTitle",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5009,7 +5055,17 @@
           "example": "[object]",
           "member": "IndicatorItem",
           "name": "Indicators",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检验报告块标题\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BlockTitle",
+          "name": "BlockTitle",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         }

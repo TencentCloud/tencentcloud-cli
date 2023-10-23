@@ -1616,6 +1616,33 @@
           "name": "EndDelayTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "example": "0",
+          "member": "uint64",
+          "name": "LiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "伪直播链接",
+          "example": "无",
+          "member": "string",
+          "name": "RecordLiveUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableAutoStart",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3084,6 +3111,36 @@
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "example": "0",
+          "member": "uint64",
+          "name": "LiveType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伪直播链接",
+          "example": "无",
+          "member": "string",
+          "name": "RecordLiveUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableAutoStart",
           "output_required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5070,6 +5127,33 @@
           "name": "EndDelayTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "example": "0",
+          "member": "uint64",
+          "name": "LiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "伪直播链接",
+          "example": "无",
+          "member": "string",
+          "name": "RecordLiveUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableAutoStart",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5503,6 +5587,33 @@
           "name": "EndDelayTime",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "example": "0",
+          "member": "uint64",
+          "name": "LiveType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "伪直播回放链接",
+          "example": "无",
+          "member": "string",
+          "name": "RecordLiveUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableAutoStart",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -5686,6 +5797,36 @@
           "example": "0",
           "member": "int64",
           "name": "EndDelayTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LiveType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "伪直播回放链接\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordLiveUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动开始上课：0 不自动上课（默认） 1 自动上课 live_type=1的时候有效\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "EnableAutoStart",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

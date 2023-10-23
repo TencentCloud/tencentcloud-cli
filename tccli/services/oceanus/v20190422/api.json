@@ -98,6 +98,13 @@
       "output": "DeleteTableConfigResponse",
       "status": "online"
     },
+    "DeleteWorkSpace": {
+      "document": "删除工作空间",
+      "input": "DeleteWorkSpaceRequest",
+      "name": "删除工作空间",
+      "output": "DeleteWorkSpaceResponse",
+      "status": "online"
+    },
     "DescribeClusters": {
       "document": "查询集群",
       "input": "DescribeClustersRequest",
@@ -995,7 +1002,168 @@
     },
     "ClusterSession": {
       "document": "session集群信息",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群SerialId",
+          "example": "cluster-nbcjavkn",
+          "member": "string",
+          "name": "ClusterGroupSerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者appId",
+          "example": "1257058945",
+          "member": "int64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者主账号",
+          "example": "100006386216",
+          "member": "string",
+          "name": "OwnerUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者账号",
+          "example": "100006386216",
+          "member": "string",
+          "name": "CreatorUin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "zone",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Session集群状态",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Session集群消耗的cu数量",
+          "example": "2",
+          "member": "float",
+          "name": "CuNum",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Session集群的Flink版本",
+          "example": "Flink-1.13",
+          "member": "string",
+          "name": "FlinkVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session集群FlinkUi地址",
+          "example": "无",
+          "member": "string",
+          "name": "WebUIUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "session集群高级参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "JobManager的规格",
+          "example": "1",
+          "member": "float",
+          "name": "JobManagerCuSpec",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskManager的规格",
+          "example": "0.5",
+          "member": "float",
+          "name": "TaskManagerCuSpec",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TaskManager启动的数量",
+          "example": "2",
+          "member": "int64",
+          "name": "TaskManagerNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
       "usage": "out"
     },
     "ClusterVersion": {
@@ -2130,6 +2298,43 @@
     "DeleteTableConfigResponse": {
       "document": "DeleteTableConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkSpaceRequest": {
+      "document": "DeleteWorkSpace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-1327",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWorkSpaceResponse": {
+      "document": "DeleteWorkSpace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否删除",
+          "example": "true",
+          "member": "bool",
+          "name": "Delete",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -492,8 +492,7 @@
           "member": "string",
           "name": "AppId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": true,
@@ -502,8 +501,7 @@
           "member": "string",
           "name": "ProxyAppId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -512,8 +510,7 @@
           "member": "string",
           "name": "ProxyOrganizationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": true,
@@ -522,8 +519,7 @@
           "member": "string",
           "name": "ProxyOperator",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"

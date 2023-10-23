@@ -413,6 +413,13 @@
       "output": "DescribeDBInstanceInfoResponse",
       "status": "online"
     },
+    "DescribeDBInstanceLogToCLS": {
+      "document": "本接口(DescribeDBInstanceLogToCLS)用于查询实例慢日志、错误日志投递CLS的配置，通过appId、Region以及实例ID过滤出当前实例日志投递CLS的配置。",
+      "input": "DescribeDBInstanceLogToCLSRequest",
+      "name": "查询实例日志投递CLS的配置",
+      "output": "DescribeDBInstanceLogToCLSResponse",
+      "status": "online"
+    },
     "DescribeDBInstanceRebootTime": {
       "document": "本接口(DescribeDBInstanceRebootTime)用于查询云数据库实例重启预计所需的时间。",
       "input": "DescribeDBInstanceRebootTimeRequest",
@@ -761,6 +768,13 @@
       "input": "ModifyCdbProxyParamRequest",
       "name": "配置数据库代理参数",
       "output": "ModifyCdbProxyParamResponse",
+      "status": "online"
+    },
+    "ModifyDBInstanceLogToCLS": {
+      "document": "开启/关闭CDB慢日志、错误日志投递CLS",
+      "input": "ModifyDBInstanceLogToCLSRequest",
+      "name": "开启或关闭CDB日志投递CLS",
+      "output": "ModifyDBInstanceLogToCLSResponse",
       "status": "online"
     },
     "ModifyDBInstanceName": {
@@ -8323,6 +8337,53 @@
       ],
       "type": "object"
     },
+    "DescribeDBInstanceLogToCLSRequest": {
+      "document": "DescribeDBInstanceLogToCLS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdb-r1ok5w15",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDBInstanceLogToCLSResponse": {
+      "document": "DescribeDBInstanceLogToCLS返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误日志投递CLS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
+          "member": "LogToCLSConfig",
+          "name": "ErrorLog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "慢日志投递CLS配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Status\": \"ON\",\"LogSetId\":\"xxx\",\"LogTopicId\":\"xxx\"}",
+          "member": "LogToCLSConfig",
+          "name": "SlowLog",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDBInstanceRebootTimeRequest": {
       "document": "DescribeDBInstanceRebootTime请求参数结构体",
       "members": [
@@ -12517,6 +12578,42 @@
       ],
       "usage": "out"
     },
+    "LogToCLSConfig": {
+      "document": "DB实例慢日志、错误日志投递CLS配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递状态打开或者关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ON/OFF",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8dff8d62-fa10-4d6c-bee0-6e31a0ade975",
+          "member": "string",
+          "name": "LogSetId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "09c3c2d1-ac46-4e4e-b688-b73950e64682",
+          "member": "string",
+          "name": "LogTopicId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "MasterInfo": {
       "document": "主实例信息",
       "members": [
@@ -13634,6 +13731,105 @@
     },
     "ModifyCdbProxyParamResponse": {
       "document": "ModifyCdbProxyParam返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceLogToCLSRequest": {
+      "document": "ModifyDBInstanceLogToCLS请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdb-234rsta",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志类型：errorLog/slowLog",
+          "example": "errorLog",
+          "member": "string",
+          "name": "LogType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递状态：ON/OFF",
+          "example": "ON",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要创建日志集",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateLogset",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要创建日志集时为日志集名称；选择已有日志集时，为日志集ID",
+          "example": "my_test",
+          "member": "string",
+          "name": "Logset",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要创建日志主题",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateLogTopic",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要创建日志主题时为日志主题名称；选择已有日志主题时，为日志主题ID",
+          "example": "my_test",
+          "member": "string",
+          "name": "LogTopic",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题有效期，不填写时，默认30天",
+          "example": "30",
+          "member": "int64",
+          "name": "Period",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "创建日志主题时，是否创建索引",
+          "example": "true",
+          "member": "bool",
+          "name": "CreateIndex",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDBInstanceLogToCLSResponse": {
+      "document": "ModifyDBInstanceLogToCLS返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

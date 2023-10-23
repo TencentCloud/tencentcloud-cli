@@ -2430,7 +2430,7 @@
           "example": "FaceRecognition",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2440,7 +2440,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskFaceResult",
           "name": "FaceTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2450,7 +2450,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrWordsResult",
           "name": "AsrWordsTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2460,7 +2460,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskAsrFullTextResult",
           "name": "AsrFullTextTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2470,7 +2470,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrWordsResult",
           "name": "OcrWordsTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2480,7 +2480,7 @@
           "example": "NULL",
           "member": "AiRecognitionTaskOcrFullTextResult",
           "name": "OcrFullTextTask",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2490,7 +2490,17 @@
           "example": "NULL",
           "member": "AiRecognitionTaskTransTextResult",
           "name": "TransTextTask",
-          "required": true,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物体识别结果，当Type 为\n\nObjectRecognition 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NULL",
+          "member": "AiRecognitionTaskObjectResult",
+          "name": "ObjectTask",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }
@@ -3117,6 +3127,166 @@
         }
       ],
       "usage": "both"
+    },
+    "AiRecognitionTaskObjectResult": {
+      "document": "物体识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0：成功，其他值：失败。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物体识别任务输入信息。",
+          "example": "无",
+          "member": "AiRecognitionTaskObjectResultInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物体识别任务输出信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiRecognitionTaskObjectResultOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskObjectResultInput": {
+      "document": "物体识别任务输入类型。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "物体识别模板 ID。",
+          "example": "",
+          "member": "int64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskObjectResultItem": {
+      "document": "单个物体识别结果。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别的物体名称。",
+          "example": "",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "物体出现的片段列表。",
+          "example": "",
+          "member": "AiRecognitionTaskObjectSeqmentItem",
+          "name": "SegmentSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskObjectResultOutput": {
+      "document": "智能物体识别输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能物体识别结果集。",
+          "example": "",
+          "member": "AiRecognitionTaskObjectResultItem",
+          "name": "ResultSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiRecognitionTaskObjectSeqmentItem": {
+      "document": "物体识别结果片段。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "识别片段起始的偏移时间，单位：秒。",
+          "example": "",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段终止的偏移时间，单位：秒。",
+          "example": "",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别片段置信度。取值：0~100。",
+          "example": "",
+          "member": "float",
+          "name": "Confidence",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别结果的区域坐标。数组包含 4 个元素 [x1,y1,x2,y2]，依次表示区域左上点、右下点的横纵坐标。",
+          "example": "",
+          "member": "int64",
+          "name": "AreaCoordSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "AiRecognitionTaskOcrFullTextResult": {
       "document": "文本全文识别结果。",

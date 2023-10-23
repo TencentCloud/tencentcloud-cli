@@ -1,6 +1,6 @@
 **Example 1: 获取资源监控列表**
 
-
+获取资源监控列表
 
 Input: 
 
@@ -12,22 +12,44 @@ Output:
 {
     "Response": {
         "Total": 1,
-        "RequestId": "xx",
         "Machines": [
             {
-                "OsInfo": "xx",
-                "Uuid": "xx",
-                "MemLoad": 0.0,
-                "MachineName": "xx",
-                "MachineIp": "xx",
-                "DiskLoad": 0.0,
-                "DiskSize": 1,
-                "Quuid": "xx",
+                "Quuid": "abc",
+                "Uuid": "abc",
+                "MachineIp": "abc",
+                "MachineName": "abc",
+                "OsInfo": "abc",
+                "Cpu": "abc",
                 "MemSize": 1,
+                "MemLoad": "abc",
+                "DiskSize": 1,
+                "DiskLoad": "abc",
                 "PartitionCount": 1,
-                "Cpu": "xx"
+                "MachineWanIp": "abc",
+                "ProjectId": 1,
+                "CpuSize": 1,
+                "CpuLoad": "abc",
+                "Tag": [
+                    {
+                        "Rid": 0,
+                        "Name": "abc",
+                        "TagId": 1
+                    }
+                ],
+                "UpdateTime": "abc",
+                "IsNew": 0,
+                "FirstTime": "abc",
+                "MachineExtraInfo": {
+                    "WanIP": "abc",
+                    "PrivateIP": "abc",
+                    "NetworkType": 0,
+                    "NetworkName": "abc",
+                    "InstanceID": "abc",
+                    "HostName": "abc"
+                }
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

@@ -22,9 +22,9 @@ Output:
                 "Apk": "test.apk",
                 "UploadTime": "2020-09-22T00:00:00+00:00",
                 "SrcDir": [
-                    "/src/test.apk"
+                    "/src/"
                 ],
-                "DstDir": "/ext/test.apk",
+                "DstDir": "/ext/",
                 "StatusDesc": "",
                 "Status": "done"
             }

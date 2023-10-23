@@ -508,6 +508,14 @@
         "title": "查询实例信息"
       }
     ],
+    "DescribeDBInstanceLogToCLS": [
+      {
+        "document": "实例日志管理中，慢日志、错误日志投递CLS的配置",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-70zdmgg1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorLog\": {\n            \"Status\": \"ON\",\n            \"LogSetId\": \"test\",\n            \"LogTopicId\": \"test\"\n        },\n        \"SlowLog\": {\n            \"Status\": \"OFF\",\n            \"LogSetId\": \"test\",\n            \"LogTopicId\": \"test\"\n        },\n        \"RequestId\": \"8a96c7fec3c747adb83cb0868c0107d5\"\n    }\n}",
+        "title": "查询实例日志投递CLS配置"
+      }
+    ],
     "DescribeDBInstanceRebootTime": [
       {
         "document": "",
@@ -912,6 +920,14 @@
         "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCdbProxyParam\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-xxxx\",\n    \"ProxyGroupId\": \"proxy-xxx\",\n    \"ConnectionPoolLimit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx-xxx-xxx\"\n    }\n}",
         "title": "配置数据库代理参数"
+      }
+    ],
+    "ModifyDBInstanceLogToCLS": [
+      {
+        "document": "CDB实例慢日志、错误日志投递到CLS",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceLogToCLS\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdb-ewa3b\",\n    \"LogType\": \"errorLog\",\n    \"Status\": \"ON\",\n    \"CreateLogset\": true,\n    \"Logset\": \"sub_fyrtjbqw\",\n    \"CreateLogTopic\": true,\n    \"LogTopic\": \"my_test\",\n    \"Period\": \"1\",\n    \"CreateIndex\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6EF60BEC-0242-43AF-BB20-270359FB54A7\"\n    }\n}",
+        "title": "开启或关闭CDB日志投递CLS"
       }
     ],
     "ModifyDBInstanceName": [

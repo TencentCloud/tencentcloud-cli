@@ -315,6 +315,13 @@
       "output": "DeleteWorkGroupResponse",
       "status": "online"
     },
+    "DescribeAdvancedStoreLocation": {
+      "document": "查询sql查询界面高级设置",
+      "input": "DescribeAdvancedStoreLocationRequest",
+      "name": "查询高级设置",
+      "output": "DescribeAdvancedStoreLocationResponse",
+      "status": "online"
+    },
     "DescribeDMSDatabase": {
       "document": "DMS元数据获取库",
       "input": "DescribeDMSDatabaseRequest",
@@ -663,6 +670,13 @@
       "input": "LockMetaDataRequest",
       "name": "元数据锁",
       "output": "LockMetaDataResponse",
+      "status": "online"
+    },
+    "ModifyAdvancedStoreLocation": {
+      "document": "修改sql查询界面高级设置。",
+      "input": "ModifyAdvancedStoreLocationRequest",
+      "name": "修改高级设置",
+      "output": "ModifyAdvancedStoreLocationResponse",
       "status": "online"
     },
     "ModifyDataEngineDescription": {
@@ -6366,6 +6380,63 @@
       ],
       "type": "object"
     },
+    "DescribeAdvancedStoreLocationRequest": {
+      "document": "DescribeAdvancedStoreLocation请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAdvancedStoreLocationResponse": {
+      "document": "DescribeAdvancedStoreLocation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用高级设置：0-否，1-是",
+          "example": "0",
+          "member": "uint64",
+          "name": "Enable",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询结果保存cos路径",
+          "example": "cosn://xx/xx/xx",
+          "member": "string",
+          "name": "StoreLocation",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有托管存储权限",
+          "example": "false",
+          "member": "bool",
+          "name": "HasLakeFs",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "托管存储状态，HasLakeFs等于true时，该值才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ready",
+          "member": "string",
+          "name": "LakeFsStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDMSDatabaseRequest": {
       "document": "DescribeDMSDatabase请求参数结构体",
       "members": [
@@ -10868,6 +10939,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAdvancedStoreLocationRequest": {
+      "document": "ModifyAdvancedStoreLocation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询结果保存cos路径",
+          "example": "cosn://xx/xx/xx",
+          "member": "string",
+          "name": "StoreLocation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否启用高级设置：0-否，1-是",
+          "example": "1",
+          "member": "uint64",
+          "name": "Enable",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAdvancedStoreLocationResponse": {
+      "document": "ModifyAdvancedStoreLocation返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
