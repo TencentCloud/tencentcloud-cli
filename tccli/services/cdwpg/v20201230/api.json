@@ -14,6 +14,13 @@
       "output": "DescribeInstanceResponse",
       "status": "online"
     },
+    "DescribeInstanceInfo": {
+      "document": "获取集群信息",
+      "input": "DescribeInstanceInfoRequest",
+      "name": "获取集群信息",
+      "output": "DescribeInstanceInfoResponse",
+      "status": "online"
+    },
     "DescribeInstanceState": {
       "document": "集群详情页中显示集群状态、流程进度等",
       "input": "DescribeInstanceStateRequest",
@@ -93,61 +100,105 @@
       ],
       "usage": "in"
     },
+    "CBSSpecInfo": {
+      "document": "磁盘信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "盘类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_SSD",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "DiskCount",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ChargeProperties": {
       "document": "计费时间参数",
       "members": [
         {
           "disabled": false,
-          "document": "1-需要自动续期",
+          "document": "1-需要自动续期\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "RenewFlag",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "订单时间范围",
+          "document": "订单时间范围\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
+          "output_required": false,
           "required": true,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "时间单位，一般为h和m",
+          "document": "时间单位，一般为h和m\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "m",
           "member": "string",
           "name": "TimeUnit",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "计费类型0-按量计费，1-包年包月",
+          "document": "计费类型0-按量计费，1-包年包月\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "PayMode",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "PREPAID、POSTPAID_BY_HOUR",
+          "document": "PREPAID、POSTPAID_BY_HOUR\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CreateInstanceByApiRequest": {
       "document": "CreateInstanceByApi请求参数结构体",
@@ -259,6 +310,53 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceInfoRequest": {
+      "document": "DescribeInstanceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwpg-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceInfoResponse": {
+      "document": "DescribeInstanceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "无",
+          "member": "SimpleInstanceInfo",
+          "name": "SimpleInstanceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "1",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1174,6 +1272,56 @@
       ],
       "type": "object"
     },
+    "ResourceInfo": {
+      "document": "资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "nc2.large",
+          "member": "string",
+          "name": "SpecName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200",
+          "member": "int64",
+          "name": "Count",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "磁盘信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \"DiskType\": \"CLOUD_HSSD\", \"DiskSize\": 20, \"DiskCount\": 10 }",
+          "member": "CBSSpecInfo",
+          "name": "DiskSpec",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，DATA\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Local",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ResourceSpecNew": {
       "document": "资源规格",
       "members": [
@@ -1251,6 +1399,188 @@
         }
       ],
       "usage": "in"
+    },
+    "SimpleInstanceInfo": {
+      "document": "集群信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "wu",
+          "member": "int64",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Version",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserVPCID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserSubnetID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessInfo",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewFlag",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ChargeProperties",
+          "name": "ChargeProperties",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ResourceInfo",
+          "name": "Resources",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Tag": {
       "document": "标签描述",

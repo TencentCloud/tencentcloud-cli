@@ -800,6 +800,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 公网访问 // 1 内网访问\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "WebUIType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1684,6 +1694,42 @@
           "name": "ExpertModeConfiguration",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "trace链路",
+          "example": "false",
+          "member": "bool",
+          "name": "TraceModeOn",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "trace链路配置",
+          "example": "{}",
+          "member": "TraceModeConfiguration",
+          "name": "TraceModeConfiguration",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint保留个数",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckpointRetainedNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "算子拓扑图",
+          "example": "{}",
+          "member": "JobGraph",
+          "name": "JobGraph",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1697,6 +1743,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Version",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2575,6 +2622,15 @@
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "2 是checkpoint\n1 是触发savepoint\n3 停止触发的savepoint",
+          "example": "[]",
+          "member": "int64",
+          "name": "RecordTypes",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -2588,7 +2644,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2598,7 +2654,7 @@
           "example": "无",
           "member": "Savepoint",
           "name": "Savepoint",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2608,7 +2664,7 @@
           "example": "无",
           "member": "Savepoint",
           "name": "RunningSavepoint",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2618,7 +2674,7 @@
           "example": "1",
           "member": "int64",
           "name": "RunningTotalNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3237,6 +3293,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "筛选条件字段",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "工作空间 Serialid",
           "example": "space-1327",
           "member": "string",
@@ -3251,6 +3316,56 @@
       "document": "DescribeTreeJobs返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root-xxx",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "folder-xxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "New Folder",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹下的作业列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TreeJobSets",
+          "name": "JobSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "迭代子目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeTreeJobsRsp",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3258,6 +3373,72 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeTreeJobsRsp": {
+      "document": "自定义树结构遍历子节点",
+      "members": [
+        {
+          "disabled": false,
+          "document": "父节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "root-xxx",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "folder-xxx",
+          "member": "string",
+          "name": "Id",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "New Folder",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前文件夹下的作业集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "JobSet",
+          "member": "TreeJobSets",
+          "name": "JobSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "迭代子目录\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeTreeJobsRsp",
+          "name": "Children",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "RequestId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeTreeResourcesRequest": {
       "document": "DescribeTreeResources请求参数结构体",
@@ -3713,7 +3894,7 @@
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3723,7 +3904,7 @@
           "example": "hello",
           "member": "string",
           "name": "EntrypointClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3733,7 +3914,7 @@
           "example": "--config key=value",
           "member": "string",
           "name": "ProgramArgs",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3743,7 +3924,7 @@
           "example": "hello",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3753,7 +3934,7 @@
           "example": "2021-01-22 20:06:19",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3763,7 +3944,7 @@
           "example": "1",
           "member": "int64",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3773,7 +3954,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DefaultParallelism",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3783,7 +3964,7 @@
           "example": "[]",
           "member": "Property",
           "name": "Properties",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3793,7 +3974,7 @@
           "example": "[]",
           "member": "ResourceRefDetail",
           "name": "ResourceRefDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3803,7 +3984,7 @@
           "example": "1132",
           "member": "string",
           "name": "CreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3813,7 +3994,7 @@
           "example": "2021-01-22 20:06:19",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3823,7 +4004,7 @@
           "example": "oceanus-example",
           "member": "string",
           "name": "COSBucket",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3833,7 +4014,7 @@
           "example": "1",
           "member": "int64",
           "name": "LogCollect",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3843,7 +4024,7 @@
           "example": "2048",
           "member": "uint64",
           "name": "MaxParallelism",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3853,7 +4034,7 @@
           "example": "0.5",
           "member": "float",
           "name": "JobManagerSpec",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3863,7 +4044,7 @@
           "example": "0.5",
           "member": "float",
           "name": "TaskManagerSpec",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -3873,7 +4054,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsLogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3883,7 +4064,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsTopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3893,7 +4074,7 @@
           "example": "Python-3.7",
           "member": "string",
           "name": "PythonVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3903,7 +4084,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoRecover",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3913,7 +4094,7 @@
           "example": "INFO",
           "member": "string",
           "name": "LogLevel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3923,7 +4104,7 @@
           "example": "[]",
           "member": "ClazzLevel",
           "name": "ClazzLevels",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3933,7 +4114,7 @@
           "example": "false",
           "member": "bool",
           "name": "ExpertModeOn",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3943,7 +4124,47 @@
           "example": "{}",
           "member": "ExpertModeConfiguration",
           "name": "ExpertModeConfiguration",
-          "required": false,
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "trace链路\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "TraceModeOn",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "trace链路配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "TraceModeConfiguration",
+          "name": "TraceModeConfiguration",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "checkpoint保留个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckpointRetainedNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "算子拓扑图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{}",
+          "member": "JobGraph",
+          "name": "JobGraph",
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         }
@@ -6248,6 +6469,90 @@
         }
       ],
       "usage": "both"
+    },
+    "TraceModeConfiguration": {
+      "document": "{\n  \"Rate\": \"0.01\",  ///如1%转换为0.01\n  \"Operator\":  \"1:OUT,2:IN_AND_OUT,3:IN\"  ///如1%转换为0.01 \n}\nOperator\n算子ID顺序配置，可以对每个算子配置IN、OUT、IN_AND_OUT三个值，分别表示采集输入数据、采集输出数据、同时采集输入和输出数据，配置示例:",
+      "members": [
+        {
+          "disabled": false,
+          "document": "如1%转换为0.01\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.01",
+          "member": "string",
+          "name": "Rate",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "按照算子ID顺序配置，可以对每个算子配置IN、OUT、IN_AND_OUT三个值，分别表示采集输入数据、采集输出数据、同时采集输入和输出数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1:OUT,2:IN_AND_OUT,3:IN",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TreeJobSets": {
+      "document": "自定义树结构出参作业列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cql-xxx",
+          "member": "string",
+          "name": "JobId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "JobType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业占用资源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.00",
+          "member": "float",
+          "name": "RunningCu",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作业状态 启动或者停止或者暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TreeResourceItem": {
       "document": "树状结构资源对象",

@@ -29,7 +29,7 @@
       "status": "online"
     },
     "DescribeKBVulnerability": {
-      "document": "本接口(DescribeKBVulnerability)用于在知识库中查询漏洞详细信息，支持根据CVE ID查询或者根据Vul ID查询。",
+      "document": "本接口(DescribeKBVulnerability)用于在知识库中查询漏洞详细信息，支持根据CVE、Vul ID、CNVD ID、CNNVD ID查询。",
       "input": "DescribeKBVulnerabilityRequest",
       "name": "查询知识库漏洞详情列表",
       "output": "DescribeKBVulnerabilityResponse",
@@ -57,6 +57,42 @@
     "serviceShortName": "bsca"
   },
   "objects": {
+    "AffectedComponent": {
+      "document": "受漏洞影响的组件信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "受漏洞影响的组件名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "apache-log4j",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "受漏洞影响的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2.4.0<=version<2.12.2\"]",
+          "member": "string",
+          "name": "AffectedVersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修复此漏洞的版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"2.15.0\"]",
+          "member": "string",
+          "name": "FixedVersionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CVSSV2Info": {
       "document": "CVSSv2.0详细信息。",
       "members": [
@@ -576,7 +612,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CVE ID列表（不能与Vul ID同时存在）",
+          "document": "根据CVE ID查询（不能与其他参数同时存在）",
           "example": "[\"CVE-2020-1971\", \"CVE-2019-1551\"]",
           "member": "string",
           "name": "CVEID",
@@ -585,10 +621,28 @@
         },
         {
           "disabled": false,
-          "document": "Vul ID列表（不能与CVE ID 同时存在）",
+          "document": "根据Vul ID查询（不能与其他参数同时存在）",
           "example": "[\"pcmgr-303514\"]",
           "member": "string",
           "name": "VulID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据CNVD ID查询（不能与其他参数同时存在）",
+          "example": "[\"CNVD-2021-04811\"]",
+          "member": "string",
+          "name": "CNVDID",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "根据CNNVD ID查询（不能与其他参数同时存在）",
+          "example": "[\"CNNVD-202108-1945\"]",
+          "member": "string",
+          "name": "CNNVDID",
           "required": false,
           "type": "list"
         }
@@ -604,7 +658,7 @@
           "example": "无",
           "member": "VulnerabilityUnion",
           "name": "VulnerabilityDetailList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1003,7 +1057,7 @@
           "example": "其他",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1013,7 +1067,7 @@
           "example": "web应用漏洞",
           "member": "string",
           "name": "CategoryType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1023,7 +1077,7 @@
           "example": "漏洞描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1033,7 +1087,7 @@
           "example": "升级到最新无漏洞版本",
           "member": "string",
           "name": "OfficialSolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1043,7 +1097,7 @@
           "example": "无",
           "member": "string",
           "name": "ReferenceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1053,7 +1107,7 @@
           "example": "目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://www.openssl.org/news/secadv/2019",
           "member": "string",
           "name": "DefenseSolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1063,7 +1117,7 @@
           "example": "无",
           "member": "CVSSV2Info",
           "name": "CVSSv2Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1073,7 +1127,7 @@
           "example": "无",
           "member": "CVSSV3Info",
           "name": "CVSSv3Info",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1083,7 +1137,7 @@
           "example": "2019-09-11 01:15:00",
           "member": "string",
           "name": "SubmitTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1093,7 +1147,7 @@
           "example": "CWE-311",
           "member": "string",
           "name": "CWEID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1103,7 +1157,7 @@
           "example": "(AV:L/AC:M/Au:N/C:P/I:N/A:N)",
           "member": "string",
           "name": "CVSSv2Vector",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1113,8 +1167,18 @@
           "example": "CVSS:3.1/AV:L/AC:H/PR:L/UI:N/S:U/C:H/I:N/A:N",
           "member": "string",
           "name": "CVSSv3Vector",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞影响的组件列表，仅当查询单个漏洞时有效",
+          "example": "无",
+          "member": "AffectedComponent",
+          "name": "AffectedComponentList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -1129,7 +1193,7 @@
           "example": "pcmgr-303514",
           "member": "string",
           "name": "VulID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1139,7 +1203,7 @@
           "example": "CVE-2019-11236",
           "member": "string",
           "name": "CVEID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1149,7 +1213,7 @@
           "example": "CNVD-XXX",
           "member": "string",
           "name": "CNVDID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1159,7 +1223,7 @@
           "example": "CNNVD-202012-579",
           "member": "string",
           "name": "CNNVDID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1169,7 +1233,7 @@
           "example": "OpenSSL 拒绝服务漏洞",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1179,7 +1243,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsSuggest",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1189,7 +1253,7 @@
           "example": "Low",
           "member": "string",
           "name": "Severity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

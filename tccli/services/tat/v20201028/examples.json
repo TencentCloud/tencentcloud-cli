@@ -82,7 +82,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAutomationAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"lhins-ar5wyn4x\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"520e7b93-904d-44de-a2dd-8e4c545be4ce\",\n        \"AutomationAgentSet\": [\n            {\n                \"InstanceId\": \"lhins-ar5wyn4x\",\n                \"Version\": \"0.1.0\",\n                \"LastHeartbeatTime\": \"2020-11-16T12:05:44+00:00\",\n                \"AgentStatus\": \"Online\",\n                \"Environment\": \"Linux\"\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"520e7b93-904d-44de-a2dd-8e4c545be4ce\",\n        \"AutomationAgentSet\": [\n            {\n                \"InstanceId\": \"lhins-ar5wyn4x\",\n                \"Version\": \"0.1.0\",\n                \"LastHeartbeatTime\": \"2020-11-16T12:05:44+00:00\",\n                \"AgentStatus\": \"Online\",\n                \"Environment\": \"Linux\",\n                \"SupportFeatures\": [\n                    \"SESSION_MANAGER\"\n                ]\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询客户端状态"
       }
     ],

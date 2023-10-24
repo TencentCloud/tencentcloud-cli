@@ -203,6 +203,13 @@
       "output": "ModifyMigrateRateLimitResponse",
       "status": "online"
     },
+    "ModifyMigrateRuntimeAttribute": {
+      "document": "修改任务运行时属性，此接口不同于配置类接口，不会进行状态机判断。",
+      "input": "ModifyMigrateRuntimeAttributeRequest",
+      "name": "修改任务运行时属性",
+      "output": "ModifyMigrateRuntimeAttributeResponse",
+      "status": "online"
+    },
     "ModifyMigrationJob": {
       "document": "配置迁移服务，配置成功后可通过`CreateMigrationCheckJob` 创建迁移校验任务接口发起校验任务，只有校验通过才能启动迁移任务。",
       "input": "ModifyMigrationJobRequest",
@@ -1756,6 +1763,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1766,6 +1774,7 @@
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1776,16 +1785,18 @@
           "example": "mysql",
           "member": "string",
           "name": "DatabaseType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "节点类型，为空或者\"simple\":表示普通节点，\"cluster\": 集群节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "节点类型，为空或者\"simple\"表示普通节点、\"cluster\"表示集群节点；对于mongo业务，取值为replicaset(mongodb副本集)、standalone(mongodb单节点)、cluster(mongodb集群)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "simple",
           "member": "string",
           "name": "NodeType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1796,6 +1807,7 @@
           "example": "无",
           "member": "DBInfo",
           "name": "Info",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -1806,6 +1818,7 @@
           "example": "others",
           "member": "string",
           "name": "Supplier",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1816,6 +1829,7 @@
           "example": "无",
           "member": "KeyValuePairOption",
           "name": "ExtraAttr",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1826,6 +1840,7 @@
           "example": "TencentVPC",
           "member": "string",
           "name": "DatabaseNetEnv",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5138,6 +5153,42 @@
     },
     "ModifyMigrateRateLimitResponse": {
       "document": "ModifyMigrateRateLimit返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMigrateRuntimeAttributeRequest": {
+      "document": "ModifyMigrateRuntimeAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "迁移任务id，如：dts-2rgv0f09",
+          "example": "dts-7itt1j4w",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的属性，此结构设计为通用结构，用于屏蔽多个业务的定制属性。<br>例如对于Redis:<br>{<br>\t \"Key\": \"DstWriteMode\",\t//目标库写入模式<br> \t\"Value\": \"normal\"\t          //clearData(清空目标实例数据)、overwrite(以覆盖写的方式执行任务)、normal(跟正常流程一样，不做额外动作，默认为此值) <br>},<br>{<br/>\t \"Key\": \"IsDstReadOnly\",\t//是否在迁移时设置目标库只读<br/> \t\"Value\": \"true\"\t          //true(设置只读)、false(不设置只读) <br/>} ",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "OtherOptions",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyMigrateRuntimeAttributeResponse": {
+      "document": "ModifyMigrateRuntimeAttribute返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

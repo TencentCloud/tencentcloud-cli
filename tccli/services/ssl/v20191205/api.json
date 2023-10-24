@@ -576,7 +576,7 @@
         },
         {
           "disabled": false,
-          "document": "密钥对参数，RSA仅支持2048。ECC仅支持prime256v1",
+          "document": "密钥对参数，RSA仅支持2048。ECC仅支持prime256v1。加密算法选择ECC时，此参数必填",
           "example": "无",
           "member": "string",
           "name": "CsrKeyParameter",
@@ -640,6 +640,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

@@ -3830,6 +3830,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "Statement任务列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "复杂类型",
+          "member": "StatementInformation",
+          "name": "Statements",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -13881,6 +13891,32 @@
           "name": "Supplement",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StatementInformation": {
+      "document": "statement信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SQL任务唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "09ei23ea-d6c0-4cd9-bbed-2e909jef04dc",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "select 1;",
+          "member": "string",
+          "name": "SQL",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

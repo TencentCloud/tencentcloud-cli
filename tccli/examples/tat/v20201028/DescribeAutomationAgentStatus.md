@@ -20,7 +20,10 @@ Output:
                 "Version": "0.1.0",
                 "LastHeartbeatTime": "2020-11-16T12:05:44+00:00",
                 "AgentStatus": "Online",
-                "Environment": "Linux"
+                "Environment": "Linux",
+                "SupportFeatures": [
+                    "SESSION_MANAGER"
+                ]
             }
         ],
         "TotalCount": 1

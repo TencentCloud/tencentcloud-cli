@@ -16,6 +16,14 @@
         "title": "描述实例信息"
       }
     ],
+    "DescribeInstanceInfo": [
+      {
+        "document": "查询集群信息",
+        "input": "POST / HTTP/1.1\nHost: cdwpg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceInfo\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SimpleInstanceInfo\": {\n            \"ID\": 0,\n            \"InstanceId\": \"abc\",\n            \"InstanceName\": \"abc\",\n            \"Version\": \"abc\",\n            \"Region\": \"abc\",\n            \"Zone\": \"abc\",\n            \"UserVPCID\": \"abc\",\n            \"UserSubnetID\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"ExpireTime\": \"abc\",\n            \"AccessInfo\": \"abc\",\n            \"RenewFlag\": 0,\n            \"ChargeProperties\": {\n                \"PayMode\": 0,\n                \"RenewFlag\": 0,\n                \"TimeSpan\": 0,\n                \"TimeUnit\": \"abc\",\n                \"ChargeType\": \"abc\"\n            },\n            \"Resources\": [\n                {\n                    \"SpecName\": \"abc\",\n                    \"Count\": 0,\n                    \"DiskSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0\n                    },\n                    \"Type\": \"abc\"\n                }\n            ],\n            \"Tags\": [\n                {\n                    \"TagKey\": \"abc\",\n                    \"TagValue\": \"abc\"\n                }\n            ],\n            \"Status\": 0\n        },\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群信息"
+      }
+    ],
     "DescribeInstanceState": [
       {
         "document": "需要展现集群状态以及操作进度",

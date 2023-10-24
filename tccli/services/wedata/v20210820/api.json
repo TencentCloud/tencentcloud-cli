@@ -16968,7 +16968,7 @@
         {
           "disabled": false,
           "document": "任务id",
-          "example": "\"cos-|ap-|file.dg\"",
+          "example": "\"ap-|cos-|file.dg\"",
           "member": "string",
           "name": "TaskId",
           "required": true,
@@ -16985,8 +16985,8 @@
         },
         {
           "disabled": false,
-          "document": "task version path",
-          "example": "\"cos-|ap-|file_xx.dg\"",
+          "document": "该任务选定版本的存储路径：\nDescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 TaskInfo.TaskExt.Properties 下 Base64.encode($region | $bucket | $ftp.file.name) 值",
+          "example": "\"YXAtfGNvcy18ZmlsZV94eC5kZw==\"",
           "member": "string",
           "name": "TaskVersionPath",
           "required": true,
@@ -16994,8 +16994,8 @@
         },
         {
           "disabled": false,
-          "document": "task version",
-          "example": "\"xx\"",
+          "document": "该任务选定版本id：\nDescribeDsTaskVersionList 或者 DescribeDsTaskVersionInfo 返回的对应的 VersionId 取值",
+          "example": "\"20230517110145728\"",
           "member": "string",
           "name": "TaskVersion",
           "required": false,
@@ -17013,7 +17013,7 @@
           "example": "[]",
           "member": "IntegrationNodeInfo",
           "name": "Nodes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17023,7 +17023,7 @@
           "example": "[]",
           "member": "IntegrationNodeMapping",
           "name": "Mappings",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -17033,7 +17033,7 @@
           "example": "\"cos-|ap-|file.dg\"",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

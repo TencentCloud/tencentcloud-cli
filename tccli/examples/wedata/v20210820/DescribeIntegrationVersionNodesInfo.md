@@ -6,92 +6,113 @@ Input:
 
 ```
 tccli wedata DescribeIntegrationVersionNodesInfo --cli-unfold-argument  \
-    --TaskId cos-|ap-|file.dg \
-    --ProjectId 22yy \
-    --TaskVersionPath cos-|ap-|file_xxy.dg \
-    --TaskVersion xx
+    --TaskId ap-|cos-|file.dg \
+    --ProjectId 123 \
+    --TaskVersionPath YXAtfGNvcy18ZmlsZV94eC5kZw== \
+    --TaskVersion 202310060503283
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TaskId": "cos-|ap-|file.dg",
-        "RequestId": "xx",
         "Nodes": [
             {
-                "NodeType": "xx",
-                "Description": "xx",
-                "CreatorUin": "xx",
-                "DataSourceType": "xx",
-                "ProjectId": "xx",
-                "OwnerUin": "xx",
-                "ExtConfig": [
+                "Id": "abc",
+                "TaskId": "abc",
+                "Name": "abc",
+                "NodeType": "abc",
+                "DataSourceType": "abc",
+                "Description": "abc",
+                "DatasourceId": "abc",
+                "Config": [
                     {
-                        "Name": "xx",
-                        "Value": "xx"
+                        "Name": "abc",
+                        "Value": "abc"
                     }
                 ],
-                "DatasourceId": "xx",
+                "ExtConfig": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "Schema": [
+                    {
+                        "Id": "abc",
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Type": "abc",
+                        "Properties": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Alias": "abc",
+                        "Comment": "abc"
+                    }
+                ],
                 "NodeMapping": {
-                    "SourceId": "xx",
-                    "SchemaMappings": [
-                        {
-                            "SinkSchemaId": "xx",
-                            "SourceSchemaId": "xx"
-                        }
-                    ],
-                    "SinkId": "xx",
+                    "SourceId": "abc",
+                    "SinkId": "abc",
                     "SourceSchema": [
                         {
-                            "Type": "xx",
-                            "Id": "xx",
-                            "Value": "xx",
-                            "Name": "xx"
+                            "Id": "abc",
+                            "Name": "abc",
+                            "Value": "abc",
+                            "Type": "abc",
+                            "Alias": "abc",
+                            "Comment": "abc",
+                            "Properties": [
+                                {
+                                    "Name": "__key__",
+                                    "Value": "abc"
+                                }
+                            ]
+                        }
+                    ],
+                    "SchemaMappings": [
+                        {
+                            "SourceSchemaId": "abc",
+                            "SinkSchemaId": "abc"
                         }
                     ]
                 },
-                "TaskId": "xx",
-                "AppId": "xx",
-                "Schema": [
-                    {
-                        "Type": "xx",
-                        "Id": "xx",
-                        "Value": "xx",
-                        "Name": "xx"
-                    }
-                ],
-                "Config": [
-                    {
-                        "Name": "xx",
-                        "Value": "xx"
-                    }
-                ],
-                "Id": "xx",
-                "OperatorUin": "xx",
-                "Name": "xx"
+                "AppId": "abc",
+                "ProjectId": "abc",
+                "CreatorUin": "abc",
+                "OperatorUin": "abc",
+                "OwnerUin": "abc",
+                "CreateTime": "abc",
+                "UpdateTime": "abc"
             }
         ],
         "Mappings": [
             {
-                "SourceId": "xx",
-                "SchemaMappings": [
-                    {
-                        "SinkSchemaId": "xx",
-                        "SourceSchemaId": "xx"
-                    }
-                ],
-                "SinkId": "xx",
+                "SourceId": "abc",
+                "SinkId": "abc",
                 "SourceSchema": [
                     {
-                        "Type": "xx",
-                        "Id": "xx",
-                        "Value": "xx",
-                        "Name": "xx"
+                        "Id": "abc",
+                        "Name": "abc",
+                        "Value": "abc",
+                        "Type": "abc",
+                        "Alias": "abc",
+                        "Comment": "abc",
+                        "Properties": []
+                    }
+                ],
+                "SchemaMappings": [
+                    {
+                        "SourceSchemaId": "abc",
+                        "SinkSchemaId": "abc"
                     }
                 ]
             }
-        ]
+        ],
+        "TaskId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

@@ -4876,7 +4876,7 @@
         {
           "disabled": false,
           "document": "固定值，为\"monitor\"",
-          "example": "",
+          "example": "monitor",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -4884,8 +4884,8 @@
         },
         {
           "disabled": false,
-          "document": "策略组id",
-          "example": "",
+          "document": "策略组id,即1.0的告警策略id,可以从策略详情获取",
+          "example": "12322",
           "member": "int64",
           "name": "GroupId",
           "required": true,
