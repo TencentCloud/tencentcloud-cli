@@ -1250,8 +1250,8 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏输出，取值范围：<br><li>true：隐藏输出 <br><li>false：不隐藏 <br>默认为 false。",
-          "example": "false",
+          "document": "是否隐藏输出，取值范围：<br><li>true：隐藏输出 <br><li>false：不隐藏 <br>默认为 true。",
+          "example": "true",
           "member": "bool",
           "name": "HideOutput",
           "required": false,

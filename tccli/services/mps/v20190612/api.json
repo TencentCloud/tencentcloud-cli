@@ -15038,42 +15038,38 @@
         {
           "disabled": false,
           "document": "水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ImageContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "水印的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>\n默认值：10%。",
-          "example": "",
+          "document": "水印的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>\n当宽高都不填或者为0时，默认为 10%。",
+          "example": "无",
           "member": "string",
           "name": "Width",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>\n默认值：0px，表示 Height 按照原始水印图片的宽高比缩放。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Height",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束（默认值）。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepeatType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -15084,42 +15080,38 @@
         {
           "disabled": false,
           "document": "水印图片 [Base64](https://tools.ietf.org/html/rfc4648) 编码后的字符串。支持 jpeg、png 图片格式。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ImageContent",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "水印的宽度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素。取值范围为[8, 4096]。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Width",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>\n默认值：0px，表示 Height 按照原始水印图片的宽高比缩放。",
-          "example": "",
+          "document": "水印的高度。支持 %、px 两种格式：\n<li>当字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素。取值范围为0或[8, 4096]。</li>\n",
+          "example": "无",
           "member": "string",
           "name": "Height",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "水印重复类型。使用场景：水印为动态图像。取值范围：\n<li>once：动态水印播放完后，不再出现；</li>\n<li>repeat_last_frame：水印播放完后，停留在最后一帧；</li>\n<li>repeat：水印循环播放，直到视频结束。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "RepeatType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

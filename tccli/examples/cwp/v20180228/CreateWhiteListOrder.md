@@ -9,6 +9,7 @@ tccli cwp CreateWhiteListOrder --cli-unfold-argument  \
     --LicenseType 1 \
     --LicenseNum 10 \
     --Deadline 10 \
+    --SourceType 1 \
     --RuleName asset_center
 ```
 

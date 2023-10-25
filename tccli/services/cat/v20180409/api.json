@@ -388,6 +388,15 @@
           "name": "City",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "es scroll查询id",
+          "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlvUQ==",
+          "member": "string",
+          "name": "ScrollID",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -401,6 +410,7 @@
           "example": "无",
           "member": "DetailedSingleDataDefine",
           "name": "DataSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -410,7 +420,18 @@
           "example": "10000",
           "member": "int64",
           "name": "TotalNumber",
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "es scroll查询的id",
+          "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlvUQ==",
+          "member": "string",
+          "name": "ScrollID",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

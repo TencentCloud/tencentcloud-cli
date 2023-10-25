@@ -11,66 +11,71 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "NetworkAclSet": [
             {
-                "TagSet": [],
-                "NetworkAclId": "acl-kmxukyv6",
-                "VpcId": "vpc-9it989fn",
-                "NetworkAclType": "TRIPLE",
+                "VpcId": "vpc-c1fd6eqe",
+                "NetworkAclId": "acl-aeyasc3zz",
+                "NetworkAclName": "ddd",
+                "NetworkAclType": "1",
+                "CreatedTime": "2021-02-19 17:52:43",
+                "SubnetSet": [
+                    {
+                        "VpcId": "vpc-c1fd6eqe",
+                        "SubnetId": "subnet-ptqwqcjzd",
+                        "SubnetName": "test_3",
+                        "CidrBlock": "10.0.0.0/24",
+                        "IsDefault": true,
+                        "EnableBroadcast": true,
+                        "Zone": "ap-beijing",
+                        "RouteTableId": "rtb-hnos32zkc",
+                        "CreatedTime": "2021-02-19 17:52:43",
+                        "AvailableIpAddressCount": 1,
+                        "Ipv6CidrBlock": "",
+                        "NetworkAclId": "acl-aeyasc3zz",
+                        "IsRemoteVpcSnat": true,
+                        "TotalIpAddressCount": 1,
+                        "TagSet": [
+                            {
+                                "Key": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "CdcId": "cdc-12312",
+                        "IsCdcSubnet": 0
+                    }
+                ],
                 "IngressEntries": [
                     {
                         "Protocol": "all",
-                        "Description": "测试1",
                         "Ipv6CidrBlock": "::/0",
-                        "ModifyTime": "2020-01-21 14:26:22",
-                        "Action": "Drop",
-                        "CidrBlock": "0.0.0.0/0",
-                        "Port": "80"
+                        "Action": "Accept",
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv6EntryId": "acli63-bwi12ozo",
+                        "Priority": 1
                     }
                 ],
-                "SubnetSet": [
-                    {
-                        "NetworkAclId": "acl-kmxukyv6",
-                        "RouteTableId": "rtb-we123456",
-                        "VpcId": "vpc-rt123456",
-                        "EnableBroadcast": true,
-                        "Zone": "ap-guangzhou",
-                        "Ipv6CidrBlock": "::/0",
-                        "AvailableIpAddressCount": 1,
-                        "IsRemoteVpcSnat": true,
-                        "SubnetName": "子网1",
-                        "TotalIpAddressCount": 1,
-                        "IsCdcSubnet": 0,
-                        "CdcId": "cluster-gbo27yc4",
-                        "TagSet": [
-                            {
-                                "Value": "og",
-                                "Key": "ck"
-                            }
-                        ],
-                        "CreatedTime": "2020-01-20 14:26:22",
-                        "SubnetId": "subnet-qmqye6ew",
-                        "CidrBlock": "10.0.0.0/24",
-                        "IsDefault": true
-                    }
-                ],
-                "NetworkAclName": "测试001",
-                "CreatedTime": "2020-01-20 14:26:22",
                 "EgressEntries": [
                     {
-                        "Protocol": "All",
-                        "Description": "测试222",
+                        "Protocol": "all",
                         "Ipv6CidrBlock": "::/0",
-                        "ModifyTime": "2020-01-20 14:26:22",
-                        "Action": "Drop",
-                        "CidrBlock": "10.0.0.0/24",
-                        "Port": "80"
+                        "Action": "Accept",
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv6EntryId": "acli63-pmh23vc1q",
+                        "Priority": 1
+                    }
+                ],
+                "TagSet": [
+                    {
+                        "Key": "test",
+                        "Value": "1"
                     }
                 ]
             }
         ],
-        "RequestId": "cccb2665-5d02-4d87-b9e7-757bb06e5beb"
+        "TotalCount": 1,
+        "RequestId": "abc"
     }
 }
 ```
@@ -83,75 +88,78 @@ Input:
 
 ```
 tccli vpc DescribeNetworkAcls --cli-unfold-argument  \
-    --NetworkAclIds acl-12345678 \
-    --Limit 20 \
-    --Offset 0
+    --Filters.0.Name vpc-id \
+    --Filters.0.Values vpc-nwg3twqu \
+    --Offset 1 \
+    --Limit 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "NetworkAclSet": [
             {
-                "TagSet": [],
-                "NetworkAclId": "",
-                "VpcId": "vpc-kj123456",
+                "VpcId": "vpc-nwg3twqu",
+                "NetworkAclId": "acl-3v122sn",
+                "NetworkAclName": "111111",
                 "NetworkAclType": "TRIPLE",
+                "CreatedTime": "2022-04-27 20:46:15",
+                "TagSet": [],
+                "SubnetSet": [],
                 "IngressEntries": [
                     {
                         "Protocol": "all",
-                        "Description": "测试1",
                         "Ipv6CidrBlock": "::/0",
-                        "ModifyTime": "2020-01-21 14:26:22",
                         "Action": "Drop",
-                        "CidrBlock": "0.0.0.0/0",
-                        "Port": "80"
-                    }
-                ],
-                "SubnetSet": [
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv6EntryId": "acli63-7whoqwek",
+                        "Priority": 1
+                    },
                     {
-                        "NetworkAclId": "acl-kmxukyv6",
-                        "RouteTableId": "rtb-we123456",
-                        "VpcId": "vpc-kj123456",
-                        "EnableBroadcast": true,
-                        "Zone": "ap-guangzhou",
-                        "Ipv6CidrBlock": "::/0",
-                        "AvailableIpAddressCount": 1,
-                        "IsCdcSubnet": 0,
-                        "CdcId": "cluster-gbo27yc4",
-                        "IsRemoteVpcSnat": true,
-                        "SubnetName": "测试01",
-                        "TotalIpAddressCount": 1,
-                        "TagSet": [
-                            {
-                                "Value": "yt",
-                                "Key": "kj"
-                            }
-                        ],
-                        "CreatedTime": "2020-01-21 14:26:22",
-                        "SubnetId": "subnet-qmqye6ew",
-                        "CidrBlock": "10.0.0.0/24",
-                        "IsDefault": true
+                        "Protocol": "all",
+                        "CidrBlock": "172.16.0.0/16",
+                        "Action": "Drop",
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv4EntryId": "acli43-dd0lxs1c",
+                        "Priority": 1
+                    },
+                    {
+                        "Protocol": "all",
+                        "CidrBlock": "0.0.0.0/0",
+                        "Action": "Drop",
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv4EntryId": "acli43-ezxjnhgy",
+                        "Priority": 2
                     }
                 ],
-                "NetworkAclName": "测试33",
-                "CreatedTime": "2020-01-21 14:26:22",
                 "EgressEntries": [
                     {
-                        "Protocol": "All",
-                        "Description": "测试",
+                        "Protocol": "all",
                         "Ipv6CidrBlock": "::/0",
-                        "ModifyTime": "2020-01-21 14:26:22",
                         "Action": "Drop",
-                        "CidrBlock": "10.0.0.0/24",
-                        "Port": "80"
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv6EntryId": "acli63-pwqzahcs",
+                        "Priority": 1
+                    },
+                    {
+                        "Protocol": "all",
+                        "CidrBlock": "0.0.0.0/0",
+                        "Action": "Drop",
+                        "Description": "",
+                        "ModifyTime": "",
+                        "NetworkAclIpv4EntryId": "acli43-ob44ewjm",
+                        "Priority": 1
                     }
                 ]
             }
         ],
-        "RequestId": "cccb2665-5d02-4d87-b9e7-757bb06e5beb"
+        "TotalCount": 1,
+        "RequestId": "87c50ae4-bfd84-48cf-b92e-b637cewdd2aa"
     }
 }
 ```

@@ -11219,16 +11219,17 @@
       "members": [
         {
           "disabled": false,
-          "document": "HLS续流超时时间。\n取值范围[0，1800]。",
-          "example": "",
+          "document": "HLS续流超时时间。\n取值范围[0，1800]。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "uint64",
           "name": "FlowContinueDuration",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "HttpCodeInfo": {
       "document": "HTTP返回码和统计数据",
@@ -15149,7 +15150,7 @@
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15159,7 +15160,7 @@
           "example": "test-1",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15169,7 +15170,7 @@
           "example": "test",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15179,7 +15180,7 @@
           "example": "无",
           "member": "RecordParam",
           "name": "FlvParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15189,7 +15190,7 @@
           "example": "无",
           "member": "RecordParam",
           "name": "HlsParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15199,7 +15200,7 @@
           "example": "无",
           "member": "RecordParam",
           "name": "Mp4Param",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15209,7 +15210,7 @@
           "example": "无",
           "member": "RecordParam",
           "name": "AacParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15219,7 +15220,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsDelayLive",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15229,7 +15230,7 @@
           "example": "无",
           "member": "HlsSpecialParam",
           "name": "HlsSpecialParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15239,7 +15240,7 @@
           "example": "无",
           "member": "RecordParam",
           "name": "Mp3Param",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -15249,7 +15250,7 @@
           "example": "false",
           "member": "bool",
           "name": "RemoveWatermark",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -15259,7 +15260,7 @@
           "example": "无",
           "member": "FlvSpecialParam",
           "name": "FlvSpecialParam",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

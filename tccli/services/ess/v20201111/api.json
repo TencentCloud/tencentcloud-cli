@@ -43,7 +43,7 @@
       "status": "online"
     },
     "CreateConvertTaskApi": {
-      "document": "此接口（CreateConvertTaskApi）用来将word、excel、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
+      "document": "此接口（CreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/GetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "CreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "CreateConvertTaskApiResponse",
@@ -61,6 +61,13 @@
       "input": "CreateEmbedWebUrlRequest",
       "name": "获取其他可嵌入web页面",
       "output": "CreateEmbedWebUrlResponse",
+      "status": "online"
+    },
+    "CreateExtendedServiceAuthInfos": {
+      "document": "创建企业扩展服务授权，当前仅支持授权 “企业自动签” 给企业员工。\n\n注：支持集团代子企业操作，请联系运营开通此功能。",
+      "input": "CreateExtendedServiceAuthInfosRequest",
+      "name": "创建企业扩展服务（自动签）授权",
+      "output": "CreateExtendedServiceAuthInfosResponse",
       "status": "online"
     },
     "CreateFlow": {
@@ -243,6 +250,13 @@
       "input": "CreateWebThemeConfigRequest",
       "name": "设置本企业嵌入式页面主题配置",
       "output": "CreateWebThemeConfigResponse",
+      "status": "online"
+    },
+    "DeleteExtendedServiceAuthInfos": {
+      "document": "删除企业扩展服务授权，当前仅支持 “企业自动签” 取消授权。\n\n注：支持集团代子企业操作，请联系运营开通此功能。",
+      "input": "DeleteExtendedServiceAuthInfosRequest",
+      "name": "删除企业扩展服务（自动签）授权",
+      "output": "DeleteExtendedServiceAuthInfosResponse",
       "status": "online"
     },
     "DeleteIntegrationDepartment": {
@@ -1969,7 +1983,7 @@
         },
         {
           "disabled": false,
-          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>\n注: `当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容`",
+          "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>\n注: `当使用的模板中存在动态表格控件时，预览结果中没有动态表格的填写内容，动态表格合成完后会触发文档合成完成的回调通知`",
           "example": "无",
           "member": "bool",
           "name": "NeedPreview",
@@ -1978,7 +1992,7 @@
         },
         {
           "disabled": false,
-          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
+          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子。</li></ul>\n注: `1.此参数在NeedPreview 为true时有效`\n`2.动态表格控件不支持H5链接方式预览`",
           "example": "无",
           "member": "int64",
           "name": "PreviewType",
@@ -2121,6 +2135,60 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExtendedServiceAuthInfosRequest": {
+      "document": "CreateExtendedServiceAuthInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yD************oimj",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "本企业员工的id，需要已实名，正常在职员工",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n</ul>\n",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExtendServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateExtendedServiceAuthInfosResponse": {
+      "document": "CreateExtendedServiceAuthInfos返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -5070,6 +5138,60 @@
     },
     "CreateWebThemeConfigResponse": {
       "document": "CreateWebThemeConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExtendedServiceAuthInfosRequest": {
+      "document": "DeleteExtendedServiceAuthInfos请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yD************oimj",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "本企业员工的id，需要已实名，正常在职员工",
+          "example": "无",
+          "member": "string",
+          "name": "UserIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n</ul>\n",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExtendServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteExtendedServiceAuthInfosResponse": {
+      "document": "DeleteExtendedServiceAuthInfos返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

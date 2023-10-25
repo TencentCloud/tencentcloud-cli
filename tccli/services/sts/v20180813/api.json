@@ -1,7 +1,7 @@
 {
   "actions": {
     "AssumeRole": {
-      "document": "申请扮演角色临时访问凭证。",
+      "document": "申请扮演角色临时访问凭证。\n\n1、角色策略组成\n\n（1）角色信任策略：指定谁可以扮演该角色；\n\n（2）角色权限策略：指定扮演角色后可以执行哪些操作。\n\n\n2、角色可扮演条件\n\n（1）给用户绑定允许调用AssumeRole的策略 ；\n\n（2）将用户添加为角色信任策略中的主体。",
       "input": "AssumeRoleRequest",
       "name": "申请扮演角色临时访问凭证",
       "output": "AssumeRoleResponse",
@@ -164,6 +164,7 @@
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -173,6 +174,7 @@
           "example": "1543914376",
           "member": "int64",
           "name": "ExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -182,6 +184,7 @@
           "example": "2018-12-04T09:06:16Z",
           "member": "string",
           "name": "Expiration",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
