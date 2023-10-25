@@ -238,6 +238,14 @@
         "title": "修改全量导出线程数"
       }
     ],
+    "ModifyMigrateRuntimeAttribute": [
+      {
+        "document": "修改Redis目标库写入模式，填写对应参数即可，也可同时修改多个参数。",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrateRuntimeAttribute\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-2rgv0f09\",\n    \"OtherOptions\": [\n        {\n            \"Key\": \"DstWriteMode\",\n            \"Value\": \"clearData\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "修改Redis目标库写入模式"
+      }
+    ],
     "ModifyMigrationJob": [
       {
         "document": "",

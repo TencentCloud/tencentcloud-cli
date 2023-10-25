@@ -162,6 +162,26 @@
         "title": "获取合同详情嵌入Web链接失败，是因为对应的签署流程不存在。"
       }
     ],
+    "CreateExtendedServiceAuthInfos": [
+      {
+        "document": "创建企业扩展服务授权\n",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {},\n    \"UserIds\": [\n        \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s169xxxxxxxx6107\"\n    }\n}",
+        "title": "创建企业扩展服务授权"
+      },
+      {
+        "document": "集团主企业代子企业操作",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yDxlzUxxxxxxxxxxxxxxxxskenibR\"\n    },\n    \"UserIds\": [\n        \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s169xxxxxxxx6107\"\n    }\n}",
+        "title": "创建企业扩展服务授权-主代子"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    },\n    \"ExtendServiceType\": \"\",\n    \"Agent\": {},\n    \"UserIds\": [\n        \"yDxlzUxxxxxxxxxxxxxxxxPNG1SC2\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"不支持的扩展类型\"\n        },\n        \"RequestId\": \"s1697xxxxxxxxx107\"\n    }\n}",
+        "title": "创建企业自动签授权-类型错误"
+      }
+    ],
     "CreateFlow": [
       {
         "document": "创建一个单C流程",
@@ -776,6 +796,20 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWebThemeConfig\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"195xxxxxxxxxxxxxxxde6a\"\n    },\n    \"ThemeType\": \"EMBED\",\n    \"WebThemeConfig\": {\n        \"DisplaySignBrandLogo\": true,\n        \"WebEmbedThemeColor\": \"#ad352f\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"不支持的主题类型\"\n        },\n        \"RequestId\": \"43b9474a-c909-4d89-aa7b-3632f02fa8a4\"\n    }\n}",
         "title": "创建主题配置：不支持的主题类型"
+      }
+    ],
+    "DeleteExtendedServiceAuthInfos": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Agent\": {},\n    \"UserIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1697xxxxxxxxx107\"\n    }\n}",
+        "title": "删除企业扩展服务授权"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteExtendedServiceAuthInfos\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"abc\"\n    },\n    \"ExtendServiceType\": \"\",\n    \"Agent\": {},\n    \"UserIds\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied\",\n            \"Message\": \"不支持的扩展类型\"\n        },\n        \"RequestId\": \"s1697xxxxxxxxx107\"\n    }\n}",
+        "title": "删除企业自动签授权-扩展类型错误"
       }
     ],
     "DeleteIntegrationDepartment": [

@@ -14,13 +14,15 @@ tccli cat DescribeDetailedSingleProbeData --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
     --SelectedFields ProbeTime City Operator ProbeIP \
-    --TaskID task-p4najqd4
+    --TaskID task-p4najqd4 \
+    --ScrollID xxx
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "ScrollID": "xxx",
         "TotalNumber": 10,
         "DataSet": [
             {

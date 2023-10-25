@@ -23,8 +23,14 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1",
-        "BatchId": "d3018ad4-9a7e-4f64-a3f4-f38507c69742"
+        "BatchId": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
+        "Statements": [
+            {
+                "TaskId": "098923ea-d6c0-4cd9-bbed-2e90c9cf04dc",
+                "SQL": "select 1;"
+            }
+        ],
+        "RequestId": "b8sd7dd7-ekd4-4e5e-993e-e5db64fa21c1"
     }
 }
 ```

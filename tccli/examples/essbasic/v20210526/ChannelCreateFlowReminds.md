@@ -1,15 +1,17 @@
 **Example 1: 合同催办**
 
-对合同中尚未完成的用户推送催办
+针对合同流程中尚未完成签署的用户发送催办消息。
+部分合同流程可以催办，而部分则无法催办。
+通过查看返回的详细信息清单，可了解各合同流程的催办结果。
 
 Input: 
 
 ```
 tccli essbasic ChannelCreateFlowReminds --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId 00498cc***********3aff766cac \
-    --Agent.AppId id \
-    --Agent.ProxyOrganizationOpenId d7c13a8***********0ee248f04 \
-    --FlowIds y******************************m
+    --Agent.ProxyOperator.OpenId OpenId-xxx \
+    --Agent.AppId yDRSRUUgygj******uO4zjEuBzwyiofZ \
+    --Agent.ProxyOrganizationOpenId ProxyOrganizationOpenId-xxx \
+    --FlowIds yDwXiUUc******************SZ0uIW72Qaxm yDwFmUU******************BSat8PWOt2iQF
 ```
 
 Output: 
@@ -19,11 +21,16 @@ Output:
         "RemindFlowRecords": [
             {
                 "CanRemind": true,
-                "FlowId": "y******************************m",
-                "RemindMessage": "签署人 xxx: 此签署人已催办过；"
+                "FlowId": "yDwXiUUc******************SZ0uIW72Qaxm",
+                "RemindMessage": ""
+            },
+            {
+                "CanRemind": false,
+                "FlowId": "yDwFmUU******************BSat8PWOt2iQF",
+                "RemindMessage": "签署人 xxx: 此签署人已催办过"
             }
         ],
-        "RequestId": "s167xxxx8x4184252"
+        "RequestId": "s16*********203499"
     }
 }
 ```

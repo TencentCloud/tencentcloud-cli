@@ -107,6 +107,16 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回违规文本命中信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "习近平",
+          "member": "HitInfo",
+          "name": "HitInfos",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -186,6 +196,78 @@
         }
       ],
       "usage": "in"
+    },
+    "HitInfo": {
+      "document": "关键词命中位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标识模型命中还是关键词命中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Model",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "啦啦",
+          "member": "string",
+          "name": "Keyword",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义词库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试词库1",
+          "member": "string",
+          "name": "LibName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "位置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Positions",
+          "name": "Positions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Positions": {
+      "document": "标识命中的违规关键词位置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关键词起始位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Start",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关键词结束位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "End",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RiskDetails": {
       "document": "账号风险检测结果",

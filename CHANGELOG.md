@@ -1,3 +1,186 @@
+# Release 3.0.870.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 33 次发布
+
+发布时间：2023-10-25 01:07:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceUserInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#InstanceUserInfo)
+
+	* 新增成员：Region
+
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 15 次发布
+
+发布时间：2023-10-25 01:14:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDetailedSingleProbeData](http://document.tencentcloudapi.woa.com/document/product/280/66205)
+
+	* 新增入参：ScrollID
+
+	* 新增出参：ScrollID
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 45 次发布
+
+发布时间：2023-10-25 01:22:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeScheduledSqlInfo](http://document.tencentcloudapi.woa.com/document/product/614/81386)
+
+	* 新增入参：Filters
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 48 次发布
+
+发布时间：2023-10-25 01:41:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateExtendedServiceAuthInfos](http://document.tencentcloudapi.woa.com/document/product/1668/82427)
+* [DeleteExtendedServiceAuthInfos](http://document.tencentcloudapi.woa.com/document/product/1668/82426)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 16 次发布
+
+发布时间：2023-10-25 01:49:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCloudStorage](http://document.tencentcloudapi.woa.com/document/product/1131/75375)
+
+	* 新增入参：ChannelId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 14 次发布
+
+发布时间：2023-10-25 02:14:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyOriginGroup](http://document.tencentcloudapi.woa.com/document/product/1738/81133)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 6 次发布
+
+发布时间：2023-10-25 02:18:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [HitInfo](http://document.tencentcloudapi.woa.com/document/product/1124/51861#HitInfo)
+* [Positions](http://document.tencentcloudapi.woa.com/document/product/1124/51861#Positions)
+
+修改数据结构：
+
+* [DetailResults](http://document.tencentcloudapi.woa.com/document/product/1124/51861#DetailResults)
+
+	* 新增成员：HitInfos
+
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 109 次发布
+
+发布时间：2023-10-25 02:22:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNetworkAcls](http://document.tencentcloudapi.woa.com/document/product/215/42160)
+
+	* 新增入参：OrderField, OrderDirection
+
+
+修改数据结构：
+
+* [NetworkAclEntry](http://document.tencentcloudapi.woa.com/document/product/215/15824#NetworkAclEntry)
+
+	* 新增成员：NetworkAclDirection
+
+* [Subnet](http://document.tencentcloudapi.woa.com/document/product/215/15824#Subnet)
+
+	* <font color="#dd0000">**修改成员**：</font>CreatedTime, ISPType, LocalZone
+
+
+
+
 # Release 3.0.869.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

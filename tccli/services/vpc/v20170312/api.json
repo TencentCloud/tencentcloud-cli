@@ -19562,6 +19562,24 @@
           "name": "NeedNetworkAclEntryInfo",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段。支持：NetworkAclId,NetworkAclName,CreatedTime",
+          "example": "CreatedTime",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方法。顺序：ASC，倒序：DESC。",
+          "example": "DESC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -34676,7 +34694,7 @@
           "example": "vpc-q26u781x",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34686,7 +34704,7 @@
           "example": "acl-fy0ys38q",
           "member": "string",
           "name": "NetworkAclId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34696,7 +34714,7 @@
           "example": "test",
           "member": "string",
           "name": "NetworkAclName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34706,7 +34724,7 @@
           "example": "2021-03-22 20:59:55",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34716,27 +34734,27 @@
           "example": "无",
           "member": "Subnet",
           "name": "SubnetSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络ACl入站规则。",
+          "document": "该参数仅对三元组ACL有效，网络ACl入站规则。",
           "example": "无",
           "member": "NetworkAclEntry",
           "name": "IngressEntries",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网络ACL出站规则。",
+          "document": "该参数仅对三元组ACL有效，网络ACL出站规则。",
           "example": "无",
           "member": "NetworkAclEntry",
           "name": "EgressEntries",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -34746,7 +34764,7 @@
           "example": "TRIPLE",
           "member": "string",
           "name": "NetworkAclType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34756,7 +34774,7 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -34783,7 +34801,7 @@
           "example": "无",
           "member": "string",
           "name": "Port",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34794,7 +34812,7 @@
           "example": "无",
           "member": "string",
           "name": "CidrBlock",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34805,7 +34823,7 @@
           "example": "无",
           "member": "string",
           "name": "Ipv6CidrBlock",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34871,6 +34889,17 @@
           "example": "acli46-0pngbwph",
           "member": "string",
           "name": "NetworkAclIpv6EntryId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "取值INGRESS或EGRESS。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkAclDirection",
           "output_required": false,
           "required": false,
           "type": "string",
@@ -39590,7 +39619,7 @@
           "example": "vpc-m0c2kcun",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39600,7 +39629,7 @@
           "example": "-",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39610,7 +39639,7 @@
           "example": "-",
           "member": "string",
           "name": "SubnetName",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39620,7 +39649,7 @@
           "example": "-",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39630,7 +39659,7 @@
           "example": "-",
           "member": "bool",
           "name": "IsDefault",
-          "required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -39640,7 +39669,7 @@
           "example": "-",
           "member": "bool",
           "name": "EnableBroadcast",
-          "required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -39650,7 +39679,7 @@
           "example": "-",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39660,7 +39689,7 @@
           "example": "-",
           "member": "string",
           "name": "RouteTableId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39670,7 +39699,7 @@
           "example": "-",
           "member": "string",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39680,7 +39709,7 @@
           "example": "-",
           "member": "uint64",
           "name": "AvailableIpAddressCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39690,7 +39719,7 @@
           "example": "-",
           "member": "string",
           "name": "Ipv6CidrBlock",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39700,7 +39729,7 @@
           "example": "-",
           "member": "string",
           "name": "NetworkAclId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39710,7 +39739,7 @@
           "example": "-",
           "member": "bool",
           "name": "IsRemoteVpcSnat",
-          "required": true,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -39720,7 +39749,7 @@
           "example": "-",
           "member": "uint64",
           "name": "TotalIpAddressCount",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39730,7 +39759,7 @@
           "example": "-",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -39740,7 +39769,7 @@
           "example": "cluster-gbo27yc4",
           "member": "string",
           "name": "CdcId",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -39750,7 +39779,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsCdcSubnet",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -39760,7 +39789,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39770,7 +39799,7 @@
           "example": "无",
           "member": "string",
           "name": "ISPType",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -39780,7 +39809,7 @@
           "example": "无",
           "member": "bool",
           "name": "LocalZone",
-          "required": false,
+          "output_required": false,
           "type": "bool",
           "value_allowed_null": false
         }

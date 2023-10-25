@@ -406,6 +406,13 @@
       "output": "ModifyHostsCertificateResponse",
       "status": "online"
     },
+    "ModifyOriginGroup": {
+      "document": "修改源站组",
+      "input": "ModifyOriginGroupRequest",
+      "name": "修改源站组",
+      "output": "ModifyOriginGroupResponse",
+      "status": "online"
+    },
     "ModifyRule": {
       "document": "修改规则引擎规则。",
       "input": "ModifyRuleRequest",
@@ -536,6 +543,36 @@
           "name": "OriginDetail",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HttpOriginPort",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS回源端口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "443",
+          "member": "uint64",
+          "name": "HttpsOriginPort",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -2527,6 +2564,33 @@
           "name": "OriginInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n<li>不填默认为： FOLLOW。</li>",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填默认为80。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HttpOriginPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填默认为443。",
+          "example": "443",
+          "member": "uint64",
+          "name": "HttpsOriginPort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3202,7 +3266,7 @@
         },
         {
           "disabled": false,
-          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.eo.dnse[0-5].com\"。例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.eo.dns2.com\n示例值：example.com",
+          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.eo.dnse[0-5].com\"。\n\n例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.share.eo.dns2.com",
           "example": "example.com",
           "member": "string",
           "name": "SharedCNAMEPrefix",
@@ -4792,25 +4856,34 @@
       "members": [
         {
           "disabled": false,
-          "document": "分页查询偏移量，默认为0。",
+          "document": "站点ID，此参数必填。",
+          "example": "zone-123456",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量，不填默认为0。",
           "example": "0",
           "member": "uint64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "分页查询限制数目，默认为10，取值：1-1000。",
+          "document": "分页查询限制数目，不填默认为20，取值：1-1000。",
           "example": "10",
           "member": "uint64",
           "name": "Limit",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点ID</strong>】进行过滤。站点ID形如：zone-20hzkd4rdmy0<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>origin-group-id<br>   按照【<strong>源站组ID</strong>】进行过滤。源站组ID形如：origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>origin-group-name<br>   按照【<strong>源站组名称</strong>】进行过滤<br>   类型：String<br>   必选：否<br>   模糊查询：支持。使用模糊查询时，仅支持填写一个源站组名称</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>origin-group-id<br>   按照【<strong>源站组ID</strong>】进行过滤。源站组ID形如：origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a<br>   模糊查询：不支持</li><li>origin-group-name<br>   按照【<strong>源站组名称</strong>】进行过滤<br>   模糊查询：支持。使用模糊查询时，仅支持填写一个源站组名称</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -4829,7 +4902,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4839,7 +4912,7 @@
           "example": "无",
           "member": "OriginGroup",
           "name": "OriginGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7716,6 +7789,33 @@
           "name": "OriginInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "回源协议，取值有：\n<li>FOLLOW: 协议跟随；</li>\n<li>HTTP: HTTP协议回源；</li>\n<li>HTTPS: HTTPS协议回源。</li>\n<li>不填保持原有配置。</li>",
+          "example": "FOLLOW",
+          "member": "string",
+          "name": "OriginProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "HTTP回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTP时生效, 不填保持原有配置。",
+          "example": "80",
+          "member": "uint64",
+          "name": "HttpOriginPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HTTPS回源端口，取值为1-65535，当OriginProtocol=FOLLOW/HTTPS时生效，不填保持原有配置。",
+          "example": "443",
+          "member": "uint64",
+          "name": "HttpsOriginPort",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -8253,6 +8353,78 @@
     },
     "ModifyHostsCertificateResponse": {
       "document": "ModifyHostsCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOriginGroupRequest": {
+      "document": "ModifyOriginGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-27q0p0bali16",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组ID，此参数必填。",
+          "example": "origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。\t",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组类型，取值有：\n<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡引用；</li>\n<li>HTTP： HTTP专用型源站组，支持添加 IP/域名、对象存储源站，无法被四层代理引用。</li>不填保持原有配置。",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站记录信息，不填保持原有配置。",
+          "example": "无",
+          "member": "OriginRecord",
+          "name": "Records",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "源站组ID。",
+          "example": "origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "OriginGroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyOriginGroupResponse": {
+      "document": "ModifyOriginGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8961,41 +9133,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点ID。",
-          "example": "zone-xxx",
-          "member": "string",
-          "name": "ZoneId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "站点名称。",
-          "example": "123.com",
-          "member": "string",
-          "name": "ZoneName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
           "document": "源站组ID。",
           "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
           "member": "string",
-          "name": "OriginGroupId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "源站类型，取值有：\n<li>self：自有源站；</li>\n<li>third_party：第三方源站；</li>\n<li>cos：腾讯云COS源站。</li>",
-          "example": "self",
-          "member": "string",
-          "name": "OriginType",
-          "required": false,
+          "name": "GroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9004,18 +9146,18 @@
           "document": "源站组名称。",
           "example": "Name",
           "member": "string",
-          "name": "OriginGroupName",
-          "required": false,
+          "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源站配置类型，当OriginType=self时，取值有：\n<li>area：按区域配置；</li>\n<li>weight： 按权重配置。</li>\n<li>proto： 按HTTP协议配置。</li>当OriginType=third_party/cos时放空。",
-          "example": "area",
+          "document": "源站组类型，取值有：\n<li>GENERAL：通用型源站组；</li>\n<li>HTTP： HTTP专用型源站组。</li>",
+          "example": "HTTP",
           "member": "string",
-          "name": "ConfigurationType",
-          "required": false,
+          "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9024,9 +9166,29 @@
           "document": "源站记录信息。",
           "example": "[]",
           "member": "OriginRecord",
-          "name": "OriginRecords",
-          "required": false,
+          "name": "Records",
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组被引用实例列表。\t",
+          "example": "无",
+          "member": "OriginGroupReference",
+          "name": "References",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站组创建时间。",
+          "example": "2014-08-03T12:00:00+08:00",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -9035,19 +9197,45 @@
           "example": "2014-08-03T12:00:00+08:00",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "OriginGroupReference": {
+      "document": "源站组引用服务。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引用服务类型，取值有：\n<li>AccelerationDomain: 加速域名；</li>\n<li>RuleEngine: 规则引擎；</li>\n<li>Loadbalance: 负载均衡；</li>\n<li>ApplicationProxy: 四层代理。</li>",
+          "example": "AccelerationDomain",
+          "member": "string",
+          "name": "InstanceType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当OriginType=self时，表示回源Host。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "www.tencent.com",
+          "document": "引用类型的实例ID。",
+          "example": "domain-123456",
           "member": "string",
-          "name": "HostHeader",
-          "required": false,
+          "name": "InstanceId",
+          "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用类型的实例名称。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "InstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -9198,7 +9386,19 @@
           "example": "8.8.8.8",
           "member": "string",
           "name": "Record",
+          "output_required": true,
           "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6、域名类型源站；</li>\n<li>COS：COS源。</li>\n<li>AWS_S3：AWS S3对象存储源站。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9208,66 +9408,40 @@
           "example": "record-27q0p0bali16",
           "member": "string",
           "name": "RecordId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "源站端口，取值范围：[1-65535]。",
-          "example": "80",
-          "member": "uint64",
-          "name": "Port",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当源站配置类型ConfigurationType=weight时，表示权重。\n不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。\n配置权重信息时，取值为[1-100]，多个源站权重总和应为100，表示多个源站按照权重回源。\n当源站配置类型ConfigurationType=proto时，表示权重。\n不配置权重信息时，所有源站组记录统一填写为0或者不填写，表示多个源站轮询回源。\n配置权重信息时，取值为[1-100]，源站组内Proto相同的多个源站权重总和应为100，表示多个源站按照权重回源。",
+          "document": "源站权重，取值为0-100, 不填表示不设置权重，由系统自由调度，填0表示权重为0, 流量将不会调度到此源站。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "uint64",
           "name": "Weight",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当源站配置类型ConfigurationType=proto时，表示源站的协议类型，将按照客户端请求协议回到相应的源站，取值有：\n<li>http：HTTP协议源站；</li>\n<li>https：HTTPS协议源站。</li>",
-          "example": "http",
-          "member": "string",
-          "name": "Proto",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当源站配置类型ConfigurationType=area时，表示区域，为空表示全部地区。取值为iso-3166中alpha-2编码或者大洲区域代码。大洲区域代码取值为：\n<li>Asia：亚洲；</li>\n<li>Europe：欧洲；</li>\n<li>Africa：非洲；</li>\n<li>Oceania：大洋洲；</li>\n<li>Americas：美洲。</li>源站组记录中，至少需要有一项为全部地区。",
-          "example": "[]",
-          "member": "string",
-          "name": "Area",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "当源站类型OriginType=third_part时有效\n是否私有鉴权，取值有：\n<li>true：使用私有鉴权；</li>\n<li>false：不使用私有鉴权。</li>不填写，默认值为：false。",
+          "document": "是否私有鉴权，当源站类型 RecordType=COS/AWS_S3 时生效，取值有：\n<li>true：使用私有鉴权；</li>\n<li>false：不使用私有鉴权。</li>不填写，默认值为：false。\n",
           "example": "false",
           "member": "bool",
           "name": "Private",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当源站类型Private=true时有效，表示私有鉴权使用参数。",
+          "document": "私有鉴权参数，当源站类型Private=true时有效。",
           "example": "无",
           "member": "PrivateParameter",
           "name": "PrivateParameters",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -9450,14 +9624,15 @@
       "usage": "both"
     },
     "PrivateParameter": {
-      "document": "源站记录私有鉴权参数",
+      "document": "对象存储源站记录私有鉴权参数",
       "members": [
         {
           "disabled": false,
-          "document": "私有鉴权参数名称，取值有：\n<li>AccessKeyId：鉴权参数Access Key ID；</li>\n<li>SecretAccessKey：鉴权参数Secret Access Key。</li>",
+          "document": "私有鉴权参数名称，取值有：\n<li>AccessKeyId：鉴权参数Access Key ID；</li>\n<li>SecretAccessKey：鉴权参数Secret Access Key；</li>\n<li>SignatureVersion：鉴权版本，v2或者v4；</li>\n<li>Region：存储桶地域。</li>",
           "example": "AccessKeyId",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -9468,6 +9643,7 @@
           "example": "无",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false

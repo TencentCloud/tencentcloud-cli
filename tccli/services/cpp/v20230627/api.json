@@ -20,6 +20,13 @@
       "name": "查询审核任务",
       "output": "QueryTaskResponse",
       "status": "online"
+    },
+    "ReportDetail": {
+      "document": "版权明细上报",
+      "input": "ReportDetailRequest",
+      "name": "明细上报",
+      "output": "ReportDetailResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -238,6 +245,98 @@
         }
       ],
       "usage": "out"
+    },
+    "ReportDetailRequest": {
+      "document": "ReportDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用时间戳",
+          "example": "无",
+          "member": "int64",
+          "name": "CreatedTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "四层计费项目",
+          "example": "无",
+          "member": "string",
+          "name": "BillingItem",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "次数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扩展信息",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportDetailResponse": {
+      "document": "ReportDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误码，0:成功，其他:失败",
+          "example": "无",
+          "member": "uint64",
+          "name": "Code",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误描述",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ResAddTaskWorkVO": {
       "document": "新建监测任务出参",
