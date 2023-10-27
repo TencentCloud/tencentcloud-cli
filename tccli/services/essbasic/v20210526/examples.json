@@ -128,10 +128,10 @@
     ],
     "ChannelCreateFlowGroupByTemplates": [
       {
-        "document": "通过多模板创建合同组签署流程",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowGroupByTemplates\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"test\"\n        },\n        \"AppId\": \"test\"\n    },\n    \"FlowGroupName\": \"testx\",\n    \"FlowInfos\": [\n        {\n            \"FlowName\": \"testx\",\n            \"TemplateId\": \"testx\",\n            \"FlowDescription\": \"testx\",\n            \"Deadline\": 1604910797,\n            \"CallbackUrl\": \"testx\",\n            \"FormFields\": [\n                {\n                    \"ComponentName\": \"testx\",\n                    \"ComponentValue\": \"testx\"\n                }\n            ],\n            \"FlowApprovers\": [\n                {\n                    \"ApproverType\": \"PERSON\",\n                    \"Name\": \"testx\",\n                    \"Mobile\": \"testx\",\n                    \"RecipientId\": \"testx\"\n                },\n                {\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"OpenId\": \"testx\",\n                    \"OrganizationOpenId\": \"testx\",\n                    \"OrganizationName\": \"testx\",\n                    \"RecipientId\": \"testx\"\n                }\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowGroupId\": \"test\",\n        \"FlowIds\": [\n            \"test\"\n        ],\n        \"TaskInfos\": [\n            {\n                \"TaskId\": \"test\",\n                \"TaskStatus\": \"test\"\n            }\n        ],\n        \"RequestId\": \"test\"\n    }\n}",
-        "title": "通过多模板创建合同组签署流程"
+        "document": "1. 入参中FlowFileInfos有2个元素, 表示2个合同组成此合同组\n2. 每个合同都是B2C合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateFlowGroupByTemplates\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"kev_8\"\n        },\n        \"ProxyOrganizationOpenId\": \"kev_open_organization_8\",\n        \"AppId\": \"16fd2f7d7ae85d13ca5f8d501d57b5ec\"\n    },\n    \"FlowGroupName\": \"2023年张三入职合同组合\",\n    \"FlowInfos\": [\n        {\n            \"FlowName\": \"2023年张三入职合同\",\n            \"FlowApprovers\": [\n                {\n                    \"OrganizationName\": \"典子谦示例企业\",\n                    \"OrganizationOpenId\": \"kev_open_organization_8\",\n                    \"OpenId\": \"kev_8\",\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"RecipientId\": \"yDwgKUUckp1jdybwUWptGKyGVpNME9fH\"\n                },\n                {\n                    \"Name\": \"张三\",\n                    \"Mobile\": \"18888888888\",\n                    \"ApproverType\": \"PERSON\",\n                    \"RecipientId\": \"yDwgKUUckp1jdybvUWptGKBD9TeupFMV\"\n                }\n            ],\n            \"Deadline\": 1698202075,\n            \"TemplateId\": \"yDwgKUUckp1jdy4dUWptGKRavSGWt9cW\"\n        },\n        {\n            \"FlowName\": \"2023年张三入职保密协议\",\n            \"FlowApprovers\": [\n                {\n                    \"OrganizationName\": \"典子谦示例企业\",\n                    \"OrganizationOpenId\": \"kev_open_organization_8\",\n                    \"OpenId\": \"kev_8\",\n                    \"ApproverType\": \"ORGANIZATION\",\n                    \"RecipientId\": \"yDwgKUUckp1jdybwUWptGKyGVpNME9fH\"\n                },\n                {\n                    \"Name\": \"张三\",\n                    \"Mobile\": \"18888888888\",\n                    \"ApproverType\": \"PERSON\",\n                    \"RecipientId\": \"yDwgKUUckp1jdybvUWptGKBD9TeupFMV\"\n                }\n            ],\n            \"Deadline\": 1698202075,\n            \"TemplateId\": \"yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowGroupId\": \"yDwiwUUckpo0n304UuwJzdxCQJhOooyw\",\n        \"FlowIds\": [\n            \"yDwiwUUckpo0n30bUuwJzdxxvnaMZpxW\",\n            \"yDwiwUUckpo0n30uUuwJzdxxwyCoXw1Z\"\n        ],\n        \"RequestId\": \"s1698201691021218250\",\n        \"TaskInfos\": [\n            {\n                \"TaskId\": \"\",\n                \"TaskStatus\": \"\"\n            },\n            {\n                \"TaskId\": \"\",\n                \"TaskStatus\": \"\"\n            }\n        ]\n    }\n}",
+        "title": "通过多模板创建有2个合同的合同组"
       }
     ],
     "ChannelCreateFlowReminds": [
@@ -482,10 +482,16 @@
     ],
     "CreateSealByImage": [
       {
-        "document": "第三方应用平台通过图片为第三方平台子客企业代创建印章，需要电子签人工审核",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"SealImage\": \"base64\",\n    \"SealName\": \"测试\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8*********xxx3aff766cac\"\n        },\n        \"ProxyOrganizationOpenId\": \"d7c13a8*********968c0ee248f04\",\n        \"AppId\": \"65fb0c59*********382cc5ed0e\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"SealId\": \"\",\n        \"RequestId\": \"s16294xxxxx0001803\"\n    }\n}",
-        "title": "第三方应用平台通过图片为第三方平台子客企业代创建印章"
+        "document": "GenerateSource为SealGenerateSourceSystem表示系统生成印章",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"SealName\": \"合同专用章\",\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"FINANCE\",\n    \"SealHorizontalText\": \"印章横向文字在这里\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDwi8UUckpo5z4omUyleFeZeadKwB=1Hm\",\n        \"ImageUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6c****66264\",\n        \"RequestId\": \"477f4d46-062c-4d72-a2e0-94e5b52b0cc5\"\n    }\n}",
+        "title": "系统生成印章"
+      },
+      {
+        "document": "1.SealImage传递图片的base64编码, GenerateSource不设置\n2. 通过图片创建电子印章，需要电子签人工审核",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSealByImage\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"SealName\": \"人事专用章\",\n    \"SealImage\": \"iVBORw0KGgoAAAANSUhEUgAAAGwAAABuCAYAAADCrvbGAAABW2lDZXE15yz3uZ6TErkJggg....(图片base64省略)\",\n    \"SealType\": \"PERSONNEL\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SealId\": \"yDwi8UUckpo5z4k1UyleFeZEcAE49vb6\",\n        \"ImageUrl\": \"\",\n        \"RequestId\": \"62378bbc-2384-499c-89f6-7835040b24a1\"\n    }\n}",
+        "title": "通过图片创建电子印章"
       }
     ],
     "CreateSignUrls": [
@@ -600,6 +606,12 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"AUTO_SIGN\",\n    \"Operate\": \"OPEN\"\n}",
         "output": "{\n    \"Response\": {\n        \"OperateUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1\",\n        \"RequestId\": \"s1673342132009427709\"\n    }\n}",
         "title": "开通企业自动签署"
+      },
+      {
+        "document": "传入了不支持的特定扩展服务，返回错误",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyExtendedService\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"admin-open-id\"\n        },\n        \"ProxyOrganizationOpenId\": \"org-open-id\",\n        \"AppId\": \"APPID122344555\"\n    },\n    \"ServiceType\": \"TEST\",\n    \"Operate\": \"OPEN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"参数错误。\"\n        },\n        \"RequestId\": \"s1**********72\"\n    }\n}",
+        "title": "修改不支持的特定扩展服务"
       }
     ],
     "OperateChannelTemplate": [

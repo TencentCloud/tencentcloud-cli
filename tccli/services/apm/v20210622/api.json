@@ -1645,7 +1645,7 @@
       "usage": "in"
     },
     "Span": {
-      "document": "Span对象\n\n",
+      "document": "Span对象",
       "members": [
         {
           "disabled": false,
@@ -1653,6 +1653,7 @@
           "example": "7a23429a8f7d6685",
           "member": "string",
           "name": "TraceID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1663,6 +1664,7 @@
           "example": "[]",
           "member": "SpanLog",
           "name": "Logs",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1673,6 +1675,7 @@
           "example": "[]",
           "member": "SpanTag",
           "name": "Tags",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1683,6 +1686,7 @@
           "example": "{}",
           "member": "SpanProcess",
           "name": "Process",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -1693,6 +1697,7 @@
           "example": "1621843224175",
           "member": "int64",
           "name": "Timestamp",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1703,6 +1708,7 @@
           "example": "span_foo3",
           "member": "string",
           "name": "OperationName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1713,6 +1719,7 @@
           "example": "[]",
           "member": "SpanReference",
           "name": "References",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1723,6 +1730,7 @@
           "example": "1621843224175963",
           "member": "int64",
           "name": "StartTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1733,6 +1741,7 @@
           "example": "500098",
           "member": "int64",
           "name": "Duration",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1743,6 +1752,7 @@
           "example": "7a23429a8f7d6685",
           "member": "string",
           "name": "SpanID",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1753,8 +1763,20 @@
           "example": "1621843224175",
           "member": "int64",
           "name": "StartTimeMillis",
+          "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Parent Span Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7a23429a8f7d6685",
+          "member": "string",
+          "name": "ParentSpanID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

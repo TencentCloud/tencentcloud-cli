@@ -12668,7 +12668,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12678,7 +12678,7 @@
           "example": "dadasda",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12688,7 +12688,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "MachineIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12698,7 +12698,7 @@
           "example": "aas",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12708,7 +12708,7 @@
           "example": "root",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12718,7 +12718,7 @@
           "example": "123.12.2.14",
           "member": "string",
           "name": "SrcIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12728,7 +12728,7 @@
           "example": "FAILED",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12738,7 +12738,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Country",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12748,7 +12748,7 @@
           "example": "1",
           "member": "uint64",
           "name": "City",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12758,7 +12758,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Province",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12768,7 +12768,7 @@
           "example": "2021-05-25 12:01:50",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12778,7 +12778,7 @@
           "example": "0",
           "member": "uint64",
           "name": "BanStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12788,7 +12788,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EventType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12798,7 +12798,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Count",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12808,7 +12808,7 @@
           "example": "cscscscs",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12818,7 +12818,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -12828,7 +12828,7 @@
           "example": "ssh/rdp",
           "member": "string",
           "name": "Protocol",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12838,7 +12838,7 @@
           "example": "22",
           "member": "uint64",
           "name": "Port",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12848,7 +12848,7 @@
           "example": "2021-05-25 12:01:50",
           "member": "string",
           "name": "ModifyTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12858,7 +12858,7 @@
           "example": "ins-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12868,7 +12868,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DataStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12878,7 +12878,7 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12888,8 +12888,18 @@
           "example": "中国:北京市:北京市",
           "member": "string",
           "name": "Location",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "威胁等级：0低危，1中危，2高危\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -14846,6 +14856,16 @@
     "CreateScanMalwareSettingResponse": {
       "document": "CreateScanMalwareSetting返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -26540,6 +26560,36 @@
     "DescribeLicenseWhiteConfigResponse": {
       "document": "DescribeLicenseWhiteConfig返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "旗舰版 配置信息",
+          "example": "1",
+          "member": "VersionWhiteConfig",
+          "name": "FlagShip",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "专业版 配置信息",
+          "example": "1",
+          "member": "VersionWhiteConfig",
+          "name": "Professional",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "普惠版 配置信息",
+          "example": "1",
+          "member": "VersionWhiteConfig",
+          "name": "PrattWhitney",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -52660,7 +52710,7 @@
           "example": "11",
           "member": "uint64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -52670,7 +52720,7 @@
           "example": "dsdsds",
           "member": "string",
           "name": "Uuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52680,7 +52730,7 @@
           "example": "dsdsds",
           "member": "string",
           "name": "Quuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52690,7 +52740,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Hostip",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52700,7 +52750,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "DstIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52710,7 +52760,7 @@
           "example": "12",
           "member": "uint64",
           "name": "DstPort",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -52720,7 +52770,7 @@
           "example": "1.exe",
           "member": "string",
           "name": "ProcessName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52730,7 +52780,7 @@
           "example": "/home",
           "member": "string",
           "name": "FullPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52740,7 +52790,7 @@
           "example": "dadad",
           "member": "string",
           "name": "CmdLine",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52750,7 +52800,7 @@
           "example": "root",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52760,7 +52810,7 @@
           "example": "root",
           "member": "string",
           "name": "UserGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52770,7 +52820,7 @@
           "example": "2.exe",
           "member": "string",
           "name": "ParentProcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52780,7 +52830,7 @@
           "example": "root",
           "member": "string",
           "name": "ParentProcUser",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52790,7 +52840,7 @@
           "example": "root",
           "member": "string",
           "name": "ParentProcGroup",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52800,7 +52850,7 @@
           "example": "/home",
           "member": "string",
           "name": "ParentProcPath",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52810,7 +52860,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -52820,7 +52870,7 @@
           "example": "2021-05-20 17:00:33",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52830,7 +52880,7 @@
           "example": "sasas",
           "member": "string",
           "name": "MachineName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -52840,17 +52890,17 @@
           "example": "sasas",
           "member": "string",
           "name": "ProcTree",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "检测方法",
+          "document": "检测方法: 0行为分析; 1命令特征检测",
           "example": "1",
           "member": "uint64",
           "name": "DetectBy",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -52860,7 +52910,7 @@
           "example": "无",
           "member": "MachineExtraInfo",
           "name": "MachineExtraInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -52870,7 +52920,17 @@
           "example": "1",
           "member": "int64",
           "name": "Pid",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "威胁等级：0中危，1高危\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -57372,6 +57432,52 @@
           "name": "ContainZH",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "VersionWhiteConfig": {
+      "document": "授权版本白名单配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "到期天数",
+          "example": "7",
+          "member": "uint64",
+          "name": "Deadline",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "授权数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "LicenseNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可申请",
+          "example": "false",
+          "member": "bool",
+          "name": "IsApplyFor",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "SourceType",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],

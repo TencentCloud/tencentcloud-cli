@@ -80,6 +80,14 @@
         "title": "创建组织成员访问策略"
       }
     ],
+    "DeleteAccount": [
+      {
+        "document": "删除成员账号",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAccount\n<公共请求参数>\n\n{\n    \"MemberUin\": 111111111111\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71295d81-d334-4fc0-af6a-5ac3d5e84b26\"\n    }\n}",
+        "title": "删除成员账号"
+      }
+    ],
     "DeleteOrganization": [
       {
         "document": "",

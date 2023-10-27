@@ -5,7 +5,19 @@
 Input: 
 
 ```
-tccli csip DescribeRiskCenterPortViewPortRiskList --cli-unfold-argument ```
+tccli csip DescribeRiskCenterPortViewPortRiskList --cli-unfold-argument  \
+    --Filter.Limit 0 \
+    --Filter.Offset 0 \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
+    --Filter.Filters.0.OperatorType 0 \
+    --Filter.StartTime abc \
+    --Filter.EndTime abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
+```
 
 Output: 
 ```
@@ -15,42 +27,42 @@ Output:
         "Data": [
             {
                 "NoHandleCount": 0,
-                "Level": "xx",
-                "Protocol": "xx",
-                "Component": "xx",
+                "Level": "abc",
+                "Protocol": "abc",
+                "Component": "abc",
                 "Port": 0,
-                "RecentTime": "xx",
-                "FirstTime": "xx",
+                "RecentTime": "abc",
+                "FirstTime": "abc",
                 "Suggestion": 1,
-                "AffectAssetCount": "xx",
-                "Id": "xx",
-                "From": "xx",
-                "Index": "xx",
-                "AppId": "xx",
-                "Nick": "xx",
-                "Uin": "xx",
-                "Service": "xx"
+                "AffectAssetCount": "abc",
+                "Id": "abc",
+                "From": "abc",
+                "Index": "abc",
+                "AppId": "abc",
+                "Nick": "abc",
+                "Uin": "abc",
+                "Service": "abc"
             }
         ],
         "LevelLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "SuggestionLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "FromLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

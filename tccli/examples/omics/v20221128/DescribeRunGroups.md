@@ -31,12 +31,14 @@ Output:
                     "StartTime": "2023-03-15T20:53:13+08:00",
                     "SubmitTime": "2023-03-15T20:52:56+08:00"
                 },
-                "Input": "omics/2721644692/project/prj-peaceful-pink-bird-631828/run-group/run-ashamed-turquoise-rooster-131773/inputs.json",
+                "Input": "omics/100000/project/prj-peaceful-pink-bird-631828/run-group/run-ashamed-turquoise-rooster-131773/inputs.json",
                 "Name": "cloudapi-test",
                 "Option": {
                     "FailureMode": "",
                     "UseCallCache": false,
-                    "UseErrorOnHold": false
+                    "UseErrorOnHold": false,
+                    "UseRelativeOutputPaths": true,
+                    "FinalWorkflowOutputsDir": "cos://bucket-10000/output"
                 },
                 "ProjectId": "prj-peaceful-pink-bird-631828",
                 "ProjectName": "run test",
@@ -66,12 +68,14 @@ Output:
                     "StartTime": "2023-03-15T20:21:48+08:00",
                     "SubmitTime": "2023-03-15T20:21:34+08:00"
                 },
-                "Input": "omics/2721644692/project/prj-peaceful-pink-bird-631828/run-group/run-hilarious-aqua-herring-857343/inputs.json",
+                "Input": "omics/100000/project/prj-peaceful-pink-bird-631828/run-group/run-hilarious-aqua-herring-857343/inputs.json",
                 "Name": "base64-20230315202115-0",
                 "Option": {
                     "FailureMode": "",
                     "UseCallCache": false,
-                    "UseErrorOnHold": false
+                    "UseErrorOnHold": false,
+                    "UseRelativeOutputPaths": true,
+                    "FinalWorkflowOutputsDir": "cos://bucket-10000/output"
                 },
                 "ProjectId": "prj-peaceful-pink-bird-631828",
                 "ProjectName": "run test",

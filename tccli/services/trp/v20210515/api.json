@@ -210,6 +210,13 @@
       "output": "DescribeMerchantsResponse",
       "status": "online"
     },
+    "DescribePlanQRCodes": {
+      "document": "查询安心计划二维码列表",
+      "input": "DescribePlanQRCodesRequest",
+      "name": "查询安心计划二维码列表",
+      "output": "DescribePlanQRCodesResponse",
+      "status": "online"
+    },
     "DescribeProductById": {
       "document": "查询商品信息",
       "input": "DescribeProductByIdRequest",
@@ -3397,6 +3404,99 @@
       ],
       "type": "object"
     },
+    "DescribePlanQRCodesRequest": {
+      "document": "DescribePlanQRCodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计划ID",
+          "example": "无",
+          "member": "int64",
+          "name": "PlanId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlanQRCodesResponse": {
+      "document": "DescribePlanQRCodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "无",
+          "member": "int64",
+          "name": "Ret",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "PlanQRCode",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeProductByIdRequest": {
       "document": "DescribeProductById请求参数结构体",
       "members": [
@@ -5263,6 +5363,34 @@
           "output_required": false,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PlanQRCode": {
+      "document": "安心计划二维码",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态，0:未激活 1:已激活 2:已冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

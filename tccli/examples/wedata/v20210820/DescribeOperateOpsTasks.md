@@ -145,3 +145,51 @@ Output:
 }
 ```
 
+**Example 2: sadfa**
+
+asdfa
+
+Input: 
+
+```
+tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
+    --ProjectId 1470561602745229312
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "请求签名验证失败，请检查您的签名计算是否正确。"
+        },
+        "RequestId": "1bb6a9d0-3182-429a-b030-1a01b55d40cd"
+    }
+}
+```
+
+**Example 3: 失败示例**
+
+失败示例
+
+Input: 
+
+```
+tccli wedata DescribeOperateOpsTasks --cli-unfold-argument  \
+    --ProjectId 1470561602745229312
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "AuthFailure.SignatureFailure",
+            "Message": "请求签名验证失败，请检查您的签名计算是否正确。"
+        },
+        "RequestId": "2aa47359-f740-4c00-a91d-51820f08e30f"
+    }
+}
+```
+

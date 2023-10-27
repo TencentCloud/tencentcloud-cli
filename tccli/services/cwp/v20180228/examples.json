@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanMalwareSetting\n<公共请求参数>\n\n{\n    \"ScanPattern\": \"0\",\n    \"HostType\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\",\n        \"TaskId\": 1\n    }\n}",
         "title": "一键检测"
       }
     ],
@@ -1744,7 +1744,7 @@
       {
         "document": "查询是否有试用配置",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseWhiteConfig\n<公共请求参数>\n\n{\n    \"RuleName\": \"cwp\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ebd92e8-9873-4b4c-a26a-7f43048d42d2\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlagShip\": {\n            \"Deadline\": 7,\n            \"IsApplyFor\": true,\n            \"LicenseNum\": 10,\n            \"SourceType\": 1\n        },\n        \"PrattWhitney\": {\n            \"Deadline\": 0,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 0,\n            \"SourceType\": 0\n        },\n        \"Professional\": {\n            \"Deadline\": 7,\n            \"IsApplyFor\": false,\n            \"LicenseNum\": 10,\n            \"SourceType\": 1\n        },\n        \"RequestId\": \"5ebd92e8-9873-4b4c-a26a-7f43048d42d2\"\n    }\n}",
         "title": "示例"
       }
     ],

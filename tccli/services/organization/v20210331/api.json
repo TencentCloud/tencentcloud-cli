@@ -70,6 +70,13 @@
       "output": "CreateOrganizationMembersPolicyResponse",
       "status": "online"
     },
+    "DeleteAccount": {
+      "document": "删除成员账号",
+      "input": "DeleteAccountRequest",
+      "name": "删除成员账号",
+      "output": "DeleteAccountResponse",
+      "status": "online"
+    },
     "DeleteOrganization": {
       "document": "删除企业组织",
       "input": "DeleteOrganizationRequest",
@@ -855,6 +862,33 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountRequest": {
+      "document": "DeleteAccount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员uin。",
+          "example": "111111111111",
+          "member": "int64",
+          "name": "MemberUin",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAccountResponse": {
+      "document": "DeleteAccount返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

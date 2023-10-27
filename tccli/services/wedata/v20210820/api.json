@@ -17500,6 +17500,15 @@
           "name": "ExecutorGroupIdList",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务标签",
+          "example": "无",
+          "member": "TaskTag",
+          "name": "TaskTags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -45910,6 +45919,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TaskTag": {
+      "document": "任务标签，可用于检索任务的条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签名称",
+          "example": "Database",
+          "member": "string",
+          "name": "TagName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签值列表",
+          "example": "[default,testdb]",
+          "member": "string",
+          "name": "TagValues",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "TaskTypeCnt": {
       "document": "TaskTypeCnt",

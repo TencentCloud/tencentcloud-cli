@@ -9112,13 +9112,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing。\n- serviceType：业务类型，web，download，media，hybrid或dynamic。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储，igtm表示IGTM多活源。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
+          "document": "过滤字段名，支持的列表如下：\n- origin：主源站。\n- domain：域名。\n- resourceId：域名id。\n- status：域名状态，online，offline或processing，deleted。\n- serviceType：业务类型，web，download，media，hybrid或dynamic。\n- projectId：项目ID。\n- domainType：主源站类型，cname表示自有源，cos表示cos接入，third_party表示第三方对象存储，igtm表示IGTM多活源。\n- fullUrlCache：全路径缓存，on或off。\n- https：是否配置https，on，off或processing。\n- originPullProtocol：回源协议类型，支持http，follow或https。\n- tagKey：标签键。",
           "example": "domainType",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -9127,8 +9126,7 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -9137,8 +9135,7 @@
           "member": "bool",
           "name": "Fuzzy",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"

@@ -273,8 +273,8 @@
     "DescribeAntiInfoLeakageRules": [
       {
         "document": "获取信息防泄漏规则列表",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiInfoLeakageRules\n<公共请求参数>\n\n{\n    \"Domain\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"xx\",\n        \"RuleList\": [\n            {\n                \"Status\": 1,\n                \"Name\": \"xx\",\n                \"RuleId\": 1,\n                \"Uri\": \"xx\",\n                \"Action\": \"xx\",\n                \"Strategies\": [\n                    {\n                        \"Content\": \"xx\",\n                        \"Field\": \"xx\",\n                        \"CompareFunc\": \"xx\"\n                    }\n                ],\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAntiInfoLeakageRules\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Order\": \"Desc\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"0\"\n            ],\n            \"Name\": \"Action\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"RequestId\": \"66ec4266-fce2-4238-bb69-8b99f3b19ad0\",\n        \"RuleList\": [\n            {\n                \"Status\": 1,\n                \"Name\": \"RuleName\",\n                \"RuleId\": 1,\n                \"Uri\": \"/url\",\n                \"Action\": \"0\",\n                \"Strategies\": [\n                    {\n                        \"Content\": \"\",\n                        \"Field\": \"information\",\n                        \"CompareFunc\": \"contains\"\n                    }\n                ],\n                \"CreateTime\": \"2022-10-26T16:31:43+08:00\"\n            }\n        ]\n    }\n}",
         "title": "获取信息防泄漏规则列表"
       }
     ],
@@ -890,6 +890,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainsCLSStatus\n<公共请求参数>\n\n{\n    \"Domains\": [\n        {\n            \"Domain\": \"lucasssli1.qcloud.com\",\n            \"Edition\": \"clb-waf\"\n        },\n        {\n            \"Domain\": \"lucasssli2.qcloud.com\",\n            \"Edition\": \"clb-waf\"\n        },\n        {\n            \"Domain\": \"lucasssli3.qcloud.com\",\n            \"Edition\": \"sparta-waf\"\n        },\n        {\n            \"Domain\": \"lucasssli4.qcloud.com\",\n            \"Edition\": \"sparta-waf\"\n        }\n    ],\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b4f13899-561b-46a0-a045-6ba6b72c38f2\"\n    }\n}",
         "title": "修改域名列表的访问日志开关"
+      }
+    ],
+    "ModifyGenerateDeals": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyGenerateDeals\n<公共请求参数>\n\n{\n    \"Goods\": [\n        {\n            \"GoodsCategoryId\": 101201,\n            \"GoodsNum\": 1,\n            \"ProjectId\": 0,\n            \"GoodsDetail\": {\n                \"ProductCode\": \"xx\",\n                \"LabelCounts\": [\n                    1\n                ],\n                \"SubProductCode\": \"xx\",\n                \"TimeSpan\": 1,\n                \"Type\": \"xx\",\n                \"RealRegion\": 0,\n                \"ElasticQps\": 0,\n                \"Pid\": 0,\n                \"ProductInfo\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"AutoRenewFlag\": 1,\n                \"FlexBill\": 0,\n                \"TimeUnit\": \"xx\",\n                \"InstanceName\": \"xx\",\n                \"LabelTypes\": [\n                    \"sv_wsm_waf_package_ultimate_clb\"\n                ]\n            },\n            \"RegionId\": 1,\n            \"PayMode\": 1,\n            \"Platform\": 0\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 1,\n        \"Data\": {\n            \"DealNames\": [\n                \"20211127383000722205671\"\n            ],\n            \"BigDealId\": \"20211127383000722205661\"\n        },\n        \"ReturnMessage\": \"success\",\n        \"RequestId\": \"b705af50-606d-46a7-8cb6-617f7592ed4e\"\n    }\n}",
+        "title": "计费下单接口"
       }
     ],
     "ModifyHost": [

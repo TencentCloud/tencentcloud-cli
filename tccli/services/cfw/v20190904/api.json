@@ -49,6 +49,27 @@
       "output": "CreateAddressTemplateResponse",
       "status": "online"
     },
+    "CreateAlertCenterIsolate": {
+      "document": "用户告警中心-封隔离处置按钮",
+      "input": "CreateAlertCenterIsolateRequest",
+      "name": "告警中心-隔离处置接口",
+      "output": "CreateAlertCenterIsolateResponse",
+      "status": "online"
+    },
+    "CreateAlertCenterOmit": {
+      "document": "用户告警中心-忽略处置按钮",
+      "input": "CreateAlertCenterOmitRequest",
+      "name": "告警中心-忽略处置接口",
+      "output": "CreateAlertCenterOmitResponse",
+      "status": "online"
+    },
+    "CreateAlertCenterRule": {
+      "document": "用户告警中心-封禁、放通处置按钮",
+      "input": "CreateAlertCenterRuleRequest",
+      "name": "告警中心-封禁、放通处置接口",
+      "output": "CreateAlertCenterRuleResponse",
+      "status": "online"
+    },
     "CreateBlockIgnoreRuleList": {
       "document": "批量添加入侵防御封禁列表、放通列表规则",
       "input": "CreateBlockIgnoreRuleListRequest",
@@ -1832,6 +1853,294 @@
           "name": "Uuid",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterIsolateRequest": {
+      "document": "CreateAlertCenterIsolate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处置对象,资产列表",
+          "example": "[\"ins-fwynfguf\"]",
+          "member": "string",
+          "name": "HandleAssetList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "处置时间\n1  1天\n7   7天\n-2 永久",
+          "example": "7",
+          "member": "int64",
+          "name": "HandleTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前日志方向： 0 出向 1 入向",
+          "example": "1",
+          "member": "int64",
+          "name": "AlertDirection",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "隔离类型 \n1 互联网入站\n2 互联网出站\n4 内网访问",
+          "example": "[1,2,4]",
+          "member": "int64",
+          "name": "IsolateType",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "运维模式 1 IP白名单 2 身份认证",
+          "example": "1",
+          "member": "int64",
+          "name": "OmMode",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterIsolateResponse": {
+      "document": "CreateAlertCenterIsolate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态码：\n0 成功\n非0 失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息：\nsuccess 成功\n其他",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态码：\n0  处置成功\n-1 通用错误，不用处理\n-3 表示重复，需重新刷新列表\n其他",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterOmitRequest": {
+      "document": "CreateAlertCenterOmit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处置对象,ID列表，  IdLists和IpList二选一",
+          "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "HandleIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "忽略数据来源：\nAlertTable 告警中心  InterceptionTable拦截列表",
+          "example": "AlertTable",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterOmitResponse": {
+      "document": "CreateAlertCenterOmit返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态码：\n0 成功\n非0 失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息：\nsuccess 成功\n其他",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态码：\n0  处置成功\n-1 通用错误，不用处理\n-3 表示重复，需重新刷新列表\n其他",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterRuleRequest": {
+      "document": "CreateAlertCenterRule请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "处置时间\n1  1天\n7   7天\n-2 永久",
+          "example": "7",
+          "member": "int64",
+          "name": "HandleTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "处置类型\n当HandleIdList 不为空时：1封禁 2放通  \n当HandleIpList 不为空时：3放通 4封禁",
+          "example": "1",
+          "member": "int64",
+          "name": "HandleType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "当前日志方向： 0 出向 1 入向",
+          "example": "1",
+          "member": "int64",
+          "name": "AlertDirection",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "处置方向： 0出向 1入向 0,1出入向 3内网",
+          "example": "0",
+          "member": "string",
+          "name": "HandleDirection",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "处置对象,ID列表，  IdLists和IpList二选一",
+          "example": "[\"a67d60bb5ede9b962ac19ad24b28be54\"]",
+          "member": "string",
+          "name": "HandleIdList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "处置对象,IP列表，  IdLists和IpList二选一",
+          "example": "[\"192.155.90.220\"]",
+          "member": "string",
+          "name": "HandleIpList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "处置描述",
+          "example": "block malware",
+          "member": "string",
+          "name": "HandleComment",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "放通原因:\n0默认 1重复 2误报 3紧急放通",
+          "example": "1",
+          "member": "int64",
+          "name": "IgnoreReason",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "封禁域名-保留字段",
+          "example": "无",
+          "member": "string",
+          "name": "BlockDomain",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAlertCenterRuleResponse": {
+      "document": "CreateAlertCenterRule返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回状态码：\n0 成功\n非0 失败",
+          "example": "0",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息：\nsuccess 成功\n其他",
+          "example": "success",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "处置状态码：\n0  处置成功\n-1 通用错误，不用处理\n-3 表示重复，需重新刷新列表\n其他",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7035,6 +7344,7 @@
           "example": "havip-xxx",
           "member": "string",
           "name": "GatewayId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7045,6 +7355,7 @@
           "example": "vpc-xxx",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -7055,12 +7366,13 @@
           "example": "192.168.1.1/24",
           "member": "string",
           "name": "IpAddress",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "FwGroupSwitch": {
       "document": "多种VPC墙模式开关结构",
@@ -7097,7 +7409,7 @@
           "example": "cfws-xxxxxxxx",
           "member": "string",
           "name": "SwitchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7107,7 +7419,7 @@
           "example": "aaaa-bbbb开关",
           "member": "string",
           "name": "SwitchName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7117,7 +7429,7 @@
           "example": "1",
           "member": "int64",
           "name": "SwitchMode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7127,7 +7439,7 @@
           "example": "1",
           "member": "int64",
           "name": "ConnectType",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7137,7 +7449,7 @@
           "example": "ccn-58cqznrf",
           "member": "string",
           "name": "ConnectId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7147,7 +7459,7 @@
           "example": "云联网ccn防火墙开发--勿删",
           "member": "string",
           "name": "ConnectName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7157,7 +7469,7 @@
           "example": "无",
           "member": "NetInstancesInfo",
           "name": "SrcInstancesInfo",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7167,7 +7479,7 @@
           "example": "无",
           "member": "NetInstancesInfo",
           "name": "DstInstancesInfo",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7177,7 +7489,7 @@
           "example": "无",
           "member": "string",
           "name": "FwGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7187,7 +7499,7 @@
           "example": "视死忽如归",
           "member": "string",
           "name": "FwGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7197,7 +7509,7 @@
           "example": "1",
           "member": "int64",
           "name": "Enable",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7207,7 +7519,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7217,7 +7529,7 @@
           "example": "0",
           "member": "int64",
           "name": "AttachWithEdge",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7227,7 +7539,7 @@
           "example": "0",
           "member": "int64",
           "name": "CrossEdgeStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7237,17 +7549,17 @@
           "example": "ap-chongqing",
           "member": "string",
           "name": "FwInsRegion",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "0 观察 1 拦截 2 严格 3 关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 观察 1 拦截 2 严格 3 关闭 4 不支持ips 前端展示tag\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "IpsAction",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7257,7 +7569,7 @@
           "example": "无",
           "member": "VpcFwInstanceShow",
           "name": "FwInsLst",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7267,7 +7579,7 @@
           "example": "1",
           "member": "int64",
           "name": "BypassStatus",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -9800,6 +10112,36 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎运行模式，Normal:正常, OnlyRoute:透明模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "TrafficMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例主所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例备所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-7",
+          "member": "string",
+          "name": "ZoneBak",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -12137,6 +12479,7 @@
           "example": "cfwew-af7aa5a3",
           "member": "string",
           "name": "FwInsId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12147,6 +12490,7 @@
           "example": "ap-chengdu",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12157,6 +12501,7 @@
           "example": "成都",
           "member": "string",
           "name": "RegionZh",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12167,6 +12512,7 @@
           "example": "西南地区",
           "member": "string",
           "name": "RegionDetail",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12177,6 +12523,7 @@
           "example": "成都一区",
           "member": "string",
           "name": "ZoneZh",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12187,6 +12534,7 @@
           "example": "成都二区",
           "member": "string",
           "name": "ZoneZhBack",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -12197,8 +12545,31 @@
           "example": "1024",
           "member": "int64",
           "name": "BandWidth",
+          "output_required": true,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例主机所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例备机所在可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-chengdu-2",
+          "member": "string",
+          "name": "ZoneBak",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -12213,7 +12584,7 @@
           "example": "cfwg-xxxxxxxx",
           "member": "string",
           "name": "FwGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12223,7 +12594,7 @@
           "example": "捐躯赴国难",
           "member": "string",
           "name": "FwGroupName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12233,7 +12604,7 @@
           "example": "10",
           "member": "int64",
           "name": "FwSwitchNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12243,7 +12614,7 @@
           "example": "['ap-guangzhou']",
           "member": "string",
           "name": "RegionLst",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12253,7 +12624,7 @@
           "example": "1",
           "member": "int64",
           "name": "Mode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12263,7 +12634,7 @@
           "example": "1",
           "member": "int64",
           "name": "SwitchMode",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12273,7 +12644,7 @@
           "example": "无",
           "member": "VpcFwInstanceInfo",
           "name": "FwInstanceLst",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12283,7 +12654,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12293,7 +12664,7 @@
           "example": "auto",
           "member": "string",
           "name": "FwVpcCidr",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12303,7 +12674,7 @@
           "example": "cluster-xxx",
           "member": "string",
           "name": "CdcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12313,7 +12684,7 @@
           "example": "test",
           "member": "string",
           "name": "CdcName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12323,7 +12694,7 @@
           "example": "1",
           "member": "string",
           "name": "CrossUserMode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -12631,6 +13002,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎运行模式，Normal:正常, OnlyRoute:透明模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "TrafficMode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -12680,6 +13062,7 @@
           "example": "VPC",
           "member": "string",
           "name": "JoinType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -12690,12 +13073,13 @@
           "example": "6",
           "member": "int64",
           "name": "Num",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "VpcRuleItem": {
       "document": "VPC内网间规则",

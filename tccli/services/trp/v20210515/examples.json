@@ -240,6 +240,14 @@
         "title": "查询商户列表"
       }
     ],
+    "DescribePlanQRCodes": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePlanQRCodes\n<公共请求参数>\n\n{\n    \"PlanId\": 67087,\n    \"StartTime\": \"2023-10-10 00:00:00\",\n    \"EndTime\": \"2023-10-10 23:59:59\",\n    \"PageNo\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Ret\": 0,\n        \"Total\": 1,\n        \"Data\": [\n            {\n                \"Url\": \"xxx\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询安心计划二维码列表"
+      }
+    ],
     "DescribeProductById": [
       {
         "document": "",

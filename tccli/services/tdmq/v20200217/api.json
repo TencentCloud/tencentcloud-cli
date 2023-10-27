@@ -413,6 +413,20 @@
       "output": "DescribeRabbitMQNodeListResponse",
       "status": "online"
     },
+    "DescribeRabbitMQQueueDetail": {
+      "document": "查询RabbitMQ队列详情",
+      "input": "DescribeRabbitMQQueueDetailRequest",
+      "name": "查询RabbitMQ队列详情",
+      "output": "DescribeRabbitMQQueueDetailResponse",
+      "status": "online"
+    },
+    "DescribeRabbitMQQueues": {
+      "document": "查询RabbitMQ队列列表",
+      "input": "DescribeRabbitMQQueuesRequest",
+      "name": "查询RabbitMQ队列列表",
+      "output": "DescribeRabbitMQQueuesResponse",
+      "status": "online"
+    },
     "DescribeRabbitMQUser": {
       "document": "查询RabbitMQ用户列表",
       "input": "DescribeRabbitMQUserRequest",
@@ -6285,6 +6299,401 @@
       ],
       "type": "object"
     },
+    "DescribeRabbitMQQueueDetailRequest": {
+      "document": "DescribeRabbitMQQueueDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vhost参数",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列名称",
+          "example": "testQueue",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQQueueDetailResponse": {
+      "document": "DescribeRabbitMQQueueDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "queue1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Vhost参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testQueue",
+          "member": "string",
+          "name": "QueueName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列类型,取值classic或quorum\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "classic",
+          "member": "string",
+          "name": "QueueType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "在线消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Consumers",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "持久标记\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Durable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动清除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "AutoDelete",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testRemark",
+          "member": "string",
+          "name": "Remark",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MessageTTL参数,classic类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MessageTTL",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "AutoExpire参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "AutoExpire",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MaxLength参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MaxLengthBytes参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxLengthBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DeliveryLimit参数,quorum类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "DeliveryLimit",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OverflowBehaviour参数,取值为drop-head, reject-publish或reject-publish-dlx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "drop-head",
+          "member": "string",
+          "name": "OverflowBehaviour",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DeadLetterExchange参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testDeadLetterExchange",
+          "member": "string",
+          "name": "DeadLetterExchange",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DeadLetterRoutingKey参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testDeadLetterRoutingKey",
+          "member": "string",
+          "name": "DeadLetterRoutingKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SingleActiveConsumer参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "SingleActiveConsumer",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MaximumPriority参数,classic类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaximumPriority",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "LazyMode参数,classic类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "LazyMode",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MasterLocator参数,classic类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testMasterLocator",
+          "member": "string",
+          "name": "MasterLocator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MaxInMemoryLength参数,quorum类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxInMemoryLength",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MaxInMemoryBytes参数,quorum类型专用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000",
+          "member": "int64",
+          "name": "MaxInMemoryBytes",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳,单位秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1669174535",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "rabbit@rabbitmq-broker-0.rabbitmq-broker-internal.amqp-xxx.",
+          "member": "string",
+          "name": "Node",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQQueuesRequest": {
+      "document": "DescribeRabbitMQQueues请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "amqp-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Vhost参数",
+          "example": "testVhost",
+          "member": "string",
+          "name": "VirtualHost",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "搜索关键词",
+          "example": "testSearchWord",
+          "member": "string",
+          "name": "SearchWord",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "队列类型筛选，不填或 \"all\"：classic 和 quorum 队列；\"classic\"：筛选 classic 队列；\"quorum\"：筛选 quorum 队列",
+          "example": "all",
+          "member": "string",
+          "name": "QueueType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序依据的字段：\nMessageHeapCount - 消息堆积数；\nMessageRateInOut - 生产消费速率之和；\nMessageRateIn - 生产速率；\nMessageRateOut - 消费速率；",
+          "example": "MessageHeapCount",
+          "member": "string",
+          "name": "SortElement",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序，ascend 或 descend",
+          "example": "ascend",
+          "member": "string",
+          "name": "SortOrder",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRabbitMQQueuesResponse": {
+      "document": "DescribeRabbitMQQueues返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RabbitMQQueueListInfo",
+          "name": "QueueInfoList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRabbitMQUserRequest": {
       "document": "DescribeRabbitMQUser请求参数结构体",
       "members": [
@@ -11958,6 +12367,98 @@
           "name": "Description",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQQueueListConsumerDetailInfo": {
+      "document": "RabbitMQ队列列表消费者信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费者数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ConsumersNumber",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RabbitMQQueueListInfo": {
+      "document": "RabbitMQ队列列表成员信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "队列名",
+          "example": "testQueueName",
+          "member": "string",
+          "name": "QueueName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "testRemark",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费者信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RabbitMQQueueListConsumerDetailInfo",
+          "name": "ConsumerDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列类型，取值 \"classic\"，\"quorum\"\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "classic",
+          "member": "string",
+          "name": "QueueType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息堆积数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "MessageHeapCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息生产速率，每秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "MessageRateIn",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息消费速率，每秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0",
+          "member": "float",
+          "name": "MessageRateOut",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

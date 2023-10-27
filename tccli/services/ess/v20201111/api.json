@@ -218,7 +218,7 @@
       "status": "online"
     },
     "CreateSeal": {
-      "document": "本接口（CreateSeal）用于创建企业电子印章，支持创建企业公章，合同章，财务专用章和人事专用章创建。",
+      "document": "本接口（CreateSeal）用于创建企业电子印章，支持创建企业公章，合同章，财务专用章和人事专用章创建。\n\n1. 可以**通过图片**创建印章，图片最大5MB\n2. 可以**系统创建**创建印章, 系统创建的印章样子下图(样式可以调整)\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage.png)",
       "input": "CreateSealRequest",
       "name": "创建企业电子印章",
       "output": "CreateSealResponse",
@@ -4647,7 +4647,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章名字，1-50个中文字符。",
+          "document": "电子印章名字，1-50个中文字符\n注:`同一企业下电子印章名字不能相同`",
           "example": "公司印章",
           "member": "string",
           "name": "SealName",
@@ -4665,7 +4665,7 @@
         },
         {
           "disabled": false,
-          "document": "本接口支持上传图片印章及系统直接生成印章；\n如果要使用系统生成印章，此值传：SealGenerateSourceSystem；\n如果要使用图片上传请传字段 Image",
+          "document": "电子印章生成方式\n<ul>\n<li><strong>空值</strong>:(默认)使用上传的图片生成印章, 此时需要上传SealImage图片</li>\n<li><strong>SealGenerateSourceSystem</strong>: 系统生成印章, 无需上传SealImage图片</li>\n</ul>",
           "example": "SealGenerateSourceSystem",
           "member": "string",
           "name": "GenerateSource",
@@ -4674,7 +4674,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型：\n<ul>\n<li>OFFICIAL-公章；</li>\n<li>CONTRACT-合同专用章;</li>\n<li>FINANCE-合财务专用章;</li>\n<li>PERSONNEL-人事专用章.</li>\n</ul>",
+          "document": "电子印章类型 , 可选类型如下: \n<ul><li>**OFFICIAL**: (默认)公章</li>\n<li>**CONTRACT**: 合同专用章;</li>\n<li>**FINANCE**: 合财务专用章;</li>\n<li>**PERSONNEL**: 人事专用章</li>\n</ul>\n注: `同企业下只能有一个公章, 重复创建会报错`",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
@@ -4692,7 +4692,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章图片base64编码\n参数Image,FileToken或GenerateSource=SealGenerateSourceSystem三选一。",
+          "document": "电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式\n\n注: `通过图片创建的电子印章，需电子签平台人工审核`\n\n",
           "example": "imagecontentbase64",
           "member": "string",
           "name": "Image",
@@ -4728,7 +4728,7 @@
         },
         {
           "disabled": false,
-          "document": "企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号）",
+          "document": "企业印章横向文字，最多可填15个汉字  (若超过印章最大宽度，优先压缩字间距，其次缩小字号)\n横向文字的位置如下图中的\"印章横向文字在这里\"\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage2.png)\n",
           "example": "横向文字",
           "member": "string",
           "name": "SealHorizontalText",
@@ -4764,7 +4764,7 @@
         },
         {
           "disabled": false,
-          "document": "印章样式，取值如下:\n\n<ul>\n<li>cycle:圆形印章;</li>\n<li>ellipse:椭圆印章;</li>\n<li>注：默认圆形印章</li>\n</ul>",
+          "document": "印章样式, 可以选择的样式如下: \n<ul><li>**circle**:(默认)圆形印章</li>\n<li>**ellipse**:椭圆印章</li></ul>",
           "example": "cycle",
           "member": "string",
           "name": "SealStyle",
@@ -4773,7 +4773,7 @@
         },
         {
           "disabled": false,
-          "document": "印章尺寸取值描述：\n<ul>\n<li>42_42 圆形企业公章直径42mm；</li>\n<li>40_40 圆形企业印章直径40mm；</li>\n<li>45_30 椭圆形印章45mm x 30mm;</li>\n</ul>",
+          "document": "印章尺寸取值描述, 可以选择的尺寸如下: \n<ul><li> **42_42**: 圆形企业公章直径42mm, 当SealStyle是圆形的时候才有效</li>\n<li> **40_40**: 圆形企业印章直径40mm, 当SealStyle是圆形的时候才有效</li>\n<li> **45_30**: 椭圆形印章45mm x 30mm, 当SealStyle是椭圆的时候才有效</li></ul>",
           "example": "42_42",
           "member": "string",
           "name": "SealSize",

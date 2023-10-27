@@ -465,7 +465,7 @@
     "ModfiyInstancePassword": {
       "document": "本接口（ModfiyInstancePassword）用于修改实例访问密码。",
       "input": "ModfiyInstancePasswordRequest",
-      "name": "修改Redis密码",
+      "name": "修改Redis密码（请使用最新的ModifyInstancePassword接口）",
       "output": "ModfiyInstancePasswordResponse",
       "status": "online"
     },
@@ -7611,6 +7611,7 @@
           "example": "16661",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

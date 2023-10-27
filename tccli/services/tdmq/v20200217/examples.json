@@ -484,6 +484,22 @@
         "title": "RabbitMQ专享版查询节点列表"
       }
     ],
+    "DescribeRabbitMQQueueDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueueDetail\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\",\n    \"QueueName\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Consumers\": 0,\n        \"Durable\": true,\n        \"LazyMode\": true,\n        \"QueueName\": \"xx\",\n        \"QueueType\": \"xx\",\n        \"VirtualHost\": \"xx\",\n        \"InstanceId\": \"xx\",\n        \"AutoExpire\": 0,\n        \"MaxInMemoryLength\": 0,\n        \"MaxLengthBytes\": 0,\n        \"MessageTTL\": 0,\n        \"SingleActiveConsumer\": true,\n        \"Remark\": \"xx\",\n        \"AutoDelete\": true,\n        \"DeadLetterExchange\": \"xx\",\n        \"DeliveryLimit\": 0,\n        \"RequestId\": \"xx\",\n        \"OverflowBehaviour\": \"xx\",\n        \"MasterLocator\": \"xx\",\n        \"MaxInMemoryBytes\": 0,\n        \"MaximumPriority\": 0,\n        \"DeadLetterRoutingKey\": \"xx\",\n        \"MaxLength\": 0,\n        \"Node\": \"xx\",\n        \"CreateTime\": 1669174535\n    }\n}",
+        "title": "查询RabbitMQ队列详情"
+      }
+    ],
+    "DescribeRabbitMQQueues": [
+      {
+        "document": "查询当前 vhost 下所有 queue",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRabbitMQQueues\n<公共请求参数>\n\n{\n    \"InstanceId\": \"amqp-44w9928j\",\n    \"VirtualHost\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\",\n        \"QueueInfoList\": [\n            {\n                \"QueueName\": \"queue.name\",\n                \"Remark\": null,\n                \"QueueType\": \"classic\",\n                \"ConsumerDetail\": {\n                    \"ConsumersNumber\": 1\n                },\n                \"MessageHeapCount\": 0,\n                \"MessageRateIn\": 0,\n                \"MessageRateOut\": 0\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询RabbitMQ队列列表"
+      }
+    ],
     "DescribeRabbitMQUser": [
       {
         "document": "-",

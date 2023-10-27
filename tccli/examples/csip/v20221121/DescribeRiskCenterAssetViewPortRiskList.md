@@ -5,7 +5,19 @@
 Input: 
 
 ```
-tccli csip DescribeRiskCenterAssetViewPortRiskList --cli-unfold-argument ```
+tccli csip DescribeRiskCenterAssetViewPortRiskList --cli-unfold-argument  \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc \
+    --Filter.Limit 0 \
+    --Filter.Offset 0 \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
+    --Filter.Filters.0.OperatorType 0 \
+    --Filter.StartTime 2021-01-01 00:00:00 \
+    --Filter.EndTime 2021-01-01 00:00:00
+```
 
 Output: 
 ```
@@ -15,57 +27,57 @@ Output:
         "Data": [
             {
                 "Port": 1,
-                "AffectAsset": "xx",
-                "Level": "xx",
-                "InstanceType": "xx",
-                "Protocol": "xx",
-                "Component": "xx",
-                "Service": "xx",
-                "RecentTime": "xx",
-                "FirstTime": "xx",
+                "AffectAsset": "abc",
+                "Level": "abc",
+                "InstanceType": "abc",
+                "Protocol": "abc",
+                "Component": "abc",
+                "Service": "abc",
+                "RecentTime": "abc",
+                "FirstTime": "abc",
                 "Suggestion": 1,
                 "Status": 1,
-                "Id": "xx",
-                "Index": "xx",
-                "InstanceId": "xx",
-                "InstanceName": "xx",
-                "AppId": "xx",
-                "Nick": "xx",
-                "Uin": "xx",
-                "From": "xx"
+                "Id": "abc",
+                "Index": "abc",
+                "InstanceId": "abc",
+                "InstanceName": "abc",
+                "AppId": "abc",
+                "Nick": "abc",
+                "Uin": "abc",
+                "From": "abc"
             }
         ],
         "StatusLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "LevelLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
-            }
-        ],
-        "InstanceTypeLists": [
-            {
-                "Value": "xx",
-                "Text": "xx"
-            }
-        ],
-        "FromLists": [
-            {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "SuggestionLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
-        "RequestId": "xx"
+        "InstanceTypeLists": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "FromLists": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

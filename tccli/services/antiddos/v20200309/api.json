@@ -11318,7 +11318,7 @@
       "usage": "both"
     },
     "RuleInstanceRelation": {
-      "document": "四七层规则的",
+      "document": "四七层规则对应实例与IP的关系",
       "members": [
         {
           "disabled": false,
@@ -11326,7 +11326,7 @@
           "example": "[1.1.1.1]",
           "member": "string",
           "name": "EipList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11336,7 +11336,7 @@
           "example": "bgpip-0000011x",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11346,7 +11346,7 @@
           "example": "abcdefg",
           "member": "string",
           "name": "Cname",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

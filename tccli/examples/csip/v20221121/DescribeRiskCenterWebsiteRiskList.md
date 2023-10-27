@@ -5,7 +5,19 @@
 Input: 
 
 ```
-tccli csip DescribeRiskCenterWebsiteRiskList --cli-unfold-argument ```
+tccli csip DescribeRiskCenterWebsiteRiskList --cli-unfold-argument  \
+    --Filter.Limit 0 \
+    --Filter.Offset 0 \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
+    --Filter.Filters.0.OperatorType 0 \
+    --Filter.StartTime abc \
+    --Filter.EndTime abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
+```
 
 Output: 
 ```
@@ -14,52 +26,52 @@ Output:
         "TotalCount": 0,
         "Data": [
             {
-                "AffectAsset": "xx",
-                "Level": "xx",
-                "RecentTime": "xx",
-                "FirstTime": "xx",
+                "AffectAsset": "abc",
+                "Level": "abc",
+                "RecentTime": "abc",
+                "FirstTime": "abc",
                 "Status": 1,
-                "Id": "xx",
-                "Index": "xx",
-                "InstanceId": "xx",
-                "InstanceName": "xx",
-                "AppId": "xx",
-                "Nick": "xx",
-                "Uin": "xx",
-                "URL": "xx",
-                "URLPath": "xx",
-                "InstanceType": "xx",
-                "DetectEngine": "xx",
-                "ResultDescribe": "xx",
-                "SourceURL": "xx",
-                "SourceURLPath": "xx"
+                "Id": "abc",
+                "Index": "abc",
+                "InstanceId": "abc",
+                "InstanceName": "abc",
+                "AppId": "abc",
+                "Nick": "abc",
+                "Uin": "abc",
+                "URL": "abc",
+                "URLPath": "abc",
+                "InstanceType": "abc",
+                "DetectEngine": "abc",
+                "ResultDescribe": "abc",
+                "SourceURL": "abc",
+                "SourceURLPath": "abc"
             }
         ],
         "StatusLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "DetectEngineLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "LevelLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "InstanceTypeLists": [
             {
-                "Value": "xx",
-                "Text": "xx"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

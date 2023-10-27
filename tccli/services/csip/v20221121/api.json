@@ -852,6 +852,34 @@
       ],
       "usage": "out"
     },
+    "AssetTag": {
+      "document": "安全中心资产标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签的key值,可以是字母、数字、下划线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签的vale值,可以是字母、数字、下划线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AssetViewCFGRisk": {
       "document": "资产视角配置风险",
       "members": [
@@ -2720,11 +2748,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "-",
-          "example": "-",
+          "document": "公网IP/域名",
+          "example": "1.1.1.1",
           "member": "string",
           "name": "Content",
           "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
           "type": "list"
         }
       ],
@@ -2844,6 +2881,15 @@
           "name": "TaskMode",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3337,7 +3383,7 @@
           "example": "无",
           "member": "PublicIpDomainListKey",
           "name": "Content",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -3357,6 +3403,24 @@
           "name": "IgnoreAsset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "删除类型，取值： ALL， 删除全部，将直接忽略Content的内容；                                           其他值 ,非全部，则Centent必填，  默认为其他值。",
+          "example": "ALL",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3796,6 +3860,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安全中心自定义标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3809,6 +3882,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3818,6 +3892,7 @@
           "example": "无",
           "member": "DomainAssetVO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3827,6 +3902,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "DefenseStatusList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3836,6 +3912,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AssetLocationList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3845,6 +3922,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "SourceTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3854,6 +3932,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3924,6 +4003,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安全中心自定义标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3937,6 +4025,7 @@
           "example": "无",
           "member": "IpAssetListVO",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3946,6 +4035,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3955,6 +4045,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AssetLocationList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3964,6 +4055,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "IpTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3973,6 +4065,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "RegionList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3982,6 +4075,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "DefenseStatusList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3991,6 +4085,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AssetTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4000,6 +4095,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "AppIdList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4023,6 +4119,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4036,6 +4141,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4045,6 +4151,7 @@
           "example": "无",
           "member": "AssetViewCFGRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4054,6 +4161,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4063,6 +4171,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4072,6 +4181,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "CFGNameLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4081,6 +4191,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "CheckTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4090,6 +4201,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4099,6 +4211,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4122,6 +4235,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4135,6 +4257,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4144,6 +4267,7 @@
           "example": "无",
           "member": "AssetViewPortRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4153,6 +4277,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4162,6 +4287,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4171,6 +4297,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "SuggestionLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4180,6 +4307,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4189,6 +4317,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4212,6 +4341,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4225,6 +4363,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4234,6 +4373,7 @@
           "example": "无",
           "member": "AssetViewVULRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4243,6 +4383,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4252,6 +4393,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4261,6 +4403,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4270,6 +4413,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "VULTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4279,6 +4423,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4302,6 +4447,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4315,6 +4469,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4324,6 +4479,7 @@
           "example": "无",
           "member": "AssetViewWeakPassRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4333,6 +4489,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4342,6 +4499,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4351,6 +4509,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4360,6 +4519,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4369,6 +4529,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "PasswordTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4392,6 +4553,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4405,6 +4575,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4414,6 +4585,7 @@
           "example": "无",
           "member": "PortViewPortRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4423,6 +4595,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4432,6 +4605,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "SuggestionLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4441,6 +4615,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4464,6 +4639,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4477,6 +4661,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4486,6 +4671,7 @@
           "example": "无",
           "member": "ServerRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4495,6 +4681,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4518,6 +4705,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4531,6 +4727,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4540,6 +4737,7 @@
           "example": "无",
           "member": "VULViewVULRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4549,6 +4747,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4558,6 +4757,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "FromLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4567,6 +4767,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "VULTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4590,6 +4791,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资产标签",
+          "example": "无",
+          "member": "AssetTag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4603,6 +4813,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4612,6 +4823,7 @@
           "example": "无",
           "member": "WebsiteRisk",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4621,6 +4833,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "StatusLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4630,6 +4843,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "LevelLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4639,6 +4853,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "InstanceTypeLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4648,6 +4863,7 @@
           "example": "无",
           "member": "FilterDataObject",
           "name": "DetectEngineLists",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4725,6 +4941,15 @@
           "name": "Filter",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "标签",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4984,21 +5209,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务报告Id 列表",
-          "example": "无",
-          "member": "ReportItemKey",
-          "name": "ReportItemKeyList",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "0: 预览， 1: 下载",
           "example": "无",
           "member": "int64",
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务报告Id 列表",
+          "example": "无",
+          "member": "ReportItemKey",
+          "name": "ReportItemKeyList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "报告中任务id列表",
+          "example": "无",
+          "member": "ReportTaskIdList",
+          "name": "ReportTaskIdList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -5012,6 +5246,7 @@
           "example": "无",
           "member": "TaskLogURL",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6171,8 +6406,7 @@
           "member": "string",
           "name": "Asset",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6189,6 +6423,30 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportTaskIdList": {
+      "document": "报告中的task_id list",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务id列表",
+          "example": "无",
+          "member": "string",
+          "name": "TaskIdList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "AppId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -7307,6 +7565,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Tags": {
+      "document": "主机标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

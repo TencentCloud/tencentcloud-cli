@@ -8,8 +8,8 @@ Input:
 tccli cvm ResetInstance --cli-unfold-argument  \
     --InstanceId ins-r8hr2upy \
     --SystemDisk.DiskSize 60 \
-    --EnhancedService.SecurityService.Enabled TRUE \
-    --EnhancedService.MonitorService.Enabled TRUE \
+    --EnhancedService.SecurityService.Enabled True \
+    --EnhancedService.MonitorService.Enabled True \
     --LoginSettings.Password Qcloud@TestApi123++ \
     --ImageId img-pmqg1cw7
 ```

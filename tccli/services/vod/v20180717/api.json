@@ -11628,7 +11628,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "音画质检测模板号。",
+          "document": "音画质检测模板 ID。",
           "example": "10001",
           "member": "uint64",
           "name": "Definition",

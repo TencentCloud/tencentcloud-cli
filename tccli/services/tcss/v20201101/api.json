@@ -17492,7 +17492,7 @@
         },
         {
           "disabled": false,
-          "document": "Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型",
+          "document": "Name 可取值：\nName: 检查项名称\nRiskType: 风险类别\nRiskLevel: 风险等级\nRiskTarget: 检查对象\nRiskAttribute: 检测项所属分型线类型\nEnable: 检查项是否开启(0:关闭 1:开启)",
           "example": "无",
           "member": "ComplianceFilters",
           "name": "Filters",
@@ -17511,7 +17511,7 @@
           "example": "无",
           "member": "ClusterCheckItem",
           "name": "ClusterCheckItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17521,7 +17521,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

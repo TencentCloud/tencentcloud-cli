@@ -571,7 +571,7 @@
   "metadata": {
     "apiVersion": "2019-08-19",
     "api_brief": "介绍如何使用API对消息队列CKafka进行操作，包括管理实例等。",
-    "serviceNameCN": "消息队列 CKafka",
+    "serviceNameCN": "消息队列 CKafka 版",
     "serviceShortName": "ckafka"
   },
   "objects": {
@@ -10881,7 +10881,7 @@
           "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10891,7 +10891,7 @@
           "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10901,7 +10901,7 @@
           "example": "无",
           "member": "VipEntity",
           "name": "VipList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -10911,7 +10911,7 @@
           "example": "grp-gsg1",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10921,7 +10921,7 @@
           "example": "ckafka-gt2ty",
           "member": "string",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10931,7 +10931,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10941,7 +10941,7 @@
           "example": "100",
           "member": "int64",
           "name": "Bandwidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10951,7 +10951,7 @@
           "example": "2344",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10961,7 +10961,7 @@
           "example": "19009",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10971,7 +10971,7 @@
           "example": "grp-gsg1",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10981,7 +10981,7 @@
           "example": "topic-tsvs23is1",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10991,7 +10991,7 @@
           "example": "12355",
           "member": "int64",
           "name": "Healthy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11001,7 +11001,7 @@
           "example": "ckafka-gt2ty",
           "member": "string",
           "name": "HealthyMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11011,7 +11011,7 @@
           "example": "134",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11021,7 +11021,7 @@
           "example": "1235",
           "member": "int64",
           "name": "MsgRetentionTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11031,7 +11031,7 @@
           "example": "无",
           "member": "InstanceConfigDO",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11041,7 +11041,7 @@
           "example": "135",
           "member": "int64",
           "name": "RemainderPartitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11051,7 +11051,7 @@
           "example": "123",
           "member": "int64",
           "name": "RemainderTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11061,7 +11061,7 @@
           "example": "123",
           "member": "int64",
           "name": "CreatedPartitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11071,7 +11071,7 @@
           "example": "123",
           "member": "int64",
           "name": "CreatedTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11081,7 +11081,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11091,7 +11091,7 @@
           "example": "123",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11101,7 +11101,7 @@
           "example": "123123",
           "member": "int64",
           "name": "ZoneIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11111,7 +11111,7 @@
           "example": "grp-gsg1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11121,7 +11121,7 @@
           "example": "1344",
           "member": "int64",
           "name": "MaxGroupNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11131,7 +11131,7 @@
           "example": "12351",
           "member": "int64",
           "name": "Cvm",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11141,7 +11141,7 @@
           "example": "ckafka-gt2ty",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11151,7 +11151,7 @@
           "example": "[\"sdgg\", \"sdgg\"]",
           "member": "string",
           "name": "Features",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11161,7 +11161,7 @@
           "example": "无",
           "member": "DynamicRetentionTime",
           "name": "RetentionTimeConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11171,7 +11171,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxConnection",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11181,7 +11181,7 @@
           "example": "1",
           "member": "int64",
           "name": "PublicNetwork",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11191,7 +11191,7 @@
           "example": "2020-08-21 11:15:54",
           "member": "string",
           "name": "DeleteRouteTimestamp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11201,7 +11201,7 @@
           "example": "135",
           "member": "int64",
           "name": "RemainingPartitions",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11211,7 +11211,7 @@
           "example": "135",
           "member": "int64",
           "name": "RemainingTopics",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11221,7 +11221,7 @@
           "example": "复杂类型",
           "member": "DynamicDiskConfig",
           "name": "DynamicDiskConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11231,7 +11231,7 @@
           "example": "PREPAID | POSTPAID_BY_HOUR",
           "member": "string",
           "name": "InstanceChargeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -13830,240 +13830,314 @@
       "members": [
         {
           "disabled": false,
-          "document": "MySQL的数据库名称，\"*\"为全数据库",
+          "document": "MySQL的数据库名称，\"*\"为全数据库\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Database",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "MySQL的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写，需要填入正则表达式时，格式为\"数据库名\\\\.数据表名\"",
+          "document": "MySQL的数据表名称，\"*\"为所监听的所有数据库中的非系统表，可以\",\"间隔，监听多个数据表，但数据表需要以\"数据库名.数据表名\"的格式进行填写，需要填入正则表达式时，格式为\"数据库名\\\\.数据表名\"\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Table",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该MySQL在连接管理内的Id",
+          "document": "该MySQL在连接管理内的Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "Resource",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "复制存量信息(schema_only不复制, initial全量)，默认位initial",
+          "document": "复制存量信息(schema_only不复制, initial全量)，默认位initial\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "SnapshotMode",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "存放MySQL的Ddl信息的Topic，为空则默认不存放",
+          "document": "存放MySQL的Ddl信息的Topic，为空则默认不存放\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "string",
           "name": "DdlTopic",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "\"TABLE\" 表示读取项为 table，\"QUERY\" 表示读取项为 query",
+          "document": "\"TABLE\" 表示读取项为 table，\"QUERY\" 表示读取项为 query\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TABLE",
           "member": "string",
           "name": "DataSourceMonitorMode",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当 \"DataMonitorMode\"=\"TABLE\" 时，传入需要读取的 Table；当 \"DataMonitorMode\"=\"QUERY\" 时，传入需要读取的查询 sql 语句",
+          "document": "当 \"DataMonitorMode\"=\"TABLE\" 时，传入需要读取的 Table；当 \"DataMonitorMode\"=\"QUERY\" 时，传入需要读取的查询 sql 语句\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testTable",
           "member": "string",
           "name": "DataSourceMonitorResource",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "\"TIMESTAMP\" 表示增量列为时间戳类型，\"INCREMENT\" 表示增量列为自增 id 类型",
+          "document": "\"TIMESTAMP\" 表示增量列为时间戳类型，\"INCREMENT\" 表示增量列为自增 id 类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "TIMESTAMP",
           "member": "string",
           "name": "DataSourceIncrementMode",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "传入需要监听的列名称",
+          "document": "传入需要监听的列名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "testColumn",
           "member": "string",
           "name": "DataSourceIncrementColumn",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "\"HEAD\" 表示复制存量 + 增量数据，\"TAIL\" 表示只复制增量数据",
+          "document": "\"HEAD\" 表示复制存量 + 增量数据，\"TAIL\" 表示只复制增量数据\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "HEAD",
           "member": "string",
           "name": "DataSourceStartFrom",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "\"INSERT\" 表示使用 Insert 模式插入，\"UPSERT\" 表示使用 Upsert 模式插入",
+          "document": "\"INSERT\" 表示使用 Insert 模式插入，\"UPSERT\" 表示使用 Upsert 模式插入\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "INSERT",
           "member": "string",
           "name": "DataTargetInsertMode",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当 \"DataInsertMode\"=\"UPSERT\" 时，传入当前 upsert 时依赖的主键",
+          "document": "当 \"DataInsertMode\"=\"UPSERT\" 时，传入当前 upsert 时依赖的主键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "id",
           "member": "string",
           "name": "DataTargetPrimaryKeyField",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "表与消息间的映射关系",
+          "document": "表与消息间的映射关系\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RecordMapping",
           "name": "DataTargetRecordMapping",
+          "output_required": false,
           "required": false,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "事件路由到特定主题的正则表达式，默认为(.*)",
+          "document": "事件路由到特定主题的正则表达式，默认为(.*)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "(.*).db.(.*)",
           "member": "string",
           "name": "TopicRegex",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "TopicRegex的引用组，指定$1、$2等",
+          "document": "TopicRegex的引用组，指定$1、$2等\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "$1",
           "member": "string",
           "name": "TopicReplacement",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键",
+          "document": "格式：库1.表1:字段1,字段2;库2.表2:字段2，表之间;（分号）隔开，字段之间,（逗号）隔开。不指定的表默认取表的主键\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "db1.table2.k1,k2",
           "member": "string",
           "name": "KeyColumns",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Mysql 是否抛弃解析失败的消息，默认为true",
+          "document": "Mysql 是否抛弃解析失败的消息，默认为true\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "DropInvalidMessage",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效",
+          "document": "当设置成员参数DropInvalidMessageToCls设置为true时,DropInvalidMessage参数失效\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xxx",
           "member": "DropCls",
           "name": "DropCls",
+          "output_required": false,
           "required": false,
-          "type": "object"
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "输出格式，DEFAULT、CANAL_1、CANAL_2",
+          "document": "输出格式，DEFAULT、CANAL_1、CANAL_2\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DEFAULT",
           "member": "string",
           "name": "OutputFormat",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "当Table输入的是前缀时，该项值为true，否则为false",
+          "document": "当Table输入的是前缀时，该项值为true，否则为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsTablePrefix",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic",
+          "document": "如果该值为all，则DDL数据以及DML数据也会写入到选中的topic；若该值为dml，则只有DML数据写入到选中的topic\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "all",
           "member": "string",
           "name": "IncludeContentChanges",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "如果该值为true，且MySQL中\"binlog_rows_query_log_events\"配置项的值为\"ON\"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句",
+          "document": "如果该值为true，且MySQL中\"binlog_rows_query_log_events\"配置项的值为\"ON\"，则流入到topic的数据包含原SQL语句；若该值为false，流入到topic的数据不包含原SQL语句\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IncludeQuery",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带",
+          "document": "如果该值为 true，则消息中会携带消息结构体对应的schema，如果该值为false则不会携带\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "RecordWithSchema",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "存放信令表的数据库名称",
+          "document": "存放信令表的数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "databaseName",
           "member": "string",
           "name": "SignalDatabase",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix",
+          "document": "输入的table是否为正则表达式，如果该选项以及IsTablePrefix同时为true，该选项的判断优先级高于IsTablePrefix\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "IsTableRegular",
+          "output_required": false,
           "required": false,
-          "type": "bool"
+          "type": "bool",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "信号表",
+          "document": "信号表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "SignalTable",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "datetime 类型字段转换为时间戳的时区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "UTC+8",
+          "member": "string",
+          "name": "DateTimeZone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自建\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "SelfBuilt",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "OperateResponseData": {
       "document": "操作类型返回的Data结构",

@@ -1716,7 +1716,7 @@
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1726,7 +1726,7 @@
           "example": "aaa",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1736,7 +1736,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1746,7 +1746,7 @@
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "StreamBeginNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1756,7 +1756,7 @@
           "example": "无",
           "member": "string",
           "name": "StreamMixNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1766,17 +1766,17 @@
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "StreamEndNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "录制回调 URL。",
+          "document": "录制文件回调 URL。",
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "RecordNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1786,7 +1786,7 @@
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "SnapshotNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1796,7 +1796,7 @@
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "PornCensorshipNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1806,7 +1806,7 @@
           "example": "def",
           "member": "string",
           "name": "CallbackKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1816,7 +1816,7 @@
           "example": "http://abc.com/abc",
           "member": "string",
           "name": "PushExceptionNotifyUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1826,7 +1826,7 @@
           "example": "无",
           "member": "string",
           "name": "AudioAuditNotifyUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2617,10 +2617,19 @@
         },
         {
           "disabled": false,
-          "document": "录制回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "document": "录制文件回调 URL，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
           "example": "无",
           "member": "string",
           "name": "RecordNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制状态回调 URL ，\n相关协议文档：[事件消息通知](/document/product/267/32744)。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordStatusNotifyUrl",
           "required": false,
           "type": "string"
         },
@@ -2690,6 +2699,7 @@
           "example": "1000",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12034,10 +12044,19 @@
         },
         {
           "disabled": false,
-          "document": "录制回调 URL。",
+          "document": "录制文件回调 URL。",
           "example": "无",
           "member": "string",
           "name": "RecordNotifyUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录制状态回调 URL 。",
+          "example": "无",
+          "member": "string",
+          "name": "RecordStatusNotifyUrl",
           "required": false,
           "type": "string"
         },

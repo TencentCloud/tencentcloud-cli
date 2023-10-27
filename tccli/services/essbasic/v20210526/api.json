@@ -78,7 +78,7 @@
       "status": "online"
     },
     "ChannelCreateFlowGroupByFiles": {
-      "document": "接口（ChannelCreateFlowGroupByFiles）用于使用 PDF 文件创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`",
+      "document": "接口（ChannelCreateFlowGroupByFiles）用于使用 PDF 文件创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n<li>此接口需要依赖<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>生成pdf资源编号（FileIds）进行使用。</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`",
       "input": "ChannelCreateFlowGroupByFilesRequest",
       "name": "通过多文件创建合同组签署流程",
       "output": "ChannelCreateFlowGroupByFilesResponse",
@@ -87,7 +87,7 @@
     "ChannelCreateFlowGroupByTemplates": {
       "document": "接口（ChannelCreateFlowGroupByTemplates）用于通过多模板创建合同组签署流程。\n\n合同组是将多个合同签署流程组织在一起，多个合同同时创建，每个签署方得到一个签署链接，`一次完成合同组中多个合同的签署`。合同组的合同`不能拆分一个一个签署`，只能作为一个整体签署。\n\n适用场景：该接口适用于需要一次性完成多份合同签署的情况，多份合同一般具有关联性，用户以目录的形式查看合同。\n\n**注**: \n<ul>\n<li>此接口静默签(企业自动签)能力为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>合同组暂不支持抄送功能</li>\n</ul>\n\n**可以作为发起方和签署方的角色列表**\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为发起方类型</th>\n<th>可作为签署方的类型</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业A员工</td>\n</tr>\n\n<tr>\n<td>场景二</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B(不指定经办人)</td>\n</tr>\n\n<tr>\n<td>场景三</td>\n<td>第三方子企业A员工</td>\n<td>第三方子企业B员工</td>\n</tr>\n\n<tr>\n<td>场景四</td>\n<td>第三方子企业A员工</td>\n<td>个人/自然人</td>\n</tr>\n\n<tr>\n<td>场景五</td>\n<td>第三方子企业A员工</td>\n<td>SaaS平台企业员工</td>\n</tr>\n</tbody>\n</table>\n\n**注**: \n`1. 发起合同时候,  作为发起方的第三方子企业A员工的企业和员工必须经过实名, 而作为签署方的第三方子企业A员工/个人/自然人/SaaS平台企业员工/第三方子企业B员工企业中的企业和个人/员工可以未实名`\n\n`2. 不同类型的签署方传参不同, 可以参考开发者中心的FlowApproverInfo结构体说明`",
       "input": "ChannelCreateFlowGroupByTemplatesRequest",
-      "name": "用模版创建合同组签署流程",
+      "name": "通过多模板创建合同组签署流程",
       "output": "ChannelCreateFlowGroupByTemplatesResponse",
       "status": "online"
     },
@@ -316,9 +316,9 @@
       "status": "online"
     },
     "CreateSealByImage": {
-      "document": "通过图片为子客企业代创建印章，图片最大5MB",
+      "document": "1. 可以**通过图片**为子客企业代创建印章，图片最大5MB\n\n2. 可以**系统创建**子客企业代创建印章, 系统创建的印章样子下图(样式可以调整)\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage.png)",
       "input": "CreateSealByImageRequest",
-      "name": "通过图片为子客企业代创建印章",
+      "name": "创建企业电子印章",
       "output": "CreateSealByImageResponse",
       "status": "online"
     },
@@ -395,7 +395,7 @@
     "PrepareFlows": {
       "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用，将会废弃。",
       "input": "PrepareFlowsRequest",
-      "name": "准备待发起文件",
+      "name": "准备待发起文件(废弃)",
       "output": "PrepareFlowsResponse",
       "status": "online"
     },
@@ -1842,7 +1842,7 @@
         },
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>\n\n子客企业和子客企业中的员工比较走完创建和实名过程",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>\n子客企业和子客企业中的员工比较走完创建和实名过程",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1916,7 +1916,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>\n\n子客企业和子客企业中的员工比较走完创建和实名过程",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>\n子客企业和子客企业中的员工比较走完创建和实名过程",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5329,7 +5329,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5338,7 +5338,7 @@
         },
         {
           "disabled": false,
-          "document": "印章名称，最大长度不超过50字符",
+          "document": "电子印章名字，1-50个中文字符\n注:`同一企业下电子印章名字不能相同`",
           "example": "无",
           "member": "string",
           "name": "SealName",
@@ -5347,7 +5347,7 @@
         },
         {
           "disabled": false,
-          "document": "印章图片base64，大小不超过10M（原始图片不超过7.6M）",
+          "document": "电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式\n\n注: `通过图片创建的电子印章，需电子签平台人工审核`\n\n",
           "example": "无",
           "member": "string",
           "name": "SealImage",
@@ -5365,7 +5365,7 @@
         },
         {
           "disabled": false,
-          "document": "本接口支持上传图片印章及系统直接生成印章； 如果要使用系统生成印章，此值传：SealGenerateSourceSystem； 如果要使用图片上传，此字段置空并且传字段 SealImage",
+          "document": "电子印章生成方式\n<ul>\n<li><strong>空值</strong>:(默认)使用上传的图片生成印章, 此时需要上传SealImage图片</li>\n<li><strong>SealGenerateSourceSystem</strong>: 系统生成印章, 无需上传SealImage图片</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "GenerateSource",
@@ -5374,7 +5374,7 @@
         },
         {
           "disabled": false,
-          "document": "电子印章类型：\n<ul><li>OFFICIAL-公章</li>\n<li>CONTRACT-合同专用章;</li>\n<li>FINANCE-合财务专用章;</li>\n<li>PERSONNEL-人事专用章\n</li>\n<li>默认：OFFICIAL</li>\n</ul>",
+          "document": "电子印章类型 , 可选类型如下: \n<ul><li>**OFFICIAL**: (默认)公章</li>\n<li>**CONTRACT**: 合同专用章;</li>\n<li>**FINANCE**: 合财务专用章;</li>\n<li>**PERSONNEL**: 人事专用章</li>\n</ul>\n注: `同企业下只能有一个公章, 重复创建会报错`",
           "example": "OFFICIAL",
           "member": "string",
           "name": "SealType",
@@ -5383,7 +5383,7 @@
         },
         {
           "disabled": false,
-          "document": "企业印章横向文字，最多可填15个汉字（若超过印章最大宽度，优先压缩字间距，其次缩小字号",
+          "document": "企业印章横向文字，最多可填15个汉字  (若超过印章最大宽度，优先压缩字间距，其次缩小字号)\n横向文字的位置如下图中的\"印章横向文字在这里\"\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage2.png)\n",
           "example": "横向文字",
           "member": "string",
           "name": "SealHorizontalText",
@@ -5392,7 +5392,7 @@
         },
         {
           "disabled": false,
-          "document": "印章样式:\n\n<ul><li>cycle:圆形印章</li>\n<li>ellipse:椭圆印章</li>\n<li> 注：默认圆形印章</li></ul>",
+          "document": "印章样式, 可以选择的样式如下: \n<ul><li>**circle**:(默认)圆形印章</li>\n<li>**ellipse**:椭圆印章</li></ul>",
           "example": "cycle",
           "member": "string",
           "name": "SealStyle",
@@ -5401,7 +5401,7 @@
         },
         {
           "disabled": false,
-          "document": "印章尺寸取值描述：<ul><li> 42_42 圆形企业公章直径42mm</li>\n<li> 40_40 圆形企业印章直径40mm</li>\n<li> 45_30 椭圆形印章45mm x 30mm</li>\n</ul>",
+          "document": "印章尺寸取值描述, 可以选择的尺寸如下: \n<ul><li> **42_42**: 圆形企业公章直径42mm, 当SealStyle是圆形的时候才有效</li>\n<li> **40_40**: 圆形企业印章直径40mm, 当SealStyle是圆形的时候才有效</li>\n<li> **45_30**: 椭圆形印章45mm x 30mm, 当SealStyle是椭圆的时候才有效</li></ul>",
           "example": "42_42",
           "member": "string",
           "name": "SealSize",
@@ -5416,7 +5416,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -5426,8 +5426,8 @@
         },
         {
           "disabled": false,
-          "document": "电子印章预览链接地址，地址默认失效时间为24小时。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "电子印章预览链接地址，地址默认失效时间为24小时。\n\n注:`图片上传生成的电子印章无预览链接地址`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://file.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=a6cdd6******64d4",
           "member": "string",
           "name": "ImageUrl",
           "output_required": false,
@@ -7422,7 +7422,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -7431,8 +7431,8 @@
         },
         {
           "disabled": false,
-          "document": "  扩展服务类型\n<ul>\n  <li>AUTO_SIGN             企业自动签（自动签署）</li>\n<li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>\n<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>\n <li> PAGING_SEAL           骑缝章</li>\n <li> DOWNLOAD_FLOW         授权渠道下载合同 </li>\n<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>\n</ul>",
-          "example": "无",
+          "document": "  扩展服务类型\n<ul>\n<li>AUTO_SIGN             企业自动签（自动签署）</li>\n<li>  OVERSEA_SIGN          企业与港澳台居民*签署合同</li>\n<li>  MOBILE_CHECK_APPROVER 使用手机号验证签署方身份</li>\n<li> PAGING_SEAL           骑缝章</li>\n<li> DOWNLOAD_FLOW         授权渠道下载合同 </li>\n<li>AGE_LIMIT_EXPANSION 拓宽签署方年龄限制</li>\n</ul>",
+          "example": "AUTO_SIGN",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -7441,7 +7441,7 @@
         {
           "disabled": false,
           "document": "操作类型 \nOPEN:开通 \nCLOSE:关闭",
-          "example": "无",
+          "example": "OPEN",
           "member": "string",
           "name": "Operate",
           "required": true,
@@ -7449,7 +7449,7 @@
         },
         {
           "disabled": false,
-          "document": "链接跳转类型，支持以下类型\n<ul><li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li></ul>",
+          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n</ul>",
           "example": "APP",
           "member": "string",
           "name": "Endpoint",
@@ -7465,7 +7465,7 @@
         {
           "disabled": false,
           "document": "操作跳转链接，有效期24小时\n若操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通/关闭服务。\n\n当操作类型是 OPEN 且 扩展服务类型是  AUTO_SIGN 或 DOWNLOAD_FLOW 或者 OVERSEA_SIGN 时返回操作链接，\n返回的链接需要平台方自行触达超管或法人，超管或法人点击链接完成服务开通操作。",
-          "example": "无",
+          "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
           "member": "string",
           "name": "OperateUrl",
           "output_required": true,
