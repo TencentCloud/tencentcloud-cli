@@ -1,6 +1,6 @@
-**Example 1: 接口示例**
+**Example 1: 资产查询**
 
-接口示例
+
 
 Input: 
 
@@ -8,87 +8,103 @@ Input:
 tccli csip DescribePublicIpAssets --cli-unfold-argument  \
     --Filter.Limit 0 \
     --Filter.Offset 0 \
-    --Filter.Order  \
-    --Filter.By  \
-    --Filter.Filters.0.Name  \
-    --Filter.Filters.0.Values  \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
     --Filter.Filters.0.OperatorType 0 \
-    --Filter.StartTime  \
-    --Filter.EndTime 
+    --Filter.StartTime abc \
+    --Filter.EndTime abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppIdList": [
-            {
-                "Text": "1251001047",
-                "Value": "1251001047"
-            }
-        ],
-        "AssetLocationList": [
-            {
-                "Text": "其他",
-                "Value": "2"
-            }
-        ],
-        "AssetTypeList": [],
         "Data": [
             {
-                "AssetId": "",
-                "AddressId": "",
-                "AssetName": "",
-                "AssetType": "",
-                "Region": "other",
-                "AssetCreateTime": "2023-01-10 17:02:50",
-                "PublicIp": "103.150.141.100",
-                "PublicIpType": 0,
-                "VpcId": "",
-                "VpcName": "",
-                "AppId": 1251001047,
-                "Uin": "",
-                "NickName": "",
+                "AssetId": "abc",
+                "AssetName": "abc",
+                "AssetType": "abc",
+                "Region": "abc",
+                "CFWStatus": 1,
+                "AssetCreateTime": "abc",
+                "PublicIp": "abc",
+                "PublicIpType": 1,
+                "VpcId": "abc",
+                "VpcName": "abc",
+                "AppId": 1,
+                "Uin": "abc",
+                "NickName": "abc",
                 "IsCore": 1,
-                "IsCloud": 2,
-                "Attack": 0,
-                "Access": 0,
-                "Intercept": 0,
-                "InBandwidth": "0.00bps",
-                "OutBandwidth": "0.00bps",
-                "InFlow": "0.00B",
-                "OutFlow": "0.00B",
-                "LastScanTime": "-",
-                "PortRisk": 0,
-                "VulnerabilityRisk": 0,
-                "ConfigurationRisk": 0,
-                "ScanTask": 0,
-                "WeakPassword": 0,
-                "WebContentRisk": 0,
-                "Tag": null,
-                "CFWStatus": 1
+                "IsCloud": 1,
+                "Attack": 1,
+                "Access": 1,
+                "Intercept": 1,
+                "InBandwidth": "abc",
+                "OutBandwidth": "abc",
+                "InFlow": "abc",
+                "OutFlow": "abc",
+                "LastScanTime": "abc",
+                "PortRisk": 1,
+                "VulnerabilityRisk": 1,
+                "ConfigurationRisk": 1,
+                "ScanTask": 1,
+                "WeakPassword": 1,
+                "WebContentRisk": 1,
+                "Tag": [
+                    {
+                        "Name": "abc",
+                        "Value": "abc"
+                    }
+                ],
+                "AddressId": "abc",
+                "MemberId": "abc",
+                "RiskExposure": 0,
+                "IsNewAsset": 1,
+                "VerifyStatus": 0
             }
         ],
-        "DefenseStatusList": [
+        "Total": 1,
+        "AssetLocationList": [
             {
-                "Text": "未防护",
-                "Value": "1"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "IpTypeList": [
             {
-                "Text": "未知",
-                "Value": "0"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
         "RegionList": [
             {
-                "Text": "其他",
-                "Value": "other"
+                "Value": "abc",
+                "Text": "abc"
             }
         ],
-        "RequestId": "c4b812a0-5814-4611-adec-6124bdd9b961",
-        "Total": 9
+        "AppIdList": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "DefenseStatusList": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "AssetTypeList": [
+            {
+                "Value": "abc",
+                "Text": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

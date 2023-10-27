@@ -5,7 +5,19 @@
 Input: 
 
 ```
-tccli csip DescribeDomainAssets --cli-unfold-argument ```
+tccli csip DescribeDomainAssets --cli-unfold-argument  \
+    --Filter.Limit 0 \
+    --Filter.Offset 0 \
+    --Filter.Order abc \
+    --Filter.By abc \
+    --Filter.Filters.0.Name abc \
+    --Filter.Filters.0.Values abc \
+    --Filter.Filters.0.OperatorType 0 \
+    --Filter.StartTime abc \
+    --Filter.EndTime abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
+```
 
 Output: 
 ```

@@ -8855,7 +8855,7 @@
         },
         {
           "disabled": false,
-          "document": "设备编码（即我们为设备生成的20位国标编码）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "设备编码（国标设备即我们为设备生成的20位国标编码，rtmp 设备为10 位设备编码）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Code",
@@ -10038,6 +10038,15 @@
           "name": "Username",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关设备接入协议（仅网关接入支持）",
+          "example": "无",
+          "member": "int64",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

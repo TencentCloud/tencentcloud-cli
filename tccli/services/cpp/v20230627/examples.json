@@ -8,12 +8,36 @@
         "title": "AddTaskWorks"
       }
     ],
+    "CreateMonitor": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMonitor\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"MonitorPlatform\": \"abc\",\n    \"WhiteList\": [\n        {\n            \"Type\": \"abc\",\n            \"Name\": \"abc\",\n            \"Platform\": \"abc\"\n        }\n    ],\n    \"WorkList\": [\n        {\n            \"WorksName\": \"abc\",\n            \"PublishTime\": \"abc\",\n            \"MediaType\": 0,\n            \"WorksAuthor\": \"abc\",\n            \"Url\": \"abc\",\n            \"WorksTag\": [\n                \"abc\"\n            ],\n            \"WorksType\": \"abc\",\n            \"ExtraInfo\": {\n                \"Description\": \"abc\"\n            }\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"abc\",\n            \"TaskName\": \"abc\",\n            \"Works\": [\n                {\n                    \"WorkId\": \"abc\",\n                    \"WorkName\": \"abc\",\n                    \"Url\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CreateMonitor"
+      }
+    ],
+    "CreateRight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRight\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"WorkId\": \"abc\",\n    \"AuthList\": [\n        {\n            \"AuthUrl\": \"abc\",\n            \"ValidStartDate\": \"abc\",\n            \"ValidEndDate\": \"abc\"\n        }\n    ],\n    \"InfringeIdList\": [\n        0\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TaskId\": \"abc\",\n            \"Letters\": [\n                {\n                    \"LetterId\": \"abc\",\n                    \"InfringeId\": 0\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "CreateRight"
+      }
+    ],
     "CreateTask": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTask\n<公共请求参数>\n\n{\n    \"TaskName\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"MonitorPlatform\": \"abc\",\n    \"WhiteList\": [\n        {\n            \"Type\": \"abc\",\n            \"Name\": \"abc\",\n            \"Platform\": \"abc\"\n        }\n    ],\n    \"MediaType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "CreateTask"
+      }
+    ],
+    "QueryRight": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryRight\n<公共请求参数>\n\n{\n    \"LetterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"LetterId\": \"abc\",\n            \"EmailStatus\": \"abc\",\n            \"Proof\": \"abc\",\n            \"EmailTime\": \"abc\",\n            \"LinkStatus\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "QueryRight"
       }
     ],
     "QueryTask": [
@@ -30,6 +54,14 @@
         "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportDetail\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"UserId\": \"abc\",\n    \"Message\": \"abc\",\n    \"CreatedTime\": 0,\n    \"BillingItem\": \"abc\",\n    \"Count\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"Code\": 1,\n        \"Message\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": " ReportDetail 明细上报"
+      }
+    ],
+    "UploadFile": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UploadFile\n<公共请求参数>\n\n{\n    \"Base64\": \"abc\",\n    \"OriginFileName\": \"abc\",\n    \"KeepActive\": true,\n    \"OriginalProxy\": \"abc\",\n    \"Watermark\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"FileId\": \"abc\",\n        \"Filename\": \"abc\",\n        \"OriginName\": \"abc\",\n        \"Type\": \"abc\",\n        \"Size\": 0,\n        \"Context\": \"abc\",\n        \"ContextKey\": \"abc\",\n        \"Path\": \"abc\",\n        \"Watermark\": \"abc\",\n        \"OriginalProxy\": \"abc\",\n        \"Ext\": \"abc\",\n        \"ReadableSize\": \"abc\",\n        \"Location\": \"abc\",\n        \"Md5\": \"abc\",\n        \"Sha1\": \"abc\",\n        \"Algorithm\": \"abc\",\n        \"State\": \"abc\",\n        \"KeepActive\": true,\n        \"ActiveExpireTime\": \"abc\",\n        \"InactiveTime\": \"abc\",\n        \"Metadata\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "UploadFile"
       }
     ]
   },

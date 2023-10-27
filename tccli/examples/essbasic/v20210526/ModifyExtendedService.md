@@ -73,3 +73,31 @@ Output:
 }
 ```
 
+**Example 4: 修改不支持的特定扩展服务**
+
+传入了不支持的特定扩展服务，返回错误
+
+Input: 
+
+```
+tccli essbasic ModifyExtendedService --cli-unfold-argument  \
+    --Agent.ProxyOperator.OpenId admin-open-id \
+    --Agent.ProxyOrganizationOpenId org-open-id \
+    --Agent.AppId APPID122344555 \
+    --ServiceType TEST \
+    --Operate OPEN
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter.ParamError",
+            "Message": "参数错误。"
+        },
+        "RequestId": "s1**********72"
+    }
+}
+```
+

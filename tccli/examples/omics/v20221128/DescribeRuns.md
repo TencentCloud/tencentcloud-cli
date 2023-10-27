@@ -31,7 +31,9 @@ Output:
                 "Option": {
                     "FailureMode": "NoNewCalls",
                     "UseCallCache": true,
-                    "UseErrorOnHold": true
+                    "UseErrorOnHold": true,
+                    "UseRelativeOutputPaths": true,
+                    "FinalWorkflowOutputsDir": "cos://bucket-10000/output"
                 },
                 "ProjectId": "prj-peaceful-pink-bird-631828",
                 "RunGroupId": "run-ashamed-turquoise-rooster-131773",
@@ -56,7 +58,9 @@ Output:
                 "Option": {
                     "FailureMode": "NoNewCalls",
                     "UseCallCache": true,
-                    "UseErrorOnHold": false
+                    "UseErrorOnHold": false,
+                    "UseRelativeOutputPaths": true,
+                    "FinalWorkflowOutputsDir": "cos://bucket-10000/output"
                 },
                 "ProjectId": "prj-peaceful-pink-bird-631828",
                 "RunGroupId": "run-hilarious-aqua-herring-857343",

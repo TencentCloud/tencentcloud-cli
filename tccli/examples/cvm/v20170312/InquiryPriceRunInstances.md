@@ -78,9 +78,9 @@ tccli cvm InquiryPriceRunInstances --cli-unfold-argument  \
     --LoginSettings.Password Qcloud@TestApi123++ \
     --ImageId img-pmqg1cw7 \
     --InstanceChargeType PREPAID \
-    --EnhancedService.SecurityService.Enabled TRUE \
-    --EnhancedService.MonitorService.Enabled TRUE \
-    --InternetAccessible.PublicIpAssigned TRUE \
+    --EnhancedService.SecurityService.Enabled True \
+    --EnhancedService.MonitorService.Enabled True \
+    --InternetAccessible.PublicIpAssigned True \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 10 \
     --InstanceChargePrepaid.RenewFlag NOTIFY_AND_AUTO_RENEW \
@@ -159,9 +159,9 @@ tccli cvm InquiryPriceRunInstances --cli-unfold-argument  \
     --LoginSettings.Password Qcloud@TestApi123++ \
     --ImageId img-pmqg1cw7 \
     --InstanceChargeType POSTPAID_BY_HOUR \
-    --EnhancedService.SecurityService.Enabled TRUE \
-    --EnhancedService.MonitorService.Enabled TRUE \
-    --InternetAccessible.PublicIpAssigned TRUE \
+    --EnhancedService.SecurityService.Enabled True \
+    --EnhancedService.MonitorService.Enabled True \
+    --InternetAccessible.PublicIpAssigned True \
     --InternetAccessible.InternetChargeType TRAFFIC_POSTPAID_BY_HOUR \
     --InternetAccessible.InternetMaxBandwidthOut 10 \
     --InstanceName QCLOUD-TEST \

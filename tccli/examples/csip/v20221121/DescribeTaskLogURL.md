@@ -5,7 +5,12 @@
 Input: 
 
 ```
-tccli csip DescribeTaskLogURL --cli-unfold-argument ```
+tccli csip DescribeTaskLogURL --cli-unfold-argument  \
+    --ReportItemKeyList.0.TaskLogList abc \
+    --Type 0 \
+    --ReportTaskIdList.0.AppId abc \
+    --ReportTaskIdList.0.TaskIdList abc
+```
 
 Output: 
 ```
@@ -13,13 +18,13 @@ Output:
     "Response": {
         "Data": [
             {
-                "URL": "xx",
-                "LogId": "xx",
-                "TaskLogName": "xx",
-                "AppId": "xx"
+                "URL": "abc",
+                "LogId": "abc",
+                "TaskLogName": "abc",
+                "AppId": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

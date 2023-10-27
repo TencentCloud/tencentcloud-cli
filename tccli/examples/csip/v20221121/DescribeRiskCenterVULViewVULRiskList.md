@@ -14,7 +14,9 @@ tccli csip DescribeRiskCenterVULViewVULRiskList --cli-unfold-argument  \
     --Filter.Filters.0.Values abc \
     --Filter.Filters.0.OperatorType 0 \
     --Filter.StartTime abc \
-    --Filter.EndTime abc
+    --Filter.EndTime abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
 ```
 
 Output: 
@@ -46,7 +48,8 @@ Output:
                 "Nick": "abc",
                 "AppId": "abc",
                 "Uin": "abc",
-                "Fix": "abc"
+                "Fix": "abc",
+                "EMGCVulType": 0
             }
         ],
         "LevelLists": [

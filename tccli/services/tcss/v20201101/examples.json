@@ -1178,8 +1178,16 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckItemList\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8d03392a-2a32-4950-b203-d2baf28057fe\",\n        \"TotalCount\": 34,\n        \"ClusterCheckItems\": [\n            {\n                \"CheckItemId\": 1,\n                \"Name\": \"runc 安全漏洞\",\n                \"ItemDetail\": \"runc是一款用于根据OCI规范生成和运行容器的CLI（命令行界面）工具。runc存在安全漏洞，攻击者可利用该漏洞将主机文件系统绑定到容器中。\",\n                \"RiskLevel\": \"Serious\",\n                \"RiskTarget\": \"runC\",\n                \"RiskType\": \"CVERisk\",\n                \"RiskAttribute\": \"PrivilegePromotion\",\n                \"RiskProperty\": \"ExistPOC ExistEXP RemoteExploit ServerRestart\",\n                \"CVENumber\": \"CVE-2021-30465\",\n                \"DiscoverTime\": \"2021-05-27 21:15:00\",\n                \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r\",\n                \"CVSS\": \"CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:C/C:H/I:H/A:H\",\n                \"CVSSScore\": \"8.5\",\n                \"RelateLink\": \"https://github.com/opencontainers/runc/security/advisories/GHSA-c3xm-pvg7-gh7r https://github.com/opencontainers/runc/releases http://www.openwall.com/lists/oss-security/2021/05/19/2\",\n                \"AffectedType\": \"Node\",\n                \"AffectedVersion\": \"\"\n            },\n            {\n                \"CheckItemId\": 2,\n                \"Name\": \"Apache containerd 安全漏洞\",\n                \"ItemDetail\": \"containerd是美国阿帕奇（Apache）基金会的一个容器守护进程。该进程根据RunCOCI规范负责控制宿主机上容器的完整周期。containerd1.3.9之前版本和1.4.3版本存在安全漏洞，该漏洞源于containerd-shimAPI被不正确地公开给主机网络容器。shimsAPI套接字的访问控制验证了连接进程的有效UID为0，但是没有限制对抽象Unix域套接字的访问。这将允许在与shim相同的网络名称空间中运行的恶意容器，其有效UID为0，但在其他方面减少了特权，从而导致使用elevat运行新进程。\",\n                \"RiskLevel\": \"Middle\",\n                \"RiskTarget\": \"Containerd\",\n                \"RiskType\": \"CVERisk\",\n                \"RiskAttribute\": \"PrivilegePromotion\",\n                \"RiskProperty\": \"ExistPOC ExistEXP ServerRestart\",\n                \"CVENumber\": \"CVE-2020-15257\",\n                \"DiscoverTime\": \"2020-12-01 11:15:00\",\n                \"Solution\": \"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad\",\n                \"CVSS\": \"CVSS:3.1/AV:L/AC:L/PR:L/UI:N/S:C/C:L/I:L/A:N\",\n                \"CVSSScore\": \"5.2\",\n                \"RelateLink\": \"https://github.com/containerd/containerd/commit/4a4bb851f5da563ff6e68a83dc837c7699c469ad https://github.com/containerd/containerd/releases/tag/v1.4.3 https://github.com/containerd/containerd/security/advisories/GHSA-36xw-fx78-c5r4\",\n                \"AffectedType\": \"Node\",\n                \"AffectedVersion\": \"\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ClusterCheckItems\": [\n            {\n                \"CheckItemId\": 0,\n                \"Name\": \"abc\",\n                \"ItemDetail\": \"abc\",\n                \"RiskLevel\": \"abc\",\n                \"RiskTarget\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"RiskAttribute\": \"abc\",\n                \"RiskProperty\": \"abc\",\n                \"CVENumber\": \"abc\",\n                \"DiscoverTime\": \"abc\",\n                \"Solution\": \"abc\",\n                \"CVSS\": \"abc\",\n                \"CVSSScore\": \"abc\",\n                \"RelateLink\": \"abc\",\n                \"AffectedType\": \"abc\",\n                \"AffectedVersion\": \"abc\",\n                \"IgnoredAssetNum\": 0,\n                \"IsIgnored\": true,\n                \"RiskAssessment\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询所有检查项示例"
+      }
+    ],
+    "DescribeClusterCheckTimerSetting": [
+      {
+        "document": "查询集群检查定时配置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterCheckTimerSetting\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"Status\": true,\n        \"ClusterIDs\": [\n            \"abc\"\n        ],\n        \"CycleDay\": 1,\n        \"ScanTimeBegin\": \"abc\",\n        \"ScanTimeEnd\": \"abc\",\n        \"ScanScope\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群检查定时配置"
       }
     ],
     "DescribeClusterDetail": [
@@ -1196,6 +1204,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterSummary\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RiskClusterCount\": 1,\n        \"UncheckClusterCount\": 1,\n        \"ManagedClusterCount\": 1,\n        \"IndependentClusterCount\": 1,\n        \"NoRiskClusterCount\": 1,\n        \"CheckedClusterCount\": 1,\n        \"AutoCheckClusterCount\": 1,\n        \"ManualCheckClusterCount\": 1,\n        \"FailedClusterCount\": 1,\n        \"NotImportedClusterCount\": 1,\n        \"ServerlessClusterCount\": 1,\n        \"TkeClusterCount\": 1,\n        \"UserCreateTencentClusterCount\": 1,\n        \"UserCreateHybridClusterCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询用户集群资产总览示例"
+      }
+    ],
+    "DescribeClusterUninstallCmd": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterUninstallCmd\n<公共请求参数>\n\n{\n    \"ClusterName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Command\": \"abc\",\n        \"URL\": \"abc\",\n        \"FileContent\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群卸载命令"
       }
     ],
     "DescribeComplianceAssetDetailInfo": [
@@ -1706,6 +1722,14 @@
         "title": "获取公钥"
       }
     ],
+    "DescribePublicProxyInstallCommand": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePublicProxyInstallCommand\n<公共请求参数>\n\n{\n    \"IP\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"KeepAliveCommand\": \"abc\",\n        \"NginxCommand\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询公共代理命令"
+      }
+    ],
     "DescribePurchaseStateInfo": [
       {
         "document": "",
@@ -2008,6 +2032,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserCluster\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterInfoList\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ClusterVersion\": \"abc\",\n                \"ClusterOs\": \"abc\",\n                \"ClusterType\": \"abc\",\n                \"ClusterNodeNum\": 1,\n                \"Region\": \"abc\",\n                \"DefenderStatus\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"ClusterCheckMode\": \"abc\",\n                \"ClusterAutoCheck\": true,\n                \"DefenderErrorReason\": \"abc\",\n                \"UnreadyNodeNum\": 1,\n                \"SeriousRiskCount\": 0,\n                \"HighRiskCount\": 0,\n                \"MiddleRiskCount\": 0,\n                \"HintRiskCount\": 0,\n                \"CheckFailReason\": \"abc\",\n                \"CheckStatus\": \"abc\",\n                \"TaskCreateTime\": \"abc\",\n                \"AccessedStatus\": \"abc\",\n                \"AccessedSubStatus\": \"abc\",\n                \"NodeCount\": 1,\n                \"OffLineNodeCount\": 1,\n                \"UnInstallAgentNodeCount\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询用户集群列表"
+      }
+    ],
+    "DescribeUserPodList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPodList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ane0zamq\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PodList\": [\n            {\n                \"PodName\": \"abc\",\n                \"Status\": \"abc\",\n                \"PodIP\": \"abc\",\n                \"NodeLanIP\": \"abc\",\n                \"WorkloadName\": \"abc\",\n                \"WorkloadKind\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Region\": \"abc\",\n                \"Age\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"Restarts\": 1,\n                \"ServiceName\": \"abc\",\n                \"ServiceCount\": 1,\n                \"ContainerName\": \"abc\",\n                \"ContainerCount\": 1,\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"Labels\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"WorkloadLabels\": \"abc\",\n                \"ContainerId\": \"abc\",\n                \"HostName\": \"abc\",\n                \"HostId\": \"abc\",\n                \"ClusterType\": \"abc\",\n                \"NodeName\": \"abc\",\n                \"NodeType\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群的Pod列表"
       }
     ],
     "DescribeValueAddedSrvInfo": [
@@ -2414,6 +2446,14 @@
         "title": "停止镜像扫描"
       }
     ],
+    "ModifyClusterCheckTimerSettings": [
+      {
+        "document": "修改集群检查定时设置",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyClusterCheckTimerSettings\n<公共请求参数>\n\n{\n    \"Status\": true,\n    \"ClusterIDs\": [\n        \"abc\"\n    ],\n    \"CycleDay\": 1,\n    \"ScanTimeBegin\": \"abc\",\n    \"ScanTimeEnd\": \"abc\",\n    \"ScanScope\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改集群检查定时设置"
+      }
+    ],
     "ModifyCompliancePeriodTask": [
       {
         "document": "",
@@ -2716,6 +2756,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncAssetImageRegistryAsset\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"33ec689a-e026-4700-8dc4-b559b97f0667\"\n    }\n}",
         "title": "镜像仓库资产刷新"
+      }
+    ],
+    "UninstallClusterContainerSecurity": [
+      {
+        "document": "卸载集群容器安全",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UninstallClusterContainerSecurity\n<公共请求参数>\n\n{\n    \"ClusterIDs\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "卸载集群容器安全"
       }
     ],
     "UpdateAndPublishNetworkFirewallPolicyDetail": [

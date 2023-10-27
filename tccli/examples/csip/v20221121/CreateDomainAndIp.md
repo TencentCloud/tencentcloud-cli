@@ -1,12 +1,14 @@
-**Example 1: 示例**
+**Example 1: 添加资产**
 
-示例
+
 
 Input: 
 
 ```
 tccli csip CreateDomainAndIp --cli-unfold-argument  \
-    --Content abc
+    --Content abc \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc
 ```
 
 Output: 

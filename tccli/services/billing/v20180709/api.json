@@ -10273,20 +10273,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源ID",
-          "example": "ins-abcdefg",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "子产品code",
           "example": "sp_cvm_s1",
           "member": "string",
           "name": "SubProductCode",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -10295,7 +10286,7 @@
           "example": "cvm",
           "member": "string",
           "name": "ResourceType",
-          "required": false,
+          "required": true,
           "type": "string"
         },
         {
@@ -10304,7 +10295,16 @@
           "example": "ap-guagnzhou\t",
           "member": "string",
           "name": "RegionApCode",
-          "required": false,
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源ID",
+          "example": "ins-abcdefg",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
           "type": "string"
         }
       ],

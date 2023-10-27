@@ -243,7 +243,7 @@
           "example": "cdwch-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -253,7 +253,7 @@
           "example": "clickhouse集群",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -263,7 +263,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -273,7 +273,7 @@
           "example": "20.7.2.30",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -283,7 +283,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -293,7 +293,7 @@
           "example": "ap-guangzhou-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -303,7 +303,7 @@
           "example": "vpc-xxxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -313,7 +313,7 @@
           "example": "subnet-xxxxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -323,7 +323,7 @@
           "example": "hour",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -333,7 +333,7 @@
           "example": "2020-01-01 11:11:11",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -343,7 +343,7 @@
           "example": "2020-02-01 11:11:11",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -353,7 +353,7 @@
           "example": "无",
           "member": "NodesSummary",
           "name": "MasterSummary",
-          "required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -363,7 +363,7 @@
           "example": "无",
           "member": "NodesSummary",
           "name": "CoreSummary",
-          "required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -373,8 +373,18 @@
           "example": "false",
           "member": "string",
           "name": "HA",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高可用类型：\n0：非高可用\n1：读高可用\n2：读写高可用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HaType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -383,7 +393,7 @@
           "example": "\"10.0.0.1:9000\"",
           "member": "string",
           "name": "AccessInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -393,7 +403,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -403,7 +413,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -413,7 +423,7 @@
           "example": "广州三区",
           "member": "string",
           "name": "ZoneDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -423,7 +433,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "FlowMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -433,7 +443,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -443,7 +453,7 @@
           "example": "false",
           "member": "bool",
           "name": "RenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -453,7 +463,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -463,7 +473,7 @@
           "example": "prom-aaaaa",
           "member": "string",
           "name": "Monitor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -473,7 +483,7 @@
           "example": "true",
           "member": "bool",
           "name": "HasClsTopic",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -483,7 +493,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsTopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -493,7 +503,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClsLogSetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -503,7 +513,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableXMLConfig",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -513,7 +523,7 @@
           "example": "广州",
           "member": "string",
           "name": "RegionDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -523,7 +533,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "Eip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -533,7 +543,7 @@
           "example": "20",
           "member": "int64",
           "name": "CosMoveFactor",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -543,7 +553,47 @@
           "example": "yunti",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cos桶\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CosBucketName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cbs\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CanAttachCbs",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BuildVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Components",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -665,7 +715,7 @@
           "example": "xx",
           "member": "string",
           "name": "Spec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -675,7 +725,7 @@
           "example": "1",
           "member": "int64",
           "name": "NodeSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -685,7 +735,7 @@
           "example": "2",
           "member": "int64",
           "name": "Core",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -695,7 +745,7 @@
           "example": "4",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -705,7 +755,7 @@
           "example": "xx",
           "member": "int64",
           "name": "Disk",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -715,7 +765,7 @@
           "example": "xx",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -725,7 +775,7 @@
           "example": "xx",
           "member": "string",
           "name": "DiskDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -735,8 +785,68 @@
           "example": "xx",
           "member": "AttachCBSSpec",
           "name": "AttachCBSSpec",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdwdoris",
+          "member": "string",
+          "name": "SubProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SpecCore",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规格内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SpecMemory",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiskCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否加密\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Encrypt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大磁盘\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxDiskSize",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

@@ -42,6 +42,13 @@
       "output": "CreateApplicationProxyRuleResponse",
       "status": "online"
     },
+    "CreateOriginGroup": {
+      "document": "创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。",
+      "input": "CreateOriginGroupRequest",
+      "name": "创建源站组",
+      "output": "CreateOriginGroupResponse",
+      "status": "online"
+    },
     "CreatePlanForZone": {
       "document": "为未购买套餐的站点购买套餐",
       "input": "CreatePlanForZoneRequest",
@@ -117,6 +124,13 @@
       "input": "DeleteApplicationProxyRuleRequest",
       "name": "删除应用代理规则",
       "output": "DeleteApplicationProxyRuleResponse",
+      "status": "online"
+    },
+    "DeleteOriginGroup": {
+      "document": "删除源站组，若源站组仍然被服务（例如：四层代理，域名服务，负载均衡，规则引起）引用，将不允许删除。",
+      "input": "DeleteOriginGroupRequest",
+      "name": "删除源站组",
+      "output": "DeleteOriginGroupResponse",
       "status": "online"
     },
     "DeleteRules": {
@@ -273,6 +287,13 @@
       "output": "DescribeRulesSettingResponse",
       "status": "online"
     },
+    "DescribeSecurityTemplateBindings": {
+      "document": "查询指定策略模板的绑定关系列表。",
+      "input": "DescribeSecurityTemplateBindingsRequest",
+      "name": "查询指定策略模板的绑定关系列表",
+      "output": "DescribeSecurityTemplateBindingsResponse",
+      "status": "online"
+    },
     "DescribeTimingL4Data": {
       "document": "本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。",
       "input": "DescribeTimingL4DataRequest",
@@ -407,7 +428,7 @@
       "status": "online"
     },
     "ModifyOriginGroup": {
-      "document": "修改源站组",
+      "document": "修改源站组配置，新提交的源站记录将会覆盖原有源站组中的源站记录。",
       "input": "ModifyOriginGroupRequest",
       "name": "修改源站组",
       "output": "ModifyOriginGroupResponse",
@@ -573,6 +594,16 @@
           "name": "HttpsOriginPort",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "follow",
+          "member": "string",
+          "name": "IPv6Status",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -2591,6 +2622,15 @@
           "name": "HttpsOriginPort",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n<li>不填默认为：follow。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "IPv6Status",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2911,6 +2951,88 @@
           "example": "rule-xxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOriginGroupRequest": {
+      "document": "CreateOriginGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID",
+          "example": "zone-27q0p0bali16",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组名称，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组类型，此参数必填，取值有：\n<li>GENERAL：通用型源站组，仅支持添加 IP/域名 源站，可以被域名服务、规则引擎、四层代理、通用型负载均衡、HTTP 专用型负载均衡引用；</li>\n<li>HTTP： HTTP 专用型源站组，支持添加 IP/域名、对象存储源站作为源站，无法被四层代理引用，仅支持被添加加速域名、规则引擎-修改源站、HTTP 专用型负载均衡引用。</li>",
+          "example": "HTTP",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站记录信息，此参数必填。",
+          "example": "无",
+          "member": "OriginRecord",
+          "name": "Records",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "回源 Host Header，仅 Type = HTTP 时传入生效，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。",
+          "example": "www.tencent.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站记录信息，此参数已经废弃。",
+          "example": "无",
+          "member": "OriginRecord",
+          "name": "OriginRecords",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateOriginGroupResponse": {
+      "document": "CreateOriginGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源站组ID。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "OriginGroupId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3266,7 +3388,7 @@
         },
         {
           "disabled": false,
-          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.eo.dnse[0-5].com\"。\n\n例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.share.eo.dns2.com",
+          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.eo.dnse[0-5].com\"。\n\n例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.share.eo.dnse2.com",
           "example": "example.com",
           "member": "string",
           "name": "SharedCNAMEPrefix",
@@ -3843,6 +3965,42 @@
     },
     "DeleteApplicationProxyRuleResponse": {
       "document": "DeleteApplicationProxyRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOriginGroupRequest": {
+      "document": "DeleteOriginGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。",
+          "example": "zone-27q0p0bali16",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组ID，此参数必填。",
+          "example": "orgin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteOriginGroupResponse": {
+      "document": "DeleteOriginGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5363,6 +5521,52 @@
       ],
       "type": "object"
     },
+    "DescribeSecurityTemplateBindingsRequest": {
+      "document": "DescribeSecurityTemplateBindings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询的站点 ID。",
+          "example": "zone-j9j09au1",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的策略模板 ID。",
+          "example": "temp-n23na0",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSecurityTemplateBindingsResponse": {
+      "document": "DescribeSecurityTemplateBindings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定策略模板的绑定关系列表。\n\n当某个站点中的域名包含在指定策略模板的绑定关系中时，绑定关系列表 `TemplateScope` 中会包含该站点的 `ZoneId`，和该站点下的和该策略模板有关的域名绑定关系。\n\n注意：当没有任何域名正在绑定或已经绑定到指定策略模板时，绑定关系为空。即：返回结构体中，`TemplateScope` 数组长度为 0。\n\n绑定关系中，同一域名可能在 `EntityStatus` 列表中重复出现，并标记为不同 `Status` 。例如，正在被绑定到其他策略模板的域名，会同时标记为 `online` 和 `pending` 。",
+          "example": "{ \"TemplateId\": \"temp-fjsoelx\", \"TemplateScope\":[ {\"ZoneId\": \"zone-fdsjjkfsda\", \"EntityStatus\":[ {\"Entity\":\"a.example.com\", \"Status\":\"online\", \"Message\": \"\"}, {\"Entity\":\"a.anotherexample.com\", \"Status\":\"online\", \"Message\": \"\"} ] } ] }",
+          "member": "SecurityTemplateBinding",
+          "name": "SecurityTemplate",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTimingL4DataRequest": {
       "document": "DescribeTimingL4Data请求参数结构体",
       "members": [
@@ -6614,6 +6818,42 @@
       ],
       "usage": "both"
     },
+    "EntityStatus": {
+      "document": "安全实例状态。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例名，现在只有子域名。",
+          "example": "a.qq.com",
+          "member": "string",
+          "name": "Entity",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例配置下发状态，取值有：\n<li>online：配置已生效；</li><li>fail：配置失败；</li><li> process：配置下发中。</li>",
+          "example": "online",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例配置下发信息提示。",
+          "example": "cc rule quota has exhausted 6/5, upgrade to use more",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ExceptConfig": {
       "document": "例外规则，用于配置需要跳过特定场景的规则",
       "members": [
@@ -7787,7 +8027,7 @@
           "example": "无",
           "member": "OriginInfo",
           "name": "OriginInfo",
-          "required": true,
+          "required": false,
           "type": "object"
         },
         {
@@ -7816,6 +8056,15 @@
           "name": "HttpsOriginPort",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "IPv6状态，取值有：\n<li>follow：遵循站点IPv6配置；</li>\n<li>on：开启状态；</li>\n<li>off：关闭状态。</li>\n<li>不填保持原有配置。</li>",
+          "example": "follow",
+          "member": "string",
+          "name": "IPv6Status",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8368,7 +8617,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "站点ID。",
+          "document": "站点 ID",
           "example": "zone-27q0p0bali16",
           "member": "string",
           "name": "ZoneId",
@@ -8377,7 +8626,7 @@
         },
         {
           "disabled": false,
-          "document": "源站组ID，此参数必填。",
+          "document": "源站组 ID，此参数必填。",
           "example": "origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
           "member": "string",
           "name": "GroupId",
@@ -8386,7 +8635,7 @@
         },
         {
           "disabled": false,
-          "document": "源站组名称，不填保持原有配置，可输入1-200个字符，允许的字符为 a-z, A-Z, 0-9, _, - 。\t",
+          "document": "源站组名称，不填保持原有配置，可输入1 - 200个字符，允许的字符为 a - z, A - Z, 0 - 9, _, - 。\t",
           "example": "test",
           "member": "string",
           "name": "Name",
@@ -8413,7 +8662,16 @@
         },
         {
           "disabled": false,
-          "document": "源站组ID。",
+          "document": "回源 Host Header，仅 Type = HTTP 时生效， 不填或者填空表示不配置回源Host，规则引擎修改 Host Header 配置优先级高于源站组的 Host Header。",
+          "example": "www.tencent.com",
+          "member": "string",
+          "name": "HostHeader",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源站组 ID",
           "example": "origin-2ccgtb24-7dc5-46s2-9r3e-95825d53dwe3a",
           "member": "string",
           "name": "OriginGroupId",
@@ -11057,6 +11315,32 @@
       ],
       "usage": "both"
     },
+    "SecurityTemplateBinding": {
+      "document": "安全策略模板的绑定关系。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板ID",
+          "example": "\"temp-dfjkffd\"",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板绑定状态。",
+          "example": "无",
+          "member": "TemplateScope",
+          "name": "TemplateScope",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SecurityType": {
       "document": "安全类型配置项。",
       "members": [
@@ -11607,6 +11891,34 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "TemplateScope": {
+      "document": "安全模板绑定域名状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zone-fdsjjkfsda",
+          "member": "string",
+          "name": "ZoneId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EntityStatus",
+          "name": "EntityStatus",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

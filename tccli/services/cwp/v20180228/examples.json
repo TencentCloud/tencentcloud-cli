@@ -194,7 +194,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateScanMalwareSetting\n<公共请求参数>\n\n{\n    \"ScanPattern\": \"0\",\n    \"HostType\": \"1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"007863e7-fce9-49c2-9561-16bc2a522620\",\n        \"TaskId\": 1\n    }\n}",
         "title": "一键检测"
       }
     ],

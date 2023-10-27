@@ -861,6 +861,46 @@
         },
         {
           "disabled": false,
+          "document": "分组触发状态。1：开启，0：关闭（默认）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "GroupTriggerStatus",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组触发条件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"$1.conut\"]",
+          "member": "string",
+          "name": "GroupTriggerCondition",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型。0:执行语句共用监控对象;1:每个执行语句单独选择监控对象。 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "MonitorObjectType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警级别。0:警告(Warn);1:提醒(Info);2:紧急 (Critical)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "多触发条件。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiCondition",
@@ -2584,7 +2624,7 @@
         },
         {
           "disabled": false,
-          "document": "告警重复的周期。单位是分钟。取值范围是0~1440。",
+          "document": "告警重复的周期。\n\n单位是分钟。\n\n取值范围是0~1440。",
           "example": "0",
           "member": "int64",
           "name": "AlarmPeriod",
@@ -2611,7 +2651,16 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件。\n\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。</li>\n\n\n",
+          "document": "告警级别。\n\n0:警告(Warn); 1:提醒(Info); 2:紧急 (Critical)。\n\n注意:  \n- 不填则默认为0。\n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "多触发条件。\n\n 注意:  \n- Condition和AlarmLevel是一组配置，MultiConditions是另一组配置，2组配置互斥。\n\n\n",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -2620,7 +2669,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启告警策略。默认值为true",
+          "document": "是否开启告警策略。\n\n默认值为true",
           "example": "true",
           "member": "bool",
           "name": "Status",
@@ -2653,6 +2702,42 @@
           "name": "Analysis",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分组触发状态。\n\n默认值false",
+          "example": "true",
+          "member": "bool",
+          "name": "GroupTriggerStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "分组触发条件。",
+          "example": "[\"$1.conut\"]",
+          "member": "string",
+          "name": "GroupTriggerCondition",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "标签描述列表，通过指定该参数可以同时绑定标签到相应的告警策略。\n\n最大支持10个标签键值对，并且不能有重复的键值对。",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n\n不填则默认为0。\n\n当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "MonitorObjectType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -4405,7 +4490,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4415,7 +4500,7 @@
           "example": "taskid_xx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4425,7 +4510,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4435,7 +4520,7 @@
           "example": "1",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4445,7 +4530,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "SrcTopicId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4455,7 +4540,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4465,7 +4550,7 @@
           "example": "xx-xx",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4475,7 +4560,7 @@
           "example": "xx-xx",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4485,7 +4570,7 @@
           "example": "xx-xx",
           "member": "string",
           "name": "LastEnableTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4495,7 +4580,7 @@
           "example": "topicname",
           "member": "string",
           "name": "SrcTopicName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4505,7 +4590,7 @@
           "example": "logset-1",
           "member": "string",
           "name": "LogsetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4515,7 +4600,7 @@
           "example": "{\"dst_topics\":[{\"topic_id\":\"xxx\", \"alias\":\"topic\"}]}",
           "member": "DataTransformResouceInfo",
           "name": "DstResources",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4525,7 +4610,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "EtlContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4535,7 +4620,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "BackupTopicID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4545,7 +4630,7 @@
           "example": "false",
           "member": "bool",
           "name": "BackupGiveUpData",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -9039,6 +9124,33 @@
           "name": "Analysis",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分组触发状态。true：开启，false：关闭（默认）",
+          "example": "true",
+          "member": "bool",
+          "name": "GroupTriggerStatus",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "分组触发条件。",
+          "example": "[\"$1.conut\"]",
+          "member": "string",
+          "name": "GroupTriggerCondition",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型。0:执行语句共用监控对象; 1:每个执行语句单独选择监控对象。 \n<li> 当值为1时，AlarmTargets元素个数不能超过10个，AlarmTargets中的Number必须是从1开始的连续正整数，不能重复。\n",
+          "example": "0",
+          "member": "uint64",
+          "name": "MonitorObjectType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9570,6 +9682,15 @@
           "name": "BackupGiveUpData",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启投递服务日志。1关闭，2开启",
+          "example": "2",
+          "member": "uint64",
+          "name": "HasServicesLog",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

@@ -7,11 +7,32 @@
       "output": "AddTaskWorksResponse",
       "status": "online"
     },
+    "CreateMonitor": {
+      "document": "新建检测任务",
+      "input": "CreateMonitorRequest",
+      "name": "新建监测任务",
+      "output": "CreateMonitorResponse",
+      "status": "online"
+    },
+    "CreateRight": {
+      "document": "新建维权任务",
+      "input": "CreateRightRequest",
+      "name": "新建维权任务",
+      "output": "CreateRightResponse",
+      "status": "online"
+    },
     "CreateTask": {
       "document": "创建审核任务",
       "input": "CreateTaskRequest",
       "name": "创建审核任务",
       "output": "CreateTaskResponse",
+      "status": "online"
+    },
+    "QueryRight": {
+      "document": "查询维权任务",
+      "input": "QueryRightRequest",
+      "name": "查询维权任务",
+      "output": "QueryRightResponse",
       "status": "online"
     },
     "QueryTask": {
@@ -26,6 +47,13 @@
       "input": "ReportDetailRequest",
       "name": "明细上报",
       "output": "ReportDetailResponse",
+      "status": "online"
+    },
+    "UploadFile": {
+      "document": "文件上传",
+      "input": "UploadFileRequest",
+      "name": "文件上传",
+      "output": "UploadFileResponse",
       "status": "online"
     }
   },
@@ -72,6 +100,211 @@
         }
       ],
       "type": "object"
+    },
+    "AuthList": {
+      "document": "维权相关的权利文件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权利文件下载地址",
+          "example": "https://cpsp-oss.rdmedia.cn/test/95/cos202306051804385cap5y.png",
+          "member": "string",
+          "name": "AuthUrl",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权利文件有效期-起始时间",
+          "example": "2023-06-01 00:00:00",
+          "member": "string",
+          "name": "ValidStartDate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权利文件有效期-终止时间",
+          "example": "2024-06-01 00:00:00",
+          "member": "string",
+          "name": "ValidEndDate",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "CreateMonitorRequest": {
+      "document": "CreateMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测开始时间",
+          "example": "2023-04-26 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测结束时间",
+          "example": "2023-04-26 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测平台",
+          "example": "全部平台",
+          "member": "string",
+          "name": "MonitorPlatform",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测作品",
+          "example": "无",
+          "member": "MonitorWork",
+          "name": "WorkList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "白名单",
+          "example": "无",
+          "member": "WhiteInfo",
+          "name": "WhiteList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMonitorResponse": {
+      "document": "CreateMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测作品",
+          "example": "无",
+          "member": "ResMonitorWorkVO",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRightRequest": {
+      "document": "CreateRight请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维权任务名称",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监测作品ID，由【新建监测任务】接口返回",
+          "example": "W393551",
+          "member": "string",
+          "name": "WorkId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "权利文件",
+          "example": "无",
+          "member": "AuthList",
+          "name": "AuthList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "要发起维权的侵权ID列表，侵权ID由【查询监测任务】接口获得",
+          "example": "无",
+          "member": "int64",
+          "name": "InfringeIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRightResponse": {
+      "document": "CreateRight返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建维权任务出参Data",
+          "example": "无",
+          "member": "CreateRightVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateRightVO": {
+      "document": "新建维权任务出参Data",
+      "members": [
+        {
+          "disabled": false,
+          "document": "新建成功的维权任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "R17107",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维权信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RightLetter",
+          "name": "Letters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CreateTaskRequest": {
       "document": "CreateTask请求参数结构体",
@@ -154,6 +387,213 @@
         }
       ],
       "type": "object"
+    },
+    "MonitorWork": {
+      "document": "监测作品",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作品名称",
+          "example": "节目名称",
+          "member": "string",
+          "name": "WorksName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作品发布时间",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "PublishTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "媒体类型。100：视频，200：音频，300：文本，400：图片，500：图文",
+          "example": "100",
+          "member": "int64",
+          "name": "MediaType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "作者",
+          "example": "作者",
+          "member": "string",
+          "name": "WorksAuthor",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "作品链接",
+          "example": "https://v.qq.com/x/cover/mzc003m069pge61/r35097uc0qk.html",
+          "member": "string",
+          "name": "Url",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "关键词",
+          "member": "string",
+          "name": "WorksTag",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "作品类型。MediaType为100时，取值范围为 10101：新闻 10102：游戏 10103：综合 10201：电视剧 10202：院线电影 10203：网络大电影 10204：综艺 10205：纪录片 10206：动漫 10207：少儿 10208：体育赛事 10209：新闻 10210：直播 10211：游戏 10212：生活 10213：时尚 10214：音乐mv 10215：娱乐 103：商品宣传片 104：课件视频 105：其他 MediaType为200时，取值范围为 201：音乐 202：有声读物 203：其他 MediaType为300时，取值范围为 301：原创文章 302：文学小说 303：新闻资讯 304：其他 MediaType为400时，取值范围为 401：照片 402：设计图 403：商业图片 404：漫画 405：其他 MediaType为500时，取值范围为 601：其他",
+          "example": "10103",
+          "member": "string",
+          "name": "WorksType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "无",
+          "member": "WorkExtraInfo",
+          "name": "ExtraInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "usage": "in"
+    },
+    "MonitorWorkVO": {
+      "document": "监测作品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测作品ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "W39360",
+          "member": "string",
+          "name": "WorkId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "节目名称",
+          "member": "string",
+          "name": "WorkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "作品链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://v.qq.com/x/cover/mzc003m069pge61/r35097uc0qk.html",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "QueryRightRequest": {
+      "document": "QueryRight请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维权ID，由【创建维权任务/追加维权数据】获得",
+          "example": "L27132",
+          "member": "string",
+          "name": "LetterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRightResponse": {
+      "document": "QueryRight返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询维权任务出参",
+          "example": "无",
+          "member": "QueryRightVO",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryRightVO": {
+      "document": "查询维权任务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维权ID",
+          "example": "L57132",
+          "member": "string",
+          "name": "LetterId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维权状态，状态包含【未发函、发函中、已发函、无法发函、已驳回】",
+          "example": "已发函",
+          "member": "string",
+          "name": "EmailStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "维权凭证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "哔哩哔哩视频下线通知函-0-2023051616",
+          "member": "string",
+          "name": "Proof",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维权时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-16-07 16:12:38",
+          "member": "string",
+          "name": "EmailTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下线状态，状态包含【未下线、已下线】",
+          "example": "未下线",
+          "member": "string",
+          "name": "LinkStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "QueryTaskRequest": {
       "document": "QueryTask请求参数结构体",
@@ -384,6 +824,68 @@
       ],
       "usage": "out"
     },
+    "ResMonitorWorkVO": {
+      "document": "新建监测任务出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监测任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监测作品\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MonitorWorkVO",
+          "name": "Works",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RightLetter": {
+      "document": "维权信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "维权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "L57133",
+          "member": "string",
+          "name": "LetterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "侵权ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "55637",
+          "member": "int64",
+          "name": "InfringeId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TaskWork": {
       "document": "监测作品",
       "members": [
@@ -479,6 +981,279 @@
         }
       ],
       "usage": "in"
+    },
+    "UploadFileRequest": {
+      "document": "UploadFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源文件Base64编码",
+          "example": "无",
+          "member": "string",
+          "name": "Base64",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源文件名称（带扩展名）",
+          "example": "demo.jpg",
+          "member": "string",
+          "name": "OriginFileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否保留文件活跃状态",
+          "example": "无",
+          "member": "bool",
+          "name": "KeepActive",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否添加水印",
+          "example": "无",
+          "member": "bool",
+          "name": "Watermark",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "文件标识",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalProxy",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UploadFileResponse": {
+      "document": "UploadFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件ID",
+          "example": "无",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "无",
+          "member": "string",
+          "name": "Filename",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件原始名",
+          "example": "xx.jpg",
+          "member": "string",
+          "name": "OriginName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件类型",
+          "example": "jpg",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小",
+          "example": "16036",
+          "member": "int64",
+          "name": "Size",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "存储上下文",
+          "example": "cos",
+          "member": "string",
+          "name": "Context",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件目录",
+          "example": "test-file-1308623730",
+          "member": "string",
+          "name": "ContextKey",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件路径",
+          "example": "test/35/cos202305231841122srfgu.jpg",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印文件路径",
+          "example": "无",
+          "member": "string",
+          "name": "Watermark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "源代理信息",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalProxy",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扩展名",
+          "example": ".jpg",
+          "member": "string",
+          "name": "Ext",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小",
+          "example": "15.66KB",
+          "member": "string",
+          "name": "ReadableSize",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问路径",
+          "example": "/test/35/cos202305231841122srfgu.jpg",
+          "member": "string",
+          "name": "Location",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件MD5",
+          "example": "无",
+          "member": "string",
+          "name": "Md5",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件SHA1",
+          "example": "无",
+          "member": "string",
+          "name": "Sha1",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "hash算法",
+          "example": "无",
+          "member": "string",
+          "name": "Algorithm",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件状态,可用值:ACTIVE,INACTIVE,DELETING",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "State",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否有效",
+          "example": "false",
+          "member": "bool",
+          "name": "KeepActive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件自动失效时间",
+          "example": "无",
+          "member": "string",
+          "name": "ActiveExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失效时间",
+          "example": "无",
+          "member": "string",
+          "name": "InactiveTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "元数据",
+          "example": "{\\\"width\\\":934,\\\"height\\\":474}",
+          "member": "string",
+          "name": "Metadata",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "WhiteInfo": {
       "document": "白名单",

@@ -99,6 +99,102 @@
     "serviceShortName": "omics"
   },
   "objects": {
+    "ApplicationVersion": {
+      "document": "应用版本。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "版本ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationVersionId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发布描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入口文件。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Entrypoint",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Git信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GitInfo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CVMOption": {
       "document": "云服务器配置。",
       "members": [
@@ -124,6 +220,42 @@
         }
       ],
       "usage": "in"
+    },
+    "CacheInfo": {
+      "document": "缓存信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缓存清理时间(小时)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CacheClearDelay",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存清理计划时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CacheClearTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缓存是否已被清理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "CacheCleared",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "ClusterOption": {
       "document": "计算集群配置。",
@@ -364,7 +496,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -406,6 +538,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -415,6 +548,7 @@
           "example": "无",
           "member": "RunGroup",
           "name": "RunGroups",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -436,7 +570,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -478,6 +612,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -487,6 +622,7 @@
           "example": "无",
           "member": "Run",
           "name": "Runs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -926,20 +1062,20 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。",
-          "example": "无",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "作业路径",
           "example": "无",
           "member": "string",
           "name": "Path",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
           "type": "string"
         }
       ],
@@ -954,6 +1090,7 @@
           "example": "无",
           "member": "RunMetadata",
           "name": "Calls",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -984,7 +1121,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],
@@ -999,6 +1136,7 @@
           "example": "无",
           "member": "RunMetadata",
           "name": "Metadata",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1083,6 +1221,56 @@
         }
       ],
       "type": "object"
+    },
+    "NFOption": {
+      "document": "Nextflow选项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Config。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Config",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Profile。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Profile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Report。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Report",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Resume。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Resume",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ResourceIds": {
       "document": "云资源ID。",
@@ -1215,7 +1403,7 @@
           "example": "无",
           "member": "string",
           "name": "RunUuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1225,7 +1413,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1235,7 +1423,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1245,7 +1433,7 @@
           "example": "无",
           "member": "string",
           "name": "RunGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1255,7 +1443,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvironmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1265,7 +1453,7 @@
           "example": "无",
           "member": "string",
           "name": "UserDefinedId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1275,7 +1463,7 @@
           "example": "无",
           "member": "string",
           "name": "TableId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1285,7 +1473,7 @@
           "example": "无",
           "member": "string",
           "name": "TableRowUuid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1295,7 +1483,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1305,7 +1493,7 @@
           "example": "无",
           "member": "string",
           "name": "Input",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1315,7 +1503,7 @@
           "example": "无",
           "member": "RunOption",
           "name": "Option",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1325,9 +1513,19 @@
           "example": "无",
           "member": "ExecutionTime",
           "name": "ExecutionTime",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "缓存信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CacheInfo",
+          "name": "Cache",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1335,7 +1533,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1345,7 +1543,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1355,7 +1553,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1498,7 +1696,7 @@
           "example": "无",
           "member": "string",
           "name": "RunGroupId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1508,7 +1706,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1518,7 +1716,7 @@
           "example": "无",
           "member": "string",
           "name": "ProjectName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1528,7 +1726,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1538,7 +1736,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1548,7 +1746,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1558,7 +1756,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvironmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1568,7 +1766,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvironmentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1578,7 +1776,7 @@
           "example": "无",
           "member": "string",
           "name": "TableId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1588,7 +1786,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1598,7 +1796,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1608,7 +1806,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1618,19 +1816,29 @@
           "example": "无",
           "member": "string",
           "name": "Input",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "运行选项。",
+          "document": "WDL运行选项。",
           "example": "无",
           "member": "RunOption",
           "name": "Option",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Nextflow运行选项。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NFOption",
+          "name": "NFOption",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1638,7 +1846,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalRun",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1648,7 +1856,7 @@
           "example": "无",
           "member": "RunStatusCount",
           "name": "RunStatusCounts",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1658,7 +1866,7 @@
           "example": "无",
           "member": "ExecutionTime",
           "name": "ExecutionTime",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1668,7 +1876,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1678,7 +1886,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1688,9 +1896,49 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "UpdateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建者。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Creator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建者ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreatorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "运行结果通知方式。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResultNotify",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationVersion",
+          "name": "ApplicationVersion",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1704,7 +1952,7 @@
           "example": "无",
           "member": "string",
           "name": "RunType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1714,7 +1962,7 @@
           "example": "无",
           "member": "string",
           "name": "RunId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1724,7 +1972,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1734,7 +1982,7 @@
           "example": "无",
           "member": "string",
           "name": "JobId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1744,7 +1992,7 @@
           "example": "无",
           "member": "string",
           "name": "CallName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1754,7 +2002,7 @@
           "example": "无",
           "member": "string",
           "name": "ScatterIndex",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1764,7 +2012,7 @@
           "example": "无",
           "member": "string",
           "name": "Input",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1774,7 +2022,7 @@
           "example": "无",
           "member": "string",
           "name": "Output",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1784,7 +2032,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1794,7 +2042,7 @@
           "example": "无",
           "member": "string",
           "name": "ErrorMessage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1804,7 +2052,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1814,7 +2062,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "SubmitTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1824,7 +2072,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1834,7 +2082,7 @@
           "example": "无",
           "member": "string",
           "name": "Command",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1844,7 +2092,7 @@
           "example": "无",
           "member": "string",
           "name": "Runtime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1854,7 +2102,7 @@
           "example": "无",
           "member": "bool",
           "name": "Preprocess",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1864,7 +2112,7 @@
           "example": "无",
           "member": "bool",
           "name": "PostProcess",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1874,7 +2122,7 @@
           "example": "无",
           "member": "bool",
           "name": "CallCached",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1884,7 +2132,7 @@
           "example": "无",
           "member": "string",
           "name": "Stdout",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1894,7 +2142,17 @@
           "example": "无",
           "member": "string",
           "name": "Stderr",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Meta",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1910,6 +2168,7 @@
           "example": "无",
           "member": "string",
           "name": "FailureMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1920,6 +2179,7 @@
           "example": "无",
           "member": "bool",
           "name": "UseCallCache",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1930,6 +2190,7 @@
           "example": "无",
           "member": "bool",
           "name": "UseErrorOnHold",
+          "output_required": true,
           "required": true,
           "type": "bool",
           "value_allowed_null": false
@@ -1940,6 +2201,7 @@
           "example": "无",
           "member": "string",
           "name": "FinalWorkflowOutputsDir",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1950,6 +2212,7 @@
           "example": "无",
           "member": "bool",
           "name": "UseRelativeOutputPaths",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true

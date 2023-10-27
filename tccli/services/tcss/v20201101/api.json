@@ -966,6 +966,13 @@
       "output": "DescribeCheckItemListResponse",
       "status": "online"
     },
+    "DescribeClusterCheckTimerSetting": {
+      "document": "查询集群定时检查设置",
+      "input": "DescribeClusterCheckTimerSettingRequest",
+      "name": "查询集群定时检查设置",
+      "output": "DescribeClusterCheckTimerSettingResponse",
+      "status": "online"
+    },
     "DescribeClusterDetail": {
       "document": "查询单个集群的详细信息",
       "input": "DescribeClusterDetailRequest",
@@ -978,6 +985,13 @@
       "input": "DescribeClusterSummaryRequest",
       "name": "查询用户集群资产总览",
       "output": "DescribeClusterSummaryResponse",
+      "status": "online"
+    },
+    "DescribeClusterUninstallCmd": {
+      "document": "查询集群卸载命令",
+      "input": "DescribeClusterUninstallCmdRequest",
+      "name": "查询集群卸载命令",
+      "output": "DescribeClusterUninstallCmdResponse",
       "status": "online"
     },
     "DescribeComplianceAssetDetailInfo": {
@@ -1414,6 +1428,13 @@
       "output": "DescribePublicKeyResponse",
       "status": "online"
     },
+    "DescribePublicProxyInstallCommand": {
+      "document": "获取公共代理安装命令",
+      "input": "DescribePublicProxyInstallCommandRequest",
+      "name": "获取公共代理安装命令",
+      "output": "DescribePublicProxyInstallCommandResponse",
+      "status": "online"
+    },
     "DescribePurchaseStateInfo": {
       "document": "DescribePurchaseStateInfo 查询容器安全服务已购买信息",
       "input": "DescribePurchaseStateInfoRequest",
@@ -1678,6 +1699,13 @@
       "input": "DescribeUserClusterRequest",
       "name": "用户集群资产查询",
       "output": "DescribeUserClusterResponse",
+      "status": "online"
+    },
+    "DescribeUserPodList": {
+      "document": "获取用户的pod列表",
+      "input": "DescribeUserPodListRequest",
+      "name": "获取用户的pod列表",
+      "output": "DescribeUserPodListResponse",
       "status": "online"
     },
     "DescribeValueAddedSrvInfo": {
@@ -2023,6 +2051,13 @@
       "output": "ModifyAssetImageScanStopResponse",
       "status": "online"
     },
+    "ModifyClusterCheckTimerSettings": {
+      "document": "修改集群检查定时设置",
+      "input": "ModifyClusterCheckTimerSettingsRequest",
+      "name": "修改集群检查定时设置",
+      "output": "ModifyClusterCheckTimerSettingsResponse",
+      "status": "online"
+    },
     "ModifyCompliancePeriodTask": {
       "document": "修改定时任务的设置，包括检测周期、开启/禁用合规基准。",
       "input": "ModifyCompliancePeriodTaskRequest",
@@ -2287,6 +2322,13 @@
       "input": "SyncAssetImageRegistryAssetRequest",
       "name": "镜像仓库资产刷新",
       "output": "SyncAssetImageRegistryAssetResponse",
+      "status": "online"
+    },
+    "UninstallClusterContainerSecurity": {
+      "document": "卸载集群容器安全",
+      "input": "UninstallClusterContainerSecurityRequest",
+      "name": "卸载集群容器安全",
+      "output": "UninstallClusterContainerSecurityResponse",
       "status": "online"
     },
     "UpdateAndPublishNetworkFirewallPolicyDetail": {
@@ -6044,6 +6086,292 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterPodInfo": {
+      "document": "集群的pod详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod名称.",
+          "example": "wktest-6486d6544d-v9gkn",
+          "member": "string",
+          "name": "PodName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod状态",
+          "example": "Running",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod IP",
+          "example": "10.0.0.9",
+          "member": "string",
+          "name": "PodIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点内网Ip",
+          "example": "10.0.0.11",
+          "member": "string",
+          "name": "NodeLanIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属的工作负载名字",
+          "example": "wktest-6486d6544d",
+          "member": "string",
+          "name": "WorkloadName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属工作负载类型",
+          "example": "Deployment",
+          "member": "string",
+          "name": "WorkloadKind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群名字",
+          "example": "wk-cluster",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群ID",
+          "example": "cls-as2mkd13",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属命名空间",
+          "example": "Default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时间",
+          "example": "78d",
+          "member": "string",
+          "name": "Age",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "Wed, 24 Nov 2021 11:31:16",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "重启次数",
+          "example": "12",
+          "member": "uint64",
+          "name": "Restarts",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的service名字",
+          "example": "wk-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的service数量",
+          "example": "2",
+          "member": "uint64",
+          "name": "ServiceCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的容器名字",
+          "example": "k8s_cluster-security-agent_cluster-security-defender-f8fhj_kube-",
+          "member": "string",
+          "name": "ContainerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联的容器数量",
+          "example": "3",
+          "member": "uint64",
+          "name": "ContainerCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CPU占用率",
+          "example": "0",
+          "member": "uint64",
+          "name": "CPU",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存占用量",
+          "example": "16",
+          "member": "uint64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod标签",
+          "example": "无",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群状态",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterStatus",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载标签",
+          "example": "无",
+          "member": "string",
+          "name": "WorkloadLabels",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器Id",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机名称",
+          "example": "无",
+          "member": "string",
+          "name": "HostName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主机Id",
+          "example": "无",
+          "member": "string",
+          "name": "HostId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群类型",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "abc",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "NORMAL：普通节点 SUPER：超级节点",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -17492,7 +17820,7 @@
         },
         {
           "disabled": false,
-          "document": "Name 可取值：risk_level风险等级, risk_target检查对象，风险对象,risk_type风险类别,risk_attri检测项所属的风险类型",
+          "document": "Name 可取值：\nName: 检查项名称\nRiskType: 风险类别\nRiskLevel: 风险等级\nRiskTarget: 检查对象\nRiskAttribute: 检测项所属分型线类型\nEnable: 检查项是否开启(0:关闭 1:开启)",
           "example": "无",
           "member": "ComplianceFilters",
           "name": "Filters",
@@ -17511,7 +17839,7 @@
           "example": "无",
           "member": "ClusterCheckItem",
           "name": "ClusterCheckItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -17521,7 +17849,84 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterCheckTimerSettingRequest": {
+      "document": "DescribeClusterCheckTimerSetting请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeClusterCheckTimerSettingResponse": {
+      "document": "DescribeClusterCheckTimerSetting返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "无",
+          "member": "bool",
+          "name": "Status",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "周期天数 若是1 则表示每天一扫 若是3 则表示每三天一扫",
+          "example": "无",
+          "member": "uint64",
+          "name": "CycleDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描开始时间",
+          "example": "09:00",
+          "member": "string",
+          "name": "ScanTimeBegin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描截止时间",
+          "example": "18:00",
+          "member": "string",
+          "name": "ScanTimeEnd",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围 0:全部集群 1:部分集群",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanScope",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17943,6 +18348,63 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterUninstallCmdRequest": {
+      "document": "DescribeClusterUninstallCmd请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterUninstallCmdResponse": {
+      "document": "DescribeClusterUninstallCmd返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命令",
+          "example": "无",
+          "member": "string",
+          "name": "Command",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件下载地址",
+          "example": "无",
+          "member": "string",
+          "name": "URL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件内容",
+          "example": "无",
+          "member": "string",
+          "name": "FileContent",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22219,6 +22681,53 @@
       ],
       "type": "object"
     },
+    "DescribePublicProxyInstallCommandRequest": {
+      "document": "DescribePublicProxyInstallCommand请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ip",
+          "example": "无",
+          "member": "string",
+          "name": "IP",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePublicProxyInstallCommandResponse": {
+      "document": "DescribePublicProxyInstallCommand返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保活命令",
+          "example": "无",
+          "member": "string",
+          "name": "KeepAliveCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "nginx命令",
+          "example": "无",
+          "member": "string",
+          "name": "NginxCommand",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePurchaseStateInfoRequest": {
       "document": "DescribePurchaseStateInfo请求参数结构体",
       "members": [],
@@ -25237,6 +25746,116 @@
           "name": "ClusterInfoList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPodListRequest": {
+      "document": "DescribeUserPodList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id,不填表示获取用户所有pod",
+          "example": "cls-as2mkd13",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每次查询的最大记录数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Name 可取值：ClusterId集群id,Namespace命名空间等",
+          "example": "无",
+          "member": "ComplianceFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "StartTime",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式 asc,desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Service名称",
+          "example": "wk-service",
+          "member": "string",
+          "name": "ServiceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserPodListResponse": {
+      "document": "DescribeUserPodList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod列表详细信息",
+          "example": "无",
+          "member": "ClusterPodInfo",
+          "name": "PodList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Pod列表总数量",
+          "example": "19",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -32923,6 +33542,78 @@
       ],
       "type": "object"
     },
+    "ModifyClusterCheckTimerSettingsRequest": {
+      "document": "ModifyClusterCheckTimerSettings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扫描周期天数 若是1 则表示每天 若是3 则表示每三天",
+          "example": "无",
+          "member": "uint64",
+          "name": "CycleDay",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扫描开始时间",
+          "example": "09:00",
+          "member": "string",
+          "name": "ScanTimeBegin",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扫描截止时间",
+          "example": "18:00",
+          "member": "string",
+          "name": "ScanTimeEnd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围 0:全部集群 1:部分集群",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanScope",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "状态(true:开启 false:关闭)",
+          "example": "true",
+          "member": "bool",
+          "name": "Status",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID列表 为空则标识全部",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyClusterCheckTimerSettingsResponse": {
+      "document": "ModifyClusterCheckTimerSettings返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyCompliancePeriodTaskRequest": {
       "document": "ModifyCompliancePeriodTask请求参数结构体",
       "members": [
@@ -38710,6 +39401,33 @@
         }
       ],
       "usage": "out"
+    },
+    "UninstallClusterContainerSecurityRequest": {
+      "document": "UninstallClusterContainerSecurity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIDs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UninstallClusterContainerSecurityResponse": {
+      "document": "UninstallClusterContainerSecurity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpdateAndPublishNetworkFirewallPolicyDetailRequest": {
       "document": "UpdateAndPublishNetworkFirewallPolicyDetail请求参数结构体",

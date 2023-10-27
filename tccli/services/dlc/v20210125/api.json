@@ -6183,6 +6183,7 @@
           "example": "42",
           "member": "int64",
           "name": "Id",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6193,6 +6194,7 @@
           "example": "datasource-xxx",
           "member": "string",
           "name": "DatasourceConnectionId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6203,6 +6205,7 @@
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6213,6 +6216,7 @@
           "example": "测试数据源",
           "member": "string",
           "name": "DatasourceConnectionDesc",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6223,6 +6227,7 @@
           "example": "DataLakeCatalog",
           "member": "string",
           "name": "DatasourceConnectionType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6233,6 +6238,7 @@
           "example": "无",
           "member": "DatasourceConnectionConfig",
           "name": "DatasourceConnectionConfig",
+          "output_required": true,
           "required": true,
           "type": "object",
           "value_allowed_null": true
@@ -6243,6 +6249,7 @@
           "example": "0",
           "member": "int64",
           "name": "State",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -6253,6 +6260,7 @@
           "example": "ap-beijjing",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6263,6 +6271,7 @@
           "example": "123xxx789",
           "member": "string",
           "name": "AppId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6273,6 +6282,7 @@
           "example": "1234567890",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6283,6 +6293,7 @@
           "example": "1234567890",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6293,6 +6304,7 @@
           "example": "success",
           "member": "string",
           "name": "Message",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -6303,6 +6315,7 @@
           "example": "[]",
           "member": "DataEngineInfo",
           "name": "DataEngines",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6313,6 +6326,7 @@
           "example": "user",
           "member": "string",
           "name": "UserAlias",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6323,6 +6337,7 @@
           "example": "无",
           "member": "NetworkConnection",
           "name": "NetworkConnectionSet",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6333,6 +6348,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ConnectivityState",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6343,6 +6359,18 @@
           "example": "测试成功",
           "member": "string",
           "name": "ConnectivityTips",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云梯账户所属部门标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7741,6 +7769,15 @@
           "name": "DatasourceConnectionTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回指定hive版本的数据源，该参数指定后，会过滤掉该参数指定版本以外的hive数据源，非hive数据源正常返回",
+          "example": "['2.3.5']",
+          "member": "string",
+          "name": "HiveVersion",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -7754,7 +7791,7 @@
           "example": "100",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7764,7 +7801,7 @@
           "example": "无",
           "member": "DatasourceConnectionInfo",
           "name": "ConnectionSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
