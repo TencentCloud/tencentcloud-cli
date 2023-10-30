@@ -41640,6 +41640,15 @@
           "name": "ConfParams",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "脚本内容是否base64加密",
+          "example": "true",
+          "member": "bool",
+          "name": "ScriptEncryption",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -41653,7 +41662,7 @@
           "example": "无",
           "member": "AdhocRecord",
           "name": "Record",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -41663,7 +41672,7 @@
           "example": "无",
           "member": "AdhocDetail",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

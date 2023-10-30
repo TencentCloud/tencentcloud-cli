@@ -1,5 +1,12 @@
 {
   "actions": {
+    "BindSecurityTemplateToEntity": {
+      "document": "操作安全策略模板，支持将域名绑定或换绑到指定的策略模板，或者从指定的策略模板解绑。",
+      "input": "BindSecurityTemplateToEntityRequest",
+      "name": "绑定或解绑安全策略模板",
+      "output": "BindSecurityTemplateToEntityResponse",
+      "status": "online"
+    },
     "BindZoneToPlan": {
       "document": "将未绑定套餐的站点绑定到已有套餐",
       "input": "BindZoneToPlanRequest",
@@ -1691,6 +1698,69 @@
         }
       ],
       "usage": "out"
+    },
+    "BindSecurityTemplateToEntityRequest": {
+      "document": "BindSecurityTemplateToEntity请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要绑定或解绑的策略模板所属站点 ID。",
+          "example": "zone-2mz9k20k",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定至策略模板（或者从策略模板解绑）的域名列表。",
+          "example": "[\"a.test.com\"]",
+          "member": "string",
+          "name": "Entities",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "绑定或解绑操作选项，取值有：\n<li>bind：绑定域名至策略模板；</li>\n<li>unbind-keep-policy：将域名从策略模板解绑，解绑时保留当前策略；</li>\n<li>unbind-use-default：将域名从策略模板解绑，并使用默认空白策略。</li>注意：解绑操作当前仅支持单个域名解绑。即：当 Operate 参数取值为 unbind-keep-policy 或 unbind-use-default 时，Entities 参数列表仅支持填写一个域名。",
+          "example": "bind",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定绑定或解绑的策略模板 ID 。",
+          "example": "temp-wj86oi2",
+          "member": "string",
+          "name": "TemplateId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "如指定的域名已经绑定了策略模板，是否替换该模板。支持下列取值：\n<li>true： 替换域名当前绑定的模板；</li>\n<li>false：不替换域名当前绑定的模板。</li>注意：当选择不替换已有策略模板时，若指定域名已经绑定策略模板，API 将返回错误。",
+          "example": "false",
+          "member": "bool",
+          "name": "OverWrite",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "BindSecurityTemplateToEntityResponse": {
+      "document": "BindSecurityTemplateToEntity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "BindZoneToPlanRequest": {
       "document": "BindZoneToPlan请求参数结构体",
@@ -12398,7 +12468,7 @@
         },
         {
           "disabled": false,
-          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>\n<li> vodeo：vodeo默认站点。</li>",
+          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>",
           "example": "full",
           "member": "string",
           "name": "Type",

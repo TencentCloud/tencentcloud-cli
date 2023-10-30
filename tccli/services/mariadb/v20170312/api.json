@@ -1088,7 +1088,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例节点可用区分布，最多可填两个可用区。当分片规格为一主两从时，其中两个节点在第一个可用区。",
+          "document": "实例节点可用区分布，可填写多个可用区。",
           "example": "[\"ap-guangzhou-2\\r\\n\",\"ap-guangzhou-2\\r\\n\"]",
           "member": "string",
           "name": "Zones",
@@ -1265,6 +1265,15 @@
           "name": "DcnInstanceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DCN同步模式，0：异步， 1：强同步",
+          "example": "1",
+          "member": "int64",
+          "name": "DcnSyncMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1278,6 +1287,7 @@
           "example": "20171103110163",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1287,6 +1297,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1526,6 +1537,15 @@
           "name": "RollbackTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DCN同步模式，0：异步， 1：强同步",
+          "example": "1",
+          "member": "int64",
+          "name": "DcnSyncMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1539,6 +1559,7 @@
           "example": "[\"tdsql-xxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1548,6 +1569,7 @@
           "example": "1122",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1727,7 +1749,7 @@
         },
         {
           "disabled": false,
-          "document": "DCN同步模式，0：普通DCN同步，1：一致性同步",
+          "document": "DCN同步模式，0：异步， 1：强同步",
           "example": "1",
           "member": "int64",
           "name": "DcnSyncMode",
@@ -2694,7 +2716,7 @@
           "example": "暂无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2704,7 +2726,7 @@
           "example": "暂无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2714,7 +2736,7 @@
           "example": "暂无",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2724,7 +2746,7 @@
           "example": "暂无",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2734,7 +2756,7 @@
           "example": "暂无",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2744,7 +2766,7 @@
           "example": "暂无",
           "member": "string",
           "name": "Vipv6",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2754,7 +2776,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2764,7 +2786,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2774,7 +2796,7 @@
           "example": "暂无",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2784,7 +2806,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "DcnFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2794,7 +2816,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "DcnStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2804,7 +2826,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2814,7 +2836,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2824,7 +2846,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2834,7 +2856,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2844,7 +2866,7 @@
           "example": "暂无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2854,7 +2876,7 @@
           "example": "暂无",
           "member": "string",
           "name": "PeriodEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2864,7 +2886,7 @@
           "example": "暂无",
           "member": "int64",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2874,7 +2896,7 @@
           "example": "暂无",
           "member": "DCNReplicaConfig",
           "name": "ReplicaConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2884,7 +2906,7 @@
           "example": "暂无",
           "member": "DCNReplicaStatus",
           "name": "ReplicaStatus",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -2894,7 +2916,97 @@
           "example": "暂无",
           "member": "int64",
           "name": "EncryptStatus",
-          "required": true,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例DCN状态描述信息",
+          "example": "暂无",
+          "member": "string",
+          "name": "DcnStatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例绑定的北极星服务所属的北极星实例Id，若未绑定则为空",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisInstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例绑定的北极星服务所属的北极星实例名，若未绑定则为空",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisInstanceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例绑定的北极星服务所属的北极星命名空间，若未绑定则为空",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisNamespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例绑定的北极星服务，若未绑定则为空",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisService",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例在北极星服务中的状态 0:未开启; 1:已开启; 2:已隔离; 3:切换中",
+          "example": "暂无",
+          "member": "int64",
+          "name": "PolarisServiceStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "DCN实例在北极星服务中的状态的描述信息",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisServiceStatusDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "北极星管控地址",
+          "example": "暂无",
+          "member": "string",
+          "name": "PolarisRegion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持DCN切换",
+          "example": "暂无",
+          "member": "int64",
+          "name": "IsDcnSwitchSupported",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -3418,6 +3530,7 @@
           "example": "tdsql-jv8z8fhl",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3427,6 +3540,7 @@
           "example": "cos_test",
           "member": "string",
           "name": "InstanceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3436,6 +3550,7 @@
           "example": "2",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3445,6 +3560,7 @@
           "example": "运行中",
           "member": "string",
           "name": "StatusDesc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3454,6 +3570,7 @@
           "example": "192.168.240.44",
           "member": "string",
           "name": "Vip",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3463,6 +3580,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3472,6 +3590,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsTmp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3481,6 +3600,7 @@
           "example": "3",
           "member": "int64",
           "name": "NodeCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3490,6 +3610,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3499,6 +3620,7 @@
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "Zone",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3508,6 +3630,7 @@
           "example": "vpc-hqxhp43z",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3517,6 +3640,7 @@
           "example": "subnet-15y3y4eo",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3526,6 +3650,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3535,6 +3660,7 @@
           "example": "无",
           "member": "string",
           "name": "WanDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3544,6 +3670,7 @@
           "example": "无",
           "member": "string",
           "name": "WanVip",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3553,6 +3680,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanPort",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3562,6 +3690,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3571,6 +3700,7 @@
           "example": "基于MariaDB 10.0.10设计(兼容MySQL 5.5)",
           "member": "string",
           "name": "TdsqlVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3580,6 +3710,7 @@
           "example": "2",
           "member": "int64",
           "name": "Memory",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3589,6 +3720,7 @@
           "example": "10",
           "member": "int64",
           "name": "Storage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3598,6 +3730,7 @@
           "example": "ap-guangzhou-2",
           "member": "string",
           "name": "MasterZone",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3607,6 +3740,7 @@
           "example": "[\"ap-guangzhou-2\",\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "SlaveZones",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3616,6 +3750,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3625,6 +3760,7 @@
           "example": "无",
           "member": "string",
           "name": "ExclusterId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3634,6 +3770,7 @@
           "example": "prepaid",
           "member": "string",
           "name": "PayMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3643,6 +3780,7 @@
           "example": "2020-04-13 15:00:16",
           "member": "datetime",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3652,6 +3790,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsAuditSupported",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -3661,6 +3800,7 @@
           "example": "2019-12-06 15:00:16",
           "member": "datetime",
           "name": "PeriodEndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3670,6 +3810,7 @@
           "example": "Z4",
           "member": "string",
           "name": "Machine",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3679,6 +3820,7 @@
           "example": "0.000",
           "member": "string",
           "name": "StorageUsage",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3688,6 +3830,7 @@
           "example": "8",
           "member": "int64",
           "name": "LogStorage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3697,6 +3840,7 @@
           "example": "0",
           "member": "int64",
           "name": "IsEncryptSupported",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3706,6 +3850,7 @@
           "example": "无",
           "member": "string",
           "name": "Vip6",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3715,6 +3860,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3724,6 +3870,7 @@
           "example": "1002231",
           "member": "int64",
           "name": "Pid",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3733,6 +3880,7 @@
           "example": "2100",
           "member": "int64",
           "name": "Qps",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3742,6 +3890,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ipv6Flag",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3751,6 +3900,7 @@
           "example": "无",
           "member": "string",
           "name": "WanVipv6",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3760,6 +3910,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanStatusIpv6",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3769,6 +3920,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanPortIpv6",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3778,6 +3930,7 @@
           "example": "Pernoca",
           "member": "string",
           "name": "DbEngine",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3787,6 +3940,7 @@
           "example": "5.7.17",
           "member": "string",
           "name": "DbVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3796,6 +3950,7 @@
           "example": "无",
           "member": "ResourceTag",
           "name": "ResourceTags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3805,6 +3960,7 @@
           "example": "1",
           "member": "int64",
           "name": "DcnFlag",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3814,6 +3970,7 @@
           "example": "2",
           "member": "int64",
           "name": "DcnStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3823,6 +3980,7 @@
           "example": "1",
           "member": "int64",
           "name": "DcnDstNum",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3832,6 +3990,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3841,6 +4000,7 @@
           "example": "无",
           "member": "NodeInfo",
           "name": "NodesInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3850,6 +4010,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsMaxUserConnectionsSupported",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -3859,6 +4020,7 @@
           "example": "5.7",
           "member": "string",
           "name": "DbVersionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3868,6 +4030,7 @@
           "example": "0",
           "member": "int64",
           "name": "EncryptStatus",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3877,6 +4040,7 @@
           "example": "无",
           "member": "DCNReplicaConfig",
           "name": "ReplicaConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3886,6 +4050,7 @@
           "example": "无",
           "member": "DCNReplicaStatus",
           "name": "ReplicaStatus",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3895,6 +4060,7 @@
           "example": "0",
           "member": "int64",
           "name": "ExclusterType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3904,6 +4070,7 @@
           "example": "0",
           "member": "int64",
           "name": "RsAccessStrategy",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3913,6 +4080,7 @@
           "example": "无",
           "member": "ReservedNetResource",
           "name": "ReservedNetResources",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3922,7 +4090,28 @@
           "example": "true",
           "member": "bool",
           "name": "IsPhysicalReplicationSupported",
+          "output_required": true,
           "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持强同步DCN",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDcnStrongSyncSupported",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持DCN切换",
+          "example": "1",
+          "member": "int64",
+          "name": "IsDcnSwitchSupported",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

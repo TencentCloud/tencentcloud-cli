@@ -1,48 +1,4 @@
-**Example 1: 批量创建签署参与者签署H5链接**
-
-创建链接,适用于APP或者小程序跳转
-
-Input: 
-
-```
-tccli essbasic CreateSignUrls --cli-unfold-argument  \
-    --FlowIds yDwhGUUfe5g******CX8ZwTiSg8gISocy \
-    --Agent.ProxyOrganizationOpenId 1000***8062 \
-    --Agent.ProxyOperator.OpenId yDR3L****eTdCt5TVx \
-    --Agent.AppId 125***319 \
-    --Endpoint APP
-```
-
-Output: 
-```
-{
-    "Response": {
-        "ErrorMessages": [
-            ""
-        ],
-        "RequestId": "022cf4af-cd7a-4a53-bb94-860673a7c6dc",
-        "SignUrlInfos": [
-            {
-                "ApproverType": "PERSON",
-                "CustomUserId": "",
-                "Deadline": 1722132728,
-                "FlowGroupId": "",
-                "FlowId": "yDwhG****iSg8gISocy",
-                "IdCardNumber": "",
-                "Mobile": "186****51",
-                "Name": "张三",
-                "OpenId": "",
-                "OrganizationName": "",
-                "SignId": "yDwhGUU****lVyjX8Q5w",
-                "SignOrder": 0,
-                "SignUrl": "pages/guide?from=default&where=mini&to=CONTRACT_DETAIL&id=yDwhGUU****ISocy&name=%E6%9D****8F%8D&phone=MTg2***Y%3D&approverVerifyTypes=1&shortKey=yDwhG***qy32"
-            }
-        ]
-    }
-}
-```
-
-**Example 2: 获取动态签署人补充链接**
+**Example 1: 获取动态签署人补充链接**
 
 获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充
 注： 
@@ -86,6 +42,227 @@ Output:
                 "SignUrl": "https://test.essurl.cn/gGI***nZC"
             }
         ]
+    }
+}
+```
+
+**Example 2: 给SaaS平台企业员工签署方生成签署链接**
+
+给SaaS平台企业员工签署方生成签署链接 GenerateType设置为NOT_CHANNEL, 并传SaaS平台企业的名称和员工的名字与手机号
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId dianziqian \
+    --Agent.ProxyAppId  \
+    --FlowIds yDwiBUUckpo27hrfUuLiduRSc29fh7OX \
+    --Endpoint WEIXINAPP \
+    --GenerateType NOT_CHANNEL \
+    --OrganizationName 李四示例企业 \
+    --Name 李四 \
+    --Mobile 15100000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrlInfos": [
+            {
+                "SignUrl": "https://test.essurl.cn/pr987U8euz",
+                "Deadline": 1706256392,
+                "SignOrder": 0,
+                "SignId": "",
+                "CustomUserId": "",
+                "Name": "李四",
+                "Mobile": "15100000000",
+                "OrganizationName": "",
+                "ApproverType": "ORGANIZATION",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo27hrfUuLiduRSc29fh7OX",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d9**2f0"
+            }
+        ],
+        "ErrorMessages": [],
+        "RequestId": "f6db6abf-512c-441f-b7e3-d17adf4a863c"
+    }
+}
+```
+
+**Example 3: 给个人/自然人生成签署链接**
+
+给个人/自然人生成签署链接 GenerateType设置为PERSON, 并传个人的名字和手机号来生成
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --FlowIds yDwiBUUckpo27hh3UuLiduR83BEL3kSb \
+    --Endpoint WEIXINAPP \
+    --GenerateType PERSON \
+    --Name 张三 \
+    --Mobile 18888888888
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrlInfos": [
+            {
+                "SignUrl": "https://test.essurl.cn/9oJhnU8evP",
+                "Deadline": 0,
+                "SignOrder": 0,
+                "SignId": "",
+                "CustomUserId": "",
+                "Name": "",
+                "Mobile": "",
+                "OrganizationName": "",
+                "ApproverType": "",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo27hh3UuLiduR83BEL3kSb",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": ""
+            }
+        ],
+        "ErrorMessages": [],
+        "RequestId": "0ec76ecb-467c-4761-8466-edb0a25bde91"
+    }
+}
+```
+
+**Example 4: 给子客企业生成签署链接**
+
+给子客企业生成签署链接 GenerateType设置为CHANNEL, 并传子客企业的OrganizationOpenId 和子客员工的OpenId
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId dianziqian \
+    --Agent.ProxyAppId  \
+    --FlowIds yDwiBUUckpo27hrfUuLiduRSc29fh7OX \
+    --Endpoint WEIXINAPP \
+    --GenerateType CHANNEL \
+    --OrganizationOpenId org_zhansan \
+    --OpenId n1357
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrlInfos": [
+            {
+                "SignUrl": "https://test.essurl.cn/ePXXNU8fSh",
+                "Deadline": 0,
+                "SignOrder": 0,
+                "SignId": "",
+                "CustomUserId": "",
+                "Name": "",
+                "Mobile": "",
+                "OrganizationName": "",
+                "ApproverType": "",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo27hrfUuLiduRSc29fh7OX",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": ""
+            }
+        ],
+        "ErrorMessages": [],
+        "RequestId": "65552999-e0c6-47b7-a8db-c5e2a26b353b"
+    }
+}
+```
+
+**Example 5: 给所有签署人的签署链接**
+
+给所有签署人的签署链接 GenerateType设置为ALL
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_zhixinlian \
+    --Agent.ProxyOperator.OpenId zhixinlian \
+    --Agent.ProxyAppId  \
+    --FlowIds 'yDwiBUUckpo2726cUuLiduRx1WvBLD5l ' \
+    --Endpoint WEIXINAPP \
+    --GenerateType ALL
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrlInfos": [
+            {
+                "SignUrl": "https://test.essurl.cn/cOwbkU8fRh",
+                "Deadline": 1706260744,
+                "SignOrder": 0,
+                "SignId": "yDwiBUUckpo2726iUuLiduRQSyCSCIK4",
+                "CustomUserId": "",
+                "Name": "张三",
+                "Mobile": "18888888888",
+                "OrganizationName": "",
+                "ApproverType": "PERSON",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo2726cUuLiduRx1WvBLD5l ",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0d***"
+            },
+            {
+                "SignUrl": "https://test.essurl.cn/QH1dqU8eta",
+                "Deadline": 1706260744,
+                "SignOrder": 0,
+                "SignId": "yDwiBUUckpo2726mUuLiduR8RkpoTHLy",
+                "CustomUserId": "",
+                "Name": "王五",
+                "Mobile": "13700000000",
+                "OrganizationName": "",
+                "ApproverType": "ORGANIZATION",
+                "IdCardNumber": "3****************3",
+                "FlowId": "yDwiBUUckpo2726cUuLiduRx1WvBLD5l ",
+                "OpenId": "n1379",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0d***"
+            },
+            {
+                "SignUrl": "https://test.essurl.cn/RaqWRU8fRg",
+                "Deadline": 1706260744,
+                "SignOrder": 0,
+                "SignId": "yDwiBUUckpo27269UuLiduRCK7cW8oxv",
+                "CustomUserId": "",
+                "Name": "李四",
+                "Mobile": "15100000000",
+                "OrganizationName": "",
+                "ApproverType": "ORGANIZATION",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo2726cUuLiduRx1WvBLD5l ",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f***"
+            }
+        ],
+        "ErrorMessages": [
+            ""
+        ],
+        "RequestId": "6f4198d9-2e9a-4ff7-a4f6-3ea8bd3f79ae"
     }
 }
 ```

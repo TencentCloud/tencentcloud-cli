@@ -36,7 +36,12 @@ Output:
                 "ContainerStatus": "abc",
                 "ClusterID": "abc",
                 "NodeType": "abc",
-                "PodIP": "abc"
+                "PodIP": "abc",
+                "NodeUniqueID": "abc",
+                "PublicIP": "abc",
+                "NodeID": "abc",
+                "HostIP": "abc",
+                "ClusterName": "abc"
             }
         ],
         "TotalCount": 1,

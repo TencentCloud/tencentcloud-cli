@@ -2878,7 +2878,7 @@
         },
         {
           "disabled": false,
-          "document": "默认带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。",
+          "document": "默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。",
           "example": "50",
           "member": "int64",
           "name": "DefaultBandWidth",
@@ -2887,7 +2887,7 @@
         },
         {
           "disabled": false,
-          "document": "默认镜像，如img-qsdf3ff2。",
+          "document": "默认镜像。",
           "example": "img-1tyt4apn",
           "member": "string",
           "name": "DefaultImageId",
@@ -2905,7 +2905,7 @@
         },
         {
           "disabled": false,
-          "document": "默认系统盘大小，单位：G，默认大小为50G。范围不得超过系统盘上下限制，详看DescribeConfig。",
+          "document": "默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。",
           "example": "50",
           "member": "int64",
           "name": "DefaultSystemDiskSize",
@@ -2914,7 +2914,7 @@
         },
         {
           "disabled": false,
-          "document": "默认数据盘大小，单位：G。范围不得超过数据盘范围大小，详看DescribeConfig。",
+          "document": "默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。",
           "example": "100",
           "member": "int64",
           "name": "DefaultDataDiskSize",
@@ -2950,7 +2950,7 @@
         },
         {
           "disabled": false,
-          "document": "默认入带宽，单位：M。范围不得超过带宽上下限，详看DescribeConfig。",
+          "document": "默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。",
           "example": "25",
           "member": "int64",
           "name": "DefaultBandWidthIn",
@@ -2996,7 +2996,7 @@
           "example": "em-r8nkc81r",
           "member": "string",
           "name": "ModuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

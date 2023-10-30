@@ -49,6 +49,13 @@
       "output": "DeleteLogstashPipelinesResponse",
       "status": "online"
     },
+    "DescribeDiagnose": {
+      "document": "查询智能运维诊断结果报告",
+      "input": "DescribeDiagnoseRequest",
+      "name": "查询智能运维诊断结果报告",
+      "output": "DescribeDiagnoseResponse",
+      "status": "online"
+    },
     "DescribeIndexList": {
       "document": "获取索引列表",
       "input": "DescribeIndexListRequest",
@@ -75,6 +82,13 @@
       "input": "DescribeInstanceOperationsRequest",
       "name": "查询实例操作记录",
       "output": "DescribeInstanceOperationsResponse",
+      "status": "online"
+    },
+    "DescribeInstancePluginList": {
+      "document": "查询实例插件列表",
+      "input": "DescribeInstancePluginListRequest",
+      "name": "查询实例插件列表",
+      "output": "DescribeInstancePluginListResponse",
       "status": "online"
     },
     "DescribeInstances": {
@@ -124,6 +138,13 @@
       "input": "DiagnoseInstanceRequest",
       "name": "智能运维诊断集群",
       "output": "DiagnoseInstanceResponse",
+      "status": "online"
+    },
+    "GetDiagnoseSettings": {
+      "document": "查看智能运维配置",
+      "input": "GetDiagnoseSettingsRequest",
+      "name": "查看智能运维配置",
+      "output": "GetDiagnoseSettingsResponse",
       "status": "online"
     },
     "GetRequestTargetNodeTypes": {
@@ -1359,6 +1380,71 @@
       ],
       "type": "object"
     },
+    "DescribeDiagnoseRequest": {
+      "document": "DescribeDiagnose请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报告日期，格式20210301",
+          "example": "20210301",
+          "member": "string",
+          "name": "Date",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "报告返回份数",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDiagnoseResponse": {
+      "document": "DescribeDiagnose返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断报告个数",
+          "example": "10",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断报告列表",
+          "example": "无",
+          "member": "DiagnoseResult",
+          "name": "DiagnoseResults",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIndexListRequest": {
       "document": "DescribeIndexList请求参数结构体",
       "members": [
@@ -1740,6 +1826,174 @@
           "example": "无",
           "member": "Operation",
           "name": "Operations",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePluginInfo": {
+      "document": "插件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "插件名",
+          "example": "analysis-qq",
+          "member": "string",
+          "name": "PluginName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件版本",
+          "example": "6.4.3",
+          "member": "string",
+          "name": "PluginVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件描述",
+          "example": "无",
+          "member": "string",
+          "name": "PluginDesc",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件状态：-2 已卸载 -1 卸载中 0 安装中 1 已安装",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件是否可卸载",
+          "example": "false",
+          "member": "bool",
+          "name": "Removable",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：系统插件",
+          "example": "0",
+          "member": "int64",
+          "name": "PluginType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件变更时间",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "PluginUpdateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeInstancePluginListRequest": {
+      "document": "DescribeInstancePluginList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "es-xxxxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页起始值, 默认值0",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小，默认值10",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段<li>1：插件名 pluginName",
+          "example": "pluginName",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式<li>0：升序 asc</li><li>1：降序 desc</li>",
+          "example": "asc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0：系统插件",
+          "example": "0",
+          "member": "int64",
+          "name": "PluginType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstancePluginListResponse": {
+      "document": "DescribeInstancePluginList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的插件个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "插件信息列表",
+          "example": "无",
+          "member": "DescribeInstancePluginInfo",
+          "name": "PluginList",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -2360,6 +2614,224 @@
       ],
       "type": "object"
     },
+    "DiagnoseJobMeta": {
+      "document": "智能运维支持的诊断项和元信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能运维诊断项英文名",
+          "example": "cluster_health",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维诊断项中文名",
+          "example": "集群健康状态诊断",
+          "member": "string",
+          "name": "JobZhName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维诊断项描述",
+          "example": "诊断集群健康状态",
+          "member": "string",
+          "name": "JobDescription",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "DiagnoseJobResult": {
+      "document": "智能运维诊断项结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断项名",
+          "example": "cluster_health",
+          "member": "string",
+          "name": "JobName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断项状态：-2失败，-1待重试，0运行中，1成功",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断项得分",
+          "example": "100",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断摘要",
+          "example": "配置合理",
+          "member": "string",
+          "name": "Summary",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断建议",
+          "example": "保持住",
+          "member": "string",
+          "name": "Advise",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断详情",
+          "example": "配置合理",
+          "member": "string",
+          "name": "Detail",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断指标详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricDetail",
+          "name": "MetricDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断日志详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LogDetail",
+          "name": "LogDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断配置详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SettingDetail",
+          "name": "SettingDetails",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiagnoseResult": {
+      "document": "智能运维诊断结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断报告ID",
+          "example": "ewtd-xcafdg-dsaq",
+          "member": "string",
+          "name": "RequestId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断触发时间",
+          "example": "2021-03-01 10:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断是否完成",
+          "example": "true",
+          "member": "bool",
+          "name": "Completed",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断总得分",
+          "example": "100",
+          "member": "int64",
+          "name": "Score",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断类型，2 定时诊断，3 客户手动触发诊断",
+          "example": "3",
+          "member": "int64",
+          "name": "JobType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断参数，如诊断时间，诊断索引等",
+          "example": "无",
+          "member": "JobParam",
+          "name": "JobParam",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "诊断项结果列表",
+          "example": "无",
+          "member": "DiagnoseJobResult",
+          "name": "JobResults",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DictInfo": {
       "document": "ik插件词典信息",
       "members": [
@@ -2398,6 +2870,32 @@
         }
       ],
       "usage": "both"
+    },
+    "Dimension": {
+      "document": "智能运维指标维度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能运维指标维度Key",
+          "example": "节点ID",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维指标维度值",
+          "example": "1232334652",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "EsAcl": {
       "document": "ES集群配置项",
@@ -2532,6 +3030,83 @@
         }
       ],
       "usage": "in"
+    },
+    "GetDiagnoseSettingsRequest": {
+      "document": "GetDiagnoseSettings请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ES实例ID",
+          "example": "es-abcdefgh",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDiagnoseSettingsResponse": {
+      "document": "GetDiagnoseSettings返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能运维诊断项和元信息",
+          "example": "无",
+          "member": "DiagnoseJobMeta",
+          "name": "DiagnoseJobMetas",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0：开启智能运维；-1：关闭智能运维",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维每天定时巡检时间",
+          "example": "10:00:00",
+          "member": "string",
+          "name": "CronTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维当天已手动触发诊断次数",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能运维每天最大可手动触发次数",
+          "example": "5",
+          "member": "int64",
+          "name": "MaxCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetRequestTargetNodeTypesRequest": {
       "document": "GetRequestTargetNodeTypes请求参数结构体",
@@ -3806,6 +4381,42 @@
       ],
       "usage": "out"
     },
+    "JobParam": {
+      "document": "智能运维诊断参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "诊断项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cluster_health]",
+          "member": "string",
+          "name": "Jobs",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "诊断索引",
+          "example": "\"*\"",
+          "member": "string",
+          "name": "Indices",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "历史诊断时间",
+          "example": "60",
+          "member": "uint64",
+          "name": "Interval",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "KeyValue": {
       "document": "OperationDetail使用此结构的数组描述新旧配置",
       "members": [
@@ -4032,6 +4643,42 @@
         }
       ],
       "usage": "both"
+    },
+    "LogDetail": {
+      "document": "智能运维日志详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志异常名",
+          "example": "BreakException",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志异常处理建议",
+          "example": "建议处理熔断",
+          "member": "string",
+          "name": "Advise",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志异常名出现次数",
+          "example": "5",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "LogstashBindedES": {
       "document": "Logstash绑定的ES集群信息",
@@ -4700,6 +5347,58 @@
           "name": "MasterNodeDiskType",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Metric": {
+      "document": "智能运维指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标维度族",
+          "example": "无",
+          "member": "Dimension",
+          "name": "Dimensions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标值",
+          "example": "0.1",
+          "member": "float",
+          "name": "Value",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MetricDetail": {
+      "document": "智能运维指标详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标详情名",
+          "example": "当前熔断节点",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标详情值",
+          "example": "无",
+          "member": "Metric",
+          "name": "Metrics",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5594,6 +6293,42 @@
         }
       ],
       "type": "object"
+    },
+    "SettingDetail": {
+      "document": "智能运维集群配置详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置key",
+          "example": "settings.a",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置当前值",
+          "example": "value.s",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置处理建议",
+          "example": "建议修改配置",
+          "member": "string",
+          "name": "Advise",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "StartLogstashPipelinesRequest": {
       "document": "StartLogstashPipelines请求参数结构体",

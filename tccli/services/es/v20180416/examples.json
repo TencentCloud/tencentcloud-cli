@@ -56,6 +56,14 @@
         "title": "删除Logstash管道"
       }
     ],
+    "DescribeDiagnose": [
+      {
+        "document": "查询智能运维诊断结果报告",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeDiagnose\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Total\": 0,\n        \"DiagnoseResults\": [\n            {\n                \"JobResults\": [\n                    {\n                        \"Status\": 0,\n                        \"MetricDetails\": [\n                            {\n                                \"Metrics\": [\n                                    {\n                                        \"Dimensions\": [\n                                            {\n                                                \"Value\": \"1\",\n                                                \"Key\": \"1\"\n                                            }\n                                        ],\n                                        \"Value\": 0.0\n                                    }\n                                ],\n                                \"Key\": \"1\"\n                            }\n                        ],\n                        \"Detail\": \"1\",\n                        \"Summary\": \"1\",\n                        \"SettingDetails\": [\n                            {\n                                \"Advise\": \"1\",\n                                \"Value\": \"1\",\n                                \"Key\": \"1\"\n                            }\n                        ],\n                        \"Score\": 0,\n                        \"Advise\": \"1\",\n                        \"JobName\": \"1\",\n                        \"LogDetails\": [\n                            {\n                                \"Count\": 0,\n                                \"Advise\": \"1\",\n                                \"Key\": \"1\"\n                            }\n                        ]\n                    }\n                ],\n                \"InstanceId\": \"1\",\n                \"Completed\": true,\n                \"Score\": 0,\n                \"RequestId\": \"1\",\n                \"JobParam\": {\n                    \"Indices\": \"1\",\n                    \"Interval\": 1,\n                    \"Jobs\": [\n                        \"1\"\n                    ]\n                },\n                \"CreateTime\": \"1\",\n                \"JobType\": 0\n            }\n        ],\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "查询智能运维诊断结果报告"
+      }
+    ],
     "DescribeIndexList": [
       {
         "document": "获取索引元数据",
@@ -86,6 +94,14 @@
         "input": "https://es.tencentcloudapi.com/?Action=DescribeInstanceOperations\r\n&InstanceId=es-f5mwm28u\r\n&StartTime=2019-01-30 20:18:03\r\n&EndTime=2019-03-30 20:18:03\r\n&Offset=0\r\n&Limit=30\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Operations\": [\n            {\n                \"Id\": 6173,\n                \"StartTime\": \"2019-03-07 16:30:39\",\n                \"Type\": \"CreateInstance\",\n                \"Detail\": {\n                    \"OldInfo\": [],\n                    \"NewInfo\": []\n                },\n                \"Result\": \"completed\",\n                \"Tasks\": [\n                    {\n                        \"Name\": \"prepareResource\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:31:11\",\n                        \"SubTasks\": [],\n                        \"ElapsedTime\": 0\n                    },\n                    {\n                        \"Name\": \"deployESCluster\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:34:32\",\n                        \"SubTasks\": [],\n                        \"ElapsedTime\": 0\n                    },\n                    {\n                        \"Name\": \"deployKibana\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:13\",\n                        \"SubTasks\": [],\n                        \"ElapsedTime\": 0\n                    },\n                    {\n                        \"Name\": \"configLB\",\n                        \"Progress\": 1,\n                        \"FinishTime\": \"2019-03-07 16:35:15\",\n                        \"SubTasks\": [],\n                        \"ElapsedTime\": 0\n                    }\n                ],\n                \"Progress\": 1\n            }\n        ],\n        \"RequestId\": \"870dd618-b1ae-40cc-a5a9-22b867367ed7\"\n    }\n}",
         "title": "查询ES集群实例操作记录"
+      }
+    ],
+    "DescribeInstancePluginList": [
+      {
+        "document": "查询实例插件列表",
+        "input": "https://es.tencentcloudapi.com/?Action=DescribeInstancePluginList\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"PluginList\": [\n            {\n                \"PluginDesc\": \"1\",\n                \"Status\": 0,\n                \"PluginType\": 0,\n                \"PluginVersion\": \"1\",\n                \"PluginUpdateTime\": \"1\",\n                \"PluginName\": \"1\",\n                \"Removable\": true\n            }\n        ],\n        \"RequestId\": \"1\"\n    }\n}",
+        "title": "查询实例插件列表"
       }
     ],
     "DescribeInstances": [
@@ -142,6 +158,14 @@
         "input": "https://es.tencentcloudapi.com/?Action=DiagnoseInstance\n&InstanceId=ex-xxxxxxxx\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"7f0e35a7-e03b-42cd-aa4f-0c1471xxxxxx\"\n    }\n}",
         "title": "智能运维诊断集群"
+      }
+    ],
+    "GetDiagnoseSettings": [
+      {
+        "document": "查看智能运维配置",
+        "input": "https://es.tencentcloudapi.com/?Action=GetDiagnoseSettings\n&InstanceId=es-xxxxxxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Count\": 0,\n        \"DiagnoseJobMetas\": [\n            {\n                \"JobZhName\": \"1\",\n                \"JobDescription\": \"1\",\n                \"JobName\": \"1\"\n            }\n        ],\n        \"CronTime\": \"1\",\n        \"RequestId\": \"1\",\n        \"MaxCount\": 0\n    }\n}",
+        "title": "查看智能运维配置"
       }
     ],
     "GetRequestTargetNodeTypes": [

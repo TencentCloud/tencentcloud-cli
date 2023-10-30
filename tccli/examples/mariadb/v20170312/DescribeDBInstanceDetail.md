@@ -91,7 +91,9 @@ Output:
                 "RecycleTime": "2023-05-19 16:12:32"
             }
         ],
-        "IsPhysicalReplicationSupported": true
+        "IsPhysicalReplicationSupported": true,
+        "IsDcnStrongSyncSupported": 1,
+        "IsDcnSwitchSupported": 1
     }
 }
 ```

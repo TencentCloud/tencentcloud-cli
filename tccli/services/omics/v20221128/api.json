@@ -56,6 +56,13 @@
       "output": "GetRunCallsResponse",
       "status": "online"
     },
+    "GetRunMetadataFile": {
+      "document": "查询任务详情文件。",
+      "input": "GetRunMetadataFileRequest",
+      "name": "查询任务详情文件",
+      "output": "GetRunMetadataFileResponse",
+      "status": "online"
+    },
     "GetRunStatus": {
       "document": "查询任务详情。",
       "input": "GetRunStatusRequest",
@@ -82,6 +89,20 @@
       "input": "RunApplicationRequest",
       "name": "运行应用",
       "output": "RunApplicationResponse",
+      "status": "online"
+    },
+    "RunWorkflow": {
+      "document": "运行工作流。",
+      "input": "RunWorkflowRequest",
+      "name": "运行工作流",
+      "output": "RunWorkflowResponse",
+      "status": "online"
+    },
+    "TerminateRunGroup": {
+      "document": "终止任务批次。",
+      "input": "TerminateRunGroupRequest",
+      "name": "终止任务批次",
+      "output": "TerminateRunGroupResponse",
       "status": "online"
     }
   },
@@ -459,7 +480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID。",
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -533,7 +554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "项目ID。",
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -1012,7 +1033,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。",
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -1044,6 +1065,61 @@
       ],
       "type": "object"
     },
+    "GetRunMetadataFileRequest": {
+      "document": "GetRunMetadataFile请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务Uuid。",
+          "example": "无",
+          "member": "string",
+          "name": "RunUuid",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取的文件名。\n\n默认支持以下文件：\n- nextflow.log\n\n提交时NFOption中report指定为true时，额外支持以下文件：\n- execution_report.html\n- execution_timeline.html\n- execution_trace.txt\n- pipeline_dag.html",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRunMetadataFileResponse": {
+      "document": "GetRunMetadataFile返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件预签名链接，一分钟内有效。",
+          "example": "无",
+          "member": "string",
+          "name": "CosSignedUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetRunStatusRequest": {
       "document": "GetRunStatus请求参数结构体",
       "members": [
@@ -1058,7 +1134,7 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。",
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
@@ -1089,6 +1165,57 @@
         }
       ],
       "type": "object"
+    },
+    "GitInfo": {
+      "document": "Git信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Git地址。",
+          "example": "无",
+          "member": "string",
+          "name": "GitHttpPath",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Git用户名。",
+          "example": "无",
+          "member": "string",
+          "name": "GitUserName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Git密码或者Token。",
+          "example": "无",
+          "member": "string",
+          "name": "GitTokenOrPassword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分支。",
+          "example": "无",
+          "member": "string",
+          "name": "Branch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签。",
+          "example": "无",
+          "member": "string",
+          "name": "Tag",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "ImportTableFileRequest": {
       "document": "ImportTableFile请求参数结构体",
@@ -1439,7 +1566,7 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "运行选项。",
           "example": "无",
           "member": "RunOption",
@@ -2187,6 +2314,124 @@
       ],
       "usage": "out"
     },
+    "RunWorkflowRequest": {
+      "document": "RunWorkflow请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务批次名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递环境ID。",
+          "example": "无",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作流Git仓库信息。",
+          "example": "无",
+          "member": "GitInfo",
+          "name": "GitSource",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "工作流类型。\n\n支持类型：\n- NEXTFLOW",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Nextflow选项。",
+          "example": "无",
+          "member": "NFOption",
+          "name": "NFOption",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务批次描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务输入JSON。需要进行base64编码。\n（InputBase64和InputCosUri必选其一）",
+          "example": "无",
+          "member": "string",
+          "name": "InputBase64",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务输入COS地址。\n（InputBase64和InputCosUri必选其一）",
+          "example": "无",
+          "member": "string",
+          "name": "InputCosUri",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务缓存清理时间。不填表示不清理。",
+          "example": "无",
+          "member": "uint64",
+          "name": "CacheClearDelay",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "RunWorkflowResponse": {
+      "document": "RunWorkflow返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务批次ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "StorageOption": {
       "document": "文件存储配置。",
       "members": [
@@ -2350,6 +2595,42 @@
         }
       ],
       "usage": "out"
+    },
+    "TerminateRunGroupRequest": {
+      "document": "TerminateRunGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务批次ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RunGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目ID。\n（不填使用指定地域下的默认项目）",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateRunGroupResponse": {
+      "document": "TerminateRunGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "VPCOption": {
       "document": "私有网络配置。",

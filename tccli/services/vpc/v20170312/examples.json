@@ -2624,6 +2624,14 @@
         "title": "禁用VPN网关路由"
       }
     ],
+    "ModifyVpnGatewaySslServer": [
+      {
+        "document": "修改SSL-VPN SERVER 属性",
+        "input": "https://vpc.tencentcloudapi.com/?Action=ModifyVpnGatewaySslServer\n&SslVpnServerId=vpngwSslServer-8es2sd1u\n&SslVpnServerName=update-name\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ae5ba776-25df-4ca0-814d-15048b40f830\",\n        \"TaskId\": 0\n    }\n}",
+        "title": "修改SSL-VPN SERVER 属性"
+      }
+    ],
     "NotifyRoutes": [
       {
         "document": "",

@@ -189,6 +189,13 @@
       "output": "DescribeTaskLogURLResponse",
       "status": "online"
     },
+    "DescribeVULRiskAdvanceCFGList": {
+      "document": "查询漏洞风险高级配置",
+      "input": "DescribeVULRiskAdvanceCFGListRequest",
+      "name": "查询漏洞风险高级配置",
+      "output": "DescribeVULRiskAdvanceCFGListResponse",
+      "status": "online"
+    },
     "DescribeVpcAssets": {
       "document": "获取vpc列表",
       "input": "DescribeVpcAssetsRequest",
@@ -5259,6 +5266,87 @@
       ],
       "type": "object"
     },
+    "DescribeVULRiskAdvanceCFGListRequest": {
+      "document": "DescribeVULRiskAdvanceCFGList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVULRiskAdvanceCFGListResponse": {
+      "document": "DescribeVULRiskAdvanceCFGList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置项列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VULRiskAdvanceCFGList",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "RiskLevelLists",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞类型过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "VULTypeLists",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "识别来源过滤列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterDataObject",
+          "name": "CheckFromLists",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcAssetsRequest": {
       "document": "DescribeVpcAssets请求参数结构体",
       "members": [
@@ -7972,6 +8060,152 @@
           "member": "string",
           "name": "AppId",
           "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VULRiskAdvanceCFGList": {
+      "document": "漏洞风险高级配置列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "风险ID",
+          "example": "xx",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "漏洞名称",
+          "example": "1",
+          "member": "string",
+          "name": "VULName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "风险等级",
+          "example": "xx",
+          "member": "string",
+          "name": "RiskLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "识别来源",
+          "example": "xx",
+          "member": "string",
+          "name": "CheckFrom",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否启用，1-启用，0-禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险类型",
+          "example": "x",
+          "member": "string",
+          "name": "VULType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "影响版本",
+          "example": "x",
+          "member": "string",
+          "name": "ImpactVersion",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CVE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "x",
+          "member": "string",
+          "name": "CVE",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞标签",
+          "example": "无",
+          "member": "string",
+          "name": "VULTag",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修复方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FixMethod",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "披露时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReleaseTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应急漏洞类型，1-应急漏洞，0-非应急漏洞\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "EMGCVulType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "漏洞描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VULDescribe",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "影响组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImpactComponent",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

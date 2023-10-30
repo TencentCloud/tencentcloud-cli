@@ -596,7 +596,7 @@
       "status": "online"
     },
     "ResetInstancesInternetMaxBandwidth": {
-      "document": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253) 接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResetInstancesInternetMaxBandwidth) 用于调整实例公网带宽上限。\n\n* 不同机型带宽上限范围不一致，具体限制详见[公网带宽上限](https://cloud.tencent.com/document/product/213/12523)。\n* 对于 `BANDWIDTH_PREPAID` 计费方式的带宽，需要输入参数 `StartTime` 和 `EndTime` ，指定调整后的带宽的生效时间段。在这种场景下目前不支持调小带宽，会涉及扣费，请确保账户余额充足。可通过 [DescribeAccountBalance] https://cloud.tencent.com/document/product/555/20253) 接口查询账户余额。\n* 对于 `TRAFFIC_POSTPAID_BY_HOUR` 、 `BANDWIDTH_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽，使用该接口调整带宽上限是实时生效的，可以在带宽允许的范围内调大或者调小带宽，不支持输入参数 `StartTime` 和 `EndTime` 。\n* 接口不支持调整 `BANDWIDTH_POSTPAID_BY_MONTH` 计费方式的带宽。\n* 接口不支持批量调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽。\n* 接口不支持批量调整混合计费方式的带宽。例如不支持同时调整 `TRAFFIC_POSTPAID_BY_HOUR` 和 `BANDWIDTH_PACKAGE` 计费方式的带宽。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesInternetMaxBandwidthRequest",
       "name": "调整实例带宽上限",
       "output": "ResetInstancesInternetMaxBandwidthResponse",
@@ -881,7 +881,7 @@
         {
           "disabled": false,
           "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的`InstanceId`获取实例ID。",
-          "example": "[\"ins-1e4r6y8i\\r\\n\",\"ins-3e56fg78\\r\\n\"]",
+          "example": "[\"ins-1e4r6y8i\",\"ins-3e56fg78\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -890,7 +890,7 @@
         {
           "disabled": false,
           "document": "一个或多个待操作的密钥对ID，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-3glfot13`。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的`KeyId`获取密钥对ID。",
-          "example": "[\"skey-4e5ty7i8\\r\\n\"]",
+          "example": "[\"skey-4e5ty7i8\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -898,8 +898,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再绑定密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br>默认取值：FALSE。",
-          "example": "TRUE",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再绑定密钥。取值范围：<br><li>true：表示在正常关机失败后进行强制关机。<br><li>false：表示在正常关机失败后不进行强制关机。<br>默认取值：false。",
+          "example": "true",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -1547,8 +1547,8 @@
         },
         {
           "disabled": false,
-          "document": "是否执行强制关机以制作镜像。\n取值范围：<br><li>TRUE：表示关机之后制作镜像<br><li>FALSE：表示开机状态制作镜像<br><br>默认取值：FALSE。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
-          "example": "TRUE",
+          "document": "是否执行强制关机以制作镜像。\n取值范围：<br><li>true：表示关机之后制作镜像<br><li>false：表示开机状态制作镜像<br><br>默认取值：false。<br><br>开机状态制作镜像，可能导致部分数据未备份，影响数据安全。",
+          "example": "true",
           "member": "string",
           "name": "ForcePoweroff",
           "required": false,
@@ -1556,8 +1556,8 @@
         },
         {
           "disabled": false,
-          "document": "创建Windows镜像时是否启用Sysprep。\n取值范围：TRUE或FALSE，默认取值为FALSE。\n\n关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)。",
-          "example": "FALSE",
+          "document": "创建Windows镜像时是否启用Sysprep。\n取值范围：true或false，传true表示启用Sysprep，传false表示不启用，默认取值为false。\n\n关于Sysprep的详情请参考[链接](https://cloud.tencent.com/document/product/213/43498)。",
+          "example": "false",
           "member": "string",
           "name": "Sysprep",
           "required": false,
@@ -1566,7 +1566,7 @@
         {
           "disabled": false,
           "document": "基于实例创建整机镜像时，指定包含在镜像里的数据盘ID",
-          "example": "['disk-6gabakqz']",
+          "example": "[\"disk-6gabakqz\"]",
           "member": "string",
           "name": "DataDiskIds",
           "required": false,
@@ -1575,7 +1575,7 @@
         {
           "disabled": false,
           "document": "基于快照创建镜像，指定快照ID，必须包含一个系统盘快照。不可与InstanceId同时传入。",
-          "example": "['snap-kso6f712', 'snap-l3rrf322']",
+          "example": "[\"snap-kso6f712\", \"snap-l3rrf322\"]",
           "member": "string",
           "name": "SnapshotIds",
           "required": false,
@@ -1583,7 +1583,7 @@
         },
         {
           "disabled": false,
-          "document": "检测本次请求的是否成功，但不会对操作的资源产生任何影响",
+          "document": "检测本次请求的是否成功，但不会对操作的资源产生任何影响。默认取值为false。",
           "example": "false",
           "member": "bool",
           "name": "DryRun",
@@ -1593,7 +1593,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
-          "example": "NA",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1611,6 +1611,7 @@
           "example": "img-2v3sqe2t",
           "member": "string",
           "name": "ImageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3725,7 +3726,7 @@
         {
           "disabled": false,
           "document": "启动模板ID，一个或者多个启动模板ID。若未指定，则显示用户所有模板。",
-          "example": "['lt-irmer45l']",
+          "example": "[\"lt-irmer45l\"]",
           "member": "string",
           "name": "LaunchTemplateIds",
           "required": false,
@@ -3734,7 +3735,7 @@
         {
           "disabled": false,
           "document": "<p style=\"padding-left: 30px;\">按照【<strong>LaunchTemplateName</strong>】进行过滤。</p><p style=\"padding-left: 30px;\">类型：String</p><p style=\"padding-left: 30px;\">必选：否</p>\n每次请求的`Filters`的上限为10，`Filter.Values`的上限为5。参数不支持同时指定`LaunchTemplateIds`和`Filters`。",
-          "example": "NA",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3777,7 +3778,7 @@
         {
           "disabled": false,
           "document": "实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "NA",
+          "example": "无",
           "member": "LaunchTemplateInfo",
           "name": "LaunchTemplateSet",
           "output_required": true,
@@ -4250,7 +4251,7 @@
         {
           "disabled": false,
           "document": "一个或多个待操作的实例ID，每次请求批量实例的上限为100。<br><br>可以通过以下方式获取可用的实例ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/index)查询实例ID。<br><li>通过调用接口 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) ，取返回信息中的 `InstanceId` 获取实例ID。",
-          "example": "[\"ins-w34e5rl9\\r\\n\"]",
+          "example": "[\"ins-w34e5rl9\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -4259,7 +4260,7 @@
         {
           "disabled": false,
           "document": "密钥对ID列表，每次请求批量密钥对的上限为100。密钥对ID形如：`skey-11112222`。<br><br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。",
-          "example": "[\"skey-e3r6y7ji\\r\\n\"]",
+          "example": "[\"skey-e3r6y7ji\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -4267,8 +4268,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机。<br><li>FALSE：表示在正常关机失败后不进行强制关机。<br><br>默认取值：FALSE。",
-          "example": "TRUE",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再解绑密钥。取值范围：<br><li>true：表示在正常关机失败后进行强制关机。<br><li>false：表示在正常关机失败后不进行强制关机。<br><br>默认取值：false。",
+          "example": "true",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -4295,7 +4296,7 @@
         {
           "disabled": false,
           "document": "要解绑的`安全组ID`，类似sg-efil73jd，只支持解绑单个安全组。",
-          "example": "[\"sg-9id3l839\\r\\n\"]",
+          "example": "[\"sg-9id3l839\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": true,
@@ -4303,8 +4304,8 @@
         },
         {
           "disabled": false,
-          "document": "被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例 。",
-          "example": "[\"ins-2zvpghhc\\r\\n\",\"ins-915zrb0p\\r\\n\"]",
+          "document": "被解绑的`实例ID`，类似ins-lesecurk，支持指定多个实例，每次请求批量实例的上限为100。",
+          "example": "[\"ins-2zvpghhc\", \"ins-915zrb0p\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -5340,7 +5341,7 @@
         {
           "disabled": false,
           "document": "只检查参数，不执行任务",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -5349,7 +5350,7 @@
         {
           "disabled": false,
           "document": "是否强制导入，参考[强制导入镜像](https://cloud.tencent.com/document/product/213/12849)",
-          "example": "False",
+          "example": "false",
           "member": "bool",
           "name": "Force",
           "required": false,
@@ -5358,7 +5359,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到自定义镜像。",
-          "example": "NA",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -5448,7 +5449,7 @@
           "example": "skey-4e5ty7i8",
           "member": "string",
           "name": "KeyId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10314,7 +10315,7 @@
         {
           "disabled": false,
           "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/9388)接口返回值中的 `InstanceId` 获取。 每次请求批量实例的上限为100。当调整 `BANDWIDTH_PREPAID` 和 `BANDWIDTH_POSTPAID_BY_HOUR` 计费方式的带宽时，只支持一个实例。",
-          "example": "[\"ins-r8hr2upy\\r\\n\"]",
+          "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

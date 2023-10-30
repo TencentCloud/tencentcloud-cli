@@ -662,6 +662,14 @@
         "title": "正常调用"
       }
     ],
+    "DescribeRocketMQSubscriptions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQSubscriptions\n<公共请求参数>\n\n{\n    \"Limit\": \"10\",\n    \"ClusterId\": \"rocketmq-a5nzx52ab7jb\",\n    \"Namespace\": \"test\",\n    \"Group\": \"consume_group\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cde7c1eb-c631-453a-999b-03c9ed38b892\",\n        \"TotalCount\": 2,\n        \"Subscriptions\": [\n            {\n                \"Topic\": \"test\",\n                \"Type\": \"Normal\",\n                \"PartitionNum\": 3,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0\n            },\n            {\n                \"Topic\": \"%RETRY%consume_group\",\n                \"Type\": \"Retry\",\n                \"PartitionNum\": 1,\n                \"ExpressionType\": \"TAG\",\n                \"SubString\": \"*\",\n                \"Status\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取rocketmq消费组订阅关系"
+      }
+    ],
     "DescribeRocketMQTopicMsgs": [
       {
         "document": "",

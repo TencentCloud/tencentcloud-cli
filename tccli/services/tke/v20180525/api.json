@@ -21908,22 +21908,20 @@
         {
           "disabled": false,
           "document": "资源类型，例如CBS",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ResourceType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "集群删除时资源的删除模式：terminate（销毁），retain （保留）",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "DeleteMode",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

@@ -7386,10 +7386,30 @@
         {
           "disabled": false,
           "document": "检测项适用的版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "k8s 1.16-1.23",
+          "example": "k8s 1.16-1.23, tke 1.24",
           "member": "string",
           "name": "ApplicableVersion",
           "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检查项描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检查项审计方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuditProcedure",
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -19057,6 +19077,15 @@
           "name": "EventId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型",
+          "example": "无",
+          "member": "string",
+          "name": "EventType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -19070,6 +19099,7 @@
           "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19079,6 +19109,7 @@
           "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19088,6 +19119,7 @@
           "example": "无",
           "member": "EscapeEventDescription",
           "name": "EventDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19097,6 +19129,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "ParentProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -19106,6 +19139,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -19141,7 +19175,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤参数,Status：EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略",
+          "document": "过滤参数,\nStatus：状态(EVENT_UNDEAL:未处理，EVENT_DEALED:已处理，EVENT_INGNORE:忽略)\nEventType: 事件类型(MOUNT_SENSITIVE_PTAH:敏感路径挂载 PRIVILEGE_CONTAINER_START:特权容器 PRIVILEGE:提权事件 \n    ESCAPE_VUL_OCCURRED:逃逸漏洞利用 ESCAPE_DOCKER_API:访问Docker API接口逃逸 ESCAPE_TAMPER_SENSITIVE_FILE:篡改敏感文件逃逸 ESCAPE_CGROUPS:利用cgroup机制逃逸)\nContainerNetStatus: 容器隔离状态 (NORMAL:正常 ISOLATED:已隔离 ISOLATE_FAILED:隔离失败 ISOLATE_FAILED:解除隔离失败 RESTORING:解除隔离中 ISOLATING:隔离中)\nContainerStatus: 容器状态(CREATED:已创建 RUNNING:正常运行 PAUSED:暂停运行 STOPPED:停止运行 RESTARTING:重启中 REMOVING:迁移中 DEAD:DEAD UNKNOWN：未知 DESTROYED:已销毁)\nForeignUniqueKey:镜像ID及事件类型唯一值",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -19178,6 +19212,7 @@
           "example": "无",
           "member": "EscapeEventInfo",
           "name": "EventSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19187,6 +19222,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

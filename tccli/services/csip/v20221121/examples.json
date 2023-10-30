@@ -216,6 +216,14 @@
         "title": "获取报告下载的临时链接"
       }
     ],
+    "DescribeVULRiskAdvanceCFGList": [
+      {
+        "document": "\t\n查询漏洞风险高级配置",
+        "input": "POST / HTTP/1.1\nHost: csip.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVULRiskAdvanceCFGList\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"RiskId\": \"abc\",\n                \"VULName\": \"abc\",\n                \"RiskLevel\": \"abc\",\n                \"CheckFrom\": \"abc\",\n                \"Enable\": 0,\n                \"VULType\": \"abc\",\n                \"ImpactVersion\": \"abc\",\n                \"CVE\": \"abc\",\n                \"VULTag\": [\n                    \"abc\"\n                ],\n                \"FixMethod\": [\n                    \"abc\"\n                ],\n                \"ReleaseTime\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RiskLevelLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"VULTypeLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"CheckFromLists\": [\n            {\n                \"Value\": \"abc\",\n                \"Text\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询漏洞风险高级配置"
+      }
+    ],
     "DescribeVpcAssets": [
       {
         "document": "空示例",

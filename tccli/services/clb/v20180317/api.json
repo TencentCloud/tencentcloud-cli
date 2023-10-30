@@ -8875,6 +8875,15 @@
           "name": "LoadBalancerSla",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否强制升级，默认否。",
+          "example": "无",
+          "member": "bool",
+          "name": "Force",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

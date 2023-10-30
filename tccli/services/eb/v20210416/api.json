@@ -1335,8 +1335,7 @@
           "member": "string",
           "name": "Source",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1345,8 +1344,7 @@
           "member": "string",
           "name": "Data",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1355,8 +1353,7 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1365,8 +1362,7 @@
           "member": "string",
           "name": "Subject",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1375,8 +1371,7 @@
           "member": "int64",
           "name": "Time",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"

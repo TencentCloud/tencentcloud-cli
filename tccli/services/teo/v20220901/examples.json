@@ -1,5 +1,19 @@
 {
   "actions": {
+    "BindSecurityTemplateToEntity": [
+      {
+        "document": "此方法会把已经绑定策略模板的指定域名从策略模板解绑。目前仅支持同时解绑一个域名。解绑时，支持下列选项：\n1. 在规则配额允许情况下，保留当前策略。解绑时，将会为域名生成一条独立安全策略，该策略使用与当前策略模板相同的配置，其中的规则将额外占用规则配额。\n2. 使用空白安全策略。使用默认空白策略，预设规则将使用默认配置，自定义规则内容将不再生效。\n\n例如：将 a.test.com 从已有策略模板（策略模板 ID 为 temp-cuwg1hki，所属站点 ID 为 zone-2aq0e8rhu6jx ）解绑，可以参考以下示例进行解绑操作。\n\n注意：如您选择保留当前策略配置，请确保当前站点有足够安全规则配额。剩余配额不足以支持保留当前策略时，解绑失败，域名将仍然绑定于当前策略模板上。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateSecurityTemplate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2aq0e8rhu6jx\",\n    \"Entities\": [\n        \"a.test.com\"\n    ],\n    \"TemplateId\": \"temp-cuwg1hki\",\n    \"Operate\": \"unbind-keep-policy\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
+        "title": "将指定域名从策略模板解绑"
+      },
+      {
+        "document": "此方法会把已有策略模板应用到指定域名。支持同时绑定至多个站点的域名。\n\n例如：将 a.test.com 和 b.example.com 域名绑定至已有策略模板（策略模板 ID 为 temp-cuwg1hki，所属站点 ID 为 zone-2aq0e8rhu6jx ），可以参考以下示例进行绑定操作。\n\n注意：您的账号需要具有指定域名列表所归属全部站点的操作权限。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateSecurityTemplate\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-2aq0e8rhu6jx\",\n    \"Entities\": [\n        \"a.test.com\",\n        \"b.example.com\"\n    ],\n    \"TemplateId\": \"temp-cuwg1hki\",\n    \"Operate\": \"bind\",\n    \"OverWrite\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
+        "title": "将策略模板应用到指定域名 （绑定域名至策略模板）"
+      }
+    ],
     "BindZoneToPlan": [
       {
         "document": "",

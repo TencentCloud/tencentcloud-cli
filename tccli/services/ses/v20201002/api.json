@@ -1393,7 +1393,7 @@
         {
           "disabled": false,
           "document": "获取模板数据量，用于分页",
-          "example": "0",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -1402,7 +1402,7 @@
         {
           "disabled": false,
           "document": "获取模板偏移值，用于分页",
-          "example": "10",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -1420,7 +1420,7 @@
           "example": "无",
           "member": "TemplatesMetadata",
           "name": "TemplatesMetadata",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1430,7 +1430,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

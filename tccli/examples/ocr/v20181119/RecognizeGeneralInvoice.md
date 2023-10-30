@@ -21,6 +21,7 @@ Output:
                 "SubType": "VatSpecialInvoice",
                 "TypeDescription": "增值税发票",
                 "SubTypeDescription": "增值税专用发票",
+                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
                         "X": 15,
@@ -139,6 +140,7 @@ Output:
                 "SubType": "TollInvoice",
                 "TypeDescription": "过路过桥费发票",
                 "SubTypeDescription": "过路过桥费发票",
+                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
                         "X": 29,
@@ -206,6 +208,7 @@ Output:
                 "SubType": "TrainTicket",
                 "TypeDescription": "火车票",
                 "SubTypeDescription": "火车票",
+                "ItemPolygon": [],
                 "Polygon": {
                     "LeftBottom": {
                         "X": 517,
@@ -261,6 +264,7 @@ Output:
                         "TimeGetOn": "18:51",
                         "Title": "",
                         "Total": "46.50",
+                        "RefundMark": 0,
                         "TotalCn": "",
                         "TrainNumber": "Z196",
                         "UserID": "3210231991****6666"
