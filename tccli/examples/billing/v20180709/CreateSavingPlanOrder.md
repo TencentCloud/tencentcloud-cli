@@ -1,0 +1,28 @@
+**Example 1: 结算计划下单**
+
+
+
+Input: 
+
+```
+tccli billing CreateSavingPlanOrder --cli-unfold-argument  \
+    --RegionId 47 \
+    --ZoneId 470004 \
+    --PrePayType 1 \
+    --SpecifyEffectTime 2023-10-21 00:00:00 \
+    --TimeSpan 1 \
+    --TimeUnit y \
+    --CommodityCode svp_common_CYq7cGNk3FaV \
+    --PromiseUseAmount 10000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "BigDealId": "20231020400000764159521",
+        "RequestId": "7525ef6b-ac63-4fa6-9bd4-d8c3c8b96220"
+    }
+}
+```
+

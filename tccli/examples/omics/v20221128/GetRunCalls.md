@@ -36,7 +36,8 @@ Output:
                 "Status": "COMPLETE",
                 "Stderr": "",
                 "Stdout": "",
-                "SubmitTime": null
+                "SubmitTime": null,
+                "Meta": ""
             }
         ],
         "RequestId": "e954d872-2955-4592-901e-38cb6678b88c"
@@ -82,7 +83,8 @@ Output:
                 "Status": "COMPLETE",
                 "Stderr": "",
                 "Stdout": "",
-                "SubmitTime": null
+                "SubmitTime": null,
+                "Meta": ""
             }
         ],
         "RequestId": "35431cd8-6913-4c28-808f-290268cb9813"

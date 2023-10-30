@@ -2765,6 +2765,13 @@
       "output": "ModifyVpnGatewayRoutesResponse",
       "status": "online"
     },
+    "ModifyVpnGatewaySslServer": {
+      "document": "本接口用于修改 SSL-VPN 服务端属性",
+      "input": "ModifyVpnGatewaySslServerRequest",
+      "name": "修改SSL-VPN 服务端属性",
+      "output": "ModifyVpnGatewaySslServerResponse",
+      "status": "online"
+    },
     "NotifyRoutes": {
       "document": "本接口（NotifyRoutes）用于路由表列表页操作增加“发布到云联网”，发布路由到云联网。",
       "input": "NotifyRoutesRequest",
@@ -34023,6 +34030,133 @@
           "name": "Routes",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewaySslServerRequest": {
+      "document": "ModifyVpnGatewaySslServer请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "SSL-VPN SERVER 实例ID",
+          "example": "vpns-43eqlqex",
+          "member": "string",
+          "name": "SslVpnServerId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL-VPN SERVER NAME",
+          "example": "rename-test",
+          "member": "string",
+          "name": "SslVpnServerName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本端地址",
+          "example": "['10.0.0.0/24']",
+          "member": "string",
+          "name": "LocalAddress",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "客户端地址",
+          "example": "9.0.0.0/24",
+          "member": "string",
+          "name": "RemoteAddress",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL VPN服务端监听协议。当前仅支持 UDP。默认UDP",
+          "example": "TCP",
+          "member": "string",
+          "name": "SslVpnProtocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "SSL VPN服务端监听协议端口。",
+          "example": "1194",
+          "member": "int64",
+          "name": "SslVpnPort",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "加密算法。可选 'AES-128-CBC', 'AES-192-CBC', 'AES-256-CBC', 'NONE'。默认NONE",
+          "example": "AES-128",
+          "member": "string",
+          "name": "EncryptAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证算法。可选 'SHA1', 'MD5', 'NONE'。默认NONE",
+          "example": "HMAC-SHA1",
+          "member": "string",
+          "name": "IntegrityAlgorithm",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否支持压缩。当前仅支持不支持压缩。默认False",
+          "example": "False",
+          "member": "bool",
+          "name": "Compress",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启SSO认证，默认False",
+          "example": "False",
+          "member": "bool",
+          "name": "SsoEnabled",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "SAML-DATA",
+          "example": "无",
+          "member": "string",
+          "name": "SamlData",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyVpnGatewaySslServerResponse": {
+      "document": "ModifyVpnGatewaySslServer返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "异步任务TASKID",
+          "example": "123",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

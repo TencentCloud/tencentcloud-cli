@@ -1,3 +1,243 @@
+# Release 3.0.872.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 34 次发布
+
+发布时间：2023-10-30 01:07:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateSavingPlanOrder](http://document.tencentcloudapi.woa.com/document/product/555/82456)
+* [DescribeIsMeasureGrayUin](http://document.tencentcloudapi.woa.com/document/product/555/82459)
+* [DescribeMeasureWhiteUinList](http://document.tencentcloudapi.woa.com/document/product/555/82458)
+* [DescribeSavingPlanCoverage](http://document.tencentcloudapi.woa.com/document/product/555/82455)
+* [DescribeSavingPlanOverview](http://document.tencentcloudapi.woa.com/document/product/555/82454)
+* [DescribeSavingPlanUsage](http://document.tencentcloudapi.woa.com/document/product/555/82453)
+* [ModifyMeasureResourceAlarmThreshold](http://document.tencentcloudapi.woa.com/document/product/555/82457)
+
+新增数据结构：
+
+* [DescribeIsMeasureGrayUinRes](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeIsMeasureGrayUinRes)
+* [DescribeMeasureWhiteUinListData](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureWhiteUinListData)
+* [DescribeMeasureWhiteUinListInterface](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureWhiteUinListInterface)
+* [DescribeMeasureWhiteUinListPara](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeMeasureWhiteUinListPara)
+* [SavingPlanCoverageDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#SavingPlanCoverageDetail)
+* [SavingPlanCoverageRate](http://document.tencentcloudapi.woa.com/document/product/555/19183#SavingPlanCoverageRate)
+* [SavingPlanOverviewDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#SavingPlanOverviewDetail)
+* [SavingPlanUsageDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#SavingPlanUsageDetail)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 15 次发布
+
+发布时间：2023-10-30 01:27:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/82460)
+
+新增数据结构：
+
+* [VULRiskAdvanceCFGList](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULRiskAdvanceCFGList)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 61 次发布
+
+发布时间：2023-10-30 01:28:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportKeyPair](http://document.tencentcloudapi.woa.com/document/product/213/15703)
+
+	* <font color="#dd0000">**修改出参**：</font>KeyId
+
+
+
+
+## TDSQL MySQL 版(dcdb) 版本：2018-04-11
+
+### 第 42 次发布
+
+发布时间：2023-10-30 01:39:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/16135)
+
+	* 新增入参：DcnSyncMode
+
+* [CreateDedicatedClusterDCDBInstance](http://document.tencentcloudapi.woa.com/document/product/557/61369)
+
+	* 新增入参：DcnSyncMode
+
+* [DescribeDCDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/557/77346)
+
+	* 新增出参：IsDcnStrongSyncSupported, IsDcnSwitchSupported
+
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/557/16142#DcnDetailItem)
+
+	* 新增成员：DcnStatusDesc, PolarisInstanceId, PolarisInstanceName, PolarisNamespace, PolarisService, PolarisServiceStatus, PolarisServiceStatusDesc, PolarisRegion, IsDcnSwitchSupported
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 43 次发布
+
+发布时间：2023-10-30 01:46:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDiagnose](http://document.tencentcloudapi.woa.com/document/product/845/82463)
+* [DescribeInstancePluginList](http://document.tencentcloudapi.woa.com/document/product/845/82462)
+* [GetDiagnoseSettings](http://document.tencentcloudapi.woa.com/document/product/845/82461)
+
+新增数据结构：
+
+* [DescribeInstancePluginInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#DescribeInstancePluginInfo)
+* [DiagnoseJobMeta](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiagnoseJobMeta)
+* [DiagnoseJobResult](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiagnoseJobResult)
+* [DiagnoseResult](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiagnoseResult)
+* [Dimension](http://document.tencentcloudapi.woa.com/document/product/845/30634#Dimension)
+* [JobParam](http://document.tencentcloudapi.woa.com/document/product/845/30634#JobParam)
+* [LogDetail](http://document.tencentcloudapi.woa.com/document/product/845/30634#LogDetail)
+* [Metric](http://document.tencentcloudapi.woa.com/document/product/845/30634#Metric)
+* [MetricDetail](http://document.tencentcloudapi.woa.com/document/product/845/30634#MetricDetail)
+* [SettingDetail](http://document.tencentcloudapi.woa.com/document/product/845/30634#SettingDetail)
+
+
+
+## 云数据库 MariaDB(mariadb) 版本：2017-03-12
+
+### 第 36 次发布
+
+发布时间：2023-10-30 02:03:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/16180)
+
+	* 新增入参：DcnSyncMode
+
+* [CreateDedicatedClusterDBInstance](http://document.tencentcloudapi.woa.com/document/product/237/61370)
+
+	* 新增入参：DcnSyncMode
+
+* [DescribeDBInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/237/77350)
+
+	* 新增出参：IsDcnStrongSyncSupported, IsDcnSwitchSupported
+
+
+修改数据结构：
+
+* [DcnDetailItem](http://document.tencentcloudapi.woa.com/document/product/237/16191#DcnDetailItem)
+
+	* 新增成员：DcnStatusDesc, PolarisInstanceId, PolarisInstanceName, PolarisNamespace, PolarisService, PolarisServiceStatus, PolarisServiceStatusDesc, PolarisRegion, IsDcnSwitchSupported
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 4 次发布
+
+发布时间：2023-10-30 02:10:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetRunMetadataFile](http://document.tencentcloudapi.woa.com/document/product/1725/82466)
+* [RunWorkflow](http://document.tencentcloudapi.woa.com/document/product/1725/82465)
+* [TerminateRunGroup](http://document.tencentcloudapi.woa.com/document/product/1725/82464)
+
+新增数据结构：
+
+* [GitInfo](http://document.tencentcloudapi.woa.com/document/product/1725/80781#GitInfo)
+
+修改数据结构：
+
+* [Run](http://document.tencentcloudapi.woa.com/document/product/1725/80781#Run)
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 17 次发布
+
+发布时间：2023-10-30 02:28:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindSecurityTemplateToEntity](http://document.tencentcloudapi.woa.com/document/product/1738/82467)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 110 次发布
+
+发布时间：2023-10-30 02:39:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyVpnGatewaySslServer](http://document.tencentcloudapi.woa.com/document/product/215/82468)
+
+
+
 # Release 3.0.871.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

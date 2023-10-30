@@ -6,10 +6,10 @@ Input:
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
-    --ProxyOrganizationName 子客企业名称 \
-    --Agent.ProxyOperator.OpenId test \
-    --Agent.ProxyOrganizationOpenId testx \
-    --Agent.AppId test
+    --ProxyOrganizationName 典子谦示例企业 \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH
 ```
 
 Output: 
@@ -32,12 +32,12 @@ Input:
 
 ```
 tccli essbasic CreateConsoleLoginUrl --cli-unfold-argument  \
-    --ProxyOrganizationName 子客企业名称 \
-    --Agent.ProxyOperator.OpenId test \
-    --Agent.ProxyOrganizationOpenId test \
-    --Agent.AppId test \
+    --ProxyOrganizationName 典子谦示例企业 \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6qnwfUuO4zjEwc193c2hH \
     --Module TEMPLATE \
-    --ModuleId test \
+    --ModuleId yDwFdUUckpsvet4jUEn0aFRxtu5TdalM \
     --MenuStatus ENABLE
 ```
 

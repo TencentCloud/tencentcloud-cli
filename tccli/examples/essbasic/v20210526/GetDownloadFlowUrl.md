@@ -1,26 +1,27 @@
-**Example 1: 生成批量下载控制连接地址**
+**Example 1: 生成批量下载控制台连接地址**
 
-生成批量下载控制连接地址
+生成批量下载控制台连接地址
 
 Input: 
 
 ```
 tccli essbasic GetDownloadFlowUrl --cli-unfold-argument  \
-    --Agent.ProxyOrganizationOpenId d7c13a8xxxxe9e3968c0ee248f04 \
-    --Agent.ProxyOperator.OpenId 00498cc8500be9cxxxxxxx3aff766cac \
-    --Agent.AppId 65fb0c5910xxxxaa382cc5ed0e \
-    --DownLoadFlows.0.FlowIdList test-flow-id1 test-flow-id2 \
-    --DownLoadFlows.0.FileName 文件夹1 \
-    --DownLoadFlows.1.FlowIdList test-flow-id3 test-flow-id4 \
-    --DownLoadFlows.1.FileName 文件夹2
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --DownLoadFlows.0.FileName 2023采购合同 \
+    --DownLoadFlows.0.FlowIdList yDwivUUckpor6wtoUuogwQHCAB0ES0pQ yDwi8UUckpo5fz9cUqI6nGwcuTvt9YSh \
+    --DownLoadFlows.1.FileName 2023入职合同 \
+    --DownLoadFlows.1.FlowIdList yDwivUUckpor6wobUuogwQHvdGfvDi5K yDwFmUUckpst10i3UubBSat8PWOt2iQF yDwFdUUckpswdrniUuzcbXw8N43W6Kcz
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "DownLoadUrl": "https://xxx.xxxx.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1639587153&code=yDxjKUUgydjf9pxxxx4adWk38k&token=yDxjKxxxpruUuO4zjES4adWk38k&operate=downloadFlow",
-        "RequestId": "s16221xxx14775648"
+        "DownLoadUrl": "https://beta.ess.tencent.cn/contract-mgr?channel=PROXYCHANNEL&expiredTime=1698393037&code=yDwivU**QH1Jir8mgiZ&token=yDwivUUckpo**H1Jir8mgiZ&operate=downloadFlow",
+        "RequestId": "d6c869b7-6383-4ae5-8c30-6375f392e7c4"
     }
 }
 ```
