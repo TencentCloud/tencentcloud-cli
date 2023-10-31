@@ -1,0 +1,21 @@
+{
+  "actions": {
+    "DescribeAllZoneList": [
+      {
+        "document": "可用区信息",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllZoneList\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Zone\": \"abc\",\n                \"ZoneName\": \"abc\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "可用区信息"
+      }
+    ],
+    "DescribeVpcFwStatusBar": [
+      {
+        "document": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据",
+        "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwStatusBar\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"FwBarStatus\": {\n            \"BandWidthUsed\": 5120,\n            \"DiffRegionFwInsId\": \"\",\n            \"DiffRegionFwInsName\": \"\",\n            \"DiffRegionMaxFlow\": 0,\n            \"FwGroupId\": \"\",\n            \"FwGroupMaxFlow\": 0,\n            \"FwGroupName\": \"\",\n            \"FwInsCount\": 6,\n            \"FwInsId\": \"cfwew-7d50f9f5\",\n            \"FwInsMaxFlow\": 9028,\n            \"FwInsName\": \" [autotest][勿删]自动化测试\",\n            \"FwSwitchCount\": 5,\n            \"JoinInstanceCount\": 13,\n            \"JoinVpcCntLimit\": 10,\n            \"SameRegionFwInsId\": \"cfwew-7d50f9f5\",\n            \"SameRegionFwInsName\": \" [autotest][勿删]自动化测试\",\n            \"SameRegionMaxFlow\": 9028,\n            \"VpcFwInsCntLimit\": 11,\n            \"VpcRegionCntLimit\": 5,\n            \"VpcThroughPut\": 10240,\n            \"FwGroupCount\": 1,\n            \"FwGroupMaxInsCount\": 10,\n            \"InstanceQuota\": 1\n        },\n        \"RequestId\": \"c9343d64-31c1-482c-bbd9-5d74c177e1fb\"\n    }\n}",
+        "title": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据"
+      }
+    ]
+  },
+  "version": "1.0"
+}

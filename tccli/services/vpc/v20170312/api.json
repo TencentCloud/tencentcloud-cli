@@ -6004,6 +6004,95 @@
       ],
       "usage": "in"
     },
+    "BgpConfig": {
+      "document": "BgpConfig",
+      "members": [
+        {
+          "disabled": false,
+          "document": "BGP隧道网段。",
+          "example": "169.254.128.0/30",
+          "member": "string",
+          "name": "TunnelCidr",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云端BGP地址。必须从BGP隧道网段内分配。",
+          "example": "169.254.128.1",
+          "member": "string",
+          "name": "LocalBgpIp",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户端BGP地址。必须从BGP隧道网段内分配。",
+          "example": "169.254.128.2",
+          "member": "string",
+          "name": "RemoteBgpIp",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "BgpConfigAndAsn": {
+      "document": "VPN通道BGP配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "BGP通道CIDR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TunnelCidr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本端BGP IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalBgpIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对端BGP IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoteBgpIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本端BGP ASN号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LocalBgpAsn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对端BGP ASN号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RemoteBgpAsn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "CCN": {
       "document": "云联网（CCN）对象",
       "members": [
@@ -7965,6 +8054,15 @@
           "name": "Tags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。ASN取值范围为1- 4294967295，其中139341、45090和58835不可用。",
+          "example": "无",
+          "member": "int64",
+          "name": "BgpAsn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -10905,6 +11003,32 @@
       ],
       "type": "object"
     },
+    "CreateVpnConnRoute": {
+      "document": "创建路由添加的指向此通道的路由",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目的端IDC网段",
+          "example": "11.0.0.0/16",
+          "member": "string",
+          "name": "DestinationCidrBlock",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级；可选值0，100。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Priority",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "CreateVpnConnectionRequest": {
       "document": "CreateVpnConnection请求参数结构体",
       "members": [
@@ -11060,6 +11184,24 @@
           "name": "DpdAction",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建通道路由信息。",
+          "example": "无",
+          "member": "CreateVpnConnRoute",
+          "name": "Route",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "BGP配置。",
+          "example": "无",
+          "member": "BgpConfig",
+          "name": "BgpConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -11175,6 +11317,15 @@
           "example": "5",
           "member": "uint64",
           "name": "MaxConnection",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。",
+          "example": "2",
+          "member": "uint64",
+          "name": "BgpAsn",
           "required": false,
           "type": "int"
         }
@@ -11798,38 +11949,52 @@
         {
           "disabled": false,
           "document": "用户网关唯一ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CustomerGatewayId",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "网关名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CustomerGatewayName",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "公网地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "IpAddress",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedTime",
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。",
+          "example": "无",
+          "member": "uint64",
+          "name": "BgpAsn",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -30122,182 +30287,199 @@
       "members": [
         {
           "disabled": false,
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBS-192', 'AES-CBC-256', 'DES-CBC'，'SM4', 默认为3DES-CBC\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "3DES-CBC",
           "member": "string",
           "name": "PropoEncryAlgorithm",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为MD5\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MD5",
           "member": "string",
           "name": "PropoAuthenAlgorithm",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN",
+          "document": "协商模式：可选值：'AGGRESSIVE', 'MAIN'，默认为MAIN\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "MAIN",
           "member": "string",
           "name": "ExchangeMode",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "document": "本端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ADDRESS",
           "member": "string",
           "name": "LocalIdentity",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS",
+          "document": "对端标识类型：可选值：'ADDRESS', 'FQDN'，默认为ADDRESS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ADDRESS",
           "member": "string",
           "name": "RemoteIdentity",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP",
+          "document": "本端标识，当LocalIdentity选为ADDRESS时，LocalAddress必填。localAddress默认为vpn网关公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.2.3.4",
           "member": "string",
           "name": "LocalAddress",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填",
+          "document": "对端标识，当RemoteIdentity选为ADDRESS时，RemoteAddress必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4.3.2.1",
           "member": "string",
           "name": "RemoteAddress",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填",
+          "document": "本端标识，当LocalIdentity选为FQDN时，LocalFqdnName必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "LocalName",
           "member": "string",
           "name": "LocalFqdnName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填",
+          "document": "对端标识，当remoteIdentity选为FQDN时，RemoteFqdnName必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RemoteName",
           "member": "string",
           "name": "RemoteFqdnName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，",
+          "document": "DH group，指定IKE交换密钥时使用的DH组，可选值：'GROUP1', 'GROUP2', 'GROUP5', 'GROUP14', 'GROUP24'，\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "GOURP1",
           "member": "string",
           "name": "DhGroupName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800",
+          "document": "IKE SA Lifetime，单位：秒，设置IKE SA的生存周期，取值范围：60-604800\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "60",
           "member": "uint64",
           "name": "IKESaLifetimeSeconds",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IKE版本",
+          "document": "IKE版本\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "IKEVersion",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "IPSECOptionsSpecification": {
       "document": "IPSec配置，腾讯云提供IPSec安全会话设置",
       "members": [
         {
           "disabled": false,
-          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128",
+          "document": "加密算法，可选值：'3DES-CBC', 'AES-CBC-128', 'AES-CBC-192', 'AES-CBC-256', 'DES-CBC', 'SM4', 'NULL'， 默认为AES-CBC-128\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "AES-CBC-128",
           "member": "string",
           "name": "EncryptAlgorithm",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为",
+          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SHA1",
           "member": "string",
           "name": "IntegrityAlgorith",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800",
+          "document": "IPsec SA lifetime(s)：单位秒，取值范围：180-604800\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "180",
           "member": "uint64",
           "name": "IPSECSaLifetimeSeconds",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL",
+          "document": "PFS：可选值：'NULL', 'DH-GROUP1', 'DH-GROUP2', 'DH-GROUP5', 'DH-GROUP14', 'DH-GROUP24'，默认为NULL\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "NULL",
           "member": "string",
           "name": "PfsDhGroup",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800",
+          "document": "IPsec SA lifetime(KB)：单位KB，取值范围：2560-604800\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2560",
           "member": "uint64",
           "name": "IPSECSaLifetimeTraffic",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ISPIPv6CidrBlock": {
       "document": "返回多运营商IPv6 Cidr Block",
@@ -38447,24 +38629,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "本端网段",
-          "example": "",
+          "document": "本端网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "LocalCidrBlock",
+          "output_required": false,
           "required": true,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "对端网段",
-          "example": "",
+          "document": "对端网段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "RemoteCidrBlock",
+          "output_required": false,
           "required": true,
-          "type": "list"
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Service": {
       "document": "服务信息",
@@ -55818,7 +56004,7 @@
           "example": "vpnx-xxxxx",
           "member": "string",
           "name": "VpnConnectionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55828,7 +56014,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "VpnConnectionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55838,7 +56024,7 @@
           "example": "vpc-xxxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55848,7 +56034,7 @@
           "example": "vpngw-xxxxx",
           "member": "string",
           "name": "VpnGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55858,7 +56044,7 @@
           "example": "cgw-xxxxx",
           "member": "string",
           "name": "CustomerGatewayId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55868,7 +56054,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "PreShareKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55878,7 +56064,7 @@
           "example": "IPSEC",
           "member": "string",
           "name": "VpnProto",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55888,7 +56074,7 @@
           "example": "IKE",
           "member": "string",
           "name": "EncryptProto",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55898,7 +56084,7 @@
           "example": "StaticRoute",
           "member": "string",
           "name": "RouteType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55908,7 +56094,7 @@
           "example": "0000-00-00 00:00:00",
           "member": "datetime",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55918,7 +56104,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55928,7 +56114,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "NetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55938,7 +56124,7 @@
           "example": "无",
           "member": "SecurityPolicyDatabase",
           "name": "SecurityPolicyDatabaseSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -55948,7 +56134,7 @@
           "example": "无",
           "member": "IKEOptionsSpecification",
           "name": "IKEOptionsSpecification",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -55958,7 +56144,7 @@
           "example": "无",
           "member": "IPSECOptionsSpecification",
           "name": "IPSECOptionsSpecification",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -55968,7 +56154,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableHealthCheck",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -55978,7 +56164,7 @@
           "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckLocalIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55988,7 +56174,7 @@
           "example": "0.0.0.0",
           "member": "string",
           "name": "HealthCheckRemoteIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -55998,7 +56184,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "HealthCheckStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -56008,7 +56194,7 @@
           "example": "0",
           "member": "int64",
           "name": "DpdEnable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -56018,7 +56204,7 @@
           "example": "30",
           "member": "string",
           "name": "DpdTimeout",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -56028,7 +56214,7 @@
           "example": "clear",
           "member": "string",
           "name": "DpdAction",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -56038,7 +56224,7 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -56048,8 +56234,18 @@
           "example": "flowTrigger",
           "member": "string",
           "name": "NegotiationType",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Bgp配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BgpConfigAndAsn",
+          "name": "BgpConfig",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

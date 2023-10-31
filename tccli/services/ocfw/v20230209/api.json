@@ -1,0 +1,375 @@
+{
+  "actions": {
+    "DescribeAllZoneList": {
+      "document": "DescribeAllZoneList",
+      "input": "DescribeAllZoneListRequest",
+      "name": "可用区信息",
+      "output": "DescribeAllZoneListResponse",
+      "status": "online"
+    },
+    "DescribeVpcFwStatusBar": {
+      "document": "获取VPC防火墙状态栏数据",
+      "input": "DescribeVpcFwStatusBarRequest",
+      "name": "获取VPC防火墙状态栏数据",
+      "output": "DescribeVpcFwStatusBarResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-02-09",
+    "api_brief": "腾讯云防火墙（Cloud Firewall，CFW）是一款基于公有云环境下的 SaaS 化防火墙，主要为用户提供互联网边界的防护，解决云上访问控制的统一管理与日志审计的安全与管理需求。云防火墙不仅具备传统防火墙功能，同时也支持云上多租户、弹性扩容功能，是用户业务上云的第一个网络安全基础设施。",
+    "serviceNameCN": "T-Sec 云防火墙",
+    "serviceShortName": "ocfw"
+  },
+  "objects": {
+    "DescribeAllZoneListRequest": {
+      "document": "DescribeAllZoneList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户AppId",
+          "example": "无",
+          "member": "uint64",
+          "name": "CurrentAppId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAllZoneListResponse": {
+      "document": "DescribeAllZoneList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回信息",
+          "example": "data",
+          "member": "ZoneConfig",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "code",
+          "example": "1",
+          "member": "int64",
+          "name": "ReturnCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息",
+          "example": "suc",
+          "member": "string",
+          "name": "ReturnMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcFwStatusBarRequest": {
+      "document": "DescribeVpcFwStatusBar请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcFwStatusBarResponse": {
+      "document": "DescribeVpcFwStatusBar返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VPC防火墙状态栏数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VpcFwBarStatus",
+          "name": "FwBarStatus",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VpcFwBarStatus": {
+      "document": "VPC防火墙状态栏信息数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽对应实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "DiffRegionFwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽对应实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "春城无处不飞花",
+          "member": "string",
+          "name": "DiffRegionFwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨地域峰值带宽数值",
+          "example": "1024",
+          "member": "int64",
+          "name": "DiffRegionMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙总接入网络实例数量",
+          "example": "7",
+          "member": "int64",
+          "name": "JoinInstanceCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙总开关数量",
+          "example": "7",
+          "member": "int64",
+          "name": "FwSwitchCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙实例数",
+          "example": "1",
+          "member": "int64",
+          "name": "FwInsCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽对应实例ID",
+          "example": "cfwew-af7aa5a3",
+          "member": "string",
+          "name": "SameRegionFwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽对应实例名称",
+          "example": "春城无处不飞花",
+          "member": "string",
+          "name": "SameRegionFwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "同地域峰值带宽数值",
+          "example": "1024",
+          "member": "int64",
+          "name": "SameRegionMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC防火墙的购买带宽 2GB 单位为M",
+          "example": "2048",
+          "member": "int64",
+          "name": "VpcThroughPut",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "单位为M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2048",
+          "member": "int64",
+          "name": "BandWidthUsed",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单实例支持最大地域个数",
+          "example": "3",
+          "member": "int64",
+          "name": "VpcRegionCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "租户最大支持实例个数",
+          "example": "2",
+          "member": "int64",
+          "name": "VpcFwInsCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "私有模式下，最大支持接入的Vpc实例个数",
+          "example": "10",
+          "member": "int64",
+          "name": "JoinVpcCntLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwg-12345667",
+          "member": "string",
+          "name": "FwGroupId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名字而已",
+          "member": "string",
+          "name": "FwGroupName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111111",
+          "member": "int64",
+          "name": "FwGroupMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cfwew-12345667",
+          "member": "string",
+          "name": "FwInsId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名字而已又",
+          "member": "string",
+          "name": "FwInsName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙实例最大峰值带宽\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111111",
+          "member": "int64",
+          "name": "FwInsMaxFlow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防火墙(组)个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "FwGroupCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "单个组最多建多少防火墙实例\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "FwGroupMaxInsCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InstanceQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ZoneConfig": {
+      "document": "az配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "chongqing1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用区中文\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "重庆1区",
+          "member": "string",
+          "name": "ZoneName",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

@@ -7323,6 +7323,15 @@
           "name": "ExpireTime",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID 非NVR设备不填 NVR设备必填 默认为无\t",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChannelId",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7336,7 +7345,7 @@
           "example": "http://zylcb.iotvideo.tencentcs.com/timeshift/live/1.m3u8?sign=x",
           "member": "string",
           "name": "SignedVideoURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

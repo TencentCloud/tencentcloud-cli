@@ -839,7 +839,7 @@
         },
         {
           "disabled": false,
-          "document": "风险信息扩展数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "扩展信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "{\"Model\":[{\"FieldName\":\"05103001\",\"FieldValue\":\"2\"}]}",
           "member": "string",
           "name": "RiskInformation",

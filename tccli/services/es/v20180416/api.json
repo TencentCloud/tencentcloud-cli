@@ -231,6 +231,13 @@
       "output": "ModifyEsVipSecurityGroupResponse",
       "status": "online"
     },
+    "NotifyEsServerless": {
+      "document": "NotifyEsServerless",
+      "input": "NotifyEsServerlessRequest",
+      "name": "NotifyEsServerless",
+      "output": "NotifyEsServerlessResponse",
+      "status": "online"
+    },
     "RestartInstance": {
       "document": "重启ES集群实例(用于系统版本更新等操作)",
       "input": "RestartInstanceRequest",
@@ -7897,6 +7904,52 @@
       ],
       "usage": "out"
     },
+    "NotifyEsServerlessRequest": {
+      "document": "NotifyEsServerless请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "string",
+          "name": "ActionTypes",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "SourceInfo",
+          "name": "SourceInfo",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "NotifyEsServerlessResponse": {
+      "document": "NotifyEsServerless返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "string",
+          "name": "DealId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "Operation": {
       "document": "ES集群操作详细信息",
       "members": [
@@ -9613,6 +9666,67 @@
       ],
       "usage": "out"
     },
+    "ServiceCvmLogPath": {
+      "document": "emr日志路径描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HDFS",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/data/emr/hdfs/logs/hadoop-hadoop.log\"]",
+          "member": "string",
+          "name": "LogPaths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "service",
+          "member": "string",
+          "name": "LogIndex",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "LogFieldRole",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "^[0-9]{4}-[0-9]{2}-[0-9]{2}",
+          "member": "string",
+          "name": "LogMultiLinePattern",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SettingDetail": {
       "document": "智能运维集群配置详情",
       "members": [
@@ -9648,6 +9762,78 @@
         }
       ],
       "usage": "out"
+    },
+    "SourceInfo": {
+      "document": "SourceInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "InnerProductType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogInfoVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScaleOutCVMInstanceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScaleInCVMInstanceIds",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "/\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceCvmLogPath",
+          "name": "ServiceCvmLogPaths",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "StartLogstashPipelinesRequest": {
       "document": "StartLogstashPipelines请求参数结构体",

@@ -12519,7 +12519,7 @@
         },
         {
           "disabled": false,
-          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>\n<li> vodeo：vodeo默认站点。</li>",
+          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>",
           "example": "full",
           "member": "string",
           "name": "Type",

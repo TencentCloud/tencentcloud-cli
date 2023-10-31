@@ -16,6 +16,7 @@ Output:
     "Response": {
         "Data": [
             {
+                "RiskId": "abc",
                 "VULName": "abc",
                 "RiskLevel": "abc",
                 "CheckFrom": "abc",

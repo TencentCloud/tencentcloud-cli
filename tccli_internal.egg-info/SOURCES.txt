@@ -614,6 +614,8 @@ tccli/services/oceanus/__init__.py
 tccli/services/oceanus/oceanus_client.py
 tccli/services/oceanus/v20190422/api.json
 tccli/services/oceanus/v20190422/examples.json
+tccli/services/ocfw/__init__.py
+tccli/services/ocfw/ocfw_client.py
 tccli/services/ocl/__init__.py
 tccli/services/ocl/ocl_client.py
 tccli/services/ocr/__init__.py

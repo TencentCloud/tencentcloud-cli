@@ -264,6 +264,14 @@
         "title": "修改集群VIP绑定的安全组信息"
       }
     ],
+    "NotifyEsServerless": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: NotifyEsServerless\n<公共请求参数>\n\n{\n    \"ActionTypes\": \"abc\",\n    \"SourceInfo\": {\n        \"InnerProductType\": 1,\n        \"InstanceId\": \"abc\",\n        \"LogInfoVersion\": \"abc\",\n        \"ScaleOutCVMInstanceIds\": [\n            \"abc\"\n        ],\n        \"ScaleInCVMInstanceIds\": [\n            \"abc\"\n        ],\n        \"ServiceCvmLogPaths\": [\n            {\n                \"ServiceName\": \"abc\",\n                \"LogPaths\": [\n                    \"abc\"\n                ],\n                \"LogIndex\": \"abc\",\n                \"LogFieldRole\": \"abc\",\n                \"LogMultiLinePattern\": \"abc\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"DealId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "NotifyEsServerless"
+      }
+    ],
     "RestartInstance": [
       {
         "document": "用以进行版本更新等操作",

@@ -1,7 +1,7 @@
 {
   "actions": {
     "ChannelBatchCancelFlows": {
-      "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；\n\n可以撤回：未全部签署完成\n 不可以撤回：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n**满足撤销条件的合同会发起异步撤销流程，不满足撤销条件的合同返回失败原因。**\n\n**合同撤销成功后，会通过合同状态为 CANCEL 的回调消息通知调用方 [具体可参考回调消息](https://qian.tencent.com/developers/scenes/partner/callback_data_types#-%E5%90%88%E5%90%8C%E7%8A%B6%E6%80%81%E9%80%9A%E7%9F%A5---flowstatuschange)**\n\n**注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人**",
+      "document": "用于批量撤销合同流程<br/>\n适用场景：\n如果某些合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n通过签署流程编号批量撤销合同，单次最多支持撤销100份合同。只有合同的发起人或者发起方企业的超管/法人才能进行合同撤销。需要注意的是，若合同处于以下已终止状态，则不可撤销：<br/>\n- 已全部签署完成\n- 已拒签\n- 已过期\n- 已撤回\n- 拒绝填写\n- 已解除\n\n<br/>\n满足撤销条件的合同会发起异步撤销流程，而不满足撤销条件的合同将返回失败原因。合同撤销成功后，会通过合同状态为 CANCEL 的回调消息通知调用方。具体的回调消息内容可参考 <a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign\" target=\"_blank\">合同状态变更回调消息</a>。\n<br/><br/>\n注:\n`如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，`签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。",
       "input": "ChannelBatchCancelFlowsRequest",
       "name": "根据签署流程id批量撤销合同",
       "output": "ChannelBatchCancelFlowsResponse",
@@ -106,7 +106,7 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "创建个人签署H5签署链接，请联系客户经理申请使用<br/>\n该接口用于发起合同后，生成C端签署人的签署链接<br/>\n注意：该接口目前签署人类型仅支持个人签署方（PERSON）<br/>\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>\n注意：该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。微信小程序请使用小程序跳转或半屏弹窗的方式<br/>",
+      "document": "该接口用于发起合同后，生成C端签署人的签署链接<br/>\n注意：该接口目前签署人类型仅支持个人签署方（PERSON）<br/>\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>\n注意：该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。微信小程序请使用小程序跳转或半屏弹窗的方式<br/>",
       "input": "ChannelCreateFlowSignUrlRequest",
       "name": "获取个人签署H5页面",
       "output": "ChannelCreateFlowSignUrlResponse",
@@ -246,14 +246,14 @@
       "status": "online"
     },
     "ChannelDescribeUserAutoSignStatus": {
-      "document": "企业方可以通过此接口查询个人用户自动签开启状态",
+      "document": "通过此接口获取个人用户自动签的开通状态。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "ChannelDescribeUserAutoSignStatusRequest",
       "name": "查询个人用户开通自动签状态",
       "output": "ChannelDescribeUserAutoSignStatusResponse",
       "status": "online"
     },
     "ChannelDisableUserAutoSign": {
-      "document": "企业方可以通过此接口关闭个人的自动签功能",
+      "document": "通过此接口可以关闭个人用户自动签功能。\n无需对应的用户刷脸等方式同意即可关闭。\n\n注意: \n\n<ul><li>处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。</li>\n<li>如果此用户在开通时候绑定过个人自动签账号许可,  关闭此用户的自动签不会归还个人自动签账号许可的额度。</li></ul>",
       "input": "ChannelDisableUserAutoSignRequest",
       "name": "关闭个人自动签功能",
       "output": "ChannelDisableUserAutoSignResponse",
@@ -921,7 +921,7 @@
         },
         {
           "disabled": false,
-          "document": "撤销理由自定义格式；选项：\n\n- 0 默认格式\n- 1 只保留身份信息：展示为【发起方】\n- 2 保留身份信息+企业名称：展示为【发起方xxx公司】\n- 3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】",
+          "document": "撤销理由自定义格式，支持以下格式\n<ul><li>0 : 默认值</li>\n<li>1 : 只保留身份信息</li>\n<li>2 : 保留身份信息+企业名称</li>\n<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>\n例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是\"合同内容错误，需要修正\",合同撤销后，各签署方看到的撤销理由是会是\n\n0: 发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同\n1: 发起方以\"合同内容错误，需要修正\"的理由撤销当前合同\n2: 发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同\n3: 发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同</br>\n\n备注:`如果不传递撤销理由，那么默认撤销理由是 \"自动撤销（通过接口实现）\"`",
           "example": "无",
           "member": "int64",
           "name": "CancelMessageFormat",
@@ -1894,7 +1894,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组中每个合同流程ID，每个ID均为32位字符串。\n\n注:\n`此数组的顺序和入参中的FlowGroupInfos顺序回不一致`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同组中每个合同流程ID，每个ID均为32位字符串。\n\n注:\n`此数组的顺序和入参中的FlowGroupInfos顺序一致`\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\",\"yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS\"]",
           "member": "string",
           "name": "FlowIds",
@@ -1959,7 +1959,7 @@
         },
         {
           "disabled": false,
-          "document": "合同组中每个合同流程ID，每个ID均为32位字符串。\n\n注:\n`此数组的顺序和入参中的FlowInfos顺序回不一致`",
+          "document": "合同组中每个合同流程ID，每个ID均为32位字符串。\n\n注:\n`此数组的顺序和入参中的FlowInfos顺序一致`",
           "example": "[\"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\",\"yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS\"]",
           "member": "string",
           "name": "FlowIds",
@@ -3847,7 +3847,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "渠道应用相关信息",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3856,7 +3856,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** : 电子处方场景</li></ul>\n\n注: `现在仅支持电子处方场景`",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -3865,7 +3865,7 @@
         },
         {
           "disabled": false,
-          "document": "查询开启状态的用户信息",
+          "document": "要查询状态的用户信息, 包括名字,身份证等",
           "example": "无",
           "member": "UserThreeFactor",
           "name": "UserInfo",
@@ -3874,7 +3874,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3889,7 +3889,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否开通",
+          "document": "查询用户是否已开通自动签",
           "example": "true",
           "member": "bool",
           "name": "IsOpen",
@@ -3899,8 +3899,8 @@
         },
         {
           "disabled": false,
-          "document": "自动签许可生效时间。当且仅当已开通自动签时有值。",
-          "example": "1684411624",
+          "document": "自动签许可生效时间。当且仅当已通过许可开通自动签时有值。\n\n值为unix时间戳,单位为秒。",
+          "example": "1684412179",
           "member": "int64",
           "name": "LicenseFrom",
           "output_required": true,
@@ -3909,8 +3909,8 @@
         },
         {
           "disabled": false,
-          "document": "自动签许可到期时间。当且仅当已开通自动签时有值。",
-          "example": "1715947624",
+          "document": "自动签许可到期时间。当且仅当已通过许可开通自动签时有值。\n\n值为unix时间戳,单位为秒。",
+          "example": "1715948179",
           "member": "int64",
           "name": "LicenseTo",
           "output_required": true,
@@ -3919,7 +3919,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -3941,7 +3941,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "渠道应用相关信息",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3950,7 +3950,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** 电子处方</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -3959,7 +3959,7 @@
         },
         {
           "disabled": false,
-          "document": "关闭自动签的个人的三要素",
+          "document": "需要关闭自动签的个人的信息，如姓名，证件信息等。",
           "example": "无",
           "member": "UserThreeFactor",
           "name": "UserInfo",
@@ -3968,7 +3968,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -7180,8 +7180,7 @@
           "member": "string",
           "name": "FlowName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7190,8 +7189,7 @@
           "member": "int64",
           "name": "Deadline",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7200,8 +7198,7 @@
           "member": "string",
           "name": "TemplateId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7210,8 +7207,7 @@
           "member": "FlowApproverInfo",
           "name": "FlowApprovers",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7220,8 +7216,7 @@
           "member": "FormField",
           "name": "FormFields",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7230,8 +7225,7 @@
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7240,8 +7234,7 @@
           "member": "string",
           "name": "FlowType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7250,8 +7243,7 @@
           "member": "string",
           "name": "FlowDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7260,8 +7252,7 @@
           "member": "string",
           "name": "CustomerData",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7270,8 +7261,7 @@
           "member": "string",
           "name": "CustomShowMap",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -7280,8 +7270,7 @@
           "member": "CcInfo",
           "name": "CcInfos",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -7290,8 +7279,7 @@
           "member": "bool",
           "name": "NeedSignReview",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         },
         {
           "disabled": false,
@@ -7300,8 +7288,7 @@
           "member": "int64",
           "name": "CcNotifyType",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -7310,8 +7297,7 @@
           "member": "string",
           "name": "AutoSignScene",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -9650,33 +9636,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "姓名",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。",
           "example": "小明",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "证件类型: \nID_CARD 身份证\nHONGKONG_AND_MACAO 港澳居民来往内地通行证\nHONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "证件号，如果有 X 请大写",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "610*************1X",
           "member": "string",
           "name": "IdCardNumber",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

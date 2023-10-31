@@ -2,10 +2,34 @@
   "actions": {
     "ChannelBatchCancelFlows": [
       {
-        "document": "指定需要批量撤销的签署流程Id，批量撤销合同\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"FlowIds\": [\n        \"yDwhGUUfe5g******CX8ZwTiSg8gISocy\"\n    ],\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"yDR3L****eTdCt5TVx\"\n        },\n        \"AppId\": \"125***319\",\n        \"ProxyOrganizationOpenId\": \"1000***8062\"\n    },\n    \"CancelMessage\": \"因为合同里边的金额填写错误\",\n    \"CancelMessageFormat\": \"0\"\n}",
-        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"c5e01d20-xxxxxx09d3d32b00\"\n    }\n}",
-        "title": "根据签署流程id批量撤销合同"
+        "document": "撤销4个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同</br>\n其中合同yDmFdUUckpsvi8mpUEn0aFR1tWzReolk 已经签署完成，无法撤销。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDmFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDmFdUUckpsvi8mpUEn0aFR1tWzReolk\",\n        \"yDmFmUUckpst10i3UubBAat8PSOt2iJc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [\n            \"\",\n            \"\",\n            \"合同流程Id:yDmFdUUckpsvi8mpUEn0aFR1tWzReolk,无法撤回，错误信息：合同当前状态不支持撤销\",\n            \"\"\n        ],\n        \"RequestId\": \"s1698669052286290493\"\n    }\n}",
+        "title": "撤销合同部分成功"
+      },
+      {
+        "document": "撤销3个合同，没有传递撤销理由（CancelMessage 设置为空），使用默认格式(CancelMessageFormat 设置为0) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业-张三以\"自动撤销（通过接口实现）\"的理由撤销当前合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"FlowIds\": [\n        \"abc\"\n    ],\n    \"CancelMessage\": \"abc\",\n    \"CancelMessageFormat\": 0,\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "无撤销理由，使用默认格式撤销合同"
+      },
+      {
+        "document": "撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDmFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDmFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDmFdUUckpsvi8mpUEn0aFR1tWzReolk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832497\"\n    }\n}",
+        "title": "自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同"
+      },
+      {
+        "document": "撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为1) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方以\"合同内容错误，需要修正\"的理由撤销当前合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 1,\n    \"FlowIds\": [\n        \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGa\",\n        \"yDwFmUUckpst10i3UubBSat8PWOt2iQc\",\n        \"yDwFdUUckpsvi8mpUEn0aFR1tWzReolk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832487\"\n    }\n}",
+        "title": "自定义撤销理由，使用只保留身份信息的方式撤销合同"
+      },
+      {
+        "document": "撤销3个合同，并且自定义撤销理由，使用默认格式(CancelMessageFormat 设置为3) </br>\n假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelBatchCancelFlows\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"CancelMessage\": \"合同内容错误，需要修正\",\n    \"CancelMessageFormat\": 3,\n    \"FlowIds\": [\n        \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n        \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n        \"yDwFdUUckpsvi8mpUEn0aFR1tWzReoTk\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailMessages\": [],\n        \"RequestId\": \"s1698667230378832486\"\n    }\n}",
+        "title": "自定义撤销理由，保留身份信息+企业名称+经办人名称撤销合同"
       }
     ],
     "ChannelCancelFlow": [
@@ -354,7 +378,7 @@
     ],
     "ChannelDescribeUserAutoSignStatus": [
       {
-        "document": "查询个人已开通自动签",
+        "document": "查看个人自动签状态, 同时也会返回自动签license类型，如果是 0 类型，则同时会返回开始和过期时间。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelDescribeUserAutoSignStatus\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"\",\n        \"ClientIp\": \"\",\n        \"CustomUserId\": \"\",\n        \"ProxyIp\": \"\",\n        \"Channel\": \"\"\n    },\n    \"SceneKey\": \"E_PRESCRIPTION_AUTO_SIGN\",\n    \"Agent\": {\n        \"ProxyAppId\": \"c17bdf9c2a7bdcb32611f4d0200fef3d\",\n        \"ProxyOrganizationOpenId\": \"d7c13a8b81340cce9e3968c0ee248f04\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"00498cc8500be9cxxxxxxx3aff766cac\"\n        },\n        \"AppId\": \"65fb0c591044be8a1f60aa382cc5ed0e\"\n    },\n    \"UserInfo\": {\n        \"Name\": \"小明\",\n        \"IdCardNumber\": \"610000000000000000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"IsOpen\": true,\n        \"LicenseFrom\": 1684411624,\n        \"LicenseTo\": 1715947624,\n        \"RequestId\": \"5beb5f54-cf3d-4c26-a4ee-a97c85196a3e\"\n    }\n}",
         "title": "查看个人自动签开启状态"

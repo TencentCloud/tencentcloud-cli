@@ -8274,6 +8274,16 @@
       "members": [
         {
           "disabled": false,
+          "document": "风险ID",
+          "example": "xx",
+          "member": "string",
+          "name": "RiskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "漏洞名称",
           "example": "1",
           "member": "string",
