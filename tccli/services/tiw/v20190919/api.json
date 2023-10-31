@@ -113,7 +113,7 @@
       "status": "online"
     },
     "DescribePPTCheck": {
-      "document": "查询PPT检测任务的执行进度或结果",
+      "document": "查询PPT检测任务的执行进度或结果，支持查询最近半年内的任务结果",
       "input": "DescribePPTCheckRequest",
       "name": "查询PPT检测任务状态",
       "output": "DescribePPTCheckResponse",
@@ -1844,6 +1844,7 @@
           "example": "0agdnligqtgtvkm65emb",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1853,6 +1854,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsOK",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1862,6 +1864,7 @@
           "example": "https://xxx/xxx/测试_fixed.ppt",
           "member": "string",
           "name": "ResultUrl",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1871,6 +1874,7 @@
           "example": "无",
           "member": "PPTErrSlide",
           "name": "Slides",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1880,6 +1884,7 @@
           "example": "FINISHED",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1889,8 +1894,19 @@
           "example": "100",
           "member": "int64",
           "name": "Progress",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PPTErr",
+          "name": "Errs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3912,7 +3928,7 @@
           "example": "Ink 1",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3922,7 +3938,7 @@
           "example": "0",
           "member": "int64",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3932,7 +3948,7 @@
           "example": "wps墨迹",
           "member": "string",
           "name": "Detail",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

@@ -144,13 +144,13 @@
       {
         "document": "查询PPT检测任务，存在异常",
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": false,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": \"https://xxx/xxx/测试_fixed.ppt\",\n        \"Slides\": [\n            {\n                \"Page\": \"幻灯片5\",\n                \"Errs\": [\n                    {\n                        \"Name\": \"Ink 1\",\n                        \"Type\": 0,\n                        \"Detail\": \"wps墨迹\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": false,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": \"https://xxx/xxx/测试_fixed.ppt\",\n        \"Slides\": [\n            {\n                \"Page\": \"幻灯片5\",\n                \"Errs\": [\n                    {\n                        \"Name\": \"Ink 1\",\n                        \"Type\": 0,\n                        \"Detail\": \"wps墨迹\"\n                    }\n                ]\n            }\n        ],\n        \"Errs\": [\n            {\n                \"Type\": 0,\n                \"Detail\": \"wps墨迹\"\n            }\n        ]\n    }\n}",
         "title": "查询PPT检测任务异常"
       },
       {
         "document": "查询PPT检测任务，PPT无异常",
         "input": "POST / HTTP/1.1\nHost: tiw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePPTCheck\n<公共请求参数>\n\n{\n    \"TaskId\": \"g0jb42ps49vtebjshilb\",\n    \"SdkAppId\": \"1400000001\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": true,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": null,\n        \"Slides\": null\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"bj0mt2l23osdj300hl30\",\n        \"IsOK\": true,\n        \"Status\": \"FINISHED\",\n        \"Progress\": 100,\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\",\n        \"ResultUrl\": null,\n        \"Slides\": null,\n        \"Errs\": null\n    }\n}",
         "title": "查询PPT检测任务无异常"
       }
     ],

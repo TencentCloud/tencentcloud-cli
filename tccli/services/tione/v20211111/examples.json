@@ -200,6 +200,14 @@
         "title": "查询资源组详情"
       }
     ],
+    "DescribeBillingResourceInstanceRunningJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingResourceInstanceRunningJobs\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"abc\",\n    \"ResourceInstanceId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02be3c0f-d1f1-4a8e-97bd-38128985baa7\",\n        \"ResourceInstanceRunningJobInfos\": [\n            {\n                \"PodName\": \"xxx-6fb768c5d5-4fh84\",\n                \"TaskType\": \"batch\",\n                \"TaskId\": \"Batch-xxx\",\n                \"TaskName\": \"批处理任务\"\n            }\n        ]\n    }\n}",
+        "title": "查询资源组节点运行中的任务"
+      }
+    ],
     "DescribeBillingSpecs": [
       {
         "document": "查询计费项列表",

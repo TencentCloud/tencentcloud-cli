@@ -35,6 +35,13 @@
       "output": "DescribeAutoScaleRecordsResponse",
       "status": "online"
     },
+    "DescribeClusterLogInfo": {
+      "document": "获取指定集群的服务日志信息",
+      "input": "DescribeClusterLogInfoRequest",
+      "name": "DescribeClusterLogInfo",
+      "output": "DescribeClusterLogInfoResponse",
+      "status": "online"
+    },
     "DescribeClusterNodes": {
       "document": "查询集群节点信息",
       "input": "DescribeClusterNodesRequest",
@@ -194,6 +201,13 @@
       "input": "ModifyUserManagerPwdRequest",
       "name": "修改用户密码（用户管理）",
       "output": "ModifyUserManagerPwdResponse",
+      "status": "online"
+    },
+    "NotifyEmr": {
+      "document": "emr日志接入es，es的回调接口",
+      "input": "NotifyEmrRequest",
+      "name": "NotifyEmr",
+      "output": "NotifyEmrResponse",
       "status": "online"
     },
     "RunJobFlow": {
@@ -2322,6 +2336,63 @@
           "name": "RecordList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLogInfoRequest": {
+      "document": "DescribeClusterLogInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群id",
+          "example": "emr-1sefwfe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterLogInfoResponse": {
+      "document": "DescribeClusterLogInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务日志信息列表",
+          "example": "无",
+          "member": "ServiceCvmLogPath",
+          "name": "ServiceCvmLogPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "组件CVM列表，所有节点将被安装filebeat",
+          "example": "[\"ins-fei9xf\"]",
+          "member": "string",
+          "name": "CVMInstanceIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号",
+          "example": "1",
+          "member": "string",
+          "name": "LogInfoVersion",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -6879,6 +6950,60 @@
       ],
       "usage": "both"
     },
+    "NotifyEmrRequest": {
+      "document": "NotifyEmr请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "emr集群id",
+          "example": "emr-1sefwfe",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es回调行为：register/unregister",
+          "example": "register",
+          "member": "string",
+          "name": "ActionMethod",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "es操作状态：-1 失败（只需要判断）, 1 正常",
+          "example": "1",
+          "member": "int64",
+          "name": "ActionCode",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "es操作失败信息",
+          "example": "无",
+          "member": "string",
+          "name": "ActionMsg",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NotifyEmrResponse": {
+      "document": "NotifyEmr返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "OpScope": {
       "document": "操作范围",
       "members": [
@@ -9027,6 +9152,62 @@
         }
       ],
       "usage": "both"
+    },
+    "ServiceCvmLogPath": {
+      "document": "返回给es的组件及其日志信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "HDFS",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/data/emr/hdfs/logs/hadoop-hadoop.log\"]",
+          "member": "string",
+          "name": "LogPaths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "索引类型",
+          "example": "gclog",
+          "member": "string",
+          "name": "LogIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "角色名称",
+          "example": "DataNode",
+          "member": "string",
+          "name": "LogFieldRole",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "filebeat的多行日志配置",
+          "example": "^[0-9]{4}-[0-9]{2}-[0-9]{2}",
+          "member": "string",
+          "name": "LogMultiLinePattern",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "ShortNodeInfo": {
       "document": "节点信息",

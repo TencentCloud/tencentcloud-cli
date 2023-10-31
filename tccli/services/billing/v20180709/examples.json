@@ -370,6 +370,14 @@
         "title": "查询uin是否在白名单列表"
       }
     ],
+    "DescribeSalesPolicy": [
+      {
+        "document": "根据uin查询用户零预付模式开关",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSalesPolicyForInternational\n<公共请求参数>\n\n{\n    \"ProductCode\": \"p_tqdcs\",\n    \"SubProductCode\": \"sp_tqdcs\"\n}",
+        "output": "{\n    \"Response\": {\n        \"NoUpfrontRIs\": \"recommended\",\n        \"RequestId\": \"c49fd5c2-1f59-4ee5-97f0-d1c158dc5691\"\n    }\n}",
+        "title": "查询用户零预付模式"
+      }
+    ],
     "DescribeSavingPlanCoverage": [
       {
         "document": "查询节省计划覆盖率数据",

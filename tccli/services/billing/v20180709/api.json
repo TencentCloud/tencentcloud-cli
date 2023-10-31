@@ -245,6 +245,13 @@
       "output": "DescribeMeasureWhiteUinListResponse",
       "status": "online"
     },
+    "DescribeSalesPolicy": {
+      "document": "根据uin查询用户零预付模式开关",
+      "input": "DescribeSalesPolicyRequest",
+      "name": "查询用户零预付模式",
+      "output": "DescribeSalesPolicyResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanCoverage": {
       "document": "查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。",
       "input": "DescribeSavingPlanCoverageRequest",
@@ -8124,6 +8131,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeSalesPolicyRequest": {
+      "document": "DescribeSalesPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一层商品码",
+          "example": "p_tqdcs",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "二层商品码",
+          "example": "sp_tqdcs",
+          "member": "string",
+          "name": "SubProductCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSalesPolicyResponse": {
+      "document": "DescribeSalesPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "recommended:支持零预付，notRecommended:不支持零预付",
+          "example": "recommended",
+          "member": "string",
+          "name": "NoUpfrontRIs",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeSavingPlanCoverageRequest": {
       "document": "DescribeSavingPlanCoverage请求参数结构体",

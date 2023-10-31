@@ -7,6 +7,83 @@
       "output": "DescribeAllZoneListResponse",
       "status": "online"
     },
+    "DescribeBlockList": {
+      "document": "DescribeBlockList 告警中心阻断资产视图列表",
+      "input": "DescribeBlockListRequest",
+      "name": "告警中心阻断资产视图列表",
+      "output": "DescribeBlockListResponse",
+      "status": "online"
+    },
+    "DescribeDNSFWSwitch": {
+      "document": "获取DSN防火墙开关信息",
+      "input": "DescribeDNSFWSwitchRequest",
+      "name": "获取DSN防火墙开关信息",
+      "output": "DescribeDNSFWSwitchResponse",
+      "status": "online"
+    },
+    "DescribeFwEdgeBar": {
+      "document": "互联网边界页概览数据",
+      "input": "DescribeFwEdgeBarRequest",
+      "name": "互联网边界页概览数据",
+      "output": "DescribeFwEdgeBarResponse",
+      "status": "online"
+    },
+    "DescribeInternetOutOverview": {
+      "document": "流量中心外联概况查询",
+      "input": "DescribeInternetOutOverviewRequest",
+      "name": "流量中心外联概况查询",
+      "output": "DescribeInternetOutOverviewResponse",
+      "status": "online"
+    },
+    "DescribeNatNewFlowStatsData": {
+      "document": "NAT监控面板-峰值均值带宽统计",
+      "input": "DescribeNatNewFlowStatsDataRequest",
+      "name": "NAT监控面板-峰值均值带宽统计",
+      "output": "DescribeNatNewFlowStatsDataResponse",
+      "status": "online"
+    },
+    "DescribeNetInfo": {
+      "document": "DescribeNetInfo 概览网络攻击汇总",
+      "input": "DescribeNetInfoRequest",
+      "name": "概览网络攻击汇总数据",
+      "output": "DescribeNetInfoResponse",
+      "status": "online"
+    },
+    "DescribeOverviewFlowStat": {
+      "document": "概览页互联网边界流量带宽统计数据",
+      "input": "DescribeOverviewFlowStatRequest",
+      "name": "概览页互联网边界流量带宽统计数据",
+      "output": "DescribeOverviewFlowStatResponse",
+      "status": "online"
+    },
+    "DescribeProtectModeCount": {
+      "document": "防护模式统计数字",
+      "input": "DescribeProtectModeCountRequest",
+      "name": "防护模式统计数字",
+      "output": "DescribeProtectModeCountResponse",
+      "status": "online"
+    },
+    "DescribeTLogIpList": {
+      "document": "DescribeTLogIpList告警中心IP柱形图",
+      "input": "DescribeTLogIpListRequest",
+      "name": "告警中心IP柱形图1",
+      "output": "DescribeTLogIpListResponse",
+      "status": "online"
+    },
+    "DescribeVisitTimesAndFlowAssetMaxTop": {
+      "document": "流量中心资产Top查询",
+      "input": "DescribeVisitTimesAndFlowAssetMaxTopRequest",
+      "name": "流量中心资产Top查询",
+      "output": "DescribeVisitTimesAndFlowAssetMaxTopResponse",
+      "status": "online"
+    },
+    "DescribeVpcEdgeList": {
+      "document": "查看vpc防火墙边状态",
+      "input": "DescribeVpcEdgeListRequest",
+      "name": "查看vpc防火墙边状态",
+      "output": "DescribeVpcEdgeListResponse",
+      "status": "online"
+    },
     "DescribeVpcFwStatusBar": {
       "document": "获取VPC防火墙状态栏数据",
       "input": "DescribeVpcFwStatusBarRequest",
@@ -79,6 +156,527 @@
       ],
       "type": "object"
     },
+    "DescribeBlockListRequest": {
+      "document": "DescribeBlockList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBlockListResponse": {
+      "document": "DescribeBlockList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDNSFWSwitchRequest": {
+      "document": "DescribeDNSFWSwitch请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDNSFWSwitchResponse": {
+      "document": "DescribeDNSFWSwitch返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFwEdgeBarRequest": {
+      "document": "DescribeFwEdgeBar请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFwEdgeBarResponse": {
+      "document": "DescribeFwEdgeBar返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "入站峰值带宽 单位 bit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "InFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.6",
+          "member": "float",
+          "name": "InFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出站峰值带宽 单位 bit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100000",
+          "member": "int64",
+          "name": "OutFlowMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出站峰值带宽占用规格百分比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.6",
+          "member": "float",
+          "name": "OutFlowPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100M",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "串行带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50M",
+          "member": "int64",
+          "name": "SerialWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "UnUsedWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "NAT 分配带宽 单位 M\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50M",
+          "member": "int64",
+          "name": "NatWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 不开启自动防护\n1 开启自动防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoDefence",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "OpenSwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关配额数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "SwitchQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "串行地域个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "SerialRegionNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "剩余通用实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "InstanceQuota",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关闭开关数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "CloseSwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开关总个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "SwitchNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "绑定资产数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "AssetNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买配额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10000",
+          "member": "int64",
+          "name": "BuyWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "natfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "NatInstanceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpcfw 实例个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "VpcInstanceNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInternetOutOverviewRequest": {
+      "document": "DescribeInternetOutOverview请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeInternetOutOverviewResponse": {
+      "document": "DescribeInternetOutOverview返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatNewFlowStatsDataRequest": {
+      "document": "DescribeNatNewFlowStatsData请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间类型",
+          "example": "1",
+          "member": "int64",
+          "name": "TimeType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "nat实例Id",
+          "example": "cfwnat-id",
+          "member": "string",
+          "name": "NatInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNatNewFlowStatsDataResponse": {
+      "document": "DescribeNatNewFlowStatsData返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "入向带宽峰值折线图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrendsItem",
+          "name": "InputTrendData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出向带宽峰值折线图\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TrendsItem",
+          "name": "OutputTrendData",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入向峰值带宽，单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "InputMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出向峰值带宽，单位bps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "OutputMax",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入向峰值带宽配额占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "InputPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出向峰值带宽配额占比\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "OutputPercent",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例带宽规格，单位Mbps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "InstanceBandWidth",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeNetInfoRequest": {
+      "document": "DescribeNetInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeNetInfoResponse": {
+      "document": "DescribeNetInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOverviewFlowStatRequest": {
+      "document": "DescribeOverviewFlowStat请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeOverviewFlowStatResponse": {
+      "document": "DescribeOverviewFlowStat返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProtectModeCountRequest": {
+      "document": "DescribeProtectModeCount请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProtectModeCountResponse": {
+      "document": "DescribeProtectModeCount返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTLogIpListRequest": {
+      "document": "DescribeTLogIpList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2021-05-21",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2021-05-26",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "类型 1 告警 2阻断",
+          "example": "address",
+          "member": "string",
+          "name": "QueryType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "top数",
+          "example": "10",
+          "member": "int64",
+          "name": "Top",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "appid",
+          "example": "1",
+          "member": "uint64",
+          "name": "CurrentAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "\"search_value\":{  \"PublicIp\": \"1.116.139.155\"}",
+          "member": "string",
+          "name": "SearchValue",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTLogIpListResponse": {
+      "document": "DescribeTLogIpList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVisitTimesAndFlowAssetMaxTopRequest": {
+      "document": "DescribeVisitTimesAndFlowAssetMaxTop请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVisitTimesAndFlowAssetMaxTopResponse": {
+      "document": "DescribeVisitTimesAndFlowAssetMaxTop返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcEdgeListRequest": {
+      "document": "DescribeVpcEdgeList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVpcEdgeListResponse": {
+      "document": "DescribeVpcEdgeList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVpcFwStatusBarRequest": {
       "document": "DescribeVpcFwStatusBar请求参数结构体",
       "members": [],
@@ -105,6 +703,42 @@
         }
       ],
       "type": "object"
+    },
+    "TrendsItem": {
+      "document": "折线图",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间坐标",
+          "example": "2022-10-03 16:00:00",
+          "member": "string",
+          "name": "Label",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "1024",
+          "member": "int64",
+          "name": "Value",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "出站带宽",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "VpcFwBarStatus": {
       "document": "VPC防火墙状态栏信息数据",
