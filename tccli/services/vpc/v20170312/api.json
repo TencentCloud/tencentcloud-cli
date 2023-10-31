@@ -5385,7 +5385,7 @@
           "example": "10.0.0.0/16",
           "member": "string",
           "name": "Cidr",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5395,7 +5395,7 @@
           "example": "True",
           "member": "bool",
           "name": "PublishedToVbc",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -25708,6 +25708,7 @@
           "example": "-",
           "member": "string",
           "name": "DestinationCidrBlock",
+          "output_required": false,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25718,16 +25719,18 @@
           "example": "-",
           "member": "string",
           "name": "GatewayType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。\n特殊说明：GatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。",
+          "document": "下一跳地址，这里只需要指定不同下一跳类型的网关ID，系统会自动匹配到下一跳地址。\n特殊说明：\nGatewayType为NORMAL_CVM时，GatewayId填写实例的内网IP。\nGatewayType为EIP时，GatewayId填写0。",
           "example": "-",
           "member": "string",
           "name": "GatewayId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -25738,6 +25741,7 @@
           "example": "-",
           "member": "uint64",
           "name": "RouteId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25748,6 +25752,7 @@
           "example": "-",
           "member": "string",
           "name": "RouteDescription",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25758,6 +25763,7 @@
           "example": "-",
           "member": "bool",
           "name": "Enabled",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -25768,6 +25774,7 @@
           "example": "-",
           "member": "string",
           "name": "RouteType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25778,19 +25785,21 @@
           "example": "-",
           "member": "string",
           "name": "RouteTableId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。",
+          "document": "目的IPv6网段，取值不能在私有网络网段内，例如：2402:4e00:1000:810b::/64。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "-",
           "member": "string",
           "name": "DestinationIpv6CidrBlock",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -25798,6 +25807,7 @@
           "example": "-",
           "member": "string",
           "name": "RouteItemId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25808,6 +25818,7 @@
           "example": "True",
           "member": "bool",
           "name": "PublishedToVbc",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -25818,6 +25829,7 @@
           "example": "2021-03-02 14:41:15",
           "member": "datetime",
           "name": "CreatedTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

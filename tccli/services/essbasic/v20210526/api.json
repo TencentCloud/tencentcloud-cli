@@ -218,7 +218,7 @@
       "status": "online"
     },
     "ChannelDescribeEmployees": {
-      "document": "查询企业员工列表",
+      "document": "用于分页查询企业员工信息列表，支持设置过滤条件以筛选员工查询结果。",
       "input": "ChannelDescribeEmployeesRequest",
       "name": "查询企业员工",
       "output": "ChannelDescribeEmployeesResponse",
@@ -323,7 +323,7 @@
       "status": "online"
     },
     "CreateSignUrls": {
-      "document": "创建跳转小程序查看或签署的链接\n\n**腾讯电子签小程序的的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |\n\n**主要使用场景可以更加EndPoint分类如下**\n\n|EndPoint| 场景| 说明和示例|\n|  ----  | ----  | --- |\n|  WEIXINAPP  | 短链跳转腾讯电子签签署场景  |  点击链接打开电子签小程序（与腾讯电子签官方短信提醒用户签署形式一样）<br> 示例: https://essurl.cn/x9nvWU8fTg|\n|  LONGURL2WEIXINAPP  | 长链跳转腾讯电子签签署场景  |  点击链接打开电子签小程序, 是WEIXINAPP生成短链代表的那个长链|\n|  CHANNEL  | 带有H5引导页的跳转腾讯电子签小程序签署场景 |  点击链接打开一个H5引导页面, 页面中有个\"前往小程序\"的按钮, 点击后会跳转到腾讯电子签小程序签署场景;  签署完成会回到H5引导页面, 然后跳转到指定创建链接指定的JumpUrl<br>示例: https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?use=channel-guide&type=warning&token=uIFKIU8fTd |\n|APP| 贵方APP跳转腾讯电子签小程序签署场景|  贵方App直接跳转到小程序后, 在腾讯电子签小程序签署完成后返回贵方App的场景<br>跳转到腾讯电子签小程序的实现可以参考微信的官方文档:<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\" target=\"_blank\">开放能力/打开 App</a> <br> 示例: pages/guide?from=default&where=mini& to=CONTRACT_DETAIL& id=yDwiBUUc*duRvquCSX8wd& shortKey=yDwivUA**W1yRsTre3 |\n|APP| 贵方小程序跳转腾讯电子签小程序签署场景|  贵方App直接跳转到小程序后, 在腾讯电子签小程序签署完成后返回贵方小程序的场景<br>跳转到腾讯电子签小程序的实现可以参考微信官方文档<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\" target=\"_blank\">全屏方式</a>和<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html \" target=\"_blank\">半屏方式</a><br>此时返回的SignUrl就是官方文档中的path<br> 示例:pages/guide?from=default&where=mini& to=CONTRACT_DETAIL& id=yDwiBUUc*duRvquCSX8wd& shortKey=yDwivUA**W1yRsTre3  |",
+      "document": "创建跳转小程序查看或签署的链接\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |\n\n**主要使用场景可以更加EndPoint分类如下**\n\n|EndPoint| 场景| 说明和示例|\n|  ----  | ----  | --- |\n|  WEIXINAPP  | 短链跳转腾讯电子签小程序签署场景  |  点击链接打开电子签小程序（与腾讯电子签官方短信提醒用户签署形式一样）<br> 示例: https://essurl.cn/x9nvWU8fTg|\n|  LONGURL2WEIXINAPP  | 长链跳转腾讯电子签小程序签署场景  |  点击链接打开电子签小程序, 是WEIXINAPP生成短链代表的那个长链|\n|  CHANNEL  | 带有H5引导页的跳转腾讯电子签小程序签署场景 |  点击链接打开一个H5引导页面, 页面中有个\"前往小程序\"的按钮, 点击后会跳转到腾讯电子签小程序签署场景;  签署完成会回到H5引导页面, 然后跳转到指定创建链接指定的JumpUrl<br>示例: https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?use=channel-guide&type=warning&token=uIFKIU8fTd |\n|APP| 贵方App跳转腾讯电子签小程序签署场景|  贵方App直接跳转到小程序后, 在腾讯电子签小程序签署完成后返回贵方App的场景<br>跳转到腾讯电子签小程序的实现可以参考微信的官方文档:<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\" target=\"_blank\">开放能力/打开 App</a> <br> 示例: pages/guide?from=default&where=mini& to=CONTRACT_DETAIL& id=yDwiBUUc*duRvquCSX8wd& shortKey=yDwivUA**W1yRsTre3 |\n|APP| 贵方小程序跳转腾讯电子签小程序签署场景|  贵方App直接跳转到小程序后, 在腾讯电子签小程序签署完成后返回贵方小程序的场景<br>跳转到腾讯电子签小程序的实现可以参考微信官方文档<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\" target=\"_blank\">全屏方式</a>和<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html \" target=\"_blank\">半屏方式</a><br>此时返回的SignUrl就是官方文档中的path<br> 示例:pages/guide?from=default&where=mini& to=CONTRACT_DETAIL& id=yDwiBUUc*duRvquCSX8wd& shortKey=yDwivUA**W1yRsTre3  |",
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转至腾讯电子签小程序的签署链接",
       "output": "CreateSignUrlsResponse",
@@ -665,7 +665,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "自动签开通个人用户的三要素",
+          "document": "自动签开通个人用户信息, 包括名字,身份证等",
           "example": "无",
           "member": "UserThreeFactor",
           "name": "UserInfo",
@@ -674,7 +674,7 @@
         },
         {
           "disabled": false,
-          "document": "是否回调证书信息",
+          "document": "是否回调证书信息:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**:需要</li></ul>",
           "example": "无",
           "member": "bool",
           "name": "CertInfoCallback",
@@ -683,7 +683,7 @@
         },
         {
           "disabled": false,
-          "document": "是否支持用户自定义签名印章",
+          "document": "是否支持用户自定义签名印章:\n<ul><li>**false**: 不能自己定义(默认)</li>\n<li>**true**: 可以自己定义</li></ul>",
           "example": "无",
           "member": "bool",
           "name": "UserDefineSeal",
@@ -692,7 +692,7 @@
         },
         {
           "disabled": false,
-          "document": "是否需要回调的时候返回印章(签名) 图片的 base64",
+          "document": "回调中是否需要自动签将要使用的印章（签名）图片的 base64:\n<ul><li>**false**: 不需要(默认)</li>\n<li>**true**: 需要</li></ul>",
           "example": "无",
           "member": "bool",
           "name": "SealImgCallback",
@@ -710,7 +710,7 @@
         },
         {
           "disabled": false,
-          "document": "开通时候的验证方式，取值：WEIXINAPP（微信人脸识别），INSIGHT（慧眼人脸认别），TELECOM（运营商三要素验证）。如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。如果是 H5 开通链接，支持传 INSIGHT / TELECOM。默认值 WEIXINAPP / INSIGHT。",
+          "document": "开通时候的身份验证方式, 取值为：\n<ul><li>**WEIXINAPP** : 微信人脸识别</li>\n<li>**INSIGHT** : 慧眼人脸认别</li>\n<li>**TELECOM** : 运营商三要素验证</li></ul>\n注：\n<ul><li>如果是小程序开通链接，支持传 WEIXINAPP / TELECOM。为空默认 WEIXINAPP</li>\n<li>如果是 H5 开通链接，支持传 INSIGHT / TELECOM。为空默认 INSIGHT </li></ul>",
           "example": "无",
           "member": "string",
           "name": "VerifyChannels",
@@ -719,7 +719,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。一旦绑定后，将扣减购买的个人自动签账号许可一次（1年有效期），不可解绑释放。不传默认为绑定自动签账号许可。 0-绑定个人自动签账号许可，开通后将扣减购买的个人自动签账号许可一次",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n</ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -3503,7 +3503,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3512,7 +3512,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大20",
+          "document": "指定分页每页返回的数据条数，单页最大支持 20。",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -3521,7 +3521,7 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤实名用户，Key为Status，Values为[\"IsVerified\"]\n根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为[\"OpenId\",\"OpenId\",...]\n查询离职员工时，Key为Status，Values为[\"QuiteJob\"]",
+          "document": "查询的关键字段，支持Key-Values查询。可选键值如下：\n<ul>\n  <li>Key:**\"Status\"**，根据实名状态查询员工，Values可选：\n    <ul><li>**[\"IsVerified\"]**：查询已实名的员工</li><li>**[\"QuiteJob\"]**：查询离职员工</li></ul></li>\n  <li>Key:**\"StaffOpenId\"**，根据第三方系统用户OpenId查询员工，Values为第三方系统用户OpenId列表：**[\"OpenId1\",\"OpenId2\",...]**</li>\n</ul>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -3530,7 +3530,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0,最大为20000",
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页。页码从 0 开始，即首页为 0，最大20000。",
           "example": "无",
           "member": "int64",
           "name": "Offset",
@@ -3554,7 +3554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "员工数据列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "员工信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Staff",
           "name": "Employees",
@@ -3564,7 +3564,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大20000\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Offset",
@@ -3574,7 +3574,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大20",
+          "document": "指定分页每页返回的数据条数，单页最大支持 20。",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -3584,7 +3584,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的员工数量",
+          "document": "符合条件的员工数量。",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
@@ -5044,7 +5044,7 @@
         },
         {
           "disabled": false,
-          "document": "该参数和Module参数配合使用，用于指定模块下的资源Id，指定后链接登录将展示该资源的详情。\n\n根据Module参数的不同所代表的含义不同(ModuleId需要和Module对应，ModuleId可以通过API或者控制台获取到)。当前支持：\n<table> <thead> <tr> <th>Module传值</th> <th>ModuleId传值</th> <th>进入的目标页面</th> </tr> </thead> <tbody> <tr> <td>SEAL</td> <td>印章ID</td> <td>查看指定印章的详情页面</td> </tr> <tr> <td>TEMPLATE</td> <td>合同模板ID</td> <td>指定模版的详情页面</td> </tr> <tr> <td>DOCUMENT</td> <td>合同ID</td> <td>指定合同的详情页面</td> </tr> </tbody> </table>\n注意：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。\n",
+          "document": "该参数和Module参数配合使用，用于指定模块下的资源Id，指定后链接登录将展示该资源的详情。\n\n根据Module参数的不同所代表的含义不同(ModuleId需要和Module对应，ModuleId可以通过API或者控制台获取到)。当前支持：\n<table> <thead> <tr> <th>Module传值</th> <th>ModuleId传值</th> <th>进入的目标页面</th> </tr> </thead> <tbody> <tr> <td>SEAL</td> <td>印章ID</td> <td>查看指定印章的详情页面</td> </tr> <tr> <td>TEMPLATE</td> <td>合同模板ID</td> <td>指定模板的详情页面</td> </tr> <tr> <td>DOCUMENT</td> <td>合同ID</td> <td>指定合同的详情页面</td> </tr> </tbody> </table>\n注意：该参数**仅在企业和员工激活完成，登录控制台场景才生效**。\n",
           "example": "yDRSRUUgygj6qnwfUuO4zjEwc193c2hH",
           "member": "string",
           "name": "ModuleId",
@@ -5448,7 +5448,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5475,7 +5475,7 @@
         },
         {
           "disabled": false,
-          "document": "签署链接类型,可以设置的参数如下\n<ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>\n<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>\n<li> **APP** :第三方APP或小程序跳转电子签小程序的path, APP或者小程序跳转适合此类型</li>\n<li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>\n\n详细使用场景可以参数接口说明中的 **主要使用场景可以更加EndPoint分类如下**",
+          "document": "签署链接类型,可以设置的参数如下\n<ul><li> **WEIXINAPP** :(默认)跳转电子签小程序的http_url, 短信通知或者H5跳转适合此类型 ，此时返回短链</li>\n<li> **CHANNEL** :带有H5引导页的跳转电子签小程序的链接</li>\n<li> **APP** :第三方App或小程序跳转电子签小程序的path, App或者小程序跳转适合此类型</li>\n<li> **LONGURL2WEIXINAPP** :跳转电子签小程序的链接, H5跳转适合此类型，此时返回长链</li></ul>\n\n详细使用场景可以参数接口说明中的 **主要使用场景可以更加EndPoint分类如下**",
           "example": "”WEIXINAPP“",
           "member": "string",
           "name": "Endpoint",
@@ -6758,7 +6758,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署合同时的认证方式\n1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)",
+          "document": "签署人签署合同时的认证方式\n<ul><li> **1** :人脸认证</li>\n<li> **2** :签署密码</li>\n<li> **3** :运营商三要素</li></ul>\n\n默认为1(人脸认证 ),2(签署密码)\n\n注: `用模版创建合同场景, 签署人的认证方式需要在配置模板的时候指定, 在此创建合同指定无效`",
           "example": "[1,2,3]",
           "member": "int64",
           "name": "ApproverSignTypes",

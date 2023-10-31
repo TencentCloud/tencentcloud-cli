@@ -28,7 +28,11 @@ Output:
                 "DeviceClass": null,
                 "DiskUsage": "DATA_DISK",
                 "MinDiskSize": 10,
-                "DiskChargeType": "PREPAID"
+                "DiskChargeType": "PREPAID",
+                "Price": {
+                    "UnitPriceDiscount": 0.21,
+                    "UnitPrice": 0.21
+                }
             }
         ],
         "RequestId": "50346458-c053-47f1-b60f-5507e7cc5b26"

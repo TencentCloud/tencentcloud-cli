@@ -175,6 +175,13 @@
       "output": "DescribeBillingResourceGroupsResponse",
       "status": "online"
     },
+    "DescribeBillingResourceInstanceRunningJobs": {
+      "document": "查询资源组节点运行中的任务",
+      "input": "DescribeBillingResourceInstanceRunningJobsRequest",
+      "name": "查询资源组节点运行中的任务",
+      "output": "DescribeBillingResourceInstanceRunningJobsResponse",
+      "status": "online"
+    },
     "DescribeBillingSpecs": {
       "document": "本接口(DescribeBillingSpecs)用于查询计费项列表",
       "input": "DescribeBillingSpecsRequest",
@@ -4731,6 +4738,52 @@
           "member": "ResourceGroup",
           "name": "ResourceGroupSet",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceInstanceRunningJobsRequest": {
+      "document": "DescribeBillingResourceInstanceRunningJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id",
+          "example": "trsg-12345678",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源组节点id",
+          "example": "tins-12345678",
+          "member": "string",
+          "name": "ResourceInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceInstanceRunningJobsResponse": {
+      "document": "DescribeBillingResourceInstanceRunningJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点运行中的任务信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "ResourceInstanceRunningJobInfo",
+          "name": "ResourceInstanceRunningJobInfos",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10318,6 +10371,52 @@
         }
       ],
       "usage": "both"
+    },
+    "ResourceInstanceRunningJobInfo": {
+      "document": "资源组节点运行任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx--6fb768c5d5-4fh84",
+          "member": "string",
+          "name": "PodName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Batch",
+          "member": "string",
+          "name": "TaskType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "batch-xxxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务自定义名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "批处理任务",
+          "member": "string",
+          "name": "TaskName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RestartModelAccelerateTaskRequest": {
       "document": "RestartModelAccelerateTask请求参数结构体",

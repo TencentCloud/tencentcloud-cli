@@ -2878,7 +2878,7 @@
         },
         {
           "disabled": false,
-          "document": "默认带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。",
+          "document": "默认带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。",
           "example": "50",
           "member": "int64",
           "name": "DefaultBandWidth",
@@ -2905,7 +2905,7 @@
         },
         {
           "disabled": false,
-          "document": "默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看DescribeConfig。",
+          "document": "默认系统盘大小，单位：GB，默认大小为50GB。范围不得超过系统盘上下限制，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。",
           "example": "50",
           "member": "int64",
           "name": "DefaultSystemDiskSize",
@@ -2914,7 +2914,7 @@
         },
         {
           "disabled": false,
-          "document": "默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看DescribeConfig。",
+          "document": "默认数据盘大小，单位：GB。范围不得超过数据盘范围大小，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。",
           "example": "100",
           "member": "int64",
           "name": "DefaultDataDiskSize",
@@ -2950,7 +2950,7 @@
         },
         {
           "disabled": false,
-          "document": "默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看DescribeConfig。",
+          "document": "默认入带宽，单位：Mbps。范围不得超过带宽上下限，详看[DescribeConfig](https://cloud.tencent.com/document/product/1108/42572)。",
           "example": "25",
           "member": "int64",
           "name": "DefaultBandWidthIn",

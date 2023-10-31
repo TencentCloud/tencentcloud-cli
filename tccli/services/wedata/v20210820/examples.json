@@ -790,6 +790,14 @@
         "title": "获取数据库信息"
       }
     ],
+    "DescribeDatabaseMetas": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseMetas\n<公共请求参数>\n\n{\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": null,\n        \"DatabaseMeta\": [\n            {\n                \"DatabaseId\": null,\n                \"DatabaseName\": null,\n                \"ProjectId\": \"944373572292796416\",\n                \"ProjectName\": null,\n                \"ProjectDisplayName\": null,\n                \"MetastoreType\": null,\n                \"DatasourceId\": 4007,\n                \"DatasourceName\": \"mysql0301public\",\n                \"DisplayName\": \"mysql0301public\",\n                \"Category\": null,\n                \"Catalog\": null,\n                \"Description\": null,\n                \"Instance\": null,\n                \"OwnerAccountName\": null,\n                \"Region\": null,\n                \"Status\": null\n            }\n        ]\n    }\n}",
+        "title": "请求demo"
+      }
+    ],
     "DescribeDatasource": [
       {
         "document": "",

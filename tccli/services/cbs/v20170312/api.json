@@ -1692,7 +1692,7 @@
         {
           "disabled": false,
           "document": "按照实例机型系列过滤。实例机型系列形如：S1、I1、M1等。详见[实例类型](https://cloud.tencent.com/document/product/213/11518)",
-          "example": "[\"S3\\n\"]",
+          "example": "[\"S3\"]",
           "member": "string",
           "name": "InstanceFamilies",
           "required": false,
@@ -1710,7 +1710,7 @@
         {
           "disabled": false,
           "document": "查询一个或多个[可用区](/document/product/213/15753#ZoneInfo)下的配置。",
-          "example": "[\"ap-guangzhou-2\\n\"]",
+          "example": "[\"ap-guangzhou-7\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -1742,6 +1742,15 @@
           "name": "CPU",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "专用集群ID。",
+          "example": "cluster-ay3xxxxf",
+          "member": "string",
+          "name": "DedicatedClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -1755,6 +1764,7 @@
           "example": "无",
           "member": "DiskConfig",
           "name": "DiskConfigSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

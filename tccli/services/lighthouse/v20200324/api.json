@@ -2685,6 +2685,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2694,6 +2695,7 @@
           "example": "无",
           "member": "DiscountDetail",
           "name": "DiscountDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2766,6 +2768,7 @@
           "example": "无",
           "member": "Bundle",
           "name": "BundleSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2775,6 +2778,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
