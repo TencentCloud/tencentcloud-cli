@@ -35,6 +35,13 @@
       "output": "CreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "CreateBatchQuickSignUrl": {
+      "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署 <br/>\n`注意：`<br/>\n`1. 该接口目前仅支持签署人类型是个人签署方的批量签署场景(ApproverType=1)。` <br/>\n`2. 该接口可生成批量签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 。` <br/>\n`3. 请确保C端签署人在批量签署合同中为待签署状态，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。` <br/>\n`4. 该签署链接有效期为30分钟，过期后将失效，如需签署可重新创建批量签署链接 。` <br/>\n`5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。`<br/>\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
+      "input": "CreateBatchQuickSignUrlRequest",
+      "name": "创建H5批量签署链接",
+      "output": "CreateBatchQuickSignUrlResponse",
+      "status": "online"
+    },
     "CreateBatchSignUrl": {
       "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
       "input": "CreateBatchSignUrlRequest",
@@ -648,7 +655,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义签署人角色名：收款人、开具人、见证人",
+          "document": "可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。\n\n注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`",
           "example": "收款人",
           "member": "string",
           "name": "ApproverRoleName",
@@ -711,7 +718,7 @@
         },
         {
           "disabled": false,
-          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段不可传多个校验方式</li></ul>",
+          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -1702,6 +1709,97 @@
           "name": "UrlExpireOn",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchQuickSignUrlRequest": {
+      "document": "CreateBatchQuickSignUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "example": "无",
+          "member": "FlowCreateApprover",
+          "name": "FlowApproverInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId(子企业的组织ID)为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li></ul>",
+          "example": "[0, 1]",
+          "member": "int64",
+          "name": "SignatureTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定批量签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>\n注：\n<ul><li>默认情况下，认证校验方式为人脸认证</li>\n<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>",
+          "example": "[1, 3]",
+          "member": "int64",
+          "name": "ApproverSignTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchQuickSignUrlResponse": {
+      "document": "CreateBatchQuickSignUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署人签署链接信息",
+          "example": "无",
+          "member": "FlowApproverUrlInfo",
+          "name": "FlowApproverUrlInfo",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -7911,7 +8009,7 @@
         },
         {
           "disabled": false,
-          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段不可传多个校验方式</li></ul>\n\n`此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主`\n\n.",
+          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>\n\n`此参数仅针对文件发起设置生效,模板发起合同签署流程, 请以模板配置为主`\n\n.",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",

@@ -476,6 +476,13 @@
       "output": "DescribeRocketMQClustersResponse",
       "status": "online"
     },
+    "DescribeRocketMQConsumeStats": {
+      "document": "获取消费详情列表",
+      "input": "DescribeRocketMQConsumeStatsRequest",
+      "name": "获取消费详情列表",
+      "output": "DescribeRocketMQConsumeStatsResponse",
+      "status": "online"
+    },
     "DescribeRocketMQConsumerConnections": {
       "document": "获取指定消费组下当前客户端的连接情况",
       "input": "DescribeRocketMQConsumerConnectionsRequest",
@@ -831,6 +838,13 @@
       "input": "UnbindCmqDeadLetterRequest",
       "name": "解绑cmq死信队列",
       "output": "UnbindCmqDeadLetterResponse",
+      "status": "online"
+    },
+    "VerifyRocketMQConsume": {
+      "document": "Rocketmq消费验证",
+      "input": "VerifyRocketMQConsumeRequest",
+      "name": "Rocketmq消费验证",
+      "output": "VerifyRocketMQConsumeResponse",
       "status": "online"
     }
   },
@@ -2267,6 +2281,92 @@
           "member": "int64",
           "name": "Partition",
           "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerStats": {
+      "document": "消费详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属Broker\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BrokerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "QueueId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费者ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerClientId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费位点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ConsumerOffset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务端位点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BrokerOffset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息堆积条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DiffTotal",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近消费时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "LastTimestamp",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }
@@ -7268,6 +7368,61 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQConsumeStatsRequest": {
+      "document": "DescribeRocketMQConsumeStats请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQConsumeStatsResponse": {
+      "document": "DescribeRocketMQConsumeStats返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费详情列表",
+          "example": "无",
+          "member": "ConsumerStats",
+          "name": "ConsumerStatsList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -16183,6 +16338,78 @@
     },
     "UnbindCmqDeadLetterResponse": {
       "document": "UnbindCmqDeadLetter返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyRocketMQConsumeRequest": {
+      "document": "VerifyRocketMQConsume请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户端ID",
+          "example": "127.0.0.1@25760#13749780392400",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "topic名称",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyRocketMQConsumeResponse": {
+      "document": "VerifyRocketMQConsume返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

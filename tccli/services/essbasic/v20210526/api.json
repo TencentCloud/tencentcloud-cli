@@ -35,6 +35,13 @@
       "output": "ChannelCreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
+    "ChannelCreateBatchQuickSignUrl": {
+      "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署 <br/>\n`注意：`<br/>\n`1. 该接口目前仅支持签署人类型是个人签署方的批量签署场景(ApproverType=PERSON)。` <br/>\n`2. 该接口可生成批量签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 。` <br/>\n`3. 请确保C端签署人在批量签署合同中为待签署状态，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。` <br/>\n`4. 该签署链接有效期为30分钟，过期后将失效，如需签署可重新创建批量签署链接 。` <br/>\n`5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。`<br/>\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
+      "input": "ChannelCreateBatchQuickSignUrlRequest",
+      "name": "创建H5批量签署链接",
+      "output": "ChannelCreateBatchQuickSignUrlResponse",
+      "status": "online"
+    },
     "ChannelCreateBatchSignUrl": {
       "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
       "input": "ChannelCreateBatchSignUrlRequest",
@@ -50,7 +57,7 @@
       "status": "online"
     },
     "ChannelCreateConvertTaskApi": {
-      "document": "上传了word、excel、图片文件后，通过该接口发起文件转换任务，将word、excel、图片文件转换为pdf文件。",
+      "document": "此接口（ChannelCreateConvertTaskApi）用来将word、excel、html、图片、txt类型文件转换为PDF文件。<br />\n前提条件：源文件已经通过 <a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">文件上传接口</a>完成上传，并得到了源文件的资源Id。<br />\n适用场景1：已经上传了一个word文件，希望将该word文件转换成pdf文件后发起合同\n适用场景2：已经上传了一个jpg图片文件，希望将该图片文件转换成pdf文件后发起合同<br />\n转换文件是一个耗时操作，若想查看转换任务是否完成，可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>接口获取任务状态。<br />\n注: \n1. `支持的文件类型有doc、docx、xls、xlsx、html、jpg、jpeg、png、bmp、txt`\n2. `可通过发起合同时设置预览来检查转换文件是否达到预期效果`",
       "input": "ChannelCreateConvertTaskApiRequest",
       "name": "创建文件转换任务",
       "output": "ChannelCreateConvertTaskApiResponse",
@@ -260,7 +267,7 @@
       "status": "online"
     },
     "ChannelGetTaskResultApi": {
-      "document": "查询转换任务的状态。转换任务Id通过发起转换任务接口（ChannelCreateConvertTaskApi）获取。\n注意：大文件转换所需的时间可能会比较长。",
+      "document": "此接口（ChannelGetTaskResultApi）用来查询转换任务的状态。如需发起转换任务，请使用<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行资源文件的转换操作<br />\n前提条件：已调用 <a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>进行文件转换，并得到了返回的转换任务Id。<br />\n\n适用场景：已创建一个文件转换任务，想查询该文件转换任务的状态，或获取转换后的文件资源Id。<br />\n注：\n1. `大文件转换所需的时间可能会比较长`",
       "input": "ChannelGetTaskResultApiRequest",
       "name": "查询转换任务状态",
       "output": "ChannelGetTaskResultApiResponse",
@@ -358,7 +365,7 @@
       "status": "online"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n> **适用场景** \n>\n>  该接口常用来配合“使用模板创建签署流程”接口作为前置的接口使用。 \n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos",
+      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n> **适用场景** \n>\n>  该接口常用来配合“使用模板创建签署流程”接口作为前置的接口使用。 \n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n注意：\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse",
@@ -393,9 +400,9 @@
       "status": "online"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用，将会废弃。",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用，将会**废弃**。",
       "input": "PrepareFlowsRequest",
-      "name": "准备待发起文件(废弃)",
+      "name": "准备待发起文件",
       "output": "PrepareFlowsResponse",
       "status": "online"
     },
@@ -542,6 +549,15 @@
     "ApproverOption": {
       "document": "签署人个性化能力信息",
       "members": [
+        {
+          "disabled": false,
+          "document": "是否可以拒签 默认false-可以拒签 true-不可以拒签",
+          "example": "true",
+          "member": "bool",
+          "name": "NoRefuse",
+          "required": false,
+          "type": "bool"
+        },
         {
           "disabled": false,
           "document": "是否隐藏一键签署 默认false-不隐藏true-隐藏",
@@ -1199,6 +1215,88 @@
       ],
       "type": "object"
     },
+    "ChannelCreateBatchQuickSignUrlRequest": {
+      "document": "ChannelCreateBatchQuickSignUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
+          "example": "无",
+          "member": "FlowApproverInfo",
+          "name": "FlowApproverInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "签署完之后的H5页面的跳转链接，此链接及支持http://和https://，最大长度1000个字符。(建议https协议)",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li></ul>",
+          "example": "[0, 1]",
+          "member": "int64",
+          "name": "SignatureTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定批量签署合同的认证校验方式，可传递以下值：\n<ul><li>**1**：人脸认证(默认)，需进行人脸识别成功后才能签署合同</li>\n<li>**3**：运营商三要素，需到运营商处比对手机号实名信息(名字、手机号、证件号)校验一致才能成功进行合同签署。</li></ul>\n注：\n<ul><li>默认情况下，认证校验方式为人脸认证</li>\n<li>您可以传递多种值，表示可用多种认证校验方式。</li></ul>",
+          "example": "[1, 3]",
+          "member": "int64",
+          "name": "ApproverSignTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelCreateBatchQuickSignUrlResponse": {
+      "document": "ChannelCreateBatchQuickSignUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "签署人签署链接信息",
+          "example": "无",
+          "member": "FlowApproverUrlInfo",
+          "name": "FlowApproverUrlInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelCreateBatchSignUrlRequest": {
       "document": "ChannelCreateBatchSignUrl请求参数结构体",
       "members": [
@@ -1387,7 +1485,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1396,8 +1494,8 @@
         },
         {
           "disabled": false,
-          "document": "资源类型 支持doc,docx,html,xls,xlsx,jpg,jpeg,png,bmp文件类型",
-          "example": "无",
+          "document": "需要进行转换的资源文件类型\n支持的文件类型如下：\n<ul><li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li>\n<li>bmp</li>\n<li>txt</li></ul>",
+          "example": "docx",
           "member": "string",
           "name": "ResourceType",
           "required": true,
@@ -1405,8 +1503,8 @@
         },
         {
           "disabled": false,
-          "document": "资源名称，长度限制为256字符",
-          "example": "无",
+          "document": "需要进行转换操作的文件资源名称，带资源后缀名。\n\n注:  `资源名称长度限制为256个字符`",
+          "example": "员工劳动合同.docx",
           "member": "string",
           "name": "ResourceName",
           "required": true,
@@ -1414,8 +1512,8 @@
         },
         {
           "disabled": false,
-          "document": "文件Id，通过UploadFiles获取",
-          "example": "无",
+          "document": "需要进行转换操作的文件资源Id，通过<a href=\"https://qian.tencent.com/developers/partnerApis/files/UploadFiles\" target=\"_blank\">UploadFiles</a>接口获取文件资源Id。\n\n注:  `目前，此接口仅支持单个文件进行转换。`",
+          "example": "yDRSRUUgygj6rq2wUuO4zjEyBZ2NHiyT",
           "member": "string",
           "name": "ResourceId",
           "required": true,
@@ -1447,8 +1545,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务id",
-          "example": "无",
+          "document": "接口返回的文件转换任务Id，可以调用接口<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelGetTaskResultApi\" target=\"_blank\">查询转换任务状态</a>获取转换任务的状态和转换后的文件资源Id。",
+          "example": "yDRS4UUgygqdcj8xUuO4zjEwOT8IN9Ec",
           "member": "string",
           "name": "TaskId",
           "output_required": true,
@@ -3995,7 +4093,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 均必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4004,7 +4102,7 @@
         },
         {
           "disabled": false,
-          "document": "任务Id，通过ChannelCreateConvertTaskApi接口获得",
+          "document": "转换任务Id，通过接口<a href=\"https://qian.tencent.com/developers/partnerApis/files/ChannelCreateConvertTaskApi\" target=\"_blank\">创建文件转换任务接口</a>得到的转换任务id",
           "example": "无",
           "member": "string",
           "name": "TaskId",
@@ -4047,7 +4145,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，需要关注的状态\n0  :NeedTranform   - 任务已提交\n4  :Processing     - 文档转换中\n8  :TaskEnd        - 任务处理完成\n-2 :DownloadFailed - 下载失败\n-6 :ProcessFailed  - 转换失败\n-13:ProcessTimeout - 转换文件超时",
+          "document": "任务状态，需要关注的状态\n<ul><li>**0**  :NeedTranform   - 任务已提交</li>\n<li>**4**  :Processing     - 文档转换中</li>\n<li>**8**  :TaskEnd        - 任务处理完成</li>\n<li>**-2** :DownloadFailed - 下载失败</li>\n<li>**-6** :ProcessFailed  - 转换失败</li>\n<li>**-13**:ProcessTimeout - 转换文件超时</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "TaskStatus",
@@ -4057,7 +4155,7 @@
         },
         {
           "disabled": false,
-          "document": "状态描述，需要关注的状态\nNeedTranform   - 任务已提交\nProcessing     - 文档转换中\nTaskEnd        - 任务处理完成\nDownloadFailed - 下载失败\nProcessFailed  - 转换失败\nProcessTimeout - 转换文件超时",
+          "document": "状态描述，需要关注的状态\n<ul><li> **NeedTranform** : 任务已提交</li>\n<li> **Processing** : 文档转换中</li>\n<li> **TaskEnd** : 任务处理完成</li>\n<li> **DownloadFailed** : 下载失败</li>\n<li> **ProcessFailed** : 转换失败</li>\n<li> **ProcessTimeout** : 转换文件超时</li></ul>",
           "example": "无",
           "member": "string",
           "name": "TaskMessage",
@@ -4067,7 +4165,7 @@
         },
         {
           "disabled": false,
-          "document": "资源Id，也是FileId，用于文件发起使用",
+          "document": "资源Id，也是FileId，用于文件发起时使用",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -5918,7 +6016,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 \n此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -5927,7 +6025,7 @@
         },
         {
           "disabled": false,
-          "document": "模板唯一标识，查询单个模板时使用",
+          "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -5936,7 +6034,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容：\n0-模板列表及详情（默认），\n1-仅模板列表",
+          "document": "查询内容控制\n\n<ul><li>**0**：模板列表及详情（默认）</li>\n<li>**1**：仅模板列表</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "ContentType",
@@ -5945,7 +6043,16 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，如果不传默认为20，单页最大100。",
+          "document": "合同模板ID数组，每一个合同模板ID为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。\n\n```注意: \n1. 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。\n2. 请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。\n3. 最多支持200个模板。\n4. 若传递此参数，分页参数(Limit,Offset)无效```\n",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注：`1.默认值为20，单页做大值为200。`",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -5954,7 +6061,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默从第一页返回。页码从0开始，即首页为0。",
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。\n\n注：`1.offset从0开始，即第一页为0。`\n`2.默认从第一页返回。`",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -5963,16 +6070,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回所有组件信息。\n默认false，只返回发起方控件；\ntrue，返回所有签署方控件",
-          "example": "无",
-          "member": "bool",
-          "name": "QueryAllComponents",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "模糊搜索模板名称，最大长度200",
+          "document": "模糊搜索的模板名称，注意是模板名的连续部分，最大长度200",
           "example": "无",
           "member": "string",
           "name": "TemplateName",
@@ -5981,7 +6079,25 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板预览链接，\n默认false-不获取\ntrue-获取",
+          "document": "对应第三方应用平台企业的模板ID，通过此值可以搜索由第三方应用平台模板ID下发或领取得到的子客模板列表。",
+          "example": "无",
+          "member": "string",
+          "name": "ChannelTemplateId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否返回所有控件信息。\n\n<ul><li>**false**：只返回发起方控件（默认）</li>\n<li>**true**：返回所有签署方控件</li></ul>",
+          "example": "无",
+          "member": "bool",
+          "name": "QueryAllComponents",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n（此功能开放需要联系客户经理）",
           "example": "无",
           "member": "bool",
           "name": "WithPreviewUrl",
@@ -5990,21 +6106,12 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板的PDF文件链接。\n默认false-不获取\ntrue-获取\n请联系客户经理开白后使用。",
+          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟。\n（此功能开放需要联系客户经理）",
           "example": "无",
           "member": "bool",
           "name": "WithPdfUrl",
           "required": false,
           "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "对应第三方应用平台企业的模板ID",
-          "example": "无",
-          "member": "string",
-          "name": "ChannelTemplateId",
-          "required": false,
-          "type": "string"
         },
         {
           "disabled": true,
@@ -6023,7 +6130,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板列表",
+          "document": "模板详情列表数据",
           "example": "无",
           "member": "TemplateInfo",
           "name": "Templates",
@@ -6033,7 +6140,7 @@
         },
         {
           "disabled": false,
-          "document": "查询到的总数",
+          "document": "查询到的模板总数",
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
@@ -6043,7 +6150,7 @@
         },
         {
           "disabled": false,
-          "document": "每页多少条数据",
+          "document": "每页返回的数据条数",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -6749,7 +6856,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1\n查看合同的认证方式 Flow层级的优先于approver层级的\n（当手写签名方式为OCR_ESIGN时，合同认证方式2无效，因为这种签名方式依赖实名认证）",
+          "document": "指定个人签署方查看合同的校验方式,可以传值如下:\n<ul><li>  **1**   : （默认）人脸识别,人脸识别后才能合同内容</li>\n<li>  **2**  : 手机号验证, 用户手机号和参与方手机号(ApproverMobile)相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）\n</li></ul>\n注: \n<ul><li>如果合同流程设置ApproverVerifyType查看合同的校验方式,    则忽略此签署人的查看合同的校验方式</li>\n<li>此字段可传多个校验方式</li></ul>",
           "example": "[1,2]",
           "member": "int64",
           "name": "ApproverVerifyTypes",
@@ -6794,7 +6901,7 @@
         },
         {
           "disabled": false,
-          "document": "自定义签署人角色名，如收款人、开具人、见证人等",
+          "document": "可以自定义签署人角色名：收款人、开具人、见证人等，长度不能超过20，只能由中文、字母、数字和下划线组成。\n\n注: `如果是用模板发起, 优先使用此处上传的, 如果不传则用模板的配置的`",
           "example": "无",
           "member": "string",
           "name": "ApproverRoleName",
@@ -7145,8 +7252,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同名字，最大长度200个字符",
-          "example": "签署流程名称",
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
+          "example": "张三的入职合同",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -7154,8 +7261,8 @@
         },
         {
           "disabled": false,
-          "document": "签署截止时间戳，超过有效签署时间则该签署流程失败，默认一年",
-          "example": "截止时间",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。\n示例值：1604912664",
+          "example": "1698827057",
           "member": "int64",
           "name": "Deadline",
           "required": true,
@@ -7163,8 +7270,8 @@
         },
         {
           "disabled": false,
-          "document": "模板ID",
-          "example": "模板Id数组",
+          "document": "用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。\n\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。",
+          "example": "yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc",
           "member": "string",
           "name": "TemplateId",
           "required": false,
@@ -7190,8 +7297,8 @@
         },
         {
           "disabled": false,
-          "document": "回调地址，最大长度1000个字符",
-          "example": "回调地址",
+          "document": "合同状态变动结的通知回调URL，该URL仅支持HTTP或HTTPS协议，建议采用HTTPS协议以保证数据传输的安全性，最大长度1000个字符。\n\n腾讯电子签服务器将通过POST方式，application/json格式通知执行结果，请确保外网可以正常访问该URL。\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/partner/callback_data_types\" target=\"_blank\">回调通知</a>模块",
+          "example": "https://capi.qq.com/callback",
           "member": "string",
           "name": "CallbackUrl",
           "required": false,
@@ -7199,8 +7306,8 @@
         },
         {
           "disabled": false,
-          "document": "合同类型，如：1. “劳务”；2. “销售”；3. “租赁”；4. “其他”，最大长度200个字符",
-          "example": "签署流程类型",
+          "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。",
+          "example": "入职合同",
           "member": "string",
           "name": "FlowType",
           "required": false,
@@ -7208,8 +7315,8 @@
         },
         {
           "disabled": false,
-          "document": "合同描述，最大长度1000个字符",
-          "example": "签署流程详情",
+          "document": "合同流程描述信息(可自定义此描述)，最大长度1000个字符。",
+          "example": "张三2023年的入职公司财务部的合同",
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -7217,8 +7324,8 @@
         },
         {
           "disabled": false,
-          "document": " 第三方应用平台的业务信息，最大长度1000个字符。",
-          "example": "\"xxx\"",
+          "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为1000长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的回调通知模块。",
+          "example": "QmFzZTY05YaF5a65",
           "member": "string",
           "name": "CustomerData",
           "required": false,
@@ -7226,7 +7333,7 @@
         },
         {
           "disabled": false,
-          "document": "合同显示的页卡模板，说明：只支持{合同名称}, {发起方企业}, {发起方姓名}, {签署方N企业}, {签署方N姓名}，且N不能超过签署人的数量，N从1开始",
+          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
           "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
           "member": "string",
           "name": "CustomShowMap",
@@ -7235,8 +7342,8 @@
         },
         {
           "disabled": false,
-          "document": "被抄送人的信息列表，抄送功能暂不开放",
-          "example": "xxx",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "example": " ",
           "member": "CcInfo",
           "name": "CcInfos",
           "required": false,
@@ -7244,7 +7351,7 @@
         },
         {
           "disabled": false,
-          "document": "发起方企业的签署人进行签署操作是否需要企业内部审批。\n若设置为true,审核结果需通过接口 ChannelCreateFlowSignReview 通知电子签，审核通过后，发起方企业签署人方可进行签署操作，否则会阻塞其签署操作。\n\n注：企业可以通过此功能与企业内部的审批流程进行关联，支持手动、静默签署合同。",
+          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
           "example": "true",
           "member": "bool",
           "name": "NeedSignReview",
@@ -7253,7 +7360,7 @@
         },
         {
           "disabled": false,
-          "document": "给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知",
+          "document": "若在创建签署流程时指定了关注人CcInfos，此参数可设定向关注人发送短信通知的类型：\n<ul><li> **0** :合同发起时通知通知对方来查看合同（默认）</li>\n<li> **1** : 签署完成后通知对方来查看合同</li></ul>",
           "example": "0",
           "member": "int64",
           "name": "CcNotifyType",
@@ -7262,7 +7369,7 @@
         },
         {
           "disabled": false,
-          "document": "个人自动签场景。发起自动签署时，需设置对应自动签署场景，目前仅支持场景：处方单-E_PRESCRIPTION_AUTO_SIGN",
+          "document": "个人自动签名的使用场景包括以下, 个人自动签署(即ApproverType设置成个人自动签署时)业务此值必传：\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN**：处方单（医疗自动签）  </li></ul>\n注: `个人自动签名场景是白名单功能，使用前请与对接的客户经理联系沟通。`",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "AutoSignScene",

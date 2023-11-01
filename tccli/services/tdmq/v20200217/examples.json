@@ -556,6 +556,14 @@
         "title": "获取用户创建的集群信息列表"
       }
     ],
+    "DescribeRocketMQConsumeStats": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRocketMQConsumeStats\n<公共请求参数>\n\n{\n    \"ClusterId\": \"rocketmq-7j8m97bqpx5d\",\n    \"NamespaceId\": \"sla_rop_namespace_504344\",\n    \"ConsumerGroup\": \"group-2023-09-21-824790\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d97e7c2f-da5f-4f73-b4da-440e0650ed0b\",\n        \"ConsumerStatsList\": [\n            {\n                \"TopicName\": \"%RETRY%group-2023-09-21-824790\",\n                \"BrokerName\": \"rocketmq-7j8m97bqpx5d-0\",\n                \"QueueId\": 0,\n                \"ConsumerClientId\": \"9.43.174.90@18834#7187709773375173\",\n                \"ConsumerOffset\": 0,\n                \"BrokerOffset\": 0,\n                \"DiffTotal\": 0,\n                \"LastTimestamp\": 0\n            }\n        ]\n    }\n}",
+        "title": "获取消费进度"
+      }
+    ],
     "DescribeRocketMQConsumerConnections": [
       {
         "document": "",
@@ -986,6 +994,14 @@
         "input": "https://tdmq.tencentcloudapi.com/?Action=UnbindCmqDeadLetter\n&SourceQueueName=test\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "解绑死信队列"
+      }
+    ],
+    "VerifyRocketMQConsume": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyRocketMQConsume\n<公共请求参数>\n\n{\n    \"NamespaceId\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"ClusterId\": \"xx\",\n    \"GroupId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"ClientId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "示例"
       }
     ]
   },
