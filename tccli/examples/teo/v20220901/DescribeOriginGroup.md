@@ -18,6 +18,7 @@ Output:
             {
                 "CreateTime": "2023-08-11T19:41:33Z",
                 "GroupId": "origin-057c4d82-383c-11ee-8888-525400682e90",
+                "HostHeader": "",
                 "Name": "test_ruichaolin",
                 "Records": [
                     {
