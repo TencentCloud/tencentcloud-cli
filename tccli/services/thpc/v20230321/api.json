@@ -2170,8 +2170,7 @@
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2180,8 +2179,7 @@
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2190,8 +2188,7 @@
           "member": "string",
           "name": "InstanceType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2200,8 +2197,7 @@
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2210,8 +2206,7 @@
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -2220,8 +2215,7 @@
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
@@ -2230,8 +2224,7 @@
           "member": "string",
           "name": "InstanceName",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2240,8 +2233,7 @@
           "member": "int64",
           "name": "ProjectId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         }
       ],
       "usage": "in"

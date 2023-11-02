@@ -5181,6 +5181,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5190,6 +5191,7 @@
           "example": "无",
           "member": "TaskLogInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5199,6 +5201,17 @@
           "example": "无",
           "member": "int64",
           "name": "NotViewNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告模板数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReportTemplateNumber",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7903,7 +7916,7 @@
           "example": "报告1",
           "member": "string",
           "name": "TaskLogName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7913,7 +7926,7 @@
           "example": "2222",
           "member": "string",
           "name": "TaskLogId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7923,7 +7936,7 @@
           "example": "1",
           "member": "int64",
           "name": "AssetsNumber",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7933,7 +7946,7 @@
           "example": "1",
           "member": "int64",
           "name": "RiskNumber",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7943,7 +7956,7 @@
           "example": "2021-09-27 15:42:22",
           "member": "string",
           "name": "Time",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7953,7 +7966,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7963,7 +7976,7 @@
           "example": "helloworld",
           "member": "string",
           "name": "TaskName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7973,7 +7986,7 @@
           "example": "2021-09-27 15:42:22",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7983,7 +7996,7 @@
           "example": "rmis-11111111",
           "member": "string",
           "name": "TaskCenterTaskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7993,7 +8006,7 @@
           "example": "xx",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8003,7 +8016,7 @@
           "example": "x",
           "member": "string",
           "name": "UIN",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8013,8 +8026,28 @@
           "example": "x",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告类型： 1安全体检 2日报 3周报 4月报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

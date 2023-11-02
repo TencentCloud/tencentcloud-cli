@@ -168,12 +168,30 @@
         },
         {
           "disabled": false,
-          "document": "任务类型 1:在线 2:离线  默认为1",
+          "document": "模型类型 1:在线 2:离线  默认为1",
           "example": "无",
           "member": "int64",
           "name": "ModelType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务类型 0:默认类型 1:轻量级复刻\n默认为0",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "校验音频ID",
+          "example": "无",
+          "member": "string",
+          "name": "VPRAudioId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

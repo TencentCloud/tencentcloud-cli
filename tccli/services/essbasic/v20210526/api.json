@@ -1,14 +1,14 @@
 {
   "actions": {
     "ChannelBatchCancelFlows": {
-      "document": "用于批量撤销合同流程<br/>\n适用场景：\n如果某些合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。<br/>\n通过签署流程编号批量撤销合同，单次最多支持撤销100份合同。只有合同的发起人或者发起方企业的超管/法人才能进行合同撤销。需要注意的是，若合同处于以下已终止状态，则不可撤销：<br/>\n- 已全部签署完成\n- 已拒签\n- 已过期\n- 已撤回\n- 拒绝填写\n- 已解除\n\n<br/>\n满足撤销条件的合同会发起异步撤销流程，而不满足撤销条件的合同将返回失败原因。合同撤销成功后，会通过合同状态为 CANCEL 的回调消息通知调用方。具体的回调消息内容可参考 <a href=\"https://qian.tencent.com/developers/partner/callback_types_contracts_sign\" target=\"_blank\">合同状态变更回调消息</a>。\n<br/><br/>\n注:\n`如果合同流程中的参与方均已签署完毕，则无法通过该接口撤销合同，`签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程</a>接口。",
+      "document": "通过合同编号批量撤销合同，单次最多支持撤销100份合同。\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
       "input": "ChannelBatchCancelFlowsRequest",
-      "name": "根据签署流程id批量撤销合同",
+      "name": "批量撤销合同流程",
       "output": "ChannelBatchCancelFlowsResponse",
       "status": "online"
     },
     "ChannelCancelFlow": {
-      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n<ul><li> `可撤回合同状态` ：未全部签署完成</li>\n<li> `不撤回合同状态` ：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。</li></ul>\n注:\n<ul><li>能撤回合同的只能是 `合同的发起人或者发起方企业的超管、法人`  </li>\n<li>签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>。</li></ul>",
+      "document": "撤销签署流程接口\n\n适用场景：如果某个合同流程当前至少还有一方没有签署，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 有对应合同撤销权限的人:  <font color='red'>**合同的发起人或者发起人所在企业的超管、法人**</font>\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
       "input": "ChannelCancelFlowRequest",
       "name": "撤销合同流程",
       "output": "ChannelCancelFlowResponse",
@@ -29,9 +29,9 @@
       "status": "online"
     },
     "ChannelCreateBatchCancelFlowUrl": {
-      "document": "指定需要批量撤销的签署流程Id，获取批量撤销链接 - 不建议使用此接口，可使用ChannelBatchCancelFlows\n客户指定需要撤销的签署流程Id，最多100个，超过100不处理；\n接口调用成功返回批量撤销合同的链接，通过链接跳转到电子签小程序完成批量撤销;\n\n可以撤回：未全部签署完成\n 不可以撤回：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注意:\n能撤回合同的只能是合同的发起人或者发起企业的超管、法人",
+      "document": "通过合同编号生成批量撤销合同的链接，单次最多支持撤销100份合同,   返回的链接需要有此权限的人<font color='red'>**合同的发起人或者发起人所在企业的超管、法人**</font>在<font color='red'>**手机端**</font>打开,  跳转到腾讯电子签小程序输入撤销原因来进行撤销合同\n\n适用场景：如果某个合同当前**至少还有一方没有签署**，则可通过该接口取消该合同流程。常用于合同发错、内容填错，需要及时撤销的场景。\n\n- **可撤回合同状态**：未全部签署完成\n- **不撤回合同状态**：已全部签署完成、已拒签、已过期、已撤回、拒绝填写、已解除等合同状态。\n\n注:\n- 签署完毕的合同需要双方走解除流程将合同作废，可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateReleaseFlow\" target=\"_blank\">发起解除合同流程接口</a>",
       "input": "ChannelCreateBatchCancelFlowUrlRequest",
-      "name": "根据签署流程id创建批量撤销url",
+      "name": "获取批量撤销合同流程的腾讯电子签小程序链接",
       "output": "ChannelCreateBatchCancelFlowUrlResponse",
       "status": "online"
     },
@@ -115,7 +115,7 @@
     "ChannelCreateFlowSignUrl": {
       "document": "该接口用于发起合同后，生成C端签署人的签署链接<br/>\n注意：该接口目前签署人类型仅支持个人签署方（PERSON）<br/>\n注意：该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件<br/>\n注意：该接口返回的签署链接是用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。微信小程序请使用小程序跳转或半屏弹窗的方式<br/>",
       "input": "ChannelCreateFlowSignUrlRequest",
-      "name": "获取个人签署H5页面",
+      "name": "获取个人用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -155,7 +155,7 @@
       "status": "online"
     },
     "ChannelCreateReleaseFlow": {
-      "document": "发起解除协议，主要应用场景为：基于一份已经签署的合同，进行解除操作。\n合同发起人必须在电子签已经进行实名。",
+      "document": "发起解除协议的主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。\n解除协议的模板是官方提供，经过提供法务审核，暂不支持自定义。\n\n注意：\n<ul><li><code>原合同必须签署完</code>成后才能发起解除协议。</li>\n<li>只有原合同企业类型的参与人才能发起解除协议，<code>个人参与方不能发起解除协议</code>。</li>\n<li>原合同个人类型参与人必须是解除协议的参与人，<code>不能更换其他第三方个人</code>参与解除协议。</li>\n<li>如果原合同企业参与人无法参与解除协议，可以指定同企业具有同等权限的<code>企业员工代为处理</code>。</li>\n<li>发起解除协议同发起其他企业合同一样，也会参与合同<code>扣费</code>，扣费标准同其他类型合同。</li>\n<li>在解除协议发起之后，原合同的状态将转变为解除中。一旦解除协议签署完毕，原合同及解除协议均变为已解除状态。</li></ul>",
       "input": "ChannelCreateReleaseFlowRequest",
       "name": "发起解除协议",
       "output": "ChannelCreateReleaseFlowResponse",
@@ -176,9 +176,9 @@
       "status": "online"
     },
     "ChannelCreateUserAutoSignEnableUrl": {
-      "document": "企业方可以通过此接口获取个人用户开启自动签的跳转链接",
+      "document": "获取个人用户自动签的开通链接。\n\n注意: `处方单等特殊场景专用，此接口为白名单功能，使用前请联系对接的客户经理沟通。`",
       "input": "ChannelCreateUserAutoSignEnableUrlRequest",
-      "name": "获取个人用户自动签开启链接",
+      "name": "获取个人用户自动签的开通链接",
       "output": "ChannelCreateUserAutoSignEnableUrlResponse",
       "status": "online"
     },
@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n> **适用场景** \n>\n>  该接口常用来配合“使用模板创建签署流程”接口作为前置的接口使用。 \n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n注意：\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
+      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n**适用场景**\n 该接口常用来配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates\" target=\"_blank\">用模板创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates\" target=\"_blank\">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 \n通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。\n\n**模版的来源**\n子客企业的模板有两种途径获取\n- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业\n- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建\n\n\n**注意**\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse",
@@ -400,7 +400,7 @@
       "status": "online"
     },
     "PrepareFlows": {
-      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，不建议使用，将会**废弃**。",
+      "document": "该接口 (PrepareFlows) 用于创建待发起文件\n用户通过该接口进入签署流程发起的确认页面，进行发起信息二次确认， 如果确认则进行正常发起。\n目前该接口只支持B2C，<font color='red'> **不建议使用，将会废弃**</font>。",
       "input": "PrepareFlowsRequest",
       "name": "准备待发起文件",
       "output": "PrepareFlowsResponse",
@@ -910,7 +910,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -919,8 +919,8 @@
         },
         {
           "disabled": false,
-          "document": "签署流程Id数组，最多100个，超过100不处理",
-          "example": "无",
+          "document": "要撤销的合同流程ID列表，最多100个，超过100不处理",
+          "example": "[\"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"]",
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -928,8 +928,8 @@
         },
         {
           "disabled": false,
-          "document": "撤销理由,不超过200个字符",
-          "example": "无",
+          "document": "撤回原因，长度不能超过200，只能由中文、字母、数字和下划线组成。\n\n备注:`如果不传递撤回原因，那么默认撤回原因是 \"自动撤销（通过接口实现）\"`",
+          "example": "合同里边支付的加个写错了",
           "member": "string",
           "name": "CancelMessage",
           "required": false,
@@ -937,7 +937,7 @@
         },
         {
           "disabled": false,
-          "document": "撤销理由自定义格式，支持以下格式\n<ul><li>0 : 默认值</li>\n<li>1 : 只保留身份信息</li>\n<li>2 : 保留身份信息+企业名称</li>\n<li>3 : 保留身份信息+企业名称+经办人名称</li></ul>\n例如,假设合同的发起方是典子谦示例企业的经办人张三，撤销理由是\"合同内容错误，需要修正\",合同撤销后，各签署方看到的撤销理由是会是\n\n0: 发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同\n1: 发起方以\"合同内容错误，需要修正\"的理由撤销当前合同\n2: 发起方-典子谦示例企业以\"合同内容错误，需要修正\"的理由撤销当前合同\n3: 发起方-典子谦示例企业-张三以\"合同内容错误，需要修正\"的理由撤销当前合同</br>\n\n备注:`如果不传递撤销理由，那么默认撤销理由是 \"自动撤销（通过接口实现）\"`",
+          "document": "撤销理由自定义格式,  会展示在合同预览的界面中,  可以选择下面的组合方式：\n\n**0** : 默认格式,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同\n**1** :  合同封面页面会展示为:  发起方以**CancelMessage**的理由撤销当前合同\n**2** : 保留企业名称,  合同封面页面会展示为:  发起方-企业名称以**CancelMessage**的理由撤销当前合同\n**3** : 保留企业名称+经办人名字,  合同封面页面会展示为: 发起方-企业名称-撤销的经办人名字以**CancelMessage**的理由撤销当前合同\n\n注: `CancelMessage为撤销当前合同的理由`\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_ChannelCancelFlow.png)\n\n",
           "example": "无",
           "member": "int64",
           "name": "CancelMessageFormat",
@@ -961,7 +961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署流程批量撤销失败原因，错误信息与流程Id一一对应，成功为“”,失败则对应失败消息",
+          "document": "签署流程批量撤销失败原因，错误信息与流程Id一一对应，成功为\"\", 失败则对应失败原因",
           "example": "无",
           "member": "string",
           "name": "FailMessages",
@@ -1145,7 +1145,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1154,7 +1154,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程Id数组",
+          "document": "要撤销的合同流程ID列表，最多100个，超过100不处理",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -1178,8 +1178,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量撤销url",
-          "example": "无",
+          "document": "批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时",
+          "example": "https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=y*Y&userId=y*G&expireOn=1699011136&login=1&verify=1",
           "member": "string",
           "name": "BatchCancelFlowUrl",
           "output_required": true,
@@ -1188,7 +1188,7 @@
         },
         {
           "disabled": false,
-          "document": "签署流程批量撤销失败原因",
+          "document": "与入参的FlowIds数组一致,   成功生成到撤销链接中,则为\"\",   不能撤销合同则为失败原因",
           "example": "无",
           "member": "string",
           "name": "FailMessages",
@@ -1198,8 +1198,8 @@
         },
         {
           "disabled": false,
-          "document": "签署撤销url过期时间-年月日-时分秒",
-          "example": "无",
+          "document": "签署撤销链接的过期时间(格式为:年-月-日 时:分:秒), 默认是生成链接的24小时后失效\n\n",
+          "example": "2023-11-03 19:46:40",
           "member": "string",
           "name": "UrlExpireOn",
           "output_required": true,
@@ -2811,7 +2811,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2820,8 +2820,8 @@
         },
         {
           "disabled": false,
-          "document": "待解除的流程编号（即原流程的编号）",
-          "example": "xxx",
+          "document": "待解除的签署流程编号(即原签署流程的编号)。",
+          "example": "yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm",
           "member": "string",
           "name": "NeedRelievedFlowId",
           "required": true,
@@ -2829,7 +2829,7 @@
         },
         {
           "disabled": false,
-          "document": "解除协议内容",
+          "document": "解除协议内容, 包括解除理由等信息。",
           "example": "无",
           "member": "RelieveInfo",
           "name": "ReliveInfo",
@@ -2838,7 +2838,7 @@
         },
         {
           "disabled": false,
-          "document": "非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，已转发的签署人不包含在内，解除协议的签署人数量不能多于原流程的签署人数量",
+          "document": "替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n\n注意：\n<ul>\n<li>只能更换自己企业的签署人, 不支持更换个人类型或者其他企业的签署人</li>\n<li>可以不指定替换签署人, 使用原流程的签署人</li>\n</ul>",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -2846,7 +2846,7 @@
           "type": "list"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "签署完回调url，最大长度1000个字符",
           "example": "https://qq.com",
           "member": "string",
@@ -2874,12 +2874,21 @@
         },
         {
           "disabled": false,
-          "document": "签署流程的签署截止时间。 值为unix时间戳,精确到秒,不传默认为当前时间七天后",
+          "document": "合同流程的签署截止时间，格式为Unix标准时间戳(秒)，如果未设置签署截止时间，则默认为合同流程创建后的7天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
           "example": "1604912664",
           "member": "int64",
           "name": "Deadline",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调用方自定义的个性化字段，该字段的值可以是字符串JSON或其他字符串形式，客户可以根据自身需求自定义数据格式并在需要时进行解析。该字段的信息将以Base64编码的形式传输，支持的最大数据大小为20480长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。\n\n回调的相关说明可参考开发者中心的<a href=\"https://qian.tencent.com/developers/company/callback_types_v2\" target=\"_blank\">回调通知</a>模块。",
+          "example": "无",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2890,7 +2899,7 @@
         {
           "disabled": false,
           "document": "解除协议流程编号",
-          "example": "xxx",
+          "example": "yDR1AUUgygj******uO4zjE8gTG7xvgH",
           "member": "string",
           "name": "FlowId",
           "output_required": true,
@@ -3048,7 +3057,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "渠道应用相关信息",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3057,8 +3066,8 @@
         },
         {
           "disabled": false,
-          "document": "自动签场景:\nE_PRESCRIPTION_AUTO_SIGN 电子处方",
-          "example": "无",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>\n\n注: `现在仅支持电子处方场景`",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
           "required": true,
@@ -3066,7 +3075,7 @@
         },
         {
           "disabled": false,
-          "document": "操作人信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -3075,7 +3084,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签开通，签署相关配置",
+          "document": "自动签开通配置信息, 包括开通的人员的信息等",
           "example": "无",
           "member": "AutoSignConfig",
           "name": "AutoSignConfig",
@@ -3084,8 +3093,8 @@
         },
         {
           "disabled": false,
-          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
-          "example": "无",
+          "document": "生成的链接类型：\n<ul><li> 不传(即为空值) 则会生成小程序端开通链接(默认)</li>\n<li> **H5SIGN** : 生成H5端开通链接</li></ul>",
+          "example": "H5SIGN",
           "member": "string",
           "name": "UrlType",
           "required": false,
@@ -3093,7 +3102,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型，默认不填为不通知开通方，填写 SMS 为短信通知。",
+          "document": "是否通知开通方，通知类型:\n<ul><li>默认不设置为不通知开通方</li>\n<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li><ul>",
           "example": "无",
           "member": "string",
           "name": "NotifyType",
@@ -3102,8 +3111,8 @@
         },
         {
           "disabled": false,
-          "document": "若上方填写为 SMS，则此处为手机号",
-          "example": "无",
+          "document": "如果通知类型NotifyType选择为SMS，则此处为手机号, 其他通知类型不需要设置此项",
+          "example": "13200000000",
           "member": "string",
           "name": "NotifyAddress",
           "required": false,
@@ -3111,7 +3120,7 @@
         },
         {
           "disabled": false,
-          "document": "链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为30天。如果不传，默认有效期为7天。",
+          "document": "链接的过期时间，格式为Unix时间戳，不能早于当前时间，且最大为当前时间往后30天。`如果不传，默认过期时间为当前时间往后7天。`",
           "example": "无",
           "member": "int64",
           "name": "ExpiredTime",
@@ -3126,8 +3135,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转短链",
-          "example": "无",
+          "document": "个人用户自动签的开通链接, 短链形式。过期时间受 `ExpiredTime` 参数控制。",
+          "example": "https://essurl.cn/002E4UGi8H ",
           "member": "string",
           "name": "Url",
           "output_required": true,
@@ -3136,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序AppId",
+          "document": "腾讯电子签小程序的 AppID，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用\n\n注: `如果获取的是H5链接, 则不会返回此值`",
           "example": "无",
           "member": "string",
           "name": "AppId",
@@ -3146,7 +3155,7 @@
         },
         {
           "disabled": false,
-          "document": "小程序 原始 Id",
+          "document": "腾讯电子签小程序的原始 Id,  ，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用\n\n注: `如果获取的是H5链接, 则不会返回此值`",
           "example": "无",
           "member": "string",
           "name": "AppOriginalId",
@@ -3156,7 +3165,7 @@
         },
         {
           "disabled": false,
-          "document": "跳转路径",
+          "document": "腾讯电子签小程序的跳转路径，用于其他小程序/APP等应用跳转至腾讯电子签小程序使用\n\n注: `如果获取的是H5链接, 则不会返回此值`",
           "example": "无",
           "member": "string",
           "name": "Path",
@@ -3166,7 +3175,7 @@
         },
         {
           "disabled": false,
-          "document": "base64格式跳转二维码",
+          "document": "base64 格式的跳转二维码图片，可通过微信扫描后跳转到腾讯电子签小程序的开通界面。\n\n注: `如果获取的是H5链接, 则不会返回此二维码图片`",
           "example": "无",
           "member": "string",
           "name": "QrCode",
@@ -3176,7 +3185,7 @@
         },
         {
           "disabled": false,
-          "document": "链接类型，空-默认小程序端链接，H5SIGN-h5端链接",
+          "document": "返回的链接类型\n<ul><li> 空: 默认小程序端链接</li>\n<li> **H5SIGN** : h5端链接</li></ul>",
           "example": "无",
           "member": "string",
           "name": "UrlType",
@@ -6025,7 +6034,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。",
+          "document": "合同模板ID，为32位字符串。\n\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在企业模板中得到合同模板ID。",
           "example": "无",
           "member": "string",
           "name": "TemplateId",
@@ -6034,7 +6043,7 @@
         },
         {
           "disabled": false,
-          "document": "查询内容控制\n\n<ul><li>**0**：模板列表及详情（默认）</li>\n<li>**1**：仅模板列表</li></ul>",
+          "document": "查询模版的内容\n\n<ul><li>**0**：（默认）模板列表及详情</li>\n<li>**1**：仅模板列表, 不会返回模板中的签署控件, 填写控件, 参与方角色列表等信息</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "ContentType",
@@ -6043,7 +6052,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID数组，每一个合同模板ID为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。\n\n```注意: \n1. 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。\n2. 请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。\n3. 最多支持200个模板。\n4. 若传递此参数，分页参数(Limit,Offset)无效```\n",
+          "document": "合同模板ID数组，每一个合同模板ID为32位字符串,  最多支持200个模板的批量查询。\n\n注意: \n1.` 此参数TemplateIds与TemplateId互为独立，若两者均传入，以TemplateId为准。`\n2. `请确保每个模板均正确且属于当前企业，若有任一模板不存在，则返回错误。`\n4. `若传递此参数，分页参数(Limit,Offset)无效`\n",
           "example": "无",
           "member": "string",
           "name": "TemplateIds",
@@ -6070,7 +6079,7 @@
         },
         {
           "disabled": false,
-          "document": "模糊搜索的模板名称，注意是模板名的连续部分，最大长度200",
+          "document": "模糊搜索的模板名称，注意是模板名的连续部分，长度不能超过200，可支持由中文、字母、数字和下划线组成字符串。",
           "example": "无",
           "member": "string",
           "name": "TemplateName",
@@ -6088,7 +6097,7 @@
         },
         {
           "disabled": false,
-          "document": "是否返回所有控件信息。\n\n<ul><li>**false**：只返回发起方控件（默认）</li>\n<li>**true**：返回所有签署方控件</li></ul>",
+          "document": "返回控件的范围, 是只返回发起方自己的还是所有参与方的\n\n<ul><li>**false**：（默认）只返回发起方控件</li>\n<li>**true**：返回所有参与方(包括发起方和签署方)控件</li></ul>",
           "example": "无",
           "member": "bool",
           "name": "QueryAllComponents",
@@ -6097,7 +6106,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n（此功能开放需要联系客户经理）",
+          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,  有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n\n注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "无",
           "member": "bool",
           "name": "WithPreviewUrl",
@@ -6106,7 +6115,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟。\n（此功能开放需要联系客户经理）",
+          "document": "是否获取模板的PDF文件链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PdfUrl，为模板PDF文件链接，有效期5分钟, 可以用于将PDF文件下载到本地\n\n注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "无",
           "member": "bool",
           "name": "WithPdfUrl",
@@ -6141,7 +6150,7 @@
         {
           "disabled": false,
           "document": "查询到的模板总数",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -6151,7 +6160,7 @@
         {
           "disabled": false,
           "document": "每页返回的数据条数",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "output_required": true,
@@ -6161,7 +6170,7 @@
         {
           "disabled": false,
           "document": "查询结果分页返回，此处指定第几页。页码从0开始，即首页为0。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "Offset",
           "output_required": true,
@@ -8341,11 +8350,11 @@
       "usage": "in"
     },
     "Recipient": {
-      "document": "流程中参与方的信息结构",
+      "document": "流程中签署方和填写方(如果有填写控件存证时)的信息",
       "members": [
         {
           "disabled": false,
-          "document": "签署人唯一标识，在通过模板发起合同的时候对应签署方ID",
+          "document": "合同参与方的角色ID",
           "example": "ed68bc6904fbd4795b4658c480214e4e",
           "member": "string",
           "name": "RecipientId",
@@ -8356,7 +8365,7 @@
         },
         {
           "disabled": false,
-          "document": "参与者类型，默认为空。\nENTERPRISE-企业；\nINDIVIDUAL-个人；\nPROMOTER-发起方",
+          "document": "参与者类型, 可以选择的类型如下:\n<ul><li> **ENTERPRISE** :此角色为企业参与方</li>\n<li> **INDIVIDUAL** :此角色为个人参与方</li>\n<li> **PROMOTER** :此角色是发起方</li></ul>",
           "example": "ENTERPRISE",
           "member": "string",
           "name": "RecipientType",
@@ -8367,7 +8376,7 @@
         },
         {
           "disabled": false,
-          "document": "描述信息\t",
+          "document": "合同参与方的角色描述，长度不能超过100，只能由中文、字母、数字和下划线组成。",
           "example": "无",
           "member": "string",
           "name": "Description",
@@ -8378,8 +8387,8 @@
         },
         {
           "disabled": false,
-          "document": "角色名称\t",
-          "example": "无",
+          "document": "合同参与方的角色名字，长度不能超过20，只能由中文、字母、数字和下划线组成。",
+          "example": "卖方",
           "member": "string",
           "name": "RoleName",
           "output_required": true,

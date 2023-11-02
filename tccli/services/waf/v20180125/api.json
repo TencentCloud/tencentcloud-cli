@@ -197,11 +197,11 @@
       "status": "online"
     },
     "DescribeAntiFakeUrl": {
-      "document": "获取防篡改url",
+      "document": "废弃接口\n\n获取防篡改url",
       "input": "DescribeAntiFakeUrlRequest",
       "name": "获取防篡改url",
       "output": "DescribeAntiFakeUrlResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAntiInfoLeakRules": {
       "document": "老接口已经不再使用。\n\n获取信息防泄漏规则列表",
@@ -253,11 +253,11 @@
       "status": "online"
     },
     "DescribeCCRule": {
-      "document": "Waf  CC V2 Query接口",
+      "document": "没有在使用。\n\nWaf  CC V2 Query接口",
       "input": "DescribeCCRuleRequest",
       "name": "Waf  CC V2 Query接口",
       "output": "DescribeCCRuleResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeCCRuleList": {
       "document": "根据多条件查询CC规则",

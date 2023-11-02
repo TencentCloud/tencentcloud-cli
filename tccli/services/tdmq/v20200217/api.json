@@ -609,6 +609,13 @@
       "output": "DescribeSubscriptionsResponse",
       "status": "online"
     },
+    "DescribeTopicMsgs": {
+      "document": "消息查询",
+      "input": "DescribeTopicMsgsRequest",
+      "name": "消息查询",
+      "output": "DescribeTopicMsgsResponse",
+      "status": "online"
+    },
     "DescribeTopics": {
       "document": "获取环境下主题列表",
       "input": "DescribeTopicsRequest",
@@ -6917,7 +6924,7 @@
           "example": "无",
           "member": "RabbitMQClusterInfo",
           "name": "ClusterInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6927,7 +6934,7 @@
           "example": "无",
           "member": "RabbitMQClusterSpecInfo",
           "name": "ClusterSpecInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6937,7 +6944,7 @@
           "example": "无",
           "member": "RabbitMQClusterAccessInfo",
           "name": "ClusterNetInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6947,7 +6954,7 @@
           "example": "无",
           "member": "RabbitMQClusterWhiteListInfo",
           "name": "ClusterWhiteListInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -6957,7 +6964,7 @@
           "example": "无",
           "member": "VirtualHostQuota",
           "name": "VirtualHostQuota",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6967,7 +6974,7 @@
           "example": "无",
           "member": "ExchangeQuota",
           "name": "ExchangeQuota",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -6977,7 +6984,7 @@
           "example": "无",
           "member": "QueueQuota",
           "name": "QueueQuota",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9166,6 +9173,116 @@
       ],
       "type": "object"
     },
+    "DescribeTopicMsgsRequest": {
+      "document": "DescribeTopicMsgs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境（命名空间）名称。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "主题名。",
+          "example": "test-topic3",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间。",
+          "example": "2020-09-22 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间。",
+          "example": "2020-09-22 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始下标，不填默认为0。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID。",
+          "example": "test",
+          "member": "string",
+          "name": "MsgId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTopicMsgsResponse": {
+      "document": "DescribeTopicMsgs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录数。",
+          "example": "10000",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息日志列表。",
+          "example": "无",
+          "member": "MsgLog",
+          "name": "TopicMsgLogSets",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTopicsRequest": {
       "document": "DescribeTopics请求参数结构体",
       "members": [
@@ -11301,6 +11418,52 @@
         }
       ],
       "type": "object"
+    },
+    "MsgLog": {
+      "document": "消息日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID。",
+          "example": "",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产者名称。",
+          "example": "",
+          "member": "string",
+          "name": "ProducerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产时间。",
+          "example": "",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产客户端地址。",
+          "example": "",
+          "member": "string",
+          "name": "ProducerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PartitionsTopic": {
       "document": "分区topic",

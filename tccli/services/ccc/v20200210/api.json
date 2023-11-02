@@ -4566,6 +4566,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4576,6 +4577,7 @@
           "example": "foo@tencent.com",
           "member": "string",
           "name": "Mail",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4586,6 +4588,7 @@
           "example": "007",
           "member": "string",
           "name": "StaffNumber",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -4596,6 +4599,7 @@
           "example": "008613012345678",
           "member": "string",
           "name": "Phone",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4606,6 +4610,7 @@
           "example": "三三",
           "member": "string",
           "name": "Nick",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4616,6 +4621,7 @@
           "example": "foo@tencent.com",
           "member": "string",
           "name": "UserId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4626,8 +4632,20 @@
           "example": "\"\"",
           "member": "string",
           "name": "SkillGroupNameList",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1:管理员\n2:质检员\n3:普通座席\nelse:自定义角色ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Role",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -5387,6 +5405,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录音 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1611631881",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "disabled": false,

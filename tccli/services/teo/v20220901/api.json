@@ -11659,7 +11659,7 @@
         },
         {
           "disabled": false,
-          "document": "允许的客户端来源。支持填写 IPV4 以及 IPV6 的 IP/IP 段，不填则表示允许任意客户端 IP。",
+          "document": "允许的客户端来源。支持填写 IPV4 以及 IPV6 的 IP/IP 段。",
           "example": "[\"9.142.236.194\", \"43.154.226.0/24\"]",
           "member": "string",
           "name": "AllowClientIPList",

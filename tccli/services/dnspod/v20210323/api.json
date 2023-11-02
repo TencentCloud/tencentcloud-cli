@@ -42,6 +42,13 @@
       "output": "CreateDomainBatchResponse",
       "status": "online"
     },
+    "CreateDomainCustomLine": {
+      "document": "创建域名的自定义线路",
+      "input": "CreateDomainCustomLineRequest",
+      "name": "创建域名的自定义线路",
+      "output": "CreateDomainCustomLineResponse",
+      "status": "online"
+    },
     "CreateDomainGroup": {
       "document": "创建域名分组",
       "input": "CreateDomainGroupRequest",
@@ -96,6 +103,13 @@
       "input": "DeleteDomainBatchRequest",
       "name": "批量删除域名",
       "output": "DeleteDomainBatchResponse",
+      "status": "online"
+    },
+    "DeleteDomainCustomLine": {
+      "document": "删除域名的自定义线路",
+      "input": "DeleteDomainCustomLineRequest",
+      "name": "删除域名的自定义线路",
+      "output": "DeleteDomainCustomLineResponse",
       "status": "online"
     },
     "DeleteRecord": {
@@ -159,6 +173,13 @@
       "input": "DescribeDomainAnalyticsRequest",
       "name": "域名解析量统计",
       "output": "DescribeDomainAnalyticsResponse",
+      "status": "online"
+    },
+    "DescribeDomainCustomLineList": {
+      "document": "获取域名的自定义线路列表",
+      "input": "DescribeDomainCustomLineListRequest",
+      "name": "获取域名的自定义线路列表",
+      "output": "DescribeDomainCustomLineListResponse",
       "status": "online"
     },
     "DescribeDomainFilterList": {
@@ -334,6 +355,13 @@
       "input": "DownloadSnapshotRequest",
       "name": "下载快照",
       "output": "DownloadSnapshotResponse",
+      "status": "online"
+    },
+    "ModifyDomainCustomLine": {
+      "document": "修改域名的自定义线路",
+      "input": "ModifyDomainCustomLineRequest",
+      "name": "修改域名的自定义线路",
+      "output": "ModifyDomainCustomLineResponse",
       "status": "online"
     },
     "ModifyDomainLock": {
@@ -1295,6 +1323,60 @@
       ],
       "type": "object"
     },
+    "CreateDomainCustomLineRequest": {
+      "document": "CreateDomainCustomLine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路名称",
+          "example": "testline8",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路IP段，用-分割",
+          "example": "6.6.6.1-6.6.6.3",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDomainCustomLineResponse": {
+      "document": "CreateDomainCustomLine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateDomainGroupRequest": {
       "document": "CreateDomainGroup请求参数结构体",
       "members": [
@@ -1886,6 +1968,62 @@
       ],
       "type": "object"
     },
+    "CustomLineInfo": {
+      "document": "自定义线路详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名ID",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路名称",
+          "example": "testline1",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路IP段",
+          "example": "1.1.1.4-1.1.1.6",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已使用IP段个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "UseCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "允许使用IP段最大个数",
+          "example": "5000",
+          "member": "uint64",
+          "name": "MaxCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Deals": {
       "document": "子订单号列表",
       "members": [
@@ -2049,6 +2187,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainCustomLineRequest": {
+      "document": "DeleteDomainCustomLine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路名称",
+          "example": "testline8",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDomainCustomLineResponse": {
+      "document": "DeleteDomainCustomLine返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2676,6 +2859,60 @@
           "member": "DomainAliasAnalyticsItem",
           "name": "AliasData",
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainCustomLineListRequest": {
+      "document": "DescribeDomainCustomLineList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDomainCustomLineListResponse": {
+      "document": "DescribeDomainCustomLineList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义线路列表",
+          "example": "无",
+          "member": "CustomLineInfo",
+          "name": "LineList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可添加的自定义线路条数",
+          "example": "无",
+          "member": "uint64",
+          "name": "AvailableCount",
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -5776,6 +6013,69 @@
         }
       ],
       "usage": "out"
+    },
+    "ModifyDomainCustomLineRequest": {
+      "document": "ModifyDomainCustomLine请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "dnspod.cn",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的自定义线路名称，如果不修改名称，需要和PreName保持一致",
+          "example": "testline8",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义线路IP段，用-分割",
+          "example": "6.6.6.1-6.6.6.3",
+          "member": "string",
+          "name": "Area",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改前的自定义线路名称",
+          "example": "testline8",
+          "member": "string",
+          "name": "PreName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "域名ID，如果传了DomainId，系统将会忽略Domain参数，优先使用DomainId",
+          "example": "1009",
+          "member": "uint64",
+          "name": "DomainId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDomainCustomLineResponse": {
+      "document": "ModifyDomainCustomLine返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ModifyDomainLockRequest": {
       "document": "ModifyDomainLock请求参数结构体",

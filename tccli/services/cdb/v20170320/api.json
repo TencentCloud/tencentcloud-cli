@@ -7768,7 +7768,7 @@
           "example": "{}",
           "member": "CdbZoneDataResult",
           "name": "DataResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

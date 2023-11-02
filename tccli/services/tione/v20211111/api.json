@@ -1549,7 +1549,8 @@
           "example": "main",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1559,7 +1560,8 @@
           "example": "989e5db6-af8c-4ea0-816a-a97369b36152",
           "member": "string",
           "name": "ContainerId",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1569,7 +1571,8 @@
           "example": "ccr.ccs.tencentyun.com/test-ccr/hellotest:grpc-test",
           "member": "string",
           "name": "Image",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1579,12 +1582,13 @@
           "example": "无",
           "member": "ContainerStatus",
           "name": "Status",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "object",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "ContainerStatus": {
       "document": "容器状态",
@@ -1595,7 +1599,8 @@
           "example": "0",
           "member": "int64",
           "name": "RestartCount",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1605,7 +1610,8 @@
           "example": "waiting",
           "member": "string",
           "name": "State",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1615,7 +1621,8 @@
           "example": "false",
           "member": "bool",
           "name": "Ready",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1625,7 +1632,8 @@
           "example": "ContainerCreating",
           "member": "string",
           "name": "Reason",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1635,12 +1643,13 @@
           "example": "Error",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "CosPathInfo": {
       "document": "cos的路径信息",
@@ -3331,6 +3340,34 @@
           "name": "ExcludeDates",
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CrossTenantENIInfo": {
+      "document": "跨租户弹性网卡下Pod调用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.0.0.1",
+          "member": "string",
+          "name": "PrimaryIP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod Port\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8501",
+          "member": "string",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -9856,6 +9893,7 @@
           "example": "ms-24xzphkz-1-55cc4779cc-9j6tb",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9866,6 +9904,7 @@
           "example": "989e5db6-af8c-4ea0-816a-a97369b36152",
           "member": "string",
           "name": "Uid",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9876,6 +9915,7 @@
           "example": "POSTPAID_BY_HOUR",
           "member": "string",
           "name": "ChargeType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9886,6 +9926,7 @@
           "example": "Pending",
           "member": "string",
           "name": "Phase",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9896,6 +9937,7 @@
           "example": "9.0.0.1",
           "member": "string",
           "name": "IP",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9906,6 +9948,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9916,6 +9959,7 @@
           "example": "无",
           "member": "Container",
           "name": "Containers",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -9926,8 +9970,20 @@
           "example": "无",
           "member": "Container",
           "name": "ContainerInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器调用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CrossTenantENIInfo",
+          "name": "CrossTenantENIInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],

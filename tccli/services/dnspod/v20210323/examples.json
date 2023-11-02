@@ -54,6 +54,14 @@
         "title": "批量添加域名"
       }
     ],
+    "CreateDomainCustomLine": [
+      {
+        "document": "创建域名的自定义线路",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDomainCustomLine\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.cn\",\n    \"Name\": \"testline88\",\n    \"Area\": \"6.6.6.1-6.6.6.3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "创建域名的自定义线路"
+      }
+    ],
     "CreateDomainGroup": [
       {
         "document": " ",
@@ -122,6 +130,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainBatch\n<公共请求参数>\n\n{\n    \"DomainList\": [\n        \"sdfsdfsdf.com\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"DetailList\": [\n            {\n                \"Domain\": \"yyds999.com\",\n                \"DomainId\": 12620607,\n                \"Error\": null,\n                \"Operation\": \"remove\",\n                \"Status\": \"waiting\"\n            }\n        ],\n        \"JobId\": 1703509,\n        \"RequestId\": \"5090a972-50ca-4be9-abf3-a1f90e8db36c\"\n    }\n}",
         "title": "批量删除域名"
+      }
+    ],
+    "DeleteDomainCustomLine": [
+      {
+        "document": "删除域名的自定义线路",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteDomainCustomLine\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.cn\",\n    \"Name\": \"testline88\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "删除域名的自定义线路"
       }
     ],
     "DeleteRecord": [
@@ -194,6 +210,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainAnalytics\n<公共请求参数>\n\n{\n    \"Domain\": \"example.com\",\n    \"StartDate\": \"2022-06-14\",\n    \"EndDate\": \"2022-06-14\"\n}",
         "output": "{\n    \"Response\": {\n        \"AliasData\": [],\n        \"Data\": [\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 0,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 1,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 2,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 3,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 4,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 5,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 6,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 7,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 8,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 9,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 10,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 11,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 12,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 13,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 14,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 15,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 16,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 17,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 18,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 19,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 20,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 21,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 22,\n                \"Num\": 0\n            },\n            {\n                \"DateKey\": \"20221201\",\n                \"HourKey\": 23,\n                \"Num\": 0\n            }\n        ],\n        \"Info\": {\n            \"DnsFormat\": \"HOUR\",\n            \"DnsTotal\": 8358,\n            \"Domain\": \"zhaodapian.com\",\n            \"EndDate\": \"2022-12-01\",\n            \"StartDate\": \"2022-12-01\"\n        },\n        \"RequestId\": \"e0815831-4978-445e-b524-746df0069d39\"\n    }\n}",
         "title": "域名解析量统计"
+      }
+    ],
+    "DescribeDomainCustomLineList": [
+      {
+        "document": "获取域名的自定义线路列表",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDomainCustomLineList\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\",\n        \"LineList\": [\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line0\",\n                \"Area\": \"3.3.3.3-3.3.3.6\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line10\",\n                \"Area\": \"117.7.7.11-117.7.7.12\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line11\",\n                \"Area\": \"117.7.7.13-117.7.7.14;117.7.7.15-117.7.7.16\",\n                \"UseCount\": 2,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line12\",\n                \"Area\": \"117.7.7.17-117.7.7.18\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line13\",\n                \"Area\": \"117.7.7.19-117.7.7.20\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line2\",\n                \"Area\": \"43.4.4.4-43.4.4.5;5.5.5.5-5.5.5.7\",\n                \"UseCount\": 2,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line3\",\n                \"Area\": \"7.7.7.7-7.7.7.9\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line4\",\n                \"Area\": \"65.6.6.6-65.6.6.7\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line5\",\n                \"Area\": \"117.7.7.7-117.7.7.8\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            },\n            {\n                \"DomainId\": 88692848,\n                \"Name\": \"line9\",\n                \"Area\": \"117.7.7.9-117.7.7.10\",\n                \"UseCount\": 1,\n                \"MaxCount\": 5000\n            }\n        ],\n        \"AvailableCount\": 0\n    }\n}",
+        "title": "获取域名的自定义线路列表"
       }
     ],
     "DescribeDomainFilterList": [
@@ -400,6 +424,14 @@
         "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DownloadSnapshot\n<公共请求参数>\n\n{\n    \"Domain\": \"domain.com\",\n    \"SnapshotId\": \"A45AXXX3\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"e9ac63bb-c1c2-465e-b662-4696ce2ccb5b\",\n        \"CosUrl\": \"https://newdnspod-1252120672.cos.ap-shanghai.myqcloud.com/snapshot_backup_91724229_xxx.csv\"\n    }\n}",
         "title": "下载快照"
+      }
+    ],
+    "ModifyDomainCustomLine": [
+      {
+        "document": "修改域名的自定义线路",
+        "input": "POST / HTTP/1.1\nHost: dnspod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDomainCustomLine\n<公共请求参数>\n\n{\n    \"Domain\": \"dnspod.cn\",\n    \"Name\": \"testline88\",\n    \"Area\": \"6.6.6.1-6.6.6.3\",\n    \"PreName\": \"testline88\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ab4f1426-ea15-42ea-8183-dc1b44151166\"\n    }\n}",
+        "title": "修改域名的自定义线路"
       }
     ],
     "ModifyDomainLock": [
