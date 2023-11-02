@@ -35,6 +35,13 @@
       "output": "DescribeAllKeysResponse",
       "status": "online"
     },
+    "DescribeDRMLicense": {
+      "document": "开发者需要指定使用的DRM类型取值 NORMALAES、和需要加密的Track类型取值 SD,ContentType取值 LiveVideo\n",
+      "input": "DescribeDRMLicenseRequest",
+      "name": "获取 FLV 加密的密钥字段。",
+      "output": "DescribeDRMLicenseResponse",
+      "status": "online"
+    },
     "DescribeFairPlayPem": {
       "document": "该接口用来查询设置的FairPlay私钥校验信息。可用该接口校验设置的私钥与本身的私钥是否一致。",
       "input": "DescribeFairPlayPemRequest",
@@ -394,6 +401,80 @@
           "name": "ContentId",
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDRMLicenseRequest": {
+      "document": "DescribeDRMLicense请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "使用的DRM方案类型，接口取值 NORMALAES 。",
+          "example": "NORMALAES",
+          "member": "string",
+          "name": "DrmType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加密的track列表，接口取值 SD 。",
+          "example": "[\"SD\"]",
+          "member": "string",
+          "name": "Tracks",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "一个加密内容的唯一标识。",
+          "example": "test",
+          "member": "string",
+          "name": "ContentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内容类型。接口取值 LiveVideo 。",
+          "example": "LiveVideo",
+          "member": "string",
+          "name": "ContentType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDRMLicenseResponse": {
+      "document": "DescribeDRMLicense返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容ID。",
+          "example": "test",
+          "member": "string",
+          "name": "ContentId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加密密钥。",
+          "example": "无",
+          "member": "string",
+          "name": "TXEncryptionToken",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
