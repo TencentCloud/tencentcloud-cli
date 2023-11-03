@@ -144,6 +144,25 @@
 
 
 
+## 官网(portal) 版本：2023-04-13
+
+### 第 7 次发布
+
+发布时间：2023-11-03 19:06:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
+
+	* 新增成员：RedirectUrl
+
+
+
+
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
 ### 第 74 次发布
@@ -58512,6 +58531,21 @@
 
 
 ## 官网(portal) 版本：2023-04-13
+
+### 第 7 次发布
+
+发布时间：2023-11-03 19:06:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
+
+	* 新增成员：RedirectUrl
+
 
 ### 第 6 次发布
 

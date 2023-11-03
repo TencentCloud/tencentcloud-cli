@@ -1,3 +1,242 @@
+# Release 3.0.877.1
+
+## 云联络中心(ccc) 版本：2020-02-10
+
+### 第 44 次发布
+
+发布时间：2023-11-03 01:08:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SeatUserInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#SeatUserInfo)
+
+	* 新增成员：Role
+
+* [TelCdrInfo](http://document.tencentcloudapi.woa.com/document/product/679/47715#TelCdrInfo)
+
+	* 新增成员：RecordId
+
+
+
+
+## 磐石(clouddc) 版本：2018-08-30
+
+### 第 7 次发布
+
+发布时间：2023-11-03 01:10:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeIndustryTrees](http://document.tencentcloudapi.woa.com/document/product/1626/81966)
+
+	* 新增入参：StatusList
+
+
+
+
+## 版权保护平台(cpp) 版本：2023-06-27
+
+### 第 6 次发布
+
+发布时间：2023-11-03 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChangeUser](http://document.tencentcloudapi.woa.com/document/product/1745/82516)
+
+新增数据结构：
+
+* [ChangeUserVO](http://document.tencentcloudapi.woa.com/document/product/1745/82344#ChangeUserVO)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 17 次发布
+
+发布时间：2023-11-03 01:11:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeExtendOrderResources](http://document.tencentcloudapi.woa.com/document/product/1726/82517)
+
+修改接口：
+
+* [DescribeTaskLogList](http://document.tencentcloudapi.woa.com/document/product/1726/81770)
+
+	* 新增出参：ReportTemplateNumber
+
+
+新增数据结构：
+
+* [OrderResourceInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#OrderResourceInfo)
+
+修改数据结构：
+
+* [TaskLogInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#TaskLogInfo)
+
+	* 新增成员：ReportType, TemplateId
+
+	* <font color="#dd0000">**修改成员**：</font>TaskLogName, TaskLogId, AssetsNumber, RiskNumber, Time, Status, TaskName, StartTime, TaskCenterTaskId, AppId, UIN, UserName
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 32 次发布
+
+发布时间：2023-11-03 01:14:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateDomainCustomLine](http://document.tencentcloudapi.woa.com/document/product/1427/82521)
+* [DeleteDomainCustomLine](http://document.tencentcloudapi.woa.com/document/product/1427/82520)
+* [DescribeDomainCustomLineList](http://document.tencentcloudapi.woa.com/document/product/1427/82519)
+* [ModifyDomainCustomLine](http://document.tencentcloudapi.woa.com/document/product/1427/82518)
+
+新增数据结构：
+
+* [CustomLineInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#CustomLineInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 98 次发布
+
+发布时间：2023-11-03 01:15:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateReleaseFlow](http://document.tencentcloudapi.woa.com/document/product/1595/76742)
+
+	* 新增入参：UserData
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 官网(portal) 版本：2023-04-13
+
+### 第 7 次发布
+
+发布时间：2023-11-03 19:06:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DocumentItem](http://document.tencentcloudapi.woa.com/document/product/1732/80923#DocumentItem)
+
+	* 新增成员：RedirectUrl
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 74 次发布
+
+发布时间：2023-11-03 01:24:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTopicMsgs](http://document.tencentcloudapi.woa.com/document/product/1179/82522)
+
+新增数据结构：
+
+* [MsgLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#MsgLog)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 38 次发布
+
+发布时间：2023-11-03 01:25:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CrossTenantENIInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#CrossTenantENIInfo)
+
+修改数据结构：
+
+* [Container](http://document.tencentcloudapi.woa.com/document/product/851/74915#Container)
+
+	* <font color="#dd0000">**修改成员**：</font>Name, ContainerId, Image, Status
+
+* [ContainerStatus](http://document.tencentcloudapi.woa.com/document/product/851/74915#ContainerStatus)
+
+	* <font color="#dd0000">**修改成员**：</font>RestartCount, State, Ready, Reason, Message
+
+* [Pod](http://document.tencentcloudapi.woa.com/document/product/851/74915#Pod)
+
+	* 新增成员：CrossTenantENIInfo
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 3 次发布
+
+发布时间：2023-11-03 01:28:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVRSTask](http://document.tencentcloudapi.woa.com/document/product/1664/79151)
+
+	* 新增入参：TaskType, VPRAudioId
+
+
+
+
 # Release 3.0.876.1
 
 ## 云联络中心(ccc) 版本：2020-02-10
