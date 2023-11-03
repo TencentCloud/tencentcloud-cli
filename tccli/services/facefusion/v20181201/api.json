@@ -685,43 +685,39 @@
       "members": [
         {
           "disabled": false,
-          "document": "输入图片base64",
+          "document": "输入图片base64。",
           "example": "string",
           "member": "string",
           "name": "Image",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "输入图片url",
+          "document": "输入图片url。\nUrl、Image必须提供一个，如果都提供，只使用 Url。",
           "example": "string",
           "member": "string",
           "name": "Url",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "上传的图片人脸位置信息（人脸框）",
+          "document": "输入图片人脸位置信息（人脸框）。不填默认取输入图中最大人脸。",
           "example": "{}",
           "member": "FaceRect",
           "name": "InputImageFaceRect",
           "required": false,
-          "type": "object",
-          "value_allowed_null": false
+          "type": "object"
         },
         {
           "disabled": false,
-          "document": "控制台上传的素材人脸ID，不填默认取最大人脸",
+          "document": "素材人脸ID，不填默认取素材中最大人脸。",
           "example": "string",
           "member": "string",
           "name": "TemplateFaceID",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

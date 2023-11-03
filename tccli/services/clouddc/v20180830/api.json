@@ -1286,6 +1286,15 @@
           "name": "Status",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1:生效列表，2:失效列表，38:即将停售(EOFM), 39:停止销售(EOM),40:停止全面支持(EOSS),43:停止服务(EOMS),  默认返回生效列表",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "StatusList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

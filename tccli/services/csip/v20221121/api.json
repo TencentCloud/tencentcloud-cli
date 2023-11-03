@@ -84,6 +84,13 @@
       "output": "DescribeDomainAssetsResponse",
       "status": "online"
     },
+    "DescribeExtendOrderResources": {
+      "document": "用于tag获取所有资源id列表",
+      "input": "DescribeExtendOrderResourcesRequest",
+      "name": "查询扩展服务资源列表",
+      "output": "DescribeExtendOrderResourcesResponse",
+      "status": "online"
+    },
     "DescribeExtendServiceItem": {
       "document": "查询用户扩展服务信息列表",
       "input": "DescribeExtendServiceItemRequest",
@@ -4036,6 +4043,62 @@
       ],
       "type": "object"
     },
+    "DescribeExtendOrderResourcesRequest": {
+      "document": "DescribeExtendOrderResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页单页数量",
+          "example": "0",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendOrderResourcesResponse": {
+      "document": "DescribeExtendOrderResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrderResourceInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总量",
+          "example": "1",
+          "member": "int64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExtendServiceItemRequest": {
       "document": "DescribeExtendServiceItem请求参数结构体",
       "members": [
@@ -5312,6 +5375,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5321,6 +5385,7 @@
           "example": "无",
           "member": "TaskLogInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5330,6 +5395,17 @@
           "example": "无",
           "member": "int64",
           "name": "NotViewNumber",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告模板数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReportTemplateNumber",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         },
@@ -6520,6 +6596,32 @@
         }
       ],
       "type": "object"
+    },
+    "OrderResourceInfo": {
+      "document": "订单资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源名称\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "PortViewPortRisk": {
       "document": "端口视角的端口风险对象",
@@ -8106,7 +8208,7 @@
           "example": "报告1",
           "member": "string",
           "name": "TaskLogName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8116,7 +8218,7 @@
           "example": "2222",
           "member": "string",
           "name": "TaskLogId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8126,7 +8228,7 @@
           "example": "1",
           "member": "int64",
           "name": "AssetsNumber",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8136,7 +8238,7 @@
           "example": "1",
           "member": "int64",
           "name": "RiskNumber",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8146,7 +8248,7 @@
           "example": "2021-09-27 15:42:22",
           "member": "string",
           "name": "Time",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8156,7 +8258,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -8166,7 +8268,7 @@
           "example": "helloworld",
           "member": "string",
           "name": "TaskName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8176,7 +8278,7 @@
           "example": "2021-09-27 15:42:22",
           "member": "string",
           "name": "StartTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8186,7 +8288,7 @@
           "example": "rmis-11111111",
           "member": "string",
           "name": "TaskCenterTaskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8196,7 +8298,7 @@
           "example": "xx",
           "member": "string",
           "name": "AppId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8206,7 +8308,7 @@
           "example": "x",
           "member": "string",
           "name": "UIN",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8216,8 +8318,28 @@
           "example": "x",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告类型： 1安全体检 2日报 3周报 4月报\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "报告模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

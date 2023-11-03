@@ -8,6 +8,14 @@
         "title": "AddTaskWorks"
       }
     ],
+    "ChangeUser": [
+      {
+        "document": "抖音作者增删",
+        "input": "POST / HTTP/1.1\nHost: cpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeUser\n<公共请求参数>\n\n{\n    \"UserId\": \"MS4wLjABAAAAKRsxsTnDn9WCxYtOUpOf1-CCflveqs0kHpzVDBbRglD4QhCNbmWfqO4ciQOgdzod\",\n    \"UserName\": \"福贵剪影\",\n    \"Homepage\": \"https://www.douyin.com/user/MS4wLjABAAAAKRsxsTnDn9WCxYtOUpOf1-CCflveqs0kHpzVDBbRglD4QhCNbmWfqO4ciQOgdzod\",\n    \"Status\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"UserId\": \"abc\",\n            \"UserName\": \"abc\",\n            \"Homepage\": \"abc\",\n            \"Status\": 0\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "抖音作者增删"
+      }
+    ],
     "CreateMonitor": [
       {
         "document": "",
