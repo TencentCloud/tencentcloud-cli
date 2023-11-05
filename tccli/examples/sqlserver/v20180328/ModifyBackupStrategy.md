@@ -23,7 +23,7 @@ Output:
 {
     "Response": {
         "RequestId": "780339f6-30d7-419a-a30c-c2dc0933af1c",
-        "Errno": 0,
+        "Code": 0,
         "Msg": ""
     }
 }

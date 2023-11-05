@@ -6,37 +6,83 @@ Input:
 
 ```
 tccli sqlserver DescribeDBsNormal --cli-unfold-argument  \
-    --InstanceId mssql-njj2mtpl
+    --InstanceId mssql-ds3p26cv
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "DBList": [
             {
-                "IsFulltextEnabled": "0",
-                "UserAccessDesc": "MULTI_USER",
-                "IsMirroring": "1",
                 "CollationName": "Chinese_PRC_CI_AS",
+                "CreateTime": "2023-09-21 21:37:47.327",
+                "IsAutoCleanupOn": "",
+                "IsBrokerEnabled": "0",
+                "IsCdcEnabled": "0",
+                "IsDbChainingOn": "0",
+                "IsEncrypted": "0",
+                "IsFullTextEnabled": "",
+                "IsFulltextEnabled": "1",
+                "IsMirroring": "0",
+                "IsPublished": "0",
+                "IsReadCommittedSnapshotOn": "0",
+                "IsSubscribed": "0",
+                "IsTrustworthyOn": "0",
+                "MirroringState": "",
+                "Name": "test_db3",
                 "RecoveryModelDesc": "FULL",
-                "IsSubscribed": "1",
+                "RetentionPeriod": "",
                 "StateDesc": "ONLINE",
+                "UserAccessDesc": "MULTI_USER"
+            },
+            {
+                "CollationName": "Chinese_PRC_CI_AS",
+                "CreateTime": "2023-09-20 20:21:50.360",
+                "IsAutoCleanupOn": "",
+                "IsBrokerEnabled": "0",
                 "IsCdcEnabled": "1",
-                "MirroringState": "SYNCHRONIZED",
-                "IsPublished": "1",
-                "RetentionPeriod": "20",
+                "IsDbChainingOn": "0",
+                "IsEncrypted": "0",
+                "IsFullTextEnabled": "",
+                "IsFulltextEnabled": "1",
+                "IsMirroring": "0",
+                "IsPublished": "0",
+                "IsReadCommittedSnapshotOn": "0",
+                "IsSubscribed": "0",
+                "IsTrustworthyOn": "0",
+                "MirroringState": "",
+                "Name": "test_db",
+                "RecoveryModelDesc": "FULL",
+                "RetentionPeriod": "",
+                "StateDesc": "ONLINE",
+                "UserAccessDesc": "MULTI_USER"
+            },
+            {
+                "CollationName": "Chinese_PRC_CI_AS",
+                "CreateTime": "2023-09-21 15:49:47.903",
+                "IsAutoCleanupOn": "1",
+                "IsBrokerEnabled": "0",
+                "IsCdcEnabled": "0",
                 "IsDbChainingOn": "1",
                 "IsEncrypted": "0",
-                "IsTrustworthyOn": "1",
+                "IsFullTextEnabled": "",
+                "IsFulltextEnabled": "1",
+                "IsMirroring": "0",
+                "IsPublished": "0",
                 "IsReadCommittedSnapshotOn": "0",
-                "IsBrokerEnabled": "1",
-                "IsAutoCleanupOn": "1",
-                "Name": "db_test"
+                "IsSubscribed": "0",
+                "IsTrustworthyOn": "0",
+                "MirroringState": "",
+                "Name": "test_db2",
+                "RecoveryModelDesc": "FULL",
+                "RetentionPeriod": "3",
+                "StateDesc": "ONLINE",
+                "UserAccessDesc": "MULTI_USER"
             }
         ],
-        "RequestId": "9607d890-db08-11eb-9f54-a9df121c01af"
+        "RequestId": "0cc5e70b-6abe-4e42-8486-68f4348a0568",
+        "TotalCount": 3
     }
 }
 ```

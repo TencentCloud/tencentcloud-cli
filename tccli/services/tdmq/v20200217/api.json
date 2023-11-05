@@ -364,6 +364,13 @@
       "output": "DescribeEnvironmentsResponse",
       "status": "online"
     },
+    "DescribeMsgTrace": {
+      "document": "查询消息轨迹",
+      "input": "DescribeMsgTraceRequest",
+      "name": "消息轨迹",
+      "output": "DescribeMsgTraceResponse",
+      "status": "online"
+    },
     "DescribeNamespaceBundlesOpt": {
       "document": "运营端获取命名空间bundle列表",
       "input": "DescribeNamespaceBundlesOptRequest",
@@ -2289,6 +2296,108 @@
           "name": "Partition",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerLog": {
+      "document": "消费日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID。",
+          "example": "",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组。",
+          "example": "",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称。",
+          "example": "",
+          "member": "string",
+          "name": "ConsumerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费时间。",
+          "example": "",
+          "member": "string",
+          "name": "ConsumeTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者客户端地址。",
+          "example": "",
+          "member": "string",
+          "name": "ConsumerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费耗时（毫秒）。",
+          "example": "",
+          "member": "uint64",
+          "name": "ConsumeUseTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费状态。",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ConsumerLogs": {
+      "document": "消费信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费日志。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ConsumerLog",
+          "name": "ConsumerLogSets",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5841,6 +5950,117 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgTraceRequest": {
+      "document": "DescribeMsgTrace请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境（命名空间）。",
+          "example": "default",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息ID。",
+          "example": "16839:8:-1",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息生产时间。",
+          "example": "2020-08-1908:06:19",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始下标，不填默认为0。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，不填则默认为10，最大值为20。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称模糊匹配。",
+          "example": "test",
+          "member": "string",
+          "name": "SubscriptionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pulsar 集群的ID",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMsgTraceResponse": {
+      "document": "DescribeMsgTrace返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生产信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProducerLog",
+          "name": "ProducerLog",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务方信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServerLog",
+          "name": "ServerLog",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConsumerLogs",
+          "name": "ConsumerLogs",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -11601,6 +11821,72 @@
       ],
       "usage": "out"
     },
+    "ProducerLog": {
+      "document": "消息生产信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息ID。",
+          "example": "test",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产者名称。",
+          "example": "test",
+          "member": "string",
+          "name": "ProducerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息生产时间。",
+          "example": "test",
+          "member": "string",
+          "name": "ProduceTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产者客户端。",
+          "example": "test",
+          "member": "string",
+          "name": "ProducerAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生产耗时（秒）。",
+          "example": "2",
+          "member": "uint64",
+          "name": "ProduceUseTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。",
+          "example": "test",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusEndpointInfo": {
       "document": "rabbitmq Prometheus信息",
       "members": [
@@ -15838,6 +16124,32 @@
         }
       ],
       "type": "object"
+    },
+    "ServerLog": {
+      "document": "服务方信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "存储时间。",
+          "example": "",
+          "member": "string",
+          "name": "SaveTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态。",
+          "example": "",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SetRocketMQPublicAccessPointRequest": {
       "document": "SetRocketMQPublicAccessPoint请求参数结构体",

@@ -1450,7 +1450,7 @@
       "status": "online"
     },
     "DisassociateAddress": {
-      "document": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[DisassociateNatGatewayAddress](https://cloud.tencent.com/document/api/215/36716)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。\n* EIP 如果被封堵，则不能进行解绑定操作。",
+      "document": "本接口 (DisassociateAddress) 用于解绑[弹性公网IP](https://cloud.tencent.com/document/product/213/1941)（简称 EIP）。\n* 支持CVM实例，弹性网卡上的EIP解绑\n* 不支持NAT上的EIP解绑。NAT上的EIP解绑请参考[DisassociateNatGatewayAddress](https://cloud.tencent.com/document/api/215/36716)\n* 只有状态为 BIND 和 BIND_ENI 的 EIP 才能进行解绑定操作。",
       "input": "DisassociateAddressRequest",
       "name": "解绑定弹性公网IP",
       "output": "DisassociateAddressResponse",
@@ -17309,6 +17309,7 @@
           "example": "61531411",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

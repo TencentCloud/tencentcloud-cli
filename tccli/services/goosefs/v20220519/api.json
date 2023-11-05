@@ -31,7 +31,7 @@
     "CreateDataRepositoryTask": {
       "document": "创建数据流通任务,包括从将文件系统的数据上传到存储桶下, 以及从存储桶下载到文件系统里。",
       "input": "CreateDataRepositoryTaskRequest",
-      "name": "创建数据流通任务",
+      "name": "创建数据流动任务",
       "output": "CreateDataRepositoryTaskResponse",
       "status": "online"
     },
@@ -87,7 +87,7 @@
     "DescribeDataRepositoryTaskStatus": {
       "document": "获取数据流通任务实时状态，用作客户端控制",
       "input": "DescribeDataRepositoryTaskStatusRequest",
-      "name": "获取数据流通任务实时状态",
+      "name": "获取数据流动任务实时状态",
       "output": "DescribeDataRepositoryTaskStatusResponse",
       "status": "online"
     },
@@ -552,6 +552,7 @@
           "example": "c1a2b3f4",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -916,6 +917,7 @@
           "example": "x_task_r3c4fa1f",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -925,6 +927,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -934,6 +937,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FinishedFileNumber",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -943,6 +947,7 @@
           "example": "0",
           "member": "uint64",
           "name": "FinishedCapacity",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

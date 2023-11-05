@@ -297,7 +297,7 @@
     "DescribeReservedInstancesConfigInfos": {
       "document": "本接口(DescribeReservedInstancesConfigInfos)供用户列出可购买预留实例机型配置。预留实例当前只针对国际站白名单用户开放。",
       "input": "DescribeReservedInstancesConfigInfosRequest",
-      "name": "查询预留实例机型配置参数。",
+      "name": "查询预留实例机型配置参数",
       "output": "DescribeReservedInstancesConfigInfosResponse",
       "status": "online"
     },
@@ -3855,6 +3855,7 @@
           "example": "无",
           "member": "ReservedInstanceConfigInfoItem",
           "name": "ReservedInstanceConfigInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9773,7 +9774,7 @@
           "example": "All Upfront",
           "member": "string",
           "name": "OfferingType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9783,57 +9784,57 @@
           "example": "100.00",
           "member": "float",
           "name": "FixedPrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "后续合计费用，单位：元/小时",
-          "example": "NA",
+          "example": "0.09",
           "member": "float",
           "name": "UsagePrice",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预留实例配置ID",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "ReservedInstancesOfferingId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预留实例计费可购买的可用区。",
-          "example": "NA",
+          "example": "ap-guangzhou-6",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预留实例计费【有效期】即预留实例计费购买时长。形如：31536000。\n计量单位：秒",
-          "example": "NA",
+          "example": "31536000",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "预留实例计费的平台描述（即操作系统）。形如：Linux。\n返回项： Linux 。",
-          "example": "NA",
+          "example": "Linux",
           "member": "string",
           "name": "ProductDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

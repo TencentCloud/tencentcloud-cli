@@ -428,6 +428,14 @@
         "title": "获取命名空间列表"
       }
     ],
+    "DescribeMsgTrace": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeMsgTrace\n&EnvironmentId=default\n&MsgId=16839:8:-1\n&ProduceTime=2020-08-1908:06:19\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ProducerLog\": {\n            \"MsgId\": \"16839:8:-1\",\n            \"ProducerName\": \"fisrtProducer\",\n            \"ProduceTime\": \"2020-08-19 08:06:19,211\",\n            \"ProducerAddr\": \"9.139.220.17:57234\",\n            \"ProduceUseTime\": 5309,\n            \"Status\": \"success\"\n        },\n        \"ServerLog\": {\n            \"SaveTime\": \"2020-08-19 08:06:19,211\",\n            \"Status\": \"success\"\n        },\n        \"ConsumerLogs\": {\n            \"TotalCount\": 1,\n            \"ConsumerLogSets\": [\n                {\n                    \"MsgId\": \"16839:8:-1\",\n                    \"ConsumerGroup\": \"sun_consumer\",\n                    \"ConsumerName\": \"7ef60\",\n                    \"ConsumeTime\": \"2020-08-19 08:06:22,563\",\n                    \"ConsumerAddr\": \"9.139.220.17:57241\",\n                    \"ConsumeUseTime\": 875,\n                    \"Status\": \"success\"\n                }\n            ]\n        },\n        \"RequestId\": \"msgs\"\n    }\n}",
+        "title": "获取消息轨迹"
+      }
+    ],
     "DescribeNamespaceBundlesOpt": [
       {
         "document": "测试",

@@ -288,16 +288,16 @@
       "status": "online"
     },
     "DescribeDBs": {
-      "document": "本接口（DescribeDBs）用于查询数据库列表。",
+      "document": "本接口（DescribeDBs）用于查询数据库列表。**已废弃，请使用接口DescribeDatabases**",
       "input": "DescribeDBsRequest",
-      "name": "查询数据库列表",
+      "name": "查询数据库列表（已废弃）",
       "output": "DescribeDBsResponse",
       "status": "online"
     },
     "DescribeDBsNormal": {
-      "document": "本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号",
+      "document": "本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号。**此接口已废弃，请使用DescribeDatabasesNormal。**",
       "input": "DescribeDBsNormalRequest",
-      "name": "查询数据库配置信息",
+      "name": "查询数据库配置信息（已废弃）",
       "output": "DescribeDBsNormalResponse",
       "status": "online"
     },
@@ -603,9 +603,9 @@
       "status": "online"
     },
     "ModifyDatabaseMdf": {
-      "document": "本接口(ModifyDatabaseMdf)用于收缩数据库mdf(Shrink mdf)",
+      "document": "本接口(ModifyDatabaseMdf)用于收缩数据库mdf(Shrink mdf)。**本接口已废弃，请使用接口ModifyDatabaseShrinkMDF**。",
       "input": "ModifyDatabaseMdfRequest",
-      "name": "收缩数据库mdf",
+      "name": "收缩数据库mdf (已废弃）",
       "output": "ModifyDatabaseMdfResponse",
       "status": "online"
     },
@@ -4585,7 +4585,7 @@
           "example": "0",
           "member": "string",
           "name": "IsSubscribed",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4595,7 +4595,7 @@
           "example": "Chinese_PRC_CI_AS",
           "member": "string",
           "name": "CollationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4605,7 +4605,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "IsAutoCleanupOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4615,7 +4615,7 @@
           "example": "0",
           "member": "string",
           "name": "IsBrokerEnabled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4625,7 +4625,7 @@
           "example": "0",
           "member": "string",
           "name": "IsCdcEnabled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4635,7 +4635,7 @@
           "example": "0",
           "member": "string",
           "name": "IsDbChainingOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4645,17 +4645,17 @@
           "example": "0",
           "member": "string",
           "name": "IsEncrypted",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否全文启用 0：否 1：是",
           "example": "0",
           "member": "string",
           "name": "IsFulltextEnabled",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4665,7 +4665,7 @@
           "example": "0",
           "member": "string",
           "name": "IsMirroring",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4675,7 +4675,7 @@
           "example": "0",
           "member": "string",
           "name": "IsPublished",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4685,7 +4685,7 @@
           "example": "0",
           "member": "string",
           "name": "IsReadCommittedSnapshotOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4695,7 +4695,7 @@
           "example": "0",
           "member": "string",
           "name": "IsTrustworthyOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4705,7 +4705,7 @@
           "example": "SYNCHRONIZED",
           "member": "string",
           "name": "MirroringState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4715,7 +4715,7 @@
           "example": "mirror_test37",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4725,7 +4725,7 @@
           "example": "FULL",
           "member": "string",
           "name": "RecoveryModelDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4735,7 +4735,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "RetentionPeriod",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4745,7 +4745,7 @@
           "example": "ONLINE",
           "member": "string",
           "name": "StateDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4755,7 +4755,7 @@
           "example": "MULTI_USER",
           "member": "string",
           "name": "UserAccessDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4765,9 +4765,19 @@
           "example": "2023-01-01 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否全文启用 0：否 1：是\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "IsFullTextEnabled",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6610,6 +6620,7 @@
           "example": "77",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6619,6 +6630,7 @@
           "example": "无",
           "member": "DbNormalDetail",
           "name": "DBList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6700,6 +6712,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6709,6 +6722,7 @@
           "example": "无",
           "member": "InstanceDBDetail",
           "name": "DBInstances",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8276,12 +8290,22 @@
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "慢查询日志信息列表",
           "example": "无",
           "member": "SlowlogInfo",
           "name": "Slowlogs",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "慢查询日志信息列表",
+          "example": "无",
+          "member": "SlowLog",
+          "name": "SlowLogs",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8327,7 +8351,7 @@
           "example": "cosbacktest-1254065710",
           "member": "string",
           "name": "BucketName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8337,7 +8361,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8347,7 +8371,7 @@
           "example": "251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-kpl74n9l/",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8357,7 +8381,7 @@
           "example": "AKID44fDXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8367,17 +8391,17 @@
           "example": "2jWOoltcvf21JIsNUaXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "临时密钥Token",
           "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "XCosSecurityToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8387,7 +8411,7 @@
           "example": "1601204649",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8397,7 +8421,17 @@
           "example": "1601205149",
           "member": "string",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥Token",
+          "example": "J6nJk8Q30PaQwyvn4OF4oOezabX61kra1cf794342ff14c39705aa17584f81650YmAxWf4vkrV2ZK2Gcr_-kzjJ7a_fRRCeQtXd547VoWnmbJ2txpX6Kj_SywpVdS4c4sMrIn2aFir1nmTu--k_a9NDyykODaR2O3n-PP_k84qacwjb-XXXXXXXXXXXXXXXXXXXXXXXXX",
+          "member": "string",
+          "name": "CosSecurityToken",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8452,7 +8486,7 @@
           "example": "cosbacktest-1254065710",
           "member": "string",
           "name": "BucketName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8462,7 +8496,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8472,7 +8506,7 @@
           "example": "251006279/sqlserver/mssql-rdc0gajn/migration/backup/mssql-backup-migration-cg0ffgqt/increment/mssql-incremental-migration-kp7bgv8p/",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8482,7 +8516,7 @@
           "example": "AKIDOxJelHkinofTdXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8492,17 +8526,17 @@
           "example": "gzfh3Olpe5HKiviXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "TmpSecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "临时密钥Token",
           "example": "S0niafv9wK40qvkDv2OjmEc2J7DAJRRa7b8c49fac8faf31d51469d4c639c866eKiE4vy8Y1d36neOhi1yg4RD4q9J4MeUyVSNsdiEt1z8X5zVFLGvGayDCfuA2uNuA5aoUSytd3CZzviKkGN-_Nq4OrIdSMzfeM-SrY3OEkV9TRItcig0PtpUYocSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
           "member": "string",
           "name": "XCosSecurityToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8512,7 +8546,7 @@
           "example": "1601211211",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8522,7 +8556,17 @@
           "example": "1601211711",
           "member": "string",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "临时密钥Token",
+          "example": "S0niafv9wK40qvkDv2OjmEc2J7DAJRRa7b8c49fac8faf31d51469d4c639c866eKiE4vy8Y1d36neOhi1yg4RD4q9J4MeUyVSNsdiEt1z8X5zVFLGvGayDCfuA2uNuA5aoUSytd3CZzviKkGN-_Nq4OrIdSMzfeM-SrY3OEkV9TRItcig0PtpUYocSXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+          "member": "string",
+          "name": "CosSecurityToken",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10268,12 +10312,12 @@
       "document": "ModifyBackupStrategy返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "返回错误码",
           "example": "0",
           "member": "int64",
           "name": "Errno",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -10283,8 +10327,18 @@
           "example": "failed",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回错误码",
+          "example": "0",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -10812,7 +10866,7 @@
           "example": "99999",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12864,6 +12918,92 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SlowLog": {
+      "document": "慢查询日志文件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "慢查询日志文件唯一标识",
+          "example": "",
+          "member": "int64",
+          "name": "Id",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件生成的开始时间",
+          "example": "",
+          "member": "datetime",
+          "name": "StartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件生成的结束时间",
+          "example": "",
+          "member": "datetime",
+          "name": "EndTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件大小（KB）",
+          "example": "",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件中log条数",
+          "example": "",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网下载地址",
+          "example": "",
+          "member": "string",
+          "name": "InternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "外网下载地址",
+          "example": "",
+          "member": "string",
+          "name": "ExternalAddr",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态（1成功 2失败）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

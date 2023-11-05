@@ -18,7 +18,7 @@ Output:
 {
     "Response": {
         "RequestId": "3e166da0-1f64-11eb-98ec-533fb32c3b2c",
-        "Slowlogs": [
+        "SlowLogs": [
             {
                 "Count": 5,
                 "EndTime": "2020-11-05 20:17:14",
