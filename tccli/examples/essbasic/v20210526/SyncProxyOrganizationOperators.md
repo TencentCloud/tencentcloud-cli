@@ -1,39 +1,61 @@
-**Example 1: 同步子客企业经办人列表**
+**Example 1: 员工离职**
 
-同步子客企业经办人列表
+员工离职只需要指定他们的ID(即OpenId)即可
 
 Input: 
 
 ```
 tccli essbasic SyncProxyOrganizationOperators --cli-unfold-argument  \
-    --OperatorType CREATE \
-    --Agent.ProxyAppId c17bdf9c2a7bd****11f4d0200fef3d \
-    --Agent.ProxyOrganizationOpenId d7c13a8****9e3968c0ee248f04 \
-    --Agent.AppId 65fb0c5910***0aa382cc5ed0e \
-    --ProxyOrganizationOperators.0.IdCardNumber 61012****30000 \
-    --ProxyOrganizationOperators.0.Name 张三 \
-    --ProxyOrganizationOperators.0.Mobile 187*****000 \
-    --ProxyOrganizationOperators.0.IdCardType ID_CARD \
-    --ProxyOrganizationOperators.0.Id 00498cc8500be9c*****3aff766cac \
-    --ProxyOrganizationOperators.1.IdCardNumber 61012*****03130001 \
-    --ProxyOrganizationOperators.1.Name 李四 \
-    --ProxyOrganizationOperators.1.Mobile 158*****987 \
-    --ProxyOrganizationOperators.1.IdCardType ID_CARD \
-    --ProxyOrganizationOperators.1.Id 11498cc8500be9c*****3aff766cac
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperatorType RESIGN \
+    --ProxyOrganizationOperators.0.Id n123456 \
+    --ProxyOrganizationOperators.1.Id n13579
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "FailedList": [
-            {
-                "Id": "11498cc8500be9c*****3aff766cac",
-                "Message": "手机号码不合法"
-            }
-        ],
-        "RequestId": "s1631673278484637219",
-        "Status": 2
+        "Status": 1,
+        "FailedList": [],
+        "RequestId": "1c92341e-184c-4322-8fe2-187411865280"
+    }
+}
+```
+
+**Example 2: 新增员工**
+
+新增2个员工成功
+
+Input: 
+
+```
+tccli essbasic SyncProxyOrganizationOperators --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperatorType CREATE \
+    --ProxyOrganizationOperators.0.Id n02468 \
+    --ProxyOrganizationOperators.0.Name 张三 \
+    --ProxyOrganizationOperators.0.IdCardNumber 640425****01015373 \
+    --ProxyOrganizationOperators.0.Mobile 18888888888 \
+    --ProxyOrganizationOperators.1.Id n123456 \
+    --ProxyOrganizationOperators.1.Name 李四 \
+    --ProxyOrganizationOperators.1.IdCardNumber 610124****01016474 \
+    --ProxyOrganizationOperators.1.Mobile 15100000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Status": 1,
+        "FailedList": [],
+        "RequestId": "88a7d888-f805-4bdc-a690-1a9d65d1e159"
     }
 }
 ```

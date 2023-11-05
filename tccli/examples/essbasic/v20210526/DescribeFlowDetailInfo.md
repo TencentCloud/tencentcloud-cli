@@ -1,55 +1,113 @@
-**Example 1: 查询签署流程合同的详细信息**
+**Example 1: 查询本企业创建的两个合同的详细信息**
 
-查询签署流程合同的详细信息
+查询本企业创建的两个合同的详细信息, FlowIds传了两个合同的ID数组
 
 Input: 
 
 ```
 tccli essbasic DescribeFlowDetailInfo --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId 子客企业经办人id \
-    --Agent.ProxyOrganizationOpenId 子客企业第三方id \
-    --Agent.AppId 16fd2f7d7xxxxx5f8d501d57b5ec \
-    --FlowIds yDxjGUUgydjxxxxxzjERvGKmZJeX
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --FlowIds yDSLNUUckpos0iylUyzyvt7TwYVXYRh7 yDSLKUUckpoq19jtUxflhN4ugLFOCBNT
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ApplicationId": "yDwcC******ciRHST9jtYB",
-        "FlowGroupId": "",
-        "FlowGroupName": "",
+        "ApplicationId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "ProxyOrganizationOpenId": "org_dianziqian",
         "FlowInfo": [
             {
-                "CcInfos": [],
-                "CreateOn": 1686120086,
+                "FlowId": "yDSLKUUckpoq19jtUxflhN4ugLFOCBNT",
+                "FlowName": "购买50吨西红柿合同",
+                "FlowType": "采购合同",
+                "FlowStatus": "INIT",
+                "FlowMessage": "",
+                "CreateOn": 1698895092,
+                "DeadLine": 1730431092,
                 "CustomData": "",
-                "DeadLine": 1717656086,
                 "FlowApproverInfos": [
                     {
+                        "ReceiptId": "yDSLOUUckpoj6ocqUyzilW6RdWiojxfG",
+                        "ProxyOrganizationOpenId": "org_dianziqian",
+                        "ProxyOperatorOpenId": "n9527",
+                        "ProxyOrganizationName": "典子谦示例企业",
+                        "Mobile": "1850000000",
+                        "SignOrder": 0,
+                        "ApproveName": "典子谦",
+                        "ApproveStatus": "PENDING",
                         "ApproveMessage": "",
+                        "ApproveTime": 0,
+                        "ApproveType": "ORGANIZATION",
+                        "ApproverRoleName": "买方"
+                    },
+                    {
+                        "ReceiptId": "yDSLOUUckpoj6ocjUyzilW6E0SsA8ggh",
+                        "ProxyOrganizationOpenId": "",
+                        "ProxyOperatorOpenId": "org_zhangsan",
+                        "ProxyOrganizationName": "张三谦示例企业",
+                        "Mobile": "1730000000",
+                        "SignOrder": 0,
                         "ApproveName": "张三",
                         "ApproveStatus": "PENDING",
+                        "ApproveMessage": "",
                         "ApproveTime": 0,
-                        "ApproveType": "PERSON",
-                        "Mobile": "133*****75",
-                        "ProxyOperatorOpenId": "oHeIG5gF****TXeXZrb4",
-                        "ProxyOrganizationName": "",
-                        "ProxyOrganizationOpenId": "",
-                        "ReceiptId": "yDwg4UUc****QEAn6BWc39jZVY",
-                        "SignOrder": 0
+                        "ApproveType": "ORGANIZATION",
+                        "ApproverRoleName": "卖方"
                     }
                 ],
-                "FlowId": "yDwg4UUc******6CLBKPEvnl",
-                "FlowMessage": "",
-                "FlowName": "电子合同",
+                "CcInfos": [],
+                "NeedCreateReview": false
+            },
+            {
+                "FlowId": "yDSLNUUckpos0iylUyzyvt7TwYVXYRh7",
+                "FlowName": "购买50吨西瓜合同",
+                "FlowType": "采购合同",
                 "FlowStatus": "INIT",
-                "FlowType": "",
+                "FlowMessage": "",
+                "CreateOn": 1698978129,
+                "DeadLine": 1730514129,
+                "CustomData": "",
+                "FlowApproverInfos": [
+                    {
+                        "ReceiptId": "yDSLKUUckpoqohr5UcuKmnx5zDmZ7Tl4",
+                        "ProxyOrganizationOpenId": "org_dianziqian",
+                        "ProxyOperatorOpenId": "n9527",
+                        "ProxyOrganizationName": "典子谦示例企业",
+                        "Mobile": "1850000000",
+                        "SignOrder": 0,
+                        "ApproveName": "典子谦",
+                        "ApproveStatus": "PENDING",
+                        "ApproveMessage": "",
+                        "ApproveTime": 0,
+                        "ApproveType": "ORGANIZATION",
+                        "ApproverRoleName": "买方"
+                    },
+                    {
+                        "ReceiptId": "yDSLKUUckpoqohr0UcuKmnBmx1YdqgMW",
+                        "ProxyOrganizationOpenId": "",
+                        "ProxyOperatorOpenId": "org_zhangsan",
+                        "ProxyOrganizationName": "张三示例企业",
+                        "Mobile": "1730000000",
+                        "SignOrder": 0,
+                        "ApproveName": "张三",
+                        "ApproveStatus": "PENDING",
+                        "ApproveMessage": "",
+                        "ApproveTime": 0,
+                        "ApproveType": "ORGANIZATION",
+                        "ApproverRoleName": "卖方"
+                    }
+                ],
+                "CcInfos": [],
                 "NeedCreateReview": false
             }
         ],
-        "ProxyOrganizationOpenId": "t1td99d*****d28ec280dd4",
-        "RequestId": "c1f80560-****-ae0be7462559"
+        "FlowGroupId": "",
+        "FlowGroupName": "",
+        "RequestId": "940b70b6-ef38-4932-ba80-936efe55b601"
     }
 }
 ```

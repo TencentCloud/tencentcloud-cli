@@ -592,6 +592,14 @@
         "title": "查询指定时间点是否看回档"
       }
     ],
+    "DescribeSlaveZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlaveZones\n<公共请求参数>\n\n{\n    \"Zone\": \"ap-guangzhou-3\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SlaveZones\": [\n            \"ap-guangzhou-5\"\n        ],\n        \"RequestId\": \"128046\"\n    }\n}",
+        "title": "DescribeSlaveZones"
+      }
+    ],
     "DescribeSupportProxyVersion": [
       {
         "document": "查询支持的数据库代理版本",

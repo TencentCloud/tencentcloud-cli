@@ -1,11 +1,43 @@
 {
   "actions": {
+    "DescribeAclRule": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAclRule\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeAllZoneList": [
       {
         "document": "可用区信息",
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAllZoneList\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Zone\": \"abc\",\n                \"ZoneName\": \"abc\"\n            }\n        ],\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "可用区信息"
+      }
+    ],
+    "DescribeBandWidthBanner": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBandWidthBanner\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeBlackListSwitchStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlackListSwitchStatus\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取封禁列表启用开关"
+      }
+    ],
+    "DescribeBlockIPBySGSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBlockIPBySGSwitch\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
       }
     ],
     "DescribeBlockList": [
@@ -24,6 +56,22 @@
         "title": "test"
       }
     ],
+    "DescribeDnsRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDnsRuleStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeEnterpriseSecurityNotDispatchCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEnterpriseSecurityNotDispatchCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeFwEdgeBar": [
       {
         "document": "互联网边界页概览数据",
@@ -32,10 +80,50 @@
         "title": "互联网边界页概览数据"
       }
     ],
+    "DescribeFwEdgeIps": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFwEdgeIps\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeHoneyPotOverview": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeHoneyPotOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeInternetOutOverview": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInternetOutOverview\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeLogStorageStatistic": [
+      {
+        "document": "租户日志存储统计",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogStorageStatistic\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "租户日志存储统计"
+      }
+    ],
+    "DescribeMessageCenterSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMessageCenterSwitch\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeNatFwInfoCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatFwInfoCount\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
       }
@@ -48,10 +136,26 @@
         "title": "NAT监控面板-峰值均值带宽统计"
       }
     ],
+    "DescribeNatRuleOverviewNew": [
+      {
+        "document": "NAT边界规则概览",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNatRuleOverviewNew\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 0,\n    \"Area\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InTotal\": 0,\n        \"InEnableNum\": 0,\n        \"OutTotal\": 0,\n        \"OutEnableNum\": 0,\n        \"InstanceId\": \"abc\",\n        \"InstanceName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "NAT边界规则概览"
+      }
+    ],
     "DescribeNetInfo": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNetInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeOmStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOmStat\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
       }
@@ -70,6 +174,14 @@
         "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProtectModeCount\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "test"
+      }
+    ],
+    "DescribeSecurityGroupOverviewData": [
+      {
+        "document": "企业安全组(新)概览",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSecurityGroupOverviewData\n<公共请求参数>\n\n{\n    \"CurrentAppId\": 0,\n    \"Area\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InRulesCnt\": 0,\n        \"OutRulesCnt\": 0,\n        \"InsCnt\": 0,\n        \"UsedSgCnt\": 0,\n        \"AllSgCnt\": 0,\n        \"SgRulesCnt\": 0,\n        \"EnableRulesCnt\": 0,\n        \"NewRulesCnt\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "企业安全组(新)概览"
       }
     ],
     "DescribeTLogIpList": [
@@ -96,12 +208,36 @@
         "title": "test"
       }
     ],
+    "DescribeVpcFwGroupSwitch": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwGroupSwitch\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"OperatorType\": 0\n        }\n    ],\n    \"Limit\": 1,\n    \"Offset\": 1,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Order\": \"abc\",\n    \"By\": \"abc\",\n    \"CurrentAppId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"SwitchList\": [\n            {\n                \"SwitchId\": \"abc\",\n                \"SwitchName\": \"abc\",\n                \"SwitchMode\": 0,\n                \"ConnectType\": 0,\n                \"ConnectId\": \"abc\",\n                \"ConnectName\": \"abc\",\n                \"SrcInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"abc\",\n                        \"InstanceName\": \"abc\",\n                        \"InstanceCidr\": \"abc\",\n                        \"Region\": \"abc\"\n                    }\n                ],\n                \"DstInstancesInfo\": [\n                    {\n                        \"InstanceId\": \"abc\",\n                        \"InstanceName\": \"abc\",\n                        \"InstanceCidr\": \"abc\",\n                        \"Region\": \"abc\"\n                    }\n                ],\n                \"FwGroupId\": \"abc\",\n                \"FwGroupName\": \"abc\",\n                \"Enable\": 0,\n                \"Status\": 0,\n                \"AttachWithEdge\": 0,\n                \"CrossEdgeStatus\": 0,\n                \"FwInsId\": \"abc\",\n                \"FwInsName\": \"abc\",\n                \"FwInsRegion\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"Total\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "VPC防火墙(组)开关列表"
+      }
+    ],
     "DescribeVpcFwStatusBar": [
       {
         "document": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcFwStatusBar\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"FwBarStatus\": {\n            \"BandWidthUsed\": 5120,\n            \"DiffRegionFwInsId\": \"\",\n            \"DiffRegionFwInsName\": \"\",\n            \"DiffRegionMaxFlow\": 0,\n            \"FwGroupId\": \"\",\n            \"FwGroupMaxFlow\": 0,\n            \"FwGroupName\": \"\",\n            \"FwInsCount\": 6,\n            \"FwInsId\": \"cfwew-7d50f9f5\",\n            \"FwInsMaxFlow\": 9028,\n            \"FwInsName\": \" [autotest][勿删]自动化测试\",\n            \"FwSwitchCount\": 5,\n            \"JoinInstanceCount\": 13,\n            \"JoinVpcCntLimit\": 10,\n            \"SameRegionFwInsId\": \"cfwew-7d50f9f5\",\n            \"SameRegionFwInsName\": \" [autotest][勿删]自动化测试\",\n            \"SameRegionMaxFlow\": 9028,\n            \"VpcFwInsCntLimit\": 11,\n            \"VpcRegionCntLimit\": 5,\n            \"VpcThroughPut\": 10240,\n            \"FwGroupCount\": 1,\n            \"FwGroupMaxInsCount\": 10,\n            \"InstanceQuota\": 1\n        },\n        \"RequestId\": \"c9343d64-31c1-482c-bbd9-5d74c177e1fb\"\n    }\n}",
         "title": "DescribeVpcFwStatusBar 获取VPC防火墙状态栏数据"
+      }
+    ],
+    "DescribeVpcRuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVpcRuleStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "DescribeWebServiceStat": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: ocfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWebServiceStat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
       }
     ]
   },

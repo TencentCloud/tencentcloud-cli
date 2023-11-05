@@ -497,6 +497,13 @@
       "output": "DescribeRollbackTimeValidityResponse",
       "status": "online"
     },
+    "DescribeSlaveZones": {
+      "document": "查询从可用区",
+      "input": "DescribeSlaveZonesRequest",
+      "name": "查询从可用区",
+      "output": "DescribeSlaveZonesResponse",
+      "status": "online"
+    },
     "DescribeSupportProxyVersion": {
       "document": "查询支持的数据库代理版本",
       "input": "DescribeSupportProxyVersionRequest",
@@ -10100,6 +10107,52 @@
           "member": "string",
           "name": "SuggestTime",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlaveZonesRequest": {
+      "document": "DescribeSlaveZones请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "ap-guangzhou-3",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云架集群ID",
+          "example": "1",
+          "member": "int64",
+          "name": "OssClusterId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlaveZonesResponse": {
+      "document": "DescribeSlaveZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "从可用区",
+          "example": "ap-guangzhou-6",
+          "member": "string",
+          "name": "SlaveZones",
+          "required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {

@@ -13,29 +13,88 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "5062de55-d048-4d3b-92f9-b98b6f244360",
-        "TotalCount": 1,
         "DBInstances": [
             {
-                "InstanceId": "mssql-632eyp63",
                 "DBDetails": [
                     {
-                        "Name": "ceshi1",
-                        "Charset": "Chinese_PRC_CI_AS",
-                        "Remark": "测试db1",
-                        "CreateTime": "2018-07-02 20:12:24",
-                        "Status": 2,
                         "Accounts": [
                             {
-                                "UserName": "victorwind",
-                                "Privilege": "ReadWrite"
+                                "AccountType": "L3",
+                                "Privilege": "ReadWrite",
+                                "UserName": "L2"
+                            },
+                            {
+                                "AccountType": "L1",
+                                "Privilege": "DBOwner",
+                                "UserName": "L0"
                             }
                         ],
-                        "InternalStatus": "ONLINE"
+                        "Charset": "Chinese_PRC_CI_AS",
+                        "CreateTime": "2023-09-21 21:37:47",
+                        "Encryption": "disable",
+                        "InternalStatus": "ONLINE",
+                        "Name": "test_db3",
+                        "Remark": "--",
+                        "Status": 2
+                    },
+                    {
+                        "Accounts": [
+                            {
+                                "AccountType": "L3",
+                                "Privilege": "ReadOnly",
+                                "UserName": "L3"
+                            },
+                            {
+                                "AccountType": "L3",
+                                "Privilege": "ReadOnly",
+                                "UserName": "L2"
+                            },
+                            {
+                                "AccountType": "L1",
+                                "Privilege": "DBOwner",
+                                "UserName": "L0"
+                            }
+                        ],
+                        "Charset": "Chinese_PRC_CI_AS",
+                        "CreateTime": "2023-09-21 15:49:47",
+                        "Encryption": "disable",
+                        "InternalStatus": "ONLINE",
+                        "Name": "test_db2",
+                        "Remark": "--",
+                        "Status": 2
+                    },
+                    {
+                        "Accounts": [
+                            {
+                                "AccountType": "L3",
+                                "Privilege": "ReadWrite",
+                                "UserName": "L3"
+                            },
+                            {
+                                "AccountType": "L3",
+                                "Privilege": "ReadWrite",
+                                "UserName": "L2"
+                            },
+                            {
+                                "AccountType": "L1",
+                                "Privilege": "DBOwner",
+                                "UserName": "L0"
+                            }
+                        ],
+                        "Charset": "Chinese_PRC_CI_AS",
+                        "CreateTime": "2023-09-20 20:21:50",
+                        "Encryption": "disable",
+                        "InternalStatus": "ONLINE",
+                        "Name": "test_db",
+                        "Remark": "--",
+                        "Status": 2
                     }
-                ]
+                ],
+                "InstanceId": "mssql-ds3p26cv"
             }
-        ]
+        ],
+        "RequestId": "dcab478c-770a-11ee-9264-525400853186",
+        "TotalCount": 3
     }
 }
 ```

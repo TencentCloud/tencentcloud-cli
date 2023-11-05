@@ -31,47 +31,7 @@ Output:
 }
 ```
 
-**Example 2: 无撤销理由，使用默认格式撤销合同**
-
-撤销3个合同，没有传递撤销理由（CancelMessage 设置为空），使用默认格式(CancelMessageFormat 设置为0) </br>
-假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业-张三以"自动撤销（通过接口实现）"的理由撤销当前合同
-
-Input: 
-
-```
-tccli essbasic ChannelBatchCancelFlows --cli-unfold-argument  \
-    --Agent.AppId abc \
-    --Agent.ProxyOrganizationOpenId abc \
-    --Agent.ProxyOperator.OpenId abc \
-    --Agent.ProxyOperator.Channel abc \
-    --Agent.ProxyOperator.CustomUserId abc \
-    --Agent.ProxyOperator.ClientIp abc \
-    --Agent.ProxyOperator.ProxyIp abc \
-    --Agent.ProxyAppId abc \
-    --Agent.ProxyOrganizationId abc \
-    --FlowIds abc \
-    --CancelMessage abc \
-    --CancelMessageFormat 0 \
-    --Operator.OpenId abc \
-    --Operator.Channel abc \
-    --Operator.CustomUserId abc \
-    --Operator.ClientIp abc \
-    --Operator.ProxyIp abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FailMessages": [
-            "abc"
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-
-**Example 3: 自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同**
+**Example 2: 自定义撤销理由，使用保留身份信息+企业名称的方式撤销合同**
 
 撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为2) </br>
 假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业以"合同内容错误，需要修正"的理由撤销当前合同
@@ -98,7 +58,7 @@ Output:
 }
 ```
 
-**Example 4: 自定义撤销理由，使用只保留身份信息的方式撤销合同**
+**Example 3: 自定义撤销理由，使用只保留身份信息的方式撤销合同**
 
 撤销3个合同，并且自定义撤销理由，使用只保留身份信息的方式(CancelMessageFormat 设置为1) </br>
 假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方以"合同内容错误，需要修正"的理由撤销当前合同
@@ -125,7 +85,7 @@ Output:
 }
 ```
 
-**Example 5: 自定义撤销理由，保留身份信息+企业名称+经办人名称撤销合同**
+**Example 4: 自定义撤销理由，保留身份信息+企业名称+经办人名称撤销合同**
 
 撤销3个合同，并且自定义撤销理由，使用默认格式(CancelMessageFormat 设置为3) </br>
 假设发起方是典子谦示例企业的经办人张三，这批合同撤销后，签署方看到的撤销理由是：发起方-典子谦示例企业-张三以"合同内容错误，需要修正"的理由撤销当前合同
