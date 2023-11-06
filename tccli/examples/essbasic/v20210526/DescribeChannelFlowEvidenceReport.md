@@ -6,19 +6,20 @@ Input:
 
 ```
 tccli essbasic DescribeChannelFlowEvidenceReport --cli-unfold-argument  \
-    --ReportId yDR0PUUhw8ahh****KyK18G1h3FK5ccC \
-    --Agent.ProxyOrganizationOpenId test1_claxxxanization1 \
-    --Agent.AppId 7f349*********984a9657b0ec \
-    --Agent.ProxyOperator.OpenId channel-super-*****-openId0001
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --ReportId yDSLVUUckpo3nva8UEnf33kvzHQ19GcL
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "ReportUrl": "",
+        "ReportUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PDF?hkey=5c123fea2686b****6283",
         "Status": "EvidenceStatusSuccess",
-        "RequestId": "s166141****028448367"
+        "RequestId": "d9040af5-eda9-47cf-b37c-b0c5b34a6319"
     }
 }
 ```

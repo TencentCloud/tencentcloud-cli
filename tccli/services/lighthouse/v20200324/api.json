@@ -42,6 +42,13 @@
       "output": "AttachDisksResponse",
       "status": "online"
     },
+    "CancelShareBlueprintAcrossAccounts": {
+      "document": "本接口（CancelShareBlueprintAcrossAccounts）用于取消镜像跨账号共享。\n指定的镜像ID必须为自定义镜像，且指定账号ID必须已进行共享。",
+      "input": "CancelShareBlueprintAcrossAccountsRequest",
+      "name": "取消镜像跨账号共享",
+      "output": "CancelShareBlueprintAcrossAccountsResponse",
+      "status": "online"
+    },
     "CreateBlueprint": {
       "document": "本接口 (CreateBlueprint) 用于创建镜像。",
       "input": "CreateBlueprintRequest",
@@ -691,6 +698,13 @@
       "input": "RunDockerContainersRequest",
       "name": "创建并运行Docker容器",
       "output": "RunDockerContainersResponse",
+      "status": "online"
+    },
+    "ShareBlueprintAcrossAccounts": {
+      "document": "本接口（ShareBlueprintAcrossAccounts）用于跨账号共享镜像。\n仅支持共享自定义镜像， 且用于共享的镜像状态必须为NORMAL。\n共享的账号必须为主账号。",
+      "input": "ShareBlueprintAcrossAccountsRequest",
+      "name": "跨账号共享镜像",
+      "output": "ShareBlueprintAcrossAccountsResponse",
       "status": "online"
     },
     "StartDockerContainers": {
@@ -1494,6 +1508,42 @@
         }
       ],
       "usage": "out"
+    },
+    "CancelShareBlueprintAcrossAccountsRequest": {
+      "document": "CancelShareBlueprintAcrossAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像ID, 可以通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回的BlueprintId获取。",
+          "example": "\"lhbp-6jc6l8yb\"",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接收共享镜像的账号ID列表。帐号ID不同于QQ号，查询用户帐号ID请查看帐号信息中的帐号ID栏。账号个数取值最大为10。",
+          "example": "[\"700000164995\"]",
+          "member": "string",
+          "name": "AccountIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CancelShareBlueprintAcrossAccountsResponse": {
+      "document": "CancelShareBlueprintAcrossAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CcnAttachedInstance": {
       "document": "云联网关联的实例列表。",
@@ -8820,6 +8870,42 @@
         }
       ],
       "usage": "out"
+    },
+    "ShareBlueprintAcrossAccountsRequest": {
+      "document": "ShareBlueprintAcrossAccounts请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像ID, 可以通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回的BlueprintId获取。",
+          "example": "lhbp-6jc6l8yb",
+          "member": "string",
+          "name": "BlueprintId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接收共享镜像的账号Id列表。帐号ID不同于QQ号，查询用户帐号ID请查看帐号信息中的帐号ID栏。账号个数取值最大为10。",
+          "example": "[\"700000164995\"]",
+          "member": "string",
+          "name": "AccountIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ShareBlueprintAcrossAccountsResponse": {
+      "document": "ShareBlueprintAcrossAccounts返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Snapshot": {
       "document": "描述了快照相关信息。",

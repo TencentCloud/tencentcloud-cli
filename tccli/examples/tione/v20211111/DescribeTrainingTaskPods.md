@@ -17,10 +17,28 @@ Output:
             "abc"
         ],
         "TotalCount": 1,
-        "PodInfoList": {
-            "Name": "abc",
-            "IP": "abc"
-        },
+        "PodInfoList": [
+            {
+                "Name": "abc",
+                "IP": "abc",
+                "Status": "abc",
+                "StartTime": "abc",
+                "EndTime": "abc",
+                "ResourceConfigInfo": {
+                    "Role": "abc",
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "GpuType": "abc",
+                    "Gpu": 1,
+                    "InstanceType": "abc",
+                    "InstanceNum": 1,
+                    "InstanceTypeAlias": "abc",
+                    "RDMAConfig": {
+                        "Enable": true
+                    }
+                }
+            }
+        ],
         "RequestId": "abc"
     }
 }

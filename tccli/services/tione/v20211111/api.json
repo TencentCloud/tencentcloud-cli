@@ -6640,7 +6640,7 @@
           "member": "PodInfo",
           "name": "PodInfoList",
           "output_required": true,
-          "type": "object",
+          "type": "list",
           "value_allowed_null": false
         },
         {

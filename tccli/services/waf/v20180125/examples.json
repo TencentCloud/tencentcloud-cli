@@ -512,6 +512,14 @@
         "title": "Waf  IP封堵状态查询"
       }
     ],
+    "DescribeModuleStatus": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModuleStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
+        "title": "查询某个domain的基础安全模块开关状态"
+      }
+    ],
     "DescribeObjects": [
       {
         "document": "",

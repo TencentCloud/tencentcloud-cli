@@ -48,6 +48,14 @@
         "title": "挂载云盘"
       }
     ],
+    "CancelShareBlueprintAcrossAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelShareBlueprintAcrossAccounts\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-6jc6l8yb\",\n    \"AccountIds\": [\n        \"700000164995\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d339efa9-f637-4ba9-a7c6-fb89ce67d76f\"\n    }\n}",
+        "title": "取消镜像跨账号共享"
+      }
+    ],
     "CreateBlueprint": [
       {
         "document": "使用实例创建镜像",
@@ -796,6 +804,14 @@
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunDockerContainers\n<公共请求参数>\n\n{\n    \"Containers\": [\n        {\n            \"Command\": \"\",\n            \"ContainerImage\": \"nginx\",\n            \"ContainerName\": \"mynginx\",\n            \"Envs\": [\n                {\n                    \"Key\": \"Key1\",\n                    \"Value\": \"Value1\"\n                }\n            ],\n            \"PublishPorts\": [\n                {\n                    \"ContainerPort\": 80,\n                    \"HostPort\": 8081\n                }\n            ],\n            \"Volumes\": [\n                {\n                    \"ContainerPath\": \"/data/container\",\n                    \"HostPath\": \"/data/host\"\n                }\n            ]\n        }\n    ],\n    \"InstanceId\": \"lhins-nwycpjl3\"\n}",
         "output": "{\n    \"Response\": {\n        \"DockerActivitySet\": [\n            \"lhda-9qq8eu91\"\n        ],\n        \"RequestId\": \"cd373a49-2506-42f6-a205-c2f5ae467849\"\n    }\n}",
         "title": "创建并运行Docker容器"
+      }
+    ],
+    "ShareBlueprintAcrossAccounts": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ShareBlueprintAcrossAccounts\n<公共请求参数>\n\n{\n    \"BlueprintId\": \"lhbp-6jc6l8yb\",\n    \"AccountIds\": [\n        \"700000164995\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d339efa9-f637-4ba9-a7c6-fb89ce67d76f\"\n    }\n}",
+        "title": "跨账号共享镜像"
       }
     ],
     "StartDockerContainers": [

@@ -351,7 +351,7 @@
       "status": "online"
     },
     "DescribeInstanceAttributes": {
-      "document": "获取实例属性 ",
+      "document": "获取实例属性",
       "input": "DescribeInstanceAttributesRequest",
       "name": "获取实例属性",
       "output": "DescribeInstanceAttributesResponse",
@@ -7616,7 +7616,7 @@
           "example": "无",
           "member": "InstanceAttributesResponse",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

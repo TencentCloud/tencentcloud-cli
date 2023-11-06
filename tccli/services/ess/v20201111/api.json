@@ -38,7 +38,7 @@
     "CreateBatchQuickSignUrl": {
       "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署 <br/>\n`注意：`<br/>\n`1. 该接口目前仅支持签署人类型是个人签署方的批量签署场景(ApproverType=1)。` <br/>\n`2. 该接口可生成批量签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，不支持填写控件 。` <br/>\n`3. 请确保C端签署人在批量签署合同中为待签署状态，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。` <br/>\n`4. 该签署链接有效期为30分钟，过期后将失效，如需签署可重新创建批量签署链接 。` <br/>\n`5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，不支持微信小程序嵌入。`<br/>\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>",
       "input": "CreateBatchQuickSignUrlRequest",
-      "name": "创建H5批量签署链接",
+      "name": "获取H5批量签署链接",
       "output": "CreateBatchQuickSignUrlResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "CreateExtendedServiceAuthInfos": {
-      "document": "创建企业扩展服务授权，当前仅支持授权 “企业自动签” 给企业员工。\n\n注：支持集团代子企业操作，请联系运营开通此功能。",
+      "document": "创建企业扩展服务授权，当前仅支持授权 “企业自动签” 和 “批量签署” 给企业员工。\n该接口作用和电子签控制台 企业设置-扩展服务-企业自动签署和批量签署授权 两个模块功能相同，可通过该接口授权给企业员工。\n\n注：“企业自动签授权”支持集团代子企业操作，请联系运营开通此功能。",
       "input": "CreateExtendedServiceAuthInfosRequest",
-      "name": "创建企业扩展服务（自动签）授权",
+      "name": "创建企业扩展服务授权",
       "output": "CreateExtendedServiceAuthInfosResponse",
       "status": "online"
     },
@@ -260,9 +260,9 @@
       "status": "online"
     },
     "DeleteExtendedServiceAuthInfos": {
-      "document": "删除企业扩展服务授权，当前仅支持 “企业自动签” 取消授权。\n\n注：支持集团代子企业操作，请联系运营开通此功能。",
+      "document": "删除企业扩展服务授权，当前仅支持 “企业自动签” 和“批量签署”  的取消授权。\n该接口作用和电子签控制台 企业设置-扩展服务-企业自动签署和批量签署授权 两个模块功能相同，可通过该接口取消企业员工授权。\n\n注：支持集团代子企业操作，请联系运营开通此功能。",
       "input": "DeleteExtendedServiceAuthInfosRequest",
-      "name": "删除企业扩展服务（自动签）授权",
+      "name": "删除企业扩展服务授权",
       "output": "DeleteExtendedServiceAuthInfosResponse",
       "status": "online"
     },
@@ -337,7 +337,7 @@
       "status": "online"
     },
     "DescribeFlowTemplates": {
-      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。\n\n适用场景：\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。",
+      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。\n\n适用场景：\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。",
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板",
       "output": "DescribeFlowTemplatesResponse",
@@ -2265,8 +2265,8 @@
         },
         {
           "disabled": false,
-          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n</ul>\n",
-          "example": "\"\"",
+          "document": "取值\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n<li>BATCH_SIGN：批量签署</li>\n</ul>",
+          "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "ExtendServiceType",
           "required": false,
@@ -5269,8 +5269,8 @@
         },
         {
           "disabled": false,
-          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n</ul>\n",
-          "example": "\"\"",
+          "document": "取值如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签</li>\n<li>BATCH_SIGN：批量签署</li>\n</ul>",
+          "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "ExtendServiceType",
           "required": false,
@@ -7646,12 +7646,12 @@
       "usage": "out"
     },
     "FlowApproverUrlInfo": {
-      "document": "签署链接信息",
+      "document": "签署链接信息。",
       "members": [
         {
           "disabled": false,
-          "document": "签署链接(短链形式呈现)。请注意保密，不要将其外泄给无关用户。\n注: `注意该链接有效期为30分钟`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://essurl.cn/bR8**HA",
+          "document": "签署短链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://essurl.cn/M**XE",
           "member": "string",
           "name": "SignUrl",
           "output_required": true,
@@ -7660,7 +7660,7 @@
         },
         {
           "disabled": false,
-          "document": "签署参与人类型 \n<ul><li> **1** :个人参与方</li></ul>\n\n注: `现在仅支持个人参与方`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人类型。\n- **1**: 个人\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "ApproverType",
@@ -7670,7 +7670,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "典子谦",
           "member": "string",
           "name": "ApproverName",
@@ -7680,7 +7680,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人手机号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "13200000000",
           "member": "string",
           "name": "ApproverMobile",
@@ -7690,8 +7690,8 @@
         },
         {
           "disabled": false,
-          "document": "签署链接(长链形式呈现)。请注意保密，不要将其外泄给无关用户。\n注: `注意该链接有效期为30分钟`\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=1&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+          "document": "签署长链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://quick.qian.tencent.cn/home?ApproverIdCardNumber=MioqK**Kio2&ApproverMobile=MTkx**%3D&ApproverName=%25E**2A&ApproverType=1&Code=yDS**w3u2Mg8q&CodeType=QUICK&FlowId=yDSLVUU**MszDy&ShowHeader=1&shortKey=yDwq5U**GlG1c&token=M**XE",
           "member": "string",
           "name": "LongUrl",
           "output_required": true,
@@ -9112,7 +9112,7 @@
         },
         {
           "disabled": false,
-          "document": "签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。",
+          "document": "签署平台\n如果文件是在腾讯电子签平台签署，则为**腾讯电子签**，\n如果文件不在腾讯电子签平台签署，则为**其他平台**。",
           "example": "无",
           "member": "string",
           "name": "SignPlatform",
@@ -9122,7 +9122,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人名称",
+          "document": "申请证书的主体的名字\n\n如果是在腾讯电子签平台签署, 则对应的主体的名字个数如下\n**企业**:  ESS@企业名称@编码\n**个人**: ESS@个人姓名@证件号@808854\n\n如果在其他平台签署的, 主体的名字参考其他平台的说明",
           "example": "无",
           "member": "string",
           "name": "SignerName",
@@ -9132,7 +9132,7 @@
         },
         {
           "disabled": false,
-          "document": "签署时间戳，单位秒",
+          "document": "签署时间的Unix时间戳，单位毫秒",
           "example": "无",
           "member": "int64",
           "name": "SignTime",
@@ -9142,7 +9142,7 @@
         },
         {
           "disabled": false,
-          "document": "签名算法",
+          "document": "证书签名算法,  如SHA1withRSA等算法",
           "example": "无",
           "member": "string",
           "name": "SignAlgorithm",
@@ -9152,7 +9152,7 @@
         },
         {
           "disabled": false,
-          "document": "签名证书序列号",
+          "document": "CA供应商下发给用户的证书编号\n\n注意：`腾讯电子签接入多家CA供应商以提供容灾能力，不同CA下发的证书编号区别较大，但基本都是由数字和字母组成，长度在200以下`。",
           "example": "无",
           "member": "string",
           "name": "CertSn",
@@ -9162,7 +9162,7 @@
         },
         {
           "disabled": false,
-          "document": "证书起始时间戳，单位毫秒",
+          "document": "证书起始时间的Unix时间戳，单位毫秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotBefore",
@@ -9172,7 +9172,7 @@
         },
         {
           "disabled": false,
-          "document": "证书过期时间戳，单位毫秒",
+          "document": "证书过期时间的时间戳，单位毫秒",
           "example": "无",
           "member": "int64",
           "name": "CertNotAfter",
@@ -9182,7 +9182,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域横坐标，单位pt",
+          "document": "签名域横坐标，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentPosX",
@@ -9192,7 +9192,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域纵坐标，单位pt",
+          "document": "签名域纵坐标，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentPosY",
@@ -9202,7 +9202,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域宽度，单位pt",
+          "document": "签名域宽度，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentWidth",
@@ -9212,7 +9212,7 @@
         },
         {
           "disabled": false,
-          "document": "签名域高度，单位pt",
+          "document": "签名域高度，单位px",
           "example": "无",
           "member": "float",
           "name": "ComponentHeight",

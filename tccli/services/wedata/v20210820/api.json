@@ -10348,6 +10348,15 @@
           "name": "Ids",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10361,7 +10370,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14154,6 +14163,15 @@
           "example": "无",
           "member": "bool",
           "name": "IncludeTask",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含虚拟任务，当 IncludeTask 为 true 的时候，该参数才生效，默认为 true",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeVirtualTask",
           "required": false,
           "type": "bool"
         }
@@ -32257,6 +32275,15 @@
           "name": "COSRegion",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作项目id",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -32270,7 +32297,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -35481,7 +35508,7 @@
           "example": "无",
           "member": "PathNodeDsVO",
           "name": "Children",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true

@@ -271,7 +271,7 @@
         },
         {
           "disabled": false,
-          "document": "使用模板发送时，填写的模板相关参数",
+          "document": "使用模板发送时，填写的模板相关参数\n<dx-alert infotype=\"notice\" title=\"注意\"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>",
           "example": "无",
           "member": "Template",
           "name": "Template",
@@ -280,7 +280,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "已废弃\n<dx-alert infotype=\"notice\" title=\"说明\"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert> ",
           "example": "无",
           "member": "Simple",
           "name": "Simple",
@@ -344,6 +344,7 @@
           "example": "123",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1861,7 +1862,7 @@
         },
         {
           "disabled": false,
-          "document": "使用模板发送时，填写的模板相关参数。因 Simple 已经废除使用，Template 为必填项",
+          "document": "使用模板发送时，填写模板相关参数。\n<dx-alert infotype=\"notice\" title=\"注意\"> 如您未申请过特殊配置，则该字段为必填 </dx-alert>",
           "example": "无",
           "member": "Template",
           "name": "Template",
@@ -1870,7 +1871,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃",
+          "document": "已废弃\n<dx-alert infotype=\"notice\" title=\"说明\"> 仅部分历史上申请了特殊配置的客户需要使用。如您未申请过特殊配置，则不存在该字段。</dx-alert>",
           "example": "无",
           "member": "Simple",
           "name": "Simple",

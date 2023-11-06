@@ -406,6 +406,13 @@
       "output": "DescribeIpHitItemsResponse",
       "status": "online"
     },
+    "DescribeModuleStatus": {
+      "document": "查询各个waf基础安全模块的开关状态，看每个模块是否开启",
+      "input": "DescribeModuleStatusRequest",
+      "name": "查询waf各个模块接口的开关状态",
+      "output": "DescribeModuleStatusResponse",
+      "status": "online"
+    },
     "DescribeObjects": {
       "document": "查看防护对象列表",
       "input": "DescribeObjectsRequest",
@@ -2094,6 +2101,144 @@
       ],
       "type": "object"
     },
+    "ApiPkg": {
+      "document": "API安全资源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sada",
+          "member": "string",
+          "name": "ResourceIds",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "BeginTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-01-05",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "申请数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "InquireNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UsedNum",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "续费标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RenewFlag",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费项\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_wsm_waf_scene_major_events_basic",
+          "member": "string",
+          "name": "BillingItem",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1 API安全6折\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "APICPWaf",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1 表示5折折扣\n2 表示4折折扣\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "APINPWaf",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "api安全7天试用标识。1试用。0没试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsAPISecurityTrial",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AttackLogInfo": {
       "document": "攻击日志详情",
       "members": [
@@ -2437,6 +2582,17 @@
           "example": "1",
           "member": "int64",
           "name": "BotNPWaf",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "7天bot试用标识 1 试用 0 没有试用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsBotTrial",
           "output_required": false,
           "required": false,
           "type": "int",
@@ -7150,6 +7306,23 @@
       ],
       "type": "object"
     },
+    "DescribeModuleStatusRequest": {
+      "document": "DescribeModuleStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModuleStatusResponse": {
+      "document": "DescribeModuleStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeObjectsRequest": {
       "document": "DescribeObjects请求参数结构体",
       "members": [
@@ -11277,6 +11450,17 @@
           "example": "详情",
           "member": "HybridPkg",
           "name": "HybridPkg",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "API安全资源包\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "详情",
+          "member": "ApiPkg",
+          "name": "ApiPkg",
           "output_required": false,
           "required": false,
           "type": "object",
