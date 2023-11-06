@@ -1,26 +1,10 @@
 # 本版本更新包含以下内容：
 
-## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+## Elasticsearch Service(es) 版本：2018-04-16
 
-### 第 65 次发布
+### 第 45 次发布
 
-发布时间：2023-11-06 01:29:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeSlaveZones](http://document.tencentcloudapi.woa.com/document/product/1003/82523)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 99 次发布
-
-发布时间：2023-11-06 01:41:55
+发布时间：2023-11-07 01:17:08
 
 本次发布包含了以下内容：
 
@@ -28,13 +12,49 @@
 
 修改数据结构：
 
-* [FlowDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowDetailInfo)
+* [DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)
 
-	* <font color="#dd0000">**修改成员**：</font>CcInfos, NeedCreateReview
+	* <font color="#dd0000">**修改成员**：</font>VpcId, LogPaths, CvmInstances
 
-* [ReleasedApprover](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ReleasedApprover)
+* [DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)
 
-	* <font color="#dd0000">**修改成员**：</font>OrganizationName
+	* <font color="#dd0000">**修改成员**：</font>VpcId, TkeId, CollectorName, CollectorType, CollectorVersion, IncludeNamespaces, ExcludeNamespaces, PodLabelKeys, PodLabelValues, ContainerName, ConfigContent, InputType, InputPath
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 50 次发布
+
+发布时间：2023-11-07 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowApproverUrlInfo)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 100 次发布
+
+发布时间：2023-11-07 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>LongUrl, ExpirationTime, SignScene
 
 
 
@@ -43,11 +63,11 @@
 
 
 
-## T-Sec 云防火墙(ocfw) 版本：2023-02-09
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
-### 第 4 次发布
+### 第 40 次发布
 
-发布时间：2023-11-06 02:02:42
+发布时间：2023-11-07 01:21:37
 
 本次发布包含了以下内容：
 
@@ -55,37 +75,16 @@
 
 新增接口：
 
-* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1746/82538)
-* [DescribeBandWidthBanner](http://document.tencentcloudapi.woa.com/document/product/1746/82528)
-* [DescribeBlackListSwitchStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82540)
-* [DescribeBlockIPBySGSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82527)
-* [DescribeDnsRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82537)
-* [DescribeEnterpriseSecurityNotDispatchCount](http://document.tencentcloudapi.woa.com/document/product/1746/82542)
-* [DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1746/82526)
-* [DescribeHoneyPotOverview](http://document.tencentcloudapi.woa.com/document/product/1746/82531)
-* [DescribeLogStorageStatistic](http://document.tencentcloudapi.woa.com/document/product/1746/82536)
-* [DescribeMessageCenterSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82525)
-* [DescribeNatFwInfoCount](http://document.tencentcloudapi.woa.com/document/product/1746/82535)
-* [DescribeNatRuleOverviewNew](http://document.tencentcloudapi.woa.com/document/product/1746/82534)
-* [DescribeOmStat](http://document.tencentcloudapi.woa.com/document/product/1746/82530)
-* [DescribeSecurityGroupOverviewData](http://document.tencentcloudapi.woa.com/document/product/1746/82533)
-* [DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82524)
-* [DescribeVpcRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82532)
-* [DescribeWebServiceStat](http://document.tencentcloudapi.woa.com/document/product/1746/82529)
-
-新增数据结构：
-
-* [CommonFilter](http://document.tencentcloudapi.woa.com/document/product/1746/82472#CommonFilter)
-* [FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1746/82472#FwGroupSwitchShow)
-* [NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1746/82472#NetInstancesInfo)
+* [CancelShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82545)
+* [ShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82544)
 
 
 
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+## TI-ONE 训练平台(tione) 版本：2021-11-11
 
-### 第 29 次发布
+### 第 39 次发布
 
-发布时间：2023-11-06 02:09:11
+发布时间：2023-11-07 01:29:45
 
 本次发布包含了以下内容：
 
@@ -93,85 +92,14 @@
 
 修改接口：
 
-* [DescribeSlowlogs](http://document.tencentcloudapi.woa.com/document/product/238/19936)
+* [DescribeTrainingTaskPods](http://document.tencentcloudapi.woa.com/document/product/851/74851)
 
-	* 新增出参：SlowLogs
-
-* [DescribeUploadBackupInfo](http://document.tencentcloudapi.woa.com/document/product/238/53185)
-
-	* 新增出参：CosSecurityToken
-
-* [DescribeUploadIncrementalInfo](http://document.tencentcloudapi.woa.com/document/product/238/53184)
-
-	* 新增出参：CosSecurityToken
-
-* [ModifyBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/46288)
-
-	* 新增出参：Code
-
-
-新增数据结构：
-
-* [SlowLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SlowLog)
-
-修改数据结构：
-
-* [DbNormalDetail](http://document.tencentcloudapi.woa.com/document/product/238/19976#DbNormalDetail)
-
-	* 新增成员：IsFullTextEnabled
-
-	* <font color="#dd0000">**修改成员**：</font>CreateTime
+	* <font color="#dd0000">**修改出参**：</font>PodInfoList
 
 
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 75 次发布
-
-发布时间：2023-11-06 02:18:21
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/82543)
-
-新增数据结构：
-
-* [ConsumerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLog)
-* [ConsumerLogs](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLogs)
-* [ProducerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ProducerLog)
-* [ServerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ServerLog)
-
-
-
-## 高性能计算平台(thpc) 版本：2023-03-21
-
-### 第 6 次发布
-
-发布时间：2023-11-06 02:21:26
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [ManagerNode](http://document.tencentcloudapi.woa.com/document/product/1701/80209#ManagerNode)
-
-	* 新增成员：EnhancedService
-
-
-
-
-## 高性能计算平台(thpc) 版本：2022-04-01
-
-
-
-## 高性能计算平台(thpc) 版本：2021-11-09
+## TI-ONE 训练平台(tione) 版本：2019-10-22
 
 
 
@@ -26942,7 +26870,7 @@
 
 新增接口：
 
-* [[DescribeSlaveZones](http://document.tencentcloudapi.woa.com/document/product/1003/82523)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeSlaveZones](http://document.tencentcloudapi.woa.com/document/product/1003/82523)
 
 ### 第 64 次发布
 
@@ -36211,6 +36139,25 @@
 
 ## Elasticsearch Service(es) 版本：2018-04-16
 
+### 第 45 次发布
+
+发布时间：2023-11-07 01:17:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId, LogPaths, CvmInstances
+
+* [DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId, TkeId, CollectorName, CollectorType, CollectorVersion, IncludeNamespaces, ExcludeNamespaces, PodLabelKeys, PodLabelValues, ContainerName, ConfigContent, InputType, InputPath
+
+
 ### 第 44 次发布
 
 发布时间：2023-10-31 01:17:41
@@ -37214,6 +37161,19 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 50 次发布
+
+发布时间：2023-11-07 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowApproverUrlInfo)
+
 
 ### 第 49 次发布
 
@@ -38471,6 +38431,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 100 次发布
+
+发布时间：2023-11-07 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>LongUrl, ExpirationTime, SignScene
+
 
 ### 第 99 次发布
 
@@ -47568,6 +47543,19 @@
 
 ## 轻量应用服务器(lighthouse) 版本：2020-03-24
 
+### 第 40 次发布
+
+发布时间：2023-11-07 01:21:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CancelShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82545)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82544)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 39 次发布
 
 发布时间：2023-10-09 02:20:31
@@ -56174,29 +56162,29 @@
 
 新增接口：
 
-* [[DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1746/82538)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBandWidthBanner](http://document.tencentcloudapi.woa.com/document/product/1746/82528)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBlackListSwitchStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82540)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBlockIPBySGSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82527)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDnsRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82537)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeEnterpriseSecurityNotDispatchCount](http://document.tencentcloudapi.woa.com/document/product/1746/82542)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1746/82526)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeHoneyPotOverview](http://document.tencentcloudapi.woa.com/document/product/1746/82531)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeLogStorageStatistic](http://document.tencentcloudapi.woa.com/document/product/1746/82536)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMessageCenterSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82525)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeNatFwInfoCount](http://document.tencentcloudapi.woa.com/document/product/1746/82535)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeNatRuleOverviewNew](http://document.tencentcloudapi.woa.com/document/product/1746/82534)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeOmStat](http://document.tencentcloudapi.woa.com/document/product/1746/82530)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSecurityGroupOverviewData](http://document.tencentcloudapi.woa.com/document/product/1746/82533)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82524)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeVpcRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82532)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeWebServiceStat](http://document.tencentcloudapi.woa.com/document/product/1746/82529)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAclRule](http://document.tencentcloudapi.woa.com/document/product/1746/82538)
+* [DescribeBandWidthBanner](http://document.tencentcloudapi.woa.com/document/product/1746/82528)
+* [DescribeBlackListSwitchStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82540)
+* [DescribeBlockIPBySGSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82527)
+* [DescribeDnsRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82537)
+* [DescribeEnterpriseSecurityNotDispatchCount](http://document.tencentcloudapi.woa.com/document/product/1746/82542)
+* [DescribeFwEdgeIps](http://document.tencentcloudapi.woa.com/document/product/1746/82526)
+* [DescribeHoneyPotOverview](http://document.tencentcloudapi.woa.com/document/product/1746/82531)
+* [DescribeLogStorageStatistic](http://document.tencentcloudapi.woa.com/document/product/1746/82536)
+* [DescribeMessageCenterSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82525)
+* [DescribeNatFwInfoCount](http://document.tencentcloudapi.woa.com/document/product/1746/82535)
+* [DescribeNatRuleOverviewNew](http://document.tencentcloudapi.woa.com/document/product/1746/82534)
+* [DescribeOmStat](http://document.tencentcloudapi.woa.com/document/product/1746/82530)
+* [DescribeSecurityGroupOverviewData](http://document.tencentcloudapi.woa.com/document/product/1746/82533)
+* [DescribeVpcFwGroupSwitch](http://document.tencentcloudapi.woa.com/document/product/1746/82524)
+* [DescribeVpcRuleStatus](http://document.tencentcloudapi.woa.com/document/product/1746/82532)
+* [DescribeWebServiceStat](http://document.tencentcloudapi.woa.com/document/product/1746/82529)
 
 新增数据结构：
 
-* [[CommonFilter](http://document.tencentcloudapi.woa.com/document/product/1746/82472#CommonFilter)](http://document.tencentcloudapi.woa.com/document/product/1746/82472#[CommonFilter](http://document.tencentcloudapi.woa.com/document/product/1746/82472#CommonFilter))
-* [[FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1746/82472#FwGroupSwitchShow)](http://document.tencentcloudapi.woa.com/document/product/1746/82472#[FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1746/82472#FwGroupSwitchShow))
-* [[NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1746/82472#NetInstancesInfo)](http://document.tencentcloudapi.woa.com/document/product/1746/82472#[NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1746/82472#NetInstancesInfo))
+* [CommonFilter](http://document.tencentcloudapi.woa.com/document/product/1746/82472#CommonFilter)
+* [FwGroupSwitchShow](http://document.tencentcloudapi.woa.com/document/product/1746/82472#FwGroupSwitchShow)
+* [NetInstancesInfo](http://document.tencentcloudapi.woa.com/document/product/1746/82472#NetInstancesInfo)
 
 ### 第 3 次发布
 
@@ -63253,7 +63241,7 @@
 
 新增数据结构：
 
-* [[SlowLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SlowLog)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[SlowLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SlowLog))
+* [SlowLog](http://document.tencentcloudapi.woa.com/document/product/238/19976#SlowLog)
 
 修改数据结构：
 
@@ -70069,14 +70057,14 @@
 
 新增接口：
 
-* [[DescribeMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/82543)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeMsgTrace](http://document.tencentcloudapi.woa.com/document/product/1179/82543)
 
 新增数据结构：
 
-* [[ConsumerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLog)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[ConsumerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLog))
-* [[ConsumerLogs](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLogs)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[ConsumerLogs](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLogs))
-* [[ProducerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ProducerLog)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[ProducerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ProducerLog))
-* [[ServerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ServerLog)](http://document.tencentcloudapi.woa.com/document/product/1179/46089#[ServerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ServerLog))
+* [ConsumerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLog)
+* [ConsumerLogs](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ConsumerLogs)
+* [ProducerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ProducerLog)
+* [ServerLog](http://document.tencentcloudapi.woa.com/document/product/1179/46089#ServerLog)
 
 ### 第 74 次发布
 
@@ -74027,6 +74015,21 @@
 
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 39 次发布
+
+发布时间：2023-11-07 01:29:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrainingTaskPods](http://document.tencentcloudapi.woa.com/document/product/851/74851)
+
+	* <font color="#dd0000">**修改出参**：</font>PodInfoList
+
 
 ### 第 38 次发布
 

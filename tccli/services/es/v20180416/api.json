@@ -710,6 +710,7 @@
           "example": "elasticsearch",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -720,6 +721,7 @@
           "example": "es-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -730,6 +732,7 @@
           "example": "elastic",
           "member": "string",
           "name": "ESUserName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -740,6 +743,7 @@
           "example": "xxxxxx",
           "member": "string",
           "name": "ESUserPasswd",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -750,6 +754,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableMonitoring",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -760,6 +765,7 @@
           "example": "1",
           "member": "int64",
           "name": "EnableDashboard",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -770,6 +776,7 @@
           "example": "1.1.1.1:9092",
           "member": "string",
           "name": "KafkaEndpoint",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -780,6 +787,7 @@
           "example": "test",
           "member": "string",
           "name": "KafkaTopic",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -790,6 +798,7 @@
           "example": "1.1.1",
           "member": "string",
           "name": "KafkaVersion",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -800,6 +809,7 @@
           "example": "\t topic-xxxx",
           "member": "string",
           "name": "SesTopicId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -810,6 +820,7 @@
           "example": "123232-xxxxx",
           "member": "string",
           "name": "SesTopicName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -820,6 +831,7 @@
           "example": "dip.tencentcloudmq.com:6000",
           "member": "string",
           "name": "SesTopicAddress",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -830,6 +842,7 @@
           "example": "iu8n1yd44zln",
           "member": "string",
           "name": "SesTopicUserName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -840,6 +853,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "SesTopicPasswd",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -850,6 +864,7 @@
           "example": "5044",
           "member": "uint64",
           "name": "LogstashListenPort",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -860,6 +875,7 @@
           "example": "index-66e77nxu",
           "member": "string",
           "name": "SesIndexId",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -870,6 +886,7 @@
           "example": "test2-3peh0wla",
           "member": "string",
           "name": "SesIndexName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -880,6 +897,7 @@
           "example": "pmtm0279-0kxpzhte",
           "member": "string",
           "name": "SesIndexUsername",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -890,6 +908,7 @@
           "example": "OA0+586Z!=hl2%V.Sg14",
           "member": "string",
           "name": "SesIndexPassword",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -900,6 +919,7 @@
           "example": "index-9ealk5tx.ap-beijing.qcloudes.com",
           "member": "string",
           "name": "SesIndexAccessUrl",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -927,7 +947,7 @@
           "example": "Default",
           "member": "Namespaces",
           "name": "Namespaces",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -938,7 +958,7 @@
           "example": "无",
           "member": "PodLabel",
           "name": "PodLabels",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -949,7 +969,7 @@
           "example": "nginx",
           "member": "string",
           "name": "ContainerName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -960,7 +980,7 @@
           "example": "nginx",
           "member": "string",
           "name": "IndexPrefix",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -971,7 +991,7 @@
           "example": "a,b",
           "member": "string",
           "name": "LogFilters",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -982,7 +1002,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfigContent",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -993,7 +1013,7 @@
           "example": "test",
           "member": "string",
           "name": "KafkaTopic",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1004,7 +1024,7 @@
           "example": "niginx",
           "member": "string",
           "name": "IndexAlias",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1015,7 +1035,7 @@
           "example": "无",
           "member": "string",
           "name": "InputType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1026,7 +1046,7 @@
           "example": "/var/log",
           "member": "string",
           "name": "InputPath",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1037,7 +1057,7 @@
           "example": "无",
           "member": "bool",
           "name": "InputsTailFiles",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
@@ -4049,7 +4069,7 @@
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4059,7 +4079,7 @@
           "example": "[/test, /tmp]",
           "member": "string",
           "name": "LogPaths",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4069,7 +4089,7 @@
           "example": "无",
           "member": "DiDataSourceCvmInstance",
           "name": "CvmInstances",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4079,7 +4099,7 @@
           "example": "coll-xxxxxxxx",
           "member": "string",
           "name": "CollectorId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -4141,7 +4161,7 @@
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4151,97 +4171,7 @@
           "example": "cls-xxxx",
           "member": "string",
           "name": "TkeId",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "采集源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "CollectorName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "采集器版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "7.14.0",
-          "member": "string",
-          "name": "CollectorVersion",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "采集器类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "filebeat",
-          "member": "string",
-          "name": "CollectorType",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "IncludeNamespaces",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke不包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ExcludeNamespaces",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke pod标签名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "PodLabelKeys",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke pod标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "PodLabelValues",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ContainerName",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "tke采集器beat配置\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "ConfigContent",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4251,7 +4181,97 @@
           "example": "coll-xxxxxxxx",
           "member": "string",
           "name": "CollectorId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CollectorName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "filebeat",
+          "member": "string",
+          "name": "CollectorType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集器版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7.14.0",
+          "member": "string",
+          "name": "CollectorVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IncludeNamespaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke不包含的命名空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeNamespaces",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke pod标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodLabelKeys",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke pod标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PodLabelValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tke采集器beat配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ConfigContent",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4261,7 +4281,7 @@
           "example": "无",
           "member": "string",
           "name": "InputType",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4271,7 +4291,7 @@
           "example": "无",
           "member": "string",
           "name": "InputPath",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

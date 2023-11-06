@@ -14,71 +14,72 @@ Output:
 {
     "Response": {
         "Result": {
-            "MsgRetentionTime": 1440,
-            "DeleteRouteTimestamp": "xx",
-            "Version": "xx",
-            "Config": {
-                "DefaultNumPartitions": 0,
-                "AutoCreateTopicsEnable": true,
-                "DefaultReplicationFactor": 2
-            },
-            "RemainingPartitions": 0,
-            "Status": 1,
-            "CreatedTopics": 0,
-            "VpcId": "xx",
-            "Tags": [
+            "InstanceId": "abc",
+            "InstanceName": "abc",
+            "VipList": [
                 {
-                    "TagKey": "xx",
-                    "TagValue": "xx"
+                    "Vip": "abc",
+                    "Vport": "abc"
                 }
             ],
-            "InstanceId": "xx",
-            "Vip": "xx",
-            "SubnetId": "xx",
-            "InstanceType": "xx",
-            "RemainderTopics": 17,
-            "MaxConnection": 1,
-            "PublicNetwork": 48000,
-            "Healthy": 1,
-            "ZoneId": 100003,
-            "Cvm": 0,
-            "DiskSize": 120000,
-            "HealthyMessage": "xx",
-            "RemainderPartitions": 45,
-            "InstanceName": "xx",
+            "Vip": "abc",
+            "Vport": "abc",
+            "Status": 0,
+            "Bandwidth": 0,
+            "DiskSize": 0,
+            "ZoneId": 0,
+            "VpcId": "abc",
+            "SubnetId": "abc",
+            "Healthy": 0,
+            "HealthyMessage": "abc",
+            "CreateTime": 1,
+            "MsgRetentionTime": 0,
+            "Config": {
+                "AutoCreateTopicsEnable": true,
+                "DefaultNumPartitions": 0,
+                "DefaultReplicationFactor": 0
+            },
+            "RemainderPartitions": 0,
+            "RemainderTopics": 0,
             "CreatedPartitions": 0,
-            "Features": [
-                "xx"
+            "CreatedTopics": 0,
+            "Tags": [
+                {
+                    "TagKey": "abc",
+                    "TagValue": "abc"
+                }
             ],
+            "ExpireTime": 1,
             "ZoneIds": [
                 0
             ],
-            "ExpireTime": 1,
-            "Bandwidth": 48000,
+            "Version": "abc",
             "MaxGroupNum": 0,
-            "RetentionTimeConfig": {
-                "StepForwardPercentage": 10,
-                "DiskQuotaPercentage": 90,
-                "Enable": 0,
-                "BottomRetention": 360
-            },
-            "DynamicDiskConfig": {
-                "Enable": 1,
-                "DiskQuotaPercentage": 30,
-                "StepForwardPercentage": 15,
-                "MaxDiskSpace": 1000
-            },
-            "Vport": "xx",
-            "CreateTime": 1,
-            "VipList": [
-                {
-                    "Vip": "xx",
-                    "Vport": "xx"
-                }
+            "Cvm": 0,
+            "InstanceType": "abc",
+            "Features": [
+                "abc"
             ],
-            "RemainingTopics": 0
+            "RetentionTimeConfig": {
+                "Enable": 0,
+                "DiskQuotaPercentage": 0,
+                "StepForwardPercentage": 0,
+                "BottomRetention": 0
+            },
+            "MaxConnection": 1,
+            "PublicNetwork": 0,
+            "DeleteRouteTimestamp": "abc",
+            "RemainingPartitions": 0,
+            "RemainingTopics": 0,
+            "DynamicDiskConfig": {
+                "Enable": 0,
+                "StepForwardPercentage": 0,
+                "DiskQuotaPercentage": 0,
+                "MaxDiskSpace": 0
+            },
+            "InstanceChargeType": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

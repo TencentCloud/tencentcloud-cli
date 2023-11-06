@@ -1,3 +1,108 @@
+# Release 3.0.879.1
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 45 次发布
+
+发布时间：2023-11-07 01:17:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DiDataSourceCvm](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvm)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId, LogPaths, CvmInstances
+
+* [DiDataSourceTke](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceTke)
+
+	* <font color="#dd0000">**修改成员**：</font>VpcId, TkeId, CollectorName, CollectorType, CollectorVersion, IncludeNamespaces, ExcludeNamespaces, PodLabelKeys, PodLabelValues, ContainerName, ConfigContent, InputType, InputPath
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 50 次发布
+
+发布时间：2023-11-07 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1668/79360#FlowApproverUrlInfo)
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 100 次发布
+
+发布时间：2023-11-07 01:17:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [FlowApproverUrlInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FlowApproverUrlInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>LongUrl, ExpirationTime, SignScene
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 40 次发布
+
+发布时间：2023-11-07 01:21:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CancelShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82545)
+* [ShareBlueprintAcrossAccounts](http://document.tencentcloudapi.woa.com/document/product/1207/82544)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 39 次发布
+
+发布时间：2023-11-07 01:29:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTrainingTaskPods](http://document.tencentcloudapi.woa.com/document/product/851/74851)
+
+	* <font color="#dd0000">**修改出参**：</font>PodInfoList
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.878.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
