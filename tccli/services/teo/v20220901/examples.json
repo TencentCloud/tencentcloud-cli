@@ -14,6 +14,20 @@
         "title": "将策略模板应用到指定域名 （绑定域名至策略模板）"
       }
     ],
+    "BindSharedCNAME": [
+      {
+        "document": "将 ZoneId 为 zone-225qgrnvbi9w 的站点下的域名 a.qq.com 和 b.qq.com 绑定至共享 CNAME qq.com.sai2ig51kaa5.share.dnse5.com，域名 api.qq.com 和 img.qq.com 绑定至共享 CNAME config.qq.com.sai2ig51kaa5.share.dnse5.com。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindSharedCNAME\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"BindType\": \"bind\",\n    \"BindSharedCNAMEMaps\": [\n        {\n            \"SharedCNAME\": \"qq.com.sai2ig51kaa5.share.dnse5.com\",\n            \"DomainNames\": [\n                \"a.qq.com\",\n                \"b.qq.com\"\n            ]\n        },\n        {\n            \"SharedCNAME\": \"config.qq.com.sai2ig51kaa5.share.dnse5.com\",\n            \"DomainNames\": [\n                \"api.qq.com\",\n                \"img.qq.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "绑定共享 CNAME"
+      },
+      {
+        "document": "将 ZoneId 为 zone-225qgrnvbi9w 的站点下的域名 a.qq.com 和共享 CNAME qq.com.sai2ig51kaa5.share.dnse5.com 解绑。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BindSharedCNAME\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"BindType\": \"unbind\",\n    \"BindSharedCNAMEMaps\": [\n        {\n            \"SharedCNAME\": \"qq.com.sai2ig51kaa5.share.dnse5.com\",\n            \"DomainNames\": [\n                \"a.qq.com\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-5d3a-ac39-1706cbf8a708\"\n    }\n}",
+        "title": "解绑共享 CNAME"
+      }
+    ],
     "BindZoneToPlan": [
       {
         "document": "",
@@ -154,10 +168,10 @@
     ],
     "CreateSharedCNAME": [
       {
-        "document": "创建共享CNAME",
-        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedCNAME\n<公共请求参数>\n\n{\n    \"SharedCNAMEPrefix\": \"test\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Description\": \"用于业务A场景\"\n}",
-        "output": "{\n    \"Response\": {\n        \"SharedCNAME\": \"test.225qgrnvbi9w.share.eo.dnse1.com\",\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
-        "title": "创建共享CNAME"
+        "document": "在 ZoneId 为 zone-225qgrnvbi9w 的站点下，创建一个共享 CNAME 前缀为 test，描述为 For Service A 的共享 CNAME。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSharedCNAME\n<公共请求参数>\n\n{\n    \"SharedCNAMEPrefix\": \"test\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Description\": \"For Service A\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SharedCNAME\": \"test.225qgrnvbi9w.share.dnse1.com\",\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "创建共享 CNAME"
       }
     ],
     "CreateZone": [
@@ -234,6 +248,14 @@
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSecurityIPGroup\n<公共请求参数>\n\n{\n    \"GroupId\": 85,\n    \"ZoneId\": \"zone-qdwibsa\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"09ce3d28-1119-49cd-xxxx-27cb34dac669\"\n    }\n}",
         "title": "删除安全 IP 组"
+      }
+    ],
+    "DeleteSharedCNAME": [
+      {
+        "document": "删除 ZoneId 为 zone-225qgrnvbi9w 的站点下的共享 CNAME qq.com.225qgrnvbi9w.share.dnse5.com。",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteSharedCNAME\n<公共请求参数>\n\n{\n    \"SharedCNAME\": \"qq.com.225qgrnvbi9w.share.dnse5.com\",\n    \"ZoneId\": \"zone-225qgrnvbi9w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
+        "title": "删除共享 CNAME"
       }
     ],
     "DeleteZone": [

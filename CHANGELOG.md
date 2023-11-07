@@ -1,3 +1,137 @@
+# Release 3.0.880.1
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 48 次发布
+
+发布时间：2023-11-08 01:10:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckFunction](http://document.tencentcloudapi.woa.com/document/product/614/82546)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 51 次发布
+
+发布时间：2023-11-08 01:15:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
+
+新增数据结构：
+
+* [BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#BillUsageDetail)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 101 次发布
+
+发布时间：2023-11-08 01:16:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SyncProxyOrganization](http://document.tencentcloudapi.woa.com/document/product/1595/75241)
+
+	* 新增入参：ProxyAddress
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 11 次发布
+
+发布时间：2023-11-08 01:20:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetNetMonitor](http://document.tencentcloudapi.woa.com/document/product/1385/82549)
+
+新增数据结构：
+
+* [MonitorData](http://document.tencentcloudapi.woa.com/document/product/1385/55846#MonitorData)
+* [SlotNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#SlotNetInfo)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 76 次发布
+
+发布时间：2023-11-08 01:26:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterConfig)
+
+	* 新增成员：TopicDistribution
+
+	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, MaxRetentionTime, MaxLatencyTime, MaxQueuesPerTopic
+
+* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
+
+	* 新增成员：AclEnabled, PublicClbId, Vip, VpcId, SupportMigration, InstanceStatus
+
+	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Region, CreateTime, Remark, PublicEndPoint, VpcEndPoint, SupportNamespaceEndpoint, Vpcs, IsVip, RocketMQFlag, Status, IsolateTime, HttpPublicEndpoint, HttpVpcEndpoint, InternalEndpoint, HttpInternalEndpoint
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 19 次发布
+
+发布时间：2023-11-08 01:26:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BindSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82551)
+* [DeleteSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82550)
+
+新增数据结构：
+
+* [BindSharedCNAMEMap](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BindSharedCNAMEMap)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
 # Release 3.0.879.1
 
 ## Elasticsearch Service(es) 版本：2018-04-16

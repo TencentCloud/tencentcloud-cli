@@ -7657,7 +7657,6 @@
           "example": "无",
           "member": "RocketMQClusterInfo",
           "name": "ClusterInfo",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7667,17 +7666,15 @@
           "example": "无",
           "member": "RocketMQClusterConfig",
           "name": "ClusterConfig",
-          "required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "集群最近使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "集群最近使用量，即将废弃，请使用云监控获取相关数据。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RocketMQClusterRecentStats",
           "name": "ClusterStats",
-          "required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -14230,7 +14227,7 @@
           "example": "8000",
           "member": "uint64",
           "name": "MaxTpsPerNamespace",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14240,7 +14237,7 @@
           "example": "10",
           "member": "uint64",
           "name": "MaxNamespaceNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14250,7 +14247,7 @@
           "example": "3",
           "member": "uint64",
           "name": "UsedNamespaceNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14260,7 +14257,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "MaxTopicNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14270,7 +14267,7 @@
           "example": "8",
           "member": "uint64",
           "name": "UsedTopicNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14280,7 +14277,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxGroupNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14290,7 +14287,7 @@
           "example": "10",
           "member": "uint64",
           "name": "UsedGroupNum",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14300,7 +14297,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "MaxRetentionTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14310,7 +14307,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "MaxLatencyTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14320,8 +14317,18 @@
           "example": "16",
           "member": "uint64",
           "name": "MaxQueuesPerTopic",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "topic分布\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RocketMQTopicDistribution",
+          "name": "TopicDistribution",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -14372,7 +14379,7 @@
           "example": "rocketmq-xxxxx",
           "member": "string",
           "name": "ClusterId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14382,7 +14389,7 @@
           "example": "test",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14392,7 +14399,7 @@
           "example": "华南地区",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14402,7 +14409,7 @@
           "example": "100000000",
           "member": "uint64",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14412,7 +14419,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14422,7 +14429,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PublicEndPoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14432,7 +14439,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "VpcEndPoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14442,7 +14449,7 @@
           "example": "true",
           "member": "bool",
           "name": "SupportNamespaceEndpoint",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14452,7 +14459,7 @@
           "example": "无",
           "member": "VpcConfig",
           "name": "Vpcs",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -14462,7 +14469,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsVip",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14472,7 +14479,7 @@
           "example": "false",
           "member": "bool",
           "name": "RocketMQFlag",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -14482,7 +14489,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14492,7 +14499,7 @@
           "example": "10000000",
           "member": "int64",
           "name": "IsolateTime",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14502,7 +14509,7 @@
           "example": "无",
           "member": "string",
           "name": "HttpPublicEndpoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14512,7 +14519,7 @@
           "example": "无",
           "member": "string",
           "name": "HttpVpcEndpoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14522,7 +14529,7 @@
           "example": "无",
           "member": "string",
           "name": "InternalEndpoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14532,8 +14539,68 @@
           "example": "无",
           "member": "string",
           "name": "HttpInternalEndpoint",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启ACL鉴权，专享实例支持关闭\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AclEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网CLB实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clbId",
+          "member": "string",
+          "name": "PublicClbId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Vip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持迁移\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SupportMigration",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态，0表示创建中，1表示正常，2表示隔离中，3表示已销毁，4 - 异常, 5 - 发货失败，6 - 变配中，7 - 变配失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -16765,26 +16832,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "标签的key的值",
-          "example": "",
+          "document": "标签的key的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagKey",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "标签的Value的值",
-          "example": "",
+          "document": "标签的Value的值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
+          "output_required": false,
           "required": true,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "Topic": {
       "document": "主题实例",

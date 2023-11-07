@@ -6,22 +6,22 @@ Input:
 
 ```
 tccli essbasic SyncProxyOrganization --cli-unfold-argument  \
-    --ProxyOrganizationName 子客企业名称 \
-    --UniformSocialCreditCode code \
-    --BusinessLicense l \
-    --ProxyLegalName name \
+    --ProxyOrganizationName 典子谦示例企业 \
+    --UniformSocialCreditCode BOLIU101304662708A  \
+    --BusinessLicense aHR0cHM6Ly9jYXBpLndvYS5jb20vhaWwlM0ZpZCUzRGVzc2Jhc2ljJTI2dGFiJTNEYXBp..图片base64省略 \
+    --ProxyLegalName 典子谦 \
     --ProxyLegalIdCardType ID_CARD \
-    --ProxyLegalIdCardNumber 666666200001011066 \
-    --Agent.ProxyOperator.OpenId proxy-operator-openid \
-    --Agent.ProxyOrganizationOpenId proxy-organization-openid \
-    --Agent.AppId test-appid
+    --ProxyLegalIdCardNumber 620000198802020000 \
+    --Agent.ProxyOperator.OpenId n31517 \
+    --Agent.ProxyOrganizationOpenId org_zhansan \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "s16221***14775648"
+        "RequestId": "8fb09e62-9642-44c8-992b-ddd6e5086293"
     }
 }
 ```
