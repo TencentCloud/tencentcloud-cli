@@ -70,6 +70,13 @@
       "output": "GetMultiFlowStatisticResponse",
       "status": "online"
     },
+    "GetNetMonitor": {
+      "document": "获取单设备的实时流量统计指标",
+      "input": "GetNetMonitorRequest",
+      "name": "获取流量监控信息",
+      "output": "GetNetMonitorResponse",
+      "status": "online"
+    },
     "GetPublicKey": {
       "document": "获取公钥用于验签",
       "input": "GetPublicKeyRequest",
@@ -1260,6 +1267,69 @@
       ],
       "type": "object"
     },
+    "GetNetMonitorRequest": {
+      "document": "GetNetMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "\"mna-xxx\"",
+          "member": "string",
+          "name": "DeviceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "1662622200",
+          "member": "int64",
+          "name": "BeginTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "1662624800",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "统计指标（上行速率：\"TxRate\":bit/s，下行速率：\"RxRate\":bit/s，丢包：\"Loss\":%，时延：\"RTT\":ms）",
+          "example": "\"TxRate\"",
+          "member": "string",
+          "name": "Metrics",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetNetMonitorResponse": {
+      "document": "GetNetMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "监控数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MonitorData",
+          "name": "MonitorData",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetPublicKeyRequest": {
       "document": "GetPublicKey请求参数结构体",
       "members": [],
@@ -1350,6 +1420,42 @@
       ],
       "type": "object"
     },
+    "MonitorData": {
+      "document": "流量监控指标",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间点：s",
+          "example": "1662622200",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "业务指标（bps/ms/%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.0",
+          "member": "float",
+          "name": "BusinessMetrics",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网卡状态信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlotNetInfo",
+          "name": "SlotNetInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "NetDetails": {
       "document": "网络详细信息",
       "members": [
@@ -1421,6 +1527,42 @@
         }
       ],
       "usage": "in"
+    },
+    "SlotNetInfo": {
+      "document": "网卡流量指标数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网卡名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"eth0\"",
+          "member": "string",
+          "name": "NetInfoName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"xxx.xxx.xx.xxx\"",
+          "member": "string",
+          "name": "PublicIP",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标数据（bps/ms/%）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2.3",
+          "member": "float",
+          "name": "Current",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SrcAddressInfo": {
       "document": "移动网络加速源地址结构体",

@@ -14913,7 +14913,7 @@
           "example": "1300000000",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14923,7 +14923,7 @@
           "example": "04000000",
           "member": "string",
           "name": "Number",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14933,7 +14933,7 @@
           "example": "20191211",
           "member": "string",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14943,7 +14943,7 @@
           "example": "城区",
           "member": "string",
           "name": "BuyerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14953,7 +14953,7 @@
           "example": "92XXXXMAXXXXXX",
           "member": "string",
           "name": "BuyerTaxCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14963,7 +14963,7 @@
           "example": "栾城区北留营村15012345678",
           "member": "string",
           "name": "BuyerAddressPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14973,7 +14973,7 @@
           "example": "中国农业银行股份有限公司",
           "member": "string",
           "name": "BuyerBankAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14983,7 +14983,7 @@
           "example": "石家庄市XXX石油经销有限公司",
           "member": "string",
           "name": "SellerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14993,7 +14993,7 @@
           "example": "911301047981234567",
           "member": "string",
           "name": "SellerTaxCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15003,7 +15003,7 @@
           "example": "石家庄市桥西区师范街xx号 0311-12345678",
           "member": "string",
           "name": "SellerAddressPhone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15013,7 +15013,7 @@
           "example": "911301047981234567",
           "member": "string",
           "name": "SellerBankAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15023,7 +15023,7 @@
           "example": "空",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15033,7 +15033,7 @@
           "example": "661510100000",
           "member": "string",
           "name": "MachineNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15043,7 +15043,7 @@
           "example": "01",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15053,7 +15053,7 @@
           "example": "85518065011000000000",
           "member": "string",
           "name": "CheckCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15063,7 +15063,7 @@
           "example": "否",
           "member": "string",
           "name": "IsAbandoned",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15073,7 +15073,7 @@
           "example": "否",
           "member": "string",
           "name": "HasSellerList",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15083,7 +15083,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerListTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15093,7 +15093,7 @@
           "example": "99.9",
           "member": "string",
           "name": "SellerListTax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15103,7 +15103,7 @@
           "example": "129.0",
           "member": "string",
           "name": "AmountWithoutTax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15113,7 +15113,7 @@
           "example": "9.0",
           "member": "string",
           "name": "TaxAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15123,7 +15123,7 @@
           "example": "123.0",
           "member": "string",
           "name": "AmountWithTax",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15133,7 +15133,7 @@
           "example": "无",
           "member": "VatInvoiceItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15143,7 +15143,7 @@
           "example": "深圳",
           "member": "string",
           "name": "TaxBureau",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15153,7 +15153,47 @@
           "example": "N",
           "member": "string",
           "name": "TrafficFreeFlag",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否为红票\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "RedLetterInvoiceMark",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开具类型标识（0: 委托代开，1：自开，2：代开，3：代办退税\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "IssuingTypeMark",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "代开销售方名称",
+          "example": "无",
+          "member": "string",
+          "name": "SellerAgentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "代开销售方税号",
+          "example": "无",
+          "member": "string",
+          "name": "SellerAgentTaxID",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }

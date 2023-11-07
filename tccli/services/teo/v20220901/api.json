@@ -7,6 +7,13 @@
       "output": "BindSecurityTemplateToEntityResponse",
       "status": "online"
     },
+    "BindSharedCNAME": {
+      "document": "用于加速域名绑定或解绑共享 CNAME，该功能白名单内测中。",
+      "input": "BindSharedCNAMERequest",
+      "name": "绑定共享CNAME",
+      "output": "BindSharedCNAMEResponse",
+      "status": "online"
+    },
     "BindZoneToPlan": {
       "document": "将未绑定套餐的站点绑定到已有套餐",
       "input": "BindZoneToPlanRequest",
@@ -92,7 +99,7 @@
       "status": "online"
     },
     "CreateSharedCNAME": {
-      "document": "创建共享 CNAME",
+      "document": "用于创建共享 CNAME，该功能白名单内测中。",
       "input": "CreateSharedCNAMERequest",
       "name": "创建共享 CNAME",
       "output": "CreateSharedCNAMEResponse",
@@ -152,6 +159,13 @@
       "input": "DeleteSecurityIPGroupRequest",
       "name": "删除安全 IP 组",
       "output": "DeleteSecurityIPGroupResponse",
+      "status": "online"
+    },
+    "DeleteSharedCNAME": {
+      "document": "用于删除共享 CNAME，该功能白名单内测中。",
+      "input": "DeleteSharedCNAMERequest",
+      "name": "删除共享CNAME",
+      "output": "DeleteSharedCNAMEResponse",
       "status": "online"
     },
     "DeleteZone": {
@@ -1752,6 +1766,79 @@
     },
     "BindSecurityTemplateToEntityResponse": {
       "document": "BindSecurityTemplateToEntity返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BindSharedCNAMEMap": {
+      "document": "共享 CNAME 和接入域名的绑定关系",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要绑定或解绑的共享 CNAME。",
+          "example": "qq.com.sai2ig51kaa5.share.dnse5.com",
+          "member": "string",
+          "name": "SharedCNAME",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加速域名，可传递多个，最多20个。",
+          "example": "[\"a.qq.com\",\"b.qq.com\"]",
+          "member": "string",
+          "name": "DomainNames",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "BindSharedCNAMERequest": {
+      "document": "BindSharedCNAME请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "加速域名所属站点 ID。\t",
+          "example": "zone-20hyebgyfsko",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "绑定类型，取值有：\n<li>bind：绑定；</li>\n<li>unbind：解绑。</li>",
+          "example": "bind",
+          "member": "string",
+          "name": "BindType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接入域名与共享 CNAME 的绑定关系。",
+          "example": "无",
+          "member": "BindSharedCNAMEMap",
+          "name": "BindSharedCNAMEMaps",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BindSharedCNAMEResponse": {
+      "document": "BindSharedCNAME返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3442,7 +3529,7 @@
         },
         {
           "disabled": false,
-          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.eo.dnse[0-5].com\"。\n\n例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.share.eo.dnse2.com",
+          "document": "共享 CNAME 前缀。请输入合法的域名前缀，例如\"test-api\"、\"test-api.com\"，限制输入 50 个字符。\n\n共享 CNAME 完整格式为：<自定义前缀>+<zoneid中的12位随机字符串>+\"share.dnse[0-5].com\"。\n\n例如前缀传入 example.com，EO 会为您创建共享 CNAME：example.com.sai2ig51kaa5.share.dnse2.com。",
           "example": "example.com",
           "member": "string",
           "name": "SharedCNAMEPrefix",
@@ -3466,8 +3553,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "共享 CNAME。格式为：<自定义前缀>+<ZoneId中的12位随机字符串>+\"share.eo.dnse[0-5].com\"",
-          "example": "example.com.drvsif25rt7.share.eo.dnse2.com",
+          "document": "共享 CNAME。格式为：<自定义前缀>+<ZoneId中的12位随机字符串>+\"share.dnse[0-5].com\"。",
+          "example": "example.com.drvsif25rt7.share.dnse2.com",
           "member": "string",
           "name": "SharedCNAME",
           "output_required": false,
@@ -4127,6 +4214,42 @@
     },
     "DeleteSecurityIPGroupResponse": {
       "document": "DeleteSecurityIPGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSharedCNAMERequest": {
+      "document": "DeleteSharedCNAME请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "共享 CNAME 所属站点 ID。",
+          "example": "zone-2drvsif25rt7",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的共享 CNAME。",
+          "example": "qq.com.sai2ig51kaa5.share.dns2.com",
+          "member": "string",
+          "name": "SharedCNAME",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteSharedCNAMEResponse": {
+      "document": "DeleteSharedCNAME返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

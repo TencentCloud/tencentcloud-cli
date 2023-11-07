@@ -1,6 +1,6 @@
-**Example 1: huo**
+**Example 1: 获取RocketMQ集群详情**
 
-
+获取RocketMQ集群详情
 
 Input: 
 
@@ -24,8 +24,8 @@ Output:
             "VpcEndPoint": "pulsar://xxxxx.com:6650",
             "Vpcs": [
                 {
-                    "SubnetId": "xx",
-                    "VpcId": "xx"
+                    "SubnetId": "subnet-123",
+                    "VpcId": "vpc-12333"
                 }
             ],
             "SupportNamespaceEndpoint": true,

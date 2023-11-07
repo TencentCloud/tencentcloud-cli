@@ -335,13 +335,13 @@
     "DescribeCCRuleList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"clb\",\n                \"saas\"\n            ],\n            \"Name\": \"InstanceType\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"ts_version\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
         "title": "根据URL查询API规则"
       },
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"By\": \"ts_version\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Limit\": \"10\",\n    \"Order\": \"asc\",\n    \"Offset\": \"10000002\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41b55f8b-1ed1-484c-aab7-c14c0889f78b\"\n    }\n}",
         "title": "test1"
       }

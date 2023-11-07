@@ -16,6 +16,14 @@
         "title": "应用采集配置到指定机器组"
       }
     ],
+    "CheckFunction": [
+      {
+        "document": "校验数据加工函数的语法",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckFunction\n<公共请求参数>\n\n{\n    \"EtlContent\": \"fields_set()\",\n    \"DstResources\": [\n        {\n            \"TopicId\": \"x56493046-XXXX-4194-81f6-c2e75569b031\",\n            \"Alias\": \"example\"\n        }\n    ],\n    \"FuncType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorCode\": 0,\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"x56493046-XXXX-4194-81f6-c2e75569b031\"\n    }\n}",
+        "title": "校验数据加工函数语法"
+      }
+    ],
     "CheckRechargeKafkaServer": [
       {
         "document": "校验用户输入Kafka服务地址是否可访问",

@@ -19,7 +19,7 @@
     "DestroySession": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"cg_user\"\n}",
+        "input": "POST / HTTP/1.1\nHost: car.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroySession\n<公共请求参数>\n\n{\n    \"UserId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fcf4146f-64d3-496c-88dc-d12f832de313\"\n    }\n}",
         "title": "DestroySession示例"
       }

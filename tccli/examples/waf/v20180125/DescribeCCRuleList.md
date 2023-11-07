@@ -5,7 +5,15 @@
 Input: 
 
 ```
-tccli waf DescribeCCRuleList --cli-unfold-argument ```
+tccli waf DescribeCCRuleList --cli-unfold-argument  \
+    --Domain www.testwaf.com \
+    --Limit 1 \
+    --Filters.0.Values clb saas \
+    --Filters.0.Name InstanceType \
+    --Filters.0.ExactMatch True \
+    --Offset 1 \
+    --By ts_version
+```
 
 Output: 
 ```
@@ -23,7 +31,13 @@ Output:
 Input: 
 
 ```
-tccli waf DescribeCCRuleList --cli-unfold-argument ```
+tccli waf DescribeCCRuleList --cli-unfold-argument  \
+    --By ts_version \
+    --Domain hzh.qcloud.com \
+    --Limit 10 \
+    --Order asc \
+    --Offset 10000002
+```
 
 Output: 
 ```

@@ -5572,7 +5572,62 @@
     },
     "DescribeCCRuleListRequest": {
       "document": "DescribeCCRuleList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要查询的API所属的域名",
+          "example": "test.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "容量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "目前支持根据ts_version排序",
+          "example": "ts_version",
+          "member": "string",
+          "name": "By",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤数组,name可以是如下的值： RuleID,ParamName,Url,Action,Method,Source,Status",
+          "example": "无",
+          "member": "FiltersItemNew",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "asc或者desc",
+          "example": "asc",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeCCRuleListResponse": {

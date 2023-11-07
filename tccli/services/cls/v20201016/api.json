@@ -14,6 +14,13 @@
       "output": "ApplyConfigToMachineGroupResponse",
       "status": "online"
     },
+    "CheckFunction": {
+      "document": "本接口用于数据加工DSL函数的语法校验。",
+      "input": "CheckFunctionRequest",
+      "name": "语法校验接口",
+      "output": "CheckFunctionResponse",
+      "status": "online"
+    },
     "CheckRechargeKafkaServer": {
       "document": "本接口用于校验Kafka服务集群是否可以正常访问",
       "input": "CheckRechargeKafkaServerRequest",
@@ -1431,6 +1438,71 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckFunctionRequest": {
+      "document": "CheckFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户输入的加工语句",
+          "example": "fields_set(\"my_field\",\"value\")",
+          "member": "string",
+          "name": "EtlContent",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "加工任务目的topic_id以及别名",
+          "example": "topicid-1",
+          "member": "DataTransformResouceInfo",
+          "name": "DstResources",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据加工目标主题的类型. 1 固定主题 2动态创建",
+          "example": "1",
+          "member": "int64",
+          "name": "FuncType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckFunctionResponse": {
+      "document": "CheckFunction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "失败错误码",
+          "example": "10001",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败错误信息",
+          "example": "Invalid Params",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckRechargeKafkaServerRequest": {
       "document": "CheckRechargeKafkaServer请求参数结构体",
