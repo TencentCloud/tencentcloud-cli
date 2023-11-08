@@ -99,7 +99,7 @@
       "status": "online"
     },
     "ChannelCreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 合同中当前状态为“待签署”的签署人是催办的对象\n2. 每个合同只能催办一次\n\n注意：该接口无法直接调用，请联系客户经理申请使用。",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办\n1. 合同中当前状态为 **待签署** 的签署人是催办的对象\n2. **每个合同只能催办一次**\n\n**催办的效果**: 对方会受到如下的短信通知\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "ChannelCreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "ChannelCreateFlowRemindsResponse",
@@ -127,7 +127,7 @@
       "status": "online"
     },
     "ChannelCreateOrganizationBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。\n\n注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方或者领取方。\n- 仅支持传入待签署或者待领取的合同，待填写暂不支持。\n- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章，暂不支持签批控件",
+      "document": "通过此接口，可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。\n\n注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方或者领取方。\n- 仅支持传入待签署或者待领取的合同，待填写暂不支持。\n- 员工批量签署，支持多种签名方式，包括手写签名、临摹签名、系统签名、个人印章、签批控件等。",
       "input": "ChannelCreateOrganizationBatchSignUrlRequest",
       "name": "获取企业签署合同web页面",
       "output": "ChannelCreateOrganizationBatchSignUrlResponse",
@@ -309,7 +309,7 @@
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客web企业控制台的唯一入口。\n\nWeb链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表示**)和员工(**Agent中OpenId表示**)的状态，进入不同的流程，主要情况分类如下：\n<table>\n<thead>\n<tr>\n<th>子客企业状态</th>\n<th>子客企业员工状态</th>\n<th>点击链接进入的流程</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>企业未激活</td>\n<td>员工未认证</td>\n<td>进入企业激活流程，首次完成企业激活流程的员工会成为超管</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工未认证</td>\n<td>进入员认证并加入企业流程</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工已认证</td>\n<td>进入子客企业Web控制台</td>\n</tr>\n</tbody>\n</table>\n如果是企业激活流程，需要注意如下情况：\n\n1. 若在激活过程中，**更换用户OpenID重新生成链接，之前的认证会被清理**。因此不要在企业认证过程生成多个链接给多人同时操作，会导致认证过程互相影响。\n2. 若您认证中发现信息有误需要重新认证，**可通过更换用户OpenID重新生成链接的方式，来清理掉已有的流程**。",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客web企业控制台的唯一入口。\n\nWeb链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表示**)和员工(**Agent中OpenId表示**)的状态，进入不同的流程，主要情况分类如下：\n<table>\n<thead>\n<tr>\n<th>子客企业状态</th>\n<th>子客企业员工状态</th>\n<th>点击链接进入的流程</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>企业未激活</td>\n<td>员工未认证</td>\n<td>进入企业激活流程，首次完成企业激活流程的员工会成为超管</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工未认证</td>\n<td>进入员认证并加入企业流程</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工已认证</td>\n<td>进入子客企业Web控制台</td>\n</tr>\n</tbody>\n</table>\n如果是企业激活流程，需要注意如下情况：\n\n1. 若在激活过程中，**更换用户OpenID重新生成链接，之前的认证会被清理**。因此不要在企业认证过程生成多个链接给多人同时操作，会导致认证过程互相影响。\n2. 若您认证中发现信息有误需要重新认证，**可通过更换用户OpenID重新生成链接的方式，来清理掉已有的流程**。\n\n系统的渠道企业, 应用, 子客企业, 子客员工的组织形式\n![image](https://qcloudimg.tencent-cloud.cn/raw/bee4b7375fe7a097f3573b18a1c1e30b.png)",
       "input": "CreateConsoleLoginUrlRequest",
       "name": "生成子客登录链接",
       "output": "CreateConsoleLoginUrlResponse",
@@ -336,6 +336,13 @@
       "output": "CreateSignUrlsResponse",
       "status": "online"
     },
+    "DescribeBillUsageDetail": {
+      "document": "通过此接口（DescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。",
+      "input": "DescribeBillUsageDetailRequest",
+      "name": "查询计费消耗情况",
+      "output": "DescribeBillUsageDetailResponse",
+      "status": "online"
+    },
     "DescribeChannelFlowEvidenceReport": {
       "document": "获取出证报告任务执行结果，返回报告 URL。\n\n注意：\n\n- 使用此功能`需搭配出证套餐` ，使用前请联系对接的客户经理沟通。\n- 需调用创建并返回出证报告接口<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/CreateChannelFlowEvidenceReport\" target=\"_blank\">提交申请出证报告任务</a>获取报告编号后调用当前接口获取报告链接。\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_CreateChannelFlowEvidenceReport.png)",
       "input": "DescribeChannelFlowEvidenceReportRequest",
@@ -358,14 +365,14 @@
       "status": "online"
     },
     "DescribeResourceUrlsByFlows": {
-      "document": "获取合同流程PDF的下载链接，可以下载签署中、签署完的此子企业创建的合同\n\n**注意**:   \n有两种开通权限的途径\n\n**第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图\n授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeResourceUrlsByFlows2.png)\n\n**第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeResourceUrlsByFlows_appilications2.png)",
+      "document": "获取合同流程PDF的下载链接，可以下载签署中、签署完的此子企业创建的合同\n\n**注意**:   \n有两种开通权限的途径\n\n**第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图\n授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/8b483dfebdeafac85051279406944048.png)\n\n**第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>\n![image](https://qcloudimg.tencent-cloud.cn/raw/238979ef51dd381ccbdbc755a593debc/channel_DescribeResourceUrlsByFlows_appilications2.png)",
       "input": "DescribeResourceUrlsByFlowsRequest",
       "name": "获取合同PDF下载链接",
       "output": "DescribeResourceUrlsByFlowsResponse",
       "status": "online"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n**适用场景**\n 该接口常用来配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates\" target=\"_blank\">用模板创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates\" target=\"_blank\">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 \n通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。\n\n**模版的来源**\n子客企业的模板有两种途径获取\n- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业\n- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建\n\n\n**注意**\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
+      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n**适用场景**\n 该接口常用来配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates\" target=\"_blank\">用模板创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates\" target=\"_blank\">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 \n通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。\n\n**模版的来源**\n子客企业的模板有两种途径获取\n- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业\n- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)\n\n\n**注意**\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse",
@@ -436,7 +443,7 @@
   },
   "objects": {
     "Agent": {
-      "document": "应用相关信息, 整体应用的层级图如下\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bc5cb933c604b28be9ad84dc780a5f81.png)\n\n注:\n  1. `不同的业务系统可以采用不同的应用，不同应用下的数据是隔离的,  应用A中的某个企业已经实名, 在应用B中此企业还需要重新认证`",
+      "document": "应用相关信息, 整体应用的层级图如下\n\n注:\n  1. `不同的业务系统可以采用不同的应用，不同应用下的数据是隔离的,  应用A中的某个企业已经实名, 在应用B中此企业还需要重新认证`",
       "members": [
         {
           "disabled": false,
@@ -858,6 +865,122 @@
         }
       ],
       "usage": "in"
+    },
+    "BillUsageDetail": {
+      "document": "用户计费使用情况详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ydxxxxxxxx",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同经办人名称\n如果有多个经办人用分号隔开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "刘二;张三",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发起方组织机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三公司",
+          "member": "string",
+          "name": "CreateOrganizationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "张三发起的合同",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前合同状态,如下是状态码对应的状态。\n0-还没有发起\n1-等待签署\n2-部分签署 \n3-拒签\n4-已签署 \n5-已过期 \n6-已撤销 \n7-还没有预发起\n8-等待填写\n9-部分填写 \n10-拒填\n11-已解除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐类型\n对应关系如下\nCloudEnterprise-企业版合同\nSingleSignature-单方签章\nCloudProve-签署报告\nCloudOnlineSign-腾讯会议在线签约\nChannelWeCard-微工卡\nSignFlow-合同套餐\nSignFace-签署意愿（人脸识别）\nSignPassword-签署意愿（密码）\nSignSMS-签署意愿（短信）\nPersonalEssAuth-签署人实名（腾讯电子签认证）\nPersonalThirdAuth-签署人实名（信任第三方认证）\nOrgEssAuth-签署企业实名\nFlowNotify-短信通知\nAuthService-企业工商信息查询\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CloudEnterprise",
+          "member": "string",
+          "name": "QuotaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合同使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "UseCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗的时间戳，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1680162193",
+          "member": "int64",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗的套餐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "企业版运营礼包",
+          "member": "string",
+          "name": "QuotaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消耗类型\n1.扣费 2.撤销返还\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CcInfo": {
       "document": "抄送信息",
@@ -2089,7 +2212,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2098,8 +2221,8 @@
         },
         {
           "disabled": false,
-          "document": "需执行催办的签署流程ID数组，最多包含100个。",
-          "example": "无",
+          "document": "需执行催办的合同流程ID数组，最多支持100个。",
+          "example": "[\"yDSL5UUckpok9bd0UvwoHnxmejhdsSKL\"]",
           "member": "string",
           "name": "FlowIds",
           "required": true,
@@ -5749,6 +5872,98 @@
       ],
       "usage": "out"
     },
+    "DescribeBillUsageDetailRequest": {
+      "document": "DescribeBillUsageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
+          "example": "20231101",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
+          "example": "20231108",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n对应关系如下\nCloudEnterprise-企业版合同\nSingleSignature-单方签章\nCloudProve-签署报告\nCloudOnlineSign-腾讯会议在线签约\nChannelWeCard-微工卡\nSignFlow-合同套餐\nSignFace-签署意愿（人脸识别）\nSignPassword-签署意愿（密码）\nSignSMS-签署意愿（短信）\nPersonalEssAuth-签署人实名（腾讯电子签认证）\nPersonalThirdAuth-签署人实名（信任第三方认证）\nOrgEssAuth-签署企业实名\nFlowNotify-短信通知\nAuthService-企业工商信息查询",
+          "example": "CloudEnterprise",
+          "member": "string",
+          "name": "QuotaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，如果不传默认为 50，单页最大支持 50。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillUsageDetailResponse": {
+      "document": "DescribeBillUsageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回查询记录总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗记录详情",
+          "example": "无",
+          "member": "BillUsageDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeChannelFlowEvidenceReportRequest": {
       "document": "DescribeChannelFlowEvidenceReport请求参数结构体",
       "members": [
@@ -6577,8 +6792,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "模板配置时候的签署人id,与控件绑定",
-          "example": "无",
+          "document": "模板配置时候的签署人角色ID(用PDF文件发起也可以指定,如果不指定则自动生成此角色ID), 所有的填写控件和签署控件都归属不同的角色",
+          "example": "yDRS4UUgygqdcjjdUuO4zjEC0osCOsHS",
           "member": "string",
           "name": "ReceiptId",
           "output_required": true,
@@ -6587,8 +6802,8 @@
         },
         {
           "disabled": false,
-          "document": "平台企业的第三方id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "第三方平台子客企业的唯一标识，定义Agent中的ProxyOrganizationOpenId一样, 可以参考<a href=\"https://qian.tencent.com/developers/partnerApis/dataTypes/#agent\" target=\"_blank\">Agent结构体</a>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "org_dianziqian",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
           "output_required": true,
@@ -6597,8 +6812,8 @@
         },
         {
           "disabled": false,
-          "document": "平台企业操作人的第三方id",
-          "example": "无",
+          "document": "第三方平台子客企业员工的唯一标识",
+          "example": "n9527",
           "member": "string",
           "name": "ProxyOperatorOpenId",
           "output_required": true,
@@ -6607,8 +6822,8 @@
         },
         {
           "disabled": false,
-          "document": "平台企业名称",
-          "example": "无",
+          "document": "第三方平台子客企业名称，与企业营业执照中注册的名称一致。",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "ProxyOrganizationName",
           "output_required": true,
@@ -6618,7 +6833,7 @@
         {
           "disabled": false,
           "document": "签署人手机号",
-          "example": "无",
+          "example": "13888888888",
           "member": "string",
           "name": "Mobile",
           "output_required": true,
@@ -6627,7 +6842,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人签署顺序",
+          "document": "签署顺序，如果是有序签署，签署顺序从小到大",
           "example": "无",
           "member": "int64",
           "name": "SignOrder",
@@ -6637,8 +6852,8 @@
         },
         {
           "disabled": false,
-          "document": "签署人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "签署方经办人的姓名。\n经办人的姓名将用于身份认证和电子签名，请确保填写的姓名为签署方的真实姓名，而非昵称等代名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "典子谦",
           "member": "string",
           "name": "ApproveName",
           "output_required": true,
@@ -6647,8 +6862,8 @@
         },
         {
           "disabled": false,
-          "document": "当前签署人的状态, 状态如下\n<br/>PENDING 待签署\t\n<br/>FILLPENDING 待填写\n<br/>FILLACCEPT 填写完成\t\n<br/>FILLREJECT 拒绝填写\t\n<br/>WAITPICKUP 待领取\t\n<br/>ACCEPT 已签署\t\n<br/>REJECT 拒签 \n<br/>DEADLINE 过期没人处理 \n<br/>CANCEL 流程已撤回\t\n<br/>FORWARD 已经转他人处理\n<br/>STOP 流程已终止\t\n<br/>RELIEVED 解除协议（已解除）\n\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "当前签署人的状态, 状态如下\n<ul><li> **PENDING** :待签署</li>\n<li> **FILLPENDING** :待填写</li>\n<li> **FILLACCEPT** :填写完成</li>\n<li> **FILLREJECT** :拒绝填写</li>\n<li> **WAITPICKUP** :待领取</li>\n<li> **ACCEPT** :已签署</li>\n<li> **REJECT** :拒签</li>\n<li> **DEADLINE** :过期没人处理</li>\n<li> **CANCEL** :流程已撤回</li>\n<li> **FORWARD** :已经转他人处理</li>\n<li> **STOP** :流程已终止</li>\n<li> **RELIEVED** :解除协议（已解除）</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ACCEPT",
           "member": "string",
           "name": "ApproveStatus",
           "output_required": true,
@@ -6657,7 +6872,7 @@
         },
         {
           "disabled": false,
-          "document": "签署人自定义信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人拒签等情况的时候填写的原因\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ApproveMessage",
@@ -6668,7 +6883,7 @@
         {
           "disabled": false,
           "document": "签署人签署时间戳，单位秒",
-          "example": "无",
+          "example": "1689688460",
           "member": "int64",
           "name": "ApproveTime",
           "output_required": true,
@@ -6677,8 +6892,8 @@
         },
         {
           "disabled": false,
-          "document": "参与者类型 \n<br/>ORGANIZATION：企业签署人\n<br/>PERSON：个人签署人\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "参与者类型 \n<ul><li> **ORGANIZATION** :企业签署人</li>\n<li> **PERSON** :个人签署人</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PERSON",
           "member": "string",
           "name": "ApproveType",
           "output_required": true,
@@ -6687,8 +6902,8 @@
         },
         {
           "disabled": false,
-          "document": "自定义签署人角色\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "自定义签署人的角色名, 如: 收款人、开具人、见证人等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "卖方",
           "member": "string",
           "name": "ApproverRoleName",
           "output_required": false,
@@ -9665,17 +9880,16 @@
       "usage": "out"
     },
     "UserInfo": {
-      "document": "接口调用者信息",
+      "document": "接口调用的员工信息",
       "members": [
         {
           "disabled": false,
-          "document": "第三方应用平台自定义，对应第三方平台子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串",
+          "document": "第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。\n\n\n注意:\n1. OpenId在子客企业对应一个真实员工，**本应用唯一, 不可重复使用**，最大64位字符串\n2. 可使用用户在贵方企业系统中的Userid或者hash值作为子客企业的员工OpenId\n3. **员工加入企业后**, 可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录子客控制台后, 在**组织架构**模块查看员工们的OpenId, 样式如下图\n![image](https://qcloudimg.tencent-cloud.cn/raw/bb67fb66c926759df3a0af5838fdafd5.png)",
           "example": "无",
           "member": "string",
           "name": "OpenId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": true,
@@ -9684,8 +9898,7 @@
           "member": "string",
           "name": "Channel",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": true,
@@ -9694,8 +9907,7 @@
           "member": "string",
           "name": "CustomUserId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": true,
@@ -9704,8 +9916,7 @@
           "member": "string",
           "name": "ClientIp",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": true,
@@ -9714,8 +9925,7 @@
           "member": "string",
           "name": "ProxyIp",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

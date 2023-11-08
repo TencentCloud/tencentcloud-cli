@@ -778,16 +778,16 @@
       "status": "online"
     },
     "DescribeImageRepository": {
-      "document": "镜像仓库列表 ",
+      "document": "查询镜像仓库列表",
       "input": "DescribeImageRepositoryRequest",
-      "name": "镜像仓库列表",
+      "name": "查询镜像仓库列表",
       "output": "DescribeImageRepositoryResponse",
       "status": "online"
     },
     "DescribeImageTags": {
       "document": "镜像版本列表",
       "input": "DescribeImageTagsRequest",
-      "name": "镜像版本列表",
+      "name": "查询镜像版本列表",
       "output": "DescribeImageTagsResponse",
       "status": "online"
     },
@@ -5047,7 +5047,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5057,7 +5057,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5067,7 +5067,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5077,7 +5077,7 @@
           "example": "无",
           "member": "int64",
           "name": "CurrentNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5087,7 +5087,7 @@
           "example": "无",
           "member": "string",
           "name": "Server",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5097,7 +5097,7 @@
           "example": "无",
           "member": "string",
           "name": "Reponame",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5107,7 +5107,7 @@
           "example": "无",
           "member": "string",
           "name": "TagName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5117,7 +5117,7 @@
           "example": "无",
           "member": "string",
           "name": "CpuRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5127,7 +5127,7 @@
           "example": "无",
           "member": "string",
           "name": "CpuLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5137,7 +5137,7 @@
           "example": "无",
           "member": "string",
           "name": "MemRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5147,7 +5147,7 @@
           "example": "无",
           "member": "string",
           "name": "MemLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5157,7 +5157,7 @@
           "example": "无",
           "member": "int64",
           "name": "AccessType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5167,7 +5167,7 @@
           "example": "无",
           "member": "ProtocolPort",
           "name": "ProtocolPorts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5177,7 +5177,7 @@
           "example": "无",
           "member": "int64",
           "name": "UpdateType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5187,7 +5187,7 @@
           "example": "无",
           "member": "int64",
           "name": "UpdateIvl",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5197,7 +5197,7 @@
           "example": "无",
           "member": "string",
           "name": "JvmOpts",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5207,7 +5207,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5217,7 +5217,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentCpuRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5227,7 +5227,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentCpuLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5237,7 +5237,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentMemRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5247,7 +5247,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentMemLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5257,7 +5257,7 @@
           "example": "无",
           "member": "string",
           "name": "IstioCpuRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5267,7 +5267,7 @@
           "example": "无",
           "member": "string",
           "name": "IstioCpuLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5277,7 +5277,7 @@
           "example": "无",
           "member": "string",
           "name": "IstioMemRequest",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5287,7 +5287,7 @@
           "example": "无",
           "member": "string",
           "name": "IstioMemLimit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5297,7 +5297,7 @@
           "example": "无",
           "member": "Env",
           "name": "Envs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5307,7 +5307,7 @@
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5317,7 +5317,7 @@
           "example": "无",
           "member": "bool",
           "name": "DeployAgent",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5327,7 +5327,7 @@
           "example": "无",
           "member": "string",
           "name": "Alias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5337,7 +5337,7 @@
           "example": "false",
           "member": "bool",
           "name": "DisableService",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5347,7 +5347,7 @@
           "example": "false",
           "member": "bool",
           "name": "HeadlessService",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5357,7 +5357,7 @@
           "example": "无",
           "member": "TcrRepoInfo",
           "name": "TcrRepoInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5367,7 +5367,7 @@
           "example": "无",
           "member": "VolumeInfo",
           "name": "VolumeInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5377,7 +5377,7 @@
           "example": "无",
           "member": "VolumeMountInfo",
           "name": "VolumeMountInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5387,7 +5387,7 @@
           "example": "无",
           "member": "bool",
           "name": "KubeInjectEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5397,7 +5397,7 @@
           "example": "无",
           "member": "string",
           "name": "RepoType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5407,7 +5407,7 @@
           "example": "无",
           "member": "WarmupSetting",
           "name": "WarmupSetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5417,8 +5417,38 @@
           "example": "无",
           "member": "GatewayConfig",
           "name": "GatewayConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "附加容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupContainerInfo",
+          "name": "AdditionalContainerList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内部容器列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GroupContainerInfo",
+          "name": "InternalContainerList",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -13606,6 +13636,15 @@
           "name": "TcrRepoInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库",
+          "example": "无",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13619,7 +13658,7 @@
           "example": "无",
           "member": "ImageRepositoryResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13641,7 +13680,7 @@
           "example": "application-xxxxxxx",
           "member": "string",
           "name": "ApplicationId",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -13697,6 +13736,15 @@
           "name": "TcrRepoInfo",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "仓库名",
+          "example": "无",
+          "member": "string",
+          "name": "RepoName",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -13710,7 +13758,7 @@
           "example": "无",
           "member": "ImageTagsResult",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18328,6 +18376,188 @@
         }
       ],
       "usage": "out"
+    },
+    "GroupContainerInfo": {
+      "document": "部署组容器信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "镜像版本名称",
+          "example": "v1",
+          "member": "string",
+          "name": "TagName",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "容器名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ContainerName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tsf/app",
+          "member": "string",
+          "name": "RepoName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仓库类型,tcr，address，personal，默认personal\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "personal",
+          "member": "string",
+          "name": "RepoType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tcr仓库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TcrRepoInfo",
+          "name": "TcrRepoInfo",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像server\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccr.ccs.tencentyun.com",
+          "member": "string",
+          "name": "Server",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "凭证名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SecretName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "jvm 参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "JvmOpts",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器最大的 CPU 核数，对应 K8S 的 limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "CpuLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器分配的 CPU 核数，对应 K8S 的 request\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "CpuRequest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器分配的内存 MiB 数，对应 K8S 的 request\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "string",
+          "name": "MemRequest",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器最大的内存 MiB 数，对应 K8S 的 limit\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "string",
+          "name": "MemLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HealthCheckSettings",
+          "name": "HealthCheckSettings",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境变量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Env",
+          "name": "Envs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "环境变量,作为入参时不用填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Env",
+          "name": "UserEnvs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据卷挂载点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VolumeMountInfo",
+          "name": "VolumeMountInfoList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "GroupDailyUseStatistics": {
       "document": "分组日使用统计对象",

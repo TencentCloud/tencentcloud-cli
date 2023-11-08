@@ -1,4 +1,4 @@
-**Example 1: 驱逐虚拟节点**
+**Example 1: 驱逐超级节点**
 
 
 
@@ -14,7 +14,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "1ac0d3ae-063e-4789-93fe-3c73e93191b9"
     }
 }
 ```

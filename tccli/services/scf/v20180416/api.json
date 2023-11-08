@@ -5714,9 +5714,10 @@
         {
           "disabled": false,
           "document": "随机权重路由附加版本",
-          "example": "",
+          "example": "无",
           "member": "VersionWeight",
           "name": "AdditionalVersionWeights",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5724,9 +5725,10 @@
         {
           "disabled": false,
           "document": "规则路由附加版本",
-          "example": "",
+          "example": "无",
           "member": "VersionMatch",
           "name": "AddtionVersionMatchs",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false

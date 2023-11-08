@@ -5517,7 +5517,7 @@
           "example": "12",
           "member": "uint64",
           "name": "DomainId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5527,7 +5527,7 @@
           "example": "qq.com",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5537,7 +5537,7 @@
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5547,7 +5547,7 @@
           "example": "600",
           "member": "uint64",
           "name": "TTL",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5557,7 +5557,7 @@
           "example": "DISABLE",
           "member": "string",
           "name": "CNAMESpeedup",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5567,7 +5567,7 @@
           "example": "DNSERROR",
           "member": "string",
           "name": "DNSStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5577,7 +5577,7 @@
           "example": "DP_FREE",
           "member": "string",
           "name": "Grade",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5587,7 +5587,7 @@
           "example": "1",
           "member": "uint64",
           "name": "GroupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5597,7 +5597,7 @@
           "example": "NO",
           "member": "string",
           "name": "SearchEnginePush",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5607,7 +5607,7 @@
           "example": "重要域名",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5617,7 +5617,7 @@
           "example": "xn--a9.com",
           "member": "string",
           "name": "Punycode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5627,7 +5627,7 @@
           "example": "[\"f1g1ns1.dnspod.net\",\"f1g1ns2.dnspod.net\"]",
           "member": "string",
           "name": "EffectiveDNS",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5637,7 +5637,7 @@
           "example": "5",
           "member": "uint64",
           "name": "GradeLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5647,7 +5647,7 @@
           "example": "免费版",
           "member": "string",
           "name": "GradeTitle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5657,7 +5657,7 @@
           "example": "YES",
           "member": "string",
           "name": "IsVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5667,7 +5667,7 @@
           "example": "2021-04-07 13:34:20",
           "member": "datetime",
           "name": "VipStartAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5677,7 +5677,7 @@
           "example": "2022-04-07 13:34:20",
           "member": "datetime",
           "name": "VipEndAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5687,7 +5687,7 @@
           "example": "YES",
           "member": "string",
           "name": "VipAutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5697,7 +5697,7 @@
           "example": "20",
           "member": "uint64",
           "name": "RecordCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5707,7 +5707,7 @@
           "example": "2020-05-21 16:08:29",
           "member": "datetime",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5717,7 +5717,7 @@
           "example": "2021-04-01 18:09:58",
           "member": "datetime",
           "name": "UpdatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5727,7 +5727,7 @@
           "example": "abc@tencent.com",
           "member": "string",
           "name": "Owner",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5737,7 +5737,7 @@
           "example": "无",
           "member": "TagItem",
           "name": "TagList",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

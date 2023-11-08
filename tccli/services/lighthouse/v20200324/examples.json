@@ -368,10 +368,10 @@
     ],
     "DescribeFirewallTemplateRules": [
       {
-        "document": "查询防火墙模版规则列表",
+        "document": "查询防火墙模板规则列表",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e3d057f-a651-4c66-b5e3-abb11e305f19\",\n        \"TemplateRuleSet\": [\n            {\n                \"FirewallRuleInfo\": {\n                    \"Action\": \"ACCEPT\",\n                    \"AppType\": \"user-defined\",\n                    \"CidrBlock\": \"0.0.0.0/0\",\n                    \"FirewallRuleDescription\": \"tcp 80\",\n                    \"Port\": \"81\",\n                    \"Protocol\": \"TCP\"\n                },\n                \"TemplateRuleId\": \"lhftr-gexf7cmvpq\"\n            },\n            {\n                \"FirewallRuleInfo\": {\n                    \"Action\": \"DROP\",\n                    \"AppType\": \"user-defined\",\n                    \"CidrBlock\": \"0.0.0.0/0\",\n                    \"FirewallRuleDescription\": \"udp 80\",\n                    \"Port\": \"81\",\n                    \"Protocol\": \"UDP\"\n                },\n                \"TemplateRuleId\": \"lhftr-9uxz9zuz62\"\n            }\n        ],\n        \"TotalCount\": 2\n    }\n}",
-        "title": "查询防火墙模版规则列表"
+        "title": "查询防火墙模板规则列表"
       }
     ],
     "DescribeFirewallTemplates": [
@@ -768,10 +768,10 @@
     ],
     "ResetFirewallTemplateRules": [
       {
-        "document": "重置防火墙模版下所有规则",
+        "document": "重置防火墙模板下所有规则",
         "input": "POST / HTTP/1.1\nHost: lighthouse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetFirewallTemplateRules\n<公共请求参数>\n\n{\n    \"TemplateId\": \"lhft-6brh0ciy\",\n    \"TemplateRules\": [\n        {\n            \"Protocol\": \"TCP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"ACCEPT\",\n            \"FirewallRuleDescription\": \"tcp 80\"\n        },\n        {\n            \"Protocol\": \"UDP\",\n            \"Port\": \"81\",\n            \"CidrBlock\": \"0.0.0.0/0\",\n            \"Action\": \"DROP\",\n            \"FirewallRuleDescription\": \"udp 80\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bf93010-2454-434a-915d-be102f47700c\",\n        \"TemplateRuleIdSet\": [\n            \"lhftr-gexf7cmvpq\",\n            \"lhftr-9uxz9zuz62\"\n        ]\n    }\n}",
-        "title": "重置防火墙模版下所有规则"
+        "title": "重置防火墙模板下所有规则"
       }
     ],
     "ResetInstance": [

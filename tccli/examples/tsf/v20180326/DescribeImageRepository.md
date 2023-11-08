@@ -19,7 +19,7 @@ Output:
             "Content": [
                 {
                     "Reponame": "tsf_100010349923/docker-java-provider",
-                    "Repotype": "QCLOUD HUB",
+                    "Repotype": "tcr",
                     "TagCount": 0,
                     "IsPublic": 0,
                     "IsUserFavor": false,
@@ -28,20 +28,19 @@ Output:
                     "PullCount": 0,
                     "Description": "",
                     "CreationTime": "2019-05-29 15:02:08",
-                    "UpdateTime": "2019-05-29 15:02:08"
-                },
-                {
-                    "Reponame": "tsf_100010349923/docker-java-consumer",
-                    "Repotype": "QCLOUD HUB",
-                    "TagCount": 0,
-                    "IsPublic": 0,
-                    "IsUserFavor": false,
-                    "IsQcloudOfficial": false,
-                    "FavorCount": 0,
-                    "PullCount": 0,
-                    "Description": "",
-                    "CreationTime": "2019-05-29 15:00:37",
-                    "UpdateTime": "2019-05-29 15:00:37"
+                    "UpdateTime": "2019-05-29 15:02:08",
+                    "TcrRepoInfo": {
+                        "Region": "1",
+                        "RegistryId": "id",
+                        "RegistryName": "tsf/nginx",
+                        "Namespace": "tsf",
+                        "RepoName": "nginx"
+                    },
+                    "TcrBindingId": null,
+                    "ApplicationId": "abc",
+                    "ApplicationName": null,
+                    "ApplicationNameReal": "abc",
+                    "Public": 0
                 }
             ],
             "TotalCount": 2,

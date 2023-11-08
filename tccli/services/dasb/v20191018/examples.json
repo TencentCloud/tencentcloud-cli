@@ -84,7 +84,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"DeployRegion\": \"ap-guanghzou\",\n    \"DeployZone\": \"ap-guangzhou-1\",\n    \"VpcId\": \"vpc-xxxxxxxx\",\n    \"SubnetId\": \"subnet-xxxxxxxx\",\n    \"ResourceEdition\": \"free\",\n    \"ResourceNode\": 2,\n    \"TimeUnit\": \"m\",\n    \"TimeSpan\": 1,\n    \"PayMode\": 1,\n    \"AutoRenewFlag\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ffb59145-70f9-45e6-99be-fc0a8db82f45\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ResourceId\": \"bh-saas-xxxxxxxx\",\n        \"RequestId\": \"ffb59145-70f9-45e6-99be-fc0a8db82f45\"\n    }\n}",
         "title": "创建堡垒机实例"
       }
     ],
@@ -317,8 +317,8 @@
     "ImportExternalDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"xx\",\n            \"Name\": \"xx\",\n            \"OsName\": \"xx\",\n            \"Port\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Name\": \"linux设备\",\n            \"OsName\": \"Linux\",\n            \"Port\": 22\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceIdSet\": [\n            1,\n            2,\n            3\n        ],\n        \"RequestId\": \"request-id-test\"\n    }\n}",
         "title": "导入外部资产信息"
       }
     ],

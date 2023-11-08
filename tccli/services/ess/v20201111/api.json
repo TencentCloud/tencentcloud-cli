@@ -295,7 +295,7 @@
       "status": "online"
     },
     "DescribeBillUsageDetail": {
-      "document": "查询企业使用情况",
+      "document": "通过此接口（DescribeBillUsageDetail）查询该企业的套餐消耗详情。",
       "input": "DescribeBillUsageDetailRequest",
       "name": "查询企业计费使用情况",
       "output": "DescribeBillUsageDetailResponse",
@@ -344,9 +344,9 @@
       "status": "online"
     },
     "DescribeFlowTemplates": {
-      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n>  一个模板通常会包含以下结构信息\n>- 模板基本信息\n>- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n>- 填写控件 Components\n>- 签署控件 SignComponents\n>- 生成模板的文件基础信息 FileInfos\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n当模板较多或模板中的控件较多时，可以通过查询模板接口更方便的获取模板列表，以及每个模板内的控件信息。\n\n适用场景：\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。",
+      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n\n\n**适用场景**\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)",
       "input": "DescribeFlowTemplatesRequest",
-      "name": "查询模板",
+      "name": "查询模板信息",
       "output": "DescribeFlowTemplatesResponse",
       "status": "online"
     },
@@ -995,7 +995,7 @@
         },
         {
           "disabled": false,
-          "document": "经办人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同经办人名称\n如果有多个经办人用分号隔开。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "张三",
           "member": "string",
           "name": "OperatorName",
@@ -1025,7 +1025,7 @@
         },
         {
           "disabled": false,
-          "document": "0 还没有发起 1等待签署 2部分签署 3拒签 4已签署 5已过期 6已撤销 7还没有预发起 8等待填写 9部分填写 10拒填 11已解除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前合同状态,如下是状态码对应的状态。\n0-还没有发起\n1-等待签署\n2-部分签署 \n3-拒签\n4-已签署 \n5-已过期 \n6-已撤销 \n7-还没有预发起\n8-等待填写\n9-部分填写 \n10-拒填\n11-已解除\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "4",
           "member": "int64",
           "name": "Status",
@@ -1035,7 +1035,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "套餐类型\n对应关系如下\nCloudEnterprise-企业版合同\nSingleSignature-单方签章\nCloudProve-签署报告\nCloudOnlineSign-腾讯会议在线签约\nChannelWeCard-微工卡\nSignFlow-合同套餐\nSignFace-签署意愿（人脸识别）\nSignPassword-签署意愿（密码）\nSignSMS-签署意愿（短信）\nPersonalEssAuth-签署人实名（腾讯电子签认证）\nPersonalThirdAuth-签署人实名（信任第三方认证）\nOrgEssAuth-签署企业实名\nFlowNotify-短信通知\nAuthService-企业工商信息查询\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "CloudEnterprise",
           "member": "string",
           "name": "QuotaType",
@@ -1055,7 +1055,7 @@
         },
         {
           "disabled": false,
-          "document": "消耗的时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗的时间戳，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1680162193",
           "member": "int64",
           "name": "CostTime",
@@ -1065,7 +1065,7 @@
         },
         {
           "disabled": false,
-          "document": "套餐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗的套餐名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "企业版运营礼包",
           "member": "string",
           "name": "QuotaName",
@@ -1075,7 +1075,7 @@
         },
         {
           "disabled": false,
-          "document": " 消耗类型\t1.扣费 2.撤销返还\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗类型\n1.扣费 2.撤销返还\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "CostType",
@@ -5728,7 +5728,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询开始时间，时间跨度不能大于31天",
+          "document": "查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
           "example": "20230101",
           "member": "string",
           "name": "StartTime",
@@ -5737,7 +5737,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间，时间跨度不能大于31天",
+          "document": "查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
           "example": "20230105",
           "member": "string",
           "name": "EndTime",
@@ -5750,7 +5750,7 @@
           "example": "0",
           "member": "int64",
           "name": "Offset",
-          "required": true,
+          "required": false,
           "type": "int"
         },
         {
@@ -5773,7 +5773,7 @@
         },
         {
           "disabled": false,
-          "document": "非必填，查询某个渠道企业的消耗情况。\n关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",

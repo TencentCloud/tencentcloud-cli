@@ -1,17 +1,17 @@
 **Example 1: 合同催办**
 
-针对合同流程中尚未完成签署的用户发送催办消息。
-部分合同流程可以催办，而部分则无法催办。
-通过查看返回的详细信息清单，可了解各合同流程的催办结果。
+因为yDSL5UUckpokxl92UvwoHnSHf4RPOgu5我已经催办过, 所以返回"签署人 张三: 此签署人已催办过；", 对方不会在受到催办短信
+yDSL5UUckpok9bd0UvwoHnxmejhdsSKL和yDSL5UUckpok4vmvUu7BBPOShktz8qHN催办成功, 对方受到短信
 
 Input: 
 
 ```
 tccli essbasic ChannelCreateFlowReminds --cli-unfold-argument  \
-    --Agent.ProxyOperator.OpenId OpenId-xxx \
-    --Agent.AppId yDRSRUUgygj******uO4zjEuBzwyiofZ \
-    --Agent.ProxyOrganizationOpenId ProxyOrganizationOpenId-xxx \
-    --FlowIds yDwXiUUc******************SZ0uIW72Qaxm yDwFmUU******************BSat8PWOt2iQF
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --FlowIds yDSL5UUckpok9bd0UvwoHnxmejhdsSKL yDSL5UUckpokxl92UvwoHnSHf4RPOgu5 yDSL5UUckpok4vmvUu7BBPOShktz8qHN
 ```
 
 Output: 
@@ -21,16 +21,21 @@ Output:
         "RemindFlowRecords": [
             {
                 "CanRemind": true,
-                "FlowId": "yDwXiUUc******************SZ0uIW72Qaxm",
-                "RemindMessage": ""
+                "FlowId": "yDSL5UUckpok9bd0UvwoHnxmejhdsSKL",
+                "RemindMessage": "签署人 王五: 催办成功；"
             },
             {
-                "CanRemind": false,
-                "FlowId": "yDwFmUU******************BSat8PWOt2iQF",
-                "RemindMessage": "签署人 xxx: 此签署人已催办过"
+                "CanRemind": true,
+                "FlowId": "yDSL5UUckpokxl92UvwoHnSHf4RPOgu5",
+                "RemindMessage": "签署人 张三: 此签署人已催办过；"
+            },
+            {
+                "CanRemind": true,
+                "FlowId": "yDSL5UUckpok4vmvUu7BBPOShktz8qHN",
+                "RemindMessage": "签署人 张三: 催办成功；签署人 李四: 催办成功；"
             }
         ],
-        "RequestId": "s16*********203499"
+        "RequestId": "4ad2f917-5c8e-4071-bae7-caa43387d0c3"
     }
 }
 ```

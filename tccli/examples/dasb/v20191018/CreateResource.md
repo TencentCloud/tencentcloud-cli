@@ -22,6 +22,7 @@ Output:
 ```
 {
     "Response": {
+        "ResourceId": "bh-saas-xxxxxxxx",
         "RequestId": "ffb59145-70f9-45e6-99be-fc0a8db82f45"
     }
 }

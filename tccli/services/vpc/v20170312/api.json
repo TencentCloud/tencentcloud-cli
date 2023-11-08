@@ -22377,6 +22377,15 @@
           "name": "InstanceChargeType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。ASN取值范围为1- 4294967295，默认值64551，其中139341、45090和58835不可用。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BgpAsn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

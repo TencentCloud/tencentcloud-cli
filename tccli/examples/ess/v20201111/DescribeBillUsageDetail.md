@@ -1,4 +1,31 @@
-**Example 1: 查询全部消耗途径**
+**Example 1: 查询失败样例**
+
+
+
+Input: 
+
+```
+tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
+    --StartTime 20230902 \
+    --EndTime 20230930 \
+    --Offset 0 \
+    --Limit 1000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "InvalidParameter.Limit",
+            "Message": "分页参数不合法"
+        },
+        "RequestId": "s169935778xxxxxxx"
+    }
+}
+```
+
+**Example 2: 查询全部套餐消耗**
 
 
 
@@ -36,7 +63,7 @@ Output:
 }
 ```
 
-**Example 2: 查询失败样例**
+**Example 3: 查询子企业客户消耗**
 
 
 
@@ -47,39 +74,8 @@ tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
     --StartTime 20230902 \
     --EndTime 20230930 \
     --Offset 0 \
-    --Limit 1000
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "InvalidParameter.Limit",
-            "Message": "分页参数不合法"
-        },
-        "RequestId": "s169935778xxxxxxx"
-    }
-}
-```
-
-**Example 3: 查询渠道客户消耗**
-
-
-
-Input: 
-
-```
-tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
-    --StartTime abc \
-    --EndTime abc \
-    --Offset 0 \
-    --Limit 0 \
-    --QuotaType abc \
-    --Agent.AppId abc \
-    --Agent.ProxyAppId abc \
-    --Agent.ProxyOrganizationId abc \
-    --Agent.ProxyOperator abc
+    --Limit 50 \
+    --Agent.ProxyOrganizationId xxxxx
 ```
 
 Output: 

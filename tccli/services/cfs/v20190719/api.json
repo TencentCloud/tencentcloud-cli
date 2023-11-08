@@ -293,6 +293,13 @@
       "name": "更新文件系统快照信息",
       "output": "UpdateCfsSnapshotAttributeResponse",
       "status": "online"
+    },
+    "UpdateFileSystemBandwidthLimit": {
+      "document": "更新文件系统带宽",
+      "input": "UpdateFileSystemBandwidthLimitRequest",
+      "name": "更新文件系统带宽",
+      "output": "UpdateFileSystemBandwidthLimitResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -4654,6 +4661,42 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFileSystemBandwidthLimitRequest": {
+      "document": "UpdateFileSystemBandwidthLimit请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件系统 ID",
+          "example": "cfs-abcd1234",
+          "member": "string",
+          "name": "FileSystemId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件系统带宽，仅吞吐型可填。单位MiB/s，最小为1GiB/s，最大200GiB/s。",
+          "example": "1024",
+          "member": "int64",
+          "name": "BandwidthLimit",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateFileSystemBandwidthLimitResponse": {
+      "document": "UpdateFileSystemBandwidthLimit返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

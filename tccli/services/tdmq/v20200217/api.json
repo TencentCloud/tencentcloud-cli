@@ -63,6 +63,13 @@
       "output": "CreateEnvironmentRoleResponse",
       "status": "online"
     },
+    "CreateProCluster": {
+      "document": "创建专业集群——预付费，仅通过api调用",
+      "input": "CreateProClusterRequest",
+      "name": "创建专业集群",
+      "output": "CreateProClusterResponse",
+      "status": "online"
+    },
     "CreateRabbitMQUser": {
       "document": "创建RabbitMQ的用户",
       "input": "CreateRabbitMQUserRequest",
@@ -3148,6 +3155,145 @@
     "CreateEnvironmentRoleResponse": {
       "document": "CreateEnvironmentRole返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProClusterRequest": {
+      "document": "CreateProCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "多可用区部署选择三个可用区，示例\"200002\",\"200003\",\"200004\"\n\n单可用区部署选择一个可用区，示例\"200002\"",
+          "example": "\"200002\",\"200003\",\"200004\"",
+          "member": "string",
+          "name": "ZoneIds",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群规格代号\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "example": "PULSAR.P1.MINI2",
+          "member": "string",
+          "name": "ProductName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储规格\n参考 [专业集群规格](https://cloud.tencent.com/document/product/1179/83705)",
+          "example": "200",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "1: true，开启自动按月续费\n\n0: false，关闭自动按月续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长，取值范围：1～50",
+          "example": "3",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "集群的标签列表(已废弃)",
+          "example": "NULL",
+          "member": "Tag",
+          "name": "Tags",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
+          "example": "default",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券 1是 0否 默认为0",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoVoucher",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "vpc网络标签",
+          "example": "NULL",
+          "member": "VpcInfo",
+          "name": "Vpcs",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateProClusterResponse": {
+      "document": "CreateProCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子订单号",
+          "example": "20231020394041338776131",
+          "member": "string",
+          "name": "DealName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号",
+          "example": "20231020394041338776121",
+          "member": "string",
+          "name": "BigDealId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "pulsar-8x3jzjxxgzvg",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群名称",
+          "example": "default",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

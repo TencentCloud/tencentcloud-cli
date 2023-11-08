@@ -84,6 +84,14 @@
         "title": "创建环境角色关系映射"
       }
     ],
+    "CreateProCluster": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProCluster\n<公共请求参数>\n\n{\n    \"ZoneIds\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"StorageSize\": 0,\n    \"AutoRenewFlag\": 0,\n    \"TimeSpan\": 0,\n    \"Vpcs\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"ClusterName\": \"abc\",\n    \"AutoVoucher\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"abc\",\n        \"BigDealId\": \"abc\",\n        \"ClusterId\": \"abc\",\n        \"ClusterName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建专业集群"
+      }
+    ],
     "CreateRabbitMQUser": [
       {
         "document": "-",

@@ -1,6 +1,6 @@
-**Example 1: 查看虚拟节点池列表**
+**Example 1: 查看超级节点池列表**
 
-
+查看超级节点池列表
 
 Input: 
 
@@ -21,7 +21,9 @@ Output:
                     "subnet-abcd1234"
                 ],
                 "Name": "virtual-nodepool",
-                "LifeState": "normal"
+                "LifeState": "normal",
+                "Labels": [],
+                "Taints": []
             }
         ],
         "TotalCount": 1

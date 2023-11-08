@@ -238,6 +238,13 @@
       "output": "DescribeRoomResponse",
       "status": "online"
     },
+    "DescribeRoomForbiddenUser": {
+      "document": "根据房间ID获取群组中被禁言的用户列表。",
+      "input": "DescribeRoomForbiddenUserRequest",
+      "name": "获取房间中被禁言成员列表",
+      "output": "DescribeRoomForbiddenUserResponse",
+      "status": "online"
+    },
     "DescribeRoomStatistics": {
       "document": "获取房间统计信息，仅可在房间结束后调用。",
       "input": "DescribeRoomStatisticsRequest",
@@ -278,6 +285,13 @@
       "input": "EndRoomRequest",
       "name": "结束房间",
       "output": "EndRoomResponse",
+      "status": "online"
+    },
+    "ForbidSendMsg": {
+      "document": "禁止指定房间中某些用户在一段时间内发言。\n取消对某些用户的禁言。\n被禁言用户退出房间之后再进入同一房间，禁言仍然有效。",
+      "input": "ForbidSendMsgRequest",
+      "name": "禁言和取消禁言",
+      "output": "ForbidSendMsgResponse",
       "status": "online"
     },
     "GetRoomEvent": {
@@ -2867,6 +2881,52 @@
       ],
       "type": "object"
     },
+    "DescribeRoomForbiddenUserRequest": {
+      "document": "DescribeRoomForbiddenUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "23134",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "12333",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRoomForbiddenUserResponse": {
+      "document": "DescribeRoomForbiddenUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "禁言用户信息数组，内容包括被禁言的成员 ID，及其被禁言到的时间（使用 UTC 时间，即世界协调时间）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MutedAccountList",
+          "name": "MutedAccountList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRoomRequest": {
       "document": "DescribeRoom请求参数结构体",
       "members": [
@@ -3905,6 +3965,60 @@
         }
       ],
       "usage": "in"
+    },
+    "ForbidSendMsgRequest": {
+      "document": "ForbidSendMsg请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "低代码互动课堂的SdkAppId。",
+          "example": "23134",
+          "member": "uint64",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "房间ID。",
+          "example": "12333",
+          "member": "uint64",
+          "name": "RoomId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "需要禁言的用户账号，最多支持500个账号",
+          "example": "peter",
+          "member": "string",
+          "name": "MembersAccount",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需禁言时间，单位为秒，为0时表示取消禁言，4294967295为永久禁言。",
+          "example": "30",
+          "member": "uint64",
+          "name": "MuteTime",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ForbidSendMsgResponse": {
+      "document": "ForbidSendMsg返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetRoomEventRequest": {
       "document": "GetRoomEvent请求参数结构体",
@@ -5257,6 +5371,32 @@
       ],
       "usage": "in"
     },
+    "MutedAccountList": {
+      "document": "禁言用户信息数组，内容包括被禁言的成员 ID，及其被禁言到的时间（使用 UTC 时间，即世界协调时间）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2WqeRoOMJKQqnnL1lILRFHpdFla",
+          "member": "string",
+          "name": "MemberAccount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "禁言到的时间（使用 UTC 时间，即世界协调时间）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1458115189",
+          "member": "uint64",
+          "name": "MutedUntil",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "QuestionInfo": {
       "document": "房间问答问题详情",
       "members": [
@@ -5863,7 +6003,7 @@
         {
           "disabled": false,
           "document": "管理员指定消息发送方账号（若需设置 FromAccount 信息，则该参数取值不能为空）",
-          "example": "\"121212\"",
+          "example": "2WqeRoOMJKQqnnL1lILRFHpdFla",
           "member": "string",
           "name": "FromAccount",
           "required": true,
@@ -5881,9 +6021,18 @@
         {
           "disabled": false,
           "document": "消息自定义数据（云端保存，会发送到对端，程序卸载重装后还能拉取到）。",
-          "example": "\"your cloud custom data\"",
+          "example": "your cloud custom data",
           "member": "string",
           "name": "CloudCustomData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "昵称，当FromAccount没有在房间中，需要填写NickName，当FromAccount在房间中，填写NickName无意义",
+          "example": "菲菲",
+          "member": "string",
+          "name": "NickName",
           "required": false,
           "type": "string"
         }

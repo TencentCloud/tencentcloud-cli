@@ -120,16 +120,16 @@
       "status": "online"
     },
     "CreateClusterVirtualNode": {
-      "document": "创建虚拟节点",
+      "document": "创建按量计费超级节点",
       "input": "CreateClusterVirtualNodeRequest",
-      "name": "创建虚拟节点",
+      "name": "创建按量计费超级节点",
       "output": "CreateClusterVirtualNodeResponse",
       "status": "online"
     },
     "CreateClusterVirtualNodePool": {
-      "document": "创建虚拟节点池",
+      "document": "创建超级节点池",
       "input": "CreateClusterVirtualNodePoolRequest",
-      "name": "创建虚拟节点池",
+      "name": "创建超级节点池",
       "output": "CreateClusterVirtualNodePoolResponse",
       "status": "online"
     },
@@ -323,16 +323,16 @@
       "status": "online"
     },
     "DeleteClusterVirtualNode": {
-      "document": "删除虚拟节点",
+      "document": "删除超级节点",
       "input": "DeleteClusterVirtualNodeRequest",
-      "name": "删除虚拟节点",
+      "name": "删除超级节点",
       "output": "DeleteClusterVirtualNodeResponse",
       "status": "online"
     },
     "DeleteClusterVirtualNodePool": {
-      "document": "删除虚拟节点池",
+      "document": "删除超级节点池",
       "input": "DeleteClusterVirtualNodePoolRequest",
-      "name": "删除虚拟节点池",
+      "name": "删除超级节点池",
       "output": "DeleteClusterVirtualNodePoolResponse",
       "status": "online"
     },
@@ -652,16 +652,16 @@
       "status": "online"
     },
     "DescribeClusterVirtualNode": {
-      "document": "查看虚拟节点列表",
+      "document": "查看超级节点列表",
       "input": "DescribeClusterVirtualNodeRequest",
-      "name": "查看虚拟节点列表",
+      "name": "查看超级节点列表",
       "output": "DescribeClusterVirtualNodeResponse",
       "status": "online"
     },
     "DescribeClusterVirtualNodePools": {
-      "document": "查看虚拟节点池列表",
+      "document": "查看超级节点池列表",
       "input": "DescribeClusterVirtualNodePoolsRequest",
-      "name": "查看虚拟节点池列表",
+      "name": "查看超级节点池列表",
       "output": "DescribeClusterVirtualNodePoolsResponse",
       "status": "online"
     },
@@ -1079,9 +1079,9 @@
       "status": "online"
     },
     "DrainClusterVirtualNode": {
-      "document": "驱逐虚拟节点",
+      "document": "驱逐超级节点",
       "input": "DrainClusterVirtualNodeRequest",
-      "name": "驱逐虚拟节点",
+      "name": "驱逐超级节点",
       "output": "DrainClusterVirtualNodeResponse",
       "status": "online"
     },
@@ -1240,9 +1240,9 @@
       "status": "online"
     },
     "ModifyClusterVirtualNodePool": {
-      "document": "修改虚拟节点池",
+      "document": "修改超级节点池",
       "input": "ModifyClusterVirtualNodePoolRequest",
-      "name": "修改虚拟节点池",
+      "name": "修改超级节点池",
       "output": "ModifyClusterVirtualNodePoolResponse",
       "status": "online"
     },
@@ -5163,6 +5163,7 @@
           "example": "np-abcd1234",
           "member": "string",
           "name": "NodePoolId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5235,7 +5236,7 @@
           "example": "eklet-subnet-1234-0",
           "member": "string",
           "name": "NodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7211,7 +7212,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7220,7 +7221,7 @@
         {
           "disabled": false,
           "document": "虚拟节点池ID列表",
-          "example": "",
+          "example": "[\"np-meg2rq7e\"]",
           "member": "string",
           "name": "NodePoolIds",
           "required": true,
@@ -7229,7 +7230,7 @@
         {
           "disabled": false,
           "document": "是否强制删除，在虚拟节点上有pod的情况下，如果选择非强制删除，则删除会失败",
-          "example": "",
+          "example": "无",
           "member": "bool",
           "name": "Force",
           "required": false,
@@ -7256,7 +7257,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-xxxxxxxx",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7265,7 +7266,7 @@
         {
           "disabled": false,
           "document": "虚拟节点列表",
-          "example": "",
+          "example": "[\"eklet-subnet-meg2rq7e-0\"]",
           "member": "string",
           "name": "NodeNames",
           "required": true,
@@ -7274,7 +7275,7 @@
         {
           "disabled": false,
           "document": "是否强制删除：如果虚拟节点上有运行中Pod，则非强制删除状态下不会进行删除",
-          "example": "",
+          "example": "false",
           "member": "bool",
           "name": "Force",
           "required": false,
@@ -9626,7 +9627,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-abcd1234",
+          "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9644,7 +9645,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9654,7 +9655,7 @@
           "example": "无",
           "member": "VirtualNodePool",
           "name": "NodePoolSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9673,7 +9674,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -9682,7 +9683,7 @@
         {
           "disabled": false,
           "document": "节点池ID",
-          "example": "",
+          "example": "np-meg2rq7e",
           "member": "string",
           "name": "NodePoolId",
           "required": false,
@@ -9691,7 +9692,7 @@
         {
           "disabled": false,
           "document": "节点名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "NodeNames",
           "required": false,
@@ -9706,18 +9707,20 @@
         {
           "disabled": false,
           "document": "节点列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "VirtualNode",
           "name": "Nodes",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13429,7 +13432,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-meg2rq7e",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -13438,7 +13441,7 @@
         {
           "disabled": false,
           "document": "节点名",
-          "example": "",
+          "example": "eklet-subnet-meg2rq7e-0",
           "member": "string",
           "name": "NodeName",
           "required": true,
@@ -24249,7 +24252,7 @@
       "usage": "out"
     },
     "VirtualNodeSpec": {
-      "document": "虚拟节点",
+      "document": "超级节点",
       "members": [
         {
           "disabled": false,
@@ -24258,8 +24261,7 @@
           "member": "string",
           "name": "DisplayName",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -24268,8 +24270,7 @@
           "member": "string",
           "name": "SubnetId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -24278,8 +24279,7 @@
           "member": "Tag",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"

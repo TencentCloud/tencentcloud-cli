@@ -296,6 +296,14 @@
         "title": "示例"
       }
     ],
+    "DescribeRoomForbiddenUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRoomForbiddenUser\n<公共请求参数>\n\n{\n    \"SdkAppId\": 23233,\n    \"RoomId\": 344563\n}",
+        "output": "{\n    \"Response\": {\n        \"MutedAccountList\": [\n            {\n                \"MemberAccount\": \"23ksl89sdhk&sddd\",\n                \"MutedUntil\": 10\n            }\n        ],\n        \"RequestId\": \"udkuisncjdlskm\"\n    }\n}",
+        "title": "获取房间中被禁言人员列表"
+      }
+    ],
     "DescribeRoomStatistics": [
       {
         "document": "获取房间统计信息示例",
@@ -342,6 +350,14 @@
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: EndRoom\n<公共请求参数>\n\n{\n    \"RoomId\": 1111\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound.Room\",\n            \"Message\": \"The room does not exist.\"\n        },\n        \"RequestId\": \"19faa0a4-c1c8-40fe-afdb-6cb67f1b3196\"\n    }\n}",
         "title": "结束房间"
+      }
+    ],
+    "ForbidSendMsg": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ForbidSendMsg\n<公共请求参数>\n\n{\n    \"SdkAppId\": 22303,\n    \"RoomId\": 12222,\n    \"MembersAccount\": [\n        \"2212jkih\"\n    ],\n    \"MuteTime\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置禁言"
       }
     ],
     "GetRoomEvent": [
@@ -450,7 +466,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SendRoomNormalMessage\n<公共请求参数>\n\n{\n    \"SdkAppId\": 3520371,\n    \"RoomId\": 352320437,\n    \"FromAccount\": \"2WqeRoOMJKQqnnL1lILRFHpdFla\",\n    \"MsgBody\": [\n        {\n            \"MsgType\": \"TIMTextElem\",\n            \"TextMsgContent\": {\n                \"Text\": \"abc\"\n            },\n            \"FaceMsgContent\": {\n                \"Index\": 1,\n                \"Data\": \"abc\"\n            },\n            \"ImageMsgContent\": {\n                \"UUID\": \"494d1feab\",\n                \"ImageFormat\": 1,\n                \"ImageInfoList\": [\n                    {\n                        \"Type\": 1,\n                        \"Size\": 12033,\n                        \"Width\": 2048,\n                        \"Height\": 800,\n                        \"URL\": \"https://grg-1258699.cos.ap-shanghai.myqcloud.com/room_messages.png\"\n                    }\n                ]\n            }\n        }\n    ],\n    \"CloudCustomData\": \"abcsd\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bfbe8b70-f8cf-43c8-bd78-0f8b9c24daa4\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abee5f\"\n    }\n}",
         "title": "指定用户给房间中发送消息"
       }
     ],
