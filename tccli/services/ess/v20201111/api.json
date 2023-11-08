@@ -365,7 +365,7 @@
       "status": "online"
     },
     "DescribeIntegrationRoles": {
-      "document": "此接口（DescribeIntegrationRoles）用于分页查询企业角色列表，列表按照角色创建时间升序排列。\n\n注：`法人角色是系统保留角色，因此返回列表中不含法人角色。`",
+      "document": "此接口（DescribeIntegrationRoles）用于分页查询企业角色列表，列表按照角色创建时间升序排列。",
       "input": "DescribeIntegrationRolesRequest",
       "name": "查询企业角色列表",
       "output": "DescribeIntegrationRolesResponse",
@@ -4360,6 +4360,16 @@
           "member": "string",
           "name": "Url",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建的合同id（还未实际发起），每次调用会生成新的id，用户可以记录此字段对应后续页面发起的合同，若在页面上未成功发起，则此字段无效。",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

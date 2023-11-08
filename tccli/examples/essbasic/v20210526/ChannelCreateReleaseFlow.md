@@ -1,34 +1,4 @@
-**Example 1: 发起解除协议（默认情况，使用原流程的签署人）**
-
-1. 使用原流程的签署人
-2. 包含了详细的解除内容
-
-Input: 
-
-```
-tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
-    --NeedRelievedFlowId yDwFmUUckpst10i3UubBSat8PWOt2iQF \
-    --ReliveInfo.Reason 因为业务调整, 结束合作。 \
-    --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。 \
-    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
-    --ReliveInfo.OriginalOtherSettlement 无 \
-    --ReliveInfo.OtherDeals 无
-```
-
-Output: 
-```
-{
-    "Response": {
-        "FlowId": "yDwFdUUckps******xAhL7zuaIwkMth",
-        "RequestId": "s1669**2203341"
-    }
-}
-```
-
-**Example 2: 发起解除协议(使用本企业的签署人，替换用原流程中本企业的签署人)**
+**Example 1: 发起解除协议(使用本企业的签署人，替换用原流程中本企业的签署人)**
 
 1. 使用本企业的签署人
 2. 包含了详细的解除内容
@@ -67,6 +37,111 @@ Output:
     "Response": {
         "FlowId": "yDwFdUUckps******xAhL7zuaIwkMth4",
         "RequestId": "s1669**2203341"
+    }
+}
+```
+
+**Example 2: 发起解除协议(替换原流程中本企业的参与人并指定签署人角色、签署控件)**
+
+1. 更换原合同中本方企业的参与人
+2. 给该企业参与人指定自定义的角色名称(通过设置ApproverSignRole)
+3. 给该企业参与人指定签署控件类型为手写签名(通过设置ApproverSignComponentType)
+
+Input: 
+
+```
+tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
+    --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --NeedRelievedFlowId yDwFmUUckpst10i3UubBSat8PWOt2iQF \
+    --ReleasedApprovers.0.ApproverNumber 1 \
+    --ReleasedApprovers.0.ApproverSignComponentType SIGN_SIGNATURE \
+    --ReleasedApprovers.0.ApproverSignRole 自定义的签署方角色(供应商) \
+    --ReleasedApprovers.0.ApproverType ORGANIZATION \
+    --ReleasedApprovers.0.Mobile 13200000000 \
+    --ReleasedApprovers.0.Name 典子谦 \
+    --ReleasedApprovers.0.OrganizationName 典子谦示例企业 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
+    --ReliveInfo.OriginalOtherSettlement 无 \
+    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.Reason 因为业务调整, 结束合作。 \
+    --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwgkUU7y***********zWBfv",
+        "RequestId": "s168809**839"
+    }
+}
+```
+
+**Example 3: 发起解除协议(默认情况，使用原流程的签署人)**
+
+1. 使用原流程的签署人
+2. 包含了详细的解除内容
+
+Input: 
+
+```
+tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
+    --NeedRelievedFlowId yDwFmUUckpst10i3UubBSat8PWOt2iQF \
+    --ReliveInfo.Reason 因为业务调整, 结束合作。 \
+    --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿。 \
+    --ReliveInfo.OriginalOtherSettlement 无 \
+    --ReliveInfo.OtherDeals 无
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowId": "yDwFdUUckps******xAhL7zuaIwkMth",
+        "RequestId": "s1669**2203341"
+    }
+}
+```
+
+**Example 4: 错误示例-解除协议中更换原合同个人类型的参与人**
+
+1. 解除某个包含个人类型签署人的合同
+2. 更换其他个人类型签署人作为解除协议的参与人
+
+Input: 
+
+```
+tccli essbasic ChannelCreateReleaseFlow --cli-unfold-argument  \
+    --Agent.AppId yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --NeedRelievedFlowId yDR1AUUgygjazuesUuO4zjESPW4PkfNi \
+    --ReleasedApprovers.0.ApproverNumber 2 \
+    --ReleasedApprovers.0.ApproverType PERSON \
+    --ReleasedApprovers.0.Mobile 15100000000 \
+    --ReleasedApprovers.0.Name 李四 \
+    --ReliveInfo.OriginalExpenseSettlement 甲方需付给乙方xxxx以作赔偿 \
+    --ReliveInfo.OriginalOtherSettlement 无 \
+    --ReliveInfo.OtherDeals 无 \
+    --ReliveInfo.Reason 因为业务调整, 结束合作。 \
+    --ReliveInfo.RemainInForceItem 在业务结束前已产生的订单依旧有效。
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "不能更换非企业签署人身份信息"
+        },
+        "RequestId": "s16939***23898"
     }
 }
 ```

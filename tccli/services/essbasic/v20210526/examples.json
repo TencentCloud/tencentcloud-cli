@@ -258,20 +258,44 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserName\": \"印章归属个人姓名\",\n    \"IdCardType\": \"\",\n    \"IdCardNumber\": \"身份证件号码\",\n    \"SealImage\": \"印章图片Base64\",\n    \"SealName\": \"我的印章名称\",\n    \"Mobile\": \"135*111\",\n    \"EnableAutoSign\": true\n}",
         "output": "{\n    \"Response\": {\n        \"SealId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "通过准备好的个人印章图片创建印章"
+      },
+      {
+        "document": "参数IdCardNumber不能为空",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserName\": \"abc\",\n    \"IdCardType\": \"abc\",\n    \"IdCardNumber\": \"\",\n    \"SealName\": \"abc\",\n    \"SealImage\": \"abc\",\n    \"SealImageCompress\": true,\n    \"Mobile\": \"abc\",\n    \"EnableAutoSign\": true,\n    \"LicenseType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"参数IdCardNumber不能为空\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "参数IdCardNumber不能为空"
+      },
+      {
+        "document": "参数UserName不能为空",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePreparedPersonalEsign\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"UserName\": \"\",\n    \"IdCardType\": \"abc\",\n    \"IdCardNumber\": \"abc\",\n    \"SealName\": \"abc\",\n    \"SealImage\": \"abc\",\n    \"SealImageCompress\": true,\n    \"Mobile\": \"abc\",\n    \"EnableAutoSign\": true,\n    \"LicenseType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"参数UserName不能为空\"\n        },\n        \"RequestId\": \"xxxx111xxxx\"\n    }\n}",
+        "title": "参数UserName不能为空"
       }
     ],
     "ChannelCreateReleaseFlow": [
-      {
-        "document": "1. 使用原流程的签署人\n2. 包含了详细的解除内容",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n    \"ReliveInfo\": {\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\",\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿。\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwFdUUckps******xAhL7zuaIwkMth\",\n        \"RequestId\": \"s1669**2203341\"\n    }\n}",
-        "title": "发起解除协议（默认情况，使用原流程的签署人）"
-      },
       {
         "document": "1. 使用本企业的签署人\n2. 包含了详细的解除内容\n3. 替换原流程中本企业的签署人\n4. 被替换的原流程中的签署人ApproverNumber=1(即第二个签署人，在原流程签署人列表中的第二位)\n\n扩展信息：\n针对ApproverNumber举个例子，\n例如在原流程中共有三个签署人(a, b, c)，\n那么a是第一位(ApproverNumber=0)，b是第二位(ApproverNumber=1)，c是第三位(ApproverNumber=2)，\n注意这里的顺序不是签署顺序，仅仅是签署人列表中的自然顺序，签署人列表的获取可以参考DescribeFlowDetailInfo接口。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n    \"ReleasedApprovers\": [\n        {\n            \"ApproverNumber\": 1,\n            \"Name\": \"典子谦\",\n            \"Mobile\": \"13200000000\",\n            \"ApproverType\": \"ORGANIZATION\",\n            \"OrganizationName\": \"典子谦示例企业\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\",\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿。\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwFdUUckps******xAhL7zuaIwkMth4\",\n        \"RequestId\": \"s1669**2203341\"\n    }\n}",
         "title": "发起解除协议(使用本企业的签署人，替换用原流程中本企业的签署人)"
+      },
+      {
+        "document": "1. 更换原合同中本方企业的参与人\n2. 给该企业参与人指定自定义的角色名称(通过设置ApproverSignRole)\n3. 给该企业参与人指定签署控件类型为手写签名(通过设置ApproverSignComponentType)",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n    \"ReleasedApprovers\": [\n        {\n            \"ApproverNumber\": 1,\n            \"ApproverSignComponentType\": \"SIGN_SIGNATURE\",\n            \"ApproverSignRole\": \"自定义的签署方角色(供应商)\",\n            \"ApproverType\": \"ORGANIZATION\",\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"OrganizationName\": \"典子谦示例企业\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿。\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwgkUU7y***********zWBfv\",\n        \"RequestId\": \"s168809**839\"\n    }\n}",
+        "title": "发起解除协议(替换原流程中本企业的参与人并指定签署人角色、签署控件)"
+      },
+      {
+        "document": "1. 使用原流程的签署人\n2. 包含了详细的解除内容",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\"\n    },\n    \"NeedRelievedFlowId\": \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\",\n    \"ReliveInfo\": {\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\",\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿。\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"yDwFdUUckps******xAhL7zuaIwkMth\",\n        \"RequestId\": \"s1669**2203341\"\n    }\n}",
+        "title": "发起解除协议(默认情况，使用原流程的签署人)"
+      },
+      {
+        "document": "1. 解除某个包含个人类型签署人的合同\n2. 更换其他个人类型签署人作为解除协议的参与人",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateReleaseFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDRSRUUgygj6rqi6UuO4zjEBDACwAjgT\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\"\n    },\n    \"NeedRelievedFlowId\": \"yDR1AUUgygjazuesUuO4zjESPW4PkfNi\",\n    \"ReleasedApprovers\": [\n        {\n            \"ApproverNumber\": 2,\n            \"ApproverType\": \"PERSON\",\n            \"Mobile\": \"15100000000\",\n            \"Name\": \"李四\"\n        }\n    ],\n    \"ReliveInfo\": {\n        \"OriginalExpenseSettlement\": \"甲方需付给乙方xxxx以作赔偿\",\n        \"OriginalOtherSettlement\": \"无\",\n        \"OtherDeals\": \"无\",\n        \"Reason\": \"因为业务调整, 结束合作。\",\n        \"RemainInForceItem\": \"在业务结束前已产生的订单依旧有效。\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"不能更换非企业签署人身份信息\"\n        },\n        \"RequestId\": \"s16939***23898\"\n    }\n}",
+        "title": "错误示例-解除协议中更换原合同个人类型的参与人"
       }
     ],
     "ChannelCreateRole": [
@@ -294,6 +318,18 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateSealPolicy\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"yDxAyUyK****cb7u0jQn0Zh7f7\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"732aaef****541b89c49e0cc\"\n        },\n        \"AppId\": \"ed68bc6***********0214e4e\"\n    },\n    \"SealId\": \"yDRTZxxxxxJNR\",\n    \"UserIds\": [\n        \"yDdzlxxxxxopk\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"UserIds\": [\n            \"yDdzlxxxxxopk\"\n        ],\n        \"RequestId\": \"fdasfavdavxxxx\"\n    }\n}",
         "title": "创建印章授权"
+      },
+      {
+        "document": "授权时，找不到对应的 UserId",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateSealPolicy\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"SealId\": \"abc\",\n    \"UserIds\": [\n        \"abc\",\n        \"xxxid\"\n    ],\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"OrganizationOpenId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"无效的授权用户Id\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "授权时，找不到对应的 UserId"
+      },
+      {
+        "document": "授权时，缺少印章ID",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateSealPolicy\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"abc\",\n        \"ProxyOrganizationOpenId\": \"abc\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"abc\",\n            \"Channel\": \"abc\",\n            \"CustomUserId\": \"abc\",\n            \"ClientIp\": \"abc\",\n            \"ProxyIp\": \"abc\"\n        },\n        \"ProxyAppId\": \"abc\",\n        \"ProxyOrganizationId\": \"abc\"\n    },\n    \"SealId\": \"\",\n    \"UserIds\": [\n        \"abc\"\n    ],\n    \"Operator\": {\n        \"OpenId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"CustomUserId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    },\n    \"Organization\": {\n        \"OrganizationId\": \"abc\",\n        \"Channel\": \"abc\",\n        \"OrganizationOpenId\": \"abc\",\n        \"ClientIp\": \"abc\",\n        \"ProxyIp\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"缺失印章ID\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "授权时，缺少印章ID"
       }
     ],
     "ChannelCreateUserAutoSignEnableUrl": [

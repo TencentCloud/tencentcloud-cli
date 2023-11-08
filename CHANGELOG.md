@@ -1,3 +1,49 @@
+# Release 3.0.992.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 134 次发布
+
+发布时间：2023-11-08 11:36:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](https://cloud.tencent.com/document/api/1323/83412)
+
+	* 新增出参：FlowId
+
+
+
+
+## Web 应用防火墙(waf) 版本：2018-01-25
+
+### 第 72 次发布
+
+发布时间：2023-11-08 10:49:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeModuleStatus](https://cloud.tencent.com/document/api/627/101340)
+
+	* 新增入参：Domain
+
+	* 新增出参：WebSecurity, AccessControl, CcProtection, AntiTamper, AntiLeakage, ApiProtection
+
+* [ModifyModuleStatus](https://cloud.tencent.com/document/api/627/99699)
+
+	* 新增入参：Domain, WebSecurity, AccessControl, CcProtection, ApiProtection, AntiTamper, AntiLeakage
+
+
+
+
 # Release 3.0.991.1
 
 ## 日志服务(cls) 版本：2020-10-16

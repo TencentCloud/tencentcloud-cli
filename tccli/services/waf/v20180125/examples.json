@@ -515,8 +515,8 @@
     "DescribeModuleStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModuleStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModuleStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"test.qcloudwaf.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessControl\": 1,\n        \"AntiLeakage\": 1,\n        \"WebSecurity\": 1,\n        \"ApiProtection\": 1,\n        \"CcProtection\": 1,\n        \"AntiTamper\": 1,\n        \"RequestId\": \"46757c6e-786c-48ca-b5c4-9fa29ece1c9e\"\n    }\n}",
         "title": "查询某个domain的基础安全模块开关状态"
       }
     ],
@@ -975,7 +975,7 @@
     "ModifyModuleStatus": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModuleStatus\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyModuleStatus\n<公共请求参数>\n\n{\n    \"Domain\": \"zjm.qcloudwaf.com\",\n    \"WebSecurity\": 1,\n    \"AccessControl\": 1,\n    \"CcProtection\": 1,\n    \"AntiTamper\": 1,\n    \"AntiLeakage\": 1,\n    \"ApiProtection\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc-edf\"\n    }\n}",
         "title": "修改模块状态"
       }

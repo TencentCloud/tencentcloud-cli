@@ -239,11 +239,11 @@
       "status": "online"
     },
     "DescribeAutoDenyIP": {
-      "document": "接口已废弃\n\n描述WAF自动封禁IP详情,对齐自动封堵状态",
+      "document": "描述WAF自动封禁IP详情,对齐自动封堵状态",
       "input": "DescribeAutoDenyIPRequest",
       "name": "描述WAF自动封禁IP详情",
       "output": "DescribeAutoDenyIPResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeBatchIpAccessControl": {
       "document": "Waf 多域名ip黑白名单查询",
@@ -7363,12 +7363,82 @@
     },
     "DescribeModuleStatusRequest": {
       "document": "DescribeModuleStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "要查询状态的域名",
+          "example": "zjm.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "DescribeModuleStatusResponse": {
       "document": "DescribeModuleStatus返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "WEB安全规则是否开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "WebSecurity",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "访问控制规则是否开启",
+          "example": "1",
+          "member": "int64",
+          "name": "AccessControl",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CC防护是否开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "CcProtection",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网页防篡改是否开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "AntiTamper",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息防泄漏是否开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "AntiLeakage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "API安全是否开启",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApiProtection",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -13635,7 +13705,71 @@
     },
     "ModifyModuleStatusRequest": {
       "document": "ModifyModuleStatus请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要设置的domain",
+          "example": "zjm.qcloudwaf.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WEB 安全模块开关，0或1",
+          "example": "1",
+          "member": "uint64",
+          "name": "WebSecurity",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制模块开关，0或者1",
+          "example": "1",
+          "member": "uint64",
+          "name": "AccessControl",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "CC模块开关，0或者1",
+          "example": "1",
+          "member": "uint64",
+          "name": "CcProtection",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "API安全模块开关，0或者1",
+          "example": "1",
+          "member": "uint64",
+          "name": "ApiProtection",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防篡改模块开关，0或者1",
+          "example": "1",
+          "member": "uint64",
+          "name": "AntiTamper",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "防泄漏模块开关，0或者1",
+          "example": "1",
+          "member": "uint64",
+          "name": "AntiLeakage",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
     "ModifyModuleStatusResponse": {

@@ -436,11 +436,11 @@
   },
   "objects": {
     "Agent": {
-      "document": "应用相关信息",
+      "document": "应用相关信息, 整体应用的层级图如下\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/bc5cb933c604b28be9ad84dc780a5f81.png)\n\n注:\n  1. `不同的业务系统可以采用不同的应用，不同应用下的数据是隔离的,  应用A中的某个企业已经实名, 在应用B中此企业还需要重新认证`",
       "members": [
         {
           "disabled": false,
-          "document": "应用的唯一标识。不同的业务系统可以采用不同的AppId，不同AppId下的数据是隔离的。可以由控制台开发者中心-应用集成自主生成。",
+          "document": "应用的唯一标识(由电子签平台自动生成)。不同的业务系统可以采用不同的AppId，不同AppId下的数据是隔离的。可以由控制台开发者中心-应用集成自主生成。位置如下:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/fac77e0d3f28aaec56669f67e65c8db8.png)",
           "example": "无",
           "member": "string",
           "name": "AppId",
@@ -467,7 +467,7 @@
         },
         {
           "disabled": false,
-          "document": "非必需参数，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
+          "document": "**不用填写**，在第三方平台子客企业开通电子签后，会生成唯一的子客应用Id（ProxyAppId）用于代理调用时的鉴权，在子客开通的回调中获取。",
           "example": "无",
           "member": "string",
           "name": "ProxyAppId",
@@ -2684,7 +2684,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2702,7 +2702,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件号码",
+          "document": "证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "IdCardNumber",
@@ -2711,7 +2711,7 @@
         },
         {
           "disabled": false,
-          "document": "印章名称",
+          "document": "电子印章名字，1-50个中文字符\n注:`同一企业下电子印章名字不能相同`",
           "example": "无",
           "member": "string",
           "name": "SealName",
@@ -2720,7 +2720,7 @@
         },
         {
           "disabled": false,
-          "document": "印章图片的base64，最大不超过 8M",
+          "document": "电子印章图片base64编码，大小不超过10M（原始图片不超过5M），只支持PNG或JPG图片格式。\n\n",
           "example": "无",
           "member": "string",
           "name": "SealImage",
@@ -2729,7 +2729,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者信息",
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
@@ -2738,7 +2738,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证件类型",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证 (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li>\n<li>OTHER_CARD_TYPE : 其他</li></ul>\n\n注: `其他证件类型为白名单功能，使用前请联系对接的客户经理沟通。`",
           "example": "无",
           "member": "string",
           "name": "IdCardType",
@@ -2789,7 +2789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "导入的印章 ID",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -2838,7 +2838,7 @@
         },
         {
           "disabled": false,
-          "document": "替换解除协议的签署人， 如不指定替换签署人,  则使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人的RecipientId编号更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/companyApis/queryFlows/DescribeFlowInfo/\">DescribeFlowInfo</a>查询签署人的RecipientId编号)<br/>\n\n注意：\n<ul>\n<li>只能更换自己企业的签署人, 不支持更换个人类型或者其他企业的签署人</li>\n<li>可以不指定替换签署人, 使用原流程的签署人</li>\n</ul>",
+          "document": "指定解除协议的签署人，如不指定，则默认使用原流程的签署人。 <br/>\n如需更换原合同中的企业端签署人，可通过指定该签署人在原合同列表中的ApproverNumber编号来更换此企业端签署人。(可通过接口<a href=\"https://qian.tencent.com/developers/partnerApis/flows/DescribeFlowDetailInfo/\">DescribeFlowDetailInfo</a>查询签署人的ApproverNumber编号，默认从0开始，顺序递增)<br/>\n\n注意：\n<ul>\n<li>只能更换自己企业的签署人，不支持更换个人类型或者其他企业的签署人</li>\n<li>可以不指定替换签署人，使用原流程的签署人</li>\n</ul>",
           "example": "无",
           "member": "ReleasedApprover",
           "name": "ReleasedApprovers",
@@ -2984,7 +2984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n第三方平台子客企业和员工必须已经经过实名认证。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2993,7 +2993,7 @@
         },
         {
           "disabled": false,
-          "document": "指定印章ID",
+          "document": "电子印章ID，为32位字符串。\n建议开发者保留此印章ID，后续指定签署区印章或者操作印章需此印章ID。\n可登录腾讯电子签控制台，在 \"印章\"->\"印章中心\"选择查看的印章，在\"印章详情\" 中查看某个印章的SealId(在页面中展示为印章ID)。",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -3002,7 +3002,7 @@
         },
         {
           "disabled": false,
-          "document": "指定待授权的用户ID数组,电子签的用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权。",
+          "document": "\n员工在腾讯电子签平台的唯一身份标识，为32位字符串。\n可登录腾讯电子签控制台，在 \"更多能力\"->\"组织管理\" 中查看某位员工的UserId(在页面中展示为用户ID)。\n员工在贵司业务系统中的唯一身份标识，用于与腾讯电子签账号进行映射，确保在同一企业内不会出现重复。\n该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。\n指定待授权的用户ID数组,电子签的用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权。",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -8508,7 +8508,7 @@
         },
         {
           "disabled": false,
-          "document": "指定签署人类型，目前支持\n<ul><li> **ORGANIZATION**：企业（默认值）</li>\n<li> **ENTERPRISESERVER**：企业静默签</li></ul>",
+          "document": "指定签署人类型，目前支持\n<ul><li> **ORGANIZATION**：企业(默认值)</li>\n<li> **ENTERPRISESERVER**：企业静默签</li></ul>",
           "example": "ORGANIZATION",
           "member": "string",
           "name": "ApproverType",
@@ -8526,7 +8526,7 @@
         },
         {
           "disabled": false,
-          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "签署方经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证(默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -8535,7 +8535,7 @@
         },
         {
           "disabled": false,
-          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母（但“I”、“O”除外），后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
+          "document": "证件号码，应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成(如存在X，请大写)。</li>\n<li>港澳居民来往内地通行证号码应为9位字符串，第1位为“C”，第2位为英文字母(但“I”、“O”除外)，后7位为阿拉伯数字。</li>\n<li>港澳台居民居住证号码编码规则与中国大陆身份证相同，应为18位字符串。</li></ul>",
           "example": "620000198802020000",
           "member": "string",
           "name": "IdCardNumber",
@@ -9255,7 +9255,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业法定代表人的证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li>",
+          "document": "第三方平台子客企业法定代表人的证件号码, 应符合以下规则\n<ul><li>居民身份证号码应为18位字符串，由数字和大写字母X组成（如存在X，请大写）。</li></ul>",
           "example": "无",
           "member": "string",
           "name": "ProxyLegalIdCardNumber",
