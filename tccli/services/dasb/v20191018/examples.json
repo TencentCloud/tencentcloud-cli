@@ -347,8 +347,8 @@
     "ImportExternalDevice": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"xx\",\n            \"Name\": \"xx\",\n            \"OsName\": \"xx\",\n            \"Port\": 1\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportExternalDevice\n<公共请求参数>\n\n{\n    \"DeviceSet\": [\n        {\n            \"Ip\": \"1.1.1.1\",\n            \"Name\": \"linux设备\",\n            \"OsName\": \"Linux\",\n            \"Port\": 22\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DeviceIdSet\": [\n            1,\n            2,\n            3\n        ],\n        \"RequestId\": \"request-id-test\"\n    }\n}",
         "title": "导入外部资产信息"
       }
     ],

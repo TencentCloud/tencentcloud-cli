@@ -1187,7 +1187,7 @@
           "example": "pwd",
           "member": "string",
           "name": "Cmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1197,7 +1197,7 @@
           "example": "2020-01-01T01:01:01Z",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1207,7 +1207,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1217,7 +1217,7 @@
           "example": "1",
           "member": "int64",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1227,7 +1227,7 @@
           "example": "sadn1j2121",
           "member": "string",
           "name": "Sid",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1237,7 +1237,7 @@
           "example": "test",
           "member": "string",
           "name": "UserName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1247,7 +1247,7 @@
           "example": "test",
           "member": "string",
           "name": "Account",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1257,7 +1257,7 @@
           "example": "ins-onwx8e9y",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1267,7 +1267,7 @@
           "example": "1.1.124.125",
           "member": "string",
           "name": "FromIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1276,8 +1276,18 @@
           "document": "该命令所属会话的会话开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2020-01-01T01:01:01Z",
           "member": "string",
+          "name": "SessionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "该命令所属会话的会话开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2020-01-01T01:01:01Z",
+          "member": "string",
           "name": "SessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1287,7 +1297,7 @@
           "example": "2020-01-01T01:01:01Z",
           "member": "string",
           "name": "ConfirmTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1297,7 +1307,7 @@
           "example": "1.3",
           "member": "string",
           "name": "UserDepartmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1307,7 +1317,7 @@
           "example": "部门名称",
           "member": "string",
           "name": "UserDepartmentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1317,7 +1327,7 @@
           "example": "1",
           "member": "string",
           "name": "DeviceDepartmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1327,7 +1337,7 @@
           "example": "部门名称",
           "member": "string",
           "name": "DeviceDepartmentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1878,13 +1888,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例Id",
+          "document": "实例Id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "bh-saas-xxxxxxxx",
           "member": "string",
           "name": "ResourceId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4321,6 +4331,16 @@
       "document": "ImportExternalDevice返回参数结构体",
       "members": [
         {
+          "disabled": false,
+          "document": "资产ID列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "DeviceIdSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -6072,7 +6092,7 @@
           "example": "2022-01-01T01:01:01Z",
           "member": "string",
           "name": "Time",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6082,7 +6102,7 @@
           "example": "user1",
           "member": "string",
           "name": "UserName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6092,7 +6112,7 @@
           "example": "张三",
           "member": "string",
           "name": "RealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6102,7 +6122,7 @@
           "example": "ins-xxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6112,7 +6132,7 @@
           "example": "开发机",
           "member": "string",
           "name": "DeviceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6122,7 +6142,7 @@
           "example": "100.100.100.100",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6132,7 +6152,7 @@
           "example": "192.168.1.100",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6142,7 +6162,7 @@
           "example": "pwd",
           "member": "string",
           "name": "Cmd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6152,7 +6172,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6162,7 +6182,7 @@
           "example": "xxxx",
           "member": "string",
           "name": "Sid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6172,7 +6192,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TimeOffset",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6182,7 +6202,7 @@
           "example": "无",
           "member": "string",
           "name": "Account",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6192,7 +6212,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "FromIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6201,8 +6221,18 @@
           "document": "该命令所属会话的会话开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2023-04-24T18:47:18.118138659+08:00",
           "member": "string",
+          "name": "SessionTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "该命令所属会话的会话开始时间（废弃，使用SessionTime）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-04-24T18:47:18.118138659+08:00",
+          "member": "string",
           "name": "SessTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6212,7 +6242,7 @@
           "example": "无",
           "member": "string",
           "name": "ConfirmTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6222,7 +6252,7 @@
           "example": "1.3",
           "member": "string",
           "name": "UserDepartmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6232,7 +6262,7 @@
           "example": "部门名称",
           "member": "string",
           "name": "UserDepartmentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6242,7 +6272,7 @@
           "example": "1",
           "member": "string",
           "name": "DeviceDepartmentId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6252,7 +6282,7 @@
           "example": "部门名称",
           "member": "string",
           "name": "DeviceDepartmentName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

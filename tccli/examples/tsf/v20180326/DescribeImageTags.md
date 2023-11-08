@@ -6,17 +6,13 @@ Input:
 
 ```
 tccli tsf DescribeImageTags --cli-unfold-argument  \
-    --TcrRepoInfo.RegistryName xx \
-    --TcrRepoInfo.Namespace xx \
-    --TcrRepoInfo.Region xx \
-    --TcrRepoInfo.RegistryId xx \
-    --TcrRepoInfo.RepoName xx \
-    --QueryImageIdFlag 0 \
-    --Limit 0 \
-    --SearchWord xx \
+    --ApplicationId abc \
     --Offset 0 \
-    --RepoType xx \
-    --ApplicationId xx
+    --Limit 20 \
+    --QueryImageIdFlag 0 \
+    --SearchWord abc \
+    --RepoType abc \
+    --RepoName abc
 ```
 
 Output: 
@@ -24,35 +20,28 @@ Output:
 {
     "Response": {
         "Result": {
+            "TotalCount": 0,
+            "RepoName": "abc",
+            "Server": "abc",
             "Content": [
                 {
-                    "UpdateTime": "xx",
-                    "DockerVersion": "xx",
-                    "Author": "xx",
-                    "TcrRepoInfo": {
-                        "RegistryName": "xx",
-                        "Namespace": "xx",
-                        "Region": "xx",
-                        "RegistryId": "xx",
-                        "RepoName": "xx"
-                    },
-                    "TagId": "xx",
-                    "CreationTime": "xx",
-                    "RepoName": "xx",
-                    "ImageId": "xx",
-                    "SizeByte": 0,
-                    "Architecture": "xx",
-                    "TagName": "xx",
-                    "PushTime": "xx",
-                    "Os": "xx",
-                    "Size": "xx"
+                    "RepoName": "abc",
+                    "TagName": "abc",
+                    "TagId": "abc",
+                    "ImageId": "abc",
+                    "Size": "abc",
+                    "CreationTime": "abc",
+                    "UpdateTime": "abc",
+                    "Author": "abc",
+                    "Architecture": "abc",
+                    "DockerVersion": "abc",
+                    "Os": "abc",
+                    "PushTime": "abc",
+                    "SizeByte": 0
                 }
-            ],
-            "TotalCount": 0,
-            "RepoName": "xx",
-            "Server": "xx"
+            ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

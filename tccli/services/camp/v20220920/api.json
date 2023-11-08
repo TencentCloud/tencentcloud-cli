@@ -1688,11 +1688,22 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "Tapp 对象\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TAPP",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TApp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TApp",
           "output_required": true,
           "required": false,
           "type": "string",
@@ -4303,6 +4314,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4316,7 +4336,17 @@
           "example": "无",
           "member": "Template",
           "name": "Templates",
-          "required": true,
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤器值列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4325,8 +4355,8 @@
           "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "uint64",
-          "name": "Total",
-          "required": true,
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5266,6 +5296,89 @@
       ],
       "usage": "out"
     },
+    "HPACustomizeMetric": {
+      "document": "HPA自定义指标配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标URL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricURL",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricExpression",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricTarget",
+          "name": "Target",
+          "output_required": true,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Token信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BearerToken",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "HPAScalingPolicy": {
       "document": "Policy 选择策略",
       "members": [
@@ -5347,6 +5460,7 @@
           "example": "无",
           "member": "int64",
           "name": "MinReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5357,6 +5471,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxReplicas",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5367,6 +5482,7 @@
           "example": "无",
           "member": "float",
           "name": "Tolerance",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": true
@@ -5377,6 +5493,7 @@
           "example": "无",
           "member": "int64",
           "name": "ReSyncPeriod",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5387,6 +5504,7 @@
           "example": "无",
           "member": "Behavior",
           "name": "Behavior",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5397,6 +5515,7 @@
           "example": "无",
           "member": "MetricSpec",
           "name": "Metrics",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5407,8 +5526,20 @@
           "example": "无",
           "member": "bool",
           "name": "OverloadScale",
+          "output_required": false,
           "required": false,
           "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPACustomizeMetric",
+          "name": "CustomizeMetric",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -7505,27 +7636,37 @@
       "usage": "both"
     },
     "Template": {
-      "document": "模板，如应用模板",
+      "document": "模板，如应用模板，部署模板。",
       "members": [
+        {
+          "disabled": false,
+          "document": "业务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "prj-xxxxx",
+          "member": "string",
+          "name": "ProjectID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板ID",
+          "example": "template-xxxxx",
+          "member": "string",
+          "name": "TemplateID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "disabled": false,
           "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "模板内容，json 字符串",
-          "example": "无",
-          "member": "string",
-          "name": "Content",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7533,7 +7674,7 @@
           "example": "无",
           "member": "string",
           "name": "DisplayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7543,12 +7684,100 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旧模板内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TemplateContent",
+          "name": "TemplateContent",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "User",
+          "name": "Creator",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "datetime_iso",
+          "name": "UpdatedAt",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
       "usage": "out"
+    },
+    "TemplateContent": {
+      "document": "模板详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组件模板内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Component",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署模板内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Policy",
+          "name": "Placements",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TencentOrganization": {
       "document": "Tencent 组织架构信息",

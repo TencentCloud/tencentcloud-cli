@@ -689,6 +689,7 @@
           "example": "all",
           "member": "string",
           "name": "ObjectMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -699,16 +700,18 @@
           "example": "无",
           "member": "CompareObjectItem",
           "name": "ObjectItems",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如account(账号),index(索引),shardkey(片键，后面可能会调整),schema(库表结构)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "account",
           "member": "string",
           "name": "AdvancedObjects",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true

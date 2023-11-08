@@ -1,3 +1,253 @@
+# Release 3.0.881.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 20 次发布
+
+发布时间：2023-11-09 01:09:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1609/77960)
+
+	* 新增入参：Filters
+
+	* 新增出参：Filters, TotalCount
+
+	* <font color="#dd0000">**删除出参**：</font>Total
+
+
+新增数据结构：
+
+* [HPACustomizeMetric](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPACustomizeMetric)
+* [TemplateContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TemplateContent)
+
+修改数据结构：
+
+* [ComponentProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ComponentProperties)
+
+	* 新增成员：TApp
+
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+
+	* 新增成员：CustomizeMetric
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Template)
+
+	* 新增成员：ProjectID, TemplateID, Type, TemplateContent, Creator, CreatedAt, UpdatedAt
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 19 次发布
+
+发布时间：2023-11-09 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateFileSystemBandwidthLimit](http://document.tencentcloudapi.woa.com/document/product/582/82552)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 18 次发布
+
+发布时间：2023-11-09 01:16:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77123)
+
+	* 新增出参：DeviceIdSet
+
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 33 次发布
+
+发布时间：2023-11-09 01:18:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItem)
+
+	* <font color="#dd0000">**修改成员**：</font>TagList
+
+
+
+
+## 数字版权管理(drm) 版本：2018-11-15
+
+### 第 3 次发布
+
+发布时间：2023-11-09 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GenerateTDRMKey](http://document.tencentcloudapi.woa.com/document/product/1000/82553)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 52 次发布
+
+发布时间：2023-11-09 01:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* 新增出参：FlowId
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 102 次发布
+
+发布时间：2023-11-09 01:20:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/82555)
+
+新增数据结构：
+
+* [BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BillUsageDetail)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 77 次发布
+
+发布时间：2023-11-09 01:30:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 38 次发布
+
+发布时间：2023-11-09 01:34:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/49526)
+
+	* 新增入参：RepoName
+
+* [DescribeImageTags](http://document.tencentcloudapi.woa.com/document/product/649/36052)
+
+	* 新增入参：RepoName
+
+	* <font color="#dd0000">**修改入参**：</font>ApplicationId
+
+
+新增数据结构：
+
+* [GroupContainerInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#GroupContainerInfo)
+
+修改数据结构：
+
+* [ContainerGroupDeploy](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupDeploy)
+
+	* 新增成员：ContainerName, AdditionalContainerList, InternalContainerList
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 114 次发布
+
+发布时间：2023-11-09 01:36:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpAsn
+
+
+
+
 # Release 3.0.880.1
 
 ## 日志服务(cls) 版本：2020-10-16

@@ -1,46 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 日志服务(cls) 版本：2020-10-16
+## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 48 次发布
+### 第 20 次发布
 
-发布时间：2023-11-08 01:10:52
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [CheckFunction](http://document.tencentcloudapi.woa.com/document/product/614/82546)
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 51 次发布
-
-发布时间：2023-11-08 01:15:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
-
-新增数据结构：
-
-* [BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#BillUsageDetail)
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 101 次发布
-
-发布时间：2023-11-08 01:16:09
+发布时间：2023-11-09 01:09:49
 
 本次发布包含了以下内容：
 
@@ -48,22 +12,44 @@
 
 修改接口：
 
-* [SyncProxyOrganization](http://document.tencentcloudapi.woa.com/document/product/1595/75241)
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1609/77960)
 
-	* 新增入参：ProxyAddress
+	* 新增入参：Filters
 
+	* 新增出参：Filters, TotalCount
 
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
-
+	* <font color="#dd0000">**删除出参**：</font>Total
 
 
-## 多网聚合加速(mna) 版本：2021-01-19
+新增数据结构：
 
-### 第 11 次发布
+* [HPACustomizeMetric](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPACustomizeMetric)
+* [TemplateContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TemplateContent)
 
-发布时间：2023-11-08 01:20:00
+修改数据结构：
+
+* [ComponentProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ComponentProperties)
+
+	* 新增成员：TApp
+
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+
+	* 新增成员：CustomizeMetric
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Template)
+
+	* 新增成员：ProjectID, TemplateID, Type, TemplateContent, Creator, CreatedAt, UpdatedAt
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 19 次发布
+
+发布时间：2023-11-09 01:11:19
 
 本次发布包含了以下内容：
 
@@ -71,20 +57,49 @@
 
 新增接口：
 
-* [GetNetMonitor](http://document.tencentcloudapi.woa.com/document/product/1385/82549)
-
-新增数据结构：
-
-* [MonitorData](http://document.tencentcloudapi.woa.com/document/product/1385/55846#MonitorData)
-* [SlotNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#SlotNetInfo)
+* [UpdateFileSystemBandwidthLimit](http://document.tencentcloudapi.woa.com/document/product/582/82552)
 
 
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
 
-### 第 76 次发布
+### 第 18 次发布
 
-发布时间：2023-11-08 01:26:02
+发布时间：2023-11-09 01:16:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77123)
+
+	* 新增出参：DeviceIdSet
+
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 33 次发布
+
+发布时间：2023-11-09 01:18:06
 
 本次发布包含了以下内容：
 
@@ -92,26 +107,18 @@
 
 修改数据结构：
 
-* [RocketMQClusterConfig](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterConfig)
+* [DomainListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItem)
 
-	* 新增成员：TopicDistribution
-
-	* <font color="#dd0000">**修改成员**：</font>MaxTpsPerNamespace, MaxNamespaceNum, UsedNamespaceNum, MaxTopicNum, UsedTopicNum, MaxGroupNum, UsedGroupNum, MaxRetentionTime, MaxLatencyTime, MaxQueuesPerTopic
-
-* [RocketMQClusterInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQClusterInfo)
-
-	* 新增成员：AclEnabled, PublicClbId, Vip, VpcId, SupportMigration, InstanceStatus
-
-	* <font color="#dd0000">**修改成员**：</font>ClusterId, ClusterName, Region, CreateTime, Remark, PublicEndPoint, VpcEndPoint, SupportNamespaceEndpoint, Vpcs, IsVip, RocketMQFlag, Status, IsolateTime, HttpPublicEndpoint, HttpVpcEndpoint, InternalEndpoint, HttpInternalEndpoint
+	* <font color="#dd0000">**修改成员**：</font>TagList
 
 
 
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
+## 数字版权管理(drm) 版本：2018-11-15
 
-### 第 19 次发布
+### 第 3 次发布
 
-发布时间：2023-11-08 01:26:33
+发布时间：2023-11-09 01:18:30
 
 本次发布包含了以下内容：
 
@@ -119,16 +126,125 @@
 
 新增接口：
 
-* [BindSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82551)
-* [DeleteSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82550)
+* [GenerateTDRMKey](http://document.tencentcloudapi.woa.com/document/product/1000/82553)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 52 次发布
+
+发布时间：2023-11-09 01:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* 新增出参：FlowId
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 102 次发布
+
+发布时间：2023-11-09 01:20:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/82555)
 
 新增数据结构：
 
-* [BindSharedCNAMEMap](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BindSharedCNAMEMap)
+* [BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BillUsageDetail)
 
 
 
-## 边缘安全加速平台(teo) 版本：2022-01-06
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 77 次发布
+
+发布时间：2023-11-09 01:30:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 38 次发布
+
+发布时间：2023-11-09 01:34:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/49526)
+
+	* 新增入参：RepoName
+
+* [DescribeImageTags](http://document.tencentcloudapi.woa.com/document/product/649/36052)
+
+	* 新增入参：RepoName
+
+	* <font color="#dd0000">**修改入参**：</font>ApplicationId
+
+
+新增数据结构：
+
+* [GroupContainerInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#GroupContainerInfo)
+
+修改数据结构：
+
+* [ContainerGroupDeploy](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupDeploy)
+
+	* 新增成员：ContainerName, AdditionalContainerList, InternalContainerList
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 114 次发布
+
+发布时间：2023-11-09 01:36:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpAsn
+
 
 
 
@@ -7502,6 +7618,47 @@
 
 ## 应用管理平台(camp) 版本：2022-09-20
 
+### 第 20 次发布
+
+发布时间：2023-11-09 01:09:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTemplates](http://document.tencentcloudapi.woa.com/document/product/1609/77960)
+
+	* 新增入参：Filters
+
+	* 新增出参：Filters, TotalCount
+
+	* <font color="#dd0000">**删除出参**：</font>Total
+
+
+新增数据结构：
+
+* [[HPACustomizeMetric](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPACustomizeMetric)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[HPACustomizeMetric](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPACustomizeMetric))
+* [[TemplateContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TemplateContent)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[TemplateContent](http://document.tencentcloudapi.woa.com/document/product/1609/78009#TemplateContent))
+
+修改数据结构：
+
+* [ComponentProperties](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ComponentProperties)
+
+	* 新增成员：TApp
+
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+
+	* 新增成员：CustomizeMetric
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1609/78009#Template)
+
+	* 新增成员：ProjectID, TemplateID, Type, TemplateContent, Creator, CreatedAt, UpdatedAt
+
+	* <font color="#dd0000">**修改成员**：</font>Name
+
+
 ### 第 19 次发布
 
 发布时间：2023-10-17 01:08:48
@@ -13863,6 +14020,18 @@
 
 ## 文件存储(cfs) 版本：2019-07-19
 
+### 第 19 次发布
+
+发布时间：2023-11-09 01:11:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[UpdateFileSystemBandwidthLimit](http://document.tencentcloudapi.woa.com/document/product/582/82552)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 18 次发布
 
 发布时间：2023-09-01 01:22:42
@@ -19012,7 +19181,7 @@
 
 新增接口：
 
-* [[CheckFunction](http://document.tencentcloudapi.woa.com/document/product/614/82546)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [CheckFunction](http://document.tencentcloudapi.woa.com/document/product/614/82546)
 
 ### 第 47 次发布
 
@@ -28313,6 +28482,36 @@
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
 
+### 第 18 次发布
+
+发布时间：2023-11-09 01:16:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ImportExternalDevice](http://document.tencentcloudapi.woa.com/document/product/1492/77123)
+
+	* 新增出参：DeviceIdSet
+
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Sid, UserName, Account, InstanceId, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：SessionTime
+
+	* <font color="#dd0000">**修改成员**：</font>Account, FromIp, SessTime, ConfirmTime, UserDepartmentId, UserDepartmentName, DeviceDepartmentId, DeviceDepartmentName
+
+
 ### 第 17 次发布
 
 发布时间：2023-10-11 01:14:00
@@ -32329,6 +32528,21 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 33 次发布
+
+发布时间：2023-11-09 01:18:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainListItem](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainListItem)
+
+	* <font color="#dd0000">**修改成员**：</font>TagList
+
+
 ### 第 32 次发布
 
 发布时间：2023-11-03 01:14:09
@@ -33306,6 +33520,18 @@
 
 
 ## 数字版权管理(drm) 版本：2018-11-15
+
+### 第 3 次发布
+
+发布时间：2023-11-09 01:18:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GenerateTDRMKey](http://document.tencentcloudapi.woa.com/document/product/1000/82553)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 2 次发布
 
@@ -37203,6 +37429,25 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 52 次发布
+
+发布时间：2023-11-09 01:20:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1668/79346)
+
+	* 新增出参：FlowId
+
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
+
+	* <font color="#dd0000">**修改入参**：</font>Offset
+
+
 ### 第 51 次发布
 
 发布时间：2023-11-08 01:15:54
@@ -37213,11 +37458,11 @@
 
 新增接口：
 
-* [[DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/82548)
 
 新增数据结构：
 
-* [[BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#BillUsageDetail)](http://document.tencentcloudapi.woa.com/document/product/1668/79360#[BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#BillUsageDetail))
+* [BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1668/79360#BillUsageDetail)
 
 ### 第 50 次发布
 
@@ -38488,6 +38733,22 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 102 次发布
+
+发布时间：2023-11-09 01:20:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/82555)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BillUsageDetail)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[BillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#BillUsageDetail))
 
 ### 第 101 次发布
 
@@ -50761,12 +51022,12 @@
 
 新增接口：
 
-* [[GetNetMonitor](http://document.tencentcloudapi.woa.com/document/product/1385/82549)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [GetNetMonitor](http://document.tencentcloudapi.woa.com/document/product/1385/82549)
 
 新增数据结构：
 
-* [[MonitorData](http://document.tencentcloudapi.woa.com/document/product/1385/55846#MonitorData)](http://document.tencentcloudapi.woa.com/document/product/1385/55846#[MonitorData](http://document.tencentcloudapi.woa.com/document/product/1385/55846#MonitorData))
-* [[SlotNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#SlotNetInfo)](http://document.tencentcloudapi.woa.com/document/product/1385/55846#[SlotNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#SlotNetInfo))
+* [MonitorData](http://document.tencentcloudapi.woa.com/document/product/1385/55846#MonitorData)
+* [SlotNetInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#SlotNetInfo)
 
 ### 第 10 次发布
 
@@ -70136,6 +70397,18 @@
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 77 次发布
+
+发布时间：2023-11-09 01:30:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 76 次发布
 
 发布时间：2023-11-08 01:26:02
@@ -72729,12 +73002,12 @@
 
 新增接口：
 
-* [[BindSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82551)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DeleteSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82550)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [BindSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82551)
+* [DeleteSharedCNAME](http://document.tencentcloudapi.woa.com/document/product/1738/82550)
 
 新增数据结构：
 
-* [[BindSharedCNAMEMap](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BindSharedCNAMEMap)](http://document.tencentcloudapi.woa.com/document/product/1738/81211#[BindSharedCNAMEMap](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BindSharedCNAMEMap))
+* [BindSharedCNAMEMap](http://document.tencentcloudapi.woa.com/document/product/1738/81211#BindSharedCNAMEMap)
 
 ### 第 18 次发布
 
@@ -79764,6 +80037,38 @@
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
+### 第 38 次发布
+
+发布时间：2023-11-09 01:34:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeImageRepository](http://document.tencentcloudapi.woa.com/document/product/649/49526)
+
+	* 新增入参：RepoName
+
+* [DescribeImageTags](http://document.tencentcloudapi.woa.com/document/product/649/36052)
+
+	* 新增入参：RepoName
+
+	* <font color="#dd0000">**修改入参**：</font>ApplicationId
+
+
+新增数据结构：
+
+* [[GroupContainerInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#GroupContainerInfo)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[GroupContainerInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#GroupContainerInfo))
+
+修改数据结构：
+
+* [ContainerGroupDeploy](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupDeploy)
+
+	* 新增成员：ContainerName, AdditionalContainerList, InternalContainerList
+
+
 ### 第 37 次发布
 
 发布时间：2023-09-12 02:42:53
@@ -83787,6 +84092,21 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 114 次发布
+
+发布时间：2023-11-09 01:36:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyVpnGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17507)
+
+	* 新增入参：BgpAsn
+
 
 ### 第 113 次发布
 
