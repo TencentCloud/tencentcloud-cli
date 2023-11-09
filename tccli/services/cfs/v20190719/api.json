@@ -295,7 +295,7 @@
       "status": "online"
     },
     "UpdateFileSystemBandwidthLimit": {
-      "document": "更新文件系统带宽",
+      "document": "更新文件系统带宽\n仅吞吐型支持此接口",
       "input": "UpdateFileSystemBandwidthLimitRequest",
       "name": "更新文件系统带宽",
       "output": "UpdateFileSystemBandwidthLimitResponse",
@@ -2800,7 +2800,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统已使用容量,单位Byte",
+          "document": "文件系统已使用容量。单位：Byte",
           "example": "10",
           "member": "uint64",
           "name": "SizeByte",
@@ -2810,7 +2810,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统最大空间限制,GiB",
+          "document": "文件系统最大空间限制。单位:GiB",
           "example": "50",
           "member": "uint64",
           "name": "SizeLimit",
@@ -2940,7 +2940,7 @@
         },
         {
           "disabled": false,
-          "document": "文件系统总容量",
+          "document": "文件系统总容量\n单位:GiB",
           "example": "100",
           "member": "uint64",
           "name": "Capacity",

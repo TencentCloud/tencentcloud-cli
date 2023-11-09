@@ -791,7 +791,7 @@
           "example": "asg-30wif85u",
           "member": "string",
           "name": "AutoScalingGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -801,7 +801,7 @@
           "example": "test-asg",
           "member": "string",
           "name": "AutoScalingGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -811,7 +811,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "AutoScalingGroupStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -821,7 +821,7 @@
           "example": "2021-05-31T12:38:35Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -831,7 +831,7 @@
           "example": "300",
           "member": "int64",
           "name": "DefaultCooldown",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -841,7 +841,7 @@
           "example": "0",
           "member": "int64",
           "name": "DesiredCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -851,7 +851,7 @@
           "example": "ENABLED",
           "member": "string",
           "name": "EnabledStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -861,7 +861,7 @@
           "example": "[]",
           "member": "ForwardLoadBalancer",
           "name": "ForwardLoadBalancerSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -871,7 +871,7 @@
           "example": "0",
           "member": "int64",
           "name": "InstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -881,7 +881,7 @@
           "example": "0",
           "member": "int64",
           "name": "InServiceInstanceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -891,7 +891,7 @@
           "example": "asc-966b7fk2",
           "member": "string",
           "name": "LaunchConfigurationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -901,7 +901,7 @@
           "example": "test-lc",
           "member": "string",
           "name": "LaunchConfigurationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -911,7 +911,7 @@
           "example": "[]",
           "member": "string",
           "name": "LoadBalancerIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -921,7 +921,7 @@
           "example": "10",
           "member": "int64",
           "name": "MaxSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -931,7 +931,7 @@
           "example": "0",
           "member": "int64",
           "name": "MinSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -941,7 +941,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -951,7 +951,7 @@
           "example": "[\"subnet-rdm629r2\"]",
           "member": "string",
           "name": "SubnetIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -961,7 +961,7 @@
           "example": "OLDEST_INSTANCE",
           "member": "string",
           "name": "TerminationPolicySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -971,7 +971,7 @@
           "example": "vpc-h3cd5td5",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -981,7 +981,7 @@
           "example": "[]",
           "member": "string",
           "name": "ZoneSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -991,7 +991,7 @@
           "example": "NO_RETRY",
           "member": "string",
           "name": "RetryPolicy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1001,7 +1001,7 @@
           "example": "IN_ACTIVITY",
           "member": "string",
           "name": "InActivityStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1011,7 +1011,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1021,7 +1021,7 @@
           "example": "null",
           "member": "ServiceSettings",
           "name": "ServiceSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1031,7 +1031,7 @@
           "example": "0",
           "member": "int64",
           "name": "Ipv6AddressCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1041,7 +1041,7 @@
           "example": "PRIORITY",
           "member": "string",
           "name": "MultiZoneSubnetPolicy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1051,7 +1051,7 @@
           "example": "CLB",
           "member": "string",
           "name": "HealthCheckType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1061,7 +1061,7 @@
           "example": "300",
           "member": "uint64",
           "name": "LoadBalancerHealthCheckGracePeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1071,7 +1071,7 @@
           "example": "LAUNCH_CONFIGURATION",
           "member": "string",
           "name": "InstanceAllocationPolicy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1081,7 +1081,7 @@
           "example": "无",
           "member": "SpotMixedAllocationPolicy",
           "name": "SpotMixedAllocationPolicy",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1091,9 +1091,19 @@
           "example": "false",
           "member": "bool",
           "name": "CapacityRebalance",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称序号相关设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "null",
+          "member": "InstanceNameIndexSettings",
+          "name": "InstanceNameIndexSettings",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1653,6 +1663,15 @@
           "name": "CapacityRebalance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称序号相关设置。若不指定该参数，则默认不开启。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
+          "example": "无",
+          "member": "InstanceNameIndexSettings",
+          "name": "InstanceNameIndexSettings",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1666,6 +1685,7 @@
           "example": "asg-aaaaqqqq",
           "member": "string",
           "name": "AutoScalingGroupId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4161,6 +4181,34 @@
       ],
       "usage": "both"
     },
+    "InstanceNameIndexSettings": {
+      "document": "实例名称序号相关设置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启实例创建序号，默认不开启。取值范围：<li>TRUE：表示开启实例创建序号<li>FALSE：表示不开启实例创建序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FALSE",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "初始序号，取值范围为 [0, 99999999]。当序号递增后超出取值范围时，扩容活动会失败。<li>首次开启实例名称序号：默认值为 0。<li>非首次开启实例名称序号：若不指定该参数，沿用历史序号。下调初始序号可能会造成伸缩组内实例名称序号重复。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "BeginIndex",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "InstanceNameSettings": {
       "document": "云服务器实例名称（InstanceName）的相关设置",
       "members": [
@@ -5182,6 +5230,15 @@
           "name": "CapacityRebalance",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称序号相关设置。开启后为伸缩组内自动创建的实例名称添加递增的数字序号。",
+          "example": "无",
+          "member": "InstanceNameIndexSettings",
+          "name": "InstanceNameIndexSettings",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

@@ -1,3 +1,216 @@
+# Release 3.0.882.1
+
+## 弹性伸缩(as) 版本：2018-04-19
+
+### 第 31 次发布
+
+发布时间：2023-11-10 01:09:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20440)
+
+	* 新增入参：InstanceNameIndexSettings
+
+* [ModifyAutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20433)
+
+	* 新增入参：InstanceNameIndexSettings
+
+
+新增数据结构：
+
+* [InstanceNameIndexSettings](http://document.tencentcloudapi.woa.com/document/product/377/20453#InstanceNameIndexSettings)
+
+修改数据结构：
+
+* [AutoScalingGroup](http://document.tencentcloudapi.woa.com/document/product/377/20453#AutoScalingGroup)
+
+	* 新增成员：InstanceNameIndexSettings
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 6 次发布
+
+发布时间：2023-11-10 01:19:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskList](http://document.tencentcloudapi.woa.com/document/product/1694/79902)
+
+	* 新增入参：TaskUpdateTime, TaskStatusList
+
+
+修改数据结构：
+
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1694/79907#Task)
+
+	* 新增成员：VerifyId
+
+* [TaskListItem](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskListItem)
+
+	* 新增成员：VerifyId, TaskStatusType
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 103 次发布
+
+发布时间：2023-11-10 01:42:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ChannelDescribeBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/82557)
+
+新增数据结构：
+
+* [ChannelBillUsageDetail](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelBillUsageDetail)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 40 次发布
+
+发布时间：2023-11-10 01:43:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DetectInfoText](http://document.tencentcloudapi.woa.com/document/product/1007/41958#DetectInfoText)
+
+	* <font color="#dd0000">**修改成员**：</font>IdInfoFrom, NFCRequestIds, NFCBillingCounts, PassNo, VisaNum
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 40 次发布
+
+发布时间：2023-11-10 02:17:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/851/74915#Instance)
+
+	* 新增成员：IsSWFinished
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 视频内容安全(vm) 版本：2021-09-22
+
+### 第 5 次发布
+
+发布时间：2023-11-10 02:24:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTaskDetail](http://document.tencentcloudapi.woa.com/document/product/1265/74818)
+
+	* 新增出参：SegmentCosUrlList
+
+
+新增数据结构：
+
+* [SegmentCosUrlList](http://document.tencentcloudapi.woa.com/document/product/1265/74821#SegmentCosUrlList)
+
+修改数据结构：
+
+* [TaskLabel](http://document.tencentcloudapi.woa.com/document/product/1265/74821#TaskLabel)
+
+	* 新增成员：SubLabel
+
+
+
+
+## 视频内容安全(vm) 版本：2020-12-29
+
+
+
+## 视频内容安全(vm) 版本：2020-07-09
+
+
+
+## 微瓴同业开放平台(weilingwith) 版本：2023-04-27
+
+### 第 8 次发布
+
+发布时间：2023-11-10 02:28:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [BatchReportAppMessage](http://document.tencentcloudapi.woa.com/document/product/1734/82564)
+* [DescribeCityWorkspaceList](http://document.tencentcloudapi.woa.com/document/product/1734/82558)
+* [DescribeDeviceStatusList](http://document.tencentcloudapi.woa.com/document/product/1734/82563)
+* [DescribeFileDownloadURL](http://document.tencentcloudapi.woa.com/document/product/1734/82566)
+* [DescribeFileUploadURL](http://document.tencentcloudapi.woa.com/document/product/1734/82565)
+* [DescribeProductList](http://document.tencentcloudapi.woa.com/document/product/1734/82562)
+* [DescribeVideoCloudRecord](http://document.tencentcloudapi.woa.com/document/product/1734/82559)
+* [ModifyDeviceName](http://document.tencentcloudapi.woa.com/document/product/1734/82561)
+* [ReportAppMessage](http://document.tencentcloudapi.woa.com/document/product/1734/82560)
+
+新增数据结构：
+
+* [AdministrativeDetail](http://document.tencentcloudapi.woa.com/document/product/1734/81779#AdministrativeDetail)
+* [BatchReportAppMessageRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#BatchReportAppMessageRes)
+* [DescribeCityWorkspaceListRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DescribeCityWorkspaceListRes)
+* [DeviceModifyInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DeviceModifyInfo)
+* [DeviceStatusInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DeviceStatusInfo)
+* [DeviceStatusRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#DeviceStatusRes)
+* [FileDownloadURL](http://document.tencentcloudapi.woa.com/document/product/1734/81779#FileDownloadURL)
+* [FileUploadURL](http://document.tencentcloudapi.woa.com/document/product/1734/81779#FileUploadURL)
+* [MessageProfile](http://document.tencentcloudapi.woa.com/document/product/1734/81779#MessageProfile)
+* [ProductInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ProductInfo)
+* [ProductSet](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ProductSet)
+* [RecordInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#RecordInfo)
+* [ReportAppMessage](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ReportAppMessage)
+* [ReportMsgRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#ReportMsgRes)
+* [VideoCloudRecordRes](http://document.tencentcloudapi.woa.com/document/product/1734/81779#VideoCloudRecordRes)
+* [WorkspaceInfo](http://document.tencentcloudapi.woa.com/document/product/1734/81779#WorkspaceInfo)
+
+
+
 # Release 3.0.881.1
 
 ## 应用管理平台(camp) 版本：2022-09-20

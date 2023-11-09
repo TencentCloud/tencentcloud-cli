@@ -14344,6 +14344,7 @@
           "example": "vpc-12345",
           "member": "string",
           "name": "UniqVpcId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -14354,12 +14355,13 @@
           "example": "subnet-12345",
           "member": "string",
           "name": "UniqSubnetId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     }
   },
   "version": "1.0"

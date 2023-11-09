@@ -4190,6 +4190,7 @@
           "example": "无",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16533,7 +16534,7 @@
           "example": "h264",
           "member": "string",
           "name": "Vcodec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16543,7 +16544,7 @@
           "example": "0",
           "member": "int64",
           "name": "VideoBitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16553,7 +16554,7 @@
           "example": "aac",
           "member": "string",
           "name": "Acodec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16563,7 +16564,7 @@
           "example": "0",
           "member": "int64",
           "name": "AudioBitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16573,7 +16574,7 @@
           "example": "0",
           "member": "int64",
           "name": "Width",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16583,7 +16584,7 @@
           "example": "0",
           "member": "int64",
           "name": "Height",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16593,7 +16594,7 @@
           "example": "0",
           "member": "int64",
           "name": "Fps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16603,7 +16604,7 @@
           "example": "3",
           "member": "int64",
           "name": "Gop",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16613,7 +16614,7 @@
           "example": "0",
           "member": "int64",
           "name": "Rotate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16623,7 +16624,7 @@
           "example": "baseline",
           "member": "string",
           "name": "Profile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16633,7 +16634,7 @@
           "example": "0",
           "member": "int64",
           "name": "BitrateToOrig",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16643,7 +16644,7 @@
           "example": "0",
           "member": "int64",
           "name": "HeightToOrig",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16653,7 +16654,7 @@
           "example": "0",
           "member": "int64",
           "name": "FpsToOrig",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16663,7 +16664,7 @@
           "example": "0",
           "member": "int64",
           "name": "NeedVideo",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16673,7 +16674,7 @@
           "example": "0",
           "member": "int64",
           "name": "NeedAudio",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16683,7 +16684,7 @@
           "example": "123",
           "member": "int64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16693,7 +16694,7 @@
           "example": "xxx",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16703,7 +16704,7 @@
           "example": "xx",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16713,7 +16714,7 @@
           "example": "0",
           "member": "int64",
           "name": "AiTransCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16723,7 +16724,7 @@
           "example": "0.5",
           "member": "float",
           "name": "AdaptBitratePercent",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -16733,7 +16734,7 @@
           "example": "0",
           "member": "int64",
           "name": "ShortEdgeAsHeight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -16743,7 +16744,7 @@
           "example": "widevine",
           "member": "string",
           "name": "DRMType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -16753,7 +16754,7 @@
           "example": "AUDIO|UHD2",
           "member": "string",
           "name": "DRMTracks",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

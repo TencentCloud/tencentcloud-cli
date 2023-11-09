@@ -2045,7 +2045,7 @@
           "example": "无",
           "member": "string",
           "name": "ReqTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2055,7 +2055,7 @@
           "example": "无",
           "member": "string",
           "name": "Seq",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2065,7 +2065,7 @@
           "example": "无",
           "member": "string",
           "name": "Idcard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2075,7 +2075,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2085,7 +2085,7 @@
           "example": "无",
           "member": "string",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2095,7 +2095,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsNeedCharge",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2105,7 +2105,7 @@
           "example": "0",
           "member": "int64",
           "name": "Errcode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2115,7 +2115,7 @@
           "example": "无",
           "member": "string",
           "name": "Errmsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2125,7 +2125,7 @@
           "example": "0",
           "member": "int64",
           "name": "Livestatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2135,7 +2135,7 @@
           "example": "无",
           "member": "string",
           "name": "Livemsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2145,7 +2145,7 @@
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2155,7 +2155,7 @@
           "example": "无",
           "member": "string",
           "name": "Comparemsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2165,7 +2165,7 @@
           "example": "无",
           "member": "string",
           "name": "CompareLibType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2175,7 +2175,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -2293,7 +2293,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2303,7 +2303,7 @@
           "example": "成功",
           "member": "string",
           "name": "ErrMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2313,7 +2313,7 @@
           "example": "440111111111111111",
           "member": "string",
           "name": "IdCard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2323,7 +2323,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UseIDType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2333,7 +2333,7 @@
           "example": "爱新觉罗永琪",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2343,7 +2343,7 @@
           "example": "汉族",
           "member": "string",
           "name": "OcrNation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2353,7 +2353,7 @@
           "example": "广东省",
           "member": "string",
           "name": "OcrAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2363,7 +2363,7 @@
           "example": "1999/1/12",
           "member": "string",
           "name": "OcrBirth",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2373,7 +2373,7 @@
           "example": "广东省",
           "member": "string",
           "name": "OcrAuthority",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2383,7 +2383,7 @@
           "example": "1999.01.01-2009.01.01",
           "member": "string",
           "name": "OcrValidDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2393,7 +2393,7 @@
           "example": "爱新觉罗永琪",
           "member": "string",
           "name": "OcrName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2403,7 +2403,7 @@
           "example": "440111111111111111",
           "member": "string",
           "name": "OcrIdCard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2413,7 +2413,7 @@
           "example": "女",
           "member": "string",
           "name": "OcrGender",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2423,7 +2423,7 @@
           "example": "NFC",
           "member": "string",
           "name": "IdInfoFrom",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2433,7 +2433,7 @@
           "example": "0",
           "member": "int64",
           "name": "LiveStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2443,7 +2443,7 @@
           "example": "成功",
           "member": "string",
           "name": "LiveMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2453,7 +2453,7 @@
           "example": "0",
           "member": "int64",
           "name": "Comparestatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2463,7 +2463,7 @@
           "example": "成功",
           "member": "string",
           "name": "Comparemsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2473,7 +2473,7 @@
           "example": "88.3",
           "member": "string",
           "name": "Sim",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2483,7 +2483,7 @@
           "example": "2",
           "member": "string",
           "name": "Location",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2493,7 +2493,7 @@
           "example": "2",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2503,7 +2503,7 @@
           "example": "{}",
           "member": "DetectDetail",
           "name": "LivenessDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2513,7 +2513,7 @@
           "example": "1",
           "member": "string",
           "name": "Mobile",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2523,7 +2523,7 @@
           "example": "权威库",
           "member": "string",
           "name": "CompareLibType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2533,7 +2533,7 @@
           "example": "0",
           "member": "uint64",
           "name": "LivenessMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2543,7 +2543,7 @@
           "example": "[\"\"]",
           "member": "string",
           "name": "NFCRequestIds",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2553,7 +2553,7 @@
           "example": "1",
           "member": "int64",
           "name": "NFCBillingCounts",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2563,7 +2563,7 @@
           "example": "1",
           "member": "string",
           "name": "PassNo",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2573,7 +2573,7 @@
           "example": "1",
           "member": "string",
           "name": "VisaNum",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

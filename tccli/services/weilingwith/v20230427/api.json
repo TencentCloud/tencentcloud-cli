@@ -21,6 +21,13 @@
       "output": "BatchKillAlarmResponse",
       "status": "online"
     },
+    "BatchReportAppMessage": {
+      "document": "批量消息上报",
+      "input": "BatchReportAppMessageRequest",
+      "name": "批量消息上报",
+      "output": "BatchReportAppMessageResponse",
+      "status": "online"
+    },
     "ChangeAlarmStatus": {
       "document": "变更告警状态",
       "input": "ChangeAlarmStatusRequest",
@@ -126,6 +133,13 @@
       "output": "DescribeCameraExtendInfoResponse",
       "status": "online"
     },
+    "DescribeCityWorkspaceList": {
+      "document": "通过城市id查询工作空间列表",
+      "input": "DescribeCityWorkspaceListRequest",
+      "name": "通过城市id查询工作空间列表",
+      "output": "DescribeCityWorkspaceListResponse",
+      "status": "online"
+    },
     "DescribeDeviceList": {
       "document": "设备列表查询/单个查询（支持通过筛选条件查询，设备类型、标签、PID、空间）",
       "input": "DescribeDeviceListRequest",
@@ -138,6 +152,13 @@
       "input": "DescribeDeviceShadowListRequest",
       "name": "获取设备影子数据",
       "output": "DescribeDeviceShadowListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceStatusList": {
+      "document": "设备状态获取",
+      "input": "DescribeDeviceStatusListRequest",
+      "name": "设备状态获取",
+      "output": "DescribeDeviceStatusListResponse",
       "status": "online"
     },
     "DescribeDeviceStatusStat": {
@@ -189,6 +210,20 @@
       "output": "DescribeEventListResponse",
       "status": "online"
     },
+    "DescribeFileDownloadURL": {
+      "document": "获取文件下载URL",
+      "input": "DescribeFileDownloadURLRequest",
+      "name": "获取文件下载URL",
+      "output": "DescribeFileDownloadURLResponse",
+      "status": "online"
+    },
+    "DescribeFileUploadURL": {
+      "document": "文件上传接口",
+      "input": "DescribeFileUploadURLRequest",
+      "name": "文件上传接口",
+      "output": "DescribeFileUploadURLResponse",
+      "status": "online"
+    },
     "DescribeInterfaceList": {
       "document": "查询接口列表",
       "input": "DescribeInterfaceListRequest",
@@ -208,6 +243,13 @@
       "input": "DescribeModelListRequest",
       "name": "模型列表查询",
       "output": "DescribeModelListResponse",
+      "status": "online"
+    },
+    "DescribeProductList": {
+      "document": "产品列表查询",
+      "input": "DescribeProductListRequest",
+      "name": "产品列表查询",
+      "output": "DescribeProductListResponse",
       "status": "online"
     },
     "DescribePropertyList": {
@@ -294,6 +336,13 @@
       "output": "DescribeTenantUserListResponse",
       "status": "online"
     },
+    "DescribeVideoCloudRecord": {
+      "document": "云录像接口",
+      "input": "DescribeVideoCloudRecordRequest",
+      "name": "云录像接口",
+      "output": "DescribeVideoCloudRecordResponse",
+      "status": "online"
+    },
     "DescribeVideoLiveStream": {
       "document": "实时流接口",
       "input": "DescribeVideoLiveStreamRequest",
@@ -327,6 +376,20 @@
       "input": "DescribeWorkspaceUserListRequest",
       "name": "查询项目空间人员列表",
       "output": "DescribeWorkspaceUserListResponse",
+      "status": "online"
+    },
+    "ModifyDeviceName": {
+      "document": "批量修改设备名字",
+      "input": "ModifyDeviceNameRequest",
+      "name": "批量修改设备名字",
+      "output": "ModifyDeviceNameResponse",
+      "status": "online"
+    },
+    "ReportAppMessage": {
+      "document": "单条消息上报",
+      "input": "ReportAppMessageRequest",
+      "name": "单条消息上报",
+      "output": "ReportAppMessageResponse",
       "status": "online"
     },
     "StopVideoStreaming": {
@@ -713,6 +776,42 @@
           "example": "无",
           "member": "string",
           "name": "AdministrationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AdministrativeDetail": {
+      "document": "行政区划详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行政区域类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "QH03",
+          "member": "string",
+          "name": "AdministrativeTypeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行政区域编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "440305",
+          "member": "string",
+          "name": "AdministrativeCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "行政区域名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "南山区",
+          "member": "string",
+          "name": "AdministrativeName",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1762,6 +1861,97 @@
           "document": "批量消警结果",
           "example": "{\"Msg\":\"ok\"}",
           "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchReportAppMessageRequest": {
+      "document": "BatchReportAppMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息上报请求列表",
+          "example": "{\"WorkspaceId\": 1016,\"Profile\": {\"AppType\": \"security\",},\"ReportTs\": 1,\"Properties\": \"x-json:{\\\"executeId\\\": \\\"RX_TASK\\\"}\"}",
+          "member": "ReportAppMessage",
+          "name": "ReportSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchReportAppMessageRes": {
+      "document": "批量消息上报结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上报数量\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalElements",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "提交数量（推送成功）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Commit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息推送结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ReportId\": \"0000000000000000\",\"ReportStatus\": 1}",
+          "member": "ReportMsgRes",
+          "name": "SpanMap",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchReportAppMessageResponse": {
+      "document": "BatchReportAppMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "批量消息上报结果",
+          "example": "{\"Commit\": 1,\"SpanMap\": [{\"ReportId\": \"0000000000000000\",\"ReportStatus\": 1}],\"TotalElements\": 1}",
+          "member": "BatchReportAppMessageRes",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -3495,6 +3685,68 @@
       ],
       "type": "object"
     },
+    "DescribeCityWorkspaceListRequest": {
+      "document": "DescribeCityWorkspaceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "行政区编码集合",
+          "example": "130500",
+          "member": "string",
+          "name": "AdministrativeCodeSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCityWorkspaceListRes": {
+      "document": "通过城市id查询工作空间列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通过城市id查询工作空间列表结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"workspaceId\": 1016,\"nameCh\": \"华南园区项目\",\"description\": \"华南园区项目\",\"status\": 0,\"parkName\": \"园区简称\",\"parkNum\": \"001\",\"administDetail\":{}}",
+          "member": "WorkspaceInfo",
+          "name": "WorkspaceSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeCityWorkspaceListResponse": {
+      "document": "DescribeCityWorkspaceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"WorkspaceSet\":[{\"AdministrativeDetailSet\":[{\"AdministrativeCode\":\"130000\",\"AdministrativeName\":\"河北省\",\"AdministrativeTypeCode\":\"QH01\"},{\"AdministrativeCode\":\"130500\",\"AdministrativeName\":\"邢台市\",\"AdministrativeTypeCode\":\"QH02\"},{\"AdministrativeCode\":\"130521\",\"AdministrativeName\":\"邢台县\",\"AdministrativeTypeCode\":\"QH03\"}],\"ChineseName\":\"华南园区项目\",\"Description\":\"华南园区项目\",\"ParkName\":\"\",\"ParkNum\":\"\",\"Status\":0,\"WorkspaceId\":1016}]}",
+          "member": "DescribeCityWorkspaceListRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDeviceListRequest": {
       "document": "DescribeDeviceList请求参数结构体",
       "members": [
@@ -3791,6 +4043,151 @@
           "document": "获取设备影子结果",
           "example": "{\"PageNumber\": 1,\"PageSize\": 20,\"Set\": [{\"DeviceShadow\": \"x-json:{\\\"desired\\\":{},\\\"reported\\\":{\\\"events\\\":{},\\\"profile\\\":{\\\"modelId\\\":\\\"w0745001\\\"},\\\"properties\\\":{\\\"Ept\\\":96,\\\"IA\\\":32,\\\"IB\\\":42},\\\"reportTs\\\":1693370542126}}\",\"DeviceShadowUpdateTime\": \"2023-08-30 12:42:22\",\"WID\": \"026d1dd8-a6d7-4fb7-9a94-0df07edaaff8\"}],\"TotalPage\": 1,\"TotalRow\": 1}}",
           "member": "DeviceShadowRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceStatusListRequest": {
+      "document": "DescribeDeviceStatusList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询，第几页，必传，大于0",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数，必传大于0",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "w010101",
+          "member": "string",
+          "name": "DeviceTypeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品 pid",
+          "example": "29",
+          "member": "int64",
+          "name": "ProductIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备标签id\n",
+          "example": "0",
+          "member": "int64",
+          "name": "TagIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "空间位置（支持空间多层，比如具体建筑、具体楼层）",
+          "example": "100110",
+          "member": "string",
+          "name": "SpaceCodeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备编号列表\n",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WIDSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备标签名，非必填",
+          "example": "test",
+          "member": "string",
+          "name": "DeviceTagSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "通信在/离线状态（online=normal+fault、offline）",
+          "example": "online",
+          "member": "string",
+          "name": "DeviceStatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "设备业务状态\n（正常-normal、故障-fault、离线-offline）\n",
+          "example": "normal",
+          "member": "string",
+          "name": "StatusSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "推流状态，推流中-true，未推流-false 仅摄像头有的状态",
+          "example": "false",
+          "member": "bool",
+          "name": "IsAlive",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceStatusListResponse": {
+      "document": "DescribeDeviceStatusList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询设备状态结果",
+          "example": "{\"DeviceStatusSet\": [{\"DeviceStatus\": \"online\",\"DeviceStatusUpdateTime\": \"2023-08-31 00:57:28\",\"IsAlive\": true,\"Status\": \"normal\",\"WID\": \"be2ea997-b7f4-4167-9545-9aa275158a92\"}],\"PageNumber\": 1,\"PageSize\": 1,\"TotalPage\": 1,\"TotalRow\": 1}",
+          "member": "DeviceStatusRes",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -4399,6 +4796,161 @@
       ],
       "type": "object"
     },
+    "DescribeFileDownloadURLRequest": {
+      "document": "DescribeFileDownloadURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文件Id",
+          "example": "a",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileDownloadURLResponse": {
+      "document": "DescribeFileDownloadURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件下载URL地址",
+          "example": "{\"FileURL\":\"https://xxx.xxx\"}",
+          "member": "FileDownloadURL",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileUploadURLRequest": {
+      "document": "DescribeFileUploadURL请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文件名称",
+          "example": "a",
+          "member": "string",
+          "name": "FileName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件大小",
+          "example": "10",
+          "member": "int64",
+          "name": "FileSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文件MD5",
+          "example": "e096797dd8d220861b03f8df7386037b",
+          "member": "string",
+          "name": "FileMD5",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "存储类型",
+          "example": "TEST2",
+          "member": "string",
+          "name": "SaveType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，过期时间戳，精确到秒的时间戳，noExpireFlag为false时必填\n",
+          "example": "1680259132",
+          "member": "int64",
+          "name": "FileExpireTime",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "永不过期标记",
+          "example": "false",
+          "member": "bool",
+          "name": "NoExpireFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileUploadURLResponse": {
+      "document": "DescribeFileUploadURL返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取文件上传地址结果",
+          "example": "{ \"URL\": \"\", FileId\": \"\", \"DownloadURL\": \"\" }",
+          "member": "FileUploadURL",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInterfaceListRequest": {
       "document": "DescribeInterfaceList请求参数结构体",
       "members": [
@@ -4696,6 +5248,97 @@
           "document": "模型列表查询结果",
           "example": "{\"PageNumber\": 1,\"PageSize\": 1,\"Set\": [{\"DeviceType\": \"w0404024\",\"DeviceTypeName\": \"空调温控器\",\"ModelId\": \"2000055\",\"ModelName\": \"边缘温控器\",\"ModelParams\": \"x-json:{}\",\"ModelType\": 1,\"RelatedProduct\": [{\"Id\": 2000055,\"Name\": \"边缘温控器\"}],\"WorkspaceId\": 1016}],\"TotalPage\": 156,\"TotalRow\": 156}",
           "member": "ModelSet",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductListRequest": {
+      "document": "DescribeProductList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询，第几页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页条数，大于0",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "w020202",
+          "member": "string",
+          "name": "DeviceTypeSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "产品 pid",
+          "example": "12",
+          "member": "int64",
+          "name": "ProductIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "模型id",
+          "example": "29",
+          "member": "string",
+          "name": "ModelIdSet",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductListResponse": {
+      "document": "DescribeProductList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品列表查询结果",
+          "example": "{\"PageNumber\": 1,\"PageSize\": 1,\"Product\": [{\"Attribute\": 1,\"DeviceTypeId\": \"w777\",\"DeviceTypeName\": \"\",\"MaintenanceMfr\": \"未知厂商\",\"Manufacturer\": \"未知厂商\",\"ModelId\": \"\",\"ModelName\": \"\",\"ModelType\": 0,\"ProductAbility\": 1,\"ProductId\": 2000051,\"ProductName\": \"视频网关\",\"ProductType\": \"33\",\"WorkspaceId\": 1016}],\"TotalPage\": 132,\"TotalRow\": 132}",
+          "member": "ProductSet",
           "name": "Result",
           "output_required": false,
           "type": "object",
@@ -5597,6 +6240,79 @@
       ],
       "type": "object"
     },
+    "DescribeVideoCloudRecordRequest": {
+      "document": "DescribeVideoCloudRecord请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备的唯一标识",
+          "example": "c6cb1e55-7bd7-4f08-a97b-0b530f8a66f3",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "录像开始时间（s）",
+          "example": "1693466144",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录像结束时间（s）\n",
+          "example": "1693470107",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoCloudRecordResponse": {
+      "document": "DescribeVideoCloudRecord返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取云录像结果",
+          "example": "{\"RecordSet\":[],\"TotalCount\":0}",
+          "member": "VideoCloudRecordRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeVideoLiveStreamRequest": {
       "document": "DescribeVideoLiveStream请求参数结构体",
       "members": [
@@ -6214,6 +6930,30 @@
       ],
       "usage": "out"
     },
+    "DeviceModifyInfo": {
+      "document": "设备修改信息入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备id",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WID",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的设备名字",
+          "example": "a",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "DeviceShadowInfo": {
       "document": "设备影子信息",
       "members": [
@@ -6423,6 +7163,118 @@
           "name": "SpaceCode",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceStatusInfo": {
+      "document": "设备状态信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "be2ea997-b7f4-4167-9545-9aa275158a92",
+          "member": "string",
+          "name": "WID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备状态（online=normal+fault、offline）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "online",
+          "member": "string",
+          "name": "DeviceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备状态更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-08-31 00:57:28",
+          "member": "string",
+          "name": "DeviceStatusUpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备业务状态（normal、fault、offline）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "推流状态。推流中-true，未推流-false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsAlive",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DeviceStatusRes": {
+      "document": "设备状态获取接口结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每页条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "TotalRow",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备状态信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DeviceStatus\": \"online\",\"DeviceStatusUpdateTime\": \"2023-08-31 00:57:28\",\"IsAlive\": true,\"Status\": \"normal\",\"WID\": \"be2ea997-b7f4-4167-9545-9aa275158a92\"}",
+          "member": "DeviceStatusInfo",
+          "name": "DeviceStatusSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -7336,6 +8188,22 @@
       ],
       "usage": "out"
     },
+    "FileDownloadURL": {
+      "document": "文件下载URL",
+      "members": [
+        {
+          "disabled": false,
+          "document": "下载地址\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://xxx.xxx",
+          "member": "string",
+          "name": "FileURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "FileInfo": {
       "document": "文件信息",
       "members": [
@@ -7355,6 +8223,42 @@
           "example": "test",
           "member": "string",
           "name": "ReportName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "FileUploadURL": {
+      "document": "获取文件上传URL接口回包",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上传地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.xxx",
+          "member": "string",
+          "name": "UploadURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "文件Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "FileId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下载地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://xxx.xxx",
+          "member": "string",
+          "name": "DownloadURL",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7596,6 +8500,39 @@
       ],
       "usage": "out"
     },
+    "MessageProfile": {
+      "document": "上报消息概要",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用类型",
+          "example": "security_monitoring",
+          "member": "string",
+          "name": "AppType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模型Id",
+          "example": "1000",
+          "member": "string",
+          "name": "ModelId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "t234329",
+          "member": "string",
+          "name": "PoiCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "ModelInfo": {
       "document": "模型基础信息",
       "members": [
@@ -7738,6 +8675,61 @@
       ],
       "usage": "out"
     },
+    "ModifyDeviceNameRequest": {
+      "document": "ModifyDeviceName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "设备修改信息集合",
+          "example": "{\"WID\":\"xx\",\"DeviceName\":\"a\"}",
+          "member": "DeviceModifyInfo",
+          "name": "Set",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDeviceNameResponse": {
+      "document": "ModifyDeviceName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回请求结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ProcessRecordInfo": {
       "document": "处理记录项",
       "members": [
@@ -7797,6 +8789,198 @@
         }
       ],
       "usage": "in"
+    },
+    "ProductInfo": {
+      "document": "产品信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品PID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200055",
+          "member": "int64",
+          "name": "ProductId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "atest",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "温控器",
+          "member": "string",
+          "name": "DeviceTypeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备类型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "w04042",
+          "member": "string",
+          "name": "DeviceTypeId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品属性，如：网关（1）、直连设备（2）、子设备（3）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "Attribute",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品型号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "atest",
+          "member": "string",
+          "name": "ProductType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品能力:信令数据、音视频，用二进制表示，第0位表示信令数据、第1表示音视频 ，默认为1（信令数据）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "daga",
+          "member": "int64",
+          "name": "ProductAbility",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生产厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "atest",
+          "member": "string",
+          "name": "Manufacturer",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "维保厂商\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "atest",
+          "member": "string",
+          "name": "MaintenanceMfr",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "温控",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物模型id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "200055",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "物模型类型，产品模型/标准模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ModelType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ProductSet": {
+      "document": "产品列表查询结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第几页\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "每页条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalPage",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "int64",
+          "name": "TotalRow",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"WorkspaceId\": 1016,\"PoductId\": 2000055,\"ProductName\": \"边缘温控器\",\"DeviceTypeName\": \"空调温控器\",\"DeviceType\": \"w0404024\",\"Attribute\": 3,\"ProductType\": \"\",\"ProductAbility\": 1,\"Manufacturer\": \"dagakng\",\"MaintenanceMfr\": \"\",\"ModelName\": \"边缘温控器\",\"ModelId\": \"2000055\",\"ModelType\": 1}",
+          "member": "ProductInfo",
+          "name": "Product",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RawInfo": {
       "document": "视频流Raw协议信息",
@@ -7874,6 +9058,42 @@
       ],
       "usage": "out"
     },
+    "RecordInfo": {
+      "document": "录像信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本录像片段开始时间（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1616466060",
+          "member": "int64",
+          "name": "StartTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "本录像片段结束时间（s）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1616466098",
+          "member": "int64",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录像片段文件url\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/618f1d115285890815878290403/f0.mp4",
+          "member": "string",
+          "name": "VideoURL",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RelatedProduct": {
       "document": "关联产品信息",
       "members": [
@@ -7900,6 +9120,193 @@
       ],
       "usage": "out"
     },
+    "ReportAppMessage": {
+      "document": "单条消息上报请求",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息定义",
+          "example": "{\"modelId\": 1000,\"poiCode\": \"t234329\",\"appType\": \"security_monitoring\"}",
+          "member": "MessageProfile",
+          "name": "Profile",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据上报时间",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportTs",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "属性定义 - KV，若为json格式，需在前加上x-json:，有效字段为x-json:后的字段",
+          "example": "x-json:{\"executeId\": \"RX_TASK\"}",
+          "member": "string",
+          "name": "Properties",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件定义 - KKV，若为json格式，需在前加上x-json:，有效字段为x-json:后的字段",
+          "example": "x-json:{\"face_control\": {\"image\": {\"data\": \"8bb1230b-78bb-4635-991b-9746dda24a9e\",\"type\": 4},\"handler\": {\"type\": 0,\"data\": \"222111123123123123\"},\"describe\": \"\",\"eventType\": 0,\"eventTs\": 1650007523091}}",
+          "member": "string",
+          "name": "EventSet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务定义 - KKV,若为json格式，需在前加上x-json:，有效字段为x-json:后的字段",
+          "example": "x-json:xxx",
+          "member": "string",
+          "name": "ServiceSet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段2，如：算法上报id，若为json格式，需在前加上x-json:",
+          "example": "x-json:xxx",
+          "member": "string",
+          "name": "ExtendTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "透传信息，若为json格式，需在前加上x-json:，有效字段为x-json:后的字段",
+          "example": "x-json:{\"executeId\": \"RX_TASK\"}",
+          "member": "string",
+          "name": "Echo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "ReportAppMessageRequest": {
+      "document": "ReportAppMessage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息定义",
+          "example": "{\"modelId\": \"1000\",\"poiCode\": \"t234329\",\"appType\": \"security_monitoring\"}",
+          "member": "MessageProfile",
+          "name": "Profile",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "数据上报时间",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportTs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "属性定义 - KV的json格式,有效字段为x-json:后的字段",
+          "example": "x-json:{\"executeId\": \"RX_TASK\"}",
+          "member": "string",
+          "name": "Properties",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "xxx",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件定义 - KKV的json格式,有效字段为x-json:后的字段",
+          "example": "x-json:{\"face_control\": {\"image\": {\"data\": \"8bb1230b-78bb-4635-991b-9746dda24a9e\",\"type\": 4},\"handler\": {\"type\": 0,\"data\": \"222111123123123123\"},\"describe\": \"\",\"eventType\": 0,\"eventTs\": 1650007523091}}",
+          "member": "string",
+          "name": "EventSet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务定义 - KKV的json格式,有效字段为x-json:后的字段",
+          "example": "x-json:{}",
+          "member": "string",
+          "name": "ServiceSet",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "扩展字段2，如：算法上报id，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "ExtendTwo",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "透传信息，若为json格式，需传x-json:{}，有效字段为x-json:后的字段",
+          "example": "xxx",
+          "member": "string",
+          "name": "Echo",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportAppMessageResponse": {
+      "document": "ReportAppMessage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上报单条信息结果",
+          "example": "{\"Msg\":\"ok\"}",
+          "member": "EmptyRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ReportImg": {
       "document": "上报图片列表",
       "members": [
@@ -7921,6 +9328,32 @@
           "name": "Data",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ReportMsgRes": {
+      "document": "上报消息结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上报消息对应下标的16位标识Id, 即第几个消息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000000000000000",
+          "member": "string",
+          "name": "ReportId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上报消息结果，1表示成功推送，0表示推送失败\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ReportStatus",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -9270,6 +10703,32 @@
       ],
       "type": "object"
     },
+    "VideoCloudRecordRes": {
+      "document": "云录像接口结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "录像信息总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "录像信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"StartTime\":1616466060,\"EndTime\":1616466098,\"VideoURL\":\"http://1304886180.vod2.myqcloud.com/cac4da69vodcq1304886180/618f1d115285890815878290403/f0.mp4\"}",
+          "member": "RecordInfo",
+          "name": "RecordSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "VideoRecordStreamRes": {
       "document": "视频流查询结果",
       "members": [
@@ -9331,6 +10790,82 @@
           "name": "Stream",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "WorkspaceInfo": {
+      "document": "工作空间信息描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "工作空间Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1016",
+          "member": "int64",
+          "name": "WorkspaceId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间中文名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "空间",
+          "member": "string",
+          "name": "ChineseName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "腾讯大厦",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "工作空间是否删除状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该工作空间绑定的区/县的行政区名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "园区简称",
+          "member": "string",
+          "name": "ParkName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该工作空间绑定的区/县的行政区编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "001",
+          "member": "string",
+          "name": "ParkNum",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "获取该工作空间绑定的区/县的上级行政区划信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{ \"administTypeCode\": \"QH01\",\"administCode\": \"440000\",\"administName\": \"广东省\"}",
+          "member": "AdministrativeDetail",
+          "name": "AdministrativeDetailSet",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

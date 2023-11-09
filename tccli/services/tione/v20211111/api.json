@@ -4921,6 +4921,7 @@
           "example": "无",
           "member": "Spec",
           "name": "Specs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7836,6 +7837,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "纳管实例是否付费完成",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSWFinished",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
