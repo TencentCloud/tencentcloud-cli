@@ -6,17 +6,18 @@ Input:
 
 ```
 tccli essbasic ChannelCancelMultiFlowSignQRCode --cli-unfold-argument  \
-    --QrCodeId yDRvQxxxxxKC \
-    --Agent.ProxyOperator.OpenId OpenId-xxx \
-    --Agent.ProxyOrganizationOpenId ProxyOrganizationOpenId-xxx \
-    --Agent.AppId yDRSRUUgygj******uO4zjEuBzwyiofZ
+    --QrCodeId yDSLZUUckpooi1ltUxCsD3RSTG9BEWhR \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "1c75e86d-xxxxxxxxxx6f330a05e"
+        "RequestId": "dfc69a6f-7738-45f3-a238-99e0e89bc91a"
     }
 }
 ```
@@ -29,10 +30,11 @@ Input:
 
 ```
 tccli essbasic ChannelCancelMultiFlowSignQRCode --cli-unfold-argument  \
-    --QrCodeId yDRvQxxxxxKC \
-    --Agent.ProxyOperator.OpenId OpenId-xxx \
-    --Agent.ProxyOrganizationOpenId ProxyOrganizationOpenId-xxx \
-    --Agent.AppId yDRSRUUgygj******uO4zjEuBzwyiofZ
+    --QrCodeId yDSLZUUckpooi1ltUxCsD3RSTG9BEWhR \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 
@@ -43,7 +45,7 @@ Output:
             "Code": "OperationDenied.QrInvalid",
             "Message": "签署二维码不可用，请检查后重试。"
         },
-        "RequestId": "s169*****0872"
+        "RequestId": "dfc69a6f-7738-45f3-a238-99e0e89bc91a"
     }
 }
 ```

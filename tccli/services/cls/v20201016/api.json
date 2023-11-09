@@ -5055,7 +5055,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5092,7 +5092,7 @@
           "example": "无",
           "member": "AlarmNotice",
           "name": "AlarmNotices",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5102,7 +5102,7 @@
           "example": "0",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6801,7 +6801,7 @@
       "type": "object"
     },
     "DynamicIndex": {
-      "document": "动态更新索引配置\n\n注意：该功能尚处于内测阶段，如需使用请联系技术支持",
+      "document": "动态索引配置，启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。",
       "members": [
         {
           "disabled": false,
@@ -10990,7 +10990,7 @@
         },
         {
           "disabled": false,
-          "document": "动态索引配置，如果为空时代表未开启动态段索引\n\n注意：该功能尚处于内测阶段，如需使用请联系技术支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "动态索引配置，为空时代表未开启动态索引。\n启用后将自动把日志内的字段添加到键值索引字段列表中，包括日志中新增的字段。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DynamicIndex",
           "name": "DynamicIndex",

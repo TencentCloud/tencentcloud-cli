@@ -1,5 +1,117 @@
 {
   "actions": {
+    "AddAlarmProcessRecord": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddAlarmProcessRecord\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1f4ae18a-6a8e-477f-9335-d59546768e93\"\n    }\n}",
+        "title": "添加告警处理记录"
+      }
+    ],
+    "BatchCreateDevice": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchCreateDevice\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27e1d3a2-5f8a-415b-9af4-41eb1751a68d\"\n    }\n}",
+        "title": "批量添加设备"
+      }
+    ],
+    "BatchKillAlarm": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchKillAlarm\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b834d00c-0a1a-4e86-8765-f7114e905466\"\n    }\n}",
+        "title": "批量消警"
+      }
+    ],
+    "BatchReportAppMessage": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchReportAppMessage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b3cac805-15a2-4766-9ef6-77929e509db9\"\n    }\n}",
+        "title": "批量上报设备消息"
+      }
+    ],
+    "ChangeAlarmStatus": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChangeAlarmStatus\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9544b470-8b37-4aeb-b7ea-d6cb0175ada1\"\n    }\n}",
+        "title": "变更告警状态"
+      }
+    ],
+    "ControlCameraPTZ": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlCameraPTZ\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"745845ec-f5be-4e2f-87b6-8e46b9269d0a\"\n    }\n}",
+        "title": "云台控制"
+      }
+    ],
+    "ControlDevice": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ControlDevice\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21909094-b304-4942-af6a-eb781ddd0a2a\"\n    }\n}",
+        "title": "设备控制"
+      }
+    ],
+    "CreateApplicationToken": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateApplicationToken\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e222d195-ab43-4b68-b115-0ad71488f7ed\"\n    }\n}",
+        "title": "获取应用凭证示例"
+      }
+    ],
+    "DescribeActionList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeActionList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c116023-0562-4488-933e-84df17c7f08c\"\n    }\n}",
+        "title": "获取动作列表"
+      }
+    ],
+    "DescribeAdministrationByTag": [
+      {
+        "document": "获取行政区划",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAdministrationByTag\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c6802352-38e4-4a36-80dd-d80e57ce92a7\"\n    }\n}",
+        "title": "获取行政区划"
+      }
+    ],
+    "DescribeAlarmLevelList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmLevelList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"54b9f3e5-9e78-43aa-92b6-d895d31372d6\"\n    }\n}",
+        "title": "告警级别列表"
+      }
+    ],
+    "DescribeAlarmList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bb4a6274-71b1-4107-98a2-06819376fb4e\"\n    }\n}",
+        "title": "告警列表"
+      }
+    ],
+    "DescribeAlarmStatusList": [
+      {
+        "document": "获取告警状态",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmStatusList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"257e0b36-70c5-4f51-ac81-83fca0ae7522\"\n    }\n}",
+        "title": "获取告警状态示例"
+      }
+    ],
+    "DescribeAlarmTypeList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmTypeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3840c20f-f364-4569-8120-1c29f072dd24\"\n    }\n}",
+        "title": "告警状态列表"
+      }
+    ],
     "DescribeApplicationList": [
       {
         "document": "获取应用列表",
@@ -8,12 +120,170 @@
         "title": "应用列表"
       }
     ],
+    "DescribeBuildingList": [
+      {
+        "document": "查询建筑列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6fb5c58b-975c-40a0-ae17-437ddfa0d234\"\n    }\n}",
+        "title": "查询建筑列表"
+      },
+      {
+        "document": "查询建筑列表示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16d8c7ac-449a-45d0-8181-15cf06a0e8e1\"\n    }\n}",
+        "title": "查询建筑列表示例-prod"
+      }
+    ],
+    "DescribeBuildingModel": [
+      {
+        "document": "查询建筑模型成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingModel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8f193fa9-506a-421d-afe9-fdde94cc5849\"\n    }\n}",
+        "title": "查询建筑模型"
+      },
+      {
+        "document": "查询建筑模型示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingModel\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"02cc707e-e6bf-4b5d-a1c3-0544eadfc3fa\"\n    }\n}",
+        "title": "查询建筑模型示例-prod"
+      }
+    ],
+    "DescribeBuildingProfile": [
+      {
+        "document": "查询建筑信息成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingProfile\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9d3442d1-0df1-48ef-beba-872e07b2b1dd\"\n    }\n}",
+        "title": "查询建筑信息"
+      },
+      {
+        "document": "查询建筑信息示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBuildingProfile\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"966d76de-83dc-4d6a-bd17-75505fe0af7e\"\n    }\n}",
+        "title": "查询建筑信息示例-prod"
+      }
+    ],
+    "DescribeCameraExtendInfo": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCameraExtendInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"825de5ec-46bd-4682-b4fc-84e807ce2eed\"\n    }\n}",
+        "title": "获取视频扩展信息"
+      }
+    ],
+    "DescribeCityWorkspaceList": [
+      {
+        "document": "成功返回示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCityWorkspaceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ec9a85c9-b887-4481-a318-1c41f7d46733\"\n    }\n}",
+        "title": "通过行政区id获取项目空间信息"
+      }
+    ],
+    "DescribeDeviceList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dd0b4025-2db7-4da3-998a-dda6cfc19441\"\n    }\n}",
+        "title": "设备列表"
+      }
+    ],
+    "DescribeDeviceShadowList": [
+      {
+        "document": "正常响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceShadowList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16528537-3858-42bd-973a-ae8c80bdeee3\"\n    }\n}",
+        "title": "设备影子查询"
+      }
+    ],
+    "DescribeDeviceStatusList": [
+      {
+        "document": "正常响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceStatusList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1286216c-1022-4bd6-83a2-3dfb0bee6fe2\"\n    }\n}",
+        "title": "设备状态查询"
+      }
+    ],
+    "DescribeDeviceStatusStat": [
+      {
+        "document": "正常响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceStatusStat\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"503f6887-d9af-48b9-91cb-999644f45e63\"\n    }\n}",
+        "title": "设备状态统计列表"
+      }
+    ],
+    "DescribeDeviceTagList": [
+      {
+        "document": "正常响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceTagList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e812b515-ad1d-496a-9042-4494c4c8128e\"\n    }\n}",
+        "title": "设备标签列表查询"
+      }
+    ],
+    "DescribeDeviceTypeList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceTypeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7be5626c-d9f9-4883-b4c4-3d77ba2fe281\"\n    }\n}",
+        "title": "设备列表类型查询结果"
+      }
+    ],
     "DescribeEdgeApplicationToken": [
       {
         "document": "获取边缘应用凭证",
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEdgeApplicationToken\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ff7892ed-9bb5-4bb6-a5d3-23ecb1e50369\"\n    }\n}",
         "title": "获取边缘应用凭证"
+      }
+    ],
+    "DescribeElementProfilePage": [
+      {
+        "document": "查询分页构件信息成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeElementProfilePage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f21ec011-9dde-478f-acd4-6adecb8a1c32\"\n    }\n}",
+        "title": "查询分页构件信息"
+      },
+      {
+        "document": "查询分页构件信息示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeElementProfilePage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa86cd58-027d-46b4-8d59-a7e15c733f18\"\n    }\n}",
+        "title": "查询分页构件信息示例-prod"
+      }
+    ],
+    "DescribeElementProfileTree": [
+      {
+        "document": "查询构件树成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeElementProfileTree\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"473e2070-39bf-4e12-836b-c821799c9cd9\"\n    }\n}",
+        "title": "查询构件树"
+      },
+      {
+        "document": "查询构件树示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeElementProfileTree\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30078117-d5fa-41a2-b837-bb747aede417\"\n    }\n}",
+        "title": "查询构件树示例-prod"
+      }
+    ],
+    "DescribeEventList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"529a10d6-0f9d-4ff9-8989-5dd0dc12aef6\"\n    }\n}",
+        "title": "事件列表"
+      }
+    ],
+    "DescribeFileDownloadURL": [
+      {
+        "document": "获取文件下载地址返回结果",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileDownloadURL\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d87de8da-6209-43df-8d87-7e6260850c5f\"\n    }\n}",
+        "title": "获取文件下载地址"
+      }
+    ],
+    "DescribeFileUploadURL": [
+      {
+        "document": "正常返回结果",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileUploadURL\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6d75ec52-741b-4579-bb7e-1c554e3a153c\"\n    }\n}",
+        "title": "获取上传文件返回地址"
       }
     ],
     "DescribeInterfaceList": [
@@ -30,6 +300,216 @@
         "title": "获取API列表请求示例"
       }
     ],
+    "DescribeLinkRuleList": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLinkRuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aa1ac6c0-5721-4a84-bf87-dbd285bac6b7\"\n    }\n}",
+        "title": "联动规则列表"
+      }
+    ],
+    "DescribeModelList": [
+      {
+        "document": "物模型列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"934fc559-1b2c-42b4-9bb7-b21dad005d90\"\n    }\n}",
+        "title": "物模型列表返回示例"
+      }
+    ],
+    "DescribeProductList": [
+      {
+        "document": "正常返回结果",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeProductList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8372d7e4-f04f-43bd-8f7d-d8b4586fdc8b\"\n    }\n}",
+        "title": "产品列表查询"
+      }
+    ],
+    "DescribePropertyList": [
+      {
+        "document": "查询构件属性示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePropertyList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da778098-4425-4519-bd0b-589e9e83ef6f\"\n    }\n}",
+        "title": "查询构件属性示例-prod"
+      },
+      {
+        "document": "查询构件属性（详情）成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePropertyList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37ff2cfc-5c07-4c14-9f4f-82e52b155754\"\n    }\n}",
+        "title": "查询构件属性（详情）"
+      }
+    ],
+    "DescribeRuleDetail": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRuleDetail\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6e77c453-636c-43db-97d8-aa7fac74f37b\"\n    }\n}",
+        "title": "联动详情"
+      }
+    ],
+    "DescribeSceneList": [
+      {
+        "document": "查询场景列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSceneList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7ab87c7-f4ae-420b-8e0a-ebfe0eb6e99f\"\n    }\n}",
+        "title": "查询场景列表"
+      },
+      {
+        "document": "查询场景列表示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSceneList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e8ac69f5-ee77-41c7-98f0-4c8719ce151e\"\n    }\n}",
+        "title": "查询场景列表示例-prod"
+      }
+    ],
+    "DescribeSpaceDeviceIdList": [
+      {
+        "document": "查询指定空间设备编号列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceDeviceIdList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c3e7242-f4fb-4000-b8ae-0724b481693d\"\n    }\n}",
+        "title": "查询指定空间设备编号列表"
+      },
+      {
+        "document": "查询指定空间设备编号列表示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceDeviceIdList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"51ddc6c7-0ee6-4d0d-b95a-dda432859da7\"\n    }\n}",
+        "title": "查询指定空间设备编号列表示例-prod"
+      }
+    ],
+    "DescribeSpaceDeviceRelationList": [
+      {
+        "document": "查询指定空间下设备与构件绑定关系列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceDeviceRelationList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6923a12d-747c-4cf2-99d5-6c74af01cb39\"\n    }\n}",
+        "title": "查询指定空间下设备与构件绑定关系列表"
+      },
+      {
+        "document": "查询指定空间下设备与构件绑定关系列表示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceDeviceRelationList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2f8170b-0ef2-4b7a-aee4-6946a6028e59\"\n    }\n}",
+        "title": "查询指定空间下设备与构件绑定关系列表示例-prod"
+      }
+    ],
+    "DescribeSpaceInfoByDeviceId": [
+      {
+        "document": "查询设备绑定的空间信息成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceInfoByDeviceId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"901e3a31-d49c-4570-b96c-dcddee09c22d\"\n    }\n}",
+        "title": "查询设备绑定的空间信息"
+      },
+      {
+        "document": "查询设备绑定的空间信息示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceInfoByDeviceId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"750095c6-29f0-4598-b1d7-16e15d43e774\"\n    }\n}",
+        "title": "查询设备绑定的空间信息示例-prod"
+      }
+    ],
+    "DescribeSpaceRelationByDeviceId": [
+      {
+        "document": "查询指定空间下设备与构件绑定关系列表成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceRelationByDeviceId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30b9a52a-1ed8-4d97-b17d-2459b938ca3a\"\n    }\n}",
+        "title": "查询指定空间下设备与构件绑定关系列表"
+      },
+      {
+        "document": "查询设备绑定的空间层级关系示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceRelationByDeviceId\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9565acba-fb0e-4ec7-be20-ab274b105fd9\"\n    }\n}",
+        "title": "查询设备绑定的空间层级关系示例-prod"
+      }
+    ],
+    "DescribeSpaceTypeList": [
+      {
+        "document": "查询空间分类成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceTypeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dbb6362d-4e7c-459f-a6e9-ecef04842722\"\n    }\n}",
+        "title": "查询空间分类"
+      },
+      {
+        "document": "查询空间分类示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSpaceTypeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"21770e5e-a17e-4023-8cc9-51129f6cd37a\"\n    }\n}",
+        "title": "查询空间分类示例-prod"
+      }
+    ],
+    "DescribeTenantBuildingCountAndArea": [
+      {
+        "document": "查询租户楼栋数量和楼栋建筑面积成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantBuildingCountAndArea\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"44e3188a-67a3-4a92-8e7b-517459c29816\"\n    }\n}",
+        "title": "查询租户楼栋数量和楼栋建筑面积"
+      },
+      {
+        "document": "查询租户楼栋数量和楼栋建筑面积示例-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantBuildingCountAndArea\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fa570973-a1d2-4fbc-807e-a0546d7819cc\"\n    }\n}",
+        "title": "查询租户楼栋数量和楼栋建筑面积示例-prod"
+      }
+    ],
+    "DescribeTenantDepartmentList": [
+      {
+        "document": "查询租户组织部门列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantDepartmentList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"6\",\n    \"ApplicationToken\": \"zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fbb81f22-548b-43e9-afad-08c595058205\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
+        "title": "查询租户组织部门列表"
+      },
+      {
+        "document": "查询组织部门列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantDepartmentList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"6\",\n    \"ApplicationToken\": \"zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e2b7483-9dc0-48af-8d5a-95bebecef8c3\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
+        "title": "查询组织部门列表"
+      },
+      {
+        "document": "组织部门列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantDepartmentList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"DepartmentId\": \"6\",\n    \"ApplicationToken\": \"zD3G1qtO9Fy4mu5HAMydrXNHBputBQVS\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"86a86966-f838-44ec-b1e4-469429cf0b61\",\n        \"Result\": {\n            \"Departments\": [\n                {\n                    \"DepartmentId\": \"32\",\n                    \"Name\": \"外部测试\",\n                    \"ParentDepartmentId\": \"6\"\n                }\n            ],\n            \"Total\": 2\n        }\n    }\n}",
+        "title": "组织部门列表"
+      }
+    ],
+    "DescribeTenantUserList": [
+      {
+        "document": "查询租户人员列表",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTenantUserList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"TenantId\": \"1\",\n    \"ApplicationToken\": \"Z2GWsZyAcnKt1zIK65FQz5XsFk5nTKqx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2a9b97e6-3f19-43ea-9ec6-37985e4eac99\",\n        \"Result\": {\n            \"Total\": 28,\n            \"Users\": [\n                {\n                    \"BelongTeam\": 0,\n                    \"CreateAt\": 1691565476,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"DepartmentUserId\": 431,\n                    \"Email\": \"v_leecyli@tencent.com\",\n                    \"Password\": \"\",\n                    \"Phone\": \"15988886666\",\n                    \"RealName\": \"v_leecyli\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UpdateAt\": 1691745205,\n                    \"UserGroup\": \"\",\n                    \"UserId\": \"0d0a98561b3c4f72963eba5c5fcf56e1\",\n                    \"UserName\": \"\",\n                    \"UserType\": \"99\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询租户人员列表"
+      }
+    ],
+    "DescribeVideoCloudRecord": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoCloudRecord\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"59bb6656-68d4-4684-aa53-2039f5bd3069\"\n    }\n}",
+        "title": "云录像"
+      }
+    ],
+    "DescribeVideoLiveStream": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoLiveStream\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"96233e8f-3a98-470b-8bf2-45fbd4988bd8\"\n    }\n}",
+        "title": "获取实时流地址"
+      }
+    ],
+    "DescribeVideoRecordStream": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoRecordStream\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2beb0875-c859-4fde-a46e-5dbdf1421f14\"\n    }\n}",
+        "title": "历史流"
+      }
+    ],
+    "DescribeWorkSpaceBuildingCountAndArea": [
+      {
+        "document": "查询项目空间楼栋数量与建筑面积成功响应示例",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkSpaceBuildingCountAndArea\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42569a1b-01e1-4064-9288-b89ad76d55b7\"\n    }\n}",
+        "title": "查询项目空间楼栋数量与建筑面积"
+      },
+      {
+        "document": "查询项目空间楼栋数量与建筑面积-prod",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkSpaceBuildingCountAndArea\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"94a7a0d6-b2d4-4da7-a39d-ed79489e09c2\"\n    }\n}",
+        "title": "查询项目空间楼栋数量与建筑面积示例-prod"
+      }
+    ],
     "DescribeWorkspaceList": [
       {
         "document": "查询项目空间列表",
@@ -44,6 +524,38 @@
         "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWorkspaceUserList\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 10,\n    \"WorkspaceId\": \"1016\",\n    \"ApplicationToken\": \"o9ftuUNOFkOVf2o5etJ0nHou396ufAes\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"68f43238-01a6-46c6-9204-f23cc3983756\",\n        \"Result\": {\n            \"Total\": 19,\n            \"Users\": [\n                {\n                    \"CreateAt\": 1692081934,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"v_leecyli@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15988886666\",\n                    \"RealName\": \"v_leecyli\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"0d0a98561b3c4f72963eba5c5fcf56e1\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1691405568,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"vincent_lipc@163.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15656552256\",\n                    \"RealName\": \"能碳外部演示\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"141ca50134924143b1435919625c7662\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1691390512,\n                    \"DepartmentId\": \"32\",\n                    \"DepartmentName\": \"外部测试\",\n                    \"Email\": \"caiyitong2009@163.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"18611738364\",\n                    \"RealName\": \"运营外部体验账号\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"0f926d1a7d514629b100b3426bd3c34b\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1691139338,\n                    \"DepartmentId\": \"1\",\n                    \"DepartmentName\": \"研发部\",\n                    \"Email\": \"richardhhu@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13988889999\",\n                    \"RealName\": \"胡辉\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"baea0677027445f49ebcf0ed29480cc2\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1690784410,\n                    \"DepartmentId\": \"\",\n                    \"DepartmentName\": \"\",\n                    \"Email\": \"213132131@11.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15612345678\",\n                    \"RealName\": \"liushuang\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"d5f4b7fda1fe472887555704bc6cba0a\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1690777551,\n                    \"DepartmentId\": \"\",\n                    \"DepartmentName\": \"\",\n                    \"Email\": \"v_ashshliu@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"15801198920\",\n                    \"RealName\": \"刘爽\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"a0354564529043309b1b7b72e80eb213\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1689755305,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"sineyayan@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13126071245\",\n                    \"RealName\": \"sineyayan\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"a76d972c93b44694bd22025f2d3cd359\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1689753730,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"707899536@qq.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"19121716602\",\n                    \"RealName\": \"李鹏程\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"8a9972532d4445cbb81edc27fe49d147\",\n                    \"UserType\": \"3\"\n                },\n                {\n                    \"CreateAt\": 1686291696,\n                    \"DepartmentId\": \"6\",\n                    \"DepartmentName\": \"产品部\",\n                    \"Email\": \"604035308@qq.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13713767123\",\n                    \"RealName\": \"To_Touche\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"c479269ae675480da3b7f5369ebd8618\",\n                    \"UserType\": \"99\"\n                },\n                {\n                    \"CreateAt\": 1686233544,\n                    \"DepartmentId\": \"21\",\n                    \"DepartmentName\": \"交付组\",\n                    \"Email\": \"v_yuymiao@tencent.com\",\n                    \"LinkFilter\": 1,\n                    \"Phone\": \"13299990000\",\n                    \"RealName\": \"苗元元\",\n                    \"Status\": 1,\n                    \"TenantId\": \"100055\",\n                    \"UserId\": \"159ac75273614918be42b3b0a208d1ab\",\n                    \"UserType\": \"3\"\n                }\n            ]\n        }\n    }\n}",
         "title": "查询项目空间人员列表"
+      }
+    ],
+    "ModifyDeviceName": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDeviceName\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"7ea50911-8e3d-40aa-82ee-c00d23cc044d\"\n    }\n}",
+        "title": "修改设备名字"
+      }
+    ],
+    "ReportAppMessage": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ReportAppMessage\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d542c6ba-6e4b-4d29-be9a-4e48c1c8616d\"\n    }\n}",
+        "title": "单个上报消息"
+      }
+    ],
+    "StopVideoStreaming": [
+      {
+        "document": "成功响应",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopVideoStreaming\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abb1962d-cc04-4113-9302-95a21f6ba18d\"\n    }\n}",
+        "title": "断流接口"
+      }
+    ],
+    "UpdateWorkspaceParkAttributes": [
+      {
+        "document": "更改园区行政编码",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateWorkspaceParkAttributes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2660b624-b925-485d-a8f4-07d4ed58d9a5\"\n    }\n}",
+        "title": "返回成功示例"
       }
     ]
   },

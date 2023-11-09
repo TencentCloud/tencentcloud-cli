@@ -1548,16 +1548,16 @@
       "status": "online"
     },
     "DescribeTemplateDimCount": {
-      "document": "查询规则模版维度分布情况",
+      "document": "查询规则模板维度分布情况",
       "input": "DescribeTemplateDimCountRequest",
-      "name": "查询规则模版维度分布情况",
+      "name": "查询规则模板维度分布情况",
       "output": "DescribeTemplateDimCountResponse",
       "status": "online"
     },
     "DescribeTemplateHistory": {
-      "document": "查询规则模版操作记录",
+      "document": "查询规则模板操作记录",
       "input": "DescribeTemplateHistoryRequest",
-      "name": "查询规则模版操作记录",
+      "name": "查询规则模板操作记录",
       "output": "DescribeTemplateHistoryResponse",
       "status": "online"
     },
@@ -1870,9 +1870,9 @@
       "status": "online"
     },
     "ModifyRuleTemplate": {
-      "document": "编辑规则模版",
+      "document": "编辑规则模板",
       "input": "ModifyRuleTemplateRequest",
-      "name": "编辑规则模版",
+      "name": "编辑规则模板",
       "output": "ModifyRuleTemplateResponse",
       "status": "online"
     },
@@ -6602,7 +6602,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "preject id",
+          "document": "项目ID",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -6611,7 +6611,7 @@
         },
         {
           "disabled": false,
-          "document": "rule group exec id",
+          "document": "规则组执行ID",
           "example": "1",
           "member": "uint64",
           "name": "RuleGroupExecId",
@@ -6620,7 +6620,7 @@
         },
         {
           "disabled": false,
-          "document": "group exec state",
+          "document": "规则组执行状态",
           "example": "无",
           "member": "string",
           "name": "RuleGroupState",
@@ -6629,7 +6629,7 @@
         },
         {
           "disabled": false,
-          "document": "runner rule exec result list",
+          "document": "规则执行结果集合",
           "example": "无",
           "member": "RunnerRuleExecResult",
           "name": "RuleExecResults",
@@ -6648,7 +6648,7 @@
           "example": "null",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23297,7 +23297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版类型",
+          "document": "模板类型",
           "example": "1",
           "member": "uint64",
           "name": "Type",
@@ -23325,7 +23325,7 @@
           "example": "无",
           "member": "DimensionCount",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23389,7 +23389,7 @@
           "example": "无",
           "member": "RuleTemplateHistoryPage",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -33023,7 +33023,7 @@
         },
         {
           "disabled": false,
-          "document": "规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性",
+          "document": "规则所属质量维度（1：准确性，2：唯一性，3：完整性，4：一致性，5：及时性，6：有效性）",
           "example": "1",
           "member": "uint64",
           "name": "QualityDim",
@@ -33177,6 +33177,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -33194,7 +33195,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版ID",
+          "document": "模板ID",
           "example": "123456",
           "member": "uint64",
           "name": "TemplateId",
@@ -33203,7 +33204,7 @@
         },
         {
           "disabled": false,
-          "document": "模版类型  1.系统模版   2.自定义模版",
+          "document": "模板类型  1.系统模板   2.自定义模板",
           "example": "123456",
           "member": "uint64",
           "name": "Type",
@@ -33212,7 +33213,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名称",
+          "document": "模板名称",
           "example": "123456",
           "member": "string",
           "name": "Name",
@@ -33303,7 +33304,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },

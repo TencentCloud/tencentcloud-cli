@@ -224,6 +224,7 @@
           "example": "[\"policy-aaaa\",\"policy-aaaa\"]",
           "member": "string",
           "name": "TaskPolicyIdList",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -234,6 +235,7 @@
           "example": "已触发",
           "member": "string",
           "name": "TaskPolicyStatus",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -244,6 +246,7 @@
           "example": "or",
           "member": "string",
           "name": "TaskPolicyRule",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -254,12 +257,13 @@
           "example": "1",
           "member": "int64",
           "name": "TaskPolicyDealType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "DescribeTaskExecuteLogsRequest": {
       "document": "DescribeTaskExecuteLogs请求参数结构体",
@@ -384,6 +388,15 @@
         },
         {
           "disabled": false,
+          "document": "更新时间，固定格式%Y-%m-%d %H:%M:%S",
+          "example": "无",
+          "member": "string",
+          "name": "TaskUpdateTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "标签对",
           "example": "无",
           "member": "TagWithDescribe",
@@ -424,6 +437,15 @@
           "example": "无",
           "member": "string",
           "name": "ApplicationName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务状态筛选--支持多选 任务状态(1001 -- 未开始 1002 -- 进行中 1003 -- 暂停中 1004 -- 任务结束)",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskStatusList",
           "required": false,
           "type": "list"
         }
@@ -1168,6 +1190,17 @@
           "output_required": false,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的隐患验证项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VerifyId",
+          "output_required": false,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -1947,6 +1980,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "验证项ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "VerifyId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "状态类型: 0 -- 无状态，1 -- 成功，2-- 失败，3--终止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskStatusType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1961,6 +2014,7 @@
           "member": "int64",
           "name": "TaskMonitorId",
           "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1971,6 +2025,7 @@
           "member": "uint64",
           "name": "MetricId",
           "output_required": false,
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1981,6 +2036,7 @@
           "member": "int64",
           "name": "TaskMonitorObjectTypeId",
           "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1991,6 +2047,7 @@
           "member": "string",
           "name": "MetricName",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2001,6 +2058,7 @@
           "member": "string",
           "name": "InstancesIds",
           "output_required": true,
+          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2011,6 +2069,7 @@
           "member": "string",
           "name": "MetricChineseName",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2021,11 +2080,12 @@
           "member": "string",
           "name": "Unit",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TaskReportInfo": {
       "document": "演练报告状态信息",

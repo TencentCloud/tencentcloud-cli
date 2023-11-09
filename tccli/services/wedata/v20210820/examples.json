@@ -251,8 +251,8 @@
     "CommitRuleGroupExecResult": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitRuleGroupExecResult\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11\",\n    \"RuleGroupExecId\": 15,\n    \"RuleGroupState\": \"COMPLETED\",\n    \"RuleExecResults\": [\n        {\n            \"RuleId\": 2,\n            \"RuleExecId\": 9,\n            \"State\": \"COMPLETED\",\n            \"Data\": [\n                100\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitRuleGroupExecResult\n<公共请求参数>\n\n{\n    \"ProjectId\": \"11\",\n    \"RuleGroupExecId\": 15,\n    \"RuleGroupState\": \"COMPLETED\",\n    \"RuleExecResults\": [\n        {\n            \"RuleId\": 2,\n            \"RuleExecId\": 9,\n            \"State\": \"COMPLETED\",\n            \"Data\": [\n                \"100\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "runner 结果上报"
       }
     ],
@@ -1898,15 +1898,15 @@
       {
         "document": "查询规则模版维度分布情况",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateDimCount\n<公共请求参数>\n\n{\n    \"Type\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Count\": 1,\n                \"DimType\": 1\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DimType\": 1,\n                \"Count\": 1,\n                \"QualityDim\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询规则模版维度分布情况"
       }
     ],
     "DescribeTemplateHistory": [
       {
         "document": "查询规则模版操作记录",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateHistory\n<公共请求参数>\n\n{\n    \"ProjectId\": 1,\n    \"PageNumber\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UserName\": \"xx\",\n                    \"AlterContent\": \"xx\",\n                    \"AlterType\": 1,\n                    \"UserId\": 1,\n                    \"Version\": 1,\n                    \"TemplateId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTemplateHistory\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"ProjectId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"Items\": [\n                {\n                    \"UserName\": \"abc\",\n                    \"AlterContent\": \"abc\",\n                    \"AlterType\": 1,\n                    \"UserId\": 1,\n                    \"Version\": 1,\n                    \"TemplateId\": 1\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询规则模版操作记录"
       }
     ],
@@ -2277,8 +2277,8 @@
     "ModifyRuleTemplate": [
       {
         "document": "编辑规则模版",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"xx\",\n    \"SqlExpression\": \"xx\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyRuleTemplate\n<公共请求参数>\n\n{\n    \"SourceEngineTypes\": [\n        1\n    ],\n    \"Name\": \"abc\",\n    \"SqlExpression\": \"abc\",\n    \"QualityDim\": 1,\n    \"MultiSourceFlag\": true,\n    \"TemplateId\": 1,\n    \"Type\": 1,\n    \"SourceObjectType\": 1,\n    \"Description\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "编辑规则模版"
       }
     ],

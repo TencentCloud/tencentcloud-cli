@@ -666,6 +666,262 @@
       ],
       "usage": "out"
     },
+    "AirTicketInfo": {
+      "document": "航空运输电子客票行程单信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "旅客姓名",
+          "example": "无",
+          "member": "string",
+          "name": "PassengerName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效身份证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "ValidIdNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签注",
+          "example": "无",
+          "member": "string",
+          "name": "Endorsement",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GP单号",
+          "example": "无",
+          "member": "string",
+          "name": "NumberOfGPOrder",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicInvoiceAirTransportReceiptNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机票详细信息元组",
+          "example": "无",
+          "member": "DetailInformationOfAirTicketTupleList",
+          "name": "DetailInformationOfAirTicketTuple",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "票价",
+          "example": "无",
+          "member": "string",
+          "name": "Fare",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "燃油附加费",
+          "example": "无",
+          "member": "string",
+          "name": "FuelSurcharge",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税率",
+          "example": "无",
+          "member": "string",
+          "name": "VatRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税额",
+          "example": "无",
+          "member": "string",
+          "name": "VatTaxAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "民航发展基金",
+          "example": "无",
+          "member": "string",
+          "name": "CivilAviationDevelopmentFund",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他税费",
+          "example": "无",
+          "member": "string",
+          "name": "OtherTaxes",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计",
+          "example": "无",
+          "member": "string",
+          "name": "TotalAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号码",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicTicketNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验证码",
+          "example": "无",
+          "member": "string",
+          "name": "VerificationCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息",
+          "example": "无",
+          "member": "string",
+          "name": "PromptInformation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险费",
+          "example": "无",
+          "member": "string",
+          "name": "Insurance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "销售网点代号",
+          "example": "无",
+          "member": "string",
+          "name": "AgentCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填开单位",
+          "example": "无",
+          "member": "string",
+          "name": "IssueParty",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填开时间",
+          "example": "无",
+          "member": "string",
+          "name": "IssueDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开具状态",
+          "example": "无",
+          "member": "string",
+          "name": "IssuingStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国内国际标识",
+          "example": "无",
+          "member": "string",
+          "name": "MarkingOfDomesticOrInternational",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买方名称",
+          "example": "无",
+          "member": "string",
+          "name": "NameOfPurchaser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "销售方名称",
+          "example": "无",
+          "member": "string",
+          "name": "NameOfSeller",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "UnifiedSocialCreditCodeOfPurchaser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "AirTransport": {
       "document": "机票行程单",
       "members": [
@@ -2269,6 +2525,132 @@
         }
       ],
       "type": "object"
+    },
+    "DetailInformationOfAirTicketTupleList": {
+      "document": "机票详细信息元组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出发站（自）",
+          "example": "无",
+          "member": "string",
+          "name": "DepartureStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "目的地（至）",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "航班",
+          "example": "无",
+          "member": "string",
+          "name": "FlightSegment",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "航班",
+          "example": "无",
+          "member": "string",
+          "name": "Carrier",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "航班号",
+          "example": "无",
+          "member": "string",
+          "name": "Flight",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位等级",
+          "example": "无",
+          "member": "string",
+          "name": "SeatClass",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日期",
+          "example": "无",
+          "member": "string",
+          "name": "CarrierDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间",
+          "example": "无",
+          "member": "string",
+          "name": "DepartureTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客票级别/客票类别",
+          "example": "无",
+          "member": "string",
+          "name": "FareBasis",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客票生效日期",
+          "example": "无",
+          "member": "string",
+          "name": "EffectiveDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效截止日期",
+          "example": "无",
+          "member": "string",
+          "name": "ExpirationDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费行李",
+          "example": "无",
+          "member": "string",
+          "name": "FreeBaggageAllowance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DetectedWordCoordPoint": {
       "document": "单字在原图中的坐标，以四个顶点坐标表示，以左上角为起点，顺时针返回。",
@@ -8478,6 +8860,262 @@
         }
       ],
       "type": "object"
+    },
+    "RailwayTicketInfo": {
+      "document": "铁路电子客票信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电子发票类型",
+          "example": "无",
+          "member": "string",
+          "name": "TypeOfVoucher",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicTicketNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开票日期",
+          "example": "无",
+          "member": "string",
+          "name": "DateOfIssue",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "售票或退票类型",
+          "example": "无",
+          "member": "string",
+          "name": "TypeOfBusiness",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "始发站",
+          "example": "无",
+          "member": "string",
+          "name": "DepartureStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "始发站英文",
+          "example": "无",
+          "member": "string",
+          "name": "PhonicsOfDepartureStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到达站",
+          "example": "无",
+          "member": "string",
+          "name": "DestinationStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到达站英文",
+          "example": "无",
+          "member": "string",
+          "name": "PhonicsOfDestinationStation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "火车号",
+          "example": "无",
+          "member": "string",
+          "name": "TrainNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "火车出发日期",
+          "example": "无",
+          "member": "string",
+          "name": "TravelDate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "始发时间",
+          "example": "无",
+          "member": "string",
+          "name": "DepartureTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "空调特点",
+          "example": "无",
+          "member": "string",
+          "name": "AirConditioningCharacteristics",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位类型",
+          "example": "无",
+          "member": "string",
+          "name": "SeatLevel",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "火车第几车",
+          "example": "无",
+          "member": "string",
+          "name": "Carriage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位号",
+          "example": "无",
+          "member": "string",
+          "name": "Seat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "票价",
+          "example": "无",
+          "member": "string",
+          "name": "Fare",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicInvoiceRailwayETicketNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "IdNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "姓名",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "金额",
+          "example": "无",
+          "member": "string",
+          "name": "TotalAmountExcludingTax",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税率",
+          "example": "无",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税额",
+          "example": "无",
+          "member": "string",
+          "name": "TaxAmount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买方名称",
+          "example": "无",
+          "member": "string",
+          "name": "NameOfPurchaser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "UnifiedSocialCreditCodeOfPurchaser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "NumberOfOriginalInvoice",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "RecognizeContainerOCRRequest": {
       "document": "RecognizeContainerOCR请求参数结构体",
@@ -17351,6 +17989,26 @@
           "name": "GoodsInfos",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "航空运输电子客票行程单信息",
+          "example": "无",
+          "member": "AirTicketInfo",
+          "name": "AirTicketInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "铁路电子客票",
+          "example": "无",
+          "member": "RailwayTicketInfo",
+          "name": "RailwayTicketInfo",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

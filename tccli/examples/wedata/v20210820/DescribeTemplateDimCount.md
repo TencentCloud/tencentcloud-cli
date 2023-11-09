@@ -15,11 +15,12 @@ Output:
     "Response": {
         "Data": [
             {
+                "DimType": 1,
                 "Count": 1,
-                "DimType": 1
+                "QualityDim": 1
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -169,7 +169,7 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。\n常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署\n\n 通过一码多扫二维码发起的合同，涉及到的合同回调消息可参考文档[合同发起以及签署相关回调](https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n\n用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多扫二维码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n二维码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "CreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫流程签署二维码",
       "output": "CreateMultiFlowSignQRCodeResponse",
@@ -985,113 +985,113 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同流程ID，为32位字符串。\n建议开发者妥善保存此流程ID，以便于顺利进行后续操作。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "ydxxxxxxxx",
+          "document": "合同流程ID，为32位字符串。\n可登录腾讯电子签控制台，在 \"合同\"->\"合同中心\" 中查看某个合同的FlowId(在页面中展示为合同ID)。",
+          "example": "yDwFdUUckps******uzcbXwoXbRF6ja3",
           "member": "string",
           "name": "FlowId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同经办人名称\n如果有多个经办人用分号隔开。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "张三",
+          "document": "合同经办人名称\n如果有多个经办人用分号隔开。",
+          "example": "典子谦",
           "member": "string",
           "name": "OperatorName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "发起方组织机构名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "张三公司",
+          "document": "发起方组织机构名称",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "CreateOrganizationName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n该名称还将用于合同签署完成后的下载文件名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "张三发起的合同",
+          "document": "合同流程的名称。",
+          "example": "典子谦示例合同",
           "member": "string",
           "name": "FlowName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "当前合同状态,如下是状态码对应的状态。\n0-还没有发起\n1-等待签署\n2-部分签署 \n3-拒签\n4-已签署 \n5-已过期 \n6-已撤销 \n7-还没有预发起\n8-等待填写\n9-部分填写 \n10-拒填\n11-已解除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前合同状态,如下是状态码对应的状态。\n<ul>\n<li>**0**: 还没有发起</li>\n<li>**1**: 等待签署</li>\n<li>**2**: 部分签署 </li>\n<li>**3**: 拒签</li>\n<li>**4**: 已签署 </li>\n<li>**5**: 已过期 </li>\n<li>**6**: 已撤销 </li>\n<li>**7**: 还没有预发起</li>\n<li>**8**: 等待填写</li>\n<li>**9**: 部分填写 </li>\n<li>**10**: 拒填</li>\n<li>**11**: 已解除</li>\n</ul>",
           "example": "4",
           "member": "int64",
           "name": "Status",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "套餐类型\n对应关系如下\nCloudEnterprise-企业版合同\nSingleSignature-单方签章\nCloudProve-签署报告\nCloudOnlineSign-腾讯会议在线签约\nChannelWeCard-微工卡\nSignFlow-合同套餐\nSignFace-签署意愿（人脸识别）\nSignPassword-签署意愿（密码）\nSignSMS-签署意愿（短信）\nPersonalEssAuth-签署人实名（腾讯电子签认证）\nPersonalThirdAuth-签署人实名（信任第三方认证）\nOrgEssAuth-签署企业实名\nFlowNotify-短信通知\nAuthService-企业工商信息查询\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询的套餐类型\n对应关系如下:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
           "example": "CloudEnterprise",
           "member": "string",
           "name": "QuotaType",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "合同使用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同使用量\n注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`",
           "example": "1",
           "member": "int64",
           "name": "UseCount",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消耗的时间戳，格式为Unix标准时间戳（秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗的时间戳，格式为Unix标准时间戳（秒）。",
           "example": "1680162193",
           "member": "int64",
           "name": "CostTime",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消耗的套餐名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗的套餐名称",
           "example": "企业版运营礼包",
           "member": "string",
           "name": "QuotaName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "消耗类型\n1.扣费 2.撤销返还\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "消耗类型\n**1**.扣费\n**2**.撤销返还",
           "example": "1",
           "member": "int64",
           "name": "CostType",
           "output_required": false,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "备注",
           "example": "空",
           "member": "string",
           "name": "Remark",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -5764,7 +5764,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n对应关系如下\nCloudEnterprise-企业版合同\nSingleSignature-单方签章\nCloudProve-签署报告\nCloudOnlineSign-腾讯会议在线签约\nChannelWeCard-微工卡\nSignFlow-合同套餐\nSignFace-签署意愿（人脸识别）\nSignPassword-签署意愿（密码）\nSignSMS-签署意愿（短信）\nPersonalEssAuth-签署人实名（腾讯电子签认证）\nPersonalThirdAuth-签署人实名（信任第三方认证）\nOrgEssAuth-签署企业实名\nFlowNotify-短信通知\nAuthService-企业工商信息查询",
+          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
           "example": "CloudEnterprise",
           "member": "string",
           "name": "QuotaType",

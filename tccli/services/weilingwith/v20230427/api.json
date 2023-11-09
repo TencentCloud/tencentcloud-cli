@@ -1,10 +1,185 @@
 {
   "actions": {
+    "AddAlarmProcessRecord": {
+      "document": "添加告警处理记录",
+      "input": "AddAlarmProcessRecordRequest",
+      "name": "添加告警处理记录",
+      "output": "AddAlarmProcessRecordResponse",
+      "status": "online"
+    },
+    "BatchCreateDevice": {
+      "document": "单个/批量新增设备",
+      "input": "BatchCreateDeviceRequest",
+      "name": "批量新增设备",
+      "output": "BatchCreateDeviceResponse",
+      "status": "online"
+    },
+    "BatchKillAlarm": {
+      "document": "批量消警",
+      "input": "BatchKillAlarmRequest",
+      "name": "批量消警",
+      "output": "BatchKillAlarmResponse",
+      "status": "online"
+    },
+    "BatchReportAppMessage": {
+      "document": "批量消息上报",
+      "input": "BatchReportAppMessageRequest",
+      "name": "批量消息上报",
+      "output": "BatchReportAppMessageResponse",
+      "status": "online"
+    },
+    "ChangeAlarmStatus": {
+      "document": "变更告警状态",
+      "input": "ChangeAlarmStatusRequest",
+      "name": "变更告警状态",
+      "output": "ChangeAlarmStatusResponse",
+      "status": "online"
+    },
+    "ControlCameraPTZ": {
+      "document": "云台控制",
+      "input": "ControlCameraPTZRequest",
+      "name": "云台控制",
+      "output": "ControlCameraPTZResponse",
+      "status": "online"
+    },
+    "ControlDevice": {
+      "document": "设备控制（单个、批量控制）",
+      "input": "ControlDeviceRequest",
+      "name": "设备控制（单个、批量控制）",
+      "output": "ControlDeviceResponse",
+      "status": "online"
+    },
+    "CreateApplicationToken": {
+      "document": "调用方应用，创建调用租户API的授权令牌。",
+      "input": "CreateApplicationTokenRequest",
+      "name": "创建应用授权令牌",
+      "output": "CreateApplicationTokenResponse",
+      "status": "online"
+    },
+    "DescribeActionList": {
+      "document": "动作列表查询",
+      "input": "DescribeActionListRequest",
+      "name": "动作列表查询",
+      "output": "DescribeActionListResponse",
+      "status": "online"
+    },
+    "DescribeAdministrationByTag": {
+      "document": "根据标签获取行政区划列表",
+      "input": "DescribeAdministrationByTagRequest",
+      "name": "根据标签获取行政区划列表",
+      "output": "DescribeAdministrationByTagResponse",
+      "status": "online"
+    },
+    "DescribeAlarmLevelList": {
+      "document": "告警级别枚举获取",
+      "input": "DescribeAlarmLevelListRequest",
+      "name": "告警级别枚举获取",
+      "output": "DescribeAlarmLevelListResponse",
+      "status": "online"
+    },
+    "DescribeAlarmList": {
+      "document": "告警列表查询",
+      "input": "DescribeAlarmListRequest",
+      "name": "告警列表查询",
+      "output": "DescribeAlarmListResponse",
+      "status": "online"
+    },
+    "DescribeAlarmStatusList": {
+      "document": "用来查询系统中的告警状态列表",
+      "input": "DescribeAlarmStatusListRequest",
+      "name": "告警状态列表查询",
+      "output": "DescribeAlarmStatusListResponse",
+      "status": "online"
+    },
+    "DescribeAlarmTypeList": {
+      "document": "告警类型获取",
+      "input": "DescribeAlarmTypeListRequest",
+      "name": "告警类型获取",
+      "output": "DescribeAlarmTypeListResponse",
+      "status": "online"
+    },
     "DescribeApplicationList": {
       "document": "查询指定空间关联的应用列表",
       "input": "DescribeApplicationListRequest",
       "name": "查询应用列表",
       "output": "DescribeApplicationListResponse",
+      "status": "online"
+    },
+    "DescribeBuildingList": {
+      "document": "查询建筑列表",
+      "input": "DescribeBuildingListRequest",
+      "name": "查询建筑列表",
+      "output": "DescribeBuildingListResponse",
+      "status": "online"
+    },
+    "DescribeBuildingModel": {
+      "document": "查询建筑三维模型",
+      "input": "DescribeBuildingModelRequest",
+      "name": "查询建筑三维模型",
+      "output": "DescribeBuildingModelResponse",
+      "status": "online"
+    },
+    "DescribeBuildingProfile": {
+      "document": "查询建筑信息",
+      "input": "DescribeBuildingProfileRequest",
+      "name": "查询建筑信息",
+      "output": "DescribeBuildingProfileResponse",
+      "status": "online"
+    },
+    "DescribeCameraExtendInfo": {
+      "document": "获取视频扩展信息",
+      "input": "DescribeCameraExtendInfoRequest",
+      "name": "获取视频扩展信息",
+      "output": "DescribeCameraExtendInfoResponse",
+      "status": "online"
+    },
+    "DescribeCityWorkspaceList": {
+      "document": "通过城市id查询工作空间列表",
+      "input": "DescribeCityWorkspaceListRequest",
+      "name": "通过城市id查询工作空间列表",
+      "output": "DescribeCityWorkspaceListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceList": {
+      "document": "设备列表查询/单个查询（支持通过筛选条件查询，设备类型、标签、PID、空间）",
+      "input": "DescribeDeviceListRequest",
+      "name": "设备列表查询",
+      "output": "DescribeDeviceListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceShadowList": {
+      "document": "获取设备影子数据",
+      "input": "DescribeDeviceShadowListRequest",
+      "name": "获取设备影子数据",
+      "output": "DescribeDeviceShadowListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceStatusList": {
+      "document": "设备状态获取",
+      "input": "DescribeDeviceStatusListRequest",
+      "name": "设备状态获取",
+      "output": "DescribeDeviceStatusListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceStatusStat": {
+      "document": "设备状态统计",
+      "input": "DescribeDeviceStatusStatRequest",
+      "name": "设备状态统计",
+      "output": "DescribeDeviceStatusStatResponse",
+      "status": "online"
+    },
+    "DescribeDeviceTagList": {
+      "document": "标签列表查询",
+      "input": "DescribeDeviceTagListRequest",
+      "name": "标签列表查询",
+      "output": "DescribeDeviceTagListResponse",
+      "status": "online"
+    },
+    "DescribeDeviceTypeList": {
+      "document": "拉取设备的设备类型列表",
+      "input": "DescribeDeviceTypeListRequest",
+      "name": "拉取设备的设备类型列表",
+      "output": "DescribeDeviceTypeListResponse",
       "status": "online"
     },
     "DescribeEdgeApplicationToken": {
@@ -14,11 +189,172 @@
       "output": "DescribeEdgeApplicationTokenResponse",
       "status": "online"
     },
+    "DescribeElementProfilePage": {
+      "document": "查询分页构件信息",
+      "input": "DescribeElementProfilePageRequest",
+      "name": "查询分页构件信息",
+      "output": "DescribeElementProfilePageResponse",
+      "status": "online"
+    },
+    "DescribeElementProfileTree": {
+      "document": "查询构件树",
+      "input": "DescribeElementProfileTreeRequest",
+      "name": "查询构件树",
+      "output": "DescribeElementProfileTreeResponse",
+      "status": "online"
+    },
+    "DescribeEventList": {
+      "document": "事件列表查询",
+      "input": "DescribeEventListRequest",
+      "name": "事件列表查询",
+      "output": "DescribeEventListResponse",
+      "status": "online"
+    },
+    "DescribeFileDownloadURL": {
+      "document": "获取文件下载URL",
+      "input": "DescribeFileDownloadURLRequest",
+      "name": "获取文件下载URL",
+      "output": "DescribeFileDownloadURLResponse",
+      "status": "online"
+    },
+    "DescribeFileUploadURL": {
+      "document": "文件上传接口",
+      "input": "DescribeFileUploadURLRequest",
+      "name": "文件上传接口",
+      "output": "DescribeFileUploadURLResponse",
+      "status": "online"
+    },
     "DescribeInterfaceList": {
       "document": "查询接口列表",
       "input": "DescribeInterfaceListRequest",
       "name": "查询接口列表",
       "output": "DescribeInterfaceListResponse",
+      "status": "online"
+    },
+    "DescribeLinkRuleList": {
+      "document": "联动规则列表查询",
+      "input": "DescribeLinkRuleListRequest",
+      "name": "联动规则列表查询",
+      "output": "DescribeLinkRuleListResponse",
+      "status": "online"
+    },
+    "DescribeModelList": {
+      "document": "模型列表查询/单个查询（产品模型/标准模型）",
+      "input": "DescribeModelListRequest",
+      "name": "模型列表查询",
+      "output": "DescribeModelListResponse",
+      "status": "online"
+    },
+    "DescribeProductList": {
+      "document": "产品列表查询",
+      "input": "DescribeProductListRequest",
+      "name": "产品列表查询",
+      "output": "DescribeProductListResponse",
+      "status": "online"
+    },
+    "DescribePropertyList": {
+      "document": "查询构件属性（详情）",
+      "input": "DescribePropertyListRequest",
+      "name": "查询构件属性（详情）",
+      "output": "DescribePropertyListResponse",
+      "status": "online"
+    },
+    "DescribeRuleDetail": {
+      "document": "联动规则详情查询",
+      "input": "DescribeRuleDetailRequest",
+      "name": "联动规则详情查询",
+      "output": "DescribeRuleDetailResponse",
+      "status": "online"
+    },
+    "DescribeSceneList": {
+      "document": "查询场景列表",
+      "input": "DescribeSceneListRequest",
+      "name": "查询场景列表",
+      "output": "DescribeSceneListResponse",
+      "status": "online"
+    },
+    "DescribeSpaceDeviceIdList": {
+      "document": "查询指定空间设备编号列表",
+      "input": "DescribeSpaceDeviceIdListRequest",
+      "name": "查询指定空间设备编号列表",
+      "output": "DescribeSpaceDeviceIdListResponse",
+      "status": "online"
+    },
+    "DescribeSpaceDeviceRelationList": {
+      "document": "查询指定空间下设备与构件绑定关系列表",
+      "input": "DescribeSpaceDeviceRelationListRequest",
+      "name": "查询指定空间下设备与构件绑定关系列表",
+      "output": "DescribeSpaceDeviceRelationListResponse",
+      "status": "online"
+    },
+    "DescribeSpaceInfoByDeviceId": {
+      "document": "查询设备绑定的空间信息",
+      "input": "DescribeSpaceInfoByDeviceIdRequest",
+      "name": "查询设备绑定的空间信息",
+      "output": "DescribeSpaceInfoByDeviceIdResponse",
+      "status": "online"
+    },
+    "DescribeSpaceRelationByDeviceId": {
+      "document": "查询设备绑定的空间层级关系",
+      "input": "DescribeSpaceRelationByDeviceIdRequest",
+      "name": "查询设备绑定的空间层级关系",
+      "output": "DescribeSpaceRelationByDeviceIdResponse",
+      "status": "online"
+    },
+    "DescribeSpaceTypeList": {
+      "document": "查询空间分类",
+      "input": "DescribeSpaceTypeListRequest",
+      "name": "查询空间分类",
+      "output": "DescribeSpaceTypeListResponse",
+      "status": "online"
+    },
+    "DescribeTenantBuildingCountAndArea": {
+      "document": "查询租户楼栋数量和楼栋建筑面积",
+      "input": "DescribeTenantBuildingCountAndAreaRequest",
+      "name": "查询租户楼栋数量和楼栋建筑面积",
+      "output": "DescribeTenantBuildingCountAndAreaResponse",
+      "status": "online"
+    },
+    "DescribeTenantDepartmentList": {
+      "document": "查询租户组织部门列表",
+      "input": "DescribeTenantDepartmentListRequest",
+      "name": "查询租户组织部门列表",
+      "output": "DescribeTenantDepartmentListResponse",
+      "status": "online"
+    },
+    "DescribeTenantUserList": {
+      "document": "查询租户人员列表",
+      "input": "DescribeTenantUserListRequest",
+      "name": "查询租户人员列表",
+      "output": "DescribeTenantUserListResponse",
+      "status": "online"
+    },
+    "DescribeVideoCloudRecord": {
+      "document": "云录像接口",
+      "input": "DescribeVideoCloudRecordRequest",
+      "name": "云录像接口",
+      "output": "DescribeVideoCloudRecordResponse",
+      "status": "online"
+    },
+    "DescribeVideoLiveStream": {
+      "document": "实时流接口",
+      "input": "DescribeVideoLiveStreamRequest",
+      "name": "实时流接口",
+      "output": "DescribeVideoLiveStreamResponse",
+      "status": "online"
+    },
+    "DescribeVideoRecordStream": {
+      "document": "历史流接口",
+      "input": "DescribeVideoRecordStreamRequest",
+      "name": "历史流接口",
+      "output": "DescribeVideoRecordStreamResponse",
+      "status": "online"
+    },
+    "DescribeWorkSpaceBuildingCountAndArea": {
+      "document": "查询项目空间楼栋数量与建筑面积",
+      "input": "DescribeWorkSpaceBuildingCountAndAreaRequest",
+      "name": "查询项目空间楼栋数量与建筑面积",
+      "output": "DescribeWorkSpaceBuildingCountAndAreaResponse",
       "status": "online"
     },
     "DescribeWorkspaceList": {
@@ -34,6 +370,34 @@
       "name": "查询项目空间人员列表",
       "output": "DescribeWorkspaceUserListResponse",
       "status": "online"
+    },
+    "ModifyDeviceName": {
+      "document": "批量修改设备名字",
+      "input": "ModifyDeviceNameRequest",
+      "name": "批量修改设备名字",
+      "output": "ModifyDeviceNameResponse",
+      "status": "online"
+    },
+    "ReportAppMessage": {
+      "document": "单条消息上报",
+      "input": "ReportAppMessageRequest",
+      "name": "单条消息上报",
+      "output": "ReportAppMessageResponse",
+      "status": "online"
+    },
+    "StopVideoStreaming": {
+      "document": "断流接口",
+      "input": "StopVideoStreamingRequest",
+      "name": "断流接口",
+      "output": "StopVideoStreamingResponse",
+      "status": "online"
+    },
+    "UpdateWorkspaceParkAttributes": {
+      "document": "修改工作空间园区属性",
+      "input": "UpdateWorkspaceParkAttributesRequest",
+      "name": "修改工作空间园区属性",
+      "output": "UpdateWorkspaceParkAttributesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -43,6 +407,244 @@
     "serviceShortName": "weilingwith"
   },
   "objects": {
+    "AddAlarmProcessRecordRequest": {
+      "document": "AddAlarmProcessRecord请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "AddAlarmProcessRecordResponse": {
+      "document": "AddAlarmProcessRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchCreateDeviceRequest": {
+      "document": "BatchCreateDevice请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BatchCreateDeviceResponse": {
+      "document": "BatchCreateDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchKillAlarmRequest": {
+      "document": "BatchKillAlarm请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BatchKillAlarmResponse": {
+      "document": "BatchKillAlarm返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "BatchReportAppMessageRequest": {
+      "document": "BatchReportAppMessage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "BatchReportAppMessageResponse": {
+      "document": "BatchReportAppMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChangeAlarmStatusRequest": {
+      "document": "ChangeAlarmStatus请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ChangeAlarmStatusResponse": {
+      "document": "ChangeAlarmStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlCameraPTZRequest": {
+      "document": "ControlCameraPTZ请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ControlCameraPTZResponse": {
+      "document": "ControlCameraPTZ返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ControlDeviceRequest": {
+      "document": "ControlDevice请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ControlDeviceResponse": {
+      "document": "ControlDevice返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateApplicationTokenRequest": {
+      "document": "CreateApplicationToken请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "CreateApplicationTokenResponse": {
+      "document": "CreateApplicationToken返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeActionListRequest": {
+      "document": "DescribeActionList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeActionListResponse": {
+      "document": "DescribeActionList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAdministrationByTagRequest": {
+      "document": "DescribeAdministrationByTag请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAdministrationByTagResponse": {
+      "document": "DescribeAdministrationByTag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmLevelListRequest": {
+      "document": "DescribeAlarmLevelList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAlarmLevelListResponse": {
+      "document": "DescribeAlarmLevelList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmListRequest": {
+      "document": "DescribeAlarmList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAlarmListResponse": {
+      "document": "DescribeAlarmList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmStatusListRequest": {
+      "document": "DescribeAlarmStatusList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAlarmStatusListResponse": {
+      "document": "DescribeAlarmStatusList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAlarmTypeListRequest": {
+      "document": "DescribeAlarmTypeList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeAlarmTypeListResponse": {
+      "document": "DescribeAlarmTypeList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeApplicationListRequest": {
       "document": "DescribeApplicationList请求参数结构体",
       "members": [],
@@ -50,6 +652,193 @@
     },
     "DescribeApplicationListResponse": {
       "document": "DescribeApplicationList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBuildingListRequest": {
+      "document": "DescribeBuildingList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBuildingListResponse": {
+      "document": "DescribeBuildingList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBuildingModelRequest": {
+      "document": "DescribeBuildingModel请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBuildingModelResponse": {
+      "document": "DescribeBuildingModel返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBuildingProfileRequest": {
+      "document": "DescribeBuildingProfile请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBuildingProfileResponse": {
+      "document": "DescribeBuildingProfile返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCameraExtendInfoRequest": {
+      "document": "DescribeCameraExtendInfo请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCameraExtendInfoResponse": {
+      "document": "DescribeCameraExtendInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCityWorkspaceListRequest": {
+      "document": "DescribeCityWorkspaceList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCityWorkspaceListResponse": {
+      "document": "DescribeCityWorkspaceList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceListRequest": {
+      "document": "DescribeDeviceList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceListResponse": {
+      "document": "DescribeDeviceList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceShadowListRequest": {
+      "document": "DescribeDeviceShadowList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceShadowListResponse": {
+      "document": "DescribeDeviceShadowList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceStatusListRequest": {
+      "document": "DescribeDeviceStatusList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceStatusListResponse": {
+      "document": "DescribeDeviceStatusList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceStatusStatRequest": {
+      "document": "DescribeDeviceStatusStat请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceStatusStatResponse": {
+      "document": "DescribeDeviceStatusStat返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceTagListRequest": {
+      "document": "DescribeDeviceTagList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceTagListResponse": {
+      "document": "DescribeDeviceTagList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeviceTypeListRequest": {
+      "document": "DescribeDeviceTypeList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeDeviceTypeListResponse": {
+      "document": "DescribeDeviceTypeList返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -77,6 +866,91 @@
       ],
       "type": "object"
     },
+    "DescribeElementProfilePageRequest": {
+      "document": "DescribeElementProfilePage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeElementProfilePageResponse": {
+      "document": "DescribeElementProfilePage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeElementProfileTreeRequest": {
+      "document": "DescribeElementProfileTree请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeElementProfileTreeResponse": {
+      "document": "DescribeElementProfileTree返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventListRequest": {
+      "document": "DescribeEventList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeEventListResponse": {
+      "document": "DescribeEventList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileDownloadURLRequest": {
+      "document": "DescribeFileDownloadURL请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFileDownloadURLResponse": {
+      "document": "DescribeFileDownloadURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFileUploadURLRequest": {
+      "document": "DescribeFileUploadURL请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeFileUploadURLResponse": {
+      "document": "DescribeFileUploadURL返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInterfaceListRequest": {
       "document": "DescribeInterfaceList请求参数结构体",
       "members": [],
@@ -84,6 +958,496 @@
     },
     "DescribeInterfaceListResponse": {
       "document": "DescribeInterfaceList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLinkRuleListRequest": {
+      "document": "DescribeLinkRuleList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeLinkRuleListResponse": {
+      "document": "DescribeLinkRuleList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeModelListRequest": {
+      "document": "DescribeModelList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeModelListResponse": {
+      "document": "DescribeModelList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeProductListRequest": {
+      "document": "DescribeProductList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeProductListResponse": {
+      "document": "DescribeProductList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePropertyListRequest": {
+      "document": "DescribePropertyList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribePropertyListResponse": {
+      "document": "DescribePropertyList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRuleDetailRequest": {
+      "document": "DescribeRuleDetail请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeRuleDetailResponse": {
+      "document": "DescribeRuleDetail返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSceneListRequest": {
+      "document": "DescribeSceneList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSceneListResponse": {
+      "document": "DescribeSceneList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceDeviceIdListRequest": {
+      "document": "DescribeSpaceDeviceIdList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSpaceDeviceIdListResponse": {
+      "document": "DescribeSpaceDeviceIdList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceDeviceRelationListRequest": {
+      "document": "DescribeSpaceDeviceRelationList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSpaceDeviceRelationListResponse": {
+      "document": "DescribeSpaceDeviceRelationList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceInfoByDeviceIdRequest": {
+      "document": "DescribeSpaceInfoByDeviceId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSpaceInfoByDeviceIdResponse": {
+      "document": "DescribeSpaceInfoByDeviceId返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceRelationByDeviceIdRequest": {
+      "document": "DescribeSpaceRelationByDeviceId请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSpaceRelationByDeviceIdResponse": {
+      "document": "DescribeSpaceRelationByDeviceId返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSpaceTypeListRequest": {
+      "document": "DescribeSpaceTypeList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeSpaceTypeListResponse": {
+      "document": "DescribeSpaceTypeList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantBuildingCountAndAreaRequest": {
+      "document": "DescribeTenantBuildingCountAndArea请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTenantBuildingCountAndAreaResponse": {
+      "document": "DescribeTenantBuildingCountAndArea返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantDepartmentListRequest": {
+      "document": "DescribeTenantDepartmentList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantDepartmentListResponse": {
+      "document": "DescribeTenantDepartmentList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoDepartmentsResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantUserListRequest": {
+      "document": "DescribeTenantUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "翻页页码",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "翻页大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "token",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "租户ID",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "更新时间戳，单位秒",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "部门ID",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "无",
+          "member": "string",
+          "name": "Cursor",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态，0，获取所有数据，1正常启用，2禁用",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目空间id",
+          "example": "无",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "关键词",
+          "example": "无",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否递归获取子级数据，0需要，1不需要，默认为0",
+          "example": "无",
+          "member": "string",
+          "name": "NoRecursive",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTenantUserListResponse": {
+      "document": "DescribeTenantUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回数据",
+          "example": "无",
+          "member": "SsoUserResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoCloudRecordRequest": {
+      "document": "DescribeVideoCloudRecord请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVideoCloudRecordResponse": {
+      "document": "DescribeVideoCloudRecord返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoLiveStreamRequest": {
+      "document": "DescribeVideoLiveStream请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVideoLiveStreamResponse": {
+      "document": "DescribeVideoLiveStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVideoRecordStreamRequest": {
+      "document": "DescribeVideoRecordStream请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeVideoRecordStreamResponse": {
+      "document": "DescribeVideoRecordStream返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWorkSpaceBuildingCountAndAreaRequest": {
+      "document": "DescribeWorkSpaceBuildingCountAndArea请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeWorkSpaceBuildingCountAndAreaResponse": {
+      "document": "DescribeWorkSpaceBuildingCountAndArea返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -192,6 +1556,102 @@
         }
       ],
       "type": "object"
+    },
+    "ModifyDeviceNameRequest": {
+      "document": "ModifyDeviceName请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ModifyDeviceNameResponse": {
+      "document": "ModifyDeviceName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ReportAppMessageRequest": {
+      "document": "ReportAppMessage请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "ReportAppMessageResponse": {
+      "document": "ReportAppMessage返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SsoDepartment": {
+      "document": "部门用户",
+      "members": [
+        {
+          "disabled": false,
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "父级部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ParentDepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoDepartmentsResult": {
+      "document": "部门用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoDepartment",
+          "name": "Departments",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SsoTeamUser": {
       "document": "部门用户",
@@ -334,6 +1794,232 @@
         }
       ],
       "usage": "out"
+    },
+    "SsoUser": {
+      "document": "用户结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RealName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TenantId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UserGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Email",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "UpdateAt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否属于团队\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BelongTeam",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartmentName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "DepartmentUserId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SsoUserResult": {
+      "document": "租户人员结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户人员数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SsoUser",
+          "name": "Users",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "StopVideoStreamingRequest": {
+      "document": "StopVideoStreaming请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "StopVideoStreamingResponse": {
+      "document": "StopVideoStreaming返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateWorkspaceParkAttributesRequest": {
+      "document": "UpdateWorkspaceParkAttributes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateWorkspaceParkAttributesResponse": {
+      "document": "UpdateWorkspaceParkAttributes返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

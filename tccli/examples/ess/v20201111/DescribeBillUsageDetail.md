@@ -47,11 +47,12 @@ Output:
             {
                 "CostTime": 1695037514,
                 "CostType": 1,
-                "FlowId": "yDwJOU5e7ikveIUxMW0p2uJxxxxxxxxxx",
-                "FlowName": "腾讯电子签xxxxx合同",
-                "OperatorName": "张三;李斯",
-                "QuotaName": "签署报告（出证服务）",
-                "QuotaType": "CloudProve",
+                "CreateOrganizationName": "典子谦示例企业",
+                "FlowId": "yDwFdUUckps******uzcbXwoXbRF6ja3",
+                "FlowName": "典子谦示例合同",
+                "OperatorName": "典子谦;张三",
+                "QuotaName": "企业版运营礼包",
+                "QuotaType": "CloudEnterprise",
                 "Remark": "",
                 "Status": 4,
                 "UseCount": 1
@@ -75,7 +76,7 @@ tccli ess DescribeBillUsageDetail --cli-unfold-argument  \
     --EndTime 20230930 \
     --Offset 0 \
     --Limit 50 \
-    --Agent.ProxyOrganizationId xxxxx
+    --Agent.ProxyOrganizationId yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP
 ```
 
 Output: 
@@ -86,11 +87,12 @@ Output:
             {
                 "CostTime": 1695037514,
                 "CostType": 1,
-                "FlowId": "yDwJOU5e7ikveIUxMW0p2uJxxxxxxxxxx",
-                "FlowName": "腾讯电子签xxxxx合同",
-                "OperatorName": "张三;李斯",
-                "QuotaName": "签署报告（出证服务）",
-                "QuotaType": "CloudProve",
+                "CreateOrganizationName": "张三示例企业",
+                "FlowId": "yDwFdUUckps******xAhL7zuaIwkMth4",
+                "FlowName": "张三示业合同",
+                "OperatorName": "典子谦;张三",
+                "QuotaName": "企业版运营礼包",
+                "QuotaType": "CloudEnterprise",
                 "Remark": "",
                 "Status": 4,
                 "UseCount": 1

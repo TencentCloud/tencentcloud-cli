@@ -71,7 +71,71 @@ Output:
         "TaxExclusiveTotalAmount": "-300.00",
         "TaxInclusiveTotalAmount": "-318.00",
         "TaxTotalAmount": "-18.00",
-        "Type": "026"
+        "Type": "026",
+        "AirTicketInfo": {
+            "PassengerName": "abc",
+            "ValidIdNumber": "abc",
+            "Endorsement": "abc",
+            "ElectronicInvoiceAirTransportReceiptNumber": "abc",
+            "DetailInformationOfAirTicketTuple": [
+                {
+                    "DepartureStation": "abc",
+                    "DestinationStation": "abc",
+                    "FlightSegment": "abc",
+                    "Carrier": "abc",
+                    "Flight": "abc",
+                    "CarrierDate": "abc",
+                    "DepartureTime": "abc",
+                    "FareBasis": "abc",
+                    "EffectiveDate": "abc",
+                    "ExpirationDate": "abc",
+                    "FreeBaggageAllowance": "abc"
+                }
+            ],
+            "Fare": "abc",
+            "FuelSurcharge": "abc",
+            "VatRate": "abc",
+            "VatTaxAmount": "abc",
+            "CivilAviationDevelopmentFund": "abc",
+            "OtherTaxes": "abc",
+            "TotalAmount": "abc",
+            "VerificationCode": "abc",
+            "PromptInformation": "abc",
+            "Insurance": "abc",
+            "AgentCode": "abc",
+            "IssueParty": "abc",
+            "IssueDate": "abc",
+            "IssuingStatus": "abc",
+            "MarkingOfDomesticOrInternational": "abc",
+            "NameOfPurchaser": "abc",
+            "NameOfSeller": "abc",
+            "UnifiedSocialCreditCodeOfPurchaser": "abc"
+        },
+        "RailwayTicketInfo": {
+            "TypeOfVoucher": "abc",
+            "DateOfIssue": "abc",
+            "TypeOfBusiness": "abc",
+            "DepartureStation": "abc",
+            "PhonicsOfDepartureStation": "abc",
+            "DestinationStation": "abc",
+            "PhonicsOfDestinationStation": "abc",
+            "TrainNumber": "abc",
+            "TravelDate": "abc",
+            "DepartureTime": "abc",
+            "AirConditioningCharacteristics": "abc",
+            "SeatLevel": "abc",
+            "Carriage": "abc",
+            "Seat": "abc",
+            "Fare": "abc",
+            "ElectronicInvoiceRailwayETicketNumber": "abc",
+            "IdNumber": "abc",
+            "Name": "abc",
+            "TotalAmountExcludingTax": "abc",
+            "TaxRate": "abc",
+            "TaxAmount": "abc",
+            "NameOfPurchaser": "abc",
+            "UnifiedSocialCreditCodeOfPurchaser": "abc"
+        }
     }
 }
 ```

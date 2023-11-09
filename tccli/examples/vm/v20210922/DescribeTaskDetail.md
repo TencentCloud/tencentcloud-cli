@@ -24,23 +24,26 @@ Output:
             {
                 "Label": "Porn",
                 "Suggestion": "Block",
-                "Score": 99
+                "Score": 99,
+                "SubLabel": ""
             },
             {
                 "Label": "Hot",
                 "Suggestion": "Block",
-                "Score": 70
+                "Score": 70,
+                "SubLabel": ""
             }
         ],
         "MediaInfo": {
             "Codecs": "h264 aac",
             "Duration": 36,
             "Width": 352,
-            "Height": 640
+            "Height": 640,
+            "Thumbnail": ""
         },
         "InputInfo": {
             "Type": "URL",
-            "Url": "https://cms-video-segments-1256309736.cos.ap-guangzhou.myqcloud.co/huang.mp4",
+            "Url": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/huang.mp4",
             "BucketInfo": null
         },
         "CreatedAt": "2020-07-13T11:47:01.925Z",
@@ -65,158 +68,73 @@ Output:
                             "Details": []
                         }
                     ],
-                    "Url": "https://cos.ap-zhou.myqcloud.com/c019/image_1.jpg"
+                    "Url": "https://cos.ap-zhou.myqcloud.com/c019/image_1.jpg",
+                    "Extra": "{}"
                 },
                 "OffsetTime": "1"
-            },
-            {
-                "Result": {
-                    "HitFlag": 1,
-                    "Label": "Porn",
-                    "Suggestion": "Block",
-                    "Score": 77,
-                    "Results": [
-                        {
-                            "Scene": "Porn",
-                            "HitFlag": 1,
-                            "Suggestion": "Block",
-                            "Label": "Porn",
-                            "SubLabel": "",
-                            "Score": 77,
-                            "Names": [],
-                            "Text": "",
-                            "Details": []
-                        }
-                    ],
-                    "Url": "https://cos.ap-guau.myqcloud.com/cc49b5b90a5d6802b7c019/image_2.jpg"
-                },
-                "OffsetTime": "2"
             }
         ],
         "AudioSegments": [
             {
                 "Result": {
-                    "HitFlag": 0,
-                    "Label": "Normal",
-                    "SubLabel": "",
-                    "Suggestion": "Pass",
-                    "Score": 0,
-                    "Text": "测试音频文本",
-                    "Url": "https://xxx.com/7c019/audio_0.mp3",
-                    "Duration": "36398"
+                    "HitFlag": 1,
+                    "Url": "https://cos.ap-guangzhou.myqcloud.com/xxx",
+                    "Suggestion": "Block",
+                    "Label": "Illegal",
+                    "Text": "全民制作人们大家好，我是练习时长。",
+                    "TextResults": [],
+                    "MoanResults": [
+                        {
+                            "Label": "Moan",
+                            "Score": 0,
+                            "StartTime": 0,
+                            "EndTime": 4000,
+                            "Suggestion": "Pass",
+                            "SubLabel": "",
+                            "SubLabelCode": ""
+                        }
+                    ],
+                    "LanguageResults": [],
+                    "Duration": "4000",
+                    "Score": 1,
+                    "Extra": "{}",
+                    "SubLabel": "Anthem",
+                    "RecognitionResults": [
+                        {
+                            "Label": "Teenager",
+                            "Tags": [
+                                {
+                                    "Name": "Teenager",
+                                    "Score": 0,
+                                    "StartTime": 0,
+                                    "EndTime": 4050
+                                }
+                            ]
+                        }
+                    ]
                 },
                 "OffsetTime": "0"
             }
         ],
+        "AudioText": "",
+        "Asrs": [
+            {
+                "Text": "",
+                "CreatedAt": ""
+            }
+        ],
+        "SegmentCosUrlList": {
+            "ImageAllUrl": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/video/w-video-ZN3KK99etTNyRHYu/image_all.json",
+            "AudioAllUrl": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/video/w-video-ZN3KK99etTNyRHYu/audio_all.json",
+            "ImageBlockUrl": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/video/w-video-ZN3KK99etTNyRHYu/image_block.json",
+            "AudioBlockUrl": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/video/w-video-ZN3KK99etTNyRHYu/audio_block.json",
+            "AsrUrl": "https://tianyu-cms-ap-guangzhou-xxxx.cos.ap-guangzhou.myqcloud.com/segment-/video/w-video-ZN3KK99etTNyRHYu/asr_txt.json"
+        },
+        "TryInSeconds": 0,
         "RequestId": "8d3e4765-48db-40b5-8fdb-aaf1d7225a60",
         "ErrorType": "",
         "ErrorDescription": "",
-        "TryInSeconds": 0,
-        "Label": "Porn",
-        "AudioText": "",
-        "Asrs": []
-    }
-}
-```
-
-**Example 2: ok**
-
-
-
-Input: 
-
-```
-tccli vm DescribeTaskDetail --cli-unfold-argument  \
-    --ShowAllSegments true \
-    --TaskId w-video-YyBIZHP6L4buPOcg
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskId": "w-video-YyBIZHP6L4buPOcg",
-        "DataId": "1111",
-        "BizType": "default",
-        "Name": "111",
-        "Status": "RUNNING",
-        "Type": "VIDEO",
-        "Suggestion": "UNSPECIFIED",
-        "Labels": [],
-        "InputInfo": {
-            "Type": "URL",
-            "Url": "https://test-resources-1306254157.cos.ap-guangzhou.myqcloud.com/audio_policy_test/4%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF.m4a",
-            "BucketInfo": null
-        },
-        "MediaInfo": {
-            "Codecs": "",
-            "Duration": 0,
-            "Width": 0,
-            "Height": 0,
-            "Thumbnail": ""
-        },
-        "AudioText": "",
-        "ImageSegments": [],
-        "AudioSegments": [],
-        "TryInSeconds": 0,
-        "CreatedAt": "2022-09-13T09:07:48.926Z",
-        "UpdatedAt": "2022-09-13T09:07:49.059Z",
-        "ErrorType": "",
-        "ErrorDescription": "",
-        "Asrs": [],
-        "Label": "",
-        "RequestId": "ba257e71-a04b-4ba9-9d67-0717a39b6a96"
-    }
-}
-```
-
-**Example 3: vm详情返回示例**
-
-
-
-Input: 
-
-```
-tccli vm DescribeTaskDetail --cli-unfold-argument  \
-    --ShowAllSegments true \
-    --TaskId w-live_audio-YyBybeJJPvjum5DP
-```
-
-Output: 
-```
-{
-    "Response": {
-        "TaskId": "w-live_audio-YyBybeJJPvjum5DP",
-        "DataId": "1111",
-        "BizType": "default",
-        "Name": "111",
-        "Status": "RUNNING",
-        "Type": "LIVE_AUDIO",
-        "Suggestion": "UNSPECIFIED",
-        "Labels": [],
-        "InputInfo": {
-            "Type": "URL",
-            "Url": "https://test-resources-1306254157.cos.ap-guangzhou.myqcloud.com/audio_policy_test/4%E5%88%86%E9%92%9F%E8%B6%85%E9%95%BF.m4a",
-            "BucketInfo": null
-        },
-        "MediaInfo": {
-            "Codecs": "",
-            "Duration": 0,
-            "Width": 0,
-            "Height": 0,
-            "Thumbnail": ""
-        },
-        "AudioText": "",
-        "ImageSegments": [],
-        "AudioSegments": [],
-        "TryInSeconds": 120,
-        "CreatedAt": "2022-09-13T12:07:09.338Z",
-        "UpdatedAt": "2022-09-13T12:07:09.623Z",
-        "ErrorType": "",
-        "ErrorDescription": "",
-        "Asrs": [],
-        "Label": "",
-        "RequestId": "08895eaa-2c51-4dc6-94fc-7b9bad51632b"
+        "Label": "Porn"
     }
 }
 ```

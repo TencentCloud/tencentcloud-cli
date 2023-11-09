@@ -4912,6 +4912,7 @@
           "example": "无",
           "member": "Spec",
           "name": "Specs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

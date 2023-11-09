@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBoundFlows": {
-      "document": "此接口（ChannelCreateBoundFlows）用于子客领取合同，经办人需要有相应的角色，合同不能重复领取。",
+      "document": "此接口（ChannelCreateBoundFlows）用于子客企业领取未归属给员工的合同，将合同领取给当前员工，合同不能重复领取。\n\n\n**未归属合同发起方式**\n 指定对应企业的OrganizationOpenId和OrganizationName而不指定具体的参与人(OpenId/名字/手机号等),  则合同进入待领取状态, 示例代码如下\n```\n\t\tFlowApprovers: []*essbasic.FlowApproverInfo{\n\t\t\t{\n\t\t\t\tApproverType:       common.StringPtr(\"ORGANIZATION\"),\n\t\t\t\tOrganizationOpenId: common.StringPtr(\"org_dianziqian\"),\n\t\t\t\tOrganizationName:   common.StringPtr(\"典子谦示例企业\"),\n\t\t\t}\n\t\t},\n```\n\n可以<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录控制台查看带领取的合同\n![image](https://qcloudimg.tencent-cloud.cn/raw/a34d0cc56ec871613e94dfc6252bc072.png)\n\n注: `支持批量领取,  如果有一个合同流程无法领取会导致接口报错,  使得所有合同都领取失败`",
       "input": "ChannelCreateBoundFlowsRequest",
       "name": "领取未归属的合同",
       "output": "ChannelCreateBoundFlowsResponse",
@@ -99,7 +99,7 @@
       "status": "online"
     },
     "ChannelCreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办\n1. 合同中当前状态为 **待签署** 的签署人是催办的对象\n2. **每个合同只能催办一次**\n\n**催办的效果**: 对方会受到如下的短信通知\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办\n1. 合同中当前状态为 **待签署** 的签署人是催办的对象\n2. **每个合同只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n\n**注**：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "ChannelCreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "ChannelCreateFlowRemindsResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "ChannelCreateMultiFlowSignQRCode": {
-      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。 \n适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。\n常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**本接口适用于发起方没有填写控件的 B2C或者单C模板**\n\n**若是B2C模板,还要满足以下任意一个条件**\n\n- 模板中配置的签署顺序是无序\n- B端企业的签署方式是静默签署\n- B端企业是非首位签署\n\n通过一码多扫二维码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/partner/callback_types_contracts_sign)\n\n用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)",
+      "document": "此接口（ChannelCreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。 \n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多扫二维码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/partner/callback_types_contracts_sign)\n3. 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/partner/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n二维码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "ChannelCreateMultiFlowSignQRCodeRequest",
       "name": "创建一码多扫签署流程二维码",
       "output": "ChannelCreateMultiFlowSignQRCodeResponse",
@@ -224,6 +224,13 @@
       "output": "ChannelDeleteSealPoliciesResponse",
       "status": "online"
     },
+    "ChannelDescribeBillUsageDetail": {
+      "document": "通过此接口（ChannelDescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。",
+      "input": "ChannelDescribeBillUsageDetailRequest",
+      "name": "查询渠道计费消耗情况",
+      "output": "ChannelDescribeBillUsageDetailResponse",
+      "status": "online"
+    },
     "ChannelDescribeEmployees": {
       "document": "获取企业员工信息, 可以获取员工的名字,OpenId,UserId和简述的角色等信息，支持设置过滤条件以筛选员工查询结果。\n\n**注**:通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/SyncProxyOrganizationOperators\" target=\"_blank\">企业员工新增或离职</a>接口增加的新员工或者离职的员工也会在列表中。",
       "input": "ChannelDescribeEmployeesRequest",
@@ -232,9 +239,9 @@
       "status": "online"
     },
     "ChannelDescribeFlowComponents": {
-      "document": "查询流程填写控件内容，可以根据流程Id查询该流程相关联的填写控件信息和填写内容。 注意：使用此接口前，需要在【企业应用管理】-【应用集成】-【第三方应用管理】中开通【下载应用内全量合同文件及内容数据】功能。",
+      "document": "用于获取合同中填写控件填写状态和填写的内容。 \n\n**注意**: `附件控件不会出现在结果列表中`\n\n\n**授权**:   \n此接口需要授权,  有两种开通权限的途径\n\n**第一种**:   需第三方应用的子企业登录控制台进行授权,  授权在**企业中心**的**授权管理**区域,  界面如下图\n授权过程需要**子企业超管**扫描跳转到电子签小程序签署<<渠道端下载渠道子客合同功能授权委托书>>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/8b483dfebdeafac85051279406944048.png)\n\n**第二种**: 第三方应用的配置接口打开全第三个应用下的所有自己起开通, 需要**渠道方企业的超管**扫描二维码跳转到电子签小程序签署 <<渠道端下载渠道子客合同功能开通知情同意书>>\n![image](https://qcloudimg.tencent-cloud.cn/raw/238979ef51dd381ccbdbc755a593debc/channel_DescribeResourceUrlsByFlows_appilications2.png)",
       "input": "ChannelDescribeFlowComponentsRequest",
-      "name": "查询流程填写控件内容",
+      "name": "获取合同填写控件内容",
       "output": "ChannelDescribeFlowComponentsResponse",
       "status": "online"
     },
@@ -339,7 +346,7 @@
     "DescribeBillUsageDetail": {
       "document": "通过此接口（DescribeBillUsageDetail）查询该第三方平台子客企业的套餐消耗详情。",
       "input": "DescribeBillUsageDetailRequest",
-      "name": "查询计费消耗情况",
+      "name": "[废弃]查询计费消耗情况",
       "output": "DescribeBillUsageDetailResponse",
       "status": "online"
     },
@@ -372,21 +379,21 @@
       "status": "online"
     },
     "DescribeTemplates": {
-      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n**适用场景**\n 该接口常用来配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates\" target=\"_blank\">用模板创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates\" target=\"_blank\">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 \n通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。\n\n**模版的来源**\n子客企业的模板有两种途径获取\n- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业\n- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)\n\n\n**注意**\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
+      "document": "通过此接口（DescribeTemplates）查询该第三方平台子客企业在电子签拥有的有效模板，不包括第三方平台模板。\n\n**适用场景**\n 该接口常用来配合<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/CreateFlowsByTemplates\" target=\"_blank\">用模板创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/partnerApis/startFlows/ChannelCreateFlowGroupByTemplates\" target=\"_blank\">通过多模板创建合同组签署流程</a>接口，作为创建合同的前置接口使用。 \n通过此接口查询到模板信息后，再通过调用创建合同的接口，指定模板ID，指定模板中需要的填写控件内容等，完成合同文档的的创建。\n\n**模版的来源**\n子客企业的模板有两种途径获取\n- 渠道方(平台方)配置完成后, 分发给同应用的各个子企业\n- 子客企业通过CreateConsoleLoginUrl创建的链接登录子客控制台自己创建\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_DescribeTemplates.png)\n\n模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)\n\n\n**注意**\n\n>1. 查询条件TemplateId、TemplateName与ChannelTemplateId可同时存在，即可查询同时满足这些条件的模板。\n>2. TemplateId 和TemplateIds互为独立，若两个参数都传入，则以TemplateId为准",
       "input": "DescribeTemplatesRequest",
       "name": "查询模板信息列表",
       "output": "DescribeTemplatesResponse",
       "status": "online"
     },
     "DescribeUsage": {
-      "document": "此接口（DescribeUsage）用于获取第三方平台所有合作企业流量消耗情况。\n 注: 此接口每日限频50次，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
+      "document": "此接口（DescribeUsage）用于获取此应用下子客企业的合同消耗数量。\n\n注: 此接口**每日限频50次**，若要扩大限制次数,请提前与客服经理或邮件至e-contract@tencent.com进行联系。",
       "input": "DescribeUsageRequest",
-      "name": "合同用量查询",
+      "name": "合同消耗数量查询",
       "output": "DescribeUsageResponse",
       "status": "online"
     },
     "GetDownloadFlowUrl": {
-      "document": "此接口（GetDownloadFlowUrl）用户获取合同控制台下载页面链接,  点击链接后会跳转至本企业合同管理控制台(会筛选出传入的合同列表), 点击**下载**按钮后就会下载传入的合同列表, 下载页面如下图\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_GetDownloadFlowUrl.png)\n\n注:\n<ul>\n<li>仅支持下载 **本企业** 下合同，链接会 **登录企业控制台** </li>\n<li> **链接仅可使用一次**，不可重复使用</li>\n</ul>",
+      "document": "此接口（GetDownloadFlowUrl）用户获取合同控制台下载页面链接,  点击链接后会跳转至本企业合同管理控制台(会筛选出传入的合同列表), 点击**下载**按钮后就会下载传入的合同列表, 下载页面如下图\n![image](https://dyn.ess.tencent.cn/guide/capi/channel_GetDownloadFlowUrl.png)\n\n注:\n<ul>\n<li>仅支持下载 <b>本企业</b> 下合同，链接会 <b>登录企业控制台</b> </li>\n<li> <b>链接仅可使用一次</b>，不可重复使用</li>\n</ul>",
       "input": "GetDownloadFlowUrlRequest",
       "name": "获取控制台下载合同页面跳转链接",
       "output": "GetDownloadFlowUrlResponse",
@@ -1101,6 +1108,122 @@
       ],
       "type": "object"
     },
+    "ChannelBillUsageDetail": {
+      "document": "用户计费使用情况详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "合同流程ID，为32位字符串。",
+          "example": "yDwFdUUckps******uzcbXwoXbRF6ja3",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同经办人名称\n如果有多个经办人用分号隔开。",
+          "example": "典子谦;张三",
+          "member": "string",
+          "name": "OperatorName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发起方组织机构名称",
+          "example": "典子谦示例企业",
+          "member": "string",
+          "name": "CreateOrganizationName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同流程的名称。",
+          "example": "典子谦示例合同",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同流程当前的签署状态, 会存在下列的状态值\n<ul>\n<li>**INIT**: 合同创建</li>\n<li>**PART**: 合同签署中(至少有一个签署方已经签署)</li>\n<li>**REJECT**: 合同拒签</li>\n<li>**ALL**: 合同签署完成</li>\n<li>**DEADLINE**: 合同流签(合同过期)</li>\n<li>**CANCEL**: 合同撤回</li>\n<li>**RELIEVED**: 解除协议（已解除）</li>\n<li>**WILLEXPIRE**: 合同即将过期</li>\n<li>**EXCEPTION**: 合同异常</li>\n</ul>",
+          "example": "ALL",
+          "member": "string",
+          "name": "FlowStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询的套餐类型\n对应关系如下:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
+          "example": "CloudEnterprise",
+          "member": "string",
+          "name": "QuotaType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合同使用量\n注: `如果消耗类型是撤销返还，此值为负值代表返还的合同数量`",
+          "example": "1",
+          "member": "int64",
+          "name": "UseCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的时间戳，格式为Unix标准时间戳（秒）。",
+          "example": "1680162193",
+          "member": "int64",
+          "name": "CostTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗的套餐名称",
+          "example": "企业版运营礼包",
+          "member": "string",
+          "name": "QuotaName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗类型\n**1**.扣费 \n**2**.撤销返还",
+          "example": "1",
+          "member": "int64",
+          "name": "CostType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ChannelCancelFlowRequest": {
       "document": "ChannelCancelFlow请求参数结构体",
       "members": [
@@ -1169,7 +1292,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1178,7 +1301,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码ID，为32位字符串。",
+          "document": "需要取消签署的二维码ID，为32位字符串。由[创建一码多扫流程签署二维码](https://qian.tencent.com/developers/partnerApis/templates/ChannelCreateMultiFlowSignQRCode)返回",
           "example": "无",
           "member": "string",
           "name": "QrCodeId",
@@ -1563,7 +1686,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用信息\n此接口Agent.AppId、Agent.ProxyOrganizationOpenId 和 Agent. ProxyOperator.OpenId 必填",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证,  合同会领取给对应的Agent.ProxyOperator.OpenId指定的员工来处理",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -1572,7 +1695,7 @@
         },
         {
           "disabled": false,
-          "document": "领取的合同id列表",
+          "document": "需要领取的合同流程的ID列表",
           "example": "无",
           "member": "string",
           "name": "FlowIds",
@@ -2412,7 +2535,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业标识: Agent. ProxyOperator.OpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent.AppId</li>\n</ul>",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -2421,7 +2544,7 @@
         },
         {
           "disabled": false,
-          "document": "合同模板ID，为32位字符串。\n建议开发者保存此模板ID，后续用此模板发起合同流程需要此参数。",
+          "document": "合同模板ID，为32位字符串。",
           "example": "yDRS4UxxxuO4zjEC0osCOsHS",
           "member": "string",
           "name": "TemplateId",
@@ -3728,6 +3851,98 @@
       ],
       "type": "object"
     },
+    "ChannelDescribeBillUsageDetailRequest": {
+      "document": "ChannelDescribeBillUsageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
+          "example": "20231101",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间字符串，格式为yyyymmdd,时间跨度不能大于31天",
+          "example": "20231108",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询的套餐类型 （选填 ）不传则查询所有套餐；\n目前支持:\n<ul>\n<li>**CloudEnterprise**: 企业版合同</li>\n<li>**SingleSignature**: 单方签章</li>\n<li>**CloudProve**: 签署报告</li>\n<li>**CloudOnlineSign**: 腾讯会议在线签约</li>\n<li>**ChannelWeCard**: 微工卡</li>\n<li>**SignFlow**: 合同套餐</li>\n<li>**SignFace**: 签署意愿（人脸识别）</li>\n<li>**SignPassword**: 签署意愿（密码）</li>\n<li>**SignSMS**: 签署意愿（短信）</li>\n<li>**PersonalEssAuth**: 签署人实名（腾讯电子签认证）</li>\n<li>**PersonalThirdAuth**: 签署人实名（信任第三方认证）</li>\n<li>**OrgEssAuth**: 签署企业实名</li>\n<li>**FlowNotify**: 短信通知</li>\n<li>**AuthService**: 企业工商信息查询</li>\n</ul>",
+          "example": "CloudEnterprise",
+          "member": "string",
+          "name": "QuotaType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页，页码从 0 开始，即首页为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，如果不传默认为 50，单页最大支持 50。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ChannelDescribeBillUsageDetailResponse": {
+      "document": "ChannelDescribeBillUsageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回查询记录总数",
+          "example": "100",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消耗记录详情",
+          "example": "无",
+          "member": "ChannelBillUsageDetail",
+          "name": "Details",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ChannelDescribeEmployeesRequest": {
       "document": "ChannelDescribeEmployees请求参数结构体",
       "members": [
@@ -3836,7 +4051,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3845,7 +4060,7 @@
         },
         {
           "disabled": false,
-          "document": "电子签流程的Id",
+          "document": "需要获取填写控件填写内容的合同流程ID",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -3860,13 +4075,13 @@
       "members": [
         {
           "disabled": false,
-          "document": "流程关联的填写控件信息，控件会按照参与方进行分类。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "合同填写控件信息列表，填写控件会按照参与方角色进行分类。",
           "example": "无",
           "member": "RecipientComponentInfo",
           "name": "RecipientComponentInfos",
           "output_required": true,
           "type": "list",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6406,7 +6621,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用信息，此接口Agent.AppId必填",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n</ul>",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6415,8 +6630,8 @@
         },
         {
           "disabled": false,
-          "document": "开始时间，例如：2021-03-21",
-          "example": "无",
+          "document": "查询日期范围的开始时间, 查询会包含此日期的数据 , 格式为yyyy-mm-dd (例如：2021-03-21)\n\n注: `查询日期范围区间长度大于90天`。",
+          "example": "2021-03-21",
           "member": "date",
           "name": "StartDate",
           "required": true,
@@ -6424,8 +6639,8 @@
         },
         {
           "disabled": false,
-          "document": "结束时间，例如：2021-06-21；\n开始时间到结束时间的区间长度小于等于90天。",
-          "example": "无",
+          "document": "查询日期范围的结束时间, 查询会包含此日期的数据 , 格式为yyyy-mm-dd (例如：2021-04-21)\n\n注: `查询日期范围区间长度大于90天`。",
+          "example": "2021-04-22",
           "member": "date",
           "name": "EndDate",
           "required": true,
@@ -6433,8 +6648,8 @@
         },
         {
           "disabled": false,
-          "document": "是否汇总数据，默认不汇总。\n不汇总：返回在统计区间内第三方平台下所有企业的每日明细，即每个企业N条数据，N为统计天数；\n汇总：返回在统计区间内第三方平台下所有企业的汇总后数据，即每个企业一条数据；",
-          "example": "无",
+          "document": "是否汇总数据，默认不汇总。\n<ul><li> **true** :  汇总数据,  即每个企业一条数据, 对日志范围内的数据相加</li>\n<li> **false** :  不会总数据,  返回企业每日明细,   按日期返回每个企业的数据(如果企业对应天数没有操作则无此企业此日期的数据)</li></ul>\n",
+          "example": "true",
           "member": "bool",
           "name": "NeedAggregate",
           "required": false,
@@ -6442,7 +6657,7 @@
         },
         {
           "disabled": false,
-          "document": "单次返回的最多条目数量。默认为1000，且不能超过1000。",
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。\n\n注: `默认值为1000，单页做大值为1000`",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -6451,7 +6666,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认是0。",
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。\n\n注：`offset从0开始，即第一页为0。`",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -6710,53 +6925,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "控件Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "填写控件ID",
+          "example": "Component_1",
           "member": "string",
           "name": "ComponentId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "控件名称",
+          "example": "商品价格",
           "member": "string",
           "name": "ComponentName",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件填写状态；0-未填写；1-已填写\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "此填写控件的填写状态\n **0** : 此填写控件**未填写**\n**1** : 此填写控件**已填写**",
+          "example": "1",
           "member": "string",
           "name": "ComponentFillStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "控件填写内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "控件填写内容",
+          "example": "100",
           "member": "string",
           "name": "ComponentValue",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "图片填充控件下载链接，如果是图片填充控件时，这里返回图片的下载链接。\n\n注: `链接不是永久链接,  默认有效期5分钟后, 到期后链接失效`",
+          "example": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=ffe60eceb87e57f6d25",
           "member": "string",
           "name": "ImageUrl",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -8668,28 +8883,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "参与方Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "参与方的角色ID",
+          "example": "yDRS4UUgygqdcj51UuO4zjEyWTmzsIAR",
           "member": "string",
           "name": "RecipientId",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "参与方填写状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "参与方填写状态\n\n<ul><li> **0** : 还没有填写</li>\n<li> **1** : 已经填写</li></ul>",
+          "example": "1",
           "member": "string",
           "name": "RecipientFillStatus",
           "output_required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否发起方\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "此角色是否是发起方角色\n\n<ul><li> **true** : 是发起方角色</li>\n<li> **false** : 不是发起方角色</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
           "member": "bool",
           "name": "IsPromoter",
           "output_required": false,
@@ -8698,7 +8913,7 @@
         },
         {
           "disabled": false,
-          "document": "填写控件内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "此角色的填写控件列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "FilledComponent",
           "name": "Components",
@@ -8947,8 +9162,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "二维码ID，为32位字符串。\t",
-          "example": "yDRS*********Swc\t",
+          "document": "二维码ID，为32位字符串。\t\n\n注: 需要保留此二维码ID, 用于后序通过<a href=\"https://qian.tencent.com/developers/partnerApis/templates/ChannelCancelMultiFlowSignQRCode\" target=\"_blank\">取消一码多扫二维码</a>关闭这个二维码的签署功能。\t",
+          "example": "PDSLZUUckpooi1ltUxCsD3RSTG9BEWhR",
           "member": "string",
           "name": "QrCodeId",
           "output_required": true,
@@ -8958,7 +9173,7 @@
         {
           "disabled": false,
           "document": "二维码URL，可通过转换二维码的工具或代码组件将此URL转化为二维码，以便用户扫描进行流程签署。\t",
-          "example": "https://xxxx\t",
+          "example": "https://dyn.test.ess.tencent.cn/imgs/multiSignQrCodes/QrCode/yDSLZUUckpoourf9UE6T6Qd1aK59.png",
           "member": "string",
           "name": "QrCodeUrl",
           "output_required": true,
@@ -8967,7 +9182,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码的有截止时间，格式为Unix标准时间戳（秒）。 一旦超过二维码的有效期限，该二维码将自动失效。\t",
+          "document": "二维码的有截止时间，格式为Unix标准时间戳（秒），可以通过入参的QrEffectiveDay来设置有效期，默认为7天有效期。 \n一旦超过二维码的有效期限，该二维码将自动失效。\t",
           "example": "1693814798",
           "member": "int64",
           "name": "ExpiredTime",
@@ -9818,11 +10033,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客企业唯一标识",
+          "document": "子客企业标识",
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationOpenId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9832,37 +10047,37 @@
           "example": "无",
           "member": "string",
           "name": "ProxyOrganizationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "日期，当需要汇总数据时日期为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "对应的消耗日期, **如果是汇总数据则为1970-01-01**\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-08-31",
           "member": "date",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "消耗数量",
+          "document": "消耗合同数量",
           "example": "50",
           "member": "uint64",
           "name": "Usage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "撤回数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "撤回合同数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "uint64",
           "name": "Cancel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9872,7 +10087,7 @@
           "example": "企业版",
           "member": "string",
           "name": "FlowChannel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

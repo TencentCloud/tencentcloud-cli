@@ -26,11 +26,13 @@ Output:
                 "Labels": [
                     {
                         "Label": "Porn",
+                        "SubLabel": "",
                         "Suggestion": "Block",
                         "Score": 99
                     },
                     {
                         "Label": "Hot",
+                        "SubLabel": "",
                         "Suggestion": "Block",
                         "Score": 70
                     }
@@ -39,7 +41,8 @@ Output:
                     "Codecs": "h264 aac",
                     "Duration": 36,
                     "Width": 352,
-                    "Height": 640
+                    "Height": 640,
+                    "Thumbnail": "http://xxx.jpg"
                 },
                 "InputInfo": {
                     "Type": "URL",
