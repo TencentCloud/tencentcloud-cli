@@ -63,6 +63,13 @@
       "output": "DescribeConsumerGroupResponse",
       "status": "online"
     },
+    "DescribeConsumerGroupList": {
+      "document": "获取消费组列表，Filter参数使用说明如下：\n\n1. ConsumerGroupName，名称模糊查询\n2. ConsumeMessageOrderly，投递顺序性。\"true\":顺序投递；\"false\":并发投递",
+      "input": "DescribeConsumerGroupListRequest",
+      "name": "查询消费组列表",
+      "output": "DescribeConsumerGroupListResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "查询实例信息",
       "input": "DescribeInstanceRequest",
@@ -141,6 +148,72 @@
     "serviceShortName": "trocket"
   },
   "objects": {
+    "ConsumeGroupItem": {
+      "document": "消费组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "无",
+          "member": "string",
+          "name": "ConsumerGroup",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启消费",
+          "example": "无",
+          "member": "bool",
+          "name": "ConsumeEnable",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "顺序投递：true\n并发投递：false",
+          "example": "无",
+          "member": "bool",
+          "name": "ConsumeMessageOrderly",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大重试次数",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxRetryTimes",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备注",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateConsumerGroupRequest": {
       "document": "CreateConsumerGroup请求参数结构体",
       "members": [
@@ -627,6 +700,87 @@
     "DeleteTopicResponse": {
       "document": "DeleteTopic返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupListRequest": {
+      "document": "DescribeConsumerGroupList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "rocketmq-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果限制数量",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询条件列表",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询指定主题下的消费组",
+          "example": "无",
+          "member": "string",
+          "name": "FromTopic",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupListResponse": {
+      "document": "DescribeConsumerGroupList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组列表",
+          "example": "无",
+          "member": "ConsumeGroupItem",
+          "name": "Data",
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

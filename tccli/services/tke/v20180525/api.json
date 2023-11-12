@@ -8929,6 +8929,7 @@
           "example": "Created",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8938,6 +8939,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ErrorMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "RunInstances": [
+      {
+        "document": "创建hai实例",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-jknfna\",\n    \"BundleType\": \"S\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIdSet\": [\n            \"hai-qcgdfaptd\"\n        ],\n        \"RequestId\": \"e267492d-fadaf-45a9-a139-416bc8652861\"\n    }\n}",
+        "title": "创建实例"
+      }
+    ]
+  },
+  "version": "1.0"
+}

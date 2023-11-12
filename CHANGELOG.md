@@ -1,3 +1,84 @@
+# Release 3.0.883.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 18 次发布
+
+发布时间：2023-11-13 01:20:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetViewPortRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewPortRisk)
+
+	* <font color="#dd0000">**修改成员**：</font>Port, AffectAsset, Level, InstanceType, Protocol, Component, Service, RecentTime, FirstTime, Suggestion, Status, Id, Index, InstanceId, InstanceName, AppId, Nick, Uin, From
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 81 次发布
+
+发布时间：2023-11-13 01:29:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDataEngineEvents](http://document.tencentcloudapi.woa.com/document/product/1342/82582)
+
+新增数据结构：
+
+* [HouseEventsInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#HouseEventsInfo)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 104 次发布
+
+发布时间：2023-11-13 01:37:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DescribeBillUsageDetail
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 RocketMQ 版(trocket) 版本：2023-03-08
+
+### 第 5 次发布
+
+发布时间：2023-11-13 02:15:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeConsumerGroupList](http://document.tencentcloudapi.woa.com/document/product/1739/82583)
+
+新增数据结构：
+
+* [ConsumeGroupItem](http://document.tencentcloudapi.woa.com/document/product/1739/81437#ConsumeGroupItem)
+
+
+
 # Release 3.0.882.1
 
 ## 弹性伸缩(as) 版本：2018-04-19

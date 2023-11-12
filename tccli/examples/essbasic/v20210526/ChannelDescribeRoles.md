@@ -12,7 +12,7 @@ tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
     --Filters.0.Key  \
     --Filters.0.Values  \
     --Offset 1 \
-    --Limit abc
+    --Limit 10
 ```
 
 Output: 
@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "Offset": 1,
-        "Limit": 1,
+        "Limit": 10,
         "TotalCount": 1,
         "ChannelRoles": [
             {
@@ -48,7 +48,7 @@ tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
     --Filters.0.Key IsReturnPermissionGroup \
     --Filters.0.Values 1 \
     --Offset 1 \
-    --Limit abc
+    --Limit 10
 ```
 
 Output: 
@@ -56,7 +56,7 @@ Output:
 {
     "Response": {
         "Offset": 1,
-        "Limit": 1,
+        "Limit": 10,
         "TotalCount": 1,
         "ChannelRoles": [
             {
