@@ -1,0 +1,139 @@
+{
+  "actions": {
+    "RunInstances": {
+      "document": "本接口 (RunInstances) 用于创建一个或多个指定配置的实例。",
+      "input": "RunInstancesRequest",
+      "name": "创建实例",
+      "output": "RunInstancesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-08-12",
+    "api_brief": "介绍如何使用API对高性能应用服务进行相关操作，包括创建、销毁、硬盘扩容等",
+    "serviceNameCN": "高性能应用服务",
+    "serviceShortName": "hai"
+  },
+  "objects": {
+    "RunInstancesRequest": {
+      "document": "RunInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用ID",
+          "example": "app-jknfna",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "算力套餐类型",
+          "example": "S",
+          "member": "string",
+          "name": "BundleType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
+          "example": "{\"DiskType\":\"CLOUD_PREMIUM\",\"DiskSize\":250}",
+          "member": "SystemDisk",
+          "name": "SystemDisk",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "购买实例数量。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InstanceCount",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例显示名称",
+          "example": "test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "幂等请求的token",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DryRun为True就是只验接口连通性，默认为False",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RunInstancesResponse": {
+      "document": "RunInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "['hai-df99mzt1']",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SystemDisk": {
+      "document": "描述了操作系统所在块设备即系统盘的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "系统盘类型。系统盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_BSSD：通用性SSD云硬盘<br><br>默认取值：当前有库存的硬盘类型。\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CLOUD_PREMIUM",
+          "member": "string",
+          "name": "DiskType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统盘大小，单位：GB。默认值为 80\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "250",
+          "member": "int64",
+          "name": "DiskSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

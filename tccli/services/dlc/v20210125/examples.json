@@ -408,6 +408,14 @@
         "title": "test"
       }
     ],
+    "DescribeDataEngineEvents": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataEngineEvents\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"DataEngineName\": \"xx\",\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Events\": [\n            {\n                \"Time\": \"2021-12-15 19:43:08\",\n                \"EventsAction\": \"集群扩容\",\n                \"ClusterInfo\": \"扩容前：集群个数0个，集群规模16CU，扩容后:集群个数1个，集群规模16CU\"\n            }\n        ],\n        \"Page\": 1,\n        \"TotalCount\": 1,\n        \"RequestId\": \"4eeb6764-d552-4d9b-89ac-62034195e936\",\n        \"Size\": 10,\n        \"TotalPages\": 1\n    }\n}",
+        "title": "test"
+      }
+    ],
     "DescribeDataEngineImageVersions": [
       {
         "document": "本接口用于获取独享集群大版本镜像列表",

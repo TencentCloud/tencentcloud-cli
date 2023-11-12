@@ -357,6 +357,13 @@
       "output": "DescribeDataEngineResponse",
       "status": "online"
     },
+    "DescribeDataEngineEvents": {
+      "document": "查询数据引擎事件",
+      "input": "DescribeDataEngineEventsRequest",
+      "name": "查询扩缩容日志",
+      "output": "DescribeDataEngineEventsResponse",
+      "status": "online"
+    },
     "DescribeDataEngineImageVersions": {
       "document": "本接口（DescribeDataEngineImageVersions）用于获取独享集群大版本镜像列表。",
       "input": "DescribeDataEngineImageVersionsRequest",
@@ -7111,6 +7118,101 @@
       ],
       "type": "object"
     },
+    "DescribeDataEngineEventsRequest": {
+      "document": "DescribeDataEngineEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "虚拟集群名称",
+          "example": "test",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大为100",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0",
+          "example": "10",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDataEngineEventsResponse": {
+      "document": "DescribeDataEngineEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "HouseEventsInfo",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分页大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Size",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalPages",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeDataEngineImageVersionsRequest": {
       "document": "DescribeDataEngineImageVersions请求参数结构体",
       "members": [
@@ -10458,6 +10560,42 @@
         }
       ],
       "usage": "both"
+    },
+    "HouseEventsInfo": {
+      "document": "集群事件日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "EventsAction",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterInfo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "IpPortPair": {
       "document": "ip端口对信息",

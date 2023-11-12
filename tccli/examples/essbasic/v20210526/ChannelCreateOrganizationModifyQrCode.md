@@ -6,7 +6,10 @@ Input:
 
 ```
 tccli essbasic ChannelCreateOrganizationModifyQrCode --cli-unfold-argument  \
-    --Agent.AppId yDwFYUU*****UekPZF8PM7tLlo6p
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId 
 ```
 
 Output: 
@@ -14,8 +17,8 @@ Output:
 {
     "Response": {
         "ExpiredTime": 1684401637,
-        "QrCodeUrl": "abc",
-        "RequestId": "abc"
+        "QrCodeUrl": "https://dyn.ess.tencent.cn/imgs/channelQrCodes/QrCode/yDw7aUUggsxcdcdnkncdkFtHhG1fJeu.png",
+        "RequestId": "s1696921563375938822"
     }
 }
 ```
