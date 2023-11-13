@@ -13755,8 +13755,8 @@
         },
         {
           "disabled": false,
-          "document": "日志类型：errorLog/slowLog",
-          "example": "errorLog",
+          "document": "日志类型：error/slowLog",
+          "example": "error",
           "member": "string",
           "name": "LogType",
           "required": true,

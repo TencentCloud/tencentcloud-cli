@@ -115,8 +115,8 @@
     "DescribeApplicationList": [
       {
         "document": "获取应用列表",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ebee73c-8477-48c0-ad4d-8a748b7842a3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplicationList\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"PageNumber\": 1,\n    \"PageSize\": 3,\n    \"ApplicationToken\": \"XggJvayJyusfUwuoJ2OlT4Z2YAVq6bVo\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2ebee73c-8477-48c0-ad4d-8a748b7842a3\",\n        \"Result\": {\n            \"ApplicationInfoList\": [\n                {\n                    \"Address\": \"http://checkproject-a6f6718d.dtwin.tencent.com/testcodingpush\",\n                    \"ApplicationId\": \"10041\",\n                    \"ApplicationLogo\": {\n                        \"FileId\": \"359cc1b5-88c1-4dd6-8ff4-21d0b36ac7e2\",\n                        \"Url\": \"https://wetwin-manager-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100055/0/20230717/359cc1b5-88c1-4dd6-8ff4-21d0b36ac7e2/%E8%B5%84%E4%BA%A7%E7%AE%A1%E7%90%86-%E9%BB%91.png?q-sign-algorithm=sha1&q-ak=AKIDiFWWFo67rLZXFgrlNinb8NL2SaR2M0OU&q-sign-time=1693452005%3B1693453205&q-key-time=1693452005%3B1693453205&q-header-list=host&q-url-param-list=&q-signature=6bf531d1b08d6f75eb7e153c24746a61d7be37d0\"\n                    },\n                    \"Description\": \"12345611111\",\n                    \"EnglishName\": \"zctest1111\",\n                    \"Name\": \"智能资产管理\",\n                    \"Type\": 0\n                },\n                {\n                    \"Address\": \"http://t-ws.twins.tencent.com/proxy/29098b25-447d-437e-987a-d493d55e84f5/weiling-pubsub/test\",\n                    \"ApplicationId\": \"10048\",\n                    \"ApplicationLogo\": {\n                        \"FileId\": \"\",\n                        \"Url\": \"\"\n                    },\n                    \"Description\": \"\",\n                    \"EnglishName\": \"MsgCenter\",\n                    \"Name\": \"消息服务\",\n                    \"Type\": 0\n                },\n                {\n                    \"Address\": \"http://t.twins.tencent.com/\",\n                    \"ApplicationId\": \"10051\",\n                    \"ApplicationLogo\": {\n                        \"FileId\": \"\",\n                        \"Url\": \"\"\n                    },\n                    \"Description\": \"\",\n                    \"EnglishName\": \"IOT\",\n                    \"Name\": \"孪生中台(物联感知中心)\",\n                    \"Type\": 0\n                }\n            ],\n            \"TotalCount\": \"171\"\n        }\n    }\n}",
         "title": "应用列表"
       }
     ],
@@ -189,8 +189,8 @@
     "DescribeDeviceShadowList": [
       {
         "document": "正常响应",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceShadowList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16528537-3858-42bd-973a-ae8c80bdeee3\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDeviceShadowList\n<公共请求参数>\n\n{\n    \"WorkspaceId\": 1016,\n    \"WIDSet\": [\n        \"026d1dd8-a6d7-4fb7-9a94-0df07edaaff8\"\n    ],\n    \"PageNumber\": 1,\n    \"PageSize\": 20,\n    \"ApplicationToken\": \"YzenL5LdGoxQM5gqJfCCoMDeGqUSsY78\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"16528537-3858-42bd-973a-ae8c80bdeee3\",\n        \"Result\": {\n            \"PageNumber\": 1,\n            \"PageSize\": 20,\n            \"Set\": [\n                {\n                    \"DeviceShadow\": \"x-json:{\\\"desired\\\":{},\\\"reported\\\":{\\\"events\\\":{},\\\"profile\\\":{\\\"modelId\\\":\\\"w0745001\\\"},\\\"properties\\\":{\\\"Ept\\\":96,\\\"IA\\\":32,\\\"IB\\\":42},\\\"reportTs\\\":1693370542126}}\",\n                    \"DeviceShadowUpdateTime\": \"2023-08-30 12:42:22\",\n                    \"WID\": \"026d1dd8-a6d7-4fb7-9a94-0df07edaaff8\"\n                }\n            ],\n            \"TotalPage\": 1,\n            \"TotalRow\": 1\n        }\n    }\n}",
         "title": "设备影子查询"
       }
     ],
@@ -491,7 +491,7 @@
     "DescribeVideoRecordStream": [
       {
         "document": "成功响应",
-        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoRecordStream\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: weilingwith.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVideoRecordStream\n<公共请求参数>\n\n{\n    \"WID\": \"c0e3f641-6ec6-444e-8ac9-3cfecc755cb0\",\n    \"Protocol\": \"hls\",\n    \"StartTime\": 1693466137,\n    \"EndTime\": 1693466144,\n    \"PlayBackRate\": 1,\n    \"WorkspaceId\": 1016,\n    \"ApplicationToken\": \"wA9bELuI4oulQCBK876UDBxe00dNcxQW\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2beb0875-c859-4fde-a46e-5dbdf1421f14\"\n    }\n}",
         "title": "历史流"
       }

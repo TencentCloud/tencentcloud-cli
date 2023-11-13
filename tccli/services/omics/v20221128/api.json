@@ -281,8 +281,7 @@
           "member": "string",
           "name": "Zone",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -291,8 +290,25 @@
           "member": "string",
           "name": "Type",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源配额。",
+          "example": "无",
+          "member": "ResourceQuota",
+          "name": "ResourceQuota",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "限制范围。",
+          "example": "无",
+          "member": "LimitRange",
+          "name": "LimitRange",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -326,6 +342,15 @@
           "name": "Description",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否为默认环境。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDefault",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -339,6 +364,7 @@
           "example": "无",
           "member": "string",
           "name": "EnvironmentId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -348,6 +374,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkflowUuid",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -902,8 +929,7 @@
           "member": "VPCOption",
           "name": "VPCOption",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
         },
         {
           "disabled": false,
@@ -912,8 +938,7 @@
           "member": "ClusterOption",
           "name": "ClusterOption",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
         },
         {
           "disabled": false,
@@ -922,8 +947,7 @@
           "member": "DatabaseOption",
           "name": "DatabaseOption",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
         },
         {
           "disabled": false,
@@ -932,8 +956,7 @@
           "member": "StorageOption",
           "name": "StorageOption",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
         },
         {
           "disabled": false,
@@ -942,8 +965,16 @@
           "member": "CVMOption",
           "name": "CVMOption",
           "required": true,
-          "type": "object",
-          "value_allowed_null": true
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "安全组配置。",
+          "example": "无",
+          "member": "SecurityGroupOption",
+          "name": "SecurityGroupOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "usage": "in"
@@ -1290,6 +1321,34 @@
       ],
       "type": "object"
     },
+    "LimitRange": {
+      "document": "资源限制范围。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大CPU设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MaxCPU",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大内存设置（单位：Mi，Gi，Ti，M，G，T）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MaxMemory",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "NFOption": {
       "document": "Nextflow选项。",
       "members": [
@@ -1425,6 +1484,45 @@
         }
       ],
       "usage": "out"
+    },
+    "ResourceQuota": {
+      "document": "资源配额。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CPU Limit设置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CPULimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存Limit设置（单位：Mi，Gi，Ti，M，G，T）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MemoryLimit",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pods数量设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Pods",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "RetryRunsRequest": {
       "document": "RetryRuns请求参数结构体",
@@ -2432,6 +2530,21 @@
       ],
       "type": "object"
     },
+    "SecurityGroupOption": {
+      "document": "安全组配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "安全组ID。",
+          "example": "无",
+          "member": "string",
+          "name": "SecurityGroupId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "StorageOption": {
       "document": "文件存储配置。",
       "members": [
@@ -2637,13 +2750,30 @@
       "members": [
         {
           "disabled": false,
+          "document": "私有网络ID（VPCId和VPCCIDRBlock必选其一。若使用VPCId，则使用现用私有网络；若使用VPCCIDRBlock，则创建新的私有网络）",
+          "example": "无",
+          "member": "string",
+          "name": "VPCId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "子网ID（SubnetId和SubnetZone&SubnetCIDRBlock必选其一。若使用SubnetId，则使用现用子网；若使用SubnetZone&SubnetCIDRBlock，则创建新的子网）",
+          "example": "无",
+          "member": "string",
+          "name": "SubnetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "子网可用区。",
           "example": "ap-guangzhou-6",
           "member": "string",
           "name": "SubnetZone",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2651,9 +2781,8 @@
           "example": "10.8.0.0/16",
           "member": "string",
           "name": "VPCCIDRBlock",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2661,9 +2790,8 @@
           "example": "10.8.16.0/20",
           "member": "string",
           "name": "SubnetCIDRBlock",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

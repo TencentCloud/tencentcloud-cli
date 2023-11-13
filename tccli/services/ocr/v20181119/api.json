@@ -6424,6 +6424,15 @@
           "name": "RetProfile",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "图片正反面\nFRONT：正面、BACK：反面，默认为FRONT",
+          "example": "FRONT",
+          "member": "string",
+          "name": "CardSide",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6437,6 +6446,7 @@
           "example": "李明",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6446,6 +6456,7 @@
           "example": "LIMING",
           "member": "string",
           "name": "EnglishName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6455,6 +6466,7 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6464,6 +6476,7 @@
           "example": "1981.08.03",
           "member": "string",
           "name": "Birthday",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6473,6 +6486,7 @@
           "example": "公安部出入境管理局",
           "member": "string",
           "name": "IssueAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6482,6 +6496,7 @@
           "example": "2018.10.09-2028.10.08",
           "member": "string",
           "name": "ValidDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6491,6 +6506,7 @@
           "example": "C00000000",
           "member": "string",
           "name": "Number",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6500,6 +6516,7 @@
           "example": "广东",
           "member": "string",
           "name": "IssueAddress",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6509,6 +6526,7 @@
           "example": "02",
           "member": "string",
           "name": "IssueNumber",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6518,6 +6536,7 @@
           "example": "台湾居民来往大陆通行证",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6527,7 +6546,18 @@
           "example": "无",
           "member": "string",
           "name": "Profile",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "背面字段信息",
+          "example": "无",
+          "member": "MainlandTravelPermitBackInfos",
+          "name": "MainlandTravelPermitBackInfos",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -6538,6 +6568,52 @@
         }
       ],
       "type": "object"
+    },
+    "MainlandTravelPermitBackInfos": {
+      "document": "港澳台来往内地通行证背面字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "String\t证件类别， 如：台湾居民来往大陆通行证、港澳居民来往内地通行证。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "卡证背面的中文姓名\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "卡证背面的身份证号码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IDNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "历史通行证号码\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HistoryNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MedicalInvoice": {
       "document": "医疗票据信息",

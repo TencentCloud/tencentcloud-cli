@@ -330,6 +330,14 @@
         "title": "查询集群Binlog日志列表"
       }
     ],
+    "DescribeClusterDatabases": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDatabases\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 3,\n        \"Limit\": 20,\n        \"Offset\": 1,\n        \"RequestId\": \"176466\",\n        \"Databases\": []\n    }\n}",
+        "title": "查询数据库列表"
+      }
+    ],
     "DescribeClusterDetail": [
       {
         "document": "集群信息描述",

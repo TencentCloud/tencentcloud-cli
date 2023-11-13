@@ -12025,7 +12025,7 @@
         },
         {
           "disabled": false,
-          "document": "命名空间，目前只支持QCE/TKE2",
+          "document": "命名空间，目前支持QCE/TKE2(Conditions必填),QCE/KEEWIDB,QCE/CAMP",
           "example": "QCE/TKE2",
           "member": "string",
           "name": "Namespace",
@@ -12043,7 +12043,7 @@
         },
         {
           "disabled": false,
-          "document": "维度条件，操作符支持=、in",
+          "document": "维度条件，操作符支持=、in\n配置文档参考：https://cloud.tencent.com/document/product/248/53821",
           "example": "无",
           "member": "MidQueryCondition",
           "name": "Conditions",
@@ -12098,6 +12098,7 @@
           "example": "300",
           "member": "uint64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12107,6 +12108,7 @@
           "example": "2020-11-24 15:15:00",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12116,6 +12118,7 @@
           "example": "2020-11-24 15:25:00",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12125,6 +12128,7 @@
           "example": "无",
           "member": "MetricData",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14137,7 +14141,7 @@
         {
           "disabled": false,
           "document": "指标触发条件",
-          "example": "无",
+          "example": "{     \"IsUnionRule\": 0,     \"Rules\": [       {         \"MetricName\": \"abc\",         \"AggregationDimensions\": [           \"abc\"         ],         \"Period\": 0,         \"AggregateType\": \"abc\",         \"Operator\": \"abc\",         \"Value\": \"abc\",         \"ContinuePeriod\": 0,         \"NoticeFrequency\": 0,         \"IsPowerNotice\": 0,         \"Filter\": {           \"Type\": \"abc\",           \"Expression\": \"abc\",           \"Dimensions\": \"abc\"         },         \"Description\": \"abc\",         \"Unit\": \"abc\",         \"RuleType\": \"abc\",         \"IsAdvanced\": 0,         \"IsOpen\": 0,         \"ProductId\": \"abc\",         \"ValueMax\": 0,         \"ValueMin\": 0,         \"HierarchicalValue\": {           \"Remind\": \"abc\",           \"Warn\": \"abc\",           \"Serious\": \"abc\"         }       }     ],     \"ComplexExpression\": \"abc\"   }",
           "member": "AlarmPolicyCondition",
           "name": "Condition",
           "required": false,
@@ -14146,7 +14150,7 @@
         {
           "disabled": false,
           "document": "事件触发条件",
-          "example": "无",
+          "example": "{         \"Rules\":[             {                 \"MetricName\":\"abc\",                 \"AggregationDimensions\":[                     \"abc\"                 ],                 \"Period\":0,                 \"AggregateType\":\"abc\",                 \"Operator\":\"abc\",                 \"Value\":\"abc\",                 \"ContinuePeriod\":0,                 \"NoticeFrequency\":0,                 \"IsPowerNotice\":0,                 \"Filter\":{                     \"Type\":\"abc\",                     \"Expression\":\"abc\",                     \"Dimensions\":\"abc\"                 },                 \"Description\":\"abc\",                 \"Unit\":\"abc\",                 \"RuleType\":\"abc\",                 \"IsAdvanced\":0,                 \"IsOpen\":0,                 \"ProductId\":\"abc\",                 \"ValueMax\":0,                 \"ValueMin\":0,                 \"HierarchicalValue\":{                     \"Remind\":\"abc\",                     \"Warn\":\"abc\",                     \"Serious\":\"abc\"                 }             }         ]     }",
           "member": "AlarmPolicyEventCondition",
           "name": "EventCondition",
           "required": false,
@@ -14155,7 +14159,7 @@
         {
           "disabled": false,
           "document": "全局过滤条件",
-          "example": "无",
+          "example": "{     \"Type\": \"abc\",     \"Expression\": \"abc\",     \"Dimensions\": \"abc\"   }",
           "member": "AlarmPolicyFilter",
           "name": "Filter",
           "required": false,
@@ -14164,7 +14168,7 @@
         {
           "disabled": false,
           "document": "聚合维度列表，指定按哪些维度 key 来做 group by",
-          "example": "无",
+          "example": "[     \"abc\"   ]",
           "member": "string",
           "name": "GroupBy",
           "required": false,
@@ -14173,7 +14177,7 @@
         {
           "disabled": false,
           "document": "日志告警创建请求参数信息",
-          "example": "无",
+          "example": "{     \"InstanceId\": \"abc\",     \"Filter\": [       {         \"Key\": \"abc\",         \"Operator\": \"abc\",         \"Value\": \"abc\"       }     ],     \"AlarmMerge\": \"abc\",     \"AlarmMergeTime\": \"abc\"   }",
           "member": "LogAlarmReq",
           "name": "LogAlarmReqInfo",
           "required": false,

@@ -2077,7 +2077,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要进行转换的资源文件类型\n支持的文件类型如下：\n<ul><li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li>\n<li>bmp</li>\n<li>txt</li></ul>",
+          "document": "需要进行转换的资源文件类型\n支持的文件类型如下：\n<ul><li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li>\n<li>html</li>\n<li>bmp</li>\n<li>txt</li></ul>",
           "example": "docx",
           "member": "string",
           "name": "ResourceType",

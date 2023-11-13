@@ -177,7 +177,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型 0:默认类型 1:轻量级复刻\n默认为0",
+          "document": "任务类型 0:轻量版复刻\n默认为0",
           "example": "无",
           "member": "int64",
           "name": "TaskType",

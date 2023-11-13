@@ -1428,6 +1428,13 @@
       "output": "DescribeTableLineageResponse",
       "status": "online"
     },
+    "DescribeTableMetas": {
+      "document": "获取表元数据list",
+      "input": "DescribeTableMetasRequest",
+      "name": "获取表元数据list",
+      "output": "DescribeTableMetasResponse",
+      "status": "online"
+    },
     "DescribeTableQualityDetails": {
       "document": "质量报告-查询表质量详情",
       "input": "DescribeTableQualityDetailsRequest",
@@ -21811,6 +21818,80 @@
       ],
       "type": "object"
     },
+    "DescribeTableMetasRequest": {
+      "document": "DescribeTableMetas请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤字段",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableMetasResponse": {
+      "document": "DescribeTableMetas返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表元数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableMeta",
+          "name": "TableMetas",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTableQualityDetailsRequest": {
       "document": "DescribeTableQualityDetails请求参数结构体",
       "members": [
@@ -40567,6 +40648,142 @@
       ],
       "usage": "in"
     },
+    "SearchColumnDocVO": {
+      "document": "表字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table1",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "表1",
+          "member": "string",
+          "name": "ChineseName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "int",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "Length",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型精度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Precision",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型scale\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Scale",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段的顺序\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Position",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPartition",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列上的索引类型 主键: PRI,唯一索引: UNI,一般索引: MUL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ColumnKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModifiedTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SearchCondition": {
       "document": "查询实例条件",
       "members": [
@@ -42525,6 +42742,52 @@
       ],
       "usage": "both"
     },
+    "TableHeat": {
+      "document": "过去七天（不算当天）表的热度值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "统计日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "datetime_iso",
+          "name": "DayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "222.0",
+          "member": "float",
+          "name": "Heat",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表热度最大值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000.0",
+          "member": "float",
+          "name": "MaxHeat",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "TableInfo": {
       "document": "元数据表详细信息",
       "members": [
@@ -42766,6 +43029,568 @@
         }
       ],
       "usage": "both"
+    },
+    "TableMeta": {
+      "document": "表的元数据信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表的全局唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12345",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "student",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "责任人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zh",
+          "member": "string",
+          "name": "TableOwnerName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源全局唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "DatasourceId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "string",
+          "name": "ClusterName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emr-xx.default",
+          "member": "string",
+          "name": "DatasourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Default",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "hdfs://xxx",
+          "member": "string",
+          "name": "TablePath",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "学生表",
+          "member": "string",
+          "name": "TableNameCn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "元数据租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "integer(int64)\t",
+          "member": "int64",
+          "name": "MetastoreId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "技术类型，可用值:HIVE,MYSQL,KAFKA, HBASE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE",
+          "member": "string",
+          "name": "MetastoreType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这是学生信息表",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列分隔符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ",",
+          "member": "string",
+          "name": "ColumnSeparator",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "text",
+          "member": "string",
+          "name": "StorageFormat",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储量，字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10241",
+          "member": "int64",
+          "name": "StorageSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表类型，如hive MANAGED_TABLE;EXTERNAL_TABLE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MANAGED_TABLE",
+          "member": "string",
+          "name": "TableType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01'T'00:00:00+0800",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近数据变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01'T'00:00:00+0800",
+          "member": "datetime_iso",
+          "name": "ModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最近DDL变更时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01'T'00:00:00+0800",
+          "member": "datetime_iso",
+          "name": "DdlModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据最后访问时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01'T'00:00:00+0800",
+          "member": "datetime_iso",
+          "name": "LastAccessTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属项目英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "school",
+          "member": "string",
+          "name": "ProjectName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属数据目录id（可能多个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"1\",\"2\"]",
+          "member": "string",
+          "name": "BizCatalogIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属数据目录（可能多个）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"支付\",\"金融\"]",
+          "member": "string",
+          "name": "BizCatalogNames",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true已收藏/false表示未收藏状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasFavorite",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生命周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "LifeCycleTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存储量，已转为适合的单位展示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.13TB",
+          "member": "string",
+          "name": "StorageSizeWithUnit",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源引擎的实例ID：如EMR集群实例ID/数据源实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据来源技术类型：HIVE/MYSQL/HBASE/KAFKA等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE",
+          "member": "string",
+          "name": "TechnologyType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表英文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "student",
+          "member": "string",
+          "name": "TableNameEn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Kafka Topic 分区数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "string",
+          "name": "Partitions",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Kafka Topic 副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "string",
+          "name": "ReplicationFactor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所属项目英中文名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "学校",
+          "member": "string",
+          "name": "ProjectDisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据最后修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-07-01'T'00:00:00+0800",
+          "member": "datetime_iso",
+          "name": "DataModifyTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前用户是否有管理员权限\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasAdminAuthority",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源展示名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "emrziyong.default",
+          "member": "string",
+          "name": "DatasourceDisplayName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DatabaseId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户下对表的收藏总次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "11",
+          "member": "int64",
+          "name": "FavoriteCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "租户下对表的点赞总次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "LikeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true已点赞/false表示未点赞状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "HasLike",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的资产评分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TablePropertyScore",
+          "name": "TablePropertyScore",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表的热度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableHeat",
+          "name": "TableHeat",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据源ownerProjectId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OwnerProjectId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表负责人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableOwnerId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "系统源-CLUSTER, DB-自定义源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataSourceCategory",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SearchColumnDocVO",
+          "name": "Columns",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TablePropertyScore": {
+      "document": "按天更新的表的资产评分",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表ID",
+          "example": "12345",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统计日期",
+          "example": "2004-05-03T17:30:08+08:00",
+          "member": "datetime_iso",
+          "name": "DayTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表完整性评分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Integrity",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表保障性评分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Safety",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表及时性评分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Timeliness",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表稳定性评分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Stability",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "表规范性评分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Normative",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资产评分平均分",
+          "example": "98.15",
+          "member": "float",
+          "name": "Average",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "TableQualityDetail": {
       "document": "表质量详情",

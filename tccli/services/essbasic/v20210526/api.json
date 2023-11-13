@@ -218,7 +218,7 @@
       "status": "online"
     },
     "ChannelDeleteSealPolicies": {
-      "document": "删除指定印章下多个授权信息",
+      "document": "此接口（ChannelDeleteSealPolicies）用于删除已指定员工印章授权信息，删除员工的印章授权后，该员工使用印章进行盖章时，将需要提交印章授权申请且通过审核后才能使用该印章进行签署。",
       "input": "ChannelDeleteSealPoliciesRequest",
       "name": "删除印章授权",
       "output": "ChannelDeleteSealPoliciesResponse",
@@ -246,16 +246,16 @@
       "status": "online"
     },
     "ChannelDescribeOrganizationSeals": {
-      "document": "查询子客企业电子印章，需要操作者具有管理印章权限\n客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理；入参InfoType控制印章是否携带授权人信息，为1则携带，为0则返回的授权人信息为空数组。接口调用成功返回印章的信息列表还有企业印章的总数，只返回启用的印章。",
+      "document": "此接口（ChannelDescribeOrganizationSeals）查询子客企业电子印章。<br />\n注: \n1. `查询子客企业电子印章，需要操作者具有管理印章权限`\n2. `客户指定需要获取的印章数量和偏移量，数量最多100，超过100按100处理`\n3. `此接口只能查询启用的印章`",
       "input": "ChannelDescribeOrganizationSealsRequest",
       "name": "查询子客企业电子印章",
       "output": "ChannelDescribeOrganizationSealsResponse",
       "status": "online"
     },
     "ChannelDescribeRoles": {
-      "document": "分页查询企业角色列表，法人的角色是系统保留角色，不会返回，按照角色创建时间升序排列。\n相关系统默认角色说明可参考文档：https://cloud.tencent.com/document/product/1323/61355",
+      "document": "分页查询企业角色列表，法人的角色是系统保留角色，不会返回，按照角色创建时间升序排列。\n\n\n<font color=\"red\">**系统默认角色**</font>说明可参考下表\n\n| 角色名称| 建议授予对象 | 角色描述 |\n| --- | --- | --- |\n| **超级管理员** |电子签业务最高权限，可以授权给法务/企业法人/业务负责人等 | 所有功能和数据管理权限，只能设置一位超管。 |\n| **业务管理员**|IT 系统负责人，可以授权给CTO等 | 企业合同模块、印章模块、模板模块等全量功能及数据权限。 |\n| **经办人**|企业法务负责人等 | 发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看企业所有合同数据。 |\n| **业务员**|销售员、采购员 等| 发起合同、签署合同（含填写、拒签）、撤销合同、持有印章等权限能力，可查看自己相关所有合同数据。 |",
       "input": "ChannelDescribeRolesRequest",
-      "name": "查询角色列表",
+      "name": "获取角色列表",
       "output": "ChannelDescribeRolesResponse",
       "status": "online"
     },
@@ -288,7 +288,7 @@
       "status": "online"
     },
     "ChannelUpdateSealStatus": {
-      "document": "本接口（ChannelUpdateSealStatus）用于第三方应用平台为子客企业更新印章状态",
+      "document": "此接口（ChannelUpdateSealStatus）用于第三方应用平台为子客企业更新印章状态。",
       "input": "ChannelUpdateSealStatusRequest",
       "name": "更新印章状态",
       "output": "ChannelUpdateSealStatusResponse",
@@ -569,6 +569,15 @@
           "example": "true",
           "member": "bool",
           "name": "NoRefuse",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否可以转发 默认false-可以转发 true-不可以转发",
+          "example": "true",
+          "member": "bool",
+          "name": "NoTransfer",
           "required": false,
           "type": "bool"
         },
@@ -1740,7 +1749,7 @@
         },
         {
           "disabled": false,
-          "document": "需要进行转换的资源文件类型\n支持的文件类型如下：\n<ul><li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li>\n<li>bmp</li>\n<li>txt</li></ul>",
+          "document": "需要进行转换的资源文件类型\n支持的文件类型如下：\n<ul><li>doc</li>\n<li>docx</li>\n<li>xls</li>\n<li>xlsx</li>\n<li>jpg</li>\n<li>jpeg</li>\n<li>png</li>\n<li>bmp</li>\n<li>html</li>\n<li>txt</li></ul>",
           "example": "docx",
           "member": "string",
           "name": "ResourceType",
@@ -3793,7 +3802,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -3802,7 +3811,7 @@
         },
         {
           "disabled": false,
-          "document": "指定印章ID",
+          "document": "操作的印章ID",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -3811,7 +3820,7 @@
         },
         {
           "disabled": false,
-          "document": "指定用户ID数组，电子签系统用户ID\n可以填写OpenId，系统会通过组织+渠道+OpenId查询得到UserId进行授权取消。",
+          "document": "需要删除授权的用户ID数组，可以传入电子签系统用户ID或OpenId。\n注: \n1. `填写OpenId时，系统会通过组织+渠道+OpenId查询得到对应的UserId进行授权取消操作`",
           "example": "无",
           "member": "string",
           "name": "UserIds",
@@ -4097,7 +4106,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4115,7 +4124,7 @@
         },
         {
           "disabled": false,
-          "document": "偏移量，默认为0，最大为20000",
+          "document": "分页查询偏移量，默认为0，最大为20000",
           "example": "0",
           "member": "int64",
           "name": "Offset",
@@ -4124,7 +4133,7 @@
         },
         {
           "disabled": false,
-          "document": "查询信息类型，为1时返回授权用户，为其他值时不返回",
+          "document": "查询信息类型\n支持的值如下：\n<ul><li>0-默认，不返回授权用户信息</li>\n<li>1-返回授权用户信息</li>\n</ul>",
           "example": "1",
           "member": "int64",
           "name": "InfoType",
@@ -4133,7 +4142,7 @@
         },
         {
           "disabled": false,
-          "document": "印章id（没有输入返回所有）",
+          "document": "印章id（没有输入返回所有）\n\n注:  `没有输入返回所有记录，最大返回100条。`",
           "example": "无",
           "member": "string",
           "name": "SealId",
@@ -4142,7 +4151,7 @@
         },
         {
           "disabled": false,
-          "document": "印章类型列表（都是组织机构印章）。\n为空时查询所有类型的印章。\n目前支持以下类型：\nOFFICIAL：企业公章；\nCONTRACT：合同专用章；\nORGANIZATION_SEAL：企业印章(图片上传创建)；\nLEGAL_PERSON_SEAL：法定代表人章",
+          "document": "印章类型列表，目前支持传入以下类型：\n<ul><li>OFFICIAL-企业公章</li>\n<li>CONTRACT-合同专用章</li>\n<li>ORGANIZATION_SEAL-企业印章(图片上传创建)</li>\n<li>LEGAL_PERSON_SEAL-法定代表人章</li>\n</ul>\n\n注:  `为空时查询所有类型的印章。`",
           "example": "无",
           "member": "string",
           "name": "SealTypes",
@@ -4198,7 +4207,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大200",
+          "document": "指定每页返回的数据条数，和Offset参数配合使用，单页最大200。\n\n注: `因为历史原因, 此字段为字符串类型`",
           "example": "无",
           "member": "string",
           "name": "Limit",
@@ -4207,7 +4216,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的关键字段:\nKey:\"RoleType\",Values:[\"1\"]查询系统角色，Values:[\"2\"]查询自定义角色\nKey:\"RoleStatus\",Values:[\"1\"]查询启用角色，Values:[\"2\"]查询禁用角色\nKey:\"IsReturnPermissionGroup\"，Values:[\"0\"]:表示接口不返回角色对应的权限树字段，Values:[\"1\"]表示接口返回角色对应的权限树字段",
+          "document": "查询的关键字段:\nKey:\"**RoleType**\",Values:[\"**1**\"]查询系统角色，\nKey:\"**RoleType**\",Values:[\"**2**\"]查询自定义角色\nKey:\"**RoleStatus**\",Values:[\"**1**\"]查询启用角色\nKey:\"**RoleStatus**\",Values:[\"**2**\"]查询禁用角色\nKey:\"**IsReturnPermissionGroup**\"，Values:[\"**0**\"]表示接口不返回角色对应的权限树字段\nKey:\"**IsReturnPermissionGroup**\"，Values:[\"**1**\"]表示接口返回角色对应的权限树字段\n\n注: `同名字的Key的过滤条件会冲突, 只能填写一个`\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -4216,7 +4225,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。\n\n注：\n1.`offset从0开始，即第一页为0。`\n2.`默认从第一页返回。`",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -4240,7 +4249,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询结果分页返回，此处指定第几页，如果不传默认从第一页返回。页码从 0 开始，即首页为 0，最大2000",
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用，最大2000条。",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -4250,7 +4259,7 @@
         },
         {
           "disabled": false,
-          "document": "指定每页多少条数据，单页最大200",
+          "document": "指定每页返回的数据条数，和Offset参数配合使用，单页最大200。",
           "example": "无",
           "member": "uint64",
           "name": "Limit",
@@ -4270,7 +4279,7 @@
         },
         {
           "disabled": false,
-          "document": "角色信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "查询的角色信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ChannelRole",
           "name": "ChannelRoles",
@@ -4663,7 +4672,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 必填。",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -4672,7 +4681,7 @@
         },
         {
           "disabled": false,
-          "document": "操作的印章状态，DISABLE-停用印章",
+          "document": "印章状态，目前支持传入以下类型：\n<ul><li>DISABLE-停用印章</li></ul>",
           "example": "DISABLE",
           "member": "string",
           "name": "Status",

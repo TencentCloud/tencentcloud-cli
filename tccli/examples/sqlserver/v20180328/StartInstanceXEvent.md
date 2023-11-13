@@ -7,7 +7,7 @@ Input:
 ```
 tccli sqlserver StartInstanceXEvent --cli-unfold-argument  \
     --InstanceId mssql-77auaua \
-    --EventConfig.0.EventType slow \
+    --EventConfig.0.EventType blocked \
     --EventConfig.0.Threshold 0
 ```
 
