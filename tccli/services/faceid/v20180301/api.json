@@ -1839,8 +1839,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "传入需要进行检测的带有人脸的图片或视频，使用base64编码的形式",
-          "example": "无",
+          "document": "传入需要进行检测的带有人脸的图片或视频，使用base64编码的形式。\n\n图片的Base64值：\n建议整体图像480x640的分辨率，脸部 大小 100X100 以上；\nBase64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。\n\n视频的Base64值：\nBase64编码后的大小不超过8M，支持mp4、avi、flv格式。\n请使用标准的Base64编码方式(带=补位)，编码规范参考RFC4648。",
+          "example": "iVBORw0KGgoAA......",
           "member": "string",
           "name": "FaceInput",
           "required": true,
@@ -3187,6 +3187,15 @@
           "name": "Encryption",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否对回包整体进行加密",
+          "example": "无",
+          "member": "bool",
+          "name": "IsEncryptResponse",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3272,6 +3281,16 @@
           "name": "IntentionActionResult",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "加密后的数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "EncryptedBody",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {

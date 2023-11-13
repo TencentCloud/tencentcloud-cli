@@ -128,6 +128,7 @@ Output:
             ],
             "CiphertextBlob": "CiphertextBlob"
         },
+        "EncryptedBody": "abc",
         "RequestId": "f52bac9a-0aee-4fe6-8d34-7de4bce89473"
     }
 }

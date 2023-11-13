@@ -3945,7 +3945,7 @@
         {
           "disabled": false,
           "document": "工作空间id",
-          "example": "无",
+          "example": "1016",
           "member": "int64",
           "name": "WorkspaceId",
           "required": true,
@@ -3954,7 +3954,7 @@
         {
           "disabled": false,
           "document": "WID",
-          "example": "无",
+          "example": "8eaebd6f-d780-424e-98d6-01de5c78e25f",
           "member": "string",
           "name": "WIDSet",
           "required": true,
@@ -3963,7 +3963,7 @@
         {
           "disabled": false,
           "document": "分页查询，第几页",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "PageNumber",
           "required": true,
@@ -3972,7 +3972,7 @@
         {
           "disabled": false,
           "document": "每页条数",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "PageSize",
           "required": true,
@@ -3981,7 +3981,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "Lawbk967Ng41d934u8vveoS",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3990,7 +3990,7 @@
         {
           "disabled": false,
           "document": "设备类型code",
-          "example": "无",
+          "example": "w20011",
           "member": "string",
           "name": "DeviceTypeSet",
           "required": false,
@@ -3999,7 +3999,7 @@
         {
           "disabled": false,
           "document": "产品 pid",
-          "example": "无",
+          "example": "2000252",
           "member": "int64",
           "name": "ProductIdSet",
           "required": false,
@@ -4008,7 +4008,7 @@
         {
           "disabled": false,
           "document": "设备标签id",
-          "example": "无",
+          "example": "45",
           "member": "int64",
           "name": "TagIdSet",
           "required": false,
@@ -4017,7 +4017,7 @@
         {
           "disabled": false,
           "document": "空间层级，（支持空间多层，比如具体建筑、具体楼层）",
-          "example": "无",
+          "example": "000381",
           "member": "string",
           "name": "SpaceCodeSet",
           "required": false,
@@ -4026,7 +4026,7 @@
         {
           "disabled": false,
           "document": "设备标签名",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "DeviceTagSet",
           "required": false,
@@ -6401,7 +6401,7 @@
         {
           "disabled": false,
           "document": "设备唯一标识",
-          "example": "无",
+          "example": "693bc0a4-ca2b-4f37-af04-4c8c0a88e000",
           "member": "string",
           "name": "WID",
           "required": true,
@@ -6410,7 +6410,7 @@
         {
           "disabled": false,
           "document": "枚举如下：\nflvsh\nrtmp\nhls\nwebrtc\nraw (视频原始帧)",
-          "example": "无",
+          "example": "hls",
           "member": "string",
           "name": "Protocol",
           "required": true,
@@ -6419,7 +6419,7 @@
         {
           "disabled": false,
           "document": "开始时间（精确到毫秒）",
-          "example": "无",
+          "example": "1699876800",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -6428,7 +6428,7 @@
         {
           "disabled": false,
           "document": "结束时间（精确到毫秒）",
-          "example": "无",
+          "example": "1699876817",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -6437,7 +6437,7 @@
         {
           "disabled": false,
           "document": "倍速 0.5、1、2、4",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "PlayBackRate",
           "required": true,
@@ -6446,7 +6446,7 @@
         {
           "disabled": false,
           "document": "工作空间id",
-          "example": "无",
+          "example": "1016",
           "member": "int64",
           "name": "WorkspaceId",
           "required": true,
@@ -6455,7 +6455,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "Lawbk967Ng41d934u8vveoSJgsj",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6464,7 +6464,7 @@
         {
           "disabled": false,
           "document": "流的唯一标识，播放链接尾缀",
-          "example": "无",
+          "example": "c6cb1e55-7bd7-4f08-a97b-0b530f8a60f1",
           "member": "string",
           "name": "Stream",
           "required": false,
@@ -6473,7 +6473,7 @@
         {
           "disabled": false,
           "document": "公有云私有化项目传0或者不传；混合云项目一般传空间id",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "Env",
           "required": false,
@@ -10035,7 +10035,7 @@
         {
           "disabled": false,
           "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "21",
           "member": "string",
           "name": "DepartmentId",
           "output_required": false,
@@ -10045,7 +10045,7 @@
         {
           "disabled": false,
           "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "财务部",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -10055,7 +10055,7 @@
         {
           "disabled": false,
           "document": "父级部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9",
           "member": "string",
           "name": "ParentDepartmentId",
           "output_required": false,
@@ -10097,7 +10097,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0d0a98561b3c4f72963eba5c5fcf56e1",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -10107,7 +10107,7 @@
         {
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "RealName",
           "output_required": false,
@@ -10116,8 +10116,8 @@
         },
         {
           "disabled": false,
-          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "string",
           "name": "UserType",
           "output_required": false,
@@ -10127,7 +10127,7 @@
         {
           "disabled": false,
           "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10001",
           "member": "string",
           "name": "TenantId",
           "output_required": false,
@@ -10137,7 +10137,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test@163.com",
           "member": "string",
           "name": "Email",
           "output_required": false,
@@ -10147,7 +10147,7 @@
         {
           "disabled": false,
           "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "186xxxx234",
           "member": "string",
           "name": "Phone",
           "output_required": false,
@@ -10157,7 +10157,7 @@
         {
           "disabled": false,
           "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "用户状态，0待审核，1正常启用，2禁用",
           "member": "int64",
           "name": "Status",
           "output_required": false,
@@ -10167,7 +10167,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1680836659",
           "member": "int64",
           "name": "CreateAt",
           "output_required": false,
@@ -10177,7 +10177,7 @@
         {
           "disabled": false,
           "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "DepartmentId",
           "output_required": false,
@@ -10187,7 +10187,7 @@
         {
           "disabled": false,
           "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "财务部",
           "member": "string",
           "name": "DepartmentName",
           "output_required": false,
@@ -10197,7 +10197,7 @@
         {
           "disabled": false,
           "document": "是否关联权限\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "LinkFilter",
           "output_required": false,
@@ -10239,7 +10239,7 @@
         {
           "disabled": false,
           "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0d0a98561b3c4f72963eba5c5fcf56e1",
           "member": "string",
           "name": "UserId",
           "output_required": false,
@@ -10249,7 +10249,7 @@
         {
           "disabled": false,
           "document": "用户昵称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "UserName",
           "output_required": false,
@@ -10259,7 +10259,7 @@
         {
           "disabled": false,
           "document": "用户名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "张三",
           "member": "string",
           "name": "RealName",
           "output_required": false,
@@ -10268,8 +10268,8 @@
         },
         {
           "disabled": false,
-          "document": "用户类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户类型，1-超级管理员；2-1号管理员；3-普通管理员；99-普通用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "string",
           "name": "UserType",
           "output_required": false,
@@ -10279,7 +10279,7 @@
         {
           "disabled": false,
           "document": "所属租户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100055",
           "member": "string",
           "name": "TenantId",
           "output_required": false,
@@ -10289,7 +10289,7 @@
         {
           "disabled": false,
           "document": "所属组ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "UserGroup",
           "output_required": false,
@@ -10299,7 +10299,7 @@
         {
           "disabled": false,
           "document": "邮箱\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test@163.com",
           "member": "string",
           "name": "Email",
           "output_required": false,
@@ -10309,7 +10309,7 @@
         {
           "disabled": false,
           "document": "电话\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "18612341234",
           "member": "string",
           "name": "Phone",
           "output_required": false,
@@ -10318,8 +10318,8 @@
         },
         {
           "disabled": false,
-          "document": "用户状态\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "用户状态，0待审核，1正常启用，2禁用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "output_required": false,
@@ -10329,7 +10329,7 @@
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1680836659",
           "member": "int64",
           "name": "CreateAt",
           "output_required": false,
@@ -10339,7 +10339,7 @@
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1680836659",
           "member": "int64",
           "name": "UpdateAt",
           "output_required": false,
@@ -10348,8 +10348,8 @@
         },
         {
           "disabled": false,
-          "document": "是否属于团队\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "是否属于团队，0不可用，1属于，2不属\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "BelongTeam",
           "output_required": false,
@@ -10358,8 +10358,8 @@
         },
         {
           "disabled": false,
-          "document": "ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "部门ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
           "member": "string",
           "name": "DepartmentId",
           "output_required": false,
@@ -10368,8 +10368,8 @@
         },
         {
           "disabled": false,
-          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "部门名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "财务部",
           "member": "string",
           "name": "DepartmentName",
           "output_required": false,
@@ -10379,7 +10379,7 @@
         {
           "disabled": false,
           "document": "子账户ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "123",
           "member": "int64",
           "name": "DepartmentUserId",
           "output_required": false,
@@ -10389,7 +10389,7 @@
         {
           "disabled": false,
           "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "***",
           "member": "string",
           "name": "Password",
           "output_required": false,
@@ -10405,7 +10405,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "28",
           "member": "int64",
           "name": "Total",
           "output_required": false,

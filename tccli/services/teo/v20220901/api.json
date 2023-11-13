@@ -7550,6 +7550,7 @@
           "example": "on/off",
           "member": "string",
           "name": "Http2",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7560,6 +7561,7 @@
           "example": "on/off",
           "member": "string",
           "name": "OcspStapling",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7570,6 +7572,7 @@
           "example": "[\"TLSv1\", \"TLSv1.1\"]",
           "member": "string",
           "name": "TlsVersion",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7580,6 +7583,7 @@
           "example": "无",
           "member": "Hsts",
           "name": "Hsts",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7590,6 +7594,7 @@
           "example": "无",
           "member": "ServerCertInfo",
           "name": "CertInfo",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7600,6 +7605,7 @@
           "example": "无",
           "member": "string",
           "name": "ApplyType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7610,6 +7616,7 @@
           "example": "无",
           "member": "string",
           "name": "CipherSuite",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9466,6 +9473,7 @@
           "example": "[\"1.1.1.1\"]",
           "member": "string",
           "name": "Origins",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9476,6 +9484,7 @@
           "example": "[\"2.2.2.2\"]",
           "member": "string",
           "name": "BackupOrigins",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -9486,6 +9495,7 @@
           "example": "https",
           "member": "string",
           "name": "OriginPullProtocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -9496,6 +9506,7 @@
           "example": "off",
           "member": "string",
           "name": "CosPrivateAccess",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -11580,7 +11591,7 @@
           "example": "默认证书",
           "member": "string",
           "name": "Alias",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

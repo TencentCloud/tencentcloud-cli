@@ -28,6 +28,13 @@
       "output": "DescribeDetailedSingleProbeDataResponse",
       "status": "online"
     },
+    "DescribeInstantTasks": {
+      "document": "获取历史即时拨测任务",
+      "input": "DescribeInstantTasksRequest",
+      "name": "获取历史即时拨测任务",
+      "output": "DescribeInstantTasksResponse",
+      "status": "online"
+    },
     "DescribeNodes": {
       "document": "获取拨测节点",
       "input": "DescribeNodesRequest",
@@ -878,6 +885,62 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeInstantTasksRequest": {
+      "document": "DescribeInstantTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始位置",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstantTasksResponse": {
+      "document": "DescribeInstantTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SingleInstantTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeNodesRequest": {
       "document": "DescribeNodes请求参数结构体",
@@ -1992,6 +2055,92 @@
         }
       ],
       "type": "object"
+    },
+    "SingleInstantTask": {
+      "document": "单个即时拨测任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task-123",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务地址",
+          "example": "http://qq.com",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "5",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试时间",
+          "example": "1641917822000",
+          "member": "uint64",
+          "name": "ProbeTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "成功",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功率",
+          "example": "0.8",
+          "member": "float",
+          "name": "SuccessRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskCategory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SuspendProbeTaskRequest": {
       "document": "SuspendProbeTask请求参数结构体",

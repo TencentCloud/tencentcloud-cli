@@ -1,18 +1,18 @@
 **Example 1: 查询角色列表**
 
-查询角色列表，默认不返回角色对应的权限树信息
+IsReturnPermissionGroup设置为0表示不返回角色对应的权限树信息
 
 Input: 
 
 ```
 tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
-    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
-    --Agent.ProxyOrganizationOpenId test_org_openid \
-    --Agent.ProxyOperator.OpenId test_openid \
-    --Filters.0.Key  \
-    --Filters.0.Values  \
-    --Offset 1 \
-    --Limit 10
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --Limit 10 \
+    --Filters.0.Key IsReturnPermissionGroup \
+    --Filters.0.Values 0
 ```
 
 Output: 
@@ -36,794 +36,1016 @@ Output:
 
 **Example 2: 查询角色列表（返回权限树信息）**
 
-查询角色列表，增加查询筛选条件“IsReturnPermissionGroup”，将返回角色对应的权限树信息
+1. IsReturnPermissionGroup设置为1表示返回角色对应的权限树信息
+2. RoleType设置为2表示只拉取自己创建的角色列表
 
 Input: 
 
 ```
 tccli essbasic ChannelDescribeRoles --cli-unfold-argument  \
-    --Agent.AppId  jsdk812kxkdfjks***k88123123 \
-    --Agent.ProxyOrganizationOpenId test_org_openid \
-    --Agent.ProxyOperator.OpenId test_openid \
-    --Filters.0.Key IsReturnPermissionGroup \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --Limit 10 \
+    --Filters.0.Key RoleType \
     --Filters.0.Values 1 \
-    --Offset 1 \
-    --Limit 10
+    --Filters.1.Key IsReturnPermissionGroup \
+    --Filters.1.Values 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Offset": 1,
+        "Offset": 0,
         "Limit": 10,
         "TotalCount": 1,
         "ChannelRoles": [
             {
-                "RoleId": "abc8jkkjds***121212",
-                "RoleName": "业务管理员",
+                "RoleId": "69997f600a7c8e9accc71f4241a8a091",
+                "RoleName": "类管理员角色",
                 "RoleStatus": 1,
                 "PermissionGroups": [
                     {
-                        "GroupKey": "bill",
                         "GroupName": "费用中心",
+                        "GroupKey": "bill",
                         "Hide": 0,
                         "Permissions": [
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "BillOrderManagement",
-                                        "Name": "订单管理",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "BillSetMealManagement",
-                                        "Name": "套餐管理",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "BillInvoiceManagement",
-                                        "Name": "发票管理",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "费用管理",
+                                "Key": "BillManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": false,
-                                "Key": "BillManagement",
-                                "Name": "费用管理",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "订单管理",
+                                        "Key": "BillOrderManagement",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "套餐管理",
+                                        "Key": "BillSetMealManagement",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "发票管理",
+                                        "Key": "BillInvoiceManagement",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "GroupKey": "channel",
                         "GroupName": "开发者中心",
+                        "GroupKey": "channel",
                         "Hide": 0,
                         "Permissions": [
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DescribeChannelComponents",
-                                        "Name": "渠道控件查看",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "InsertOrModifyChannelComponents",
-                                        "Name": "渠道控件编辑",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DeleteChannelComponents",
-                                        "Name": "渠道控件删除",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "渠道模板控件管理",
+                                "Key": "WidgetManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": false,
-                                "Key": "WidgetManagement",
-                                "Name": "渠道模板控件管理",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "渠道控件查看",
+                                        "Key": "DescribeChannelComponents",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "渠道控件编辑",
+                                        "Key": "InsertOrModifyChannelComponents",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "渠道控件删除",
+                                        "Key": "DeleteChannelComponents",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             },
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DescribeChannelTemplate",
-                                        "Name": "渠道模板库查看",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "InsertOrModifyChannelTemplate",
-                                        "Name": "渠道模板库编辑",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DeleteChannelTemplate",
-                                        "Name": "渠道模板库删除",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "渠道模板库管理",
+                                "Key": "ChannelTemplateManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": false,
-                                "Key": "ChannelTemplateManagement",
-                                "Name": "渠道模板库管理",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "渠道模板库查看",
+                                        "Key": "DescribeChannelTemplate",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "渠道模板库编辑",
+                                        "Key": "InsertOrModifyChannelTemplate",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "渠道模板库删除",
+                                        "Key": "DeleteChannelTemplate",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "GroupKey": "Flow",
-                        "GroupName": "合同中心",
+                        "GroupName": "拓展服务",
+                        "GroupKey": "ExpandService",
                         "Hide": 0,
                         "Permissions": [
                             {
+                                "Name": "合同相关",
+                                "Key": "FlowRelatedManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
                                 "Children": [
                                     {
-                                        "Children": [],
+                                        "Name": "企业自动签署",
+                                        "Key": "CompanyAutoSign",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "批量签署授权",
+                                        "Key": "BatchSignAccredit",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "企业与港澳台居民签署合同",
+                                        "Key": "OverseasSign",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "拓宽签署方年龄限制",
+                                        "Key": "ExpandSignAgeLimit",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "个人签署方仅校验手机号",
+                                        "Key": "SignatoryMobileVerify",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "隐藏合同经办人姓名",
+                                        "Key": "HideFlowOperatorName",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "印章相关",
+                                "Key": "SealRelatedManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "骑缝章",
+                                        "Key": "PagingSeal",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "模板相关",
+                                "Key": "TemplateRelatedManagement",
+                                "Type": 1,
+                                "Hide": 1,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": []
+                            },
+                            {
+                                "Name": "审批相关",
+                                "Key": "ApprovalRelatedManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "审批流配置",
+                                        "Key": "ApprovalFlowConfig",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "Name": "其它拓展服务",
+                                "Key": "OtherExpandManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "企业CA证书配置",
+                                        "Key": "CompanyCAConfig",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "下载企业合同/文件授权",
+                                        "Key": "AuthProxyOrgDownLoadFlow",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "GroupName": "合同中心",
+                        "GroupKey": "Flow",
+                        "Hide": 0,
+                        "Permissions": [
+                            {
+                                "Name": "查询合同",
+                                "Key": "FlowsManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 1,
+                                "DataType": 2,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "企业全部合同",
+                                        "Key": "DescribeAllFlows",
+                                        "Type": 2,
+                                        "Hide": 0,
                                         "DataLabel": 2,
+                                        "DataType": 0,
                                         "DataRange": 1,
                                         "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "DescribeAllFlows",
-                                        "Name": "企业全部合同",
                                         "ParentKey": "FlowsManagement",
-                                        "Type": 2
+                                        "IsChecked": true,
+                                        "Children": []
                                     }
-                                ],
-                                "DataLabel": 1,
-                                "DataRange": 0,
-                                "DataTo": "",
-                                "DataType": 2,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "FlowsManagement",
-                                "Name": "查询合同",
-                                "ParentKey": "",
-                                "Type": 1
+                                ]
                             },
                             {
-                                "Children": [],
-                                "DataLabel": 1,
-                                "DataRange": 0,
-                                "DataTo": "FlowsManagement",
-                                "DataType": 1,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "FlowsManagement-Preview",
                                 "Name": "合同详情&预览",
-                                "ParentKey": "",
-                                "Type": 1
-                            },
-                            {
-                                "Children": [],
+                                "Key": "FlowsManagement-Preview",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 1,
+                                "DataType": 1,
                                 "DataRange": 0,
                                 "DataTo": "FlowsManagement",
-                                "DataType": 1,
-                                "Hide": 0,
+                                "ParentKey": "",
                                 "IsChecked": true,
-                                "Key": "FlowsManagement-Download",
+                                "Children": []
+                            },
+                            {
                                 "Name": "下载合同",
+                                "Key": "FlowsManagement-Download",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 1,
+                                "DataType": 1,
+                                "DataRange": 0,
+                                "DataTo": "FlowsManagement",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": []
                             },
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "FlowByImportedFile",
-                                        "Name": "上传文件发起",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "FlowByOrganizationTemplate",
-                                        "Name": "企业模版发起",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "CreateMultiFlowSignQRCode",
-                                        "Name": "创建签署二维码",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    }
-                                ],
-                                "DataLabel": 0,
-                                "DataRange": 0,
-                                "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "CreateFlow",
                                 "Name": "发起合同",
-                                "ParentKey": "",
-                                "Type": 2
-                            },
-                            {
-                                "Children": [],
+                                "Key": "CreateFlow",
+                                "Type": 2,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 1,
+                                "ParentKey": "",
                                 "IsChecked": true,
-                                "Key": "FlowsManagement-Pickup",
+                                "Children": [
+                                    {
+                                        "Name": "上传文件发起",
+                                        "Key": "FlowByImportedFile",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "企业模版发起",
+                                        "Key": "FlowByOrganizationTemplate",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "创建签署二维码",
+                                        "Key": "CreateMultiFlowSignQRCode",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
                                 "Name": "领取合同",
-                                "ParentKey": "",
-                                "Type": 1
-                            },
-                            {
-                                "Children": [],
+                                "Key": "FlowsManagement-Pickup",
+                                "Type": 1,
+                                "Hide": 1,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
+                                "ParentKey": "",
                                 "IsChecked": true,
-                                "Key": "CancelFlow",
+                                "Children": []
+                            },
+                            {
                                 "Name": "撤销合同",
+                                "Key": "CancelFlow",
+                                "Type": 2,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
                                 "ParentKey": "",
-                                "Type": 2
+                                "IsChecked": true,
+                                "Children": []
+                            },
+                            {
+                                "Name": "申请签署报告",
+                                "Key": "ApplyEvidenceReport",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": []
                             }
                         ]
                     },
                     {
-                        "GroupKey": "Organization",
                         "GroupName": "组织员工",
+                        "GroupKey": "Organization",
                         "Hide": 0,
                         "Permissions": [
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": true,
-                                        "Key": "CreateUserRoles",
-                                        "Name": "为员工分配角色",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": true,
-                                        "Key": "ModifyYuFuOrg",
-                                        "Name": "编辑组织架构",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    }
-                                ],
-                                "DataLabel": 0,
-                                "DataRange": 0,
-                                "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "OrgManagement",
                                 "Name": "组织架构管理",
-                                "ParentKey": "",
-                                "Type": 1
-                            },
-                            {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "CreateRole",
-                                        "Name": "创建角色",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "ModifyRole",
-                                        "Name": "修改角色",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DeleteRole",
-                                        "Name": "删除角色",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "ModifyRoleStatus",
-                                        "Name": "启用&禁用角色",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "CreateRoleUsers",
-                                        "Name": "添加员工",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": false,
-                                        "Key": "DeleteRoleUsers",
-                                        "Name": "取消关联",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Key": "OrgManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": false,
-                                "Key": "RoleManagement",
+                                "ParentKey": "",
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "为员工分配角色",
+                                        "Key": "CreateUserRoles",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "编辑组织架构",
+                                        "Key": "ModifyYuFuOrg",
+                                        "Type": 1,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
+                            },
+                            {
                                 "Name": "角色管理",
+                                "Key": "RoleManagement",
+                                "Type": 1,
+                                "Hide": 0,
+                                "DataLabel": 0,
+                                "DataType": 0,
+                                "DataRange": 0,
+                                "DataTo": "",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "创建角色",
+                                        "Key": "CreateRole",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "修改角色",
+                                        "Key": "ModifyRole",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "删除角色",
+                                        "Key": "DeleteRole",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "启用&禁用角色",
+                                        "Key": "ModifyRoleStatus",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "添加员工",
+                                        "Key": "CreateRoleUsers",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "取消关联",
+                                        "Key": "DeleteRoleUsers",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "GroupKey": "Seal",
                         "GroupName": "印章中心",
+                        "GroupKey": "Seal",
                         "Hide": 0,
                         "Permissions": [
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 1,
-                                        "IsChecked": true,
-                                        "Key": "QueryHoldSeal",
-                                        "Name": "查询印章",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "我持有企业印章",
+                                "Key": "SealManagement-Hold",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "SealManagement-Hold",
-                                "Name": "我持有企业印章",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "查询印章",
+                                        "Key": "QueryHoldSeal",
+                                        "Type": 2,
+                                        "Hide": 1,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             },
                             {
-                                "Children": [
-                                    {
-                                        "Children": [
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Detail-Holder",
-                                                "Name": "授权记录",
-                                                "ParentKey": "",
-                                                "Type": 2
-                                            },
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Detail-Holder-Template",
-                                                "Name": "关联模版",
-                                                "ParentKey": "",
-                                                "Type": 2
-                                            },
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Detail-Holder-Use-Record",
-                                                "Name": "用印记录",
-                                                "ParentKey": "",
-                                                "Type": 2
-                                            },
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Detail-Holder-Change-Record",
-                                                "Name": "变更记录",
-                                                "ParentKey": "",
-                                                "Type": 1
-                                            }
-                                        ],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "SealManagement-Manage-Detail",
-                                        "Name": "查询印章",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Create-Template",
-                                                "Name": "新建印章-模版印章",
-                                                "ParentKey": "",
-                                                "Type": 1
-                                            },
-                                            {
-                                                "Children": [],
-                                                "DataLabel": 0,
-                                                "DataRange": 0,
-                                                "DataTo": "",
-                                                "DataType": 0,
-                                                "Hide": 1,
-                                                "IsChecked": true,
-                                                "Key": "SealManagement-Manage-Create-Upload",
-                                                "Name": "新建印章-本地上传",
-                                                "ParentKey": "",
-                                                "Type": 1
-                                            }
-                                        ],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "CreateSeal",
-                                        "Name": "创建印章",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "ModifySeal",
-                                        "Name": "修改印章",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "CreateSealPolicy",
-                                        "Name": "分配印章管理人",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "DeleteSeal",
-                                        "Name": "删除印章",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "ApplySealOnce",
-                                        "Name": "单次用印审批",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "印章管理",
+                                "Key": "SealManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "SealManagement",
-                                "Name": "印章管理",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "查询印章",
+                                        "Key": "SealManagement-Manage-Detail",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": [
+                                            {
+                                                "Name": "授权记录",
+                                                "Key": "SealManagement-Manage-Detail-Holder",
+                                                "Type": 2,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "关联模版",
+                                                "Key": "SealManagement-Manage-Detail-Holder-Template",
+                                                "Type": 2,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "用印记录",
+                                                "Key": "SealManagement-Manage-Detail-Holder-Use-Record",
+                                                "Type": 2,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "变更记录",
+                                                "Key": "SealManagement-Manage-Detail-Holder-Change-Record",
+                                                "Type": 1,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "创建印章",
+                                        "Key": "CreateSeal",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": [
+                                            {
+                                                "Name": "新建印章-模版印章",
+                                                "Key": "SealManagement-Manage-Create-Template",
+                                                "Type": 1,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            },
+                                            {
+                                                "Name": "新建印章-本地上传",
+                                                "Key": "SealManagement-Manage-Create-Upload",
+                                                "Type": 1,
+                                                "Hide": 1,
+                                                "DataLabel": 0,
+                                                "DataType": 0,
+                                                "DataRange": 0,
+                                                "DataTo": "",
+                                                "ParentKey": "",
+                                                "IsChecked": true,
+                                                "Children": []
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        "Name": "修改印章",
+                                        "Key": "ModifySeal",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "分配印章管理人",
+                                        "Key": "CreateSealPolicy",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "删除印章",
+                                        "Key": "DeleteSeal",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "单次用印审批",
+                                        "Key": "ApplySealOnce",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "GroupKey": "Template",
                         "GroupName": "模板中心",
+                        "GroupKey": "Template",
                         "Hide": 0,
                         "Permissions": [
                             {
-                                "Children": [
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "TemplateManagement-Query",
-                                        "Name": "查询模板",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "OfficialFlowTemplateCollection",
-                                        "Name": "官方模板收藏",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "TemplateManagement-Download",
-                                        "Name": "下载模板",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "TemplateManagement-Create",
-                                        "Name": "创建模板",
-                                        "ParentKey": "",
-                                        "Type": 1
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "DeleteFlowTemplates",
-                                        "Name": "删除模板",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    },
-                                    {
-                                        "Children": [],
-                                        "DataLabel": 0,
-                                        "DataRange": 0,
-                                        "DataTo": "",
-                                        "DataType": 0,
-                                        "Hide": 0,
-                                        "IsChecked": true,
-                                        "Key": "ModifyFlowTemplate",
-                                        "Name": "编辑模板",
-                                        "ParentKey": "",
-                                        "Type": 2
-                                    }
-                                ],
+                                "Name": "模板管理",
+                                "Key": "TemplateManagement",
+                                "Type": 1,
+                                "Hide": 0,
                                 "DataLabel": 0,
+                                "DataType": 0,
                                 "DataRange": 0,
                                 "DataTo": "",
-                                "DataType": 0,
-                                "Hide": 0,
-                                "IsChecked": true,
-                                "Key": "TemplateManagement",
-                                "Name": "模板管理",
                                 "ParentKey": "",
-                                "Type": 1
+                                "IsChecked": true,
+                                "Children": [
+                                    {
+                                        "Name": "查询模板",
+                                        "Key": "TemplateManagement-Query",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "官方模板收藏",
+                                        "Key": "OfficialFlowTemplateCollection",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "下载模板",
+                                        "Key": "TemplateManagement-Download",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "创建模板",
+                                        "Key": "TemplateManagement-Create",
+                                        "Type": 1,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "删除模板",
+                                        "Key": "DeleteFlowTemplates",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    },
+                                    {
+                                        "Name": "编辑模板",
+                                        "Key": "ModifyFlowTemplate",
+                                        "Type": 2,
+                                        "Hide": 0,
+                                        "DataLabel": 0,
+                                        "DataType": 0,
+                                        "DataRange": 0,
+                                        "DataTo": "",
+                                        "ParentKey": "",
+                                        "IsChecked": true,
+                                        "Children": []
+                                    }
+                                ]
                             }
                         ]
                     }
                 ]
             }
         ],
-        "RequestId": " s19ksdjkkds****ldsjfkdfdf"
+        "RequestId": "cb9c33e8-2870-42ea-b798-b9fbd4756827"
     }
 }
 ```
