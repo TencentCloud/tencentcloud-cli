@@ -2886,7 +2886,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "Lawbk967Ng41d934u8vveoS",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -2895,7 +2895,7 @@
         {
           "disabled": false,
           "document": "工作空间ID",
-          "example": "无",
+          "example": "1016",
           "member": "int64",
           "name": "WorkspaceId",
           "required": true,
@@ -2904,7 +2904,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "无",
+          "example": "城市",
           "member": "string",
           "name": "Tag",
           "required": true,
@@ -2935,7 +2935,7 @@
         {
           "disabled": false,
           "document": "行政区划返回结构",
-          "example": "无",
+          "example": "{ \t\"Response\": { \t\t\"RequestId\": \"c6802352-38e4-4a36-80dd-d80e57ce92a7\", \t\t\"Result\": { \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"AdministrationCode\": \"130100\", \t\t\t\t\t\"AdministrationName\": \"石家庄市\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"AdministrationCode\": \"130200\", \t\t\t\t\t\"AdministrationName\": \"唐山市\" \t\t\t\t}, \t\t\t] \t\t} \t} }",
           "member": "DescribeAdministrationByTagRes",
           "name": "Result",
           "output_required": false,
@@ -3462,7 +3462,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1109\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3471,7 +3471,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"LMb6piRXpioR7nmwFhXpvZd4GC4wf0B4\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3480,7 +3480,7 @@
         {
           "disabled": false,
           "document": "是否有模型文件",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "HasModel",
           "required": false,
@@ -3489,7 +3489,7 @@
         {
           "disabled": false,
           "document": "空间编码",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpaceCodes",
           "required": false,
@@ -3504,7 +3504,7 @@
         {
           "disabled": false,
           "document": "查询建筑列表出参",
-          "example": "无",
+          "example": " { \t\t\t\"BuildingProfileList\": [ \t\t\t\t{ \t\t\t\t\t\"Address\": \"北京市,丰台区样例模型\", \t\t\t\t\t\"BuildingId\": \"2da7d294-483e-4033-a99a-49f7323fd6ef\", \t\t\t\t\t\"BuildingName\": \"样例模型1\", \t\t\t\t\t\"Latitude\": 39.927326, \t\t\t\t\t\"Longitude\": 116.39177, \t\t\t\t\t\"SpaceCode\": \"000009\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Address\": \"1#楼\", \t\t\t\t\t\"BuildingId\": \"dfad5b19-79d8-4e40-9a8c-8efa32a1f425\", \t\t\t\t\t\"BuildingName\": \"1#楼\", \t\t\t\t\t\"Latitude\": 39.92442, \t\t\t\t\t\"Longitude\": 116.38269, \t\t\t\t\t\"SpaceCode\": \"000007\" \t\t\t\t}\t\t\t] \t\t}",
           "member": "BuildingListRes",
           "name": "Result",
           "output_required": false,
@@ -3526,7 +3526,7 @@
         {
           "disabled": false,
           "document": "建筑id",
-          "example": "无",
+          "example": "\"82d5fb5a-52d0-4636-a225-d46245e911ef\"",
           "member": "string",
           "name": "BuildingId",
           "required": true,
@@ -3535,7 +3535,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3544,7 +3544,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"ZRCJHdnhqEUEqO1vyskCgWimPucHhREV\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3559,7 +3559,7 @@
         {
           "disabled": false,
           "document": "建模模型信息出参",
-          "example": "无",
+          "example": "{ \t\t\t\"Models\": [ \t\t\t\t{ \t\t\t\t\t\"ElementId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\"ElementName\": \"验证专用\", \t\t\t\t\t\"ModelType\": \"MODEL_ORIGIN\", \t\t\t\t\t\"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/cb6bad63-0855-4dc2-8908-20518627479b.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Ddbac70b180e5a2d8c343506dae755a01669ffb04\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ElementId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\"ElementName\": \"验证专用-外壳\", \t\t\t\t\t\"ModelType\": \"MODEL_HULL\", \t\t\t\t\t\"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/ff847c36-89f8-4644-9c1f-d265bd5d5167.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D7af0ab15cab83314e44026fedc0927467d07b776\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"ElementId\": \"0b00f88f-36f1-4ae3-a7b4-5db12332c005\", \t\t\t\t\t\"ElementName\": \"-1F\", \t\t\t\t\t\"ModelType\": \"MODEL_STOREY\", \t\t\t\t\t\"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/2ee86ae4-41a1-4c45-840b-4e9eae1b83a1.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3De9b58a5293201d24c19e2bc28b49404035b569c1\" \t\t\t\t} \t\t\t] \t\t}",
           "member": "BuildingModelRes",
           "name": "Result",
           "output_required": false,
@@ -3581,7 +3581,7 @@
         {
           "disabled": false,
           "document": "建筑id",
-          "example": "无",
+          "example": "\"2e374df6-7ba7-45d2-a44d-2a92bb2a6668\"",
           "member": "string",
           "name": "BuildingId",
           "required": true,
@@ -3590,7 +3590,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -3599,7 +3599,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"0VGYLwQaH4ejNnwSMIfYtl0zlstprsdZ\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -3614,7 +3614,7 @@
         {
           "disabled": false,
           "document": "查询建筑信息出参",
-          "example": "无",
+          "example": "{ \t\t\t\"BuildingProfile\": { \t\t\t\t\"Address\": \"广东省,深圳市,南山区测试建筑\", \t\t\t\t\"BuildingId\": \"2e374df6-7ba7-45d2-a44d-2a92bb2a6668\", \t\t\t\t\"BuildingName\": \"测试建筑\", \t\t\t\t\"Latitude\": 22.533192, \t\t\t\t\"Longitude\": 113.93048, \t\t\t\t\"SpaceCode\": \"000003\" \t\t\t} \t\t}",
           "member": "BuildingProfileRes",
           "name": "Result",
           "output_required": false,
@@ -4446,7 +4446,7 @@
         {
           "disabled": false,
           "document": "建筑id",
-          "example": "无",
+          "example": "\"956bd069-c802-4bbb-b325-18d30d7bcd3c\"",
           "member": "string",
           "name": "BuildingId",
           "required": true,
@@ -4455,7 +4455,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -4464,7 +4464,7 @@
         {
           "disabled": false,
           "document": "页容量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -4473,7 +4473,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -4482,7 +4482,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"ZRCJHdnhqEUEqO1vyskCgWimPucHhREV\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4491,7 +4491,7 @@
         {
           "disabled": false,
           "document": "父级构件id",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ParentElementIds",
           "required": false,
@@ -4500,7 +4500,7 @@
         {
           "disabled": false,
           "document": "空间层级",
-          "example": "无",
+          "example": "7",
           "member": "uint64",
           "name": "Level",
           "required": false,
@@ -4509,7 +4509,7 @@
         {
           "disabled": false,
           "document": "空间分类代码",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpaceTypeCode",
           "required": false,
@@ -4518,7 +4518,7 @@
         {
           "disabled": false,
           "document": "构件类型",
-          "example": "无",
+          "example": "[ \t\t\"TBIM_SPACE\", \t\t\"TBIM_BUILDINGSTOREY\" \t]",
           "member": "string",
           "name": "EntityTypes",
           "required": false,
@@ -4527,7 +4527,7 @@
         {
           "disabled": false,
           "document": "是否包含已删除构件",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "IncludeDelete",
           "required": false,
@@ -4536,7 +4536,7 @@
         {
           "disabled": false,
           "document": "时间范围-开始",
-          "example": "无",
+          "example": "1683981442",
           "member": "uint64",
           "name": "StartTime",
           "required": false,
@@ -4545,7 +4545,7 @@
         {
           "disabled": false,
           "document": "时间范围-结束",
-          "example": "无",
+          "example": "1699879043",
           "member": "uint64",
           "name": "EndTime",
           "required": false,
@@ -4560,7 +4560,7 @@
         {
           "disabled": false,
           "document": "分页查询构件出参",
-          "example": "无",
+          "example": "{ \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"BottomHeight\": -100, \t\t\t\t\t\"BuildingId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\"ElementId\": \"1Kjh8u2qf4uRSkCPoKigTI\", \t\t\t\t\t\"ElementName\": \"1F（结） -0.100\", \t\t\t\t\t\"EntityType\": \"TBIM_BUILDINGSTOREY\", \t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\"Level\": 7, \t\t\t\t\t\"ParentElementId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\"SpaceCode\": \"000185004\", \t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t} \t\t\t], \t\t\t\"TotalCount\": 1\t\t}",
           "member": "ElementProfilePageRes",
           "name": "Result",
           "output_required": false,
@@ -4582,7 +4582,7 @@
         {
           "disabled": false,
           "document": "建筑id",
-          "example": "无",
+          "example": "\"82d5fb5a-52d0-4636-a225-d46245e911ef\"",
           "member": "string",
           "name": "BuildingId",
           "required": true,
@@ -4591,7 +4591,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -4600,7 +4600,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"0VGYLwQaH4ejNnwSMIfYtl0zlstprsdZ\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -4609,7 +4609,7 @@
         {
           "disabled": false,
           "document": "父级构件id",
-          "example": "无",
+          "example": "\"61049c1b-158d-41bd-9f0b-df30a50401bd\"",
           "member": "string",
           "name": "ElementId",
           "required": false,
@@ -4618,7 +4618,7 @@
         {
           "disabled": false,
           "document": "构件级别",
-          "example": "无",
+          "example": "8",
           "member": "uint64",
           "name": "Level",
           "required": false,
@@ -4627,7 +4627,7 @@
         {
           "disabled": false,
           "document": "空间分类代码",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpaceTypeCode",
           "required": false,
@@ -4642,7 +4642,7 @@
         {
           "disabled": false,
           "document": "构件树出参",
-          "example": "无",
+          "example": "{ \t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\"Root\": { \t\t\t\t\"Children\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"Children\": [], \t\t\t\t\t\t\"ElementProfile\": { \t\t\t\t\t\t\t\"BottomHeight\": 3000, \t\t\t\t\t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\t\t\"ElementId\": \"6042d426-6973-47ff-8ce1-3a63ef9f3c2f\", \t\t\t\t\t\t\t\"ElementName\": \"\", \t\t\t\t\t\t\t\"EntityType\": \"TBIM_SLASHWALL\", \t\t\t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\t\t\"Level\": 8, \t\t\t\t\t\t\t\"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\t\t\"SpaceCode\": \"00003000300000001\", \t\t\t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t\t\t} \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"ElementProfile\": { \t\t\t\t\t\"BottomHeight\": 3000, \t\t\t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\t\t\"ElementDesc\": \"\", \t\t\t\t\t\"ElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \t\t\t\t\t\"ElementName\": \"RF\", \t\t\t\t\t\"EntityType\": \"TBIM_BUILDINGSTOREY\", \t\t\t\t\t\"IsDelete\": 0, \t\t\t\t\t\"Level\": 7, \t\t\t\t\t\"ParentElementId\": \"\", \t\t\t\t\t\"Sort\": 1, \t\t\t\t\t\"SpaceCode\": \"000030003\", \t\t\t\t\t\"SpacePoiId\": \"\", \t\t\t\t\t\"SpaceTypeCode\": \"\", \t\t\t\t\t\"SpaceTypeName\": \"\" \t\t\t\t} \t\t\t} \t\t}",
           "member": "ElementProfileTreeRes",
           "name": "Result",
           "output_required": false,
@@ -5359,7 +5359,7 @@
         {
           "disabled": false,
           "document": "建筑id",
-          "example": "无",
+          "example": "\"377e4f9d-d20e-4209-b1e8-0ddb32e888c8\"",
           "member": "string",
           "name": "BuildingId",
           "required": true,
@@ -5368,7 +5368,7 @@
         {
           "disabled": false,
           "document": "构件id",
-          "example": "无",
+          "example": "\"b66aece1-62e9-49d3-872e-6e66156a853b\"",
           "member": "string",
           "name": "ElementId",
           "required": true,
@@ -5377,7 +5377,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1124\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5386,7 +5386,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"Sl5ZDmVuHzhN52o8n1KWagl7sLdrLfN7\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5401,7 +5401,7 @@
         {
           "disabled": false,
           "document": "构件属性信息出参",
-          "example": "无",
+          "example": " { \t\t\t\"BuildingId\": \"377e4f9d-d20e-4209-b1e8-0ddb32e888c8\", \t\t\t\"Coordinates\": { \t\t\t\t\"Altitude\": 0, \t\t\t\t\"Latitude\": 39.12852507853361, \t\t\t\t\"Longitude\": 117.25139600000003 \t\t\t}, \t\t\t\"ElementId\": \"b66aece1-62e9-49d3-872e-6e66156a853b\", \t\t\t\"ElementName\": \"Level : F4\", \t\t\t\"EntityTypeCode\": \"TBIM_BUILDINGSTOREY\", \t\t\t\"EntityTypeName\": \"楼层\", \t\t\t\"PropertySet\": [ \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Elevation=9500, Story Above=None}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Constraints\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Computation Height=0}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Dimensions\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Is ground plane=0}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Display\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{storeyType=TOP_FLOOR, floorHeight=3000, bottomHeight=9500}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"EDITOR_BUILDING_STOREY_EXTEND\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Scope Box=None}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Extents\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{IfcGUID=1LvAmy3$j18hHP$GEcP3rk, Export to IFC=0}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"IFC Parameters\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Structural=No, Design Option=None, Building Story=Yes}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Identity Data\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Name=Level : F4, Type=C_上标高+层标, Childs=[Roofs], Family=Level, Type Id=87266, Category=OST_Levels, ClassName=OdBmCDANode, ODAUniqueID=214592, LocalizedName=, Family and Type=Level : C_上标高+层标}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Invalid group\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"Content\": \"{Material=None}\", \t\t\t\t\t\"Description\": \"\", \t\t\t\t\t\"Name\": \"Materials and Finishes\" \t\t\t\t} \t\t\t], \t\t\t\"Translate\": { \t\t\t\t\"X\": 0, \t\t\t\t\"Y\": 0, \t\t\t\t\"Z\": 0 \t\t\t} \t\t}",
           "member": "ElementPropertyRes",
           "name": "Result",
           "output_required": false,
@@ -5598,7 +5598,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5607,7 +5607,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"x1DSknvmd61KzG20nGIBAx2fD4GZB8yh\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5622,7 +5622,7 @@
         {
           "disabled": false,
           "document": "场景列表出参",
-          "example": "无",
+          "example": " { \t\t\t\"SceneList\": [ \t\t\t\t{ \t\t\t\t\t\"SceneId\": \"0abe73dd-d06f-44f5-af82-43dea23af230\", \t\t\t\t\t\"SceneName\": \"三层商务办公楼单位修正\", \t\t\t\t\t\"Version\": \"20230705160410780\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"SceneId\": \"e9f2b87f-9078-4546-8d4f-99356ec3f82c\", \t\t\t\t\t\"SceneName\": \"商务办公楼模型\", \t\t\t\t\t\"Version\": \"20230630151240729\" \t\t\t\t} \t\t\t] \t\t}",
           "member": "SceneListRes",
           "name": "Result",
           "output_required": false,
@@ -5644,7 +5644,7 @@
         {
           "disabled": false,
           "document": "构件id列表",
-          "example": "无",
+          "example": "[\"377a53a6-c5a7-445d-a3b7-c2d721f95408\"]",
           "member": "string",
           "name": "ElementIds",
           "required": true,
@@ -5653,7 +5653,7 @@
         {
           "disabled": false,
           "document": "是否级联",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsCascade",
           "required": true,
@@ -5662,7 +5662,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5671,7 +5671,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -5680,7 +5680,7 @@
         {
           "disabled": false,
           "document": "页容量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -5689,7 +5689,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"GUsHDOIP614sDxEIiliCx7GIKTqyONoX\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5704,7 +5704,7 @@
         {
           "disabled": false,
           "document": "设备ID列表",
-          "example": "无",
+          "example": "{ \t\t\t\"DeviceIds\": [ \t\t\t\t\"2b538c57-933f-4820-b1d0-4df70d64aee3\", \t\t\t\t\"ad655ba1-975a-4238-94d7-5d2015d1cf1f\", \t\t\t\t\"5a1a0b73-7aa3-4699-a893-21846e7853ec\", \t\t\t\t\"0a198d6e-40f0-499f-bf99-7a959b7f4ef2\" \t\t\t] \t\t}",
           "member": "SpaceDeviceIdListRes",
           "name": "Result",
           "output_required": false,
@@ -5726,7 +5726,7 @@
         {
           "disabled": false,
           "document": "构件id列表",
-          "example": "无",
+          "example": " [ \"82d5fb5a-52d0-4636-a225-d46245e911ef\" ]",
           "member": "string",
           "name": "ElementIds",
           "required": true,
@@ -5735,7 +5735,7 @@
         {
           "disabled": false,
           "document": "是否级联",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "IsCascade",
           "required": true,
@@ -5744,7 +5744,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5753,7 +5753,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -5762,7 +5762,7 @@
         {
           "disabled": false,
           "document": "页容量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -5771,7 +5771,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"0VGYLwQaH4ejNnwSMIfYtl0zlstprsdZ\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5786,7 +5786,7 @@
         {
           "disabled": false,
           "document": "查询指定空间下设备与构件绑定关系列表出参",
-          "example": "无",
+          "example": " { \t\t\t\"SpaceDeviceRelationList\": [ \t\t\t\t{ \t\t\t\t\t\"DeviceId\": \"1c902558-d360-4a93-9b6f-1b49970534f7\", \t\t\t\t\t\"ElementId\": \"8a74aba0-46e3-4097-89e6-7adbeb9ccaef\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"DeviceId\": \"b66603af-7f8c-46c0-8712-1353a08d5806\", \t\t\t\t\t\"ElementId\": \"af7f7d83-17f8-4dff-80e2-a5129a39eab0\" \t\t\t\t} \t\t\t] \t\t}",
           "member": "SpaceDeviceRelationRes",
           "name": "Result",
           "output_required": false,
@@ -5808,7 +5808,7 @@
         {
           "disabled": false,
           "document": "设备id",
-          "example": "无",
+          "example": "\"1c902558-d360-4a93-9b6f-1b49970534f7\"",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -5817,7 +5817,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5826,7 +5826,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"0VGYLwQaH4ejNnwSMIfYtl0zlstprsdZ\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5841,7 +5841,7 @@
         {
           "disabled": false,
           "document": "设备绑定的空间信息出参",
-          "example": "无",
+          "example": " { \t\t\t\"BottomHeight\": 3000, \t\t\t\"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \t\t\t\"ElementId\": \"8a74aba0-46e3-4097-89e6-7adbeb9ccaef\", \t\t\t\"ElementName\": \"\", \t\t\t\"EntityType\": \"TBIM_CAMERA\", \t\t\t\"Level\": 9, \t\t\t\"SpaceCode\": \"00003000300000008\" \t\t}",
           "member": "DeviceSpaceInfoRes",
           "name": "Result",
           "output_required": false,
@@ -5863,7 +5863,7 @@
         {
           "disabled": false,
           "document": "设备id",
-          "example": "无",
+          "example": "\"ad655ba1-975a-4238-94d7-5d2015d1cf1f\"",
           "member": "string",
           "name": "DeviceId",
           "required": true,
@@ -5872,7 +5872,7 @@
         {
           "disabled": false,
           "document": "工作空间id",
-          "example": "无",
+          "example": "\"1016\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5881,7 +5881,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"GUsHDOIP614sDxEIiliCx7GIKTqyONoX\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5896,7 +5896,7 @@
         {
           "disabled": false,
           "document": "空间层级关系出参",
-          "example": "无",
+          "example": " { \t\t\t\"SpaceRelation\": { \t\t\t\t\"Children\": [ \t\t\t\t\t{ \t\t\t\t\t\t\"Children\": [ \t\t\t\t\t\t\t{ \t\t\t\t\t\t\t\t\"Children\": [], \t\t\t\t\t\t\t\t\"ElementId\": \"bdbbf537-d6c4-4b1e-80ae-e0bcaab8b06f\", \t\t\t\t\t\t\t\t\"ElementName\": \"test_no_100\", \t\t\t\t\t\t\t\t\"Level\": 9, \t\t\t\t\t\t\t\t\"ParentSpaceCode\": \"000162002\", \t\t\t\t\t\t\t\t\"SpaceCode\": \"00016200200000003\" \t\t\t\t\t\t\t} \t\t\t\t\t\t], \t\t\t\t\t\t\"ElementId\": \"f3c5ffa5-05e3-4c26-a447-0edf71aa9783\", \t\t\t\t\t\t\"ElementName\": \"1F\", \t\t\t\t\t\t\"Level\": 7, \t\t\t\t\t\t\"ParentSpaceCode\": \"000162\", \t\t\t\t\t\t\"SpaceCode\": \"000162002\" \t\t\t\t\t} \t\t\t\t], \t\t\t\t\"ElementId\": \"377a53a6-c5a7-445d-a3b7-c2d721f95408\", \t\t\t\t\"ElementName\": \"小智新设备挂接0628\", \t\t\t\t\"Level\": 6, \t\t\t\t\"ParentSpaceCode\": \"\", \t\t\t\t\"SpaceCode\": \"000162\" \t\t\t} \t\t}",
           "member": "SpaceRelationRes",
           "name": "Result",
           "output_required": false,
@@ -5918,7 +5918,7 @@
         {
           "disabled": false,
           "document": "项目空间ID",
-          "example": "无",
+          "example": "\"1124\"",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -5927,7 +5927,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "PageNumber",
           "required": true,
@@ -5936,7 +5936,7 @@
         {
           "disabled": false,
           "document": "页容量",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "PageSize",
           "required": true,
@@ -5945,7 +5945,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"Sl5ZDmVuHzhN52o8n1KWagl7sLdrLfN7\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -5960,7 +5960,7 @@
         {
           "disabled": false,
           "document": "空间分类列表出参",
-          "example": "无",
+          "example": "{ \t\t\t\"SpaceTypeList\": [ \t\t\t\t{ \t\t\t\t\t\"SpaceTypeCode\": \"DIANTIJIAN\", \t\t\t\t\t\"SpaceTypeName\": \"电梯间\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"SpaceTypeCode\": \"LOUTIJIAN\", \t\t\t\t\t\"SpaceTypeName\": \"楼梯间\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"SpaceTypeCode\": \"WODEFANGJIAN\", \t\t\t\t\t\"SpaceTypeName\": \"我的房间\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"SpaceTypeCode\": \"XIUXISHI\", \t\t\t\t\t\"SpaceTypeName\": \"休息室\" \t\t\t\t} \t\t\t] \t\t}",
           "member": "SpaceTypeListRes",
           "name": "Result",
           "output_required": false,
@@ -5982,7 +5982,7 @@
         {
           "disabled": false,
           "document": "租户所有工作空间ID列表",
-          "example": "无",
+          "example": " [ \"1015\", \"1016\", \"1018\" ]",
           "member": "string",
           "name": "WorkspaceIdList",
           "required": true,
@@ -5991,7 +5991,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"ZRCJHdnhqEUEqO1vyskCgWimPucHhREV\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6006,7 +6006,7 @@
         {
           "disabled": false,
           "document": "租户所有项目空间楼栋数量与建筑面积统计结果",
-          "example": "无",
+          "example": "{ \t\t\t\"BuildingArea\": 202928.77732501808, \t\t\t\"BuildingCount\": 137 \t\t}",
           "member": "SpaceDataTotalStatsRes",
           "name": "Result",
           "output_required": false,
@@ -6028,7 +6028,7 @@
         {
           "disabled": false,
           "document": "翻页页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6037,7 +6037,7 @@
         {
           "disabled": false,
           "document": "翻页大小",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6046,7 +6046,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6055,7 +6055,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "无",
+          "example": "10001",
           "member": "string",
           "name": "TenantId",
           "required": false,
@@ -6064,7 +6064,7 @@
         {
           "disabled": false,
           "document": "更新时间戳，单位秒",
-          "example": "无",
+          "example": "1680836659",
           "member": "int64",
           "name": "UpdateAt",
           "required": false,
@@ -6073,7 +6073,7 @@
         {
           "disabled": false,
           "document": "部门ID",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -6082,7 +6082,7 @@
         {
           "disabled": false,
           "document": "用户id",
-          "example": "无",
+          "example": "财务部",
           "member": "string",
           "name": "Cursor",
           "required": false,
@@ -6119,7 +6119,7 @@
         {
           "disabled": false,
           "document": "翻页页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6128,7 +6128,7 @@
         {
           "disabled": false,
           "document": "翻页大小",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6137,7 +6137,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6146,7 +6146,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "无",
+          "example": "10001",
           "member": "string",
           "name": "TenantId",
           "required": false,
@@ -6155,7 +6155,7 @@
         {
           "disabled": false,
           "document": "更新时间戳，单位秒",
-          "example": "无",
+          "example": "1681314106",
           "member": "int64",
           "name": "UpdateAt",
           "required": false,
@@ -6164,7 +6164,7 @@
         {
           "disabled": false,
           "document": "部门ID",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "DepartmentId",
           "required": false,
@@ -6173,7 +6173,7 @@
         {
           "disabled": false,
           "document": "用户id",
-          "example": "无",
+          "example": "0d0a98561b3c4f72963eba5c5fcf56e1",
           "member": "string",
           "name": "Cursor",
           "required": false,
@@ -6182,7 +6182,7 @@
         {
           "disabled": false,
           "document": "状态，0，获取所有数据，1正常启用，2禁用",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Status",
           "required": false,
@@ -6191,7 +6191,7 @@
         {
           "disabled": false,
           "document": "项目空间id",
-          "example": "无",
+          "example": "1016",
           "member": "string",
           "name": "WorkspaceId",
           "required": false,
@@ -6200,7 +6200,7 @@
         {
           "disabled": false,
           "document": "关键词",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "Keyword",
           "required": false,
@@ -6209,7 +6209,7 @@
         {
           "disabled": false,
           "document": "是否递归获取子级数据，0需要，1不需要，默认为0",
-          "example": "无",
+          "example": "1",
           "member": "string",
           "name": "NoRecursive",
           "required": false,
@@ -6510,7 +6510,7 @@
         {
           "disabled": false,
           "document": "工作空间ID列表",
-          "example": "无",
+          "example": " [ \t\t\"1016\", \t\t\"1015\", \t\t\"1018\" \t]",
           "member": "string",
           "name": "WorkspaceIdList",
           "required": true,
@@ -6519,7 +6519,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "\"fquCgDi2QfNDMlNyQ5YPoMR2Zw4tQs2B\"",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6534,7 +6534,7 @@
         {
           "disabled": false,
           "document": "查询项目空间楼栋数量与建筑面积出参",
-          "example": "无",
+          "example": "{ \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"BuildingArea\": 0, \t\t\t\t\t\"BuildingCount\": 2, \t\t\t\t\t\"WorkspaceId\": \"1018\", \t\t\t\t\t\"WorkspaceName\": \"华北园区项目\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"BuildingArea\": 202928.77732501808, \t\t\t\t\t\"BuildingCount\": 127, \t\t\t\t\t\"WorkspaceId\": \"1016\", \t\t\t\t\t\"WorkspaceName\": \"华南园区项目\" \t\t\t\t}, \t\t\t\t{ \t\t\t\t\t\"BuildingArea\": 0, \t\t\t\t\t\"BuildingCount\": 8, \t\t\t\t\t\"WorkspaceId\": \"1015\", \t\t\t\t\t\"WorkspaceName\": \"公共空间\" \t\t\t\t} \t\t\t] \t\t}",
           "member": "SpaceDataListStatsRes",
           "name": "Result",
           "output_required": false,
@@ -6602,7 +6602,7 @@
         {
           "disabled": false,
           "document": "翻页页码",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Offset",
           "required": true,
@@ -6611,7 +6611,7 @@
         {
           "disabled": false,
           "document": "翻页大小",
-          "example": "无",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": true,
@@ -6620,7 +6620,7 @@
         {
           "disabled": false,
           "document": "工作空间ID",
-          "example": "无",
+          "example": "1016",
           "member": "string",
           "name": "WorkspaceId",
           "required": true,
@@ -6629,7 +6629,7 @@
         {
           "disabled": false,
           "document": "token",
-          "example": "无",
+          "example": "xxx",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -6638,7 +6638,7 @@
         {
           "disabled": false,
           "document": "租户ID",
-          "example": "无",
+          "example": "10001",
           "member": "string",
           "name": "TenantId",
           "required": false,
@@ -6647,7 +6647,7 @@
         {
           "disabled": false,
           "document": "更新时间戳，单位秒",
-          "example": "无",
+          "example": "1689755305",
           "member": "int64",
           "name": "UpdateAt",
           "required": false,

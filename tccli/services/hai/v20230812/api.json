@@ -6,6 +6,13 @@
       "name": "创建实例",
       "output": "RunInstancesResponse",
       "status": "online"
+    },
+    "TerminateInstances": {
+      "document": "本接口 (TerminateInstances) 用于主动退还实例。",
+      "input": "TerminateInstancesRequest",
+      "name": "销毁实例",
+      "output": "TerminateInstancesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -30,7 +37,7 @@
         {
           "disabled": false,
           "document": "算力套餐类型",
-          "example": "S",
+          "example": "XL",
           "member": "string",
           "name": "BundleType",
           "required": true,
@@ -133,6 +140,42 @@
         }
       ],
       "usage": "both"
+    },
+    "TerminateInstancesRequest": {
+      "document": "TerminateInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "['hai-2dfajzo4q']\t",
+          "member": "string",
+          "name": "InstanceIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为False，True代表只验证接口连通性",
+          "example": "无",
+          "member": "bool",
+          "name": "DryRun",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "TerminateInstancesResponse": {
+      "document": "TerminateInstances返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

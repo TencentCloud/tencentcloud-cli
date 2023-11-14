@@ -134,9 +134,9 @@
       "status": "online"
     },
     "DeleteShareDomain": {
-      "document": "删除域名共享",
+      "document": "按账号删除域名共享",
       "input": "DeleteShareDomainRequest",
-      "name": "删除域名共享",
+      "name": "按账号删除域名共享",
       "output": "DeleteShareDomainResponse",
       "status": "online"
     },

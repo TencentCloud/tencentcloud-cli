@@ -1,3 +1,268 @@
+# Release 3.0.885.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 37 次发布
+
+发布时间：2023-11-15 01:10:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81231)
+
+	* 新增入参：ProtocolType
+
+* [DescribeAddressTemplateList](http://document.tencentcloudapi.woa.com/document/product/1132/81902)
+
+	* 新增入参：TemplateType, TemplateId
+
+	* 新增出参：IpTemplateCount, DomainTemplateCount, PortTemplateCount
+
+* [ModifyAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81903)
+
+	* 新增入参：ProtocolType
+
+
+修改数据结构：
+
+* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+
+	* 新增成员：Domain
+
+* [TemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TemplateListInfo)
+
+	* 新增成员：TemplateId, ProtocolType
+
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+
+
+
+## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+
+### 第 2 次发布
+
+发布时间：2023-11-15 01:11:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCustomizeTemplates
+* CreateTemporaryWorkspaceByDevFile
+* CreateWorkspaceByAgent
+* CreateWorkspaceByTemplate
+* CreateWorkspaceByVersionControl
+* CreateWorkspaceTemporaryToken
+* DeleteCustomizeTemplatesById
+* DescribeCustomizeTemplates
+* DescribeCustomizeTemplatesById
+* DescribeCustomizeTemplatesPresets
+* DescribeWorkspaceEnvList
+* DescribeWorkspaceIsReady
+* DescribeWorkspaceNameExist
+* DescribeWorkspaceStatus
+* DescribeWorkspaceStatusList
+* ModifyCustomizeTemplateVersionControl
+* ModifyCustomizeTemplatesFullById
+* ModifyCustomizeTemplatesPartById
+* ModifyWorkspaceAttributes
+* RecoverWorkspace
+* RemoveWorkspace
+* RunWorkspace
+* StopWorkspace
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 19 次发布
+
+发布时间：2023-11-15 01:11:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ScanTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ScanTaskInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>AppId, UIN, UserName
+
+* [VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk)
+
+	* <font color="#dd0000">**修改成员**：</font>Port, NoHandleCount, Level, Component, RecentTime, FirstTime, AffectAssetCount, Id, From, Index, VULType, VULName, CVE, Describe, Payload, AppName, References, AppVersion, VULURL, Nick, AppId, Uin, Fix, EMGCVulType
+
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 82 次发布
+
+发布时间：2023-11-15 01:14:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
+
+	* 新增成员：EngineGeneration, EngineTypeDetail
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 7 次发布
+
+发布时间：2023-11-15 01:15:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResumeMigrateJob](http://document.tencentcloudapi.woa.com/document/product/571/78295)
+
+	* <font color="#dd0000">**修改入参**：</font>ResumeOption
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 2 次发布
+
+发布时间：2023-11-15 01:17:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82588)
+
+
+
+## 移动应用安全(ms) 版本：2018-04-08
+
+### 第 6 次发布
+
+发布时间：2023-11-15 01:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PlanInfo](http://document.tencentcloudapi.woa.com/document/product/1617/78369#PlanInfo)
+
+	* 新增成员：SetFile, FileSign, AntiRoot
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 78 次发布
+
+发布时间：2023-11-15 01:30:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteProClusters](http://document.tencentcloudapi.woa.com/document/product/1179/82589)
+
+
+
+## 设备安全(tds) 版本：2022-08-01
+
+### 第 2 次发布
+
+发布时间：2023-11-15 01:31:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeFraudUltimate](http://document.tencentcloudapi.woa.com/document/product/1719/80585)
+
+	* 新增出参：Unionid
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 45 次发布
+
+发布时间：2023-11-15 01:33:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudNativeAPIGatewayUpstream](http://document.tencentcloudapi.woa.com/document/product/1364/82593)
+* [DescribeUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82592)
+* [ModifyUpstreamNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1364/82591)
+* [UpdateUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82590)
+
+新增数据结构：
+
+* [KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck)
+* [KongPassiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongPassiveHealthCheck)
+* [KongUpstreamList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamList)
+* [KongUpstreamPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamPreview)
+* [UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig)
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 115 次发布
+
+发布时间：2023-11-15 01:34:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyCustomerGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17509)
+
+	* 新增入参：BgpAsn
+
+
+
+
 # Release 3.0.884.1
 
 ## 云拨测(cat) 版本：2018-04-09
