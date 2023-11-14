@@ -318,6 +318,14 @@
         "title": "Waf 多域名ip黑白名单查询"
       }
     ],
+    "DescribeCCAutoStatus": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=DescribeCCAutoStatus\r\n&Domain=www.test.com\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"AutoCCSwitch\": 0,\n        \"RequestId\": \"2a2d479f-d481-40e9-bb31-8f9e743bd529\"\n    }\n}",
+        "title": "Waf 斯巴达版本查询cc自动封堵状态"
+      }
+    ],
     "DescribeCCRule": [
       {
         "document": "",
@@ -336,13 +344,13 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"Domain\": \"www.testwaf.com\",\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"clb\",\n                \"saas\"\n            ],\n            \"Name\": \"InstanceType\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"By\": \"ts_version\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"ActionType\": 22,\n                    \"Advance\": 0,\n                    \"Interval\": 60,\n                    \"Limit\": 60,\n                    \"MatchFunc\": 0,\n                    \"Name\": \"test1\",\n                    \"Priority\": 50,\n                    \"Status\": 1,\n                    \"TsVersion\": 1579058116920,\n                    \"Url\": \"///\",\n                    \"ValidTime\": 600,\n                    \"Options\": \"\",\n                    \"RuleId\": 1900009616,\n                    \"EventId\": \"111\"\n                }\n            ],\n            \"TotalCount\": 1\n        },\n        \"RequestId\": \"1cc54bf4-cfeb-40cc-a823-035e52106df9\"\n    }\n}",
         "title": "根据URL查询API规则"
       },
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCCRuleList\n<公共请求参数>\n\n{\n    \"By\": \"ts_version\",\n    \"Domain\": \"hzh.qcloud.com\",\n    \"Limit\": \"10\",\n    \"Order\": \"asc\",\n    \"Offset\": \"10000002\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41b55f8b-1ed1-484c-aab7-c14c0889f78b\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"41b55f8b-1ed1-484c-aab7-c14c0889f78b\",\n        \"Data\": {\n            \"Res\": [\n                {\n                    \"Name\": \"test\",\n                    \"Status\": 0,\n                    \"Advance\": 0,\n                    \"Limit\": 2,\n                    \"Interval\": 60,\n                    \"Url\": \"/\",\n                    \"MatchFunc\": 0,\n                    \"ActionType\": 22,\n                    \"Priority\": 50,\n                    \"ValidTime\": 600,\n                    \"TsVersion\": 1609769256761,\n                    \"Options\": \"[]\",\n                    \"RuleId\": 0,\n                    \"EventId\": \"11\"\n                },\n                {\n                    \"Name\": \"ddp\",\n                    \"Status\": 0,\n                    \"Advance\": 0,\n                    \"Limit\": 10,\n                    \"Interval\": 10,\n                    \"Url\": \"/test\",\n                    \"MatchFunc\": 0,\n                    \"ActionType\": 20,\n                    \"Priority\": 1,\n                    \"ValidTime\": 61,\n                    \"TsVersion\": 1669794335102,\n                    \"Options\": \"\",\n                    \"RuleId\": 1900009616,\n                    \"EventId\": \"111\"\n                }\n            ],\n            \"TotalCount\": 2\n        }\n    }\n}",
         "title": "test1"
       }
     ],
@@ -1060,14 +1068,6 @@
         "title": "修改ip惩罚配置"
       }
     ],
-    "ModifyWafAutoDenyStatus": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyWafAutoDenyStatus\n<公共请求参数>\n\n{\n    \"WafAutoDenyDetails\": {\n        \"TimeThreshold\": 0,\n        \"AttackThreshold\": 0,\n        \"AttackTags\": [\n            \"123\"\n        ],\n        \"DefenseStatus\": 0\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"WafAutoDenyDetails\": {\n            \"TimeThreshold\": 0,\n            \"AttackThreshold\": 0,\n            \"AttackTags\": [\n                \"123\"\n            ],\n            \"DefenseStatus\": 0\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "配置WAF自动情报封禁模块详情"
-      }
-    ],
     "ModifyWafThreatenIntelligence": [
       {
         "document": "配置管理WAF 威胁情报封禁模块",
@@ -1130,6 +1130,14 @@
         "input": "POST / HTTP/1.1\nHost: waf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchElasticMode\n<公共请求参数>\n\n{\n    \"Edition\": \"clb-waf\",\n    \"Mode\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"123894afsa90577\"\n    }\n}",
         "title": "切换弹性的开关"
+      }
+    ],
+    "UpsertCCAutoStatus": [
+      {
+        "document": "",
+        "input": "https://waf.tencentcloudapi.com/?Action=UpsertCCAutoStatus\r\n&Domain=test.com\r\n&Value=1\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Data\": null,\n        \"RequestId\": \"a0b4e55b-5307-4378-856d-efc22475c77d\"\n    }\n}",
+        "title": "Waf 斯巴达版本更新cc自动封堵状态"
       }
     ],
     "UpsertCCRule": [

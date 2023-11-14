@@ -252,12 +252,19 @@
       "output": "DescribeBatchIpAccessControlResponse",
       "status": "online"
     },
+    "DescribeCCAutoStatus": {
+      "document": "Waf 斯巴达版本查询cc自动封堵状态",
+      "input": "DescribeCCAutoStatusRequest",
+      "name": "Waf 斯巴达版本查询cc自动封堵状态",
+      "output": "DescribeCCAutoStatusResponse",
+      "status": "online"
+    },
     "DescribeCCRule": {
-      "document": "没有在使用。\n\nWaf  CC V2 Query接口",
+      "document": "Waf  CC V2 Query接口",
       "input": "DescribeCCRuleRequest",
       "name": "Waf  CC V2 Query接口",
       "output": "DescribeCCRuleResponse",
-      "status": "deprecated"
+      "status": "online"
     },
     "DescribeCCRuleList": {
       "document": "根据多条件查询CC规则",
@@ -833,13 +840,6 @@
       "output": "ModifyWafAutoDenyRulesResponse",
       "status": "online"
     },
-    "ModifyWafAutoDenyStatus": {
-      "document": "配置WAF自动封禁模块状态",
-      "input": "ModifyWafAutoDenyStatusRequest",
-      "name": "配置WAF自动封禁模块状态",
-      "output": "ModifyWafAutoDenyStatusResponse",
-      "status": "online"
-    },
     "ModifyWafThreatenIntelligence": {
       "document": "配置WAF威胁情报封禁模块详情",
       "input": "ModifyWafThreatenIntelligenceRequest",
@@ -894,6 +894,13 @@
       "input": "SwitchElasticModeRequest",
       "name": "切换弹性QPS的开关",
       "output": "SwitchElasticModeResponse",
+      "status": "online"
+    },
+    "UpsertCCAutoStatus": {
+      "document": "Waf 斯巴达版本更新cc自动封堵状态",
+      "input": "UpsertCCAutoStatusRequest",
+      "name": "Waf 斯巴达版本更新cc自动封堵状态",
+      "output": "UpsertCCAutoStatusResponse",
       "status": "online"
     },
     "UpsertCCRule": {
@@ -2205,28 +2212,6 @@
         },
         {
           "disabled": false,
-          "document": "1 API安全6折\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "APICPWaf",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "1 表示5折折扣\n2 表示4折折扣\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1",
-          "member": "int64",
-          "name": "APINPWaf",
-          "output_required": false,
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
           "document": "api安全7天试用标识。1试用。0没试用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
@@ -2860,6 +2845,188 @@
           "name": "OptionsArr",
           "required": true,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CCRuleItems": {
+      "document": "CC规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名字",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模式",
+          "example": "0",
+          "member": "uint64",
+          "name": "Advance",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限制",
+          "example": "0",
+          "member": "uint64",
+          "name": "Limit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "范围",
+          "example": "0",
+          "member": "uint64",
+          "name": "Interval",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网址",
+          "example": "test.com",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "匹配类型",
+          "example": "0",
+          "member": "uint64",
+          "name": "MatchFunc",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "动作",
+          "example": "0",
+          "member": "uint64",
+          "name": "ActionType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "优先级",
+          "example": "0",
+          "member": "uint64",
+          "name": "Priority",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效时间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ValidTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本",
+          "example": "0",
+          "member": "uint64",
+          "name": "TsVersion",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则详情",
+          "example": "\"[]\"",
+          "member": "string",
+          "name": "Options",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则ID",
+          "example": "0",
+          "member": "uint64",
+          "name": "RuleId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "api_aaa",
+          "member": "string",
+          "name": "EventId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联的Session规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,200000001]",
+          "member": "int64",
+          "name": "SessionApplied",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CCRuleLists": {
+      "document": "CC规则总览",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "CCRuleItems",
+          "name": "Res",
+          "required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -5570,6 +5737,42 @@
       ],
       "type": "object"
     },
+    "DescribeCCAutoStatusRequest": {
+      "document": "DescribeCCAutoStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCCAutoStatusResponse": {
+      "document": "DescribeCCAutoStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置状态",
+          "example": "",
+          "member": "int64",
+          "name": "AutoCCSwitch",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCCRuleListRequest": {
       "document": "DescribeCCRuleList请求参数结构体",
       "members": [
@@ -5633,6 +5836,16 @@
     "DescribeCCRuleListResponse": {
       "document": "DescribeCCRuleList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "查询到的CC规则的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "list",
+          "member": "CCRuleLists",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -14415,42 +14628,6 @@
       ],
       "type": "object"
     },
-    "ModifyWafAutoDenyStatusRequest": {
-      "document": "ModifyWafAutoDenyStatus请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WAF 自动封禁配置项",
-          "example": "",
-          "member": "AutoDenyDetail",
-          "name": "WafAutoDenyDetails",
-          "required": true,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyWafAutoDenyStatusResponse": {
-      "document": "ModifyWafAutoDenyStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "WAF 自动封禁配置项",
-          "example": "",
-          "member": "AutoDenyDetail",
-          "name": "WafAutoDenyDetails",
-          "type": "object",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "ModifyWafThreatenIntelligenceRequest": {
       "document": "ModifyWafThreatenIntelligence请求参数结构体",
       "members": [
@@ -16100,6 +16277,60 @@
         }
       ],
       "usage": "in"
+    },
+    "UpsertCCAutoStatusRequest": {
+      "document": "UpsertCCAutoStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名",
+          "example": "",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "状态值",
+          "example": "",
+          "member": "int64",
+          "name": "Value",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "版本：clb-waf, spart-waf",
+          "example": "",
+          "member": "string",
+          "name": "Edition",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpsertCCAutoStatusResponse": {
+      "document": "UpsertCCAutoStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正常情况为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "Data",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "UpsertCCRuleRequest": {
       "document": "UpsertCCRule请求参数结构体",
