@@ -5988,7 +5988,7 @@
           "example": "overwrite ",
           "member": "string",
           "name": "ResumeOption",
-          "required": true,
+          "required": false,
           "type": "string"
         }
       ],

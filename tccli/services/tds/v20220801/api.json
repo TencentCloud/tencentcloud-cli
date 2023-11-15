@@ -416,7 +416,7 @@
           "example": "6.8.50",
           "member": "string",
           "name": "AppVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -426,7 +426,7 @@
           "example": "OPPO",
           "member": "string",
           "name": "Brand",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -436,7 +436,7 @@
           "example": "2409:8929:270b:316:16f2:2dd6:2987:390a",
           "member": "string",
           "name": "ClientIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -446,7 +446,7 @@
           "example": "PEMM00",
           "member": "string",
           "name": "Model",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -456,7 +456,7 @@
           "example": "1",
           "member": "string",
           "name": "NetworkType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -466,7 +466,7 @@
           "example": "com.xx.xxx",
           "member": "string",
           "name": "PackageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -476,7 +476,7 @@
           "example": "2",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -486,7 +486,7 @@
           "example": "11",
           "member": "string",
           "name": "SystemVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -496,7 +496,7 @@
           "example": "74",
           "member": "string",
           "name": "SdkBuildNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -506,7 +506,7 @@
           "example": "无",
           "member": "RiskInfo",
           "name": "RiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -516,7 +516,7 @@
           "example": "无",
           "member": "RiskInfo",
           "name": "HistRiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -526,7 +526,7 @@
           "example": "85ADB490D96D6A0044D00798",
           "member": "string",
           "name": "Openid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -536,7 +536,7 @@
           "example": "无",
           "member": "RiskInfo",
           "name": "SceneRiskInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -546,8 +546,18 @@
           "example": "1",
           "member": "uint64",
           "name": "SuggestionLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "图灵盾统一ID",
+          "example": "BCC4AD40983ACF9CA18A55BC0A4401489833F362",
+          "member": "string",
+          "name": "Unionid",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

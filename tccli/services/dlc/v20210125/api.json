@@ -5548,6 +5548,28 @@
           "required": false,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎版本，支持Native/SuperSQL\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Native",
+          "member": "string",
+          "name": "EngineGeneration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎详细类型，支持：SparkSQL/SparkBatch/PrestoSQL/Kyuubi\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

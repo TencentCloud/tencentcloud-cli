@@ -11,6 +11,7 @@ tccli vod ComposeMedia --cli-unfold-argument  \
     --Tracks.0.TrackItems.0.Type Empty \
     --Tracks.0.TrackItems.0.EmptyItem.Duration 5 \
     --Tracks.0.TrackItems.1.AudioItem.SourceMedia 5285485487985271488 \
+    --Tracks.0.TrackItems.1.AudioItem.Duration 15 \
     --Tracks.0.TrackItems.1.Type Audio \
     --Tracks.0.TrackItems.2.AudioItem.Duration 14 \
     --Tracks.0.TrackItems.2.AudioItem.SourceMedia 5285485487985271489 \
@@ -55,6 +56,7 @@ tccli vod ComposeMedia --cli-unfold-argument  \
     --Tracks.0.TrackItems.0.Type Sticker \
     --Tracks.0.Type Sticker \
     --Tracks.1.TrackItems.0.TransitionItem.Duration 5 \
+    --Tracks.1.TrackItems.0.TransitionItem.MediaTransitions.0.Type ImageFadeInFadeOut \
     --Tracks.1.TrackItems.0.Type Transition \
     --Tracks.1.TrackItems.1.Type Video \
     --Tracks.1.TrackItems.1.VideoItem.Duration 60 \

@@ -7798,6 +7798,7 @@
           "example": "125xxx65-ComposeMedia-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25488,9 +25489,10 @@
         {
           "disabled": false,
           "document": "音频流的编码格式，可选值：\n<li>libfdk_aac：适合 mp4 文件。</li>\n默认值：libfdk_aac。",
-          "example": "",
+          "example": "libfdk_aac",
           "member": "string",
           "name": "Codec",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -25498,9 +25500,10 @@
         {
           "disabled": false,
           "document": "音频流的采样率，可选值：\n<li>16000</li>\n<li>32000</li>\n<li>44100</li>\n<li>48000</li>\n单位：Hz。\n默认值：16000。",
-          "example": "",
+          "example": "44100",
           "member": "int64",
           "name": "SampleRate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -25508,9 +25511,21 @@
         {
           "disabled": false,
           "document": "音频声道数，可选值：\n<li>1：单声道 。</li>\n<li>2：双声道</li>\n默认值：2。",
-          "example": "",
+          "example": "2",
           "member": "int64",
           "name": "AudioChannel",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音频流的码率，取值范围：0 和 [26, 256]，单位：kbps。\n当取值为 0，将自动设置音频码率。",
+          "example": "192",
+          "member": "int64",
+          "name": "Bitrate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false

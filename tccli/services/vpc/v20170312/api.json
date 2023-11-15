@@ -20613,6 +20613,15 @@
           "name": "CustomerGatewayName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "BGP ASN。只有开启BGP白名单才可以修改此参数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "BgpAsn",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

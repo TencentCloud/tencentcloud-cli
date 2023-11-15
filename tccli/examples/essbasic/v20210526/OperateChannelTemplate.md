@@ -6,68 +6,152 @@ Input:
 
 ```
 tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.AppId yD*****id \
-    --TemplateId yDxlkUyKxxxxxxxxxjEvToNRI2MuTr \
-    --OperateType select
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType SELECT \
+    --TemplateId yDSLZUUckpot5i01UydF1AEvOMQiKaBG \
+    --ProxyOrganizationOpenIds  \
+    --AuthTag 
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppId": "yD*****id",
-        "AuthTag": "all",
-        "FailMessageList": [],
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDSLZUUckpot5i01UydF1AEvOMQiKaBG",
         "OperateResult": "all-success",
+        "AuthTag": "all",
         "ProxyOrganizationOpenIds": [
-            "子客企业1",
-            "子客企业2"
+            "org_lisi",
+            "org_dianziqian",
+            "org_zhangsan",
+            "org_wangwu",
+            "org_liubo"
         ],
-        "TemplateId": "yDxlkUyKQDpMxxxxxoNRI2MuTr",
-        "RequestId": "s16395xxxxx249716125"
+        "FailMessageList": [],
+        "RequestId": "75fffd24-3644-44eb-b7da-3849b942d69b"
     }
 }
 ```
 
-**Example 2: 设置Available为启用**
+**Example 2: 删除部分授权子企业**
 
-设置Available为启用--成功
+1.ProxyOrganizationOpenIds为要删除的子企业的标识列表
 
-尽管OperateResult是fail，但是这只代表更改可见性失败了，对于Available的更改是成功的。
+2.因为本模板是部分可见的AuthTag设置为part
 
 Input: 
 
 ```
 tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.AppId yDwFoUUckpsomwx1Uyh******** \
-    --Agent.ProxyOrganizationOpenId *******anization_1 \
-    --Agent.ProxyOperator.OpenId *****heng \
-    --Agent.ProxyOperator.Channel SBZEV***** \
-    --OperateType update \
-    --TemplateId yDwFiUUckpsz25w1UxjZYF******** \
-    --AuthTag all \
-    --Available 1
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType DELETE \
+    --TemplateId yDwivUUckpo2g6ugUu4sxH2i15SY0OZY \
+    --ProxyOrganizationOpenIds org_zhangsan,org_lisi,org_wangwu \
+    --AuthTag part
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "AppId": "yDwFoUUckps*******hWGhIR2RkhOjw2",
-        "AuthTag": "all",
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "OperateResult": "all-success",
+        "AuthTag": "part",
+        "ProxyOrganizationOpenIds": [
+            "org_dianziqian"
+        ],
+        "FailMessageList": [],
+        "RequestId": "7ca39d89-2b6c-4fd9-9f32-735137d5a6e9"
+    }
+}
+```
+
+**Example 3: 增加部分可见的模版授权子企业列表**
+
+1.ProxyOrganizationOpenIds为新增的子企业的标识列表
+
+2.因为本模板是部分可见的AuthTag设置为part
+
+Input: 
+
+```
+tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType UPDATE \
+    --TemplateId yDwivUUckpo2g6ugUu4sxH2i15SY0OZY \
+    --ProxyOrganizationOpenIds org_zhangsan,org_lisi,org_wangwu \
+    --AuthTag part
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "OperateResult": "all-success",
+        "AuthTag": "part",
+        "ProxyOrganizationOpenIds": [
+            "org_dianziqian",
+            "org_zhangsan",
+            "org_lisi",
+            "org_wangwu"
+        ],
+        "FailMessageList": [],
+        "RequestId": "7ca39d89-2b6c-4fd9-9f32-735137d5a6e9"
+    }
+}
+```
+
+**Example 4: 授权部分失败的情况**
+
+因为org_fffffffffff不存在导致这个企业授权失败(其他的授权成功)
+
+Input: 
+
+```
+tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType UPDATE \
+    --TemplateId yDwivUUckpo2g6ugUu4sxH2i15SY0OZY \
+    --ProxyOrganizationOpenIds org_zhangsan,org_lisi,org_fffffffffff \
+    --AuthTag part
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "OperateResult": "part-success",
+        "AuthTag": "part",
+        "ProxyOrganizationOpenIds": [
+            "org_zhangsan",
+            "org_lisi",
+            "org_dianziqian"
+        ],
         "FailMessageList": [
             {
-                "Message": "已经是全部可见，勿重复操作",
-                "ProxyOrganizationOpenId": ""
+                "ProxyOrganizationOpenId": "org_fffffffffff",
+                "Message": "非渠道合作企业openId"
             }
         ],
-        "OperateResult": "fail",
-        "ProxyOrganizationOpenIds": [
-            "first-organiz****",
-            "****organization_1"
-        ],
-        "RequestId": "4031c******e-95f6-74b3225f279e",
-        "TemplateId": "yDwFiUUckpsz25w1******"
+        "RequestId": "8b9e9a6b-2730-4971-8c4d-7c12d3905cd7"
     }
 }
 ```

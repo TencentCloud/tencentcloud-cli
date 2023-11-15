@@ -1,7 +1,7 @@
 **Example 1: 合同催办**
 
-因为yDSL5UUckpokxl92UvwoHnSHf4RPOgu5我已经催办过, 所以返回"签署人 张三: 此签署人已催办过；", 对方不会在受到催办短信
-yDSL5UUckpok9bd0UvwoHnxmejhdsSKL和yDSL5UUckpok4vmvUu7BBPOShktz8qHN催办成功, 对方受到短信
+因为yDSL5UUckpokxl92UvwoHnSHf4RPOgu5我已经催办过, 所以返回"签署人 张三: 此签署人已催办过；", 对方不会在收到催办短信
+yDSL5UUckpok9bd0UvwoHnxmejhdsSKL和yDSL5UUckpok4vmvUu7BBPOShktz8qHN催办成功, 对方收到短信
 
 Input: 
 

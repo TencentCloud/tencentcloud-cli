@@ -189,6 +189,13 @@
       "output": "DeleteEnvironmentsResponse",
       "status": "online"
     },
+    "DeleteProClusters": {
+      "document": "删除专业集群——预付费，仅通过API 调用，支持同时删除多个集群",
+      "input": "DeleteProClustersRequest",
+      "name": "删除专业集群",
+      "output": "DeleteProClustersResponse",
+      "status": "online"
+    },
     "DeleteRabbitMQUser": {
       "document": "删除RabbitMQ的用户",
       "input": "DeleteRabbitMQUserRequest",
@@ -4476,6 +4483,53 @@
           "member": "string",
           "name": "EnvironmentIds",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProClustersRequest": {
+      "document": "DeleteProClusters请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id列表",
+          "example": "[\"pulsar-rd42kgdwpe4g\",\"pulsar-rd42kgdwpe5g\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProClustersResponse": {
+      "document": "DeleteProClusters返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "退还实例订单号",
+          "example": "[\"20231020394041338776131\",\"20231020394041338776132\"]",
+          "member": "string",
+          "name": "DealNames",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "[\"pulsar-rd42kgdwpe4g\",\"pulsar-rd42kgdwpe5g\"]",
+          "member": "string",
+          "name": "ClusterIds",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

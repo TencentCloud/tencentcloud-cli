@@ -1822,12 +1822,21 @@
         },
         {
           "disabled": false,
-          "document": "1 ip模板\n5 域名模板",
+          "document": "1 ip模板\n5 域名模板\n6 协议端口模板",
           "example": "模板类型",
           "member": "int64",
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "协议端口模板，协议类型，4:4层协议，7:7层协议，Type=6时必填",
+          "example": "无",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4084,6 +4093,24 @@
           "name": "Uuid",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1：ip模板，5：域名模板，6：协议端口模板",
+          "example": "1",
+          "member": "string",
+          "name": "TemplateType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "模板Id",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4119,6 +4146,36 @@
           "name": "NameList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Ip地址模板数量",
+          "example": "1",
+          "member": "int64",
+          "name": "IpTemplateCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名地址模板数量",
+          "example": "1",
+          "member": "int64",
+          "name": "DomainTemplateCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "协议端口模板数量",
+          "example": "1",
+          "member": "int64",
+          "name": "PortTemplateCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -7142,6 +7199,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名化CLB的域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "www.qq.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8093,6 +8160,15 @@
           "name": "Type",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "协议端口模板，协议类型，4:4层协议，7:7层协议。Type=6时必填。",
+          "example": "4",
+          "member": "string",
+          "name": "ProtocolType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -12205,7 +12281,7 @@
           "example": "mb_1300448058_1636944838448",
           "member": "string",
           "name": "Uuid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12215,7 +12291,7 @@
           "example": "abc",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12225,7 +12301,7 @@
           "example": "whitelist",
           "member": "string",
           "name": "Detail",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12235,7 +12311,7 @@
           "example": "1.1.1.1",
           "member": "string",
           "name": "IpString",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12245,7 +12321,7 @@
           "example": "2021-11-15 10:53:58",
           "member": "string",
           "name": "InsertTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12255,7 +12331,7 @@
           "example": "2021-11-15 10:53:58",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12265,7 +12341,7 @@
           "example": "1",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12275,8 +12351,28 @@
           "example": "1",
           "member": "int64",
           "name": "RulesNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pp-test",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议端口模板，协议类型，4:4层协议，7:7层协议\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "4",
+          "member": "string",
+          "name": "ProtocolType",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

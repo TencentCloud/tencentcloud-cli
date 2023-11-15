@@ -232,6 +232,14 @@
         "title": "查询云原生网关服务列表"
       }
     ],
+    "DescribeCloudNativeAPIGatewayUpstream": [
+      {
+        "document": "获取云原生网关服务详情下的Upstream列表",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeCloudNativeAPIGatewayUpstream\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b70\",\n    \"ServiceName\": \"test-service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\",\n        \"Result\": {\n            \"UpstreamList\": [\n                {\n                    \"Name\": \"ins-102555d0.1105a4ef-567b-49c5-8564-0377dae7a5d1.DEFAULT_GROUP__test-dev.default\",\n                    \"ID\": \"6ca025ec-ba14-4876-b99c-741c1dcc4131\",\n                    \"Target\": [\n                        {\n                            \"Host\": \"1.1.1.1\",\n                            \"Port\": 7777,\n                            \"Weight\": 10\n                        },\n                        {\n                            \"Host\": \"1.1.1.1\",\n                            \"Port\": 8889,\n                            \"Weight\": 10\n                        }\n                    ]\n                },\n                {\n                    \"Name\": \"test-upstream\",\n                    \"ID\": \"7cf1d268-4c76-4caf-8a59-20bb6a3ff016\",\n                    \"Target\": [\n                        {\n                            \"Host\": \"9.0.0.1\",\n                            \"Port\": 80,\n                            \"Weight\": 100\n                        }\n                    ]\n                }\n            ]\n        }\n    }\n}",
+        "title": "获取云原生网关服务详情下的Upstream列表"
+      }
+    ],
     "DescribeCloudNativeAPIGateways": [
       {
         "document": "",
@@ -286,6 +294,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSREInstances\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Content\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"Name\": \"abc\",\n                \"Edition\": \"abc\",\n                \"Status\": \"abc\",\n                \"SpecId\": \"abc\",\n                \"Replica\": 0,\n                \"Type\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetIds\": [\n                    \"abc\"\n                ],\n                \"EnableStorage\": true,\n                \"StorageType\": \"abc\",\n                \"StorageCapacity\": 0,\n                \"Paymode\": \"abc\",\n                \"EKSClusterID\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"EnvInfos\": [\n                    {\n                        \"EnvName\": \"abc\",\n                        \"VpcInfos\": [\n                            {\n                                \"VpcId\": \"abc\",\n                                \"SubnetId\": \"abc\",\n                                \"IntranetAddress\": \"abc\"\n                            }\n                        ],\n                        \"Status\": \"abc\",\n                        \"StorageCapacity\": 0,\n                        \"AdminServiceIp\": \"abc\",\n                        \"ConfigServiceIp\": \"abc\",\n                        \"EnableConfigInternet\": true,\n                        \"ConfigInternetServiceIp\": \"abc\",\n                        \"SpecId\": \"abc\",\n                        \"EnvReplica\": 0,\n                        \"RunningCount\": 0,\n                        \"AliasEnvName\": \"abc\",\n                        \"EnvDesc\": \"abc\",\n                        \"ClientBandWidth\": 1,\n                        \"EnableConfigIntranet\": true\n                    }\n                ],\n                \"EngineRegion\": \"abc\",\n                \"EnableInternet\": true,\n                \"VpcInfos\": [\n                    {\n                        \"VpcId\": \"abc\",\n                        \"SubnetId\": \"abc\",\n                        \"IntranetAddress\": \"abc\"\n                    }\n                ],\n                \"ServiceGovernanceInfos\": [\n                    {\n                        \"EngineRegion\": \"abc\",\n                        \"BoundK8SInfos\": [\n                            {\n                                \"BoundClusterId\": \"abc\",\n                                \"BoundClusterType\": \"abc\",\n                                \"SyncMode\": \"abc\",\n                                \"BindRegion\": \"abc\"\n                            }\n                        ],\n                        \"VpcInfos\": [\n                            {\n                                \"VpcId\": \"abc\",\n                                \"SubnetId\": \"abc\",\n                                \"IntranetAddress\": \"abc\"\n                            }\n                        ],\n                        \"PgwVpcInfos\": [],\n                        \"LimiterVpcInfos\": [],\n                        \"AuthOpen\": true,\n                        \"Features\": [\n                            \"abc\"\n                        ],\n                        \"MainPassword\": \"abc\",\n                        \"CLSTopics\": [\n                            {\n                                \"LogSetId\": \"abc\",\n                                \"LogSetName\": \"abc\",\n                                \"TopicId\": \"abc\",\n                                \"TopicName\": \"abc\"\n                            }\n                        ]\n                    }\n                ],\n                \"Tags\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": \"abc\"\n                    }\n                ],\n                \"EnableConsoleInternet\": true,\n                \"EnableConsoleIntranet\": true,\n                \"ConfigInfoVisible\": true,\n                \"ConsoleDefaultPwd\": \"abc\",\n                \"TradeType\": 0,\n                \"AutoRenewFlag\": 0,\n                \"CurDeadline\": \"abc\",\n                \"IsolateTime\": \"abc\",\n                \"RegionInfos\": [\n                    {\n                        \"EngineRegion\": \"abc\",\n                        \"Replica\": 0,\n                        \"SpecId\": \"abc\",\n                        \"EnableClientInternet\": true,\n                        \"MainRegion\": true,\n                        \"ConsoleIntranetVpcInfos\": [\n                            {\n                                \"VpcId\": \"abc\",\n                                \"SubnetId\": \"abc\",\n                                \"IntranetAddress\": \"abc\"\n                            }\n                        ],\n                        \"IntranetVpcInfos\": [\n                            {\n                                \"VpcId\": \"abc\",\n                                \"SubnetId\": \"abc\",\n                                \"IntranetAddress\": \"abc\"\n                            }\n                        ]\n                    }\n                ],\n                \"EKSType\": \"abc\",\n                \"FeatureVersion\": \"abc\",\n                \"EnableClientIntranet\": true,\n                \"StorageOption\": [\n                    {\n                        \"Name\": \"abc\",\n                        \"Type\": \"abc\",\n                        \"Capacity\": 1\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询引擎实例列表"
+      }
+    ],
+    "DescribeUpstreamHealthCheckConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpstreamHealthCheckConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"EnableActiveHealthCheck\": true,\n            \"ActiveHealthCheck\": {\n                \"HealthyInterval\": 1,\n                \"UnHealthyInterval\": 1,\n                \"HttpPath\": \"abc\"\n            },\n            \"EnablePassiveHealthCheck\": true,\n            \"PassiveHealthCheck\": {\n                \"Type\": \"abc\"\n            },\n            \"Successes\": 1,\n            \"Failures\": 1,\n            \"Timeouts\": 1,\n            \"HealthyHttpStatuses\": [\n                1\n            ],\n            \"UnhealthyHttpStatuses\": [\n                1\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "DescribeZookeeperReplicas": [
@@ -368,6 +384,14 @@
         "title": "修改云原生API网关实例分组基础信息"
       }
     ],
+    "ModifyUpstreamNodeStatus": [
+      {
+        "document": "将上游节点置为健康",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeCloudNativeAPIGatewayUpstream\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"ServiceName\": \"test\",\n    \"Host\": \"10.0.0.1\",\n    \"Port\": \"8080\",\n    \"Status\": \"HEALTHY\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "将上游节点置为健康"
+      }
+    ],
     "UpdateCloudNativeAPIGatewayCertificateInfo": [
       {
         "document": "修改云原生网关证书信息",
@@ -390,6 +414,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateEngineInternetAccess\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-xxxxx\",\n    \"EnableClientInternetAccess\": \"true\",\n    \"EngineType\": \"eureka\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "修改引擎公网访问配置"
+      }
+    ],
+    "UpdateUpstreamHealthCheckConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateUpstreamHealthCheckConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"HealthCheckConfig\": {\n        \"EnableActiveHealthCheck\": true,\n        \"ActiveHealthCheck\": {\n            \"HealthyInterval\": 1,\n            \"UnHealthyInterval\": 1,\n            \"HttpPath\": \"abc\"\n        },\n        \"EnablePassiveHealthCheck\": true,\n        \"PassiveHealthCheck\": {\n            \"Type\": \"abc\"\n        },\n        \"Successes\": 1,\n        \"Failures\": 1,\n        \"Timeouts\": 1,\n        \"HealthyHttpStatuses\": [\n            1\n        ],\n        \"UnhealthyHttpStatuses\": [\n            1\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
       }
     ],
     "UpdateUpstreamTargets": [

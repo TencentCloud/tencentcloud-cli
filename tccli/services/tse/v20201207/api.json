@@ -203,6 +203,13 @@
       "output": "DescribeCloudNativeAPIGatewayServicesResponse",
       "status": "online"
     },
+    "DescribeCloudNativeAPIGatewayUpstream": {
+      "document": "获取云原生网关服务详情下的Upstream列表",
+      "input": "DescribeCloudNativeAPIGatewayUpstreamRequest",
+      "name": "获取云原生网关服务详情下的Upstream列表",
+      "output": "DescribeCloudNativeAPIGatewayUpstreamResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGateways": {
       "document": "获取云原生API网关实例列表",
       "input": "DescribeCloudNativeAPIGatewaysRequest",
@@ -250,6 +257,13 @@
       "input": "DescribeSREInstancesRequest",
       "name": "查询引擎实例列表",
       "output": "DescribeSREInstancesResponse",
+      "status": "online"
+    },
+    "DescribeUpstreamHealthCheckConfig": {
+      "document": "获取云原生网关服务健康检查配置",
+      "input": "DescribeUpstreamHealthCheckConfigRequest",
+      "name": "获取网关服务健康检查配置",
+      "output": "DescribeUpstreamHealthCheckConfigResponse",
       "status": "online"
     },
     "DescribeZookeeperReplicas": {
@@ -322,6 +336,13 @@
       "output": "ModifyNativeGatewayServerGroupResponse",
       "status": "online"
     },
+    "ModifyUpstreamNodeStatus": {
+      "document": "修改云原生网关上游实例节点健康状态",
+      "input": "ModifyUpstreamNodeStatusRequest",
+      "name": "修改云原生网关上游实例节点健康状态",
+      "output": "ModifyUpstreamNodeStatusResponse",
+      "status": "online"
+    },
     "UpdateCloudNativeAPIGatewayCertificateInfo": {
       "document": "修改云原生网关证书信息",
       "input": "UpdateCloudNativeAPIGatewayCertificateInfoRequest",
@@ -341,6 +362,13 @@
       "input": "UpdateEngineInternetAccessRequest",
       "name": "修改引擎公网访问配置",
       "output": "UpdateEngineInternetAccessResponse",
+      "status": "online"
+    },
+    "UpdateUpstreamHealthCheckConfig": {
+      "document": "更新云原生网关健康检查配置",
+      "input": "UpdateUpstreamHealthCheckConfigRequest",
+      "name": "更新网关服务健康检查配置",
+      "output": "UpdateUpstreamHealthCheckConfigResponse",
       "status": "online"
     },
     "UpdateUpstreamTargets": {
@@ -4002,6 +4030,51 @@
       ],
       "type": "object"
     },
+    "DescribeCloudNativeAPIGatewayUpstreamRequest": {
+      "document": "DescribeCloudNativeAPIGatewayUpstream请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名字",
+          "example": "service-demo",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudNativeAPIGatewayUpstreamResponse": {
+      "document": "DescribeCloudNativeAPIGatewayUpstream返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无",
+          "example": "无",
+          "member": "KongUpstreamList",
+          "name": "Result",
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewaysRequest": {
       "document": "DescribeCloudNativeAPIGateways请求参数结构体",
       "members": [
@@ -4645,6 +4718,52 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpstreamHealthCheckConfigRequest": {
+      "document": "DescribeUpstreamHealthCheckConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关服务名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpstreamHealthCheckConfigResponse": {
+      "document": "DescribeUpstreamHealthCheckConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpstreamHealthCheckConfig",
+          "name": "Result",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5404,6 +5523,45 @@
       ],
       "usage": "out"
     },
+    "KongActiveHealthCheck": {
+      "document": "Kong网关主动健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主动健康检查健康探测间隔，单位：秒，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HealthyInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主动健康检查异常探测间隔，单位：秒，0表示不开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "UnHealthyInterval",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "在 GET HTTP 请求中使用的路径，以作为主动运行状况检查的探测器运行。默认： ”/”。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "HttpPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "KongCertificate": {
       "document": "云原生网关证书",
       "members": [
@@ -5571,6 +5729,23 @@
         }
       ],
       "usage": "out"
+    },
+    "KongPassiveHealthCheck": {
+      "document": "Kong网关被动健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "后端target协议类型，被动健康检查支持http和tcp，主动健康检查支持http\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "KongRoutePreview": {
       "document": "云原生网关路由信息",
@@ -6305,6 +6480,58 @@
       ],
       "usage": "both"
     },
+    "KongUpstreamList": {
+      "document": "kong后端upstream列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "无\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongUpstreamPreview",
+          "name": "UpstreamList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "KongUpstreamPreview": {
+      "document": "云原生网关Upstream信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "ID",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test-service",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "后端配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongTarget",
+          "name": "Target",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ListCloudNativeAPIGatewayResult": {
       "document": "获取云原生API网关实例列表响应结果。",
       "members": [
@@ -6942,6 +7169,79 @@
     "ModifyNativeGatewayServerGroupResponse": {
       "document": "ModifyNativeGatewayServerGroup返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUpstreamNodeStatusRequest": {
+      "document": "ModifyUpstreamNodeStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关实例ID",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务名称",
+          "example": "test",
+          "member": "string",
+          "name": "ServiceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问IP地址或域名",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Host",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问端口",
+          "example": "8080",
+          "member": "int64",
+          "name": "Port",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "HEALTHY或UNHEALTHY",
+          "example": "HEALTHY",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUpstreamNodeStatusResponse": {
+      "document": "ModifyUpstreamNodeStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -8039,6 +8339,61 @@
       ],
       "type": "object"
     },
+    "UpdateUpstreamHealthCheckConfigRequest": {
+      "document": "UpdateUpstreamHealthCheckConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-xxxxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网关服务名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "健康检查配置",
+          "example": "无",
+          "member": "UpstreamHealthCheckConfig",
+          "name": "HealthCheckConfig",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateUpstreamHealthCheckConfigResponse": {
+      "document": "UpdateUpstreamHealthCheckConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否成功\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateUpstreamTargetsRequest": {
       "document": "UpdateUpstreamTargets请求参数结构体",
       "members": [
@@ -8093,6 +8448,111 @@
         }
       ],
       "type": "object"
+    },
+    "UpstreamHealthCheckConfig": {
+      "document": "云原生网关健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启主动健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableActiveHealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主动健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongActiveHealthCheck",
+          "name": "ActiveHealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启被动健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnablePassiveHealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被动健康检查配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KongPassiveHealthCheck",
+          "name": "PassiveHealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连续健康阈值，单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Successes",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连续异常阈值，单位：次\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Failures",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超时阈值，单位：次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeouts",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康HTTP状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "HealthyHttpStatuses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常HTTP状态码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UnhealthyHttpStatuses",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "VpcInfo": {
       "document": "私有网络信息",
