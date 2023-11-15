@@ -308,6 +308,13 @@
       "output": "ModifyUserResponse",
       "status": "online"
     },
+    "ModifyUserGroup": {
+      "document": "修改用户组",
+      "input": "ModifyUserGroupRequest",
+      "name": "修改用户组",
+      "output": "ModifyUserGroupResponse",
+      "status": "online"
+    },
     "ResetDeviceAccountPassword": {
       "document": "清除设备账号绑定密码",
       "input": "ResetDeviceAccountPasswordRequest",
@@ -4696,6 +4703,51 @@
     },
     "ModifyResourceResponse": {
       "document": "ModifyResource返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupRequest": {
+      "document": "ModifyUserGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户组ID",
+          "example": "1",
+          "member": "uint64",
+          "name": "Id",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户组名",
+          "example": "xx",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户组所属的部门ID，如：1.2.3",
+          "example": "1.2.3",
+          "member": "string",
+          "name": "DepartmentId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyUserGroupResponse": {
+      "document": "ModifyUserGroup返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

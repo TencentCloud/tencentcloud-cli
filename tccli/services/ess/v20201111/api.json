@@ -344,7 +344,7 @@
       "status": "online"
     },
     "DescribeFlowTemplates": {
-      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n\n\n**适用场景**\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模版ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/ab81fa948a0a6fea14f48cac91d0e36a/channel_DescribeTemplates.png)\n\n模版中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)",
+      "document": "此接口（DescribeFlowTemplates）用于查询本企业模板列表信息。\n\n\n**适用场景**\n该接口常用来配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">模板发起合同-创建电子文档</a>接口，作为创建电子文档的前置接口使用。\n通过此接口查询到模板信息后，再通过调用创建电子文档接口，指定模板ID，指定模板中需要的填写控件内容等，完成电子文档的创建。\n\n**一个模板通常会包含以下结构信息** \n\n- 模板模板ID, 模板名字等基本信息\n- 发起方参与信息Promoter、签署参与方 Recipients，后者会在模板发起合同时用于指定参与方\n- 发起方和签署方的填写控件 Components\n- 签署方的签署控件 SignComponents\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/ab81fa948a0a6fea14f48cac91d0e36a/channel_DescribeTemplates.png)\n\n模板中各元素的层级关系, 所有的填写控件和签署控件都归属某一个角色(通过控件的ComponentRecipientId来关联)\n![image](https://qcloudimg.tencent-cloud.cn/raw/45c638bd93f9c8024763add9ab47c27f.png)",
       "input": "DescribeFlowTemplatesRequest",
       "name": "查询模板信息",
       "output": "DescribeFlowTemplatesResponse",
@@ -8269,7 +8269,7 @@
         {
           "disabled": false,
           "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
-          "example": "测试合同-1\t",
+          "example": "购买50吨西瓜的采购合同",
           "member": "string",
           "name": "FlowName",
           "output_required": true,

@@ -912,7 +912,7 @@
           "example": "dts-e7ukka6g",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -922,7 +922,7 @@
           "example": "dts-e7ukka6g-cmp-c7tnusmo",
           "member": "string",
           "name": "CompareTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -932,7 +932,7 @@
           "example": "test",
           "member": "string",
           "name": "TaskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -942,7 +942,7 @@
           "example": "success",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -952,7 +952,7 @@
           "example": "无",
           "member": "CompareObject",
           "name": "Config",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -962,7 +962,7 @@
           "example": "无",
           "member": "ProcessProgress",
           "name": "CheckProcess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -972,7 +972,7 @@
           "example": "无",
           "member": "ProcessProgress",
           "name": "CompareProcess",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -982,7 +982,7 @@
           "example": "same",
           "member": "string",
           "name": "Conclusion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -992,7 +992,7 @@
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1002,7 +1002,7 @@
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "StartedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1012,7 +1012,7 @@
           "example": "2022-07-11 17:26:40",
           "member": "string",
           "name": "FinishedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1022,7 +1022,7 @@
           "example": "dataCheck",
           "member": "string",
           "name": "Method",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1032,7 +1032,7 @@
           "example": "无",
           "member": "CompareOptions",
           "name": "Options",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1042,7 +1042,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

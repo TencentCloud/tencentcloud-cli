@@ -7030,7 +7030,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7040,7 +7040,7 @@
           "example": "无",
           "member": "string",
           "name": "Code",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7050,7 +7050,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7060,7 +7060,7 @@
           "example": "无",
           "member": "string",
           "name": "Date",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7070,7 +7070,7 @@
           "example": "无",
           "member": "string",
           "name": "PretaxAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7080,7 +7080,7 @@
           "example": "无",
           "member": "string",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7090,7 +7090,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalCn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7100,7 +7100,7 @@
           "example": "无",
           "member": "string",
           "name": "Seller",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7110,7 +7110,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7120,7 +7120,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerTel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7130,7 +7130,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7140,7 +7140,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerBank",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7150,7 +7150,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerBankAccount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7160,7 +7160,7 @@
           "example": "无",
           "member": "string",
           "name": "Buyer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7170,7 +7170,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7180,7 +7180,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7190,7 +7190,7 @@
           "example": "无",
           "member": "string",
           "name": "TaxAuthorities",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7200,7 +7200,7 @@
           "example": "无",
           "member": "string",
           "name": "TaxAuthoritiesCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7210,7 +7210,7 @@
           "example": "无",
           "member": "string",
           "name": "VIN",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7220,7 +7220,7 @@
           "example": "无",
           "member": "string",
           "name": "VehicleModel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7230,7 +7230,7 @@
           "example": "无",
           "member": "string",
           "name": "VehicleEngineCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7240,7 +7240,7 @@
           "example": "无",
           "member": "string",
           "name": "CertificateNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7250,7 +7250,7 @@
           "example": "无",
           "member": "string",
           "name": "InspectionNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7260,7 +7260,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7270,7 +7270,7 @@
           "example": "无",
           "member": "string",
           "name": "VehicleType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7280,7 +7280,7 @@
           "example": "无",
           "member": "string",
           "name": "Kind",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7290,7 +7290,7 @@
           "example": "无",
           "member": "string",
           "name": "Province",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7300,7 +7300,7 @@
           "example": "无",
           "member": "string",
           "name": "City",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7310,7 +7310,7 @@
           "example": "无",
           "member": "string",
           "name": "Tax",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7320,7 +7320,7 @@
           "example": "无",
           "member": "string",
           "name": "TaxRate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7330,7 +7330,7 @@
           "example": "无",
           "member": "int64",
           "name": "CompanySealMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7340,7 +7340,7 @@
           "example": "无",
           "member": "string",
           "name": "Tonnage",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7350,7 +7350,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7360,7 +7360,7 @@
           "example": "无",
           "member": "string",
           "name": "FormType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7370,7 +7370,7 @@
           "example": "无",
           "member": "string",
           "name": "FormName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7380,7 +7380,17 @@
           "example": "无",
           "member": "string",
           "name": "Issuer",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "进口证明书号",
+          "example": "无",
+          "member": "string",
+          "name": "TaxNum",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7389,8 +7399,18 @@
           "document": "完税凭证号码",
           "example": "无",
           "member": "string",
-          "name": "TaxNum",
-          "required": false,
+          "name": "TaxPayNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税控码",
+          "example": "无",
+          "member": "string",
+          "name": "TaxCode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7400,7 +7420,7 @@
           "example": "无",
           "member": "string",
           "name": "MaxPeopleNum",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7410,7 +7430,7 @@
           "example": "无",
           "member": "string",
           "name": "Origin",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7420,7 +7440,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineCode",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7430,7 +7450,7 @@
           "example": "无",
           "member": "string",
           "name": "MachineNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7440,7 +7460,7 @@
           "example": "无",
           "member": "int64",
           "name": "QRCodeMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -14712,7 +14732,7 @@
           "example": "无",
           "member": "string",
           "name": "Title",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14722,7 +14742,7 @@
           "example": "无",
           "member": "int64",
           "name": "QRCodeMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14732,7 +14752,7 @@
           "example": "无",
           "member": "string",
           "name": "Code",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14742,7 +14762,7 @@
           "example": "无",
           "member": "string",
           "name": "Number",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14752,7 +14772,7 @@
           "example": "无",
           "member": "string",
           "name": "Date",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14762,7 +14782,7 @@
           "example": "无",
           "member": "string",
           "name": "Total",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14772,7 +14792,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalCn",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14782,7 +14802,7 @@
           "example": "无",
           "member": "string",
           "name": "Seller",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14792,7 +14812,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerTel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14802,7 +14822,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14812,7 +14832,7 @@
           "example": "无",
           "member": "string",
           "name": "SellerAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14822,7 +14842,7 @@
           "example": "无",
           "member": "string",
           "name": "Buyer",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14832,7 +14852,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14842,7 +14862,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14852,7 +14872,7 @@
           "example": "无",
           "member": "string",
           "name": "BuyerTel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14862,7 +14882,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14872,7 +14892,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyTaxID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14882,7 +14902,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyBankAccount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14892,7 +14912,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyTel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14902,7 +14922,7 @@
           "example": "无",
           "member": "string",
           "name": "CompanyAddress",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14912,7 +14932,7 @@
           "example": "无",
           "member": "string",
           "name": "TransferAdministrationName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14922,7 +14942,7 @@
           "example": "无",
           "member": "string",
           "name": "LicensePlate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14932,7 +14952,7 @@
           "example": "无",
           "member": "string",
           "name": "RegistrationNumber",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14942,7 +14962,7 @@
           "example": "无",
           "member": "string",
           "name": "VIN",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14952,7 +14972,7 @@
           "example": "无",
           "member": "string",
           "name": "VehicleModel",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14962,7 +14982,7 @@
           "example": "无",
           "member": "string",
           "name": "Kind",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14972,7 +14992,7 @@
           "example": "无",
           "member": "string",
           "name": "Province",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14982,7 +15002,7 @@
           "example": "无",
           "member": "string",
           "name": "City",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14992,7 +15012,7 @@
           "example": "无",
           "member": "string",
           "name": "VehicleType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15002,7 +15022,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15012,7 +15032,7 @@
           "example": "无",
           "member": "string",
           "name": "FormType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15022,7 +15042,7 @@
           "example": "无",
           "member": "string",
           "name": "FormName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15032,8 +15052,108 @@
           "example": "无",
           "member": "int64",
           "name": "CompanySealMark",
-          "required": false,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营拍卖单位",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionOrgName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营拍卖单位地址",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionOrgAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营拍卖单位纳税人识别号",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionOrgTaxID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营拍卖单位开户银行账号",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionOrgBankAccount",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "经营拍卖单位电话",
+          "example": "无",
+          "member": "string",
+          "name": "AuctionOrgPhone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开票人",
+          "example": "无",
+          "member": "string",
+          "name": "Issuer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税控码",
+          "example": "无",
+          "member": "string",
+          "name": "TaxCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机器编号",
+          "example": "无",
+          "member": "string",
+          "name": "MachineSerialNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机打发票代码",
+          "example": "无",
+          "member": "string",
+          "name": "MachineCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机打发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "MachineNumber",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],

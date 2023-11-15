@@ -112,6 +112,13 @@
       "output": "CreateImageSpriteTemplateResponse",
       "status": "online"
     },
+    "CreateJustInTimeTranscodeTemplate": {
+      "document": "创建即时转码模板。",
+      "input": "CreateJustInTimeTranscodeTemplateRequest",
+      "name": "创建即时转码模板",
+      "output": "CreateJustInTimeTranscodeTemplateResponse",
+      "status": "online"
+    },
     "CreatePersonSample": {
       "document": "该接口用于创建素材样本，用于通过五官定位等技术，进行内容识别、不适宜视频识别等视频处理。",
       "input": "CreatePersonSampleRequest",
@@ -285,6 +292,13 @@
       "input": "DeleteImageSpriteTemplateRequest",
       "name": "删除雪碧图模板",
       "output": "DeleteImageSpriteTemplateResponse",
+      "status": "online"
+    },
+    "DeleteJustInTimeTranscodeTemplate": {
+      "document": "删除即时转码模板。",
+      "input": "DeleteJustInTimeTranscodeTemplateRequest",
+      "name": "删除即时转码模板",
+      "output": "DeleteJustInTimeTranscodeTemplateResponse",
       "status": "online"
     },
     "DeleteMedia": {
@@ -544,6 +558,13 @@
       "input": "DescribeImageSpriteTemplatesRequest",
       "name": "获取雪碧图模板列表",
       "output": "DescribeImageSpriteTemplatesResponse",
+      "status": "online"
+    },
+    "DescribeJustInTimeTranscodeTemplates": {
+      "document": "获取即时转码模板列表。",
+      "input": "DescribeJustInTimeTranscodeTemplatesRequest",
+      "name": "获取即时转码模板列表",
+      "output": "DescribeJustInTimeTranscodeTemplatesResponse",
       "status": "online"
     },
     "DescribeLicenseUsageData": {
@@ -859,6 +880,13 @@
       "input": "ModifyImageSpriteTemplateRequest",
       "name": "修改雪碧图模板",
       "output": "ModifyImageSpriteTemplateResponse",
+      "status": "online"
+    },
+    "ModifyJustInTimeTranscodeTemplate": {
+      "document": "修改即时转码模板。",
+      "input": "ModifyJustInTimeTranscodeTemplateRequest",
+      "name": "修改即时转码模板",
+      "output": "ModifyJustInTimeTranscodeTemplateResponse",
       "status": "online"
     },
     "ModifyMediaInfo": {
@@ -9693,6 +9721,69 @@
       ],
       "type": "object"
     },
+    "CreateJustInTimeTranscodeTemplateRequest": {
+      "document": "CreateJustInTimeTranscodeTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名字，长度限制64个字符。",
+          "example": "模板名字",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频参数配置。",
+          "example": "无",
+          "member": "VideoConfigureInfo",
+          "name": "VideoConfigure",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "水印参数配置。",
+          "example": "无",
+          "member": "WatermarkConfigureInfo",
+          "name": "WatermarkConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述，长度限制256个字符。",
+          "example": "模板描述",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateJustInTimeTranscodeTemplateResponse": {
+      "document": "CreateJustInTimeTranscodeTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePersonSampleRequest": {
       "document": "CreatePersonSample请求参数结构体",
       "members": [
@@ -11497,6 +11588,42 @@
     },
     "DeleteImageSpriteTemplateResponse": {
       "document": "DeleteImageSpriteTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJustInTimeTranscodeTemplateRequest": {
+      "document": "DeleteJustInTimeTranscodeTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名字。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteJustInTimeTranscodeTemplateResponse": {
+      "document": "DeleteJustInTimeTranscodeTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -13766,6 +13893,89 @@
           "member": "ImageSpriteTemplate",
           "name": "ImageSpriteTemplateSet",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJustInTimeTranscodeTemplatesRequest": {
+      "document": "DescribeJustInTimeTranscodeTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名过滤条件，数组长度限制：100。",
+          "example": "无",
+          "member": "string",
+          "name": "Names",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模板类型过滤条件，可选值：\n<li>Preset：系统预置任务流模板；</li>\n<li>Custom：用户自定义任务流模板。</li>",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：10，最大值：100。",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJustInTimeTranscodeTemplatesResponse": {
+      "document": "DescribeJustInTimeTranscodeTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合过滤条件的记录总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板详情列表。",
+          "example": "无",
+          "member": "JustInTimeTranscodeTemplate",
+          "name": "JustInTimeTranscodeTemplateSet",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19076,6 +19286,62 @@
       ],
       "usage": "in"
     },
+    "JustInTimeTranscodeTemplate": {
+      "document": "即时转码模板详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板类型。",
+          "example": "Custom",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板名。",
+          "example": "模板名",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "模板描述。",
+          "example": "模板描述",
+          "member": "string",
+          "name": "Comment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频参数配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VideoConfigureInfo",
+          "name": "VideoConfigure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "水印参数配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "WatermarkConfigureData",
+          "name": "WatermarkConfigure",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "LicenseUsageDataItem": {
       "document": "License 请求次数统计数据。",
       "members": [
@@ -23608,6 +23874,69 @@
     },
     "ModifyImageSpriteTemplateResponse": {
       "document": "ModifyImageSpriteTemplate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJustInTimeTranscodeTemplateRequest": {
+      "document": "ModifyJustInTimeTranscodeTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板名字。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "无",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "视频参数配置。",
+          "example": "无",
+          "member": "VideoConfigureInfoForUpdate",
+          "name": "VideoConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "水印参数配置。",
+          "example": "无",
+          "member": "WatermarkConfigureInfoForUpdate",
+          "name": "WatermarkConfigure",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "模板描述，长度限制256个字符。",
+          "example": "无",
+          "member": "string",
+          "name": "Comment",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyJustInTimeTranscodeTemplateResponse": {
+      "document": "ModifyJustInTimeTranscodeTemplate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -35109,6 +35438,106 @@
       ],
       "type": "object"
     },
+    "VideoConfigureInfo": {
+      "document": "即时转码视频模板配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 1920]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "720",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 1920]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n\n默认值：open。",
+          "example": "open",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "500",
+          "member": "int64",
+          "name": "Bitrate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VideoConfigureInfoForUpdate": {
+      "document": "即时转码视频模板更新配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频流宽度（或长边）的最大值，取值范围：0 和 [128, 1920]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "720",
+          "member": "int64",
+          "name": "Width",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流高度（或短边）的最大值，取值范围：0 和 [128, 1920]，单位：px。\n<li>当 Width、Height 均为 0，则分辨率同源；</li>\n<li>当 Width 为 0，Height 非 0，则 Width 按比例缩放；</li>\n<li>当 Width 非 0，Height 为 0，则 Height 按比例缩放；</li>\n<li>当 Width、Height 均非 0，则分辨率按用户指定。</li>\n\n默认值：0。",
+          "example": "1080",
+          "member": "int64",
+          "name": "Height",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n\n默认值：open。",
+          "example": "open",
+          "member": "string",
+          "name": "ResolutionAdaptive",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "视频流的码率，取值范围：0 和 [128, 10000]，单位：kbps。\n当取值为 0，表示视频码率和原始视频保持一致。",
+          "example": "500",
+          "member": "int64",
+          "name": "Bitrate",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "VideoDenoiseInfo": {
       "document": "视频降噪控制参数",
       "members": [
@@ -35537,6 +35966,192 @@
           "example": "ON",
           "member": "string",
           "name": "Switch",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WatermarkConfigureData": {
+      "document": "即时转码水印模板配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用水印。可取值：\n<li>ON：表示启用水印；</li>\n<li>OFF：表示关闭水印。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印 Url。",
+          "example": "1234",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印的宽度。\n<li>字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Width",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印的高度。\n<li>字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Height",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的水平位置。字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；",
+          "example": "10%",
+          "member": "string",
+          "name": "XPos",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的垂直位置。当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%。",
+          "example": "10%",
+          "member": "string",
+          "name": "YPos",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "WatermarkConfigureInfo": {
+      "document": "即时转码水印模板配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用水印。可取值：\n<li>ON：表示启用水印；</li>\n<li>OFF：表示关闭水印。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印图片 Base64 编码后的字符串。支持 jpeg、png 图片格式。",
+          "example": "1234",
+          "member": "string",
+          "name": "ImageContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印的宽度。\n<li>字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印的高度。\n<li>字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的水平位置。字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；",
+          "example": "10%",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的垂直位置。当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%。",
+          "example": "10%",
+          "member": "string",
+          "name": "YPos",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "WatermarkConfigureInfoForUpdate": {
+      "document": "即时转码水印模板更新配置。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用水印。可取值：\n<li>ON：表示启用水印；</li>\n<li>OFF：表示关闭水印。</li>",
+          "example": "ON",
+          "member": "string",
+          "name": "Switch",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印图片 Base64 编码后的字符串。支持 jpeg、png 图片格式。",
+          "example": "1234",
+          "member": "string",
+          "name": "ImageContent",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印的宽度。\n<li>字符串以 % 结尾，表示水印 Width 为视频宽度的百分比大小，如 10% 表示 Width 为视频宽度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Width",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印的高度。\n<li>字符串以 % 结尾，表示水印 Height 为视频高度的百分比大小，如 10% 表示 Height 为视频高度的 10%；</li>",
+          "example": "10%",
+          "member": "string",
+          "name": "Height",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的水平位置。字符串以 % 结尾，表示水印 XPos 为视频宽度指定百分比，如 10% 表示 XPos 为视频宽度的 10%；",
+          "example": "10%",
+          "member": "string",
+          "name": "XPos",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "水印原点距离视频图像坐标原点的垂直位置。当字符串以 % 结尾，表示水印 YPos 为视频高度指定百分比，如 10% 表示 YPos 为视频高度的 10%。",
+          "example": "10%",
+          "member": "string",
+          "name": "YPos",
           "required": false,
           "type": "string"
         }

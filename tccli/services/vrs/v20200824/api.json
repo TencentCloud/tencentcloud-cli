@@ -41,6 +41,13 @@
       "name": "获取声音复刻训练文本",
       "output": "GetTrainingTextResponse",
       "status": "online"
+    },
+    "GetVRSVoiceTypes": {
+      "document": "查询复刻音色",
+      "input": "GetVRSVoiceTypesRequest",
+      "name": "查询复刻音色",
+      "output": "GetVRSVoiceTypesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -563,6 +570,33 @@
       ],
       "type": "object"
     },
+    "GetVRSVoiceTypesRequest": {
+      "document": "GetVRSVoiceTypes请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetVRSVoiceTypesResponse": {
+      "document": "GetVRSVoiceTypes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "VoiceTypeListData",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "TrainingText": {
       "document": "训练文本",
       "members": [
@@ -599,6 +633,88 @@
           "member": "TrainingText",
           "name": "TrainingTextList",
           "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoiceTypeInfo": {
+      "document": "复刻音色详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VoiceName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音色性别: 1-male 2-female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "VoiceGender",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复刻类型: 0-轻量版复刻 1-基础版复刻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "复刻任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaskID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DateCreated",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "VoiceTypeListData": {
+      "document": "音色信息列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音色信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "VoiceTypeInfo",
+          "name": "VoiceTypeList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

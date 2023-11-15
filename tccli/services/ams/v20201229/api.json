@@ -1150,7 +1150,7 @@
         },
         {
           "disabled": false,
-          "document": "该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为秒。**默认值为15秒**，支持用户自定义配置。",
+          "document": "该字段用于返回对传入的流媒体文件进行分片的片段时长，单位为毫秒。**默认值为15秒**，支持用户自定义配置。",
           "example": "无",
           "member": "int64",
           "name": "Duration",
@@ -1196,11 +1196,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表改音频中无呻吟/娇喘相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "固定取值为Moan（呻吟/娇喘），如音频中无复杂类型「MoanResult」的返回则代表该音频中无呻吟/娇喘相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1210,7 +1210,7 @@
           "example": "1",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1220,7 +1220,7 @@
           "example": "1",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1230,7 +1230,7 @@
           "example": "1",
           "member": "float",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1240,7 +1240,7 @@
           "example": "1",
           "member": "float",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -1250,7 +1250,7 @@
           "example": "1",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -1660,11 +1660,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告，Custom：自定义词库。\n以及其他令人反感、不安全或不适宜的内容类型。\n\n如音频中无复杂类型「TextResults」的返回则代表改音频中无相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "恶意标签，Normal：正常，Porn：色情，Abuse：谩骂，Ad：广告。\n以及其他令人反感、不安全或不适宜的内容类型。\n\n如音频中无复杂类型「TextResults」的返回则代表该音频中无相关违规内容；\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "Normal",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1674,7 +1674,7 @@
           "example": "1",
           "member": "string",
           "name": "Keywords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1684,7 +1684,7 @@
           "example": "1",
           "member": "string",
           "name": "LibId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1694,7 +1694,7 @@
           "example": "1",
           "member": "string",
           "name": "LibName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1704,7 +1704,7 @@
           "example": "1",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1714,7 +1714,7 @@
           "example": "1",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1724,7 +1724,7 @@
           "example": "1",
           "member": "int64",
           "name": "LibType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1734,7 +1734,7 @@
           "example": "1",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

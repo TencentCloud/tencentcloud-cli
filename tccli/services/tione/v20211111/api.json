@@ -217,6 +217,13 @@
       "output": "DescribeDatasetsResponse",
       "status": "online"
     },
+    "DescribeEvents": {
+      "document": "获取任务式建模训练任务，Notebook，在线服务和批量预测任务的事件API",
+      "input": "DescribeEventsRequest",
+      "name": "获取事件",
+      "output": "DescribeEventsResponse",
+      "status": "online"
+    },
     "DescribeInferTemplates": {
       "document": "查询推理镜像模板",
       "input": "DescribeInferTemplatesRequest",
@@ -232,7 +239,7 @@
       "status": "online"
     },
     "DescribeLogs": {
-      "document": "获取训练、推理、Notebook服务的日志 API",
+      "document": "获取任务式建模训练任务，Notebook，在线服务和批量预测任务的日志API",
       "input": "DescribeLogsRequest",
       "name": "获取日志",
       "output": "DescribeLogsResponse",
@@ -5252,6 +5259,125 @@
       ],
       "type": "object"
     },
+    "DescribeEventsRequest": {
+      "document": "DescribeEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测\n枚举值：\n- TRAIN\n- NOTEBOOK\n- INFER\n- BATCH",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "Service",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件最早发生的时间（RFC3339格式的时间字符串），默认值为当前时间的前一天",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询事件最晚发生的时间（RFC3339格式的时间字符串），默认值为当前时间",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页Limit，默认值为100，最大值为100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页Offset，默认值为0",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排列顺序（可选值为ASC, DESC ），默认为DESC",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序的依据字段（可选值为FirstTimestamp, LastTimestamp），默认值为LastTimestamp",
+          "example": "LastTimestamp",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n注意: \n1. Filter.Name：目前支持ResourceKind（按事件关联的资源类型过滤）；Type（按事件类型过滤）\n2. Filter.Values：\n对于Name为ResourceKind，Values的可选取值为Deployment, Replicaset, Pod等K8S资源类型；\n对于Name为Type，Values的可选取值仅为Normal或者Warning；\nValues为多个的时候表示同时满足\n3. Filter. Negative和Filter. Fuzzy没有使用",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEventsResponse": {
+      "document": "DescribeEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件的列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Event",
+          "name": "Events",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "此次查询的事件的个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInferTemplatesRequest": {
       "document": "DescribeInferTemplates请求参数结构体",
       "members": [],
@@ -5331,7 +5457,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询哪个服务的事件（可选值为TRAIN, NOTEBOOK, INFER）",
+          "document": "服务类型，TRAIN为任务式建模, NOTEBOOK为Notebook, INFER为在线服务, BATCH为批量预测\n枚举值：\n- TRAIN\n- NOTEBOOK\n- INFER\n- BATCH",
           "example": "TRAIN",
           "member": "string",
           "name": "Service",
@@ -5367,7 +5493,16 @@
         },
         {
           "disabled": false,
-          "document": "查询哪个Pod的日志（支持结尾通配符*)",
+          "document": "服务ID，和Service参数对应，不同Service的服务ID获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTask接口](/document/product/851/75089)查询训练任务详情，ServiceId为接口返回值中Response.TrainingTaskDetail.LatestInstanceId\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，ServiceId为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelServiceGroup接口](/document/product/851/82285)查询服务组详情，ServiceId为接口返回值中Response.ServiceGroup.Services.ServiceId\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，ServiceId为接口返回值中Response.BatchTaskDetail.LatestInstanceId",
+          "example": "train-fsdjl-1",
+          "member": "string",
+          "name": "ServiceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Pod的名称，即需要查询服务对应的Pod，和Service参数对应，不同Service的PodName获取方式不同，具体如下：\n- Service类型为TRAIN：\n  调用[DescribeTrainingTaskPods接口](/document/product/851/75088)查询训练任务pod列表，PodName为接口返回值中Response.PodNames\n- Service类型为NOTEBOOK：\n  调用[DescribeNotebook接口](/document/product/851/95662)查询Notebook详情，PodName为接口返回值中Response.NotebookDetail.PodName\n- Service类型为INFER：\n  调用[DescribeModelService接口](/document/product/851/82287)查询单个服务详情，PodName为接口返回值中Response.Service.ServiceInfo.PodInfos\n- Service类型为BATCH：\n  调用[DescribeBatchTask接口](/document/product/851/80180)查询跑批任务详情，PodName为接口返回值中Response.BatchTaskDetail. PodList\n注：支持结尾通配符*",
           "example": "train-fsdjl-1",
           "member": "string",
           "name": "PodName",
@@ -6887,6 +7022,92 @@
         }
       ],
       "usage": "both"
+    },
+    "Event": {
+      "document": "K8s的Event",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件的id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx-xxx",
+          "member": "string",
+          "name": "Id",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件的具体信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Created pod: ti-log-event-server-9f7dc5598-xxx",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件第一次发生的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "FirstTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件最后一次发生的时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-30T16:22:09+08:00",
+          "member": "string",
+          "name": "LastTimestamp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件发生的次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Normal",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件关联的资源的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Pod",
+          "member": "string",
+          "name": "ResourceKind",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件关联的资源的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ti-log-event-server-9f7dc5598-xxx",
+          "member": "string",
+          "name": "ResourceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Filter": {
       "document": "过滤器",

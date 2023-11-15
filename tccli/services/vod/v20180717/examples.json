@@ -188,6 +188,14 @@
         "title": "创建雪碧图模板"
       }
     ],
+    "CreateJustInTimeTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\",\n    \"VideoConfigure\": {\n        \"Width\": 720,\n        \"Height\": 1080,\n        \"Bitrate\": 10000,\n        \"ResolutionAdaptive\": \"open\"\n    },\n    \"WatermarkConfigure\": {\n        \"Switch\": \"ON\",\n        \"ImageContent\": \"111\",\n        \"Width\": \"10%\",\n        \"Height\": \"10%\",\n        \"XPos\": \"10%\",\n        \"YPos\": \"10%\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\"\n    }\n}",
+        "title": "创建即时转码模板"
+      }
+    ],
     "CreatePersonSample": [
       {
         "document": "",
@@ -422,6 +430,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DeleteImageSpriteTemplate\n&Definition=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "删除雪碧图模板"
+      }
+    ],
+    "DeleteJustInTimeTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除即时转码模板"
       }
     ],
     "DeleteMedia": [
@@ -760,6 +776,14 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeImageSpriteTemplates\n&Definitions.0=10001\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ImageSpriteTemplateSet\": [\n            {\n                \"Definition\": 10001,\n                \"Type\": \"Custom\",\n                \"Name\": \"雪碧图模板1\",\n                \"Comment\": \"test\",\n                \"CreateTime\": \"2018-10-01T10:00:00Z\",\n                \"UpdateTime\": \"2018-10-01T10:00:00Z\",\n                \"Height\": 540,\n                \"SampleType\": \"Percent\",\n                \"SampleInterval\": 10,\n                \"ResolutionAdaptive\": \"open\",\n                \"FillType\": \"black\",\n                \"ColumnCount\": 1,\n                \"RowCount\": 1,\n                \"Width\": 960\n            }\n        ],\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "获取雪碧图模板列表"
+      }
+    ],
+    "DescribeJustInTimeTranscodeTemplates": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJustInTimeTranscodeTemplates\n<公共请求参数>\n\n{\n    \"Names\": [\n        \"testtempaltename\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"JustInTimeTranscodeTemplateSet\": [\n            {\n                \"Type\": \"Custom\",\n                \"Name\": \"test\",\n                \"Comment\": \"comment\",\n                \"VideoConfigure\": {\n                    \"Width\": 720,\n                    \"Height\": 1080,\n                    \"Bitrate\": 10000,\n                    \"ResolutionAdaptive\": \"open\"\n                },\n                \"WatermarkConfigure\": {\n                    \"Switch\": \"ON\",\n                    \"Url\": \"http://example.com/aa.png\",\n                    \"Width\": \"10%\",\n                    \"Height\": \"10%\",\n                    \"XPos\": \"10%\",\n                    \"YPos\": \"10%\"\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取即时转码模板列表"
       }
     ],
     "DescribeLicenseUsageData": [
@@ -1252,6 +1276,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyImageSpriteTemplate\n<公共请求参数>\n\n{\n    \"ColumnCount\": \"10\",\n    \"Definition\": \"10001\",\n    \"Name\": \"雪碧图模板1\",\n    \"RowCount\": \"5\",\n    \"SampleType\": \"Percent\",\n    \"Height\": \"128\",\n    \"Width\": \"128\",\n    \"SampleInterval\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "修改雪碧图模板"
+      }
+    ],
+    "ModifyJustInTimeTranscodeTemplate": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJustInTimeTranscodeTemplate\n<公共请求参数>\n\n{\n    \"Name\": \"testtempaltename\",\n    \"Comment\": \"this is a test comment\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改即时转码模板"
       }
     ],
     "ModifyMediaInfo": [

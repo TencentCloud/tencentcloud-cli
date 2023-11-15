@@ -1,6 +1,6 @@
-**Example 1: 空示例**
+**Example 1: 删除公网IP/域名**
 
-空示例
+删除公网IP/域名
 
 Input: 
 
@@ -8,7 +8,10 @@ Input:
 tccli csip DeleteDomainAndIp --cli-unfold-argument  \
     --Content.0.Asset abc \
     --RetainPath 0 \
-    --IgnoreAsset 0
+    --IgnoreAsset 0 \
+    --Tags.0.TagKey abc \
+    --Tags.0.TagValue abc \
+    --Type abc
 ```
 
 Output: 
@@ -16,7 +19,7 @@ Output:
 {
     "Response": {
         "Data": 0,
-        "RequestId": ""
+        "RequestId": "abc"
     }
 }
 ```

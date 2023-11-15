@@ -311,7 +311,7 @@
     "CreateChannelOrganizationInfoChangeUrl": {
       "document": "此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接（需要在移动端打开，会跳转到微信小程序），支持创建企业超管变更链接或企业基础信息变更链接，通过入参 ChangeType 指定。\n\n\n<h3 id=\"1-企业超管变更\">1. 企业超管变更</h3>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h3 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h3>\n\n<h4 id=\"可以变动\">可以变动</h4>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h4 id=\"不可变动\">不可变动</h4>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章和合同专用章,  然后用新企业名称生成新的机构公章 和合同专用章,  而法人章, 财务专用章和人事专用章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>",
       "input": "CreateChannelOrganizationInfoChangeUrlRequest",
-      "name": "创建子客企业信息变更链接",
+      "name": "获取变更企业信息电子签小程序链接",
       "output": "CreateChannelOrganizationInfoChangeUrlResponse",
       "status": "online"
     },
@@ -7214,7 +7214,7 @@
         },
         {
           "disabled": false,
-          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n<ul><li> **PERSON** :个人/自然人</li>\n<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>\n<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>\n<li> **ENTERPRISESERVER** :企业/企业员自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>\n\n注:  \n`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`\n`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`\n<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>\n<li>条件2：子客之间完成授权</li>\n<li>条件3：联系对接的客户经理沟通如何使用</li></ul>",
+          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n<ul><li> **PERSON** :个人/自然人</li>\n<li> **PERSON_AUTO_SIGN** :个人/自然人自动签署，适用于个人自动签场景</li>\n<li> **ORGANIZATION** :企业/企业员工（企业签署方或模板发起时的企业静默签）</li>\n<li> **ENTERPRISESERVER** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）</li></ul>\n\n注:  \n`1. 个人自动签场景(PERSON_AUTO_SIGN)为白名单功能, 使用前请联系对接的客户经理沟通。`\n`2. 若要实现他方企业（同一应用下）自动签，需要满足3个条件：`\n<ul><li>条件1：ApproverType 设置为ENTERPRISESERVER</li>\n<li>条件2：子客之间完成授权</li>\n<li>条件3：联系对接的客户经理沟通如何使用</li></ul>",
           "example": "PERSON",
           "member": "string",
           "name": "ApproverType",
@@ -7457,7 +7457,7 @@
         {
           "disabled": false,
           "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。",
-          "example": "购买50顿西瓜的采购合同",
+          "example": "购买50吨西瓜的采购合同",
           "member": "string",
           "name": "FlowName",
           "output_required": true,

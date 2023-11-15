@@ -3445,12 +3445,39 @@
       "members": [
         {
           "disabled": false,
+          "document": "筛选条件字段",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "工作空间 SerialId",
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页游标",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单页显示数",
+          "example": "200",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3464,6 +3491,7 @@
           "example": "root",
           "member": "string",
           "name": "ParentId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3473,6 +3501,7 @@
           "example": "folder-id",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3482,6 +3511,7 @@
           "example": "folder-xxx",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3491,6 +3521,7 @@
           "example": "无",
           "member": "TreeResourceItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3500,6 +3531,7 @@
           "example": "无",
           "member": "DescribeTreeResourcesRsp",
           "name": "Children",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3509,6 +3541,7 @@
           "example": "200",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

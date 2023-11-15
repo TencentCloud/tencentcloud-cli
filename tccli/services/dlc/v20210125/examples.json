@@ -640,6 +640,14 @@
         "title": "查询任务列表"
       }
     ],
+    "DescribeUpdatableDataEngines": [
+      {
+        "document": "查询需要更新结果桶集群配置的sparksql引擎",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpdatableDataEngines\n<公共请求参数>\n\n{\n    \"DataEngineConfigCommand\": \"UpdateSparkSQLResultPath\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DataEngineBasicInfos\": [\n            {\n                \"DataEngineName\": \"abc\",\n                \"State\": 0,\n                \"CreateTime\": 0,\n                \"UpdateTime\": 0,\n                \"Message\": \"abc\",\n                \"DataEngineId\": \"abc\",\n                \"DataEngineType\": \"abc\",\n                \"AppId\": 0,\n                \"UserUin\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询需要更新结果桶集群配置的sparksql引擎"
+      }
+    ],
     "DescribeUserDataEngineConfig": [
       {
         "document": "查询用户自定义引擎参数",

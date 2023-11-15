@@ -560,6 +560,13 @@
       "output": "DescribeTasksResponse",
       "status": "online"
     },
+    "DescribeUpdatableDataEngines": {
+      "document": "查询可更新配置的引擎列表",
+      "input": "DescribeUpdatableDataEnginesRequest",
+      "name": "查询可更新配置的引擎列表",
+      "output": "DescribeUpdatableDataEnginesResponse",
+      "status": "online"
+    },
     "DescribeUserDataEngineConfig": {
       "document": "查询用户自定义引擎参数",
       "input": "DescribeUserDataEngineConfigRequest",
@@ -2521,7 +2528,7 @@
         },
         {
           "disabled": false,
-          "document": "资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认3600",
+          "document": "资源使用时长，后付费：固定填3600，预付费：最少填1，代表购买资源一个月，最长不超过120。默认1",
           "example": "1",
           "member": "int64",
           "name": "TimeSpan",
@@ -2689,6 +2696,24 @@
           "name": "AutoAuthorization",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "引擎网络ID",
+          "example": "DataEngine-Network-xxx",
+          "member": "string",
+          "name": "EngineNetworkId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎世代，SuperSQL：代表supersql引擎，Native：代表标准引擎。默认值为SuperSQL",
+          "example": "superSQL",
+          "member": "string",
+          "name": "EngineGeneration",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4875,6 +4900,102 @@
           "name": "Asset",
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DataEngineBasicInfo": {
+      "document": "DataEngine基本信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DataEngine名称",
+          "example": "xxx_presto",
+          "member": "string",
+          "name": "DataEngineName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据引擎状态  -2已删除 -1失败 0初始化中 1挂起 2运行中 3准备删除 4删除中",
+          "example": "1",
+          "member": "int64",
+          "name": "State",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "CreateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间",
+          "example": "1635320563",
+          "member": "int64",
+          "name": "UpdateTime",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试资源",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "引擎id",
+          "example": "02345495-cfe0-461c-8c3d-5715d03feda4",
+          "member": "string",
+          "name": "DataEngineId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，有效值：PrestoSQL/SparkSQL/SparkBatch\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DataEngineType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "int64",
+          "name": "AppId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxxx",
+          "member": "string",
+          "name": "UserUin",
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -7457,6 +7578,24 @@
           "name": "DatasourceConnectionNameSet",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "引擎版本，有效值：Native/SuperSQL，为空时默认获取SuperSQL引擎",
+          "example": "Native",
+          "member": "string",
+          "name": "EngineGeneration",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "引擎类型，支持：SparkSQL、SparkBatch、PrestoSQL、Kyuubi",
+          "example": "SparkSQL",
+          "member": "string",
+          "name": "EngineTypeDetail",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9218,6 +9357,51 @@
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpdatableDataEnginesRequest": {
+      "document": "DescribeUpdatableDataEngines请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "引擎配置操作命令，UpdateSparkSQLLakefsPath 更新托管表路径，UpdateSparkSQLResultPath 更新结果桶路径",
+          "example": "UpdateSparkSQLLakefsPath",
+          "member": "string",
+          "name": "DataEngineConfigCommand",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUpdatableDataEnginesResponse": {
+      "document": "DescribeUpdatableDataEngines返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群基础信息",
+          "example": "[xxx]",
+          "member": "DataEngineBasicInfo",
+          "name": "DataEngineBasicInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群个数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

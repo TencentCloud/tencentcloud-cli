@@ -14,22 +14,36 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
         "Details": [
             {
-                "CategoryName": "个人基本信息",
-                "DataSourceId": "datasource-xxxx",
-                "DbType": "MySQL",
-                "LevelRiskName": "中",
-                "LevelRiskScore": 2,
-                "TableName": "beijing_01",
-                "FieldName": "address",
-                "RuleName": "住址",
-                "FieldResultId": 123,
-                "DbName": "db-1"
+                "DataSourceId": "abc",
+                "DbType": "abc",
+                "DbName": "abc",
+                "TableName": "abc",
+                "FieldName": "abc",
+                "RuleName": "abc",
+                "CategoryName": "abc",
+                "LevelRiskName": "abc",
+                "LevelRiskScore": 0,
+                "TrustedScore": "abc",
+                "ResourceRegion": "abc",
+                "FieldResultId": "abc",
+                "RuleId": 0,
+                "LevelId": 0,
+                "CategoryId": 0,
+                "DataSourceName": "abc",
+                "SafeGuard": {
+                    "Encrypt": "abc",
+                    "Desensitization": "abc"
+                },
+                "CategoryFullPath": "abc",
+                "IdentifyType": 0,
+                "CheckStatus": 0,
+                "IsSensitiveData": 0
             }
         ],
-        "RequestId": "xx"
+        "TotalCount": 0,
+        "RequestId": "abc"
     }
 }
 ```

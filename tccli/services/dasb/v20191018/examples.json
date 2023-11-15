@@ -370,6 +370,14 @@
         "title": "修改用户信息"
       }
     ],
+    "ModifyUserGroup": [
+      {
+        "document": "新建主机成功",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyUserGroup\n<公共请求参数>\n\n{\n    \"Id\": 1,\n    \"Name\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "新建主机成功"
+      }
+    ],
     "ResetDeviceAccountPassword": [
       {
         "document": "清除设备账号绑定密码",

@@ -9253,6 +9253,15 @@
           "name": "Filters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "可信分排序，ASC升序\nDESC降序",
+          "example": "ASC",
+          "member": "string",
+          "name": "CreditScore",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9632,6 +9641,15 @@
           "name": "ComplianceId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "可信分排序，ASC-升序\nDESC降序",
+          "example": "ASC",
+          "member": "string",
+          "name": "CreditScore",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9645,7 +9663,7 @@
           "example": "无",
           "member": "DspaRDBDataAssetDetail",
           "name": "Details",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9655,7 +9673,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12937,7 +12955,7 @@
           "example": "datasource-001",
           "member": "string",
           "name": "DataSourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12947,7 +12965,7 @@
           "example": "mysql",
           "member": "string",
           "name": "DbType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12957,7 +12975,7 @@
           "example": "db-1",
           "member": "string",
           "name": "DbName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12967,7 +12985,7 @@
           "example": "beijing_01",
           "member": "string",
           "name": "TableName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12977,7 +12995,7 @@
           "example": "address",
           "member": "string",
           "name": "FieldName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12987,7 +13005,7 @@
           "example": "住址",
           "member": "string",
           "name": "RuleName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12997,7 +13015,7 @@
           "example": "个人基本信息",
           "member": "string",
           "name": "CategoryName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13007,7 +13025,7 @@
           "example": "中",
           "member": "string",
           "name": "LevelRiskName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13017,7 +13035,7 @@
           "example": "2",
           "member": "int64",
           "name": "LevelRiskScore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13027,7 +13045,7 @@
           "example": "100%",
           "member": "string",
           "name": "TrustedScore",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13037,7 +13055,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "ResourceRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13047,7 +13065,7 @@
           "example": "1",
           "member": "string",
           "name": "FieldResultId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13057,7 +13075,7 @@
           "example": "1",
           "member": "int64",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13067,7 +13085,7 @@
           "example": "1",
           "member": "int64",
           "name": "LevelId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13077,7 +13095,7 @@
           "example": "1",
           "member": "int64",
           "name": "CategoryId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -13087,7 +13105,7 @@
           "example": "test",
           "member": "string",
           "name": "DataSourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13097,7 +13115,7 @@
           "example": "无",
           "member": "DspaSafeGuard",
           "name": "SafeGuard",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -13107,8 +13125,38 @@
           "example": "无",
           "member": "string",
           "name": "CategoryFullPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0.系统识别，1人工打标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IdentifyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0未核查 1已核查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CheckStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0非敏感，1敏感\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsSensitiveData",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -13778,6 +13826,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0系统识别，1人工打标",
+          "example": "无",
+          "member": "int64",
+          "name": "IdentifyType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "0未核查，1已核查",
+          "example": "无",
+          "member": "int64",
+          "name": "CheckStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -15771,6 +15839,42 @@
           "name": "DestLevelId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整前的规则id（系统识别的id）",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcRuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整前的规则id（系统识别的id）",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcCategoryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整前的等级id",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcLevelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "0系统识别，1人工打标",
+          "example": "识别方式",
+          "member": "int64",
+          "name": "IdentifyType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15850,6 +15954,42 @@
           "example": "1",
           "member": "int64",
           "name": "DestLevelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整前的规则ID\n",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcRuleId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整之前的分类id",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcCategoryId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "调整之前的分级id",
+          "example": "1",
+          "member": "int64",
+          "name": "SrcLevelId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "识别方式\n0-系统识别，1-人工打标",
+          "example": "0",
+          "member": "int64",
+          "name": "IdentifyType",
           "required": false,
           "type": "int"
         }

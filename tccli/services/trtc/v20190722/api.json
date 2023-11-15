@@ -3271,13 +3271,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDN转推URL。",
+          "document": "CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。",
           "example": "xxxx",
           "member": "string",
           "name": "PublishCdnUrl",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3286,8 +3285,7 @@
           "member": "uint64",
           "name": "IsTencentCdn",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3404,8 +3402,7 @@
           "member": "string",
           "name": "WaterMarkUrl",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3414,8 +3411,7 @@
           "member": "uint64",
           "name": "WaterMarkWidth",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3424,8 +3420,7 @@
           "member": "uint64",
           "name": "WaterMarkHeight",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3434,8 +3429,7 @@
           "member": "uint64",
           "name": "LocationX",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3444,8 +3438,7 @@
           "member": "uint64",
           "name": "LocationY",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3454,8 +3447,16 @@
           "member": "uint64",
           "name": "ZOrder",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DynamicPosType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -3506,8 +3507,7 @@
           "member": "string",
           "name": "Text",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3516,8 +3516,7 @@
           "member": "uint64",
           "name": "WaterMarkWidth",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3526,8 +3525,7 @@
           "member": "uint64",
           "name": "WaterMarkHeight",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3536,8 +3534,7 @@
           "member": "uint64",
           "name": "LocationX",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3546,8 +3543,7 @@
           "member": "uint64",
           "name": "LocationY",
           "required": true,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3556,8 +3552,7 @@
           "member": "uint64",
           "name": "FontSize",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -3566,8 +3561,7 @@
           "member": "string",
           "name": "FontColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3576,8 +3570,16 @@
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "动态水印类型，默认为0。0:关闭；1:随机位置，每秒变动一次；2:边界扫描反弹，每帧变动一次。",
+          "example": "0",
+          "member": "uint64",
+          "name": "DynamicPosType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
