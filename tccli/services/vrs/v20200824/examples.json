@@ -47,6 +47,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"63f89e17a6f281d5108ab7b0\",\n        \"Data\": {\n            \"TrainingTextList\": [\n                {\n                    \"TextId\": \"00001\",\n                    \"Text\": \"在很久很久以前 鸟群中有一只小鸟\"\n                },\n                {\n                    \"TextId\": \"00005\",\n                    \"Text\": \"那时候的凤凰还不是鸟中之王 只是一个很不起眼的小鸟\"\n                }\n            ]\n        }\n    }\n}",
         "title": "获取训练文本信息"
       }
+    ],
+    "GetVRSVoiceTypes": [
+      {
+        "document": "查询复刻音色",
+        "input": "POST / HTTP/1.1\nHost: vrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVRSVoiceTypes\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1234dce8-15d7-abcd-9325-8259266c1234\",\n        \"Data\": {\n            \"VoiceTypeList\": [\n                {\n                    \"VoiceType\": 111111,\n                    \"VoiceName\": \"小红\",\n                    \"VoiceGender\": 2,\n                    \"TaskType\": 1,\n                    \"TaskID\": \"1234d751-fb5f-4805-889c-2fce9e8babcd\",\n                    \"DateCreated\": \"2023-10-23T10:25:54+08:00\"\n                },\n                {\n                    \"VoiceType\": 222222,\n                    \"VoiceName\": \"小刚\",\n                    \"VoiceGender\": 1,\n                    \"TaskType\": 1,\n                    \"TaskID\": \"1234ed3d-4026-4e48-9926-382459e4abcd\",\n                    \"DateCreated\": \"2023-10-20T15:38:28+08:00\"\n                }\n            ]\n        }\n    }\n}",
+        "title": "查询复刻音色"
+      }
     ]
   },
   "version": "1.0"

@@ -1,10 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云防火墙(cfw) 版本：2019-09-04
+## API 网关(apigateway) 版本：2018-08-08
 
-### 第 37 次发布
+### 第 34 次发布
 
-发布时间：2023-11-15 01:10:02
+发布时间：2023-11-16 01:06:34
 
 本次发布包含了以下内容：
 
@@ -12,81 +12,53 @@
 
 修改接口：
 
-* [CreateAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81231)
+* [CreateAPIDoc](http://document.tencentcloudapi.woa.com/document/product/628/54951)
 
-	* 新增入参：ProtocolType
+	* 新增入参：Tags
 
-* [DescribeAddressTemplateList](http://document.tencentcloudapi.woa.com/document/product/1132/81902)
+* [CreateApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45213)
 
-	* 新增入参：TemplateType, TemplateId
+	* 新增入参：Tags
 
-	* 新增出参：IpTemplateCount, DomainTemplateCount, PortTemplateCount
+* [CreateUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45224)
 
-* [ModifyAddressTemplate](http://document.tencentcloudapi.woa.com/document/product/1132/81903)
-
-	* 新增入参：ProtocolType
+	* 新增入参：Tags
 
 
 修改数据结构：
 
-* [EdgeIpInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#EdgeIpInfo)
+* [APIDoc](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDoc)
 
-	* 新增成员：Domain
+	* 新增成员：Tags
 
-* [TemplateListInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#TemplateListInfo)
+* [APIDocInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDocInfo)
 
-	* 新增成员：TemplateId, ProtocolType
+	* 新增成员：Tags
 
+* [ApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiKey)
 
+	* 新增成员：Tags
 
+* [ApiUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiUsagePlan)
 
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2023-05-08
+	* 新增成员：Tags
 
+* [UsagePlanInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanInfo)
 
+	* 新增成员：Tags
 
-## Cloud Studio（云端 IDE）(cloudstudio) 版本：2021-05-24
+* [UsagePlanStatusInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanStatusInfo)
 
-### 第 2 次发布
+	* 新增成员：Tags
 
-发布时间：2023-11-15 01:11:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**预下线接口**：</font>
-
-* CreateCustomizeTemplates
-* CreateTemporaryWorkspaceByDevFile
-* CreateWorkspaceByAgent
-* CreateWorkspaceByTemplate
-* CreateWorkspaceByVersionControl
-* CreateWorkspaceTemporaryToken
-* DeleteCustomizeTemplatesById
-* DescribeCustomizeTemplates
-* DescribeCustomizeTemplatesById
-* DescribeCustomizeTemplatesPresets
-* DescribeWorkspaceEnvList
-* DescribeWorkspaceIsReady
-* DescribeWorkspaceNameExist
-* DescribeWorkspaceStatus
-* DescribeWorkspaceStatusList
-* ModifyCustomizeTemplateVersionControl
-* ModifyCustomizeTemplatesFullById
-* ModifyCustomizeTemplatesPartById
-* ModifyWorkspaceAttributes
-* RecoverWorkspace
-* RemoveWorkspace
-* RunWorkspace
-* StopWorkspace
 
 
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
-### 第 19 次发布
+### 第 20 次发布
 
-发布时间：2023-11-15 01:11:58
+发布时间：2023-11-16 01:12:24
 
 本次发布包含了以下内容：
 
@@ -94,64 +66,65 @@
 
 修改数据结构：
 
-* [ScanTaskInfo](http://document.tencentcloudapi.woa.com/document/product/1726/80814#ScanTaskInfo)
+* [AssetViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRisk)
 
-	* <font color="#dd0000">**修改成员**：</font>AppId, UIN, UserName
+	* <font color="#dd0000">**修改成员**：</font>AffectAsset, Level, InstanceType, Component, Service, RecentTime, FirstTime, Status, Id, Index, InstanceId, InstanceName, AppId, Nick, Uin, VULType, Port, Describe, AppName, References, AppVersion, VULURL, VULName, CVE, Fix, POCId, From, CWPVersion, IsSupportRepair, IsSupportDetect, InstanceUUID, Payload, EMGCVulType
 
-* [VULViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#VULViewVULRisk)
 
-	* <font color="#dd0000">**修改成员**：</font>Port, NoHandleCount, Level, Component, RecentTime, FirstTime, AffectAssetCount, Id, From, Index, VULType, VULName, CVE, Describe, Payload, AppName, References, AppVersion, VULURL, Nick, AppId, Uin, Fix, EMGCVulType
 
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 19 次发布
+
+发布时间：2023-11-16 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1492/82594)
 
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
-### 第 82 次发布
+### 第 83 次发布
 
-发布时间：2023-11-15 01:14:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [DataEngineInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineInfo)
-
-	* 新增成员：EngineGeneration, EngineTypeDetail
-
-
-
-
-## 数据传输服务(dts) 版本：2021-12-06
-
-### 第 7 次发布
-
-发布时间：2023-11-15 01:15:32
+发布时间：2023-11-16 01:15:20
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [DescribeUpdatableDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/82595)
 
 修改接口：
 
-* [ResumeMigrateJob](http://document.tencentcloudapi.woa.com/document/product/571/78295)
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
 
-	* <font color="#dd0000">**修改入参**：</font>ResumeOption
+	* 新增入参：EngineNetworkId, OrderId, EngineGeneration
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：EngineGeneration, EngineTypeDetail
 
 
+新增数据结构：
 
-
-## 数据传输服务(dts) 版本：2018-03-30
+* [DataEngineBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineBasicInfo)
 
 
 
 ## 高性能应用服务(hai) 版本：2023-08-12
 
-### 第 2 次发布
+### 第 3 次发布
 
-发布时间：2023-11-15 01:17:43
+发布时间：2023-11-16 01:18:47
 
 本次发布包含了以下内容：
 
@@ -159,15 +132,103 @@
 
 新增接口：
 
-* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82588)
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
+* [DescribeInstanceNetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82602)
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82601)
+* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1750/82604)
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1750/82597)
+* [DescribeServiceLoginSettings](http://document.tencentcloudapi.woa.com/document/product/1750/82600)
+* [InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)
+
+新增数据结构：
+
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Filter)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance)
+* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPrice)
+* [LoginService](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginService)
+* [LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginSetting)
+* [NetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82570#NetworkStatus)
+* [Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#RegionInfo)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#SceneInfo)
 
 
 
-## 移动应用安全(ms) 版本：2018-04-08
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
-### 第 6 次发布
+### 第 38 次发布
 
-发布时间：2023-11-15 01:26:38
+发布时间：2023-11-16 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTreeResources](http://document.tencentcloudapi.woa.com/document/product/849/75701)
+
+	* 新增入参：Filters, Offset, Limit
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 40 次发布
+
+发布时间：2023-11-16 01:25:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListNamespaces](http://document.tencentcloudapi.woa.com/document/product/583/37158)
+
+	* 新增入参：Filters
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 41 次发布
+
+发布时间：2023-11-16 01:29:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/851/82606)
+
+修改接口：
+
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/851/74837)
+
+	* 新增入参：ServiceId
+
+
+新增数据结构：
+
+* [Event](http://document.tencentcloudapi.woa.com/document/product/851/74915#Event)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 34 次发布
+
+发布时间：2023-11-16 01:30:25
 
 本次发布包含了以下内容：
 
@@ -175,53 +236,22 @@
 
 修改数据结构：
 
-* [PlanInfo](http://document.tencentcloudapi.woa.com/document/product/1617/78369#PlanInfo)
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
 
-	* 新增成员：SetFile, FileSign, AntiRoot
+	* 新增成员：DynamicPosType
 
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
 
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 78 次发布
-
-发布时间：2023-11-15 01:30:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DeleteProClusters](http://document.tencentcloudapi.woa.com/document/product/1179/82589)
-
-
-
-## 设备安全(tds) 版本：2022-08-01
-
-### 第 2 次发布
-
-发布时间：2023-11-15 01:31:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeFraudUltimate](http://document.tencentcloudapi.woa.com/document/product/1719/80585)
-
-	* 新增出参：Unionid
+	* 新增成员：DynamicPosType
 
 
 
 
-## 微服务引擎 TSE(tse) 版本：2020-12-07
+## 声音复刻(vrs) 版本：2020-08-24
 
-### 第 45 次发布
+### 第 4 次发布
 
-发布时间：2023-11-15 01:33:44
+发布时间：2023-11-16 01:32:31
 
 本次发布包含了以下内容：
 
@@ -229,37 +259,12 @@
 
 新增接口：
 
-* [DescribeCloudNativeAPIGatewayUpstream](http://document.tencentcloudapi.woa.com/document/product/1364/82593)
-* [DescribeUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82592)
-* [ModifyUpstreamNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1364/82591)
-* [UpdateUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82590)
+* [GetVRSVoiceTypes](http://document.tencentcloudapi.woa.com/document/product/1664/82607)
 
 新增数据结构：
 
-* [KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck)
-* [KongPassiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongPassiveHealthCheck)
-* [KongUpstreamList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamList)
-* [KongUpstreamPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamPreview)
-* [UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig)
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 115 次发布
-
-发布时间：2023-11-15 01:34:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ModifyCustomerGatewayAttribute](http://document.tencentcloudapi.woa.com/document/product/215/17509)
-
-	* 新增入参：BgpAsn
-
+* [VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo)
+* [VoiceTypeListData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeListData)
 
 
 
@@ -2925,6 +2930,56 @@
 
 
 ## API 网关(apigateway) 版本：2018-08-08
+
+### 第 34 次发布
+
+发布时间：2023-11-16 01:06:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAPIDoc](http://document.tencentcloudapi.woa.com/document/product/628/54951)
+
+	* 新增入参：Tags
+
+* [CreateApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45213)
+
+	* 新增入参：Tags
+
+* [CreateUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45224)
+
+	* 新增入参：Tags
+
+
+修改数据结构：
+
+* [APIDoc](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDoc)
+
+	* 新增成员：Tags
+
+* [APIDocInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDocInfo)
+
+	* 新增成员：Tags
+
+* [ApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiKey)
+
+	* 新增成员：Tags
+
+* [ApiUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiUsagePlan)
+
+	* 新增成员：Tags
+
+* [UsagePlanInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanInfo)
+
+	* 新增成员：Tags
+
+* [UsagePlanStatusInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanStatusInfo)
+
+	* 新增成员：Tags
+
 
 ### 第 33 次发布
 
@@ -22991,6 +23046,21 @@
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
+### 第 20 次发布
+
+发布时间：2023-11-16 01:12:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRisk)
+
+	* <font color="#dd0000">**修改成员**：</font>AffectAsset, Level, InstanceType, Component, Service, RecentTime, FirstTime, Status, Id, Index, InstanceId, InstanceName, AppId, Nick, Uin, VULType, Port, Describe, AppName, References, AppVersion, VULURL, VULName, CVE, Fix, POCId, From, CWPVersion, IsSupportRepair, IsSupportDetect, InstanceUUID, Payload, EMGCVulType
+
+
 ### 第 19 次发布
 
 发布时间：2023-11-15 01:11:58
@@ -28685,6 +28755,18 @@
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
 
+### 第 19 次发布
+
+发布时间：2023-11-16 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1492/82594)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 18 次发布
 
 发布时间：2023-11-09 01:16:01
@@ -30902,6 +30984,33 @@
 
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 83 次发布
+
+发布时间：2023-11-16 01:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUpdatableDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/82595)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：EngineNetworkId, OrderId, EngineGeneration
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：EngineGeneration, EngineTypeDetail
+
+
+新增数据结构：
+
+* [[DataEngineBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineBasicInfo)](http://document.tencentcloudapi.woa.com/document/product/1342/53778#[DataEngineBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineBasicInfo))
 
 ### 第 82 次发布
 
@@ -43597,6 +43706,37 @@
 
 ## 高性能应用服务(hai) 版本：2023-08-12
 
+### 第 3 次发布
+
+发布时间：2023-11-16 01:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstanceNetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82602)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82601)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1750/82604)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1750/82597)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeServiceLoginSettings](http://document.tencentcloudapi.woa.com/document/product/1750/82600)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo))
+* [[Filter](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Filter)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[Filter](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Filter))
+* [[Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance))
+* [[ItemPrice](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPrice)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[ItemPrice](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPrice))
+* [[LoginService](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginService)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[LoginService](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginService))
+* [[LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginSetting)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginSetting))
+* [[NetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82570#NetworkStatus)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[NetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82570#NetworkStatus))
+* [[Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price))
+* [[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#RegionInfo)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#RegionInfo))
+* [[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#SceneInfo)](http://document.tencentcloudapi.woa.com/document/product/1750/82570#[SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#SceneInfo))
+
 ### 第 2 次发布
 
 发布时间：2023-11-15 01:17:43
@@ -43607,7 +43747,7 @@
 
 新增接口：
 
-* [[TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82588)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82588)
 
 ### 第 1 次发布
 
@@ -56096,6 +56236,21 @@
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
 
+### 第 38 次发布
+
+发布时间：2023-11-16 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTreeResources](http://document.tencentcloudapi.woa.com/document/product/849/75701)
+
+	* 新增入参：Filters, Offset, Limit
+
+
 ### 第 37 次发布
 
 发布时间：2023-10-24 02:00:09
@@ -62388,6 +62543,21 @@
 
 
 ## 云函数(scf) 版本：2018-04-16
+
+### 第 40 次发布
+
+发布时间：2023-11-16 01:25:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListNamespaces](http://document.tencentcloudapi.woa.com/document/product/583/37158)
+
+	* 新增入参：Filters
+
 
 ### 第 39 次发布
 
@@ -70851,7 +71021,7 @@
 
 新增接口：
 
-* [[DeleteProClusters](http://document.tencentcloudapi.woa.com/document/product/1179/82589)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DeleteProClusters](http://document.tencentcloudapi.woa.com/document/product/1179/82589)
 
 ### 第 77 次发布
 
@@ -74889,6 +75059,29 @@
 
 ## TI-ONE 训练平台(tione) 版本：2021-11-11
 
+### 第 41 次发布
+
+发布时间：2023-11-16 01:29:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/851/82606)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+修改接口：
+
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/851/74837)
+
+	* 新增入参：ServiceId
+
+
+新增数据结构：
+
+* [[Event](http://document.tencentcloudapi.woa.com/document/product/851/74915#Event)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[Event](http://document.tencentcloudapi.woa.com/document/product/851/74915#Event))
+
 ### 第 40 次发布
 
 发布时间：2023-11-10 02:17:42
@@ -78896,6 +79089,25 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 34 次发布
+
+发布时间：2023-11-16 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
+
+	* 新增成员：DynamicPosType
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+	* 新增成员：DynamicPosType
+
+
 ### 第 33 次发布
 
 发布时间：2023-08-28 01:26:02
@@ -79638,18 +79850,18 @@
 
 新增接口：
 
-* [[DescribeCloudNativeAPIGatewayUpstream](http://document.tencentcloudapi.woa.com/document/product/1364/82593)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82592)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyUpstreamNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1364/82591)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[UpdateUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82590)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCloudNativeAPIGatewayUpstream](http://document.tencentcloudapi.woa.com/document/product/1364/82593)
+* [DescribeUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82592)
+* [ModifyUpstreamNodeStatus](http://document.tencentcloudapi.woa.com/document/product/1364/82591)
+* [UpdateUpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/82590)
 
 新增数据结构：
 
-* [[KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck))
-* [[KongPassiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongPassiveHealthCheck)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[KongPassiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongPassiveHealthCheck))
-* [[KongUpstreamList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamList)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[KongUpstreamList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamList))
-* [[KongUpstreamPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamPreview)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[KongUpstreamPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamPreview))
-* [[UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig)](http://document.tencentcloudapi.woa.com/document/product/1364/54942#[UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig))
+* [KongActiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongActiveHealthCheck)
+* [KongPassiveHealthCheck](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongPassiveHealthCheck)
+* [KongUpstreamList](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamList)
+* [KongUpstreamPreview](http://document.tencentcloudapi.woa.com/document/product/1364/54942#KongUpstreamPreview)
+* [UpstreamHealthCheckConfig](http://document.tencentcloudapi.woa.com/document/product/1364/54942#UpstreamHealthCheckConfig)
 
 ### 第 44 次发布
 
@@ -87863,6 +88075,23 @@
 
 
 ## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 4 次发布
+
+发布时间：2023-11-16 01:32:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[GetVRSVoiceTypes](http://document.tencentcloudapi.woa.com/document/product/1664/82607)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo)](http://document.tencentcloudapi.woa.com/document/product/1664/79152#[VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo))
+* [[VoiceTypeListData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeListData)](http://document.tencentcloudapi.woa.com/document/product/1664/79152#[VoiceTypeListData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeListData))
 
 ### 第 3 次发布
 

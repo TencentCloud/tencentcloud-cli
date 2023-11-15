@@ -5,71 +5,46 @@
 Input: 
 
 ```
-tccli oceanus DescribeTreeResources --cli-unfold-argument ```
+tccli oceanus DescribeTreeResources --cli-unfold-argument  \
+    --Filters.0.Name ResourceName \
+    --Filters.0.Values 111
+```
 
 Output: 
 ```
 {
     "Response": {
-        "ParentId": "xx",
-        "Id": "xx",
-        "Name": "xx",
-        "Items": [
-            {
-                "ResourceId": "xx",
-                "Name": "xx",
-                "ResourceType": 0,
-                "Remark": "xx",
-                "FileName": "xx",
-                "FolderId": "xx"
-            }
-        ],
         "Children": [
             {
-                "ParentId": "xx",
-                "Id": "xx",
-                "Name": "xx",
-                "Items": [
-                    {
-                        "ResourceId": "xx",
-                        "Name": "xx",
-                        "ResourceType": 0,
-                        "Remark": "xx",
-                        "FileName": "xx",
-                        "FolderId": "xx"
-                    }
-                ],
-                "Children": [
-                    {
-                        "ParentId": "xx",
-                        "Id": "xx",
-                        "Name": "xx",
-                        "Items": [
-                            {
-                                "ResourceId": "xx",
-                                "Name": "xx",
-                                "ResourceType": 0,
-                                "Remark": "xx",
-                                "FileName": "xx",
-                                "FolderId": "xx"
-                            }
-                        ],
-                        "Children": [
-                            {
-                                "ParentId": "xx",
-                                "Id": "xx",
-                                "Name": "xx",
-                                "TotalCount": 0
-                            }
-                        ],
-                        "TotalCount": 0
-                    }
-                ],
+                "ParentId": "root",
+                "Id": "folder-xxxxx",
+                "Name": "folder-name",
+                "Items": null,
+                "Children": null,
                 "TotalCount": 0
             }
         ],
-        "TotalCount": 0,
-        "RequestId": "xx"
+        "Id": "root",
+        "Items": [
+            {
+                "ResourceId": "resource-xxxxxx",
+                "Name": "flink-connector-jdbc.jar",
+                "ResourceType": 1,
+                "Remark": "pgsql1",
+                "FileName": "flink-connector-jdbc.jar",
+                "FolderId": "root",
+                "RefJobStatusCountSet": [
+                    {
+                        "JobStatus": 5,
+                        "Count": 2
+                    }
+                ]
+            }
+        ],
+        "Name": "依赖目录",
+        "ParentId": "",
+        "RequestId": "4aafc302-4fc5-44f5-9e90-2e0a2702ab81",
+        "TotalCount": 333
     }
 }
 ```

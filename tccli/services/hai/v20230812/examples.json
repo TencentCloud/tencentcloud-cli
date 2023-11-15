@@ -1,5 +1,61 @@
 {
   "actions": {
+    "DescribeApplications": [
+      {
+        "document": "查询应用",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-jxnaqazx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-jxnaqazx\",\n                \"ApplicationName\": \"应用名称\",\n                \"Description\": \"应用描述\",\n                \"MinSystemDiskSize\": 80\n            }\n        ],\n        \"RequestId\": \"2b1fae52-8004-4a13-a20a-26ea1149f9df\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询应用"
+      }
+    ],
+    "DescribeInstanceNetworkStatus": [
+      {
+        "document": "查看实例hai-xxxxxxxx关联的公网配置及使用情况",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNetworkStatus\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jklfaded\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"NetworkStatusSet\": [\n            {\n                \"InstanceId\": \"hai-xxxxxxxx\",\n                \"AddressIp\": \"1.1.1.1\",\n                \"Bandwidth\": 5,\n                \"TotalTrafficAmount\": 1000,\n                \"RemainingTrafficAmount\": 500\n            }\n        ],\n        \"RequestId\": \"41fa870d-8592-493c-b794-9fe19f23e800\"\n    }\n}",
+        "title": "查看实例hai-xxxxxxxx关联的公网配置及使用情况"
+      }
+    ],
+    "DescribeInstances": [
+      {
+        "document": "查看指定实例hai-jklfaded的信息",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jklfaded\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 10,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"hai-jklfaded\",\n                \"InstanceName\": \"abc\",\n                \"InstanceState\": \"RUNNING\",\n                \"ApplicationName\": \"pytorch\",\n                \"BundleName\": \"基础型\",\n                \"GPUPerformance\": \"8+TFlops\",\n                \"GPUMemory\": \"16+GB\",\n                \"CPU\": \"20C\",\n                \"Memory\": \"80GB\",\n                \"SystemDisk\": {\n                    \"DiskType\": \"CLOUD_SSD\",\n                    \"DiskSize\": 80\n                },\n                \"PrivateIpAddresses\": [\n                    \"1.1.1.1\"\n                ],\n                \"PublicIpAddresses\": [\n                    \"2.2.2.2\"\n                ],\n                \"SecurityGroupIds\": [\n                    \"sg-xxxxxxxx\"\n                ],\n                \"LatestOperation\": \"RunInstances\",\n                \"LatestOperationState\": \"SUCCESS\",\n                \"CreateTime\": \"2023-08-01 00:00:00\",\n                \"MaxOutBandwidth\": \"5Mbps\",\n                \"MaxFreeTraffic\": \"1000GB\",\n                \"ConfigurationEnvironment\": \"cuda 10 | pytorch | tensorflow\",\n                \"LoginServices\": [\n                    {\n                        \"ServiceName\": \"jupyter\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"41fa870d-8592-493c-b794-9fe19f23e800\"\n    }\n}",
+        "title": "查看指定实例hai-jklfaded的信息"
+      }
+    ],
+    "DescribeRegions": [
+      {
+        "document": "查询地域列表",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegions\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegionSet\": [\n            {\n                \"Region\": \"ap-guangzhou\",\n                \"RegionName\": \"广州\",\n                \"RegionState\": \"AVAILABLE\",\n                \"ScholarRocketSupportState\": \"ALREADY_SUPPORT\"\n            },\n            {\n                \"Region\": \"ap-chongqing\",\n                \"RegionName\": \"重庆\",\n                \"RegionState\": \"UNAVAILABLE\",\n                \"ScholarRocketSupportState\": \"NOT_SUPPORT_YET\"\n            }\n        ],\n        \"RequestId\": \"e34431dd-763e-4523-92da-ec68016a3d6a\"\n    }\n}",
+        "title": "查询地域列表"
+      }
+    ],
+    "DescribeScenes": [
+      {
+        "document": "查询场景",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeScenes\n<公共请求参数>\n\n{\n    \"SceneIds\": [\n        \"sc-xxxxxxxx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"82505ff0-ca36-486b-849f-50996228e838\",\n        \"SceneSet\": [\n            {\n                \"SceneId\": \"sc-abcdefgh\",\n                \"SceneName\": \"人工智能\"\n            }\n        ]\n    }\n}",
+        "title": "查询场景"
+      }
+    ],
+    "DescribeServiceLoginSettings": [
+      {
+        "document": "查询实例hai-xxxxxxxx包含的服务登录配置",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServiceLoginSettings\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-xxxxxxxx\",\n    \"ServiceName\": \"jupyter\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"73956f5a-0f0e-4e60-ba7d-d555bcefe27b\",\n        \"LoginSettings\": [\n            {\n                \"ServiceName\": \"jupyter\",\n                \"Url\": \"http://1.14.52.185:80?40a0153b6c8ff839b2b83f9a3918daa55facad3c3e7a9b4a0e2377bd08f4aaa2\"\n            }\n        ]\n    }\n}",
+        "title": "查询实例hai-xxxxxxxx包含的服务登录配置"
+      }
+    ],
+    "InquirePriceRunInstances": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquirePriceRunInstances\n<公共请求参数>\n\n{\n    \"ApplicationId\": \"app-jknfna\",\n    \"BundleType\": \"S\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\",\n        \"DiskSize\": 250\n    },\n    \"InstanceName\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Price\": {\n            \"InstancePrice\": {\n                \"UnitPrice\": 0.88,\n                \"DiscountUnitPrice\": 0.88,\n                \"Discount\": 100.0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            },\n            \"CloudDiskPrice\": {\n                \"UnitPrice\": 0,\n                \"DiscountUnitPrice\": 0,\n                \"Discount\": 0,\n                \"ChargeUnit\": \"HOUR\",\n                \"Amount\": 1\n            }\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "发货询价"
+      }
+    ],
     "RunInstances": [
       {
         "document": "创建hai实例",

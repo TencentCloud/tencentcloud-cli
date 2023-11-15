@@ -1,3 +1,273 @@
+# Release 3.0.886.1
+
+## API 网关(apigateway) 版本：2018-08-08
+
+### 第 34 次发布
+
+发布时间：2023-11-16 01:06:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAPIDoc](http://document.tencentcloudapi.woa.com/document/product/628/54951)
+
+	* 新增入参：Tags
+
+* [CreateApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45213)
+
+	* 新增入参：Tags
+
+* [CreateUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45224)
+
+	* 新增入参：Tags
+
+
+修改数据结构：
+
+* [APIDoc](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDoc)
+
+	* 新增成员：Tags
+
+* [APIDocInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#APIDocInfo)
+
+	* 新增成员：Tags
+
+* [ApiKey](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiKey)
+
+	* 新增成员：Tags
+
+* [ApiUsagePlan](http://document.tencentcloudapi.woa.com/document/product/628/45244#ApiUsagePlan)
+
+	* 新增成员：Tags
+
+* [UsagePlanInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanInfo)
+
+	* 新增成员：Tags
+
+* [UsagePlanStatusInfo](http://document.tencentcloudapi.woa.com/document/product/628/45244#UsagePlanStatusInfo)
+
+	* 新增成员：Tags
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 20 次发布
+
+发布时间：2023-11-16 01:12:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AssetViewVULRisk](http://document.tencentcloudapi.woa.com/document/product/1726/80814#AssetViewVULRisk)
+
+	* <font color="#dd0000">**修改成员**：</font>AffectAsset, Level, InstanceType, Component, Service, RecentTime, FirstTime, Status, Id, Index, InstanceId, InstanceName, AppId, Nick, Uin, VULType, Port, Describe, AppName, References, AppVersion, VULURL, VULName, CVE, Fix, POCId, From, CWPVersion, IsSupportRepair, IsSupportDetect, InstanceUUID, Payload, EMGCVulType
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 19 次发布
+
+发布时间：2023-11-16 01:14:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyUserGroup](http://document.tencentcloudapi.woa.com/document/product/1492/82594)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 83 次发布
+
+发布时间：2023-11-16 01:15:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUpdatableDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/82595)
+
+修改接口：
+
+* [CreateDataEngine](http://document.tencentcloudapi.woa.com/document/product/1342/77204)
+
+	* 新增入参：EngineNetworkId, OrderId, EngineGeneration
+
+* [DescribeDataEngines](http://document.tencentcloudapi.woa.com/document/product/1342/74816)
+
+	* 新增入参：EngineGeneration, EngineTypeDetail
+
+
+新增数据结构：
+
+* [DataEngineBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#DataEngineBasicInfo)
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 3 次发布
+
+发布时间：2023-11-16 01:18:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
+* [DescribeInstanceNetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82602)
+* [DescribeInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82601)
+* [DescribeRegions](http://document.tencentcloudapi.woa.com/document/product/1750/82604)
+* [DescribeScenes](http://document.tencentcloudapi.woa.com/document/product/1750/82597)
+* [DescribeServiceLoginSettings](http://document.tencentcloudapi.woa.com/document/product/1750/82600)
+* [InquirePriceRunInstances](http://document.tencentcloudapi.woa.com/document/product/1750/82599)
+
+新增数据结构：
+
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
+* [Filter](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Filter)
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Instance)
+* [ItemPrice](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ItemPrice)
+* [LoginService](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginService)
+* [LoginSetting](http://document.tencentcloudapi.woa.com/document/product/1750/82570#LoginSetting)
+* [NetworkStatus](http://document.tencentcloudapi.woa.com/document/product/1750/82570#NetworkStatus)
+* [Price](http://document.tencentcloudapi.woa.com/document/product/1750/82570#Price)
+* [RegionInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#RegionInfo)
+* [SceneInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#SceneInfo)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 38 次发布
+
+发布时间：2023-11-16 01:23:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeTreeResources](http://document.tencentcloudapi.woa.com/document/product/849/75701)
+
+	* 新增入参：Filters, Offset, Limit
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 40 次发布
+
+发布时间：2023-11-16 01:25:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ListNamespaces](http://document.tencentcloudapi.woa.com/document/product/583/37158)
+
+	* 新增入参：Filters
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 41 次发布
+
+发布时间：2023-11-16 01:29:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeEvents](http://document.tencentcloudapi.woa.com/document/product/851/82606)
+
+修改接口：
+
+* [DescribeLogs](http://document.tencentcloudapi.woa.com/document/product/851/74837)
+
+	* 新增入参：ServiceId
+
+
+新增数据结构：
+
+* [Event](http://document.tencentcloudapi.woa.com/document/product/851/74915#Event)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 34 次发布
+
+发布时间：2023-11-16 01:30:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuWaterMarkImage](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkImage)
+
+	* 新增成员：DynamicPosType
+
+* [McuWaterMarkText](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuWaterMarkText)
+
+	* 新增成员：DynamicPosType
+
+
+
+
+## 声音复刻(vrs) 版本：2020-08-24
+
+### 第 4 次发布
+
+发布时间：2023-11-16 01:32:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetVRSVoiceTypes](http://document.tencentcloudapi.woa.com/document/product/1664/82607)
+
+新增数据结构：
+
+* [VoiceTypeInfo](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeInfo)
+* [VoiceTypeListData](http://document.tencentcloudapi.woa.com/document/product/1664/79152#VoiceTypeListData)
+
+
+
 # Release 3.0.885.1
 
 ## 云防火墙(cfw) 版本：2019-09-04
