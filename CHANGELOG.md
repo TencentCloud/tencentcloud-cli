@@ -1,3 +1,123 @@
+# Release 3.0.887.1
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 84 次发布
+
+发布时间：2023-11-17 01:14:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTablesName](http://document.tencentcloudapi.woa.com/document/product/1342/82608)
+
+
+
+## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
+
+### 第 30 次发布
+
+发布时间：2023-11-17 01:22:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBackupMonitor](http://document.tencentcloudapi.woa.com/document/product/238/82617)
+* [DescribeBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82616)
+* [DescribeBackupSummary](http://document.tencentcloudapi.woa.com/document/product/238/82615)
+* [DescribeCrossBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82614)
+* [DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/238/82611)
+* [DescribeDatabasesNormal](http://document.tencentcloudapi.woa.com/document/product/238/82610)
+* [DescribeRegularBackupPlan](http://document.tencentcloudapi.woa.com/document/product/238/82613)
+* [ModifyCrossBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/82612)
+* [ModifyDatabaseShrinkMDF](http://document.tencentcloudapi.woa.com/document/product/238/82609)
+
+新增数据结构：
+
+* [CrossSummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#CrossSummaryDetailRes)
+* [SummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#SummaryDetailRes)
+
+
+
+## 安全运营中心(ssa) 版本：2018-06-08
+
+### 第 18 次发布
+
+发布时间：2023-11-17 01:23:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* SaEventPub
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* ListDataSaEventPub
+* ObjDataSaEventPub
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 79 次发布
+
+发布时间：2023-11-17 01:25:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RocketMQSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQSubscription)
+
+	* 新增成员：ClientProtocol
+
+* [RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)
+
+	* 新增成员：AclEnabled, DestroyTime
+
+	* <font color="#dd0000">**修改成员**：</font>MaxRetention, MinRetention, Retention
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 42 次发布
+
+发布时间：2023-11-17 01:26:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+
+	* 新增入参：PreTrainModel
+
+
+新增数据结构：
+
+* [PreTrainModel](http://document.tencentcloudapi.woa.com/document/product/851/74915#PreTrainModel)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.886.1
 
 ## API 网关(apigateway) 版本：2018-08-08

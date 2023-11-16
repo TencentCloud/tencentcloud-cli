@@ -274,6 +274,30 @@
         "title": "查询全量备份导入任务"
       }
     ],
+    "DescribeBackupMonitor": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupMonitor\n&StartTime=2018-03-28 00:00:00\n&EndTime=2018-04-20 00:00:00\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"863b2797-858b-49f3-88e9-50159e564cbc\",\n        \"ActualUsedSpace\": [\n            1012900,\n            1012900,\n            1013190,\n            1013190,\n            1013190,\n            1014280,\n            1014280,\n            1014280,\n            1014570,\n            1014570,\n            1015680,\n            1015680\n        ],\n        \"DataBackupSpace\": [\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860,\n            512860\n        ],\n        \"FreeSpace\": [\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040,\n            1352663040\n        ],\n        \"LogBackupSpace\": [\n            500040,\n            500040,\n            500330,\n            500330,\n            500330,\n            501420,\n            501420,\n            501420,\n            501710,\n            501710,\n            502820,\n            502820\n        ],\n        \"TimeStamp\": [\n            \"2022-05-06 09:15:00\",\n            \"2022-05-06 09:20:00\",\n            \"2022-05-06 09:25:00\",\n            \"2022-05-06 09:30:00\",\n            \"2022-05-06 09:35:00\",\n            \"2022-05-06 09:40:00\",\n            \"2022-05-06 09:45:00\",\n            \"2022-05-06 09:50:00\",\n            \"2022-05-06 09:55:00\",\n            \"2022-05-06 10:00:00\",\n            \"2022-05-06 10:05:00\",\n            \"2022-05-06 10:10:00\"\n        ]\n    }\n}",
+        "title": "查询备份空间使用详情"
+      }
+    ],
+    "DescribeBackupStatistical": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupStatistical\n&InstanceIdSet.0=mssql-3l3fgqn7\n&InstanceNameSet.0=数仓\n&Offset=0\n&Limit=3\n&OrderBy=data\n&OrderByType=desc\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"ActualUsedSpace\": 1003844420,\n                \"AutoBackupCount\": 9190,\n                \"AutoBackupSpace\": 920300548,\n                \"DataBackupCount\": 1706,\n                \"DataBackupSpace\": 996004980,\n                \"InstanceId\": \"mssql-1ybz12wb\",\n                \"LogBackupCount\": 7627,\n                \"LogBackupSpace\": 7839440,\n                \"ManualBackupCount\": 143,\n                \"ManualBackupSpace\": 83543872,\n                \"Name\": \"xinyuanxu-new\",\n                \"Region\": \"ap-guangzhou\",\n                \"RegionId\": 1,\n                \"Status\": 2\n            }\n        ],\n        \"RequestId\": \"c3ea3ea0-f0a2-11ec-94dd-525400853186\",\n        \"TotalCount\": 17\n    }\n}",
+        "title": "查询备份实时统计列表"
+      }
+    ],
+    "DescribeBackupSummary": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeBackupSummary\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ActualUsedSpace\": 1193345364,\n        \"AutoBackupCount\": 1615,\n        \"AutoBackupSpace\": 953883130,\n        \"BackupFilesTotal\": 16637,\n        \"BillingSpace\": 605473752,\n        \"CrossAutoBackupCount\": 288,\n        \"CrossAutoBackupSpace\": 146231712,\n        \"CrossBackupFilesTotal\": 3303,\n        \"CrossBillingSpace\": 147469692,\n        \"CrossEstimatedAmount\": 0.114,\n        \"CrossLogBackupCount\": 3015,\n        \"CrossLogBackupSpace\": 1237980,\n        \"DataBackupCount\": 2046,\n        \"DataBackupSpace\": 1183658714,\n        \"EstimatedAmount\": 0.4616,\n        \"FreeSpace\": 440401920,\n        \"LocalBackupFilesTotal\": 13334,\n        \"LocalLogBackupCount\": 11576,\n        \"LocalLogBackupSpace\": 8448670,\n        \"LogBackupCount\": 14591,\n        \"LogBackupSpace\": 9686650,\n        \"ManualBackupCount\": 143,\n        \"ManualBackupSpace\": 83543872,\n        \"RequestId\": \"8b5d62cb-40f4-45ba-8a26-a2083d4f9eee\"\n    }\n}",
+        "title": "查询数据库备份概览信息"
+      }
+    ],
     "DescribeBackupUploadSize": [
       {
         "document": "",
@@ -302,6 +326,14 @@
         "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBusinessIntelligenceFile\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"OrderByType\": \"desc\",\n    \"OrderBy\": \"create_time\",\n    \"InstanceId\": \"mssqlbi-fo2dwujt\",\n    \"FileName\": \"test\",\n    \"FileType\": \"FLAT\",\n    \"StatusSet\": [\n        1\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"BackupMigrationSet\": [\n            {\n                \"Action\": {\n                    \"AllAction\": [\n                        \"view\",\n                        \"remark\",\n                        \"delete\"\n                    ],\n                    \"AllowedAction\": [\n                        \"view\",\n                        \"remark\",\n                        \"delete\"\n                    ]\n                },\n                \"CreateTime\": \"2022-08-05 14:14:17\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"FileMd5\": \"\",\n                \"FileName\": \"test.xlsx\",\n                \"FilePath\": \"D:\\\\SSIS\\\\\",\n                \"FileSize\": 0,\n                \"FileType\": \"FLAT\",\n                \"FileURL\": \"http://sqlserver-gz-test-1251966477.cos.ap-guangzhou.myqcloud.com/test.xlsx\",\n                \"InstanceId\": \"mssqlbi-fo2dwujt\",\n                \"Message\": \"\",\n                \"Remark\": \"Remark\",\n                \"StartTime\": \"0000-00-00 00:00:00\",\n                \"Status\": 1\n            }\n        ],\n        \"RequestId\": \"13903852-75f7-4977-9965-aa4babeadbd5\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询商业智能服务需要的文件"
+      }
+    ],
+    "DescribeCrossBackupStatistical": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeCrossBackupStatistical\n&InstanceIdSet.0=mssql-6upluvd5\n&InstanceNameSet.0=name\n&CrossBackupStatus=enable\n&CrossRegion=guangzhou\n&OrderBy=default\n&OrderByType=desc\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1fed8472-f117-11ec-be47-525400853186\",\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"ActualUsedCount\": 4937,\n                \"ActualUsedSpace\": 554778704,\n                \"CrossBackupEnabled\": \"enable\",\n                \"CrossBackupSaveDays\": 7,\n                \"CrossRegions\": [\n                    \"ap-shanghai\"\n                ],\n                \"DataBackupCount\": 1019,\n                \"DataBackupSpace\": 550868544,\n                \"InstanceId\": \"mssql-1ybz12wb\",\n                \"LastBackupStartTime\": \"2022-06-21 13:57:17\",\n                \"LogBackupCount\": 3918,\n                \"LogBackupSpace\": 3910160,\n                \"Name\": \"xinyuanxu-new\",\n                \"Region\": \"ap-guangzhou\",\n                \"Status\": 2\n            }\n        ]\n    }\n}",
+        "title": "查询跨地域备份实时统计列表"
       }
     ],
     "DescribeCrossRegionZone": [
@@ -364,6 +396,22 @@
       {
         "document": "查询数据库详细配置信息",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDBsNormal\n&InstanceId=mssql-ds3p26cv\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"DBList\": [\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-21 21:37:47.327\",\n                \"IsAutoCleanupOn\": \"\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"0\",\n                \"IsDbChainingOn\": \"0\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db3\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            },\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-20 20:21:50.360\",\n                \"IsAutoCleanupOn\": \"\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"1\",\n                \"IsDbChainingOn\": \"0\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            },\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-21 15:49:47.903\",\n                \"IsAutoCleanupOn\": \"1\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"0\",\n                \"IsDbChainingOn\": \"1\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db2\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"3\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            }\n        ],\n        \"RequestId\": \"0cc5e70b-6abe-4e42-8486-68f4348a0568\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询数据库详细配置信息"
+      }
+    ],
+    "DescribeDatabases": [
+      {
+        "document": "查询数据库列表",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataBases\n<公共请求参数>\n\n{\n    \"InstanceIdSet\": [\n        \"mssql-ds3p26cv\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DBInstances\": [\n            {\n                \"DBDetails\": [\n                    {\n                        \"Accounts\": [\n                            {\n                                \"AccountType\": \"L3\",\n                                \"Privilege\": \"ReadWrite\",\n                                \"UserName\": \"L2\"\n                            },\n                            {\n                                \"AccountType\": \"L1\",\n                                \"Privilege\": \"DBOwner\",\n                                \"UserName\": \"L0\"\n                            }\n                        ],\n                        \"Charset\": \"Chinese_PRC_CI_AS\",\n                        \"CreateTime\": \"2023-09-21 21:37:47\",\n                        \"Encryption\": \"disable\",\n                        \"InternalStatus\": \"ONLINE\",\n                        \"Name\": \"test_db3\",\n                        \"Remark\": \"--\",\n                        \"Status\": 2\n                    },\n                    {\n                        \"Accounts\": [\n                            {\n                                \"AccountType\": \"L3\",\n                                \"Privilege\": \"ReadOnly\",\n                                \"UserName\": \"L3\"\n                            },\n                            {\n                                \"AccountType\": \"L3\",\n                                \"Privilege\": \"ReadOnly\",\n                                \"UserName\": \"L2\"\n                            },\n                            {\n                                \"AccountType\": \"L1\",\n                                \"Privilege\": \"DBOwner\",\n                                \"UserName\": \"L0\"\n                            }\n                        ],\n                        \"Charset\": \"Chinese_PRC_CI_AS\",\n                        \"CreateTime\": \"2023-09-21 15:49:48\",\n                        \"Encryption\": \"disable\",\n                        \"InternalStatus\": \"ONLINE\",\n                        \"Name\": \"test_db2\",\n                        \"Remark\": \"--\",\n                        \"Status\": 2\n                    },\n                    {\n                        \"Accounts\": [\n                            {\n                                \"AccountType\": \"L3\",\n                                \"Privilege\": \"ReadWrite\",\n                                \"UserName\": \"L3\"\n                            },\n                            {\n                                \"AccountType\": \"L3\",\n                                \"Privilege\": \"ReadWrite\",\n                                \"UserName\": \"L2\"\n                            },\n                            {\n                                \"AccountType\": \"L1\",\n                                \"Privilege\": \"DBOwner\",\n                                \"UserName\": \"L0\"\n                            }\n                        ],\n                        \"Charset\": \"Chinese_PRC_CI_AS\",\n                        \"CreateTime\": \"2023-09-20 20:21:50\",\n                        \"Encryption\": \"disable\",\n                        \"InternalStatus\": \"ONLINE\",\n                        \"Name\": \"test_db\",\n                        \"Remark\": \"--\",\n                        \"Status\": 2\n                    }\n                ],\n                \"InstanceId\": \"mssql-ds3p26cv\"\n            }\n        ],\n        \"RequestId\": \"1e4e038e-76eb-11ee-b611-525400853186\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询数据库列表"
+      }
+    ],
+    "DescribeDatabasesNormal": [
+      {
+        "document": "查询数据库详细配置信息",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=DescribeDatabasesNormal\n&InstanceId=mssql-ds3p26cv\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DBList\": [\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-21 21:37:47.327\",\n                \"IsAutoCleanupOn\": \"\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"0\",\n                \"IsDbChainingOn\": \"0\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db3\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            },\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-20 20:21:50.360\",\n                \"IsAutoCleanupOn\": \"\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"1\",\n                \"IsDbChainingOn\": \"0\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            },\n            {\n                \"CollationName\": \"Chinese_PRC_CI_AS\",\n                \"CreateTime\": \"2023-09-21 15:49:47.903\",\n                \"IsAutoCleanupOn\": \"1\",\n                \"IsBrokerEnabled\": \"0\",\n                \"IsCdcEnabled\": \"0\",\n                \"IsDbChainingOn\": \"1\",\n                \"IsEncrypted\": \"0\",\n                \"IsFullTextEnabled\": \"\",\n                \"IsFulltextEnabled\": \"1\",\n                \"IsMirroring\": \"0\",\n                \"IsPublished\": \"0\",\n                \"IsReadCommittedSnapshotOn\": \"0\",\n                \"IsSubscribed\": \"0\",\n                \"IsTrustworthyOn\": \"0\",\n                \"MirroringState\": \"\",\n                \"Name\": \"test_db2\",\n                \"RecoveryModelDesc\": \"FULL\",\n                \"RetentionPeriod\": \"3\",\n                \"StateDesc\": \"ONLINE\",\n                \"UserAccessDesc\": \"MULTI_USER\"\n            }\n        ],\n        \"RequestId\": \"0cc5e70b-6abe-4e42-8486-68f4348a0568\",\n        \"TotalCount\": 3\n    }\n}",
         "title": "查询数据库详细配置信息"
       }
@@ -512,6 +560,14 @@
         "title": "查询所有地域"
       }
     ],
+    "DescribeRegularBackupPlan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: sqlserver.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeRegularBackupPlan\n<公共请求参数>\n\n{\n    \"InstanceId\": \"mssql-j8kv137v\",\n    \"RegularBackupCounts\": \"1\",\n    \"RegularBackupSaveDays\": \"365\",\n    \"RegularBackupStrategy\": \"month\",\n    \"RegularBackupStartTime\": \"2022-10-10\",\n    \"BackupCycle\": [\n        1,\n        2,\n        3\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a62cac28-1656-4115-bf8d-189bef5e1102\",\n        \"SaveModePeriod\": [\n            \"2022-10-24 00:00:00\"\n        ],\n        \"SaveModeRegular\": [\n            \"2022-10-26 00:00:00\"\n        ]\n    }\n}",
+        "title": "查询实例mssql-j8kv137v定期备份保留计划"
+      }
+    ],
     "DescribeRollbackTime": [
       {
         "document": "",
@@ -632,6 +688,14 @@
         "title": "修改实例mssql-j8kv137v的备份策略"
       }
     ],
+    "ModifyCrossBackupStrategy": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyCrossBackupStrategy\n&InstanceId=mssql-7vfv3rk3\n&InstanceIdSet.0=mssql-7vfv3rk3\n&CrossBackupEnabled=enable\n&CrossBackupSaveDays=7\n&CrossBackupRegion.0=ap-guangzhou\n&CleanUpCrossBackup=1\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"fc765108-efcd-11ec-887f-525400853186\"\n    }\n}",
+        "title": "开启、关闭跨地域备份策略"
+      }
+    ],
     "ModifyDBEncryptAttributes": [
       {
         "document": "开启、关闭数据库的TDE加密功能",
@@ -722,6 +786,14 @@
       {
         "document": "",
         "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabaseMdf\n&InstanceId=mssql-j8kv137v\n&DBNames.0=test_db\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 9999,\n        \"RequestId\": \"a989d733-1099-4f44-84ad-991da182d0w3\"\n    }\n}",
+        "title": "收缩数据库mdf"
+      }
+    ],
+    "ModifyDatabaseShrinkMDF": [
+      {
+        "document": "",
+        "input": "https://sqlserver.tencentcloudapi.com/?Action=ModifyDatabaseShrinkMDF\n&InstanceId=mssql-j8kv137v\n&DBNames.0=test_db\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"FlowId\": 9999,\n        \"RequestId\": \"a989d733-1099-4f44-84ad-991da182d0w3\"\n    }\n}",
         "title": "收缩数据库mdf"
       }

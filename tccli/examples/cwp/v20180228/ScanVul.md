@@ -1,23 +1,26 @@
-**Example 1: 漏洞管理 - 一键检测**
+**Example 1: 漏洞一键检测**
 
-漏洞管理 - 一键检测
+
 
 Input: 
 
 ```
 tccli cwp ScanVul --cli-unfold-argument  \
-    --VulCategories 1;2 \
-    --VulLevels 1;2 \
+    --VulCategories 1,2 \
+    --VulLevels 1,2,3,4 \
     --HostType 1 \
-    --VulEmergency 1
+    --QuuidList 69796250-2a3a-40ef-b418-676e677019a4 \
+    --VulEmergency 1 \
+    --TimeoutPeriod 3600 \
+    --VulIds 1
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "c741a4fd-776f-499b-85a2-7bc70fd5b92s",
-        "TaskId": 1
+        "TaskId": 1,
+        "RequestId": "69796250-2a3a-40ef-b418-676e677019a4"
     }
 }
 ```
