@@ -3224,6 +3224,15 @@
           "name": "CallbackUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "太极预训练模型ID",
+          "example": "无",
+          "member": "PreTrainModel",
+          "name": "PreTrainModel",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -10302,6 +10311,34 @@
         }
       ],
       "usage": "out"
+    },
+    "PreTrainModel": {
+      "document": "太极任务预训练模型信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ModelName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "PushTrainingMetricsRequest": {
       "document": "PushTrainingMetrics请求参数结构体",

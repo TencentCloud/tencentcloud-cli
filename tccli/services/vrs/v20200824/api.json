@@ -580,7 +580,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "数据",
+          "document": "复刻音色信息",
           "example": "无",
           "member": "VoiceTypeListData",
           "name": "Data",
@@ -644,63 +644,63 @@
       "members": [
         {
           "disabled": false,
-          "document": "音色id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色id",
           "example": "无",
           "member": "int64",
           "name": "VoiceType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "音色名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色名称",
           "example": "无",
           "member": "string",
           "name": "VoiceName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "音色性别: 1-male 2-female\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "音色性别: 1-male 2-female",
           "example": "无",
           "member": "int64",
           "name": "VoiceGender",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "复刻类型: 0-轻量版复刻 1-基础版复刻\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "复刻类型: 0-轻量版复刻 1-基础版复刻",
           "example": "无",
           "member": "int64",
           "name": "TaskType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "复刻任务 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "复刻任务 ID",
           "example": "无",
           "member": "string",
           "name": "TaskID",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "创建时间",
           "example": "无",
           "member": "string",
           "name": "DateCreated",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

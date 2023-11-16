@@ -66,7 +66,7 @@ Output:
 
 1. 包含<b>个人/自然人</b>签署 <b>张三</b>
 2. 包含第三方子企业<b>李四的示例企业</b>员工<b>李四</b>
-3. 包含平台企业<b>王五示例企业</b>的员工王五</b> (NotChannelOrganization设置为true)
+3. 包含平台企业<b>王五示例企业</b>的员工<b>王五</b> (NotChannelOrganization设置为true)
 4. 王五的签署区是通过关键字<b>甲方签章位置</b>生成印章区域
 
 Input: 

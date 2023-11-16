@@ -5687,7 +5687,7 @@
         },
         {
           "disabled": false,
-          "document": "boi访问数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "bot攻击数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "uint64",
           "name": "BotCount",
@@ -5817,7 +5817,7 @@
         },
         {
           "disabled": false,
-          "document": "bot访问数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "bot访问数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "BotAccessCount",
@@ -8866,7 +8866,7 @@
         },
         {
           "disabled": false,
-          "document": "中台定义：\n1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与\n精确匹配填 7 模糊匹配填9 兼容 中台定的结构\n",
+          "document": "中台定义：\n1等于 2大于 3小于 4大于等于 5小于等于 6不等于 9模糊匹配 13非模糊匹配 14按位与\n精确匹配填 7 模糊匹配填9 \n",
           "example": "9",
           "member": "int64",
           "name": "OperatorType",

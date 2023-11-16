@@ -224,6 +224,27 @@
       "output": "DescribeBackupMigrationResponse",
       "status": "online"
     },
+    "DescribeBackupMonitor": {
+      "document": "本接口(DescribeBackupMonitor)用于查询备份空间使用详情。",
+      "input": "DescribeBackupMonitorRequest",
+      "name": "查询备份空间使用详情",
+      "output": "DescribeBackupMonitorResponse",
+      "status": "online"
+    },
+    "DescribeBackupStatistical": {
+      "document": "本接口(DescribeBackupStatistical)用于查询备份实时统计列表。",
+      "input": "DescribeBackupStatisticalRequest",
+      "name": "查询备份实时统计列表",
+      "output": "DescribeBackupStatisticalResponse",
+      "status": "online"
+    },
+    "DescribeBackupSummary": {
+      "document": "本接口(DescribeBackupSummary)用于查询数据库备份概览信息。",
+      "input": "DescribeBackupSummaryRequest",
+      "name": "查询数据库备份概览信息",
+      "output": "DescribeBackupSummaryResponse",
+      "status": "online"
+    },
     "DescribeBackupUploadSize": {
       "document": "本接口（DescribeBackupUploadSize）用于查询上传的备份文件大小。在备份上传类型是COS_UPLOAD(备份放在业务的对象存储上)时有效。",
       "input": "DescribeBackupUploadSizeRequest",
@@ -243,6 +264,13 @@
       "input": "DescribeBusinessIntelligenceFileRequest",
       "name": "查询商业智能服务需要的文件",
       "output": "DescribeBusinessIntelligenceFileResponse",
+      "status": "online"
+    },
+    "DescribeCrossBackupStatistical": {
+      "document": "本接口(DescribeCrossBackupStatistical)用于查询跨地域备份实时统计列表。",
+      "input": "DescribeCrossBackupStatisticalRequest",
+      "name": "查询跨地域备份实时统计列表",
+      "output": "DescribeCrossBackupStatisticalResponse",
       "status": "online"
     },
     "DescribeCrossRegionZone": {
@@ -299,6 +327,20 @@
       "input": "DescribeDBsNormalRequest",
       "name": "查询数据库配置信息（已废弃）",
       "output": "DescribeDBsNormalResponse",
+      "status": "online"
+    },
+    "DescribeDatabases": {
+      "document": "本接口（DescribeDatabases）用于查询数据库列表。",
+      "input": "DescribeDatabasesRequest",
+      "name": "查询数据库列表",
+      "output": "DescribeDatabasesResponse",
+      "status": "online"
+    },
+    "DescribeDatabasesNormal": {
+      "document": "本接口(DescribeDBsNormal)用于查询数据库配置信息，此接口不包含数据库的关联账号",
+      "input": "DescribeDatabasesNormalRequest",
+      "name": "查询数据库配置信息",
+      "output": "DescribeDatabasesNormalResponse",
       "status": "online"
     },
     "DescribeFlowStatus": {
@@ -427,6 +469,13 @@
       "output": "DescribeRegionsResponse",
       "status": "online"
     },
+    "DescribeRegularBackupPlan": {
+      "document": "本接口（DescribeRegularBackupPlan）用于查询实例定期备份保留计划",
+      "input": "DescribeRegularBackupPlanRequest",
+      "name": "查询实例定期备份保留计划",
+      "output": "DescribeRegularBackupPlanResponse",
+      "status": "online"
+    },
     "DescribeRollbackTime": {
       "document": "本接口（DescribeRollbackTime）用于查询实例可回档时间范围",
       "input": "DescribeRollbackTimeRequest",
@@ -532,6 +581,13 @@
       "output": "ModifyBackupStrategyResponse",
       "status": "online"
     },
+    "ModifyCrossBackupStrategy": {
+      "document": "本接口(ModifyCrossBackupStrategy)用于开启、关闭地域备份策略。",
+      "input": "ModifyCrossBackupStrategyRequest",
+      "name": "开启、关闭跨地域备份策略",
+      "output": "ModifyCrossBackupStrategyResponse",
+      "status": "online"
+    },
     "ModifyDBEncryptAttributes": {
       "document": "本接口（ModifyDBEncryptAttributes）用于开启、关闭数据库的TDE加密功能。",
       "input": "ModifyDBEncryptAttributesRequest",
@@ -607,6 +663,13 @@
       "input": "ModifyDatabaseMdfRequest",
       "name": "收缩数据库mdf (已废弃）",
       "output": "ModifyDatabaseMdfResponse",
+      "status": "online"
+    },
+    "ModifyDatabaseShrinkMDF": {
+      "document": "本接口(ModifyDatabaseShrinkDMF)用于收缩数据库mdf(Shrink mdf)。",
+      "input": "ModifyDatabaseShrinkMDFRequest",
+      "name": "收缩数据库mdf",
+      "output": "ModifyDatabaseShrinkMDFResponse",
       "status": "online"
     },
     "ModifyIncrementalMigration": {
@@ -3698,6 +3761,152 @@
       ],
       "usage": "out"
     },
+    "CrossSummaryDetailRes": {
+      "document": "跨地域备份实时统计列表项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例状态",
+          "example": "2",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-xxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "name",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份状态 enable-开启，disable-关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "CrossBackupEnabled",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份目标地域",
+          "example": "[]",
+          "member": "string",
+          "name": "CrossRegions",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最新备份开始时间",
+          "example": "2022-06-21 11:47:17",
+          "member": "string",
+          "name": "LastBackupStartTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份保留天数",
+          "example": "7",
+          "member": "int64",
+          "name": "CrossBackupSaveDays",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域数据备份总空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域数据备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域日志备份总空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域日志备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份总空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ActualUsedSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ActualUsedCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DBCreateInfo": {
       "document": "数据库创建信息",
       "members": [
@@ -5757,6 +5966,440 @@
       ],
       "type": "object"
     },
+    "DescribeBackupMonitorRequest": {
+      "document": "DescribeBackupMonitor请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份空间使用详情开始时间",
+          "example": "2022-05-05 22:12:27",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份空间使用详情结束时间",
+          "example": "2022-05-05 22:12:27",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "备份趋势查询类型，local-本地备份，cross-跨地域备份",
+          "example": "local",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupMonitorResponse": {
+      "document": "DescribeBackupMonitor返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备份趋势图时间轴",
+          "example": "[10000]",
+          "member": "string",
+          "name": "TimeStamp",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费备份空间",
+          "example": "[99.99]",
+          "member": "float",
+          "name": "FreeSpace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实际总备份空间",
+          "example": "[99.99]",
+          "member": "float",
+          "name": "ActualUsedSpace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份空间",
+          "example": "[99.99]",
+          "member": "float",
+          "name": "LogBackupSpace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份空间",
+          "example": "[99.99]",
+          "member": "float",
+          "name": "DataBackupSpace",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStatisticalRequest": {
+      "document": "DescribeBackupStatistical请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页返回，每页返回的数目，取值为1-100，默认值为100",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回，页编号，默认值为第0页。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "一个或者多个实例ID。实例ID，格式如：mssql-si2823jyl。",
+          "example": "[mssql-7vfv3rk3]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称列表，模糊查询。",
+          "example": "[name]",
+          "member": "string",
+          "name": "InstanceNameSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，默认default，则按照备份空间降序。\ndefault 按照备份空间排序\ndata 数据备份排序\nlog 日志备份排序\nauto 自动备份排序\nmanual 手动备份排序",
+          "example": "default",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "默认降序，[desc-降序，asc-升序]。",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupStatisticalResponse": {
+      "document": "DescribeBackupStatistical返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合条件的实例总数。分页返回的话，这个值指的是所有符合条件的实例的个数，而非当前根据Limit和Offset值返回的实例个数。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例列表。",
+          "example": "无",
+          "member": "SummaryDetailRes",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBackupSummaryRequest": {
+      "document": "DescribeBackupSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeBackupSummaryResponse": {
+      "document": "DescribeBackupSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实际免费总空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "FreeSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份实际使用空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "ActualUsedSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份文件总个数。",
+          "example": "680",
+          "member": "uint64",
+          "name": "BackupFilesTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份占用收费空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "BillingSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份使用空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "DataBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份文件总个数。",
+          "example": "94",
+          "member": "uint64",
+          "name": "DataBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份中手动备份使用空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "ManualBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份中手动备份文件总个数。",
+          "example": "40",
+          "member": "uint64",
+          "name": "ManualBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份中自动备份使用空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "AutoBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份中自动备份文件总个数。",
+          "example": "54",
+          "member": "uint64",
+          "name": "AutoBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份使用空间，单位(KB)。",
+          "example": "1024",
+          "member": "uint64",
+          "name": "LogBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份文件总个数。",
+          "example": "586",
+          "member": "uint64",
+          "name": "LogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预估收费金额，单位（元/小时）。",
+          "example": "0.1",
+          "member": "float",
+          "name": "EstimatedAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地备份文件总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "LocalBackupFilesTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份文件总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossBackupFilesTotal",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份占用收费空间，单位（KB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossBillingSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域自动数据备份使用空间，单位（KB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossAutoBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域自动数据备份文件总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossAutoBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地日志备份使用空间，单位（KB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "LocalLogBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本地日志备份文件总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "LocalLogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域日志备份使用空间，单位（KB）",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossLogBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域日志备份文件总个数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CrossLogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份预估收费金额，单位（元/小时）",
+          "example": "1",
+          "member": "float",
+          "name": "CrossEstimatedAmount",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeBackupUploadSizeRequest": {
       "document": "DescribeBackupUploadSize请求参数结构体",
       "members": [
@@ -6073,6 +6716,116 @@
           "example": "无",
           "member": "BusinessIntelligenceFile",
           "name": "BackupMigrationSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossBackupStatisticalRequest": {
+      "document": "DescribeCrossBackupStatistical请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页,页数",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页，页大小",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "[mssql-6upluvd5]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例名称列表",
+          "example": "[name]",
+          "member": "string",
+          "name": "InstanceNameSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份状态，enable-开启，disable-关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "CrossBackupStatus",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份目标地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "CrossRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，默认default-按照备份空间降序排序，data-按照数据备份排序，log-按照日志备份培训",
+          "example": "default",
+          "member": "string",
+          "name": "OrderBy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCrossBackupStatisticalResponse": {
+      "document": "DescribeCrossBackupStatistical返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨地域备份概览实时统计总条数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份概览实时统计列表",
+          "example": "无",
+          "member": "CrossSummaryDetailRes",
+          "name": "Items",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -6705,6 +7458,145 @@
     },
     "DescribeDBsResponse": {
       "document": "DescribeDBs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库数量",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例数据库列表",
+          "example": "无",
+          "member": "InstanceDBDetail",
+          "name": "DBInstances",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesNormalRequest": {
+      "document": "DescribeDatabasesNormal请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID，形如mssql-7vfv3rk3",
+          "example": "mssql-7vfv3rk3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesNormalResponse": {
+      "document": "DescribeDatabasesNormal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表示当前实例下的数据库总个数",
+          "example": "77",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回数据库的详细配置信息，例如：数据库是否开启CDC、CT等",
+          "example": "无",
+          "member": "DbNormalDetail",
+          "name": "DBList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesRequest": {
+      "document": "DescribeDatabases请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "[\"mssql-njj2mtpl\\r\\n\"]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回，每页返回的数目，取值为1-100，默认值为20",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页返回，页编号，默认值为第0页",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "test_db",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序规则（desc-降序，asc-升序），默认desc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderByType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否已开启TDE加密，enable-已加密，disable-未加密",
+          "example": "disable",
+          "member": "string",
+          "name": "Encryption",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabasesResponse": {
+      "document": "DescribeDatabases返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -8166,6 +9058,98 @@
           "example": "无",
           "member": "RegionInfo",
           "name": "RegionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegularBackupPlanRequest": {
+      "document": "DescribeRegularBackupPlan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定期备份保留天数 [90 - 3650]天，默认365天",
+          "example": "90",
+          "member": "uint64",
+          "name": "RegularBackupSaveDays",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定期备份策略 years-每年，quarters-每季度，months-每月，默认months",
+          "example": "months",
+          "member": "string",
+          "name": "RegularBackupStrategy",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "定期备份保留个数，默认1个",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegularBackupCounts",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "定期备份开始日期，格式-YYYY-MM-DD 默认当前日期",
+          "example": "2022-10-10",
+          "member": "string",
+          "name": "RegularBackupStartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "常规备份周期",
+          "example": "[1,2,3,4,5,6,7]",
+          "member": "uint64",
+          "name": "BackupCycle",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRegularBackupPlanResponse": {
+      "document": "DescribeRegularBackupPlan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "常规备份计划",
+          "example": "[\"2022-10-24 00:00:00\"]",
+          "member": "string",
+          "name": "SaveModePeriod",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "定期备份计划",
+          "example": "[\"2022-10-25 00:00:00\"]",
+          "member": "string",
+          "name": "SaveModeRegular",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10350,6 +11334,78 @@
       ],
       "type": "object"
     },
+    "ModifyCrossBackupStrategyRequest": {
+      "document": "ModifyCrossBackupStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨地域备份开关(数据备份&日志备份) enable-开启，disable-关闭",
+          "example": "enable",
+          "member": "string",
+          "name": "CrossBackupEnabled",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "mssql-7vfv3rk3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID列表",
+          "example": "[mssql-7vfv3rk3]",
+          "member": "string",
+          "name": "InstanceIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份保留天数，取值：7~1830，默认7天",
+          "example": "7",
+          "member": "uint64",
+          "name": "CrossBackupSaveDays",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "跨地域备份的目标地域ID，最多两个，最少一个",
+          "example": "[ap-guangzhou]",
+          "member": "string",
+          "name": "CrossBackupRegion",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否立即清理跨地域备份(数据备份&日志备份) ，只有在BackupEnabled = disable时有效。1-是，0-否，默认：0",
+          "example": "1",
+          "member": "uint64",
+          "name": "CleanUpCrossBackup",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyCrossBackupStrategyResponse": {
+      "document": "ModifyCrossBackupStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyDBEncryptAttributesRequest": {
       "document": "ModifyDBEncryptAttributes请求参数结构体",
       "members": [
@@ -10859,6 +11915,52 @@
     },
     "ModifyDatabaseMdfResponse": {
       "document": "ModifyDatabaseMdf返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "99999",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseShrinkMDFRequest": {
+      "document": "ModifyDatabaseShrinkMDF请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据库名数组",
+          "example": "[db_test]",
+          "member": "string",
+          "name": "DBNames",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-j8kv137v",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyDatabaseShrinkMDFResponse": {
+      "document": "ModifyDatabaseShrinkMDF返回参数结构体",
       "members": [
         {
           "disabled": false,
@@ -13506,6 +14608,152 @@
         }
       ],
       "type": "object"
+    },
+    "SummaryDetailRes": {
+      "document": "备份概览实时统计项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地域标识",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例状态。1：申请中2：运行中3：受限运行中 (主备切换中)4：已隔离5：回收中6：已回收7：任务执行中 (实例做备份、回档等操作)8：已下线9：实例扩容中10：实例迁移中",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "mssql-7vfv3rk3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备份空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ActualUsedSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "DataBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "LogBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动备份空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "AutoBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手动备份空间",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBackupSpace",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "手动备份文件总个数",
+          "example": "0",
+          "member": "uint64",
+          "name": "ManualBackupCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例所属地域码",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SwitchCloudInstanceHARequest": {
       "document": "SwitchCloudInstanceHA请求参数结构体",

@@ -394,34 +394,37 @@
   },
   "objects": {
     "ACTemplate": {
-      "document": "权限控制模版对象",
+      "document": "权限控制模板对象",
       "members": [
         {
           "disabled": false,
-          "document": "模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "temp-xxxx",
           "member": "string",
           "name": "TemplateId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "模版A",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "模板A",
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模版描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "这是一个描述信息",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

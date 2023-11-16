@@ -3480,9 +3480,9 @@
       "status": "online"
     },
     "ScanVul": {
-      "document": " 一键检测",
+      "document": "漏洞一键检测",
       "input": "ScanVulRequest",
-      "name": "一键检测",
+      "name": "漏洞一键检测",
       "output": "ScanVulResponse",
       "status": "online"
     },
@@ -54622,7 +54622,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

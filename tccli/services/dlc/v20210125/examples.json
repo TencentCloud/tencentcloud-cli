@@ -624,6 +624,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeTablesName": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dlc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTablesName\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 1,\n    \"DatabaseName\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"DatasourceConnectionName\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Sort\": \"abc\",\n    \"Asc\": true,\n    \"TableType\": \"abc\",\n    \"TableFormat\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TableNameList\": [\n            \"abc\"\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询数据表名称列表"
+      }
+    ],
     "DescribeTaskResult": [
       {
         "document": "查询任务结果，每次返回1000行数据",

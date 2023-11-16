@@ -13,9 +13,9 @@ Output:
 ```
 {
     "Response": {
-        "Token": "xx",
-        "UserId": "xx",
-        "RequestId": "xx"
+        "Token": "abc",
+        "UserId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

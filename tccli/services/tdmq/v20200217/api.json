@@ -15487,6 +15487,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP/HTTP",
+          "member": "string",
+          "name": "ClientProtocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15749,7 +15759,7 @@
           "example": "rocketmq-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15759,7 +15769,7 @@
           "example": "abc",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15769,7 +15779,7 @@
           "example": "4.9.3",
           "member": "string",
           "name": "InstanceVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15779,7 +15789,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15789,7 +15799,7 @@
           "example": "5",
           "member": "uint64",
           "name": "NodeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15799,7 +15809,7 @@
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15809,7 +15819,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15819,7 +15829,7 @@
           "example": "1200",
           "member": "uint64",
           "name": "MaxBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15829,7 +15839,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15839,7 +15849,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15849,7 +15859,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15859,7 +15869,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15869,7 +15879,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -15879,7 +15889,7 @@
           "example": "vip-basic-1",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15889,7 +15899,7 @@
           "example": "168",
           "member": "int64",
           "name": "MaxRetention",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -15899,7 +15909,7 @@
           "example": "24",
           "member": "int64",
           "name": "MinRetention",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -15909,7 +15919,27 @@
           "example": "72",
           "member": "int64",
           "name": "Retention",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启ACL鉴权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AclEnabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "销毁时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "DestroyTime",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

@@ -5072,7 +5072,7 @@
           "example": "无",
           "member": "DetailHost",
           "name": "DetailHosts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5082,7 +5082,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6274,7 +6274,7 @@
           "example": "无",
           "member": "ZoneSetting",
           "name": "ZoneSetting",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

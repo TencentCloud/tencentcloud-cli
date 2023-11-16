@@ -412,7 +412,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: lcic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: LoginUser\n<公共请求参数>\n\n{\n    \"UserId\": \"xxx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Token\": \"xx\",\n        \"UserId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Token\": \"abc\",\n        \"UserId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "登录"
       }
     ],

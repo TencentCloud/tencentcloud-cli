@@ -4032,10 +4032,10 @@
     ],
     "ScanVul": [
       {
-        "document": "漏洞管理 - 一键检测",
-        "input": "https://cwp.tencentcloudapi.com/?Action=ScanVul\n&VulCategories=1;2\n&VulLevels=1;2\n&HostType=1\n&VulEmergency=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c741a4fd-776f-499b-85a2-7bc70fd5b92s\",\n        \"TaskId\": 1\n    }\n}",
-        "title": "漏洞管理 - 一键检测"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScanVul\n<公共请求参数>\n\n{\n    \"VulCategories\": \"1,2\",\n    \"VulLevels\": \"1,2,3,4\",\n    \"HostType\": 1,\n    \"QuuidList\": [\n        \"69796250-2a3a-40ef-b418-676e677019a4\"\n    ],\n    \"VulEmergency\": 1,\n    \"TimeoutPeriod\": 3600,\n    \"VulIds\": [\n        1\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1,\n        \"RequestId\": \"69796250-2a3a-40ef-b418-676e677019a4\"\n    }\n}",
+        "title": "漏洞一键检测"
       }
     ],
     "ScanVulAgain": [

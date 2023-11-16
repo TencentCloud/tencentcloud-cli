@@ -30,14 +30,18 @@ Output:
                 },
                 "CacheConfig": {
                     "Cache": {
-                        "CacheTime": 2592000,
-                        "Switch": "off"
-                    },
-                    "FollowOrigin": {
-                        "Switch": "on"
+                        "Switch": "on",
+                        "CacheTime": 0,
+                        "IgnoreCacheControl": "abc"
                     },
                     "NoCache": {
-                        "Switch": "off"
+                        "Switch": "on"
+                    },
+                    "FollowOrigin": {
+                        "Switch": "on",
+                        "DefaultCacheTime": 0,
+                        "DefaultCache": "abc",
+                        "DefaultCacheStrategy": "abc"
                     }
                 },
                 "CacheKey": {
@@ -58,6 +62,10 @@ Output:
                 },
                 "DDoS": {
                     "Switch": "on"
+                },
+                "ClientIpCountry": {
+                    "HeaderName": "",
+                    "Switch": "off"
                 },
                 "CC": {
                     "PolicyId": 1996,
@@ -82,7 +90,9 @@ Output:
                         "TLSv1.1",
                         "TLSv1.2",
                         "TLSv1.3"
-                    ]
+                    ],
+                    "ApplyType": "abc",
+                    "CipherSuite": "abc"
                 },
                 "Ipv6": {
                     "Switch": "off"

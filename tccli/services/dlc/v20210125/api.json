@@ -546,6 +546,13 @@
       "output": "DescribeTablesResponse",
       "status": "online"
     },
+    "DescribeTablesName": {
+      "document": "本接口（DescribeTables）用于查询数据表名称列表",
+      "input": "DescribeTablesNameRequest",
+      "name": "查询数据表名称列表",
+      "output": "DescribeTablesNameResponse",
+      "status": "online"
+    },
     "DescribeTaskResult": {
       "document": "查询任务结果",
       "input": "DescribeTaskResultRequest",
@@ -9044,6 +9051,143 @@
           "name": "Table",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesNameRequest": {
+      "document": "DescribeTablesName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列出该数据库下所属数据表。",
+          "example": "database1",
+          "member": "string",
+          "name": "DatabaseName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为10，最大值为100。",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量，从0开始，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，如下支持的过滤类型，传参Name应为其一\ntable-name - String - （过滤条件）数据表名称,形如：table-001。\ntable-id - String - （过滤条件）table id形如：12342。",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定查询的数据源名称，默认为DataLakeCatalog",
+          "example": "DataLakeCatalog",
+          "member": "string",
+          "name": "DatasourceConnectionName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "起始时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "终止时间：用于对更新时间的筛选，格式为yyyy-mm-dd HH:MM:SS",
+          "example": "2006-01-02 15:04:05",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，支持：CreateTime（创建时间）、UpdateTime（更新时间）、StorageSize（存储空间）、RecordCount（行数）、Name（表名称）（不传则默认按name升序）",
+          "example": "UpdateTime",
+          "member": "string",
+          "name": "Sort",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段，false：降序（默认）；true：升序",
+          "example": "false",
+          "member": "bool",
+          "name": "Asc",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "table type，表类型查询,可用值:EXTERNAL_TABLE,INDEX_TABLE,MANAGED_TABLE,MATERIALIZED_VIEW,TABLE,VIEW,VIRTUAL_VIEW",
+          "example": "Table",
+          "member": "string",
+          "name": "TableType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选字段-表格式：不传（默认）为查全部；LAKEFS：托管表；ICEBERG：非托管iceberg表；HIVE：非托管hive表；OTHER：非托管其它；",
+          "example": "HIVE",
+          "member": "string",
+          "name": "TableFormat",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTablesNameResponse": {
+      "document": "DescribeTablesName返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据表名称对象列表。",
+          "example": "[t1,t2]",
+          "member": "string",
+          "name": "TableNameList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例总数。",
+          "example": "21",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {

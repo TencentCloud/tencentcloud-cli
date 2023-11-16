@@ -5469,31 +5469,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "热Key",
-          "example": "",
+          "document": "热 Key 的名称。",
+          "example": "无",
           "member": "string",
           "name": "Key",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "类型",
-          "example": "",
+          "document": "Key 类型。",
+          "example": "无",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "数量",
-          "example": "",
+          "document": "某段时间内热 Key 的访问次数",
+          "example": "无",
           "member": "int64",
           "name": "Count",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }

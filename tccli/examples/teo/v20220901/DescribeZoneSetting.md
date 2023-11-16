@@ -13,9 +13,27 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "ddc589b3-c3f3-487d-a29e-43a9008d3c59",
+        "RequestId": "88215c08-67de-4c7d-974e-a14461816f5b",
         "ZoneSetting": {
-            "Area": "mainland",
+            "AccelerateMainland": {
+                "Switch": "off"
+            },
+            "Area": "global",
+            "CacheConfig": {
+                "Cache": {
+                    "CacheTime": 2592000,
+                    "Switch": "off"
+                },
+                "FollowOrigin": {
+                    "DefaultCache": "on",
+                    "DefaultCacheStrategy": "on",
+                    "DefaultCacheTime": 0,
+                    "Switch": "on"
+                },
+                "NoCache": {
+                    "Switch": "off"
+                }
+            },
             "CacheKey": {
                 "FullUrlCache": "on",
                 "IgnoreCase": "off",
@@ -29,7 +47,12 @@ Output:
                 "Percent": 90,
                 "Switch": "off"
             },
+            "ClientIpCountry": {
+                "HeaderName": "",
+                "Switch": "off"
+            },
             "ClientIpHeader": {
+                "HeaderName": "",
                 "Switch": "off"
             },
             "Compression": {
@@ -43,7 +66,13 @@ Output:
                 "RedirectStatusCode": 302,
                 "Switch": "off"
             },
+            "Grpc": {
+                "Switch": "off"
+            },
             "Https": {
+                "ApplyType": "none",
+                "CertInfo": [],
+                "CipherSuite": "loose-v2023",
                 "Hsts": {
                     "IncludeSubDomains": "off",
                     "MaxAge": 0,
@@ -59,6 +88,9 @@ Output:
                     "TLSv1.3"
                 ]
             },
+            "ImageOptimize": {
+                "Switch": "off"
+            },
             "Ipv6": {
                 "Switch": "off"
             },
@@ -70,7 +102,14 @@ Output:
                 "Switch": "on"
             },
             "Origin": {
-                "OriginPullProtocol": "follow"
+                "Origins": [
+                    "30.12.34.23"
+                ],
+                "BackupOrigins": [
+                    "30.12.34.11"
+                ],
+                "OriginPullProtocol": "follow",
+                "CosPrivateAccess": "abc"
             },
             "PostMaxSize": {
                 "MaxSize": 524288000,
@@ -82,13 +121,19 @@ Output:
             "SmartRouting": {
                 "Switch": "off"
             },
+            "StandardDebug": {
+                "AllowClientIPList": [],
+                "ExpireTime": "1969-12-31T16:00:00Z",
+                "Switch": "off"
+            },
             "UpstreamHttp2": {
                 "Switch": "off"
             },
             "WebSocket": {
                 "Switch": "off",
                 "Timeout": 30
-            }
+            },
+            "ZoneName": "wxlagame.com"
         }
     }
 }
