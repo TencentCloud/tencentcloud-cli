@@ -1,3 +1,107 @@
+# Release 3.0.888.1
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 21 次发布
+
+发布时间：2023-11-20 01:03:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+
+	* 新增成员：CustomizeMetrics
+
+	* <font color="#dd0000">**删除成员**：</font>CustomizeMetric
+
+
+
+
+## 配置审计(config) 版本：2022-08-02
+
+### 第 2 次发布
+
+发布时间：2023-11-20 01:06:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListConfigRules](http://document.tencentcloudapi.woa.com/document/product/1751/82635)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 62 次发布
+
+发布时间：2023-11-20 01:06:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResetInstancesType](http://document.tencentcloudapi.woa.com/document/product/213/15744)
+
+	* 新增入参：Placement, YuntiParameters
+
+
+修改数据结构：
+
+* [InstanceTypeConfig](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>Zone, InstanceType, InstanceFamily, GPU, CPU, Memory
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 11 次发布
+
+发布时间：2023-11-20 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckScfFunctionHandler](http://document.tencentcloudapi.woa.com/document/product/1359/82636)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 7 次发布
+
+发布时间：2023-11-20 01:12:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillDetailData)
+
+	* <font color="#dd0000">**修改成员**：</font>PayerAccountId, OwnerAccountId, OperatorAccountId, ProductName, BillingMode, ProjectName, Region, AvailabilityZone, InstanceId, InstanceName, SubProductName, TransactionType, TransactionId, TransactionTime, UsageStartTime, UsageEndTime, ComponentType, ComponentName, ComponentListPrice, ComponentPriceMeasurementUnit, ComponentUsage, ComponentUsageUnit, UsageDuration, DurationUnit, OriginalCost, DiscountRate, Currency, TotalAmountAfterDiscount, VoucherDeduction, TotalCost
+
+
+
+
 # Release 3.0.887.1
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25

@@ -7,6 +7,13 @@
       "output": "CheckRuleResponse",
       "status": "online"
     },
+    "CheckScfFunctionHandler": {
+      "document": "校验scf函数",
+      "input": "CheckScfFunctionHandlerRequest",
+      "name": "校验scf函数",
+      "output": "CheckScfFunctionHandlerResponse",
+      "status": "online"
+    },
     "CheckTransformation": {
       "document": "用于在ETL配置页面, 测试规则和数据.",
       "input": "CheckTransformationRequest",
@@ -578,6 +585,70 @@
     "CheckRuleResponse": {
       "document": "CheckRule返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckScfFunctionHandlerRequest": {
+      "document": "CheckScfFunctionHandler请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件集ID",
+          "example": "eb-xxxxxxxx",
+          "member": "string",
+          "name": "EventBusId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件规则ID",
+          "example": "rule-xxxxxxxx",
+          "member": "string",
+          "name": "RuleId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标类型",
+          "example": "scf",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "目标描述",
+          "example": "qcs::scf_custom:ap-guangzhou:uin/3473058547:namespace/test/function/",
+          "member": "string",
+          "name": "ResourceDescription",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckScfFunctionHandlerResponse": {
+      "document": "CheckScfFunctionHandler返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "校验结果",
+          "example": "true",
+          "member": "bool",
+          "name": "CheckResult",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

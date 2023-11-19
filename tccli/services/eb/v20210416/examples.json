@@ -8,6 +8,14 @@
         "title": "规则校验"
       }
     ],
+    "CheckScfFunctionHandler": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckScfFunctionHandler\n<公共请求参数>\n\n{\n    \"EventBusId\": \"rule-xxxxxx\",\n    \"RuleId\": \"rule-xxxxxx\",\n    \"Type\": \"scf\",\n    \"ResourceDescription\": \"qcs::scf_custom:ap-guangzhou:uin/xxxxxxxx:namespace/xxxxxx/function/xxxxx/x\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CheckResult\": true,\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\"\n    }\n}",
+        "title": "检验scf函数"
+      }
+    ],
     "CheckTransformation": [
       {
         "document": "",

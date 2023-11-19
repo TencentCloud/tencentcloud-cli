@@ -660,7 +660,7 @@
         {
           "disabled": false,
           "document": "CVM实例ID列表",
-          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -706,7 +706,7 @@
         {
           "disabled": false,
           "document": "传统型负载均衡器ID列表，每个伸缩组绑定传统型负载均衡器数量上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "[\"lb-crhgatrf\\n\"]",
+          "example": "[\"lb-crhgatrf\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -2074,7 +2074,7 @@
         {
           "disabled": false,
           "document": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>",
-          "example": "[\"SCALE_OUT_SUCCESSFUL\\n\",\"SCALE_OUT_FAILED\\n\"]",
+          "example": "[\"SCALE_OUT_SUCCESSFUL\",\"SCALE_OUT_FAILED\"]",
           "member": "string",
           "name": "NotificationTypes",
           "required": true,
@@ -2083,7 +2083,7 @@
         {
           "disabled": false,
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
-          "example": "[\"1678\\n\"]",
+          "example": "[\"1678\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -2246,7 +2246,7 @@
         {
           "disabled": false,
           "document": "此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。\n通知组ID，即为用户组ID集合。",
-          "example": "[\"1678\\n\"]",
+          "example": "[\"1678\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -2795,7 +2795,7 @@
         {
           "disabled": false,
           "document": "伸缩组ID列表",
-          "example": "[\"asg-2umy3jbd\\n\"]",
+          "example": "[\"asg-2umy3jbd\"]",
           "member": "string",
           "name": "AutoScalingGroupIds",
           "required": true,
@@ -2832,7 +2832,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个伸缩组ID查询。伸缩组ID形如：`asg-nkdwoui0`。每次请求的上限为100。参数不支持同时指定`AutoScalingGroupIds`和`Filters`。",
-          "example": "[\"asg-nkdwoui0\\n\"]",
+          "example": "[\"asg-nkdwoui0\"]",
           "member": "string",
           "name": "AutoScalingGroupIds",
           "required": false,
@@ -2906,7 +2906,7 @@
         {
           "disabled": false,
           "document": "待查询云服务器（CVM）的实例ID。每次请求的上限为100。参数不支持同时指定InstanceIds和Filters。",
-          "example": "[\"ins-1fswxz1m\\n\"]",
+          "example": "[\"ins-1fswxz1m\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -3128,7 +3128,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个通知ID查询。实例ID形如：asn-2sestqbr。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingNotificationIds`和`Filters`。",
-          "example": "[\"asn-9bhwvxqh\\n\"]",
+          "example": "[\"asn-9bhwvxqh\"]",
           "member": "string",
           "name": "AutoScalingNotificationIds",
           "required": false,
@@ -3276,7 +3276,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个告警策略ID查询。告警策略ID形如：asp-i9vkg894。每次请求的实例的上限为100。参数不支持同时指定`AutoScalingPolicyIds`和`Filters`。",
-          "example": "[\"asp-5zffv598\\n\"]",
+          "example": "[\"asp-5zffv598\"]",
           "member": "string",
           "name": "AutoScalingPolicyIds",
           "required": false,
@@ -3348,7 +3348,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个定时任务ID查询。实例ID形如：asst-am691zxo。每次请求的实例的上限为100。参数不支持同时指定ScheduledActionIds和Filters。",
-          "example": "[\"asst-caa5ha40\\n\"]",
+          "example": "[\"asst-caa5ha40\"]",
           "member": "string",
           "name": "ScheduledActionIds",
           "required": false,
@@ -3431,7 +3431,7 @@
         {
           "disabled": false,
           "document": "CVM实例ID列表",
-          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3477,7 +3477,7 @@
         {
           "disabled": false,
           "document": "传统负载均衡器ID列表，列表长度上限为20，LoadBalancerIds 和 ForwardLoadBalancerIdentifications 二者同时最多只能指定一个",
-          "example": "[\"lb-crhgatrf\\n\"]",
+          "example": "[\"lb-crhgatrf\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -5685,7 +5685,7 @@
         {
           "disabled": false,
           "document": "传统负载均衡器ID列表，目前长度上限为20，LoadBalancerIds 和 ForwardLoadBalancers 二者同时最多只能指定一个",
-          "example": "[\"lb-crhgatrf\\n\"]",
+          "example": "[\"lb-crhgatrf\"]",
           "member": "string",
           "name": "LoadBalancerIds",
           "required": false,
@@ -5749,7 +5749,7 @@
         {
           "disabled": false,
           "document": "通知类型，即为需要订阅的通知类型集合，取值范围如下：\n<li>SCALE_OUT_SUCCESSFUL：扩容成功</li>\n<li>SCALE_OUT_FAILED：扩容失败</li>\n<li>SCALE_IN_SUCCESSFUL：缩容成功</li>\n<li>SCALE_IN_FAILED：缩容失败</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_SUCCESSFUL：替换不健康子机成功</li>\n<li>REPLACE_UNHEALTHY_INSTANCE_FAILED：替换不健康子机失败</li>",
-          "example": "[\"SCALE_IN_SUCCESSFUL\\n\",\"SCALE_IN_FAILED\\n\"]",
+          "example": "[\"SCALE_IN_SUCCESSFUL\",\"SCALE_IN_FAILED\"]",
           "member": "string",
           "name": "NotificationTypes",
           "required": false,
@@ -5758,7 +5758,7 @@
         {
           "disabled": false,
           "document": "通知组ID，即为用户组ID集合，用户组ID可以通过[ListGroups](https://cloud.tencent.com/document/product/598/34589)查询。",
-          "example": "[\"1678\\n\"]",
+          "example": "[\"1678\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -5893,7 +5893,7 @@
         {
           "disabled": false,
           "document": "此参数已不再生效，请使用[创建通知](https://cloud.tencent.com/document/api/377/33185)。\n通知组ID，即为用户组ID集合。",
-          "example": "[\"1678\\n\"]",
+          "example": "[\"1678\"]",
           "member": "string",
           "name": "NotificationUserGroupIds",
           "required": false,
@@ -6337,7 +6337,7 @@
         {
           "disabled": false,
           "document": "CVM实例ID列表",
-          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -6957,7 +6957,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "[\"ins-b2d33ywt\\n\"]",
+          "example": "[\"ins-b2d33ywt\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7074,7 +7074,7 @@
         {
           "disabled": false,
           "document": "待开启的CVM实例ID列表",
-          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -7175,7 +7175,7 @@
         {
           "disabled": false,
           "document": "待关闭的CVM实例ID列表",
-          "example": "[\"ins-cri8d02t\\n\",\"ins-osckfnm7\\n\"]",
+          "example": "[\"ins-cri8d02t\",\"ins-osckfnm7\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,

@@ -1,76 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 应用管理平台(camp) 版本：2022-09-20
 
-### 第 84 次发布
+### 第 21 次发布
 
-发布时间：2023-11-17 01:14:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeTablesName](http://document.tencentcloudapi.woa.com/document/product/1342/82608)
-
-
-
-## 云数据库 SQL Server(sqlserver) 版本：2018-03-28
-
-### 第 30 次发布
-
-发布时间：2023-11-17 01:22:43
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeBackupMonitor](http://document.tencentcloudapi.woa.com/document/product/238/82617)
-* [DescribeBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82616)
-* [DescribeBackupSummary](http://document.tencentcloudapi.woa.com/document/product/238/82615)
-* [DescribeCrossBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82614)
-* [DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/238/82611)
-* [DescribeDatabasesNormal](http://document.tencentcloudapi.woa.com/document/product/238/82610)
-* [DescribeRegularBackupPlan](http://document.tencentcloudapi.woa.com/document/product/238/82613)
-* [ModifyCrossBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/82612)
-* [ModifyDatabaseShrinkMDF](http://document.tencentcloudapi.woa.com/document/product/238/82609)
-
-新增数据结构：
-
-* [CrossSummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#CrossSummaryDetailRes)
-* [SummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#SummaryDetailRes)
-
-
-
-## 安全运营中心(ssa) 版本：2018-06-08
-
-### 第 18 次发布
-
-发布时间：2023-11-17 01:23:12
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* SaEventPub
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* ListDataSaEventPub
-* ObjDataSaEventPub
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 79 次发布
-
-发布时间：2023-11-17 01:25:14
+发布时间：2023-11-20 01:03:34
 
 本次发布包含了以下内容：
 
@@ -78,24 +12,40 @@
 
 修改数据结构：
 
-* [RocketMQSubscription](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQSubscription)
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
 
-	* 新增成员：ClientProtocol
+	* 新增成员：CustomizeMetrics
 
-* [RocketMQVipInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RocketMQVipInstance)
-
-	* 新增成员：AclEnabled, DestroyTime
-
-	* <font color="#dd0000">**修改成员**：</font>MaxRetention, MinRetention, Retention
+	* <font color="#dd0000">**删除成员**：</font>CustomizeMetric
 
 
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
+## 配置审计(config) 版本：2022-08-02
 
-### 第 42 次发布
+### 第 2 次发布
 
-发布时间：2023-11-17 01:26:13
+发布时间：2023-11-20 01:06:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListConfigRules](http://document.tencentcloudapi.woa.com/document/product/1751/82635)
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 62 次发布
+
+发布时间：2023-11-20 01:06:38
 
 本次发布包含了以下内容：
 
@@ -103,18 +53,52 @@
 
 修改接口：
 
-* [CreateTrainingTask](http://document.tencentcloudapi.woa.com/document/product/851/74857)
+* [ResetInstancesType](http://document.tencentcloudapi.woa.com/document/product/213/15744)
 
-	* 新增入参：PreTrainModel
-
-
-新增数据结构：
-
-* [PreTrainModel](http://document.tencentcloudapi.woa.com/document/product/851/74915#PreTrainModel)
+	* 新增入参：Placement, YuntiParameters
 
 
+修改数据结构：
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+* [InstanceTypeConfig](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>Zone, InstanceType, InstanceFamily, GPU, CPU, Memory
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 11 次发布
+
+发布时间：2023-11-20 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckScfFunctionHandler](http://document.tencentcloudapi.woa.com/document/product/1359/82636)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 7 次发布
+
+发布时间：2023-11-20 01:12:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillDetailData)
+
+	* <font color="#dd0000">**修改成员**：</font>PayerAccountId, OwnerAccountId, OperatorAccountId, ProductName, BillingMode, ProjectName, Region, AvailabilityZone, InstanceId, InstanceName, SubProductName, TransactionType, TransactionId, TransactionTime, UsageStartTime, UsageEndTime, ComponentType, ComponentName, ComponentListPrice, ComponentPriceMeasurementUnit, ComponentUsage, ComponentUsageUnit, UsageDuration, DurationUnit, OriginalCost, DiscountRate, Currency, TotalAmountAfterDiscount, VoucherDeduction, TotalCost
+
 
 
 
@@ -7567,6 +7551,23 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 21 次发布
+
+发布时间：2023-11-20 01:03:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [HPATrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPATrait)
+
+	* 新增成员：CustomizeMetrics
+
+	* <font color="#dd0000">**删除成员**：</font>CustomizeMetric
+
 
 ### 第 20 次发布
 
@@ -21246,6 +21247,45 @@
 
 
 
+## 配置审计(config) 版本：2022-08-02
+
+### 第 2 次发布
+
+发布时间：2023-11-20 01:06:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ListConfigRules](http://document.tencentcloudapi.woa.com/document/product/1751/82635)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+### 第 1 次发布
+
+发布时间：2023-11-17 16:21:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListAggregateConfigRules](http://document.tencentcloudapi.woa.com/document/product/1751/82622)
+
+新增数据结构：
+
+* [Annotation](http://document.tencentcloudapi.woa.com/document/product/1751/82623#Annotation)
+* [ConfigRule](http://document.tencentcloudapi.woa.com/document/product/1751/82623#ConfigRule)
+* [InputParameter](http://document.tencentcloudapi.woa.com/document/product/1751/82623#InputParameter)
+* [InputParameterForManage](http://document.tencentcloudapi.woa.com/document/product/1751/82623#InputParameterForManage)
+* [SourceConditionForManage](http://document.tencentcloudapi.woa.com/document/product/1751/82623#SourceConditionForManage)
+* [Tag](http://document.tencentcloudapi.woa.com/document/product/1751/82623#Tag)
+* [TriggerType](http://document.tencentcloudapi.woa.com/document/product/1751/82623#TriggerType)
+
+
+
+
 ## 企业收付平台(cpdp) 版本：2019-08-20
 
 ### 第 54 次发布
@@ -23435,6 +23475,28 @@
 
 
 ## 云服务器(cvm) 版本：2017-03-12
+
+### 第 62 次发布
+
+发布时间：2023-11-20 01:06:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResetInstancesType](http://document.tencentcloudapi.woa.com/document/product/213/15744)
+
+	* 新增入参：Placement, YuntiParameters
+
+
+修改数据结构：
+
+* [InstanceTypeConfig](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeConfig)
+
+	* <font color="#dd0000">**修改成员**：</font>Zone, InstanceType, InstanceFamily, GPU, CPU, Memory
+
 
 ### 第 61 次发布
 
@@ -30845,7 +30907,7 @@
 
 新增接口：
 
-* [[DescribeTablesName](http://document.tencentcloudapi.woa.com/document/product/1342/82608)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTablesName](http://document.tencentcloudapi.woa.com/document/product/1342/82608)
 
 ### 第 83 次发布
 
@@ -34277,6 +34339,18 @@
 
 
 ## 事件总线(eb) 版本：2021-04-16
+
+### 第 11 次发布
+
+发布时间：2023-11-20 01:10:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CheckScfFunctionHandler](http://document.tencentcloudapi.woa.com/document/product/1359/82636)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 10 次发布
 
@@ -44727,6 +44801,21 @@
 
 
 ## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 7 次发布
+
+发布时间：2023-11-20 01:12:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillDetailData)
+
+	* <font color="#dd0000">**修改成员**：</font>PayerAccountId, OwnerAccountId, OperatorAccountId, ProductName, BillingMode, ProjectName, Region, AvailabilityZone, InstanceId, InstanceName, SubProductName, TransactionType, TransactionId, TransactionTime, UsageStartTime, UsageEndTime, ComponentType, ComponentName, ComponentListPrice, ComponentPriceMeasurementUnit, ComponentUsage, ComponentUsageUnit, UsageDuration, DurationUnit, OriginalCost, DiscountRate, Currency, TotalAmountAfterDiscount, VoucherDeduction, TotalCost
+
 
 ### 第 6 次发布
 
@@ -64048,20 +64137,20 @@
 
 新增接口：
 
-* [[DescribeBackupMonitor](http://document.tencentcloudapi.woa.com/document/product/238/82617)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82616)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBackupSummary](http://document.tencentcloudapi.woa.com/document/product/238/82615)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeCrossBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82614)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/238/82611)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeDatabasesNormal](http://document.tencentcloudapi.woa.com/document/product/238/82610)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeRegularBackupPlan](http://document.tencentcloudapi.woa.com/document/product/238/82613)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyCrossBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/82612)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[ModifyDatabaseShrinkMDF](http://document.tencentcloudapi.woa.com/document/product/238/82609)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBackupMonitor](http://document.tencentcloudapi.woa.com/document/product/238/82617)
+* [DescribeBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82616)
+* [DescribeBackupSummary](http://document.tencentcloudapi.woa.com/document/product/238/82615)
+* [DescribeCrossBackupStatistical](http://document.tencentcloudapi.woa.com/document/product/238/82614)
+* [DescribeDatabases](http://document.tencentcloudapi.woa.com/document/product/238/82611)
+* [DescribeDatabasesNormal](http://document.tencentcloudapi.woa.com/document/product/238/82610)
+* [DescribeRegularBackupPlan](http://document.tencentcloudapi.woa.com/document/product/238/82613)
+* [ModifyCrossBackupStrategy](http://document.tencentcloudapi.woa.com/document/product/238/82612)
+* [ModifyDatabaseShrinkMDF](http://document.tencentcloudapi.woa.com/document/product/238/82609)
 
 新增数据结构：
 
-* [[CrossSummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#CrossSummaryDetailRes)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[CrossSummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#CrossSummaryDetailRes))
-* [[SummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#SummaryDetailRes)](http://document.tencentcloudapi.woa.com/document/product/238/19976#[SummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#SummaryDetailRes))
+* [CrossSummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#CrossSummaryDetailRes)
+* [SummaryDetailRes](http://document.tencentcloudapi.woa.com/document/product/238/19976#SummaryDetailRes)
 
 ### 第 29 次发布
 
@@ -75001,7 +75090,7 @@
 
 新增数据结构：
 
-* [[PreTrainModel](http://document.tencentcloudapi.woa.com/document/product/851/74915#PreTrainModel)](http://document.tencentcloudapi.woa.com/document/product/851/74915#[PreTrainModel](http://document.tencentcloudapi.woa.com/document/product/851/74915#PreTrainModel))
+* [PreTrainModel](http://document.tencentcloudapi.woa.com/document/product/851/74915#PreTrainModel)
 
 ### 第 41 次发布
 

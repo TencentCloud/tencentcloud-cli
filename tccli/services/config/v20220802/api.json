@@ -1,0 +1,767 @@
+{
+  "actions": {
+    "ListAggregateConfigRules": {
+      "document": "账号组获取规则列表",
+      "input": "ListAggregateConfigRulesRequest",
+      "name": "账号组获取规则列表",
+      "output": "ListAggregateConfigRulesResponse",
+      "status": "online"
+    },
+    "ListConfigRules": {
+      "document": "获取规则列表",
+      "input": "ListConfigRulesRequest",
+      "name": "获取规则列表",
+      "output": "ListConfigRulesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-08-02",
+    "api_brief": "介绍如何使用API对配置审计进行操作，包括查询资源详情、查询相关资源、查询资源配置项等。",
+    "serviceNameCN": "配置审计",
+    "serviceShortName": "config"
+  },
+  "objects": {
+    "Annotation": {
+      "document": "合规详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源当前实际配置。长度为0~256位字符，即资源不合规配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "string",
+          "name": "Configuration",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源期望配置。长度为0~256位字符，即资源合规配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12",
+          "member": "string",
+          "name": "DesiredValue",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源当前配置和期望配置之间的比较运算符。长度为0~16位字符，自定义规则上报评估结果此字段可能为空",
+          "example": "Equals",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前配置在资源属性结构体中的JSON路径。长度为0~256位字符，自定义规则上报评估结果此字段可能为空",
+          "example": "$.Cpu",
+          "member": "string",
+          "name": "Property",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ConfigRule": {
+      "document": "规则详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "qqq",
+          "member": "string",
+          "name": "Identifier",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "RuleName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputParameter",
+          "name": "InputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则触发条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SourceConditionForManage",
+          "name": "SourceCondition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则支持的资源类型，规则仅对指定资源类型的资源生效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则所属标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Labels",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则风险等级\n1:低风险\n2:中风险\n3:高风险\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "RiskLevel",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则对应的函数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ServiceFunction",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n格式：YYYY-MM-DD h:i:s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Redis实例内存总量大于等于指定的参数值，视为“合规”。默认值：1000MB",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ACTIVE：启用\nNO_ACTIVE：停止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则状态",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规： 'COMPLIANT'\n不合规： 'NON_COMPLIANT'\n无法应用规则： 'NOT_APPLICABLE'\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "合规状态",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "[\"\",\"\"]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "合规详情",
+          "member": "Annotation",
+          "name": "Annotation",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则评估时间\n格式：YYYY-MM-DD h:i:s\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-09-01 12:00:00",
+          "member": "string",
+          "name": "ConfigRuleInvokedTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22",
+          "member": "string",
+          "name": "ConfigRuleId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CUSTOMIZE：自定义规则、\nSYSTEM：托管规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则类型",
+          "member": "string",
+          "name": "IdentifierType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规包ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "CompliancePackId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发类型\nScheduledNotification：周期触发、\nConfigurationItemChangeNotification：变更触发\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TriggerType",
+          "name": "TriggerType",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InputParameterForManage",
+          "name": "ManageInputParameter",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CompliancePackName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RegionsScope",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Tag",
+          "name": "TagsScope",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 规则对指定资源ID无效，即不对该资源执行评估。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeResourceIdsScope",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountGroupName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则所属用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3444***4455",
+          "member": "uint64",
+          "name": "RuleOwnerId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "预设规则支持的触发方式\nScheduledNotification：周期触发\nConfigurationItemChangeNotification：变更触发",
+          "example": "[\"ScheduledNotification\"]",
+          "member": "string",
+          "name": "ManageTriggerType",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "InputParameter": {
+      "document": "参数值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "参数名",
+          "example": "days",
+          "member": "string",
+          "name": "ParameterKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数类型。必填类型：Require，可选类型：Optional。",
+          "example": "Require",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参数值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Value",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "InputParameterForManage": {
+      "document": "规则入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "值类型。数值：Integer， 字符串：String\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ValueType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "ParameterKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "参数类型。必填类型：Require，可选类型：Optional。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DefaultValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ListAggregateConfigRulesRequest": {
+      "document": "ListAggregateConfigRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "账号组ID",
+          "example": "ca-sdfs7734h24h3",
+          "member": "string",
+          "name": "AccountGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型, 倒序：desc，顺序：asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估结果",
+          "example": "[\"COMPLIANT\"]",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则所属账号ID",
+          "example": "98332222",
+          "member": "uint64",
+          "name": "RuleOwnerId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ListAggregateConfigRulesResponse": {
+      "document": "ListAggregateConfigRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "ConfigRule",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConfigRulesRequest": {
+      "document": "ListConfigRules请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页限制",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "int64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型, 倒序：desc，顺序：asc",
+          "example": "desc",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "风险等级\n1：高风险。\n2：中风险。\n3：低风险。",
+          "example": "[1,2]",
+          "member": "uint64",
+          "name": "RiskLevel",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则状态",
+          "example": "ACTIVE",
+          "member": "string",
+          "name": "State",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "评估结果",
+          "example": "[\"COMPLIANT\"]",
+          "member": "string",
+          "name": "ComplianceResult",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则名",
+          "example": "规则1",
+          "member": "string",
+          "name": "RuleName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListConfigRulesResponse": {
+      "document": "ListConfigRules返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "4",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "详情",
+          "example": "无",
+          "member": "ConfigRule",
+          "name": "Items",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SourceConditionForManage": {
+      "document": "管理端规则条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "条件为空，合规：COMPLIANT，不合规：NON_COMPLIANT，无法应用：NOT_APPLICABLE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "EmptyAs",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "SelectPath",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作运算符\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "Operator",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否必须\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "bool",
+          "name": "Required",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "期望值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DesiredValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Tag": {
+      "document": "标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "string",
+          "name": "TagKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bbb",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "TriggerType": {
+      "document": "规则支持触发类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发类型",
+          "example": "ScheduledNotification、ConfigurationItemChangeNotification",
+          "member": "string",
+          "name": "MessageType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "触发时间周期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TwentyFour_Hours",
+          "member": "string",
+          "name": "MaximumExecutionFrequency",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}
