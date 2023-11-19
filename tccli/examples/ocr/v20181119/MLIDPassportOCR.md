@@ -27,6 +27,20 @@ Output:
         "RequestId": "9c42cdcf-53df-445d-b45b-ea3eaaf2bb70",
         "Sex": "F",
         "Surname": "CARTER",
+        "Type": "abc",
+        "PassportRecognizeInfos": {
+            "Type": "abc",
+            "IssuingCountry": "abc",
+            "PassportID": "abc",
+            "Surname": "abc",
+            "GivenName": "abc",
+            "Name": "abc",
+            "Nationality": "abc",
+            "DateOfBirth": "abc",
+            "Sex": "abc",
+            "DateOfIssuance": "abc",
+            "DateOfExpiration": "abc"
+        },
         "Warn": [
             -9102
         ]

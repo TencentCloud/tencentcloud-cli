@@ -5901,7 +5901,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "护照ID",
+          "document": "护照ID（机读码区的解析结果）",
           "example": "E6918C",
           "member": "string",
           "name": "ID",
@@ -5911,7 +5911,7 @@
         },
         {
           "disabled": false,
-          "document": "姓名",
+          "document": "姓名（机读码区的解析结果）",
           "example": "BROWN BENJAMIN",
           "member": "string",
           "name": "Name",
@@ -5921,7 +5921,7 @@
         },
         {
           "disabled": false,
-          "document": "出生日期",
+          "document": "出生日期（机读码区的解析结果）",
           "example": "20230414",
           "member": "string",
           "name": "DateOfBirth",
@@ -5931,7 +5931,7 @@
         },
         {
           "disabled": false,
-          "document": "性别（F女，M男）",
+          "document": "性别（F女，M男）（机读码区的解析结果）",
           "example": "M",
           "member": "string",
           "name": "Sex",
@@ -5941,7 +5941,7 @@
         },
         {
           "disabled": false,
-          "document": "有效期",
+          "document": "有效期（机读码区的解析结果）",
           "example": "20230414",
           "member": "string",
           "name": "DateOfExpiration",
@@ -5951,7 +5951,7 @@
         },
         {
           "disabled": false,
-          "document": "发行国",
+          "document": "发行国（机读码区的解析结果）",
           "example": "SGP",
           "member": "string",
           "name": "IssuingCountry",
@@ -5961,7 +5961,7 @@
         },
         {
           "disabled": false,
-          "document": "国家地区代码",
+          "document": "国家地区代码（机读码区的解析结果）",
           "example": "SGP",
           "member": "string",
           "name": "Nationality",
@@ -5971,7 +5971,7 @@
         },
         {
           "disabled": false,
-          "document": "告警码\n-9103\t证照翻拍告警\n-9102\t证照复印件告警（包括黑白复印件、彩色复印件）\n-9106       证件遮挡告警",
+          "document": "告警码：\n-9103\t证照翻拍告警\n-9102\t证照复印件告警（包括黑白复印件、彩色复印件）\n-9106       证件遮挡告警",
           "example": "[]",
           "member": "int64",
           "name": "Warn",
@@ -6021,7 +6021,7 @@
         },
         {
           "disabled": false,
-          "document": "姓\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "姓（机读码区的解析结果）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BROWN",
           "member": "string",
           "name": "Surname",
@@ -6031,13 +6031,33 @@
         },
         {
           "disabled": false,
-          "document": "名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "名（机读码区的解析结果）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "BENJAMIN",
           "member": "string",
           "name": "GivenName",
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型（机读码区的解析结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "信息区证件内容",
+          "example": "无",
+          "member": "PassportRecognizeInfos",
+          "name": "PassportRecognizeInfos",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -8245,6 +8265,122 @@
         }
       ],
       "type": "object"
+    },
+    "PassportRecognizeInfos": {
+      "document": "信息区证件内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证件类型（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发行国家（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "IssuingCountry",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "护照号码（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "PassportID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "姓（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Surname",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "名（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "GivenName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "姓名（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国籍信息（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Nationality",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "出生日期（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "DateOfBirth",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "性别（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "Sex",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发行日期（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "DateOfIssuance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "截止日期（护照信息页识别结果）",
+          "example": "无",
+          "member": "string",
+          "name": "DateOfExpiration",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "PermitOCRRequest": {
       "document": "PermitOCR请求参数结构体",
