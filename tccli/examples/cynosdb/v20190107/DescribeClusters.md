@@ -1,6 +1,6 @@
 **Example 1: 查询集群列表**
 
-
+查询集群列表
 
 Input: 
 
@@ -18,101 +18,94 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 597,
+        "TotalCount": 0,
         "ClusterSet": [
             {
-                "ServerlessStatus": "xx",
+                "Status": "abc",
+                "UpdateTime": "abc",
+                "Zone": "abc",
+                "ClusterName": "abc",
+                "Region": "abc",
+                "DbVersion": "abc",
+                "ClusterId": "abc",
+                "InstanceNum": 0,
+                "Uin": "abc",
+                "DbType": "abc",
+                "AppId": 0,
+                "StatusDesc": "abc",
+                "CreateTime": "abc",
+                "PayMode": 0,
+                "PeriodEndTime": "abc",
+                "Vip": "abc",
+                "Vport": 0,
+                "ProjectID": 0,
+                "VpcId": "abc",
+                "SubnetId": "abc",
+                "CynosVersion": "abc",
+                "StorageLimit": 0,
                 "RenewFlag": 0,
-                "Zone": "xx",
-                "InstanceNum": 1,
-                "ClusterId": "xx",
-                "DbVersion": "xx",
-                "Storage": 0,
-                "StorageId": "xx",
-                "ProcessingTask": "xx",
-                "Status": "xx",
-                "PhysicalZone": "xx",
-                "UpdateTime": "xx",
-                "VpcId": "xx",
-                "Ability": [
-                    {
-                        "NonsupportSlaveZoneReason": "xx",
-                        "IsSupportSlaveZone": "xx",
-                        "IsSupportRo": "xx",
-                        "NonsupportRoReason": "xx"
-                    }
-                ],
-                "StorageLimit": 30000,
-                "SlaveZones": [
-                    "xx"
-                ],
-                "DbMode": "xx",
-                "SubnetId": "xx",
-                "MinStorageSize": 10,
-                "MaxStorageSize": 30000,
-                "IsFreeze": "xx",
-                "Region": "xx",
-                "MasterZone": "xx",
-                "PayMode": 1,
-                "PeriodEndTime": "xx",
-                "ResourceTags": [
-                    {
-                        "TagKey": "xx",
-                        "TagValue": "xx"
-                    }
-                ],
-                "CynosVersion": "xx",
-                "StatusDesc": "xx",
-                "StoragePayMode": 0,
-                "BusinessType": "xx",
+                "ProcessingTask": "abc",
                 "Tasks": [
                     {
-                        "ObjectType": "xx",
-                        "TaskStatus": "xx",
-                        "ObjectId": "xx",
                         "TaskId": 0,
-                        "TaskType": "xx"
+                        "TaskType": "abc",
+                        "TaskStatus": "abc",
+                        "ObjectId": "abc",
+                        "ObjectType": "abc"
                     }
                 ],
-                "HasSlaveZone": "xx",
-                "ClusterName": "xx",
-                "ProjectID": 0,
-                "Uin": "xx",
-                "DbType": "xx",
-                "Vip": "xx",
-                "AppId": 251007582,
-                "OrderSource": "xx",
-                "Vport": 3306,
-                "CreateTime": "xx",
+                "ResourceTags": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "DbMode": "abc",
+                "ServerlessStatus": "abc",
+                "Storage": 0,
+                "StorageId": "abc",
+                "StoragePayMode": 0,
+                "MinStorageSize": 0,
+                "MaxStorageSize": 0,
                 "NetAddrs": [
                     {
-                        "WanStatus": "xx",
-                        "Description": "xx",
-                        "UniqVpcId": "xx",
-                        "WanDomain": "xx",
+                        "Vip": "abc",
+                        "Vport": 0,
+                        "WanDomain": "abc",
                         "WanPort": 0,
-                        "Vip": "xx",
-                        "UniqSubnetId": "xx",
-                        "NetType": "xx",
-                        "WanIP": "xx",
-                        "Vport": 3306
-                    },
+                        "NetType": "abc",
+                        "UniqSubnetId": "abc",
+                        "UniqVpcId": "abc",
+                        "Description": "abc",
+                        "WanIP": "abc",
+                        "WanStatus": "abc",
+                        "InstanceGroupId": "abc"
+                    }
+                ],
+                "PhysicalZone": "abc",
+                "MasterZone": "abc",
+                "HasSlaveZone": "abc",
+                "SlaveZones": [
+                    "abc"
+                ],
+                "BusinessType": "abc",
+                "IsFreeze": "abc",
+                "OrderSource": "abc",
+                "Ability": {
+                    "IsSupportSlaveZone": "abc",
+                    "NonsupportSlaveZoneReason": "abc",
+                    "IsSupportRo": "abc",
+                    "NonsupportRoReason": "abc"
+                },
+                "ResourcePackages": [
                     {
-                        "WanStatus": "xx",
-                        "Description": "xx",
-                        "UniqVpcId": "xx",
-                        "WanDomain": "xx",
-                        "WanPort": 0,
-                        "Vip": "xx",
-                        "UniqSubnetId": "xx",
-                        "NetType": "xx",
-                        "WanIP": "xx",
-                        "Vport": 3306
+                        "PackageId": "abc",
+                        "PackageType": "abc"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

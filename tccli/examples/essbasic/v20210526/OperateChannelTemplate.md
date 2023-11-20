@@ -74,47 +74,7 @@ Output:
 }
 ```
 
-**Example 3: 增加部分可见的模版授权子企业列表**
-
-1.ProxyOrganizationOpenIds为新增的子企业的标识列表
-
-2.因为本模板是部分可见的AuthTag设置为part
-
-Input: 
-
-```
-tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
-    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
-    --Agent.ProxyOrganizationOpenId org_dianziqian \
-    --Agent.ProxyOperator.OpenId n9527 \
-    --Agent.ProxyAppId  \
-    --OperateType UPDATE \
-    --TemplateId yDwivUUckpo2g6ugUu4sxH2i15SY0OZY \
-    --ProxyOrganizationOpenIds org_zhangsan,org_lisi,org_wangwu \
-    --AuthTag part
-```
-
-Output: 
-```
-{
-    "Response": {
-        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
-        "TemplateId": "yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
-        "OperateResult": "all-success",
-        "AuthTag": "part",
-        "ProxyOrganizationOpenIds": [
-            "org_dianziqian",
-            "org_zhangsan",
-            "org_lisi",
-            "org_wangwu"
-        ],
-        "FailMessageList": [],
-        "RequestId": "7ca39d89-2b6c-4fd9-9f32-735137d5a6e9"
-    }
-}
-```
-
-**Example 4: 授权部分失败的情况**
+**Example 3: 授权部分失败的情况**
 
 因为org_fffffffffff不存在导致这个企业授权失败(其他的授权成功)
 
@@ -152,6 +112,46 @@ Output:
             }
         ],
         "RequestId": "8b9e9a6b-2730-4971-8c4d-7c12d3905cd7"
+    }
+}
+```
+
+**Example 4: 增加部分可见的模板授权子企业列表**
+
+1.ProxyOrganizationOpenIds为新增的子企业的标识列表
+
+2.因为本模板是部分可见的AuthTag设置为part
+
+Input: 
+
+```
+tccli essbasic OperateChannelTemplate --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --OperateType UPDATE \
+    --TemplateId yDwivUUckpo2g6ugUu4sxH2i15SY0OZY \
+    --ProxyOrganizationOpenIds org_zhangsan,org_lisi,org_wangwu \
+    --AuthTag part
+```
+
+Output: 
+```
+{
+    "Response": {
+        "AppId": "yDwhxUUckp3gl8j5UuFX33LSNozpRsbi",
+        "TemplateId": "yDwivUUckpo2g6ugUu4sxH2i15SY0OZY",
+        "OperateResult": "all-success",
+        "AuthTag": "part",
+        "ProxyOrganizationOpenIds": [
+            "org_dianziqian",
+            "org_zhangsan",
+            "org_lisi",
+            "org_wangwu"
+        ],
+        "FailMessageList": [],
+        "RequestId": "7ca39d89-2b6c-4fd9-9f32-735137d5a6e9"
     }
 }
 ```

@@ -7917,7 +7917,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbpg-1xcycbu8",
+          "example": "cynosdbmysql-1xcycbu8",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7944,7 +7944,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7954,7 +7954,7 @@
           "example": "无",
           "member": "ParamInfo",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8123,7 +8123,6 @@
           "example": "3",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8133,7 +8132,6 @@
           "example": "无",
           "member": "CynosdbCluster",
           "name": "ClusterSet",
-          "required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9857,6 +9855,7 @@
           "example": "无",
           "member": "SaleRegion",
           "name": "RegionSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -11216,7 +11215,7 @@
         {
           "disabled": false,
           "document": "集群id",
-          "example": "cynosdbpg-on5xw0ni",
+          "example": "cynosdbmysql-on5xw0ni",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11225,7 +11224,7 @@
         {
           "disabled": false,
           "document": "新主机",
-          "example": "xx",
+          "example": "192.168.12.15",
           "member": "string",
           "name": "NewHost",
           "required": true,
@@ -12366,7 +12365,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-qwerasd",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -14942,7 +14941,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cynosdbmysql-xxxxxxx",
+          "example": "cynosdbmysql-qwerasdf",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -14969,7 +14968,7 @@
           "example": "无",
           "member": "int64",
           "name": "FlowId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14979,7 +14978,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

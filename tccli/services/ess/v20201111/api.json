@@ -2451,6 +2451,15 @@
         },
         {
           "disabled": false,
+          "document": "签署人信息补充方式\n\n<ul><li>**0**: 添加或签人候选人，或签支持一个节点传多个签署人，不传值默认或签。\n注: `或签只支持企业签署方`</li>\n<li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillApproverType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "在可定制的企业微信通知中，发起人可以根据具体需求进行自定义设置。",
           "example": "无",
           "member": "string",
@@ -2466,15 +2475,6 @@
           "name": "Agent",
           "required": false,
           "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "签署人信息补充方式\n\n<ul><li>**0**: 补充或签人，支持补充多个企业经办签署人（默认）注: `不可补充个人签署人`</li>\n<li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>",
-          "example": "无",
-          "member": "int64",
-          "name": "FillApproverType",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"

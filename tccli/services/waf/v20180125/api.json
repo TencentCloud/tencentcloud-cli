@@ -610,9 +610,9 @@
       "status": "online"
     },
     "ModifyAccessPeriod": {
-      "document": "本接口用于修改访问日志保存期限及大字段是否存储",
+      "document": "本接口用于修改访问日志保存期限等字段信息",
       "input": "ModifyAccessPeriodRequest",
-      "name": "修改访问日志保存期限",
+      "name": "修改访问日志保存期限等字段信息",
       "output": "ModifyAccessPeriodResponse",
       "status": "online"
     },
@@ -972,7 +972,7 @@
       "document": "用于接口DescribeAccessHistogram 的出参",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "时间，单位ms",
           "example": "1625387904000",
           "member": "int64",
@@ -987,6 +987,16 @@
           "example": "100",
           "member": "int64",
           "name": "Count",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "时间，单位ms",
+          "example": "1625387904000",
+          "member": "int64",
+          "name": "BeginTime",
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3453,7 +3463,7 @@
           "example": "无",
           "member": "string",
           "name": "ObjectId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3463,7 +3473,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3473,7 +3483,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3483,7 +3493,7 @@
           "example": "无",
           "member": "string",
           "name": "PreciseDomains",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3493,7 +3503,7 @@
           "example": "无",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3503,7 +3513,7 @@
           "example": "无",
           "member": "int64",
           "name": "ClsStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3513,7 +3523,7 @@
           "example": "无",
           "member": "string",
           "name": "VirtualDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3523,7 +3533,7 @@
           "example": "无",
           "member": "string",
           "name": "ObjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3533,7 +3543,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3543,7 +3553,7 @@
           "example": "无",
           "member": "string",
           "name": "PrivateIp",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3553,7 +3563,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3563,7 +3573,7 @@
           "example": "无",
           "member": "string",
           "name": "Vpc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3573,7 +3583,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceLevel",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3583,7 +3593,7 @@
           "example": "无",
           "member": "int64",
           "name": "PostCLSStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3593,9 +3603,29 @@
           "example": "无",
           "member": "int64",
           "name": "PostCKafkaStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "对象类型：CLB:负载均衡器，TSE:云原生网关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象地域\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Region",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6167,7 +6197,7 @@
           "example": "无",
           "member": "string",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6177,7 +6207,7 @@
           "example": "无",
           "member": "string",
           "name": "Bypass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6187,7 +6217,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6197,7 +6227,7 @@
           "example": "无",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6207,7 +6237,7 @@
           "example": "无",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6217,7 +6247,7 @@
           "example": "无",
           "member": "string",
           "name": "Redirect",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6227,7 +6257,7 @@
           "example": "无",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6237,7 +6267,7 @@
           "example": "无",
           "member": "string",
           "name": "SortId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6247,7 +6277,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6257,7 +6287,7 @@
           "example": "无",
           "member": "Strategy",
           "name": "Strategies",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6267,7 +6297,37 @@
           "example": "无",
           "member": "string",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-09T16:03:14+08:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "生效状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ValidStatus",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "来源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "custom",
+          "member": "string",
+          "name": "Source",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7325,7 +7385,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "最小有效时间的时间戳",
           "example": "1674958082000",
           "member": "uint64",
@@ -7334,7 +7394,7 @@
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "最大有效时间的时间戳",
           "example": "1675130882000",
           "member": "uint64",
@@ -7413,6 +7473,24 @@
           "name": "ValidStatus",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "最小有效时间的时间戳",
+          "example": "1674958082000",
+          "member": "string",
+          "name": "ValidTimeStampMin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "最大有效时间的时间戳",
+          "example": "1674958082000",
+          "member": "string",
+          "name": "ValidTimeStampMax",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -7445,7 +7523,7 @@
         {
           "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "www.abc.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -7454,7 +7532,7 @@
         {
           "disabled": false,
           "document": "计数标识",
-          "example": "",
+          "example": "1",
           "member": "int64",
           "name": "Count",
           "required": true,
@@ -7463,25 +7541,25 @@
         {
           "disabled": false,
           "document": "类别",
-          "example": "",
+          "example": "threat_intelligence",
           "member": "string",
           "name": "Category",
           "required": true,
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "有效时间最小时间戳",
-          "example": "",
+          "example": "1698825494000",
           "member": "uint64",
           "name": "VtsMin",
           "required": false,
           "type": "int"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "有效时间最大时间戳",
-          "example": "",
+          "example": "1698825494000",
           "member": "uint64",
           "name": "VtsMax",
           "required": false,
@@ -7490,7 +7568,7 @@
         {
           "disabled": false,
           "document": "创建时间最小时间戳",
-          "example": "",
+          "example": "1698825494000",
           "member": "uint64",
           "name": "CtsMin",
           "required": false,
@@ -7499,7 +7577,7 @@
         {
           "disabled": false,
           "document": "创建时间最大时间戳",
-          "example": "",
+          "example": "1698825494000",
           "member": "uint64",
           "name": "CtsMax",
           "required": false,
@@ -7508,7 +7586,7 @@
         {
           "disabled": false,
           "document": "偏移参数",
-          "example": "",
+          "example": "12",
           "member": "uint64",
           "name": "Skip",
           "required": false,
@@ -7517,7 +7595,7 @@
         {
           "disabled": false,
           "document": "限制数目",
-          "example": "",
+          "example": "10",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -7526,7 +7604,7 @@
         {
           "disabled": false,
           "document": "策略名称",
-          "example": "",
+          "example": "测试一下",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -7535,7 +7613,7 @@
         {
           "disabled": false,
           "document": "排序参数",
-          "example": "",
+          "example": "1",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -7544,11 +7622,29 @@
         {
           "disabled": false,
           "document": "IP",
-          "example": "",
+          "example": "1.2.3.4",
           "member": "string",
           "name": "Ip",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "有效时间最小时间戳",
+          "example": "1698825494000",
+          "member": "uint64",
+          "name": "ValidTimeStampMin",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "有效时间最大时间戳",
+          "example": "1698825494000",
+          "member": "uint64",
+          "name": "ValidTimeStampMax",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -7559,9 +7655,10 @@
         {
           "disabled": false,
           "document": "结果\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "{}",
           "member": "IpHitItemsData",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -7649,6 +7746,16 @@
           "member": "uint64",
           "name": "ApiProtection",
           "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "限流模块开关",
+          "example": "1",
+          "member": "uint64",
+          "name": "RateLimit",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7748,7 +7855,7 @@
         },
         {
           "disabled": false,
-          "document": "十一个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nbw-黑IP攻击总数趋势图\ntamper-防篡改攻击总数趋势图\nleak-防泄露攻击总数趋势图\nacl-访问控制攻击总数趋势图\nhttp_status-状态码各次数趋势图",
+          "document": "十二个值可选：\naccess-峰值qps趋势图\nbotAccess- bot峰值qps趋势图\ndown-下行峰值带宽趋势图\nup-上行峰值带宽趋势图\nattack-Web攻击总数趋势图\ncc-CC攻击总数趋势图\nbw-黑IP攻击总数趋势图\ntamper-防篡改攻击总数趋势图\nleak-防泄露攻击总数趋势图\nacl-访问控制攻击总数趋势图\nhttp_status-状态码各次数趋势图\nwx_access-微信小程序峰值qps趋势图",
           "example": "access",
           "member": "string",
           "name": "MetricName",
@@ -12460,7 +12567,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "访问日志保存期限，范围为[1, 30]",
+          "document": "访问日志保存期限，范围为[1, 180]",
           "example": "30",
           "member": "int64",
           "name": "Period",
@@ -12469,7 +12576,7 @@
         },
         {
           "disabled": false,
-          "document": "日志主题",
+          "document": "日志主题，新版本不需要再传",
           "example": "\"1ae37c76-df99-4e2b-998c-20f39eba6226\"",
           "member": "string",
           "name": "TopicId",
@@ -13981,6 +14088,15 @@
           "name": "AntiLeakage",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限流模块开关，0或1",
+          "example": "1",
+          "member": "uint64",
+          "name": "RateLimit",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -14909,6 +15025,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序 qps\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "WxAccess",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15057,7 +15183,7 @@
         {
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
-          "example": " ",
+          "example": " all",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -15066,7 +15192,7 @@
         {
           "disabled": false,
           "document": "查询起始时间",
-          "example": " ",
+          "example": "2023-10-11T18:28:13+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
           "required": true,
@@ -15075,7 +15201,7 @@
         {
           "disabled": false,
           "document": "查询结束时间",
-          "example": " ",
+          "example": " 2023-10-11T20:28:13+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
           "required": true,
@@ -15093,7 +15219,7 @@
         {
           "disabled": false,
           "document": "任务名称",
-          "example": " ",
+          "example": "test",
           "member": "string",
           "name": "TaskName",
           "required": true,
@@ -15102,7 +15228,7 @@
         {
           "disabled": false,
           "document": "默认为desc，可以取值desc和asc",
-          "example": " ",
+          "example": " desc",
           "member": "string",
           "name": "Sort",
           "required": false,
@@ -15129,6 +15255,7 @@
           "example": " ",
           "member": "string",
           "name": "Flow",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16638,6 +16765,16 @@
           "value_allowed_null": true
         },
         {
+          "disabled": false,
+          "document": "添加或修改的IP数据Id列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"65477a5325b70461ccfaccfc\", \"65477a8125b70461ccfacd1c\"]",
+          "member": "string",
+          "name": "Ids",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -16753,6 +16890,16 @@
           "name": "Data",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SessionID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "12312321123",
+          "member": "int64",
+          "name": "SessionID",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {

@@ -546,6 +546,13 @@
       "output": "DescribeClusterEndpointsResponse",
       "status": "online"
     },
+    "DescribeClusterExtraArgs": {
+      "document": "查询集群自定义参数",
+      "input": "DescribeClusterExtraArgsRequest",
+      "name": "查询集群自定义参数",
+      "output": "DescribeClusterExtraArgsResponse",
+      "status": "online"
+    },
     "DescribeClusterInspectionResultsOverview": {
       "document": "查询用户单个Region下的所有集群巡检结果概览信息",
       "input": "DescribeClusterInspectionResultsOverviewRequest",
@@ -789,6 +796,20 @@
       "input": "DescribeExternalClusterSpecRequest",
       "name": "获取导入第三方集群YAML定义",
       "output": "DescribeExternalClusterSpecResponse",
+      "status": "online"
+    },
+    "DescribeExternalNodeSupportConfig": {
+      "document": "查看开启第三方节点池配置信息",
+      "input": "DescribeExternalNodeSupportConfigRequest",
+      "name": "查看开启第三方节点池配置信息",
+      "output": "DescribeExternalNodeSupportConfigResponse",
+      "status": "online"
+    },
+    "DescribeIPAMD": {
+      "document": "获取eniipamd组件信息",
+      "input": "DescribeIPAMDRequest",
+      "name": "获取eniipamd组件信息",
+      "output": "DescribeIPAMDResponse",
       "status": "online"
     },
     "DescribeImageCaches": {
@@ -8527,6 +8548,7 @@
           "example": "”“",
           "member": "string",
           "name": "CertificationAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8536,6 +8558,7 @@
           "example": "12.34.56.78",
           "member": "string",
           "name": "ClusterExternalEndpoint",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8545,6 +8568,7 @@
           "example": "10.0.0.1",
           "member": "string",
           "name": "ClusterIntranetEndpoint",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8554,6 +8578,7 @@
           "example": "cls-65r1c5nu.ccs.tencent-cloud.com",
           "member": "string",
           "name": "ClusterDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8563,6 +8588,7 @@
           "example": "[\"10.0.0.0\\/24\"]",
           "member": "string",
           "name": "ClusterExternalACL",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8572,6 +8598,7 @@
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterExternalDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8581,6 +8608,7 @@
           "example": "cls.domain",
           "member": "string",
           "name": "ClusterIntranetDomain",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8590,7 +8618,54 @@
           "example": "sg-3euou3gv",
           "member": "string",
           "name": "SecurityGroup",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网访问所属子网\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIntranetSubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterExtraArgsRequest": {
+      "document": "DescribeClusterExtraArgs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterExtraArgsResponse": {
+      "document": "DescribeClusterExtraArgs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群自定义参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "ClusterExtraArgs",
+          "name": "ClusterExtraArgs",
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -10886,6 +10961,250 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeSupportConfigRequest": {
+      "document": "DescribeExternalNodeSupportConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "cls-abcd1234",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExternalNodeSupportConfigResponse": {
+      "document": "DescribeExternalNodeSupportConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于分配集群容器和服务 IP 的 CIDR，不得与 VPC CIDR 冲突，也不得与同 VPC 内其他集群 CIDR 冲突。且网段范围必须在内网网段内，例如:10.1.0.0/14, 192.168.0.1/18,172.16.0.0/16。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "172.22.0.0/16",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群网络插件类型，支持：CiliumBGP、CiliumVXLan\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Flannel",
+          "member": "string",
+          "name": "NetworkType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-drsvvxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启第三方节点专线连接支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "Enabled",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点所属交换机的BGP AS 号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1001",
+          "member": "string",
+          "name": "AS",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点所属交换机的交换机 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "SwitchIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启第三方节点池状态",
+          "example": "Initializing",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果开启失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Create Failed\"",
+          "member": "string",
+          "name": "FailedReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Master",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像仓库代理地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "Proxy",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于记录开启第三方节点的过程进行到哪一步了\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Step",
+          "name": "Progress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启第三方节点公网连接支持",
+          "example": "false",
+          "member": "bool",
+          "name": "EnabledPublicConnect",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "公网连接地址",
+          "example": "23.142.142.24:9000",
+          "member": "string",
+          "name": "PublicConnectUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPAMDRequest": {
+      "document": "DescribeIPAMD请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPAMDResponse": {
+      "document": "DescribeIPAMD返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否安装了eniipamd组件",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableIPAMD",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启自定义podcidr，默认为false，已安装eniipamd组件才意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "EnableCustomizedPodCidr",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否不开启vpccni模式，默认为false，已安装eniipamd组件才意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableVpcCniMode",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件状态，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Phase",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误信息，已安装eniipamd组件且状态为非running才会有错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Reason",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网信息，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[sub-xxxx]",
+          "member": "string",
+          "name": "SubnetIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -22604,6 +22923,62 @@
         }
       ],
       "type": "object"
+    },
+    "Step": {
+      "document": "执行步骤信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "\"ensureNodeMasterCommunication\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-07-12-14-23-04\"",
+          "member": "string",
+          "name": "StartAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结束时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2022-07-12-14-24-04\"",
+          "member": "string",
+          "name": "EndAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"Success\"",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"null\"",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SubnetInfos": {
       "document": "子网信息",

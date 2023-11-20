@@ -86,7 +86,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=AddEditImageAutoAuthorizedRule\n&RangeType=\"MANUAL\"\n&HostIdSet.0=\"xx\"\n&MaxDailyCount=1\n&RuleId=1\n&IsEnabled=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaa\"\n    }\n}",
         "title": "新增或编辑本地镜像自动授权规则"
       }
     ],
@@ -211,8 +211,8 @@
     "CreateAssetImageScanSetting": [
       {
         "document": "添加容器安全镜像扫描设置",
-        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageScanSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"ScanTime\": \"2020-12-28 15:53:26\",\n    \"ScanPeriod\": 3600,\n    \"ScanVirus\": true,\n    \"ScanRisk\": true,\n    \"ScanVul\": true,\n    \"All\": true,\n    \"Images\": []\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"af170769-a009-4c51-879a-8fe182ace76e\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAssetImageScanSetting\n<公共请求参数>\n\n{\n    \"Enable\": true,\n    \"ScanTime\": \"00:00\",\n    \"ScanPeriod\": 1,\n    \"ScanVirus\": true,\n    \"ScanRisk\": true,\n    \"ScanVul\": true,\n    \"ScanEndTime\": \"02:00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e3526ac5-6a37-46c4-8f65-c722973f4f65\"\n    }\n}",
         "title": "添加容器安全镜像扫描设置"
       }
     ],
@@ -888,7 +888,7 @@
       {
         "document": "查询镜像详细信息",
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetImageDetail\n<公共请求参数>\n\n{\n    \"ImageID\": \"dskaldjskld\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AgentError\": \"\",\n        \"Architecture\": \"\",\n        \"Author\": \"\",\n        \"BuildHistory\": \"file:c92c248239f8c7b9b3c067650954815f391b7bcb09023f984972c082ace2a8d0 in  \",\n        \"ContainerCnt\": 0,\n        \"CreateTime\": \"2021-01-29T04:03:11Z\",\n        \"HostCnt\": 1,\n        \"ImageID\": \"sha256:1c19ee40bfafd313400cde57a50b38b16ed4751c6b62a64141f18629a0e9d430\",\n        \"ImageName\": \"<none>:<none>\",\n        \"IsTrustImage\": true,\n        \"OsName\": \"alpine:v3.12\",\n        \"RemainScanTime\": 0,\n        \"RequestId\": \"1d1ca0b5-f2ca-40bb-8797-39132bdbf35e\",\n        \"RiskCnt\": 7,\n        \"ScanError\": \"\",\n        \"ScanRiskError\": \"\",\n        \"ScanRiskProgress\": 100,\n        \"ScanStatus\": \"SCAN_ERR\",\n        \"ScanTime\": \"2021-01-29T05:26:18.07Z\",\n        \"ScanVirusError\": \" 失败\",\n        \"ScanVirusProgress\": 100,\n        \"ScanVulError\": \"\",\n        \"ScanVulProgress\": 100,\n        \"SensitiveInfoCnt\": 0,\n        \"Size\": 16159906,\n        \"Status\": 3,\n        \"VirusCnt\": 11,\n        \"VulCnt\": 5,\n        \"IsAuthorized\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ImageID\": \"abc\",\n        \"ImageName\": \"abc\",\n        \"CreateTime\": \"abc\",\n        \"Size\": 1,\n        \"HostCnt\": 1,\n        \"ContainerCnt\": 1,\n        \"ScanTime\": \"abc\",\n        \"VulCnt\": 1,\n        \"RiskCnt\": 1,\n        \"SensitiveInfoCnt\": 1,\n        \"IsTrustImage\": true,\n        \"OsName\": \"abc\",\n        \"AgentError\": \"abc\",\n        \"ScanError\": \"abc\",\n        \"Architecture\": \"abc\",\n        \"Author\": \"abc\",\n        \"BuildHistory\": \"abc\",\n        \"ScanVirusProgress\": 1,\n        \"ScanVulProgress\": 1,\n        \"ScanRiskProgress\": 1,\n        \"ScanVirusError\": \"abc\",\n        \"ScanVulError\": \"abc\",\n        \"ScanRiskError\": \"abc\",\n        \"ScanStatus\": \"abc\",\n        \"VirusCnt\": 1,\n        \"Status\": 1,\n        \"RemainScanTime\": 1,\n        \"IsAuthorized\": 0,\n        \"ImageDigest\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询镜像详细信息"
       }
     ],
@@ -1426,7 +1426,7 @@
       {
         "document": "",
         "input": "https://tcss.tencentcloudapi.com/?Action=DescribeImageAutoAuthorizedRule\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MaxDailyCount\": 0,\n        \"RangeType\": \"xx\",\n        \"RuleId\": 1,\n        \"HostCount\": 0,\n        \"RequestId\": \"xx\",\n        \"IsEnabled\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MaxDailyCount\": 0,\n        \"RangeType\": \"ALL\",\n        \"RuleId\": 1,\n        \"HostCount\": 0,\n        \"RequestId\": \"abc\",\n        \"IsEnabled\": 0\n    }\n}",
         "title": "查询本地镜像自动授权规则"
       }
     ],
@@ -2633,8 +2633,8 @@
     "RenewImageAuthorizeState": [
       {
         "document": "",
-        "input": "https://tcss.tencentcloudapi.com/?Action=RenewImageAuthorizeState\n&AllImages=false\n&ImageIds.0=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://tcss.tencentcloudapi.com/?Action=RenewImageAuthorizeState\n&AllImages=false\n&ImageIds.0=aaa\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"aaa\"\n    }\n}",
         "title": "授权镜像扫描"
       }
     ],

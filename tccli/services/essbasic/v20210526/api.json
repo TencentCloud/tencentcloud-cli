@@ -1922,21 +1922,21 @@
         },
         {
           "disabled": false,
+          "document": "签署人信息补充方式\n\n<ul><li>**1**: 表示往未指定签署人的节点，添加一个明确的签署人，支持企业或个人签署方。</li></ul>",
+          "example": "无",
+          "member": "int64",
+          "name": "FillApproverType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "操作人信息",
           "example": "无",
           "member": "UserInfo",
           "name": "Operator",
           "required": false,
           "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "签署人信息补充方式\n\n<ul><li>**1**: 补充动态签署人，可补充企业和个人签署人。注: `每个签署方节点签署人是唯一的，一个节点只支持传入一个签署人信息`</li></ul>",
-          "example": "无",
-          "member": "int64",
-          "name": "FillApproverType",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -5687,7 +5687,7 @@
         },
         {
           "disabled": false,
-          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
+          "document": "预览模式下产生的预览链接类型 \n<ul><li> **0** :(默认) 文件流 ,点开后下载预览的合同PDF文件 </li>\n<li> **1** :H5链接 ,点开后在浏览器中展示合同的样子</li></ul>\n注: `此参数在NeedPreview 为true时有效`\n",
           "example": "0",
           "member": "int64",
           "name": "PreviewType",
@@ -7286,7 +7286,7 @@
         },
         {
           "disabled": false,
-          "document": "可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人等。\n详细操作可以参考开发者中心的ApproverOption结构体。",
+          "document": "可以控制签署方在签署合同时能否进行某些操作，例如拒签、转交他人、是否为动态补充签署人等。\n详细操作可以参考开发者中心的ApproverOption结构体。",
           "example": "无",
           "member": "ApproverOption",
           "name": "ApproverOption",

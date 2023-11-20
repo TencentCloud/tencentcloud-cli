@@ -74,7 +74,7 @@
     ],
     "CreateLaunchTemplate": [
       {
-        "document": "只传必传的Zone和镜像ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州二区，镜像ID为：img-pmqg1cw7，实例启动模板名称：test",
+        "document": "只传必传的Zone、镜像ID和启动模板ID，其他均采用系统默认值，具体配置如下：实例所在位置为广州二区，镜像ID为：img-pmqg1cw7，实例启动模板名称：test",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaunchTemplate\n<公共请求参数>\n\n{\n    \"LaunchTemplateName\": \"test\",\n    \"Placement\": {\n        \"Zone\": \"ap-guangzhou-2\"\n    },\n    \"ImageId\": \"img-pmqg1cw7\"\n}",
         "output": "{\n    \"Response\": {\n        \"LaunchTemplateId\": \"lt-lobxe2yo\",\n        \"RequestId\": \"9b4ad85f-1657-4445-111d-3c0a9fbec309\"\n    }\n}",
         "title": "使用最简单参数创建实例启动模板"
@@ -719,7 +719,7 @@
     "RenewInstances": [
       {
         "document": "本示例用于续费一个实例，指定续费实例Id是ins-r8hr2upy，续费一个月，到期时通知过期但不自动续费。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=RenewInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceChargePrepaid.Period=1\n&InstanceChargePrepaid.RenewFlag=NOTIFY_AND_MANUAL_RENEW\n&<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RenewInstances\n<公共请求参数>\n\n{\n    \"InstanceChargePrepaid\": {\n        \"RenewFlag\": \"NOTIFY_AND_MANUAL_RENEW\",\n        \"Period\": \"1\"\n    },\n    \"InstanceIds\": [\n        \"ins-r8hr2upy\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "续费实例"
       }
@@ -757,7 +757,7 @@
     "ResetInstancesPassword": [
       {
         "document": "重置一个Linux/Windows实例的密码，之后您可利用此密码登录实例",
-        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesPassword\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&Password=abc123ABC!@#\n&ForceStop=TRUE\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=ResetInstancesPassword\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&Password=abc123ABC!@#\n&ForceStop=true\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "重置一个Linux/Windows实例的密码"
       }
@@ -821,7 +821,7 @@
     "StopInstances": [
       {
         "document": "本示例用于关闭两个实例。",
-        "input": "https://cvm.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ForceStop=FALSE\n&<公共请求参数>",
+        "input": "https://cvm.tencentcloudapi.com/?Action=StopInstances\n&InstanceIds.0=ins-r8hr2upy\n&InstanceIds.1=ins-5d8a23rs\n&ForceStop=false\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "关闭实例"
       }

@@ -14,6 +14,20 @@
       "output": "ApplyUserCertResponse",
       "status": "online"
     },
+    "DescribeFabricBlock": {
+      "document": "获取Fabric某区块的详细信息",
+      "input": "DescribeFabricBlockRequest",
+      "name": "获取Fabric某区块的详细信息",
+      "output": "DescribeFabricBlockResponse",
+      "status": "online"
+    },
+    "DescribeFabricTransaction": {
+      "document": "获取Fabric交易的详细信息",
+      "input": "DescribeFabricTransactionRequest",
+      "name": "获取Fabric交易的详细信息",
+      "output": "DescribeFabricTransactionResponse",
+      "status": "online"
+    },
     "DownloadUserCert": {
       "document": "下载用户证书",
       "input": "DownloadUserCertRequest",
@@ -91,6 +105,13 @@
       "output": "InvokeChainMakerDemoContractResponse",
       "status": "online"
     },
+    "InvokeFabricChaincode": {
+      "document": "调用Fabric用户合约执行交易",
+      "input": "InvokeFabricChaincodeRequest",
+      "name": "调用Fabric用户合约执行交易",
+      "output": "InvokeFabricChaincodeResponse",
+      "status": "online"
+    },
     "Query": {
       "document": "查询交易",
       "input": "QueryRequest",
@@ -138,6 +159,13 @@
       "input": "QueryChainMakerTransactionRequest",
       "name": "通过交易ID查询长安链交易",
       "output": "QueryChainMakerTransactionResponse",
+      "status": "online"
+    },
+    "QueryFabricChaincode": {
+      "document": "调用Fabric用户合约查询",
+      "input": "QueryFabricChaincodeRequest",
+      "name": "调用Fabric用户合约查询",
+      "output": "QueryFabricChaincodeResponse",
       "status": "online"
     },
     "SrvInvoke": {
@@ -525,6 +553,256 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeFabricBlockRequest": {
+      "document": "DescribeFabricBlock请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络ID，可在区块链网络详情或列表中获取",
+          "example": "fabric-65z42qi150",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID，可在通道列表或通道详情获取",
+          "example": "channel-9xej4d",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "区块高度，从0开始",
+          "example": "4",
+          "member": "int64",
+          "name": "BlockHeight",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFabricBlockResponse": {
+      "document": "DescribeFabricBlock返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "区块高度",
+          "example": "1024",
+          "member": "int64",
+          "name": "BlockHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区块Hash",
+          "example": "abc",
+          "member": "string",
+          "name": "BlockHash",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "前置区块Hash",
+          "example": "abc",
+          "member": "string",
+          "name": "PreBlockHash",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区块中交易数量",
+          "example": "100",
+          "member": "int64",
+          "name": "TxCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区块中交易列表",
+          "example": "[]",
+          "member": "Transaction",
+          "name": "TransactionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间戳",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTimestamp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提案组织",
+          "example": "无",
+          "member": "string",
+          "name": "ProposerOrg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFabricTransactionRequest": {
+      "document": "DescribeFabricTransaction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络ID，可在区块链网络详情或列表中获取",
+          "example": "fabric-65z42qi150",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID，可在通道列表或通道详情获取",
+          "example": "channel-9xej4d",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "交易ID",
+          "example": "03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229",
+          "member": "string",
+          "name": "TxId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFabricTransactionResponse": {
+      "document": "DescribeFabricTransaction返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易ID",
+          "example": "03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229",
+          "member": "string",
+          "name": "TxId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易Hash",
+          "example": "8e5b978d33cfbc0510b4e60406f8481f8ec00e390131d5b6ea6d38604e1bcb46",
+          "member": "string",
+          "name": "TxHash",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易状态",
+          "example": "VALID",
+          "member": "string",
+          "name": "TxStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "参与的组织列表",
+          "example": "[\"\"org-xxxx.fabric-ian2bqtylk\"\"]",
+          "member": "string",
+          "name": "JoinOrgList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易发送者",
+          "example": "org-xxxx.fabric-ian2bqtylk",
+          "member": "string",
+          "name": "Sender",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "2023-07-07 10:10:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区块高度",
+          "example": "1024",
+          "member": "int64",
+          "name": "BlockHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易所属合约",
+          "example": "abc",
+          "member": "string",
+          "name": "ChaincodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易数据，base64编码，解码后为json化的字符串",
+          "example": "eyJjaGFpbmNvZGVfc3BlYyI6eyJjaGFpbmNvZGVfaWQiOnsibmFtZSI6Il9saWZlY3ljbGUiLCJwYXRoIjoiIiwidmVyc2lvbiI6IiJ9LCJpbnB1dCI6eyJhcmdzIjpbIkNvbW1pdENoYWluY29kZURlZmluaXRpb24iLCJcdTAwMDhcdTAwMDFcdTAwMTJcdTAwMDNteWNcdTAwMWFcdTAwMDR2MS4wXCJcdTAwMDRlc2NjKlx1MDAwNHZzY2MyMVxuL1x1MDAxMlx1MDAwOFx1MDAxMlx1MDAwNlx1MDAwOFx1MDAwMVx1MDAxMlx1MDAwMlx1MDAwOFx1MDAwMFx1MDAxYSNcdTAwMTIhXG5cdTAwMWZvcmctMjUxMDA1NzQ2LmZhYnJpYy02NXo0MnFpMTUwOlx1MDAwMCJdLCJkZWNvcmF0aW9ucyI6e30sImlzX2luaXQiOmZhbHNlfSwidGltZW91dCI6MCwidHlwZSI6IlVOREVGSU5FRCJ9fQ==",
+          "member": "string",
+          "name": "TransactionData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DownloadUserCertRequest": {
       "document": "DownloadUserCert请求参数结构体",
@@ -1797,6 +2075,108 @@
       ],
       "type": "object"
     },
+    "InvokeFabricChaincodeRequest": {
+      "document": "InvokeFabricChaincode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络ID，可在区块链网络详情获取",
+          "example": "fabric-65z42qi150",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID，可在通道列表或通道详情获取",
+          "example": "channel-9xej4d",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约名称，可在合约列表或合约详情获取",
+          "example": "test",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约方法",
+          "example": "Set",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约方法入参",
+          "example": "[\"key\",\"value\"]",
+          "member": "string",
+          "name": "FuncParam",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否异步执行，如果异步执行，可使用返回值中的交易TxID查询执行结果",
+          "example": "false",
+          "member": "bool",
+          "name": "WithAsyncResult",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "InvokeFabricChaincodeResponse": {
+      "document": "InvokeFabricChaincode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易ID",
+          "example": "03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229",
+          "member": "string",
+          "name": "TxId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易状态",
+          "example": "VALID",
+          "member": "string",
+          "name": "TxStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易结果",
+          "example": "value",
+          "member": "string",
+          "name": "TxResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InvokeRequest": {
       "document": "Invoke请求参数结构体",
       "members": [
@@ -2365,6 +2745,99 @@
       ],
       "type": "object"
     },
+    "QueryFabricChaincodeRequest": {
+      "document": "QueryFabricChaincode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网络ID，可在区块链网络详情获取",
+          "example": "fabric-65z42qi150",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通道ID，可在通道列表或通道详情获取",
+          "example": "channel-9xej4d",
+          "member": "string",
+          "name": "ChannelId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约名称，可在合约列表或合约详情获取",
+          "example": "test",
+          "member": "string",
+          "name": "ChaincodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约方法",
+          "example": "Get",
+          "member": "string",
+          "name": "FuncName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "合约方法入参",
+          "example": "[\"key\"]",
+          "member": "string",
+          "name": "FuncParam",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryFabricChaincodeResponse": {
+      "document": "QueryFabricChaincode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易ID",
+          "example": "03389f4a5af1883347ecdb15471e70abf3a8e6cf5b6648dc789674af7930e229",
+          "member": "string",
+          "name": "TxId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易状态",
+          "example": "VALID",
+          "member": "string",
+          "name": "TxStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易结果",
+          "example": "value",
+          "member": "string",
+          "name": "TxResult",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "QueryRequest": {
       "document": "Query请求参数结构体",
       "members": [
@@ -2571,6 +3044,72 @@
         }
       ],
       "type": "object"
+    },
+    "Transaction": {
+      "document": "交易显示概述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "交易ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "abc",
+          "member": "string",
+          "name": "TxId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合约名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "save",
+          "member": "string",
+          "name": "ChaincodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易发送者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "zhangsan",
+          "member": "string",
+          "name": "Sender",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-07 10:10:10",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易所在区块高度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1024",
+          "member": "int64",
+          "name": "BlockHeight",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "交易在区块中的序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TxIndex",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TransactionItem": {
       "document": "交易列表项信息",

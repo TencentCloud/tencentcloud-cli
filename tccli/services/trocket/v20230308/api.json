@@ -112,6 +112,20 @@
       "output": "DescribeTopicStatsOpResponse",
       "status": "online"
     },
+    "ImportSourceClusterConsumerGroups": {
+      "document": "导入消费者组列表",
+      "input": "ImportSourceClusterConsumerGroupsRequest",
+      "name": "平滑迁移：导入消费者组列表",
+      "output": "ImportSourceClusterConsumerGroupsResponse",
+      "status": "online"
+    },
+    "ImportSourceClusterTopics": {
+      "document": "导入topic列表",
+      "input": "ImportSourceClusterTopicsRequest",
+      "name": "平滑迁移：导入topic列表",
+      "output": "ImportSourceClusterTopicsResponse",
+      "status": "online"
+    },
     "ModifyConsumerGroup": {
       "document": "修改消费组属性",
       "input": "ModifyConsumerGroupRequest",
@@ -1629,6 +1643,78 @@
       ],
       "usage": "in"
     },
+    "ImportSourceClusterConsumerGroupsRequest": {
+      "document": "ImportSourceClusterConsumerGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的消费组列表",
+          "example": "无",
+          "member": "SourceClusterGroupConfig",
+          "name": "GroupList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportSourceClusterConsumerGroupsResponse": {
+      "document": "ImportSourceClusterConsumerGroups返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportSourceClusterTopicsRequest": {
+      "document": "ImportSourceClusterTopics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的主题列表",
+          "example": "无",
+          "member": "SourceClusterTopicConfig",
+          "name": "TopicList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ImportSourceClusterTopicsResponse": {
+      "document": "ImportSourceClusterTopics返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "InstanceItem": {
       "document": "实例列表页中的实例信息",
       "members": [
@@ -2206,6 +2292,150 @@
         }
       ],
       "usage": "out"
+    },
+    "SourceClusterGroupConfig": {
+      "document": "消费组配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已导入，作为入参时无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Imported",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x集群有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入状态\nUnknown 未知\nSuccess 成功\nFailure 失败\nAlreadyExists 已存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImportStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SourceClusterTopicConfig": {
+      "document": "源集群主题配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主题类型，\n5.x版本\nUNSPECIFIED 未指定\nNORMAL 普通消息\nFIFO 顺序消息\nDELAY 延迟消息\nTRANSACTION 事务消息\n\n4.x版本\nNormal 普通消息\nPartitionedOrder 分区顺序消息\nTransaction 事务消息\nDelayScheduled 延时消息\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TopicType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "队列数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "QueueNum",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Remark",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否已导入，作为入参时无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "Imported",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命名空间，仅4.x集群有效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "导入状态，\nUnknown 未知，\nAlreadyExists 已存在，\nSuccess 成功，\nFailure 失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ImportStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SubscriptionData": {
       "document": "主题与消费组的订阅关系数据",

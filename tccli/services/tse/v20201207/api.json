@@ -6250,6 +6250,28 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CVM实例名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CvmInstanceName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -7671,7 +7693,7 @@
           "example": "inst-12345678",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7681,7 +7703,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7691,7 +7713,7 @@
           "example": "1.8.6",
           "member": "string",
           "name": "Edition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7701,7 +7723,7 @@
           "example": "creating",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7711,7 +7733,7 @@
           "example": "spec-12345678",
           "member": "string",
           "name": "SpecId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7721,7 +7743,7 @@
           "example": "3",
           "member": "int64",
           "name": "Replica",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7731,7 +7753,7 @@
           "example": "consul",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7741,7 +7763,7 @@
           "example": "vpc-12345678",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7751,7 +7773,7 @@
           "example": "[\"subnet-12345678\"]",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7761,7 +7783,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableStorage",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7771,7 +7793,7 @@
           "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "StorageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7781,7 +7803,7 @@
           "example": "10",
           "member": "int64",
           "name": "StorageCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7791,7 +7813,7 @@
           "example": "POSTPAID",
           "member": "string",
           "name": "Paymode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7801,7 +7823,7 @@
           "example": "cls-1234567",
           "member": "string",
           "name": "EKSClusterID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7811,17 +7833,17 @@
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "环境配置信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
+          "example": "[{\"EnvName\":\"Apollo环境名称\",\"Status\":\"running\",\"AdminServiceIp\":\"\",\"ConfigServiceIp\":\"客户端接入内网 IP\",\"ConfigInternetServiceIp\":\"\",\"EnableConfigInternet\":false,\"EnableConfigIntranet\":null,\"StorageCapacity\":\"存储容量规格, 这里的类型是 int\",\"SpecId\":\"规格 ID\",\"EnvReplica\":2,\"RunningCount\":0,\"EnvDesc\":\"\",\"ClientBandWidth\":0}]",
           "member": "EnvInfo",
           "name": "EnvInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7831,7 +7853,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "EngineRegion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7841,7 +7863,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableInternet",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7851,7 +7873,7 @@
           "example": "[]",
           "member": "VpcInfo",
           "name": "VpcInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7861,7 +7883,7 @@
           "example": "无",
           "member": "ServiceGovernanceInfo",
           "name": "ServiceGovernanceInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7871,7 +7893,7 @@
           "example": "[{\"Key\":\"type\",\"Value\":\"nacos\"}]",
           "member": "KVPair",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7881,7 +7903,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableConsoleInternet",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7891,7 +7913,7 @@
           "example": "true",
           "member": "bool",
           "name": "EnableConsoleIntranet",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7901,7 +7923,7 @@
           "example": "true",
           "member": "bool",
           "name": "ConfigInfoVisible",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7911,7 +7933,7 @@
           "example": "nacosxx",
           "member": "string",
           "name": "ConsoleDefaultPwd",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7921,7 +7943,7 @@
           "example": "1",
           "member": "int64",
           "name": "TradeType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7931,7 +7953,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7941,7 +7963,7 @@
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "CurDeadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7951,7 +7973,7 @@
           "example": "2021-04-08 16:20:58",
           "member": "string",
           "name": "IsolateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7961,7 +7983,7 @@
           "example": "无",
           "member": "DescribeInstanceRegionInfo",
           "name": "RegionInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7971,7 +7993,7 @@
           "example": "common",
           "member": "string",
           "name": "EKSType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7981,7 +8003,7 @@
           "example": "STANDARD",
           "member": "string",
           "name": "FeatureVersion",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7991,7 +8013,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableClientIntranet",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -8001,7 +8023,7 @@
           "example": "无",
           "member": "StorageOption",
           "name": "StorageOption",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

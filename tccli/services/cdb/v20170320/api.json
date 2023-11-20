@@ -15885,6 +15885,15 @@
           "name": "ModifyPayType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标记，0表示不自动续费，1表示进行自动续费",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -15898,7 +15907,7 @@
           "example": "20170320233333",
           "member": "string",
           "name": "DealId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

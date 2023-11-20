@@ -64,7 +64,7 @@
       "status": "online"
     },
     "CreateLaunchTemplate": {
-      "document": "本接口（CreateLaunchTemplate）用于创建实例启动模板。\n\n实例启动模板是一种配置数据并可用于创建实例，其内容包含创建实例所需的配置，比如实例类型，数据盘和系统盘的类型和大小，以及安全组等信息。\n\n初次创建实例模板后，其模板版本为默认版本1，新版本的创建可使用CreateLaunchTemplateVersion创建，版本号递增。默认情况下，在RunInstances中指定实例启动模板，若不指定模板版本号，则使用默认版本。",
+      "document": "本接口（CreateLaunchTemplate）用于创建实例启动模板。\n\n实例启动模板是一种配置数据并可用于创建实例，其内容包含创建实例所需的配置，比如实例类型，数据盘和系统盘的类型和大小，以及安全组等信息。\n\n初次创建实例模板后，其模板版本为默认版本1，新版本的创建可使用 [CreateLaunchTemplateVersion](https://cloud.tencent.com/document/product/213/66326) 创建，版本号递增。默认情况下，在[RunInstances](https://cloud.tencent.com/document/product/213/15730) 中指定实例启动模板，若不指定模板版本号，则使用默认版本。",
       "input": "CreateLaunchTemplateRequest",
       "name": "创建实例启动模板",
       "output": "CreateLaunchTemplateResponse",
@@ -491,7 +491,7 @@
       "status": "online"
     },
     "ModifyInstancesChargeType": {
-      "document": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 关机不收费的实例、`BC1`和`BS1`机型族的实例、设置定时销毁的实例不支持该操作。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ModifyInstancesChargeType) 用于切换实例的计费模式。\n\n* 关机不收费的实例、`批量计算型BC1`和`批量计算型BS1`机型族的实例、设置定时销毁的实例不支持该操作。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ModifyInstancesChargeTypeRequest",
       "name": "修改实例计费模式",
       "output": "ModifyInstancesChargeTypeResponse",
@@ -575,7 +575,7 @@
       "status": "online"
     },
     "RenewInstances": {
-      "document": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[`DescribeAccountBalance`](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (RenewInstances) 用于续费包年包月实例。\n\n* 只支持操作包年包月实例。\n* 续费时请确保账户余额充足。可通过[DescribeAccountBalance](https://cloud.tencent.com/document/product/555/20253)接口查询账户余额。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "RenewInstancesRequest",
       "name": "续费实例",
       "output": "RenewInstancesResponse",
@@ -603,7 +603,7 @@
       "status": "online"
     },
     "ResetInstancesPassword": {
-      "document": "本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。\n\n*如果是修改系统管理云密码：实例的操作系统不同，管理员账号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。\n* 重置处于运行中状态的实例密码，需要设置关机参数`ForceStop`为`TRUE`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
+      "document": "本接口 (ResetInstancesPassword) 用于将实例操作系统的密码重置为用户指定的密码。\n\n*如果是修改系统管理员密码：实例的操作系统不同，管理员账号也会不一样(`Windows`为`Administrator`，`Ubuntu`为`ubuntu`，其它系统为`root`)。\n* 重置处于运行中状态的实例密码，需要设置关机参数`ForceStop`为`TRUE`。如果没有显式指定强制关机参数，则只有处于关机状态的实例才允许执行重置密码操作。\n* 支持批量操作。将多个实例操作系统的密码重置为相同的密码。每次请求批量实例的上限为100。\n* 实例操作结果可以通过调用 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728#.E7.A4.BA.E4.BE.8B3-.E6.9F.A5.E8.AF.A2.E5.AE.9E.E4.BE.8B.E7.9A.84.E6.9C.80.E6.96.B0.E6.93.8D.E4.BD.9C.E6.83.85.E5.86.B5) 接口查询，如果实例的最新操作状态(LatestOperationState)为“SUCCESS”，则代表操作成功。",
       "input": "ResetInstancesPasswordRequest",
       "name": "重置实例密码",
       "output": "ResetInstancesPasswordResponse",
@@ -1694,7 +1694,7 @@
         {
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。",
-          "example": "NA",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -1730,7 +1730,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "NA",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -1739,7 +1739,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "NA",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -1748,7 +1748,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若不指定该参数，则默认使用基础网络。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
-          "example": "NA",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -1757,7 +1757,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "NA",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -1784,7 +1784,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
-          "example": "NA",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -1793,7 +1793,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "['sg-rf6ogz49']",
+          "example": "[\"sg-rf6ogz49\"]",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -1802,7 +1802,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
-          "example": "NA",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -1811,7 +1811,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -1820,7 +1820,7 @@
         {
           "disabled": false,
           "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -1829,7 +1829,7 @@
         {
           "disabled": false,
           "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
-          "example": "NA",
+          "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
           "required": false,
@@ -1838,7 +1838,7 @@
         {
           "disabled": false,
           "document": "置放群组id，仅支持指定一个。",
-          "example": "['ps-3p88qhfo']",
+          "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -1847,7 +1847,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。",
-          "example": "NA",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -1856,7 +1856,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
-          "example": "NA",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -1910,7 +1910,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "NA",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -1937,7 +1937,7 @@
           "example": "lt-a5n123lo",
           "member": "string",
           "name": "LaunchTemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1956,7 +1956,7 @@
         {
           "disabled": false,
           "document": "实例所在的位置。通过该参数可以指定实例所属可用区，所属项目，所属宿主机（在专用宿主机上创建子机时指定）等属性。",
-          "example": "NA",
+          "example": "无",
           "member": "Placement",
           "name": "Placement",
           "required": true,
@@ -1965,7 +1965,7 @@
         {
           "disabled": false,
           "document": "启动模板ID，新版本将基于该实例启动模板ID创建。",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "LaunchTemplateId",
           "required": true,
@@ -2010,7 +2010,7 @@
         {
           "disabled": false,
           "document": "实例系统盘配置信息。若不指定该参数，则按照系统默认值进行分配。",
-          "example": "NA",
+          "example": "无",
           "member": "SystemDisk",
           "name": "SystemDisk",
           "required": false,
@@ -2019,7 +2019,7 @@
         {
           "disabled": false,
           "document": "实例数据盘配置信息。若不指定该参数，则默认不购买数据盘。支持购买的时候指定21块数据盘，其中最多包含1块LOCAL_BASIC数据盘或者LOCAL_SSD数据盘，最多包含20块CLOUD_BASIC数据盘、CLOUD_PREMIUM数据盘或者CLOUD_SSD数据盘。",
-          "example": "NA",
+          "example": "无",
           "member": "DataDisk",
           "name": "DataDisks",
           "required": false,
@@ -2028,7 +2028,7 @@
         {
           "disabled": false,
           "document": "私有网络相关信息配置。通过该参数可以指定私有网络的ID，子网ID等信息。若不指定该参数，则默认使用基础网络。若在此参数中指定了私有网络IP，即表示每个实例的主网卡IP；同时，InstanceCount参数必须与私有网络IP的个数一致且不能大于20。",
-          "example": "NA",
+          "example": "无",
           "member": "VirtualPrivateCloud",
           "name": "VirtualPrivateCloud",
           "required": false,
@@ -2037,7 +2037,7 @@
         {
           "disabled": false,
           "document": "公网带宽相关信息设置。若不指定该参数，则默认公网带宽为0Mbps。",
-          "example": "NA",
+          "example": "无",
           "member": "InternetAccessible",
           "name": "InternetAccessible",
           "required": false,
@@ -2064,7 +2064,7 @@
         {
           "disabled": false,
           "document": "实例登录设置。通过该参数可以设置实例的登录方式密码、密钥或保持镜像的原始登录设置。默认情况下会随机生成密码，并以站内信方式知会到用户。",
-          "example": "NA",
+          "example": "无",
           "member": "LoginSettings",
           "name": "LoginSettings",
           "required": false,
@@ -2073,7 +2073,7 @@
         {
           "disabled": false,
           "document": "实例所属安全组。该参数可以通过调用 [DescribeSecurityGroups](https://cloud.tencent.com/document/api/215/15808) 的返回值中的sgId字段来获取。若不指定该参数，则绑定默认安全组。",
-          "example": "NA",
+          "example": "[\"sg-rf6ogz49\"]\t",
           "member": "string",
           "name": "SecurityGroupIds",
           "required": false,
@@ -2082,7 +2082,7 @@
         {
           "disabled": false,
           "document": "增强服务。通过该参数可以指定是否开启云安全、云监控等服务。若不指定该参数，则默认公共镜像开启云监控、云安全服务；自定义镜像与镜像市场镜像默认不开启云监控，云安全服务，而使用镜像里保留的服务。",
-          "example": "NA",
+          "example": "无",
           "member": "EnhancedService",
           "name": "EnhancedService",
           "required": false,
@@ -2091,7 +2091,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -2100,7 +2100,7 @@
         {
           "disabled": false,
           "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：字符长度为[2, 60]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
-          "example": "NA",
+          "example": "无",
           "member": "string",
           "name": "HostName",
           "required": false,
@@ -2109,7 +2109,7 @@
         {
           "disabled": false,
           "document": "定时任务。通过该参数可以为实例指定定时任务，目前仅支持定时销毁。",
-          "example": "NA",
+          "example": "无",
           "member": "ActionTimer",
           "name": "ActionTimer",
           "required": false,
@@ -2118,7 +2118,7 @@
         {
           "disabled": false,
           "document": "置放群组id，仅支持指定一个。",
-          "example": "NA",
+          "example": "[\"ps-3p88qhfo\"]",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -2127,7 +2127,7 @@
         {
           "disabled": false,
           "document": "标签描述列表。通过指定该参数可以同时绑定标签到相应的资源实例，当前仅支持绑定标签到云服务器实例。",
-          "example": "NA",
+          "example": "无",
           "member": "TagSpecification",
           "name": "TagSpecification",
           "required": false,
@@ -2136,7 +2136,7 @@
         {
           "disabled": false,
           "document": "实例的市场相关选项，如竞价实例相关参数，若指定实例的付费模式为竞价付费则该参数必传。",
-          "example": "NA",
+          "example": "无",
           "member": "InstanceMarketOptionsRequest",
           "name": "InstanceMarketOptions",
           "required": false,
@@ -2145,7 +2145,7 @@
         {
           "disabled": false,
           "document": "提供给实例使用的用户数据，需要以 base64 方式编码，支持的最大数据大小为 16KB。关于获取此参数的详细介绍，请参阅[Windows](https://cloud.tencent.com/document/product/213/17526)和[Linux](https://cloud.tencent.com/document/product/213/17525)启动时运行命令。",
-          "example": "NA",
+          "example": "YmFzZTY0Cg==",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -2154,7 +2154,7 @@
         {
           "disabled": false,
           "document": "是否只预检此次请求。\ntrue：发送检查请求，不会创建实例。检查项包括是否填写了必需参数，请求格式，业务限制和云服务器库存。\n如果检查不通过，则返回对应错误码；\n如果检查通过，则返回RequestId.\nfalse（默认）：发送正常请求，通过检查后直接创建实例。",
-          "example": "NA",
+          "example": "false",
           "member": "bool",
           "name": "DryRun",
           "required": false,
@@ -2163,7 +2163,7 @@
         {
           "disabled": false,
           "document": "CAM角色名称。可通过[`DescribeRoleList`](https://cloud.tencent.com/document/product/598/13887)接口返回值中的`roleName`获取。",
-          "example": "NA",
+          "example": "testroleName001",
           "member": "string",
           "name": "CamRoleName",
           "required": false,
@@ -2172,7 +2172,7 @@
         {
           "disabled": false,
           "document": "高性能计算集群ID。若创建的实例为高性能计算实例，需指定实例放置的集群，否则不可指定。",
-          "example": "NA",
+          "example": "hpc-a5n666lo",
           "member": "string",
           "name": "HpcClusterId",
           "required": false,
@@ -2181,7 +2181,7 @@
         {
           "disabled": false,
           "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>CDHPAID：独享子机（基于专用宿主机创建，宿主机部分的资源不收费）<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
-          "example": "NA",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "required": false,
@@ -2190,7 +2190,7 @@
         {
           "disabled": false,
           "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。",
-          "example": "NA",
+          "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
           "required": false,
@@ -2217,7 +2217,7 @@
           "example": "2",
           "member": "int64",
           "name": "LaunchTemplateVersionNumber",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8455,8 +8455,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为30。",
-          "example": "[\"ins-r8hr2upy\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为30。",
+          "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8464,7 +8464,7 @@
         },
         {
           "disabled": false,
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
+          "document": "修改后实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月。<br><li>POSTPAID_BY_HOUR：后付费，即按量付费。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -8473,7 +8473,7 @@
         },
         {
           "disabled": false,
-          "document": "预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。<dx-alert infotype=\"explain\" title=\"\">若指定实例的付费模式为预付费则该参数必传。</dx-alert>",
+          "document": "修改后预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。<dx-alert infotype=\"explain\" title=\"\">若指定实例的付费模式为预付费则该参数必传。</dx-alert>",
           "example": "无",
           "member": "InstanceChargePrepaid",
           "name": "InstanceChargePrepaid",
@@ -8482,8 +8482,8 @@
         },
         {
           "disabled": false,
-          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<br><li>TRUE：表示切换弹性数据云盘计费模式<br><li>FALSE：表示不切换弹性数据云盘计费模式<br><br>默认取值：FALSE。",
-          "example": "无",
+          "document": "是否同时切换弹性数据云盘计费模式。取值范围：<br><li>true：表示切换弹性数据云盘计费模式<br><li>false：表示不切换弹性数据云盘计费模式<br><br>默认取值：false。",
+          "example": "false",
           "member": "bool",
           "name": "ModifyPortableDataDisk",
           "required": false,
@@ -8545,8 +8545,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
-          "example": "[\"ins-r8hr2upy\\n\",\"ins-5d8a23rs\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -8581,8 +8581,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "待操作的实例ID数组。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。",
-          "example": "[\"ins-r8hr2upy\\n\",\"ins-5d8a23rs\\n\"]",
+          "document": "待操作的实例ID数组。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -9102,7 +9102,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
           "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
@@ -9111,8 +9111,8 @@
         },
         {
           "disabled": false,
-          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>TRUE：表示在正常重启失败后进行强制重启<br><li>FALSE：表示在正常重启失败后不进行强制重启<br><br>默认取值：FALSE。",
-          "example": "FALSE",
+          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常重启失败后选择强制重启实例。取值范围：<br><li>true：表示在正常重启失败后进行强制重启<br><li>false：表示在正常重启失败后不进行强制重启<br><br>默认取值：false。",
+          "example": "false",
           "member": "bool",
           "name": "ForceReboot",
           "required": false,
@@ -9270,8 +9270,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
-          "example": "[\"ins-r8hr2upy\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -9288,8 +9288,8 @@
         },
         {
           "disabled": false,
-          "document": "是否续费弹性数据盘。取值范围：<br><li>TRUE：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>FALSE：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：TRUE。",
-          "example": "FALSE",
+          "document": "是否续费弹性数据盘。取值范围：<br><li>true：表示续费包年包月实例同时续费其挂载的弹性数据盘<br><li>false：表示续费包年包月实例同时不再续费其挂载的弹性数据盘<br><br>默认取值：true。",
+          "example": "false",
           "member": "bool",
           "name": "RenewPortableDataDisk",
           "required": false,
@@ -10369,8 +10369,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
-          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728) API返回值中的`InstanceId`获取。每次请求允许操作的实例数量上限是100。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -10378,7 +10378,7 @@
         },
         {
           "disabled": false,
-          "document": "实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\nLinux 实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/\nWindows 实例密码必须12\\~30位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `Linux` 实例又包含 `Windows` 实例，则密码复杂度限制按照 `Windows` 实例的限制。",
+          "document": "重置后的实例登录密码。不同操作系统类型密码复杂度限制不一样，具体如下：\nLinux 实例密码必须8-30位，推荐使用12位以上密码，不能以“/”开头，至少包含以下字符中的三种不同字符，字符种类：<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字：0-9<br><li>特殊字符： ()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;'<>,.?/\nWindows 实例密码必须12\\~30位，不能以“/”开头且不包括用户名，至少包含以下字符中的三种不同字符<br><li>小写字母：[a-z]<br><li>大写字母：[A-Z]<br><li>数字： 0-9<br><li>特殊字符：()\\`\\~!@#$%^&\\*-+=\\_|{}[]:;' <>,.?/<br><li>如果实例即包含 `Linux` 实例又包含 `Windows` 实例，则密码复杂度限制按照 `Windows` 实例的限制。",
           "example": "abc123ABC!@#",
           "member": "string",
           "name": "Password",
@@ -10396,8 +10396,8 @@
         },
         {
           "disabled": false,
-          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>TRUE：表示在正常关机失败后进行强制关机<br><li>FALSE：表示在正常关机失败后不进行强制关机<br><br>默认取值：FALSE。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
-          "example": "TRUE",
+          "document": "是否对运行中的实例选择强制关机。建议对运行中的实例先手动关机，然后再重置用户密码。取值范围：<br><li>true：表示在正常关机失败后进行强制关机<br><li>false：表示在正常关机失败后不进行强制关机<br><br>默认取值：false。<br><br>强制关机的效果等同于关闭物理计算机的电源开关。强制关机可能会导致数据丢失或文件系统损坏，请仅在服务器不能正常关机时使用。",
+          "example": "true",
           "member": "bool",
           "name": "ForceStop",
           "required": false,
@@ -11025,8 +11025,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
-          "example": "[\"ins-r8hr2upy\\r\\n\",\"ins-5d8a23rs\\r\\n\"]",
+          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "example": "[\"ins-r8hr2upy\",\"ins-5d8a23rs\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -11034,8 +11034,8 @@
         },
         {
           "disabled": false,
-          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>TRUE：表示在正常关闭失败后进行强制关闭<br><li>FALSE：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：FALSE。",
-          "example": "FALSE",
+          "document": "本参数已弃用，推荐使用StopType，不可以与参数StopType同时使用。表示是否在正常关闭失败后选择强制关闭实例。取值范围：<br><li>true：表示在正常关闭失败后进行强制关闭<br><li>false：表示在正常关闭失败后不进行强制关闭<br><br>默认取值：false。",
+          "example": "false",
           "member": "bool",
           "name": "ForceStop",
           "required": false,

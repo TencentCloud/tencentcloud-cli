@@ -560,6 +560,13 @@
       "output": "DescribeApproveListResponse",
       "status": "online"
     },
+    "DescribeApproveTypeList": {
+      "document": "获取审批分类列表",
+      "input": "DescribeApproveTypeListRequest",
+      "name": "获取审批分类列表",
+      "output": "DescribeApproveTypeListResponse",
+      "status": "online"
+    },
     "DescribeBaselineAllTaskDag": {
       "document": "查询基线DAG",
       "input": "DescribeBaselineAllTaskDagRequest",
@@ -3125,7 +3132,7 @@
           "example": "1",
           "member": "string",
           "name": "ApplicantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3135,7 +3142,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApplicantName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3145,7 +3152,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3155,7 +3162,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApproveClassification",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3165,7 +3172,7 @@
           "example": "1",
           "member": "string",
           "name": "ApproveId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3175,7 +3182,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApproveType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3185,7 +3192,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3195,7 +3202,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3205,7 +3212,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApproveTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3215,7 +3222,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApproveClassificationName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3225,7 +3232,7 @@
           "example": "\"test\"",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3235,9 +3242,59 @@
           "example": "\"test\"",
           "member": "string",
           "name": "ApproveTypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审批异常或者失败信息",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "申请名称",
+          "member": "string",
+          "name": "ApplyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批人id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "审批人id",
+          "member": "string",
+          "name": "ApproverId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批人名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "审批人名称",
+          "member": "string",
+          "name": "ApproverName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审批所属项目\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "审批所属项目",
+          "member": "string",
+          "name": "ApproveProjectName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -3263,6 +3320,42 @@
           "name": "Success",
           "required": true,
           "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ApproveType": {
+      "document": "审批分类",
+      "members": [
+        {
+          "disabled": false,
+          "document": "申请分类key",
+          "example": "db_db",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "类型名称",
+          "example": "库申请",
+          "member": "string",
+          "name": "TypeName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请类型key",
+          "example": "db",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -12800,7 +12893,7 @@
         {
           "disabled": false,
           "document": "审批分类key",
-          "example": "\"test\"",
+          "example": "“db”代表库表审批， “task”代表任务审批 ，“api”代表API审批",
           "member": "string",
           "name": "ApproveClassification",
           "required": true,
@@ -12854,9 +12947,46 @@
           "example": "无",
           "member": "DescribeApply",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApproveTypeListRequest": {
+      "document": "DescribeApproveTypeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型key",
+          "example": "\"test\"",
+          "member": "string",
+          "name": "Classification",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeApproveTypeListResponse": {
+      "document": "DescribeApproveTypeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "获取审批分类列表",
+          "example": "无",
+          "member": "ApproveType",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

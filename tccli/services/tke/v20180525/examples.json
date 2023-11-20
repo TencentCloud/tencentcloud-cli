@@ -650,8 +650,16 @@
       {
         "document": "获取集群访问地址",
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterEndpoints\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-65r1c5nu\"\n}",
-        "output": "{\n    \"Response\": {\n        \"CertificationAuthority\": \"\",\n        \"ClusterIntranetDomain\": \"cls.domain\",\n        \"ClusterExternalDomain\": \"cls.domain\",\n        \"SecurityGroup\": \"sg-2quou3re\",\n        \"ClusterExternalEndpoint\": \"12.34.56.78\",\n        \"ClusterIntranetEndpoint\": \"10.0.0.1\",\n        \"ClusterDomain\": \"cls-65r1c5nu.ccs.tencent-cloud.com\",\n        \"ClusterExternalACL\": [\n            \"10.0.0.0/24\"\n        ],\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"CertificationAuthority\": \"\",\n        \"ClusterIntranetDomain\": \"cls.domain\",\n        \"ClusterExternalDomain\": \"cls.domain\",\n        \"SecurityGroup\": \"sg-2quou3re\",\n        \"ClusterExternalEndpoint\": \"12.34.56.78\",\n        \"ClusterIntranetEndpoint\": \"10.0.0.1\",\n        \"ClusterDomain\": \"cls-65r1c5nu.ccs.tencent-cloud.com\",\n        \"ClusterExternalACL\": [\n            \"10.0.0.0/24\"\n        ],\n        \"ClusterIntranetSubnetId\": \"subnet-xxxxx\",\n        \"RequestId\": \"33483fde-efec-4d3c-8ff6-340d9dbc2d01\"\n    }\n}",
         "title": "获取集群访问地址"
+      }
+    ],
+    "DescribeClusterExtraArgs": [
+      {
+        "document": "",
+        "input": "https://tke.tencentcloudapi.com/?Action=DescribeClusterExtraArgs\r\n&ClusterId=cls-xxxxxx\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterExtraArgs\": {\n            \"KubeAPIServer\": [\n                \"max-mutating-requests-inflight=500\"\n            ],\n            \"KubeControllerManager\": [\n                \"kube-api-burst=500\"\n            ],\n            \"KubeScheduler\": [\n                \"kube-api-burst=500\"\n            ]\n        },\n        \"RequestId\": \"5a489220-1730-43ee-9a59-7d3a752ac750\"\n    }\n}",
+        "title": "查询集群自定义参数"
       }
     ],
     "DescribeClusterInspectionResultsOverview": [
@@ -932,6 +940,22 @@
         "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalClusterSpec\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-xxx\",\n    \"IsExtranet\": false,\n    \"IsRefreshExpirationTime\": false\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\",\n        \"Spec\": \"xxxx\",\n        \"Expiration\": \"2021-09-08T07:04:51Z\"\n    }\n}",
         "title": "获取导入第三方集群YAML定义"
+      }
+    ],
+    "DescribeExternalNodeSupportConfig": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExternalNodeSupportConfig\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-lm91rql0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4c6c63c7-b23e-4896-bf3b-6bc44dxxxxxx\",\n        \"ClusterCIDR\": \"172.22.0.0/16\",\n        \"NetworkType\": \"CiliumVXLan\",\n        \"SubnetId\": \"subnet-drsvvxxx\",\n        \"Enabled\": true,\n        \"AS\": \"1001\",\n        \"SwitchIP\": \"1.1.1.1\",\n        \"Status\": \"Initializing\",\n        \"Proxy\": \"1.1.1.1\",\n        \"Master\": \"1.1.1.1\",\n        \"Progress\": [\n            {\n                \"EndAt\": \"2021-11-05T12:40:51Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureNodeMasterCommunicate\",\n                \"StartAt\": \"2021-11-05T12:40:45Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:52Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureInClusterAccess\",\n                \"StartAt\": \"2021-11-05T12:40:51Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureExternalNodeProxy\",\n                \"StartAt\": \"2021-11-05T12:40:52Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureBootStrap\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:40:57Z\",\n                \"Message\": \"\",\n                \"Name\": \"EnsureAdmissionController\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"InstallUnderlayCilium\",\n                \"StartAt\": \"2021-11-05T12:40:57Z\",\n                \"Status\": \"success\"\n            },\n            {\n                \"EndAt\": \"2021-11-05T12:41:00Z\",\n                \"Message\": \"\",\n                \"Name\": \"CompleteEnable\",\n                \"StartAt\": \"2021-11-05T12:41:00Z\",\n                \"Status\": \"success\"\n            }\n        ],\n        \"FailedReason\": \"fail\"\n    }\n}",
+        "title": "查看开启第三方节点池配置信息"
+      }
+    ],
+    "DescribeIPAMD": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPAMD\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DisableVpcCniMode\": false,\n        \"EnableCustomizedPodCidr\": false,\n        \"EnableIPAMD\": false,\n        \"Phase\": \"running\",\n        \"Reason\": \"\",\n        \"RequestId\": \"xxxxx\",\n        \"SubnetIds\": null\n    }\n}",
+        "title": "获取eniipamd组件信息"
       }
     ],
     "DescribeImageCaches": [

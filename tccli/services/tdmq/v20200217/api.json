@@ -3221,15 +3221,6 @@
         },
         {
           "disabled": false,
-          "document": "集群的标签列表(已废弃)",
-          "example": "NULL",
-          "member": "Tag",
-          "name": "Tags",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "集群名称，不支持中字以及除了短线和下划线外的特殊字符且不超过64个字符。",
           "example": "default",
           "member": "string",
@@ -3254,6 +3245,15 @@
           "name": "Vpcs",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "集群的标签列表(已废弃)",
+          "example": "NULL",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"

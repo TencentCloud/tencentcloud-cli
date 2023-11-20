@@ -7,14 +7,14 @@ Input:
 ```
 tccli tcss RenewImageAuthorizeState --cli-unfold-argument  \
     --AllImages false \
-    --ImageIds xx
+    --ImageIds aaa
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "aaa"
     }
 }
 ```

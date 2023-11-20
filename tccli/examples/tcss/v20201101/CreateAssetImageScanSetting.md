@@ -7,19 +7,19 @@ Input:
 ```
 tccli tcss CreateAssetImageScanSetting --cli-unfold-argument  \
     --Enable True \
-    --ScanTime 2020-12-28 15:53:26 \
-    --ScanPeriod 3600 \
+    --ScanTime 00:00 \
+    --ScanPeriod 1 \
     --ScanVirus True \
     --ScanRisk True \
     --ScanVul True \
-    --All True
+    --ScanEndTime 02:00
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "af170769-a009-4c51-879a-8fe182ace76e"
+        "RequestId": "e3526ac5-6a37-46c4-8f65-c722973f4f65"
     }
 }
 ```

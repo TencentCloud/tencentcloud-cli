@@ -134,6 +134,22 @@
         "title": "1"
       }
     ],
+    "ImportSourceClusterConsumerGroups": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSourceClusterConsumerGroups\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"GroupList\": [\n        {\n            \"GroupName\": \"Test\",\n            \"Remark\": \"abc\",\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "导入源集群消费组"
+      }
+    ],
+    "ImportSourceClusterTopics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: trocket.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImportSourceClusterTopics\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"TopicList\": [\n        {\n            \"TopicName\": \"Test\",\n            \"TopicType\": \"Normal\",\n            \"QueueNum\": 10,\n            \"Remark\": \"abc\",\n            \"Namespace\": \"\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "导入源集群主题列表"
+      }
+    ],
     "ModifyConsumerGroup": [
       {
         "document": "修改消费组属性",

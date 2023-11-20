@@ -1115,7 +1115,7 @@
           "example": "control-9dk3w8jrv",
           "member": "string",
           "name": "ItemId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1125,7 +1125,7 @@
           "example": "个人信息",
           "member": "string",
           "name": "ItemName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1135,7 +1135,7 @@
           "example": "个人信息需要加密存储",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1145,7 +1145,7 @@
           "example": "system",
           "member": "string",
           "name": "Source",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1155,7 +1155,7 @@
           "example": "auto",
           "member": "string",
           "name": "ItemType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1165,7 +1165,7 @@
           "example": "AKSK",
           "member": "string",
           "name": "ItemSubType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1175,7 +1175,7 @@
           "example": "2022-04-14 18:54:57",
           "member": "string",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1185,17 +1185,17 @@
           "example": "enable",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "评估项关联的模版数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "评估项关联的模板数量\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "TemplateCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1227,7 +1227,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版Id",
+          "document": "评估模板Id",
           "example": "template-9gkskr3g",
           "member": "string",
           "name": "TemplateId",
@@ -1237,7 +1237,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版名称",
+          "document": "评估模板名称",
           "example": "个人信息保护法",
           "member": "string",
           "name": "TemplateName",
@@ -1468,7 +1468,7 @@
         },
         {
           "disabled": false,
-          "document": "关联模版个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联模板个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2",
           "member": "int64",
           "name": "ReferTemplateCount",
@@ -1501,7 +1501,7 @@
         },
         {
           "disabled": false,
-          "document": "关联模版列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关联模板列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "TemplateInfo",
           "name": "ReferTemplateList",
@@ -1584,7 +1584,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版Id",
+          "document": "评估模板Id",
           "example": "template-9rm28d4",
           "member": "string",
           "name": "TemplateId",
@@ -1595,7 +1595,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版名称",
+          "document": "评估模板名称",
           "example": "个人信息保护法",
           "member": "string",
           "name": "TemplateName",
@@ -1606,7 +1606,7 @@
         },
         {
           "disabled": false,
-          "document": "分类分级模版Id",
+          "document": "分类分级模板Id",
           "example": "1",
           "member": "int64",
           "name": "ComplianceGroupId",
@@ -1617,7 +1617,7 @@
         },
         {
           "disabled": false,
-          "document": "分类分级模版名称",
+          "document": "分类分级模板名称",
           "example": "个人信息保护法",
           "member": "string",
           "name": "ComplianceGroupName",
@@ -1716,7 +1716,7 @@
         },
         {
           "disabled": false,
-          "document": "模版主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板主键id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TemplateUid",
@@ -1754,7 +1754,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版Id",
+          "document": "评估模板Id",
           "example": "template-f04ng1ds",
           "member": "string",
           "name": "TemplateId",
@@ -1764,7 +1764,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版名称",
+          "document": "评估模板名称",
           "example": "数据安全自动化评估",
           "member": "string",
           "name": "TemplateName",
@@ -1784,7 +1784,7 @@
         },
         {
           "disabled": false,
-          "document": "模版来源，内置/用户自定，取值（system，user）",
+          "document": "模板来源，内置/用户自定，取值（system，user）",
           "example": "system",
           "member": "string",
           "name": "Source",
@@ -1794,7 +1794,7 @@
         },
         {
           "disabled": false,
-          "document": "模版类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等",
+          "document": "模板类型，自动化/半自动化/问卷，取值（auto，semi-auto，law）等",
           "example": "auto",
           "member": "string",
           "name": "UseType",
@@ -1804,7 +1804,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版创建时间",
+          "document": "评估模板创建时间",
           "example": "2022-04-20 15:59:42",
           "member": "string",
           "name": "CreatedTime",
@@ -1814,7 +1814,7 @@
         },
         {
           "disabled": false,
-          "document": "模版关联的评估项数量",
+          "document": "模板关联的评估项数量",
           "example": "2",
           "member": "int64",
           "name": "ControlItemCount",
@@ -1824,7 +1824,7 @@
         },
         {
           "disabled": false,
-          "document": "模版已启用的评估项数量",
+          "document": "模板已启用的评估项数量",
           "example": "1",
           "member": "int64",
           "name": "AppliedItemCount",
@@ -1834,7 +1834,7 @@
         },
         {
           "disabled": false,
-          "document": "模版启用状态，草稿/已启用，取值draft / launched",
+          "document": "模板启用状态，草稿/已启用，取值draft / launched",
           "example": "draft",
           "member": "string",
           "name": "Status",
@@ -12819,7 +12819,7 @@
         },
         {
           "disabled": false,
-          "document": "COS配额单位，比如TB。",
+          "document": "COS配额单位，例如:TB。",
           "example": "无",
           "member": "string",
           "name": "CosQuotaUnit",
@@ -16323,20 +16323,22 @@
       "members": [
         {
           "disabled": false,
-          "document": "通用key，比如分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通用key，例如分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "key",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "通用value，比如分类个数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "通用value，例如分类个数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Value",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16865,6 +16867,7 @@
           "member": "string",
           "name": "RiskLevel",
           "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16875,6 +16878,7 @@
           "member": "int64",
           "name": "Count",
           "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16885,11 +16889,12 @@
           "member": "string",
           "name": "RiskLevelName",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RiskDealedTrendItem": {
       "document": "风险趋势项",
@@ -17254,7 +17259,7 @@
           "example": "1",
           "member": "int64",
           "name": "Id",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -17264,7 +17269,7 @@
           "example": "内置分级",
           "member": "string",
           "name": "RiskLevelName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17274,17 +17279,17 @@
           "example": "xx-描述",
           "member": "string",
           "name": "RiskLevelDescription",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "引用的分类分级模版\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "分类分级模版",
+          "document": "引用的分类分级模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分类分级模板",
           "member": "string",
           "name": "IdentifyComplianceName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -17294,7 +17299,7 @@
           "example": "system",
           "member": "string",
           "name": "Type",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -17880,26 +17885,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "TemplateId",
           "output_required": false,
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "风险模版",
           "member": "string",
           "name": "TemplateName",
           "output_required": false,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "TopAsset": {
       "document": "数据资产报告-涉敏top的资产",
