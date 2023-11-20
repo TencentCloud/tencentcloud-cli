@@ -23,6 +23,7 @@ Output:
         "ClusterExternalACL": [
             "10.0.0.0/24"
         ],
+        "ClusterIntranetSubnetId": "subnet-xxxxx",
         "RequestId": "33483fde-efec-4d3c-8ff6-340d9dbc2d01"
     }
 }

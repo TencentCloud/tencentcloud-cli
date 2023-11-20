@@ -8,7 +8,7 @@ Input:
 tccli cvm ResetInstancesPassword --cli-unfold-argument  \
     --InstanceIds ins-r8hr2upy ins-5d8a23rs \
     --Password abc123ABC!@# \
-    --ForceStop TRUE
+    --ForceStop true
 ```
 
 Output: 

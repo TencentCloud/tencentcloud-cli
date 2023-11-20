@@ -13,67 +13,65 @@ Output:
     "Response": {
         "RegionSet": [
             {
-                "DbType": "xx",
-                "Region": "xx",
-                "RegionId": 1,
+                "DbType": "MYSQL",
+                "Region": "ap-guangzhou",
+                "RegionId": 100001,
                 "Modules": [
                     {
-                        "ModuleName": "xx",
-                        "IsDisable": "xx"
+                        "ModuleName": "is.disable.wan",
+                        "IsDisable": "yes"
                     }
                 ],
-                "RegionZh": "xx",
+                "RegionZh": "广州",
                 "ZoneSet": [
                     {
-                        "PhysicalZone": "xx",
-                        "Zone": "xx",
+                        "PhysicalZone": "ap-guangzhou-2",
+                        "Zone": "ap-guangzhou-2",
                         "IsSupportServerless": 0,
                         "ZoneId": 100003,
                         "IsSupportNormal": 0,
-                        "ZoneZh": "xx"
+                        "ZoneZh": "广州二区",
+                        "HasPermission": true,
+                        "IsWholeRdmaZone": "abc"
                     },
                     {
-                        "PhysicalZone": "xx",
-                        "Zone": "xx",
-                        "IsSupportServerless": 0,
-                        "ZoneId": 100003,
-                        "IsSupportNormal": 0,
-                        "ZoneZh": "xx"
-                    },
-                    {
-                        "PhysicalZone": "xx",
-                        "Zone": "xx",
+                        "PhysicalZone": "ao-guangzhou-5",
+                        "Zone": "ap-guangzhou-5",
                         "IsSupportServerless": 0,
                         "ZoneId": 100004,
                         "IsSupportNormal": 0,
-                        "ZoneZh": "xx"
+                        "ZoneZh": "广州五区",
+                        "HasPermission": true,
+                        "IsWholeRdmaZone": "abc"
                     }
                 ]
             },
             {
-                "DbType": "xx",
-                "Region": "xx",
+                "DbType": "MYSQL",
+                "Region": "ap-beijing",
                 "RegionId": 8,
                 "Modules": [
                     {
-                        "ModuleName": "xx",
-                        "IsDisable": "xx"
+                        "ModuleName": "is.disable.wan",
+                        "IsDisable": "no"
                     }
                 ],
-                "RegionZh": "xx",
+                "RegionZh": "北京",
                 "ZoneSet": [
                     {
-                        "PhysicalZone": "xx",
-                        "Zone": "xx",
+                        "PhysicalZone": "ap-beijing-5",
+                        "Zone": "ap-beijing-5",
                         "IsSupportServerless": 0,
                         "ZoneId": 800001,
                         "IsSupportNormal": 0,
-                        "ZoneZh": "xx"
+                        "ZoneZh": "北京五区",
+                        "HasPermission": true,
+                        "IsWholeRdmaZone": "abc"
                     }
                 ]
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1qwert-123-asbc"
     }
 }
 ```

@@ -1,6 +1,6 @@
 **Example 1: 查询集群参数**
 
-
+查询集群参数
 
 Input: 
 
@@ -13,39 +13,29 @@ Output:
 ```
 {
     "Response": {
+        "TotalCount": 0,
         "Items": [
             {
-                "MatchValue": "",
-                "CurrentValue": "4096",
-                "Min": "1024",
-                "Default": "4096",
-                "Description": "xx",
-                "Max": "65536",
-                "ParamType": "integer",
-                "EnumValue": null,
-                "ParamName": "work_mem",
-                "MatchType": "",
-                "NeedReboot": 0
-            },
-            {
-                "MatchValue": "",
-                "CurrentValue": "base64",
-                "Min": "",
-                "Default": "base64",
-                "Description": "xx",
-                "Max": "",
-                "ParamType": "enum",
+                "CurrentValue": "abc",
+                "Default": "abc",
                 "EnumValue": [
-                    "base64",
-                    "hex"
+                    "abc"
                 ],
-                "ParamName": "xmlbinary",
-                "MatchType": "",
-                "NeedReboot": 0
+                "Max": "abc",
+                "Min": "abc",
+                "ParamName": "abc",
+                "NeedReboot": 0,
+                "ParamType": "abc",
+                "MatchType": "abc",
+                "MatchValue": "abc",
+                "Description": "abc",
+                "IsGlobal": 0,
+                "ModifiableInfo": {},
+                "IsFunc": true,
+                "Func": "abc"
             }
         ],
-        "RequestId": "117812",
-        "TotalCount": 2
+        "RequestId": "abc"
     }
 }
 ```

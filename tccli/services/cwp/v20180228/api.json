@@ -27758,6 +27758,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineIp",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27767,6 +27768,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ProtectDays",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -27776,6 +27778,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineOs",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27785,6 +27788,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27794,6 +27798,7 @@
           "example": "OFFLINE",
           "member": "string",
           "name": "MachineStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27803,6 +27808,7 @@
           "example": "CVM",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27812,6 +27818,7 @@
           "example": "xxx",
           "member": "string",
           "name": "MachineWanIp",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27821,6 +27828,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Quuid",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27830,6 +27838,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Uuid",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27839,6 +27848,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsProVersion",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -27848,6 +27858,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ProVersionOpenDate",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27857,6 +27868,7 @@
           "example": "CVM",
           "member": "string",
           "name": "MachineType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27866,6 +27878,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "MachineRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27875,6 +27888,7 @@
           "example": "PREPAY",
           "member": "string",
           "name": "PayMode",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27884,6 +27898,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeMalwaresLeft",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -27893,6 +27908,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeVulsLeft",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -27902,6 +27918,7 @@
           "example": "xxx",
           "member": "string",
           "name": "AgentVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27911,6 +27928,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ProVersionDeadline",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27920,6 +27938,7 @@
           "example": "1",
           "member": "uint64",
           "name": "HasAssetScan",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -27929,6 +27948,7 @@
           "example": "BASIC_VERSION",
           "member": "string",
           "name": "ProtectType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

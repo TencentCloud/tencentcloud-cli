@@ -4026,7 +4026,7 @@
         {
           "disabled": false,
           "document": "区域，列表：default（默认）",
-          "example": "https",
+          "example": "default",
           "member": "string",
           "name": "RegistryRegion",
           "required": false,
@@ -4058,6 +4058,15 @@
           "name": "ConnDetectConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "”授权&扫描\"开关",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedScan",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -4329,6 +4338,24 @@
           "example": "无",
           "member": "string",
           "name": "ExcludeHostIdSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自动扫描开关",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoScanEnabled",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "自动扫描范围",
+          "example": "无",
+          "member": "string",
+          "name": "ScanType",
           "required": false,
           "type": "list"
         }
@@ -8907,7 +8934,7 @@
         },
         {
           "disabled": false,
-          "document": "扫描时间",
+          "document": "扫描开始时间\n01:00 时分",
           "example": "无",
           "member": "string",
           "name": "ScanTime",
@@ -8951,12 +8978,12 @@
           "type": "bool"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
-          "required": true,
+          "required": false,
           "type": "bool"
         },
         {
@@ -8967,6 +8994,33 @@
           "name": "Images",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否存在运行中的容器",
+          "example": "无",
+          "member": "bool",
+          "name": "ContainerRunning",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扫描结束时间\n02:00 时分",
+          "example": "无",
+          "member": "string",
+          "name": "ScanEndTime",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8987,7 +9041,7 @@
       "document": "CreateAssetImageScanTask请求参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "是否扫描全部镜像；全部镜像，镜像列表和根据过滤条件筛选三选一。",
           "example": "无",
           "member": "bool",
@@ -9048,6 +9102,33 @@
           "name": "ExcludeImageIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否存在运行中的容器",
+          "example": "无",
+          "member": "bool",
+          "name": "ContainerRunning",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanScope",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "任务超时时长单位秒，默认1小时",
+          "example": "无",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -9061,7 +9142,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14592,7 +14673,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14602,7 +14683,17 @@
           "example": "无",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像摘要",
+          "example": "无",
+          "member": "string",
+          "name": "ImageDigest",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14612,7 +14703,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14622,7 +14713,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14632,7 +14723,7 @@
           "example": "无",
           "member": "uint64",
           "name": "HostCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14642,7 +14733,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14652,7 +14743,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14662,7 +14753,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VulCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14672,7 +14763,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RiskCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14682,7 +14773,7 @@
           "example": "无",
           "member": "uint64",
           "name": "SensitiveInfoCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14692,7 +14783,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsTrustImage",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -14702,7 +14793,7 @@
           "example": "无",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14712,7 +14803,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14722,7 +14813,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14732,7 +14823,7 @@
           "example": "无",
           "member": "string",
           "name": "Architecture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14742,7 +14833,7 @@
           "example": "无",
           "member": "string",
           "name": "Author",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14752,7 +14843,7 @@
           "example": "无",
           "member": "string",
           "name": "BuildHistory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14762,7 +14853,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanVirusProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14772,7 +14863,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanVulProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14782,7 +14873,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanRiskProgress",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14792,7 +14883,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanVirusError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14802,7 +14893,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanVulError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14812,7 +14903,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanRiskError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14822,7 +14913,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14832,7 +14923,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VirusCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14842,7 +14933,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14852,7 +14943,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RemainScanTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -14862,7 +14953,7 @@
           "example": "无",
           "member": "int64",
           "name": "IsAuthorized",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16691,7 +16782,7 @@
           "example": "无",
           "member": "bool",
           "name": "Enable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16701,7 +16792,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16711,7 +16802,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ScanPeriod",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16721,7 +16812,7 @@
           "example": "无",
           "member": "bool",
           "name": "ScanVirus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16731,7 +16822,7 @@
           "example": "无",
           "member": "bool",
           "name": "ScanRisk",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16741,17 +16832,17 @@
           "example": "无",
           "member": "bool",
           "name": "ScanVul",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "扫描全部镜像",
           "example": "无",
           "member": "bool",
           "name": "All",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -16761,8 +16852,38 @@
           "example": "无",
           "member": "string",
           "name": "Images",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "镜像是否存在运行中的容器",
+          "example": "无",
+          "member": "bool",
+          "name": "ContainerRunning",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描范围 0 全部授权镜像，1自选镜像，2 推荐扫描",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScanScope",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "扫描结束时间 02:00 时分",
+          "example": "无",
+          "member": "string",
+          "name": "ScanEndTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -17453,6 +17574,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AppCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17462,6 +17584,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17471,6 +17594,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerPause",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17480,6 +17604,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerRunning",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17489,6 +17614,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerStop",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17498,6 +17624,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17507,6 +17634,7 @@
           "example": "无",
           "member": "uint64",
           "name": "DbCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17516,6 +17644,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17525,6 +17654,7 @@
           "example": "无",
           "member": "uint64",
           "name": "HostOnline",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17534,6 +17664,7 @@
           "example": "无",
           "member": "uint64",
           "name": "HostCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17543,6 +17674,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageHasRiskInfoCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17552,6 +17684,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageHasVirusCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17561,6 +17694,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageHasVulsCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17570,6 +17704,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageUntrustCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17579,6 +17714,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ListenPortCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17588,6 +17724,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ProcessCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17597,6 +17734,7 @@
           "example": "无",
           "member": "uint64",
           "name": "WebServiceCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17606,6 +17744,7 @@
           "example": "无",
           "member": "string",
           "name": "LatestImageScanTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17615,6 +17754,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ImageUnsafeCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17624,6 +17764,7 @@
           "example": "无",
           "member": "uint64",
           "name": "HostUnInstallCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17633,6 +17774,7 @@
           "example": "1",
           "member": "uint64",
           "name": "SuperNodeCnt",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -17642,6 +17784,47 @@
           "example": "1",
           "member": "uint64",
           "name": "SuperNodeRunningCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "今日新增镜像个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TodayNewImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "今日新增风险镜像个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TodayUnsafeImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "推荐处置镜像个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "RecommendedFixImageCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已扫描镜像个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ScannedImageCnt",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20389,7 +20572,7 @@
           "example": "1",
           "member": "int64",
           "name": "IsEnabled",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20399,7 +20582,7 @@
           "example": "无",
           "member": "string",
           "name": "RangeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20409,7 +20592,7 @@
           "example": "无",
           "member": "int64",
           "name": "HostCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20419,7 +20602,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxDailyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -20429,9 +20612,29 @@
           "example": "无",
           "member": "int64",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动扫描开关，0：关闭，1：开启",
+          "example": "无",
+          "member": "int64",
+          "name": "AutoScanEnabled",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动扫描范围",
+          "example": "无",
+          "member": "string",
+          "name": "ScanType",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -31344,6 +31547,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否推荐处置",
+          "example": "false",
+          "member": "bool",
+          "name": "RecommendedFix",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -32006,6 +32219,42 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像层信息列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageVulLayerInfo",
+          "name": "LayerInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ImageVulLayerInfo": {
+      "document": "漏洞列表中的层信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "层id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LayerId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "层cmd\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LayerCmd",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -32095,7 +32344,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32105,7 +32354,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32115,7 +32364,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32125,7 +32374,7 @@
           "example": "无",
           "member": "uint64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32135,7 +32384,7 @@
           "example": "无",
           "member": "uint64",
           "name": "HostCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32145,7 +32394,7 @@
           "example": "无",
           "member": "uint64",
           "name": "ContainerCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32155,7 +32404,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32165,7 +32414,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VulCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32175,7 +32424,7 @@
           "example": "无",
           "member": "uint64",
           "name": "VirusCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32185,7 +32434,7 @@
           "example": "无",
           "member": "uint64",
           "name": "RiskCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32195,7 +32444,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsTrustImage",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -32205,7 +32454,7 @@
           "example": "无",
           "member": "string",
           "name": "OsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32215,7 +32464,7 @@
           "example": "无",
           "member": "string",
           "name": "AgentError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32225,7 +32474,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32235,7 +32484,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32245,7 +32494,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanVirusError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32255,7 +32504,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanVulError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32265,7 +32514,7 @@
           "example": "无",
           "member": "string",
           "name": "ScanRiskError",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32275,7 +32524,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsSuggest",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32285,7 +32534,7 @@
           "example": "0",
           "member": "uint64",
           "name": "IsAuthorized",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32295,8 +32544,68 @@
           "example": "无",
           "member": "uint64",
           "name": "ComponentCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "严重漏洞数",
+          "example": "1",
+          "member": "uint64",
+          "name": "CriticalLevelVulCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高危漏洞数",
+          "example": "1",
+          "member": "uint64",
+          "name": "HighLevelVulCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中危漏洞数",
+          "example": "1",
+          "member": "uint64",
+          "name": "MediumLevelVulCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "低危漏洞数",
+          "example": "1",
+          "member": "uint64",
+          "name": "LowLevelVulCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否最新版本镜像",
+          "example": "true",
+          "member": "bool",
+          "name": "IsLatestImage",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否推荐处置",
+          "example": "false",
+          "member": "bool",
+          "name": "RecommendedFix",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": false
         }
       ],
@@ -32311,7 +32620,7 @@
           "example": "\"CVE-2020-14155\"",
           "member": "string",
           "name": "CVEID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32321,7 +32630,7 @@
           "example": "\"PCRE 输入验证错误漏洞\"",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32331,7 +32640,7 @@
           "example": "\"pcre3\"",
           "member": "string",
           "name": "Component",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32341,7 +32650,7 @@
           "example": "\"2:8.39-12build1\"",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32351,7 +32660,7 @@
           "example": "\"输入验证错误\"",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32361,7 +32670,7 @@
           "example": "\"web应用漏洞\"",
           "member": "string",
           "name": "CategoryType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32371,7 +32680,7 @@
           "example": "2",
           "member": "uint64",
           "name": "Level",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -32381,7 +32690,7 @@
           "example": "\"PCRE是PhilipHazel软件开发者的一款使用C语言编写的开源正则表达式函数库。PCRE8.44之前版本中的libpcr",
           "member": "string",
           "name": "Des",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32391,7 +32700,7 @@
           "example": "\"升级到最新无漏洞版本\"",
           "member": "string",
           "name": "OfficialSolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32401,7 +32710,7 @@
           "example": "\"[\\\"http://seclists.org/fulldisclosure/2020/Dec/32\\\", \\\"https://",
           "member": "string",
           "name": "Reference",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32411,7 +32720,7 @@
           "example": "\"目前厂商已发布升级补丁以修复漏洞，补丁获取链接：https://www.suse.com/support/update/ann",
           "member": "string",
           "name": "DefenseSolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32421,7 +32730,7 @@
           "example": "\"2021-02-17T01:15:00+08:00\"",
           "member": "string",
           "name": "SubmitTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32431,7 +32740,7 @@
           "example": "7.5",
           "member": "float",
           "name": "CVSSV3Score",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -32441,7 +32750,7 @@
           "example": "\"CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H\"",
           "member": "string",
           "name": "CVSSV3Desc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -32451,7 +32760,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsSuggest",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -32461,7 +32770,7 @@
           "example": "无",
           "member": "string",
           "name": "FixedVersions",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -32471,8 +32780,18 @@
           "example": "[\"CanBeFixed\",\"DynamicLevelPoc\",\"DynamicLevelExp\"]",
           "member": "string",
           "name": "Tag",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击热度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AttackLevel",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -36439,6 +36758,24 @@
           "name": "ImageIds",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否授权后自动扫描",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedScan",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "扫描类型",
+          "example": "[\"CVE\",\"VIRUS\",\"RISK\"]",
+          "member": "string",
+          "name": "ScanType",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -39381,7 +39718,26 @@
     },
     "SyncAssetImageRegistryAssetRequest": {
       "document": "SyncAssetImageRegistryAsset请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否同步所有镜像仓库",
+          "example": "true",
+          "member": "bool",
+          "name": "All",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "需要同步的部分镜像仓库",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "RegistryIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "SyncAssetImageRegistryAssetResponse": {

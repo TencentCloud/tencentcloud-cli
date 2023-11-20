@@ -1,19 +1,19 @@
 **Example 1: 创建数据库**
 
-
+创建数据库
 
 Input: 
 
 ```
 tccli cynosdb CreateClusterDatabase --cli-unfold-argument  \
-    --UserHostPrivileges.0.DbUserName root \
-    --UserHostPrivileges.0.DbHost % \
-    --UserHostPrivileges.0.DbPrivilege xx \
-    --CollateRule utf8_general_ci \
-    --DbName test \
-    --Description test-beizhu \
-    --CharacterSet utf8 \
-    --ClusterId cynosdbmysql-xxxxxx
+    --ClusterId abc \
+    --DbName abc \
+    --CharacterSet abc \
+    --CollateRule abc \
+    --UserHostPrivileges.0.DbUserName abc \
+    --UserHostPrivileges.0.DbHost abc \
+    --UserHostPrivileges.0.DbPrivilege abc \
+    --Description abc
 ```
 
 Output: 
