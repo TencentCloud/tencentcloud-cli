@@ -32,6 +32,14 @@
         "title": "创建集群"
       }
     ],
+    "CreateClusterInternalAccessPoint": [
+      {
+        "document": "专业集群开启支撑接入点",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateClusterInternalAccessPoint\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"RequestToken\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "专业集群开启支撑接入点"
+      }
+    ],
     "CreateCmqQueue": [
       {
         "document": "创建队列",
@@ -86,8 +94,8 @@
     ],
     "CreateProCluster": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProCluster\n<公共请求参数>\n\n{\n    \"ZoneIds\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"StorageSize\": 0,\n    \"AutoRenewFlag\": 0,\n    \"TimeSpan\": 0,\n    \"Vpcs\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"ClusterName\": \"abc\",\n    \"AutoVoucher\": 0\n}",
+        "document": "创建专业集群 -- 仅通过api调用",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProCluster\n<公共请求参数>\n\n{\n    \"ZoneIds\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"StorageSize\": 0,\n    \"AutoRenewFlag\": 0,\n    \"TimeSpan\": 0,\n    \"Vpc\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"ClusterName\": \"abc\",\n    \"AutoVoucher\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"abc\",\n        \"BigDealId\": \"abc\",\n        \"ClusterId\": \"abc\",\n        \"ClusterName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建专业集群"
       }
@@ -378,14 +386,6 @@
         "input": "https://tdmq.tencentcloudapi.com/?Action=DescribeCmqDeadLetterSourceQueues\n&DeadLetterQueueName=test123\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"QueueSet\": [\n            {\n                \"QueueName\": \"test\",\n                \"QueueId\": \"queue-kc7m75to\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"83fce81a-7305-49b4-a154-983dd76204da\"\n    }\n}",
         "title": "枚举死信队列源队列"
-      }
-    ],
-    "DescribeCmqExclusiveInstances": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCmqExclusiveInstances\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"845c0ef7-60bb-46ed-8251-69e8525d07c7\",\n        \"TotalCount\": 2,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"instance-944b80eb\",\n                \"InstanceName\": \"test1\",\n                \"InstanceDescription\": \"cmq\",\n                \"InstanceState\": \"Creating\",\n                \"InstanceType\": \"basic\",\n                \"CreatedTime\": \"0001-01-01T00:00:00Z\",\n                \"VpcConfig\": [\n                    {\n                        \"SubnetId\": \"vpc-cxxx\",\n                        \"VpcId\": \"subnet-xasas\"\n                    }\n                ]\n            },\n            {\n                \"InstanceId\": \"instance-b8787f12\",\n                \"InstanceName\": \"assssaqw\",\n                \"InstanceDescription\": \"asdsasadsa\",\n                \"InstanceState\": \"Creating\",\n                \"InstanceType\": \"basic\",\n                \"CreatedTime\": \"0001-01-01T00:00:00Z\",\n                \"VpcConfig\": [\n                    {\n                        \"SubnetId\": \"vpc-cxxx\",\n                        \"VpcId\": \"subnet-xasas\"\n                    }\n                ]\n            }\n        ]\n    }\n}",
-        "title": "查询列表"
       }
     ],
     "DescribeCmqQueueDetail": [

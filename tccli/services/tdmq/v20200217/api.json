@@ -28,6 +28,13 @@
       "output": "CreateClusterResponse",
       "status": "online"
     },
+    "CreateClusterInternalAccessPoint": {
+      "document": "开启集群支撑接入点",
+      "input": "CreateClusterInternalAccessPointRequest",
+      "name": "开启集群支撑接入点",
+      "output": "CreateClusterInternalAccessPointResponse",
+      "status": "online"
+    },
     "CreateCmqQueue": {
       "document": "创建cmq队列接口",
       "input": "CreateCmqQueueRequest",
@@ -320,13 +327,6 @@
       "input": "DescribeCmqDeadLetterSourceQueuesRequest",
       "name": "枚举cmq死信队列源队列",
       "output": "DescribeCmqDeadLetterSourceQueuesResponse",
-      "status": "online"
-    },
-    "DescribeCmqExclusiveInstances": {
-      "document": "查询专享实例列表",
-      "input": "DescribeCmqExclusiveInstancesRequest",
-      "name": "查询专享实例列表",
-      "output": "DescribeCmqExclusiveInstancesResponse",
       "status": "online"
     },
     "DescribeCmqQueueDetail": {
@@ -1263,7 +1263,7 @@
           "example": "1000",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1273,7 +1273,7 @@
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1283,7 +1283,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1293,7 +1293,7 @@
           "example": "0",
           "member": "int64",
           "name": "EndPointNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1303,7 +1303,7 @@
           "example": "2021-04-21 19:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1313,7 +1313,7 @@
           "example": "1",
           "member": "int64",
           "name": "Healthy",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1323,7 +1323,7 @@
           "example": "test",
           "member": "string",
           "name": "HealthyInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1333,7 +1333,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1343,7 +1343,7 @@
           "example": "100",
           "member": "int64",
           "name": "MaxNamespaceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1353,7 +1353,7 @@
           "example": "8000",
           "member": "int64",
           "name": "MaxTopicNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1363,7 +1363,7 @@
           "example": "1000",
           "member": "int64",
           "name": "MaxQps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1373,7 +1373,7 @@
           "example": "100000000",
           "member": "int64",
           "name": "MessageRetentionTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1383,7 +1383,7 @@
           "example": "1024",
           "member": "int64",
           "name": "MaxStorageCapacity",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1393,7 +1393,7 @@
           "example": "2.5.1",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1403,7 +1403,7 @@
           "example": "test",
           "member": "string",
           "name": "PublicEndPoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1413,7 +1413,7 @@
           "example": "test",
           "member": "string",
           "name": "VpcEndPoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1423,7 +1423,7 @@
           "example": "2",
           "member": "int64",
           "name": "NamespaceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1433,7 +1433,7 @@
           "example": "0",
           "member": "int64",
           "name": "UsedStorageBudget",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1443,7 +1443,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxPublishRateInMessages",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1453,7 +1453,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDispatchRateInMessages",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1463,7 +1463,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxPublishRateInBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1473,7 +1473,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDispatchRateInBytes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1483,7 +1483,7 @@
           "example": "1",
           "member": "int64",
           "name": "TopicNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1493,7 +1493,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxMessageDelayInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1503,7 +1503,7 @@
           "example": "true",
           "member": "bool",
           "name": "PublicAccessEnabled",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1513,8 +1513,28 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支撑网 Pulsar 接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pulsar://tdmq.ap-gz.tencentyun.com:6650",
+          "member": "string",
+          "name": "InternalPulsarEndPoint",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支撑网 HTTP 接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://tdmq.ap-gz.tencentyun.com:8080",
+          "member": "string",
+          "name": "InternalHttpEndPoint",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -1523,8 +1543,28 @@
           "example": "0",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ProjectId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -2635,6 +2675,42 @@
       ],
       "usage": "out"
     },
+    "CreateClusterInternalAccessPointRequest": {
+      "document": "CreateClusterInternalAccessPoint请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id（目前只支持专业集群）",
+          "example": "pulsar-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求token",
+          "example": "asdsaj-1221m-adasda",
+          "member": "string",
+          "name": "RequestToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateClusterInternalAccessPointResponse": {
+      "document": "CreateClusterInternalAccessPoint返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterRequest": {
       "document": "CreateCluster请求参数结构体",
       "members": [
@@ -3326,7 +3402,7 @@
           "document": "vpc网络标签",
           "example": "NULL",
           "member": "VpcInfo",
-          "name": "Vpcs",
+          "name": "Vpc",
           "required": false,
           "type": "object"
         },
@@ -3351,7 +3427,7 @@
           "example": "20231020394041338776131",
           "member": "string",
           "name": "DealName",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3361,7 +3437,7 @@
           "example": "20231020394041338776121",
           "member": "string",
           "name": "BigDealId",
-          "output_required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5591,71 +5667,6 @@
           "example": "无",
           "member": "CmqDeadLetterSource",
           "name": "QueueSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCmqExclusiveInstancesRequest": {
-      "document": "DescribeCmqExclusiveInstances请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "分页查询，limit",
-          "example": "100",
-          "member": "uint64",
-          "name": "Limit",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "分页查询，offset",
-          "example": "0",
-          "member": "uint64",
-          "name": "Offset",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "专享实例过滤，支持实例id 实例名称",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCmqExclusiveInstancesResponse": {
-      "document": "DescribeCmqExclusiveInstances返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "专享实例总数",
-          "example": "1",
-          "member": "uint64",
-          "name": "TotalCount",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例列表信息",
-          "example": "无",
-          "member": "InstanceListInfo",
-          "name": "InstanceSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -10360,82 +10371,6 @@
         }
       ],
       "type": "object"
-    },
-    "InstanceListInfo": {
-      "document": "专享实例列表",
-      "members": [
-        {
-          "disabled": false,
-          "document": "专享实例id",
-          "example": "InstanceId-uansitah",
-          "member": "string",
-          "name": "InstanceId",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例name",
-          "example": "test",
-          "member": "string",
-          "name": "InstanceName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例描述",
-          "example": "test",
-          "member": "string",
-          "name": "InstanceDescription",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例规格",
-          "example": "basic",
-          "member": "string",
-          "name": "InstanceType",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例状态，枚举如下\n\"Creating\"  // 创建中\n\"CreateFailed\" // 创建失败 \n\"Running\" // 运行中\n\"Deleting\" // 销毁中\n\"Deleted\" // 销毁完成\n\"DeletFailed\" // 销毁失败",
-          "example": "RUNNING",
-          "member": "string",
-          "name": "InstanceState",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享实例创建时间",
-          "example": "\"2018-10-30T04:24:19Z\"",
-          "member": "datetime_iso",
-          "name": "CreatedTime",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "专享集群vpc属性",
-          "example": "[{\"VpcId\":\"vpc-12345\",\"SubnetId\":\"subnet-12345\"}]",
-          "member": "VpcConfig",
-          "name": "VpcConfig",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "out"
     },
     "InstanceNodeDistribution": {
       "document": "实例节点分布信息",

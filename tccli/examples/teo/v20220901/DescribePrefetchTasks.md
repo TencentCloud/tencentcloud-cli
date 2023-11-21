@@ -1,11 +1,12 @@
 **Example 1: 查询预热任务**
 
-
+通过 CreatePrefetchTasks 提交预热任务后，通过该查询接口查询预热任务记录及执行进度。
 
 Input: 
 
 ```
 tccli teo DescribePrefetchTasks --cli-unfold-argument  \
+    --ZoneId zone-z8m9mgx \
     --StartTime 2022-02-09T00:00:00+08:00 \
     --EndTime 2022-02-09T23:59:00+08:00 \
     --Limit 1 \

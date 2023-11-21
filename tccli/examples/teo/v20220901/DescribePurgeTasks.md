@@ -1,11 +1,12 @@
 **Example 1: 查询清除缓存历史记录**
 
-
+通过 CreatePurgeTasks 提交刷新任务后，通过该查询接口 查询刷新任务记录及处理进度。
 
 Input: 
 
 ```
 tccli teo DescribePurgeTasks --cli-unfold-argument  \
+    --ZoneId zone-wz8m9mgx \
     --StartTime 2022-02-09T00:00:00+08:00 \
     --EndTime 2022-02-09T23:59:00+08:00 \
     --Limit 1 \

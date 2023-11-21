@@ -1531,7 +1531,7 @@
         },
         {
           "disabled": false,
-          "document": "账号状态\n0：未冻结\n1：冻结\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "账号状态\n0:正常\n1:强制可用\n2:强制欠费 \n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AccountStatus",
@@ -1541,7 +1541,7 @@
         },
         {
           "disabled": false,
-          "document": "实名状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "实名状态\n-1：文件未上传\n0：未提交审核\n1：审核中\n2：审核出错\n3：审核通过\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "string",
           "name": "AuthStatus",

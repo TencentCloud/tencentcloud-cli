@@ -1,6 +1,6 @@
 **Example 1: 创建专业集群**
 
-
+创建专业集群 -- 仅通过api调用
 
 Input: 
 
@@ -11,8 +11,8 @@ tccli tdmq CreateProCluster --cli-unfold-argument  \
     --StorageSize 0 \
     --AutoRenewFlag 0 \
     --TimeSpan 0 \
-    --Vpcs.VpcId abc \
-    --Vpcs.SubnetId abc \
+    --Vpc.VpcId abc \
+    --Vpc.SubnetId abc \
     --Tags.0.TagKey abc \
     --Tags.0.TagValue abc \
     --ClusterName abc \

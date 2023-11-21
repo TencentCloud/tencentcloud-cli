@@ -46,6 +46,14 @@
         "title": "查询演练列表(含预检状态信息)"
       }
     ],
+    "DescribeTaskPolicyTriggerLog": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTaskPolicyTriggerLog\n<公共请求参数>\n\n{\n    \"TaskId\": 5491,\n    \"Page\": 1,\n    \"PageSize\": 11\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1bba6839-682a-4123-9728-ec3fc141235b\",\n        \"TriggerLogs\": [\n            {\n                \"Content\": \"触发护栏测试内容-恢复i\",\n                \"CreatTime\": \"2023-11-14 12:51:33\",\n                \"Name\": \"触发护栏测试-恢复\",\n                \"TaskId\": 5491,\n                \"TriggerType\": 1\n            },\n            {\n                \"Content\": \"触发护栏测试内容\",\n                \"CreatTime\": \"2023-11-14 12:37:20\",\n                \"Name\": \"触发护栏测试\",\n                \"TaskId\": 5491,\n                \"TriggerType\": 0\n            }\n        ]\n    }\n}",
+        "title": "1"
+      }
+    ],
     "DescribeTemplate": [
       {
         "document": "查询经验",
@@ -96,6 +104,14 @@
         "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyTaskRunStatus\n<公共请求参数>\n\n{\n    \"Status\": \"1002\",\n    \"TaskId\": \"1698\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8e9a0777-ff96-4020-8aec-6802d8103689\"\n    }\n}",
         "title": "示例1"
+      }
+    ],
+    "TriggerPolicy": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: cfg.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerPolicy\n<公共请求参数>\n\n{\n    \"TaskId\": 5491,\n    \"Name\": \"触发护栏测试\",\n    \"Content\": \"触发护栏测试内容\",\n    \"TriggerType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1050e4e3-ef1a-4e2f-b100-c68dfd38fc75\",\n        \"Success\": true,\n        \"TaskId\": 5491\n    }\n}",
+        "title": "1"
       }
     ]
   },

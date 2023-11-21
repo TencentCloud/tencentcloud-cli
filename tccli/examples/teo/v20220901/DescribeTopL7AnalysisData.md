@@ -11,7 +11,8 @@ tccli teo DescribeTopL7AnalysisData --cli-unfold-argument  \
     --Limit 1 \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --EndTime 2022-08-29T19:17:59+08:00 \
-    --MetricName l7Flow_outFlux_url
+    --MetricName l7Flow_outFlux_url \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -54,7 +55,8 @@ tccli teo DescribeTopL7AnalysisData --cli-unfold-argument  \
     --Filters.0.Value test1 \
     --Filters.1.Key tagValue \
     --Filters.1.Operator equals \
-    --Filters.1.Value a.com b.com
+    --Filters.1.Value a.com b.com \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -94,7 +96,8 @@ tccli teo DescribeTopL7AnalysisData --cli-unfold-argument  \
     --MetricName l7Flow_outFlux_url \
     --Filters.0.Key protocol \
     --Filters.0.Operator equals \
-    --Filters.0.Value HTTP/1.0 HTTP/1.1
+    --Filters.0.Value HTTP/1.0 HTTP/1.1 \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 

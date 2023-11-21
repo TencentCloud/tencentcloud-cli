@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tke DescribeIPAMD --cli-unfold-argument  \
-    --ClusterId xx
+    --ClusterId cls-8k33qz0w
 ```
 
 Output: 
@@ -18,8 +18,11 @@ Output:
         "EnableIPAMD": false,
         "Phase": "running",
         "Reason": "",
-        "RequestId": "xxxxx",
-        "SubnetIds": null
+        "RequestId": "c692a3b6-11cd-4a9d-8e36-409545d332a2",
+        "SubnetIds": [
+            "subnet-imgoatdg"
+        ],
+        "ClaimExpiredDuration": "300s"
     }
 }
 ```

@@ -1,3 +1,191 @@
+# Release 3.0.890.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 81 次发布
+
+发布时间：2023-11-22 01:20:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseAuditService](http://document.tencentcloudapi.woa.com/document/product/236/82706)
+* [CreateAuditRuleTemplate](http://document.tencentcloudapi.woa.com/document/product/236/82705)
+* [DeleteAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/236/82704)
+* [DeleteDatabase](http://document.tencentcloudapi.woa.com/document/product/236/82698)
+* [DescribeAuditInstanceList](http://document.tencentcloudapi.woa.com/document/product/236/82703)
+* [DescribeAuditRuleTemplateModifyHistory](http://document.tencentcloudapi.woa.com/document/product/236/82702)
+* [DescribeAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/236/82701)
+* [ModifyAuditRuleTemplates](http://document.tencentcloudapi.woa.com/document/product/236/82700)
+* [ModifyAuditService](http://document.tencentcloudapi.woa.com/document/product/236/82699)
+
+新增数据结构：
+
+* [AuditInstanceFilters](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditInstanceFilters)
+* [AuditInstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditInstanceInfo)
+* [AuditRuleTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#AuditRuleTemplateInfo)
+* [InstanceDbAuditStatus](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceDbAuditStatus)
+* [RuleTemplateInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RuleTemplateInfo)
+* [RuleTemplateRecordInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#RuleTemplateRecordInfo)
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#InstanceInfo)
+
+	* 新增成员：ExpandCpu
+
+	* <font color="#dd0000">**修改成员**：</font>MasterInfo
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 7 次发布
+
+发布时间：2023-11-22 01:27:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTaskPolicyTriggerLog](http://document.tencentcloudapi.woa.com/document/product/1694/82708)
+* [TriggerPolicy](http://document.tencentcloudapi.woa.com/document/product/1694/82707)
+
+新增数据结构：
+
+* [PolicyTriggerLog](http://document.tencentcloudapi.woa.com/document/product/1694/79907#PolicyTriggerLog)
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 4 次发布
+
+发布时间：2023-11-22 02:33:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1750/82570#SystemDisk)
+
+	* 新增成员：DiskName
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 81 次发布
+
+发布时间：2023-11-22 03:24:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateClusterInternalAccessPoint](http://document.tencentcloudapi.woa.com/document/product/1179/82709)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCmqExclusiveInstances
+
+修改接口：
+
+* [CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)
+
+	* 新增入参：Vpc
+
+	* <font color="#dd0000">**删除入参**：</font>Vpcs
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* InstanceListInfo
+
+修改数据结构：
+
+* [Cluster](http://document.tencentcloudapi.woa.com/document/product/1179/46089#Cluster)
+
+	* 新增成员：InternalPulsarEndPoint, InternalHttpEndPoint, ProjectId, ProjectName
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 20 次发布
+
+发布时间：2023-11-22 03:26:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePrefetchTasks](http://document.tencentcloudapi.woa.com/document/product/1738/81207)
+
+	* 新增入参：ZoneId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 82 次发布
+
+发布时间：2023-11-22 03:30:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeIPAMD](http://document.tencentcloudapi.woa.com/document/product/457/82692)
+
+	* 新增出参：ClaimExpiredDuration
+
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 47 次发布
+
+发布时间：2023-11-22 03:38:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CloseWafProtection](http://document.tencentcloudapi.woa.com/document/product/1364/82712)
+* [CreateWafDomains](http://document.tencentcloudapi.woa.com/document/product/1364/82711)
+* [OpenWafProtection](http://document.tencentcloudapi.woa.com/document/product/1364/82710)
+
+
+
 # Release 3.0.889.1
 
 ## 费用中心(billing) 版本：2018-07-09

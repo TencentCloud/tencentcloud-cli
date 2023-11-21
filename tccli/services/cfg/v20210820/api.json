@@ -35,6 +35,13 @@
       "output": "DescribeTaskListResponse",
       "status": "online"
     },
+    "DescribeTaskPolicyTriggerLog": {
+      "document": "获取护栏触发日志",
+      "input": "DescribeTaskPolicyTriggerLogRequest",
+      "name": "获取护栏触发日志",
+      "output": "DescribeTaskPolicyTriggerLogResponse",
+      "status": "online"
+    },
     "DescribeTemplate": {
       "document": "查询经验库",
       "input": "DescribeTemplateRequest",
@@ -68,6 +75,13 @@
       "input": "ModifyTaskRunStatusRequest",
       "name": "修改任务运行状态",
       "output": "ModifyTaskRunStatusResponse",
+      "status": "online"
+    },
+    "TriggerPolicy": {
+      "document": "用于触发混沌演练护栏（类型为触发和恢复2种）",
+      "input": "TriggerPolicyRequest",
+      "name": "触发护栏策略",
+      "output": "TriggerPolicyResponse",
       "status": "online"
     }
   },
@@ -484,6 +498,61 @@
       ],
       "type": "object"
     },
+    "DescribeTaskPolicyTriggerLogRequest": {
+      "document": "DescribeTaskPolicyTriggerLog请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "演练ID",
+          "example": "1111",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页数量",
+          "example": "24",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTaskPolicyTriggerLogResponse": {
+      "document": "DescribeTaskPolicyTriggerLog返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "触发日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PolicyTriggerLog",
+          "name": "TriggerLogs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTaskRequest": {
       "document": "DescribeTask请求参数结构体",
       "members": [
@@ -839,6 +908,62 @@
         }
       ],
       "type": "object"
+    },
+    "PolicyTriggerLog": {
+      "document": "护栏策略触发日志",
+      "members": [
+        {
+          "disabled": false,
+          "document": "演练ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "111",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cpu告警",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型，0--触发，1--恢复\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TriggerType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "内容",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "触发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-02-22",
+          "member": "string",
+          "name": "CreatTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TagWithCreate": {
       "document": "用于传入创建、编辑标签",
@@ -2777,6 +2902,80 @@
         }
       ],
       "usage": "out"
+    },
+    "TriggerPolicyRequest": {
+      "document": "TriggerPolicy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "混沌演练ID\n",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "cpu告警",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发内容",
+          "example": "触发CPU利用率>80%",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "触发类型，0--触发；1--恢复",
+          "example": "0",
+          "member": "int64",
+          "name": "TriggerType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerPolicyResponse": {
+      "document": "TriggerPolicy返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "演练ID",
+          "example": "11",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否触发成功",
+          "example": "true",
+          "member": "bool",
+          "name": "Success",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     }
   },
   "version": "1.0"

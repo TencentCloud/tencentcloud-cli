@@ -10,7 +10,8 @@ tccli teo DescribeTimingL7CacheData --cli-unfold-argument  \
     --Interval day \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l7Cache_outFlux
+    --MetricNames l7Cache_outFlux \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -61,7 +62,8 @@ tccli teo DescribeTimingL7CacheData --cli-unfold-argument  \
     --MetricNames l7Cache_outFlux \
     --Filters.0.Key statusCode \
     --Filters.0.Operator equals \
-    --Filters.0.Value 1XX 2XX
+    --Filters.0.Value 1XX 2XX \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -115,7 +117,8 @@ tccli teo DescribeTimingL7CacheData --cli-unfold-argument  \
     --Filters.0.Value test1 \
     --Filters.1.Key tagValue \
     --Filters.1.Operator equals \
-    --Filters.1.Value a.com b.com
+    --Filters.1.Value a.com b.com \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 

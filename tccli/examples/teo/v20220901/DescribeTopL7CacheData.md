@@ -11,7 +11,8 @@ tccli teo DescribeTopL7CacheData --cli-unfold-argument  \
     --Limit 5 \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --EndTime 2022-08-29T19:17:59+08:00 \
-    --MetricName l7Cache_outFlux_cacheType
+    --MetricName l7Cache_outFlux_cacheType \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -55,7 +56,8 @@ tccli teo DescribeTopL7CacheData --cli-unfold-argument  \
     --MetricName l7Cache_outFlux_cacheType \
     --Filters.0.Key cacheType \
     --Filters.0.Operator equals \
-    --Filters.0.Value miss hit
+    --Filters.0.Value miss hit \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -99,7 +101,8 @@ tccli teo DescribeTopL7CacheData --cli-unfold-argument  \
     --MetricName l7Cache_outFlux_cacheType \
     --Filters.0.Key statusCode \
     --Filters.0.Operator equals \
-    --Filters.0.Value 2XX 3XX
+    --Filters.0.Value 2XX 3XX \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -146,7 +149,8 @@ tccli teo DescribeTopL7CacheData --cli-unfold-argument  \
     --Filters.0.Value test1 \
     --Filters.1.Key tagValue \
     --Filters.1.Operator equals \
-    --Filters.1.Value a.com b.com
+    --Filters.1.Value a.com b.com \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
