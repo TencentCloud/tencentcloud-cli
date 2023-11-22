@@ -24,7 +24,7 @@ Output:
     "Response": {
         "Events": "myOrgpeer0.myorg.envnew:VALID",
         "RequestId": "0b82b65e-7100-49f1-9f29-e934a8833711",
-        "Txid": "0366ab8f31c9f8aa6b9fc9506fa841e55d1ecd492b3ecc373c0f66ca49f33ea1"
+        "TxId": "0366ab8f31c9f8aa6b9fc9506fa841e55d1ecd492b3ecc373c0f66ca49f33ea1"
     }
 }
 ```
@@ -56,7 +56,7 @@ Output:
     "Response": {
         "Events": "",
         "RequestId": "51ad1047-30c0-4397-b672-37e8ffd65d9f",
-        "Txid": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c"
+        "TxId": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c"
     }
 }
 ```

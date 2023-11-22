@@ -36,11 +36,11 @@
       "status": "online"
     },
     "CreateCustomAccount": {
-      "document": "创建自定义账户",
+      "document": "接口未使用\n\n创建自定义账户",
       "input": "CreateCustomAccountRequest",
       "name": "创建自定义账户",
       "output": "CreateCustomAccountResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateImageAccelerationService": {
       "document": "创建镜像加速服务",
@@ -190,11 +190,11 @@
       "status": "online"
     },
     "DeleteCustomAccount": {
-      "document": "删除自定义账号",
+      "document": "接口未使用\n\n删除自定义账号",
       "input": "DeleteCustomAccountRequest",
       "name": "删除自定义账号",
       "output": "DeleteCustomAccountResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DeleteImage": {
       "document": "删除指定镜像",
@@ -365,11 +365,11 @@
       "status": "online"
     },
     "DescribeCustomAccounts": {
-      "document": "查询自定义账号",
+      "document": "接口未使用\n\n查询自定义账号",
       "input": "DescribeCustomAccountsRequest",
       "name": "查询自定义账号",
       "output": "DescribeCustomAccountsResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeExternalEndpointStatus": {
       "document": "查询实例公网访问入口状态",
@@ -680,11 +680,11 @@
       "status": "online"
     },
     "ModifyCustomAccount": {
-      "document": "更新自定义账户",
+      "document": "接口未使用\n\n更新自定义账户",
       "input": "ModifyCustomAccountRequest",
       "name": "更新自定义账户",
       "output": "ModifyCustomAccountResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "ModifyImmutableTagRules": {
       "document": "更新镜像不可变规则",

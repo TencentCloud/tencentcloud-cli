@@ -3458,6 +3458,7 @@
           "example": "rule-qbjifysd",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5633,7 +5634,7 @@
           "example": "zone-qbjifysd",
           "member": "string",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5643,7 +5644,7 @@
           "example": "无",
           "member": "RuleItem",
           "name": "RuleItems",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8453,8 +8454,8 @@
         },
         {
           "disabled": false,
-          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>不填写保持原有配置。",
-          "example": "hostname",
+          "document": "四层代理模式，取值有：\n<li>instance：表示实例模式。</li>不填写使用默认值instance。",
+          "example": "instance",
           "member": "string",
           "name": "ProxyType",
           "required": false,
@@ -8922,6 +8923,7 @@
           "example": "rule-duxamq",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11804,7 +11806,7 @@
         },
         {
           "disabled": false,
-          "document": "允许的客户端来源。支持填写 IPV4 以及 IPV6 的 IP/IP 段。",
+          "document": "允许的客户端来源。支持填写 IPv4 以及 IPv6 的 IP/IP 段。0.0.0.0/0 表示允许所有 IPv4 客户端进行调试，::/0 表示允许所有 IPv6 客户端进行调试。",
           "example": "[\"9.142.236.194\", \"43.154.226.0/24\"]",
           "member": "string",
           "name": "AllowClientIPList",

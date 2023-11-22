@@ -160,6 +160,14 @@
         "title": "删除网关实例分组"
       }
     ],
+    "DeleteWafDomains": [
+      {
+        "document": "删除 WAF 防护域名",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteWafDomains\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Domains\": [\n        \"example.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "删除 WAF 防护域名"
+      }
+    ],
     "DescribeCloudNativeAPIGateway": [
       {
         "document": "",
@@ -318,6 +326,22 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUpstreamHealthCheckConfig\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"EnableActiveHealthCheck\": true,\n            \"ActiveHealthCheck\": {\n                \"HealthyInterval\": 1,\n                \"UnHealthyInterval\": 1,\n                \"HttpPath\": \"abc\"\n            },\n            \"EnablePassiveHealthCheck\": true,\n            \"PassiveHealthCheck\": {\n                \"Type\": \"abc\"\n            },\n            \"Successes\": 1,\n            \"Failures\": 1,\n            \"Timeouts\": 1,\n            \"HealthyHttpStatuses\": [\n                1\n            ],\n            \"UnhealthyHttpStatuses\": [\n                1\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "demo"
+      }
+    ],
+    "DescribeWafDomains": [
+      {
+        "document": "获取 WAF 防护域名",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafDomains\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"Domains\": [\n                \"example.com\"\n            ]\n        },\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "获取 WAF 防护域名"
+      }
+    ],
+    "DescribeWafProtection": [
+      {
+        "document": "获取 WAF 防护状态",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GlobalStatus\": \"Open\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取 WAF 防护状态"
       }
     ],
     "DescribeZookeeperReplicas": [

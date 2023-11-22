@@ -140,6 +140,13 @@
       "output": "DeleteNativeGatewayServerGroupResponse",
       "status": "online"
     },
+    "DeleteWafDomains": {
+      "document": "删除 WAF 防护域名",
+      "input": "DeleteWafDomainsRequest",
+      "name": "删除 WAF 防护域名",
+      "output": "DeleteWafDomainsResponse",
+      "status": "online"
+    },
     "DescribeCloudNativeAPIGateway": {
       "document": "获取云原生API网关实例信息",
       "input": "DescribeCloudNativeAPIGatewayRequest",
@@ -278,6 +285,20 @@
       "input": "DescribeUpstreamHealthCheckConfigRequest",
       "name": "获取网关服务健康检查配置",
       "output": "DescribeUpstreamHealthCheckConfigResponse",
+      "status": "online"
+    },
+    "DescribeWafDomains": {
+      "document": "获取 WAF 防护域名",
+      "input": "DescribeWafDomainsRequest",
+      "name": "获取 WAF 防护域名",
+      "output": "DescribeWafDomainsResponse",
+      "status": "online"
+    },
+    "DescribeWafProtection": {
+      "document": "获取 WAF 防护状态",
+      "input": "DescribeWafProtectionRequest",
+      "name": "获取 WAF 防护状态",
+      "output": "DescribeWafProtectionResponse",
       "status": "online"
     },
     "DescribeZookeeperReplicas": {
@@ -3201,6 +3222,42 @@
       ],
       "usage": "out"
     },
+    "DeleteWafDomainsRequest": {
+      "document": "DeleteWafDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF 防护域名列表",
+          "example": "[\"tencent.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteWafDomainsResponse": {
+      "document": "DeleteWafDomains返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCloudNativeAPIGatewayCanaryRulesRequest": {
       "document": "DescribeCloudNativeAPIGatewayCanaryRules请求参数结构体",
       "members": [
@@ -4875,6 +4932,160 @@
         }
       ],
       "type": "object"
+    },
+    "DescribeWafDomainsRequest": {
+      "document": "DescribeWafDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafDomainsResponse": {
+      "document": "DescribeWafDomains返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已被 WAF 防护域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeWafDomainsResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafDomainsResult": {
+      "document": "获取WAF保护域名列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "WAF防护域名列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Domains",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeWafProtectionRequest": {
+      "document": "DescribeWafProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": true,
+          "document": " 防护资源的类型。\n- Global  实例\n- Service  服务\n- Route  路由\n- Object  对象",
+          "example": "Global",
+          "member": "string",
+          "name": "Type",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "防护资源类型列表，支持查询多个类型（Global、Service、Route、Object）。为空时，默认查询Global类型。",
+          "example": "[\"Global\",\"Object\"]",
+          "member": "string",
+          "name": "TypeList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafProtectionResponse": {
+      "document": "DescribeWafProtection返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "保护状态",
+          "example": "无",
+          "member": "DescribeWafProtectionResult",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeWafProtectionResult": {
+      "document": "获取WAF保护资源状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "全局防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Open",
+          "member": "string",
+          "name": "GlobalStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ServiceWafStatus",
+          "name": "ServicesStatus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RouteWafStatus",
+          "name": "RouteStatus",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对象防护状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Open",
+          "member": "string",
+          "name": "ObjectStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeZookeeperReplicasRequest": {
       "document": "DescribeZookeeperReplicas请求参数结构体",
@@ -7831,6 +8042,92 @@
       ],
       "usage": "both"
     },
+    "RouteWafStatus": {
+      "document": "路由 WAF 状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": "路由的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo-route",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 路由是否开启 WAF 防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Open",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "方法\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"GET\"]",
+          "member": "string",
+          "name": "Methods",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"/\"]",
+          "member": "string",
+          "name": "Paths",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"tencent.com\"]",
+          "member": "string",
+          "name": "Hosts",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由对应服务的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo-service",
+          "member": "string",
+          "name": "ServiceName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "路由对应服务的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38202",
+          "member": "string",
+          "name": "ServiceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SREInstance": {
       "document": "微服务注册引擎实例",
       "members": [
@@ -8281,6 +8578,52 @@
         }
       ],
       "usage": "both"
+    },
+    "ServiceWafStatus": {
+      "document": "服务的 WAF 状态",
+      "members": [
+        {
+          "disabled": false,
+          "document": " 服务的名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "demo-service",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "916462a4-8ce4-4605-a7b7-66cd51c38201",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务的类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Kubernetes",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " 服务是否开启 WAF 防护\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Open",
+          "member": "string",
+          "name": "Status",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "StorageOption": {
       "document": "存储的额外选项",

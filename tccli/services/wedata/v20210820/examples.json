@@ -788,6 +788,14 @@
         "title": "列出表血缘信息"
       }
     ],
+    "DescribeColumnsMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeColumnsMeta\n<公共请求参数>\n\n{\n    \"PageSize\": 0,\n    \"IsPartitionQuery\": true,\n    \"OrderFieldSet\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 0,\n    \"TableId\": \"xx\",\n    \"FilterSet\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ColumnMetaSet\": [\n            {\n                \"Description\": \"xx\",\n                \"NameCn\": \"xx\",\n                \"ColumnFamiliesFieldSet\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"IsPartition\": true,\n                \"Position\": 0,\n                \"NameEn\": \"xx\",\n                \"Type\": \"xx\",\n                \"Name\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询表的所有列元数据"
+      }
+    ],
     "DescribeDataBases": [
       {
         "document": "",

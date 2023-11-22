@@ -8,8 +8,8 @@ Input:
 tccli teo ModifyApplicationProxy --cli-unfold-argument  \
     --ZoneId zone-21xfqlh4qjee \
     --ProxyId proxy-537f5b41-162a-11ed-abaa-525400c5da15 \
-    --ProxyName test.com \
-    --ProxyType hostname \
+    --ProxyName ssss \
+    --ProxyType instance \
     --SessionPersistTime 3600 \
     --Ipv6.Switch on
 ```

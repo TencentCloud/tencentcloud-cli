@@ -758,6 +758,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"RecipientId\": \"yDw7aUUckpkxxmljUE0xkKk1DlvwRdfK\",\n    \"PathType\": 3,\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693829642597082849\",\n        \"SchemeQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
         "title": "获取动态签署人补充链接（短链）"
+      },
+      {
+        "document": "1. 获取合同的签署链接(FlowId设置成合同的ID)\n2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)\n3. 根据证件信息匹配签署人(指定IdCardType, IdCardNumber参数)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"PathType\": 1,\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693*****49\",\n        \"SchemeQrcodeUrl\": \"\",\n        \"SchemeUrl\": \"https://essurl.cn/3a****tM\"\n    }\n}",
+        "title": "指定证件信息，给企业员工生成跳转到电子签小程序的签署链接"
       }
     ],
     "CreateSeal": [

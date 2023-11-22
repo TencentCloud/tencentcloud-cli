@@ -637,6 +637,13 @@
       "output": "DescribeColumnLineageResponse",
       "status": "online"
     },
+    "DescribeColumnsMeta": {
+      "document": "查询表的所有列元数据",
+      "input": "DescribeColumnsMetaRequest",
+      "name": "查询表的所有列元数据",
+      "output": "DescribeColumnsMetaResponse",
+      "status": "online"
+    },
     "DescribeDataBases": {
       "document": "查询数据来源列表",
       "input": "DescribeDataBasesRequest",
@@ -7165,6 +7172,92 @@
         }
       ],
       "usage": "both"
+    },
+    "ColumnMeta": {
+      "document": "列的元数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段英文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "age",
+          "member": "string",
+          "name": "NameEn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段中文名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "年龄",
+          "member": "string",
+          "name": "NameCn",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "String",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "年龄",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Position",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为分区字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPartition",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "age",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HBase列簇属性集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Pair",
+          "name": "ColumnFamiliesFieldSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "CommitExportTaskRequest": {
       "document": "CommitExportTask请求参数结构体",
@@ -13970,6 +14063,98 @@
           "required": true,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeColumnsMetaRequest": {
+      "document": "DescribeColumnsMeta请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表ID",
+          "example": "111",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页大小",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤器",
+          "example": "无",
+          "member": "Filter",
+          "name": "FilterSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFieldSet",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否查询分区字段，默认false",
+          "example": "false",
+          "member": "bool",
+          "name": "IsPartitionQuery",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeColumnsMetaResponse": {
+      "document": "DescribeColumnsMeta返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页返回的\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ColumnMeta",
+          "name": "ColumnMetaSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总记录数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -36592,6 +36777,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Pair": {
+      "document": "键值对",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键名",
+          "example": "name",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "值",
+          "example": "Tom",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

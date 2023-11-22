@@ -1702,12 +1702,6 @@
     ],
     "DescribeTrafficPackages": [
       {
-        "document": "查询某个账号所有的共享流量包信息。",
-        "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",
-        "title": "查询某个账号所有的共享流量包信息"
-      },
-      {
         "document": "查询某一个账号所有的共享流量包信息。",
         "input": "POST / HTTP/1.1\nHost: vpc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTrafficPackages\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"TrafficPackageSet\": [\n            {\n                \"TrafficPackageId\": \"tfp-g67jlh1j\",\n                \"TrafficPackageName\": \"未命名\",\n                \"TotalAmount\": 10,\n                \"RemainingAmount\": 10,\n                \"Status\": \"AVAILABLE\",\n                \"CreatedTime\": \"2022-08-31T11:42:37Z\",\n                \"Deadline\": \"2022-09-30T11:42:36Z\",\n                \"DeductType\": \"FULL_TIME\",\n                \"UsedAmount\": 0,\n                \"TagSet\": [\n                    {\n                        \"Key\": \"aa\",\n                        \"Value\": \"bb\"\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"e92ac36b-db69-4329-b030-9276b88d93c4\"\n    }\n}",

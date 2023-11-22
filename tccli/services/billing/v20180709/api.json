@@ -3531,6 +3531,15 @@
           "name": "SpecifyEffectTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可重入ID",
+          "example": "可重入标记，业务名+64位UUID",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

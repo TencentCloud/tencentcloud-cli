@@ -13,55 +13,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "811d2583-310c-41f4-b5e7-abe4074047d4",
+        "RequestId": "5f24d792-050d-439f-a864-353fd7b67e9f",
         "RuleItems": [
             {
-                "RuleId": "rule-3bta0qmn",
-                "RuleName": "new_rule01",
-                "RulePriority": 2,
-                "Rules": [
-                    {
-                        "Actions": [
-                            {
-                                "CodeAction": null,
-                                "NormalAction": {
-                                    "Action": "RangeOriginPull",
-                                    "Parameters": [
-                                        {
-                                            "Name": "Switch",
-                                            "Values": [
-                                                "on"
-                                            ]
-                                        }
-                                    ]
-                                },
-                                "RewriteAction": null
-                            }
-                        ],
-                        "Conditions": [
-                            {
-                                "Conditions": [
-                                    {
-                                        "Operator": "equal",
-                                        "Target": "extension",
-                                        "Values": [
-                                            "name1",
-                                            "name2"
-                                        ]
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ],
-                "Tags": [
-                    "tag1"
-                ],
-                "Status": "disable"
-            },
-            {
-                "RuleId": "rule-jr7ammcu",
-                "RuleName": "new_rule",
+                "RuleId": "rule-2picazk4qsq9",
+                "RuleName": "未命名规则",
                 "RulePriority": 1,
                 "Rules": [
                     {
@@ -69,12 +25,30 @@ Output:
                             {
                                 "CodeAction": null,
                                 "NormalAction": {
-                                    "Action": "RangeOriginPull",
+                                    "Action": "Cache",
                                     "Parameters": [
+                                        {
+                                            "Name": "Type",
+                                            "Values": [
+                                                "Cache"
+                                            ]
+                                        },
                                         {
                                             "Name": "Switch",
                                             "Values": [
                                                 "on"
+                                            ]
+                                        },
+                                        {
+                                            "Name": "IgnoreCacheControl",
+                                            "Values": [
+                                                "off"
+                                            ]
+                                        },
+                                        {
+                                            "Name": "CacheTime",
+                                            "Values": [
+                                                "100"
                                             ]
                                         }
                                     ]
@@ -86,25 +60,26 @@ Output:
                             {
                                 "Conditions": [
                                     {
+                                        "IgnoreCase": false,
+                                        "IgnoreNameCase": false,
                                         "Operator": "equal",
-                                        "Target": "extension",
+                                        "Target": "host",
+                                        "Name": "",
                                         "Values": [
-                                            "name1",
-                                            "name2"
+                                            "corki.chris-v.com"
                                         ]
                                     }
                                 ]
                             }
-                        ]
+                        ],
+                        "SubRules": []
                     }
                 ],
-                "Tags": [
-                    "tag2"
-                ],
-                "Status": "disable"
+                "Status": "enable",
+                "Tags": []
             }
         ],
-        "ZoneId": "zone-kwsqufps"
+        "ZoneId": "zone-2p7d5y3b8l8k"
     }
 }
 ```
