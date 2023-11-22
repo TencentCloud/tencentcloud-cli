@@ -10,7 +10,8 @@ tccli teo DescribeTimingL4Data --cli-unfold-argument  \
     --Interval day \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l4Flow_inFlux
+    --MetricNames l4Flow_inFlux \
+    --ZoneIds zone-28kw53cmc6ky
 ```
 
 Output: 
@@ -59,6 +60,7 @@ tccli teo DescribeTimingL4Data --cli-unfold-argument  \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l4Flow_inFlux \
+    --ZoneIds zone-28kw53cmc6ky \
     --Filters.0.Key ruleId \
     --Filters.0.Operator equals \
     --Filters.0.Value rule-033950bf-6fc4-11ed-8ab2-525400a22580
@@ -234,6 +236,7 @@ tccli teo DescribeTimingL4Data --cli-unfold-argument  \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
     --MetricNames l4Flow_inFlux \
+    --ZoneIds zone-28kw53cmc6ky \
     --Filters.0.Key proxyId \
     --Filters.0.Operator equals \
     --Filters.0.Value sid-2c2uug8ubfmn

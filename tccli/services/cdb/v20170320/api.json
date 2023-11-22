@@ -42,6 +42,13 @@
       "output": "BalanceRoGroupLoadResponse",
       "status": "online"
     },
+    "CloseAuditService": {
+      "document": "实例关闭审计服务",
+      "input": "CloseAuditServiceRequest",
+      "name": "实例关闭审计服务",
+      "output": "CloseAuditServiceResponse",
+      "status": "online"
+    },
     "CloseCDBProxy": {
       "document": "关闭数据库代理",
       "input": "CloseCDBProxyRequest",
@@ -89,6 +96,13 @@
       "input": "CreateAuditRuleRequest",
       "name": "创建审计规则",
       "output": "CreateAuditRuleResponse",
+      "status": "online"
+    },
+    "CreateAuditRuleTemplate": {
+      "document": "创建审计规则模板",
+      "input": "CreateAuditRuleTemplateRequest",
+      "name": "创建审计规则模板",
+      "output": "CreateAuditRuleTemplateResponse",
       "status": "online"
     },
     "CreateBackup": {
@@ -196,11 +210,25 @@
       "output": "DeleteAuditRuleResponse",
       "status": "online"
     },
+    "DeleteAuditRuleTemplates": {
+      "document": "删除审计规则模版",
+      "input": "DeleteAuditRuleTemplatesRequest",
+      "name": "删除审计规则模版",
+      "output": "DeleteAuditRuleTemplatesResponse",
+      "status": "online"
+    },
     "DeleteBackup": {
       "document": "本接口(DeleteBackup)用于删除数据库备份。本接口只支持删除手动发起的备份。",
       "input": "DeleteBackupRequest",
       "name": "删除云数据库备份",
       "output": "DeleteBackupResponse",
+      "status": "online"
+    },
+    "DeleteDatabase": {
+      "document": "本接口(DeleteDatabase)用于在云数据库实例中删除数据库。",
+      "input": "DeleteDatabaseRequest",
+      "name": "删除数据库",
+      "output": "DeleteDatabaseResponse",
       "status": "online"
     },
     "DeleteDeployGroups": {
@@ -252,6 +280,13 @@
       "output": "DescribeAuditConfigResponse",
       "status": "online"
     },
+    "DescribeAuditInstanceList": {
+      "document": "获取审计实例列表",
+      "input": "DescribeAuditInstanceListRequest",
+      "name": "获取审计实例列表",
+      "output": "DescribeAuditInstanceListResponse",
+      "status": "online"
+    },
     "DescribeAuditLogFiles": {
       "document": "本接口(DescribeAuditLogFiles)用于查询云数据库实例的审计日志文件。",
       "input": "DescribeAuditLogFilesRequest",
@@ -271,6 +306,20 @@
       "input": "DescribeAuditPoliciesRequest",
       "name": "查询审计策略",
       "output": "DescribeAuditPoliciesResponse",
+      "status": "online"
+    },
+    "DescribeAuditRuleTemplateModifyHistory": {
+      "document": "查询规则模板变更记录",
+      "input": "DescribeAuditRuleTemplateModifyHistoryRequest",
+      "name": "查询规则模板变更记录",
+      "output": "DescribeAuditRuleTemplateModifyHistoryResponse",
+      "status": "online"
+    },
+    "DescribeAuditRuleTemplates": {
+      "document": "查询审计规则模板信息",
+      "input": "DescribeAuditRuleTemplatesRequest",
+      "name": "查询审计规则模板",
+      "output": "DescribeAuditRuleTemplatesResponse",
       "status": "online"
     },
     "DescribeAuditRules": {
@@ -719,6 +768,20 @@
       "input": "ModifyAuditRuleRequest",
       "name": "修改审计规则",
       "output": "ModifyAuditRuleResponse",
+      "status": "online"
+    },
+    "ModifyAuditRuleTemplates": {
+      "document": "修改审计规则模板",
+      "input": "ModifyAuditRuleTemplatesRequest",
+      "name": "修改审计规则模板",
+      "output": "ModifyAuditRuleTemplatesResponse",
+      "status": "online"
+    },
+    "ModifyAuditService": {
+      "document": "本接口(ModifyAuditService)用于修改云数据库审计日志保存时长、审计规则等服务配置",
+      "input": "ModifyAuditServiceRequest",
+      "name": "实例修改审计服务",
+      "output": "ModifyAuditServiceResponse",
       "status": "online"
     },
     "ModifyAutoRenewFlag": {
@@ -1668,6 +1731,88 @@
       ],
       "usage": "both"
     },
+    "AuditInstanceFilters": {
+      "document": "查询审计实例的过滤条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件名。支持InstanceId-实例ID，InstanceName-实例名称，ProjectId-项目ID，TagKey-标签键，Tag-标签（以竖线分割，例：Tagkey|Tagvalue）。",
+          "example": "InstanceId",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "true表示精确查找，false表示模糊匹配。",
+          "example": "true",
+          "member": "bool",
+          "name": "ExactMatch",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "筛选值",
+          "example": "cdb-euu5fkcj",
+          "member": "string",
+          "name": "Values",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
+    "AuditInstanceInfo": {
+      "document": "审计实例详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23414",
+          "member": "int64",
+          "name": "ProjectId",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagInfoUnit",
+          "name": "TagList",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库内核类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MYSQL",
+          "member": "string",
+          "name": "DbType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库内核版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5.7",
+          "member": "string",
+          "name": "DbVersion",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AuditLog": {
       "document": "审计日志详细信息",
       "members": [
@@ -2349,6 +2494,112 @@
         }
       ],
       "usage": "both"
+    },
+    "AuditRuleTemplateInfo": {
+      "document": "审计规则模板的详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则模板ID。",
+          "example": "cdb-art-dnpg9p3r",
+          "member": "string",
+          "name": "RuleTemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则模板名称。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则模板的过滤条件。",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则模板描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则模板创建时间。",
+          "example": "2022-11-15 11:11:11",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警策略。0-不告警，1-告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmPolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则模板应用在哪些在实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AffectedInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板状态。0-无任务 ，1-修改中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AutoStrategy": {
       "document": "CPU弹性扩容的自动扩容策略",
@@ -3557,6 +3808,33 @@
       ],
       "usage": "out"
     },
+    "CloseAuditServiceRequest": {
+      "document": "CloseAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cdb-22dhn3e3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseAuditServiceResponse": {
+      "document": "CloseAuditService返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CloseCDBProxyRequest": {
       "document": "CloseCDBProxy请求参数结构体",
       "members": [
@@ -4105,6 +4383,79 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditRuleTemplateRequest": {
+      "document": "CreateAuditRuleTemplate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计规则",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则模板名称",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "规则模板描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警等级。1-低风险，2-中风险，3-高风险",
+          "example": "3",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略。0-不告警，1-告警",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmPolicy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateAuditRuleTemplateResponse": {
+      "document": "CreateAuditRuleTemplate返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成的规则模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6076,6 +6427,33 @@
       ],
       "type": "object"
     },
+    "DeleteAuditRuleTemplatesRequest": {
+      "document": "DeleteAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计规则模版ID。",
+          "example": "cdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteAuditRuleTemplatesResponse": {
+      "document": "DeleteAuditRuleTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteBackupRequest": {
       "document": "DeleteBackup请求参数结构体",
       "members": [
@@ -6102,6 +6480,42 @@
     },
     "DeleteBackupResponse": {
       "document": "DeleteBackup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatabaseRequest": {
+      "document": "DeleteDatabase请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例 ID，格式如：cdb-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。",
+          "example": "cdb-c1nl9rpv",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称。",
+          "example": "db_test",
+          "member": "string",
+          "name": "DBName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteDatabaseResponse": {
+      "document": "DeleteDatabase返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6562,6 +6976,87 @@
       ],
       "type": "object"
     },
+    "DescribeAuditInstanceListRequest": {
+      "document": "DescribeAuditInstanceList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例审计开启的状态。1-已开启审计；0-未开启审计。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询实例列表的过滤条件。",
+          "example": "无",
+          "member": "AuditInstanceFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例的审计规则模式。1-规则审计；0-全审计。",
+          "example": "1",
+          "member": "int64",
+          "name": "AuditMode",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次请求返回的数量。默认值为30，最大值为 20000。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为 0。",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditInstanceListResponse": {
+      "document": "DescribeAuditInstanceList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的实例总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计实例详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceDbAuditStatus",
+          "name": "Items",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAuditLogFilesRequest": {
       "document": "DescribeAuditLogFiles请求参数结构体",
       "members": [
@@ -6835,6 +7330,190 @@
           "member": "AuditPolicy",
           "name": "Items",
           "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplateModifyHistoryRequest": {
+      "document": "DescribeAuditRuleTemplateModifyHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模板ID",
+          "example": "[\"cdb-art-8qx2kcr7\"]",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "查询范围的开始时间。",
+          "example": "2023-08-01 00:00:00",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询范围的结束时间。",
+          "example": "2023-08-02 00:00:00",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回条数。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式。DESC-按修改时间倒排，ASC-正序。",
+          "example": "DESC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplateModifyHistoryResponse": {
+      "document": "DescribeAuditRuleTemplateModifyHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总的条数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变更详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleTemplateRecordInfo",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplatesRequest": {
+      "document": "DescribeAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则模板ID。",
+          "example": "cdb-art-nuzwpha1",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则模板名称。",
+          "example": "测试template",
+          "member": "string",
+          "name": "RuleTemplateNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "单次请求返回的数量。默认值20。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认值为 0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。",
+          "example": "3",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略。0-不告警，1-告警。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmPolicy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAuditRuleTemplatesResponse": {
+      "document": "DescribeAuditRuleTemplates返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的实例总数。",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "规则模板详细信息列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditRuleTemplateInfo",
+          "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8761,6 +9440,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8770,6 +9450,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9956,7 +10637,7 @@
           "example": "[]",
           "member": "SecurityGroup",
           "name": "Groups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -9966,7 +10647,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11911,6 +12592,162 @@
       ],
       "usage": "in"
     },
+    "InstanceDbAuditStatus": {
+      "document": "实例审计详情信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cdb-euu5fkcj",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计状态。ON-表示审计已开启，OFF-表示审计关闭",
+          "example": "ON",
+          "member": "string",
+          "name": "AuditStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态。0-无任务；1-审计开启中，2-审计关闭中。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AuditTask",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志保留时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低频存储时长。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "23",
+          "member": "uint64",
+          "name": "LowLogExpireDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "173749.248",
+          "member": "float",
+          "name": "BillingAmount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "高频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45639.68",
+          "member": "float",
+          "name": "HighRealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "低频存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "128109.568",
+          "member": "float",
+          "name": "LowRealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为全审计。true-表示全审计。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAll",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "审计开通时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2022-10-12 11:41:42",
+          "member": "string",
+          "name": "CreateAt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例相关信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuditInstanceInfo",
+          "name": "InstanceInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总存储量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "173749.248",
+          "member": "float",
+          "name": "RealStorage",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否包含审计策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "OldRule",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例所应用的规则模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceInfo": {
       "document": "实例详细信息",
       "members": [
@@ -11920,7 +12757,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11930,7 +12767,7 @@
           "example": "ap-beijing-3",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11940,7 +12777,7 @@
           "example": "1",
           "member": "int64",
           "name": "InitFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11950,7 +12787,7 @@
           "example": "{}",
           "member": "RoVipInfo",
           "name": "RoVipInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11960,7 +12797,7 @@
           "example": "1000",
           "member": "int64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11970,7 +12807,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11980,7 +12817,7 @@
           "example": "51102",
           "member": "int64",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11990,7 +12827,7 @@
           "example": "{}",
           "member": "SlaveInfo",
           "name": "SlaveInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12000,7 +12837,7 @@
           "example": "cdb-***",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12010,7 +12847,7 @@
           "example": "50",
           "member": "int64",
           "name": "Volume",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12020,7 +12857,7 @@
           "example": "1",
           "member": "int64",
           "name": "AutoRenew",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12030,7 +12867,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProtectMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12040,7 +12877,7 @@
           "example": "[]",
           "member": "RoGroup",
           "name": "RoGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12050,7 +12887,7 @@
           "example": "2333",
           "member": "int64",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12060,7 +12897,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12070,7 +12907,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12080,7 +12917,7 @@
           "example": "ap-beijing",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12090,7 +12927,7 @@
           "example": "2020-09-29 08:37:33",
           "member": "datetime",
           "name": "DeadlineTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12100,7 +12937,7 @@
           "example": "0",
           "member": "int64",
           "name": "DeployMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12110,7 +12947,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12120,7 +12957,7 @@
           "example": "{}",
           "member": "MasterInfo",
           "name": "MasterInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12130,7 +12967,7 @@
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12140,7 +12977,7 @@
           "example": "5.7",
           "member": "string",
           "name": "EngineVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12150,7 +12987,7 @@
           "example": "******",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12160,7 +12997,7 @@
           "example": "[]",
           "member": "DrInfo",
           "name": "DrInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12170,7 +13007,7 @@
           "example": "''",
           "member": "string",
           "name": "WanDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12180,7 +13017,7 @@
           "example": "0",
           "member": "int64",
           "name": "WanPort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12190,7 +13027,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12200,7 +13037,7 @@
           "example": "2020-08-29 08:37:33",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12210,7 +13047,7 @@
           "example": "1.2.3.4",
           "member": "string",
           "name": "Vip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12220,7 +13057,7 @@
           "example": "3306",
           "member": "int64",
           "name": "Vport",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12230,7 +13067,7 @@
           "example": "0",
           "member": "int64",
           "name": "CdbError",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12240,7 +13077,7 @@
           "example": "vpc-5v8wn9mg",
           "member": "string",
           "name": "UniqVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12250,7 +13087,7 @@
           "example": "subnet-1typ0s7d",
           "member": "string",
           "name": "UniqSubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12260,7 +13097,7 @@
           "example": "''",
           "member": "string",
           "name": "PhysicalId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12270,7 +13107,7 @@
           "example": "1",
           "member": "int64",
           "name": "Cpu",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12280,7 +13117,7 @@
           "example": "1000",
           "member": "int64",
           "name": "Qps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12290,7 +13127,7 @@
           "example": "北京三区",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12300,7 +13137,7 @@
           "example": "‘’",
           "member": "string",
           "name": "DeviceClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12310,7 +13147,7 @@
           "example": "‘’",
           "member": "string",
           "name": "DeployGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12320,7 +13157,7 @@
           "example": "800003",
           "member": "int64",
           "name": "ZoneId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12330,7 +13167,7 @@
           "example": "1",
           "member": "int64",
           "name": "InstanceNodes",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12340,7 +13177,7 @@
           "example": "[]",
           "member": "TagInfoItem",
           "name": "TagList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12350,7 +13187,7 @@
           "example": "InnoDB",
           "member": "string",
           "name": "EngineType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12360,7 +13197,7 @@
           "example": "1",
           "member": "int64",
           "name": "MaxDelayTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12370,9 +13207,19 @@
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前扩容的CPU核心数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpandCpu",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13227,6 +14074,150 @@
     },
     "ModifyAuditRuleResponse": {
       "document": "ModifyAuditRule返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditRuleTemplatesRequest": {
+      "document": "ModifyAuditRuleTemplates请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审计规则模板ID。",
+          "example": "cdb-art-l1mlbo59",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的审计规则。",
+          "example": "无",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的规则模板名称。\t",
+          "example": "新规则模板名称",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的规则模板描述。",
+          "example": "新规则模板名称",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。",
+          "example": "3",
+          "member": "uint64",
+          "name": "AlarmLevel",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警策略。0-不告警，1-告警。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AlarmPolicy",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditRuleTemplatesResponse": {
+      "document": "ModifyAuditRuleTemplates返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceRequest": {
+      "document": "ModifyAuditService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID。",
+          "example": "cdb-22dhn3e3",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志保留时长。",
+          "example": "30",
+          "member": "uint64",
+          "name": "LogExpireDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "高频日志保留时长。",
+          "example": "7",
+          "member": "uint64",
+          "name": "HighLogExpireDay",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改实例审计规则为全审计。",
+          "example": "true",
+          "member": "bool",
+          "name": "AuditAll",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "审计规则。",
+          "example": "无",
+          "member": "AuditRuleFilters",
+          "name": "AuditRuleFilters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "规则模版ID。",
+          "example": "无",
+          "member": "string",
+          "name": "RuleTemplateIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyAuditServiceResponse": {
+      "document": "ModifyAuditService返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -16837,6 +17828,138 @@
         }
       ],
       "usage": "both"
+    },
+    "RuleTemplateInfo": {
+      "document": "规则模板内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则模板ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-art-8qx2kcr7",
+          "member": "string",
+          "name": "RuleTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则模板名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "RuleTemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则内容。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Type\":\"host\",\"Compare\":\"INC\",\"Value\":[\"100.122.76.176\"]}]",
+          "member": "RuleFilters",
+          "name": "RuleFilters",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警等级。1-低风险，2-中风险，3-高风险。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "AlarmLevel",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警策略。0-不告警，1-告警。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AlarmPolicy",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "这不单单是一个的描述",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "RuleTemplateRecordInfo": {
+      "document": "规则模板变更记录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改前规则模板的详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleTemplateInfo",
+          "name": "ModifyBeforeInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "修改后规则模板的详情。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RuleTemplateInfo",
+          "name": "ModifyAfterInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "影响的实例。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AffectedInstances",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作人，账号uin。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变更的时间。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "SecurityGroup": {
       "document": "安全组详情",

@@ -267,21 +267,21 @@
       "status": "online"
     },
     "DescribeOverviewL7Data": {
-      "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。",
+      "document": "本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。此接口待废弃，请使用 <a href=\"https://cloud.tencent.com/document/product/1552/80648\">DescribeTimingL7AnalysisData</a> 接口。",
       "input": "DescribeOverviewL7DataRequest",
-      "name": "查询监控流量时序数据",
+      "name": "查询监控流量时序数据（待废弃）",
       "output": "DescribeOverviewL7DataResponse",
       "status": "online"
     },
     "DescribePrefetchTasks": {
-      "document": "查询预热任务状态",
+      "document": "DescribePrefetchTasks 用于查询预热任务提交历史记录及执行进度，通过 CreatePrefetchTasks 接口提交的任务可通过此接口进行查询。",
       "input": "DescribePrefetchTasksRequest",
       "name": "查询预热任务状态",
       "output": "DescribePrefetchTasksResponse",
       "status": "online"
     },
     "DescribePurgeTasks": {
-      "document": "查询清除缓存历史记录",
+      "document": "DescribePurgeTasks 用于查询提交的 URL 刷新、目录刷新记录及执行进度，通过 CreatePurgeTasks 接口提交的任务均可通过此接口进行查询。",
       "input": "DescribePurgeTasksRequest",
       "name": "查询清除缓存历史记录",
       "output": "DescribePurgeTasksResponse",
@@ -5329,8 +5329,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合。\n若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href=\"https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90\">数据分析最大查询范围</a>。",
-          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "[\"zone-2mzegj4vln5f\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -5338,7 +5338,7 @@
         },
         {
           "disabled": false,
-          "document": "查询的域名集合，不填默认查询所有子域名。",
+          "document": "查询的域名集合，此参数已经废弃。",
           "example": "[\"www.baidu.com\",\"www.google.com\"]",
           "member": "string",
           "name": "Domains",
@@ -5365,7 +5365,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>socket<br>   按照【<strong>HTTP协议类型</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP：HTTP 协议；<br>   HTTPS：HTTPS协议；<br>   QUIC：QUIC协议。</li>\n<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>\n<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>",
+          "document": "过滤条件，详细的过滤条件Key值如下：\n<li>socket<br>   按照【<strong>HTTP协议类型</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP：HTTP 协议；<br>   HTTPS：HTTPS协议；<br>   QUIC：QUIC协议。</li>\n<li>domain<br>   按照【<strong>域名</strong>】进行过滤。</li>\n<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>\n<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>",
           "example": "无",
           "member": "QueryCondition",
           "name": "Filters",
@@ -5375,7 +5375,7 @@
         {
           "disabled": false,
           "document": "数据归属地区，取值有：\n<li>overseas：全球（除中国大陆地区）数据；</li>\n<li>mainland：中国大陆地区数据；</li>\n<li>global：全球数据。</li>不填默认取值为global。",
-          "example": "\"mainland\"",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -5393,6 +5393,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5402,6 +5403,7 @@
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5417,6 +5419,15 @@
     "DescribePrefetchTasksRequest": {
       "document": "DescribePrefetchTasks请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "站点ID。\n必填参数。",
+          "example": "zone-xxx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": false,
+          "type": "string"
+        },
         {
           "disabled": false,
           "document": "查询起始时间。",
@@ -5455,7 +5466,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：\n<li>zone-id<br>   按照【<strong>站点 ID</strong>】进行过滤。zone-id形如：zone-1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤。target形如：http://www.qq.com/1.txt，暂不支持多值。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤。domains形如：www.qq.com。<br>   类型：String<br>   必选：否。<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤。<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -5474,7 +5485,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5484,7 +5495,7 @@
           "example": "无",
           "member": "Task",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5502,8 +5513,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "字段已废弃，请使用Filters中的zone-id。",
-          "example": "jalfj2n42",
+          "document": "站点ID。\n必填参数。",
+          "example": "zone-xxxxxx",
           "member": "string",
           "name": "ZoneId",
           "required": false,
@@ -5547,7 +5558,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>zone-id<br>   按照【<strong>站点 ID</strong>】进行过滤。zone-id形如：zone-xxx，暂不支持多值<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤，target形如：http://www.qq.com/1.txt或者tag1，暂不支持多值<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤，domains形如：www.qq.com<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li><li>type<br>   按照【<strong>清除缓存类型</strong>】进行过滤，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持<br>   可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
+          "document": "过滤条件，Filters.Values的上限为20。详细的过滤条件如下：<li>job-id<br>   按照【<strong>任务ID</strong>】进行过滤。job-id形如：1379afjk91u32h，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>target<br>   按照【<strong>目标资源信息</strong>】进行过滤，target形如：http://www.qq.com/1.txt或者tag1，暂不支持多值<br>   类型：String<br>   必选：否<br>   模糊查询：不支持</li><li>domains<br>   按照【<strong>域名</strong>】进行过滤，domains形如：www.qq.com<br>   类型：String<br>   必选：否<br>   模糊查询：不支持。</li><li>statuses<br>   按照【<strong>任务状态</strong>】进行过滤<br>   必选：否<br>   模糊查询：不支持。<br>   可选项：<br>   processing：处理中<br>   success：成功<br>   failed：失败<br>   timeout：超时</li><li>type<br>   按照【<strong>清除缓存类型</strong>】进行过滤，暂不支持多值。<br>   类型：String<br>   必选：否<br>   模糊查询：不支持<br>   可选项：<br>   purge_url：URL<br>   purge_prefix：前缀<br>   purge_all：全部缓存内容<br>   purge_host：Hostname<br>   purge_cache_tag：CacheTag</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -5566,7 +5577,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5576,7 +5587,7 @@
           "example": "无",
           "member": "Task",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5741,7 +5752,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标，取值有：\n<li>l4Flow_connections: 访问连接数；</li>\n<li>l4Flow_flux: 访问总流量；</li>\n<li>l4Flow_inFlux: 访问入流量；</li>\n<li>l4Flow_outFlux: 访问出流量；</li>\n<li> l4Flow_outPkt: 访问出包量。</li>",
+          "document": "查询指标，取值有：\n<li>l4Flow_connections: 访问连接数；</li>\n<li>l4Flow_flux: 访问总流量；</li>\n<li>l4Flow_inFlux: 访问入流量；</li>\n<li>l4Flow_outFlux: 访问出流量。</li>",
           "example": "[\"l4Flow_connections\"]",
           "member": "string",
           "name": "MetricNames",
@@ -5750,7 +5761,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合。\n若不填写，默认选择全部站点，且最多只能查询近30天的数据；\n若填写，则可查询站点绑定套餐支持的<a href=\"https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90\">数据分析最大查询范围</a>。",
+          "document": "站点 ID 集合，此参数必填。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -5805,7 +5816,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5815,7 +5826,7 @@
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5851,7 +5862,7 @@
         },
         {
           "disabled": false,
-          "document": "指标列表，取值有:\n<li>l7Flow_outFlux: Edgeone响应流量；</li>\n<li>l7Flow_inFlux: Edgeone请求流量；</li>\n<li>l7Flow_outBandwidth: Edgeone响应带宽；</li>\n<li>l7Flow_inBandwidth：Edgeone请求带宽；</li>\n<li>l7Flow_request: 访问请求数；</li>\n<li>l7Flow_flux: 访问请求上行+下行流量；</li>\n<li>l7Flow_bandwidth：访问请求上行+下行带宽。</li>",
+          "document": "指标列表，取值有:\n<li>l7Flow_outFlux: Edgeone 响应流量；</li>\n<li>l7Flow_inFlux: Edgeone 请求流量；</li>\n<li>l7Flow_outBandwidth: Edgeone 响应带宽；</li>\n<li>l7Flow_inBandwidth：Edgeone 请求带宽；</li>\n<li>l7Flow_request: 访问请求数；</li>\n<li>l7Flow_flux: 访问请求上行+下行流量；</li>\n<li>l7Flow_bandwidth：访问请求上行+下行带宽。</li>",
           "example": "l7Flow_flow",
           "member": "string",
           "name": "MetricNames",
@@ -5860,8 +5871,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合。\n若不填写，默认选择全部站点，且最多只能查询近30天的数据；若填写，则可查询站点绑定套餐支持的<a href=\"https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90\">数据分析最大查询范围</a>。",
-          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "document": "站点 ID 集合, 此参数必填。",
+          "example": "[\"zone-2ju9lrnpaxol\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -5961,8 +5972,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，不填默认选择全部站点。",
-          "example": "[\"zoneId1\",\"zoneId2\"]",
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "[\"zone-2mzegj4vln5f\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -6007,7 +6018,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6017,7 +6028,7 @@
           "example": "无",
           "member": "TimingDataRecord",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6062,8 +6073,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填，不填默认查询为空。",
-          "example": "[\"qq.com\", \"baidu.com\"]",
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "[\"zone-2mzegj4vln5f\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -6099,7 +6110,7 @@
         {
           "disabled": false,
           "document": "数据归属地区，取值有：\n<li>overseas：全球（除中国大陆地区）数据；</li>\n<li>mainland：中国大陆地区数据；</li>\n<li>global：全球数据。</li>不填默认取值为global。",
-          "example": "\"mainland\"",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -6172,8 +6183,8 @@
         },
         {
           "disabled": false,
-          "document": "站点id集合，不填默认选择全部站点。",
-          "example": "[\"qq.com\", \"baidu.com\"]",
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "[\"zone-2ju9lrnpaxol\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -6209,7 +6220,7 @@
         {
           "disabled": false,
           "document": "数据归属地区，取值有：\n<li>overseas：全球（除中国大陆地区）数据；</li>\n<li>mainland：中国大陆地区数据；</li>\n<li>global：全球数据。</li>不填默认取值为global。",
-          "example": "\"mainland\"",
+          "example": "mainland",
           "member": "string",
           "name": "Area",
           "required": false,
@@ -6227,7 +6238,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6237,7 +6248,7 @@
           "example": "无",
           "member": "TopDataRecord",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6711,8 +6722,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填，不填默认查询为空。",
-          "example": "[\"zone1\",\"zone2\"]",
+          "document": "站点 ID 集合，此参数必填。",
+          "example": "[\"zone-2m6jx63f6k3x\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,
@@ -6803,8 +6814,8 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填，不填默认查询为空。",
-          "example": "[\"zone1\",\"zone2\"]",
+          "document": "站点ID集合，此参数必填。",
+          "example": "[\"zone-2nepupfjtjlf\"]",
           "member": "string",
           "name": "ZoneIds",
           "required": false,

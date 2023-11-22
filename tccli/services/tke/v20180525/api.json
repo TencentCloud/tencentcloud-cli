@@ -11134,7 +11134,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "cls-xxx",
+          "example": "cls-8k33qz0w",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -11152,7 +11152,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableIPAMD",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11162,7 +11162,7 @@
           "example": "false",
           "member": "bool",
           "name": "EnableCustomizedPodCidr",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11172,7 +11172,7 @@
           "example": "false",
           "member": "bool",
           "name": "DisableVpcCniMode",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -11182,7 +11182,7 @@
           "example": "running",
           "member": "string",
           "name": "Phase",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11192,18 +11192,28 @@
           "example": "\"\"",
           "member": "string",
           "name": "Reason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "子网信息，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[sub-xxxx]",
+          "example": "[\"subnet-imgoatdg\"]",
           "member": "string",
           "name": "SubnetIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "固定ip回收时间，已安装eniipamd组件才会有值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "300s",
+          "member": "string",
+          "name": "ClaimExpiredDuration",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {

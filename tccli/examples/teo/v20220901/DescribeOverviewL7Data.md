@@ -10,7 +10,8 @@ tccli teo DescribeOverviewL7Data --cli-unfold-argument  \
     --Interval day \
     --Area mainland \
     --StartTime 2022-07-31T00:00:00+08:00 \
-    --MetricNames l7Flow_request
+    --MetricNames l7Flow_request \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 
@@ -64,7 +65,8 @@ tccli teo DescribeOverviewL7Data --cli-unfold-argument  \
     --Filters.0.Value test1 \
     --Filters.1.Key tagValue \
     --Filters.1.Operator equals \
-    --Filters.1.Value a.com b.com
+    --Filters.1.Value a.com b.com \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 

@@ -7145,8 +7145,10 @@
           "example": "libmp3lame",
           "member": "string",
           "name": "Codec",
+          "output_required": false,
           "required": false,
-          "type": "string"
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7154,8 +7156,10 @@
           "example": "0",
           "member": "uint64",
           "name": "Bitrate",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7163,8 +7167,10 @@
           "example": "16000",
           "member": "uint64",
           "name": "SampleRate",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "disabled": false,
@@ -7172,11 +7178,13 @@
           "example": "1",
           "member": "int64",
           "name": "AudioChannel",
+          "output_required": false,
           "required": false,
-          "type": "int"
+          "type": "int",
+          "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "AudioTrackItem": {
       "document": "音频轨道上的音频片段信息。",
@@ -15431,7 +15439,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务；</li>\n<li>QualityInspect：音画质检测任务。</li>",
+          "document": "任务类型，取值：\n<li>Procedure：视频处理任务；</li>\n<li>EditMedia：视频编辑任务；</li>\n<li>SplitMedia：视频拆条任务；</li>\n<li>ComposeMedia：制作媒体文件任务；</li>\n<li>WechatPublish：微信发布任务；</li>\n<li>WechatMiniProgramPublish：微信小程序视频发布任务；</li>\n<li>PullUpload：拉取上传媒体文件任务；</li>\n<li>FastClipMedia：快速剪辑任务；</li>\n<li>RemoveWatermarkTask：智能去除水印任务；</li>\n<li>DescribeFileAttributesTask：获取文件属性任务；</li>\n<li>RebuildMedia：音画质重生任务（不推荐使用）；</li>\n<li>ReviewAudioVideo：音视频审核任务；</li>\n<li>ExtractTraceWatermark：提取溯源水印任务；</li>\n<li>ExtractCopyRightWatermark：提取版权水印任务；</li>\n<li>QualityInspect：音画质检测任务；</li>\n<li>QualityEnhance：音画质重生任务。</li>",
           "example": "Procedure",
           "member": "string",
           "name": "TaskType",
@@ -15675,6 +15683,16 @@
           "example": "无",
           "member": "QualityInspectTask",
           "name": "QualityInspectTask",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生任务信息，仅当 TaskType 为 QualityEnhance，该字段有值。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityEnhanceTask",
+          "name": "QualityEnhanceTask",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -19060,6 +19078,7 @@
           "example": "12ab",
           "member": "string",
           "name": "ImageContent",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -19070,6 +19089,7 @@
           "example": "10px",
           "member": "string",
           "name": "Width",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -19080,6 +19100,7 @@
           "example": "10px",
           "member": "string",
           "name": "Height",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -19090,6 +19111,7 @@
           "example": "once",
           "member": "string",
           "name": "RepeatType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -19100,12 +19122,13 @@
           "example": "0",
           "member": "int64",
           "name": "Transparency",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "ImageWatermarkTemplate": {
       "document": "图片水印模板",
@@ -28377,6 +28400,214 @@
       ],
       "usage": "in"
     },
+    "QualityEnhanceTask": {
+      "document": "音画质重生任务",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务 ID。",
+          "example": "123-xxx-xx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务流状态，取值：\n<li>PROCESSING：处理中；</li>\n<li>FINISH：已完成。</li>",
+          "example": "SUCCESS",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0 表示成功，其他值表示失败：\n<li>40000：输入参数不合法，请检查输入参数；</li>\n<li>60000：源文件错误（如视频数据损坏），请确认源文件是否正常；</li>\n<li>70000：内部服务错误，建议重试。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，空字符串表示成功，其他值表示失败，取值请参考 [视频处理类错误码](https://cloud.tencent.com/document/product/266/50368#.E8.A7.86.E9.A2.91.E5.A4.84.E7.90.86.E7.B1.BB.E9.94.99.E8.AF.AF.E7.A0.81) 列表。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ErrCodeExt",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生任务进度，取值范围 [0-100] 。",
+          "example": "0",
+          "member": "int64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生任务的输入。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityEnhanceTaskInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生任务的输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityEnhanceTaskOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生输出视频的元信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MediaMetaData",
+          "name": "MetaData",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "123",
+          "member": "string",
+          "name": "SessionId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
+          "example": "123",
+          "member": "string",
+          "name": "SessionContext",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityEnhanceTaskInput": {
+      "document": "音画质重生任务的输入。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。",
+          "example": "327083******3604148",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板 ID。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "QualityEnhanceTaskOutput": {
+      "document": "音画质重生任务输出",
+      "members": [
+        {
+          "disabled": false,
+          "document": "文件类型，例如 mp4、flv 等。",
+          "example": "mp4",
+          "member": "string",
+          "name": "FileType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件播放地址。",
+          "example": "http://125.xxx.mp4",
+          "member": "string",
+          "name": "FileUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "媒体文件 ID。",
+          "example": "123",
+          "member": "string",
+          "name": "FileId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "mediaName",
+          "member": "string",
+          "name": "MediaName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "9999-12-31T23:59:59Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "QualityEvaluationConfigureInfo": {
       "document": "视频画面质量评价的控制参数。",
       "members": [
@@ -33805,9 +34036,10 @@
         {
           "disabled": false,
           "document": "水印的宽度，支持 px，%，W%，H%，S%，L% 六种格式：\n<li>当字符串以 px 结尾，表示水印 Width 单位为像素，如 100px 表示 Width 为 100 像素；当填 0px 且\n Height 不为 0px 时，表示水印的宽度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的宽度取原始 SVG 图像的宽度；</li>\n<li>当字符串以 W% 结尾，表示水印 Width 为视频宽度的百分比大小，如 10W% 表示 Width 为视频宽度的 10%；</li>\n<li>当字符串以 H% 结尾，表示水印 Width 为视频高度的百分比大小，如 10H% 表示 Width 为视频高度的 10%；</li>\n<li>当字符串以 S% 结尾，表示水印 Width 为视频短边的百分比大小，如 10S% 表示 Width 为视频短边的 10%；</li>\n<li>当字符串以 L% 结尾，表示水印 Width 为视频长边的百分比大小，如 10L% 表示 Width 为视频长边的 10%；</li>\n<li>当字符串以 % 结尾时，含义同 W%。</li>\n默认值为 10W%。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Width",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -33815,25 +34047,27 @@
         {
           "disabled": false,
           "document": "水印的高度，支持 px，%，W%，H%，S%，L% 六种格式：\n<li>当字符串以 px 结尾，表示水印 Height 单位为像素，如 100px 表示 Height 为 100 像素；当填 0px 且\n Width 不为 0px 时，表示水印的高度按原始 SVG 图像等比缩放；当 Width、Height 都填 0px 时，表示水印的高度取原始 SVG 图像的高度；</li>\n<li>当字符串以 W% 结尾，表示水印 Height 为视频宽度的百分比大小，如 10W% 表示 Height 为视频宽度的 10%；</li>\n<li>当字符串以 H% 结尾，表示水印 Height 为视频高度的百分比大小，如 10H% 表示 Height 为视频高度的 10%；</li>\n<li>当字符串以 S% 结尾，表示水印 Height 为视频短边的百分比大小，如 10S% 表示 Height 为视频短边的 10%；</li>\n<li>当字符串以 L% 结尾，表示水印 Height 为视频长边的百分比大小，如 10L% 表示 Height 为视频长边的 10%；</li>\n<li>当字符串以 % 结尾时，含义同 H%。\n默认值为 0px。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Height",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "水印周期配置，用于配置水印周期性地显示与隐藏。\n主要使用场景是：为了视频防遮标，在视频多个地方设置水印，这些水印按固定顺序周期性地显示与隐藏。\n例如，设置 A、B、C、D 4 个水印分别位于视频的左上角、右上角、右下角、左下角处，视频开始时，{ A 显示 5 秒 -> B 显示 5 秒 -> C 显示 5 秒 -> D 显示 5 秒 } -> A 显示 5 秒 -> B 显示 5 秒 -> ...，任何时刻只显示一处水印。\n花括号 {} 表示由 A、B、C、D 4 个水印组成的大周期，可以看出每个大周期持续 20 秒。\n可以看出，A、B、C、D 都是周期性地显示 5 秒、隐藏 15 秒，且四者有固定的显示顺序。\n此配置项即用来描述单个水印的周期配置。",
-          "example": "",
+          "document": "水印周期配置，用于配置水印周期性地显示与隐藏。\n主要使用场景是：为了视频防遮标，在视频多个地方设置水印，这些水印按固定顺序周期性地显示与隐藏。\n例如，设置 A、B、C、D 4 个水印分别位于视频的左上角、右上角、右下角、左下角处，视频开始时，{ A 显示 5 秒 -> B 显示 5 秒 -> C 显示 5 秒 -> D 显示 5 秒 } -> A 显示 5 秒 -> B 显示 5 秒 -> ...，任何时刻只显示一处水印。\n花括号 {} 表示由 A、B、C、D 4 个水印组成的大周期，可以看出每个大周期持续 20 秒。\n可以看出，A、B、C、D 都是周期性地显示 5 秒、隐藏 15 秒，且四者有固定的显示顺序。\n此配置项即用来描述单个水印的周期配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "WatermarkCycleConfigForUpdate",
           "name": "CycleConfig",
+          "output_required": false,
           "required": false,
           "type": "object",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TEHDConfig": {
       "document": "极速高清参数配置。",
@@ -33870,6 +34104,7 @@
           "example": "TEHD-100",
           "member": "string",
           "name": "Type",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -33880,12 +34115,13 @@
           "example": "1000",
           "member": "uint64",
           "name": "MaxVideoBitrate",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TagConfigureInfo": {
       "document": "智能标签任务控制参数",
@@ -34465,9 +34701,10 @@
         {
           "disabled": false,
           "document": "字体类型，目前可以支持两种：\n<li>simkai.ttf：可以支持中文和英文；</li>\n<li>arial.ttf：仅支持英文。</li>",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FontType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34475,9 +34712,10 @@
         {
           "disabled": false,
           "document": "字体大小，格式：Npx，N 为数值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FontSize",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34485,9 +34723,10 @@
         {
           "disabled": false,
           "document": "字体颜色，格式：0xRRGGBB，默认值：0xFFFFFF（白色）。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "FontColor",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -34495,15 +34734,16 @@
         {
           "disabled": false,
           "document": "文字透明度，取值范围：(0, 1]\n<li>0：完全透明</li>\n<li>1：完全不透明</li>",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "FontAlpha",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "TimeRange": {
       "document": "用于描述一个时间段的通用数据类型。",
@@ -35717,6 +35957,7 @@
           "example": "libx264",
           "member": "string",
           "name": "Codec",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35727,6 +35968,7 @@
           "example": "25",
           "member": "uint64",
           "name": "Fps",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35737,6 +35979,7 @@
           "example": "500",
           "member": "uint64",
           "name": "Bitrate",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35747,6 +35990,7 @@
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35757,6 +36001,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Width",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35767,6 +36012,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Height",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35777,6 +36023,7 @@
           "example": "stretch",
           "member": "string",
           "name": "FillType",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35787,6 +36034,7 @@
           "example": "23",
           "member": "uint64",
           "name": "Vcrf",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35797,6 +36045,7 @@
           "example": "25",
           "member": "uint64",
           "name": "Gop",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -35807,6 +36056,7 @@
           "example": "ON",
           "member": "string",
           "name": "PreserveHDRSwitch",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -35817,12 +36067,13 @@
           "example": "hev1",
           "member": "string",
           "name": "CodecTag",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "VideoTrackItem": {
       "document": "视频轨的视频片段信息。",
@@ -36164,9 +36415,10 @@
         {
           "disabled": false,
           "document": "水印在视频里第一次出现的播放时间点，单位：秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "StartTime",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -36174,9 +36426,10 @@
         {
           "disabled": false,
           "document": "在一个水印周期内，水印显示的持续时间，单位：秒。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "DisplayDuration",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
@@ -36184,15 +36437,16 @@
         {
           "disabled": false,
           "document": "一个水印周期的持续时间，单位：秒。\n填 0 表示水印只持续一个水印周期（即在整个视频里只显示 DisplayDuration 秒）。",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "CycleDuration",
+          "output_required": false,
           "required": false,
           "type": "float",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "WatermarkInput": {
       "document": "视频处理任务中的水印参数类型",

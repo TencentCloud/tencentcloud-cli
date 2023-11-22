@@ -953,8 +953,8 @@
     "DescribeIPAMD": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPAMD\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"DisableVpcCniMode\": false,\n        \"EnableCustomizedPodCidr\": false,\n        \"EnableIPAMD\": false,\n        \"Phase\": \"running\",\n        \"Reason\": \"\",\n        \"RequestId\": \"xxxxx\",\n        \"SubnetIds\": null\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tke.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPAMD\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-8k33qz0w\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DisableVpcCniMode\": false,\n        \"EnableCustomizedPodCidr\": false,\n        \"EnableIPAMD\": false,\n        \"Phase\": \"running\",\n        \"Reason\": \"\",\n        \"RequestId\": \"c692a3b6-11cd-4a9d-8e36-409545d332a2\",\n        \"SubnetIds\": [\n            \"subnet-imgoatdg\"\n        ],\n        \"ClaimExpiredDuration\": \"300s\"\n    }\n}",
         "title": "获取eniipamd组件信息"
       }
     ],

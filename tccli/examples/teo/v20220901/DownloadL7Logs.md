@@ -9,7 +9,8 @@ tccli teo DownloadL7Logs --cli-unfold-argument  \
     --Offset 0 \
     --Limit 10 \
     --StartTime 2022-05-04T03:27:00+08:00 \
-    --EndTime 2022-05-10T23:59:00+08:00
+    --EndTime 2022-05-10T23:59:00+08:00 \
+    --ZoneIds zone-2mzegj4vln5f
 ```
 
 Output: 

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CloseWafProtection": [
+      {
+        "document": "关闭 WAF 防护",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CloseWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "关闭 WAF 防护"
+      }
+    ],
     "CreateCloudNativeAPIGateway": [
       {
         "document": "创建云原生API网关实例",
@@ -70,6 +78,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"Name\": \"abc\",\n    \"NodeConfig\": {\n        \"Specification\": \"abc\",\n        \"Number\": 0\n    },\n    \"SubnetId\": \"abc\",\n    \"Description\": \"abc\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"GatewayId\": \"abc\",\n            \"GroupId\": \"abc\",\n            \"Status\": \"abc\",\n            \"TaskId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建云原生网关引擎分组"
+      }
+    ],
+    "CreateWafDomains": [
+      {
+        "document": "新建 WAF 防护域名",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateWafDomains\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Domains\": [\n        \"example.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "新建 WAF 防护域名"
       }
     ],
     "DeleteCloudNativeAPIGateway": [
@@ -390,6 +406,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action:DescribeCloudNativeAPIGatewayUpstream\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"ServiceName\": \"test\",\n    \"Host\": \"10.0.0.1\",\n    \"Port\": \"8080\",\n    \"Status\": \"HEALTHY\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
         "title": "将上游节点置为健康"
+      }
+    ],
+    "OpenWafProtection": [
+      {
+        "document": "开启 WAF 防护",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OpenWafProtection\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-0f7c158e\",\n    \"Type\": \"Global\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
+        "title": "开启 WAF 防护"
       }
     ],
     "UpdateCloudNativeAPIGatewayCertificateInfo": [

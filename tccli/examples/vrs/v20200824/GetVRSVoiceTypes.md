@@ -20,7 +20,8 @@ Output:
                     "VoiceGender": 2,
                     "TaskType": 1,
                     "TaskID": "1234d751-fb5f-4805-889c-2fce9e8babcd",
-                    "DateCreated": "2023-10-23T10:25:54+08:00"
+                    "DateCreated": "2023-10-23T10:25:54+08:00",
+                    "IsDeployed": true
                 },
                 {
                     "VoiceType": 222222,
@@ -28,7 +29,8 @@ Output:
                     "VoiceGender": 1,
                     "TaskType": 1,
                     "TaskID": "1234ed3d-4026-4e48-9926-382459e4abcd",
-                    "DateCreated": "2023-10-20T15:38:28+08:00"
+                    "DateCreated": "2023-10-20T15:38:28+08:00",
+                    "IsDeployed": true
                 }
             ]
         }

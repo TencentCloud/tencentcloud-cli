@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CloseWafProtection": {
+      "document": "关闭 WAF 防护",
+      "input": "CloseWafProtectionRequest",
+      "name": "关闭 WAF 防护",
+      "output": "CloseWafProtectionResponse",
+      "status": "online"
+    },
     "CreateCloudNativeAPIGateway": {
       "document": "创建云原生API网关实例",
       "input": "CreateCloudNativeAPIGatewayRequest",
@@ -61,6 +68,13 @@
       "input": "CreateNativeGatewayServerGroupRequest",
       "name": "创建云原生网关引擎分组",
       "output": "CreateNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "CreateWafDomains": {
+      "document": "新建 WAF 防护域名",
+      "input": "CreateWafDomainsRequest",
+      "name": "新建 WAF 防护域名",
+      "output": "CreateWafDomainsResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGateway": {
@@ -341,6 +355,13 @@
       "input": "ModifyUpstreamNodeStatusRequest",
       "name": "修改云原生网关上游实例节点健康状态",
       "output": "ModifyUpstreamNodeStatusResponse",
+      "status": "online"
+    },
+    "OpenWafProtection": {
+      "document": "开启 WAF 防护",
+      "input": "OpenWafProtectionRequest",
+      "name": "开启 WAF 防护",
+      "output": "OpenWafProtectionResponse",
       "status": "online"
     },
     "UpdateCloudNativeAPIGatewayCertificateInfo": {
@@ -669,6 +690,51 @@
         }
       ],
       "usage": "out"
+    },
+    "CloseWafProtectionRequest": {
+      "document": "CloseWafProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 防护资源的类型。\n- Global  实例\n- Service  服务\n- Route  路由\n- Object  对象",
+          "example": "Global",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当资源类型 Type 是 Service 或 Route 的时候，传入的服务或路由的列表",
+          "example": "无",
+          "member": "string",
+          "name": "List",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CloseWafProtectionResponse": {
+      "document": "CloseWafProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CloudAPIGatewayCanaryRuleList": {
       "document": "灰度规则列表",
@@ -2675,6 +2741,42 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWafDomainsRequest": {
+      "document": "CreateWafDomains请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WAF 防护域名列表",
+          "example": "[\"tencent.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateWafDomainsResponse": {
+      "document": "CreateWafDomains返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -7552,6 +7654,51 @@
         }
       ],
       "usage": "both"
+    },
+    "OpenWafProtectionRequest": {
+      "document": "OpenWafProtection请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "网关ID",
+          "example": "gateway-962b7d7c",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 防护资源的类型。\n- Global  实例\n- Service  服务\n- Route  路由\n- Object  对象（接口暂不支持）",
+          "example": "Global",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当资源类型 Type 是 Service 或 Route 的时候，传入的服务或路由的列表",
+          "example": "无",
+          "member": "string",
+          "name": "List",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "OpenWafProtectionResponse": {
+      "document": "OpenWafProtection返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "PolarisCLSTopicInfo": {
       "document": "北极星日志主题信息",

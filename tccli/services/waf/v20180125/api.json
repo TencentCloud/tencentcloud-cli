@@ -7422,7 +7422,7 @@
         },
         {
           "disabled": false,
-          "document": "分页开始条数",
+          "document": "分页偏移量，取Limit整数倍。最小值为0，最大值= Total/Limit向上取整",
           "example": "0",
           "member": "uint64",
           "name": "OffSet",
@@ -7431,8 +7431,8 @@
         },
         {
           "disabled": false,
-          "document": "每页的条数",
-          "example": "50",
+          "document": "每页返回的数量",
+          "example": "20",
           "member": "uint64",
           "name": "Limit",
           "required": false,
