@@ -810,7 +810,7 @@
         {
           "disabled": false,
           "document": "模块名，固定字段：cert_mng",
-          "example": "",
+          "example": "cert_mng",
           "member": "string",
           "name": "Module",
           "required": true,
@@ -819,7 +819,7 @@
         {
           "disabled": false,
           "document": "操作名，固定字段：cert_download_for_user",
-          "example": "",
+          "example": "cert_download_for_user",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -828,7 +828,7 @@
         {
           "disabled": false,
           "document": "证书ID，可以在证书详情页面获取",
-          "example": "",
+          "example": "171781",
           "member": "uint64",
           "name": "CertId",
           "required": true,
@@ -837,7 +837,7 @@
         {
           "disabled": false,
           "document": "证书DN，可以在证书详情页面获取",
-          "example": "",
+          "example": "name",
           "member": "string",
           "name": "CertDn",
           "required": true,
@@ -846,7 +846,7 @@
         {
           "disabled": false,
           "document": "区块链网络ID，可在区块链网络详情或列表中获取",
-          "example": "",
+          "example": "251005746bckuobc41mpu",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -855,7 +855,7 @@
         {
           "disabled": false,
           "document": "下载证书的组织名称，可以在组织管理列表中获取当前组织的名称",
-          "example": "",
+          "example": "youtuOrg",
           "member": "string",
           "name": "GroupName",
           "required": true,
@@ -870,18 +870,30 @@
         {
           "disabled": false,
           "document": "证书名称",
-          "example": "",
+          "example": "kyloz@youtuorg.bckuobc41mpu@client.pem",
           "member": "string",
           "name": "CertName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": true,
+          "document": "证书内容",
+          "example": "-----BEGIN CERTIFICATE-----MIIC4DCCAoagAwIBAgIBBzAKBggqhkjOPQQDAjBpMQswCQYDVQQGEwJDTjERMA8GA1UECAwIU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0dU9yZzEhMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1MB4XDTE5MTAxNjA2NDY0NVoXDTIyMDkzMDA2NDY0NVowgYUxCzAJBgNVBAYTAkNOMREwDwYDVQQIEwhTaGVuWmhlbjESMBAGA1UEBxMJNFNoZW5aaGVuMREwDwYDVQQKEwh5b3V0dU9yZzEPMA0GA1UECxMGY2xpZW50MSswKQYDVQQDFCJreWxvekB5b3V0dW9yZy5iY2t1b2JjNDFtcHVAY2xpZW50MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwitZ4tmOK9tMvDLP4kx+ZmM8QnzHgfxr8KeoEjBwJomODlwyo6L5XIUeQIz1K/gwU6o8ArusTrab1cWzgHyF8qOCAQAwgf0wCQYDVR0TBAIwADARBglghkgBhvhCAQEEBAMCBkAwHQYDVR0OBBYEFNeW9zH7j/rxDklNBz4OB5aWVY66MIGbBgNVHSMEgZMwgZCAFDdP92WahmfoPabh45gYaozILIVooW2kazBpMQswCQYDVQQGEwJDTjERMA8GA1UECAwIU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0dU9yZzEhMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1ggkA+Nat6MctlAowCwYDVR0PBAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAoGCCqGSM49BAMCA0gAMEUCIQDquRCXMx6T1QUi9YviE6cpGfQyIQIJ+SAp/6u5EhgzjgIgaf9eX823ZRWLG+S7CdWSk/oVVeSoelyUDYqTvYYqXtI=-----END CERTIFICATE-----",
+          "member": "string",
+          "name": "CertCtx",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书内容",
-          "example": "",
+          "example": "-----BEGIN CERTIFICATE-----MIIC4DCCAoagAwIBAgIBBzAKBggqhkjOPQQDAjBpMQswCQYDVQQGEwJDTjERMA8GA1UECAwIU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0dU9yZzEhMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1MB4XDTE5MTAxNjA2NDY0NVoXDTIyMDkzMDA2NDY0NVowgYUxCzAJBgNVBAYTAkNOMREwDwYDVQQIEwhTaGVuWmhlbjESMBAGA1UEBxMJNFNoZW5aaGVuMREwDwYDVQQKEwh5b3V0dU9yZzEPMA0GA1UECxMGY2xpZW50MSswKQYDVQQDFCJreWxvekB5b3V0dW9yZy5iY2t1b2JjNDFtcHVAY2xpZW50MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEwitZ4tmOK9tMvDLP4kx+ZmM8QnzHgfxr8KeoEjBwJomODlwyo6L5XIUeQIz1K/gwU6o8ArusTrab1cWzgHyF8qOCAQAwgf0wCQYDVR0TBAIwADARBglghkgBhvhCAQEEBAMCBkAwHQYDVR0OBBYEFNeW9zH7j/rxDklNBz4OB5aWVY66MIGbBgNVHSMEgZMwgZCAFDdP92WahmfoPabh45gYaozILIVooW2kazBpMQswCQYDVQQGEwJDTjERMA8GA1UECAwIU2hlblpoZW4xETAPBgNVBAcMCFNoZW5aaGVuMREwDwYDVQQKDAh5b3V0dU9yZzEhMB8GA1UEAwwYY2EueW91dHVvcmcuYmNrdW9iYzQxbXB1ggkA+Nat6MctlAowCwYDVR0PBAQDAgWgMBMGA1UdJQQMMAoGCCsGAQUFBwMBMAoGCCqGSM49BAMCA0gAMEUCIQDquRCXMx6T1QUi9YviE6cpGfQyIQIJ+SAp/6u5EhgzjgIgaf9eX823ZRWLG+S7CdWSk/oVVeSoelyUDYqTvYYqXtI=-----END CERTIFICATE-----",
           "member": "string",
-          "name": "CertCtx",
+          "name": "Cert",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2277,22 +2289,32 @@
       "document": "Invoke返回参数结构体",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "交易ID",
-          "example": "myOrgpeer0.myorg.envnew:VALID",
+          "example": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c",
           "member": "string",
           "name": "Txid",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "交易执行结果",
-          "example": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c",
+          "example": "myOrgpeer0.myorg.envnew:VALID",
           "member": "string",
           "name": "Events",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "交易ID",
+          "example": "280e9f1436c3ce045af4f3c7060ff217583585d41faf1f1daa99387419bac07c",
+          "member": "string",
+          "name": "TxId",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

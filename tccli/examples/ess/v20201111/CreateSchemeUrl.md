@@ -172,3 +172,34 @@ Output:
 }
 ```
 
+**Example 7: 指定证件信息，给企业员工生成跳转到电子签小程序的签署链接**
+
+1. 获取合同的签署链接(FlowId设置成合同的ID)
+2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)
+3. 根据证件信息匹配签署人(指定IdCardType, IdCardNumber参数)
+
+Input: 
+
+```
+tccli ess CreateSchemeUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowId yDwq7UU*Uu1vFD6uHSIyKQPf \
+    --PathType 1 \
+    --EndPoint HTTP_SHORT_URL \
+    --Name 典子谦 \
+    --Mobile 13200000000 \
+    --IdCardType ID_CARD \
+    --IdCardNumber 620000198802020000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s1693*****49",
+        "SchemeQrcodeUrl": "",
+        "SchemeUrl": "https://essurl.cn/3a****tM"
+    }
+}
+```
+

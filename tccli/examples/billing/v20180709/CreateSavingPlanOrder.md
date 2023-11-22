@@ -13,7 +13,8 @@ tccli billing CreateSavingPlanOrder --cli-unfold-argument  \
     --TimeSpan 1 \
     --TimeUnit y \
     --CommodityCode svp_common_CYq7cGNk3FaV \
-    --PromiseUseAmount 10000
+    --PromiseUseAmount 10000 \
+    --ClientToken sp-856f5555-8064-43e9-8b7e-d04c5a9d6a9a,856f5555806443e98b7ed04c5a9d6a9a
 ```
 
 Output: 

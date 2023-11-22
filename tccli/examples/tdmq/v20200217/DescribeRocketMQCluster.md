@@ -30,7 +30,14 @@ Output:
             ],
             "SupportNamespaceEndpoint": true,
             "RocketMQFlag": true,
-            "IsVip": true
+            "IsVip": true,
+            "IsolateTime": 0,
+            "Status": 1,
+            "AclEnabled": true,
+            "InternalEndpoint": "",
+            "HttpInternalEndpoint": "",
+            "HttpVpcEndpoint": "",
+            "HttpPublicEndpoint": ""
         },
         "ClusterConfig": {
             "MaxTpsPerNamespace": 8000,
@@ -41,7 +48,9 @@ Output:
             "UsedGroupNum": 1,
             "MaxRetentionTime": 1296000000,
             "MaxLatencyTime": 3456000000,
-            "MaxNamespaceNum": 10
+            "MaxNamespaceNum": 10,
+            "MaxQueuesPerTopic": 1,
+            "TopicDistribution": []
         },
         "ClusterStats": {
             "TopicNum": 2,

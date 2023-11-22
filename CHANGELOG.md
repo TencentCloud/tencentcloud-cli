@@ -1,3 +1,227 @@
+# Release 3.0.891.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 37 次发布
+
+发布时间：2023-11-23 01:07:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSavingPlanOrder](http://document.tencentcloudapi.woa.com/document/product/555/82456)
+
+	* 新增入参：ClientToken
+
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* <font color="#dd0000">**修改成员**：</font>DeductionEndTime, OriginUnit, TotalCycles, RemainCycles, CycleStartTime, CycleEndTime, Region, Zone
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 63 次发布
+
+发布时间：2023-11-23 01:13:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyInstancesAttribute](http://document.tencentcloudapi.woa.com/document/product/213/15739)
+
+	* 新增入参：UserData
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 46 次发布
+
+发布时间：2023-11-23 01:17:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RestartInstance](http://document.tencentcloudapi.woa.com/document/product/845/30630)
+
+	* 新增入参：UpgradeKernel
+
+* [UpdateInstance](http://document.tencentcloudapi.woa.com/document/product/845/30629)
+
+	* 新增入参：KibanaPrivateDomain, CerebroPrivateDomain
+
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#InstanceInfo)
+
+	* 新增成员：KibanaPrivateVip, CustomKibanaPrivateUrl
+
+* [OptionalWebServiceInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#OptionalWebServiceInfo)
+
+	* 新增成员：PrivateVip, CustomPrivateUrl
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 53 次发布
+
+发布时间：2023-11-23 01:17:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSchemeUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79345)
+
+	* 新增入参：IdCardType, IdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 106 次发布
+
+发布时间：2023-11-23 01:17:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSignUrls](http://document.tencentcloudapi.woa.com/document/product/1595/75249)
+
+	* 新增入参：IdCardType, IdCardNumber
+
+
+修改数据结构：
+
+* [FillApproverInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#FillApproverInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>NotChannelOrganization
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 8 次发布
+
+发布时间：2023-11-23 01:18:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#BillDetailData)
+
+	* 新增成员：Id
+
+* [CustomerBillDetailData](http://document.tencentcloudapi.woa.com/document/product/1724/80754#CustomerBillDetailData)
+
+	* 新增成员：Id
+
+
+
+
+## 腾讯云区块链服务平台 TBaaS(tbaas) 版本：2018-04-16
+
+### 第 10 次发布
+
+发布时间：2023-11-23 01:24:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DownloadUserCert](http://document.tencentcloudapi.woa.com/document/product/663/38516)
+
+	* 新增出参：Cert
+
+* [Invoke](http://document.tencentcloudapi.woa.com/document/product/663/19464)
+
+	* 新增出参：TxId
+
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 28 次发布
+
+发布时间：2023-11-23 01:24:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateCustomAccount
+* DeleteCustomAccount
+* DescribeCustomAccounts
+* ModifyCustomAccount
+
+
+
+## 微服务引擎 TSE(tse) 版本：2020-12-07
+
+### 第 48 次发布
+
+发布时间：2023-11-23 01:28:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteWafDomains](http://document.tencentcloudapi.woa.com/document/product/1364/82715)
+* [DescribeWafDomains](http://document.tencentcloudapi.woa.com/document/product/1364/82714)
+* [DescribeWafProtection](http://document.tencentcloudapi.woa.com/document/product/1364/82713)
+
+新增数据结构：
+
+* [DescribeWafDomainsResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeWafDomainsResult)
+* [DescribeWafProtectionResult](http://document.tencentcloudapi.woa.com/document/product/1364/54942#DescribeWafProtectionResult)
+* [RouteWafStatus](http://document.tencentcloudapi.woa.com/document/product/1364/54942#RouteWafStatus)
+* [ServiceWafStatus](http://document.tencentcloudapi.woa.com/document/product/1364/54942#ServiceWafStatus)
+
+
+
 # Release 3.0.890.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

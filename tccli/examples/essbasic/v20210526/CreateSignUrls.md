@@ -267,3 +267,52 @@ Output:
 }
 ```
 
+**Example 6: 指定证件信息，为个人/自然人生成签署链接**
+
+给个人/自然人生成签署链接 GenerateType设置为PERSON, 并传个人的名字、手机号和证件信息来生成
+
+Input: 
+
+```
+tccli essbasic CreateSignUrls --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --FlowIds yDwiBUUckpo27hh3UuLiduR83BEL3kSb \
+    --Endpoint WEIXINAPP \
+    --GenerateType PERSON \
+    --Name 张三 \
+    --Mobile 18888888888 \
+    --IdCardType ID_CARD \
+    --IdCardNumber 620000198802020000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SignUrlInfos": [
+            {
+                "SignUrl": "https://essurl.cn/9oJ**P",
+                "Deadline": 0,
+                "SignOrder": 0,
+                "SignId": "",
+                "CustomUserId": "",
+                "Name": "",
+                "Mobile": "",
+                "OrganizationName": "",
+                "ApproverType": "",
+                "IdCardNumber": "",
+                "FlowId": "yDwiBUUckpo27hh3UuLiduR83BEL3kSb",
+                "OpenId": "",
+                "FlowGroupId": "",
+                "SignQrcodeUrl": ""
+            }
+        ],
+        "ErrorMessages": [],
+        "RequestId": "0ec76ecb**bde91"
+    }
+}
+```
+
