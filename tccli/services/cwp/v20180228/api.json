@@ -3046,7 +3046,7 @@
       "status": "online"
     },
     "ModifyAutoOpenProVersionConfig": {
-      "document": " 用于设置新增主机自动开通专业防护配置。",
+      "document": "用于设置新增主机自动开通专业防护配置。",
       "input": "ModifyAutoOpenProVersionConfigRequest",
       "name": "设置自动开通配置",
       "output": "ModifyAutoOpenProVersionConfigResponse",
@@ -26275,7 +26275,7 @@
           "example": "3",
           "member": "uint64",
           "name": "LicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26285,7 +26285,7 @@
           "example": "3",
           "member": "uint64",
           "name": "AvailableLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26295,7 +26295,7 @@
           "example": "2",
           "member": "uint64",
           "name": "AvailableProVersionLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26305,7 +26305,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AvailableFlagshipVersionLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26315,7 +26315,7 @@
           "example": "0",
           "member": "uint64",
           "name": "NearExpiryLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26325,7 +26325,7 @@
           "example": "0",
           "member": "uint64",
           "name": "ExpireLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26335,7 +26335,7 @@
           "example": "false",
           "member": "bool",
           "name": "AutoOpenStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26345,7 +26345,7 @@
           "example": "PROVERSION_POSTPAY ",
           "member": "string",
           "name": "ProtectType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26355,7 +26355,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsOpenStatusHistory",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26365,7 +26365,7 @@
           "example": "0",
           "member": "uint64",
           "name": "UsedLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26375,7 +26375,7 @@
           "example": "3",
           "member": "uint64",
           "name": "NotExpiredLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26385,7 +26385,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FlagshipVersionLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26395,7 +26395,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ProVersionLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26405,7 +26405,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CwpVersionLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26415,7 +26415,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AvailableLHLicenseCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -26425,7 +26425,7 @@
           "example": "false",
           "member": "bool",
           "name": "AutoRepurchaseSwitch",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26435,7 +26435,7 @@
           "example": "false",
           "member": "bool",
           "name": "AutoRepurchaseRenewSwitch",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -26445,8 +26445,18 @@
           "example": "0",
           "member": "uint64",
           "name": "DestroyOrderNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费开关,true 开启,false 关闭",
+          "example": "false",
+          "member": "bool",
+          "name": "RepurchaseRenewSwitch",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -46248,6 +46258,15 @@
           "example": "1",
           "member": "uint64",
           "name": "AutoRepurchaseRenewSwitch",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "手动购买的订单是否自动续费,默认0, 0关闭 ,1 开启",
+          "example": "0",
+          "member": "uint64",
+          "name": "RepurchaseRenewSwitch",
           "required": false,
           "type": "int"
         }

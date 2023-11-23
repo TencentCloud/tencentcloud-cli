@@ -1728,8 +1728,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLicenseGeneral\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0,\n        \"AutoRepurchaseSwitch\": false,\n        \"AutoRepurchaseRenewSwitch\": false,\n        \"DestroyOrderNum\": 0\n    }\n}",
-        "title": "示例"
+        "output": "{\n    \"Response\": {\n        \"AutoOpenStatus\": true,\n        \"AvailableFlagshipVersionLicenseCnt\": 1,\n        \"AvailableLHLicenseCnt\": 0,\n        \"AvailableLicenseCnt\": 3,\n        \"AvailableProVersionLicenseCnt\": 2,\n        \"CwpVersionLicenseCnt\": 0,\n        \"ExpireLicenseCnt\": 0,\n        \"FlagshipVersionLicenseCnt\": 1,\n        \"IsOpenStatusHistory\": true,\n        \"LicenseCnt\": 3,\n        \"NearExpiryLicenseCnt\": 0,\n        \"NotExpiredLicenseCnt\": 3,\n        \"ProVersionLicenseCnt\": 2,\n        \"ProtectType\": \"FLAGSHIP_PREPAY\",\n        \"RequestId\": \"d9a5456b-a2db-4106-bd12-32e2c735435d\",\n        \"UsedLicenseCnt\": 0,\n        \"AutoRepurchaseSwitch\": false,\n        \"AutoRepurchaseRenewSwitch\": false,\n        \"DestroyOrderNum\": 0,\n        \"RepurchaseRenewSwitch\": false\n    }\n}",
+        "title": "查询授权概览信息"
       }
     ],
     "DescribeLicenseList": [
@@ -3521,7 +3521,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAutoOpenProVersionConfig\n<公共请求参数>\n\n{\n    \"Status\": \"CLOSE\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
-        "title": "示例"
+        "title": "设置授权管理参数配置"
       }
     ],
     "ModifyBanMode": [

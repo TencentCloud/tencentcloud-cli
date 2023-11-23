@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"Name\": \"probe\",\n            \"TargetAddress\": \"http://www.baidu.com\"\n        }\n    ],\n    \"Parameters\": \"{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":1,\\\"netDnsTimeout\\\":5,\\\"netDnsQuerymethod\\\":1,\\\"netDnsNs\\\":\\\"\\\",\\\"netDigOn\\\":1,\\\"netDnsServer\\\":2,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":60,\\\"netTracertNum\\\":30,\\\"whiteList\\\":\\\"\\\",\\\"blackList\\\":\\\"\\\",\\\"netIcmpActivexStr\\\":\\\"\\\"}\",\n    \"Interval\": 30,\n    \"TaskCategory\": 1,\n    \"TaskType\": 5,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Cron\": \"* 0-6 * * *\",\n    \"Tag\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"a1\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskIDs\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskIDs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量创建拨测任务"
       },
       {
@@ -138,7 +138,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProbeTaskConfigurationList\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"task-xx\"\n    ],\n    \"Interval\": 30,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Parameters\": \"{}\",\n    \"Cron\": \"* 0-6 * * *\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新拨测任务配置"
       }
     ]

@@ -1327,6 +1327,17 @@
           "required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "护栏处理方式，1--顺序回滚，2--演练暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyDealType",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -1341,8 +1352,7 @@
           "member": "TaskGroupConfig",
           "name": "TaskGroupsConfig",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -1351,8 +1361,7 @@
           "member": "string",
           "name": "TaskTitle",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1361,8 +1370,7 @@
           "member": "string",
           "name": "TaskDescription",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1371,8 +1379,7 @@
           "member": "uint64",
           "name": "TaskMode",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1381,8 +1388,7 @@
           "member": "uint64",
           "name": "TaskPauseDuration",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -1391,8 +1397,16 @@
           "member": "TagWithCreate",
           "name": "Tags",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "护栏处理方式，1--顺序回滚，2--演练暂停",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyDealType",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -2459,6 +2473,16 @@
           "name": "AlarmPolicy",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "护栏处理方式，1--顺序回滚，2--演练暂停\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PolicyDealType",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

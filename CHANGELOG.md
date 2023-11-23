@@ -1,3 +1,322 @@
+# Release 3.0.892.1
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 17 次发布
+
+发布时间：2023-11-24 01:08:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateProbeTasks](http://document.tencentcloudapi.woa.com/document/product/280/66213)
+
+	* 新增入参：NodeIpType
+
+* [UpdateProbeTaskConfigurationList](http://document.tencentcloudapi.woa.com/document/product/280/66201)
+
+	* 新增入参：NodeIpType
+
+
+修改数据结构：
+
+* [ProbeTask](http://document.tencentcloudapi.woa.com/document/product/280/40931#ProbeTask)
+
+	* 新增成员：NodeIpType
+
+
+
+
+## 混沌演练平台(cfg) 版本：2021-08-20
+
+### 第 8 次发布
+
+发布时间：2023-11-24 01:09:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Task](http://document.tencentcloudapi.woa.com/document/product/1694/79907#Task)
+
+	* 新增成员：PolicyDealType
+
+* [TaskConfig](http://document.tencentcloudapi.woa.com/document/product/1694/79907#TaskConfig)
+
+	* 新增成员：PolicyDealType
+
+* [Template](http://document.tencentcloudapi.woa.com/document/product/1694/79907#Template)
+
+	* 新增成员：PolicyDealType
+
+
+
+
+## 日志服务(cls) 版本：2020-10-16
+
+### 第 49 次发布
+
+发布时间：2023-11-24 01:10:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56466)
+
+	* 新增入参：Enable, Classifications
+
+* [ModifyAlarm](http://document.tencentcloudapi.woa.com/document/product/614/56459)
+
+	* 新增入参：Enable, Tags, Classifications
+
+
+新增数据结构：
+
+* [AlarmClassification](http://document.tencentcloudapi.woa.com/document/product/614/56471#AlarmClassification)
+* [MetricLabel](http://document.tencentcloudapi.woa.com/document/product/614/56471#MetricLabel)
+
+修改数据结构：
+
+* [LogContextInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#LogContextInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>RawLog, IndexStatus
+
+* [ScheduledSqlResouceInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#ScheduledSqlResouceInfo)
+
+	* 新增成员：MetricNames, MetricLabels, CustomTime, CustomMetricLabels
+
+* [TopicInfo](http://document.tencentcloudapi.woa.com/document/product/614/56471#TopicInfo)
+
+	* 新增成员：BizType, IsWebTracking
+
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 79 次发布
+
+发布时间：2023-11-24 01:11:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeLicenseGeneral](http://document.tencentcloudapi.woa.com/document/product/296/76032)
+
+	* 新增出参：RepurchaseRenewSwitch
+
+* [ModifyAutoOpenProVersionConfig](http://document.tencentcloudapi.woa.com/document/product/296/19863)
+
+	* 新增入参：RepurchaseRenewSwitch
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 12 次发布
+
+发布时间：2023-11-24 01:14:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [TDMQParams](http://document.tencentcloudapi.woa.com/document/product/1359/67704#TDMQParams)
+
+修改数据结构：
+
+* [ConnectionDescription](http://document.tencentcloudapi.woa.com/document/product/1359/67704#ConnectionDescription)
+
+	* 新增成员：TDMQParams
+
+* [DTSParams](http://document.tencentcloudapi.woa.com/document/product/1359/67704#DTSParams)
+
+	* 新增成员：ConsumerGroupName, Account, Password
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 54 次发布
+
+发布时间：2023-11-24 01:15:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePersonAuthCertificateImage](http://document.tencentcloudapi.woa.com/document/product/1668/81457)
+
+	* 新增入参：SceneKey
+
+* [CreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1668/79307)
+
+	* 新增入参：SceneKey
+
+
+修改数据结构：
+
+* [HasAuthUser](http://document.tencentcloudapi.woa.com/document/product/1668/79360#HasAuthUser)
+
+	* 新增成员：MainOrganizationId
+
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 41 次发布
+
+发布时间：2023-11-24 01:21:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：SFType
+
+
+
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 44 次发布
+
+发布时间：2023-11-24 01:22:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CertificateExtra](http://document.tencentcloudapi.woa.com/document/product/400/41679#CertificateExtra)
+
+	* 新增成员：CompanyType
+
+	* <font color="#dd0000">**修改成员**：</font>SMCert
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：HasRenewOrder, ReplaceOriCertIsDelete, IsExpiring, DVAuthDeadline, ValidationPassedTime, CertSANs, AwaitingValidationMsg, AllowDownload
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 82 次发布
+
+发布时间：2023-11-24 01:23:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* DeleteProClusters
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 21 次发布
+
+发布时间：2023-11-24 01:24:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateConfigGroupVersion](http://document.tencentcloudapi.woa.com/document/product/1738/82722)
+* [DeployConfigGroupVersion](http://document.tencentcloudapi.woa.com/document/product/1738/82721)
+* [DescribeConfigGroupVersionDetail](http://document.tencentcloudapi.woa.com/document/product/1738/82720)
+* [DescribeConfigGroupVersions](http://document.tencentcloudapi.woa.com/document/product/1738/82719)
+* [DescribeDeployHistory](http://document.tencentcloudapi.woa.com/document/product/1738/82718)
+* [DescribeEnvironments](http://document.tencentcloudapi.woa.com/document/product/1738/82717)
+
+新增数据结构：
+
+* [ConfigGroupVersionInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#ConfigGroupVersionInfo)
+* [DeployRecord](http://document.tencentcloudapi.woa.com/document/product/1738/81211#DeployRecord)
+* [EnvInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#EnvInfo)
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 43 次发布
+
+发布时间：2023-11-24 01:24:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Instance](http://document.tencentcloudapi.woa.com/document/product/851/74915#Instance)
+
+	* 新增成员：CvmInstanceId
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 35 次发布
+
+发布时间：2023-11-24 01:25:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82726)
+* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
+* [StopStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82724)
+
+新增数据结构：
+
+* [AudioEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#AudioEncodeParams)
+* [VideoEncodeParams](http://document.tencentcloudapi.woa.com/document/product/647/44055#VideoEncodeParams)
+
+
+
 # Release 3.0.891.1
 
 ## 费用中心(billing) 版本：2018-07-09

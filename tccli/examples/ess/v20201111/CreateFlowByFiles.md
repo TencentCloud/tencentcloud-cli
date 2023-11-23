@@ -120,7 +120,7 @@ Output:
 3. 他方企业参与者仅具有一个印章签署控件（SignComponents中仅有一个Component元素，且该元素的ComponentType为SIGN_SEAL，使用关键字定位方式，即GenerateMode = KEYWORD）。
 4. C端参与者仅具有一个签名签署控件（SignComponents中仅有一个Component元素，且该元素的ComponentType为SIGN_SIGNATURE，使用关键字定位方式，即GenerateMode = KEYWORD）。
 5. 本合同为无序签署（Unordered传递为true）。
-6. 有关关键字定位PDF的创建方式，请参阅电子签开发者中心 -> 常见问题 -> PDF相关介绍。
+6. 关键字定位PDF的创建方式，请参阅电子签开发者中心 -> 常见问题 -> PDF相关介绍。
 
 Input: 
 
