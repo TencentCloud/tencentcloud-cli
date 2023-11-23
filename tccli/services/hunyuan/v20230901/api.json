@@ -1,0 +1,443 @@
+{
+  "actions": {
+    "ChatPro": {
+      "document": "腾讯混元大模型高级版是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口为SSE协议。",
+      "input": "ChatProRequest",
+      "name": "腾讯混元大模型高级版",
+      "output": "ChatProResponse",
+      "status": "online"
+    },
+    "ChatStd": {
+      "document": "腾讯混元大模型标准版是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。本接口为SSE协议。",
+      "input": "ChatStdRequest",
+      "name": "腾讯混元大模型标准版",
+      "output": "ChatStdResponse",
+      "status": "online"
+    },
+    "GetTokenCount": {
+      "document": "该接口用于计算文本对应Token数、字符数。",
+      "input": "GetTokenCountRequest",
+      "name": "Token计数",
+      "output": "GetTokenCountResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-09-01",
+    "api_brief": "腾讯混元大模型是由腾讯研发的大语言模型，具备强大的中文创作能力，复杂语境下的逻辑推理能力，以及可靠的任务执行能力。",
+    "serviceNameCN": "腾讯混元大模型",
+    "serviceShortName": "hunyuan"
+  },
+  "objects": {
+    "ChatProRequest": {
+      "document": "ChatPro请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "聊天上下文信息。\n说明：\n1.长度最多为40, 按对话时间从旧到新在数组中排列。\n2.Message的Role当前可选值：user、assistant，其中，user和assistant需要交替出现(一问一答)，最后一个为user提问, 且Content不能为空。\n3.Messages中Content总长度不超过16000token，超过则会截断最前面的内容，只保留尾部内容。建议不超过4000token。",
+          "example": "无",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "说明：\n1.影响输出文本的多样性，取值越大，生成文本的多样性越强。\n2.默认1.0，取值区间为[0.0, 1.0]。\n3.非必要不建议使用, 不合理的取值会影响效果。",
+          "example": "无",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "说明：\n1.较高的数值会使输出更加随机，而较低的数值会使其更加集中和确定。\n2.默认1.0，取值区间为[0.0，2.0]。\n3.非必要不建议使用,不合理的取值会影响效果。",
+          "example": "无",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatProResponse": {
+      "document": "ChatPro返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "unix 时间戳，单位为秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token统计信息。\n按照总token数量计费。",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免责声明。",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本轮对话的id。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回复内容。",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorMsg",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatStdRequest": {
+      "document": "ChatStd请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "聊天上下文信息。\n说明：\n1.长度最多为40, 按对话时间从旧到新在数组中排列。\n2.Message的Role当前可选值：user、assistant，其中，user和assistant需要交替出现(一问一答)，最后一个为user提问, 且Content不能为空。\n3.Messages中Content总长度不超过16000token，超过则会截断最前面的内容，只保留尾部内容。建议不超过4000token。",
+          "example": "无",
+          "member": "Message",
+          "name": "Messages",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "说明：\n1.影响输出文本的多样性，取值越大，生成文本的多样性越强。\n2.默认1.0，取值区间为[0.0, 1.0]。\n3.非必要不建议使用, 不合理的取值会影响效果。",
+          "example": "无",
+          "member": "float",
+          "name": "TopP",
+          "required": false,
+          "type": "float"
+        },
+        {
+          "disabled": false,
+          "document": "说明：\n1.较高的数值会使输出更加随机，而较低的数值会使其更加集中和确定。\n2.默认1.0，取值区间为[0.0，2.0]。\n3.非必要不建议使用,不合理的取值会影响效果。",
+          "example": "无",
+          "member": "float",
+          "name": "Temperature",
+          "required": false,
+          "type": "float"
+        }
+      ],
+      "type": "object"
+    },
+    "ChatStdResponse": {
+      "document": "ChatStd返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "unix 时间戳，单位为秒。",
+          "example": "无",
+          "member": "int64",
+          "name": "Created",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token统计信息。\n按照总token数量计费。",
+          "example": "无",
+          "member": "Usage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免责声明。",
+          "example": "无",
+          "member": "string",
+          "name": "Note",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本轮对话的id。",
+          "example": "无",
+          "member": "string",
+          "name": "Id",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "回复内容。",
+          "example": "无",
+          "member": "Choice",
+          "name": "Choices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。\n如果流式返回中服务处理异常，返回该错误信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ErrorMsg",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。本接口为流式响应接口，当请求成功时，RequestId 会被放在 HTTP 响应的 Header \"X-TC-RequestId\" 中。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Choice": {
+      "document": "返回的回复, 支持多个",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流式结束标志位，为 stop 则表示尾包。",
+          "example": "无",
+          "member": "string",
+          "name": "FinishReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回值。",
+          "example": "无",
+          "member": "Delta",
+          "name": "Delta",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "Delta": {
+      "document": "返回的内容（流式返回）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色名称。",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内容详情。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ErrorMsg": {
+      "document": "运行时异常信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误提示信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Msg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码。\n4000 服务内部异常。\n4001 请求模型超时。\n",
+          "example": "无",
+          "member": "int64",
+          "name": "Code",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetTokenCountRequest": {
+      "document": "GetTokenCount请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入文本",
+          "example": "无",
+          "member": "string",
+          "name": "Prompt",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTokenCountResponse": {
+      "document": "GetTokenCount返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "token计数",
+          "example": "无",
+          "member": "int64",
+          "name": "TokenCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "字符计数",
+          "example": "无",
+          "member": "int64",
+          "name": "CharacterCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "切分后的列表",
+          "example": "无",
+          "member": "string",
+          "name": "Tokens",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Message": {
+      "document": "会话内容,  按对话时间序排列，长度最多为40",
+      "members": [
+        {
+          "disabled": false,
+          "document": "角色",
+          "example": "无",
+          "member": "string",
+          "name": "Role",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息的内容",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "Usage": {
+      "document": "token 数量",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入 token 数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "输出 token 数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "CompletionTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总 token 数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

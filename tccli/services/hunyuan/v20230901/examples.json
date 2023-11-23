@@ -1,0 +1,41 @@
+{
+  "actions": {
+    "ChatPro": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatPro\n<公共请求参数>\n\n{\n    \"TopP\": 0,\n    \"Temperature\": 4.8,\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"介绍下自己\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"655c67aad32b0f48f52b89b0\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"The value of Temperature should be within the range [0.0, 2.0]: 4.800000 \"\n        }\n    }\n}",
+        "title": "请求失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatPro\n<公共请求参数>\n\n{\n    \"TopP\": 1,\n    \"Temperature\": 1,\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"计算1+1\"\n        }\n    ]\n}",
+        "output": "HTTP/1.1 200 OK\nCache-Control: no-cache\nConnection: keep-alive\nContent-Type: text/event-stream\nDate: Tue, 21 Nov 2023 06:56:00 GMT\nTransfer-Encoding: chunked\nX-TC-RequestId: 61a8459b-27c8-4868-af8f-f374db0245f8\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"1\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":2,\"TotalTokens\":6}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"+\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":3,\"TotalTokens\":7}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"1\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":4,\"TotalTokens\":8}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"=\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"2\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"stop\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}",
+        "title": "请求成功示例"
+      }
+    ],
+    "ChatStd": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatStd\n<公共请求参数>\n\n{\n    \"TopP\": 0,\n    \"Temperature\": 4.8,\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"介绍下自己\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"655c67aad32b0f48f52b89b0\",\n        \"Error\": {\n            \"Code\": \"InvalidParameter\",\n            \"Message\": \"The value of Temperature should be within the range [0.0, 2.0]: 4.800000 \"\n        }\n    }\n}",
+        "title": "请求失败示例"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChatStd\n<公共请求参数>\n\n{\n    \"TopP\": 0,\n    \"Temperature\": 0,\n    \"Messages\": [\n        {\n            \"Role\": \"user\",\n            \"Content\": \"计算1+1\"\n        }\n    ]\n}",
+        "output": "HTTP/1.1 200 OK\nCache-Control: no-cache\nConnection: keep-alive\nContent-Type: text/event-stream\nDate: Tue, 21 Nov 2023 06:56:00 GMT\nTransfer-Encoding: chunked\nX-TC-RequestId: 61a8459b-27c8-4868-af8f-f374db0245f8\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"1\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":2,\"TotalTokens\":6}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"+\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":3,\"TotalTokens\":7}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"1\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":4,\"TotalTokens\":8}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"=\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"2\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}\n\ndata: {\"Note\":\"以上内容为AI生成，不代表开发者立场，请勿删除或修改本标记\",\"Choices\":[{\"FinishReason\":\"stop\",\"Delta\":{\"Role\":\"assistant\",\"Content\":\"\"}}],\"Created\":1700549760,\"Id\":\"148b89ef-14e1-489f-8e70-b767e5b27d56\",\"Usage\":{\"PromptTokens\":4,\"CompletionTokens\":5,\"TotalTokens\":9}}",
+        "title": "请求成功示例"
+      }
+    ],
+    "GetTokenCount": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTokenCount\n<公共请求参数>\n\n{\n    \"Prompt\": \"你是谁\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c9e24deb-dd6d-4fe5-b0ca-c9292d1f1a9d\",\n        \"TokenCount\": 2,\n        \"CharacterCount\": 3,\n        \"Tokens\": [\n            \"你是\",\n            \"谁\"\n        ]\n    }\n}",
+        "title": "调用接口成功案例"
+      }
+    ]
+  },
+  "version": "1.0"
+}
