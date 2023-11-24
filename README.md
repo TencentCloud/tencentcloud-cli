@@ -229,6 +229,9 @@ tccli cvm RunInstances --InstanceChargeType POSTPAID_BY_HOUR --InstanceChargePre
 ```
 更多功能，您可以通过tccli help查看支持的产品，通过tccli cvm help（以cvm举例）查看产品支持的接口。通过tccli cbs DescribeDisks help(以cbs产品的DescribeDisks接口为例) 查看接口支持的参数。如果想看详细信息，可以在help的后面增加字段'--detail'查看。例如：分别使用tccli help --detail，tccli cvm help --detail和tccli cbs DescribeDisks help --detail查看对应的详细信息。
 
+## 返回值
+从3.0.1009.1版本开始，命令行执行成功返回0值，执行失败返回非0值。
+
 # 高级功能
 ## 多版本接口访问
 某些产品可能存在多个版本的接口，TCCLI默认访问最新版本的接口。如果您想访问特定旧版本的接口，可以通过以下方式实现(以cvm举例)。
