@@ -35,57 +35,58 @@ def main():
     cli_version = __version__.rsplit(".", 1)[0]
     if int(sdkVersion.split(".")[-1]) < int(cli_version.split(".")[-1]):
         sys.stderr.write("Version is inconsistent, python sdk version:%s tccli version:%s" % (sdkVersion, __version__))
-        return
+        return 255
     try:
         log.info("tccli %s" % ' '.join(sys.argv[1:]))
         CLICommand()()
+        return 0
     except UnknownArgumentError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.exception(e)
-        return
+        return 255
     except ConfigurationError as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.exception(e)
-        return
+        return 255
     except NoRegionError as e:
         msg = ('%s You can configure your region by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
         log.exception(e)
-        return
+        return 255
     except NoCredentialsError as e:
         msg = ('%s. You can configure your credentials by running '
                '"tccli configure".' % e)
         sys.stderr.write(msg)
         sys.stderr.write('\n')
         log.exception(e)
-        return
+        return 255
     except KeyboardInterrupt:
         sys.stdout.write("\n")
-        return
+        return 255
     except ClientError as e:
         sys.stderr.write("\n")
         sys.stderr.write(six.text_type(e))
         sys.stderr.write("\n")
         log.exception(e)
-        return
+        return 255
     except TencentCloudSDKException as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.error(e)
-        return
+        return 255
     except Exception as e:
         sys.stderr.write("usage: %s\n" % USAGE)
         sys.stderr.write(str(e))
         sys.stderr.write("\n")
         log.exception(e)
-        return
+        return 255
 
 
 if __name__ == "__main__":
