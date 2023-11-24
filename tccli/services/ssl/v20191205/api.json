@@ -979,7 +979,7 @@
           "example": "无",
           "member": "string",
           "name": "DomainNumber",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -989,7 +989,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginCertificateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -999,7 +999,7 @@
           "example": "无",
           "member": "string",
           "name": "ReplacedBy",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1009,7 +1009,7 @@
           "example": "无",
           "member": "string",
           "name": "ReplacedFor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1019,7 +1019,7 @@
           "example": "无",
           "member": "string",
           "name": "RenewOrder",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1029,7 +1029,17 @@
           "example": "无",
           "member": "int64",
           "name": "SMCert",
-          "required": false,
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公司类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CompanyType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -1291,7 +1301,7 @@
         },
         {
           "disabled": false,
-          "document": "是否可重颁发证书。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "是否可续费。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "RenewAble",
@@ -1425,7 +1435,7 @@
           "example": "无",
           "member": "int64",
           "name": "HostingStatus",
-          "output_required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1435,7 +1445,7 @@
           "example": "无",
           "member": "string",
           "name": "HostingCompleteTime",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1445,8 +1455,88 @@
           "example": "无",
           "member": "string",
           "name": "HostingRenewCertId",
-          "output_required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "存在的续费证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HasRenewOrder",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "重颁发证书原证书是否删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ReplaceOriCertIsDelete",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否即将过期， 证书即将到期的30天内为即将过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsExpiring",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "DV证书添加验证截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DVAuthDeadline",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名验证通过时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ValidationPassedTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书关联的多域名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertSANs",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "域名验证驳回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AwaitingValidationMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否允许下载\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "AllowDownload",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

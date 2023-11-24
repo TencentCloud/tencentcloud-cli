@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProbeTasks\n<公共请求参数>\n\n{\n    \"BatchTasks\": [\n        {\n            \"Name\": \"probe\",\n            \"TargetAddress\": \"http://www.baidu.com\"\n        }\n    ],\n    \"Parameters\": \"{\\\"ipType\\\":0,\\\"grabBag\\\":0,\\\"netIcmpOn\\\":1,\\\"netIcmpActivex\\\":0,\\\"netIcmpTimeout\\\":20,\\\"netIcmpInterval\\\":0.5,\\\"netIcmpNum\\\":20,\\\"netIcmpSize\\\":32,\\\"netIcmpDataCut\\\":1,\\\"netDnsOn\\\":1,\\\"netDnsTimeout\\\":5,\\\"netDnsQuerymethod\\\":1,\\\"netDnsNs\\\":\\\"\\\",\\\"netDigOn\\\":1,\\\"netDnsServer\\\":2,\\\"netTracertOn\\\":1,\\\"netTracertTimeout\\\":60,\\\"netTracertNum\\\":30,\\\"whiteList\\\":\\\"\\\",\\\"blackList\\\":\\\"\\\",\\\"netIcmpActivexStr\\\":\\\"\\\"}\",\n    \"Interval\": 30,\n    \"TaskCategory\": 1,\n    \"TaskType\": 5,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Cron\": \"* 0-6 * * *\",\n    \"Tag\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"a1\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"TaskIDs\": [\n            \"xx\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskIDs\": [\n            \"abc\"\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "批量创建拨测任务"
       },
       {
@@ -28,6 +28,14 @@
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDetailedSingleProbeData\n<公共请求参数>\n\n{\n    \"BeginTime\": 1679899994107,\n    \"EndTime\": 1679903594107,\n    \"TaskType\": \"AnalyzeTaskType_Network\",\n    \"SortField\": \"ProbeTime\",\n    \"Ascending\": true,\n    \"Offset\": 0,\n    \"Limit\": 10,\n    \"SelectedFields\": [\n        \"ProbeTime\",\n        \"City\",\n        \"Operator\",\n        \"ProbeIP\"\n    ],\n    \"TaskID\": [\n        \"task-p4najqd4\"\n    ],\n    \"ScrollID\": \"xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"ScrollID\": \"xxx\",\n        \"TotalNumber\": 10,\n        \"DataSet\": [\n            {\n                \"ProbeTime\": 1,\n                \"Labels\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"City\",\n                        \"Value\": \"上海市\"\n                    }\n                ],\n                \"Fields\": [\n                    {\n                        \"ID\": 0,\n                        \"Name\": \"ProbeTime\",\n                        \"Value\": 1679903537000\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"asd\"\n    }\n}",
         "title": "列出单次拨测详情数据"
+      }
+    ],
+    "DescribeInstantTasks": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstantTasks\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Offset\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"Tasks\": [\n            {\n                \"Status\": \"xx\",\n                \"ProbeTime\": \"xx\",\n                \"TaskCategory\": 1,\n                \"SuccessRate\": 0.0,\n                \"TargetAddress\": \"xx\",\n                \"TaskId\": \"xx\",\n                \"TaskType\": 1,\n                \"NodeCount\": 1\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取历史即时拨测任务"
       }
     ],
     "DescribeNodes": [
@@ -108,7 +116,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateProbeTaskConfigurationList\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        \"task-xx\"\n    ],\n    \"Interval\": 30,\n    \"Nodes\": [\n        \"10001\"\n    ],\n    \"Parameters\": \"{}\",\n    \"Cron\": \"* 0-6 * * *\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新拨测任务配置"
       }
     ]

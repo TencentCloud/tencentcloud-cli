@@ -138,11 +138,28 @@ Output:
         ],
         "AsyncRunEnable": "abc",
         "TraceEnable": "abc",
+        "ImageConfig": {
+            "RegistryId": "abc",
+            "ImageType": "abc",
+            "ImageUri": "abc",
+            "EntryPoint": "abc",
+            "Command": "abc",
+            "Args": "abc",
+            "ContainerImageAccelerate": true,
+            "ImagePort": 0
+        },
         "ProtocolType": "abc",
         "ProtocolParams": {
             "WSParams": {
                 "IdleTimeOut": 1
             }
+        },
+        "DnsCache": "abc",
+        "IntranetConfig": {
+            "IpFixed": "abc",
+            "IpAddress": [
+                "abc"
+            ]
         },
         "RequestId": "abc"
     }

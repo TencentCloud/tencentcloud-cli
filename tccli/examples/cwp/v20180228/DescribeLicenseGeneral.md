@@ -1,4 +1,4 @@
-**Example 1: 示例**
+**Example 1: 查询授权概览信息**
 
 
 
@@ -29,7 +29,8 @@ Output:
         "UsedLicenseCnt": 0,
         "AutoRepurchaseSwitch": false,
         "AutoRepurchaseRenewSwitch": false,
-        "DestroyOrderNum": 0
+        "DestroyOrderNum": 0,
+        "RepurchaseRenewSwitch": false
     }
 }
 ```

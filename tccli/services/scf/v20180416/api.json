@@ -2725,6 +2725,7 @@
           "example": "2018-06-07 09:52:23",
           "member": "datetime",
           "name": "ModTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2734,6 +2735,7 @@
           "example": "无",
           "member": "string",
           "name": "CodeInfo",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2743,6 +2745,7 @@
           "example": "这是一个云函数",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2752,6 +2755,7 @@
           "example": "无",
           "member": "Trigger",
           "name": "Triggers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2761,6 +2765,7 @@
           "example": "scfredis.main_handler",
           "member": "string",
           "name": "Handler",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2770,6 +2775,7 @@
           "example": "0",
           "member": "int64",
           "name": "CodeSize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2779,6 +2785,7 @@
           "example": "3",
           "member": "int64",
           "name": "Timeout",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2788,6 +2795,7 @@
           "example": "$LATEST",
           "member": "string",
           "name": "FunctionVersion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2797,6 +2805,7 @@
           "example": "128",
           "member": "int64",
           "name": "MemorySize",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2806,6 +2815,7 @@
           "example": "Python2.7",
           "member": "string",
           "name": "Runtime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2815,6 +2825,7 @@
           "example": "ledDummyAPITest",
           "member": "string",
           "name": "FunctionName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2824,6 +2835,7 @@
           "example": "无",
           "member": "VpcConfig",
           "name": "VpcConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2833,6 +2845,7 @@
           "example": "FALSE",
           "member": "string",
           "name": "UseGpu",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2842,6 +2855,7 @@
           "example": "无",
           "member": "Environment",
           "name": "Environment",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2851,6 +2865,7 @@
           "example": "failed",
           "member": "string",
           "name": "CodeResult",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2860,6 +2875,7 @@
           "example": "无",
           "member": "string",
           "name": "CodeError",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2869,6 +2885,7 @@
           "example": "0",
           "member": "int64",
           "name": "ErrNo",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2878,6 +2895,7 @@
           "example": "default",
           "member": "string",
           "name": "Namespace",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2887,6 +2905,7 @@
           "example": "无",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2896,6 +2915,7 @@
           "example": "FALSE",
           "member": "string",
           "name": "InstallDependency",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2905,6 +2925,7 @@
           "example": "Active",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2914,6 +2935,7 @@
           "example": "无",
           "member": "string",
           "name": "StatusDesc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2923,6 +2945,7 @@
           "example": "5354061a-dcaa-46be-8359-fe5gt56075c0",
           "member": "string",
           "name": "ClsLogsetId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2932,6 +2955,7 @@
           "example": "5354061a-dcaa-46be-jydw-fe51e56075c0",
           "member": "string",
           "name": "ClsTopicId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2941,6 +2965,7 @@
           "example": "lam-bcrxav2w",
           "member": "string",
           "name": "FunctionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2950,6 +2975,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2959,6 +2985,7 @@
           "example": "无",
           "member": "EipOutConfig",
           "name": "EipConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2968,6 +2995,7 @@
           "example": "无",
           "member": "AccessInfo",
           "name": "AccessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2977,6 +3005,7 @@
           "example": "无",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2986,6 +3015,7 @@
           "example": "无",
           "member": "string",
           "name": "L5Enable",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2995,6 +3025,7 @@
           "example": "无",
           "member": "LayerVersionInfo",
           "name": "Layers",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3004,6 +3035,7 @@
           "example": "无",
           "member": "DeadLetterConfig",
           "name": "DeadLetterConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3013,6 +3045,7 @@
           "example": "无",
           "member": "datetime",
           "name": "AddTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3022,6 +3055,7 @@
           "example": "无",
           "member": "PublicNetConfigOut",
           "name": "PublicNetConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3031,6 +3065,7 @@
           "example": "无",
           "member": "string",
           "name": "OnsEnable",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3040,6 +3075,7 @@
           "example": "无",
           "member": "CfsConfig",
           "name": "CfsConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3049,6 +3085,7 @@
           "example": "Available",
           "member": "string",
           "name": "AvailableStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3058,6 +3095,7 @@
           "example": "$LATEST",
           "member": "string",
           "name": "Qualifier",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3067,6 +3105,7 @@
           "example": "无",
           "member": "int64",
           "name": "InitTimeout",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3076,6 +3115,7 @@
           "example": "无",
           "member": "StatusReason",
           "name": "StatusReasons",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3085,6 +3125,7 @@
           "example": "无",
           "member": "string",
           "name": "AsyncRunEnable",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3094,7 +3135,18 @@
           "example": "无",
           "member": "string",
           "name": "TraceEnable",
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "镜像配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ImageConfig",
+          "name": "ImageConfig",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": true
         },
         {
@@ -3103,6 +3155,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ProtocolType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3112,6 +3165,27 @@
           "example": "无",
           "member": "ProtocolParams",
           "name": "ProtocolParams",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启DNS缓存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DnsCache",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内网访问配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "IntranetConfigOut",
+          "name": "IntranetConfig",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3444,6 +3518,7 @@
           "example": "enterprise",
           "member": "string",
           "name": "ImageType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3454,6 +3529,7 @@
           "example": "tcr.tencentcloudcr.com/namespace/test:latest",
           "member": "string",
           "name": "ImageUri",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3464,6 +3540,7 @@
           "example": "tcr-xxx",
           "member": "string",
           "name": "RegistryId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3474,6 +3551,7 @@
           "example": "\"entrypoint.sh\"",
           "member": "string",
           "name": "EntryPoint",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3484,6 +3562,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "Command",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3494,6 +3573,7 @@
           "example": "\"'",
           "member": "string",
           "name": "Args",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -3504,16 +3584,18 @@
           "example": "False",
           "member": "bool",
           "name": "ContainerImageAccelerate",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "镜像函数端口设置\n-1: 无端口镜像函数\n0: 默认端口，当前默认端口是9000\n其他: 特殊端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "镜像函数端口设置\n默认值: 9000\n-1: 无端口镜像函数\n其他: 取值范围 0 ~ 65535\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "9000",
           "member": "int64",
           "name": "ImagePort",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -3546,6 +3628,32 @@
         }
       ],
       "usage": "both"
+    },
+    "IntranetConfigOut": {
+      "document": "内网配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否启用固定内网IP\nENABLE 为启用\nDISABLE 为不启用",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "IpFixed",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "若已启用固定内网IP，则该字段返回使用的IP列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "IpAddress",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "InvokeFunctionRequest": {
       "document": "InvokeFunction请求参数结构体",
@@ -7071,6 +7179,7 @@
           "example": "testKey",
           "member": "string",
           "name": "Key",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -7081,12 +7190,13 @@
           "example": "testValue",
           "member": "string",
           "name": "Value",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "VersionMatch": {
       "document": "带有匹配规则的函数版本",

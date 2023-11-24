@@ -21,6 +21,13 @@
       "output": "DescribeDetailedSingleProbeDataResponse",
       "status": "online"
     },
+    "DescribeInstantTasks": {
+      "document": "获取历史即时拨测任务",
+      "input": "DescribeInstantTasksRequest",
+      "name": "获取历史即时拨测任务",
+      "output": "DescribeInstantTasksResponse",
+      "status": "online"
+    },
     "DescribeNodes": {
       "document": "获取拨测节点",
       "input": "DescribeNodesRequest",
@@ -99,7 +106,7 @@
         },
         {
           "disabled": false,
-          "document": "任务类型",
+          "document": "任务类型，如1、2、3、4、5、6、7；1-页面性能、2-文件上传、3-文件下载、4-端口性能、5-网络质量、6-音视频体验、7-域名whois",
           "example": "1",
           "member": "int64",
           "name": "TaskType",
@@ -108,7 +115,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测节点",
+          "document": "拨测节点，如10001，具体拨测地域运营商对应的拨测点编号可联系云拨测确认。",
           "example": "[\"10001\"]",
           "member": "string",
           "name": "Nodes",
@@ -126,7 +133,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测参数",
+          "document": "拨测参数，如{}，详细可参考云拨测官方文档。",
           "example": "{}",
           "member": "string",
           "name": "Parameters",
@@ -162,7 +169,7 @@
         },
         {
           "disabled": false,
-          "document": "测试类型，包含定时测试与即时测试",
+          "document": "测试类型，包含定时测试与即时测试。1-定时拨测，其它表示即时拨测。",
           "example": "1",
           "member": "uint64",
           "name": "ProbeType",
@@ -171,7 +178,7 @@
         },
         {
           "disabled": false,
-          "document": "插件类型",
+          "document": "插件类型，如CDN，详情参考云拨测官方文档。",
           "example": "CDN",
           "member": "string",
           "name": "PluginSource",
@@ -186,6 +193,15 @@
           "name": "ClientNum",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "拨测点IP类型：0-不限制IP类型，1-IPv4，2-IPv6",
+          "example": "0",
+          "member": "int64",
+          "name": "NodeIpType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -199,7 +215,7 @@
           "example": "[\"task-fsz5tuvy\"]",
           "member": "string",
           "name": "TaskIDs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -432,6 +448,62 @@
           "name": "ScrollID",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstantTasksRequest": {
+      "document": "DescribeInstantTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "起始位置",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstantTasksResponse": {
+      "document": "DescribeInstantTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "SingleInstantTask",
+          "name": "Tasks",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "10",
+          "member": "uint64",
+          "name": "Total",
+          "required": true,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -1187,7 +1259,7 @@
           "example": "probe",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1197,7 +1269,7 @@
           "example": "task-xx",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1207,7 +1279,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1217,9 +1289,19 @@
           "example": "[\"10000\"]",
           "member": "string",
           "name": "Nodes",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "拨测任务所选的拨测点IP类型，0-不限，1-IPv4，2-IPv6\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "NodeIpType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "disabled": false,
@@ -1227,7 +1309,7 @@
           "example": "30",
           "member": "int64",
           "name": "Interval",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1237,7 +1319,7 @@
           "example": "{}",
           "member": "string",
           "name": "Parameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1247,7 +1329,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1257,7 +1339,7 @@
           "example": "http://www.qq.com",
           "member": "string",
           "name": "TargetAddress",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1267,7 +1349,7 @@
           "example": "1",
           "member": "int64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1277,7 +1359,7 @@
           "example": "1",
           "member": "int64",
           "name": "OrderState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1287,7 +1369,7 @@
           "example": "1",
           "member": "int64",
           "name": "TaskCategory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1297,7 +1379,7 @@
           "example": "\"2020\"",
           "member": "string",
           "name": "CreatedAt",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1307,7 +1389,7 @@
           "example": "* 0-5 * * *",
           "member": "string",
           "name": "Cron",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1317,7 +1399,7 @@
           "example": "1",
           "member": "int64",
           "name": "CronState",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1327,7 +1409,7 @@
           "example": "[{\"Key\":\"name\", \"Value\": \"zhangsan\"}]",
           "member": "KeyValuePair",
           "name": "TagInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -1416,6 +1498,92 @@
         }
       ],
       "type": "object"
+    },
+    "SingleInstantTask": {
+      "document": "单个即时拨测任务信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID",
+          "example": "task-123",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务地址",
+          "example": "http://qq.com",
+          "member": "string",
+          "name": "TargetAddress",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务类型",
+          "example": "5",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "测试时间",
+          "example": "1641917822000",
+          "member": "uint64",
+          "name": "ProbeTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态",
+          "example": "成功",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "成功率",
+          "example": "0.8",
+          "member": "float",
+          "name": "SuccessRate",
+          "required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "1",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点类型",
+          "example": "1",
+          "member": "uint64",
+          "name": "TaskCategory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SuspendProbeTaskRequest": {
       "document": "SuspendProbeTask请求参数结构体",
@@ -1577,7 +1745,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务 ID",
+          "document": "任务 ID，如task-n1wchki8",
           "example": "task-xx",
           "member": "string",
           "name": "TaskIds",
@@ -1586,7 +1754,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测节点",
+          "document": "拨测节点，如10001，详细地区运营商拨测编号请联系云拨测。",
           "example": "[\"10001\"]",
           "member": "string",
           "name": "Nodes",
@@ -1595,7 +1763,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测间隔",
+          "document": "拨测间隔，如30，单位为分钟。",
           "example": "30",
           "member": "int64",
           "name": "Interval",
@@ -1604,7 +1772,7 @@
         },
         {
           "disabled": false,
-          "document": "拨测参数",
+          "document": "拨测参数，详细参数配置可参考云拨测官网文档。",
           "example": "{}",
           "member": "string",
           "name": "Parameters",
@@ -1628,6 +1796,15 @@
           "name": "ResourceIDs",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "拨测节点的IP类型，0-不限，1-IPv4，2-IPv6",
+          "example": "0",
+          "member": "int64",
+          "name": "NodeIpType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

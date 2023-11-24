@@ -758,7 +758,7 @@
         },
         {
           "disabled": false,
-          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n</ul>",
+          "document": "设置用户开通自动签时是否绑定个人自动签账号许可。\n\n<ul><li>**0**: (默认) 使用个人自动签账号许可进行开通，个人自动签账号许可有效期1年，注: `不可解绑释放更换他人`</li>\n<li>**1**: 不绑定自动签账号许可开通，后续使用合同份额进行合同发起</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "LicenseType",
@@ -1364,7 +1364,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签场景: E_PRESCRIPTION_AUTO_SIGN 电子处方",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -3321,7 +3321,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>\n\n注: `现在仅支持电子处方场景`",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
@@ -3357,7 +3357,7 @@
         },
         {
           "disabled": false,
-          "document": "是否通知开通方，通知类型:\n<ul><li>默认不设置为不通知开通方</li>\n<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li><ul>",
+          "document": "是否通知开通方，通知类型:\n<ul><li>默认不设置为不通知开通方</li>\n<li>**SMS** :  短信通知 ,如果需要短信通知则NotifyAddress填写对方的手机号</li></ul>",
           "example": "无",
           "member": "string",
           "name": "NotifyType",
@@ -3471,7 +3471,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li></ul>\n\n注: `现在仅支持电子处方场景`",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
           "example": "E_PRESCRIPTION_AUTO_SIGN",
           "member": "string",
           "name": "SceneKey",
@@ -4310,7 +4310,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** : 电子处方场景</li></ul>\n\n注: `现在仅支持电子处方场景`",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -4404,7 +4404,7 @@
         },
         {
           "disabled": false,
-          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** 电子处方</li></ul>",
+          "document": "自动签使用的场景值, 可以选择的场景值如下:\n<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
           "example": "无",
           "member": "string",
           "name": "SceneKey",
@@ -5974,7 +5974,7 @@
         },
         {
           "disabled": false,
-          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证(默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
+          "document": "证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>",
           "example": "ID_CARD",
           "member": "string",
           "name": "IdCardType",
@@ -7736,7 +7736,7 @@
         },
         {
           "disabled": false,
-          "document": "用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。\n\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。",
+          "document": "用户配置的合同模板ID，会基于此模板创建合同文档，为32位字符串。\n如果使用模板发起接口，此参数为必填。\n\n可以通过<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录企业控制台, 在**企业模板**中得到合同模板ID。",
           "example": "yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc",
           "member": "string",
           "name": "TemplateId",

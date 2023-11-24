@@ -8028,6 +8028,16 @@
           "output_required": false,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "纳管cvmid",
+          "example": "ins-xxxxxxxx",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

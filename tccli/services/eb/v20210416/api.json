@@ -559,6 +559,7 @@
           "example": "qcs::apigw:ap-guangzhou:uin/0000000:serviceid/service-id",
           "member": "string",
           "name": "ResourceDescription",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -569,6 +570,7 @@
           "example": "无",
           "member": "APIGWParams",
           "name": "APIGWParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -579,6 +581,7 @@
           "example": "无",
           "member": "CkafkaParams",
           "name": "CkafkaParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -589,6 +592,18 @@
           "example": "无",
           "member": "DTSParams",
           "name": "DTSParams",
+          "output_required": true,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tdmq参数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TDMQParams",
+          "name": "TDMQParams",
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -935,7 +950,41 @@
     },
     "DTSParams": {
       "document": "Data Transfer Service参数",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "Consumer Group Name",
+          "example": "consumer-grp-subs-abcde12345-consumer-group-name",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账户名",
+          "example": "user-account",
+          "member": "string",
+          "name": "Account",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "user-pwd",
+          "member": "string",
+          "name": "Password",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "DeadLetterConfig": {
@@ -2984,6 +3033,34 @@
         }
       ],
       "usage": "out"
+    },
+    "TDMQParams": {
+      "document": "TDMQ参数详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "default:虚拟集群; exclusive:专业集群",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群支撑网接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterEndPoint",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "Target": {
       "document": "Target信息",

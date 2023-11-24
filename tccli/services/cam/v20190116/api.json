@@ -1870,8 +1870,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "授权服务，附加了此角色的腾讯云服务主体。",
-          "example": "[\"ccs.qcloud.com\\n\"]",
+          "document": "填写此角色的腾讯云服务载体，具体可查询文档（角色载体）字段\nhttps://cloud.tencent.com/document/product/598/85165",
+          "example": "示例值：[\"cbsinit.cvm.cloud.tencent.com\"] ",
           "member": "string",
           "name": "QCSServiceName",
           "required": true,
@@ -1916,7 +1916,7 @@
           "example": "4611686018427411525",
           "member": "string",
           "name": "RoleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

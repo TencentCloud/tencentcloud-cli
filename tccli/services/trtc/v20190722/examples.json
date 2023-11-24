@@ -104,6 +104,14 @@
         "title": "查询历史房间与用户规模信息"
       }
     ],
+    "DescribeStreamIngest": [
+      {
+        "document": "查询SdkAppId为1234567890下的TaskId为1234的转推任务状态",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"InProgress\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "查询任务"
+      }
+    ],
     "DescribeTRTCMarketQualityData": [
       {
         "document": "查询TRTC数据大盘质量相关数据",
@@ -312,6 +320,14 @@
         "title": "混一个人的音视频，和房间所有人的声音"
       }
     ],
+    "StartStreamIngest": [
+      {
+        "document": "启动一个拉流转推任务，任务内容为两个在线媒体流\"https://a.b/test.mp4\",\"https://b.c/test.mp4\"，音视频编码采用默认编码值，设置回调地址为 \"https://b.c/callback\"，转推成功后返回TaskId",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"RoomId\": \"room123\",\n    \"UserId\": \"robot123\",\n    \"UserSig\": \"xxxxxxxxxxxxxxxxxxxxxxxxxxxx\",\n    \"PrivateMapKey\": \"abcdefg\",\n    \"RoomIdType\": 1,\n    \"SourceUrl\": [\n        \"https://a.b/test.mp4\",\n        \"https://b.c/test.mp4\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"-gCTFWtU7t7DUlo7A8IswFszO9z2O-rbERqJAoK-4pycoZXKjIAAnasdcasdOEycyX4CnzhIm4RAQ..\",\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "启动拉流转推"
+      }
+    ],
     "StopMCUMixTranscode": [
       {
         "document": "结束房间号为3560的云端混流。",
@@ -334,6 +350,14 @@
         "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopPublishCdnStream\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1400188366,\n    \"TaskId\": \"-m97l2ZU7kOlV5cTRMoU6yoGp2nDYkzbJ13EC4K-4pycoZXVv+XVrNoUXQ8++8Z2PwUlAQ..\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\",\n        \"TaskId\": \"xx\"\n    }\n}",
         "title": "停止转推任务"
+      }
+    ],
+    "StopStreamIngest": [
+      {
+        "document": "将SdkAppId为1234567890下的任务1234停止",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopStreamIngest\n<公共请求参数>\n\n{\n    \"SdkAppId\": 1234567890,\n    \"TaskId\": \"1234\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"71993312-6ab8-4768-9124-118e0a20c45f\"\n    }\n}",
+        "title": "停止拉流转推"
       }
     ],
     "UpdatePublishCdnStream": [

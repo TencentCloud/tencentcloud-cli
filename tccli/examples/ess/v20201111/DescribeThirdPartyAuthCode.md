@@ -21,7 +21,7 @@ Output:
 
 **Example 2: 通过AuthCode查询用户是否实名(失效AuthCode)**
 
-AuthCode已经使用过过一次, 再次查询返回错误OperationDenied.AuthCodeInvalid
+AuthCode已经使用过一次, 再次查询返回错误OperationDenied.AuthCodeInvalid
 
 Input: 
 

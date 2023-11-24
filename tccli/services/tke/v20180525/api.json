@@ -7116,7 +7116,7 @@
         {
           "disabled": false,
           "document": "集群ID",
-          "example": "",
+          "example": "cls-etu4tjip",
           "member": "string",
           "name": "ClusterId",
           "required": true,
@@ -7125,7 +7125,7 @@
         {
           "disabled": false,
           "document": "集群实例删除时的策略：terminate（销毁实例，仅支持按量计费云主机实例） retain （仅移除，保留实例）",
-          "example": "",
+          "example": "terminate",
           "member": "string",
           "name": "InstanceDeleteMode",
           "required": true,
@@ -7134,7 +7134,7 @@
         {
           "disabled": false,
           "document": "集群删除时资源的删除策略，目前支持CBS（默认保留CBS）",
-          "example": "",
+          "example": "无",
           "member": "ResourceDeleteOption",
           "name": "ResourceDeleteOptions",
           "required": false,

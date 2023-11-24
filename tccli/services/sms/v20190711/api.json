@@ -488,7 +488,7 @@
         {
           "disabled": false,
           "document": "回执数据统计响应包体。",
-          "example": " {             \"CallbackCount\": 1745,             \"RequestSucces",
+          "example": "{\"CallbackCount\":1745,\"RequestSuccessCount\":1880,\"CallbackFailCount\":401,\"CallbackSuccessCount\":1344,\"InternalErrorCount\":0,\"InvalidNumberCount\":0,\"ShutdownErrorCount\":401,\"BlackListCount\":0,\"FrequencyLimitCount\":0}",
           "member": "CallbackStatusStatistics",
           "name": "CallbackStatusStatistics",
           "output_required": true,
@@ -728,7 +728,7 @@
         {
           "disabled": false,
           "document": "获取签名信息响应",
-          "example": "{ \t\t\t\t\"SignId\": 1110, \t\t\t\t\"International\":0, \t\t\t\t\"StatusCode\":0,",
+          "example": "[{\"SignName\":\"腾讯云\",\"International\":0,\"SignId\":1110,\"ReviewReply\":\"\",\"CreateTime\":1617508800,\"StatusCode\":0}]",
           "member": "DescribeSignListStatus",
           "name": "DescribeSignListStatusSet",
           "output_required": true,
@@ -1057,7 +1057,7 @@
         {
           "disabled": false,
           "document": "修改模板参数响应",
-          "example": "ModifyTemplateStatus\": {             \"TemplateId\": 1110         ",
+          "example": "{\"TemplateId\":1110}",
           "member": "ModifyTemplateStatus",
           "name": "ModifyTemplateStatus",
           "output_required": true,

@@ -56,6 +56,13 @@
       "output": "CreateApplicationProxyRuleResponse",
       "status": "online"
     },
+    "CreateConfigGroupVersion": {
+      "document": "在版本管理模式下，用于创建指定配置组的新版本。版本管理功能内测中，当前仅白名单开放。",
+      "input": "CreateConfigGroupVersionRequest",
+      "name": "创建配置组版本",
+      "output": "CreateConfigGroupVersionResponse",
+      "status": "online"
+    },
     "CreateOriginGroup": {
       "document": "创建源站组，以源站组的方式管理业务源站。此处配置的源站组可于**添加加速域名**和**四层代理**等功能中引用。",
       "input": "CreateOriginGroupRequest",
@@ -175,6 +182,13 @@
       "output": "DeleteZoneResponse",
       "status": "online"
     },
+    "DeployConfigGroupVersion": {
+      "document": "在版本管理模式下，用于版本发布，可通过 EnvId 将版本发布至测试环境或生产环境。版本管理功能内测中，当前仅白名单开放。",
+      "input": "DeployConfigGroupVersionRequest",
+      "name": "发布配置组版本",
+      "output": "DeployConfigGroupVersionResponse",
+      "status": "online"
+    },
     "DescribeAccelerationDomains": {
       "document": "您可以通过本接口查看站点下的域名信息，包括加速域名、源站以及域名状态等信息。您可以查看站点下全部域名的信息，也可以指定过滤条件查询对应的域名信息。",
       "input": "DescribeAccelerationDomainsRequest",
@@ -201,6 +215,20 @@
       "input": "DescribeAvailablePlansRequest",
       "name": "查询当前账户可购买套餐信息列表",
       "output": "DescribeAvailablePlansResponse",
+      "status": "online"
+    },
+    "DescribeConfigGroupVersionDetail": {
+      "document": "在版本管理模式下，用于获取版本的详细信息，包括版本 ID、描述、状态、创建时间、所属配置组信息以及版本配置文件的内容。版本管理功能内测中，当前仅白名单开放。",
+      "input": "DescribeConfigGroupVersionDetailRequest",
+      "name": "查询配置组版本详情",
+      "output": "DescribeConfigGroupVersionDetailResponse",
+      "status": "online"
+    },
+    "DescribeConfigGroupVersions": {
+      "document": "在版本管理模式下，用于查询指定配置组的版本列表。版本管理功能内测中，当前仅白名单开放。",
+      "input": "DescribeConfigGroupVersionsRequest",
+      "name": "查询配置组版本列表",
+      "output": "DescribeConfigGroupVersionsResponse",
       "status": "online"
     },
     "DescribeContentQuota": {
@@ -236,6 +264,20 @@
       "input": "DescribeDefaultCertificatesRequest",
       "name": "查询默认证书列表",
       "output": "DescribeDefaultCertificatesResponse",
+      "status": "online"
+    },
+    "DescribeDeployHistory": {
+      "document": "在版本管理模式下，用于查询生产/测试环境的版本发布历史。版本管理功能内测中，当前仅白名单开放。",
+      "input": "DescribeDeployHistoryRequest",
+      "name": "查询版本发布历史",
+      "output": "DescribeDeployHistoryResponse",
+      "status": "online"
+    },
+    "DescribeEnvironments": {
+      "document": "在版本管理模式下，用于查询环境信息，可获取环境 ID、类型、当前生效版本等。版本管理功能内测中，当前仅白名单开放。",
+      "input": "DescribeEnvironmentsRequest",
+      "name": "查询环境信息",
+      "output": "DescribeEnvironmentsResponse",
       "status": "online"
     },
     "DescribeHostsSetting": {
@@ -2716,6 +2758,89 @@
       ],
       "usage": "both"
     },
+    "ConfigGroupVersionInfo": {
+      "document": "配置组版本信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本 ID。",
+          "example": "ver-2kplomhisdcb",
+          "member": "string",
+          "name": "VersionId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本号。",
+          "example": "1.0",
+          "member": "string",
+          "name": "VersionNumber",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置组 ID。",
+          "example": "cg-2kplomhisdcb",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置组类型。取值有：\n<li>l7_acceleration ：七层加速配置组。</li>\n<li>edge_functions ：边缘函数配置组。</li>",
+          "example": "l7_acceleration",
+          "member": "string",
+          "name": "GroupType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本描述。",
+          "example": "这是个测试版本",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本状态，取值有：\n<li>creating：创建中；</li>\n<li>inactive：未生效；</li>\n<li>active：已生效。</li>",
+          "example": "creating ",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-06-30T17:37:56+0800",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "CreateAccelerationDomainRequest": {
       "document": "CreateAccelerationDomain请求参数结构体",
       "members": [
@@ -3101,6 +3226,70 @@
           "example": "rule-xxx",
           "member": "string",
           "name": "RuleId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigGroupVersionRequest": {
+      "document": "CreateConfigGroupVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-225qgrnvbi9w",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待新建版本的配置组 ID。",
+          "example": "cg-245xgrhv2i9w",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "待导入的配置内容。要求采用 JSON 格式，按照 UTF-8 方式进行编码。配置文件内容可参考下方示例。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本描述，可输入最大长度为 50 个字符，可以通过本字段填写该版本的使用场景等。",
+          "example": "create for test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConfigGroupVersionResponse": {
+      "document": "CreateConfigGroupVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本 ID。",
+          "example": "ver-2njd27gendjm",
+          "member": "string",
+          "name": "VersionId",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4288,6 +4477,136 @@
       ],
       "type": "object"
     },
+    "DeployConfigGroupVersionRequest": {
+      "document": "DeployConfigGroupVersion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-yoaan091nx",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境 ID。请填写版本需要发布到的环境 ID。",
+          "example": "env-13aan091nx",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要发布的版本信息。可以同时变更多个不同配置组的版本，每个配置组一次仅支持变更一个版本。",
+          "example": "ver-khasdj345r",
+          "member": "ConfigGroupVersionInfo",
+          "name": "ConfigGroupVersionInfos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "变更说明。用于描述此次变更的内容、原因，最大支持 100 个字符。",
+          "example": "变更说明：新增IPV6、CN2等功能",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployConfigGroupVersionResponse": {
+      "document": "DeployConfigGroupVersion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布记录 ID。",
+          "example": "dr-2nvadq3sa41u",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeployRecord": {
+      "document": "配置组版本发布记录详情。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布版本的详细信息。",
+          "example": "无",
+          "member": "ConfigGroupVersionInfo",
+          "name": "ConfigGroupVersionInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-06-30T17:37:56+0800",
+          "member": "datetime_iso",
+          "name": "DeployTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布状态，取值有：\n<li> deploying ：发布中；</li>\n<li>failure ：发布失败；</li>\n<li>success： 发布成功。</li>",
+          "example": "failure",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布结果信息。",
+          "example": "发布失败：校验不通过",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布记录 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dr-2nvwh63fa40u",
+          "member": "string",
+          "name": "RecordId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "变更说明。",
+          "example": "变更说明：新增IPV6、CN2等功能\t",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeAccelerationDomainsRequest": {
       "document": "DescribeAccelerationDomains请求参数结构体",
       "members": [
@@ -4545,6 +4864,145 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigGroupVersionDetailRequest": {
+      "document": "DescribeConfigGroupVersionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2jwahzkd4cn0",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "版本 ID。",
+          "example": "ver-2jwahzkd4cn0",
+          "member": "string",
+          "name": "VersionId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigGroupVersionDetailResponse": {
+      "document": "DescribeConfigGroupVersionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本信息。",
+          "example": "无",
+          "member": "ConfigGroupVersionInfo",
+          "name": "ConfigGroupVersionInfo",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本文件的内容。以 JSON 格式返回。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigGroupVersionsRequest": {
+      "document": "DescribeConfigGroupVersions请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2jwahzkd4cn0",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置组 ID。",
+          "example": "confgroup-27fil18zp2v1",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20，该参数不填写时，返回所选配置组下的所有版本信息。详细的过滤条件如下：\n<li>version-id：按照版本 ID 进行过滤；</li>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询偏移量。默认值为 0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询限制数目。默认值为 20，最大值为 100。 ",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConfigGroupVersionsResponse": {
+      "document": "DescribeConfigGroupVersions返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "版本总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "版本信息列表。",
+          "example": "无",
+          "member": "ConfigGroupVersionInfo",
+          "name": "ConfigGroupVersionInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5010,6 +5468,118 @@
           "member": "DefaultServerCertInfo",
           "name": "DefaultServerCertInfo",
           "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployHistoryRequest": {
+      "document": "DescribeDeployHistory请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2jwahzkd4cn0",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "环境 ID。",
+          "example": "env-2jwahzkd4cn0",
+          "member": "string",
+          "name": "EnvId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，Filters.Values 的上限为 20，详细的过滤条件如下：\n<li>record-id：按照发布记录 ID 进行过滤进行过滤。</li>",
+          "example": "无",
+          "member": "AdvancedFilter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDeployHistoryResponse": {
+      "document": "DescribeDeployHistory返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发布记录总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发布记录详情。",
+          "example": "无",
+          "member": "DeployRecord",
+          "name": "Records",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsRequest": {
+      "document": "DescribeEnvironments请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "站点 ID。",
+          "example": "zone-2jwahzkd4cn0",
+          "member": "string",
+          "name": "ZoneId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeEnvironmentsResponse": {
+      "document": "DescribeEnvironments返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境总数。",
+          "example": "0",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境列表。",
+          "example": "无",
+          "member": "EnvInfo",
+          "name": "EnvInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7010,6 +7580,82 @@
           "example": "cc rule quota has exhausted 6/5, upgrade to use more",
           "member": "string",
           "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "EnvInfo": {
+      "document": "环境信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "环境 ID。",
+          "example": "env-2kplomhisdcb",
+          "member": "string",
+          "name": "EnvId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境类型，取值有：\n<li>production: 生产环境；</li><li>staging: 测试环境。</li>",
+          "example": "无",
+          "member": "string",
+          "name": "EnvType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "环境状态，取值有：\n<li>creating：创建中；</li>\n<li>running：稳定运行中，可进行版本变更；</li>\n<li>version_deploying：版本部署中，不能进行新的变更。</li>",
+          "example": "running ",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前环境的配置生效范围：\n<li>当 EnvType 取值为 production 时，该参数值为 [\"ALL\"]，代表全网生效；</li>\n<li>当 EnvType 取值为 staging 时，会返回测试节点 IP，可用于绑定 host 测试。</li>",
+          "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
+          "member": "string",
+          "name": "Scope",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前环境中各配置组实际生效的版本，根据 Status 的取值有以下两种情况：\n<li>当 Status 取值为 version_deploying 时，本字段返回的值为执行变更动作之前生效的版本，即新版本部署期间，实际生效的版本为执行变更动作之前的版本；</li>\n<li>当 Status 取值为 running 时，本字段返回的值即为当前实际生效的版本。</li>",
+          "example": "无",
+          "member": "ConfigGroupVersionInfo",
+          "name": "CurrentConfigGroupVersionInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-06-30T17:37:56+0800",
+          "member": "datetime_iso",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新时间。时间为世界标准时间（UTC）， 遵循 ISO 8601 标准的日期和时间格式。",
+          "example": "2023-06-30T17:37:56+0800",
+          "member": "datetime_iso",
+          "name": "UpdateTime",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
