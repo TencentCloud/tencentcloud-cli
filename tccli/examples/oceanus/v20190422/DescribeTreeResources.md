@@ -49,3 +49,50 @@ Output:
 }
 ```
 
+**Example 2: 查询指定依赖**
+
+查询指定依赖
+
+Input: 
+
+```
+tccli oceanus DescribeTreeResources --cli-unfold-argument  \
+    --Filters.0.Name ResourceName \
+    --Filters.0.Values normal \
+    --WorkSpaceId space-53rqk422
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Children": null,
+        "Id": "root",
+        "Items": [
+            {
+                "FileName": "1317959670/deep_normal_flink-hello-world-1.0.0.jar",
+                "FolderId": "root",
+                "Name": "1317959670/deep_normal_flink-hello-world-1.0.0.jar",
+                "RefJobStatusCountSet": [],
+                "Remark": "deep normal size",
+                "ResourceId": "resource-er9pkk0o",
+                "ResourceType": 1
+            },
+            {
+                "FileName": "normal_flink-hello-world-1.0.0.jar",
+                "FolderId": "root",
+                "Name": "normal_flink-hello-world-1.0.0.jar",
+                "RefJobStatusCountSet": [],
+                "Remark": "normal size",
+                "ResourceId": "resource-jvwtg594",
+                "ResourceType": 1
+            }
+        ],
+        "Name": "依赖目录",
+        "ParentId": "",
+        "RequestId": "78d06002-44d2-46fa-8f63-14f51b0237d3",
+        "TotalCount": 2
+    }
+}
+```
+

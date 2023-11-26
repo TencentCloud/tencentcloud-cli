@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeInstances": [
+      {
+        "document": "查询eks",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"ProductCategory\": \"eks\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"CPU\": 400,\n                \"CreatedTime\": \"2023-07-06T07:55:10Z\",\n                \"HostIp\": \"50.4.4.54\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceId\": \"eks-pgde84qh\",\n                \"InstanceName\": \"未命名\",\n                \"InstanceState\": \"RUNNING\",\n                \"InstanceType\": \"S5.LARGE8\",\n                \"Memory\": 8192,\n                \"OsName\": \"tlinux3.1x86_64\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.47\"\n                ],\n                \"SecurityGroupIds\": [],\n                \"Uuid\": \"49a4b663-b17a-458d-8d5f-5701171cb4aa\",\n                \"VirtualPrivateCloud\": {\n                    \"InnerSubnetId\": 2285684,\n                    \"InnerVpcId\": 11121810,\n                    \"SubnetId\": \"subnet-nax03onu\",\n                    \"VpcId\": \"vpc-eckyx8r1\"\n                }\n            }\n        ],\n        \"RequestId\": \"6bbb875d-0c93-4161-9a98-262683e5c894\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询eks"
+      }
+    ]
+  },
+  "version": "1.0"
+}

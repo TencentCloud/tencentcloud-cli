@@ -357,7 +357,7 @@
         {
           "disabled": false,
           "document": "加速策略关键数据",
-          "example": "{\"NetworkData\":{\"RTT\":[30,25,51],\"Loss\":0.02,\"Jitter\":50.5,\"Inte",
+          "example": "{\"ExpectedHighThreshold\":{\"Jitter\":20.0,\"Loss\":10.0,\"RTT\":90.0},\"ExpectedLowThreshold\":{\"Jitter\":5.0,\"Loss\":3.0,\"RTT\":50.5},\"NetworkData\":{\"Jitter\":48.09,\"Loss\":0.0,\"RTT\":[206.0,96.8,123.0],\"Timestamp\":1645586039}}",
           "member": "Context",
           "name": "Context",
           "required": false,
@@ -384,7 +384,7 @@
           "example": "ZWViYzAwNzJmNjRkNGExMDgyMjkzZTY0YzU0ZjZhNDY=-1-0",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -394,7 +394,7 @@
           "example": "1790",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -7,7 +7,7 @@ Input:
 ```
 tccli oceanus StopJobs --cli-unfold-argument  \
     --StopJobDescriptions.0.StopType 0 \
-    --StopJobDescriptions.0.JobId xx
+    --StopJobDescriptions.0.JobId cql-glegwraz
 ```
 
 Output: 

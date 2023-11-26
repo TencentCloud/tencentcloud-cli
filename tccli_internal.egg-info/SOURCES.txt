@@ -298,6 +298,8 @@ tccli/services/cwp/__init__.py
 tccli/services/cwp/cwp_client.py
 tccli/services/cwp/v20180228/api.json
 tccli/services/cwp/v20180228/examples.json
+tccli/services/cxm/__init__.py
+tccli/services/cxm/cxm_client.py
 tccli/services/cynosdb/__init__.py
 tccli/services/cynosdb/cynosdb_client.py
 tccli/services/cynosdb/v20190107/api.json

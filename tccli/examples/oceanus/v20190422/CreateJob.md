@@ -1,26 +1,24 @@
-**Example 1: 新建作业示例**
+**Example 1: 创建作业**
 
-新建作业
+创建作业
 
 Input: 
 
 ```
 tccli oceanus CreateJob --cli-unfold-argument  \
-    --Name job_new \
-    --JobType 2 \
+    --Name create_job_test \
+    --JobType 1 \
     --ClusterType 2 \
-    --ClusterId cluster-xxxxxxxx \
-    --CuMem 4 \
-    --Remark 测试作业 \
-    --FolderId folder-xxxxxxxx
+    --ClusterId cluster-5c42n3a5 \
+    --WorkSpaceId space-53rqk422
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "JobId": "cql-qlpn5o2a",
-        "RequestId": "d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16"
+        "JobId": "cql-e92rhppb",
+        "RequestId": "9159e720-d61c-459f-862b-d630de3209dd"
     }
 }
 ```
