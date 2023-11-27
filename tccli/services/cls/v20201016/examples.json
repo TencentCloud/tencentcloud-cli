@@ -96,6 +96,14 @@
         "title": "创建数据加工任务"
       }
     ],
+    "CreateDeliverCloudFunction": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cls.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDeliverCloudFunction\n<公共请求参数>\n\n{\n    \"TopicId\": \"xx\",\n    \"FunctionName\": \"xx\",\n    \"MaxMsgNum\": 1,\n    \"Namespace\": \"xx\",\n    \"Timeout\": 1,\n    \"Qualifier\": \"xx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx\"\n    }\n}",
+        "title": "创建投递SCF任务"
+      }
+    ],
     "CreateExport": [
       {
         "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。",

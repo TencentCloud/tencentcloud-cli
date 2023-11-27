@@ -168,6 +168,13 @@
       "output": "DescribeBatchTasksResponse",
       "status": "online"
     },
+    "DescribeBillingResourceGroup": {
+      "document": "查询资源组节点列表",
+      "input": "DescribeBillingResourceGroupRequest",
+      "name": "查询资源组节点列表",
+      "output": "DescribeBillingResourceGroupResponse",
+      "status": "online"
+    },
     "DescribeBillingResourceGroups": {
       "document": "查询资源组详情",
       "input": "DescribeBillingResourceGroupsRequest",
@@ -4692,6 +4699,108 @@
           "name": "BatchTaskSet",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupRequest": {
+      "document": "DescribeBillingResourceGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组id, 取值为创建资源组接口(CreateBillingResourceGroup)响应中的ResourceGroupId",
+          "example": "ersg-8jpj27jc",
+          "member": "string",
+          "name": "ResourceGroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n注意: \n1. Filter.Name 只支持以下枚举值:\n    InstanceId (资源组节点id)\n    InstanceStatus (资源组节点状态)\n2. Filter.Values: 长度为1且Filter.Fuzzy=true时，支持模糊查询; 不为1时，精确查询\n3. 每次请求的Filters的上限为10，Filter.Values的上限为100",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询起始位置，如：Limit为10，第一页Offset为0，第二页Offset为10....即每页左边为闭区间; 默认0",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询每页大小，最大30; 默认20",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向; 枚举值: ASC | DESC；默认DESC",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段; 枚举值: CreateTime (创建时间) ｜ ExpireTime (到期时间)；默认CreateTime",
+          "example": "无",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBillingResourceGroupResponse": {
+      "document": "DescribeBillingResourceGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源组节点总数； 注意接口是分页拉取的，total是指资源组节点总数，不是本次返回中InstanceSet数组的大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Instance",
+          "name": "InstanceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源组纳管类型",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "ResourceGroupSWType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

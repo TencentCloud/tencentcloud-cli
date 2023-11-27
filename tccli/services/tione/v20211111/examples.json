@@ -192,6 +192,14 @@
         "title": "跑批任务列表"
       }
     ],
+    "DescribeBillingResourceGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBillingResourceGroup\n<公共请求参数>\n\n{\n    \"ResourceGroupId\": \"abc\",\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"Negative\": true,\n            \"Fuzzy\": true\n        }\n    ],\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Order\": \"abc\",\n    \"OrderField\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"InstanceSet\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"UsedResource\": {\n                    \"Cpu\": 1,\n                    \"Memory\": 1,\n                    \"Gpu\": 1,\n                    \"GpuType\": \"abc\",\n                    \"RealGpu\": 1,\n                    \"RealGpuDetailSet\": [\n                        {\n                            \"Name\": \"abc\",\n                            \"Value\": 1\n                        }\n                    ]\n                },\n                \"TotalResource\": {\n                    \"Cpu\": 1,\n                    \"Memory\": 1,\n                    \"Gpu\": 1,\n                    \"GpuType\": \"abc\",\n                    \"RealGpu\": 1,\n                    \"RealGpuDetailSet\": [\n                        {\n                            \"Name\": \"abc\",\n                            \"Value\": 1\n                        }\n                    ]\n                },\n                \"InstanceStatus\": \"abc\",\n                \"SubUin\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"AutoRenewFlag\": \"abc\",\n                \"SpecId\": \"abc\",\n                \"SpecAlias\": \"abc\",\n                \"SpecFeatures\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"ResourceGroupSWType\": \"NORMAL\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询资源组节点列表"
+      }
+    ],
     "DescribeBillingResourceGroups": [
       {
         "document": "",

@@ -44,10 +44,10 @@
     ],
     "CreateJob": [
       {
-        "document": "新建作业",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateJob\n&Name=job_new\n&JobType=2\n&ClusterType=2\n&ClusterId=cluster-xxxxxxxx\n&CuMem=4\n&Remark=测试作业\n&FolderId=folder-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobId\": \"cql-qlpn5o2a\",\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
-        "title": "新建作业示例"
+        "document": "创建作业",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateJob\n<公共请求参数>\n\n{\n    \"Name\": \"create_job_test\",\n    \"JobType\": 1,\n    \"ClusterType\": 2,\n    \"ClusterId\": \"cluster-5c42n3a5\",\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobId\": \"cql-e92rhppb\",\n        \"RequestId\": \"9159e720-d61c-459f-862b-d630de3209dd\"\n    }\n}",
+        "title": "创建作业"
       }
     ],
     "CreateJobConfig": [
@@ -60,18 +60,18 @@
     ],
     "CreateResource": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateResource\n&Name=testjar\n&ResourceType=1\n&FolderId=folder-xxxxx\n&ResourceLoc.StorageType=1\n&ResourceLoc.Param.Bucket=oceanus-online-resource-xxxxx\n&ResourceLoc.Param.Path=123456/10000534/testjar/xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\",\n        \"ResourceId\": \"resource-jj4fx50r\",\n        \"Version\": 1\n    }\n}",
-        "title": "创建资源示例"
+        "document": "创建依赖",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResource\n<公共请求参数>\n\n{\n    \"ResourceLoc\": {\n        \"StorageType\": 1,\n        \"Param\": {\n            \"Bucket\": \"oceanus-online-resource01-gz-1257058918\",\n            \"Path\": \"1257058945/100006386216/upload/20231120142441/flink-hello-world-1.0.0-jar-with-dependencies.jar\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    },\n    \"Remark\": \"test\",\n    \"Name\": \"flink-hello-world-1.0.0-jar-with-dependencies.jar\",\n    \"ResourceType\": 1,\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1a7f54d8-fbfa-4367-a572-219c46b18058\",\n        \"ResourceId\": \"resource-gk2iv5z5\",\n        \"Version\": 1\n    }\n}",
+        "title": "创建依赖"
       }
     ],
     "CreateResourceConfig": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=CreateResourceConfig\n&ResourceId=resource-jj3fx50f\n&ResourceLoc.StorageType=1\n&ResourceLoc.Param.Bucket=oceanus-online-resource-xxxxx\n&ResourceLoc.Param.Path=123456/10000534/testjar/xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Version\": 15,\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
-        "title": "创建资源配置示例"
+        "document": "创建依赖版本",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateResourceConfig\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-qreuon9y\",\n    \"ResourceLoc\": {\n        \"StorageType\": 1,\n        \"Param\": {\n            \"Bucket\": \"oceanus-online-resource01-gz-1257058918\",\n            \"Path\": \"1257058945/100006386216/upload/20231120150319/flink-hello-world-1.0.0.jar\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    },\n    \"Remark\": \"test\",\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"65812cf1-22bb-4ecd-89bb-01fe5a12ffb2\",\n        \"Version\": 3\n    }\n}",
+        "title": "创建依赖版本"
       }
     ],
     "CreateWorkSpace": [
@@ -100,33 +100,33 @@
     ],
     "DeleteJobs": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteJobs\n&JobIds.0=cql-2ldwgh8i\n&JobIds.1=cql-34klpwqm\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
-        "title": "批量删除作业示例"
+        "document": "删除作业",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"cql-6ntmhryo\"\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"12470b27-ef12-4c52-9b79-bddd64ae0a5b\"\n    }\n}",
+        "title": "删除作业"
       }
     ],
     "DeleteResourceConfigs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"ResourceConfigVersions\": [\n        \"1\"\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-gk2iv5z5\",\n    \"ResourceConfigVersions\": [\n        \"1\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
         "title": "删除资源版本"
       }
     ],
     "DeleteResources": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteResources\n&ResourceIds.0=resource-jj4fx50r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5d5a201f-0a3d-485f-a82f-3c73ccca348a\"\n    }\n}",
-        "title": "删除资源示例"
+        "document": "删除依赖",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteResources\n<公共请求参数>\n\n{\n    \"ResourceIds\": [\n        \"resource-gk2iv5z5\"\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1218133b-2a74-413d-abef-237bee5803df\"\n    }\n}",
+        "title": "删除依赖"
       }
     ],
     "DeleteTableConfig": [
       {
         "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteTableConfig\n&DebugId=1\n&JobId=cql-xxxxxxx\n&TableName=test\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "https://oceanus.tencentcloudapi.com/?Action=DeleteTableConfig\n&DebugId=1\n&JobId=cql-067opv7l\n&TableName=test\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3998cdae-e624-4e23-b497-17dbf8c90b0f\"\n    }\n}",
         "title": "删除作业表配置"
       }
     ],
@@ -148,10 +148,10 @@
     ],
     "DescribeJobConfigs": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobConfigs\n&JobId=cql-fktse6bt\n&JobConfigVersions.0=1\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"JobConfigSet\": [\n            {\n                \"ProgramArgs\": \"xx\",\n                \"Remark\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"DefaultParallelism\": 1,\n                \"ClsTopicId\": \"xx\",\n                \"ResourceRefDetails\": [\n                    {\n                        \"ResourceId\": \"xx\",\n                        \"SystemProvide\": 0,\n                        \"Type\": 0,\n                        \"Version\": 0,\n                        \"Name\": \"xx\"\n                    }\n                ],\n                \"COSBucket\": \"xx\",\n                \"TaskManagerSpec\": 0.0,\n                \"UpdateTime\": \"xx\",\n                \"JobId\": \"xx\",\n                \"EntrypointClass\": \"xx\",\n                \"Version\": 1,\n                \"ClsLogsetId\": \"xx\",\n                \"Properties\": [\n                    {\n                        \"Value\": \"xx\",\n                        \"Key\": \"xx\"\n                    }\n                ],\n                \"LogCollect\": 0,\n                \"JobManagerSpec\": 0.0,\n                \"MaxParallelism\": 1,\n                \"PythonVersion\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "查询作业配置列表示例"
+        "document": "查询指定的作业配置",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobConfigs\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-ahnkqtay\",\n    \"WorkSpaceId\": \"space-1257058945ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"JobConfigSet\": [\n            {\n                \"AutoRecover\": 1,\n                \"COSBucket\": \"autotest-gz-bucket-1257058945\",\n                \"CheckpointRetainedNum\": 0,\n                \"ClazzLevels\": [],\n                \"ClsLogsetId\": \"\",\n                \"ClsTopicId\": \"\",\n                \"CreateTime\": \"2023-10-20 10:55:12\",\n                \"CreatorUin\": \"100032959577\",\n                \"DefaultParallelism\": 1,\n                \"EntrypointClass\": \"\",\n                \"ExpertModeOn\": false,\n                \"JobId\": \"cql-ahnkqtay\",\n                \"JobManagerSpec\": 1,\n                \"LogCollect\": 4,\n                \"LogLevel\": \"INFO\",\n                \"MaxParallelism\": 2048,\n                \"ProgramArgs\": \"{\\\"CheckpointInterval\\\":600,\\\"Metadata\\\":\\\"{\\\\\\\"Metadata\\\\\\\":{\\\\\\\"ReferenceTables\\\\\\\":[],\\\\\\\"Variables\\\\\\\":[]}}\\\",\\\"SqlCode\\\":\\\"-- Datagen Connector 可以随机生成一些数据用于测试\\\\n-- 参见 https://cloud.tencent.com/document/product/849/58713\\\\nCREATE TABLE datagen_source_table_b ( \\\\n    id INT, \\\\n    name STRING \\\\n) WITH ( \\\\n    'connector' = 'datagen',\\\\n    'rows-per-second'='1'  -- 每秒产生的数据条数\\\\n);\\\\n\\\\n\\\\n-- 输入到 Blackhole Sink 的数据, 会被全部丢弃。这个 Sink 适合做性能测试。\\\\n-- 参见 https://ci.apache.org/projects/flink/flink-docs-release-1.11/zh/dev/table/connectors/blackhole.html\\\\nCREATE TABLE blackhole_sink_b ( \\\\n    id INT, \\\\n    name STRING \\\\n) WITH ( \\\\n    'connector' = 'blackhole'\\\\n);\\\\n\\\\nINSERT INTO blackhole_sink_b SELECT * FROM datagen_source_table_b;\\\\n\\\\n\\\\n\\\"}\",\n                \"Properties\": [\n                    {\n                        \"Key\": \"pipeline.max-parallelism\",\n                        \"Value\": \"2048\"\n                    }\n                ],\n                \"PythonVersion\": \"\",\n                \"Remark\": \"v1\",\n                \"ResourceRefDetails\": null,\n                \"TaskManagerSpec\": 1,\n                \"TraceModeConfiguration\": null,\n                \"TraceModeOn\": false,\n                \"UpdateTime\": \"2023-11-13 17:19:04\",\n                \"Version\": 1\n            }\n        ],\n        \"RequestId\": \"21ac3206-2b1a-4095-93cd-ceed11cf5379\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询作业配置"
       }
     ],
     "DescribeJobSavepoint": [
@@ -164,16 +164,16 @@
     ],
     "DescribeJobSubmissionLog": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobSubmissionLog\n&JobId=cql-ebgioapf\n&RunningOrderId=0\n&StartTime=1586284444\n&EndTime=1586327659\n&Limit=10\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JobInstanceList\": [\n            {\n                \"StartingMillis\": 0,\n                \"RunningOrderId\": 4,\n                \"JobInstanceStartTime\": \"xx\"\n            },\n            {\n                \"StartingMillis\": 60000,\n                \"RunningOrderId\": 2,\n                \"JobInstanceStartTime\": \"xx\"\n            },\n            {\n                \"StartingMillis\": 60000,\n                \"RunningOrderId\": 1,\n                \"JobInstanceStartTime\": \"xx\"\n            }\n        ],\n        \"LogList\": [\n            \"2020-04-08 11:58:35.048 [queuedThreadPool-57106 dfd73175-f8d4-4981-8cd3-8072e0a52fbd cql-ebgioapf 4 20200408115835048] WARN  org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducerBase  - Overwriting the key.serializer is not recommended\"\n        ],\n        \"ListOver\": false,\n        \"LogContentList\": [\n            {\n                \"PkgId\": \"xx\",\n                \"PkgLogId\": 0,\n                \"Log\": \"xx\",\n                \"Time\": 0\n            }\n        ],\n        \"Cursor\": \"xx\",\n        \"RequestId\": \"xx\",\n        \"JobRequestId\": \"xx\"\n    }\n}",
-        "title": "查询作业启动日志"
-      },
-      {
         "document": "持续加载数据",
         "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeJobSubmissionLog\n&JobId=cql-ebgioapf\n&RunningOrderId=1\n&StartTime=1586284444\n&EndTime=1586327659\n&Cursor=Y29udGV4dC0xMzcyM2NmZi03YjAyLTQ2MTgtYWJiOC0zYWQ5ZmU3MzIxMGUxNTg2MzI3OTk0NjEx\n&Limit=100\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Cursor\": \"Y29udGV4dC1hNTI3ZmVhYy01YmE0LTQ5MWMtYjAwZS1kZGQwZWEwZWU2NDAxNTg2MzI4MTQ4Nzkw\",\n        \"JobInstanceList\": [],\n        \"JobRequestId\": \"dfd73175-f8d4-4981-8cd3-8072e0a52fbd\",\n        \"ListOver\": false,\n        \"LogList\": [\n            \"2020-04-08 11:57:32.703 [queuedThreadPool-57106 dfd73175-f8d4-4981-8cd3-8072e0a52fbd cql-ebgioapf 1 20200408115732703] INFO  com.tencent.cloud.tstream.flink.toolbox.sql.parse.settings.SettingManager  - Registered Setting Handler CHECKPOINT_INTERVAL to CheckpointIntervalHandler for POST_PROCESSING\"\n        ],\n        \"RequestId\": \"db79c5af-adba-484b-8cf0-775e0b0b8070\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Cursor\": \"Y29udGV4dC1hNTI3ZmVhYy01YmE0LTQ5MWMtYjAwZS1kZGQwZWEwZWU2NDAxNTg2MzI4MTQ4Nzkw\",\n        \"JobInstanceList\": [],\n        \"JobRequestId\": \"dfd73175-f8d4-4981-8cd3-8072e0a52fbd\",\n        \"ListOver\": false,\n        \"LogList\": [\n            \"2020-04-08 11:57:32.703 [queuedThreadPool-57106 dfd73175-f8d4-4981-8cd3-8072e0a52fbd cql-ebgioapf 1 20200408115732703] INFO  com.tencent.cloud.tstream.flink.toolbox.sql.parse.settings.SettingManager  - Registered Setting Handler CHECKPOINT_INTERVAL to CheckpointIntervalHandler for POST_PROCESSING\"\n        ],\n        \"LogContentList\": [\n            {\n                \"Log\": \"2023-09-11 15:37:23.094 [jobmanager-future-thread-4] INFO  org.apache.flink.runtime.checkpoint.CheckpointCoordinator - Completed checkpoint 2767 for job 00000000000000000000000000000000 (0 bytes in 269 ms).\",\n                \"Time\": 1694417844009,\n                \"PkgId\": \"11CBB7C1649A91DD-1741\",\n                \"PkgLogId\": 131073,\n                \"ContainerName\": \"cql-07zmx8tv-318940-64f4dbfcb6-vtf67\"\n            }\n        ],\n        \"RequestId\": \"db79c5af-adba-484b-8cf0-775e0b0b8070\"\n    }\n}",
         "title": "查询指定job实例的启动日志"
+      },
+      {
+        "document": "查询启动日志",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeJobSubmissionLog\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-067opv7l\",\n    \"RunningOrderId\": 1,\n    \"StartTime\": 1698044059122,\n    \"EndTime\": 1698045059131\n}",
+        "output": "{\n    \"Response\": {\n        \"Cursor\": \"\",\n        \"JobInstanceList\": null,\n        \"JobRequestId\": \"9acab4fc-d101-47ca-96a6-da08fe3fc130\",\n        \"ListOver\": true,\n        \"LogContentList\": [\n            {\n                \"ContainerName\": \"\",\n                \"Log\": \"2023-10-23 14:54:18.158 [pool-1-thread-14] INFO  org.apache.flink.kubernetes.utils.KubernetesUtils  - Kubernetes deployment requires a fixed port. Configuration blob.server.port will be set to 6124\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": 0,\n                \"Time\": 1698044059131\n            },\n            {\n                \"ContainerName\": \"\",\n                \"Log\": \"2023-10-23 14:54:18.158 [pool-1-thread-14] INFO  org.apache.flink.kubernetes.utils.KubernetesUtils  - Kubernetes deployment requires a fixed port. Configuration taskmanager.rpc.port will be set to 6122\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": 0,\n                \"Time\": 1698044059131\n            },\n            {\n                \"ContainerName\": \"\",\n                \"Log\": \"2023-10-23 14:54:18.590 [pool-1-thread-14] INFO  com.qcloud.oceanus.ca.service.RunJobService  - Finish invoking clusterClient.run (run job)\",\n                \"PkgId\": \"\",\n                \"PkgLogId\": 0,\n                \"Time\": 1698044059132\n            }\n        ],\n        \"LogList\": [\n            \"2020-04-08 11:58:35.048 [queuedThreadPool-57106 dfd73175-f8d4-4981-8cd3-8072e0a52fbd cql-ebgioapf 4 20200408115835048] WARN  org.apache.flink.streaming.connectors.kafka.FlinkKafkaProducerBase  - Overwriting the key.serializer is not recommended\"\n        ],\n        \"RequestId\": \"9270beec-295b-42dd-836b-11ec47b6bff7\"\n    }\n}",
+        "title": "查询启动日志"
       }
     ],
     "DescribeJobs": [
@@ -186,10 +186,10 @@
     ],
     "DescribeResourceConfigs": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeResourceConfigs\n&ResourceId=resource-iloy4wei\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceConfigSet\": [\n            {\n                \"Status\": 0,\n                \"Remark\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"ResourceType\": 1,\n                \"ResourceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"ResourceLoc\": {\n                    \"StorageType\": 1,\n                    \"Param\": {\n                        \"Path\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\"\n                    }\n                },\n                \"RefJobCount\": 0,\n                \"Version\": 1,\n                \"AppId\": 1257051234,\n                \"CreateTime\": \"xx\"\n            }\n        ]\n    }\n}",
-        "title": "描述作业配置接口示例"
+        "document": "查询资源版本",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceConfigs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-qreuon9y\",\n    \"Limit\": 1,\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d20bc7a4-8382-42d1-8f8b-91ec83eac1d5\",\n        \"ResourceConfigSet\": [\n            {\n                \"AppId\": 1257058945,\n                \"CreateTime\": \"2023-11-20 15:05:56\",\n                \"CreatorUin\": \"100032489861\",\n                \"OwnerUin\": \"100006386216\",\n                \"RefJobCount\": 0,\n                \"RefJobStatusCountSet\": [],\n                \"Region\": \"ap-guangzhou\",\n                \"Remark\": \"test\",\n                \"ResourceId\": \"resource-qreuon9y\",\n                \"ResourceLoc\": {\n                    \"Param\": {\n                        \"Bucket\": \"oceanus-online-resource01-gz-1257058918\",\n                        \"Path\": \"1257058945/100006386216/upload/20231120150319/flink-hello-world-1.0.0.jar\",\n                        \"Region\": \"ap-guangzhou\"\n                    },\n                    \"StorageType\": 1\n                },\n                \"ResourceType\": 1,\n                \"Status\": 1,\n                \"Version\": 3\n            }\n        ],\n        \"TotalCount\": 3\n    }\n}",
+        "title": "查询资源版本"
       }
     ],
     "DescribeResourceRelatedJobs": [
@@ -203,9 +203,9 @@
     "DescribeResources": [
       {
         "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=DescribeResources\n&ResourceIds.0=resource-abd503yt\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\",\n        \"ResourceSet\": [\n            {\n                \"UpdateTime\": \"xx\",\n                \"Name\": \"xx\",\n                \"CreatorUin\": \"xx\",\n                \"ResourceType\": 1,\n                \"ResourceId\": \"xx\",\n                \"Region\": \"xx\",\n                \"OwnerUin\": \"xx\",\n                \"Remark\": \"xx\",\n                \"VersionCount\": 0,\n                \"RefJobCount\": 0,\n                \"LatestResourceConfigVersion\": 1,\n                \"AppId\": 1,\n                \"CreateTime\": \"xx\",\n                \"ResourceLoc\": {\n                    \"StorageType\": 1,\n                    \"Param\": {\n                        \"Path\": \"xx\",\n                        \"Region\": \"xx\",\n                        \"Bucket\": \"xx\"\n                    }\n                }\n            }\n        ]\n    }\n}",
-        "title": "查询资源配置列表示例"
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResources\n<公共请求参数>\n\n{\n    \"ResourceIds\": [\n        \"resource-qreuon9y\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2f1a8e8b-a5e7-41a1-a96c-f40091d6ffff\",\n        \"ResourceSet\": [\n            {\n                \"AppId\": 1257058945,\n                \"CreateTime\": \"2023-08-16 20:29:58\",\n                \"CreatorUin\": \"100032489861\",\n                \"FileName\": \"flink-hello-world-1.0.0.jar\",\n                \"LatestResourceConfigVersion\": 1,\n                \"Name\": \"flink-hello-world-1.0.0.jar\",\n                \"OwnerUin\": \"100006386216\",\n                \"RefJobCount\": 2,\n                \"IsJobRun\": 0,\n                \"RefJobStatusCountSet\": [\n                    {\n                        \"Count\": 1,\n                        \"JobStatus\": 5\n                    },\n                    {\n                        \"Count\": 3,\n                        \"JobStatus\": 4\n                    }\n                ],\n                \"Region\": \"ap-guangzhou\",\n                \"Remark\": \"test\",\n                \"ResourceId\": \"resource-qreuon9y\",\n                \"ResourceLoc\": {\n                    \"Param\": {\n                        \"Bucket\": \"oceanus-online-resource01-gz-1257058918\",\n                        \"Path\": \"1257058945/100006386216/upload/20230816202945/flink-hello-world-1.0.0.jar\",\n                        \"Region\": \"ap-guangzhou\"\n                    },\n                    \"StorageType\": 1\n                },\n                \"ResourceType\": 1,\n                \"UpdateTime\": \"2023-08-16 20:29:58\",\n                \"VersionCount\": 1,\n                \"WorkSpaceId\": 2892\n            }\n        ],\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询资源"
       }
     ],
     "DescribeSystemResources": [
@@ -230,6 +230,12 @@
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTreeResources\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceName\",\n            \"Values\": [\n                \"111\"\n            ]\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Children\": [\n            {\n                \"ParentId\": \"root\",\n                \"Id\": \"folder-xxxxx\",\n                \"Name\": \"folder-name\",\n                \"Items\": null,\n                \"Children\": null,\n                \"TotalCount\": 0\n            }\n        ],\n        \"Id\": \"root\",\n        \"Items\": [\n            {\n                \"ResourceId\": \"resource-xxxxxx\",\n                \"Name\": \"flink-connector-jdbc.jar\",\n                \"ResourceType\": 1,\n                \"Remark\": \"pgsql1\",\n                \"FileName\": \"flink-connector-jdbc.jar\",\n                \"FolderId\": \"root\",\n                \"RefJobStatusCountSet\": [\n                    {\n                        \"JobStatus\": 5,\n                        \"Count\": 2\n                    }\n                ]\n            }\n        ],\n        \"Name\": \"依赖目录\",\n        \"ParentId\": \"\",\n        \"RequestId\": \"4aafc302-4fc5-44f5-9e90-2e0a2702ab81\",\n        \"TotalCount\": 333\n    }\n}",
         "title": "分类中的自定义树状结构并筛选"
+      },
+      {
+        "document": "查询指定依赖",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTreeResources\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"ResourceName\",\n            \"Values\": [\n                \"normal\"\n            ]\n        }\n    ],\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Children\": null,\n        \"Id\": \"root\",\n        \"Items\": [\n            {\n                \"FileName\": \"1317959670/deep_normal_flink-hello-world-1.0.0.jar\",\n                \"FolderId\": \"root\",\n                \"Name\": \"1317959670/deep_normal_flink-hello-world-1.0.0.jar\",\n                \"RefJobStatusCountSet\": [],\n                \"Remark\": \"deep normal size\",\n                \"ResourceId\": \"resource-er9pkk0o\",\n                \"ResourceType\": 1\n            },\n            {\n                \"FileName\": \"normal_flink-hello-world-1.0.0.jar\",\n                \"FolderId\": \"root\",\n                \"Name\": \"normal_flink-hello-world-1.0.0.jar\",\n                \"RefJobStatusCountSet\": [],\n                \"Remark\": \"normal size\",\n                \"ResourceId\": \"resource-jvwtg594\",\n                \"ResourceType\": 1\n            }\n        ],\n        \"Name\": \"依赖目录\",\n        \"ParentId\": \"\",\n        \"RequestId\": \"78d06002-44d2-46fa-8f63-14f51b0237d3\",\n        \"TotalCount\": 2\n    }\n}",
+        "title": "查询指定依赖"
       }
     ],
     "DescribeWorkSpaces": [
@@ -264,10 +270,10 @@
     ],
     "ModifyJob": [
       {
-        "document": "",
-        "input": "https://oceanus.tencentcloudapi.com/?Action=ModifyJob\n&JobId=cql-6iaginqp\n&Name=test\n&Remark=测试\n&TargetFolderId=folder-xxxxxxxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
-        "title": "更新作业示例"
+        "document": "更新作业",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyJob\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-glegwraz\",\n    \"Name\": \"modify_test\",\n    \"WorkSpaceId\": \"space-53rqk422\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"db5c46b4-b927-4a24-963d-a24e333cc78f\"\n    }\n}",
+        "title": "更新作业"
       }
     ],
     "ModifyWorkSpace": [
@@ -297,7 +303,7 @@
     "StopJobs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopJobs\n<公共请求参数>\n\n{\n    \"StopJobDescriptions\": [\n        {\n            \"StopType\": 0,\n            \"JobId\": \"xx\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopJobs\n<公共请求参数>\n\n{\n    \"StopJobDescriptions\": [\n        {\n            \"StopType\": 0,\n            \"JobId\": \"cql-glegwraz\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16\"\n    }\n}",
         "title": "批量停止作业示例"
       }
@@ -306,8 +312,8 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerJobSavepoint\n<公共请求参数>\n\n{\n    \"JobId\": \"cql-52xkpymp\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"xx\",\n        \"FinalSavepointPath\": \"xx\",\n        \"SavepointTrigger\": true,\n        \"RequestId\": \"cc75a49d-a99b-4840-b3cb-7d3bdd9a0e33\",\n        \"SavepointId\": \"svp-asdf5678\"\n    }\n}",
-        "title": "1"
+        "output": "{\n    \"Response\": {\n        \"ErrorMsg\": \"\",\n        \"FinalSavepointPath\": \"\",\n        \"SavepointTrigger\": true,\n        \"RequestId\": \"cc75a49d-a99b-4840-b3cb-7d3bdd9a0e33\",\n        \"SavepointId\": \"svp-asdf5678\"\n    }\n}",
+        "title": "触发快照"
       }
     ]
   },

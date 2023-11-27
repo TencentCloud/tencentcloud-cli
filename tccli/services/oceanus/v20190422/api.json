@@ -204,7 +204,7 @@
       "status": "online"
     },
     "ModifyJob": {
-      "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失\n\n",
+      "document": "更新作业属性，仅允许以下3种操作，不支持组合操作：\n(1)\t更新作业名称\n(2)\t更新作业备注 \n(3)\t更新作业最大并行度\n变更前提：WorkerCuNum<=MaxParallelism\n如果MaxParallelism变小，不重启作业，待下一次重启生效\n如果MaxParallelism变大，则要求入参RestartAllowed必须为True\n假设作业运行状态，则先停止作业，再启动作业，中间状态丢失\n假设作业暂停状态，则将作业更改为停止状态，中间状态丢失",
       "input": "ModifyJobRequest",
       "name": "更新作业",
       "output": "ModifyJobResponse",
@@ -1861,6 +1861,7 @@
           "example": "cql-qlpn5o2a",
           "member": "string",
           "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1933,7 +1934,7 @@
           "example": "1",
           "member": "int64",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2024,7 +2025,7 @@
           "example": "resource-xxx",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2034,7 +2035,7 @@
           "example": "1",
           "member": "int64",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2561,7 +2562,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2571,7 +2572,7 @@
           "example": "[]",
           "member": "JobConfig",
           "name": "JobConfigSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2774,7 +2775,7 @@
           "example": "Y29udGV4dC1hNTI3ZmVhYy01YmE0LTQ5MWMtYjAwZS1kZGQwZWEwZWU2NDAxNTg2",
           "member": "string",
           "name": "Cursor",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2784,7 +2785,7 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -2794,7 +2795,7 @@
           "example": "dfd73175-f8d4-4981-8cd3-8072e0a52fbd",
           "member": "string",
           "name": "JobRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2804,7 +2805,7 @@
           "example": "[]",
           "member": "JobInstanceForSubmissionLog",
           "name": "JobInstanceList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2814,7 +2815,7 @@
           "example": " [             \"2020-04-08 11:57:32.703 [queuedThreadPool-57106 ",
           "member": "string",
           "name": "LogList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2824,7 +2825,7 @@
           "example": "[]",
           "member": "LogContent",
           "name": "LogContentList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2998,7 +2999,7 @@
           "example": "[]",
           "member": "ResourceConfigItem",
           "name": "ResourceConfigSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3008,7 +3009,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3173,7 +3174,7 @@
           "example": "无",
           "member": "ResourceItem",
           "name": "ResourceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3183,7 +3184,7 @@
           "example": "[]",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4199,6 +4200,26 @@
           "name": "JobGraph",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "es索引\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "index-**",
+          "member": "string",
+          "name": "EsServerlessIndex",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "es空间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "space-**",
+          "member": "string",
+          "name": "EsServerlessSpace",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -6705,7 +6726,7 @@
           "example": "true",
           "member": "bool",
           "name": "SavepointTrigger",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6715,7 +6736,7 @@
           "example": "errormsg",
           "member": "string",
           "name": "ErrorMsg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6725,7 +6746,7 @@
           "example": "cos",
           "member": "string",
           "name": "FinalSavepointPath",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6735,7 +6756,7 @@
           "example": "cql-xxx",
           "member": "string",
           "name": "SavepointId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

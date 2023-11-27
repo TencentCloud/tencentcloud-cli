@@ -13,6 +13,13 @@
       "name": "获取规则列表",
       "output": "ListConfigRulesResponse",
       "status": "online"
+    },
+    "PutEvaluations": {
+      "document": "上报自定义规则评估结果",
+      "input": "PutEvaluationsRequest",
+      "name": "上报自定义规则评估结果",
+      "output": "PutEvaluationsResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -344,6 +351,62 @@
       ],
       "usage": "out"
     },
+    "Evaluation": {
+      "document": "自定义规则评估结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "已评估资源ID。长度为0~256个字符",
+          "example": "disk-26itbqha",
+          "member": "string",
+          "name": "ComplianceResourceId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已评估资源类型。\n支持:\nQCS::CVM::Instance、 QCS::CBS::Disk、QCS::VPC::Vpc、QCS::VPC::Subnet、QCS::VPC::SecurityGroup、 QCS::CAM::User、QCS::CAM::Group、QCS::CAM::Policy、QCS::CAM::Role、QCS::COS::Bucket",
+          "example": "QCS::CBS::Disk",
+          "member": "string",
+          "name": "ComplianceResourceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "已评估资源地域。\n长度为0~32个字符",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "ComplianceRegion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合规类型。取值：\nCOMPLIANT：合规、\nNON_COMPLIANT：不合规",
+          "example": "NON_COMPLIANT",
+          "member": "string",
+          "name": "ComplianceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不合规资源的补充信息。",
+          "example": "无",
+          "member": "Annotation",
+          "name": "Annotation",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "in"
+    },
     "InputParameter": {
       "document": "参数值",
       "members": [
@@ -645,6 +708,42 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEvaluationsRequest": {
+      "document": "PutEvaluations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "回调令牌。从自定义规则所选的scf云函数Context中取参数ResultToken值",
+          "example": "FQikxW6AmU4cTUUpEJ-OF4Mvbq_7quPYZQOjDuo9cAxzUX-D8w==",
+          "member": "string",
+          "name": "ResultToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自定义规则评估结果信息。",
+          "example": "无",
+          "member": "Evaluation",
+          "name": "Evaluations",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "PutEvaluationsResponse": {
+      "document": "PutEvaluations返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

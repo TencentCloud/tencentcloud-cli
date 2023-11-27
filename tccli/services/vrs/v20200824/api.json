@@ -31,7 +31,7 @@
     "DownloadVRSModel": {
       "document": "下载声音复刻离线模型",
       "input": "DownloadVRSModelRequest",
-      "name": "下载声音复刻离线模型",
+      "name": "下载声音复刻离线模型（暂未开放）",
       "output": "DownloadVRSModelResponse",
       "status": "online"
     },
@@ -476,6 +476,7 @@
           "example": "无",
           "member": "DownloadVRSModelRsp",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

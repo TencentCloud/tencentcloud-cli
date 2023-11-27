@@ -1,19 +1,20 @@
-**Example 1: 删除资源示例**
+**Example 1: 删除依赖**
 
-
+删除依赖
 
 Input: 
 
 ```
 tccli oceanus DeleteResources --cli-unfold-argument  \
-    --ResourceIds resource-jj4fx50r
+    --ResourceIds resource-gk2iv5z5 \
+    --WorkSpaceId space-53rqk422
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "5d5a201f-0a3d-485f-a82f-3c73ccca348a"
+        "RequestId": "1218133b-2a74-413d-abef-237bee5803df"
     }
 }
 ```

@@ -40,14 +40,6 @@
         "title": "创建应用更新触发器"
       }
     ],
-    "CreateCustomAccount": [
-      {
-        "document": "创建自定义账户",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCustomAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-12345\",\n    \"Name\": \"robot\",\n    \"Description\": \"desc\",\n    \"ExpiresAt\": 1676897989,\n    \"Disable\": false,\n    \"Permissions\": [\n        {\n            \"Resource\": \"library\",\n            \"Actions\": [\n                \"tcr:PushRepository\",\n                \"tcr:PullRepository\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Name\": \"tcr$robot\",\n        \"Password\": \"kiHUaTAmF6a94mNzhZWDans3dYahHQNE\",\n        \"ExpiresAt\": 1676897989,\n        \"CreateTime\": \"2023-02-20T21:00:00+00:00\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "创建自定义账户"
-      }
-    ],
     "CreateImageAccelerationService": [
       {
         "document": "",
@@ -226,14 +218,6 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=DeleteApplicationTriggerPersonal\r\n&TriggerName=test2\r\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26358c69-7254-41e8-8f4e-bb13836e4165\"\n    }\n}",
         "title": "删除应用更新触发器"
-      }
-    ],
-    "DeleteCustomAccount": [
-      {
-        "document": "删除自定义账号",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"Name\": \"tcr$robot\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除自定义账号"
       }
     ],
     "DeleteImage": [
@@ -792,14 +776,6 @@
         "input": "https://tcr.tencentcloudapi.com/?Action=ModifyApplicationTriggerPersonal\n&RepoName=test/test123\n&TriggerName=testtrig\n&InvokeMethod=all\n&ClusterId=cls-xxxxxxxx\n&Namespace=default\n&WorkloadType=Deployment\n&WorkloadName=testdeploy\n&ContainerName=nginx\n&ClusterRegion=16\n&NewTriggerName=test2\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"26358c69-7254-41e8-8f4e-bb13836e4165\"\n    }\n}",
         "title": "修改应用更新触发器"
-      }
-    ],
-    "ModifyCustomAccount": [
-      {
-        "document": "更新自定义账户",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCustomAccount\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-12345\",\n    \"Name\": \"robot\",\n    \"Description\": \"desc\",\n    \"ExpiresAt\": 1676897989,\n    \"Disable\": false,\n    \"Permissions\": [\n        {\n            \"Resource\": \"library\",\n            \"Actions\": [\n                \"tcr:PushRepository\",\n                \"tcr:PullRepository\"\n            ]\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"reqId\"\n    }\n}",
-        "title": "更新自定义账户"
       }
     ],
     "ModifyImmutableTagRules": [

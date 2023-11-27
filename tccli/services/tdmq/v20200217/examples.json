@@ -823,7 +823,7 @@
     "ModifyCmqTopicAttribute": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmqTopicAttribute\n<公共请求参数>\n\n{\n    \"MaxMsgSize\": 1,\n    \"TopicName\": \"xx\",\n    \"Trace\": true,\n    \"MsgRetentionSeconds\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCmqTopicAttribute\n<公共请求参数>\n\n{\n    \"TopicName\": \"abc\",\n    \"MaxMsgSize\": 1,\n    \"MsgRetentionSeconds\": 1,\n    \"Trace\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"8a04c6b1-dec5-4979-b3b2-34ab3b3402b2\"\n    }\n}",
         "title": "修改主题属性"
       }

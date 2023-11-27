@@ -84,6 +84,13 @@
       "output": "CreateDataTransformResponse",
       "status": "online"
     },
+    "CreateDeliverCloudFunction": {
+      "document": "本接口用于创建投递SCF任务",
+      "input": "CreateDeliverCloudFunctionRequest",
+      "name": "创建投递SCF任务",
+      "output": "CreateDeliverCloudFunctionResponse",
+      "status": "online"
+    },
     "CreateExport": {
       "document": "本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449",
       "input": "CreateExportRequest",
@@ -3397,6 +3404,78 @@
           "type": "string",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeliverCloudFunctionRequest": {
+      "document": "CreateDeliverCloudFunction请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "投递规则属于的 topic id",
+          "example": "xxx-xxx-xxx-xxx",
+          "member": "string",
+          "name": "TopicId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递的云函数名字",
+          "example": "test-report-es",
+          "member": "string",
+          "name": "FunctionName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "default",
+          "member": "string",
+          "name": "Namespace",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数版本",
+          "example": "$DEFAULT",
+          "member": "string",
+          "name": "Qualifier",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "投递最长等待时间，单位：秒",
+          "example": "60",
+          "member": "uint64",
+          "name": "Timeout",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "投递最大消息数",
+          "example": "10000000",
+          "member": "uint64",
+          "name": "MaxMsgNum",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateDeliverCloudFunctionResponse": {
+      "document": "CreateDeliverCloudFunction返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -22,9 +22,9 @@
       "status": "online"
     },
     "BatchReportAppMessage": {
-      "document": "批量消息上报",
+      "document": "批量上报应用消息",
       "input": "BatchReportAppMessageRequest",
-      "name": "批量消息上报",
+      "name": "批量上报应用消息",
       "output": "BatchReportAppMessageResponse",
       "status": "online"
     },
@@ -379,9 +379,9 @@
       "status": "online"
     },
     "ReportAppMessage": {
-      "document": "单条消息上报",
+      "document": "上报应用消息",
       "input": "ReportAppMessageRequest",
-      "name": "单条消息上报",
+      "name": "上报应用消息",
       "output": "ReportAppMessageResponse",
       "status": "online"
     },

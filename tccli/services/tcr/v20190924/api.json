@@ -35,13 +35,6 @@
       "output": "CreateApplicationTriggerPersonalResponse",
       "status": "online"
     },
-    "CreateCustomAccount": {
-      "document": "接口未使用\n\n创建自定义账户",
-      "input": "CreateCustomAccountRequest",
-      "name": "创建自定义账户",
-      "output": "CreateCustomAccountResponse",
-      "status": "deprecated"
-    },
     "CreateImageAccelerationService": {
       "document": "创建镜像加速服务",
       "input": "CreateImageAccelerationServiceRequest",
@@ -188,13 +181,6 @@
       "name": "删除应用更新触发器",
       "output": "DeleteApplicationTriggerPersonalResponse",
       "status": "online"
-    },
-    "DeleteCustomAccount": {
-      "document": "接口未使用\n\n删除自定义账号",
-      "input": "DeleteCustomAccountRequest",
-      "name": "删除自定义账号",
-      "output": "DeleteCustomAccountResponse",
-      "status": "deprecated"
     },
     "DeleteImage": {
       "document": "删除指定镜像",
@@ -678,13 +664,6 @@
       "name": "修改应用更新触发器",
       "output": "ModifyApplicationTriggerPersonalResponse",
       "status": "online"
-    },
-    "ModifyCustomAccount": {
-      "document": "接口未使用\n\n更新自定义账户",
-      "input": "ModifyCustomAccountRequest",
-      "name": "更新自定义账户",
-      "output": "ModifyCustomAccountResponse",
-      "status": "deprecated"
     },
     "ModifyImmutableTagRules": {
       "document": "更新镜像不可变规则",
@@ -1198,123 +1177,6 @@
     "CreateApplicationTriggerPersonalResponse": {
       "document": "CreateApplicationTriggerPersonal返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCustomAccountRequest": {
-      "document": "CreateCustomAccount请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例Id",
-          "example": "tcr-xxx",
-          "member": "string",
-          "name": "RegistryId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户名",
-          "example": "robot",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "策略列表",
-          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
-          "member": "Permission",
-          "name": "Permissions",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户描述",
-          "example": "for namespace library",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
-          "example": "10",
-          "member": "int64",
-          "name": "Duration",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户过期时间（时间戳，单位:毫秒）",
-          "example": "1676897989000",
-          "member": "int64",
-          "name": "ExpiresAt",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "是否禁用自定义的账户",
-          "example": "false",
-          "member": "bool",
-          "name": "Disable",
-          "required": false,
-          "type": "bool"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateCustomAccountResponse": {
-      "document": "CreateCustomAccount返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "自定义用户名（会自动加上前缀tcr$）",
-          "example": "tcr$robot",
-          "member": "string",
-          "name": "Name",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自定义用户密码，仅展示一次，请注意留存",
-          "example": "kiHUaTAmF6a94mNzhZWDans3dYahHQNE",
-          "member": "string",
-          "name": "Password",
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自定义用户失效时间（时间戳）",
-          "example": "1676897989",
-          "member": "int64",
-          "name": "ExpiresAt",
-          "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自定义用户创建时间",
-          "example": "2023-02-20T17:30:00+8:00",
-          "member": "datetime_iso",
-          "name": "CreateTime",
-          "type": "string",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2734,42 +2596,6 @@
     },
     "DeleteApplicationTriggerPersonalResponse": {
       "document": "DeleteApplicationTriggerPersonal返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteCustomAccountRequest": {
-      "document": "DeleteCustomAccount请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例Id\t",
-          "example": "tcr-xxx",
-          "member": "string",
-          "name": "RegistryId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户名",
-          "example": "robot",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteCustomAccountResponse": {
-      "document": "DeleteCustomAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7163,87 +6989,6 @@
     },
     "ModifyApplicationTriggerPersonalResponse": {
       "document": "ModifyApplicationTriggerPersonal返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyCustomAccountRequest": {
-      "document": "ModifyCustomAccount请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例Id",
-          "example": "tcr-xxx",
-          "member": "string",
-          "name": "RegistryId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户名",
-          "example": "tcr$robot",
-          "member": "string",
-          "name": "Name",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户描述",
-          "example": "无",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "有效期(单位：天)，从当前时间开始计算，优先级高于ExpiresAt",
-          "example": "无",
-          "member": "int64",
-          "name": "Duration",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "自定义的账户过期时间（时间戳）",
-          "example": "1676897989",
-          "member": "int64",
-          "name": "ExpiresAt",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "是否禁用自定义的账户",
-          "example": "true",
-          "member": "bool",
-          "name": "Disable",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "策略列表",
-          "example": "{   \"Resource\": \"library\",   \"Actions\": [\"tcr:PushRepository\", \"tcr:PullRepository\"] }",
-          "member": "Permission",
-          "name": "Permissions",
-          "required": false,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyCustomAccountResponse": {
-      "document": "ModifyCustomAccount返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

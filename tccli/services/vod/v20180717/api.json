@@ -30998,7 +30998,7 @@
         {
           "disabled": false,
           "document": "模板描述信息，长度限制：256 个字符。",
-          "example": "我的模版",
+          "example": "我的模板",
           "member": "string",
           "name": "Comment",
           "required": false,

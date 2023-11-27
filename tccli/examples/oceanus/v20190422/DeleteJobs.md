@@ -1,19 +1,20 @@
-**Example 1: 批量删除作业示例**
+**Example 1: 删除作业**
 
-
+删除作业
 
 Input: 
 
 ```
 tccli oceanus DeleteJobs --cli-unfold-argument  \
-    --JobIds cql-2ldwgh8i cql-34klpwqm
+    --JobIds cql-6ntmhryo \
+    --WorkSpaceId space-53rqk422
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "d7b76d5e-ad7d-4abd-b3b2-43b96dd08d16"
+        "RequestId": "12470b27-ef12-4c52-9b79-bddd64ae0a5b"
     }
 }
 ```

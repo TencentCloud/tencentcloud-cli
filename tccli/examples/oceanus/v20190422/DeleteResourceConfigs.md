@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli oceanus DeleteResourceConfigs --cli-unfold-argument  \
-    --ResourceId xx \
+    --ResourceId resource-gk2iv5z5 \
     --ResourceConfigVersions 1
 ```
 
