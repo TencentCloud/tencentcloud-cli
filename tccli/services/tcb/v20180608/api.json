@@ -8192,6 +8192,7 @@
           "example": "GWQps",
           "member": "string",
           "name": "MetricName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8201,6 +8202,7 @@
           "example": "2022-02-22 20:08:10",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8210,6 +8212,7 @@
           "example": "2022-02-22 20:08:10",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8219,6 +8222,7 @@
           "example": "10",
           "member": "int64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8228,15 +8232,17 @@
           "example": "[10,20,30]",
           "member": "float",
           "name": "Values",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监控时间",
-          "example": "[1640253400,1640253401,1640253402]]",
+          "example": "[1640253400,1640253401,1640253402]",
           "member": "int64",
           "name": "Time",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

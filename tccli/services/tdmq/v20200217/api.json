@@ -189,6 +189,13 @@
       "output": "DeleteEnvironmentsResponse",
       "status": "online"
     },
+    "DeleteProCluster": {
+      "document": "删除专业集群——预付费，仅通过API 调用",
+      "input": "DeleteProClusterRequest",
+      "name": "删除专业集群实例",
+      "output": "DeleteProClusterResponse",
+      "status": "online"
+    },
     "DeleteProClusters": {
       "document": "接口支持删除多个集群，目前已废弃\n\n删除专业集群——预付费，仅通过API 调用，支持同时删除多个集群",
       "input": "DeleteProClustersRequest",
@@ -3196,12 +3203,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "多可用区部署选择三个可用区，示例\"200002\",\"200003\",\"200004\"\n\n单可用区部署选择一个可用区，示例\"200002\"",
-          "example": "\"200002\",\"200003\",\"200004\"",
-          "member": "string",
+          "document": "多可用区部署选择三个可用区，示例[200002,200003,200004]\n\n单可用区部署选择一个可用区，示例[200002]",
+          "example": "[200002,200003,200004]",
+          "member": "int64",
           "name": "ZoneIds",
           "required": true,
-          "type": "string"
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4504,6 +4511,43 @@
           "name": "EnvironmentIds",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProClusterRequest": {
+      "document": "DeleteProCluster请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id",
+          "example": "pulsar-rd42kgdwpe4g",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteProClusterResponse": {
+      "document": "DeleteProCluster返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "退还实例订单号",
+          "example": "20231020394041338776131",
+          "member": "string",
+          "name": "DealName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

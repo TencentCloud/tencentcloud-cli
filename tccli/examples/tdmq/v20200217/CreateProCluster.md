@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli tdmq CreateProCluster --cli-unfold-argument  \
-    --ZoneIds abc \
+    --ZoneIds 200002 200003 200004 \
     --ProductName abc \
     --StorageSize 0 \
     --AutoRenewFlag 0 \

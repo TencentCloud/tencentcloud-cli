@@ -748,12 +748,6 @@
         "title": "获取某个流程合同的签署链接(主代子)"
       },
       {
-        "document": "1. 获取小程序跳转签署链接(EndPoint设置成APP)\n2. 不指定跳转的页面类型(不传PathType或者传0值)",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"EndPoint\": \"APP\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.NoSupportJumpPage\",\n            \"Message\": \"APP类型不支持跳转到电子签主页或合同列表页\"\n        },\n        \"RequestId\": \"s1693830251815551087\"\n    }\n}",
-        "title": "错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情)"
-      },
-      {
         "document": "获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充\n注：`获取动态签署人补充链接需指定PathType值为，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"RecipientId\": \"yDw7aUUckpkxxmljUE0xkKk1DlvwRdfK\",\n    \"PathType\": 3,\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693829642597082849\",\n        \"SchemeQrcodeUrl\": \"https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.JPG?hkey=5d92f0db15e6bbba6aea641f64c5c06d01********************************f313b0728621415f3f14724c1d784e7737421333bf96a\",\n        \"SchemeUrl\": \"https://essurl.cn/i3am**5Y9W\"\n    }\n}",
@@ -764,6 +758,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"PathType\": 1,\n    \"EndPoint\": \"HTTP_SHORT_URL\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\",\n    \"IdCardType\": \"ID_CARD\",\n    \"IdCardNumber\": \"620000198802020000\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1693*****49\",\n        \"SchemeQrcodeUrl\": \"\",\n        \"SchemeUrl\": \"https://essurl.cn/3a****tM\"\n    }\n}",
         "title": "指定证件信息，给企业员工生成跳转到电子签小程序的签署链接"
+      },
+      {
+        "document": "1. 获取小程序跳转签署链接(EndPoint设置成APP)\n2. 不指定跳转的页面类型(不传PathType或者传0值)",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSchemeUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowId\": \"yDwq7UU*Uu1vFD6uHSIyKQPf\",\n    \"EndPoint\": \"APP\",\n    \"Name\": \"典子谦\",\n    \"Mobile\": \"13200000000\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.NoSupportJumpPage\",\n            \"Message\": \"APP类型不支持跳转到电子签主页或合同列表页\"\n        },\n        \"RequestId\": \"s1693830251815551087\"\n    }\n}",
+        "title": "错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情）"
       }
     ],
     "CreateSeal": [

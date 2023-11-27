@@ -1570,7 +1570,7 @@
         {
           "disabled": false,
           "document": "logo图片对应的fileId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "d442d82a-ded2-49f1-92e7-81a7f0f45ac6",
           "member": "string",
           "name": "FileId",
           "output_required": false,
@@ -1580,7 +1580,7 @@
         {
           "disabled": false,
           "document": "logo图片地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://wetwin-manager-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100055/0/20231030/72f6c306-5819-42dc-98a9-758b4e7892aa/%E7%A7%9F%E6%88%B7%E5%88%9D%E5%A7%8B%E5%8C%96%E8%84%9A%E6%9C%AC-1698664462444.sql?q-sign-algorithm=sha1&q-ak=AKIDiFWWFo67rLZXFgrlNinb8NL2SaR2M0OU&q-sign-time=1698664464%3B1698665664&q-key-time=1698664464%3B1698665664&q-header-list=host&q-url-param-list=&q-signature=45bb085655d6a9722df5ec4dfd1aa80b1cdb08f8",
           "member": "string",
           "name": "Url",
           "output_required": false,

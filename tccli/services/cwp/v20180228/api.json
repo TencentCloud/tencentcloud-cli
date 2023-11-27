@@ -47385,7 +47385,7 @@
         },
         {
           "disabled": false,
-          "document": "安全模块下的日志类型，http://tapd.woa.com/Teneyes/markdown_wikis/show/#1210131751002328905",
+          "document": "安全模块下的日志类型，",
           "example": "[1,2]",
           "member": "uint64",
           "name": "LogType",

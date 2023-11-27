@@ -194,10 +194,10 @@
     ],
     "DescribeResourceRelatedJobs": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"xx\",\n    \"Offset\": 0,\n    \"Limit\": 0,\n    \"DESCByJobConfigCreateTime\": 0,\n    \"ResourceConfigVersion\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RefJobInfos\": [\n            {\n                \"JobConfigVersion\": 0,\n                \"ResourceVersion\": 0,\n                \"JobId\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取资源关联作业信息"
+        "document": "查询特定关联作业",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeResourceRelatedJobs\n<公共请求参数>\n\n{\n    \"ResourceId\": \"resource-ew6aw29s\",\n    \"Offset\": 0,\n    \"Limit\": 100,\n    \"ResourceConfigVersion\": 1,\n    \"WorkSpaceId\": \"space-1257057943ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RefJobInfos\": [\n            {\n                \"JobConfigVersion\": -1,\n                \"JobId\": \"cql-oy8hvq7i\",\n                \"ResourceVersion\": 1\n            }\n        ],\n        \"RequestId\": \"5c2f633d-1706-492b-811f-4cdd6ec24810\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "查询依赖关联作业"
       }
     ],
     "DescribeResources": [

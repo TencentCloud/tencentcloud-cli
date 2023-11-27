@@ -16263,6 +16263,17 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "腾讯云 SSL 产品中的证书 ID。",
+          "example": "xxx234xxx",
+          "member": "string",
+          "name": "CloudCertId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -20287,7 +20298,7 @@
         },
         {
           "disabled": false,
-          "document": "文件状态：Normal：正常，Forbidden：封禁。\n\n*注意：此字段暂不支持。\t",
+          "document": "文件状态：Normal：正常，Forbidden：封禁。",
           "example": "Normal",
           "member": "string",
           "name": "Status",

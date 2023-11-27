@@ -87,7 +87,7 @@
     "CreateProCluster": [
       {
         "document": "创建专业集群 -- 仅通过api调用",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProCluster\n<公共请求参数>\n\n{\n    \"ZoneIds\": \"abc\",\n    \"ProductName\": \"abc\",\n    \"StorageSize\": 0,\n    \"AutoRenewFlag\": 0,\n    \"TimeSpan\": 0,\n    \"Vpc\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"ClusterName\": \"abc\",\n    \"AutoVoucher\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateProCluster\n<公共请求参数>\n\n{\n    \"ZoneIds\": [\n        200002,\n        200003,\n        200004\n    ],\n    \"ProductName\": \"abc\",\n    \"StorageSize\": 0,\n    \"AutoRenewFlag\": 0,\n    \"TimeSpan\": 0,\n    \"Vpc\": {\n        \"VpcId\": \"abc\",\n        \"SubnetId\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"ClusterName\": \"abc\",\n    \"AutoVoucher\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"DealName\": \"abc\",\n        \"BigDealId\": \"abc\",\n        \"ClusterId\": \"abc\",\n        \"ClusterName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建专业集群"
       }
@@ -226,6 +226,14 @@
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteEnvironments\n<公共请求参数>\n\n{\n    \"EnvironmentIds\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"EnvironmentIds\": [\n            \"test1\"\n        ],\n        \"RequestId\": \"db8bd520-496e-4e7c-a4a1-e7414d3c315c\"\n    }\n}",
         "title": "删除命名空间"
+      }
+    ],
+    "DeleteProCluster": [
+      {
+        "document": "删除专业集群",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteProCluster\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"DealName\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除专业集群"
       }
     ],
     "DeleteProClusters": [

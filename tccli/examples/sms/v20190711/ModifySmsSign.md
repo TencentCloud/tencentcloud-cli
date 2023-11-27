@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli sms ModifySmsSign --cli-unfold-argument  \
-    --Remark "xxxx" \
+    --Remark 测试使用 \
     --SignType 0 \
-    --CommissionImage "xxxx" \
-    --SignName “test” \
+    --CommissionImage base64 \
+    --SignName 腾讯云 \
     --DocumentType 1 \
     --International 0 \
     --SignId 1110 \
-    --ProofImage "xxxx" \
+    --ProofImage base64 \
     --UsedMethod 1
 ```
 

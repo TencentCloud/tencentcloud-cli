@@ -230,7 +230,7 @@
         {
           "disabled": false,
           "document": "添加签名响应",
-          "example": "无",
+          "example": "{\"SignId\":1110,\"SignApplyId\":1109}",
           "member": "AddSignStatus",
           "name": "AddSignStatus",
           "output_required": true,
@@ -252,7 +252,7 @@
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "xxx",
+          "example": "验证码",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -261,7 +261,7 @@
         {
           "disabled": false,
           "document": "模板内容。",
-          "example": "xxx",
+          "example": "您的验证码是{1}",
           "member": "string",
           "name": "TemplateContent",
           "required": true,
@@ -288,7 +288,7 @@
         {
           "disabled": false,
           "document": "模板备注，例如申请原因，使用场景等。",
-          "example": "xxx",
+          "example": "业务验证码",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -303,7 +303,7 @@
         {
           "disabled": false,
           "document": "添加短信模板响应包体",
-          "example": "无",
+          "example": "{\"TemplateId\":\"1110\"}",
           "member": "AddTemplateStatus",
           "name": "AddTemplateStatus",
           "output_required": true,
@@ -510,7 +510,7 @@
         {
           "disabled": false,
           "document": "删除状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
           "output_required": false,
@@ -521,7 +521,7 @@
         {
           "disabled": false,
           "document": "删除时间，UNIX 时间戳（单位：秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
           "output_required": false,
@@ -553,7 +553,7 @@
         {
           "disabled": false,
           "document": "删除签名响应",
-          "example": "无",
+          "example": "{\"DeleteTime\":1578988506, \"DeleteStatus\":\"return successfully!\"}",
           "member": "DeleteSignStatus",
           "name": "DeleteSignStatus",
           "output_required": true,
@@ -590,7 +590,7 @@
         {
           "disabled": false,
           "document": "删除模板响应",
-          "example": "无",
+          "example": "{\"DeleteTime\":1578988506,\"DeleteStatus\":\"return successfully!\"}",
           "member": "DeleteTemplateStatus",
           "name": "DeleteTemplateStatus",
           "output_required": true,
@@ -750,7 +750,7 @@
         {
           "disabled": false,
           "document": "模板 ID 数组。",
-          "example": "[\"1110\\r\\n\",\"1111\\r\\n\"]",
+          "example": "[\"1110\"]",
           "member": "uint64",
           "name": "TemplateIdSet",
           "required": true,
@@ -774,7 +774,7 @@
         {
           "disabled": false,
           "document": "获取短信模板信息响应",
-          "example": "无",
+          "example": "[{\"TemplateName\":\"验证码\",\"TemplateId\":1110,\"International\":0,\"ReviewReply\":\"\",\"CreateTime\":1617379200,\"StatusCode\":0}]",
           "member": "DescribeTemplateListStatus",
           "name": "DescribeTemplateStatusSet",
           "output_required": true,
@@ -796,60 +796,60 @@
         {
           "disabled": false,
           "document": "模板Id",
-          "example": "无",
+          "example": "1110",
           "member": "uint64",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否国际/港澳台短信：\n0：表示国内短信。\n1：表示国际/港澳台短信。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "International",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "申请模板状态，其中0表示审核通过且已生效，1表示审核中，2表示审核通过待生效，-1表示审核未通过或审核失败。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "StatusCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "无",
+          "example": "通过",
           "member": "string",
           "name": "ReviewReply",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板名称。",
-          "example": "无",
+          "example": "验证码短信",
           "member": "string",
           "name": "TemplateName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "提交审核时间，UNIX 时间戳（单位：秒）。",
-          "example": "无",
+          "example": "1578899900",
           "member": "uint64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -942,7 +942,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "xxxx",
+          "example": "base64",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -951,7 +951,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 UsedMethod 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 UsedMethod 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "xxxx",
+          "example": "base64",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -960,7 +960,7 @@
         {
           "disabled": false,
           "document": "签名的申请备注。",
-          "example": "xxxx",
+          "example": "测试使用",
           "member": "string",
           "name": "Remark",
           "required": false,
@@ -975,7 +975,7 @@
         {
           "disabled": false,
           "document": "修改签名响应",
-          "example": "无",
+          "example": "{\"SignId\":1110,\"SignApplyId\":\"1109\"}",
           "member": "ModifySignStatus",
           "name": "ModifySignStatus",
           "output_required": true,
@@ -1231,7 +1231,7 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "无",
+          "example": "[{\"ReplyContent\":\"xxxxxx\", \"ReplyUnixTime\":1620734188, \"ExtendCode\":\"11\", \"ReplyTime\":\"2021-05-11 19:56:28\", \"Sign\":\"腾讯云\", \"PhoneNumber\":\"+8615291996666\", \"NationCode\":\"86\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
           "output_required": true,
@@ -1277,7 +1277,7 @@
         {
           "disabled": false,
           "document": "回复状态响应集合。",
-          "example": "无",
+          "example": "[{\"ReplyContent\":\"xxxxxx\", \"ReplyUnixTime\":1620734188, \"ExtendCode\":\"11\", \"ReplyTime\":\"2021-05-11 19:56:28\", \"Sign\":\"腾讯云\", \"PhoneNumber\":\"+8615291990000\", \"NationCode\":\"86\"}]",
           "member": "PullSmsReplyStatus",
           "name": "PullSmsReplyStatusSet",
           "output_required": true,
@@ -1445,7 +1445,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "无",
+          "example": "[{\"Description\":\"DELIVRD\", \"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\", \"PurePhoneNumber\":\"+8615291996666\", \"ReportStatus\":\"SUCCESS\", \"UserReceiveUnixTime\":1570526317, \"PhoneNumber\":\"15291996666\", \"UserReceiveTime\":\"2019-10-08 17:18:37\", \"NationCode\":\"86\"}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1491,7 +1491,7 @@
         {
           "disabled": false,
           "document": "下发状态响应集合。",
-          "example": "无",
+          "example": "[{\"UserReceiveTime\":\"2019-10-08 17:18:37\", \"UserReceiveUnixTime\":1570526317, \"NationCode\":\"86\", \"PurePhoneNumber\":\"+8615291996666\", \"PhoneNumber\":\"15291996666\", \"SerialNo\":\"14:19325917feb3914eb78b50d6182d7e452e\", \"ReportStatus\":\"SUCCESS\", \"Description\":\"DELIVRD\"}]",
           "member": "PullSmsSendStatus",
           "name": "PullSmsSendStatusSet",
           "output_required": true,
@@ -1513,7 +1513,7 @@
         {
           "disabled": false,
           "document": "下发手机号码，采用 e.164 标准，格式为+[国家或地区码][手机号]，单次请求最多支持200个手机号且要求全为境内手机号或全为境外手机号。\n例如：+8613711112222， 其中前面有一个+号 ，86为国家码，13711112222为手机号。",
-          "example": "[\"+8618511122233\\n\",\"+8618511122266\\n\"]",
+          "example": "[\"+8618511122233\",\"+8618511122266\"]",
           "member": "string",
           "name": "PhoneNumberSet",
           "required": true,
@@ -1522,7 +1522,7 @@
         {
           "disabled": false,
           "document": "模板 ID，必须填写已审核通过的模板 ID。模板ID可登录 [短信控制台](https://console.cloud.tencent.com/smsv2) 查看，若向境外手机号发送短信，仅支持使用国际/港澳台短信模板。",
-          "example": "1234",
+          "example": "1110",
           "member": "string",
           "name": "TemplateID",
           "required": true,
@@ -1591,7 +1591,7 @@
         {
           "disabled": false,
           "document": "短信发送状态。",
-          "example": "无",
+          "example": "[{\"SerialNo\":\"5000:1045710669157053657849499619\", \"PhoneNumber\":\"+8618511122233\", \"Fee\":1, \"SessionContext\":\"test\", \"Code\":\"Ok\", \"Message\":\"send success\", \"IsoCode\":\"CN\"}]",
           "member": "SendStatus",
           "name": "SendStatusSet",
           "output_required": true,
@@ -1776,7 +1776,7 @@
         {
           "disabled": false,
           "document": "发送数据统计响应包体。",
-          "example": "无",
+          "example": "{\"FeeCount\":1880,\"RequestCount\":1880,\"RequestSuccessCount\":1880}",
           "member": "SendStatusStatistics",
           "name": "SendStatusStatistics",
           "output_required": true,
@@ -1937,7 +1937,7 @@
         {
           "disabled": false,
           "document": "发送数据统计响应包体。",
-          "example": "无",
+          "example": "[{ \"PackageCreateTime\":\"2019-05-01 00:00:00\", \"PackageEffectiveTime\":\"2019-05-01 00:00:00\", \"PackageExpiredTime\":\"2019-05-31 23:59:59\", \"PackageCreateUnixTime\":1556640000, \"PackageExpiredUnixTime\":1556640000, \"PackageEffectiveUnixTime\":1559318399, \"AmountOfPackage\":1000, \"TypeOfPackage\":0, \"PackageId\":1000876572, \"CurrentUsage\":100}]",
           "member": "SmsPackagesStatistics",
           "name": "SmsPackagesStatisticsSet",
           "output_required": true,

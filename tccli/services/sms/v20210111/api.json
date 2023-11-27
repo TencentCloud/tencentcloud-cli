@@ -201,7 +201,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -210,7 +210,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 SignPurpose 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 SignPurpose 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -514,7 +514,7 @@
         {
           "disabled": false,
           "document": "删除状态信息。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "return successfully!",
           "member": "string",
           "name": "DeleteStatus",
           "output_required": false,
@@ -525,7 +525,7 @@
         {
           "disabled": false,
           "document": "删除时间，UNIX 时间戳（单位：秒）。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1578988506",
           "member": "uint64",
           "name": "DeleteTime",
           "output_required": false,
@@ -657,10 +657,10 @@
         {
           "disabled": false,
           "document": "获取号码信息。",
-          "example": "无",
+          "example": "[{\"SubscriberNumber\":\"18511122266\", \"Message\":\"Describe success\", \"Code\":\"Ok\", \"PhoneNumber\":\"+8618511122266\", \"IsoCode\":\"CN\", \"IsoName\":\"China\", \"NationCode\":\"86\"}]",
           "member": "PhoneNumberInfo",
           "name": "PhoneNumberInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -709,7 +709,7 @@
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "无",
+          "example": "通过",
           "member": "string",
           "name": "ReviewReply",
           "output_required": true,
@@ -885,7 +885,7 @@
         {
           "disabled": false,
           "document": "审核回复，审核人员审核后给出的回复，通常是审核未通过的原因。",
-          "example": "无",
+          "example": "通过",
           "member": "string",
           "name": "ReviewReply",
           "output_required": true,
@@ -1001,7 +1001,7 @@
         {
           "disabled": false,
           "document": "签名对应的资质证明图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "ProofImage",
           "required": true,
@@ -1010,7 +1010,7 @@
         {
           "disabled": false,
           "document": "委托授权证明。选择 SignPurpose 为他用之后需要提交委托的授权证明。\n图片需先进行 base64 编码格式转换，将转换后的字符串去掉前缀`data:image/jpeg;base64,`再赋值给该参数。\n注：只有 SignPurpose 在选择为 1（他用）时，这个字段才会生效。",
-          "example": "无",
+          "example": "base64",
           "member": "string",
           "name": "CommissionImage",
           "required": false,
@@ -1681,7 +1681,7 @@
         {
           "disabled": false,
           "document": "转化率上报响应包体。",
-          "example": "无",
+          "example": "{\"Code\":\"ok\", \"Message\":\"report success\"}",
           "member": "ReportConversionStatus",
           "name": "ReportConversionStatus",
           "output_required": true,
@@ -1774,7 +1774,7 @@
         {
           "disabled": false,
           "document": "短信码号扩展号，默认未开通，如需开通请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "无",
+          "example": "12",
           "member": "string",
           "name": "ExtendCode",
           "required": false,
@@ -1792,7 +1792,7 @@
         {
           "disabled": false,
           "document": "国内短信无需填写该项；国际/港澳台短信已申请独立 SenderId 需要填写该字段，默认使用公共 SenderId，无需填写该字段。\n注：月度使用量达到指定量级可申请独立 SenderId 使用，详情请联系 [腾讯云短信小助手](https://cloud.tencent.com/document/product/382/3773#.E6.8A.80.E6.9C.AF.E4.BA.A4.E6.B5.81)。",
-          "example": "无",
+          "example": "Qsms",
           "member": "string",
           "name": "SenderId",
           "required": false,

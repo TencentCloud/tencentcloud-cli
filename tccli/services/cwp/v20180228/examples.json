@@ -3713,8 +3713,8 @@
     "ModifyLogKafkaDeliverType": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaDeliverType\n<公共请求参数>\n\n{\n    \"SecurityType\": 1,\n    \"LogType\": [\n        1,\n        2\n    ],\n    \"Switch\": 1,\n    \"TopicId\": \"xx\",\n    \"TopicName\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLogKafkaDeliverType\n<公共请求参数>\n\n{\n    \"SecurityType\": 1,\n    \"LogType\": [\n        1,\n        2\n    ],\n    \"Switch\": 1,\n    \"TopicId\": \"a\",\n    \"TopicName\": \"n\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"c\"\n    }\n}",
         "title": "修改指定日志类别投递配置、开关"
       }
     ],

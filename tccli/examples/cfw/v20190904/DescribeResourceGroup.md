@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli cfw DescribeResourceGroup --cli-unfold-argument  \
-    --GroupId xx \
-    --QueryType xx
+    --GroupId abc \
+    --QueryType abc \
+    --ShowType abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Data": "xx",
-        "RequestId": "xx"
+        "Data": "abc",
+        "RequestId": "abc"
     }
 }
 ```

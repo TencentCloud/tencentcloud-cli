@@ -9,11 +9,11 @@ tccli sms AddSmsSign --cli-unfold-argument  \
     --Remark 业务自用申请 \
     --SignPurpose 0 \
     --SignType 0 \
-    --CommissionImage  \
+    --CommissionImage base64 \
     --SignName 腾讯云 \
     --DocumentType 1 \
     --International 0 \
-    --ProofImage 
+    --ProofImage base64
 ```
 
 Output: 

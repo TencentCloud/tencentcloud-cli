@@ -8311,7 +8311,7 @@
           "example": "example.com",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8321,7 +8321,7 @@
           "example": "a.example.com",
           "member": "string",
           "name": "Domain",
-          "required": false,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -8331,7 +8331,7 @@
           "example": "pending",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8341,7 +8341,7 @@
           "example": "无",
           "member": "AscriptionInfo",
           "name": "Ascription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -8351,7 +8351,7 @@
           "example": "无",
           "member": "string",
           "name": "OriginalNameServers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -8361,7 +8361,7 @@
           "example": "无",
           "member": "FileAscriptionInfo",
           "name": "FileAscription",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }

@@ -32,10 +32,16 @@
     ],
     "CreateRegisterCode": [
       {
-        "document": "创建注册码。",
-        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{\n    \"Description\": \"abc\",\n    \"InstanceNamePrefix\": \"abc\",\n    \"RegisterLimit\": 0,\n    \"EffectiveTime\": 0,\n    \"IpAddressRange\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"abc\",\n        \"RegisterCodeValue\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "创建注册码"
+        "document": "创建注册码-带参数。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{\n    \"Description\": \"test\",\n    \"InstanceNamePrefix\": \"test\",\n    \"RegisterLimit\": 0,\n    \"EffectiveTime\": 0,\n    \"IpAddressRange\": \"192.168.10.1/10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"9b5rb72b-418f-4a81-b32e-f8bc80eef678\",\n        \"RegisterCodeValue\": \"21e9b871e123427dbee18b0cf3e0d766f91d81a9902843b7b046d7b9ffb9d45a\",\n        \"RequestId\": \"3f5bf8de-a51a-4ac0-8d95-ad56702cab1f\"\n    }\n}",
+        "title": "创建注册码-带参数"
+      },
+      {
+        "document": "创建注册码-无参数。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"9b5rb72b-418f-4a81-b32e-f8bc80eef678\",\n        \"RegisterCodeValue\": \"21e9b871e123427dbee18b0cf3e0d766f91d81a9902843b7b046d7b9ffb9d45a\",\n        \"RequestId\": \"2e8bf8de-a51a-4ac0-8d95-ad56702cab1f\"\n    }\n}",
+        "title": "创建注册码-无参数"
       }
     ],
     "DeleteCommand": [

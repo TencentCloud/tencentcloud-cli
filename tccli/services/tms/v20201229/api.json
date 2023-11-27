@@ -1,7 +1,7 @@
 {
   "actions": {
     "TextModeration": {
-      "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms/text/package) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms/text/package)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**1万条**文本识别额度，有效期为1个月。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。\n",
+      "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
       "input": "TextModerationRequest",
       "name": "文本内容安全",
       "output": "TextModerationResponse",
@@ -295,6 +295,88 @@
       ],
       "usage": "out"
     },
+    "SentimentAnalysis": {
+      "document": "情感分析结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "情感标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Positive",
+          "member": "string",
+          "name": "Label",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签分数，取值范围0到100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "情感分析明细\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SentimentDetail",
+          "name": "Detail",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "响应码，成功为\"OK\"，失败为\"InternalError\"",
+          "example": "OK",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "异常信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SentimentDetail": {
+      "document": "情感分析明细",
+      "members": [
+        {
+          "disabled": false,
+          "document": "正向分数，取值范围0到100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Positive",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负向分数，取值范围0到100\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Negative",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "Tag": {
       "document": "该字段用于返回审核结果明细字段的标签及分数",
       "members": [
@@ -391,7 +473,7 @@
           "example": "111",
           "member": "string",
           "name": "BizType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -401,7 +483,7 @@
           "example": "111",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -411,7 +493,7 @@
           "example": "11",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -421,7 +503,7 @@
           "example": "11",
           "member": "string",
           "name": "Keywords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -431,7 +513,7 @@
           "example": "11",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -441,7 +523,7 @@
           "example": "11",
           "member": "DetailResults",
           "name": "DetailResults",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -451,7 +533,7 @@
           "example": "11",
           "member": "RiskDetails",
           "name": "RiskDetails",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -461,7 +543,7 @@
           "example": "11",
           "member": "string",
           "name": "Extra",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -471,7 +553,7 @@
           "example": "11",
           "member": "string",
           "name": "DataId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -481,7 +563,7 @@
           "example": "11",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -491,8 +573,18 @@
           "example": "11",
           "member": "string",
           "name": "ContextText",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "情感分析结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SentimentAnalysis",
+          "name": "SentimentAnalysis",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         },
         {
