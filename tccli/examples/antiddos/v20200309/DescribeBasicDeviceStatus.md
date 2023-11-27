@@ -25,6 +25,12 @@ Output:
                 "Value": "1"
             }
         ],
+        "CnameWafData": [
+            {
+                "Key": "1.1.1.1",
+                "Value": "1"
+            }
+        ],
         "RequestId": "8f7a9451-2372-4a88-a69d-9868b8991076"
     }
 }
@@ -57,6 +63,12 @@ Output:
             {
                 "Key": "abc",
                 "Value": "abc"
+            }
+        ],
+        "CnameWafData": [
+            {
+                "Key": "1.1.1.1",
+                "Value": "1"
             }
         ],
         "RequestId": "abc"

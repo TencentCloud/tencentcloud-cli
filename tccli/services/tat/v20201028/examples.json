@@ -32,10 +32,16 @@
     ],
     "CreateRegisterCode": [
       {
-        "document": "创建注册码。",
-        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{\n    \"Description\": \"abc\",\n    \"InstanceNamePrefix\": \"abc\",\n    \"RegisterLimit\": 0,\n    \"EffectiveTime\": 0,\n    \"IpAddressRange\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"abc\",\n        \"RegisterCodeValue\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "创建注册码"
+        "document": "创建注册码-带参数。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{\n    \"Description\": \"test\",\n    \"InstanceNamePrefix\": \"test\",\n    \"RegisterLimit\": 0,\n    \"EffectiveTime\": 0,\n    \"IpAddressRange\": \"192.168.10.1/10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"9b5rb72b-418f-4a81-b32e-f8bc80eef678\",\n        \"RegisterCodeValue\": \"21e9b871e123427dbee18b0cf3e0d766f91d81a9902843b7b046d7b9ffb9d45a\",\n        \"RequestId\": \"3f5bf8de-a51a-4ac0-8d95-ad56702cab1f\"\n    }\n}",
+        "title": "创建注册码-带参数"
+      },
+      {
+        "document": "创建注册码-无参数。",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateRegisterCode\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RegisterCodeId\": \"9b5rb72b-418f-4a81-b32e-f8bc80eef678\",\n        \"RegisterCodeValue\": \"21e9b871e123427dbee18b0cf3e0d766f91d81a9902843b7b046d7b9ffb9d45a\",\n        \"RequestId\": \"2e8bf8de-a51a-4ac0-8d95-ad56702cab1f\"\n    }\n}",
+        "title": "创建注册码-无参数"
       }
     ],
     "DeleteCommand": [
@@ -258,6 +264,14 @@
         "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunCommand\n<公共请求参数>\n\n{\n    \"CommandName\": \"run-command\",\n    \"SaveCommand\": false,\n    \"Description\": \"whoami\",\n    \"Content\": \"d2hvYW1p\",\n    \"CommandType\": \"SHELL\",\n    \"WorkingDirectory\": \"/root/\",\n    \"Timeout\": 60,\n    \"InstanceIds\": [\n        \"ins-zj0f57ew\",\n        \"ins-zj0f57ex\",\n        \"ins-zj0f57ev\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3e3a951-56b1-4042-af23-ba50223a8f60\",\n        \"CommandId\": \"cmd-5oa8jajm\",\n        \"InvocationId\": \"inv-mp6m9vmu\"\n    }\n}",
         "title": "在 CVM 批量执行命令"
+      }
+    ],
+    "StartSession": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tat.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSession\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-zcewfho0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4a622ee3-ea46-49d0-b572-c6bea790db09\",\n        \"SessionId\": \"d079fc14-b550-41e3-ae6e-b68154e843e5\",\n        \"StreamUrl\": \"\"\n    }\n}",
+        "title": "开始会话"
       }
     ],
     "StartSessionWithMFA": [

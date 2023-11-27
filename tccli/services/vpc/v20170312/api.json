@@ -23962,7 +23962,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，那些终端节点服务授权了该账户。</li>",
+          "document": "<li>不支持同时传入参数 Filters 。</li> <li>列出授权给当前账号的终端节点服务信息。可以配合EndPointServiceIds参数进行过滤，那些终端节点服务授权了该账户。</li>",
           "example": "无",
           "member": "bool",
           "name": "IsListAuthorizedEndPointService",
@@ -29302,7 +29302,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29312,7 +29312,7 @@
           "example": "无",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29322,7 +29322,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29332,7 +29332,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointOwner",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29342,7 +29342,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29352,7 +29352,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceVpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29362,7 +29362,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29372,7 +29372,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29382,7 +29382,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29392,7 +29392,7 @@
           "example": "无",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29402,7 +29402,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29412,7 +29412,7 @@
           "example": "无",
           "member": "string",
           "name": "GroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -29422,7 +29422,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29432,8 +29432,58 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GWLB 关联的EIP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PublicAddressAssociationSet",
+          "name": "PublicAddressAssociationSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联弹性公网的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "关联弹性公网的ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AddressId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为免费的终端节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsFreeEndPoint",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -29448,7 +29498,7 @@
           "example": "无",
           "member": "string",
           "name": "EndPointServiceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29458,7 +29508,7 @@
           "example": "vpc-gjui0b5t",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29468,7 +29518,7 @@
           "example": "251007979",
           "member": "string",
           "name": "ServiceOwner",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29478,7 +29528,7 @@
           "example": "无",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29488,7 +29538,7 @@
           "example": "10.1.1.1",
           "member": "string",
           "name": "ServiceVip",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29498,7 +29548,7 @@
           "example": "lb-xxx",
           "member": "string",
           "name": "ServiceInstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29508,7 +29558,7 @@
           "example": "True",
           "member": "bool",
           "name": "AutoAcceptFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -29518,7 +29568,7 @@
           "example": "0",
           "member": "uint64",
           "name": "EndPointCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -29528,7 +29578,7 @@
           "example": "无",
           "member": "EndPoint",
           "name": "EndPointSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -29538,7 +29588,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29548,7 +29598,7 @@
           "example": "CLB,CDB,CRS",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29558,9 +29608,39 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "CDC 集群唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cluster-d8htgb6k",
+          "member": "string",
+          "name": "CdcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "服务IP类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "BusinessIpType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -36141,6 +36221,32 @@
           "required": true,
           "type": "bool",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "PublicAddressAssociationSet": {
+      "document": "终端节点关联的 弹性公网 信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "弹性公网 IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicIpAddress",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "弹性公网ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AddressId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

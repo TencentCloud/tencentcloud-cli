@@ -9,15 +9,15 @@ tccli cwp ModifyLogKafkaDeliverType --cli-unfold-argument  \
     --SecurityType 1 \
     --LogType 1 2 \
     --Switch 1 \
-    --TopicId xx \
-    --TopicName xx
+    --TopicId a \
+    --TopicName n
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "c"
     }
 }
 ```

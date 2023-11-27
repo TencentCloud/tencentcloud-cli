@@ -114,36 +114,7 @@ Output:
 }
 ```
 
-**Example 5: 错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情)**
-
-1. 获取小程序跳转签署链接(EndPoint设置成APP)
-2. 不指定跳转的页面类型(不传PathType或者传0值)
-
-Input: 
-
-```
-tccli ess CreateSchemeUrl --cli-unfold-argument  \
-    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
-    --FlowId yDwq7UU*Uu1vFD6uHSIyKQPf \
-    --EndPoint APP \
-    --Name 典子谦 \
-    --Mobile 13200000000
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Error": {
-            "Code": "OperationDenied.NoSupportJumpPage",
-            "Message": "APP类型不支持跳转到电子签主页或合同列表页"
-        },
-        "RequestId": "s1693830251815551087"
-    }
-}
-```
-
-**Example 6: 获取动态签署人补充链接（短链）**
+**Example 5: 获取动态签署人补充链接（短链）**
 
 获取动态签署人补充链接，创建合同时未指定具体签署人，可获取链接后推送给指定的人进行补充
 注：`获取动态签署人补充链接需指定PathType值为，即跳转到合同封面页，并且指定对应签署节点的签署角色编号即RecipientId`
@@ -172,7 +143,7 @@ Output:
 }
 ```
 
-**Example 7: 指定证件信息，给企业员工生成跳转到电子签小程序的签署链接**
+**Example 6: 指定证件信息，给企业员工生成跳转到电子签小程序的签署链接**
 
 1. 获取合同的签署链接(FlowId设置成合同的ID)
 2. 签署链接是短链(EndPoint设置成HTTP_SHORT_URL)
@@ -199,6 +170,35 @@ Output:
         "RequestId": "s1693*****49",
         "SchemeQrcodeUrl": "",
         "SchemeUrl": "https://essurl.cn/3a****tM"
+    }
+}
+```
+
+**Example 7: 错误的示例- 获取某个流程合同的小程序跳转签署链接，PathType值没有传对（应该传1- 小程序合同详情）**
+
+1. 获取小程序跳转签署链接(EndPoint设置成APP)
+2. 不指定跳转的页面类型(不传PathType或者传0值)
+
+Input: 
+
+```
+tccli ess CreateSchemeUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowId yDwq7UU*Uu1vFD6uHSIyKQPf \
+    --EndPoint APP \
+    --Name 典子谦 \
+    --Mobile 13200000000
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "OperationDenied.NoSupportJumpPage",
+            "Message": "APP类型不支持跳转到电子签主页或合同列表页"
+        },
+        "RequestId": "s1693830251815551087"
     }
 }
 ```

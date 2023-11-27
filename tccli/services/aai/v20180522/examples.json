@@ -1,13 +1,5 @@
 {
   "actions": {
-    "Chat": [
-      {
-        "document": "基于文本的机器人聊天",
-        "input": "https://aai.tencentcloudapi.com/?Action=Chat\r\n&Text=\"hello\"\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Answer\": \"你好啊\",\n        \"RequestId\": \"0f9ceb5c-0995-4347-8933-0cdccd024cf8\"\n    }\n}",
-        "title": "智能闲聊接口"
-      }
-    ],
     "SentenceRecognition": [
       {
         "document": "实时识别60s以内的短语音。",

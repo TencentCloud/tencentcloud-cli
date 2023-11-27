@@ -1,3 +1,247 @@
+# Release 3.0.894.1
+
+## 智能语音(aai) 版本：2018-05-22
+
+### 第 3 次发布
+
+发布时间：2023-11-28 01:05:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* Chat
+
+
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 50 次发布
+
+发布时间：2023-11-28 01:06:06
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBasicDeviceStatus](http://document.tencentcloudapi.woa.com/document/product/1021/59237)
+
+	* 新增入参：CnameWafIdList
+
+	* 新增出参：CnameWafData
+
+
+
+
+## 云数据仓库 for Apache Doris(cdwdoris) 版本：2021-12-28
+
+### 第 4 次发布
+
+发布时间：2023-11-28 01:09:18
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceNode)
+
+	* 新增成员：UUID
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 38 次发布
+
+发布时间：2023-11-28 01:09:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeResourceGroup](http://document.tencentcloudapi.woa.com/document/product/1132/60246)
+
+	* 新增入参：ShowType
+
+
+
+
+## 多网聚合加速(mna) 版本：2021-01-19
+
+### 第 12 次发布
+
+发布时间：2023-11-28 01:19:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ActivateHardware](http://document.tencentcloudapi.woa.com/document/product/1385/82750)
+* [AddHardware](http://document.tencentcloudapi.woa.com/document/product/1385/82749)
+* [GetHardwareList](http://document.tencentcloudapi.woa.com/document/product/1385/82748)
+* [GetVendorHardware](http://document.tencentcloudapi.woa.com/document/product/1385/82747)
+* [UpdateHardware](http://document.tencentcloudapi.woa.com/document/product/1385/82746)
+
+新增数据结构：
+
+* [ActivateHardware](http://document.tencentcloudapi.woa.com/document/product/1385/55846#ActivateHardware)
+* [Hardware](http://document.tencentcloudapi.woa.com/document/product/1385/55846#Hardware)
+* [HardwareInfo](http://document.tencentcloudapi.woa.com/document/product/1385/55846#HardwareInfo)
+* [VendorHardware](http://document.tencentcloudapi.woa.com/document/product/1385/55846#VendorHardware)
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 40 次发布
+
+发布时间：2023-11-28 01:20:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateJobConfig](http://document.tencentcloudapi.woa.com/document/product/849/52004)
+
+	* 新增入参：EsServerlessIndex, EsServerlessSpace
+
+
+
+
+## 自动化助手(tat) 版本：2020-10-28
+
+### 第 12 次发布
+
+发布时间：2023-11-28 01:22:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartSession](http://document.tencentcloudapi.woa.com/document/product/1340/82751)
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 83 次发布
+
+发布时间：2023-11-28 01:23:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DeleteProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82752)
+
+修改接口：
+
+* [CreateProCluster](http://document.tencentcloudapi.woa.com/document/product/1179/82556)
+
+	* <font color="#dd0000">**修改入参**：</font>ZoneIds
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 22 次发布
+
+发布时间：2023-11-28 01:24:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Identification](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Identification)
+
+	* <font color="#dd0000">**修改成员**：</font>Domain
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 7 次发布
+
+发布时间：2023-11-28 01:25:41
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TextModeration](http://document.tencentcloudapi.woa.com/document/product/1124/51860)
+
+	* 新增出参：SentimentAnalysis
+
+
+新增数据结构：
+
+* [SentimentAnalysis](http://document.tencentcloudapi.woa.com/document/product/1124/51861#SentimentAnalysis)
+* [SentimentDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#SentimentDetail)
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 116 次发布
+
+发布时间：2023-11-28 01:26:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [PublicAddressAssociationSet](http://document.tencentcloudapi.woa.com/document/product/215/15824#PublicAddressAssociationSet)
+
+修改数据结构：
+
+* [EndPoint](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPoint)
+
+	* 新增成员：CdcId, PublicAddressAssociationSet, PublicIpAddress, AddressId, IsFreeEndPoint
+
+	* <font color="#dd0000">**修改成员**：</font>Region
+
+* [EndPointService](http://document.tencentcloudapi.woa.com/document/product/215/15824#EndPointService)
+
+	* 新增成员：CdcId, ServiceUin, BusinessIpType
+
+	* <font color="#dd0000">**修改成员**：</font>Region
+
+
+
+
 # Release 3.0.893.1
 
 ## 日志服务(cls) 版本：2020-10-16

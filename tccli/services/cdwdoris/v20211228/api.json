@@ -702,6 +702,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "UUID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2e8ed58d-bbf8-48f2-bfa6-3c5b3f4b9xas",
+          "member": "string",
+          "name": "UUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

@@ -1,10 +1,24 @@
 {
   "actions": {
+    "ActivateHardware": {
+      "document": "激活硬件设备",
+      "input": "ActivateHardwareRequest",
+      "name": "批量激活硬件设备",
+      "output": "ActivateHardwareResponse",
+      "status": "online"
+    },
     "AddDevice": {
       "document": "新建设备记录",
       "input": "AddDeviceRequest",
       "name": "新建设备",
       "output": "AddDeviceResponse",
+      "status": "online"
+    },
+    "AddHardware": {
+      "document": "添加硬件设备，生成未激活的硬件设备，可支持批量添加",
+      "input": "AddHardwareRequest",
+      "name": "添加硬件设备",
+      "output": "AddHardwareResponse",
       "status": "online"
     },
     "CreateEncryptedKey": {
@@ -63,6 +77,13 @@
       "output": "GetFlowStatisticResponse",
       "status": "online"
     },
+    "GetHardwareList": {
+      "document": "租户获取厂商硬件列表",
+      "input": "GetHardwareListRequest",
+      "name": "租户获取厂商硬件列表",
+      "output": "GetHardwareListResponse",
+      "status": "online"
+    },
     "GetMultiFlowStatistic": {
       "document": "批量获取设备流量统计曲线",
       "input": "GetMultiFlowStatisticRequest",
@@ -91,11 +112,25 @@
       "output": "GetStatisticDataResponse",
       "status": "online"
     },
+    "GetVendorHardware": {
+      "document": "获取厂商硬件设备列表",
+      "input": "GetVendorHardwareRequest",
+      "name": "获取厂商硬件设备列表",
+      "output": "GetVendorHardwareResponse",
+      "status": "online"
+    },
     "UpdateDevice": {
       "document": "更新设备信息",
       "input": "UpdateDeviceRequest",
       "name": "更新设备",
       "output": "UpdateDeviceResponse",
+      "status": "online"
+    },
+    "UpdateHardware": {
+      "document": "更新硬件信息",
+      "input": "UpdateHardwareRequest",
+      "name": "更新硬件信息",
+      "output": "UpdateHardwareResponse",
       "status": "online"
     }
   },
@@ -106,6 +141,99 @@
     "serviceShortName": "mna"
   },
   "objects": {
+    "ActivateHardware": {
+      "document": "激活设备",
+      "members": [
+        {
+          "disabled": false,
+          "document": "厂商名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Vendor",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备SN序列号",
+          "example": "xxx",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备密钥",
+          "example": "无",
+          "member": "string",
+          "name": "DataKey",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "ActivateHardwareRequest": {
+      "document": "ActivateHardware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待激活的设备列表",
+          "example": "无",
+          "member": "ActivateHardware",
+          "name": "Hardware",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ActivateHardwareResponse": {
+      "document": "ActivateHardware返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "完成激活的设备信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ActivateHardware",
+          "name": "HardwareInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "AddDeviceRequest": {
       "document": "AddDevice请求参数结构体",
       "members": [
@@ -180,6 +308,43 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AddHardwareRequest": {
+      "document": "AddHardware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件列表",
+          "example": "无",
+          "member": "Hardware",
+          "name": "Hardware",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AddHardwareResponse": {
+      "document": "AddHardware返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件设备",
+          "example": "无",
+          "member": "Hardware",
+          "name": "Hardware",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1195,6 +1360,78 @@
       ],
       "type": "object"
     },
+    "GetHardwareListRequest": {
+      "document": "GetHardwareList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面设备数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "xxx",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetHardwareListResponse": {
+      "document": "GetHardwareList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件信息列表",
+          "example": "无",
+          "member": "HardwareInfo",
+          "name": "HardwareInfos",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "硬件总数",
+          "example": "12",
+          "member": "int64",
+          "name": "Length",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalPage",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetMultiFlowStatisticRequest": {
       "document": "GetMultiFlowStatistic请求参数结构体",
       "members": [
@@ -1419,6 +1656,229 @@
         }
       ],
       "type": "object"
+    },
+    "GetVendorHardwareRequest": {
+      "document": "GetVendorHardware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页面数量",
+          "example": "10",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "关键字",
+          "example": "mna-xxx",
+          "member": "string",
+          "name": "Keyword",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "激活状态，\n空：全部；\n1:待激活；\n2:已激活；",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetVendorHardwareResponse": {
+      "document": "GetVendorHardware返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件信息列表",
+          "example": "无",
+          "member": "VendorHardware",
+          "name": "VendorHardware",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备总数",
+          "example": "10",
+          "member": "int64",
+          "name": "Length",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总页数",
+          "example": "3",
+          "member": "int64",
+          "name": "TotalPage",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Hardware": {
+      "document": "新建Hardware入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "SN",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license计费模式：\n1，租户月付费\n2，厂商月付费\n3，license永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseChargingMode",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件ID，入参无需传递\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "HardwareId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "HardwareInfo": {
+      "document": "硬件信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mna-xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "DeviceName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676800844",
+          "member": "string",
+          "name": "ActiveTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676800844",
+          "member": "string",
+          "name": "LastOnlineTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "厂商备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "VendorDescription",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseChargingMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1676800844",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SN",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "MonitorData": {
       "document": "流量监控指标",
@@ -1654,6 +2114,51 @@
       ],
       "type": "object"
     },
+    "UpdateHardwareRequest": {
+      "document": "UpdateHardware请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件ID",
+          "example": "xxx",
+          "member": "string",
+          "name": "HardwareId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "硬件序列号",
+          "example": "xxx",
+          "member": "string",
+          "name": "SN",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备备注",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateHardwareResponse": {
+      "document": "UpdateHardware返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "UpdateNetInfo": {
       "document": "更新设备网络状态信息",
       "members": [
@@ -1709,6 +2214,102 @@
         }
       ],
       "usage": "in"
+    },
+    "VendorHardware": {
+      "document": "厂商硬件详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "硬件id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cpe-xxx",
+          "member": "string",
+          "name": "HardwareId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "硬件序列号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "SN",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1680019225",
+          "member": "string",
+          "name": "CreateTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活状态， 空：全部； 1:待激活； 2:已激活\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "激活时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1680019225",
+          "member": "string",
+          "name": "ActiveTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "厂商备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设备id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mna-xxx",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "license计费模式： 1，租户月付费 2，厂商月付费 3，license永久授权\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "LicenseChargingMode",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最后在线时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1680019225",
+          "member": "string",
+          "name": "LastOnlineTime",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     }
   },
   "version": "1.0"

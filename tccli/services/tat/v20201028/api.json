@@ -196,6 +196,13 @@
       "output": "RunCommandResponse",
       "status": "online"
     },
+    "StartSession": {
+      "document": "开始一次Webshell会话",
+      "input": "StartSessionRequest",
+      "name": "开始会话",
+      "output": "StartSessionResponse",
+      "status": "online"
+    },
     "StartSessionWithMFA": {
       "document": "开始一次Webshell会话。",
       "input": "StartSessionWithMFARequest",
@@ -825,7 +832,7 @@
         },
         {
           "disabled": false,
-          "document": "注册实列名称前缀。",
+          "document": "注册实例名称前缀。",
           "example": "无",
           "member": "string",
           "name": "InstanceNamePrefix",
@@ -834,7 +841,7 @@
         },
         {
           "disabled": false,
-          "document": "该注册码允许注册的实列数目。默认限制为10个。",
+          "document": "该注册码允许注册的实例数目。默认限制为10个。",
           "example": "100",
           "member": "int64",
           "name": "RegisterLimit",
@@ -3301,6 +3308,53 @@
         }
       ],
       "usage": "both"
+    },
+    "StartSessionRequest": {
+      "document": "StartSession请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "ins-zcewfho0, lhins-qr8vzait",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSessionResponse": {
+      "document": "StartSession返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "本次Webshell会话ID",
+          "example": "b896c8ff-a593-4534-984a-2377555f4caf",
+          "member": "string",
+          "name": "SessionId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "websocket连接地址",
+          "example": "\"\"",
+          "member": "string",
+          "name": "StreamUrl",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "StartSessionWithMFARequest": {
       "document": "StartSessionWithMFA请求参数结构体",
