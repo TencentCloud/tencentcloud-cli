@@ -1,4 +1,4 @@
-**Example 1: xx**
+**Example 1: 示例**
 
 查询风险面的分布详情
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli dsgc DescribeDSPAAssessmentRiskSideDistributed --cli-unfold-argument  \
     --DspaId abc \
-    --TemplateId 0
+    --TemplateId 1
 ```
 
 Output: 

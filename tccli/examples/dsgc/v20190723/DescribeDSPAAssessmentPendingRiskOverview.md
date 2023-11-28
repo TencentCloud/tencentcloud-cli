@@ -1,4 +1,4 @@
-**Example 1: xx**
+**Example 1: 示例**
 
 xx
 
@@ -7,7 +7,7 @@ Input:
 ```
 tccli dsgc DescribeDSPAAssessmentPendingRiskOverview --cli-unfold-argument  \
     --DspaId abc \
-    --TemplateId 0
+    --TemplateId 2
 ```
 
 Output: 

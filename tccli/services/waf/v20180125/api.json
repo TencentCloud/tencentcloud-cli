@@ -16695,7 +16695,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "域名",
+          "document": "具体域名如：test.qcloudwaf.com\n全局域名为：global",
           "example": "test.qcloudwaf.com",
           "member": "string",
           "name": "Domain",

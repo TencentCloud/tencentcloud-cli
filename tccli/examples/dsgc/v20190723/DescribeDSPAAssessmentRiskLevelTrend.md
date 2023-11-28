@@ -43,35 +43,3 @@ Output:
 }
 ```
 
-**Example 2: xx**
-
-xx
-
-Input: 
-
-```
-tccli dsgc DescribeDSPAAssessmentRiskLevelTrend --cli-unfold-argument  \
-    --DspaId abc \
-    --StartTime abc \
-    --EndTime abc \
-    --TemplateId abc
-```
-
-Output: 
-```
-{
-    "Response": {
-        "Items": [
-            {
-                "Date": "abc",
-                "High": 1,
-                "Medium": 1,
-                "Low": 1,
-                "Total": 1
-            }
-        ],
-        "RequestId": "abc"
-    }
-}
-```
-

@@ -3232,7 +3232,7 @@
           "example": "xxxxx",
           "member": "string",
           "name": "AccessUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

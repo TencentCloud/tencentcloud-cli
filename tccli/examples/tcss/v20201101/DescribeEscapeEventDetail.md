@@ -42,7 +42,9 @@ Output:
             "ClusterID": "abc",
             "ClusterName": "abc",
             "NodeUniqueID": "abc",
-            "HostID": "abc"
+            "HostID": "abc",
+            "Namespace": "abc",
+            "WorkloadType": "abc"
         },
         "ProcessInfo": {
             "ProcessName": "abc",

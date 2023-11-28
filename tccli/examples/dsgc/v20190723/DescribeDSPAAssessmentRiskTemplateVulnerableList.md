@@ -1,6 +1,6 @@
-**Example 1: xx**
+**Example 1: 示例**
 
-xx
+
 
 Input: 
 
@@ -28,7 +28,13 @@ Output:
                 "SupportDataSource": [
                     "abc"
                 ],
-                "RiskSide": "abc"
+                "RiskSide": "abc",
+                "ReferTemplateList": [
+                    {
+                        "TemplateId": 0,
+                        "TemplateName": "abc"
+                    }
+                ]
             }
         ],
         "TotalCount": 0,

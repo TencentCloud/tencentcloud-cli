@@ -294,6 +294,13 @@
       "output": "DescribeCloudStorageThumbnailResponse",
       "status": "online"
     },
+    "DescribeCloudStorageThumbnailList": {
+      "document": "批量拉取云存事件缩略图",
+      "input": "DescribeCloudStorageThumbnailListRequest",
+      "name": "批量拉取云存事件缩略图",
+      "output": "DescribeCloudStorageThumbnailListResponse",
+      "status": "online"
+    },
     "DescribeCloudStorageTime": {
       "document": "获取某一天云存时间轴",
       "input": "DescribeCloudStorageTimeRequest",
@@ -4162,6 +4169,61 @@
           "name": "AudioStream",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailListRequest": {
+      "document": "DescribeCloudStorageThumbnailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品ID",
+          "example": "H541SOP191",
+          "member": "string",
+          "name": "ProductId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "设备名称",
+          "example": "event_36502632_1",
+          "member": "string",
+          "name": "DeviceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "缩略图文件名列表",
+          "example": "[\"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\",\"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"]",
+          "member": "string",
+          "name": "ThumbnailList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudStorageThumbnailListResponse": {
+      "document": "DescribeCloudStorageThumbnailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址",
+          "example": "无",
+          "member": "ThumbnailURLInfoList",
+          "name": "ThumbnailURLInfoList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -9067,6 +9129,34 @@
         }
       ],
       "usage": "out"
+    },
+    "ThumbnailURLInfoList": {
+      "document": "缩略图信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "缩略图访问地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100",
+          "member": "string",
+          "name": "ThumbnailURL",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "缩略图访问地址的过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1690195335",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "TransferCloudStorageRequest": {
       "document": "TransferCloudStorage请求参数结构体",

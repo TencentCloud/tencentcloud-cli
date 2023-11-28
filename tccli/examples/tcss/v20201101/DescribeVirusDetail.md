@@ -76,6 +76,8 @@ Output:
         "NodeType": "abc",
         "NodeID": "abc",
         "ClusterName": "abc",
+        "Namespace": "abc",
+        "WorkloadType": "abc",
         "RequestId": "abc"
     }
 }

@@ -1243,6 +1243,24 @@
           "name": "InstanceConcurrencyConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启Dns缓存能力。只支持EVENT函数。默认为FALSE，TRUE 为开启，FALSE为关闭",
+          "example": "FALSE",
+          "member": "string",
+          "name": "DnsCache",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内网访问配置",
+          "example": "无",
+          "member": "IntranetConfigIn",
+          "name": "IntranetConfig",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -3628,6 +3646,21 @@
         }
       ],
       "usage": "both"
+    },
+    "IntranetConfigIn": {
+      "document": "内网配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启固定内网IP\nENABLE 为开启\nDISABLE 为不开启\n",
+          "example": "ENABLE",
+          "member": "string",
+          "name": "IpFixed",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "IntranetConfigOut": {
       "document": "内网配置",

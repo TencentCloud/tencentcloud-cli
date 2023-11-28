@@ -11629,6 +11629,7 @@
           "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11638,6 +11639,7 @@
           "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11647,6 +11649,7 @@
           "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11656,6 +11659,7 @@
           "example": "无",
           "member": "AbnormalProcessEventDescription",
           "name": "EventDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -11665,6 +11669,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -12186,6 +12191,7 @@
           "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12195,6 +12201,7 @@
           "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12204,6 +12211,7 @@
           "example": "无",
           "member": "FileAttributeInfo",
           "name": "TamperedFileInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12213,6 +12221,7 @@
           "example": "无",
           "member": "AccessControlEventDescription",
           "name": "EventDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12222,6 +12231,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "ParentProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -12231,6 +12241,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17523,8 +17534,28 @@
           "example": "无",
           "member": "string",
           "name": "AssetSyncLastTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务状态\nPENDING:待处理\nPROCESSING:处理中\nPROCESSED:已完成",
+          "example": "无",
+          "member": "string",
+          "name": "TaskStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务进度(百分比)",
+          "example": "无",
+          "member": "int64",
+          "name": "TaskProcess",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -23035,6 +23066,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EventID",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23044,6 +23076,7 @@
           "example": "无",
           "member": "string",
           "name": "EventType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23053,6 +23086,7 @@
           "example": "1",
           "member": "uint64",
           "name": "EventCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23062,6 +23096,7 @@
           "example": "无",
           "member": "string",
           "name": "FoundTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23071,6 +23106,7 @@
           "example": "无",
           "member": "string",
           "name": "LatestFoundTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23080,6 +23116,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23089,6 +23126,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23098,6 +23136,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23107,6 +23146,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23116,6 +23156,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetSubStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23125,6 +23166,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23134,6 +23176,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23143,6 +23186,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23152,6 +23196,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23161,6 +23206,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23170,6 +23216,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23179,6 +23226,7 @@
           "example": "无",
           "member": "string",
           "name": "PodName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23188,6 +23236,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23197,6 +23246,7 @@
           "example": "无",
           "member": "string",
           "name": "Solution",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23206,6 +23256,7 @@
           "example": "无",
           "member": "string",
           "name": "Reference",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -23215,6 +23266,7 @@
           "example": "无",
           "member": "string",
           "name": "Address",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23224,6 +23276,7 @@
           "example": "无",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23233,6 +23286,7 @@
           "example": "无",
           "member": "string",
           "name": "MatchRuleType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23242,6 +23296,7 @@
           "example": "无",
           "member": "string",
           "name": "FeatureLabel",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23251,6 +23306,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23260,6 +23316,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessMd5",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23269,6 +23326,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessStartUser",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23278,6 +23336,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessUserGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23287,6 +23346,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23296,6 +23356,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessTree",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23305,6 +23366,7 @@
           "example": "无",
           "member": "string",
           "name": "ProcessParam",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23314,6 +23376,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentProcessStartUser",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23323,6 +23386,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentProcessUserGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23332,6 +23396,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23341,6 +23406,7 @@
           "example": "无",
           "member": "string",
           "name": "ParentProcessParam",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23350,6 +23416,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessStartUser",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23359,6 +23426,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessUserGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23368,6 +23436,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23377,6 +23446,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessParam",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23386,6 +23456,7 @@
           "example": "无",
           "member": "string",
           "name": "HostID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23395,6 +23466,7 @@
           "example": "无",
           "member": "string",
           "name": "EventStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23404,6 +23476,7 @@
           "example": "无",
           "member": "string",
           "name": "OperationTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23413,6 +23486,7 @@
           "example": "无",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23422,6 +23496,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23431,6 +23506,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23440,6 +23516,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23449,6 +23526,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23458,6 +23536,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetCIDR",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23467,6 +23546,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23476,6 +23556,7 @@
           "example": "无",
           "member": "string",
           "name": "PodIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23485,6 +23566,7 @@
           "example": "无",
           "member": "string",
           "name": "PodStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23494,6 +23576,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeUniqueID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23503,6 +23586,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23512,6 +23596,27 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Namespace",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载类型",
+          "example": "无",
+          "member": "string",
+          "name": "WorkloadType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -23721,6 +23826,7 @@
           "example": "无",
           "member": "RunTimeEventBaseInfo",
           "name": "EventBaseInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23730,6 +23836,7 @@
           "example": "无",
           "member": "ProcessDetailInfo",
           "name": "ProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23739,6 +23846,7 @@
           "example": "无",
           "member": "ProcessDetailBaseInfo",
           "name": "ParentProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23748,6 +23856,7 @@
           "example": "无",
           "member": "RiskSyscallEventDescription",
           "name": "EventDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -23757,6 +23866,7 @@
           "example": "无",
           "member": "ProcessBaseInfo",
           "name": "AncestorProcessInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -25842,6 +25952,7 @@
           "example": "xx",
           "member": "string",
           "name": "ImageId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25851,6 +25962,7 @@
           "example": "xx",
           "member": "string",
           "name": "ImageName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25860,6 +25972,7 @@
           "example": "xx",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25869,6 +25982,7 @@
           "example": "xx",
           "member": "uint64",
           "name": "Size",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25878,6 +25992,7 @@
           "example": "xx",
           "member": "string",
           "name": "FilePath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25887,6 +26002,7 @@
           "example": "xx",
           "member": "string",
           "name": "ModifyTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25896,6 +26012,7 @@
           "example": "xx",
           "member": "string",
           "name": "VirusName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25905,6 +26022,7 @@
           "example": "xx",
           "member": "string",
           "name": "RiskLevel",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25914,6 +26032,7 @@
           "example": "xx",
           "member": "string",
           "name": "ContainerName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25923,6 +26042,7 @@
           "example": "xx",
           "member": "string",
           "name": "ContainerId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25932,6 +26052,7 @@
           "example": "xx",
           "member": "string",
           "name": "HostName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25941,6 +26062,7 @@
           "example": "xx",
           "member": "string",
           "name": "HostId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25950,6 +26072,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25959,6 +26082,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25968,6 +26092,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessMd5",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25977,6 +26102,7 @@
           "example": "xx",
           "member": "uint64",
           "name": "ProcessId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -25986,6 +26112,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessArgv",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -25995,6 +26122,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessChan",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26004,6 +26132,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessAccountGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26013,6 +26142,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessStartAccount",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26022,6 +26152,7 @@
           "example": "xx",
           "member": "string",
           "name": "ProcessFileAuthority",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26031,6 +26162,7 @@
           "example": "xx",
           "member": "int64",
           "name": "SourceType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -26040,6 +26172,7 @@
           "example": "[]",
           "member": "string",
           "name": "Tags",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -26049,6 +26182,7 @@
           "example": "xx",
           "member": "string",
           "name": "HarmDescribe",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26058,6 +26192,7 @@
           "example": "xx",
           "member": "string",
           "name": "SuggestScheme",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26067,6 +26202,7 @@
           "example": "xx",
           "member": "string",
           "name": "Mark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26076,6 +26212,7 @@
           "example": "xx",
           "member": "string",
           "name": "FileName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26085,6 +26222,7 @@
           "example": "xx",
           "member": "string",
           "name": "FileMd5",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26094,6 +26232,7 @@
           "example": "xx",
           "member": "string",
           "name": "EventType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26103,6 +26242,7 @@
           "example": "xx",
           "member": "string",
           "name": "PodName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26112,6 +26252,7 @@
           "example": "xx",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26121,6 +26262,7 @@
           "example": "xx",
           "member": "string",
           "name": "SubStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26130,6 +26272,7 @@
           "example": "xx",
           "member": "string",
           "name": "HostIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26139,6 +26282,7 @@
           "example": "xx",
           "member": "string",
           "name": "ClientIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26148,6 +26292,7 @@
           "example": "无",
           "member": "string",
           "name": "PProcessStartUser",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26157,6 +26302,7 @@
           "example": "无",
           "member": "string",
           "name": "PProcessUserGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26166,6 +26312,7 @@
           "example": "无",
           "member": "string",
           "name": "PProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26175,6 +26322,7 @@
           "example": "无",
           "member": "string",
           "name": "PProcessParam",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26184,6 +26332,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessStartUser",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26193,6 +26342,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessUserGroup",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26202,6 +26352,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessPath",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26211,6 +26362,7 @@
           "example": "无",
           "member": "string",
           "name": "AncestorProcessParam",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26220,6 +26372,7 @@
           "example": "无",
           "member": "string",
           "name": "OperationTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26229,6 +26382,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26238,6 +26392,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetSubStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26247,6 +26402,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26256,6 +26412,7 @@
           "example": "[\"xxx\"]",
           "member": "string",
           "name": "CheckPlatform",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -26265,6 +26422,7 @@
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "FileAccessTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26274,6 +26432,7 @@
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "FileModifyTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -26283,6 +26442,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26292,6 +26452,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26301,6 +26462,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetCIDR",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26310,6 +26472,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26319,6 +26482,7 @@
           "example": "无",
           "member": "string",
           "name": "PodIP",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26328,6 +26492,7 @@
           "example": "无",
           "member": "string",
           "name": "PodStatus",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26337,6 +26502,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeUniqueID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26346,6 +26512,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26355,6 +26522,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -26364,6 +26532,27 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Namespace",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载类型",
+          "example": "无",
+          "member": "string",
+          "name": "WorkloadType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -27232,6 +27421,7 @@
           "example": "无",
           "member": "VulDefenceEventDetail",
           "name": "EventDetail",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -37446,7 +37636,7 @@
           "example": "2739f6abc25bcee2a1409ba91bcb0340",
           "member": "string",
           "name": "EventId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37456,7 +37646,7 @@
           "example": "2021-1-2 12:00:00",
           "member": "datetime",
           "name": "FoundTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37466,7 +37656,7 @@
           "example": "b1a95186d40db53682751a3d51981abdbc1427b1983b63a2e7bf48ab156a9a22",
           "member": "string",
           "name": "ContainerId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37476,7 +37666,7 @@
           "example": "/condescending_allen",
           "member": "string",
           "name": "ContainerName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37486,7 +37676,7 @@
           "example": "sha256:9aae1601d6832af6c69ef257f09f9d4e41646ed287a269cf62ac39d8d",
           "member": "string",
           "name": "ImageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37496,7 +37686,7 @@
           "example": "tcs_runtime:latest",
           "member": "string",
           "name": "ImageName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37506,7 +37696,7 @@
           "example": "VM-0-13-centos",
           "member": "string",
           "name": "NodeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37516,7 +37706,7 @@
           "example": " EVENT_UNDEAL ",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37526,7 +37716,7 @@
           "example": "敏感路径挂载",
           "member": "string",
           "name": "EventName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37536,7 +37726,7 @@
           "example": "ESCAPE_HOST_ACESS_FILE",
           "member": "string",
           "name": "EventType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37546,7 +37736,7 @@
           "example": "1",
           "member": "int64",
           "name": "EventCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -37556,7 +37746,7 @@
           "example": "2020-2-2 13:00:00",
           "member": "string",
           "name": "LatestFoundTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37566,7 +37756,7 @@
           "example": "xxx",
           "member": "string",
           "name": "HostIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -37576,7 +37766,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ClientIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -37586,7 +37776,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ContainerNetStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -37596,7 +37786,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ContainerNetSubStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -37606,7 +37796,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -37616,7 +37806,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37626,7 +37816,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37636,7 +37826,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37646,7 +37836,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37656,7 +37846,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetCIDR",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37666,7 +37856,7 @@
           "example": "/",
           "member": "string",
           "name": "PodName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37676,7 +37866,7 @@
           "example": "无",
           "member": "string",
           "name": "PodIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37686,7 +37876,7 @@
           "example": "无",
           "member": "string",
           "name": "PodStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37696,7 +37886,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37706,7 +37896,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37716,7 +37906,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeUniqueID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -37726,7 +37916,27 @@
           "example": "无",
           "member": "string",
           "name": "HostID",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Namespace",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "WorkloadType",
+          "example": "无",
+          "member": "string",
+          "name": "WorkloadType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -41012,7 +41222,7 @@
           "example": "无",
           "member": "string",
           "name": "CVEID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41022,7 +41232,7 @@
           "example": "无",
           "member": "string",
           "name": "VulName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41032,7 +41242,7 @@
           "example": "无",
           "member": "string",
           "name": "PocID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41042,7 +41252,7 @@
           "example": "无",
           "member": "string",
           "name": "EventType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41052,7 +41262,7 @@
           "example": "无",
           "member": "string",
           "name": "SourceIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41062,7 +41272,7 @@
           "example": "无",
           "member": "string",
           "name": "City",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41072,7 +41282,7 @@
           "example": "无",
           "member": "int64",
           "name": "EventCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -41082,7 +41292,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41092,7 +41302,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41102,7 +41312,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41112,7 +41322,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41122,7 +41332,7 @@
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41132,7 +41342,7 @@
           "example": "无",
           "member": "string",
           "name": "SourcePort",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -41142,7 +41352,7 @@
           "example": "无",
           "member": "int64",
           "name": "EventID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -41152,7 +41362,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41162,7 +41372,7 @@
           "example": "无",
           "member": "string",
           "name": "HostIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41172,7 +41382,7 @@
           "example": "无",
           "member": "string",
           "name": "PublicIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41182,7 +41392,7 @@
           "example": "无",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41192,7 +41402,7 @@
           "example": "无",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41202,7 +41412,7 @@
           "example": "无",
           "member": "string",
           "name": "OfficialSolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41212,7 +41422,7 @@
           "example": "无",
           "member": "string",
           "name": "NetworkPayload",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41222,7 +41432,7 @@
           "example": "无",
           "member": "int64",
           "name": "PID",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -41232,7 +41442,7 @@
           "example": "无",
           "member": "string",
           "name": "MainClass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41242,7 +41452,7 @@
           "example": "无",
           "member": "string",
           "name": "StackTrace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41252,7 +41462,7 @@
           "example": "无",
           "member": "string",
           "name": "ServerAccount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41262,7 +41472,7 @@
           "example": "无",
           "member": "string",
           "name": "ServerPort",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41272,7 +41482,7 @@
           "example": "无",
           "member": "string",
           "name": "ServerExe",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41282,7 +41492,7 @@
           "example": "无",
           "member": "string",
           "name": "ServerArg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41292,7 +41502,7 @@
           "example": "无",
           "member": "string",
           "name": "QUUID",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41302,7 +41512,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41312,7 +41522,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerNetSubStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41322,7 +41532,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerIsolateOperationSrc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41332,7 +41542,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41342,7 +41552,7 @@
           "example": "无",
           "member": "string",
           "name": "JNDIUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -41352,7 +41562,7 @@
           "example": "无",
           "member": "RaspInfo",
           "name": "RaspDetail",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -41362,7 +41572,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41372,7 +41582,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetCIDR",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41382,7 +41592,7 @@
           "example": "无",
           "member": "string",
           "name": "PodIP",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41392,7 +41602,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41402,7 +41612,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41412,7 +41622,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeUniqueID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41422,7 +41632,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeSubNetID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41432,7 +41642,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterID",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -41442,7 +41652,27 @@
           "example": "无",
           "member": "string",
           "name": "ClusterName",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Namespace",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载",
+          "example": "无",
+          "member": "string",
+          "name": "WorkloadType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

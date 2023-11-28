@@ -1,13 +1,13 @@
-**Example 1: xx**
+**Example 1: 示例**
 
-复制合规组模版
+复制合规组模板
 
 Input: 
 
 ```
 tccli dsgc CopyDSPATemplate --cli-unfold-argument  \
     --DspaId abc \
-    --TemplateId 0
+    --TemplateId 1
 ```
 
 Output: 

@@ -15,21 +15,27 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 1,
+        "TotalCount": 0,
         "Items": [
             {
-                "TemplateId": "template-00000000",
-                "TemplateName": "系统基础自动化评估模板",
-                "Description": "系统基础自动化评估模板",
-                "Source": "system",
-                "UseType": "auto",
-                "CreatedTime": "2022-04-14 18:52:43",
-                "ControlItemCount": 4,
-                "AppliedItemCount": 4,
-                "Status": "launched"
+                "Id": 0,
+                "TemplateId": "abc",
+                "TemplateName": "abc",
+                "Description": "abc",
+                "Source": "abc",
+                "UseType": "abc",
+                "CreatedTime": "abc",
+                "ControlItemCount": 0,
+                "AppliedItemCount": 0,
+                "Status": "abc",
+                "SupportDataSource": [
+                    "abc"
+                ],
+                "IsASMTemplate": true,
+                "IdentifyComplianceId": 0
             }
         ],
-        "RequestId": "9a9f5c32-95ab-4130-ae37-047cde38b943"
+        "RequestId": "abc"
     }
 }
 ```

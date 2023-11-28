@@ -357,6 +357,13 @@
       "output": "DescribeChannelFlowEvidenceReportResponse",
       "status": "online"
     },
+    "DescribeChannelSealPolicyWorkflowUrl": {
+      "document": "生成渠道子客用印申请审批小程序链接，链接类型（通过H5唤起小程序方式查看）",
+      "input": "DescribeChannelSealPolicyWorkflowUrlRequest",
+      "name": "生成渠道子客用印申请审批链接",
+      "output": "DescribeChannelSealPolicyWorkflowUrlResponse",
+      "status": "online"
+    },
     "DescribeExtendedServiceAuthInfo": {
       "document": "查询企业扩展服务的开通和授权情况，当前支持查询以下内容：\n1. 企业自动签\n2. 企业与港澳台居民签署合同\n3. 使用手机号验证签署方身份\n4. 骑缝章\n5. 拓宽签署方年龄限制\n6. 下载企业合同/文件\n\n注: 此接口 参数Agent. ProxyOperator.OpenId 需要传递超管或者法人的OpenId",
       "input": "DescribeExtendedServiceAuthInfoRequest",
@@ -6286,6 +6293,52 @@
           "member": "string",
           "name": "Status",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelSealPolicyWorkflowUrlRequest": {
+      "document": "DescribeChannelSealPolicyWorkflowUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用印审批单的ID，可通过用印申请回调获取。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowInstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelSealPolicyWorkflowUrlResponse": {
+      "document": "DescribeChannelSealPolicyWorkflowUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用印审批小程序链接，链接类型（通过H5唤起小程序方式查看），一年内有效。",
+          "example": "无",
+          "member": "string",
+          "name": "WorkflowUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

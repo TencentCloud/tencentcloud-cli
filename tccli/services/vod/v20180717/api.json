@@ -1134,6 +1134,13 @@
       "output": "SetDrmKeyProviderInfoResponse",
       "status": "online"
     },
+    "SetVodDomainCertificate": {
+      "document": "设置点播域名 HTTPS 证书。",
+      "input": "SetVodDomainCertificateRequest",
+      "name": "设置点播域名 HTTPS 证书",
+      "output": "SetVodDomainCertificateResponse",
+      "status": "online"
+    },
     "SimpleHlsClip": {
       "document": "对 HLS 视频进行按时间段裁剪，实时生成一个新的视频（HLS 格式），开发者可以将其立即分享出去，或者长久保存起来。\n\n腾讯云点播支持两种剪辑模式：\n- 剪辑固化：将剪辑出来的视频保存成独立的视频，拥有独立 FileId；适用于将精彩片段长久保存的场景；\n- 剪辑不固化：剪辑得到的视频附属于输入文件，没有独立 FileId；适用于将精彩片段临时分享的场景。\n\n注意：\n- 剪辑是基于输入 m3u8 文件进行的，故而其最小剪辑精度为一个 ts 切片，无法实现秒级或者更为精确的剪辑精度。\n\n\n### 剪辑固化\n所谓剪辑固化，是指将剪辑出来的视频保存成一个独立的视频（拥有独立的 FileId）。其生命周期不受原始输入视频影响（即使原始输入视频被删除，剪辑结果也不会受到任何影响）；也可以对其进行转码、微信发布等二次处理。\n\n举例如下：一场完整的足球比赛，原始视频可能长达 2 个小时，客户出于节省成本的目的可以对这个视频存储 2 个月，但对于剪辑的「精彩时刻」视频却可以指定存储更长时间，同时可以单独对「精彩时刻」视频进行转码、微信发布等额外的点播操作，这时候可以选择剪辑并且固化的方案。\n\n剪辑固化的优势在于其生命周期与原始输入视频相互独立，可以独立管理、长久保存。\n\n### 剪辑不固化\n所谓剪辑不固化，是指剪辑所得到的结果（m3u8 文件）与原始输入视频共享相同的 ts 分片，新生成的视频不是一个独立完整的视频（没有独立 FileId，只有播放 URL），其有效期与原始输入的完整视频有效期是一致的。一旦原始输入的视频被删除，也会导致该片段无法播放。\n\n剪辑不固化，由于其剪辑结果不是一个独立的视频，因而也不会纳入点播媒资视频管理（例如控制台的视频总数不会统计这一片段）中，也无法单独针对这个片段做转码、微信发布等任何视频处理操作。\n\n剪辑不固化的优势在于其剪辑操作十分“轻量化”，不会产生额外的存储开销。但其不足之处在于生命周期与原始录制视频相同，且无法进一步进行转码等视频处理。",
       "input": "SimpleHlsClipRequest",
@@ -16911,6 +16918,24 @@
     "EditMediaVideoStream": {
       "document": "视频流配置信息",
       "members": [
+        {
+          "disabled": false,
+          "document": "视频流的编码格式，可选值：\n<li>libx264：H.264 编码；</li>\n<li>libx265：H.265 编码；</li>\n<li>av1：AOMedia Video 1 编码；</li>\n<li>H.266：H.266 编码。</li>",
+          "example": "libx264",
+          "member": "string",
+          "name": "Codec",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "视频流的码率，取值范围：0 和 [128, 35000]，单位：kbps。\n当取值为 0 或不填时，表示自动选择最佳视频码率。",
+          "example": "500",
+          "member": "uint64",
+          "name": "Bitrate",
+          "required": false,
+          "type": "int"
+        },
         {
           "disabled": false,
           "document": "分辨率自适应，可选值：\n<li>open：开启，此时，Width 代表视频的长边，Height 表示视频的短边；</li>\n<li>close：关闭，此时，Width 代表视频的宽度，Height 表示视频的高度。</li>\n默认值：open。",
@@ -32761,6 +32786,23 @@
     },
     "SetDrmKeyProviderInfoResponse": {
       "document": "SetDrmKeyProviderInfo返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetVodDomainCertificateRequest": {
+      "document": "SetVodDomainCertificate请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "SetVodDomainCertificateResponse": {
+      "document": "SetVodDomainCertificate返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

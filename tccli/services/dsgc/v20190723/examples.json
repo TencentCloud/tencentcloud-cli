@@ -26,10 +26,10 @@
     ],
     "CopyDSPATemplate": [
       {
-        "document": "复制合规组模版",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyDSPATemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "document": "复制合规组模板",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CopyDSPATemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "CreateAssetSortingReportRetryTask": [
@@ -61,15 +61,15 @@
         "document": "xx",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAAssessmentRiskLevel\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskLevelName\": \"abc\",\n    \"RiskLevelDescription\": \"abc\",\n    \"IdentifyComplianceId\": 0,\n    \"RiskLevelRule\": [\n        {\n            \"Id\": 0,\n            \"SensitiveLevelId\": 0,\n            \"SensitiveLevelName\": \"abc\",\n            \"VulnerabilityLevel\": \"abc\",\n            \"RiskLevel\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "CreateDSPAAssessmentRiskTemplate": [
       {
-        "document": "xx",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDSPAAssessmentRiskTemplate\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateName\": \"abc\",\n    \"TemplateDescription\": \"abc\",\n    \"RiskLevelId\": 0,\n    \"RiskIdList\": [\n        0\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "CreateDSPAAssessmentTask": [
@@ -314,58 +314,58 @@
     ],
     "DescribeDSPAAssessmentHighRiskTop10Overview": [
       {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentHighRiskTop10Overview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentHighRiskTop10Overview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"AssetsList\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"AssetsName\": \"abc\",\n                \"HighRiskCount\": 0,\n                \"RiskType\": \"abc\",\n                \"TotalRiskCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentLatestRiskDetailInfo": [
       {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskDetailInfo\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"RiskId\": 0\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskDetailInfo\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 1,\n    \"RiskId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"DataSourceId\": \"abc\",\n        \"DataSourceName\": \"abc\",\n        \"AssetName\": \"abc\",\n        \"AssessmentTemplateId\": 0,\n        \"IdentifyTemplateId\": 0,\n        \"RiskType\": \"abc\",\n        \"RiskName\": \"abc\",\n        \"RiskDescription\": \"abc\",\n        \"RiskLevel\": \"abc\",\n        \"SuggestAction\": \"abc\",\n        \"Status\": 0,\n        \"Remark\": \"abc\",\n        \"SecurityProduct\": [\n            {\n                \"ProductName\": \"abc\",\n                \"ReferUrl\": \"abc\"\n            }\n        ],\n        \"RiskDimension\": \"abc\",\n        \"RelationAsset\": [\n            \"abc\"\n        ],\n        \"AccountRiskDetail\": [\n            {\n                \"Id\": \"abc\",\n                \"RiskAccount\": \"abc\"\n            }\n        ],\n        \"PrivilegeRiskDetail\": [\n            {\n                \"AccountName\": [\n                    \"abc\"\n                ],\n                \"TableName\": \"abc\",\n                \"Description\": \"abc\"\n            }\n        ],\n        \"PolicyRiskCosFileList\": [\n            \"abc\"\n        ],\n        \"AKSKLeak\": [\n            {\n                \"AK\": \"abc\",\n                \"SK\": \"abc\",\n                \"URL\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentLatestRiskList": [
       {
         "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"Limit\": 0,\n    \"Offset\": \"abc\",\n    \"DataSourceId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"ControlItemId\": \"abc\",\n    \"Status\": 0,\n    \"BeginTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"RiskLevel\": \"abc\"\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentLatestRiskList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 2,\n    \"Limit\": 0,\n    \"Offset\": \"abc\",\n    \"DataSourceId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"ControlItemId\": \"abc\",\n    \"Status\": 0,\n    \"BeginTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"RiskLevel\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"LatestRiskList\": [\n            {\n                \"Id\": 0,\n                \"DataSourceId\": \"abc\",\n                \"DataSourceName\": \"abc\",\n                \"DataSourceType\": \"abc\",\n                \"AssetName\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"RiskName\": \"abc\",\n                \"RiskLevel\": \"abc\",\n                \"RiskDescription\": \"abc\",\n                \"SuggestAction\": \"abc\",\n                \"SecurityProduct\": [\n                    {\n                        \"ProductName\": \"abc\",\n                        \"ReferUrl\": \"abc\"\n                    }\n                ],\n                \"Status\": 0,\n                \"ScanTime\": \"abc\",\n                \"LastProcessTime\": \"abc\",\n                \"IdentifyComplianceId\": 0,\n                \"ItemSubType\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentNewDiscoveredRiskOverview": [
       {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentNewDiscoveredRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentNewDiscoveredRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"NewDiscoveredRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentPendingRiskOverview": [
       {
         "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentPendingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentPendingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"PendingRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentProcessingRiskOverview": [
       {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentProcessingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentProcessingRiskOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"ProcessingRiskCount\": 0,\n        \"AffectedAssetCount\": 0,\n        \"WeekRatio\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskAmountOverview": [
       {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskAmountOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskAmountOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 2\n}",
         "output": "{\n    \"Response\": {\n        \"TotalRiskCount\": 0,\n        \"TotalAffectedAssetCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskDatasourceTop5": [
@@ -388,22 +388,16 @@
       {
         "document": "风险项处理趋势统计",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDealedTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-97538993\",\n    \"StartTime\": \"2022-09-01\",\n    \"EndTime\": \"2022-09-03\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"09-01\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            },\n            {\n                \"Date\": \"09-02\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            },\n            {\n                \"Date\": \"09-03\",\n                \"Unhandled\": 0,\n                \"Handled\": 0\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
-        "title": "风险项处理趋势统计"
-      },
-      {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDealedTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"TemplateId\": \"abc\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"abc\",\n                \"Unhandled\": 1,\n                \"Handled\": 1,\n                \"NewDiscoveryHandled\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "风险项处理趋势统计"
       }
     ],
     "DescribeDSPAAssessmentRiskDistributionOverview": [
       {
-        "document": "xx",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskDistributionOverview\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RiskTypeDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RiskDetailDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RiskAssetsDistribution\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskItemTop5": [
@@ -416,10 +410,10 @@
     ],
     "DescribeDSPAAssessmentRiskLevelDetail": [
       {
-        "document": "xx",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskLevelId\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RiskLevelName\": \"abc\",\n        \"RiskLevelDescription\": \"abc\",\n        \"IdentifyComplianceId\": 0,\n        \"IdentifyComplianceName\": \"abc\",\n        \"RiskLevelMatrix\": [\n            {\n                \"Id\": 0,\n                \"SensitiveLevelId\": 0,\n                \"SensitiveLevelName\": \"abc\",\n                \"VulnerabilityLevel\": \"abc\",\n                \"RiskLevel\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskLevelList": [
@@ -436,12 +430,6 @@
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"StartTime\": \"2022-09-01\",\n    \"EndTime\": \"2022-09-03\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"09-01\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            },\n            {\n                \"Date\": \"09-02\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            },\n            {\n                \"Date\": \"09-03\",\n                \"High\": 0,\n                \"Medium\": 0,\n                \"Low\": 0,\n                \"Total\": 0\n            }\n        ],\n        \"RequestId\": \"128009ac-7df4-0530-cc92-52f0d945e191\"\n    }\n}",
         "title": "风险级别趋势统计"
-      },
-      {
-        "document": "xx",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskLevelTrend\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"TemplateId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Date\": \"abc\",\n                \"High\": 1,\n                \"Medium\": 1,\n                \"Low\": 1,\n                \"Total\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
       }
     ],
     "DescribeDSPAAssessmentRiskOverview": [
@@ -463,33 +451,33 @@
     "DescribeDSPAAssessmentRiskSideDistributed": [
       {
         "document": "查询风险面的分布详情",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideDistributed\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideDistributed\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RiskSideDistributed\": [\n            {\n                \"AssessmentRiskSide\": {\n                    \"Key\": \"abc\",\n                    \"Value\": 0\n                },\n                \"AssessmentRisk\": [\n                    {\n                        \"Key\": \"abc\",\n                        \"Value\": 0\n                    }\n                ]\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskSideList": [
       {
         "document": "查询风险面的列表",
-        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideItemList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0\n}",
+        "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskSideItemList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RiskSideItmeList\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "风险面列表"
       }
     ],
     "DescribeDSPAAssessmentRiskTemplateDetail": [
       {
-        "document": "xx",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskTemplateDetail\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"TemplateId\": 0,\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"TemplateName\": \"abc\",\n        \"TemplateDescription\": \"abc\",\n        \"RiskLevelId\": 0,\n        \"RiskLevelName\": \"abc\",\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"TaskCitations\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "output": "{\n    \"Response\": {\n        \"TemplateId\": 0,\n        \"TemplateName\": \"abc\",\n        \"TemplateDescription\": \"abc\",\n        \"RiskLevelId\": 0,\n        \"RiskLevelName\": \"abc\",\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ],\n                \"RiskSide\": \"abc\",\n                \"ReferTemplateList\": [\n                    {\n                        \"TemplateId\": 0,\n                        \"TemplateName\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"TaskCitations\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRiskTemplateVulnerableList": [
       {
-        "document": "xx",
+        "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentRiskTemplateVulnerableList\n<公共请求参数>\n\n{\n    \"DspaId\": \"abc\",\n    \"RiskType\": \"abc\",\n    \"RiskName\": \"abc\",\n    \"Limit\": 0,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ],\n                \"RiskSide\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "xx"
+        "output": "{\n    \"Response\": {\n        \"RiskItemList\": [\n            {\n                \"Id\": 0,\n                \"RiskName\": \"abc\",\n                \"Level\": \"abc\",\n                \"Description\": \"abc\",\n                \"RiskType\": \"abc\",\n                \"ReferTemplateCount\": 0,\n                \"SupportDataSource\": [\n                    \"abc\"\n                ],\n                \"RiskSide\": \"abc\",\n                \"ReferTemplateList\": [\n                    {\n                        \"TemplateId\": 0,\n                        \"TemplateName\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "示例"
       }
     ],
     "DescribeDSPAAssessmentRisks": [
@@ -513,14 +501,14 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentTemplateControlItems\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"TemplateId\": \"template-00000000\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"ItemId\": \"control-00000004\",\n                \"ItemName\": \"数据库账号和权限评估\",\n                \"Description\": \"数据库账号和权限评估\",\n                \"Source\": \"system\",\n                \"ItemType\": \"auto\",\n                \"ItemSubType\": \"application.database.accountAndprivilege\",\n                \"CreatedTime\": \"2022-05-30 09:31:22\",\n                \"Status\": \"launched\",\n                \"TemplateCount\": 0\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
-        "title": "获取DSPA评估模版关联的评估控制项列表"
+        "title": "获取DSPA评估模板关联的评估控制项列表"
       }
     ],
     "DescribeDSPAAssessmentTemplates": [
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: dsgc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDSPAAssessmentTemplates\n<公共请求参数>\n\n{\n    \"DspaId\": \"dspa-92aabacd\",\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"TemplateId\": \"template-00000000\",\n                \"TemplateName\": \"系统基础自动化评估模板\",\n                \"Description\": \"系统基础自动化评估模板\",\n                \"Source\": \"system\",\n                \"UseType\": \"auto\",\n                \"CreatedTime\": \"2022-04-14 18:52:43\",\n                \"ControlItemCount\": 4,\n                \"AppliedItemCount\": 4,\n                \"Status\": \"launched\"\n            }\n        ],\n        \"RequestId\": \"9a9f5c32-95ab-4130-ae37-047cde38b943\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"Items\": [\n            {\n                \"Id\": 0,\n                \"TemplateId\": \"abc\",\n                \"TemplateName\": \"abc\",\n                \"Description\": \"abc\",\n                \"Source\": \"abc\",\n                \"UseType\": \"abc\",\n                \"CreatedTime\": \"abc\",\n                \"ControlItemCount\": 0,\n                \"AppliedItemCount\": 0,\n                \"Status\": \"abc\",\n                \"SupportDataSource\": [\n                    \"abc\"\n                ],\n                \"IsASMTemplate\": true,\n                \"IdentifyComplianceId\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取DSPA评估模板列表"
       }
     ],

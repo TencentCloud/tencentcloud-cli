@@ -7,7 +7,7 @@ Input:
 ```
 tccli dsgc DescribeDSPAAssessmentRiskSideList --cli-unfold-argument  \
     --DspaId abc \
-    --TemplateId 0
+    --TemplateId 1
 ```
 
 Output: 

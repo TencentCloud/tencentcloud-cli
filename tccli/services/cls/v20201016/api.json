@@ -400,7 +400,7 @@
       "status": "online"
     },
     "DescribeMachines": {
-      "document": "获取制定机器组下的机器状态",
+      "document": "获取指定机器组下的机器状态",
       "input": "DescribeMachinesRequest",
       "name": "获取机器状态",
       "output": "DescribeMachinesResponse",
@@ -6539,7 +6539,7 @@
           "example": "0 ",
           "member": "MachineInfo",
           "name": "Machines",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6549,7 +6549,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutoUpdate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6559,7 +6559,7 @@
           "example": "00:00:00 ",
           "member": "string",
           "name": "UpdateStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6569,7 +6569,7 @@
           "example": "01:00:00 ",
           "member": "string",
           "name": "UpdateEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6579,7 +6579,7 @@
           "example": "2.2.0",
           "member": "string",
           "name": "LatestAgentVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6589,7 +6589,7 @@
           "example": "true",
           "member": "bool",
           "name": "ServiceLogging",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -6680,7 +6680,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否<br><li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否<br><li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否<br><li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否<br><li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,，。类型：String必选：否<br><li>status按照【任务状态】进行过滤。类型：String必选：否<br><li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否<br><li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>\n<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>\n<li>status按照【任务状态】进行过滤。类型：String必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",

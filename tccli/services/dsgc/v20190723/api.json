@@ -22,9 +22,9 @@
       "status": "online"
     },
     "CopyDSPATemplate": {
-      "document": "复制合规组模版",
+      "document": "复制合规组模板",
       "input": "CopyDSPATemplateRequest",
-      "name": "复制合规组模版",
+      "name": "复制合规组模板",
       "output": "CopyDSPATemplateResponse",
       "status": "online"
     },
@@ -57,9 +57,9 @@
       "status": "online"
     },
     "CreateDSPAAssessmentRiskTemplate": {
-      "document": "风险评估模版---创建风险评估模版",
+      "document": "风险评估模板---创建风险评估模板",
       "input": "CreateDSPAAssessmentRiskTemplateRequest",
-      "name": "创建评估模版",
+      "name": "创建评估模板",
       "output": "CreateDSPAAssessmentRiskTemplateResponse",
       "status": "online"
     },
@@ -407,16 +407,16 @@
       "status": "online"
     },
     "DescribeDSPAAssessmentRiskTemplateDetail": {
-      "document": "风险项页面--查看评估模版详情",
+      "document": "风险项页面--查看评估模板详情",
       "input": "DescribeDSPAAssessmentRiskTemplateDetailRequest",
-      "name": "查看评估模版详情",
+      "name": "查看评估模板详情",
       "output": "DescribeDSPAAssessmentRiskTemplateDetailResponse",
       "status": "online"
     },
     "DescribeDSPAAssessmentRiskTemplateVulnerableList": {
-      "document": "风险模版页面--查询风险模版中的脆弱项配置",
+      "document": "风险模板页面--查询风险模板中的脆弱项配置",
       "input": "DescribeDSPAAssessmentRiskTemplateVulnerableListRequest",
-      "name": "查询风险模版中的脆弱项配置",
+      "name": "查询风险中的脆弱项配置",
       "output": "DescribeDSPAAssessmentRiskTemplateVulnerableListResponse",
       "status": "online"
     },
@@ -437,7 +437,7 @@
     "DescribeDSPAAssessmentTemplateControlItems": {
       "document": "获取DSPA评估模版关联的评估控制项列表",
       "input": "DescribeDSPAAssessmentTemplateControlItemsRequest",
-      "name": "获取DSPA评估模版关联控制项列表",
+      "name": "获取DSPA评估模板关联控制项列表",
       "output": "DescribeDSPAAssessmentTemplateControlItemsResponse",
       "status": "online"
     },
@@ -862,9 +862,9 @@
       "status": "online"
     },
     "ModifyDSPAAssessmentRiskTemplate": {
-      "document": "风险模版---修改风险模版",
+      "document": "风险模板---修改风险模板",
       "input": "ModifyDSPAAssessmentRiskTemplateRequest",
-      "name": "修改风险模版页面",
+      "name": "修改风险模板页面",
       "output": "ModifyDSPAAssessmentRiskTemplateResponse",
       "status": "online"
     },
@@ -2605,7 +2605,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版id",
+          "document": "模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -2937,7 +2937,7 @@
         },
         {
           "disabled": false,
-          "document": "识别模版",
+          "document": "识别模板",
           "example": "1",
           "member": "int64",
           "name": "IdentifyComplianceId",
@@ -2992,7 +2992,7 @@
         {
           "disabled": false,
           "document": "模版名称",
-          "example": "xx-风险模版",
+          "example": "xx-风险模板",
           "member": "string",
           "name": "TemplateName",
           "required": true,
@@ -3019,7 +3019,7 @@
         {
           "disabled": false,
           "document": "模版描述",
-          "example": "模版描述",
+          "example": "模板描述",
           "member": "string",
           "name": "TemplateDescription",
           "required": false,
@@ -3063,7 +3063,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版Id，格式“template-xxxxxxxx”",
+          "document": "评估模板Id，格式“template-xxxxxxxx”",
           "example": "template-xxxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -3099,7 +3099,7 @@
         },
         {
           "disabled": false,
-          "document": "分类分级模版Id",
+          "document": "分类分级模板Id",
           "example": "1",
           "member": "int64",
           "name": "ComplianceId",
@@ -5714,7 +5714,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -5769,7 +5769,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -5797,6 +5797,7 @@
           "example": "cos-xxx",
           "member": "string",
           "name": "DataSourceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5806,6 +5807,7 @@
           "example": "无",
           "member": "string",
           "name": "DataSourceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5815,24 +5817,27 @@
           "example": "bucket-xxx",
           "member": "string",
           "name": "AssetName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "风险评估模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "风险评估模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "101",
           "member": "int64",
           "name": "AssessmentTemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "分类分级的模版id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分类分级的模板id\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "10",
           "member": "int64",
           "name": "IdentifyTemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5842,6 +5847,7 @@
           "example": "策略风险",
           "member": "string",
           "name": "RiskType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5851,6 +5857,7 @@
           "example": "aksk泄漏",
           "member": "string",
           "name": "RiskName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5860,6 +5867,7 @@
           "example": "这是一个什么xxx风险",
           "member": "string",
           "name": "RiskDescription",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5869,6 +5877,7 @@
           "example": "高",
           "member": "string",
           "name": "RiskLevel",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5878,6 +5887,7 @@
           "example": "建议处理",
           "member": "string",
           "name": "SuggestAction",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5887,6 +5897,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5896,6 +5907,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5905,6 +5917,7 @@
           "example": "无",
           "member": "SecurityProduct",
           "name": "SecurityProduct",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5914,6 +5927,7 @@
           "example": "instance",
           "member": "string",
           "name": "RiskDimension",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5923,6 +5937,7 @@
           "example": "db1，db2",
           "member": "string",
           "name": "RelationAsset",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5932,6 +5947,7 @@
           "example": "无",
           "member": "AccountRisk",
           "name": "AccountRiskDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5941,6 +5957,7 @@
           "example": "无",
           "member": "PrivilegeRisk",
           "name": "PrivilegeRiskDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5950,6 +5967,7 @@
           "example": "无",
           "member": "string",
           "name": "PolicyRiskCosFileList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5959,6 +5977,7 @@
           "example": "无",
           "member": "AKSKLeak",
           "name": "AKSKLeak",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5985,7 +6004,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -6140,7 +6159,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "12",
           "member": "int64",
           "name": "TemplateId",
@@ -6159,6 +6178,7 @@
           "example": "2",
           "member": "int64",
           "name": "NewDiscoveredRiskCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6168,6 +6188,7 @@
           "example": "1",
           "member": "int64",
           "name": "AffectedAssetCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6177,6 +6198,7 @@
           "example": "100%",
           "member": "float",
           "name": "WeekRatio",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6203,7 +6225,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "12",
           "member": "int64",
           "name": "TemplateId",
@@ -6222,6 +6244,7 @@
           "example": "2",
           "member": "int64",
           "name": "PendingRiskCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6231,6 +6254,7 @@
           "example": "1",
           "member": "int64",
           "name": "AffectedAssetCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6240,6 +6264,7 @@
           "example": "100%",
           "member": "float",
           "name": "WeekRatio",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6266,7 +6291,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "12",
           "member": "int64",
           "name": "TemplateId",
@@ -6285,6 +6310,7 @@
           "example": "2",
           "member": "int64",
           "name": "ProcessingRiskCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6294,6 +6320,7 @@
           "example": "1",
           "member": "int64",
           "name": "AffectedAssetCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6303,6 +6330,7 @@
           "example": "100%",
           "member": "float",
           "name": "WeekRatio",
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -6329,7 +6357,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "12",
           "member": "int64",
           "name": "TemplateId",
@@ -6348,6 +6376,7 @@
           "example": "11",
           "member": "int64",
           "name": "TotalRiskCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6357,6 +6386,7 @@
           "example": "11",
           "member": "int64",
           "name": "TotalAffectedAssetCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6505,7 +6535,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "2",
           "member": "string",
           "name": "TemplateId",
@@ -6524,6 +6554,7 @@
           "example": "无",
           "member": "RiskDealedTrendItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6550,7 +6581,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -6681,6 +6712,7 @@
           "example": "xx",
           "member": "string",
           "name": "RiskLevelName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6690,6 +6722,7 @@
           "example": "xx-描述",
           "member": "string",
           "name": "RiskLevelDescription",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -6699,15 +6732,17 @@
           "example": "无",
           "member": "int64",
           "name": "IdentifyComplianceId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "分类分级模版名称",
+          "document": "分类分级模板名称",
           "example": "通用合规组",
           "member": "string",
           "name": "IdentifyComplianceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6717,6 +6752,7 @@
           "example": "无",
           "member": "RiskLevelMatrix",
           "name": "RiskLevelMatrix",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6824,7 +6860,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "2",
           "member": "string",
           "name": "TemplateId",
@@ -6843,6 +6879,7 @@
           "example": "无",
           "member": "RiskLevelTrendItem",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6981,7 +7018,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -7027,7 +7064,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版id",
+          "document": "评估模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -7073,7 +7110,7 @@
         },
         {
           "disabled": false,
-          "document": "模版id",
+          "document": "模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
@@ -7106,28 +7143,31 @@
       "members": [
         {
           "disabled": false,
-          "document": "模版id",
+          "document": "模板id",
           "example": "1",
           "member": "int64",
           "name": "TemplateId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模版名称",
-          "example": "xx-模版",
+          "document": "模板名称",
+          "example": "xx-模板",
           "member": "string",
           "name": "TemplateName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模版的描述\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板的描述\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx-模版描述",
           "member": "string",
           "name": "TemplateDescription",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7137,6 +7177,7 @@
           "example": "1",
           "member": "int64",
           "name": "RiskLevelId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7146,6 +7187,7 @@
           "example": "无",
           "member": "string",
           "name": "RiskLevelName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7155,6 +7197,7 @@
           "example": "无",
           "member": "AssessmentRiskItem",
           "name": "RiskItemList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7164,6 +7207,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7173,6 +7217,7 @@
           "example": "无",
           "member": "int64",
           "name": "TaskCitations",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7448,7 +7493,7 @@
         },
         {
           "disabled": false,
-          "document": "评估模版Id。格式“template-xxxxxxxx”",
+          "document": "评估模板Id。格式“template-xxxxxxxx”",
           "example": "template-xxxxxxx",
           "member": "string",
           "name": "TemplateId",
@@ -7494,17 +7539,17 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "模版关联的评估项列表",
+          "document": "模板关联的评估项列表",
           "example": "无",
           "member": "AssessmentControlItem",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7568,7 +7613,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7578,7 +7623,7 @@
           "example": "无",
           "member": "AssessmentTemplate",
           "name": "Items",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14403,7 +14448,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储量单位，比如TB。",
+          "document": "COS存储量单位，例如TB。",
           "example": "无",
           "member": "string",
           "name": "CosQuotaUnit",
@@ -15086,7 +15131,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名称",
+          "document": "模板名称",
           "example": "xx",
           "member": "string",
           "name": "TemplateName",
@@ -15095,7 +15140,7 @@
         },
         {
           "disabled": false,
-          "document": "模版的描述",
+          "document": "模板的描述",
           "example": "xxx",
           "member": "string",
           "name": "TemplateDescription",
@@ -15104,7 +15149,7 @@
         },
         {
           "disabled": false,
-          "document": "模版id",
+          "document": "模板id",
           "example": "无",
           "member": "int64",
           "name": "TemplateId",

@@ -39,7 +39,12 @@ Output:
             "PodName": "abc",
             "PodIP": "abc",
             "PodStatus": "abc",
-            "ClusterID": "abc"
+            "ClusterID": "abc",
+            "ClusterName": "abc",
+            "NodeUniqueID": "abc",
+            "HostID": "abc",
+            "Namespace": "abc",
+            "WorkloadType": "abc"
         },
         "ProcessInfo": {
             "ProcessName": "abc",

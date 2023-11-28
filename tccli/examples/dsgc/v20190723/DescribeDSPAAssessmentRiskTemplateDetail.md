@@ -1,6 +1,6 @@
-**Example 1: xx**
+**Example 1: 示例**
 
-xx
+
 
 Input: 
 
@@ -31,6 +31,13 @@ Output:
                 "ReferTemplateCount": 0,
                 "SupportDataSource": [
                     "abc"
+                ],
+                "RiskSide": "abc",
+                "ReferTemplateList": [
+                    {
+                        "TemplateId": 0,
+                        "TemplateName": "abc"
+                    }
                 ]
             }
         ],
