@@ -336,6 +336,14 @@
         "title": "拉取云存事件缩略图"
       }
     ],
+    "DescribeCloudStorageThumbnailList": [
+      {
+        "document": "批量拉取云存事件缩略图",
+        "input": "POST / HTTP/1.1\nHost: iotvideo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCloudStorageThumbnailList\n<公共请求参数>\n\n{\n    \"ProductId\": \"H541SOP191\",\n    \"DeviceName\": \"event_36502632_1\",\n    \"ThumbnailList\": [\n        \"/100008401725/AQTV2839QJ/sp01_32820237_7/events/1615200613.jpg\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77dbf0ae-bdee-4b09-a5eb-0086d0164a20\",\n        \"ThumbnailURLInfoList\": [\n            {\n                \"ExpireTime\": 12321321,\n                \"ThumbnailURL\": \"https://video-cv-1258344699.cos.ap-guangzhou.myqcloud.com/%2F100\"\n            }\n        ]\n    }\n}",
+        "title": "批量拉取云存事件缩略图"
+      }
+    ],
     "DescribeCloudStorageTime": [
       {
         "document": "",

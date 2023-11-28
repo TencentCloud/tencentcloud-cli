@@ -56,7 +56,17 @@ Output:
                     "Value": "abc"
                 }
             ],
-            "PodIP": "abc"
+            "NodeSubNetName": "abc",
+            "NodeSubNetCIDR": "abc",
+            "PodIP": "abc",
+            "NodeType": "abc",
+            "NodeID": "abc",
+            "NodeUniqueID": "abc",
+            "NodeSubNetID": "abc",
+            "ClusterID": "abc",
+            "ClusterName": "abc",
+            "Namespace": "abc",
+            "WorkloadType": "abc"
         },
         "RequestId": "abc"
     }

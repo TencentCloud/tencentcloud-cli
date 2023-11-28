@@ -11,8 +11,10 @@ Output:
 ```
 {
     "Response": {
-        "AssetSyncLastTime": "2006-01-02 15:04:05",
-        "RequestId": "xx"
+        "AssetSyncLastTime": "abc",
+        "TaskStatus": "abc",
+        "TaskProcess": 0,
+        "RequestId": "abc"
     }
 }
 ```

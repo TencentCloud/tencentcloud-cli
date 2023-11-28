@@ -69,6 +69,8 @@ Output:
         "NodeUniqueID": "abc",
         "NodeID": "abc",
         "ClusterName": "abc",
+        "Namespace": "abc",
+        "WorkloadType": "abc",
         "RequestId": "abc"
     }
 }

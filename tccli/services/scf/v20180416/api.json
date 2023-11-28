@@ -4036,8 +4036,7 @@
           "member": "string",
           "name": "IpFixed",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4046,8 +4045,7 @@
           "member": "string",
           "name": "IpAddress",
           "required": false,
-          "type": "list",
-          "value_allowed_null": true
+          "type": "list"
         }
       ],
       "usage": "in"

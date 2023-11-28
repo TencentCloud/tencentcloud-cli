@@ -696,6 +696,14 @@
         "title": "创建并返回出证报告"
       }
     ],
+    "DescribeChannelSealPolicyWorkflowUrl": [
+      {
+        "document": "获取用印审批链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelSealPolicyWorkflowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"WorkflowInstanceId\": \"yDwiBUUckpo27hh3UuLiduR83BEL3kSb\"\n}",
+        "output": "{\n    \"Response\": {\n        \"WorkflowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=SEAL_APPROVE&userId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&policyId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&instanceId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&channelType=AAA\",\n        \"RequestId\": \"s1696921563375938822\"\n    }\n}",
+        "title": "获取用印审批链接"
+      }
+    ],
     "DescribeExtendedServiceAuthInfo": [
       {
         "document": "查询企业扩展服务授权信息",

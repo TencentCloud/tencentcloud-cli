@@ -1,3 +1,152 @@
+# Release 3.0.895.1
+
+## 版权保护平台(cpp) 版本：2023-06-27
+
+### 第 7 次发布
+
+发布时间：2023-11-29 01:11:13
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ReportDetail](http://document.tencentcloudapi.woa.com/document/product/1745/82424)
+
+	* 新增入参：CustomAppId, CustomUin, CustomSubUin
+
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 19 次发布
+
+发布时间：2023-11-29 01:26:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UploadImage](http://document.tencentcloudapi.woa.com/document/product/242/49206)
+
+	* 新增出参：SignedUrl
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 108 次发布
+
+发布时间：2023-11-29 01:27:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeChannelSealPolicyWorkflowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82754)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 18 次发布
+
+发布时间：2023-11-29 01:29:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudStorageThumbnailList](http://document.tencentcloudapi.woa.com/document/product/1131/82755)
+
+新增数据结构：
+
+* [ThumbnailURLInfoList](http://document.tencentcloudapi.woa.com/document/product/1131/75389#ThumbnailURLInfoList)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 12 次发布
+
+发布时间：2023-11-29 01:34:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeAssetSyncLastTime](http://document.tencentcloudapi.woa.com/document/product/1662/79030)
+
+	* 新增出参：TaskStatus, TaskProcess
+
+* [DescribeRiskDnsEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/81622)
+
+	* 新增出参：Namespace, WorkloadType
+
+* [DescribeVirusDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78988)
+
+	* 新增出参：Namespace, WorkloadType
+
+
+修改数据结构：
+
+* [RunTimeEventBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RunTimeEventBaseInfo)
+
+	* 新增成员：Namespace, WorkloadType
+
+	* <font color="#dd0000">**修改成员**：</font>EventId, FoundTime, ContainerId, ContainerName, ImageId, ImageName, NodeName, Status, EventName, EventType, EventCount, LatestFoundTime, HostIP, ClientIP, ContainerNetStatus, ContainerNetSubStatus, ContainerIsolateOperationSrc, NodeID, NodeType, NodeSubNetID, NodeSubNetName, NodeSubNetCIDR, PodName, PodIP, PodStatus, ClusterID, ClusterName, NodeUniqueID, HostID
+
+* [VulDefenceEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulDefenceEventDetail)
+
+	* 新增成员：Namespace, WorkloadType
+
+	* <font color="#dd0000">**修改成员**：</font>NodeSubNetName, NodeSubNetCIDR, PodIP, NodeType, NodeID, NodeUniqueID, NodeSubNetID, ClusterID, ClusterName
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 117 次发布
+
+发布时间：2023-11-29 01:38:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+
+	* 新增成员：RenewFlag
+
+
+
+
 # Release 3.0.894.1
 
 ## 智能语音(aai) 版本：2018-05-22

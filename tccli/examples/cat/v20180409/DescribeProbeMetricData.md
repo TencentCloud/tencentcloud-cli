@@ -17,8 +17,8 @@ Output:
 ```
 {
     "Response": {
-        "MetricSet": "xx",
-        "RequestId": "xx"
+        "MetricSet": "abc",
+        "RequestId": "abc"
     }
 }
 ```

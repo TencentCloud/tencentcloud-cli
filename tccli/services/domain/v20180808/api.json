@@ -6438,7 +6438,17 @@
           "example": "xxxxx",
           "member": "string",
           "name": "AccessUrl",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "带预签名的地址",
+          "example": "http://cos.url/image.jpg",
+          "member": "string",
+          "name": "SignedUrl",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

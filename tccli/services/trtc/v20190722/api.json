@@ -1168,7 +1168,7 @@
           "example": "无",
           "member": "string",
           "name": "UsageKey",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1178,7 +1178,7 @@
           "example": "无",
           "member": "TrtcUsage",
           "name": "UsageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1371,7 +1371,7 @@
           "example": "无",
           "member": "string",
           "name": "UsageKey",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1381,7 +1381,7 @@
           "example": "无",
           "member": "TrtcUsage",
           "name": "UsageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1436,7 +1436,7 @@
           "example": "无",
           "member": "string",
           "name": "UsageKey",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1446,7 +1446,7 @@
           "example": "无",
           "member": "TrtcUsage",
           "name": "UsageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2323,7 +2323,7 @@
           "example": "无",
           "member": "string",
           "name": "UsageKey",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2333,7 +2333,7 @@
           "example": "无",
           "member": "TrtcUsage",
           "name": "UsageList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
