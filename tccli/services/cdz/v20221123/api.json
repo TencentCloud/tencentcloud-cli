@@ -13,6 +13,13 @@
       "name": "查询专属可用区白名单信息",
       "output": "DescribeCloudDedicatedZoneWhiteListResponse",
       "status": "online"
+    },
+    "DescribeUserAvailableCloudDedicatedZones": {
+      "document": "查询用户可使用的专属可用区列表",
+      "input": "DescribeUserAvailableCloudDedicatedZonesRequest",
+      "name": "查询用户可使用的专属可用区列表",
+      "output": "DescribeUserAvailableCloudDedicatedZonesResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -271,6 +278,52 @@
           "example": "无",
           "member": "CloudDedicatedZoneWhiteListInfo",
           "name": "ZoneSet",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAvailableCloudDedicatedZonesRequest": {
+      "document": "DescribeUserAvailableCloudDedicatedZones请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定查询的用户 Uin，如果不传该参数，则查询系统参数中的用户 Uin",
+          "example": "123",
+          "member": "string",
+          "name": "CheckUin",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "传递数字型的 Region ID，用于过滤查询结果。如果不传该参数则查询全地域的专属可用区",
+          "example": "1",
+          "member": "uint64",
+          "name": "RegionId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserAvailableCloudDedicatedZonesResponse": {
+      "document": "DescribeUserAvailableCloudDedicatedZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回当前用户可使用的专属可用区 ID ",
+          "example": "[\"123\"]",
+          "member": "string",
+          "name": "ZoneIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -14,8 +14,10 @@ tccli tsf ModifyLane --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "aa9c0ea6-5bc1-42c1-90d3-ad2b0653ed56",
-    "Result": true
+    "Response": {
+        "Result": true,
+        "RequestId": "abc"
+    }
 }
 ```
 

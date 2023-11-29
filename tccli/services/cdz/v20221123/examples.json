@@ -15,6 +15,14 @@
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ZoneSet\": [\n            {\n                \"CdzId\": \"xx\",\n                \"ZoneId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"AppId\": \"xx\",\n                \"WhiteListKey\": \"xx\",\n                \"RegionId\": \"xx\",\n                \"ZoneName\": \"xx\",\n                \"WhiteList\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
         "title": "查询专属可用区白名单信息"
       }
+    ],
+    "DescribeUserAvailableCloudDedicatedZones": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdz.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserAvailableCloudDedicatedZones\n<公共请求参数>\n\n{\n    \"CheckUin\": \"abc\",\n    \"RegionId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneIdSet\": [\n            \"123\"\n        ],\n        \"RequestId\": \"123\"\n    }\n}",
+        "title": "查询用户可使用的专属可用区列表"
+      }
     ]
   },
   "version": "1.0"

@@ -12,8 +12,10 @@ tccli tsf DeleteLane --cli-unfold-argument  \
 Output: 
 ```
 {
-    "RequestId": "1f2a5c1d-d94b-4296-9b1a-208b237b64da",
-    "Result": true
+    "Response": {
+        "Result": true,
+        "RequestId": "abc"
+    }
 }
 ```
 

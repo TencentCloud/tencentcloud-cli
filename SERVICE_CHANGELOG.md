@@ -1,48 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 版权保护平台(cpp) 版本：2023-06-27
+## 专属可用区(cdz) 版本：2022-11-23
 
-### 第 7 次发布
+### 第 3 次发布
 
-发布时间：2023-11-29 01:11:13
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ReportDetail](http://document.tencentcloudapi.woa.com/document/product/1745/82424)
-
-	* 新增入参：CustomAppId, CustomUin, CustomSubUin
-
-
-
-
-## 域名注册(domain) 版本：2018-08-08
-
-### 第 19 次发布
-
-发布时间：2023-11-29 01:26:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [UploadImage](http://document.tencentcloudapi.woa.com/document/product/242/49206)
-
-	* 新增出参：SignedUrl
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 108 次发布
-
-发布时间：2023-11-29 01:27:27
+发布时间：2023-11-30 01:24:20
 
 本次发布包含了以下内容：
 
@@ -50,7 +12,42 @@
 
 新增接口：
 
+* [DescribeUserAvailableCloudDedicatedZones](http://document.tencentcloudapi.woa.com/document/product/1727/82756)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 85 次发布
+
+发布时间：2023-11-30 02:02:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AssignMangedTableProperties](http://document.tencentcloudapi.woa.com/document/product/1342/82757)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 109 次发布
+
+发布时间：2023-11-30 02:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
 * [DescribeChannelSealPolicyWorkflowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82754)
+
+	* 新增入参：Endpoint
+
 
 
 
@@ -58,39 +55,11 @@
 
 
 
-## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
 
-### 第 18 次发布
+### 第 3 次发布
 
-发布时间：2023-11-29 01:29:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeCloudStorageThumbnailList](http://document.tencentcloudapi.woa.com/document/product/1131/82755)
-
-新增数据结构：
-
-* [ThumbnailURLInfoList](http://document.tencentcloudapi.woa.com/document/product/1131/75389#ThumbnailURLInfoList)
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2020-12-15
-
-
-
-## 物联网智能视频服务(iotvideo) 版本：2019-11-26
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 12 次发布
-
-发布时间：2023-11-29 01:34:52
+发布时间：2023-11-30 02:26:47
 
 本次发布包含了以下内容：
 
@@ -98,41 +67,79 @@
 
 修改接口：
 
-* [DescribeAssetSyncLastTime](http://document.tencentcloudapi.woa.com/document/product/1662/79030)
+* [DescribeConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1712/80431)
 
-	* 新增出参：TaskStatus, TaskProcess
+	* 新增出参：ClientLimitMin, ClientLimitMax
 
-* [DescribeRiskDnsEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/81622)
+* [ModifyNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1712/80417)
 
-	* 新增出参：Namespace, WorkloadType
+	* 新增出参：TaskId
 
-* [DescribeVirusDetail](http://document.tencentcloudapi.woa.com/document/product/1662/78988)
 
-	* 新增出参：Namespace, WorkloadType
 
+
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 45 次发布
+
+发布时间：2023-11-30 02:48:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77791)
+
+	* 新增出参：UpdateSyncProgress
+
+
+新增数据结构：
+
+* [SupportDownloadType](http://document.tencentcloudapi.woa.com/document/product/400/41679#SupportDownloadType)
+* [UpdateSyncProgress](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgress)
+* [UpdateSyncProgressRegion](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgressRegion)
 
 修改数据结构：
 
-* [RunTimeEventBaseInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#RunTimeEventBaseInfo)
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
 
-	* 新增成员：Namespace, WorkloadType
-
-	* <font color="#dd0000">**修改成员**：</font>EventId, FoundTime, ContainerId, ContainerName, ImageId, ImageName, NodeName, Status, EventName, EventType, EventCount, LatestFoundTime, HostIP, ClientIP, ContainerNetStatus, ContainerNetSubStatus, ContainerIsolateOperationSrc, NodeID, NodeType, NodeSubNetID, NodeSubNetName, NodeSubNetCIDR, PodName, PodIP, PodStatus, ClusterID, ClusterName, NodeUniqueID, HostID
-
-* [VulDefenceEventDetail](http://document.tencentcloudapi.woa.com/document/product/1662/79121#VulDefenceEventDetail)
-
-	* 新增成员：Namespace, WorkloadType
-
-	* <font color="#dd0000">**修改成员**：</font>NodeSubNetName, NodeSubNetCIDR, PodIP, NodeType, NodeID, NodeUniqueID, NodeSubNetID, ClusterID, ClusterName
+	* 新增成员：IsDNSPODResolve, IsPackage, KeyPasswordCustomFlag, SupportDownloadType
 
 
 
 
-## 私有网络(vpc) 版本：2017-03-12
+## 容器服务(tke) 版本：2022-05-01
 
-### 第 117 次发布
 
-发布时间：2023-11-29 01:38:23
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 83 次发布
+
+发布时间：2023-11-30 03:00:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeLogSwitches](http://document.tencentcloudapi.woa.com/document/product/457/82758)
+
+新增数据结构：
+
+* [Switch](http://document.tencentcloudapi.woa.com/document/product/457/31866#Switch)
+* [SwitchInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#SwitchInfo)
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 39 次发布
+
+发布时间：2023-11-30 03:07:10
 
 本次发布包含了以下内容：
 
@@ -140,9 +147,9 @@
 
 修改数据结构：
 
-* [Address](http://document.tencentcloudapi.woa.com/document/product/215/15824#Address)
+* [LaneRuleTag](http://document.tencentcloudapi.woa.com/document/product/649/36099#LaneRuleTag)
 
-	* 新增成员：RenewFlag
+	* <font color="#dd0000">**修改成员**：</font>TagId, TagName, TagOperator, TagValue, LaneRuleId, CreateTime, UpdateTime
 
 
 
@@ -13961,6 +13968,18 @@
 
 
 ## 专属可用区(cdz) 版本：2022-11-23
+
+### 第 3 次发布
+
+发布时间：2023-11-30 01:24:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUserAvailableCloudDedicatedZones](http://document.tencentcloudapi.woa.com/document/product/1727/82756)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 2 次发布
 
@@ -31301,6 +31320,18 @@
 
 ## 数据湖计算 DLC(dlc) 版本：2021-01-25
 
+### 第 85 次发布
+
+发布时间：2023-11-30 02:02:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[AssignMangedTableProperties](http://document.tencentcloudapi.woa.com/document/product/1342/82757)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 84 次发布
 
 发布时间：2023-11-17 01:14:05
@@ -39541,6 +39572,21 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 109 次发布
+
+发布时间：2023-11-30 02:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeChannelSealPolicyWorkflowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82754)
+
+	* 新增入参：Endpoint
+
+
 ### 第 108 次发布
 
 发布时间：2023-11-29 01:27:27
@@ -39551,7 +39597,7 @@
 
 新增接口：
 
-* [[DescribeChannelSealPolicyWorkflowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82754)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeChannelSealPolicyWorkflowUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82754)
 
 ### 第 107 次发布
 
@@ -47025,11 +47071,11 @@
 
 新增接口：
 
-* [[DescribeCloudStorageThumbnailList](http://document.tencentcloudapi.woa.com/document/product/1131/82755)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeCloudStorageThumbnailList](http://document.tencentcloudapi.woa.com/document/product/1131/82755)
 
 新增数据结构：
 
-* [[ThumbnailURLInfoList](http://document.tencentcloudapi.woa.com/document/product/1131/75389#ThumbnailURLInfoList)](http://document.tencentcloudapi.woa.com/document/product/1131/75389#[ThumbnailURLInfoList](http://document.tencentcloudapi.woa.com/document/product/1131/75389#ThumbnailURLInfoList))
+* [ThumbnailURLInfoList](http://document.tencentcloudapi.woa.com/document/product/1131/75389#ThumbnailURLInfoList)
 
 ### 第 17 次发布
 
@@ -48395,6 +48441,25 @@
 
 
 ## 云数据库 KeeWiDB(keewidb) 版本：2022-03-08
+
+### 第 3 次发布
+
+发布时间：2023-11-30 02:26:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeConnectionConfig](http://document.tencentcloudapi.woa.com/document/product/1712/80431)
+
+	* 新增出参：ClientLimitMin, ClientLimitMax
+
+* [ModifyNetworkConfig](http://document.tencentcloudapi.woa.com/document/product/1712/80417)
+
+	* 新增出参：TaskId
+
 
 ### 第 2 次发布
 
@@ -66072,6 +66137,34 @@
 
 ## SSL 证书(ssl) 版本：2019-12-05
 
+### 第 45 次发布
+
+发布时间：2023-11-30 02:48:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [UpdateCertificateInstance](http://document.tencentcloudapi.woa.com/document/product/400/77791)
+
+	* 新增出参：UpdateSyncProgress
+
+
+新增数据结构：
+
+* [[SupportDownloadType](http://document.tencentcloudapi.woa.com/document/product/400/41679#SupportDownloadType)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[SupportDownloadType](http://document.tencentcloudapi.woa.com/document/product/400/41679#SupportDownloadType))
+* [[UpdateSyncProgress](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgress)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[UpdateSyncProgress](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgress))
+* [[UpdateSyncProgressRegion](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgressRegion)](http://document.tencentcloudapi.woa.com/document/product/400/41679#[UpdateSyncProgressRegion](http://document.tencentcloudapi.woa.com/document/product/400/41679#UpdateSyncProgressRegion))
+
+修改数据结构：
+
+* [Certificates](http://document.tencentcloudapi.woa.com/document/product/400/41679#Certificates)
+
+	* 新增成员：IsDNSPODResolve, IsPackage, KeyPasswordCustomFlag, SupportDownloadType
+
+
 ### 第 44 次发布
 
 发布时间：2023-11-24 01:22:11
@@ -77682,6 +77775,23 @@
 
 ## 容器服务(tke) 版本：2018-05-25
 
+### 第 83 次发布
+
+发布时间：2023-11-30 03:00:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeLogSwitches](http://document.tencentcloudapi.woa.com/document/product/457/82758)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[Switch](http://document.tencentcloudapi.woa.com/document/product/457/31866#Switch)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[Switch](http://document.tencentcloudapi.woa.com/document/product/457/31866#Switch))
+* [[SwitchInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#SwitchInfo)](http://document.tencentcloudapi.woa.com/document/product/457/31866#[SwitchInfo](http://document.tencentcloudapi.woa.com/document/product/457/31866#SwitchInfo))
+
 ### 第 82 次发布
 
 发布时间：2023-11-22 03:30:35
@@ -82059,6 +82169,21 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 39 次发布
+
+发布时间：2023-11-30 03:07:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LaneRuleTag](http://document.tencentcloudapi.woa.com/document/product/649/36099#LaneRuleTag)
+
+	* <font color="#dd0000">**修改成员**：</font>TagId, TagName, TagOperator, TagValue, LaneRuleId, CreateTime, UpdateTime
+
 
 ### 第 38 次发布
 
