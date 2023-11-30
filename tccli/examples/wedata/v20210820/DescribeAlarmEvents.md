@@ -6,16 +6,16 @@ Input:
 
 ```
 tccli wedata DescribeAlarmEvents --cli-unfold-argument  \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
+    --Filters.0.Values 1 \
+    --Filters.0.Name AlarmLevel \
     --PageSize 1 \
-    --ProjectId xx \
-    --OrderFields.0.Direction xx \
-    --OrderFields.0.Name xx \
+    --ProjectId 1 \
+    --OrderFields.0.Direction DESC \
+    --OrderFields.0.Name AlarmTime \
     --PageNumber 1 \
-    --StartTime xx \
+    --StartTime  \
     --TaskType 1 \
-    --EndTime xx
+    --EndTime 
 ```
 
 Output: 
@@ -25,21 +25,30 @@ Output:
         "TotalCount": 1,
         "AlarmEventInfoList": [
             {
-                "TaskId": "xx",
-                "EstimatedTime": 1,
-                "ProjectId": "xx",
-                "AlarmIndicator": 1,
-                "AlarmTime": "xx",
-                "AlarmId": 1,
-                "RegularName": "xx",
-                "TriggerType": 1,
-                "AlarmRecipientId": "xx",
+                "AlarmId": "1",
+                "AlarmIndicator": 0,
+                "AlarmIndicatorDesc": null,
+                "AlarmLevel": 0,
+                "AlarmRecipientId": "1",
+                "AlarmRecipientName": "name1",
+                "AlarmTime": "2023-11-07 07:22:36",
                 "AlarmWay": 1,
-                "AlarmLevel": 1,
-                "AlarmIndicatorDesc": "xx"
+                "EstimatedTime": null,
+                "InstanceId": null,
+                "IsSendSuccess": 2,
+                "MessageId": "0ee4bf30",
+                "Operator": 1,
+                "ProjectId": "1455251608631480320",
+                "RegularId": "814",
+                "RegularName": "mmmm",
+                "SendResult": "email:1,sms:0,wecom:0,voice:0,wechat:0,http:0,wecomgroup:0",
+                "TaskId": "h8591470e",
+                "TaskName": "test",
+                "TaskType": 201,
+                "TriggerType": null
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "1"
     }
 }
 ```

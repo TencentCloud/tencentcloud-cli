@@ -1871,6 +1871,15 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义参数\n<ul>\n<li>目前仅支持EmbedType=CREATE_TEMPLATE时传入</li>\n<li>指定后，创建，编辑，删除模版时，回调都会携带该userData</li>\n<li>支持的格式：json字符串的BASE64编码字符串</li>\n<li>示例：<ul>\n                 <li>json字符串：{\"ComeFrom\":\"xxx\"}，BASE64编码：eyJDb21lRnJvbSI6Inh4eCJ9</li>\n                 <li>eyJDb21lRnJvbSI6Inh4eCJ9，为符合要求的userData数据格式</li>\n</ul>\n</li>\n</ul>",
+          "example": "eyJDb21lRnJvbSI6Inh4eCJ9",
+          "member": "string",
+          "name": "UserData",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -2818,7 +2827,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "合同模板ID，为32位字符串。",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -2827,7 +2836,7 @@
         },
         {
           "disabled": false,
-          "document": "资源类型，此接口固定为**1**表示为用模板发起",
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
           "example": "无",
           "member": "int64",
           "name": "ResourceType",
@@ -2872,7 +2881,7 @@
         },
         {
           "disabled": false,
-          "document": "用过去已经通过此接口发起的合同的ID复制个新的合同创建链接",
+          "document": "合同Id：用于通过一个已发起的合同快速生成一个发起流程web链接\n注: `该参数必须是一个待发起审核的合同id，并且还未审核通过`",
           "example": "无",
           "member": "string",
           "name": "FlowId",
@@ -5685,6 +5694,15 @@
           "name": "ForbidEditFillComponent",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "跳过上传文件步骤\n\n**true**：跳过\n**false**：（默认）不跳过，需要传ResourceId",
+          "example": "false",
+          "member": "string",
+          "name": "SkipUploadFile",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

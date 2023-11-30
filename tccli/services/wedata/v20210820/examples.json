@@ -199,8 +199,8 @@
     "BatchUpdateIntegrationTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchUpdateIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"Incharge\": \"352;345\",\n    \"TaskType\": 202\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchUpdateIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"TaskIds\": [\n        \"123\",\n        \"1234\"\n    ],\n    \"Incharge\": \"352;345\",\n    \"TaskType\": 202\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "BatchUpdateIntegrationTasks"
       }
     ],
@@ -637,16 +637,16 @@
     "DescribeAlarmEvents": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmEvents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"xx\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"xx\",\n            \"Name\": \"xx\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"StartTime\": \"xx\",\n    \"TaskType\": 1,\n    \"EndTime\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AlarmEventInfoList\": [\n            {\n                \"TaskId\": \"xx\",\n                \"EstimatedTime\": 1,\n                \"ProjectId\": \"xx\",\n                \"AlarmIndicator\": 1,\n                \"AlarmTime\": \"xx\",\n                \"AlarmId\": 1,\n                \"RegularName\": \"xx\",\n                \"TriggerType\": 1,\n                \"AlarmRecipientId\": \"xx\",\n                \"AlarmWay\": 1,\n                \"AlarmLevel\": 1,\n                \"AlarmIndicatorDesc\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmEvents\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"1\"\n            ],\n            \"Name\": \"AlarmLevel\"\n        }\n    ],\n    \"PageSize\": 1,\n    \"ProjectId\": \"1\",\n    \"OrderFields\": [\n        {\n            \"Direction\": \"DESC\",\n            \"Name\": \"AlarmTime\"\n        }\n    ],\n    \"PageNumber\": 1,\n    \"StartTime\": \"\",\n    \"TaskType\": 1,\n    \"EndTime\": \"\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"AlarmEventInfoList\": [\n            {\n                \"AlarmId\": \"1\",\n                \"AlarmIndicator\": 0,\n                \"AlarmIndicatorDesc\": null,\n                \"AlarmLevel\": 0,\n                \"AlarmRecipientId\": \"1\",\n                \"AlarmRecipientName\": \"name1\",\n                \"AlarmTime\": \"2023-11-07 07:22:36\",\n                \"AlarmWay\": 1,\n                \"EstimatedTime\": null,\n                \"InstanceId\": null,\n                \"IsSendSuccess\": 2,\n                \"MessageId\": \"0ee4bf30\",\n                \"Operator\": 1,\n                \"ProjectId\": \"1455251608631480320\",\n                \"RegularId\": \"814\",\n                \"RegularName\": \"mmmm\",\n                \"SendResult\": \"email:1,sms:0,wecom:0,voice:0,wechat:0,http:0,wecomgroup:0\",\n                \"TaskId\": \"h8591470e\",\n                \"TaskName\": \"test\",\n                \"TaskType\": 201,\n                \"TriggerType\": null\n            }\n        ],\n        \"RequestId\": \"1\"\n    }\n}",
         "title": "告警事件列表"
       }
     ],
     "DescribeAlarmReceiver": [
       {
         "document": "告警接收人详情",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmReceiver\n<公共请求参数>\n\n{\n    \"AlarmRecipientName\": \"xx\",\n    \"PageSize\": 1,\n    \"ProjectId\": \"xx\",\n    \"MessageId\": \"xx\",\n    \"AlarmTime\": \"xx\",\n    \"AlarmId\": \"xx\",\n    \"PageNumber\": 1,\n    \"TaskType\": 1,\n    \"AlarmRecipient\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"AlarmReceiverInfoList\": [\n            {\n                \"Http\": 1,\n                \"Sms\": 1,\n                \"AlarmId\": 1,\n                \"Wechat\": 1,\n                \"AlarmReceiver\": \"xx\",\n                \"Wecom\": 1,\n                \"Voice\": 1,\n                \"Email\": 1\n            }\n        ],\n        \"RequestId\": \"xx\",\n        \"TotalCount\": 1\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAlarmReceiver\n<公共请求参数>\n\n{\n    \"AlarmRecipientName\": \"用户A\",\n    \"PageSize\": 1,\n    \"ProjectId\": \"123\",\n    \"MessageId\": \"123\",\n    \"AlarmTime\": \"2023-11-10 18:31:06\",\n    \"AlarmId\": \"1\",\n    \"PageNumber\": 1,\n    \"TaskType\": 1,\n    \"AlarmRecipient\": \"887\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AlarmReceiverInfoList\": [\n            {\n                \"Http\": 1,\n                \"Sms\": 1,\n                \"AlarmId\": \"1\",\n                \"Wechat\": 1,\n                \"AlarmReceiver\": \"887\",\n                \"Wecom\": 1,\n                \"Voice\": 1,\n                \"Email\": 1,\n                \"WecomGroup\": 1\n            }\n        ],\n        \"RequestId\": \"123\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "告警接收人详情"
       }
     ],
@@ -823,7 +823,7 @@
     "DescribeDataSourceInfoList": [
       {
         "document": "获取数据源列表",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceInfoList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"ProjectId\": \"1\"\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDataSourceInfoList\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 10,\n    \"ProjectId\": \"1\",\n    \"Type\": \"MYSQL\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"DatasourceSet\": [\n            {\n                \"DatabaseNames\": [\n                    \"abc\"\n                ],\n                \"Description\": \"abc\",\n                \"ID\": 1,\n                \"Instance\": \"abc\",\n                \"Name\": \"abc\",\n                \"Region\": \"abc\",\n                \"Type\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Version\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取数据源信息"
       }
@@ -974,10 +974,16 @@
     ],
     "DescribeEventCases": [
       {
-        "document": "成功获取事件实例",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventCases\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460963739345731584\",\n    \"Category\": \"current\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Items\": [\n                {\n                    \"CaseId\": \"9eb045788691c9e901869c4858950000\",\n                    \"Description\": \"手动触发\",\n                    \"Dimension\": \"20230301\",\n                    \"EventBroadcastType\": \"SINGLE\",\n                    \"EventName\": \"stack_text_event\",\n                    \"EventTriggerTimestamp\": \"2023-03-01T08:27:12.398Z\",\n                    \"EventType\": \"TIME_SERIES\",\n                    \"LogTimestamp\": \"2023-03-24T07:09:47.051Z\",\n                    \"Status\": \"ACTIVE\",\n                    \"TTL\": null,\n                    \"TimeUnit\": \"DAYS\"\n                }\n            ],\n            \"PageCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 10,\n            \"TotalCount\": 1,\n            \"TotalPage\": 1\n        },\n        \"RequestId\": \"21318b6f-b2c9-46f3-be55-17747991c87b\"\n    }\n}",
-        "title": "成功获取事件实例"
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventCases\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"Category\": \"abc\",\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"EventName\": \"abc\",\n    \"EventType\": \"abc\",\n    \"EventSubType\": \"abc\",\n    \"EventBroadcastType\": \"abc\",\n    \"Status\": \"abc\",\n    \"CreationTimeStart\": \"abc\",\n    \"CreationTimeEnd\": \"abc\",\n    \"EventTriggeredTimeStart\": \"abc\",\n    \"EventTriggeredTimeEnd\": \"abc\",\n    \"LogTimeStart\": \"abc\",\n    \"LogTimeEnd\": \"abc\",\n    \"Dimension\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"TotalPage\": 1,\n            \"PageCount\": 1,\n            \"PageNumber\": 1,\n            \"PageSize\": 1,\n            \"Items\": [\n                {\n                    \"CaseId\": \"abc\",\n                    \"EventName\": \"abc\",\n                    \"EventType\": \"abc\",\n                    \"EventSubType\": \"abc\",\n                    \"EventBroadcastType\": \"abc\",\n                    \"TTL\": 1,\n                    \"TimeUnit\": \"abc\",\n                    \"Dimension\": \"abc\",\n                    \"Status\": \"abc\",\n                    \"EventTriggerTimestamp\": \"abc\",\n                    \"LogTimestamp\": \"abc\",\n                    \"Description\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "待消费"
+      },
+      {
+        "document": "获取事件",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEventCases\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1460947878944567296\",\n    \"Category\": \"all\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"获取事件实例出错\"\n        },\n        \"RequestId\": \"dd4c9f45-1b85-488f-8fcd-73ae8c1fa37d\"\n    }\n}",
+        "title": "获取事件"
       }
     ],
     "DescribeEventConsumeTasks": [
@@ -2653,8 +2659,8 @@
     "TriggerDsEvent": [
       {
         "document": "触发事件",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerDsEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"EventCaseList\": [\n        {\n            \"CaseId\": \"abc\",\n            \"Name\": \"abc\",\n            \"Dimension\": \"abc\",\n            \"CreationTs\": \"abc\",\n            \"ConsumerId\": \"abc\",\n            \"Description\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"SuccessCount\": 0,\n            \"FailCount\": 0,\n            \"FailMessageList\": [\n                {\n                    \"Key\": \"abc\",\n                    \"ErrorMessage\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerDsEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1\",\n    \"EventCaseList\": [\n        {\n            \"Name\": \"myTest\",\n            \"Dimension\": \"20220729\",\n            \"Description\": \"手动触发\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 1,\n            \"SuccessCount\": 1,\n            \"FailCount\": 0,\n            \"FailMessageList\": []\n        },\n        \"RequestId\": \"a339e515-9f6c-46b1-a43a-587f1c39067c\"\n    }\n}",
         "title": "触发事件"
       }
     ],

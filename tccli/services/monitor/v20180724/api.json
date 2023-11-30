@@ -1053,7 +1053,7 @@
   },
   "metadata": {
     "apiVersion": "2018-07-24",
-    "api_brief": "介绍如何使用API对云监控进行操作，包括查询监控数据、创建报警规则等。",
+    "api_brief": "介绍如何使用API对腾讯云可观测平台进行操作，包括查询监控数据、创建报警规则等。",
     "serviceNameCN": "腾讯云可观测平台",
     "serviceShortName": "monitor"
   },

@@ -19019,7 +19019,7 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "SHA1",
           "member": "string",
@@ -19060,6 +19060,17 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证算法：可选值：'MD5', 'SHA1'，'SHA-256' 默认为\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SHA1",
+          "member": "string",
+          "name": "IntegrityAlgorithm",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

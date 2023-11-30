@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli wedata DescribeAlarmReceiver --cli-unfold-argument  \
-    --AlarmRecipientName xx \
+    --AlarmRecipientName 用户A \
     --PageSize 1 \
-    --ProjectId xx \
-    --MessageId xx \
-    --AlarmTime xx \
-    --AlarmId xx \
+    --ProjectId 123 \
+    --MessageId 123 \
+    --AlarmTime 2023-11-10 18:31:06 \
+    --AlarmId 1 \
     --PageNumber 1 \
     --TaskType 1 \
-    --AlarmRecipient xx
+    --AlarmRecipient 887
 ```
 
 Output: 
@@ -25,15 +25,16 @@ Output:
             {
                 "Http": 1,
                 "Sms": 1,
-                "AlarmId": 1,
+                "AlarmId": "1",
                 "Wechat": 1,
-                "AlarmReceiver": "xx",
+                "AlarmReceiver": "887",
                 "Wecom": 1,
                 "Voice": 1,
-                "Email": 1
+                "Email": 1,
+                "WecomGroup": 1
             }
         ],
-        "RequestId": "xx",
+        "RequestId": "123",
         "TotalCount": 1
     }
 }

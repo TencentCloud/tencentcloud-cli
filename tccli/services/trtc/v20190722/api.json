@@ -4580,7 +4580,7 @@
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "",
+          "example": "1400xxx",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4589,7 +4589,7 @@
         {
           "disabled": false,
           "document": "房间号。",
-          "example": "",
+          "example": "1234",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -4598,7 +4598,7 @@
         {
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
-          "example": "",
+          "example": "[1,2,3]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -6325,8 +6325,7 @@
           "member": "uint64",
           "name": "Top",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6335,8 +6334,7 @@
           "member": "uint64",
           "name": "Left",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6345,8 +6343,7 @@
           "member": "uint64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6355,8 +6352,7 @@
           "member": "uint64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6365,8 +6361,7 @@
           "member": "string",
           "name": "Chars",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6375,8 +6370,7 @@
           "member": "uint64",
           "name": "FontSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6385,8 +6379,7 @@
           "member": "string",
           "name": "FontColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6395,8 +6388,16 @@
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文字水印的字体，支持设置以下值：\n1. Tencent （默认）\n2. SourceHanSans",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6533,8 +6534,7 @@
           "member": "uint64",
           "name": "Pos",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6543,8 +6543,16 @@
           "member": "uint64",
           "name": "TimeZone",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文字水印的字体，支持设置以下值：\n1. Tencent （默认）\n2. SourceHanSans",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

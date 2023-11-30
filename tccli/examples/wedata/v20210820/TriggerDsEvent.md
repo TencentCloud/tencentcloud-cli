@@ -6,13 +6,10 @@ Input:
 
 ```
 tccli wedata TriggerDsEvent --cli-unfold-argument  \
-    --ProjectId abc \
-    --EventCaseList.0.CaseId abc \
-    --EventCaseList.0.Name abc \
-    --EventCaseList.0.Dimension abc \
-    --EventCaseList.0.CreationTs abc \
-    --EventCaseList.0.ConsumerId abc \
-    --EventCaseList.0.Description abc
+    --ProjectId 1 \
+    --EventCaseList.0.Name myTest \
+    --EventCaseList.0.Dimension 20220729 \
+    --EventCaseList.0.Description 手动触发
 ```
 
 Output: 
@@ -20,17 +17,12 @@ Output:
 {
     "Response": {
         "Data": {
-            "TotalCount": 0,
-            "SuccessCount": 0,
+            "TotalCount": 1,
+            "SuccessCount": 1,
             "FailCount": 0,
-            "FailMessageList": [
-                {
-                    "Key": "abc",
-                    "ErrorMessage": "abc"
-                }
-            ]
+            "FailMessageList": []
         },
-        "RequestId": "abc"
+        "RequestId": "a339e515-9f6c-46b1-a43a-587f1c39067c"
     }
 }
 ```

@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli tsf UpdateConfigTemplate --cli-unfold-argument  \
-    --ConfigTemplateId xxx \
-    --ConfigTemplateName xxx \
-    --ConfigTemplateType xxx \
-    --ConfigTemplateValue xxx
+    --ConfigTemplateId abc \
+    --ConfigTemplateName abc \
+    --ConfigTemplateDesc abc \
+    --ConfigTemplateType abc \
+    --ConfigTemplateValue abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "!2vko3112424d2322",
-        "Result": true
+        "Result": true,
+        "RequestId": "abc"
     }
 }
 ```

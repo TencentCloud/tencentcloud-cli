@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata BatchUpdateIntegrationTasks --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId abc \
     --TaskIds 123 1234 \
     --Incharge 352;345 \
     --TaskType 202
@@ -19,7 +19,7 @@ Output:
         "SuccessCount": 1,
         "FailedCount": 1,
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

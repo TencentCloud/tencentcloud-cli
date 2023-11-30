@@ -1776,7 +1776,7 @@
         },
         {
           "disabled": false,
-          "document": "任务缓存清理时间。不填表示不清理。",
+          "document": "任务缓存清理时间（小时）。不填表示不清理。",
           "example": "无",
           "member": "uint64",
           "name": "CacheClearDelay",
@@ -2498,7 +2498,7 @@
         },
         {
           "disabled": false,
-          "document": "任务缓存清理时间。不填表示不清理。",
+          "document": "任务缓存清理时间（小时）。不填表示不清理。",
           "example": "无",
           "member": "uint64",
           "name": "CacheClearDelay",

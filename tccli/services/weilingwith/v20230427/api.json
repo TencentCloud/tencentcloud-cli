@@ -1064,6 +1064,42 @@
       ],
       "usage": "out"
     },
+    "AlarmStatusData": {
+      "document": "告警状态返回结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警状态ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警状态名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警状态类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StatusType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "AlarmTypeDetailInfo": {
       "document": "告警类型详情信息",
       "members": [
@@ -3209,12 +3245,57 @@
     },
     "DescribeAlarmStatusListRequest": {
       "document": "DescribeAlarmStatusList请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用token",
+          "example": "Lawbk967Ng41d934u8vveoS",
+          "member": "string",
+          "name": "ApplicationToken",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间ID",
+          "example": "1016",
+          "member": "string",
+          "name": "WorkspaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
       "type": "object"
+    },
+    "DescribeAlarmStatusListRes": {
+      "document": "告警状态列表返回",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警状态返回结构\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AlarmStatusData",
+          "name": "List",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "DescribeAlarmStatusListResponse": {
       "document": "DescribeAlarmStatusList返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "告警状态返回结构",
+          "example": "{ \t\t\t\"List\": [ \t\t\t\t{ \t\t\t\t\t\"StatusID\": \"test\", \t\t\t\t\t\"StatusName\": \"测试\", \t\t\t\t\t\"StatusType\": \"\" \t\t\t\t} \t\t\t] \t\t}",
+          "member": "DescribeAlarmStatusListRes",
+          "name": "Result",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

@@ -13191,6 +13191,7 @@
           "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13200,6 +13201,7 @@
           "example": "无",
           "member": "ClusterCredential",
           "name": "Credential",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13209,6 +13211,7 @@
           "example": "无",
           "member": "EdgeClusterPublicLB",
           "name": "PublicLB",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13218,6 +13221,7 @@
           "example": "无",
           "member": "EdgeClusterInternalLB",
           "name": "InternalLB",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13227,6 +13231,7 @@
           "example": "yes",
           "member": "string",
           "name": "CoreDns",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13236,6 +13241,7 @@
           "example": "yes",
           "member": "string",
           "name": "HealthRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13245,6 +13251,7 @@
           "example": "yes",
           "member": "string",
           "name": "Health",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13254,6 +13261,7 @@
           "example": "yes",
           "member": "string",
           "name": "GridDaemon",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13263,6 +13271,7 @@
           "example": "yes",
           "member": "string",
           "name": "UnitCluster",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

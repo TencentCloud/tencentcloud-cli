@@ -3897,7 +3897,7 @@
         },
         {
           "disabled": false,
-          "document": "系统类型，默认0，0：Linux，1: windows",
+          "document": "系统类型，默认0，0：Linux，1: Windows",
           "example": "0",
           "member": "uint64",
           "name": "OSType",
@@ -7365,7 +7365,7 @@
         },
         {
           "disabled": false,
-          "document": "windows事件日志采集",
+          "document": "Windows事件日志采集",
           "example": "无",
           "member": "EventLog",
           "name": "EventLogRules",

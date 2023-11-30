@@ -646,6 +646,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单归属日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-10 00:00:00",
+          "member": "string",
+          "name": "BillDay",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单归属月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-01 00:00:00",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1420,6 +1440,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账单归属月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-01 00:00:00",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -1433,7 +1463,7 @@
           "example": "实时音视频",
           "member": "string",
           "name": "BusinessCodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1443,7 +1473,7 @@
           "example": "实时音视频-音视频通话",
           "member": "string",
           "name": "ProductCodeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1453,7 +1483,7 @@
           "example": "包年包月",
           "member": "string",
           "name": "PayModeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1463,7 +1493,7 @@
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1473,7 +1503,7 @@
           "example": "华南地区（广州）",
           "member": "string",
           "name": "RegionName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1483,7 +1513,7 @@
           "example": "其他",
           "member": "string",
           "name": "ZoneName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1493,7 +1523,7 @@
           "example": "1000068815",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1503,7 +1533,7 @@
           "example": " 1",
           "member": "string",
           "name": "ResourceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1513,7 +1543,7 @@
           "example": "包年包月新购",
           "member": "string",
           "name": "ActionTypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1523,7 +1553,7 @@
           "example": "20210818400005559878881",
           "member": "string",
           "name": "OrderId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1533,7 +1563,7 @@
           "example": "2021-08-18 15:35:01",
           "member": "datetime",
           "name": "PayTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1543,7 +1573,7 @@
           "example": "2021-08-18 15:35:00",
           "member": "datetime",
           "name": "FeeBeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1553,7 +1583,7 @@
           "example": "2022-08-31 23:59:59",
           "member": "datetime",
           "name": "FeeEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1563,7 +1593,7 @@
           "example": "音视频通话-自定义套餐包: 1000分钟; ",
           "member": "string",
           "name": "ConfigDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1573,7 +1603,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtendField1",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1583,7 +1613,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtendField2",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1593,7 +1623,7 @@
           "example": "7",
           "member": "string",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1603,7 +1633,7 @@
           "example": "1",
           "member": "string",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1613,7 +1643,7 @@
           "example": "折扣",
           "member": "string",
           "name": "ReduceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1623,7 +1653,7 @@
           "example": "7.00000000",
           "member": "string",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1633,7 +1663,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "VoucherPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1643,7 +1673,7 @@
           "example": "7.00000000",
           "member": "string",
           "name": "CashPayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1653,7 +1683,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "IncentivePayAmount",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1663,7 +1693,7 @@
           "example": "0.00000000",
           "member": "string",
           "name": "TransferPayAmount",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1673,7 +1703,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtendField3",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1683,7 +1713,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtendField4",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1693,7 +1723,7 @@
           "example": "-",
           "member": "string",
           "name": "ExtendField5",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1703,7 +1733,7 @@
           "example": "[]",
           "member": "BillTagInfo",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1713,7 +1743,7 @@
           "example": "xxx",
           "member": "string",
           "name": "PayerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1723,7 +1753,7 @@
           "example": "xxx",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1733,7 +1763,7 @@
           "example": "xxx",
           "member": "string",
           "name": "OperateUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1743,7 +1773,7 @@
           "example": "p_rav",
           "member": "string",
           "name": "BusinessCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1753,7 +1783,7 @@
           "example": "sp_rav_audio_video",
           "member": "string",
           "name": "ProductCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1763,7 +1793,7 @@
           "example": "1",
           "member": "int64",
           "name": "RegionId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1773,7 +1803,7 @@
           "example": "ri",
           "member": "string",
           "name": "InstanceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1783,7 +1813,7 @@
           "example": "0",
           "member": "string",
           "name": "OriginalCostWithRI",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1793,7 +1823,7 @@
           "example": "0",
           "member": "string",
           "name": "SPDeduction",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1803,9 +1833,19 @@
           "example": "0",
           "member": "string",
           "name": "OriginalCostWithSP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "账单归属月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-01 00:00:00",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7168,6 +7208,26 @@
           "example": "https://buy.cloud.tencent.com/price/cvm",
           "member": "string",
           "name": "FormulaUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单归属月\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-01 00:00:00",
+          "member": "string",
+          "name": "BillMonth",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账单归属日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-10-10 00:00:00",
+          "member": "string",
+          "name": "BillDay",
           "output_required": false,
           "type": "string",
           "value_allowed_null": true

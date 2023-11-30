@@ -72,12 +72,28 @@
         "title": "获取指定id设备信息"
       }
     ],
+    "GetDevicePayMode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevicePayMode\n<公共请求参数>\n\n{\n    \"DeviceIdList\": [\n        \"mna-test1\",\n        \"mna-test2\",\n        \"mna-test3\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": [\n            {\n                \"DeviceId\": \"mna-test1\",\n                \"PayMode\": 1,\n                \"PayModeDesc\": \"50G流量包\",\n                \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\"\n            },\n            {\n                \"DeviceId\": \"mna-test2\",\n                \"PayMode\": 1,\n                \"PayModeDesc\": \"20G流量包\",\n                \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\"\n            },\n            {\n                \"DeviceId\": \"mna-test3\",\n                \"PayMode\": 0,\n                \"PayModeDesc\": \"按流量后付费\"\n            }\n        ],\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "GetDevices": [
       {
         "document": "获取设备基本信息列表",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetDevices\n<公共请求参数>\n\n{\n    \"PageSize\": \"10\",\n    \"PageNumber\": \"1\",\n    \"Keyword\": \"mna-xxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"DeviceInfos\": [\n            {\n                \"DeviceId\": \"abc\",\n                \"DeviceName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"LastTime\": \"abc\",\n                \"Remark\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取设备基本信息列表"
+      }
+    ],
+    "GetFlowPackages": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetFlowPackages\n<公共请求参数>\n\n{\n    \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n    \"DeviceId\": \"mna-test1\",\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 1,\n        \"PackageList\": [\n            {\n                \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n                \"AppId\": 1,\n                \"PackageType\": \"DEVICE_1_FLOW_20G\",\n                \"Status\": 1,\n                \"ActiveTime\": 1697181612,\n                \"ExpireTime\": 1699860012,\n                \"DeviceList\": [\n                    \"mna-test1\",\n                    \"mna-test2\"\n                ],\n                \"CapacitySize\": 20000,\n                \"CapacityRemain\": 10000,\n                \"RenewFlag\": true\n            }\n        ],\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "GetFlowStatistic": [
@@ -98,7 +114,7 @@
       {
         "document": "租户查看厂商设备",
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetHardwareList\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 11\n}",
-        "output": "{\n    \"Response\": {\n        \"HardwareInfos\": [\n            {\n                \"ActiveTime\": \"1685514528\",\n                \"CreateTime\": \"1685510058\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-fsap0nz6lp\",\n                \"DeviceName\": \"DeviceName\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-08\",\n                \"VendorDescription\": \"\"\n            },\n            {\n                \"ActiveTime\": \"1685518319\",\n                \"CreateTime\": \"1685518183\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-yhf5rxj0ud\",\n                \"DeviceName\": \"DeviceName1\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-13\",\n                \"VendorDescription\": \"\"\n            }\n        ],\n        \"Length\": 2,\n        \"RequestId\": \"cad17990-449a-4961-830f-0cde5b8bd74a\",\n        \"TotalPage\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"HardwareInfos\": [\n            {\n                \"ActiveTime\": \"1685514528\",\n                \"CreateTime\": \"1685510058\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-fsap0nz6lp\",\n                \"DeviceName\": \"DeviceName\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-08\",\n                \"VendorDescription\": \"\",\n                \"LastOnlineTime\": \"1685518319\"\n            },\n            {\n                \"ActiveTime\": \"1685518319\",\n                \"CreateTime\": \"1685518183\",\n                \"Description\": \"\",\n                \"DeviceId\": \"mna-yhf5rxj0ud\",\n                \"DeviceName\": \"DeviceName1\",\n                \"LicenseChargingMode\": 1,\n                \"SN\": \"cpe-sn-13\",\n                \"VendorDescription\": \"\",\n                \"LastOnlineTime\": \"1685518319\"\n            }\n        ],\n        \"Length\": 2,\n        \"RequestId\": \"cad17990-449a-4961-830f-0cde5b8bd74a\",\n        \"TotalPage\": 1\n    }\n}",
         "title": "租户查看厂商设备"
       }
     ],
@@ -146,6 +162,22 @@
         "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetVendorHardware\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10,\n    \"Keyword\": \"abc\",\n    \"Status\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"VendorHardware\": [\n            {\n                \"HardwareId\": \"abc\",\n                \"SN\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"Status\": 0,\n                \"ActiveTime\": \"abc\",\n                \"Description\": \"abc\",\n                \"DeviceId\": \"abc\",\n                \"LicenseChargingMode\": 0,\n                \"LastOnlineTime\": \"abc\"\n            }\n        ],\n        \"Length\": 0,\n        \"TotalPage\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取厂商设备列表"
+      }
+    ],
+    "ModifyPackageRenewFlag": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelFlowPackage\n<公共请求参数>\n\n{\n    \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\",\n    \"RenewFlag\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\"\n    }\n}",
+        "title": "示例1"
+      }
+    ],
+    "OrderFlowPackage": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mna.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OrderFlowPackage\n<公共请求参数>\n\n{\n    \"PackageType\": \"DEVICE_1_FLOW_20G\",\n    \"DeviceList\": [\n        \"mna-test1\",\n        \"mna-test2\"\n    ],\n    \"AutoRenewFlag\": true,\n    \"PackageRegion\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"1206563f-f13f-4647-aaa8-37fa86954cc4-1\",\n        \"ResourceId\": \"56d11777-50f7-4c60-9c89-e7076c8529a9-0\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "UpdateDevice": [

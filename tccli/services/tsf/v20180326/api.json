@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateConfigTemplateWithDetailResp": {
-      "document": "创建参数模板,并返回模版详细信息",
+      "document": "创建参数模板,并返回模板详细信息",
       "input": "CreateConfigTemplateWithDetailRespRequest",
       "name": "创建参数模板返回详细信息",
       "output": "CreateConfigTemplateWithDetailRespResponse",
@@ -6966,7 +6966,7 @@
         {
           "disabled": false,
           "document": "配置模板描述",
-          "example": "11111111111",
+          "example": "test",
           "member": "string",
           "name": "ConfigTemplateDesc",
           "required": false,
@@ -6993,6 +6993,7 @@
           "example": "config-xxx",
           "member": "ConfigTemplate",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11863,8 +11864,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "无",
-          "example": "",
+          "document": "配置模板Id",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateId",
           "required": true,
@@ -11878,10 +11879,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "Result\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "document": "导入结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
           "member": "ConfigTemplate",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21895,7 +21897,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "编辑成功: true / 编辑失败: false",
+          "document": "更新成功: true / 更新失败: false",
           "example": "无",
           "member": "bool",
           "name": "Result",
@@ -28494,7 +28496,7 @@
         {
           "disabled": false,
           "document": "配置模板id",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateId",
           "required": true,
@@ -28503,7 +28505,7 @@
         {
           "disabled": false,
           "document": "配置模板名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateName",
           "required": true,
@@ -28512,7 +28514,7 @@
         {
           "disabled": false,
           "document": "配置模板对应的微服务框架",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateType",
           "required": true,
@@ -28521,7 +28523,7 @@
         {
           "disabled": false,
           "document": "配置模板数据",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateValue",
           "required": true,
@@ -28530,7 +28532,7 @@
         {
           "disabled": false,
           "document": "配置模板描述",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "ConfigTemplateDesc",
           "required": false,
@@ -28544,10 +28546,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "结果true：成功；false：失败；",
-          "example": "",
+          "document": "更新成功: true / 更新失败: false",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

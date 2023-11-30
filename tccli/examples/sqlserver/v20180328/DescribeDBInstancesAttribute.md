@@ -13,20 +13,25 @@ Output:
 ```
 {
     "Response": {
+        "BlockedThreshold": 0,
+        "EventSaveDays": 7,
         "InstanceId": "mssql-j8kv137v",
-        "RegularBackupSaveDays": 1,
-        "RequestId": "7",
-        "RegularBackupCounts": 1,
-        "RegularBackupEnable": "enable",
+        "RegularBackupCounts": 0,
+        "RegularBackupEnable": "disable",
+        "RegularBackupSaveDays": 0,
+        "RegularBackupStartTime": "",
         "RegularBackupStrategy": "months",
-        "RegularBackupStartTime": "2022-10-10",
-        "EventSaveDays": 0,
-        "TDEConfig": {
+        "RequestId": "9db13c19-d660-43c4-b340-7ba86b7b1470",
+        "SSLConfig": {
             "Encryption": "disable",
-            "CertificateAttribution": "self",
-            "QuoteUin": ""
+            "SSLValidity": 0,
+            "SSLValidityPeriod": "0000-00-00 00:00:00"
         },
-        "BlockedThreshold": 6
+        "TDEConfig": {
+            "CertificateAttribution": "self",
+            "Encryption": "disable",
+            "QuoteUin": ""
+        }
     }
 }
 ```

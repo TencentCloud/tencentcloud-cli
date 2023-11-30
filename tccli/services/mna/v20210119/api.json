@@ -63,11 +63,25 @@
       "output": "GetDeviceResponse",
       "status": "online"
     },
+    "GetDevicePayMode": {
+      "document": "获取设备付费模式",
+      "input": "GetDevicePayModeRequest",
+      "name": "获取设备付费模式",
+      "output": "GetDevicePayModeResponse",
+      "status": "online"
+    },
     "GetDevices": {
       "document": "获取设备信息列表",
       "input": "GetDevicesRequest",
       "name": "设备信息列表",
       "output": "GetDevicesResponse",
+      "status": "online"
+    },
+    "GetFlowPackages": {
+      "document": "获取流量包列表",
+      "input": "GetFlowPackagesRequest",
+      "name": "获取流量包列表",
+      "output": "GetFlowPackagesResponse",
       "status": "online"
     },
     "GetFlowStatistic": {
@@ -78,9 +92,9 @@
       "status": "online"
     },
     "GetHardwareList": {
-      "document": "租户获取厂商硬件列表",
+      "document": "获取厂商硬件列表",
       "input": "GetHardwareListRequest",
-      "name": "租户获取厂商硬件列表",
+      "name": "获取厂商硬件列表",
       "output": "GetHardwareListResponse",
       "status": "online"
     },
@@ -117,6 +131,20 @@
       "input": "GetVendorHardwareRequest",
       "name": "获取厂商硬件设备列表",
       "output": "GetVendorHardwareResponse",
+      "status": "online"
+    },
+    "ModifyPackageRenewFlag": {
+      "document": "可开启/关闭流量包自动续费，不影响当前周期正在生效的流量包。",
+      "input": "ModifyPackageRenewFlagRequest",
+      "name": "修改流量包自动续费标识",
+      "output": "ModifyPackageRenewFlagResponse",
+      "status": "online"
+    },
+    "OrderFlowPackage": {
+      "document": "购买预付费流量包",
+      "input": "OrderFlowPackageRequest",
+      "name": "订购流量包",
+      "output": "OrderFlowPackageResponse",
       "status": "online"
     },
     "UpdateDevice": {
@@ -1052,6 +1080,52 @@
       ],
       "usage": "out"
     },
+    "DevicePayModeInfo": {
+      "document": "设备付费模式信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式。\n1：预付费流量包\n0：按流量后付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "付费模式描述",
+          "example": "50G流量包",
+          "member": "string",
+          "name": "PayModeDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包ID，仅当付费模式为流量包类型时才有。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ExpectedThreshold": {
       "document": "用户期望门限",
       "members": [
@@ -1143,6 +1217,149 @@
         }
       ],
       "usage": "out"
+    },
+    "FlowPackageInfo": {
+      "document": "流量包信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包的唯一资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包所属的用户AppId",
+          "example": "无",
+          "member": "uint64",
+          "name": "AppId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包规格类型。可取值如下：\nDEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、\nDEVICE_3_FLOW_100G、\nDEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。\n档位也影响流量包可绑定的设备数量上限：\n20G：最多绑定1个设备\n50G：最多绑定2个设备\n100G：最多绑定3个设备\n500G：最多绑定5个设备",
+          "example": "DEVICE_1_FLOW_20G",
+          "member": "string",
+          "name": "PackageType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包状态，0：未生效，1：有效期内，2：已过期",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "生效时间，Unix时间戳格式，单位：秒",
+          "example": "1697181612",
+          "member": "int64",
+          "name": "ActiveTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过期时间，Unix时间戳格式，单位：秒",
+          "example": "1699860012",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包绑定的设备ID列表",
+          "example": "[\"mna-test1\",\"mna-test2\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包总容量，单位：MB",
+          "example": "20000",
+          "member": "uint64",
+          "name": "CapacitySize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流量包余量，单位：MB",
+          "example": "10000",
+          "member": "uint64",
+          "name": "CapacityRemain",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。true代表自动续费，false代表不自动续费",
+          "example": "true",
+          "member": "bool",
+          "name": "RenewFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GetDevicePayModeRequest": {
+      "document": "GetDevicePayMode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "设备ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceIdList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "GetDevicePayModeResponse": {
+      "document": "GetDevicePayMode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "结果信息",
+          "example": "无",
+          "member": "DevicePayModeInfo",
+          "name": "Result",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetDeviceRequest": {
       "document": "GetDevice请求参数结构体",
@@ -1249,6 +1466,89 @@
           "example": "2",
           "member": "int64",
           "name": "TotalPage",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowPackagesRequest": {
+      "document": "GetFlowPackages请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始",
+          "example": "1",
+          "member": "uint64",
+          "name": "PageNumber",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "流量包的唯一资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量包绑定的设备ID",
+          "example": "无",
+          "member": "string",
+          "name": "DeviceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量包状态，0：未生效，1：有效期内，2：已过期\n",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetFlowPackagesResponse": {
+      "document": "GetFlowPackages返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包列表",
+          "example": "无",
+          "member": "FlowPackageInfo",
+          "name": "PackageList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "12",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1402,6 +1702,7 @@
           "example": "无",
           "member": "HardwareInfo",
           "name": "HardwareInfos",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1411,6 +1712,7 @@
           "example": "12",
           "member": "int64",
           "name": "Length",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1420,6 +1722,7 @@
           "example": "3",
           "member": "int64",
           "name": "TotalPage",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1880,6 +2183,42 @@
       ],
       "usage": "out"
     },
+    "ModifyPackageRenewFlagRequest": {
+      "document": "ModifyPackageRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包的唯一资源ID",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。true代表自动续费，false代表不自动续费",
+          "example": "true",
+          "member": "bool",
+          "name": "RenewFlag",
+          "required": true,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyPackageRenewFlagResponse": {
+      "document": "ModifyPackageRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "MonitorData": {
       "document": "流量监控指标",
       "members": [
@@ -1987,6 +2326,70 @@
         }
       ],
       "usage": "in"
+    },
+    "OrderFlowPackageRequest": {
+      "document": "OrderFlowPackage请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包规格类型。可取值如下：\nDEVICE_1_FLOW_20G、DEVICE_2_FLOW_50G、\nDEVICE_3_FLOW_100G、\nDEVICE_5_FLOW_500G，分别代表20G、50G、100G、500G档位的流量包。\n档位也影响流量包可绑定的设备数量上限：\n20G：最多绑定1个设备\n50G：最多绑定2个设备\n100G：最多绑定3个设备\n500G：最多绑定5个设备",
+          "example": "DEVICE_1_FLOW_20G",
+          "member": "string",
+          "name": "PackageType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "流量包绑定的设备ID列表。捆绑设备个数上限取决于包的规格档位：\n20G：最多绑定1个设备\n50G：最多绑定2个设备\n100G：最多绑定3个设备\n500G：最多绑定5个设备",
+          "example": "[\"mna-test1\",\"mna-test2\"]",
+          "member": "string",
+          "name": "DeviceList",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "区域标识，0：国内，1：国外",
+          "example": "0",
+          "member": "int64",
+          "name": "PackageRegion",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "OrderFlowPackageResponse": {
+      "document": "OrderFlowPackage返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流量包的唯一资源ID",
+          "example": "56d11777-50f7-4c60-9c89-e7076c8529a9-0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SlotNetInfo": {
       "document": "网卡流量指标数据",

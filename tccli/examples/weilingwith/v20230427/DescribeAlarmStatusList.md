@@ -5,13 +5,25 @@
 Input: 
 
 ```
-tccli weilingwith DescribeAlarmStatusList --cli-unfold-argument ```
+tccli weilingwith DescribeAlarmStatusList --cli-unfold-argument  \
+    --ApplicationToken RQ7wnN7IMDutqe0JJ6t4MTqbBAePbryn \
+    --WorkspaceId 1124
+```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "257e0b36-70c5-4f51-ac81-83fca0ae7522"
+        "RequestId": "257e0b36-70c5-4f51-ac81-83fca0ae7522",
+        "Result": {
+            "List": [
+                {
+                    "StatusID": "test",
+                    "StatusName": "测试",
+                    "StatusType": ""
+                }
+            ]
+        }
     }
 }
 ```

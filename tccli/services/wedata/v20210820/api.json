@@ -2629,7 +2629,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TriggerType",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2640,7 +2640,7 @@
           "example": "20",
           "member": "uint64",
           "name": "EstimatedTime",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2662,7 +2662,7 @@
           "example": "ggrt",
           "member": "string",
           "name": "TaskName",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2743,6 +2743,39 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控对象id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "89",
+          "member": "string",
+          "name": "MonitorObjectId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控对象名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称A",
+          "member": "string",
+          "name": "MonitorObjectName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "float",
+          "name": "Threshold",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -2812,16 +2845,18 @@
           "example": "123",
           "member": "string",
           "name": "Id",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "告警指标,0任务失败,1任务运行超时,2任务停止,3任务暂停, 4读取速度,5写入速度,6读取吞吐 7写入吞吐, 8脏数据字节数,9脏数据条数,10任务异常,11任务检测异常, 12重启次数, 13任务延时, 14近20分内的重启次数 15传输延迟,16业务延迟, 50离线包CPU使用率, 51离线包内存使用率, 52离线包并行度使用率, 53离线包排队中的实例数, 54实时包资源使用率, 55实时包运行中的任务数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "AlarmIndicator",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2829,9 +2864,10 @@
         {
           "disabled": false,
           "document": "告警指标描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "任务失败",
           "member": "string",
           "name": "AlarmIndicatorDesc",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2839,9 +2875,10 @@
         {
           "disabled": false,
           "document": "指标阈值，1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "example": "1",
           "member": "uint64",
           "name": "TriggerType",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2852,16 +2889,18 @@
           "example": "123",
           "member": "uint64",
           "name": "EstimatedTime",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "实时任务告警需要的参数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "123",
+          "document": "告警阈值的算子,1 大于,2 小于\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "uint64",
           "name": "Operator",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -2872,6 +2911,7 @@
           "example": "ms",
           "member": "string",
           "name": "AlarmIndicatorUnit",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2882,16 +2922,18 @@
           "example": "1",
           "member": "int64",
           "name": "Duration",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "告警周期单位",
+          "document": "告警周期单位:hour,minute,day",
           "example": "minute",
           "member": "string",
           "name": "DurationUnit",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2902,9 +2944,21 @@
           "example": "1",
           "member": "int64",
           "name": "MaxTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指标阈值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "float",
+          "name": "Threshold",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -6170,6 +6224,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "责任人Id（多个责任人用小写分号隔开）",
+          "example": "无",
+          "member": "string",
+          "name": "InchargeIds",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6183,7 +6246,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6193,7 +6256,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6203,7 +6266,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6389,6 +6452,15 @@
           "name": "TaskType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)",
+          "example": "4",
+          "member": "uint64",
+          "name": "MonitorType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6402,6 +6474,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -12465,51 +12538,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "排序字段（AlarmTime）",
-          "example": "无",
-          "member": "OrderField",
-          "name": "OrderFields",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "类型(201表示实时，202表示离线)",
-          "example": "201",
-          "member": "uint64",
-          "name": "TaskType",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "开始时间",
-          "example": "2022-12-12 12:12:12",
-          "member": "string",
-          "name": "StartTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "结束时间",
-          "example": "2022-12-12 12:12:12",
-          "member": "string",
-          "name": "EndTime",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "项目ID",
           "example": "67847",
           "member": "string",
@@ -12534,6 +12562,60 @@
           "name": "PageSize",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件(key可以是：AlarmLevel,AlarmIndicator,KeyWord)",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段（AlarmTime）",
+          "example": "无",
+          "member": "OrderField",
+          "name": "OrderFields",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "类型(201表示实时，202表示离线)",
+          "example": "201",
+          "member": "uint64",
+          "name": "TaskType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "2022-12-12 12:12:12",
+          "member": "string",
+          "name": "StartTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "2022-12-12 12:12:12",
+          "member": "string",
+          "name": "EndTime",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)",
+          "example": "4",
+          "member": "uint64",
+          "name": "MonitorType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12547,7 +12629,7 @@
           "example": "无",
           "member": "AlarmEventInfo",
           "name": "AlarmEventInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12557,7 +12639,7 @@
           "example": "11",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12653,6 +12735,15 @@
           "name": "AlarmTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "监控对象类型(1:所有任务,2:指定任务,3:指定责任人,4:指定资源组)",
+          "example": "4",
+          "member": "uint64",
+          "name": "MonitorType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -12666,7 +12757,7 @@
           "example": "无",
           "member": "AlarmReceiverInfo",
           "name": "AlarmReceiverInfoList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12676,7 +12767,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14397,7 +14488,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "工作空间id",
+          "document": "项目id",
           "example": "1",
           "member": "string",
           "name": "ProjectId",
@@ -14424,7 +14515,7 @@
         },
         {
           "disabled": false,
-          "document": "可选过滤条件，Filter可选配置(参考): \"Name\": { \"type\": \"string\", \"description\": \"数据源名称\" }, \"Type\": { \"type\": \"string\", \"description\": \"类型\" }, \"ClusterId\": { \"type\": \"string\", \"description\": \"集群id\" }, \"CategoryId\": { \"type\": \"string\", \"description\": \"分类，项目或空间id\" }",
+          "document": "过滤条件（暂不支持）",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -14442,8 +14533,8 @@
         },
         {
           "disabled": false,
-          "document": "数据源类型",
-          "example": "mysql",
+          "document": "数据源类型，必选（如MYSQL、DLC等）",
+          "example": "MYSQL",
           "member": "string",
           "name": "Type",
           "required": false,
@@ -14451,7 +14542,7 @@
         },
         {
           "disabled": false,
-          "document": "数据源名称过滤用",
+          "document": "数据源名称过滤",
           "example": "123",
           "member": "string",
           "name": "DatasourceName",
@@ -14470,6 +14561,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14479,6 +14571,7 @@
           "example": "无",
           "member": "DatasourceBaseInfo",
           "name": "DatasourceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15574,7 +15667,7 @@
         },
         {
           "disabled": false,
-          "document": "事件实例目录",
+          "document": "事件实例目录,示例取值:\n- 已过期: expired\n- 未过期: consuming\n- 全部: all\n",
           "example": "无",
           "member": "string",
           "name": "Category",
@@ -15609,7 +15702,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "事件类型",
           "example": "无",
           "member": "string",
@@ -15627,7 +15720,7 @@
           "type": "string"
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "事件广播类型",
           "example": "无",
           "member": "string",
@@ -15636,8 +15729,8 @@
           "type": "string"
         },
         {
-          "disabled": false,
-          "document": "事件实例状态",
+          "disabled": true,
+          "document": "事件实例状态,示例取值:\n- 已消费: COMSUMED\n- 已过期: EXPIRED\n- 待消费: ACTIVE\n- 消费中: CONSUMING",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -15706,6 +15799,33 @@
           "name": "Dimension",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件实例有效时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeToLive",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "SortItem",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序顺序",
+          "example": "无",
+          "member": "string",
+          "name": "SortType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -15719,6 +15839,7 @@
           "example": "无",
           "member": "EventCaseAuditLogVOCollection",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -26271,6 +26392,84 @@
         }
       ],
       "type": "object"
+    },
+    "EventBatchCaseDTO": {
+      "document": "事件连续时间实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件实例id",
+          "example": "123",
+          "member": "string",
+          "name": "CaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件名",
+          "example": "event",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件触发起始时间",
+          "example": "yyyymmdd",
+          "member": "string",
+          "name": "StartDimension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者id",
+          "example": "123",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "的",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件触发结束时间",
+          "example": "yyyymmdd",
+          "member": "string",
+          "name": "EndDimension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件周期",
+          "example": "DAY",
+          "member": "string",
+          "name": "EventSubType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "EventCaseAuditLogOptDto": {
       "document": "事件实例",
@@ -51862,7 +52061,16 @@
           "example": "无",
           "member": "EventCaseDTO",
           "name": "EventCaseList",
-          "required": true,
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "事件实例信息(连续时间)",
+          "example": "无",
+          "member": "EventBatchCaseDTO",
+          "name": "EventBatchCaseList",
+          "required": false,
           "type": "list"
         }
       ],
@@ -51877,6 +52085,7 @@
           "example": "无",
           "member": "BatchOpsDTO",
           "name": "Data",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
