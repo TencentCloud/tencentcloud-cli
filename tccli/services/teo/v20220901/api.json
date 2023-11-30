@@ -10,7 +10,7 @@
     "BindSharedCNAME": {
       "document": "用于加速域名绑定或解绑共享 CNAME，该功能白名单内测中。",
       "input": "BindSharedCNAMERequest",
-      "name": "绑定共享CNAME",
+      "name": "绑定共享 CNAME",
       "output": "BindSharedCNAMEResponse",
       "status": "online"
     },
@@ -171,7 +171,7 @@
     "DeleteSharedCNAME": {
       "document": "用于删除共享 CNAME，该功能白名单内测中。",
       "input": "DeleteSharedCNAMERequest",
-      "name": "删除共享CNAME",
+      "name": "删除共享 CNAME",
       "output": "DeleteSharedCNAMEResponse",
       "status": "online"
     },

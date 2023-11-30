@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli vod SetVodDomainCertificate --cli-unfold-argument ```
+tccli vod SetVodDomainCertificate --cli-unfold-argument  \
+    --Domain myexample.com \
+    --Operation Set \
+    --CertID xfgfdgds
+```
 
 Output: 
 ```

@@ -32798,7 +32798,44 @@
     },
     "SetVodDomainCertificateRequest": {
       "document": "SetVodDomainCertificate请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "xxx.test.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "本次接口调用的操作类型，可选值：\n<li>Set：设置域名的 HTTPS 所需证书；</li>\n<li>Clear: 清空域名 HTTPS 配置，清空后该域名无法支持 HTTPS 访问。</li>",
+          "example": "Set",
+          "member": "string",
+          "name": "Operation",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "[腾讯云SSL](/document/product/400/7572) 上传的证书 ID。清空域名 HTTPS 配置时无需填写该字段。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "CertID",
+          "required": false,
+          "type": "string"
+        }
+      ],
       "type": "object"
     },
     "SetVodDomainCertificateResponse": {

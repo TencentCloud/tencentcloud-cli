@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli tsf DeleteImageTags --cli-unfold-argument  \
-    --ImageTags.0.RepoName xx \
-    --ImageTags.0.TagName xx \
-    --RepoType xx
+    --ImageTags.0.RepoName tsf_1000000/images \
+    --ImageTags.0.TagName consumer-demo \
+    --RepoType tcr
 ```
 
 Output: 
@@ -16,7 +16,7 @@ Output:
 {
     "Response": {
         "Result": true,
-        "RequestId": "xx"
+        "RequestId": "abc-defg"
     }
 }
 ```

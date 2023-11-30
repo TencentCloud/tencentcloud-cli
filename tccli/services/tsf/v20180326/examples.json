@@ -195,8 +195,8 @@
     "CreateLaneRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaneRule\n<公共请求参数>\n\n{\n    \"Remark\": \"xx\",\n    \"RuleTagList\": [\n        {\n            \"UpdateTime\": 0,\n            \"TagId\": \"xx\",\n            \"TagOperator\": \"xx\",\n            \"TagValue\": \"xx\",\n            \"TagName\": \"xx\",\n            \"LaneRuleId\": \"xx\",\n            \"CreateTime\": 0\n        }\n    ],\n    \"RuleName\": \"xx\",\n    \"ProgramIdList\": [\n        \"xx\"\n    ],\n    \"LaneId\": \"xx\",\n    \"RuleTagRelationship\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateLaneRule\n<公共请求参数>\n\n{\n    \"RuleName\": \"abc\",\n    \"Remark\": \"abc\",\n    \"RuleTagList\": [\n        {\n            \"TagId\": \"abc\",\n            \"TagName\": \"abc\",\n            \"TagOperator\": \"abc\",\n            \"TagValue\": \"abc\",\n            \"LaneRuleId\": \"abc\",\n            \"CreateTime\": 0,\n            \"UpdateTime\": 0\n        }\n    ],\n    \"RuleTagRelationship\": \"abc\",\n    \"LaneId\": \"abc\",\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建泳道规则"
       }
     ],
@@ -387,8 +387,8 @@
     "DeleteImageTags": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageTags\n<公共请求参数>\n\n{\n    \"ImageTags\": [\n        {\n            \"RepoName\": \"xx\",\n            \"TagName\": \"xx\"\n        }\n    ],\n    \"RepoType\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteImageTags\n<公共请求参数>\n\n{\n    \"ImageTags\": [\n        {\n            \"RepoName\": \"tsf_1000000/images\",\n            \"TagName\": \"consumer-demo\"\n        }\n    ],\n    \"RepoType\": \"tcr\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc-defg\"\n    }\n}",
         "title": "DeleteImageTags"
       }
     ],
@@ -396,7 +396,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DeleteLane\r\n&LaneId=lane-6ymrl42a\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"1f2a5c1d-d94b-4296-9b1a-208b237b64da\",\"Result\":true}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "删除泳道"
       }
     ],
@@ -1422,7 +1422,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyLane\r\n&LaneId=1\r\n&LaneName=1\r\n&Remark=1\r\n&<公共请求参数>",
-        "output": "{\"RequestId\":\"aa9c0ea6-5bc1-42c1-90d3-ad2b0653ed56\",\"Result\":true}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新泳道信息"
       }
     ],
@@ -1446,7 +1446,7 @@
       {
         "document": "修改命名空间示例",
         "input": "https://tsf.tencentcloudapi.com/?Action=ModifyNamespace\n&NamespaceId=namespace-by8nrgyk\n&NamespaceDesc=desc\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"517e8f36-91c6-466d-914e-0ce7cdf3d776\"\n    }\n}",
         "title": "修改命名空间示例"
       }
     ],

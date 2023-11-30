@@ -13,11 +13,11 @@ Output:
     "Response": {
         "Data": [
             {
-                "ApproveId": 1,
+                "ApproveId": "abc",
                 "Success": true
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

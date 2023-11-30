@@ -323,7 +323,7 @@
       "status": "online"
     },
     "RecognizeGeneralInvoice": {
-      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
+      "document": "本接口支持 PDF多页（最多30页）、一页中单张、多张、类型票据的混合识别，同时支持单选识别某类票据，已支持票种包括：增值税发票（专票、普票、卷票、区块链发票、通行费发票）、全电发票（专票、普票）、非税发票（通用票据、统一缴纳书）、定额发票、通用机打发票、购车发票（机动车销售发票、二手车发票）、火车票、出租车发票、机票行程单、汽车票、轮船票、过路过桥费发票共14种标准报销发票，支持OFD格式的 增值税电子普通发票、增值税电子专用发票、电子发票（普通发票）、电子发票（增值税专用发票）、电子发票（机票行程单）、电子发票（铁路电子客票）的第一页识别，并支持非上述类型的其他发票的智能识别，点击[立即试用](https://cloud.tencent.com/product/ocr)。\n\n默认接口请求频率限制：5次/秒。\n\n\n支持返回的细项目子票种SubType、子票种中文TypeDescription、以及对应所属大类票种Type 的说明如下列表：\n<table style=\"width:715px\">\n      <thead>\n        <tr>\n          <th style=\"width:200px\">SubType 子票种英文</th>\n          <th style=\"width:200px\">TypeDescription子票种中文</th>\n          <th >Type 所属大类票种</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td> VatSpecialInvoice</td>\n          <td> 增值税专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatCommonInvoice</td>\n          <td> 增值税普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicCommonInvoice </td>\n          <td> 增值税电子普通发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoice </td>\n          <td> 增值税电子专用发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceBlockchain</td>\n          <td> 区块链电子发票 </td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceToll</td>\n          <td> 增值税电子普通发票(通行费)</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatSalesList</td>\n          <td> 增值税销货清单</td>\n          <td> 3 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicSpecialInvoiceFull</td>\n          <td> 电子发票(专用发票)</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> VatElectronicInvoiceFull</td>\n          <td> 电子发票(普通发票) </td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicFlightTicketFull</td>\n          <td> 电子发票(机票行程单)，该子类目前仅支持ofd发票</td>\n          <td> 16 </td>\n        </tr>\n         <tr>\n          <td> ElectronicTrainTicketFull</td>\n          <td> 电子发票(铁路电子客票)，该子类目前仅支持ofd发票</td>\n          <td> 16 </td>\n        </tr>\n        <tr>\n          <td> MotorVehicleSaleInvoice </td>\n          <td> 机动车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> UsedCarPurchaseInvoice </td>\n          <td> 二手车销售统一发票 </td>\n          <td> 12 </td>\n        </tr>\n        <tr>\n          <td> VatInvoiceRoll </td>\n          <td> 增值税普通发票(卷票) </td>\n          <td> 11 </td>\n        </tr>\n        <tr>\n          <td> TaxiTicket </td>\n          <td> 出租车发票 </td>\n          <td> 0 </td>\n        </tr>\n        <tr>\n          <td> QuotaInvoice </td>\n          <td> 定额发票 </td>\n          <td> 1 </td>\n        </tr>\n        <tr>\n          <td> TrainTicket </td>\n          <td> 火车票 </td>\n          <td> 2 </td>\n        </tr>\n        <tr>\n          <td> AirTransport </td>\n          <td> 机票行程单 </td>\n          <td> 5 </td>\n        </tr>\n        <tr>\n          <td> MachinePrintedInvoice </td>\n          <td> 通用机打发票 </td>\n          <td> 8 </td>\n        </tr>\n        <tr>\n          <td> BusInvoice </td>\n          <td> 汽车票 </td>\n          <td> 9 </td>\n        </tr>\n        <tr>\n          <td> ShippingInvoice </td>\n          <td> 轮船票 </td>\n          <td> 10 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeGeneralBill </td>\n          <td> 非税收入通用票据 </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> NonTaxIncomeElectronicBill </td>\n          <td> 非税收入一般缴款书(电子) </td>\n          <td> 15 </td>\n        </tr>\n        <tr>\n          <td> TollInvoice </td>\n          <td> 过路过桥费发票 </td>\n          <td> 13 </td>\n        </tr>\n        <tr>\n          <td> MedicalOutpatientInvoice </td>\n          <td> 医疗门诊收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> MedicalHospitalizedInvoice </td>\n          <td> 医疗住院收费票据（电子） </td>\n          <td> 17 </td>\n        </tr>\n        <tr>\n          <td> OtherInvoice </td>\n          <td> 其他发票 </td>\n          <td> -1 </td>\n        </tr>\n      </tbody>\n    </table>",
       "input": "RecognizeGeneralInvoiceRequest",
       "name": "通用票据识别（高级版）",
       "output": "RecognizeGeneralInvoiceResponse",
@@ -3132,6 +3132,448 @@
       ],
       "type": "object"
     },
+    "ElectronicFlightTicketFull": {
+      "document": "电子发票（机票行程单）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "旅客姓名",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "有效身份证件号码",
+          "example": "无",
+          "member": "string",
+          "name": "UserID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "签注",
+          "example": "无",
+          "member": "string",
+          "name": "Endorsement",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "GP单号",
+          "example": "无",
+          "member": "string",
+          "name": "GPOrder",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "票价",
+          "example": "无",
+          "member": "string",
+          "name": "Fare",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "燃油附加费",
+          "example": "无",
+          "member": "string",
+          "name": "FuelSurcharge",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税率",
+          "example": "无",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "增值税税额",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "民航发展基金",
+          "example": "无",
+          "member": "string",
+          "name": "DevelopmentFund",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "其他税费",
+          "example": "无",
+          "member": "string",
+          "name": "OtherTax",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "合计",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号码",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicTicketNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验证码",
+          "example": "无",
+          "member": "string",
+          "name": "VerificationCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "提示信息",
+          "example": "无",
+          "member": "string",
+          "name": "PromptInformation",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "保险费",
+          "example": "无",
+          "member": "string",
+          "name": "Insurance",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填开单位",
+          "example": "无",
+          "member": "string",
+          "name": "Issuer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "填开时间",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "国内国际标识",
+          "example": "无",
+          "member": "string",
+          "name": "DomesticInternationalTag",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买方名称",
+          "example": "无",
+          "member": "string",
+          "name": "Buyer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "销售方名称",
+          "example": "无",
+          "member": "string",
+          "name": "Seller",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerTaxID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机票详细信息元组",
+          "example": "无",
+          "member": "FlightItemInfo",
+          "name": "FlightItems",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ElectronicTrainTicketFull": {
+      "document": "电子发票（火车票）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电子发票类型",
+          "example": "无",
+          "member": "string",
+          "name": "TypeOfVoucher",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicTicketNum",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开票日期",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "始发站",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到达站",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOff",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "火车号",
+          "example": "无",
+          "member": "string",
+          "name": "TrainNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "乘车日期",
+          "example": "无",
+          "member": "string",
+          "name": "DateGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "始发时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位类型",
+          "example": "无",
+          "member": "string",
+          "name": "Seat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位号",
+          "example": "无",
+          "member": "string",
+          "name": "SeatNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "票价",
+          "example": "无",
+          "member": "string",
+          "name": "Fare",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "身份证号",
+          "example": "无",
+          "member": "string",
+          "name": "UserID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "乘车人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "UserName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "金额",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税率",
+          "example": "无",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "税额",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "购买方名称",
+          "example": "无",
+          "member": "string",
+          "name": "Buyer",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "统一社会信用代码",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerTaxID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "原发票号码",
+          "example": "无",
+          "member": "string",
+          "name": "OriginalNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "EnglishOCRRequest": {
       "document": "EnglishOCR请求参数结构体",
       "members": [
@@ -3800,6 +4242,102 @@
           "member": "string",
           "name": "FareBasis",
           "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "FlightItemInfo": {
+      "document": "机票详细信息元组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "出发站",
+          "example": "无",
+          "member": "string",
+          "name": "TerminalGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "到达站",
+          "example": "无",
+          "member": "string",
+          "name": "TerminalGetOff",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "承运人",
+          "example": "无",
+          "member": "string",
+          "name": "Carrier",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "航班号",
+          "example": "无",
+          "member": "string",
+          "name": "FlightNumber",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "座位等级",
+          "example": "无",
+          "member": "string",
+          "name": "Seat",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "乘机日期",
+          "example": "无",
+          "member": "string",
+          "name": "DateGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "乘机时间",
+          "example": "无",
+          "member": "string",
+          "name": "TimeGetOn",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客票级别/客票类别",
+          "example": "无",
+          "member": "string",
+          "name": "FareBasis",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "免费行李额",
+          "example": "无",
+          "member": "string",
+          "name": "Allow",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -12303,6 +12841,26 @@
           "example": "无",
           "member": "VatInvoiceInfo",
           "name": "VatSalesList",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电子发票（火车票）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ElectronicTrainTicketFull",
+          "name": "ElectronicTrainTicketFull",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电子发票（机票行程单）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ElectronicFlightTicketFull",
+          "name": "ElectronicFlightTicketFull",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true

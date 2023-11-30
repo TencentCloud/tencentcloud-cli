@@ -1701,7 +1701,7 @@
     "SetVodDomainCertificate": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVodDomainCertificate\n<公共请求参数>\n\n{}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetVodDomainCertificate\n<公共请求参数>\n\n{\n    \"Domain\": \"myexample.com\",\n    \"Operation\": \"Set\",\n    \"CertID\": \"xfgfdgds\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"12ae8d8e-dce3-4551-9d4b-5594145287e1\"\n    }\n}",
         "title": "设置域名 HTTPS 证书信息"
       }

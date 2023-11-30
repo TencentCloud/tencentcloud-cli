@@ -11,7 +11,7 @@
     "CreateAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=CreateAlias\n&Name=<AliasName>\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&FunctionVersion=<FunctionVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=CreateAlias\n&Name=TestAlias\n&Namespace=default\n&FunctionName=TestFunction\n&FunctionVersion=$LATEST\n&RoutingConfig.AdditionalVersionWeights.0.Version=1\n&RoutingConfig.AdditionalVersionWeights.0.Weight=0.5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "创建一个别名"
       }
@@ -321,7 +321,7 @@
     "UpdateAlias": [
       {
         "document": "",
-        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=<AliasName>\n&Namespace=<Namespace>\n&FunctionName=<FunctionName>\n&FunctionVersion=<FunctionVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Version=<OtherVersion>\n&RoutingConfig.AdditionalVersionWeights.0.Weight=<Weight>\n&<公共请求参数>",
+        "input": "https://scf.tencentcloudapi.com/?Action=UpdateAlias\n&Name=abcAlias\n&Namespace=default\n&FunctionName=abc\n&FunctionVersion=1\n&RoutingConfig.AdditionalVersionWeights.0.Version=2\n&RoutingConfig.AdditionalVersionWeights.0.Weight=0.5\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "更新别名的配置"
       }

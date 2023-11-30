@@ -19,8 +19,22 @@ Output:
 {
     "Response": {
         "DeployRecordId": 1,
-        "DeployStatus": 1,
-        "RequestId": "c9c9d2fb-41c0-43b6-8c10-44c81de553c1"
+        "DeployStatus": 0,
+        "UpdateSyncProgress": [
+            {
+                "ResourceType": "abc",
+                "UpdateSyncProgressRegions": [
+                    {
+                        "Region": "abc",
+                        "TotalCount": 0,
+                        "OffsetCount": 0,
+                        "Status": "abc"
+                    }
+                ],
+                "Status": 0
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

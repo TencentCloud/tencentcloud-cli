@@ -2156,6 +2156,13 @@
       "output": "TaskLogResponse",
       "status": "online"
     },
+    "TriggerDsEvent": {
+      "document": "事件管理-触发事件",
+      "input": "TriggerDsEventRequest",
+      "name": "触发事件",
+      "output": "TriggerDsEventResponse",
+      "status": "online"
+    },
     "TriggerEvent": {
       "document": "<p style=\"color:red;\">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>\n触发事件",
       "input": "TriggerEventRequest",
@@ -5436,6 +5443,52 @@
           "name": "TotalCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "BatchOpsDTO": {
+      "document": "批量操作结果，带失败原因",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成功数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "SuccessCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "int64",
+          "name": "FailCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "FailMessage",
+          "name": "FailMessageList",
+          "required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -26533,6 +26586,66 @@
       ],
       "usage": "out"
     },
+    "EventCaseDTO": {
+      "document": "事件实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "事件实例id",
+          "example": "123",
+          "member": "string",
+          "name": "CaseId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件名",
+          "example": "event",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件格式",
+          "example": "yyyymmdd",
+          "member": "string",
+          "name": "Dimension",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreationTs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费者id",
+          "example": "123",
+          "member": "string",
+          "name": "ConsumerId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "描述信息",
+          "example": "的",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "EventCaseOpsDto": {
       "document": "EventCaseOpsDto",
       "members": [
@@ -27068,6 +27181,32 @@
         }
       ],
       "usage": "both"
+    },
+    "FailMessage": {
+      "document": "错误处理结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据唯一标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "数据不存在",
+          "member": "string",
+          "name": "ErrorMessage",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FieldConfig": {
       "document": "字段变量",
@@ -33386,7 +33525,7 @@
           "example": "无",
           "member": "ApproveModify",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -51704,6 +51843,51 @@
         }
       ],
       "usage": "out"
+    },
+    "TriggerDsEventRequest": {
+      "document": "TriggerDsEvent请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目id",
+          "example": "123",
+          "member": "string",
+          "name": "ProjectId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件实例信息",
+          "example": "无",
+          "member": "EventCaseDTO",
+          "name": "EventCaseList",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "TriggerDsEventResponse": {
+      "document": "TriggerDsEvent返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "BatchOpsDTO",
+          "name": "Data",
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "TriggerEventRequest": {
       "document": "TriggerEvent请求参数结构体",

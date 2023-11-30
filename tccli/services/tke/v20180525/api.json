@@ -826,6 +826,13 @@
       "output": "DescribeImagesResponse",
       "status": "online"
     },
+    "DescribeLogSwitches": {
+      "document": "查询集群日志（审计、事件、普通日志）开关列表",
+      "input": "DescribeLogSwitchesRequest",
+      "name": "查询集群日志开关列表",
+      "output": "DescribeLogSwitchesResponse",
+      "status": "online"
+    },
     "DescribePodDeductionRate": {
       "document": "查询各个规格的 Pod 的抵扣率",
       "input": "DescribePodDeductionRateRequest",
@@ -11331,6 +11338,52 @@
           "example": "无",
           "member": "ImageInstance",
           "name": "ImageInstanceSet",
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogSwitchesRequest": {
+      "document": "DescribeLogSwitches请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID列表",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterIds",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "集群类型，tke 或eks",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeLogSwitchesResponse": {
+      "document": "DescribeLogSwitches返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群日志开关集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Switch",
+          "name": "SwitchSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -23097,6 +23150,128 @@
           "name": "Gpu",
           "output_required": false,
           "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "Switch": {
+      "document": "集群日志开关集合",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "审计开关的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchInfo",
+          "name": "Audit",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件开关的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchInfo",
+          "name": "Event",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通日志的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchInfo",
+          "name": "Log",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "master 日志详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SwitchInfo",
+          "name": "MasterLog",
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SwitchInfo": {
+      "document": "日志开关详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开启标识符 true代表开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "d12706e7-ae3b-42cf-9dab-d41e71489j4d",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志主题ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "77b6130b-81cf-46dc-9faf-8d4b5afc1rt3s",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前log-agent版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.1.10",
+          "member": "string",
+          "name": "Version",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否可升级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "UpgradeAble",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志主题所属region\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "TopicRegion",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

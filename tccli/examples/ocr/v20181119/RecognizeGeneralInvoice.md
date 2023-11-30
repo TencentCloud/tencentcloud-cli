@@ -66,6 +66,8 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
+                    "ElectronicTrainTicketFull": null,
+                    "ElectronicFlightTicketFull": null,
                     "VatSpecialInvoice": {
                         "AcquisitionMark": 0,
                         "AgentMark": 0,
@@ -197,7 +199,9 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null
+                    "VatSpecialInvoice": null,
+                    "ElectronicFlightTicketFull": null,
+                    "ElectronicTrainTicketFull": null
                 },
                 "Page": 1,
                 "CutImage": ""
@@ -279,7 +283,9 @@ Output:
                     "VatElectronicSpecialInvoiceFull": null,
                     "VatInvoiceRoll": null,
                     "VatSalesList": null,
-                    "VatSpecialInvoice": null
+                    "VatSpecialInvoice": null,
+                    "ElectronicTrainTicketFull": null,
+                    "ElectronicFlightTicketFull": null
                 },
                 "Page": 1,
                 "CutImage": ""

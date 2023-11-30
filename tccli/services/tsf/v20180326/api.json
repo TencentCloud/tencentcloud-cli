@@ -1009,7 +1009,7 @@
       "status": "online"
     },
     "DescribeSimpleNamespaces": {
-      "document": "查询简单命名空间列表 ",
+      "document": "查询简单命名空间列表",
       "input": "DescribeSimpleNamespacesRequest",
       "name": "查询简单命名空间列表",
       "output": "DescribeSimpleNamespacesResponse",
@@ -7880,7 +7880,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9336,7 +9336,7 @@
           "example": "1",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9355,7 +9355,7 @@
         {
           "disabled": false,
           "document": "泳道Idl",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LaneId",
           "required": true,
@@ -9369,10 +9369,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "true / false",
-          "example": "",
+          "document": "删除成功: true / 删除失败: false",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -11218,7 +11219,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "是否无视权限查询全租户的，默认 true。注：无论 true 还是 false，PackageSpaceUsed 和 ConsulInstanceCount  都是全租户的",
+          "document": "是否拥有权限查询全租户的，默认 true。注：无论 true 还是 false，PackageSpaceUsed 和 ConsulInstanceCount  都是全租户的",
           "example": "true",
           "member": "bool",
           "name": "All",
@@ -11237,7 +11238,7 @@
           "example": "无",
           "member": "OverviewBasicResourceUsage",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -16149,7 +16150,7 @@
         },
         {
           "disabled": false,
-          "document": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认，命名空间。1：非默认命名空间",
+          "document": "通过是否是默认命名空间过滤，不传表示拉取全部命名空间。0：默认命名空间。1：非默认命名空间",
           "example": "无",
           "member": "string",
           "name": "IsDefault",
@@ -16177,7 +16178,7 @@
           "example": "无",
           "member": "TsfPageNamespace",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -21063,75 +21064,82 @@
         {
           "disabled": false,
           "document": "标签ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagName",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签操作符\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagOperator",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TagValue",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "泳道规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LaneRuleId",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
+          "required": false,
           "type": "int",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "LaneRules": {
       "document": "泳道规则分页查询",
@@ -21569,11 +21577,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "true/false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "true：操作成功\nfalse：操作失败\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -21855,7 +21863,7 @@
         {
           "disabled": false,
           "document": "泳道ID",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LaneId",
           "required": true,
@@ -21864,7 +21872,7 @@
         {
           "disabled": false,
           "document": "泳道名称",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "LaneName",
           "required": true,
@@ -21873,7 +21881,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Remark",
           "required": true,
@@ -21887,10 +21895,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作状态",
-          "example": "",
+          "document": "编辑成功: true / 编辑失败: false",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -22044,7 +22053,7 @@
         {
           "disabled": false,
           "document": "命名空间ID",
-          "example": "x",
+          "example": "namespace-123456",
           "member": "string",
           "name": "NamespaceId",
           "required": true,
@@ -22053,7 +22062,7 @@
         {
           "disabled": false,
           "document": "命名空间名称",
-          "example": "x",
+          "example": "PROD命名空间",
           "member": "string",
           "name": "NamespaceName",
           "required": false,
@@ -22062,7 +22071,7 @@
         {
           "disabled": false,
           "document": "命名空间备注",
-          "example": "x",
+          "example": "PROD命名空间",
           "member": "string",
           "name": "NamespaceDesc",
           "required": false,
@@ -22071,7 +22080,7 @@
         {
           "disabled": false,
           "document": "是否开启高可用",
-          "example": "x",
+          "example": "1",
           "member": "string",
           "name": "IsHaEnable",
           "required": false,
@@ -22089,6 +22098,7 @@
           "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22864,7 +22874,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22874,7 +22884,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22884,7 +22894,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22894,7 +22904,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22904,7 +22914,7 @@
           "example": "无",
           "member": "string",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22914,7 +22924,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22924,7 +22934,7 @@
           "example": "无",
           "member": "bool",
           "name": "DeleteFlag",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -22934,7 +22944,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22944,7 +22954,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22954,7 +22964,7 @@
           "example": "无",
           "member": "Cluster",
           "name": "ClusterList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -22964,7 +22974,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22974,7 +22984,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22984,7 +22994,7 @@
           "example": "无",
           "member": "string",
           "name": "NamespaceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -22994,7 +23004,7 @@
           "example": "无",
           "member": "string",
           "name": "IsHaEnable",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23004,7 +23014,7 @@
           "example": "无",
           "member": "bool",
           "name": "KubeInjectEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }

@@ -35,6 +35,13 @@
       "output": "AlterDMSTableResponse",
       "status": "online"
     },
+    "AssignMangedTableProperties": {
+      "document": "分配原生表表属性",
+      "input": "AssignMangedTablePropertiesRequest",
+      "name": "分配原生表表属性",
+      "output": "AssignMangedTablePropertiesResponse",
+      "status": "online"
+    },
     "AttachUserPolicy": {
       "document": "绑定鉴权策略到用户",
       "input": "AttachUserPolicyRequest",
@@ -1369,6 +1376,69 @@
         }
       ],
       "usage": "both"
+    },
+    "AssignMangedTablePropertiesRequest": {
+      "document": "AssignMangedTableProperties请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表基本信息",
+          "example": "无",
+          "member": "TableBaseInfo",
+          "name": "TableBaseInfo",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "表字段信息",
+          "example": "无",
+          "member": "TColumn",
+          "name": "Columns",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表分区信息",
+          "example": "无",
+          "member": "TPartition",
+          "name": "Partitions",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "表属性信息",
+          "example": "无",
+          "member": "Property",
+          "name": "Properties",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "V2 upsert表 upsert键",
+          "example": "[\"col1\",col2\"\"]",
+          "member": "string",
+          "name": "UpsertKeys",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "AssignMangedTablePropertiesResponse": {
+      "document": "AssignMangedTableProperties返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "AttachUserPolicyRequest": {
       "document": "AttachUserPolicy请求参数结构体",

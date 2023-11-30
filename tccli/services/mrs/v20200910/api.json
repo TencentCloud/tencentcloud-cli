@@ -4600,7 +4600,7 @@
           "example": "2011-12-07",
           "member": "string",
           "name": "AdmissionTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4610,7 +4610,7 @@
           "example": "2011-12-16",
           "member": "string",
           "name": "DischargeTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4620,17 +4620,17 @@
           "example": "9天",
           "member": "string",
           "name": "AdmissionDays",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "入院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.年龄相关性白内障(双) :2013-09\\n2.倒睫(双) st.A_const:118.3\\n3.年龄相关性黄斑病变(左)",
           "member": "string",
           "name": "AdmissionDignosis",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4640,7 +4640,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "AdmissionCondition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4650,7 +4650,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "DiagnosisTreatment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4660,7 +4660,7 @@
           "example": "1.年龄相关性白内障(双)\\n2.倒睫(双)\\n3.年龄相关性黄斑病变(左)",
           "member": "string",
           "name": "DischargeDiagnosis",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4670,7 +4670,17 @@
           "example": "\"\"",
           "member": "string",
           "name": "DischargeInstruction",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入院诊断\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1.年龄相关性白内障(双) :2013-09\\n2.倒睫(双) st.A_const:118.3\\n3.年龄相关性黄斑病变(左)",
+          "member": "string",
+          "name": "AdmissionDiagnosis",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5342,12 +5352,12 @@
       "document": "检验报告v3",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "检验报告V3结论\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[object]",
           "member": "TableIndicators",
           "name": "TableIndictors",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5357,8 +5367,18 @@
           "example": "\"\"",
           "member": "string",
           "name": "Version",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "检验报告V3结论\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[object]",
+          "member": "TableIndicators",
+          "name": "TableIndicators",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": true
         }
       ],
@@ -12461,12 +12481,12 @@
       "document": "病历",
       "members": [
         {
-          "disabled": false,
+          "disabled": true,
           "document": "入院\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"\"",
           "member": "string",
           "name": "DmissionCondition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12476,7 +12496,7 @@
           "example": "“”",
           "member": "string",
           "name": "ChiefComplaint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12486,7 +12506,7 @@
           "example": "“”",
           "member": "string",
           "name": "DiseasePresent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12496,7 +12516,7 @@
           "example": "“”",
           "member": "string",
           "name": "SymptomsAndSigns",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12506,7 +12526,7 @@
           "example": "“”",
           "member": "string",
           "name": "AuxiliaryExamination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12516,7 +12536,7 @@
           "example": "“”",
           "member": "string",
           "name": "BodyExamination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12526,7 +12546,7 @@
           "example": "“”",
           "member": "string",
           "name": "SpecialistExamination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12536,7 +12556,7 @@
           "example": "“”",
           "member": "string",
           "name": "MentalExamination",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12546,7 +12566,7 @@
           "example": "“”",
           "member": "string",
           "name": "CheckRecord",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12556,7 +12576,7 @@
           "example": "“”",
           "member": "string",
           "name": "InspectResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12566,7 +12586,7 @@
           "example": "“”",
           "member": "string",
           "name": "IncisionHealing",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12576,7 +12596,7 @@
           "example": "“”",
           "member": "string",
           "name": "TreatmentSuggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12586,7 +12606,7 @@
           "example": "“”",
           "member": "string",
           "name": "FollowUpRequirements",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12596,7 +12616,7 @@
           "example": "“”",
           "member": "string",
           "name": "CheckAndTreatmentProcess",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12606,7 +12626,7 @@
           "example": "“”",
           "member": "string",
           "name": "SurgeryCondition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12616,7 +12636,7 @@
           "example": "“”",
           "member": "string",
           "name": "ConditionChanges",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12626,7 +12646,7 @@
           "example": "“”",
           "member": "string",
           "name": "DischargeCondition",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12636,7 +12656,7 @@
           "example": "“”",
           "member": "string",
           "name": "PTNM",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12646,7 +12666,7 @@
           "example": "“”",
           "member": "string",
           "name": "PTNMM",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12656,7 +12676,7 @@
           "example": "“”",
           "member": "string",
           "name": "PTNMN",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12666,7 +12686,7 @@
           "example": "“”",
           "member": "string",
           "name": "PTNMT",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12676,7 +12696,7 @@
           "example": "“”",
           "member": "string",
           "name": "ECOG",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12686,7 +12706,7 @@
           "example": "“”",
           "member": "string",
           "name": "NRS",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12696,7 +12716,7 @@
           "example": "“”",
           "member": "string",
           "name": "KPS",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12706,7 +12726,7 @@
           "example": "“”",
           "member": "string",
           "name": "DeathDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12716,7 +12736,7 @@
           "example": "“”",
           "member": "string",
           "name": "RelapseDate",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12726,7 +12746,17 @@
           "example": "“”",
           "member": "string",
           "name": "ObservationDays",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入院\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "“”",
+          "member": "string",
+          "name": "AdmissionCondition",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

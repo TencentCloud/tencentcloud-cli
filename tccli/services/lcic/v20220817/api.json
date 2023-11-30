@@ -1227,7 +1227,7 @@
         },
         {
           "disabled": false,
-          "document": "转码类型，可以有如下取值：\n0 无需转码（默认）\n1 需要转码的文档，ppt，pptx，pdf，doc，docx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
+          "document": "转码类型，可以有如下取值：\n0 无需转码（默认），bmp，jpg，jpeg，png，gif\n1 需要转码的文档，ppt，pptx，pdf，doc，docx，xls，xlsx\n2 需要转码的视频，mp4，3pg，mpeg，avi，flv，wmv，rm，h264等\n2 需要转码的音频，mp3，wav，wma，aac，flac，opus",
           "example": "1",
           "member": "uint64",
           "name": "TranscodeType",

@@ -2248,7 +2248,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyApproveStatus\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ApproveId\": 1,\n                \"Success\": true\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"ApproveId\": \"abc\",\n                \"Success\": true\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "样例"
       },
       {
@@ -2648,6 +2648,14 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TaskLog\n<公共请求参数>\n\n{\n    \"ProjectId\": \"**\",\n    \"StartTime\": 1659258887409,\n    \"EndTime\": 1659345287409,\n    \"Limit\": 100,\n    \"OrderType\": \"desc\",\n    \"TaskId\": \"**\",\n    \"TaskType\": 201\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"LogContentList\": [\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            },\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            },\n            {\n                \"PkgId\": \"xx\",\n                \"Log\": \"xx\",\n                \"Time\": 1\n            }\n        ]\n    }\n}",
         "title": "查询管控日志"
+      }
+    ],
+    "TriggerDsEvent": [
+      {
+        "document": "触发事件",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TriggerDsEvent\n<公共请求参数>\n\n{\n    \"ProjectId\": \"abc\",\n    \"EventCaseList\": [\n        {\n            \"CaseId\": \"abc\",\n            \"Name\": \"abc\",\n            \"Dimension\": \"abc\",\n            \"CreationTs\": \"abc\",\n            \"ConsumerId\": \"abc\",\n            \"Description\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"TotalCount\": 0,\n            \"SuccessCount\": 0,\n            \"FailCount\": 0,\n            \"FailMessageList\": [\n                {\n                    \"Key\": \"abc\",\n                    \"ErrorMessage\": \"abc\"\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "触发事件"
       }
     ],
     "TriggerEvent": [

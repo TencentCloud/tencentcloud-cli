@@ -1538,6 +1538,46 @@
           "output_required": true,
           "type": "bool",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书域名是否全部在DNSPOD托管解析\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsDNSPODResolve",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是权益点购买的证书\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPackage",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否存在私钥密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "KeyPasswordCustomFlag",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "支持下载的WEB服务器类型： nginx、apache、iis、tomcat、jks、root、other\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SupportDownloadType",
+          "name": "SupportDownloadType",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -8176,6 +8216,82 @@
       ],
       "usage": "both"
     },
+    "SupportDownloadType": {
+      "document": "支持下载的类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否可以下载nginx可用格式",
+          "example": "无",
+          "member": "bool",
+          "name": "NGINX",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载apache可用格式",
+          "example": "无",
+          "member": "bool",
+          "name": "APACHE",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载tomcat可用格式",
+          "example": "无",
+          "member": "bool",
+          "name": "TOMCAT",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载iis可用格式",
+          "example": "无",
+          "member": "bool",
+          "name": "IIS",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载JKS可用格式",
+          "example": "无",
+          "member": "bool",
+          "name": "JKS",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载其他格式",
+          "example": "无",
+          "member": "bool",
+          "name": "OTHER",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否可以下载根证书",
+          "example": "无",
+          "member": "bool",
+          "name": "ROOT",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "SyncTaskBindResourceResult": {
       "document": "异步任务证书关联云资源结果",
       "members": [
@@ -8879,7 +8995,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一键更新原证书ID",
+          "document": "一键更新原证书ID， 查询绑定该证书的云资源然后进行证书更新",
           "example": "无",
           "member": "string",
           "name": "OldCertificateId",
@@ -8888,7 +9004,7 @@
         },
         {
           "disabled": false,
-          "document": "需要部署的资源类型，参数值可选：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb",
+          "document": "需要部署的资源类型，参数值可选（小写）：clb、cdn、waf、live、ddos、teo、apigateway、vod、tke、tcb、tse",
           "example": "无",
           "member": "string",
           "name": "ResourceTypes",
@@ -8897,7 +9013,7 @@
         },
         {
           "disabled": false,
-          "document": "一键更新新证书ID",
+          "document": "一键更新新证书ID，不传该则证书公钥和私钥必传",
           "example": "无",
           "member": "string",
           "name": "CertificateId",
@@ -8915,7 +9031,7 @@
         },
         {
           "disabled": false,
-          "document": "云资源需要部署的地域列表",
+          "document": "云资源需要部署的地域列表，支持地域的云资源类型必传，如：clb、tke、apigateway、waf、tcb、tse等",
           "example": "无",
           "member": "ResourceTypeRegions",
           "name": "ResourceTypesRegions",
@@ -8933,7 +9049,7 @@
         },
         {
           "disabled": false,
-          "document": "证书私钥，若上传证书公钥， 则证书私钥必填",
+          "document": "证书私钥，若上传证书公钥， 则CertificateId不用传",
           "example": "无",
           "member": "string",
           "name": "CertificatePrivateKey",
@@ -8942,7 +9058,7 @@
         },
         {
           "disabled": false,
-          "document": "旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知",
+          "document": "旧证书是否忽略到期提醒  0:不忽略通知。1:忽略通知，忽略OldCertificateId到期提醒",
           "example": "无",
           "member": "uint64",
           "name": "ExpiringNotificationSwitch",
@@ -8951,7 +9067,7 @@
         },
         {
           "disabled": false,
-          "document": "相同的证书是否允许重复上传，若上传证书公钥， 则可以配置该参数",
+          "document": "相同的证书是否允许重复上传，若选择上传证书， 则可以配置该参数",
           "example": "无",
           "member": "bool",
           "name": "Repeatable",
@@ -8960,7 +9076,7 @@
         },
         {
           "disabled": false,
-          "document": "是否允许下载，若上传证书公钥， 则可以配置该参数",
+          "document": "是否允许下载，若选择上传证书， 则可以配置该参数",
           "example": "无",
           "member": "bool",
           "name": "AllowDownload",
@@ -8969,7 +9085,7 @@
         },
         {
           "disabled": false,
-          "document": "标签列表，若上传证书公钥， 则可以配置该参数",
+          "document": "标签列表，若选择上传证书， 则可以配置该参数",
           "example": "无",
           "member": "Tags",
           "name": "Tags",
@@ -8978,7 +9094,7 @@
         },
         {
           "disabled": false,
-          "document": "项目 ID，若上传证书公钥， 则可以配置该参数",
+          "document": "项目 ID，若选择上传证书， 则可以配置该参数",
           "example": "无",
           "member": "uint64",
           "name": "ProjectId",
@@ -9010,6 +9126,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "更新异步创建任务进度详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateSyncProgress",
+          "name": "UpdateSyncProgress",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -9437,6 +9563,88 @@
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateSyncProgress": {
+      "document": "更新异步任务进度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "UpdateSyncProgressRegion",
+          "name": "UpdateSyncProgressRegions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步更新进度状态：0， 待处理， 1 已处理， 3 处理中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UpdateSyncProgressRegion": {
+      "document": "更新异步任务进度",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "地域",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "总数",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行完成数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "偏移量",
+          "member": "int64",
+          "name": "OffsetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异步更新进度状态：0， 待处理， 1 已处理， 3 处理中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
