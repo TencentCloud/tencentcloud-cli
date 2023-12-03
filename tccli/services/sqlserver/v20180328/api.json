@@ -750,7 +750,7 @@
       "status": "online"
     },
     "ModifyDBInstanceSSL": {
-      "document": "本接口（DescribeDBInstancesAttribute）用于开启\\关闭\\更新SSL加密",
+      "document": "本接口（ModifyDBInstanceSSL）用于开启\\关闭\\更新SSL加密",
       "input": "ModifyDBInstanceSSLRequest",
       "name": "开启\\关闭\\更新SSL加密",
       "output": "ModifyDBInstanceSSLResponse",

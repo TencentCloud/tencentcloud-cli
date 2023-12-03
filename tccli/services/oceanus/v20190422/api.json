@@ -2479,7 +2479,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2489,7 +2489,7 @@
           "example": "[]",
           "member": "Cluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2916,7 +2916,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2926,7 +2926,7 @@
           "example": "[]",
           "member": "JobV1",
           "name": "JobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4386,7 +4386,7 @@
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4396,7 +4396,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4406,7 +4406,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4416,7 +4416,7 @@
           "example": "1",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4426,7 +4426,7 @@
           "example": "2",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4436,7 +4436,7 @@
           "example": "2",
           "member": "string",
           "name": "CreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4446,7 +4446,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4456,7 +4456,7 @@
           "example": "1",
           "member": "int64",
           "name": "JobType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4466,7 +4466,7 @@
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4476,7 +4476,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4486,7 +4486,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4496,7 +4496,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StopTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4506,7 +4506,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4516,7 +4516,7 @@
           "example": "13864986",
           "member": "int64",
           "name": "TotalRunMillis",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4526,7 +4526,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4536,7 +4536,7 @@
           "example": "success",
           "member": "string",
           "name": "LastOpResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4546,7 +4546,7 @@
           "example": "test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4556,7 +4556,7 @@
           "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4566,7 +4566,7 @@
           "example": "2",
           "member": "int64",
           "name": "PublishedJobConfigVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4576,7 +4576,7 @@
           "example": "1",
           "member": "int64",
           "name": "RunningCuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4586,7 +4586,7 @@
           "example": "4",
           "member": "int64",
           "name": "CuMem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4596,7 +4596,7 @@
           "example": "running",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4606,7 +4606,7 @@
           "example": "124",
           "member": "int64",
           "name": "CurrentRunMillis",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4616,7 +4616,7 @@
           "example": "cluster-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4626,7 +4626,7 @@
           "example": "https://175.24.255.193//cql-czvy480r-78/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4636,7 +4636,7 @@
           "example": "2",
           "member": "int64",
           "name": "SchedulerType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4646,7 +4646,7 @@
           "example": "2",
           "member": "int64",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4656,7 +4656,7 @@
           "example": "0.5",
           "member": "float",
           "name": "RunningCu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4666,7 +4666,7 @@
           "example": "Flink-1.11",
           "member": "string",
           "name": "FlinkVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4676,7 +4676,7 @@
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4686,7 +4686,7 @@
           "example": "mysqItemSpace",
           "member": "string",
           "name": "WorkSpaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4696,7 +4696,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

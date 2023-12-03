@@ -17118,17 +17118,17 @@
           "example": "123",
           "member": "string",
           "name": "EventHandle",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
+          "document": "<b>支持事件类型：</b>\n<li>NewFileUpload：视频上传完成；</li>\n<li>ProcedureStateChanged：任务流状态变更；</li>\n<li>FileDeleted：视频删除完成；</li>\n<li>RestoreMediaComplete：视频取回完成；</li>\n<li>PullComplete：视频转拉完成；</li>\n<li>EditMediaComplete：视频编辑完成；</li>\n<li>SplitMediaComplete：视频拆分完成；</li>\n<li>ComposeMediaComplete：制作媒体文件完成；</li>\n<li>WechatMiniProgramPublishComplete：微信小程序发布完成。</li>\n<li>RemoveWatermark：智能去除水印完成。</li>\n<li>RebuildMediaComplete：音画质重生完成事件（不推荐使用）。</li>\n<li>ReviewAudioVideoComplete：音视频审核完成；</li>\n<li>ExtractTraceWatermarkComplete：提取溯源水印完成；</li>\n<li>ExtractCopyRightWatermarkComplete：提取版权水印完成；</li>\n<li>DescribeFileAttributesComplete：获取文件属性完成；</li>\n<li>QualityInspectComplete：音画质检测完成；</li>\n<li>QualityEnhanceComplete：音画质重生任务完成。</li>\n<b>兼容 2017 版的事件类型：</b>\n<li>TranscodeComplete：视频转码完成；</li>\n<li>ConcatComplete：视频拼接完成；</li>\n<li>ClipComplete：视频剪辑完成；</li>\n<li>CreateImageSpriteComplete：视频截取雪碧图完成；</li>\n<li>CreateSnapshotByTimeOffsetComplete：视频按时间点截图完成。</li>",
           "example": "null",
           "member": "string",
           "name": "EventType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -17138,7 +17138,7 @@
           "example": "null",
           "member": "FileUploadTask",
           "name": "FileUploadEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17148,7 +17148,7 @@
           "example": "null",
           "member": "ProcedureTask",
           "name": "ProcedureStateChangeEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17158,7 +17158,7 @@
           "example": "null",
           "member": "FileDeleteTask",
           "name": "FileDeleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17168,7 +17168,7 @@
           "example": "null",
           "member": "PullUploadTask",
           "name": "PullCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17178,7 +17178,7 @@
           "example": "null",
           "member": "EditMediaTask",
           "name": "EditMediaCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17188,7 +17188,7 @@
           "example": "null",
           "member": "SplitMediaTask",
           "name": "SplitMediaCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17198,7 +17198,7 @@
           "example": "null",
           "member": "ComposeMediaTask",
           "name": "ComposeMediaCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17208,7 +17208,7 @@
           "example": "null",
           "member": "ClipTask2017",
           "name": "ClipCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17218,7 +17218,7 @@
           "example": "null",
           "member": "TranscodeTask2017",
           "name": "TranscodeCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17228,7 +17228,7 @@
           "example": "null",
           "member": "CreateImageSpriteTask2017",
           "name": "CreateImageSpriteCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17238,7 +17238,7 @@
           "example": "null",
           "member": "ConcatTask2017",
           "name": "ConcatCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17248,7 +17248,7 @@
           "example": "null",
           "member": "SnapshotByTimeOffsetTask2017",
           "name": "SnapshotByTimeOffsetCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17258,7 +17258,7 @@
           "example": "null",
           "member": "WechatPublishTask",
           "name": "WechatPublishCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17268,7 +17268,7 @@
           "example": "null",
           "member": "WechatMiniProgramPublishTask",
           "name": "WechatMiniProgramPublishCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17278,7 +17278,7 @@
           "example": "null",
           "member": "RemoveWatermarkTask",
           "name": "RemoveWatermarkCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17288,7 +17288,7 @@
           "example": "null",
           "member": "RestoreMediaTask",
           "name": "RestoreMediaCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17298,7 +17298,7 @@
           "example": "null",
           "member": "RebuildMediaTask",
           "name": "RebuildMediaCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17308,7 +17308,7 @@
           "example": "null",
           "member": "ExtractTraceWatermarkTask",
           "name": "ExtractTraceWatermarkCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17318,7 +17318,7 @@
           "example": "无",
           "member": "ExtractCopyRightWatermarkTask",
           "name": "ExtractCopyRightWatermarkCompleteEvent",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17328,7 +17328,7 @@
           "example": "null",
           "member": "ReviewAudioVideoTask",
           "name": "ReviewAudioVideoCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17338,7 +17338,7 @@
           "example": "null",
           "member": "ReduceMediaBitrateTask",
           "name": "ReduceMediaBitrateCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17348,7 +17348,7 @@
           "example": "null",
           "member": "DescribeFileAttributesTask",
           "name": "DescribeFileAttributesCompleteEvent",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -17358,7 +17358,17 @@
           "example": "无",
           "member": "QualityInspectTask",
           "name": "QualityInspectCompleteEvent",
-          "required": false,
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生完成事件，当事件类型为 QualityEnhanceComplete 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "QualityEnhanceTask",
+          "name": "QualityEnhanceCompleteEvent",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         }

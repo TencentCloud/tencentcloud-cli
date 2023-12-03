@@ -608,7 +608,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定的关系数组。",
+          "document": "绑定的关系数组。一次请求最多支持20个。",
           "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
@@ -10890,8 +10890,7 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10900,8 +10899,7 @@
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10910,8 +10908,7 @@
           "member": "string",
           "name": "ListenerId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -10920,8 +10917,7 @@
           "member": "string",
           "name": "LocationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
