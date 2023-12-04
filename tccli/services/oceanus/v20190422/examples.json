@@ -146,6 +146,14 @@
         "title": "查询集群"
       }
     ],
+    "DescribeFolder": [
+      {
+        "document": "查询文件夹",
+        "input": "POST / HTTP/1.1\nHost: oceanus.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFolder\n<公共请求参数>\n\n{\n    \"FolderId\": \"folder-bnjsm2sb\",\n    \"WorkSpaceId\": \"space-7rfcnslf\",\n    \"FolderType\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"FolderId\": \"folder-bnjsm2sb\",\n        \"FolderName\": \"6.9_connector\",\n        \"FolderType\": 1,\n        \"ParentId\": \"root\",\n        \"RequestId\": \"3ca249e8-b742-4e97-856d-1fca5a95d6a5\",\n        \"SubFolderInfo\": [\n            {\n                \"FolderId\": \"folder-gbtcphg0\",\n                \"FolderName\": \"hive_catalog_config_311\"\n            },\n            {\n                \"FolderId\": \"folder-79b2dxuc\",\n                \"FolderName\": \"sql_server\"\n            },\n            {\n                \"FolderId\": \"folder-oc406jen\",\n                \"FolderName\": \"doris\"\n            },\n            {\n                \"FolderId\": \"folder-3ldo2w3g\",\n                \"FolderName\": \"mysql_cdc\"\n            },\n            {\n                \"FolderId\": \"folder-nodi86tq\",\n                \"FolderName\": \"kudu\"\n            }\n        ],\n        \"WorkSpaceId\": \"space-7rfcnslf\"\n    }\n}",
+        "title": "查询文件夹"
+      }
+    ],
     "DescribeJobConfigs": [
       {
         "document": "查询指定的作业配置",

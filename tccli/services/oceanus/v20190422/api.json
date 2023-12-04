@@ -112,6 +112,13 @@
       "output": "DescribeClustersResponse",
       "status": "online"
     },
+    "DescribeFolder": {
+      "document": "查询指定文件夹及其相应的子文件夹信息",
+      "input": "DescribeFolderRequest",
+      "name": "查询文件夹",
+      "output": "DescribeFolderResponse",
+      "status": "online"
+    },
     "DescribeJobConfigs": {
       "document": "查询作业配置列表，一次最多查询100个",
       "input": "DescribeJobConfigsRequest",
@@ -2492,6 +2499,111 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFolderRequest": {
+      "document": "DescribeFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "workspace id",
+          "example": "space-53rqk422",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源文件夹\n其他:作业文件夹",
+          "example": "1",
+          "member": "int64",
+          "name": "FolderType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFolderResponse": {
+      "document": "DescribeFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "folder name",
+          "example": "test",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父文件夹id",
+          "example": "folder-lfqkt10i",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型",
+          "example": "1",
+          "member": "int64",
+          "name": "FolderType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "workspace id",
+          "example": "无",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子文件夹信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubFolderInfo",
+          "name": "SubFolderInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6449,6 +6561,32 @@
         }
       ],
       "type": "object"
+    },
+    "SubFolderInfo": {
+      "document": "子目录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "folder name",
+          "example": "test",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SystemResourceItem": {
       "document": "系统资源返回值",
