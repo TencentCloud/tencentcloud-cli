@@ -1860,6 +1860,7 @@
           "example": "mongos",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1870,6 +1871,7 @@
           "example": "mysql",
           "member": "string",
           "name": "DbKernel",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1880,6 +1882,7 @@
           "example": "192.2.3.4",
           "member": "string",
           "name": "Host",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1890,6 +1893,7 @@
           "example": "3306",
           "member": "uint64",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1900,6 +1904,7 @@
           "example": "root",
           "member": "string",
           "name": "User",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1910,6 +1915,7 @@
           "example": "password",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1920,6 +1926,7 @@
           "example": "ins-olgl39y8",
           "member": "string",
           "name": "CvmInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1930,6 +1937,7 @@
           "example": "vpngw-9ghexg7q",
           "member": "string",
           "name": "UniqVpnGwId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1940,6 +1948,7 @@
           "example": "dcg-0rxtqqxb",
           "member": "string",
           "name": "UniqDcgId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1950,6 +1959,7 @@
           "example": "cdb-powiqx8q",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1960,6 +1970,7 @@
           "example": "ccn-afp6kltc",
           "member": "string",
           "name": "CcnGwId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1970,6 +1981,7 @@
           "example": "vpc-92jblxto",
           "member": "string",
           "name": "VpcId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1980,6 +1992,7 @@
           "example": "subnet-3paxmkdz",
           "member": "string",
           "name": "SubnetId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1990,6 +2003,7 @@
           "example": "5.6",
           "member": "string",
           "name": "EngineVersion",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2000,6 +2014,7 @@
           "example": "无",
           "member": "string",
           "name": "Account",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2010,6 +2025,7 @@
           "example": "无",
           "member": "string",
           "name": "AccountRole",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2020,36 +2036,40 @@
           "example": "self",
           "member": "string",
           "name": "AccountMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "临时密钥Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Id，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "临时密钥Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Key，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "临时Token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时Token，可通过 获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpToken",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -2448,6 +2468,7 @@
           "example": "partial",
           "member": "string",
           "name": "ObjectMode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -2458,16 +2479,18 @@
           "example": "无",
           "member": "DBItem",
           "name": "Databases",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如trigger、function、procedure、event\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如trigger、function、procedure、event。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"trigger\"]",
           "member": "string",
           "name": "AdvancedObjects",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -4203,7 +4226,7 @@
         },
         {
           "disabled": false,
-          "document": "临时密钥Id，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Id，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretId",
@@ -4214,7 +4237,7 @@
         },
         {
           "disabled": false,
-          "document": "临时密钥Key，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时密钥Key，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
@@ -4225,7 +4248,7 @@
         },
         {
           "disabled": false,
-          "document": "临时Token，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "临时Token，可通过获取联合身份临时访问凭证获取临时密钥https://cloud.tencent.com/document/product/1312/48195，，如果为跨账号实例此项必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "TmpToken",
@@ -5427,6 +5450,7 @@
           "example": "Partial",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5437,16 +5461,18 @@
           "example": "无",
           "member": "Database",
           "name": "Databases",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "高级对象类型，如function、procedure，当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "高级对象类型，如function、procedure。注意：如果要迁移同步高级对象，此配置中应该包含对应的高级对象类型。当需要同步高级对象时，初始化类型必须包含结构初始化类型，即任务的Options.InitType字段值为Structure或Full\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AdvancedObjects",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5457,6 +5483,7 @@
           "example": "无",
           "member": "OnlineDDL",
           "name": "OnlineDDL",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -7256,6 +7283,7 @@
           "example": "t1",
           "member": "string",
           "name": "TableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7266,6 +7294,7 @@
           "example": "t1_new",
           "member": "string",
           "name": "NewTableName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7276,6 +7305,7 @@
           "example": "[\"_t1_old\",_t1_new\"]",
           "member": "string",
           "name": "TmpTables",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -7286,6 +7316,7 @@
           "example": "rename",
           "member": "string",
           "name": "TableEditMode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

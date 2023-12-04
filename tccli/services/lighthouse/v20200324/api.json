@@ -1829,7 +1829,7 @@
         {
           "disabled": false,
           "document": "当通过本接口来创建云硬盘时会返回该参数，表示一个或多个云硬盘ID。返回云硬盘ID列表并不代表云硬盘创建成功。\n\n可根据 [DescribeDisks](https://cloud.tencent.com/document/product/1207/66093) 接口查询返回的DiskSet中对应云硬盘的ID的状态来判断创建是否完成；如果云硬盘状态由“PENDING”变为“UNATTACHED”或“ATTACHED”，则为创建成功。",
-          "example": "无",
+          "example": "[\"lhdisk-2q0cs4oe\"]",
           "member": "string",
           "name": "DiskIdSet",
           "output_required": true,
@@ -3466,7 +3466,7 @@
         {
           "disabled": false,
           "document": "容器ID列表。",
-          "example": "无",
+          "example": "[\"edbc15ffac7074bf28cbc6071f422f90029154aefd9bf0392f33b247a3577a57\"]",
           "member": "string",
           "name": "ContainerIds",
           "required": false,
@@ -3511,6 +3511,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3520,6 +3521,7 @@
           "example": "无",
           "member": "DockerContainer",
           "name": "DockerContainerSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4262,7 +4264,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573)接口返回值中的InstanceId获取。",
-          "example": "无",
+          "example": "[\"lhins-7h98ep3z\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -4298,7 +4300,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4308,7 +4310,7 @@
           "example": "无",
           "member": "InstanceTrafficPackage",
           "name": "InstanceTrafficPackageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4964,50 +4966,50 @@
         {
           "disabled": false,
           "document": "计费时长。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TimeSpan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "计费单元。",
-          "example": "无",
+          "example": "m",
           "member": "string",
           "name": "TimeUnit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总价。",
-          "example": "无",
+          "example": "50",
           "member": "float",
           "name": "TotalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "折后总价。",
-          "example": "无",
+          "example": "50",
           "member": "float",
           "name": "RealTotalCost",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "折扣。",
-          "example": "无",
+          "example": "100",
           "member": "float",
           "name": "Discount",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -5017,7 +5019,7 @@
           "example": "无",
           "member": "PolicyDetail",
           "name": "PolicyDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         }
@@ -5239,7 +5241,7 @@
           "example": "lhbak-nuen5foj",
           "member": "string",
           "name": "DiskBackupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5249,7 +5251,7 @@
           "example": "DATA_DISK",
           "member": "string",
           "name": "DiskUsage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5259,7 +5261,7 @@
           "example": "lhdisk-nbebddz8",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5269,7 +5271,7 @@
           "example": "200",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5279,7 +5281,7 @@
           "example": "lhdisk-nbebddz8-data-disk-062",
           "member": "string",
           "name": "DiskBackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5289,7 +5291,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "DiskBackupState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5299,7 +5301,7 @@
           "example": "90",
           "member": "int64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5309,7 +5311,7 @@
           "example": "ApplyDiskBackup",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5319,27 +5321,27 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "上一次请求ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "cd7f9d77-c19b-4490-8d5e-42a776383f90",
           "member": "string",
           "name": "LatestOperationRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。",
-          "example": "无",
+          "example": "2022-06-23T09:19:05Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -7191,20 +7193,20 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "",
+          "example": "lhins-abcd1234",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包详情列表。",
-          "example": "",
+          "example": "无",
           "member": "TrafficPackage",
           "name": "TrafficPackageSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -8036,50 +8038,50 @@
         {
           "disabled": false,
           "document": "用户折扣。",
-          "example": "无",
+          "example": "100",
           "member": "float",
           "name": "UserDiscount",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "公共折扣。",
-          "example": "无",
+          "example": "88",
           "member": "float",
           "name": "CommonDiscount",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "最终折扣。",
-          "example": "无",
+          "example": "88",
           "member": "float",
           "name": "FinalDiscount",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "活动折扣。取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "100",
           "member": "float",
           "name": "ActivityDiscount",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "折扣类型。\nuser：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "common",
           "member": "string",
           "name": "DiscountType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8913,110 +8915,110 @@
         {
           "disabled": false,
           "document": "快照 ID。",
-          "example": "无",
+          "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建此快照的磁盘类型。取值：<li>SYSTEM_DISK：系统盘</li>",
-          "example": "无",
+          "example": "SYSTEM_DISK",
           "member": "string",
           "name": "DiskUsage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建此快照的磁盘 ID。",
-          "example": "无",
+          "example": "lhdisk-f71kc5bh",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建此快照的磁盘大小，单位 GB。",
-          "example": "无",
+          "example": "50",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照名称，用户自定义的快照别名。",
-          "example": "无",
+          "example": "day-backup-0903145122",
           "member": "string",
           "name": "SnapshotName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照的状态。取值范围：\n<li>NORMAL：正常 </li>\n<li>CREATING：创建中</li>\n<li>ROLLBACKING：回滚中。</li>",
-          "example": "无",
+          "example": "NORMAL",
           "member": "string",
           "name": "SnapshotState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建或回滚快照进度百分比，成功后此字段取值为 100。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Percent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "快照的最新操作，只有创建、回滚快照时记录。\n取值如 CreateInstanceSnapshot，RollbackInstanceSnapshot。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RollbackInstanceSnapshot",
           "member": "string",
           "name": "LatestOperation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "快照的最新操作状态，只有创建、回滚快照时记录。\n取值范围：\n<li>SUCCESS：表示操作成功</li>\n<li>OPERATING：表示操作执行中</li>\n<li>FAILED：表示操作失败</li>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "快照最新操作的唯一请求 ID，只有创建、回滚快照时记录。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "96aee6e3-172c-4f0f-be7c-fc46b9865763",
           "member": "string",
           "name": "LatestOperationRequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "快照的创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2020-09-03T06:51:23Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9437,90 +9439,90 @@
         {
           "disabled": false,
           "document": "流量包ID。",
-          "example": "",
+          "example": "lhtfp-o1wtyyvx",
           "member": "string",
           "name": "TrafficPackageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包生效周期内已使用流量，单位字节。",
-          "example": "",
+          "example": "5905577",
           "member": "int64",
           "name": "TrafficUsed",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包生效周期内的总流量，单位字节。",
-          "example": "",
+          "example": "536870912000",
           "member": "int64",
           "name": "TrafficPackageTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包生效周期内的剩余流量，单位字节。",
-          "example": "",
+          "example": "536865006423",
           "member": "int64",
           "name": "TrafficPackageRemaining",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包生效周期内超出流量包额度的流量，单位字节。",
-          "example": "",
+          "example": "0",
           "member": "int64",
           "name": "TrafficOverflow",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "流量包生效周期开始时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2020-06-28T08:15:18Z",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "流量包生效周期结束时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2020-07-28T08:15:17Z",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "流量包到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2020-07-28T08:15:18Z",
           "member": "datetime_iso",
           "name": "Deadline",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "流量包状态：\n<li>NETWORK_NORMAL：正常</li>\n<li>OVERDUE_NETWORK_DISABLED：欠费断网</li>",
-          "example": "",
+          "example": "NETWORK_NORMAL",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

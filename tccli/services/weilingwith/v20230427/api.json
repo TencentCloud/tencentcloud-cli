@@ -1965,7 +1965,7 @@
         {
           "disabled": false,
           "document": "建筑列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ { \"Address\": \"北京市,丰台区样例模型\", \"BuildingId\": \"2da7d294-483e-4033-a99a-49f7323fd6ef\", \"BuildingName\": \"样例模型1\", \"Latitude\": 39.927326, \"Longitude\": 116.39177, \"SpaceCode\": \"000009\" }, { \"Address\": \"1#楼\", \"BuildingId\": \"dfad5b19-79d8-4e40-9a8c-8efa32a1f425\", \"BuildingName\": \"1#楼\", \"Latitude\": 39.92442, \"Longitude\": 116.38269, \"SpaceCode\": \"000007\" } ]",
           "member": "BuildingProfile",
           "name": "BuildingProfileList",
           "output_required": false,
@@ -1981,7 +1981,7 @@
         {
           "disabled": false,
           "document": "构件ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "82d5fb5a-52d0-4636-a225-d46245e911ef",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -1991,7 +1991,7 @@
         {
           "disabled": false,
           "document": "构件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "验证专用",
           "member": "string",
           "name": "ElementName",
           "output_required": false,
@@ -2001,7 +2001,7 @@
         {
           "disabled": false,
           "document": "模型类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "MODEL_ORIGIN",
           "member": "string",
           "name": "ModelType",
           "output_required": false,
@@ -2011,7 +2011,7 @@
         {
           "disabled": false,
           "document": "模型URL\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/cb6bad63-0855-4dc2-8908-20518627479b.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Ddbac70b180e5a2d8c343506dae755a01669ffb04",
           "member": "string",
           "name": "ModelUrl",
           "output_required": false,
@@ -2027,7 +2027,7 @@
         {
           "disabled": false,
           "document": "建模模型信息出参\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ { \"ElementId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \"ElementName\": \"验证专用\", \"ModelType\": \"MODEL_ORIGIN\", \"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/cb6bad63-0855-4dc2-8908-20518627479b.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3Ddbac70b180e5a2d8c343506dae755a01669ffb04\" }, { \"ElementId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \"ElementName\": \"验证专用-外壳\", \"ModelType\": \"MODEL_HULL\", \"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/ff847c36-89f8-4644-9c1f-d265bd5d5167.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3D7af0ab15cab83314e44026fedc0927467d07b776\" }, { \"ElementId\": \"0b00f88f-36f1-4ae3-a7b4-5db12332c005\", \"ElementName\": \"-1F\", \"ModelType\": \"MODEL_STOREY\", \"ModelUrl\": \"https://bim-1301743406.cos.ap-guangzhou.myqcloud.com/100055/1016/2ee86ae4-41a1-4c45-840b-4e9eae1b83a1.glb?sign=q-sign-algorithm%3Dsha1%26q-ak%3DAKIDsyyqVvLagaL8lBZq5896tTxOfjbL2h8L%26q-sign-time%3D1692758001%3B1787366001%26q-key-time%3D1692758001%3B1787366001%26q-header-list%3D%26q-url-param-list%3D%26q-signature%3De9b58a5293201d24c19e2bc28b49404035b569c1\" } ]",
           "member": "BuildingModel",
           "name": "Models",
           "output_required": false,
@@ -2043,7 +2043,7 @@
         {
           "disabled": false,
           "document": "建筑id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2da7d294-483e-4033-a99a-49f7323fd6ef",
           "member": "string",
           "name": "BuildingId",
           "output_required": false,
@@ -2053,7 +2053,7 @@
         {
           "disabled": false,
           "document": "建筑名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "样例模型1",
           "member": "string",
           "name": "BuildingName",
           "output_required": false,
@@ -2063,7 +2063,7 @@
         {
           "disabled": false,
           "document": "空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "000009",
           "member": "string",
           "name": "SpaceCode",
           "output_required": false,
@@ -2073,7 +2073,7 @@
         {
           "disabled": false,
           "document": "经度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "116.38269",
           "member": "float",
           "name": "Longitude",
           "output_required": false,
@@ -2083,7 +2083,7 @@
         {
           "disabled": false,
           "document": "纬度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "39.92442",
           "member": "float",
           "name": "Latitude",
           "output_required": false,
@@ -2093,7 +2093,7 @@
         {
           "disabled": false,
           "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "北京市,丰台区样例地址1#楼",
           "member": "string",
           "name": "Address",
           "output_required": false,
@@ -2109,7 +2109,7 @@
         {
           "disabled": false,
           "document": "建筑概要信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"Address\": \"广东省,深圳市,南山区测试建筑\", \"BuildingId\": \"2e374df6-7ba7-45d2-a44d-2a92bb2a6668\", \"BuildingName\": \"测试建筑\", \"Latitude\": 22.533192, \"Longitude\": 113.93048, \"SpaceCode\": \"000003\" }",
           "member": "BuildingProfile",
           "name": "BuildingProfile",
           "output_required": false,
@@ -6951,7 +6951,7 @@
         {
           "disabled": false,
           "document": "建筑id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "82d5fb5a-52d0-4636-a225-d46245e911ef",
           "member": "string",
           "name": "BuildingId",
           "output_required": false,
@@ -6961,7 +6961,7 @@
         {
           "disabled": false,
           "document": "构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8a74aba0-46e3-4097-89e6-7adbeb9ccaef",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -6971,7 +6971,7 @@
         {
           "disabled": false,
           "document": "构件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TBIM_CAMERA",
           "member": "string",
           "name": "EntityType",
           "output_required": false,
@@ -6981,7 +6981,7 @@
         {
           "disabled": false,
           "document": "构件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1232533半球摄像头",
           "member": "string",
           "name": "ElementName",
           "output_required": false,
@@ -6991,7 +6991,7 @@
         {
           "disabled": false,
           "document": "构件级别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9",
           "member": "uint64",
           "name": "Level",
           "output_required": false,
@@ -7001,7 +7001,7 @@
         {
           "disabled": false,
           "document": "底部标高（单位mm）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3000",
           "member": "int64",
           "name": "BottomHeight",
           "output_required": false,
@@ -7011,7 +7011,7 @@
         {
           "disabled": false,
           "document": "空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "00003000300000008",
           "member": "string",
           "name": "SpaceCode",
           "output_required": false,
@@ -7435,7 +7435,7 @@
         {
           "disabled": false,
           "document": "经度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "117.25139600000003",
           "member": "float",
           "name": "Longitude",
           "output_required": false,
@@ -7445,7 +7445,7 @@
         {
           "disabled": false,
           "document": "纬度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "39.12852507853361",
           "member": "float",
           "name": "Latitude",
           "output_required": false,
@@ -7455,7 +7455,7 @@
         {
           "disabled": false,
           "document": "高程\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "Altitude",
           "output_required": false,
@@ -7471,7 +7471,7 @@
         {
           "disabled": false,
           "document": "建筑id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "82d5fb5a-52d0-4636-a225-d46245e911ef",
           "member": "string",
           "name": "BuildingId",
           "output_required": false,
@@ -7481,7 +7481,7 @@
         {
           "disabled": false,
           "document": "构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "61049c1b-158d-41bd-9f0b-df30a50401bd",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -7491,7 +7491,7 @@
         {
           "disabled": false,
           "document": "构件类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "TBIM_BUILDINGSTOREY",
           "member": "string",
           "name": "EntityType",
           "output_required": false,
@@ -7501,7 +7501,7 @@
         {
           "disabled": false,
           "document": "构件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "RF",
           "member": "string",
           "name": "ElementName",
           "output_required": false,
@@ -7511,7 +7511,7 @@
         {
           "disabled": false,
           "document": "构件空间级别\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "7",
           "member": "uint64",
           "name": "Level",
           "output_required": false,
@@ -7521,7 +7521,7 @@
         {
           "disabled": false,
           "document": "底部标高（单位mm）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "3000",
           "member": "int64",
           "name": "BottomHeight",
           "output_required": false,
@@ -7531,7 +7531,7 @@
         {
           "disabled": false,
           "document": "排序\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "Sort",
           "output_required": false,
@@ -7541,7 +7541,7 @@
         {
           "disabled": false,
           "document": "空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "000030003",
           "member": "string",
           "name": "SpaceCode",
           "output_required": false,
@@ -7551,7 +7551,7 @@
         {
           "disabled": false,
           "document": "空间分类编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpaceTypeCode",
           "output_required": false,
@@ -7561,7 +7561,7 @@
         {
           "disabled": false,
           "document": "空间分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpaceTypeName",
           "output_required": false,
@@ -7571,7 +7571,7 @@
         {
           "disabled": false,
           "document": "父级构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "82d5fb5a-52d0-4636-a225-d46245e911ef",
           "member": "string",
           "name": "ParentElementId",
           "output_required": false,
@@ -7581,7 +7581,7 @@
         {
           "disabled": false,
           "document": "空间层级类型编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "SpacePoiId",
           "output_required": false,
@@ -7591,7 +7591,7 @@
         {
           "disabled": false,
           "document": "构件描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ElementDesc",
           "output_required": false,
@@ -7601,7 +7601,7 @@
         {
           "disabled": false,
           "document": "删除标记\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "uint64",
           "name": "IsDelete",
           "output_required": false,
@@ -7617,7 +7617,7 @@
         {
           "disabled": false,
           "document": "构件总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "uint64",
           "name": "TotalCount",
           "output_required": false,
@@ -7627,7 +7627,7 @@
         {
           "disabled": false,
           "document": "构件列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ { \"BottomHeight\": -100, \"BuildingId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \"ElementDesc\": \"\", \"ElementId\": \"1Kjh8u2qf4uRSkCPoKigTI\", \"ElementName\": \"1F（结） -0.100\", \"EntityType\": \"TBIM_BUILDINGSTOREY\", \"IsDelete\": 0, \"Level\": 7, \"ParentElementId\": \"956bd069-c802-4bbb-b325-18d30d7bcd3c\", \"Sort\": 1, \"SpaceCode\": \"000185004\", \"SpacePoiId\": \"\", \"SpaceTypeCode\": \"\", \"SpaceTypeName\": \"\" } ]",
           "member": "ElementProfile",
           "name": "List",
           "output_required": false,
@@ -7643,7 +7643,7 @@
         {
           "disabled": false,
           "document": "构件概要信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"BottomHeight\": 3000, \"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \"ElementDesc\": \"\", \"ElementId\": \"6042d426-6973-47ff-8ce1-3a63ef9f3c2f\", \"ElementName\": \"\", \"EntityType\": \"TBIM_SLASHWALL\", \"IsDelete\": 0, \"Level\": 8, \"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \"Sort\": 1, \"SpaceCode\": \"00003000300000001\", \"SpacePoiId\": \"\", \"SpaceTypeCode\": \"\", \"SpaceTypeName\": \"\" }",
           "member": "ElementProfile",
           "name": "ElementProfile",
           "output_required": false,
@@ -7653,7 +7653,7 @@
         {
           "disabled": false,
           "document": "子节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "ElementProfileTreeNode",
           "name": "Children",
           "output_required": false,
@@ -7669,7 +7669,7 @@
         {
           "disabled": false,
           "document": "建筑id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "82d5fb5a-52d0-4636-a225-d46245e911ef",
           "member": "string",
           "name": "BuildingId",
           "output_required": false,
@@ -7679,7 +7679,7 @@
         {
           "disabled": false,
           "document": "父级构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "61049c1b-158d-41bd-9f0b-df30a50401bd",
           "member": "string",
           "name": "ParentElementId",
           "output_required": false,
@@ -7689,7 +7689,7 @@
         {
           "disabled": false,
           "document": "构件树\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " { \"Children\": [ { \"Children\": [], \"ElementProfile\": { \"BottomHeight\": 3000, \"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \"ElementDesc\": \"\", \"ElementId\": \"6042d426-6973-47ff-8ce1-3a63ef9f3c2f\", \"ElementName\": \"\", \"EntityType\": \"TBIM_SLASHWALL\", \"IsDelete\": 0, \"Level\": 8, \"ParentElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \"Sort\": 1, \"SpaceCode\": \"00003000300000001\", \"SpacePoiId\": \"\", \"SpaceTypeCode\": \"\", \"SpaceTypeName\": \"\" } } ], \"ElementProfile\": { \"BottomHeight\": 3000, \"BuildingId\": \"82d5fb5a-52d0-4636-a225-d46245e911ef\", \"ElementDesc\": \"\", \"ElementId\": \"61049c1b-158d-41bd-9f0b-df30a50401bd\", \"ElementName\": \"RF\", \"EntityType\": \"TBIM_BUILDINGSTOREY\", \"IsDelete\": 0, \"Level\": 7, \"ParentElementId\": \"\", \"Sort\": 1, \"SpaceCode\": \"000030003\", \"SpacePoiId\": \"\", \"SpaceTypeCode\": \"\", \"SpaceTypeName\": \"\" } }",
           "member": "ElementProfileTreeNode",
           "name": "Root",
           "output_required": false,
@@ -7705,7 +7705,7 @@
         {
           "disabled": false,
           "document": "属性名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "Materials and Finishes",
           "member": "string",
           "name": "Name",
           "output_required": false,
@@ -7715,7 +7715,7 @@
         {
           "disabled": false,
           "document": "属性描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "Description",
           "output_required": false,
@@ -7725,7 +7725,7 @@
         {
           "disabled": false,
           "document": "属性内容\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{Material=None}",
           "member": "string",
           "name": "Content",
           "output_required": false,
@@ -7741,7 +7741,7 @@
         {
           "disabled": false,
           "document": "建筑id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"377e4f9d-d20e-4209-b1e8-0ddb32e888c8\"",
           "member": "string",
           "name": "BuildingId",
           "output_required": false,
@@ -7751,7 +7751,7 @@
         {
           "disabled": false,
           "document": "构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"b66aece1-62e9-49d3-872e-6e66156a853b\"",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -7761,7 +7761,7 @@
         {
           "disabled": false,
           "document": "构件属性集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[     {         \"Content\": \"{Elevation=9500, Story Above=None}\",         \"Description\": \"\",         \"Name\": \"Constraints\"     },     {         \"Content\": \"{Computation Height=0}\",         \"Description\": \"\",         \"Name\": \"Dimensions\"     },     {         \"Content\": \"{Is ground plane=0}\",         \"Description\": \"\",         \"Name\": \"Display\"     },     {         \"Content\": \"{storeyType=TOP_FLOOR, floorHeight=3000, bottomHeight=9500}\",         \"Description\": \"\",         \"Name\": \"EDITOR_BUILDING_STOREY_EXTEND\"     },     {         \"Content\": \"{Scope Box=None}\",         \"Description\": \"\",         \"Name\": \"Extents\"     },     {         \"Content\": \"{IfcGUID=1LvAmy3$j18hHP$GEcP3rk, Export to IFC=0}\",         \"Description\": \"\",         \"Name\": \"IFC Parameters\"     },     {         \"Content\": \"{Structural=No, Design Option=None, Building Story=Yes}\",         \"Description\": \"\",         \"Name\": \"Identity Data\"     },     {         \"Content\": \"{Name=Level : F4, Type=C_上标高+层标, Childs=[Roofs], Family=Level, Type Id=87266, Category=OST_Levels, ClassName=OdBmCDANode, ODAUniqueID=214592, LocalizedName=, Family and Type=Level : C_上标高+层标}\",         \"Description\": \"\",         \"Name\": \"Invalid group\"     },     {         \"Content\": \"{Material=None}\",         \"Description\": \"\",         \"Name\": \"Materials and Finishes\"     } ]",
           "member": "ElementProperty",
           "name": "PropertySet",
           "output_required": false,
@@ -7771,7 +7771,7 @@
         {
           "disabled": false,
           "document": "构件地理坐标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"Altitude\": 0,     \"Latitude\": 39.12852507853361,     \"Longitude\": 117.25139600000003 }",
           "member": "ElementCoordinates",
           "name": "Coordinates",
           "output_required": false,
@@ -7781,7 +7781,7 @@
         {
           "disabled": false,
           "document": "构件偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{     \"X\": 0,     \"Y\": 0,     \"Z\": 0 }",
           "member": "ElementTranslate",
           "name": "Translate",
           "output_required": false,
@@ -7791,7 +7791,7 @@
         {
           "disabled": false,
           "document": "构件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"Level : F4\"",
           "member": "string",
           "name": "ElementName",
           "output_required": false,
@@ -7801,7 +7801,7 @@
         {
           "disabled": false,
           "document": "构件类型代码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"TBIM_BUILDINGSTOREY\"",
           "member": "string",
           "name": "EntityTypeCode",
           "output_required": false,
@@ -7811,7 +7811,7 @@
         {
           "disabled": false,
           "document": "构件类型名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "\"楼层\"",
           "member": "string",
           "name": "EntityTypeName",
           "output_required": false,
@@ -7827,7 +7827,7 @@
         {
           "disabled": false,
           "document": "X方向偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "X",
           "output_required": false,
@@ -7837,7 +7837,7 @@
         {
           "disabled": false,
           "document": "Y方向偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "Y",
           "output_required": false,
@@ -7847,7 +7847,7 @@
         {
           "disabled": false,
           "document": "Z方向偏移量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "float",
           "name": "Z",
           "output_required": false,
@@ -9334,7 +9334,7 @@
         {
           "disabled": false,
           "document": "场景id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0abe73dd-d06f-44f5-af82-43dea23af230",
           "member": "string",
           "name": "SceneId",
           "output_required": false,
@@ -9344,7 +9344,7 @@
         {
           "disabled": false,
           "document": "场景名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "三层商务办公楼单位修正",
           "member": "string",
           "name": "SceneName",
           "output_required": false,
@@ -9354,7 +9354,7 @@
         {
           "disabled": false,
           "document": "场景版本\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "20230705160410780",
           "member": "string",
           "name": "Version",
           "output_required": false,
@@ -9370,7 +9370,7 @@
         {
           "disabled": false,
           "document": "场景列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [ { \"SceneId\": \"0abe73dd-d06f-44f5-af82-43dea23af230\", \"SceneName\": \"三层商务办公楼单位修正\", \"Version\": \"20230705160410780\" }, { \"SceneId\": \"e9f2b87f-9078-4546-8d4f-99356ec3f82c\", \"SceneName\": \"商务办公楼模型\", \"Version\": \"20230630151240729\" } ]",
           "member": "SceneInfo",
           "name": "SceneList",
           "output_required": false,
@@ -9386,7 +9386,7 @@
         {
           "disabled": false,
           "document": "楼栋数量与建筑面积列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [ { \"BuildingArea\": 0, \"BuildingCount\": 2, \"WorkspaceId\": \"1018\", \"WorkspaceName\": \"华北园区项目\" }, { \"BuildingArea\": 202928.77732501808, \"BuildingCount\": 127, \"WorkspaceId\": \"1016\", \"WorkspaceName\": \"华南园区项目\" }, { \"BuildingArea\": 0, \"BuildingCount\": 8, \"WorkspaceId\": \"1015\", \"WorkspaceName\": \"公共空间\" } ] ",
           "member": "SpaceDataStats",
           "name": "List",
           "output_required": false,
@@ -9402,7 +9402,7 @@
         {
           "disabled": false,
           "document": "工作空间ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1016",
           "member": "string",
           "name": "WorkspaceId",
           "output_required": false,
@@ -9412,7 +9412,7 @@
         {
           "disabled": false,
           "document": "工作空间名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "华南园区项目",
           "member": "string",
           "name": "WorkspaceName",
           "output_required": false,
@@ -9422,7 +9422,7 @@
         {
           "disabled": false,
           "document": "楼栋数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "127",
           "member": "uint64",
           "name": "BuildingCount",
           "output_required": false,
@@ -9432,7 +9432,7 @@
         {
           "disabled": false,
           "document": "建筑面积\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202928.77732501808",
           "member": "float",
           "name": "BuildingArea",
           "output_required": false,
@@ -9448,7 +9448,7 @@
         {
           "disabled": false,
           "document": "总楼栋数量\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "137",
           "member": "uint64",
           "name": "BuildingCount",
           "output_required": false,
@@ -9458,7 +9458,7 @@
         {
           "disabled": false,
           "document": "总建筑面积\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "202928.77732501808",
           "member": "float",
           "name": "BuildingArea",
           "output_required": false,
@@ -9474,7 +9474,7 @@
         {
           "disabled": false,
           "document": "设备id列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [ \"2b538c57-933f-4820-b1d0-4df70d64aee3\", \"ad655ba1-975a-4238-94d7-5d2015d1cf1f\", \"5a1a0b73-7aa3-4699-a893-21846e7853ec\", \"0a198d6e-40f0-499f-bf99-7a959b7f4ef2\" ] ",
           "member": "string",
           "name": "DeviceIds",
           "output_required": false,
@@ -9490,7 +9490,7 @@
         {
           "disabled": false,
           "document": "设备id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1c902558-d360-4a93-9b6f-1b49970534f7",
           "member": "string",
           "name": "DeviceId",
           "output_required": false,
@@ -9500,7 +9500,7 @@
         {
           "disabled": false,
           "document": "构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "8a74aba0-46e3-4097-89e6-7adbeb9ccaef",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -9516,7 +9516,7 @@
         {
           "disabled": false,
           "document": "设备空间绑定关系列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[ { \"DeviceId\": \"1c902558-d360-4a93-9b6f-1b49970534f7\", \"ElementId\": \"8a74aba0-46e3-4097-89e6-7adbeb9ccaef\" }, { \"DeviceId\": \"b66603af-7f8c-46c0-8712-1353a08d5806\", \"ElementId\": \"af7f7d83-17f8-4dff-80e2-a5129a39eab0\" } ]",
           "member": "SpaceDeviceRelation",
           "name": "SpaceDeviceRelationList",
           "output_required": false,
@@ -9648,7 +9648,7 @@
         {
           "disabled": false,
           "document": "构件id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "bdbbf537-d6c4-4b1e-80ae-e0bcaab8b06f",
           "member": "string",
           "name": "ElementId",
           "output_required": false,
@@ -9658,7 +9658,7 @@
         {
           "disabled": false,
           "document": "构件名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test_no_100",
           "member": "string",
           "name": "ElementName",
           "output_required": false,
@@ -9668,7 +9668,7 @@
         {
           "disabled": false,
           "document": "空间层级\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "9",
           "member": "uint64",
           "name": "Level",
           "output_required": false,
@@ -9678,7 +9678,7 @@
         {
           "disabled": false,
           "document": "空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "00016200200000003",
           "member": "string",
           "name": "SpaceCode",
           "output_required": false,
@@ -9688,7 +9688,7 @@
         {
           "disabled": false,
           "document": "父级空间编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "000162002",
           "member": "string",
           "name": "ParentSpaceCode",
           "output_required": false,
@@ -9698,7 +9698,7 @@
         {
           "disabled": false,
           "document": "子构件信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "SpaceRelation",
           "name": "Children",
           "output_required": false,
@@ -9714,7 +9714,7 @@
         {
           "disabled": false,
           "document": "空间层级关系\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "{ \"Children\": [ { \"Children\": [ { \"Children\": [], \"ElementId\": \"bdbbf537-d6c4-4b1e-80ae-e0bcaab8b06f\", \"ElementName\": \"test_no_100\", \"Level\": 9, \"ParentSpaceCode\": \"000162002\", \"SpaceCode\": \"00016200200000003\" } ], \"ElementId\": \"f3c5ffa5-05e3-4c26-a447-0edf71aa9783\", \"ElementName\": \"1F\", \"Level\": 7, \"ParentSpaceCode\": \"000162\", \"SpaceCode\": \"000162002\" } ], \"ElementId\": \"377a53a6-c5a7-445d-a3b7-c2d721f95408\", \"ElementName\": \"小智新设备挂接0628\", \"Level\": 6, \"ParentSpaceCode\": \"\", \"SpaceCode\": \"000162\" }",
           "member": "SpaceRelation",
           "name": "SpaceRelation",
           "output_required": false,
@@ -9730,7 +9730,7 @@
         {
           "disabled": false,
           "document": "空间分类编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "DIANTIJIAN",
           "member": "string",
           "name": "SpaceTypeCode",
           "output_required": false,
@@ -9740,7 +9740,7 @@
         {
           "disabled": false,
           "document": "空间分类名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "电梯间",
           "member": "string",
           "name": "SpaceTypeName",
           "output_required": false,
@@ -9756,7 +9756,7 @@
         {
           "disabled": false,
           "document": "空间分类列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": " [ { \"SpaceTypeCode\": \"DIANTIJIAN\", \"SpaceTypeName\": \"电梯间\" }, { \"SpaceTypeCode\": \"LOUTIJIAN\", \"SpaceTypeName\": \"楼梯间\" }, { \"SpaceTypeCode\": \"WODEFANGJIAN\", \"SpaceTypeName\": \"我的房间\" }, { \"SpaceTypeCode\": \"XIUXISHI\", \"SpaceTypeName\": \"休息室\" } ] ",
           "member": "SpaceType",
           "name": "SpaceTypeList",
           "output_required": false,

@@ -176,6 +176,14 @@
         "title": "获取接收客户端请求的节点类型"
       }
     ],
+    "InquirePriceRenewInstance": [
+      {
+        "document": "ES集群实例续费询价",
+        "input": "https://es.tencentcloudapi.com/?Action=InquirePriceRenewInstance\n&InstanceId=es_xdfds\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Discount\": 65,\n        \"OriginalPrice\": 1.15,\n        \"DiscountPrice\": 0.75,\n        \"Currency\": \"CNY\",\n        \"RequestId\": \"027e29ad-f2b5-4929-b479-96bf541df7e7\"\n    }\n}",
+        "title": "ES集群实例续费询价"
+      }
+    ],
     "ModifyEsVipSecurityGroup": [
       {
         "document": "修改集群VIP绑定的安全组信息",

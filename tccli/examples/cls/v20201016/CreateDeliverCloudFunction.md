@@ -6,19 +6,18 @@ Input:
 
 ```
 tccli cls CreateDeliverCloudFunction --cli-unfold-argument  \
-    --TopicId xx \
-    --FunctionName xx \
-    --MaxMsgNum 1 \
-    --Namespace xx \
-    --Timeout 1 \
-    --Qualifier xx
+    --TopicId 7953cd3d-993f-4813-822d-1dc65f5ba111 \
+    --FunctionName test-client-log-handler \
+    --Namespace default \
+    --Timeout 60 \
+    --Qualifier $LATEST
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "6ef60xxx-0xxx-4xxx-bxxx-270359fb5xxx"
+        "RequestId": "01fd5bcc-d7d4-4edb-9ff5-7ecfc305b831"
     }
 }
 ```

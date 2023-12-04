@@ -8133,32 +8133,29 @@
         {
           "disabled": false,
           "document": "导出的媒资名称。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Name",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
           "document": "导出的媒资分类 Id。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "ClassId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "第三方平台发布信息列表。暂未正式对外，请勿使用。",
-          "example": "",
+          "example": "无",
           "member": "ThirdPartyPublishInfo",
           "name": "ThirdPartyPublishInfos",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"

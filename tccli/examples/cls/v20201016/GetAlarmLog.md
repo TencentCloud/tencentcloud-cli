@@ -31,6 +31,8 @@ Output:
                 "HostName": "",
                 "PkgId": "",
                 "PkgLogId": "",
+                "IndexStatus": "",
+                "RawLog": "",
                 "LogJson": "{\"reach_trigger\":\"true\",\"notify_time\":1676618994,\"reach_notify\":\"false\",\"process_error_msg\":\"AlertThreshold Unreached\",\"record_group_id\":\"\",\"trigger\":\"$1.Warning事件数 > 0\",\"trigger_failed_reason\":\"matched\",\"alert_threshold\":15,\"trigger_result\":\"success\",\"monitored_object\":\"993bba4d-9494-4023-xxxx-f06c1b8c2983\",\"happen_threshold\":1,\"notify_type\":1,\"record_id\":\"\",\"trigger_time\":1676618994,\"notify_template\":\"notice-a1d2a4a6-c731-4386-869a-5ba91b1bb26c\",\"alert_id\":\"alarm-3e6131b1-689a-xxxx-8e2d-62ba80e6d91e\",\"notify_result\":\"fail\",\"process_result\":\"fail\",\"notify_failed_reason\":\"AlertThreshold Unreached\",\"uin\":10000100xxxx,\"topic_id\":\"993bba4d-9494-4023-xxxx-f06c1b8c2983\",\"record_info\":\"\",\"alert_name\":\"TKE Demo事件日志告警策略_10000100xxxx\",\"process_error_type\":\"UnreachedThreshold\"}"
             }
         ],

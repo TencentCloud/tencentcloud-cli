@@ -5361,6 +5361,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5370,6 +5371,7 @@
           "example": "无",
           "member": "AlertHistoryRecord",
           "name": "Records",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5424,7 +5426,7 @@
           "example": "无",
           "member": "ConfigExtraInfo",
           "name": "Configs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5434,7 +5436,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5471,7 +5473,7 @@
           "example": "无",
           "member": "MachineGroupInfo",
           "name": "MachineGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5701,7 +5703,7 @@
         },
         {
           "disabled": false,
-          "document": "<br><li> dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
+          "document": "<br><li>dashboardId\n\n按照【仪表盘id】进行过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardName\n\n按照【仪表盘名字】进行模糊搜索过滤。\n类型：String\n\n必选：否</li>\n\n<br><li> dashboardRegion\n\n按照【仪表盘地域】进行过滤，为了兼容老的仪表盘，通过云API创建的仪表盘没有地域属性\n类型：String\n\n必选：否</li>\n\n<br><li> tagKey\n\n按照【标签键】进行过滤。\n\n类型：String\n\n必选：否</li>\n\n<br><li> tag:tagKey\n\n按照【标签键值对】进行过滤。tag-key使用具体的标签键进行替换。使用请参考示例2。\n\n类型：String\n\n必选：否</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为100。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -5729,7 +5731,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5739,7 +5741,7 @@
           "example": "无",
           "member": "DashboardInfo",
           "name": "DashboardInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6439,7 +6441,7 @@
           "example": "无",
           "member": "ConfigInfo",
           "name": "Configs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7579,6 +7581,7 @@
           "example": "xx",
           "member": "string",
           "name": "Context",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7588,6 +7591,7 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7597,6 +7601,7 @@
           "example": "1",
           "member": "bool",
           "name": "Analysis",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -7606,6 +7611,7 @@
           "example": "[\"time\",\"pv\",\"uv\"]",
           "member": "string",
           "name": "ColNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7615,6 +7621,7 @@
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7624,6 +7631,7 @@
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7633,6 +7641,7 @@
           "example": "[\"xxx\",\"yy\"]",
           "member": "string",
           "name": "AnalysisRecords",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7642,6 +7651,7 @@
           "example": "无",
           "member": "Column",
           "name": "Columns",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

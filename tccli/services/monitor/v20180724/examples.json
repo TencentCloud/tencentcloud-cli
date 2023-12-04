@@ -1209,8 +1209,8 @@
     "UpdateGrafanaNotificationChannel": [
       {
         "document": "更新 Grafana 告警通道",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelId\": \"nchannel-abcd1234\",\n    \"ChannelName\": \"test\",\n    \"Receivers\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateGrafanaNotificationChannel\n<公共请求参数>\n\n{\n    \"InstanceId\": \"grafana-12345678\",\n    \"ChannelId\": \"nchannel-abcd1234\",\n    \"ChannelName\": \"test\",\n    \"Receivers\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新 Grafana 告警通道"
       }
     ],

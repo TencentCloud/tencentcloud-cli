@@ -2213,11 +2213,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "宿主机IP",
+          "document": "宿主机IP（废弃）",
           "example": "10.1.1.1",
           "member": "string",
           "name": "HostIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2227,7 +2227,7 @@
           "example": "云服务器宿主机",
           "member": "string",
           "name": "ServiceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2237,7 +2237,7 @@
           "example": "ONLINE",
           "member": "string",
           "name": "HostStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2247,7 +2247,7 @@
           "example": "CG2-25G",
           "member": "string",
           "name": "HostType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2257,7 +2257,7 @@
           "example": "32",
           "member": "uint64",
           "name": "CpuAvailable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2267,7 +2267,7 @@
           "example": "32",
           "member": "uint64",
           "name": "CpuTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2277,7 +2277,7 @@
           "example": "64",
           "member": "uint64",
           "name": "MemAvailable",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2287,7 +2287,7 @@
           "example": "64",
           "member": "uint64",
           "name": "MemTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2297,7 +2297,7 @@
           "example": "2020/12/18",
           "member": "string",
           "name": "RunTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2307,7 +2307,7 @@
           "example": "2023/12/18",
           "member": "string",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2317,7 +2317,7 @@
           "example": "host-xxxx",
           "member": "string",
           "name": "HostId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
