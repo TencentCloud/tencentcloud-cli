@@ -4639,7 +4639,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：\n<li>domain-name：按照加速域名进行过滤；</li>\n<li>origin-type：按照源站类型进行过滤；</li>\n<li>origin：按照主源站地址进行过滤；</li>\n<li>backup-origin： 按照备用源站地址进行过滤；</li>\n<li>domain-cname：按照 CNAME 进行过滤；</li>\n<li>share-cname：按照共享 CNAME 进行过滤；</li>",
+          "document": "过滤条件，Filters.Values 的上限为 20。该参数不填写时，返回当前 zone-id 下所有域名信息。详细的过滤条件如下：\n<li>domain-name：按照加速域名进行过滤；</li>\n<li>origin-type：按照源站类型进行过滤；</li>\n<li>origin：按照主源站地址进行过滤；</li>\n<li>backup-origin： 按照备用源站地址进行过滤；</li>\n<li>domain-cname：按照 CNAME 进行过滤；</li>\n<li>share-cname：按照共享 CNAME 进行过滤；</li>\n<li>vodeo-sub-app-id：按照【 vodeo 子应用 ID】进行过滤；</li>\n<li>vodeo-distribution-range：按照【 vodeo 分发范围】进行过滤；</li>\n<li>vodeo-bucket-id：按照【vodeo 存储桶 ID】进行过滤；</li>",
           "example": "无",
           "member": "AdvancedFilter",
           "name": "Filters",
@@ -10127,7 +10127,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6或域名类型源站；</li>\n<li>COS：COS源。</li>\n<li>ORIGIN_GROUP：源站组类型源站。</li>\n<li>AWS_S3：AWS S3对象存储源站。</li>",
+          "document": "源站类型，取值有：\n<li>IP_DOMAIN：IPV4、IPV6 或域名类型源站；</li>\n<li>COS：腾讯云 COS 对象存储源站；</li>\n<li>AWS_S3：AWS S3 对象存储源站；</li>\n<li>ORIGIN_GROUP：源站组类型源站；</li>\n <li>VODEO：云点播（混合云版）；</li>\n<li>SPACE：源站卸载，当前仅白名单开放；</li>\n<li>LB：负载均衡，当前仅白名单开放。</li>",
           "example": "ip_domain",
           "member": "string",
           "name": "OriginType",
@@ -10137,7 +10137,7 @@
         },
         {
           "disabled": false,
-          "document": "源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。",
+          "document": "源站地址，根据 OriginType 的取值分为以下情况：\n<li>当 OriginType = IP_DOMAIN 时，该参数为 IPv4、IPv6 地址或域名；</li>\n<li>当 OriginType = COS 时，该参数为 COS 桶的访问域名；</li>\n<li>当 OriginType = AWS_S3，该参数为 S3 桶的访问域名；</li>\n<li>当 OriginType = ORIGIN_GROUP 时，该参数为源站组 ID；</li>\n<li>当 OriginType = VODEO 时，如果 VodeoDistributionRange = ALL，则该参数为 \"all-buckets-in-vodeo-application\"；如果 VodeoDistributionRange = Bucket，则该参数为对应存储桶域名。</li>\n",
           "example": "qq.com",
           "member": "string",
           "name": "Origin",
@@ -10147,7 +10147,7 @@
         },
         {
           "disabled": false,
-          "document": "备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。",
+          "document": "备用源站组 ID，该参数仅在 OriginType = ORIGIN_GROUP 且配置了备源站组时会生效。",
           "example": "\"origin-07fa3f6c-4498-11ed-a368-5254006ca63d\"",
           "member": "string",
           "name": "BackupOrigin",
@@ -10157,7 +10157,7 @@
         },
         {
           "disabled": false,
-          "document": "主源源站组名称，当OriginType参数指定为ORIGIN_GROUP时该参数生效。",
+          "document": "主源源站组名称，当 OriginType = ORIGIN_GROUP 时该参数会返回值。",
           "example": "\"QQ\"",
           "member": "string",
           "name": "OriginGroupName",
@@ -10167,7 +10167,7 @@
         },
         {
           "disabled": false,
-          "document": "备用源站源站组名称，当OriginType参数指定为ORIGIN_GROUP，且用户指定了被用源站时该参数生效。",
+          "document": "备用源站组名称，该参数仅当 OriginType = ORIGIN_GROUP 且配置了备用源站组时会生效。",
           "example": "\"腾讯云\"",
           "member": "string",
           "name": "BackOriginGroupName",
@@ -10177,7 +10177,7 @@
         },
         {
           "disabled": false,
-          "document": "指定是否允许访问私有对象存储源站。当源站类型OriginType=COS或AWS_S3时有效 取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>\n不填写，默认值为off。",
+          "document": "指定是否允许访问私有对象存储源站，该参数仅当源站类型 OriginType = COS 或 AWS_S3 时会生效，取值有：\n<li>on：使用私有鉴权；</li>\n<li>off：不使用私有鉴权。</li>\n不填写，默认值为off。",
           "example": "on",
           "member": "string",
           "name": "PrivateAccess",
@@ -10187,13 +10187,43 @@
         },
         {
           "disabled": false,
-          "document": "私有鉴权使用参数，当源站类型PrivateAccess=on时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "私有鉴权使用参数，该参数仅当源站类型 PrivateAccess = on 时会生效。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "PrivateParameter",
           "name": "PrivateParameters",
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "MO 子应用 ID",
+          "example": "无",
+          "member": "int64",
+          "name": "VodeoSubAppId",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>\t",
+          "example": "无",
+          "member": "string",
+          "name": "VodeoDistributionRange",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填",
+          "example": "无",
+          "member": "string",
+          "name": "VodeoBucketId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -10367,6 +10397,33 @@
           "name": "PrivateParameters",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "MO 子应用 ID",
+          "example": "无",
+          "member": "int64",
+          "name": "VodeoSubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "MO 分发范围，取值有： <li>All：全部</li> <li>Bucket：存储桶</li>",
+          "example": "无",
+          "member": "string",
+          "name": "VodeoDistributionRange",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "MO 存储桶 ID，分发范围(DistributionRange)为存储桶(Bucket)时必填\t",
+          "example": "无",
+          "member": "string",
+          "name": "VodeoBucketId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -11377,6 +11434,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源标记类型，取值有：\n<li>vodeo：vodeo资源。</li>",
+          "example": "vodeo",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

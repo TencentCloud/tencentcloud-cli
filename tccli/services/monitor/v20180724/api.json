@@ -14110,7 +14110,7 @@
         {
           "disabled": false,
           "document": "告警通知规则名称 60字符以内",
-          "example": "默认通知模版",
+          "example": "默认通知模板",
           "member": "string",
           "name": "Name",
           "required": true,

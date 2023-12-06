@@ -11,7 +11,8 @@ tccli bi CreateEmbedToken --cli-unfold-argument  \
     --ExtraParam  \
     --ProjectId 1 \
     --UserCorpId  \
-    --UserId 
+    --UserId  \
+    --TicketNum 0
 ```
 
 Output: 
@@ -34,7 +35,8 @@ Output:
             "UpdatedAt": "2022-04-28 14:26:01",
             "BIToken": "300cf2a4-cfb8-47b8-9bc0-4a1f1f74bc1d",
             "UserCorpId": "",
-            "UserId": ""
+            "UserId": "",
+            "TicketNum": 0
         }
     }
 }
