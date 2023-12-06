@@ -2279,7 +2279,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br><li>LOCAL_BASIC：本地硬盘<br><li>LOCAL_SSD：本地SSD硬盘<br><li>LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br><li>LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br><li>CLOUD_BASIC：普通云硬盘<br><li>CLOUD_PREMIUM：高性能云硬盘<br><li>CLOUD_SSD：SSD云硬盘<br><li>CLOUD_HSSD：增强型SSD云硬盘<br><li>CLOUD_TSSD：极速型SSD云硬盘<br><li>CLOUD_BSSD：通用型SSD云硬盘<br><br>默认取值：LOCAL_BASIC。<br><br>该参数对`ResizeInstanceDisk`接口无效。",
+          "document": "数据盘类型。数据盘类型限制详见[存储概述](https://cloud.tencent.com/document/product/213/4952)。取值范围：<br />\n<li>\n  LOCAL_BASIC：本地硬盘<br />\n  <li>\n    LOCAL_SSD：本地SSD硬盘<br />\n    <li>\n      LOCAL_NVME：本地NVME硬盘，与InstanceType强相关，不支持指定<br />\n      <li>\n        LOCAL_PRO：本地HDD硬盘，与InstanceType强相关，不支持指定<br />\n        <li>\n          CLOUD_BASIC：普通云硬盘<br />\n          <li>\n            CLOUD_PREMIUM：高性能云硬盘<br />\n            <li>\n              CLOUD_SSD：SSD云硬盘<br />\n              <li>\n                CLOUD_HSSD：增强型SSD云硬盘<br />\n                <li>\n                  CLOUD_TSSD：极速型SSD云硬盘<br />\n                  <li>\n                    CLOUD_BSSD：通用型SSD云硬盘<br /><br />默认取值：LOCAL_BASIC。<br /><br />该参数对`ResizeInstanceDisk`接口无效。\n                  </li>\n                </li>\n              </li>\n            </li>\n          </li>\n        </li>\n      </li>\n    </li>\n  </li>\n</li>",
           "example": "无",
           "member": "string",
           "name": "DiskType",
@@ -2301,7 +2301,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘\n<li>FALSE：子机销毁时，保留数据盘<br>\n默认取值：TRUE<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是否随子机销毁。取值范围：\n<li>TRUE：子机销毁时，销毁数据盘，只支持按小时后付费云盘</li>\n<li>\n  FALSE：子机销毁时，保留数据盘<br />\n  默认取值：TRUE<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "bool",
           "name": "DeleteWithInstance",
@@ -2323,7 +2323,7 @@
         },
         {
           "disabled": false,
-          "document": "数据盘是加密。取值范围：\n<li>true：加密\n<li>false：不加密<br>\n默认取值：false<br>\n该参数目前仅用于 `RunInstances` 接口。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据盘是加密。取值范围：\n<li>true：加密</li>\n<li>\n  false：不加密<br />\n  默认取值：false<br />\n  该参数目前仅用于 `RunInstances` 接口。\n</li>\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "Encrypt",
@@ -2363,6 +2363,17 @@
           "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "突发性能\n\n <b>注：内测中。</b>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "BurstPerformance",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -5369,7 +5380,7 @@
           "example": "img-19mu3fy3",
           "member": "string",
           "name": "ImageId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5379,7 +5390,7 @@
           "example": "CentOS 8.0 64位",
           "member": "string",
           "name": "OsName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5389,7 +5400,7 @@
           "example": "PRIVATE_IMAGE",
           "member": "string",
           "name": "ImageType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5399,7 +5410,7 @@
           "example": "2022-03-21T08:41:45Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5409,7 +5420,7 @@
           "example": "test",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5419,7 +5430,7 @@
           "example": "test",
           "member": "string",
           "name": "ImageDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5429,7 +5440,7 @@
           "example": "50",
           "member": "int64",
           "name": "ImageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5439,7 +5450,7 @@
           "example": "x86_64",
           "member": "string",
           "name": "Architecture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5449,7 +5460,7 @@
           "example": "NORMAL",
           "member": "string",
           "name": "ImageState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5459,7 +5470,7 @@
           "example": "CentOS",
           "member": "string",
           "name": "Platform",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5469,7 +5480,7 @@
           "example": "xxx",
           "member": "string",
           "name": "ImageCreator",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5479,7 +5490,7 @@
           "example": "CREATE_IMAGE",
           "member": "string",
           "name": "ImageSource",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5489,7 +5500,7 @@
           "example": "null",
           "member": "int64",
           "name": "SyncPercent",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5499,7 +5510,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsSupportCloudinit",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -5509,7 +5520,7 @@
           "example": "[]",
           "member": "Snapshot",
           "name": "SnapshotSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5519,7 +5530,7 @@
           "example": "[]",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5529,7 +5540,7 @@
           "example": "TencentCloud",
           "member": "string",
           "name": "LicenseType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6280,7 +6291,7 @@
         },
         {
           "disabled": false,
-          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。",
+          "document": "实例[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月</li><br><li>POSTPAID_BY_HOUR：按小时后付费</li><br><li>SPOTPAID：竞价付费</li><br>默认值：POSTPAID_BY_HOUR。",
           "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
@@ -6352,7 +6363,7 @@
         },
         {
           "disabled": false,
-          "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持60个字符（包含模式串）。",
+          "document": "实例显示名称。<br><li>不指定实例显示名称则默认显示‘未命名’。</li><li>购买多台实例，如果指定模式串`{R:x}`，表示生成数字`[x, x+n-1]`，其中`n`表示购买实例的数量，例如`server_{R:3}`，购买1台时，实例显示名称为`server_3`；购买2台时，实例显示名称分别为`server_3`，`server_4`。支持指定多个模式串`{R:x}`。</li><li>购买多台实例，如果不指定模式串，则在实例显示名称添加后缀`1、2...n`，其中`n`表示购买实例的数量，例如`server_`，购买2台时，实例显示名称分别为`server_1`，`server_2`。</li><li>最多支持60个字符（包含模式串）。</li>",
           "example": "myInstance",
           "member": "string",
           "name": "InstanceName",
@@ -6397,7 +6408,7 @@
         },
         {
           "disabled": false,
-          "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。<br><li>Windows 实例：主机名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。<br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 30]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。",
+          "document": "云服务器的主机名。<br><li>点号（.）和短横线（-）不能作为 HostName 的首尾字符，不能连续使用。</li><br><li>Windows 实例：主机名字符长度为[2, 15]，允许字母（不限制大小写）、数字和短横线（-）组成，不支持点号（.），不能全是数字。</li><br><li>其他类型（Linux 等）实例：主机名字符长度为[2, 30]，允许支持多个点号，点之间为一段，每段允许字母（不限制大小写）、数字和短横线（-）组成。</li>",
           "example": "myHost",
           "member": "string",
           "name": "HostName",
@@ -8779,6 +8790,15 @@
           "name": "CamRoleType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改实例主机名是否自动重启实例，不传默认自动重启。\n- true: 修改主机名，并自动重启实例；\n- false: 修改主机名，不自动重启实例，需要手动重启使新主机名生效。\n注意点：本参数仅对修改主机名生效。",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoReboot",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

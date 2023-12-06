@@ -1,3 +1,210 @@
+# Release 3.0.897.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 7 次发布
+
+发布时间：2023-12-06 01:06:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Strategies](http://document.tencentcloudapi.woa.com/document/product/1660/78752#Strategies)
+
+	* 新增成员：IsSupportCustom
+
+
+
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 7 次发布
+
+发布时间：2023-12-06 01:11:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateDatasourceCloud](http://document.tencentcloudapi.woa.com/document/product/1707/82011)
+
+	* 新增入参：ClusterId
+
+* [CreateEmbedToken](http://document.tencentcloudapi.woa.com/document/product/1707/80322)
+
+	* 新增入参：TicketNum
+
+* [ModifyDatasourceCloud](http://document.tencentcloudapi.woa.com/document/product/1707/82008)
+
+	* 新增入参：ClusterId
+
+
+修改数据结构：
+
+* [EmbedTokenInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#EmbedTokenInfo)
+
+	* 新增成员：TicketNum
+
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 67 次发布
+
+发布时间：2023-12-06 01:37:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Package](http://document.tencentcloudapi.woa.com/document/product/1003/48097#Package)
+
+	* 新增成员：HistoryBindResourceInfos
+
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 48 次发布
+
+发布时间：2023-12-06 01:50:43
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/77396)
+
+	* 新增入参：DiSourceEmr
+
+
+新增数据结构：
+
+* [DiDataSourceCvmCdwDoris](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceCvmCdwDoris)
+* [DiDataSourceEmr](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiDataSourceEmr)
+* [DiSourceEmr](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiSourceEmr)
+
+修改数据结构：
+
+* [DiData](http://document.tencentcloudapi.woa.com/document/product/845/30634#DiData)
+
+	* 新增成员：DiDataSourceCvmCdwDoris, DiDataSourceEmr
+
+* [ServerlessDi](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessDi)
+
+	* 新增成员：DiSourceEmr
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 43 次发布
+
+发布时间：2023-12-06 01:53:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ImageRecognitionV2](http://document.tencentcloudapi.woa.com/document/product/1007/82771)
+
+
+
+## 游戏多媒体引擎(gme) 版本：2018-07-11
+
+### 第 21 次发布
+
+发布时间：2023-12-06 01:55:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* CreateAgeDetectTask
+* DescribeAgeDetectTask
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 23 次发布
+
+发布时间：2023-12-06 02:35:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeIPRegion](http://document.tencentcloudapi.woa.com/document/product/1738/81138)
+
+	* 新增入参：IPs
+
+	* 新增出参：IPRegionInfo
+
+
+新增数据结构：
+
+* [IPRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#IPRegionInfo)
+
+修改数据结构：
+
+* [OriginDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginDetail)
+
+	* 新增成员：VodeoSubAppId, VodeoDistributionRange, VodeoBucketId
+
+* [OriginInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#OriginInfo)
+
+	* 新增成员：VodeoSubAppId, VodeoDistributionRange, VodeoBucketId
+
+* [Resource](http://document.tencentcloudapi.woa.com/document/product/1738/81211#Resource)
+
+	* 新增成员：Type
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 84 次发布
+
+发布时间：2023-12-06 02:39:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckClusterCIDR](http://document.tencentcloudapi.woa.com/document/product/457/82772)
+
+
+
 # Release 3.0.896.1
 
 ## 专属可用区(cdz) 版本：2022-11-23

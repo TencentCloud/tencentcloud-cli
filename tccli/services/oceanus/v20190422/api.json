@@ -126,6 +126,13 @@
       "output": "DescribeClustersResponse",
       "status": "online"
     },
+    "DescribeFolder": {
+      "document": "查询指定文件夹及其相应的子文件夹信息",
+      "input": "DescribeFolderRequest",
+      "name": "查询文件夹",
+      "output": "DescribeFolderResponse",
+      "status": "online"
+    },
     "DescribeJobConfigs": {
       "document": "查询作业配置列表，一次最多查询100个",
       "input": "DescribeJobConfigsRequest",
@@ -2610,7 +2617,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2620,9 +2627,114 @@
           "example": "[]",
           "member": "Cluster",
           "name": "ClusterSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFolderRequest": {
+      "document": "DescribeFolder请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "workspace id",
+          "example": "space-53rqk422",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "1:资源文件夹\n其他:作业文件夹",
+          "example": "1",
+          "member": "int64",
+          "name": "FolderType",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeFolderResponse": {
+      "document": "DescribeFolder返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "folder name",
+          "example": "test",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "父文件夹id",
+          "example": "folder-lfqkt10i",
+          "member": "string",
+          "name": "ParentId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "文件夹类型",
+          "example": "1",
+          "member": "int64",
+          "name": "FolderType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "workspace id",
+          "example": "无",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子文件夹信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubFolderInfo",
+          "name": "SubFolderInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3047,7 +3159,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3057,7 +3169,7 @@
           "example": "[]",
           "member": "JobV1",
           "name": "JobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4517,7 +4629,7 @@
           "example": "cql-xxx",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4527,7 +4639,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4537,7 +4649,7 @@
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4547,7 +4659,7 @@
           "example": "1",
           "member": "int64",
           "name": "AppId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4557,7 +4669,7 @@
           "example": "2",
           "member": "string",
           "name": "OwnerUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4567,7 +4679,7 @@
           "example": "2",
           "member": "string",
           "name": "CreatorUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4577,7 +4689,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4587,7 +4699,7 @@
           "example": "1",
           "member": "int64",
           "name": "JobType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4597,7 +4709,7 @@
           "example": "4",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4607,7 +4719,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4617,7 +4729,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4627,7 +4739,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "StopTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4637,7 +4749,7 @@
           "example": "2021-06-11 16:44:44",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4647,7 +4759,7 @@
           "example": "13864986",
           "member": "int64",
           "name": "TotalRunMillis",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4657,7 +4769,7 @@
           "example": "test",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4667,7 +4779,7 @@
           "example": "success",
           "member": "string",
           "name": "LastOpResult",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4677,7 +4789,7 @@
           "example": "test",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4687,7 +4799,7 @@
           "example": "2",
           "member": "int64",
           "name": "LatestJobConfigVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4697,7 +4809,7 @@
           "example": "2",
           "member": "int64",
           "name": "PublishedJobConfigVersion",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4707,7 +4819,7 @@
           "example": "1",
           "member": "int64",
           "name": "RunningCuNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4717,7 +4829,7 @@
           "example": "4",
           "member": "int64",
           "name": "CuMem",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4727,7 +4839,7 @@
           "example": "running",
           "member": "string",
           "name": "StatusDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4737,7 +4849,7 @@
           "example": "124",
           "member": "int64",
           "name": "CurrentRunMillis",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4747,7 +4859,7 @@
           "example": "cluster-xxx",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4757,7 +4869,7 @@
           "example": "https://175.24.255.193//cql-czvy480r-78/?defaultToken=0",
           "member": "string",
           "name": "WebUIUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4767,7 +4879,7 @@
           "example": "2",
           "member": "int64",
           "name": "SchedulerType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4777,7 +4889,7 @@
           "example": "2",
           "member": "int64",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4787,7 +4899,7 @@
           "example": "0.5",
           "member": "float",
           "name": "RunningCu",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": true
         },
@@ -4797,7 +4909,7 @@
           "example": "Flink-1.11",
           "member": "string",
           "name": "FlinkVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4807,7 +4919,7 @@
           "example": "space-xxx",
           "member": "string",
           "name": "WorkSpaceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4817,7 +4929,7 @@
           "example": "mysqItemSpace",
           "member": "string",
           "name": "WorkSpaceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -4827,7 +4939,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -6580,6 +6692,32 @@
         }
       ],
       "type": "object"
+    },
+    "SubFolderInfo": {
+      "document": "子目录信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "folder id",
+          "example": "folder-lfqkt10s",
+          "member": "string",
+          "name": "FolderId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "folder name",
+          "example": "test",
+          "member": "string",
+          "name": "FolderName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SystemResourceItem": {
       "document": "系统资源返回值",

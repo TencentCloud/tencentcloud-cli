@@ -60,7 +60,8 @@ Output:
                 "DeviceName": "DeviceName",
                 "LicenseChargingMode": 1,
                 "SN": "cpe-sn-08",
-                "VendorDescription": ""
+                "VendorDescription": "",
+                "LastOnlineTime": "1685518319"
             },
             {
                 "ActiveTime": "1685518319",
@@ -70,7 +71,8 @@ Output:
                 "DeviceName": "DeviceName1",
                 "LicenseChargingMode": 1,
                 "SN": "cpe-sn-13",
-                "VendorDescription": ""
+                "VendorDescription": "",
+                "LastOnlineTime": "1685518319"
             }
         ],
         "Length": 2,

@@ -133,6 +133,13 @@
       "output": "DescribeUserBaseInfoInstanceResponse",
       "status": "online"
     },
+    "DestroyResourceInstances": {
+      "document": "渠道合作资源销毁\n安卓应用加固-按年收费资源销毁，其他类型暂不支持",
+      "input": "DestroyResourceInstancesRequest",
+      "name": "渠道订单：资源销毁",
+      "output": "DestroyResourceInstancesResponse",
+      "status": "online"
+    },
     "RequestLocalTask": {
       "document": "client任务请求",
       "input": "RequestLocalTaskRequest",
@@ -2854,6 +2861,82 @@
           "example": "",
           "member": "uint64",
           "name": "TimeStamp",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyResourceInstancesRequest": {
+      "document": "DestroyResourceInstances请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "ResourceId 资源id，在创建订单时，返回的resourceId",
+          "example": "20231204_**********_0",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源绑定的包名，为了防止误删除，需要指定绑定时的包名",
+          "example": "com.***.***",
+          "member": "string",
+          "name": "AppPkgName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyResourceInstancesResponse": {
+      "document": "DestroyResourceInstances返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "20231204_**********_0",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回状态",
+          "example": "ok",
+          "member": "string",
+          "name": "Result",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
+          "example": "平台类型  1.android安卓加固   2.ios源码混淆  3.sdk加固  4.applet小程序加固",
+          "member": "int64",
+          "name": "PlatformType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单采购类型 1-免费试用 2-按年收费 3-按次收费  ",
+          "example": "订单采购类型 1-免费试用 2-按年收费 3-按次收费  ",
+          "member": "int64",
+          "name": "OrderType",
+          "output_required": false,
           "type": "int",
           "value_allowed_null": false
         },

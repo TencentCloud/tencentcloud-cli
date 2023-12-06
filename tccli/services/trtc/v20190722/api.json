@@ -4597,13 +4597,49 @@
       ],
       "usage": "out"
     },
+    "RemoveInfo": {
+      "document": "踢用户接口返回信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "aaa",
+          "member": "string",
+          "name": "UserId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误码：-203016(上麦用户不存在）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-203016",
+          "member": "int64",
+          "name": "ErrorCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户不存在\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"conn user not exist\"",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RemoveUserByStrRoomIdRequest": {
       "document": "RemoveUserByStrRoomId请求参数结构体",
       "members": [
         {
           "disabled": false,
           "document": "TRTC的SDKAppId。",
-          "example": "",
+          "example": "1400xxx",
           "member": "uint64",
           "name": "SdkAppId",
           "required": true,
@@ -4612,7 +4648,7 @@
         {
           "disabled": false,
           "document": "房间号。",
-          "example": "",
+          "example": "1234",
           "member": "string",
           "name": "RoomId",
           "required": true,
@@ -4621,7 +4657,7 @@
         {
           "disabled": false,
           "document": "要移出的用户列表，最多10个。",
-          "example": "",
+          "example": "[1,2,3]",
           "member": "string",
           "name": "UserIds",
           "required": true,
@@ -4633,6 +4669,16 @@
     "RemoveUserByStrRoomIdResponse": {
       "document": "RemoveUserByStrRoomId返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "踢用户返回信息",
+          "example": "无",
+          "member": "RemoveInfo",
+          "name": "RemoveInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -4678,6 +4724,16 @@
     "RemoveUserResponse": {
       "document": "RemoveUser返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "踢用户返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RemoveInfo",
+          "name": "RemoveInfoList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -6465,8 +6521,7 @@
           "member": "uint64",
           "name": "Top",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6475,8 +6530,7 @@
           "member": "uint64",
           "name": "Left",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6485,8 +6539,7 @@
           "member": "uint64",
           "name": "Width",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6495,8 +6548,7 @@
           "member": "uint64",
           "name": "Height",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6505,8 +6557,7 @@
           "member": "string",
           "name": "Chars",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6515,8 +6566,7 @@
           "member": "uint64",
           "name": "FontSize",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6525,8 +6575,7 @@
           "member": "string",
           "name": "FontColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -6535,8 +6584,16 @@
           "member": "string",
           "name": "BackGroundColor",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文字水印的字体，支持设置以下值：\n1. Tencent （默认）\n2. SourceHanSans",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -6673,8 +6730,7 @@
           "member": "uint64",
           "name": "Pos",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -6683,8 +6739,16 @@
           "member": "uint64",
           "name": "TimeZone",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "文字水印的字体，支持设置以下值：\n1. Tencent （默认）\n2. SourceHanSans",
+          "example": "Tencent",
+          "member": "string",
+          "name": "Font",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

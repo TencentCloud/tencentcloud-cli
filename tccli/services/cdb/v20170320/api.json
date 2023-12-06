@@ -5353,7 +5353,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC\" - 基础版实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - ONTKE单节点实例。 不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",
@@ -5471,6 +5471,7 @@
           "example": "['20171201110011']",
           "member": "string",
           "name": "DealIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5480,6 +5481,7 @@
           "example": "['cdb-pn6gd5jp']",
           "member": "string",
           "name": "InstanceIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5731,7 +5733,7 @@
         },
         {
           "disabled": false,
-          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC\" - 基础版实例。 不指定则默认为通用型实例。",
+          "document": "实例隔离类型。支持值包括： \"UNIVERSAL\" - 通用型实例， \"EXCLUSIVE\" - 独享型实例， \"BASIC_V2\" - ONTKE单节点实例。 不指定则默认为通用型实例。",
           "example": "UNIVERSAL",
           "member": "string",
           "name": "DeviceType",

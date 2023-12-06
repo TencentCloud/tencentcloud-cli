@@ -1,11 +1,11 @@
 {
   "actions": {
     "CreateAgeDetectTask": {
-      "document": "用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。\n</br>\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音文件进行检测，判断是否为未成年人。</li>\n<li>支持批量提交检测子任务。检测子任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：10 M</li>\n<li>音频文件时长限制：3分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>",
+      "document": "目前该功能底层能力已不具备，不对外提供，目前需要下线，走预下线流程。\n\n用于创建年龄语音识别任务的接口，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。\n</br>\n<h4><b>接口功能说明：</b></h4>\n<li>支持对语音文件进行检测，判断是否为未成年人。</li>\n<li>支持批量提交检测子任务。检测子任务列表最多支持100个。</li>\n</br>\n<h4><b>音频文件限制说明：</b></h4>\n<li>音频文件大小限制：10 M</li>\n<li>音频文件时长限制：3分钟</li>\n<li>音频文件格式支持的类型：.wav、.m4a、.amr、.mp3、.aac、.wma、.ogg</li>\n</br>",
       "input": "CreateAgeDetectTaskRequest",
       "name": "提交年龄语音识别任务",
       "output": "CreateAgeDetectTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "CreateApp": {
       "document": "本接口(CreateApp)用于创建一个GME应用。",
@@ -50,11 +50,11 @@
       "status": "online"
     },
     "DescribeAgeDetectTask": {
-      "document": "查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
+      "document": "目前该功能底层能力已不具备，不对外提供，目前需要下线，走预下线流程。\n\n查询年龄语音识别任务结果，请求频率10次/秒。该接口目前通过白名单开放试用，如有需求，请提交工单申请。",
       "input": "DescribeAgeDetectTaskRequest",
       "name": "查询年龄语音识别任务结果",
       "output": "DescribeAgeDetectTaskResponse",
-      "status": "online"
+      "status": "deprecated"
     },
     "DescribeAppStatistics": {
       "document": "本接口(DescribeAppStatistics)用于获取某个GME应用的用量数据。包括实时语音，语音消息及转文本，语音分析等。最长查询周期为最近60天。",

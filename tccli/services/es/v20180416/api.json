@@ -224,6 +224,13 @@
       "output": "GetRequestTargetNodeTypesResponse",
       "status": "online"
     },
+    "InquirePriceRenewInstance": {
+      "document": "集群续费询价接口，续费前通过调用该接口，可获取集群续费的价格。",
+      "input": "InquirePriceRenewInstanceRequest",
+      "name": "集群续费询价",
+      "output": "InquirePriceRenewInstanceResponse",
+      "status": "online"
+    },
     "ModifyEsVipSecurityGroup": {
       "document": "修改绑定VIP的安全组，传安全组id列表",
       "input": "ModifyEsVipSecurityGroupRequest",
@@ -1135,7 +1142,7 @@
         {
           "disabled": false,
           "document": "【必填】创建的索引元数据JSON，如mappings、settings",
-          "example": "{}",
+          "example": "{\"settings\": {\"index.number_of_shards\": 1},\"mappings\": {\"properties\": {\"field1\": {\"type\": \"text\"}}}}",
           "member": "string",
           "name": "IndexMetaJson",
           "required": false,
@@ -1278,7 +1285,7 @@
         },
         {
           "disabled": false,
-          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li>默认值CLOUD_SSD",
+          "document": "已废弃请使用NodeInfoList\n节点磁盘类型<li>CLOUD_SSD：SSD云硬盘</li><li>CLOUD_PREMIUM：高性能云硬盘</li><li> CLOUD_HSSD：增强型SSD云硬盘</li><li> CLOUD_BSSD：通用型SSD云硬盘</li>默认值CLOUD_SSD",
           "example": "CLOUD_SSD",
           "member": "string",
           "name": "DiskType",
@@ -1368,7 +1375,7 @@
         },
         {
           "disabled": false,
-          "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署</li>默认为0",
+          "document": "集群部署方式<li>0：单可用区部署</li><li>1：多可用区部署，北京、上海、上海金融、广州、南京、香港、新加坡、法兰克福（白名单控制）</li>默认为0",
           "example": "0",
           "member": "uint64",
           "name": "DeployMode",
@@ -1789,6 +1796,15 @@
           "example": "无",
           "member": "DiSourceCvmCdwDoris",
           "name": "DiSourceCvmCdwDoris",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "emr 数据源",
+          "example": "无",
+          "member": "DiSourceEmr",
+          "name": "DiSourceEmr",
           "required": false,
           "type": "object"
         }
@@ -3806,6 +3822,7 @@
           "example": "无",
           "member": "ServerlessIndexMetaField",
           "name": "IndexMetaFields",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3815,6 +3832,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3997,7 +4015,7 @@
           "example": "无",
           "member": "DiDataSourceCvm",
           "name": "DiDataSourceCvm",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4007,7 +4025,7 @@
           "example": "无",
           "member": "DiDataSourceTke",
           "name": "DiDataSourceTke",
-          "output_required": true,
+          "output_required": false,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4037,6 +4055,26 @@
           "example": "无",
           "member": "DiSourceInfo",
           "name": "DiSourceInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cdw-doris数据源信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSourceCvmCdwDoris",
+          "name": "DiDataSourceCvmCdwDoris",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Emr数据源\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DiDataSourceEmr",
+          "name": "DiDataSourceEmr",
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
@@ -4106,6 +4144,32 @@
       ],
       "usage": "out"
     },
+    "DiDataSourceCvmCdwDoris": {
+      "document": "cdw数据源信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Cdw实例ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdw-xxxxxxxx",
+          "member": "string",
+          "name": "CdwId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Cdw实例VPC ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DiDataSourceCvmInstance": {
       "document": "数据接入cvm实例信息",
       "members": [
@@ -4147,6 +4211,72 @@
           "name": "ErrMsg",
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DiDataSourceEmr": {
+      "document": "DiDataSourceEmr, 用于DescribeServerlessDi的出参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR集群VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR组件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SelectedServices",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogInfoVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否采集Application日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ApplicationLogEnabled",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集策略; 全量为false，增量为true\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "InputsTailFiles",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],
@@ -4460,6 +4590,78 @@
         }
       ],
       "usage": "in"
+    },
+    "DiSourceEmr": {
+      "document": "DiSourceEmr",
+      "members": [
+        {
+          "disabled": false,
+          "document": "EMR集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR集群VPC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR组件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SelectedServices",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EMR版本信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LogInfoVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否采集Application日志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "ApplicationLogEnabled",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "采集策略, 增量true, 全量false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "InputsTailFiles",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DiSourceInfo": {
       "document": "Di 内部产品 采集数据源 相关辅助描述信息",
@@ -5588,6 +5790,73 @@
         }
       ],
       "usage": "both"
+    },
+    "InquirePriceRenewInstanceRequest": {
+      "document": "InquirePriceRenewInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例Id",
+          "example": "es-xxxsxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "InquirePriceRenewInstanceResponse": {
+      "document": "InquirePriceRenewInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "刊例价，即集群原始价格",
+          "example": "100",
+          "member": "float",
+          "name": "OriginalPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折后价",
+          "example": "100",
+          "member": "float",
+          "name": "DiscountPrice",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "折扣，如65折",
+          "example": "65",
+          "member": "float",
+          "name": "Discount",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "货币，如CNY代表人民币",
+          "example": "CNY",
+          "member": "string",
+          "name": "Currency",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "InstallBundle": {
       "document": "安装文件包信息",
@@ -9293,6 +9562,15 @@
           "example": "无",
           "member": "DiSourceInfo",
           "name": "DiSourceInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "/",
+          "example": "无",
+          "member": "DiSourceEmr",
+          "name": "DiSourceEmr",
           "required": false,
           "type": "object"
         }

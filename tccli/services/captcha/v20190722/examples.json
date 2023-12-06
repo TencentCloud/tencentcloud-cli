@@ -72,6 +72,14 @@
         "title": "请求和返回示例"
       }
     ],
+    "DescribeCaptchaRceResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: captcha.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCaptchaRceResult\n<公共请求参数>\n\n{\n    \"CaptchaType\": 1,\n    \"Ticket\": \"abc\",\n    \"UserIp\": \"abc\",\n    \"BusinessId\": 1,\n    \"SceneId\": 1,\n    \"MacAddress\": \"abc\",\n    \"Imei\": \"abc\",\n    \"Randstr\": \"abc\",\n    \"CaptchaAppId\": 1,\n    \"AppSecretKey\": \"abc\",\n    \"NeedGetCaptchaTime\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"CaptchaCode\": 0,\n        \"CaptchaMsg\": \"abc\",\n        \"EvilLevel\": 0,\n        \"GetCaptchaTime\": 0,\n        \"EvilBitmap\": 0,\n        \"SubmitCaptchaTime\": 0,\n        \"RceResult\": {\n            \"UserId\": \"abc\",\n            \"PostTime\": 0,\n            \"AssociateAccount\": \"abc\",\n            \"UserIp\": \"abc\",\n            \"RiskLevel\": \"abc\",\n            \"RiskType\": [\n                0\n            ],\n            \"ConstId\": \"abc\",\n            \"RiskInformation\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "成功结果示例"
+      }
+    ],
     "DescribeCaptchaResult": [
       {
         "document": "票据校验",

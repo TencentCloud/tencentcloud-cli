@@ -19,6 +19,10 @@ Output:
                 "ApplicationVersionSize": 1024,
                 "ApplicationVersionStatus": "Inuse",
                 "ApplicationVersionName": "xxx",
+                "ApplicationVersionRegions": [
+                    "ap-chinese-mainland",
+                    "na-north-america-1"
+                ],
                 "CreateTime": "2021-08-29T08:00:30Z"
             }
         ],

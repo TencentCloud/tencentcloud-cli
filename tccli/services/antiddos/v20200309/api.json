@@ -6282,12 +6282,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例",
-          "example": "lh-xxxxx",
+          "document": "实例id 列表",
+          "example": "[\"lh-xxxxxx\", \"lh-xxxxxxx\"]",
           "member": "string",
-          "name": "InstanceId",
+          "name": "InstanceIds",
           "required": true,
-          "type": "string"
+          "type": "list"
         }
       ],
       "type": "object"
@@ -6297,32 +6297,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "创建时间",
-          "example": "2023-01-01 00:00:00",
-          "member": "string",
-          "name": "CreateTime",
+          "document": "保险版计费信息",
+          "example": "无",
+          "member": "InsuranceBillingInfo",
+          "name": "InsuranceBillingInfos",
           "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "过期时间",
-          "example": "2023-01-01 00:00:00",
-          "member": "string",
-          "name": "ExpireTime",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "自动续费开关0:关闭，1:开启",
-          "example": "1",
-          "member": "int64",
-          "name": "AutoRenewFlag",
-          "output_required": true,
-          "type": "int",
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -8993,6 +8973,72 @@
         }
       ],
       "usage": "both"
+    },
+    "InsuranceBillingInfo": {
+      "document": "高防保险版计费相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-01-01 00:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "lh-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "保险版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "newinsurance-xxxxxx",
+          "member": "string",
+          "name": "InsuranceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "IpSegment": {
       "document": "ip段数据结构",

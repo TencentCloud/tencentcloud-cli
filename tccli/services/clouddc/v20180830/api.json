@@ -21,13 +21,6 @@
       "output": "CreateLabelsToCustomerResponse",
       "status": "online"
     },
-    "CreateLead": {
-      "document": "下线接口\n\nTCC导创建线索，有白名单限制，需要的童鞋，请联系joshuadu 配置白名单\n更多接入问题请看\nhttp://tapd.oa.com/pt_jifei/markdown_wikis/view/#1010140771008122957",
-      "input": "CreateLeadRequest",
-      "name": "创建线索",
-      "output": "CreateLeadResponse",
-      "status": "deprecated"
-    },
     "CreateProductPatch": {
       "document": "产研接口--推送产品补丁包信息接口\nhttps://iwiki.woa.com/pages/viewpage.action?pageId=395934565",
       "input": "CreateProductPatchRequest",
@@ -92,7 +85,7 @@
       "status": "online"
     },
     "DescribeIndustryTrees": {
-      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n#### 响应参数说明\n|参数名称|数据类型|备注|\n|:--|:--:|:--:|\n| Status |int|0:全部列表，1:生效列表，2:失效列表，38:即将停售(EOFM), 39:停止销售(EOM),40:停止全面支持(EOSS),43:停止服务(EOMS),  默认返回生效列表|\n\n#### 返回参数说明参考\nhttp://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975",
+      "document": "【有白名单限制，需要的童鞋，请联系neilqiao或zanderfang配置白名单 更多接入问题请看 http://tapd.oa.com/TC_CSIG_OM/markdown_wikis/view/#1020403412010282661】\n\n#### 返回参数说明参考\nhttp://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975",
       "input": "DescribeIndustryTreesRequest",
       "name": "获取产业树列表",
       "output": "DescribeIndustryTreesResponse",
@@ -415,205 +408,6 @@
           "disabled": false,
           "document": "回包",
           "example": "{\"affected_rows\":1,\"insert_id\":96}",
-          "member": "string",
-          "name": "JsonString",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLeadRequest": {
-      "document": "CreateLead请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "一级来源标签id",
-          "example": "1",
-          "member": "int64",
-          "name": "SourcePrimaryTagId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "二级来源标签id",
-          "example": "1",
-          "member": "int64",
-          "name": "SourceSecondaryTagId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "扩展字段格式为[[\"Key\":\"province\", \"KeyName\":\"省份\", \"KeyValue\":\"广东省\" ]]",
-          "example": "1",
-          "member": "Extend",
-          "name": "Extend",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "申请的批次id",
-          "example": "1",
-          "member": "int64",
-          "name": "BatchId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "线索来源方标识",
-          "example": "1",
-          "member": "string",
-          "name": "LeadReleaseSource",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "线索来源方唯一id",
-          "example": "1",
-          "member": "string",
-          "name": "LeadReleaseSourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "0非属任何模块1saas电销2渠道经理",
-          "example": "1",
-          "member": "int64",
-          "name": "BelongModule",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "线索贡献人",
-          "example": "1",
-          "member": "string",
-          "name": "Contributor",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "qq号",
-          "example": "1",
-          "member": "string",
-          "name": "Qq",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "手机号",
-          "example": "1",
-          "member": "string",
-          "name": "Phone",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "客户名称",
-          "example": "1",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "邮箱",
-          "example": "1",
-          "member": "string",
-          "name": "Email",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "qss参数",
-          "example": "1",
-          "member": "string",
-          "name": "QssParams",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人姓名",
-          "example": "1",
-          "member": "string",
-          "name": "ContactName",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人职位",
-          "example": "1",
-          "member": "string",
-          "name": "ContactPosition",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "联系人微信",
-          "example": "1",
-          "member": "string",
-          "name": "ContactWechat",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "UIN",
-          "example": "1",
-          "member": "string",
-          "name": "AccountId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "意向度",
-          "example": "1",
-          "member": "string",
-          "name": "IntentionLevel",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "付费类型",
-          "example": "1",
-          "member": "int64",
-          "name": "PayType",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateLeadResponse": {
-      "document": "CreateLead返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "回包",
-          "example": "1",
           "member": "string",
           "name": "JsonString",
           "required": true,
@@ -1280,7 +1074,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "0:全部列表，1:生效列表，2:失效列表，38:即将停售(EOFM), 39:停止销售(EOM),40:停止全面支持(EOSS),43:停止服务(EOMS),  默认返回生效列表",
+          "document": "参看https://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975@toc0   status 节点状态目录",
           "example": "2",
           "member": "int64",
           "name": "Status",
@@ -1289,7 +1083,7 @@
         },
         {
           "disabled": false,
-          "document": "1:生效列表，2:失效列表，38:即将停售(EOFM), 39:停止销售(EOM),40:停止全面支持(EOSS),43:停止服务(EOMS),  默认返回生效列表",
+          "document": "参看https://tapd.woa.com/TC_CSIG_OM/markdown_wikis/show/#1220403412002308975@toc0   status 节点状态目录",
           "example": "[1,2]",
           "member": "int64",
           "name": "StatusList",
@@ -1896,42 +1690,6 @@
         }
       ],
       "type": "object"
-    },
-    "Extend": {
-      "document": "TCC扩展字段",
-      "members": [
-        {
-          "disabled": false,
-          "document": "扩展字段key",
-          "example": "",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "扩展字段Name",
-          "example": "",
-          "member": "string",
-          "name": "KeyName",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "扩展字段Value",
-          "example": "",
-          "member": "string",
-          "name": "KeyValue",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        }
-      ],
-      "usage": "in"
     },
     "GetBatchListRequest": {
       "document": "GetBatchList请求参数结构体",

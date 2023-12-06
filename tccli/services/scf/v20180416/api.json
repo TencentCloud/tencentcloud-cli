@@ -5061,10 +5061,19 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。输入具体的Namespace进行过滤",
-          "example": "[         {             \"Name\": \"Namespace\",             \"Values\": [ \"alano\"]         }     ]",
+          "document": "过滤条件。可根据Description 和 Namespaces 进行 命名空间的模糊过滤",
+          "example": "[         {             \"Name\": \"Namespace\",             \"Values\": [ \"test\"]         }     ]",
           "member": "Filter",
           "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件，输入具体的Namespace列表进行过滤\n最多输入20个",
+          "example": "['test1', 'test2']",
+          "member": "string",
+          "name": "Namespaces",
           "required": false,
           "type": "list"
         }

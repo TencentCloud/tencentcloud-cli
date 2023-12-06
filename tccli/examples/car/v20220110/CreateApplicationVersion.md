@@ -19,6 +19,10 @@ Output:
             "ApplicationVersionSize": 1024,
             "ApplicationVersionStatus": "Creating",
             "ApplicationVersionName": "xxx",
+            "ApplicationVersionRegions": [
+                "ap-chinese-mainland",
+                "na-north-america-1"
+            ],
             "CreateTime": "2020-09-22T00:00:00+00:00"
         },
         "RequestId": "4eb17e58-68da-4e9a-b298-0894723c9022"

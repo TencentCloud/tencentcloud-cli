@@ -729,14 +729,14 @@
       "status": "online"
     },
     "GetMonitorData": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataRequest",
       "name": "拉取指标监控数据",
       "output": "GetMonitorDataResponse",
       "status": "online"
     },
     "GetMonitorDataInternal": {
-      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，云监控开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
+      "document": "获取云产品的监控数据。此接口不适用于拉取容器服务监控数据，如需拉取容器服务监控数据，请使用[根据维度条件查询监控数据](https://cloud.tencent.com/document/product/248/51845)接口。\n传入产品的命名空间、对象维度描述和监控指标即可获得相应的监控数据。\n接口调用限制：单请求最多可支持批量拉取10个实例的监控数据，单请求的数据点数限制为1440个。\n若您需要调用的指标、对象较多，可能存在因限频出现拉取失败的情况，建议尽量将请求按时间维度均摊。\n\n>?\n>- 2022年9月1日起，腾讯云可观测平台开始对GetMonitorData接口计费。每个主账号每月可获得100万次免费请求额度，超过免费额度后如需继续调用接口需要开通 [API请求按量付费](https://buy.cloud.tencent.com/APIRequestBuy)。计费规则可查看[API计费文档](https://cloud.tencent.com/document/product/248/77914)。",
       "input": "GetMonitorDataInternalRequest",
       "name": "拉取指标监控数据内部",
       "output": "GetMonitorDataInternalResponse",
@@ -1067,7 +1067,7 @@
   },
   "metadata": {
     "apiVersion": "2018-07-24",
-    "api_brief": "介绍如何使用API对云监控进行操作，包括查询监控数据、创建报警规则等。",
+    "api_brief": "介绍如何使用API对腾讯云可观测平台进行操作，包括查询监控数据、创建报警规则等。",
     "serviceNameCN": "腾讯云可观测平台",
     "serviceShortName": "monitor"
   },
@@ -1179,7 +1179,7 @@
           "example": "01e1f33f-b4ec-43db-8fd0-6f7e163e6ca5",
           "member": "string",
           "name": "AlarmId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1189,7 +1189,7 @@
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1199,7 +1199,7 @@
           "example": "cvm_device",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1209,7 +1209,7 @@
           "example": "ins-abcdef",
           "member": "string",
           "name": "AlarmObject",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1219,7 +1219,7 @@
           "example": "CPU 使用率 > 80%",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1229,7 +1229,7 @@
           "example": "1611700000",
           "member": "int64",
           "name": "FirstOccurTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1239,7 +1239,7 @@
           "example": "1611734567",
           "member": "int64",
           "name": "LastOccurTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1249,7 +1249,7 @@
           "example": "ALARM",
           "member": "string",
           "name": "AlarmStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1259,7 +1259,7 @@
           "example": "policy-abcdef",
           "member": "string",
           "name": "PolicyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1269,7 +1269,7 @@
           "example": "云服务器告警策略",
           "member": "string",
           "name": "PolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1279,7 +1279,7 @@
           "example": "0",
           "member": "string",
           "name": "VPC",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1289,7 +1289,7 @@
           "example": "0",
           "member": "int64",
           "name": "ProjectId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1299,7 +1299,7 @@
           "example": "默认项目",
           "member": "string",
           "name": "ProjectName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1309,7 +1309,7 @@
           "example": "无",
           "member": "InstanceGroups",
           "name": "InstanceGroup",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1319,7 +1319,7 @@
           "example": "无",
           "member": "int64",
           "name": "ReceiverUids",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1329,7 +1329,7 @@
           "example": "无",
           "member": "int64",
           "name": "ReceiverGroups",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1339,7 +1339,7 @@
           "example": "无",
           "member": "string",
           "name": "NoticeWays",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1349,7 +1349,7 @@
           "example": "12345",
           "member": "string",
           "name": "OriginId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1359,7 +1359,7 @@
           "example": "METRIC",
           "member": "string",
           "name": "AlarmType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1369,7 +1369,7 @@
           "example": "0",
           "member": "int64",
           "name": "EventId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1379,7 +1379,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1389,7 +1389,7 @@
           "example": "1",
           "member": "int64",
           "name": "PolicyExists",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1399,7 +1399,7 @@
           "example": "无",
           "member": "AlarmHistoryMetric",
           "name": "MetricsInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1409,7 +1409,7 @@
           "example": "{\"cluster_name\":\"es-dnxsssss\"}",
           "member": "string",
           "name": "Dimensions",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1419,7 +1419,87 @@
           "example": "Warn",
           "member": "string",
           "name": "AlarmLevel",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否有配置告警屏蔽规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "ShieldFlag",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型（英文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "FOREVER_SHIELD",
+          "member": "string",
+          "name": "AlarmShieldingType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间（英文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Permanent",
+          "member": "string",
+          "name": "AlarmShieldingTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽类型（中文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "时间范围屏蔽",
+          "member": "string",
+          "name": "AlarmShieldingShowType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽时间（中文）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023/01/01 12:00:00-2023/01/02 12:00:00",
+          "member": "string",
+          "name": "AlarmShieldingShowTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "屏蔽原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "测试",
+          "member": "string",
+          "name": "AlarmShieldReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警实例的维度信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InternalDimensions",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指标名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MetricName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -3571,21 +3651,21 @@
         },
         {
           "disabled": false,
-          "document": "默认为1，建议使用 OrganizationIds",
-          "example": "1",
-          "member": "int64",
-          "name": "OrgId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "接受告警通道 ID 数组，值为告警管理/基础配置/通知模板中的模板 ID ",
           "example": "[]",
           "member": "string",
           "name": "Receivers",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认为1，建议使用 OrganizationIds",
+          "example": "1",
+          "member": "int64",
+          "name": "OrgId",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -5696,7 +5776,7 @@
         },
         {
           "disabled": false,
-          "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能观测；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测",
+          "document": "根据监控类型过滤，不选默认查所有类型。\"MT_QCE\"=云产品监控，支持的枚举值有：\"MT_QCE\"=云产品监控；\"MT_TAW\"=应用性能监控；\"MT_RUM\"=前端性能监控；\"MT_PROBE\"=云拨测",
           "example": "MT_QCE",
           "member": "string",
           "name": "MonitorTypes",
@@ -12818,6 +12898,7 @@
           "example": "300",
           "member": "uint64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12827,6 +12908,7 @@
           "example": "CPUUsage",
           "member": "string",
           "name": "MetricName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12836,6 +12918,7 @@
           "example": "无",
           "member": "DataPoint",
           "name": "DataPoints",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12845,6 +12928,7 @@
           "example": "2019-03-24T10:50:00+08:00",
           "member": "datetime_iso",
           "name": "StartTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12854,6 +12938,7 @@
           "example": "2019-03-24T20:50:00+08:00",
           "member": "datetime_iso",
           "name": "EndTime",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12863,6 +12948,7 @@
           "example": "无",
           "member": "string",
           "name": "Msg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -14215,7 +14301,7 @@
         {
           "disabled": false,
           "document": "告警通知规则名称 60字符以内",
-          "example": "默认通知模版",
+          "example": "默认通知模板",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -14611,7 +14697,7 @@
         {
           "disabled": false,
           "document": "告警策略触发任务列表，空数据代表解绑",
-          "example": "         {             \"Type\": \"AS\",             \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\"         }     ]",
+          "example": "         {             \"Type\": \"AS\",             \"TaskConfig\": \"{\\\"Region\\\":\\\"ap-guangzhou\\\",\\\"Group\\\":\\\"asg-0zhspjx\\\",\\\"Policy\\\":\\\"asp-ganig28\\\"}\"         }    ",
           "member": "AlarmPolicyTriggerTask",
           "name": "TriggerTasks",
           "required": false,
@@ -19581,21 +19667,21 @@
         },
         {
           "disabled": false,
-          "document": "告警通道名称，例如：test",
-          "example": "channel-name",
-          "member": "string",
-          "name": "ChannelName",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "接受告警通道 ID 数组",
           "example": "[]",
           "member": "string",
           "name": "Receivers",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警通道名称，已废弃，名称不可修改。",
+          "example": "channel-name",
+          "member": "string",
+          "name": "ChannelName",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,

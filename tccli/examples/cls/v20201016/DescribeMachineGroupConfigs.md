@@ -1,12 +1,12 @@
 **Example 1: 获取机器组绑定的采集规则配置**
 
-
+获取机器组绑定的采集规则配置
 
 Input: 
 
 ```
 tccli cls DescribeMachineGroupConfigs --cli-unfold-argument  \
-    --GroupId xxxxx-xxx-xxxxx
+    --GroupId 01fd5bcc-d7d4-4edb-9ff5-7ecfc305b831
 ```
 
 Output: 
@@ -15,35 +15,41 @@ Output:
     "Response": {
         "Configs": [
             {
-                "ConfigId": "xxxx-xx-xx-xx-yyyyyyyy",
-                "Name": "testname",
-                "Path": "/abc/log/test.log",
-                "LogType": "delimiter_log",
+                "AdvancedConfig": "",
+                "ConfigId": "16c904ed-db2a-4ba4-b6fd-0f5f94f71111",
+                "CreateTime": "2023-06-28 15:58:16",
+                "ExcludePaths": null,
                 "ExtractRule": {
-                    "TimeKey": "date",
-                    "TimeFormat": "%Y-%m-%d %H:%M:%S",
-                    "Delimiter": "|",
-                    "LogRegex": ".*",
-                    "BeginRegex": "^",
-                    "Keys": [
-                        "date",
-                        "",
-                        "content"
-                    ],
-                    "FilterKeyRegex": [
-                        {
-                            "Key": "xx",
-                            "Regex": "xxxx"
-                        }
-                    ],
-                    "UnMatchLogKey": "testlog",
-                    "UnMatchUpLoadSwitch": true
+                    "Address": "",
+                    "Backtracking": -1,
+                    "BeginRegex": "",
+                    "Delimiter": "",
+                    "EventLogRules": [],
+                    "FilterKeyRegex": [],
+                    "IsGBK": 0,
+                    "JsonStandard": 0,
+                    "Keys": null,
+                    "LogRegex": "",
+                    "MetaTags": [],
+                    "MetadataType": 0,
+                    "ParseProtocol": "",
+                    "PathRegex": "",
+                    "Protocol": "",
+                    "TimeFormat": "",
+                    "TimeKey": "",
+                    "UnMatchLogKey": "LogParseFailure",
+                    "UnMatchUpLoadSwitch": false
                 },
-                "UpdateTime": "2017-08-08 12:12:12",
-                "CreateTime": "2017-08-08 12:12:12"
+                "LogFormat": "",
+                "LogType": "json_log",
+                "Name": "cls_hkff7p5e_test_c_eks",
+                "Output": "a004adec-c87a-4179-b0eb-8f7ee4ec1111",
+                "Path": "/var/log/eks-log-agent/test-c/*/*/**/*.log",
+                "UpdateTime": "2023-11-16 21:42:48",
+                "UserDefineRule": ""
             }
         ],
-        "RequestId": "6ef60bec-0242-43af-bb20-270359fb54a7"
+        "RequestId": "983cd59e-7a7a-48aa-a16f-b0f0275c2288"
     }
 }
 ```

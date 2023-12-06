@@ -14,13 +14,6 @@
       "output": "CreateApplicationResponse",
       "status": "online"
     },
-    "CreateOfflineRecord": {
-      "document": "课后录制服务已下线\n\n创建课后录制任务",
-      "input": "CreateOfflineRecordRequest",
-      "name": "创建课后录制任务",
-      "output": "CreateOfflineRecordResponse",
-      "status": "deprecated"
-    },
     "CreatePPTCheckTask": {
       "document": "检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素",
       "input": "CreatePPTCheckTaskRequest",
@@ -83,20 +76,6 @@
       "name": "查询可用的IM应用列表",
       "output": "DescribeIMApplicationsResponse",
       "status": "online"
-    },
-    "DescribeOfflineRecord": {
-      "document": "课后录制服务已下线\n\n查询课后录制任务的进度与录制结果等相关信息",
-      "input": "DescribeOfflineRecordRequest",
-      "name": "查询课后录制任务",
-      "output": "DescribeOfflineRecordResponse",
-      "status": "deprecated"
-    },
-    "DescribeOfflineRecordCallback": {
-      "document": "课后录制服务已下线\n\n查询课后录制回调地址",
-      "input": "DescribeOfflineRecordCallbackRequest",
-      "name": "查询回调地址",
-      "output": "DescribeOfflineRecordCallbackResponse",
-      "status": "deprecated"
     },
     "DescribeOnlineRecord": {
       "document": "查询录制任务状态与结果",
@@ -335,13 +314,6 @@
       "name": "恢复实时录制",
       "output": "ResumeOnlineRecordResponse",
       "status": "online"
-    },
-    "SetOfflineRecordCallback": {
-      "document": "课后录制服务已下线\n\n设置课后录制回调地址",
-      "input": "SetOfflineRecordCallbackRequest",
-      "name": "设置回调地址",
-      "output": "SetOfflineRecordCallbackResponse",
-      "status": "deprecated"
     },
     "SetOnlineRecordCallback": {
       "document": "设置实时录制回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40258",
@@ -700,69 +672,6 @@
       ],
       "type": "object"
     },
-    "CreateOfflineRecordRequest": {
-      "document": "CreateOfflineRecord请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "录制任务对应的房间号",
-          "example": "",
-          "member": "int64",
-          "name": "RoomId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "录制任务对应的群组Id",
-          "example": "",
-          "member": "string",
-          "name": "GroupId",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "混流参数配置\n目前课后录制暂未支持自定义混流布局Custom参数",
-          "example": "",
-          "member": "MixStream",
-          "name": "MixStream",
-          "required": false,
-          "type": "object"
-        },
-        {
-          "disabled": false,
-          "document": "白板参数配置",
-          "example": "",
-          "member": "Whiteboard",
-          "name": "Whiteboard",
-          "required": false,
-          "type": "object"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOfflineRecordResponse": {
-      "document": "CreateOfflineRecord返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
     "CreatePPTCheckTaskRequest": {
       "document": "CreatePPTCheckTask请求参数结构体",
       "members": [
@@ -991,6 +900,15 @@
           "name": "AutoHandleUnsupportedElement",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "Excel表格转码参数，可设置转码时表格纸张大小及纸张方向等参数（仅对转码文件为Excel表格文件的静态转码任务生效）",
+          "example": "无",
+          "member": "ExcelParam",
+          "name": "ExcelParam",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1470,69 +1388,6 @@
     },
     "DescribeIMApplicationsResponse": {
       "document": "DescribeIMApplications返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineRecordCallbackRequest": {
-      "document": "DescribeOfflineRecordCallback请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "应用的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineRecordCallbackResponse": {
-      "document": "DescribeOfflineRecordCallback返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineRecordRequest": {
-      "document": "DescribeOfflineRecord请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "课后录制任务的Id",
-          "example": "",
-          "member": "string",
-          "name": "TaskId",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineRecordResponse": {
-      "document": "DescribeOfflineRecord返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3556,6 +3411,30 @@
       ],
       "usage": "out"
     },
+    "ExcelParam": {
+      "document": "Excel转码相关参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表格转码纸张（画布）大小，默认为0。\n0 -- A4\n1 -- A2 \n2 -- A0\n\n注：当设置的值超出合法取值范围时，将采用默认值。",
+          "example": "0",
+          "member": "int64",
+          "name": "PaperSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表格文件转换纸张方向，默认为0。\n0 -- 代表垂直方向\n非0 -- 代表水平方向",
+          "example": "0",
+          "member": "int64",
+          "name": "PaperDirection",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
     "Interrupt": {
       "document": "实时录制中出现的用户视频流断流次数统计",
       "members": [
@@ -4498,42 +4377,6 @@
         }
       ],
       "usage": "out"
-    },
-    "SetOfflineRecordCallbackRequest": {
-      "document": "SetOfflineRecordCallback请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "客户的SdkAppId",
-          "example": "",
-          "member": "int64",
-          "name": "SdkAppId",
-          "required": true,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "课后录制任务结果回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持 http或https协议，即回调地址以http://或https://开头",
-          "example": "",
-          "member": "string",
-          "name": "Callback",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "SetOfflineRecordCallbackResponse": {
-      "document": "SetOfflineRecordCallback返回参数结构体",
-      "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
     },
     "SetOnlineRecordCallbackKeyRequest": {
       "document": "SetOnlineRecordCallbackKey请求参数结构体",

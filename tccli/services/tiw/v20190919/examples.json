@@ -16,14 +16,6 @@
         "title": "创建白板应用"
       }
     ],
-    "CreateOfflineRecord": [
-      {
-        "document": "创建课后录制任务",
-        "input": "https://tiw.tencentcloudapi.com/?Action=CreateOfflineRecord\n&SdkAppId=1400000001\n&RoomId=8000\n&GroupId=8000\n&MixStream.Enabled=true\n&MixStream.ModelId=1\n&Whiteboard.Width=1280\n&Whiteboard.Height=960\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "创建课后录制任务"
-      }
-    ],
     "CreatePPTCheckTask": [
       {
         "document": "创建PPT检测任务，识别动态转码不支持的元素列表",
@@ -100,22 +92,6 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=DescribeIMApplications\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
         "title": "查询IM应用列表"
-      }
-    ],
-    "DescribeOfflineRecord": [
-      {
-        "document": "查询课后录制任务",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOfflineRecord\n&SdkAppId=1400000001\n&TaskId=00e1jv8ve0jcqk7da9lb\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d290f1ee-6c54-4b01-90e6-d701748f0851\"\n    }\n}",
-        "title": "查询课后录制任务"
-      }
-    ],
-    "DescribeOfflineRecordCallback": [
-      {
-        "document": "查询课后录制回调地址",
-        "input": "https://tiw.tencentcloudapi.com/?Action=DescribeOfflineRecordCallback\n&SdkAppId=1400000001\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "查询课后录制回调地址"
       }
     ],
     "DescribeOnlineRecord": [
@@ -412,14 +388,6 @@
         "input": "https://tiw.tencentcloudapi.com/?Action=ResumeOnlineRecord\n&SdkAppId=1400000001\n&TaskId=07b4c70bpafm1b4majmb\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "恢复实时录制任务"
-      }
-    ],
-    "SetOfflineRecordCallback": [
-      {
-        "document": "",
-        "input": "https://tiw.tencentcloudapi.com/?Action=SetOfflineRecordCallback\n&SdkAppId=1400000001\n&Callback=https://example.com/offline/callback\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
-        "title": "设置课后录制回调地址"
       }
     ],
     "SetOnlineRecordCallback": [

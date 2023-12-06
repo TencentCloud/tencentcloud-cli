@@ -14,23 +14,110 @@ Output:
 {
     "Response": {
         "ErrorCode": 0,
-        "ErrorMsg": "Success",
-        "RequestId": "a6e62364-60d4-4eb6-8908-da3ff3d601f8",
+        "ErrorMsg": "abc",
         "VerificationDetailList": [
             {
                 "ErrorCode": 0,
-                "ErrorMsg": "Success",
+                "ErrorMsg": "abc",
                 "LivenessErrorCode": 0,
-                "LivenessErrorMsg": "Success",
+                "LivenessErrorMsg": "abc",
                 "CompareErrorCode": 0,
-                "CompareErrorMsg": "Success",
-                "Similarity": 100,
-                "ReqTimestamp": 1637291599353,
-                "Seq": "7269e30e-c142-46ba-aa60-b5677bf69d24"
+                "CompareErrorMsg": "abc",
+                "ReqTimestamp": 1,
+                "Similarity": 0,
+                "Seq": "abc"
             }
         ],
-        "BestFrameBase64": "BestFrameBase64string",
-        "VideoBase64": "VideoBase64string"
+        "VideoBase64": "abc",
+        "BestFrameBase64": "abc",
+        "OCRResult": [
+            {
+                "IsPass": true,
+                "CardImageBase64": "abc",
+                "CardInfo": {
+                    "HKIDCard": {
+                        "CnName": "abc",
+                        "EnName": "abc",
+                        "IdNum": "abc",
+                        "Birthday": "abc",
+                        "Sex": "abc"
+                    },
+                    "MLIDCard": {
+                        "Name": "abc",
+                        "ID": "abc",
+                        "Sex": "abc",
+                        "Address": "abc",
+                        "Type": "abc",
+                        "Birthday": "abc"
+                    },
+                    "PhilippinesVoteID": {
+                        "VIN": "abc",
+                        "FirstName": "abc",
+                        "LastName": "abc",
+                        "Birthday": "abc",
+                        "CivilStatus": "abc",
+                        "Citizenship": "abc",
+                        "Address": "abc",
+                        "PrecinctNo": "abc"
+                    },
+                    "IndonesiaIDCard": {
+                        "NIK": "abc",
+                        "Nama": "abc",
+                        "TempatTglLahir": "abc",
+                        "JenisKelamin": "abc",
+                        "GolDarah": "abc",
+                        "Alamat": "abc",
+                        "RTRW": "abc",
+                        "KelDesa": "abc",
+                        "Kecamatan": "abc",
+                        "Agama": "abc",
+                        "StatusPerkawinan": "abc",
+                        "Perkerjaan": "abc",
+                        "KewargaNegaraan": "abc",
+                        "BerlakuHingga": "abc",
+                        "IssuedDate": "abc",
+                        "Provinsi": "abc",
+                        "Kota": "abc"
+                    },
+                    "PhilippinesDrivingLicense": {
+                        "Name": "abc",
+                        "LastName": "abc",
+                        "FirstName": "abc",
+                        "MiddleName": "abc",
+                        "Nationality": "abc",
+                        "Sex": "abc",
+                        "Address": "abc",
+                        "LicenseNo": "abc",
+                        "ExpiresDate": "abc",
+                        "AgencyCode": "abc",
+                        "Birthday": "abc"
+                    },
+                    "PhilippinesTinID": {
+                        "LicenseNumber": "abc",
+                        "FullName": "abc",
+                        "Address": "abc",
+                        "Birthday": "abc",
+                        "IssueDate": "abc"
+                    },
+                    "PhilippinesSSSID": {
+                        "LicenseNumber": "abc",
+                        "FullName": "abc",
+                        "Birthday": "abc"
+                    },
+                    "PhilippinesUMID": {
+                        "Surname": "abc",
+                        "MiddleName": "abc",
+                        "GivenName": "abc",
+                        "Sex": "abc",
+                        "Birthday": "abc",
+                        "Address": "abc",
+                        "CRN": "abc"
+                    }
+                },
+                "RequestId": "abc"
+            }
+        ],
+        "RequestId": "abc"
     }
 }
 ```

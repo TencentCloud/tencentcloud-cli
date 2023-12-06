@@ -596,6 +596,15 @@
           "name": "DataOriginDatasourceId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -926,6 +935,15 @@
           "name": "UserId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问次数限制，限制范围1-99999，为空则不设置访问次数限制",
+          "example": "1",
+          "member": "int64",
+          "name": "TicketNum",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -2574,6 +2592,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问次数限制，限制范围1-99999，为空则不设置访问次数限制\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "TicketNum",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2819,6 +2847,15 @@
           "example": "无",
           "member": "string",
           "name": "DataOriginDatasourceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterId",
           "required": false,
           "type": "string"
         }

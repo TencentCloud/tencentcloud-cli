@@ -157,6 +157,24 @@
           "name": "Env",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "废弃",
+          "example": "无",
+          "member": "Filters",
+          "name": "Filters",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件， 支持 product，groupID 两种过滤条件",
+          "example": "无",
+          "member": "Filter",
+          "name": "StrategyFilters",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -558,6 +576,34 @@
       ],
       "type": "object"
     },
+    "Filter": {
+      "document": "查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询values\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Filters": {
       "document": "过滤条件",
       "members": [
@@ -805,6 +851,16 @@
           "name": "Conditions",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否支持自定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true/false",
+          "member": "bool",
+          "name": "IsSupportCustom",
+          "output_required": false,
+          "type": "bool",
           "value_allowed_null": true
         }
       ],

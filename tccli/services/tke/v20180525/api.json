@@ -42,6 +42,13 @@
       "output": "CancelClusterReleaseResponse",
       "status": "online"
     },
+    "CheckClusterCIDR": {
+      "document": "检查集群的CIDR是否冲突",
+      "input": "CheckClusterCIDRRequest",
+      "name": "检查集群的CIDR是否冲突",
+      "output": "CheckClusterCIDRResponse",
+      "status": "online"
+    },
     "CheckEdgeClusterCIDR": {
       "document": "检查边缘计算集群的CIDR是否冲突",
       "input": "CheckEdgeClusterCIDRRequest",
@@ -2287,6 +2294,90 @@
         }
       ],
       "usage": "both"
+    },
+    "CheckClusterCIDRRequest": {
+      "document": "CheckClusterCIDR请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群的vpc-id",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群的CIDR",
+          "example": "“192.168.0.0/16”",
+          "member": "string",
+          "name": "ClusterCIDR",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "欲校验的 CIDR 类型，可填\"cluster\" 或 \"service\"，表明欲校验 clusterCIDR 或 serviceCIDR，默认为 \"cluster\"",
+          "example": "cluster",
+          "member": "string",
+          "name": "CIDRType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否忽略 ServiceCIDR 与其他集群CIDR冲突错误, 仅在校验 \"service\" 类型CIDR生效，默认不忽略",
+          "example": "false",
+          "member": "bool",
+          "name": "IgnoreServiceCIDRConflict",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckClusterCIDRResponse": {
+      "document": "CheckClusterCIDR返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否存在CIDR冲突。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsConflict",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CIDR冲突的类型(\"CIDR_CONFLICT_WITH_OTHER_CLUSTER\" 同VPC其他集群CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_CIDR\" 与VPC的CIDR存在冲突\n\"CIDR_CONFLICT_WITH_VPC_GLOBAL_ROUTE\" 与同VPC的全局路由存在冲突)。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CIDR_CONFLICT_WITH_OTHER_CLUSTER",
+          "member": "string",
+          "name": "ConflictType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CIDR冲突描述信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[cidr 192.168.0.0/20 is conflict with cluster id: cls-xxxxxxxx",
+          "member": "string",
+          "name": "ConflictMsg",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "CheckEdgeClusterCIDRRequest": {
       "document": "CheckEdgeClusterCIDR请求参数结构体",
@@ -13732,6 +13823,7 @@
           "example": "无",
           "member": "IPAddress",
           "name": "Addresses",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -13741,6 +13833,7 @@
           "example": "无",
           "member": "ClusterCredential",
           "name": "Credential",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13750,6 +13843,7 @@
           "example": "无",
           "member": "EdgeClusterPublicLB",
           "name": "PublicLB",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13759,6 +13853,7 @@
           "example": "无",
           "member": "EdgeClusterInternalLB",
           "name": "InternalLB",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -13768,6 +13863,7 @@
           "example": "yes",
           "member": "string",
           "name": "CoreDns",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13777,6 +13873,7 @@
           "example": "yes",
           "member": "string",
           "name": "HealthRegion",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13786,6 +13883,7 @@
           "example": "yes",
           "member": "string",
           "name": "Health",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13795,6 +13893,7 @@
           "example": "yes",
           "member": "string",
           "name": "GridDaemon",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13804,6 +13903,7 @@
           "example": "yes",
           "member": "string",
           "name": "UnitCluster",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

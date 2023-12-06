@@ -6,16 +6,23 @@ Input:
 
 ```
 tccli antiddos DescribeInsuranceBillingInfo --cli-unfold-argument  \
-    --InstanceId lh-xxxxxx
+    --InstanceIds lh-xxxxxx
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "CreateTime": "2023-01-01 00:00:00",
-        "ExpireTime": "2023-01-01 00:00:00",
-        "AutoRenewFlag": 1,
+        "InsuranceBillingInfos": [
+            {
+                "CreateTime": "2023-01-01 00:00:00",
+                "ExpireTime": "2023-01-01 00:00:00",
+                "InstanceId": "lh-xxxxxxx",
+                "InsuranceId": "newinsurance-xxxxxxx",
+                "AutoRenewFlag": 1,
+                "Status": 6
+            }
+        ],
         "RequestId": "abc"
     }
 }

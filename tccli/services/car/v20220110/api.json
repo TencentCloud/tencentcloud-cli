@@ -230,7 +230,7 @@
         },
         {
           "disabled": false,
-          "document": "应用版本ID",
+          "document": "应用版本ID。如果请求应用的当前版本，可以不用填写该字段。如果请求应用的其它版本时，才需要通过该字段来指定应用的版本。",
           "example": "ver-1a2b3c4d",
           "member": "string",
           "name": "ApplicationVersionId",
@@ -363,6 +363,15 @@
           "name": "ApplicationFileName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用版本分发地区",
+          "example": "[\"ap-chinese-mainland\",\"na-north-america-1\"]",
+          "member": "string",
+          "name": "ApplicationVersionRegions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1543,6 +1552,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用版本分发区域（\n标准区：\nap-chinese-mainland ： 中国大陆、\nna-north-america : 北美、\neu-frankfurt ：法兰克福、\nap-mumbai ： 孟买、\nap-tokyo ： 东京、\nap-seoul ： 首尔、\nap-singapore ： 新加坡、\nap-bangkok ： 曼谷、\nap-hongkong ： 中国香港、\n专用区1:\nme-middle-east-1 ：中东\nna-north-america-1 ：北美\nsa-south-america-1 ：南美\nap-tokyo-1 ： 东京\nap-seoul-1 ： 首尔\neu-frankfurt-1 ：法兰克福\nap-singapore-1 ： 新加坡\nap-hongkong-1 ： 中国香港\n）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"[\"ap-chinese-mainland\",\"sa-south-america-1\"]\"",
+          "member": "string",
+          "name": "ApplicationVersionRegions",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

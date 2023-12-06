@@ -206,6 +206,20 @@
         "title": "获取用户基础信息"
       }
     ],
+    "DestroyResourceInstances": [
+      {
+        "document": "销毁资源",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyResourceInstances\n<公共请求参数>\n\n{\n    \"ResourceId\": \"20231204_*****_0\",\n    \"AppPkgName\": \"com.****\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrderType\": 2,\n        \"PlatformType\": 1,\n        \"RequestId\": \"50d9287c-0d10-****\",\n        \"ResourceId\": \"20231204_*****_0\",\n        \"Result\": \"ok\"\n    }\n}",
+        "title": "销毁资源"
+      },
+      {
+        "document": "销毁资源：请求找不到资源",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyResourceInstances\n<公共请求参数>\n\n{\n    \"ResourceId\": \"20231204_****_0\",\n    \"AppPkgName\": \"com.**\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"ResourceNotFound\",\n            \"Message\": \"资源不存在。\"\n        },\n        \"RequestId\": \"62978335-*****\"\n    }\n}",
+        "title": "销毁资源：请求找不到资源"
+      }
+    ],
     "RequestLocalTask": [
       {
         "document": "",

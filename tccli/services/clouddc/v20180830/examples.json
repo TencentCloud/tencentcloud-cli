@@ -24,14 +24,6 @@
         "title": "示例"
       }
     ],
-    "CreateLead": [
-      {
-        "document": "",
-        "input": "https://clouddc.tencentcloudapi.com/?Action=CreateLead\n&Contributor.0=12334556\n&SourcePrimaryTagId=123\n&SourceSecondaryTagId=123\n&Qq=123\n&Phone=18888888888\n&Name=123\n&Email=123@qq.com\n&BatchId=123\n&LeadReleaseSource=123\n&LeadReleaseSourceId=123\n&BelongModule=1\n&Extend.0.KeyName=xx\n&Extend.0.KeyValue=xx\n&Extend.0.Key=xx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"JsonString\": \"{\\\"leadId\\\":50}\",\n        \"RequestId\": \"25ede15b-f30e-4f5f-8356-c38db98cfa23\"\n    }\n}",
-        "title": "示例"
-      }
-    ],
     "CreateProductPatch": [
       {
         "document": "产研侧有补丁包发布时，需要将物料传递到交付侧，目前是采用产研人员手工上传天途的方式，处理效率低下。\n因此需要开发产品补丁包接收接口，可以和产研的发布平台对接，发布平台发布完成将产品补丁包推送到天途。\n文档链接：https://iwiki.woa.com/pages/viewpage.action?pageId=395934565",

@@ -130,10 +130,10 @@
     ],
     "CreateConfigTemplateWithDetailResp": [
       {
-        "document": "创建配置模版",
+        "document": "创建配置模板",
         "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConfigTemplateWithDetailResp\n<公共请求参数>\n\n{\n    \"ConfigTemplateName\": \"abc\",\n    \"ConfigTemplateDesc\": \"abc\",\n    \"ConfigTemplateType\": \"abc\",\n    \"ConfigTemplateValue\": \"abc\",\n    \"ProgramIdList\": [\n        \"abc\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigTemplateId\": \"abc\",\n            \"ConfigTemplateName\": \"abc\",\n            \"ConfigTemplateDesc\": \"abc\",\n            \"ConfigTemplateType\": \"abc\",\n            \"ConfigTemplateValue\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\"\n        },\n        \"RequestId\": \"xxxxxxxxxxx\"\n    }\n}",
-        "title": "创建配置模版"
+        "title": "创建配置模板"
       }
     ],
     "CreateConfigWithDetailResp": [
@@ -677,8 +677,8 @@
     "DescribeConfigTemplate": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=DescribeConfigTemplate\r\n&ConfigTemplateId=dcfg_temp-evjrwqyb\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0c34a61c-fd80-453e-8a52-0532d8e4e5b0\",\n        \"Result\": {\n            \"ConfigTemplateId\": \"dcfg_temp-evjrwqyb\",\n            \"ConfigTemplateName\": \"下线检测系统\",\n            \"ConfigTemplateDesc\": \"下线检测系统\",\n            \"ConfigTemplateType\": \"customize\",\n            \"ConfigTemplateValue\": \"dl_mysql_host: 10.16.0.10\\ndl_mysql_port: 3306\\ndl_mysql_dbname: fca\\ndl_mysql_username: root\\ndl_mysql_password: fca@2018\\nredis_host: '10.16.0.9:6379'\\nredis_database: 1\\nredis_password: fca@2018\\nredis_port: 6379\\nSPRING_PROFILES_ACTIVE: pro\",\n            \"CreateTime\": \"2019-05-05 18:24:43.0\",\n            \"UpdateTime\": null\n        }\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConfigTemplate\n<公共请求参数>\n\n{\n    \"ConfigTemplateId\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigTemplateId\": \"abc\",\n            \"ConfigTemplateName\": \"abc\",\n            \"ConfigTemplateDesc\": \"abc\",\n            \"ConfigTemplateType\": \"abc\",\n            \"ConfigTemplateValue\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"UpdateTime\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "导入配置模板"
       }
     ],
@@ -1733,8 +1733,8 @@
     "UpdateConfigTemplate": [
       {
         "document": "",
-        "input": "https://tsf.tencentcloudapi.com/?Action=UpdateConfigTemplate\n&ConfigTemplateId=xxx\n&ConfigTemplateName=xxx\n&ConfigTemplateType=xxx\n&ConfigTemplateValue=xxx\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"!2vko3112424d2322\",\n        \"Result\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tsf.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateConfigTemplate\n<公共请求参数>\n\n{\n    \"ConfigTemplateId\": \"abc\",\n    \"ConfigTemplateName\": \"abc\",\n    \"ConfigTemplateDesc\": \"abc\",\n    \"ConfigTemplateType\": \"abc\",\n    \"ConfigTemplateValue\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "更新参数模板"
       }
     ],

@@ -959,7 +959,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "绑定的关系数组。",
+          "document": "绑定的关系数组。一次请求最多支持20个。",
           "example": "无",
           "member": "TargetGroupAssociation",
           "name": "Associations",
@@ -3209,7 +3209,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器最大连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "document": "监听器最大连接数，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。基础网络实例不支持该参数。",
           "example": "-1",
           "member": "int64",
           "name": "MaxConn",
@@ -3218,7 +3218,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器最大新增连接数，只有TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。",
+          "document": "监听器最大新增连接数，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持，不传或者传-1表示监听器维度不限速。基础网络实例不支持该参数。",
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
@@ -9962,7 +9962,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。",
+          "document": "监听器粒度并发连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格并发连接上限，其中-1表示关闭监听器粒度并发连接数限速。基础网络实例不支持该参数。",
           "example": "-1",
           "member": "int64",
           "name": "MaxConn",
@@ -9971,7 +9971,7 @@
         },
         {
           "disabled": false,
-          "document": "监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。",
+          "document": "监听器粒度新建连接数上限，当前仅性能容量型实例且仅TCP/UDP/TCP_SSL/QUIC监听器支持。取值范围：1-实例规格新建连接上限，其中-1表示关闭监听器粒度新建连接数限速。基础网络实例不支持该参数。",
           "example": "-1",
           "member": "int64",
           "name": "MaxCps",
@@ -12200,8 +12200,7 @@
           "member": "string",
           "name": "LoadBalancerId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12210,8 +12209,7 @@
           "member": "string",
           "name": "TargetGroupId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12220,8 +12218,7 @@
           "member": "string",
           "name": "ListenerId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -12230,8 +12227,7 @@
           "member": "string",
           "name": "LocationId",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

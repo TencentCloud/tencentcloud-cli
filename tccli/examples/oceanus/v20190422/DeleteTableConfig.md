@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli oceanus DeleteTableConfig --cli-unfold-argument  \
+    --JobId cql-6ntmhryo \
     --DebugId 1 \
-    --JobId cql-067opv7l \
-    --TableName test
+    --TableName tabale_test
 ```
 
 Output: 
