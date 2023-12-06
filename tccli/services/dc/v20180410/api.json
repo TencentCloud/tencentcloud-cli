@@ -22,7 +22,7 @@
       "status": "online"
     },
     "CreateDirectConnectTunnel": {
-      "document": "用于创建专用通道的接口",
+      "document": "创建专用通道。",
       "input": "CreateDirectConnectTunnelRequest",
       "name": "创建专用通道",
       "output": "CreateDirectConnectTunnelResponse",
@@ -410,23 +410,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户侧，BGP Asn",
-          "example": "",
+          "document": "用户侧BGP ASN",
+          "example": "无",
           "member": "int64",
           "name": "Asn",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
           "document": "用户侧BGP密钥",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "AuthKey",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -642,7 +640,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "专线 ID，例如：dc-kd7d06of",
+          "document": "物理专线ID，例如：dc-kd7d06of。",
           "example": "dc-abcdefgh",
           "member": "string",
           "name": "DirectConnectId",
@@ -651,7 +649,7 @@
         },
         {
           "disabled": false,
-          "document": "专用通道名称",
+          "document": "专用通道名称。",
           "example": "Test",
           "member": "string",
           "name": "DirectConnectTunnelName",
@@ -660,7 +658,7 @@
         },
         {
           "disabled": false,
-          "document": "物理专线 owner，缺省为当前客户（物理专线 owner）\n共享专线时这里需要填写共享专线的开发商账号 ID",
+          "document": "物理专线owner，缺省为当前客户（物理专线 owner）\n共享专线时这里需要填写共享专线的开发商账号 ID。",
           "example": "12325464",
           "member": "string",
           "name": "DirectConnectOwnerAccount",
@@ -669,7 +667,7 @@
         },
         {
           "disabled": false,
-          "document": "网络类型，分别为VPC、BMVPC，CCN，默认是VPC\nVPC：私有网络\nBMVPC：黑石网络\nCCN：云联网",
+          "document": "网络类型，枚举：VPC、BMVPC、CCN；默认为VPC。VPC：私有网络；BMVPC：黑石网络；CCN：云联网）。",
           "example": "VPC",
           "member": "string",
           "name": "NetworkType",
@@ -678,7 +676,7 @@
         },
         {
           "disabled": false,
-          "document": "网络地域",
+          "document": "网络地域。",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "NetworkRegion",
@@ -687,7 +685,7 @@
         },
         {
           "disabled": false,
-          "document": "私有网络统一 ID 或者黑石网络统一 ID",
+          "document": "私有网络统一ID或黑石网络统一ID。",
           "example": "vpc-abcdefgh",
           "member": "string",
           "name": "VpcId",
@@ -696,7 +694,7 @@
         },
         {
           "disabled": false,
-          "document": "专线网关 ID，例如 dcg-d545ddf",
+          "document": "专线网关ID，例如 dcg-d545ddf。",
           "example": "dcg-abcdefgh",
           "member": "string",
           "name": "DirectConnectGatewayId",
@@ -705,7 +703,7 @@
         },
         {
           "disabled": false,
-          "document": "专线带宽，单位：Mbps\n默认是物理专线带宽值",
+          "document": "专线带宽，单位：Mbps；默认是物理专线带宽值。",
           "example": "100",
           "member": "int64",
           "name": "Bandwidth",
@@ -714,7 +712,7 @@
         },
         {
           "disabled": false,
-          "document": "BGP ：BGP路由\nSTATIC：静态\n默认为 BGP 路由",
+          "document": "路由类型，枚举：BGP、STATIC；默认为BGP 。（BGP ：BGP路由；STATIC：静态）。",
           "example": "BGP",
           "member": "string",
           "name": "RouteType",
@@ -723,7 +721,7 @@
         },
         {
           "disabled": false,
-          "document": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey",
+          "document": "BgpPeer，用户侧bgp信息，包括Asn和AuthKey。",
           "example": "无",
           "member": "BgpPeer",
           "name": "BgpPeer",
@@ -732,7 +730,7 @@
         },
         {
           "disabled": false,
-          "document": "静态路由，用户IDC的网段地址",
+          "document": "静态路由，用户IDC的网段地址。",
           "example": "无",
           "member": "RouteFilterPrefix",
           "name": "RouteFilterPrefixes",
@@ -741,7 +739,7 @@
         },
         {
           "disabled": false,
-          "document": "vlan，范围：0 ~ 3000\n0：不开启子接口\n默认值是非0",
+          "document": "vlan，范围：0 ~ 3000。\n0：不开启子接口，默认值是非0。",
           "example": "100",
           "member": "int64",
           "name": "Vlan",
@@ -750,7 +748,7 @@
         },
         {
           "disabled": false,
-          "document": "TencentAddress，腾讯侧互联 IP",
+          "document": "TencentAddress，腾讯侧互联 IP。",
           "example": "192.168.1.2/30",
           "member": "string",
           "name": "TencentAddress",
@@ -759,7 +757,7 @@
         },
         {
           "disabled": false,
-          "document": "CustomerAddress，用户侧互联 IP",
+          "document": "CustomerAddress，用户侧互联 IP。",
           "example": "192.168.1.1/30",
           "member": "string",
           "name": "CustomerAddress",
@@ -768,7 +766,7 @@
         },
         {
           "disabled": false,
-          "document": "TencentBackupAddress，腾讯侧备用互联 IP",
+          "document": "TencentBackupAddress，腾讯侧备用互联 IP。",
           "example": "192.168.1.1/30",
           "member": "string",
           "name": "TencentBackupAddress",
@@ -777,7 +775,7 @@
         },
         {
           "disabled": false,
-          "document": "高速上云服务ID",
+          "document": "高速上云服务ID。",
           "example": "cas-xxxxxxxx",
           "member": "string",
           "name": "CloudAttachId",
@@ -786,7 +784,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启BFD",
+          "document": "是否开启BFD。",
           "example": "0",
           "member": "int64",
           "name": "BfdEnable",
@@ -795,7 +793,7 @@
         },
         {
           "disabled": false,
-          "document": "是否开启NQA",
+          "document": "是否开启NQA。",
           "example": "0",
           "member": "int64",
           "name": "NqaEnable",
@@ -804,7 +802,7 @@
         },
         {
           "disabled": false,
-          "document": "BFD配置信息",
+          "document": "BFD配置信息。",
           "example": "无",
           "member": "BFDInfo",
           "name": "BfdInfo",
@@ -813,7 +811,7 @@
         },
         {
           "disabled": false,
-          "document": "NQA配置信息",
+          "document": "NQA配置信息。",
           "example": "无",
           "member": "NQAInfo",
           "name": "NqaInfo",
@@ -828,11 +826,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "专用通道ID",
+          "document": "专用通道ID。",
           "example": "[\"dcx-abcdefgh\"]",
           "member": "string",
           "name": "DirectConnectTunnelIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3202,12 +3200,11 @@
         {
           "disabled": false,
           "document": "用户侧网段地址",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Cidr",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"

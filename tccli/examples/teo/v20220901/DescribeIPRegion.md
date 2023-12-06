@@ -17,43 +17,35 @@ Output:
         "IPRegionInfo": [
             {
                 "IP": "120.226.17.168",
-                "IsEdgeOneIP": "yes",
-                "Region": "中国湖南省长沙市 中国移动"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "101.33.20.11",
-                "IsEdgeOneIP": "yes",
-                "Region": "美国California 腾讯网络"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "120.222.238.33",
-                "IsEdgeOneIP": "yes",
-                "Region": "中国山东省青岛市 中国移动"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "120.222.238.33",
-                "IsEdgeOneIP": "yes",
-                "Region": "中国山东省青岛市 中国移动"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "120.226.17.167",
-                "IsEdgeOneIP": "yes",
-                "Region": "中国湖南省长沙市 中国移动"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "120.226.17.168",
-                "IsEdgeOneIP": "yes",
-                "Region": "中国湖南省长沙市 中国移动"
+                "IsEdgeOneIP": "yes"
             },
             {
                 "IP": "43.130.34.95",
-                "IsEdgeOneIP": "no",
-                "Region": "美国California 腾讯网络"
+                "IsEdgeOneIP": "no"
             },
             {
                 "IP": "43.128.224.98",
-                "IsEdgeOneIP": "no",
-                "Region": "日本Tokyo 腾讯网络"
+                "IsEdgeOneIP": "no"
             }
         ]
     }

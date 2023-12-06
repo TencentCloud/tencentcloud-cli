@@ -288,9 +288,9 @@
       "status": "online"
     },
     "DescribeIPRegion": {
-      "document": "查询IP地理位置归属信息",
+      "document": "该接口可用于查询 IP 是否为 EdgeOne IP。",
       "input": "DescribeIPRegionRequest",
-      "name": "查询IP地理位置归属信息",
+      "name": "查询 IP 归属信息",
       "output": "DescribeIPRegionResponse",
       "status": "online"
     },
@@ -5696,7 +5696,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "要查询的IP列表，可同时支持IP4和IPV6，最大条数是100条。",
+          "document": "待查询的 IP 列表，支持 IPV4 和 IPV6，最大可查询 100 条。",
           "example": "[\"1.1.1.1\",\"2402:4e00:1403:eb00:0:9440:b55a:39a8\"]",
           "member": "string",
           "name": "IPs",
@@ -5711,7 +5711,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "IP地理位置信息列表。",
+          "document": "IP 归属信息列表。",
           "example": "[]",
           "member": "IPRegionInfo",
           "name": "IPRegionInfo",
@@ -8339,11 +8339,11 @@
       "usage": "both"
     },
     "IPRegionInfo": {
-      "document": "IP类型以及归属信息",
+      "document": "IP 归属信息查询",
       "members": [
         {
           "disabled": false,
-          "document": "IP地址，IPV4或IPV6。",
+          "document": "IP 地址，IPV4 或 IPV6。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "IP",
@@ -8353,20 +8353,10 @@
         },
         {
           "disabled": false,
-          "document": "IP是否属于EdgeOne节点，取值有：\n<li>yes：该IP属于EdgeOne节点；</li>\n<li>no：该IP不属于EdgeOne节点。</li>",
+          "document": "IP 是否属于 EdgeOne 节点，取值有：\n<li>yes：该 IP 属于 EdgeOne 节点；</li>\n<li>no：该 IP 不属于 EdgeOne 节点。</li>",
           "example": "yes",
           "member": "string",
           "name": "IsEdgeOneIP",
-          "output_required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "IP归属地理位置信息。",
-          "example": "中国广东省中国电信",
-          "member": "string",
-          "name": "Region",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

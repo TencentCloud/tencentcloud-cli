@@ -1,3 +1,168 @@
+# Release 3.0.898.1
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 20 次发布
+
+发布时间：2023-12-07 01:38:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [AccessDevice](http://document.tencentcloudapi.woa.com/document/product/1492/82773)
+
+新增数据结构：
+
+* [AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessInfo)
+
+
+
+## 数据湖计算 DLC(dlc) 版本：2021-01-25
+
+### 第 86 次发布
+
+发布时间：2023-12-07 01:42:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>ExecutorMaxNumbers
+
+* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
+
+	* 新增成员：HeatValue
+
+* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
+
+	* 新增成员：ResultFormat
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 111 次发布
+
+发布时间：2023-12-07 01:52:30
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
+
+	* <font color="#dd0000">**修改成员**：</font>SkipUploadFile
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 44 次发布
+
+发布时间：2023-12-07 02:12:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AiAnalysisTaskDescriptionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionInput)
+* [AiAnalysisTaskDescriptionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionOutput)
+* [AiAnalysisTaskDescriptionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionResult)
+* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
+
+修改数据结构：
+
+* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
+
+	* 新增成员：DescriptionTask
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 15 次发布
+
+发布时间：2023-12-07 02:17:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AddSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81956)
+
+	* 新增入参：Sync
+
+	* 新增出参：UniqId
+
+* [DeleteSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81955)
+
+	* 新增入参：Sync
+
+	* 新增出参：UniqId
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 24 次发布
+
+发布时间：2023-12-07 02:35:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [IPRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#IPRegionInfo)
+
+	* <font color="#dd0000">**删除成员**：</font>Region
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 智能钛机器学习(tia) 版本：2018-02-26
+
+### 第 3 次发布
+
+发布时间：2023-12-07 02:37:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateJob
+
+
+
 # Release 3.0.897.1
 
 ## 云顾问(advisor) 版本：2020-07-21

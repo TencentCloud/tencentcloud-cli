@@ -1,5 +1,13 @@
 {
   "actions": {
+    "AccessDevice": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AccessDevice\n<公共请求参数>\n\n{\n    \"ResourceId\": \"bh-saas-xxxxxxxx\",\n    \"InstanceId\": \"ins-xxxxxxxx\",\n    \"Account\": \"root\",\n    \"Password\": \"\",\n    \"PrivateKey\": \"\",\n    \"PrivateKeyPassword\": \"\",\n    \"Protocol\": \"SSH\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AccessInfo\": {\n            \"Ip\": \"127.0.0.1\",\n            \"Port\": \"80\",\n            \"User\": \"root@xxxx\",\n            \"Password\": \"\"\n        },\n        \"RequestId\": \"77d99ae2-8c7f-484c-b1d6-fe45df130fc0\"\n    }\n}",
+        "title": "访问资产"
+      }
+    ],
     "AddDeviceGroupMembers": [
       {
         "document": "",

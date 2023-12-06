@@ -1,13 +1,5 @@
 {
   "actions": {
-    "CreateJob": [
-      {
-        "document": "在名为 ap-beijing 的集群上创建一个名为 test-job 的分布式任务。采用一个 master 节点，一个 ps 节点，和两个 worker 节点的计算节点结构，使用预提供的标签为 tia-1.7.0 的运行环境。",
-        "input": "https://tia.tencentcloudapi.com/?Action=CreateJob\r\n&Name=test-job\r\n&Cluster=ap-beijing\r\n&RuntimeVersion=tia-1.7.0\r\n&ScaleTier=CUSTOM\r\n&MasterType=1U1G0P\r\n&WorkerType=1U1G0P\r\n&ParameterServerType=1U1G0P\r\n&WorkerCount=2\r\n&ParameterServerCount=1\r\n&Debug=false\r\n&PackageDir.0=/* nfs or cos address */\r\n&Command.0=python\r\n&Args.0=mnist_saved_model.py\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Job\": {\n            \"Name\": \"test-job\",\n            \"CreateTime\": \"2018-05-23 10:00:00.000000000 +0800 CST m=+66666.666666666\",\n            \"Message\": \"creating\",\n            \"ScaleTier\": \"Custom\",\n            \"MasterType\": \"1U1G0P\",\n            \"WorkerType\": \"1U1G0P\",\n            \"ParameterServerType\": \"1U1G0P\",\n            \"WorkerCount\": 2,\n            \"ParameterServerCount\": 1,\n            \"Debug\": false,\n            \"PackageDir\": [\n                \"/* nfs or cos address */\"\n            ],\n            \"Command\": [\n                \"python\"\n            ],\n            \"Args\": [\n                \"mnist_saved_model.py\"\n            ],\n            \"Cluster\": \"ap-beijing\",\n            \"RuntimeVersion\": \"tia-1.7.0\"\n        },\n        \"RequestId\": \"xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx\"\n    }\n}",
-        "title": "创建一个训练任务"
-      }
-    ],
     "CreateModel": [
       {
         "document": "在名为 ap-beijing 的集群上运行一个名为 test-model 的模型，对外提供服务。使用预提供的标签为 tiaserv-1.6.0-cpu 的运行环境，指定机器配置为：4核CPU，8G内存，不使用GPU。",

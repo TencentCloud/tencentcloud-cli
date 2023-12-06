@@ -1,5 +1,12 @@
 {
   "actions": {
+    "AccessDevice": {
+      "document": "访问资产",
+      "input": "AccessDeviceRequest",
+      "name": "访问资产",
+      "output": "AccessDeviceResponse",
+      "status": "online"
+    },
     "AddDeviceGroupMembers": {
       "document": "添加资产组成员",
       "input": "AddDeviceGroupMembersRequest",
@@ -452,6 +459,143 @@
         }
       ],
       "usage": "both"
+    },
+    "AccessDeviceRequest": {
+      "document": "AccessDevice请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "堡垒机实例id",
+          "example": "bh-saas-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源id",
+          "example": "ins-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号",
+          "example": "root",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 协议",
+          "example": "无",
+          "member": "string",
+          "name": "Protocol",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "密码",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥密码",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKeyPassword",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AccessDeviceResponse": {
+      "document": "AccessDevice返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "认证信息",
+          "example": "无",
+          "member": "AccessInfo",
+          "name": "AccessInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "AccessInfo": {
+      "document": "认证信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AccessWhiteListRule": {
       "document": "访问白名单规则",
