@@ -4,7 +4,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: privatedns.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddSpecifyPrivateZoneVpc\n<公共请求参数>\n\n{\n    \"ZoneId\": \"abc\",\n    \"VpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxx\",\n            \"Region\": \"ap-guangzhou\"\n        }\n    ],\n    \"AccountVpcSet\": [\n        {\n            \"UniqVpcId\": \"vpc-xxxxxxxx\",\n            \"Region\": \"ap-guangzhou\",\n            \"Uin\": \"334345\",\n            \"VpcName\": \"abc\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ZoneId\": \"abc\",\n        \"VpcSet\": [\n            {\n                \"UniqVpcId\": \"abc\",\n                \"Region\": \"abc\"\n            }\n        ],\n        \"AccountVpcSet\": [\n            {\n                \"Uin\": \"123456789\",\n                \"UniqVpcId\": \"vpc-xxxxxxx\",\n                \"Region\": \"ap-guangzhou\"\n            }\n        ],\n        \"UniqId\": \"888888\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "追加与私有域关联的vpc"
       }
     ],

@@ -1233,7 +1233,7 @@
     "UpdatePrometheusScrapeJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-abcd1234\",\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name:xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"JobId\": \"job-abcd1234\",\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name: demo-config\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nstatic_configs:\\n- targets:\\n  - localhost:8080\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "更新 Prometheus 抓取任务"
       }
@@ -1241,7 +1241,7 @@
     "UpdateRecordingRule": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": \"2\",\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"1\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateRecordingRule\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xrwerwe\",\n    \"RuleState\": 2,\n    \"Group\": \"LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp\",\n    \"Name\": \"test\",\n    \"RuleId\": \"rrule-m74lrt6g\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1z5ph-pcsxjbfy1y56525v5q-w5brnte\",\n        \"RuleId\": \"rrule-m74lrt6g\"\n    }\n}",
         "title": "更新预聚合规则"
       }

@@ -418,6 +418,14 @@
         "title": "查询域名详细配置"
       }
     ],
+    "DescribeIPRegion": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIPRegion\n<公共请求参数>\n\n{\n    \"IPs\": [\n        \"1.1.1.1\",\n        \"2402:4e00:1403:eb00:0:9440:b55a:39a8\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bc0bb357-0b72-4abb-ae66-ffffb965aced\",\n        \"IPRegionInfo\": [\n            {\n                \"IP\": \"120.226.17.168\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"101.33.20.11\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"120.222.238.33\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"120.222.238.33\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"120.226.17.167\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"120.226.17.168\",\n                \"IsEdgeOneIP\": \"yes\"\n            },\n            {\n                \"IP\": \"43.130.34.95\",\n                \"IsEdgeOneIP\": \"no\"\n            },\n            {\n                \"IP\": \"43.128.224.98\",\n                \"IsEdgeOneIP\": \"no\"\n            }\n        ]\n    }\n}",
+        "title": "查询IP地理位置归属信息"
+      }
+    ],
     "DescribeIdentifications": [
       {
         "document": "",

@@ -4006,7 +4006,7 @@
         },
         {
           "disabled": false,
-          "document": "单次查询的时间窗口",
+          "document": "单次查询的时间窗口,如果您的目标主题为指标主题，建议该参数的大小不超过30分钟，否则可能转指标失败。 ",
           "example": "@m-15m,@m",
           "member": "string",
           "name": "ProcessTimeWindow",
@@ -11302,7 +11302,7 @@
         },
         {
           "disabled": false,
-          "document": "指标标签，从SQL结果字段中选择，一般是分组(group by) 的字段。",
+          "document": "指标维度，不接受时间类型。",
           "example": "[\"cluster\",\"ip\"]",
           "member": "string",
           "name": "MetricLabels",
@@ -11324,7 +11324,7 @@
         },
         {
           "disabled": false,
-          "document": "除了MetricLabels，您还可以使用该参数，为指标补充静态的标签。",
+          "document": "除了MetricLabels，您还可以使用该参数，为指标补充静态的维度。\n维度名以字母或下划线开头，后面可以跟字母、数字或下划线，长度小于等于1024 字节",
           "example": "[{\"Key\":\"region\",\"Value\":\"gz\"},{\"Key\":\"service\",\"Value\":\"cgi\"}]",
           "member": "MetricLabel",
           "name": "CustomMetricLabels",

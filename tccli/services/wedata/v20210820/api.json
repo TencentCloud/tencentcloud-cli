@@ -15563,6 +15563,33 @@
           "name": "IncludeVirtualTask",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "任务目录id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskFolderId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "classification.分类展示  catalog.目录展示",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含任务目录",
+          "example": "无",
+          "member": "bool",
+          "name": "IncludeTaskFolder",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -15625,6 +15652,15 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " classification:分类展示  catalog:目录展示",
+          "example": "无",
+          "member": "string",
+          "name": "DisplayType",
           "required": false,
           "type": "string"
         }

@@ -287,6 +287,13 @@
       "output": "DescribeHostsSettingResponse",
       "status": "online"
     },
+    "DescribeIPRegion": {
+      "document": "该接口可用于查询 IP 是否为 EdgeOne IP。",
+      "input": "DescribeIPRegionRequest",
+      "name": "查询 IP 归属信息",
+      "output": "DescribeIPRegionResponse",
+      "status": "online"
+    },
     "DescribeIdentifications": {
       "document": "查询站点的验证信息。",
       "input": "DescribeIdentificationsRequest",
@@ -5666,6 +5673,43 @@
       ],
       "type": "object"
     },
+    "DescribeIPRegionRequest": {
+      "document": "DescribeIPRegion请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "待查询的 IP 列表，支持 IPV4 和 IPV6，最大可查询 100 条。",
+          "example": "[\"1.1.1.1\",\"2402:4e00:1403:eb00:0:9440:b55a:39a8\"]",
+          "member": "string",
+          "name": "IPs",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeIPRegionResponse": {
+      "document": "DescribeIPRegion返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 归属信息列表。",
+          "example": "[]",
+          "member": "IPRegionInfo",
+          "name": "IPRegionInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeIdentificationsRequest": {
       "document": "DescribeIdentifications请求参数结构体",
       "members": [
@@ -8275,6 +8319,32 @@
         }
       ],
       "usage": "both"
+    },
+    "IPRegionInfo": {
+      "document": "IP 归属信息查询",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP 地址，IPV4 或 IPV6。",
+          "example": "1.1.1.1",
+          "member": "string",
+          "name": "IP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IP 是否属于 EdgeOne 节点，取值有：\n<li>yes：该 IP 属于 EdgeOne 节点；</li>\n<li>no：该 IP 不属于 EdgeOne 节点。</li>",
+          "example": "yes",
+          "member": "string",
+          "name": "IsEdgeOneIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IPWhitelist": {
       "document": "源站防护IP白名单",

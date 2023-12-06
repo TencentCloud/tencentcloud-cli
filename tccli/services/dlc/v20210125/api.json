@@ -5103,7 +5103,7 @@
         },
         {
           "disabled": false,
-          "document": "作业集群资源参数配置模版",
+          "document": "作业集群资源参数配置模板",
           "example": "无",
           "member": "SessionResourceTemplate",
           "name": "SessionResourceTemplate",
@@ -8296,7 +8296,7 @@
         {
           "disabled": false,
           "document": "结果数据",
-          "example": "[         [             \"allen\",             \"27\"         ],    ",
+          "example": "[[\"allen\",\"27\"],[\"tim\",\"20\"]]",
           "member": "string",
           "name": "ResultSet",
           "output_required": true,
@@ -11192,21 +11192,21 @@
       "members": [
         {
           "disabled": false,
-          "document": "Token使用的临时秘钥的ID",
+          "document": "Token使用的临时密钥的ID",
           "example": "无",
           "member": "string",
           "name": "SecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Token使用的临时秘钥",
+          "document": "Token使用的临时密钥",
           "example": "无",
           "member": "string",
           "name": "SecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11216,7 +11216,7 @@
           "example": "无",
           "member": "string",
           "name": "Token",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11226,7 +11226,7 @@
           "example": "无",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11236,7 +11236,7 @@
           "example": "无",
           "member": "int64",
           "name": "IssueTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -12379,7 +12379,7 @@
           "example": "session1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12389,7 +12389,7 @@
           "example": "spark",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12399,7 +12399,7 @@
           "example": "data_engine_1",
           "member": "string",
           "name": "DataEngineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12409,7 +12409,7 @@
           "example": "[\"eni\":\"test_eni\"]",
           "member": "KVPair",
           "name": "Arguments",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12419,7 +12419,7 @@
           "example": "[cosn://xxx]",
           "member": "string",
           "name": "ProgramDependentFiles",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12429,7 +12429,7 @@
           "example": "[cosn://xxx]",
           "member": "string",
           "name": "ProgramDependentJars",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12439,7 +12439,7 @@
           "example": "[cosn://xxx]",
           "member": "string",
           "name": "ProgramDependentPython",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12449,7 +12449,7 @@
           "example": "[cosn://xxx]",
           "member": "string",
           "name": "ProgramArchives",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12459,7 +12459,7 @@
           "example": "small",
           "member": "string",
           "name": "DriverSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12469,7 +12469,7 @@
           "example": "small",
           "member": "string",
           "name": "ExecutorSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12479,7 +12479,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorNumbers",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12489,7 +12489,7 @@
           "example": "root",
           "member": "string",
           "name": "ProxyUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12499,17 +12499,17 @@
           "example": "3600",
           "member": "int64",
           "name": "TimeoutInSecond",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "example": "spark-123",
           "member": "string",
           "name": "SparkAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12519,7 +12519,7 @@
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12529,7 +12529,7 @@
           "example": "not_started",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12539,7 +12539,7 @@
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12549,7 +12549,7 @@
           "example": "[\"sparkUiUrl\":\"xxx\"]",
           "member": "KVPair",
           "name": "AppInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12559,7 +12559,7 @@
           "example": "http://xxx",
           "member": "string",
           "name": "SparkUiUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12569,7 +12569,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ExecutorMaxNumbers",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         }
@@ -12727,7 +12727,7 @@
           "example": "spark",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12737,7 +12737,7 @@
           "example": "d3018ad4-9a7e-4f64-a3f4-f38507c69742",
           "member": "string",
           "name": "SessionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12747,7 +12747,7 @@
           "example": "root",
           "member": "string",
           "name": "ProxyUser",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12757,17 +12757,17 @@
           "example": "not_started",
           "member": "string",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Spark任务返回的AppId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "spark-4ke6a46618d24e9c7yh2b62f0ddebdks",
+          "example": "spark-123",
           "member": "string",
           "name": "SparkAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12777,7 +12777,7 @@
           "example": "session1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12787,7 +12787,7 @@
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12797,7 +12797,7 @@
           "example": "data_engine_1",
           "member": "string",
           "name": "DataEngineName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12807,7 +12807,7 @@
           "example": "2006-01-02 15:04:05",
           "member": "string",
           "name": "LastRunningTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12817,7 +12817,7 @@
           "example": "test",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12827,7 +12827,7 @@
           "example": "http://xxx",
           "member": "string",
           "name": "SparkUiUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -15272,6 +15272,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "访问热点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "HeatValue",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -15729,6 +15739,16 @@
           "name": "PrestoMonitorMetrics",
           "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果文件格式：默认为csv\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "csv",
+          "member": "string",
+          "name": "ResultFormat",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

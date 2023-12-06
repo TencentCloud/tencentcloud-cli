@@ -421,7 +421,7 @@
       "status": "online"
     },
     "DescribeExporterIntegrations": {
-      "document": "查询 exporter 集成列表",
+      "document": "查询集成中心 exporter 集成列表",
       "input": "DescribeExporterIntegrationsRequest",
       "name": "查询 exporter 集成列表",
       "output": "DescribeExporterIntegrationsResponse",
@@ -939,9 +939,9 @@
       "status": "online"
     },
     "UpdateAlertRule": {
-      "document": "更新 Prometheus 的报警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
+      "document": "更新 Prometheus 的告警规则。\n\n请注意，**告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description**，，请参考 [Prometheus Rule更多配置请参考](https://prometheus.io/docs/prometheus/latest/configuration/alerting_rules/)。",
       "input": "UpdateAlertRuleRequest",
-      "name": "更新报警规则",
+      "name": "更新告警规则",
       "output": "UpdateAlertRuleResponse",
       "status": "online"
     },
@@ -1009,9 +1009,9 @@
       "status": "online"
     },
     "UpdatePrometheusScrapeJob": {
-      "document": "更新 Prometheus 抓取任务",
+      "document": "更新 Prometheus Agent 抓取任务",
       "input": "UpdatePrometheusScrapeJobRequest",
-      "name": "更新 Prometheus 抓取任务",
+      "name": "更新 Prometheus Agent 抓取任务",
       "output": "UpdatePrometheusScrapeJobResponse",
       "status": "online"
     },
@@ -5288,7 +5288,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "规则 ID 列表",
+          "document": "规则 ID 列表(规则 ID 可通过 DescribeRecordingRules 接口获取)",
           "example": "[\"rrule-m74lrt6g\"]",
           "member": "string",
           "name": "RuleIds",
@@ -7619,7 +7619,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "document": "Kubernetes 集群类型，可不填。取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "3",
           "member": "int64",
           "name": "KubeType",
@@ -7628,7 +7628,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "集群 ID，可不填",
           "example": "cls-evrh1x32",
           "member": "string",
           "name": "ClusterId",
@@ -7637,7 +7637,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "类型(不填返回全部集成。可通过 DescribePrometheusIntegrations 接口获取，取每一项中的 ExporterType 字段)",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -15775,33 +15775,30 @@
       "members": [
         {
           "disabled": false,
-          "document": "集群类型",
-          "example": "xxx",
+          "document": "集群类型。可填入tke、eks、tkeedge、tdcc，分别代表标准集群、弹性集群、边缘集群、注册集群",
+          "example": "tke",
           "member": "string",
           "name": "ClusterType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "集群id",
-          "example": "xxx",
+          "document": "集成容器服务中关联的集群ID",
+          "example": "cls-abc",
           "member": "string",
           "name": "ClusterId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "备注",
-          "example": "xxx",
+          "document": "该参数未使用，不需要填写",
+          "example": "test",
           "member": "string",
           "name": "Describe",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -18987,7 +18984,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 报警规则 ID",
+          "document": "Prometheus 高警规则 ID",
           "example": "arule-omq28fcm",
           "member": "string",
           "name": "RuleId",
@@ -19014,7 +19011,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则名称",
+          "document": "告警规则名称",
           "example": "告警规则测试",
           "member": "string",
           "name": "RuleName",
@@ -19023,7 +19020,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则表达式",
+          "document": "告警规则表达式",
           "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
           "member": "string",
           "name": "Expr",
@@ -19032,7 +19029,7 @@
         },
         {
           "disabled": false,
-          "document": "报警规则持续时间",
+          "document": "告警规则持续时间",
           "example": "1m",
           "member": "string",
           "name": "Duration",
@@ -19041,8 +19038,8 @@
         },
         {
           "disabled": false,
-          "document": "报警规则接收组列表",
-          "example": "[\"Consumer-5sfs3242\"]",
+          "document": "告警规则接收组列表(当前规则绑定的接收组列表可通过 DescribeAlertRules 接口获取；用户已有的接收组列表可通过 DescribeAlarmNotices 接口获取)",
+          "example": "[\"notice-5sfs3242\"]",
           "member": "string",
           "name": "Receivers",
           "required": true,
@@ -19068,7 +19065,7 @@
         },
         {
           "disabled": false,
-          "document": "报警策略模板分类",
+          "document": "报警策略模板分类(自定义，可不填)",
           "example": "TargetDown",
           "member": "string",
           "name": "Type",
@@ -19087,7 +19084,7 @@
           "example": "arule-omq28fcm",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -19186,8 +19183,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "实例 ID",
-          "example": "prom-xx",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-id",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19195,7 +19192,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "类型(可通过 DescribeExporterIntegrations 获取对应集成的 Kind)",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -19204,7 +19201,7 @@
         },
         {
           "disabled": false,
-          "document": "配置内容",
+          "document": "配置内容(可通过 DescribeExporterIntegrations 接口获取对应集成的 Content，并在此基础上做修改)",
           "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
           "member": "string",
           "name": "Content",
@@ -19213,7 +19210,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "document": "Kubernetes 集群类型，可不填。取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "1",
           "member": "int64",
           "name": "KubeType",
@@ -19222,8 +19219,8 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID",
-          "example": "cls-xx",
+          "document": "集群 ID，可不填",
+          "example": "cls-id",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -19528,8 +19525,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
-          "example": "xx",
+          "document": "Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)",
+          "example": "prom-id",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -19537,8 +19534,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
-          "example": "xx",
+          "document": "Agent ID(可通过DescribePrometheusAgents 接口获取)",
+          "example": "agent-id",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -19546,8 +19543,8 @@
         },
         {
           "disabled": false,
-          "document": "抓取任务 ID，例如：job-abcd1234，可在控制台 Agent 管理-抓取任务配置中获取",
-          "example": "xx",
+          "document": "抓取任务 ID(可通过 DescribePrometheusScrapeJobs 接口获取)",
+          "example": "job-id",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -19555,8 +19552,8 @@
         },
         {
           "disabled": false,
-          "document": "抓取任务配置，格式：job_name:xx",
-          "example": "job_name:xx",
+          "document": "抓取任务配置",
+          "example": "job_name: demo-config\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nstatic_configs:\\n- targets:\\n  - localhost:8080",
           "member": "string",
           "name": "Config",
           "required": true,
@@ -19600,7 +19597,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID",
+          "document": "Prometheus 实例 ID(可通过 DescribePrometheusInstances 接口获取)",
           "example": "prom-xrwerwe",
           "member": "string",
           "name": "InstanceId",
@@ -19609,7 +19606,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 聚合规则 ID",
+          "document": "Prometheus 聚合规则 ID(可通过 DescribeRecordingRules 接口获取)",
           "example": "rrule-m74lrt6g",
           "member": "string",
           "name": "RuleId",
@@ -19637,7 +19634,7 @@
           "example": "rrule-m74lrt6g",
           "member": "string",
           "name": "RuleId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

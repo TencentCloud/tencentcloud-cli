@@ -1,6 +1,6 @@
 **Example 1: BGP路由模式和私有网络VPC的专用通道**
 
-
+BGP路由模式和私有网络VPC的专用通道
 
 Input: 
 
@@ -35,7 +35,7 @@ Output:
 
 **Example 2: STATIC路由模式和黑石VPC的专用通道**
 
-
+STATIC路由模式和黑石VPC的专用通道
 
 Input: 
 
@@ -70,7 +70,7 @@ Output:
 
 **Example 3: BGP路由模式和共享专线的专用通道**
 
-
+BGP路由模式和共享专线的专用通道
 
 Input: 
 
@@ -106,7 +106,7 @@ Output:
 
 **Example 4: BGP路由模式和云联网专用通道**
 
-
+BGP路由模式和云联网专用通道
 
 Input: 
 
@@ -134,6 +134,36 @@ Output:
             "dcx-abcdefgh"
         ],
         "RequestId": "24a0d7e5-4c13-49be-aa16-94f698fbef3e"
+    }
+}
+```
+
+**Example 5: 创建云交换服务通道**
+
+创建云交换服务通道
+
+Input: 
+
+```
+tccli dc CreateDirectConnectTunnel --cli-unfold-argument  \
+    --DirectConnectId dc-juystu9z \
+    --DirectConnectTunnelName testvif \
+    --NetworkType CCN \
+    --NetworkRegion ap-guangzhou \
+    --DirectConnectGatewayId dcg-du8uzrih \
+    --Bandwidth 100 \
+    --RouteType BGP \
+    --Vlan 1001
+```
+
+Output: 
+```
+{
+    "Response": {
+        "DirectConnectTunnelIdSet": [
+            "dcx-inx9ty4u"
+        ],
+        "RequestId": "4539586b-d0d7-49bb-b351-2036da9ac277"
     }
 }
 ```

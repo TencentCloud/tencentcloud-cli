@@ -5699,10 +5699,10 @@
           "disabled": false,
           "document": "跳过上传文件步骤\n\n**true**：跳过\n**false**：（默认）不跳过，需要传ResourceId",
           "example": "false",
-          "member": "string",
+          "member": "bool",
           "name": "SkipUploadFile",
           "required": false,
-          "type": "string"
+          "type": "bool"
         }
       ],
       "usage": "in"

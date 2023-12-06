@@ -1548,7 +1548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>",
+          "document": "任务的类型，可以取的值有：\n<li>Classification：智能分类</li>\n<li>Cover：智能封面</li>\n<li>Tag：智能标签</li>\n<li>FrameTag：智能按帧标签</li>\n<li>Highlight：智能精彩集锦</li>\n<li>DeLogo：智能去水印</li>\n<li>Description：大模型摘要</li>",
           "example": "Classification",
           "member": "string",
           "name": "Type",
@@ -1612,6 +1612,16 @@
           "example": "无",
           "member": "AiAnalysisTaskDelLogoResult",
           "name": "DeLogoTask",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "视频内容分析摘要任务的查询结果，当任务类型为 Description 时有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskDescriptionResult",
+          "name": "DescriptionTask",
           "output_required": true,
           "type": "object",
           "value_allowed_null": true
@@ -1915,6 +1925,94 @@
           "document": "智能去水印任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AiAnalysisTaskDelLogoOutput",
+          "name": "Output",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDescriptionInput": {
+      "document": "智能分类任务输入类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频智能描述模板 ID。",
+          "example": "",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDescriptionOutput": {
+      "document": "智能描述结果信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "视频智能描述列表。",
+          "example": "",
+          "member": "MediaAiAnalysisDescriptionItem",
+          "name": "DescriptionSet",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "AiAnalysisTaskDescriptionResult": {
+      "document": "智能描述结果类型",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务状态，有 PROCESSING，SUCCESS 和 FAIL 三种。",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误码，0：成功，其他值：失败。",
+          "example": "无",
+          "member": "int64",
+          "name": "ErrCode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能描述任务输入。",
+          "example": "无",
+          "member": "AiAnalysisTaskDescriptionInput",
+          "name": "Input",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能描述任务输出。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiAnalysisTaskDescriptionOutput",
           "name": "Output",
           "output_required": true,
           "type": "object",
@@ -2394,6 +2492,42 @@
         }
       ],
       "usage": "both"
+    },
+    "AiParagraphInfo": {
+      "document": "分段信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分段摘要\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Summary",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分段起始时间点，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "StartTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分段结束时间点，秒\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "EndTimeOffset",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "AiQualityControlTaskInput": {
       "document": "视频质检输入参数类型",
@@ -16755,6 +16889,42 @@
           "required": true,
           "type": "float",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "MediaAiAnalysisDescriptionItem": {
+      "document": "智能描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "智能描述。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "智能描述的可信度，取值范围是 0 到 100。",
+          "example": "无",
+          "member": "float",
+          "name": "Confidence",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分段结果。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AiParagraphInfo",
+          "name": "Paragraphs",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
