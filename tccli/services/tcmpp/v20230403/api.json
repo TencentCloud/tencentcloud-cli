@@ -1,0 +1,237 @@
+{
+  "actions": {
+    "DescribeMNPDetail": {
+      "document": "小程序详情",
+      "input": "DescribeMNPDetailRequest",
+      "name": "小程序详情",
+      "output": "DescribeMNPDetailResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2023-04-03",
+    "api_brief": "腾讯小程序平台的云API接口，提供控制台使用的交互接口。",
+    "serviceNameCN": "腾讯云小程序平台",
+    "serviceShortName": "tcmpp"
+  },
+  "objects": {
+    "ApplicationSimpleInfo": {
+      "document": "应用信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ApplicationName",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeMNPDetailRequest": {
+      "document": "DescribeMNPDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键id",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "小程序mnpid",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalTeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMNPDetailResponse": {
+      "document": "DescribeMNPDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MNPDetail",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "MNPDetail": {
+      "document": "小程序列表项详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主键id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Id",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "图标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIcon",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序简介\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIntro",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MNPDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建人账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间,时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "上线状态 0 未上线， 1 已上线\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "OnlineStatus",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ApplicationSimpleInfo",
+          "name": "Applications",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "小程序状态 1-已上架 2-已下架\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

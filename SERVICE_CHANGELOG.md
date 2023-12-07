@@ -1,10 +1,40 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+## 应用性能监控(apm) 版本：2021-06-22
 
-### 第 20 次发布
+### 第 10 次发布
 
-发布时间：2023-12-07 01:38:55
+发布时间：2023-12-08 01:09:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
+
+	* 新增入参：PayMode
+
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+
+	* 新增入参：PayMode
+
+
+修改数据结构：
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：PayMode, PayModeEffective
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 5 次发布
+
+发布时间：2023-12-08 01:22:55
 
 本次发布包含了以下内容：
 
@@ -12,19 +42,35 @@
 
 新增接口：
 
-* [AccessDevice](http://document.tencentcloudapi.woa.com/document/product/1492/82773)
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 21 次发布
+
+发布时间：2023-12-08 01:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)
 
 新增数据结构：
 
-* [AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessInfo)
+* [GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)
 
 
 
-## 数据湖计算 DLC(dlc) 版本：2021-01-25
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 86 次发布
+### 第 56 次发布
 
-发布时间：2023-12-07 01:42:57
+发布时间：2023-12-08 01:51:38
 
 本次发布包含了以下内容：
 
@@ -32,26 +78,18 @@
 
 修改数据结构：
 
-* [NotebookSessionInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#NotebookSessionInfo)
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
 
-	* <font color="#dd0000">**修改成员**：</font>ExecutorMaxNumbers
-
-* [TableResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TableResponseInfo)
-
-	* 新增成员：HeatValue
-
-* [TaskResponseInfo](http://document.tencentcloudapi.woa.com/document/product/1342/53778#TaskResponseInfo)
-
-	* 新增成员：ResultFormat
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
 
 
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 111 次发布
+### 第 112 次发布
 
-发布时间：2023-12-07 01:52:30
+发布时间：2023-12-08 01:52:36
 
 本次发布包含了以下内容：
 
@@ -59,9 +97,9 @@
 
 修改数据结构：
 
-* [CreateFlowOption](http://document.tencentcloudapi.woa.com/document/product/1595/75258#CreateFlowOption)
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Recipient)
 
-	* <font color="#dd0000">**修改成员**：</font>SkipUploadFile
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
 
 
 
@@ -70,65 +108,35 @@
 
 
 
-## 媒体处理(mps) 版本：2019-06-12
+## 服务管理平台(smp) 版本：2023-06-02
 
-### 第 44 次发布
+### 第 8 次发布
 
-发布时间：2023-12-07 02:12:42
+发布时间：2023-12-08 02:22:03
 
 本次发布包含了以下内容：
 
 改善已有的文档。
+
+新增接口：
+
+* [DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)
 
 新增数据结构：
 
-* [AiAnalysisTaskDescriptionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionInput)
-* [AiAnalysisTaskDescriptionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionOutput)
-* [AiAnalysisTaskDescriptionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionResult)
-* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
-* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
-
-修改数据结构：
-
-* [AiAnalysisResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisResult)
-
-	* 新增成员：DescriptionTask
+* [UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)
 
 
 
-
-## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
-
-### 第 15 次发布
-
-发布时间：2023-12-07 02:17:57
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [AddSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81956)
-
-	* 新增入参：Sync
-
-	* 新增出参：UniqId
-
-* [DeleteSpecifyPrivateZoneVpc](http://document.tencentcloudapi.woa.com/document/product/1338/81955)
-
-	* 新增入参：Sync
-
-	* 新增出参：UniqId
+## 容器服务(tke) 版本：2022-05-01
 
 
 
+## 容器服务(tke) 版本：2018-05-25
 
-## 边缘安全加速平台(teo) 版本：2022-09-01
+### 第 85 次发布
 
-### 第 24 次发布
-
-发布时间：2023-12-07 02:35:52
+发布时间：2023-12-08 02:39:29
 
 本次发布包含了以下内容：
 
@@ -136,30 +144,10 @@
 
 修改数据结构：
 
-* [IPRegionInfo](http://document.tencentcloudapi.woa.com/document/product/1738/81211#IPRegionInfo)
+* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/457/31866#ResourceDeleteOption)
 
-	* <font color="#dd0000">**删除成员**：</font>Region
+	* 新增成员：SkipDeletionProtection
 
-
-
-
-## 边缘安全加速平台(teo) 版本：2022-01-06
-
-
-
-## 智能钛机器学习(tia) 版本：2018-02-26
-
-### 第 3 次发布
-
-发布时间：2023-12-07 02:37:27
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* CreateJob
 
 
 
@@ -3784,6 +3772,32 @@
 
 
 ## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 10 次发布
+
+发布时间：2023-12-08 01:09:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
+
+	* 新增入参：PayMode
+
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+
+	* 新增入参：PayMode
+
+
+修改数据结构：
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：PayMode, PayModeEffective
+
 
 ### 第 9 次发布
 
@@ -14071,7 +14085,19 @@
 
 
 
-## 云数据仓库 for Apache Doris(cdwdoris) 版本：2021-12-28
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 5 次发布
+
+发布时间：2023-12-08 01:22:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 4 次发布
 
@@ -23511,6 +23537,22 @@
 
 ## 云安全一体化平台(csip) 版本：2022-11-21
 
+### 第 21 次发布
+
+发布时间：2023-12-08 01:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset))
+
 ### 第 20 次发布
 
 发布时间：2023-11-16 01:12:24
@@ -29351,11 +29393,11 @@
 
 新增接口：
 
-* [[AccessDevice](http://document.tencentcloudapi.woa.com/document/product/1492/82773)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [AccessDevice](http://document.tencentcloudapi.woa.com/document/product/1492/82773)
 
 新增数据结构：
 
-* [[AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessInfo)](http://document.tencentcloudapi.woa.com/document/product/1492/74806#[AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessInfo))
+* [AccessInfo](http://document.tencentcloudapi.woa.com/document/product/1492/74806#AccessInfo)
 
 ### 第 19 次发布
 
@@ -38560,6 +38602,21 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 56 次发布
+
+发布时间：2023-12-08 01:51:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
+
 ### 第 55 次发布
 
 发布时间：2023-12-01 01:16:10
@@ -39920,6 +39977,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 112 次发布
+
+发布时间：2023-12-08 01:52:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Recipient)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
 
 ### 第 111 次发布
 
@@ -54790,11 +54862,11 @@
 
 新增数据结构：
 
-* [[AiAnalysisTaskDescriptionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionInput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[AiAnalysisTaskDescriptionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionInput))
-* [[AiAnalysisTaskDescriptionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionOutput)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[AiAnalysisTaskDescriptionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionOutput))
-* [[AiAnalysisTaskDescriptionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionResult)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[AiAnalysisTaskDescriptionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionResult))
-* [[AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo))
-* [[MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)](http://document.tencentcloudapi.woa.com/document/product/862/37615#[MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem))
+* [AiAnalysisTaskDescriptionInput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionInput)
+* [AiAnalysisTaskDescriptionOutput](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionOutput)
+* [AiAnalysisTaskDescriptionResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiAnalysisTaskDescriptionResult)
+* [AiParagraphInfo](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiParagraphInfo)
+* [MediaAiAnalysisDescriptionItem](http://document.tencentcloudapi.woa.com/document/product/862/37615#MediaAiAnalysisDescriptionItem)
 
 修改数据结构：
 
@@ -65057,6 +65129,22 @@
 
 ## 服务管理平台(smp) 版本：2023-06-02
 
+### 第 8 次发布
+
+发布时间：2023-12-08 02:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)](http://document.tencentcloudapi.woa.com/document/product/1736/80965#[UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth))
+
 ### 第 7 次发布
 
 发布时间：2023-09-29 02:20:54
@@ -70676,6 +70764,28 @@
 * [Service](http://document.tencentcloudapi.woa.com/document/product/1593/75052#Service)
 * [TracingConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#TracingConfig)
 * [WorkloadConfig](http://document.tencentcloudapi.woa.com/document/product/1593/75052#WorkloadConfig)
+
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
+
+### 第 1 次发布
+
+发布时间：2023-12-07 14:46:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMNPDetail](http://document.tencentcloudapi.woa.com/document/product/1754/82776)
+
+新增数据结构：
+
+* [ApplicationSimpleInfo](http://document.tencentcloudapi.woa.com/document/product/1754/82777#ApplicationSimpleInfo)
+* [MNPDetail](http://document.tencentcloudapi.woa.com/document/product/1754/82777#MNPDetail)
 
 
 
@@ -78508,6 +78618,21 @@
 
 
 ## 容器服务(tke) 版本：2018-05-25
+
+### 第 85 次发布
+
+发布时间：2023-12-08 02:39:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/457/31866#ResourceDeleteOption)
+
+	* 新增成员：SkipDeletionProtection
+
 
 ### 第 84 次发布
 

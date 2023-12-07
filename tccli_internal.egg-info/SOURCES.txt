@@ -798,6 +798,8 @@ tccli/services/tcm/__init__.py
 tccli/services/tcm/tcm_client.py
 tccli/services/tcm/v20210413/api.json
 tccli/services/tcm/v20210413/examples.json
+tccli/services/tcmpp/__init__.py
+tccli/services/tcmpp/tcmpp_client.py
 tccli/services/tcop/__init__.py
 tccli/services/tcop/tcop_client.py
 tccli/services/tcr/__init__.py

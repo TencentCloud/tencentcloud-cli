@@ -23,6 +23,14 @@
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"dadcbddc-cc96-488d-b072-6de6bc713f00\",\n        \"Data\": {\n            \"PaymentInfos\": [\n                {\n                    \"PaymentResType\": 1,\n                    \"ResourceId\": \"资源ID\",\n                    \"PaymentAmount\": 0.87,\n                    \"Availability\": 95.448,\n                    \"PaymentRatio\": 25,\n                    \"ExceptionMsg\": \"\"\n                }\n            ],\n            \"PaymentAmountTotal\": 0.87,\n            \"PaymentTraceId\": \"5ce2d8d5-5173-47a0-895d-4c0052d97f5f\"\n        }\n    }\n}",
         "title": "SLA赔付金额计算"
       }
+    ],
+    "DescribeUserBillingAuth": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: smp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserBillingAuth\n<公共请求参数>\n\n{\n    \"Operator\": \"rockyjiepan\",\n    \"PayerUin\": \"客户UIN\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"cad3a73d-ff17-4176-9f8e-7087ccdeb460\",\n        \"Data\": {\n            \"IsWhiteList\": 0\n        }\n    }\n}",
+        "title": "示例"
+      }
     ]
   },
   "version": "1.0"

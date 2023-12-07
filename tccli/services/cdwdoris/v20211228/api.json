@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeInstance": {
+      "document": "根据实例ID查询某个实例的具体信息",
+      "input": "DescribeInstanceRequest",
+      "name": "描述实例信息",
+      "output": "DescribeInstanceResponse",
+      "status": "online"
+    },
     "DescribeInstanceNodes": {
       "document": "获取实例节点信息列表",
       "input": "DescribeInstanceNodesRequest",
@@ -17,8 +24,8 @@
   },
   "metadata": {
     "apiVersion": "2021-12-28",
-    "api_brief": "云数据仓库 Doris（CDWDRS）是腾讯云提供的云上 Doris 托管服务，为用户提供便捷的 Doris 集群部署、软件安装、配置修改、监控告警、弹性伸缩等功能，为企业及用户提供安全稳定的大数据处理解决方案。",
-    "serviceNameCN": "云数据仓库 for Apache Doris",
+    "api_brief": "腾讯云数据仓库 TCHouse-D（Tencent Cloud House-D，TCHouse-D）基于业内领先的 OLAP 数据库 Apache Doris 内核构建，兼容 MySQL 协议，融合云上大数据生态，提供丰富的集群管控能力及完善的巡检告警体系，为客户提供简单易用、轻松运维的云上全托管服务，助力客户快速进行实时 OLAP 数据分析。",
+    "serviceNameCN": "腾讯云数据仓库 TCHouse-D",
     "serviceShortName": "cdwdoris"
   },
   "objects": {
@@ -141,6 +148,43 @@
           "required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceRequest": {
+      "document": "DescribeInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceResponse": {
+      "document": "DescribeInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例描述信息",
+          "example": "无",
+          "member": "InstanceInfo",
+          "name": "InstanceInfo",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

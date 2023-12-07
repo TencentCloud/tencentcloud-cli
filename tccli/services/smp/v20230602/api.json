@@ -20,6 +20,13 @@
       "name": "SLA赔付金额计算",
       "output": "DescribeResourcesSLAPaymentResponse",
       "status": "online"
+    },
+    "DescribeUserBillingAuth": {
+      "document": "查询用户是否具备查询uin账单权限接口",
+      "input": "DescribeUserBillingAuthRequest",
+      "name": "查询用户是否具备查询uin账单权限接口",
+      "output": "DescribeUserBillingAuthResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -550,6 +557,52 @@
       ],
       "type": "object"
     },
+    "DescribeUserBillingAuthRequest": {
+      "document": "DescribeUserBillingAuth请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户名",
+          "example": "无",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户UIN",
+          "example": "无",
+          "member": "string",
+          "name": "PayerUin",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeUserBillingAuthResponse": {
+      "document": "DescribeUserBillingAuth返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "权限信息",
+          "example": "无",
+          "member": "UserBillingAuth",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeviceDealInfo": {
       "document": "资源订单信息",
       "members": [
@@ -993,6 +1046,22 @@
           "name": "InputJson",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "UserBillingAuth": {
+      "document": "UserBillingAuth",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0:不在白名单，1：在白名单\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "IsWhiteList",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

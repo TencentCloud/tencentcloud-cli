@@ -1,3 +1,156 @@
+# Release 3.0.899.1
+
+## 应用性能监控(apm) 版本：2021-06-22
+
+### 第 10 次发布
+
+发布时间：2023-12-08 01:09:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
+
+	* 新增入参：PayMode
+
+* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
+
+	* 新增入参：PayMode
+
+
+修改数据结构：
+
+* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
+
+	* 新增成员：PayMode, PayModeEffective
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 5 次发布
+
+发布时间：2023-12-08 01:22:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 21 次发布
+
+发布时间：2023-12-08 01:31:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)
+
+新增数据结构：
+
+* [GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 56 次发布
+
+发布时间：2023-12-08 01:51:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 112 次发布
+
+发布时间：2023-12-08 01:52:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Recipient)
+
+	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 服务管理平台(smp) 版本：2023-06-02
+
+### 第 8 次发布
+
+发布时间：2023-12-08 02:22:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)
+
+新增数据结构：
+
+* [UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 85 次发布
+
+发布时间：2023-12-08 02:39:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/457/31866#ResourceDeleteOption)
+
+	* 新增成员：SkipDeletionProtection
+
+
+
+
 # Release 3.0.898.1
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
