@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ImageMask": {
+      "document": "医疗报告图片脱敏接口",
+      "input": "ImageMaskRequest",
+      "name": "医疗报告图片脱敏接口",
+      "output": "ImageMaskResponse",
+      "status": "online"
+    },
     "ImageToClass": {
       "document": "图片分类",
       "input": "ImageToClassRequest",
@@ -4880,6 +4887,94 @@
         }
       ],
       "usage": "in"
+    },
+    "ImageMaskFlags": {
+      "document": "图片脱敏选项\n不填默认敏感信息都脱敏",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否对医院信息进行脱敏",
+          "example": "true",
+          "member": "bool",
+          "name": "HospitalFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对医生信息进行脱敏",
+          "example": "无",
+          "member": "bool",
+          "name": "DoctorFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对患者信息进行脱敏",
+          "example": "无",
+          "member": "bool",
+          "name": "PatientFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否对二维码信息进行脱敏",
+          "example": "无",
+          "member": "bool",
+          "name": "BarFlag",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "usage": "in"
+    },
+    "ImageMaskRequest": {
+      "document": "ImageMask请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "图片信息,目前只支持传图片base64",
+          "example": "无",
+          "member": "ImageInfo",
+          "name": "Image",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片脱敏选项, 不传默认都脱敏",
+          "example": "无",
+          "member": "ImageMaskFlags",
+          "name": "MaskFlag",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ImageMaskResponse": {
+      "document": "ImageMask返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "脱敏后图片的Base64信息",
+          "example": "无",
+          "member": "string",
+          "name": "MaskedImage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ImageToClassRequest": {
       "document": "ImageToClass请求参数结构体",

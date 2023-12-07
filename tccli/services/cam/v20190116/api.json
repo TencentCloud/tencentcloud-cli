@@ -2769,7 +2769,7 @@
           "example": "[]",
           "member": "SubAccountUser",
           "name": "SubAccounts",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6282,7 +6282,7 @@
         {
           "disabled": false,
           "document": "子用户用户名",
-          "example": "name",
+          "example": "Name",
           "member": "string",
           "name": "Name",
           "required": true,
@@ -6341,7 +6341,7 @@
         },
         {
           "disabled": false,
-          "document": "最近登录时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "最近登录时间，回参为空，即为未登录过控制台\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "2021-03-15 20:00:00",
           "member": "string",
           "name": "LastLoginTime",

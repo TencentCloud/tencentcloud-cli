@@ -46,6 +46,8 @@ Output:
                 "OrganizationId": "yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP",
                 "PreviewUrl": "",
                 "Promoter": {
+                    "ApproverSignTypes": [],
+                    "ApproverVerifyTypes": [],
                     "DeliveryMethod": "EMAIL",
                     "Description": "",
                     "Email": "",
@@ -63,6 +65,13 @@ Output:
                 "Published": true,
                 "Recipients": [
                     {
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ],
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
                         "DeliveryMethod": "EMAIL",
                         "Description": "",
                         "Email": "",
@@ -78,6 +87,13 @@ Output:
                         "UserId": ""
                     },
                     {
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ],
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
                         "DeliveryMethod": "EMAIL",
                         "Description": "",
                         "Email": "",

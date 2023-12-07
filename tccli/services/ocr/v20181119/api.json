@@ -14414,7 +14414,7 @@
           "example": "无",
           "member": "string",
           "name": "PlateNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14424,7 +14424,7 @@
           "example": "无",
           "member": "string",
           "name": "FileNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14434,7 +14434,7 @@
           "example": "无",
           "member": "string",
           "name": "AllowNum",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14444,7 +14444,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalMass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14454,7 +14454,7 @@
           "example": "无",
           "member": "string",
           "name": "CurbWeight",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14464,7 +14464,7 @@
           "example": "无",
           "member": "string",
           "name": "LoadQuality",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14474,7 +14474,7 @@
           "example": "无",
           "member": "string",
           "name": "ExternalSize",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14484,7 +14484,7 @@
           "example": "无",
           "member": "string",
           "name": "Marks",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14494,7 +14494,7 @@
           "example": "无",
           "member": "string",
           "name": "Record",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14504,7 +14504,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalQuasiMass",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -14514,7 +14514,17 @@
           "example": "无",
           "member": "string",
           "name": "SubPageCode",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "燃料种类\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FuelType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

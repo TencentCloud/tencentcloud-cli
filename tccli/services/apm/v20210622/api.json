@@ -527,6 +527,26 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例计费模式\n1为预付费\n0为按量付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例计费模式是否生效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "PayModeEffective",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -630,6 +650,15 @@
           "name": "SpanDailyCounters",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例的计费模式",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -643,7 +672,7 @@
           "example": "Lcmm7a3kl",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1566,6 +1595,15 @@
           "name": "CustomShowTags",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "修改计费模式\n1为预付费\n0为按量付费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayMode",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

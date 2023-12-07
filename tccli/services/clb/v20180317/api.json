@@ -10038,8 +10038,8 @@
         },
         {
           "disabled": false,
-          "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~3600，单位：秒。",
-          "example": "0",
+          "document": "会话保持时间。设置为0表示关闭会话保持，开启会话保持可取值30~86400，单位：秒。",
+          "example": "30",
           "member": "int64",
           "name": "SessionExpireTime",
           "required": false,
