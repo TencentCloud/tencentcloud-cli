@@ -12621,7 +12621,7 @@
           "example": "pulsar-xxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12631,7 +12631,7 @@
           "example": "cluster-test",
           "member": "string",
           "name": "InstanceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12641,7 +12641,7 @@
           "example": "2.7.2",
           "member": "string",
           "name": "InstanceVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12651,7 +12651,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12661,7 +12661,7 @@
           "example": "基础型",
           "member": "string",
           "name": "ConfigDisplay",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12671,7 +12671,7 @@
           "example": "10000",
           "member": "uint64",
           "name": "MaxTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12681,7 +12681,7 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxStorage",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12691,7 +12691,7 @@
           "example": "100000",
           "member": "uint64",
           "name": "ExpireTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12701,7 +12701,7 @@
           "example": "0",
           "member": "uint64",
           "name": "AutoRenewFlag",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12711,7 +12711,7 @@
           "example": "0",
           "member": "uint64",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12721,7 +12721,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12731,7 +12731,7 @@
           "example": "vip-basic-1",
           "member": "string",
           "name": "SpecName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12741,7 +12741,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "ScalableTps",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -12751,7 +12751,7 @@
           "example": "vpc-xxxx",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12761,7 +12761,7 @@
           "example": "subnet-xxx",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12771,9 +12771,29 @@
           "example": "100",
           "member": "uint64",
           "name": "MaxBandWidth",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{ \"TagKey\": \"aaa\",  \"TagValue\": \"aaa\" }]",
+          "member": "Tag",
+          "name": "Tags",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-08 10:25:51",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

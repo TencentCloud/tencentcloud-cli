@@ -161,6 +161,13 @@
       "output": "ModifyRecordsStatusResponse",
       "status": "online"
     },
+    "QueryAsyncBindVpcStatus": {
+      "document": "查询异步绑定vpc操作状态",
+      "input": "QueryAsyncBindVpcStatusRequest",
+      "name": "查询异步绑定vpc操作状态",
+      "output": "QueryAsyncBindVpcStatusResponse",
+      "status": "online"
+    },
     "SubscribePrivateZoneService": {
       "document": "开通私有域解析",
       "input": "SubscribePrivateZoneServiceRequest",
@@ -2286,6 +2293,53 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryAsyncBindVpcStatusRequest": {
+      "document": "QueryAsyncBindVpcStatus请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "唯一ID",
+          "example": "363636",
+          "member": "string",
+          "name": "UniqId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAsyncBindVpcStatusResponse": {
+      "document": "QueryAsyncBindVpcStatus返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "processing 处理中，success 执行成功，\nfail 执行失败",
+          "example": "unstart",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "绑定失败",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SubscribePrivateZoneServiceRequest": {
       "document": "SubscribePrivateZoneService请求参数结构体",

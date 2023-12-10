@@ -287,6 +287,13 @@
       "output": "DescribeInstanceShardsResponse",
       "status": "online"
     },
+    "DescribeInstanceSupportFeature": {
+      "document": "本接口（DescribeInstanceSupportFeature）用于查询实例支持的功能特性。",
+      "input": "DescribeInstanceSupportFeatureRequest",
+      "name": "查询实例支持的功能特性",
+      "output": "DescribeInstanceSupportFeatureResponse",
+      "status": "online"
+    },
     "DescribeInstanceZoneInfo": {
       "document": "本接口（DescribeInstanceZoneInfo）用于查询 Redis 节点详细信息。",
       "input": "DescribeInstanceZoneInfoRequest",
@@ -511,6 +518,13 @@
       "output": "ModifyInstanceAccountResponse",
       "status": "online"
     },
+    "ModifyInstanceAvailabilityZones": {
+      "document": "本接口（ModifyInstanceAvailabilityZones）用于变更实例可用区",
+      "input": "ModifyInstanceAvailabilityZonesRequest",
+      "name": "修改实例可用区",
+      "output": "ModifyInstanceAvailabilityZonesResponse",
+      "status": "online"
+    },
     "ModifyInstanceParams": {
       "document": "本接口(ModifyInstanceParams)用于修改Redis实例的参数配置。",
       "input": "ModifyInstanceParamsRequest",
@@ -593,6 +607,13 @@
       "input": "StartupInstanceRequest",
       "name": "实例解隔离",
       "output": "StartupInstanceResponse",
+      "status": "online"
+    },
+    "SwitchAccessNewInstance": {
+      "document": "本接口（SwitchAccessNewInstance）针对处于时间窗口中待切换操作的实例，用户可主动发起该操作。",
+      "input": "SwitchAccessNewInstanceRequest",
+      "name": "立即切换操作",
+      "output": "SwitchAccessNewInstanceResponse",
       "status": "online"
     },
     "SwitchInstanceVip": {
@@ -3839,6 +3860,52 @@
           "member": "int64",
           "name": "TotalCount",
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSupportFeatureRequest": {
+      "document": "DescribeInstanceSupportFeature请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。\n示例值：crs-asdasdas",
+          "example": "crs-f8bjda0p",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "功能特性名称\n- read-local-node-only 就近接入功能\n- multi-account 多账号功能",
+          "example": "read-local-node-only",
+          "member": "string",
+          "name": "FeatureName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceSupportFeatureResponse": {
+      "document": "DescribeInstanceSupportFeature返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否支持",
+          "example": "true",
+          "member": "bool",
+          "name": "Support",
+          "output_required": true,
+          "type": "bool",
           "value_allowed_null": false
         },
         {
@@ -7968,6 +8035,61 @@
       ],
       "type": "object"
     },
+    "ModifyInstanceAvailabilityZonesRequest": {
+      "document": "ModifyInstanceAvailabilityZones请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****，请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。",
+          "example": "crs-65xie09x",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "切换时间。\n- 1：维护时间窗切换。\n- 2：立即切换。",
+          "example": "2",
+          "member": "int64",
+          "name": "SwitchOption",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例的节点信息，包含节点 ID、节点类型、节点可用区 ID等。具体信息，请参见[RedisNodeInfo ](https://cloud.tencent.com/document/product/239/20022)。\n单可用区实例无需传NodeId，多可用区实例NodeId必传",
+          "example": "无",
+          "member": "RedisNodeInfo",
+          "name": "NodeSet",
+          "required": true,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceAvailabilityZonesResponse": {
+      "document": "ModifyInstanceAvailabilityZones返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务ID。\t",
+          "example": "1924",
+          "member": "int64",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyInstanceParamsRequest": {
       "document": "ModifyInstanceParams请求参数结构体",
       "members": [
@@ -9965,6 +10087,33 @@
           "type": "int",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchAccessNewInstanceRequest": {
+      "document": "SwitchAccessNewInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis#/)在实例列表复制实例 ID。\n示例值：crs-asdasdas",
+          "example": "crs-0k6k7gzo",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SwitchAccessNewInstanceResponse": {
+      "document": "SwitchAccessNewInstance返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

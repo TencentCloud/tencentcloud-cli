@@ -103,6 +103,12 @@ Output:
                     "TagStatus": 0
                 }
             ],
+            "GroupBy": [
+                {
+                    "Id": "xx",
+                    "Name": "xx"
+                }
+            ],
             "Condition": {
                 "IsUnionRule": 0,
                 "Rules": [
@@ -193,6 +199,11 @@ Output:
                 "xiyec"
             ],
             "FilterDimensionsParam": "xx",
+            "Filter": {
+                "Expression": "xx",
+                "Type": "xx",
+                "Dimensions": "xx"
+            },
             "EventCondition": {
                 "Rules": [
                     {

@@ -357,6 +357,13 @@
       "output": "DescribeChannelFlowEvidenceReportResponse",
       "status": "online"
     },
+    "DescribeChannelOrganizations": {
+      "document": "查询渠道子客企业信息",
+      "input": "DescribeChannelOrganizationsRequest",
+      "name": "查询渠道子客企业信息",
+      "output": "DescribeChannelOrganizationsResponse",
+      "status": "online"
+    },
     "DescribeChannelSealPolicyWorkflowUrl": {
       "document": "生成渠道子客用印申请审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转的方式查看）",
       "input": "DescribeChannelSealPolicyWorkflowUrlRequest",
@@ -4637,6 +4644,133 @@
       ],
       "type": "object"
     },
+    "ChannelOrganizationInfo": {
+      "document": "渠道企业信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "电子签企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电子签企业OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UnifiedSocialCreditCode",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "法人OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超管OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "超管手机号，脱敏后返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业认证状态字段。值如下：\n<ul>\n  <li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证的企业</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizationStatus",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企业认证方式字段。值如下：\n<ul>\n  <li>**\"AuthorizationInit\"**： 暂未选择授权方式</li>\n  <li>**\"AuthorizationFile\"**： 授权书</li>\n  <li>**\"AuthorizationLegalPerson\"**： 法人授权超管</li>\n  <li>**\"AuthorizationLegalIdentity\"**： 法人直接认证</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizationType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ChannelRole": {
       "document": "角色信息",
       "members": [
@@ -6312,6 +6446,109 @@
           "name": "Status",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelOrganizationsRequest": {
+      "document": "DescribeChannelOrganizations请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "子客OrganizationOpenId，定向查询某个子客的企业数据。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企业认证状态过滤字段。可值如下：\n<ul>\n  <li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证的企业</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizationStatusList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "指定分页返回第几页的数据，如果不传默认返回第一页。 页码从 0 开始，即首页为 0，最大20000。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeChannelOrganizationsResponse": {
+      "document": "DescribeChannelOrganizations返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业企业信息列表。",
+          "example": "无",
+          "member": "ChannelOrganizationInfo",
+          "name": "ChannelOrganizationInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定分页返回第几页的数据。页码从 0 开始，即首页为 0，最大20000。",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "指定分页每页返回的数据条数，单页最大支持 200。",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "符合条件的企业数量。",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {

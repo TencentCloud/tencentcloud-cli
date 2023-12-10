@@ -5854,7 +5854,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "查询的站点集合，不填默认查询所有站点。",
+          "document": "查询的站点ID集合。该参数必填。",
           "example": "[\"zone-276zs184g93m\",\"zone-27fil18zp2v1\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -5900,6 +5900,7 @@
           "example": "无",
           "member": "OriginProtectionInfo",
           "name": "OriginProtectionInfo",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
