@@ -334,6 +334,14 @@
         "title": "请求示例"
       }
     ],
+    "DescribeInstanceSupportFeature": [
+      {
+        "document": "查询是否支持就近接入",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceSupportFeature\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-fhsw2mh4\",\n    \"FeatureName\": \"read-local-node-only\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"60b6c537-1021-4360-a7b9-90feaca647a1\",\n        \"Support\": true\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "DescribeInstanceZoneInfo": [
       {
         "document": "查询指定实例的节点信息",
@@ -590,6 +598,14 @@
         "title": "请求示例"
       }
     ],
+    "ModifyInstanceAvailabilityZones": [
+      {
+        "document": "更改多az实例可用区(时间窗口切换)",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceAvailabilityZones\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-rrhr1lm6\",\n    \"SwitchOption\": 1,\n    \"NodeSet\": [\n        {\n            \"NodeId\": 339472,\n            \"NodeType\": 0,\n            \"ZoneId\": 100004\n        },\n        {\n            \"NodeId\": 339473,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        },\n        {\n            \"NodeId\": 339549,\n            \"NodeType\": 1,\n            \"ZoneId\": 100003\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"27c0d6e8-9894-42e0-a03b-814a204437ba\",\n        \"TaskId\": 2031290200\n    }\n}",
+        "title": "示例1"
+      }
+    ],
     "ModifyInstanceParams": [
       {
         "document": "",
@@ -684,6 +700,14 @@
         "input": "https://redis.tencentcloudapi.com/?Action=StartupInstance\n&InstanceId=crs-7ponppu3\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e96ecad-23db-4fa8-ac41-af9b8e015b26\",\n        \"TaskId\": 1203\n    }\n}",
         "title": "请求示例"
+      }
+    ],
+    "SwitchAccessNewInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: redis.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SwitchAccessNewInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"crs-kf******\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc7c5c1b-e0b4-4cbc-a1bf-b6fea3be9500\"\n    }\n}",
+        "title": "示例1"
       }
     ],
     "SwitchInstanceVip": [

@@ -1,5 +1,13 @@
 {
   "actions": {
+    "CreateMNP": [
+      {
+        "document": "demo",
+        "input": "POST / HTTP/1.1\nHost: tcmpp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMNP\n<公共请求参数>\n\n{\n    \"MNPName\": \"测试小程序\",\n    \"MNPType\": \"教育->在线教育,教育服务->教育平台,教育服务->素质教育\",\n    \"MNPIntro\": \"学习强国\",\n    \"MNPDesc\": \"学习强国\",\n    \"MNPIcon\": \"https://tcmpp-dev-renter-1258344699.cos.ap-guangzhou.tencentcos.cn/T1683257917UJWKPM/default/be20d614-230b-47fd-81b9-22994a9bd839_xx.png\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"ResourceId\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "DescribeMNPDetail": [
       {
         "document": "demo",

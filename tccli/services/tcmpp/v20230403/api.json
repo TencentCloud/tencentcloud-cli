@@ -1,5 +1,12 @@
 {
   "actions": {
+    "CreateMNP": {
+      "document": "创建小程序",
+      "input": "CreateMNPRequest",
+      "name": "创建小程序",
+      "output": "CreateMNPResponse",
+      "status": "online"
+    },
     "DescribeMNPDetail": {
       "document": "小程序详情",
       "input": "DescribeMNPDetailRequest",
@@ -40,6 +47,97 @@
         }
       ],
       "usage": "out"
+    },
+    "CreateMNPRequest": {
+      "document": "CreateMNP请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序类型",
+          "example": "无",
+          "member": "string",
+          "name": "MNPType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序名称",
+          "example": "无",
+          "member": "string",
+          "name": "MNPName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序图标",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIcon",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序简介",
+          "example": "无",
+          "member": "string",
+          "name": "MNPIntro",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "小程序说明",
+          "example": "无",
+          "member": "string",
+          "name": "MNPDesc",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "全局团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "GlobalTeamId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "团队ID",
+          "example": "无",
+          "member": "string",
+          "name": "TeamId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateMNPResponse": {
+      "document": "CreateMNP返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "小程序添加成功返回结果",
+          "example": "无",
+          "member": "ResourceIdStringInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeMNPDetailRequest": {
       "document": "DescribeMNPDetail请求参数结构体",
@@ -227,6 +325,22 @@
           "name": "Status",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ResourceIdStringInfo": {
+      "document": "统一操作成功返回ID数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务返回资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

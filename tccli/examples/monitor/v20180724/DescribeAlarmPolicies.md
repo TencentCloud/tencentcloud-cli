@@ -257,6 +257,17 @@ Output:
                         "TagStatus": 0
                     }
                 ],
+                "Filter": {
+                    "Type": "abc",
+                    "Expression": "abc",
+                    "Dimensions": "abc"
+                },
+                "GroupBy": [
+                    {
+                        "Id": "abc",
+                        "Name": "abc"
+                    }
+                ],
                 "FilterDimensionsParam": "abc",
                 "IsOneClick": 0,
                 "OneClickStatus": 0,
@@ -507,6 +518,17 @@ Output:
                         "RegionId": 0,
                         "BindingStatus": 0,
                         "TagStatus": 0
+                    }
+                ],
+                "Filter": {
+                    "Type": "abc",
+                    "Expression": "abc",
+                    "Dimensions": "abc"
+                },
+                "GroupBy": [
+                    {
+                        "Id": "abc",
+                        "Name": "abc"
                     }
                 ],
                 "FilterDimensionsParam": "abc",

@@ -1,76 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 应用性能监控(apm) 版本：2021-06-22
+## 访问管理(cam) 版本：2019-01-16
 
-### 第 10 次发布
+### 第 24 次发布
 
-发布时间：2023-12-08 01:09:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/65347)
-
-	* 新增入参：PayMode
-
-* [ModifyApmInstance](http://document.tencentcloudapi.woa.com/document/product/1463/77278)
-
-	* 新增入参：PayMode
-
-
-修改数据结构：
-
-* [ApmInstanceDetail](http://document.tencentcloudapi.woa.com/document/product/1463/64927#ApmInstanceDetail)
-
-	* 新增成员：PayMode, PayModeEffective
-
-
-
-
-## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
-
-### 第 5 次发布
-
-发布时间：2023-12-08 01:22:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)
-
-
-
-## 云安全一体化平台(csip) 版本：2022-11-21
-
-### 第 21 次发布
-
-发布时间：2023-12-08 01:31:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)
-
-新增数据结构：
-
-* [GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)
-
-
-
-## 腾讯电子签企业版(ess) 版本：2020-11-11
-
-### 第 56 次发布
-
-发布时间：2023-12-08 01:51:38
+发布时间：2023-12-11 01:11:44
 
 本次发布包含了以下内容：
 
@@ -78,29 +12,30 @@
 
 修改数据结构：
 
-* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1668/79360#Recipient)
+* [LoginActionFlag](http://document.tencentcloudapi.woa.com/document/product/598/33167#LoginActionFlag)
 
-	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+	* 新增成员：Mail
 
 
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 112 次发布
+### 第 113 次发布
 
-发布时间：2023-12-08 01:52:36
+发布时间：2023-12-11 01:50:38
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改数据结构：
+新增接口：
 
-* [Recipient](http://document.tencentcloudapi.woa.com/document/product/1595/75258#Recipient)
+* [DescribeChannelOrganizations](http://document.tencentcloudapi.woa.com/document/product/1595/82792)
 
-	* 新增成员：ApproverVerifyTypes, ApproverSignTypes
+新增数据结构：
 
+* [ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo)
 
 
 
@@ -108,11 +43,35 @@
 
 
 
-## 服务管理平台(smp) 版本：2023-06-02
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
-### 第 8 次发布
+### 第 62 次发布
 
-发布时间：2023-12-08 02:22:03
+发布时间：2023-12-11 02:09:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AlarmConditionFilter](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmConditionFilter)
+* [AlarmGroupByItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmGroupByItem)
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+
+	* 新增成员：Filter, GroupBy
+
+
+
+
+## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
+
+### 第 16 次发布
+
+发布时间：2023-12-11 02:16:12
 
 本次发布包含了以下内容：
 
@@ -120,23 +79,53 @@
 
 新增接口：
 
-* [DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)
+* [QueryAsyncBindVpcStatus](http://document.tencentcloudapi.woa.com/document/product/1338/82793)
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 34 次发布
+
+发布时间：2023-12-11 02:17:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceSupportFeature](http://document.tencentcloudapi.woa.com/document/product/239/82796)
+* [ModifyInstanceAvailabilityZones](http://document.tencentcloudapi.woa.com/document/product/239/82795)
+* [SwitchAccessNewInstance](http://document.tencentcloudapi.woa.com/document/product/239/82794)
+
+
+
+## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
+
+### 第 2 次发布
+
+发布时间：2023-12-11 02:27:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateMNP](http://document.tencentcloudapi.woa.com/document/product/1754/82797)
 
 新增数据结构：
 
-* [UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)
+* [ResourceIdStringInfo](http://document.tencentcloudapi.woa.com/document/product/1754/82777#ResourceIdStringInfo)
 
 
 
-## 容器服务(tke) 版本：2022-05-01
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
 
+### 第 84 次发布
 
-
-## 容器服务(tke) 版本：2018-05-25
-
-### 第 85 次发布
-
-发布时间：2023-12-08 02:39:29
+发布时间：2023-12-11 02:32:05
 
 本次发布包含了以下内容：
 
@@ -144,9 +133,9 @@
 
 修改数据结构：
 
-* [ResourceDeleteOption](http://document.tencentcloudapi.woa.com/document/product/457/31866#ResourceDeleteOption)
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
 
-	* 新增成员：SkipDeletionProtection
+	* 新增成员：Tags, CreateTime
 
 
 
@@ -7365,6 +7354,21 @@
 
 ## 访问管理(cam) 版本：2019-01-16
 
+### 第 24 次发布
+
+发布时间：2023-12-11 01:11:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LoginActionFlag](http://document.tencentcloudapi.woa.com/document/product/598/33167#LoginActionFlag)
+
+	* 新增成员：Mail
+
+
 ### 第 23 次发布
 
 发布时间：2023-08-11 01:09:55
@@ -14097,7 +14101,7 @@
 
 新增接口：
 
-* [[DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82789)
 
 ### 第 4 次发布
 
@@ -23547,11 +23551,11 @@
 
 新增接口：
 
-* [[DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)
 
 新增数据结构：
 
-* [[GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)](http://document.tencentcloudapi.woa.com/document/product/1726/80814#[GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset))
+* [GateWayAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#GateWayAsset)
 
 ### 第 20 次发布
 
@@ -39978,6 +39982,22 @@
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
+### 第 113 次发布
+
+发布时间：2023-12-11 01:50:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeChannelOrganizations](http://document.tencentcloudapi.woa.com/document/product/1595/82792)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo)](http://document.tencentcloudapi.woa.com/document/product/1595/75258#[ChannelOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#ChannelOrganizationInfo))
+
 ### 第 112 次发布
 
 发布时间：2023-12-08 01:52:36
@@ -53364,6 +53384,26 @@
 
 ## 腾讯云可观测平台(monitor) 版本：2018-07-24
 
+### 第 62 次发布
+
+发布时间：2023-12-11 02:09:08
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[AlarmConditionFilter](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmConditionFilter)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[AlarmConditionFilter](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmConditionFilter))
+* [[AlarmGroupByItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmGroupByItem)](http://document.tencentcloudapi.woa.com/document/product/248/30354#[AlarmGroupByItem](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmGroupByItem))
+
+修改数据结构：
+
+* [AlarmPolicy](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmPolicy)
+
+	* 新增成员：Filter, GroupBy
+
+
 ### 第 61 次发布
 
 发布时间：2023-12-05 02:08:10
@@ -61547,6 +61587,18 @@
 
 ## 私有域解析 Private DNS(privatedns) 版本：2020-10-28
 
+### 第 16 次发布
+
+发布时间：2023-12-11 02:16:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[QueryAsyncBindVpcStatus](http://document.tencentcloudapi.woa.com/document/product/1338/82793)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
 ### 第 15 次发布
 
 发布时间：2023-12-07 02:17:57
@@ -62585,6 +62637,20 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 34 次发布
+
+发布时间：2023-12-11 02:17:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstanceSupportFeature](http://document.tencentcloudapi.woa.com/document/product/239/82796)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[ModifyInstanceAvailabilityZones](http://document.tencentcloudapi.woa.com/document/product/239/82795)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[SwitchAccessNewInstance](http://document.tencentcloudapi.woa.com/document/product/239/82794)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 33 次发布
 
@@ -65139,11 +65205,11 @@
 
 新增接口：
 
-* [[DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeUserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/82791)
 
 新增数据结构：
 
-* [[UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)](http://document.tencentcloudapi.woa.com/document/product/1736/80965#[UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth))
+* [UserBillingAuth](http://document.tencentcloudapi.woa.com/document/product/1736/80965#UserBillingAuth)
 
 ### 第 7 次发布
 
@@ -70770,6 +70836,22 @@
 
 ## 腾讯云小程序平台(tcmpp) 版本：2023-04-03
 
+### 第 2 次发布
+
+发布时间：2023-12-11 02:27:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[CreateMNP](http://document.tencentcloudapi.woa.com/document/product/1754/82797)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ResourceIdStringInfo](http://document.tencentcloudapi.woa.com/document/product/1754/82777#ResourceIdStringInfo)](http://document.tencentcloudapi.woa.com/document/product/1754/82777#[ResourceIdStringInfo](http://document.tencentcloudapi.woa.com/document/product/1754/82777#ResourceIdStringInfo))
+
 ### 第 1 次发布
 
 发布时间：2023-12-07 14:46:00
@@ -72791,6 +72873,21 @@
 
 
 ## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 84 次发布
+
+发布时间：2023-12-11 02:32:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarProInstance](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarProInstance)
+
+	* 新增成员：Tags, CreateTime
+
 
 ### 第 83 次发布
 

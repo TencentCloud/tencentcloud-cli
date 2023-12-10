@@ -702,6 +702,14 @@
         "title": "创建并返回出证报告"
       }
     ],
+    "DescribeChannelOrganizations": [
+      {
+        "document": "查询渠道子客企业信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelOrganizations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelOrganizationInfos\": [\n            {\n                \"AdminMobile\": \"186****0000\",\n                \"AdminName\": \"张三\",\n                \"AdminOpenId\": \"zhangsan\",\n                \"AuthorizationStatus\": \"VERIFYING\",\n                \"AuthorizationType\": \"AuthorizationLegalPerson\",\n                \"LegalName\": \"李四\",\n                \"LegalOpenId\": \"lisi\",\n                \"OrganizationId\": \"yDwFqUUckpxxxxxxxxxxxxRvShTIZ3e\",\n                \"OrganizationName\": \"渠道测试企业\",\n                \"OrganizationOpenId\": \"dianziqian_orgopenid\",\n                \"UnifiedSocialCreditCode\": \"913xxxxxxxxxxxxxx5W\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1701931761617688110\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询渠道子客企业信息"
+      }
+    ],
     "DescribeChannelSealPolicyWorkflowUrl": [
       {
         "document": "获取用印审批链接",
