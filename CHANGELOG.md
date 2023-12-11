@@ -1,3 +1,135 @@
+# Release 3.0.901.1
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 22 次发布
+
+发布时间：2023-12-12 01:31:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeNICAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82813)
+
+新增数据结构：
+
+* [NICAsset](http://document.tencentcloudapi.woa.com/document/product/1726/80814#NICAsset)
+
+
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 20 次发布
+
+发布时间：2023-12-12 01:46:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [TemplateInfo](http://document.tencentcloudapi.woa.com/document/product/242/38895#TemplateInfo)
+
+	* <font color="#dd0000">**修改成员**：</font>IsBlack, Tag
+
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 57 次发布
+
+发布时间：2023-12-12 01:52:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/82511)
+
+	* 新增入参：FlowGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>FlowIds
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 114 次发布
+
+发布时间：2023-12-12 01:53:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateBatchQuickSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82512)
+
+	* 新增入参：FlowGroupId
+
+	* <font color="#dd0000">**修改入参**：</font>FlowIds
+
+* [ChannelCreatePreparedPersonalEsign](http://document.tencentcloudapi.woa.com/document/product/1595/81620)
+
+	* 新增入参：SceneKey
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 容器镜像服务(tcr) 版本：2019-09-24
+
+### 第 30 次发布
+
+发布时间：2023-12-12 02:29:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeCustomAccounts
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CustomAccount
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 86 次发布
+
+发布时间：2023-12-12 02:40:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCLSLogConfig](http://document.tencentcloudapi.woa.com/document/product/457/82815)
+* [CreateEksLogConfig](http://document.tencentcloudapi.woa.com/document/product/457/82814)
+
+
+
 # Release 3.0.900.1
 
 ## 访问管理(cam) 版本：2019-01-16

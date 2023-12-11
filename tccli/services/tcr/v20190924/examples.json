@@ -412,14 +412,6 @@
         "title": "查询Chart包下载信息"
       }
     ],
-    "DescribeCustomAccounts": [
-      {
-        "document": "查询自定义账户",
-        "input": "POST / HTTP/1.1\nHost: tcr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCustomAccounts\n<公共请求参数>\n\n{\n    \"RegistryId\": \"tcr-xxx\",\n    \"EmbedPermission\": true,\n    \"All\": false,\n    \"Filters\": [],\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"CustomAccounts\": [\n            {\n                \"Name\": \"tcr$robot\",\n                \"Disable\": false,\n                \"UpdateTime\": \"2022-09-22T00:00:00+00:00\",\n                \"Permissions\": [\n                    {\n                        \"Resource\": \"library\",\n                        \"Actions\": [\n                            \"tcr:PushRepository\",\n                            \"tcr:PullRepository\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "查询自定义账户"
-      }
-    ],
     "DescribeExternalEndpointStatus": [
       {
         "document": "",

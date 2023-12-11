@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli pts DescribeLabelValues --cli-unfold-argument  \
-    --JobId 123 \
-    --ScenarioId 123 \
-    --ProjectId project-xx \
+    --JobId job-61ovraba \
+    --ScenarioId scenario-j1u85ixm \
+    --ProjectId project-btksohr0 \
     --Metric pts_engine_req_total \
     --LabelName service
 ```
@@ -39,7 +39,7 @@ Output:
             "http://pets.com/8",
             "http://pets.com/9"
         ],
-        "RequestId": "xx"
+        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
     }
 }
 ```

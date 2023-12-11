@@ -2314,8 +2314,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "processing 处理中，success 执行成功，\nfail 执行失败",
-          "example": "unstart",
+          "document": "processing 处理中，success 执行成功，\nfailed 执行失败",
+          "example": "success",
           "member": "string",
           "name": "Status",
           "output_required": true,

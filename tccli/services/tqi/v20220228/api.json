@@ -1,0 +1,142 @@
+{
+  "actions": {
+    "ExtractDialogTags": {
+      "document": "会话标签提取",
+      "input": "ExtractDialogTagsRequest",
+      "name": "会话标签提取",
+      "output": "ExtractDialogTagsResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-02-28",
+    "api_brief": "面向管理者提供的对员工服务质量监督服务，通过AI能力审核监督会话内容，判断会话内容是否违规",
+    "serviceNameCN": "智能质检",
+    "serviceShortName": "tqi"
+  },
+  "objects": {
+    "DialogueContent": {
+      "document": "会话切片内容",
+      "members": [
+        {
+          "disabled": false,
+          "document": "目前对应ASR的角色分离后SpeakerID，后续考虑客户，客服等角色",
+          "example": "0",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息内容",
+          "example": "您好",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "DialogueTag": {
+      "document": "会话标签",
+      "members": [
+        {
+          "disabled": false,
+          "document": "一级标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TagName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagValues",
+          "name": "TagValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ExtractDialogTagsRequest": {
+      "document": "ExtractDialogTags请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话切片",
+          "example": "无",
+          "member": "DialogueContent",
+          "name": "DialogueContents",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "会话类型",
+          "example": "无",
+          "member": "string",
+          "name": "DialogueType",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ExtractDialogTagsResponse": {
+      "document": "ExtractDialogTags返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DialogueTag",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "TagValues": {
+      "document": "标签值",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二级标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值（二级标签名为空时，标签值为一级标签值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    }
+  },
+  "version": "1.0"
+}

@@ -184,3 +184,104 @@ Output:
 }
 ```
 
+**Example 6: 为个人用户生成合同组H5批量签署链接**
+
+1. 为个人用户生成合同组H5批量签署链接
+2. 使用默认的签名类型
+3. 使用默认的签署方式
+4. 默认跳转到合同列表页
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType PERSON \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典子谦 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD \
+    --FlowGroupId yDSL9UUckpo*****jwSsug2y3cW
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverType": "PERSON",
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E",
+            "Mobile": "13200000000",
+            "Name": "典子谦",
+            "SignUrl": "https://test.essurl.cn/C**E"
+        },
+        "RequestId": "s16986**08"
+    }
+}
+```
+
+**Example 7: 错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息**
+
+1. 指定了合同流程ID信息
+2. 指定了合同组ID信息
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType PERSON \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典子谦 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD \
+    --FlowGroupId yDSL9UUckpo*****jwSsug2y3cW \
+    --FlowIds yDRSRUUgygj6******7wUuaaadqccc yDRSRUUgygj6rq***Cpxxxsdfa
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "请勿同时传入流程ID和合同组ID，请检查参数后再试"
+        },
+        "RequestId": "s17007305****493"
+    }
+}
+```
+
+**Example 8: 错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
+
+1. 没有指定合同流程ID信息
+2. 没有指定合同组ID信息
+
+Input: 
+
+```
+tccli essbasic ChannelCreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.AppId yDRSRUUgygj6rq7wUuO4zjECxndqQApl \
+    --FlowApproverInfo.ApproverType PERSON \
+    --FlowApproverInfo.Mobile 13200000000 \
+    --FlowApproverInfo.Name 典子谦 \
+    --FlowApproverInfo.IdCardNumber 620000198802020000 \
+    --FlowApproverInfo.IdCardType ID_CARD
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "流程ID和合同组ID不能同时为空，请检查参数后再试"
+        },
+        "RequestId": "s1700727885657576147"
+    }
+}
+```
+

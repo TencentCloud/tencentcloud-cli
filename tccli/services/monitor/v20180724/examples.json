@@ -67,9 +67,9 @@
     "CreateExporterIntegration": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"KubeType\": 3,\n    \"ClusterId\": \"cls-xx\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"xx\\\"]}}}\"\n}",
-        "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"redis-exporter\"\n        ],\n        \"RequestId\": \"xyz\"\n    }\n}",
-        "title": "创建 exporter 集成"
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateExporterIntegration\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-1\",\n    \"Kind\": \"blackbox-exporter\",\n    \"Content\": \"{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"instanceSpec\\\":{\\\"module\\\":\\\"http_get\\\",\\\"urls\\\":[\\\"http://abc\\\"]}}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Names\": [\n            \"test\"\n        ],\n        \"RequestId\": \"xyz\"\n    }\n}",
+        "title": "创建 blackbox-exporter 集成"
       }
     ],
     "CreateGrafanaInstance": [
@@ -187,7 +187,7 @@
     "CreatePrometheusScrapeJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name:xx\"\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusScrapeJob\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentId\": \"agent-abcd1234\",\n    \"Config\": \"job_name: demo-config\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nstatic_configs:\\n- targets:\\n  - localhost:8080\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobId\": \"job-xxfs\",\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "创建 Prometheus 抓取任务"
       }
@@ -851,8 +851,8 @@
     "DestroyPrometheusInstance": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-w3rkj7835b\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyPrometheusInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "强制释放 Prometheus 实例"
       }
     ],

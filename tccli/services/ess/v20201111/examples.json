@@ -118,6 +118,18 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"1.2.3.4\",\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"Agent\": {\n        \"ProxyOrganizationId\": \"yDxbNUyKQDx3oAUuO4zjEBQGidlGe4hP\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": 1,\n        \"ApproverMobile\": \"13200000000\",\n        \"ApproverName\": \"典子谦\",\n        \"ApproverIdCardNumber\": \"620000198802020000\",\n        \"ApproverIdCardType\": \"ID_CARD\"\n    },\n    \"SignatureTypes\": [\n        0,\n        1\n    ],\n    \"ApproverSignTypes\": [\n        1,\n        3\n    ],\n    \"FlowIds\": [\n        \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\",\n        \"yDwFmUUckpst10i3UubBSat8PWOt2iQF\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"ApproverType\": 1,\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0U**xoK&CodeType=QUICK&shortKey=yDw**S2ATh95&token=Y9b**O\",\n            \"SignUrl\": \"https://essurl.cn/Y9b**O\"\n        },\n        \"RequestId\": \"s169**68\"\n    }\n}",
         "title": "集团主企业代子企业创建H5批量签署链接"
+      },
+      {
+        "document": "1. 为个人用户生成合同组H5批量签署链接\n2. 使用默认的签名类型\n3. 使用默认的签署方式\n4. 默认跳转到合同列表页",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"1.2.3.4\",\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": 1,\n        \"ApproverMobile\": \"13200000000\",\n        \"ApproverName\": \"典子谦\",\n        \"ApproverIdCardNumber\": \"620000198802020000\",\n        \"ApproverIdCardType\": \"ID_CARD\"\n    },\n    \"FlowGroupId\": \"yDSLcUUck****ysv1OQYIe9H\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"ApproverType\": 1,\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0U**xoK&CodeType=QUICK&shortKey=yDw**S2ATh95&token=Y9b**O\",\n            \"SignUrl\": \"https://essurl.cn/Y9b**O\"\n        },\n        \"RequestId\": \"s169**68\"\n    }\n}",
+        "title": "为个人用户，创建合同组批量签署链接"
+      },
+      {
+        "document": "1. 没有指定合同流程ID信息\n2. 没有指定合同组ID信息",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"ClientIp\": \"1.2.3.4\",\n        \"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": 1,\n        \"ApproverMobile\": \"13200000000\",\n        \"ApproverName\": \"典子谦\",\n        \"ApproverIdCardNumber\": \"620000198802020000\",\n        \"ApproverIdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"流程ID和合同组ID不能同时为空，请检查参数后再试\"\n        },\n        \"RequestId\": \"s17007***76147\"\n    }\n}",
+        "title": "错误示例，为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息"
       }
     ],
     "CreateBatchSignUrl": [

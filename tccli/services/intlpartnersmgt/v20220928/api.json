@@ -1109,7 +1109,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：每页条数,最大值为200",
+          "document": "分页参数：每页条数，取值范围: [1, 200]",
           "example": "20",
           "member": "int64",
           "name": "PageSize",
@@ -1118,7 +1118,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：当前页数",
+          "document": "分页参数：当前页数，最小取值为1",
           "example": "1",
           "member": "int64",
           "name": "Page",
@@ -1336,7 +1336,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：每页条数，最大值为200",
+          "document": "分页参数：每页条数，取值范围: [1, 200]",
           "example": "1",
           "member": "int64",
           "name": "PageSize",
@@ -1345,7 +1345,7 @@
         },
         {
           "disabled": false,
-          "document": "分页参数：当前页数",
+          "document": "分页参数：当前页数，最小取值为1",
           "example": "10",
           "member": "int64",
           "name": "Page",

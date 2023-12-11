@@ -884,6 +884,8 @@ tccli/services/tocservice/v20220210/api.json
 tccli/services/tocservice/v20220210/examples.json
 tccli/services/tourism/__init__.py
 tccli/services/tourism/tourism_client.py
+tccli/services/tqi/__init__.py
+tccli/services/tqi/tqi_client.py
 tccli/services/tr/__init__.py
 tccli/services/tr/tr_client.py
 tccli/services/trdp/__init__.py

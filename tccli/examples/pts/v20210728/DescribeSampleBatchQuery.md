@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli pts DescribeSampleBatchQuery --cli-unfold-argument  \
-    --ProjectId xx \
-    --JobId 123 \
-    --ScenarioId 123 \
+    --ProjectId project-btksohr0 \
+    --JobId job-61ovraba \
+    --ScenarioId scenario-j1u85ixm \
     --Queries.0.Metric pts_engine_req_total \
     --Queries.0.Aggregation Rate \
     --Queries.1.Metric pts_engine_req_total \
@@ -37,7 +37,7 @@ Output:
                 "Timestamp": 1631694009709
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
     }
 }
 ```

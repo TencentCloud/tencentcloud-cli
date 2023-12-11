@@ -21,11 +21,16 @@ Output:
             "Metric": "pts_engine_req_total",
             "Aggregation": "Count",
             "Unit": "reqs",
-            "Labels": null,
+            "Labels": [
+                {
+                    "LabelName": "method",
+                    "LabelValue": "GET"
+                }
+            ],
             "Value": "1159362",
             "Timestamp": 1631693039208
         },
-        "RequestId": "xx"
+        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
     }
 }
 ```

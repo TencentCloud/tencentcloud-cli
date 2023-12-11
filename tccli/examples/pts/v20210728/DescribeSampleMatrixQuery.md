@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli pts DescribeSampleMatrixQuery --cli-unfold-argument  \
-    --ProjectId project-xx \
-    --JobId 123 \
-    --ScenarioId 123 \
+    --ProjectId project-btksohr0 \
+    --JobId job-61ovraba \
+    --ScenarioId scenario-j1u85ixm \
     --Metric pts_engine_req_duration_seconds \
     --Aggregation P50
 ```
@@ -46,7 +46,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
     }
 }
 ```
