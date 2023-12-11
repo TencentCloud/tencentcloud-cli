@@ -63,6 +63,13 @@
       "output": "CreateBackupStorageLocationResponse",
       "status": "online"
     },
+    "CreateCLSLogConfig": {
+      "document": "创建日志采集配置",
+      "input": "CreateCLSLogConfigRequest",
+      "name": "创建日志采集配置",
+      "output": "CreateCLSLogConfigResponse",
+      "status": "online"
+    },
     "CreateCluster": {
       "document": "创建集群",
       "input": "CreateClusterRequest",
@@ -166,6 +173,13 @@
       "input": "CreateEdgeLogConfigRequest",
       "name": "创建边缘集群日志采集配置",
       "output": "CreateEdgeLogConfigResponse",
+      "status": "online"
+    },
+    "CreateEksLogConfig": {
+      "document": "为弹性集群创建日志采集配置",
+      "input": "CreateEksLogConfigRequest",
+      "name": "弹性集群创建日志采集配置",
+      "output": "CreateEksLogConfigResponse",
       "status": "online"
     },
     "CreateImageCache": {
@@ -4417,6 +4431,60 @@
       ],
       "type": "object"
     },
+    "CreateCLSLogConfigRequest": {
+      "document": "CreateCLSLogConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志采集配置的json表达",
+          "example": "{\\\"apiVersion\\\":\\\"cls.cloud.tencent.com/v1\\\",\\\"kind\\\":\\\"LogConfig\\\",\\\"metadata\\\":{\\\"name\\\":\\\"stdout\\\"},\\\"spec\\\":{\\\"clsDetail\\\":{\\\"logType\\\":\\\"minimalist_log\\\",\\\"logFormat\\\":\\\"default\\\",\\\"topicId\\\":null,\\\"userDefineRule\\\":null,\\\"extractRule\\\":{\\\"timeKey\\\":null,\\\"timeFormat\\\":null,\\\"delimiter\\\":null,\\\"logRegex\\\":null,\\\"beginningRegex\\\":null,\\\"keys\\\":[],\\\"filterKeys\\\":[],\\\"filterRegex\\\":[],\\\"unMatchUpload\\\":\\\"false\\\",\\\"unMatchedKey\\\":null,\\\"backtracking\\\":\\\"0\\\"},\\\"topicName\\\":null,\\\"indexs\\\":[],\\\"region\\\":null},\\\"inputDetail\\\":{\\\"type\\\":\\\"container_stdout\\\",\\\"containerStdout\\\":{\\\"allContainers\\\":false,\\\"namespace\\\":null,\\\"workloads\\\":[{\\\"namespace\\\":\\\"default\\\",\\\"kind\\\":\\\"deployment\\\",\\\"name\\\":\\\"stdout\\\",\\\"container\\\":\\\"\\\"}],\\\"includeLabels\\\":null,\\\"container\\\":null,\\\"metadataLabels\\\":[]},\\\"containerFile\\\":null,\\\"hostFile\\\":null},\\\"kafkaDetail\\\":null}}",
+          "member": "string",
+          "name": "LogConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "CLS日志集ID",
+          "example": "tas89a94-d952-410a-a393-9224de64test",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当前集群类型支持tke、eks",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSLogConfigResponse": {
+      "document": "CreateCLSLogConfig返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateClusterEndpointRequest": {
       "document": "CreateClusterEndpoint请求参数结构体",
       "members": [
@@ -5873,6 +5941,61 @@
     "CreateEdgeLogConfigResponse": {
       "document": "CreateEdgeLogConfig返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEksLogConfigRequest": {
+      "document": "CreateEksLogConfig请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cls-kaftesta",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志采集配置的json表达",
+          "example": "{\\\"apiVersion\\\":\\\"cls.cloud.tencent.com/v1\\\",\\\"kind\\\":\\\"LogConfig\\\",\\\"metadata\\\":{\\\"name\\\":\\\"stdout\\\"},\\\"spec\\\":{\\\"clsDetail\\\":{\\\"logType\\\":\\\"minimalist_log\\\",\\\"logFormat\\\":\\\"default\\\",\\\"topicId\\\":null,\\\"userDefineRule\\\":null,\\\"extractRule\\\":{\\\"timeKey\\\":null,\\\"timeFormat\\\":null,\\\"delimiter\\\":null,\\\"logRegex\\\":null,\\\"beginningRegex\\\":null,\\\"keys\\\":[],\\\"filterKeys\\\":[],\\\"filterRegex\\\":[],\\\"unMatchUpload\\\":\\\"false\\\",\\\"unMatchedKey\\\":null,\\\"backtracking\\\":\\\"0\\\"},\\\"topicName\\\":null,\\\"indexs\\\":[],\\\"region\\\":null},\\\"inputDetail\\\":{\\\"type\\\":\\\"container_stdout\\\",\\\"containerStdout\\\":{\\\"allContainers\\\":false,\\\"namespace\\\":null,\\\"workloads\\\":[{\\\"namespace\\\":\\\"default\\\",\\\"kind\\\":\\\"deployment\\\",\\\"name\\\":\\\"stdout\\\",\\\"container\\\":\\\"\\\"}],\\\"includeLabels\\\":null,\\\"container\\\":null,\\\"metadataLabels\\\":[]},\\\"containerFile\\\":null,\\\"hostFile\\\":null},\\\"kafkaDetail\\\":null}}",
+          "member": "string",
+          "name": "LogConfig",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集ID",
+          "example": "tas89a94-d952-410a-a393-9224de64test",
+          "member": "string",
+          "name": "LogsetId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateEksLogConfigResponse": {
+      "document": "CreateEksLogConfig返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志采集topicid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tas89a94-d952-410a-a393-9224de64test",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

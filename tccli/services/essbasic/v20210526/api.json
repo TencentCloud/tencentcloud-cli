@@ -43,7 +43,7 @@
       "status": "online"
     },
     "ChannelCreateBatchSignUrl": {
-      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。\n- 个人批量签署，签名区`仅支持手写签名`。",
+      "document": "通过此接口，创建小程序批量签署链接，个人/企业员工点击此链接即可跳转小程序进行批量签署。\n请确保生成链接时候的身份信息和签署合同参与方的信息保持一致。\n\n注：\n- 参与人点击链接后需短信验证码才能查看合同内容。\n- 企业用户批量签署，需要传OrganizationName（参与方所在企业名称）参数生成签署链接，`请确保此企业已完成腾讯电子签企业认证`。若为子客企业，请确保员工已经加入企业。\n- 个人批量签署，签名区`仅支持手写签名`。",
       "input": "ChannelCreateBatchSignUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的批量签署链接",
       "output": "ChannelCreateBatchSignUrlResponse",
@@ -358,9 +358,9 @@
       "status": "online"
     },
     "DescribeChannelOrganizations": {
-      "document": "查询渠道子客企业信息",
+      "document": "查询渠道子客企业信息时，可以支持单个子客和整个应用下所有子客的查询。返回的信息包括超管、法人的信息以及当前企业的认证状态等信息。\n\n- 对于单个企业的查询，通过**指定子客的唯一标识**来查询该子客的企业信息\n- 对于整个应用下所有企业的查询，**不需要指定子客的唯一标识**，直接查询整个应用下所有子客企业的企业信息",
       "input": "DescribeChannelOrganizationsRequest",
-      "name": "查询渠道子客企业信息",
+      "name": "查询企业信息",
       "output": "DescribeChannelOrganizationsResponse",
       "status": "online"
     },
@@ -1489,15 +1489,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
-          "example": "无",
-          "member": "string",
-          "name": "FlowIds",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "批量签署的流程签署人，其中姓名(ApproverName)、参与人类型(ApproverType)必传，手机号(ApproverMobile)和证件信息(ApproverIdCardType、ApproverIdCardNumber)可任选一种或全部传入。\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`3. 当需要通过短信验证码签署时，手机号ApproverMobile需要与发起合同时填写的用户手机号一致。`",
           "example": "无",
           "member": "FlowApproverInfo",
@@ -1513,6 +1504,24 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "批量签署的合同流程ID数组。\n注: `在调用此接口时，请确保合同流程均为本企业发起，且合同数量不超过100个。`",
+          "example": "无",
+          "member": "string",
+          "name": "FlowIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "合同组编号\n注：`该参数和合同流程ID数组必须二选一`",
+          "example": "yDwFdUUckpsveo27UEQPEVo14KnASuGI",
+          "member": "string",
+          "name": "FlowGroupId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1643,7 +1652,7 @@
         },
         {
           "disabled": false,
-          "document": "目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n</ul>",
+          "document": "目标签署人的企业名称，签署人如果是企业员工身份，需要传此参数。\n\n注：\n<ul>\n<li>请确认该名称与企业营业执照中注册的名称一致。</li>\n<li>如果名称中包含英文括号()，请使用中文括号（）代替。</li>\n<li>请确保此企业已完成腾讯电子签企业认证。</li>\n<li>若为子客企业，请确保员工已经加入企业。</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "OrganizationName",
@@ -3058,6 +3067,15 @@
           "name": "LicenseType",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<ul><li> **E_PRESCRIPTION_AUTO_SIGN** :  电子处方场景</li><li> **OTHER** :  通用场景</li></ul>",
+          "example": "E_PRESCRIPTION_AUTO_SIGN",
+          "member": "string",
+          "name": "SceneKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4649,124 +4667,124 @@
       "members": [
         {
           "disabled": false,
-          "document": "电子签企业Id\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "电子签平台给企业分配的ID（在不同应用下同一个企业会分配通用的ID）",
+          "example": "yDRSRUUgygj6qnwfUuO4zjEwc193c2hH",
           "member": "string",
           "name": "OrganizationId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "电子签企业OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "第三方平台子客企业的唯一标识",
+          "example": "n9527",
           "member": "string",
           "name": "OrganizationOpenId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "第三方平台子客企业名称",
+          "example": "典子谦示例企业",
           "member": "string",
           "name": "OrganizationName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业信用代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "企业的统一社会信用代码",
           "example": "无",
           "member": "string",
           "name": "UnifiedSocialCreditCode",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法人姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业法定代表人的姓名",
+          "example": "典子谦",
           "member": "string",
           "name": "LegalName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "法人OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业法定代表人作为第三方平台子客企业员工的唯一标识",
+          "example": "n9527",
           "member": "string",
           "name": "LegalOpenId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "超管姓名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业超级管理员的姓名",
+          "example": "典子谦",
           "member": "string",
           "name": "AdminName",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "超管OpenId\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业超级管理员作为第三方平台子客企业员工的唯一标识",
+          "example": "n9527",
           "member": "string",
           "name": "AdminOpenId",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "超管手机号，脱敏后返回\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业超级管理员的手机号码\n**注**：`手机号码脱敏（隐藏部分用*替代）`",
+          "example": "186****0000",
           "member": "string",
           "name": "AdminMobile",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业认证状态字段。值如下：\n<ul>\n  <li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证的企业</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业认证状态字段。值如下：\n<ul>\n  <li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证的企业</li>\n</ul>",
+          "example": "VERIFIED",
           "member": "string",
           "name": "AuthorizationStatus",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "企业认证方式字段。值如下：\n<ul>\n  <li>**\"AuthorizationInit\"**： 暂未选择授权方式</li>\n  <li>**\"AuthorizationFile\"**： 授权书</li>\n  <li>**\"AuthorizationLegalPerson\"**： 法人授权超管</li>\n  <li>**\"AuthorizationLegalIdentity\"**： 法人直接认证</li>\n</ul>\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "企业认证方式字段。值如下：\n<ul>\n  <li>**\"AuthorizationInit\"**： 暂未选择授权方式</li>\n  <li>**\"AuthorizationFile\"**： 授权书</li>\n  <li>**\"AuthorizationLegalPerson\"**： 法人授权超管</li>\n  <li>**\"AuthorizationLegalIdentity\"**： 法人直接认证</li>\n</ul>",
+          "example": "AuthorizationLegalIdentity",
           "member": "string",
           "name": "AuthorizationType",
           "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "both"
@@ -6462,7 +6480,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n第三方平台子客企业和员工必须已经经过实名认证",
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n\n渠道应用标识: Agent.AppId\n第三方平台子客企业标识: Agent.ProxyOrganizationOpenId\n第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId\n\n第三方平台子客企业和员工必须已经经过实名认证",
           "example": "无",
           "member": "Agent",
           "name": "Agent",
@@ -6472,7 +6490,7 @@
         {
           "disabled": false,
           "document": "指定分页每页返回的数据条数，单页最大支持 200。",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -6480,7 +6498,7 @@
         },
         {
           "disabled": false,
-          "document": "子客OrganizationOpenId，定向查询某个子客的企业数据。",
+          "document": "该字段是指第三方平台子客企业的唯一标识，用于查询单独某个子客的企业数据。\n\n**注**：`如果需要批量查询本应用下的所有企业的信息，则该字段不需要赋值`",
           "example": "无",
           "member": "string",
           "name": "OrganizationOpenId",
@@ -6489,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "企业认证状态过滤字段。可值如下：\n<ul>\n  <li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证的企业</li>\n</ul>",
+          "document": "可以按照当前企业的认证状态进行过滤。可值如下：\n<ul><li>**\"UNVERIFIED\"**： 未认证的企业</li>\n  <li>**\"VERIFYINGLEGALPENDINGAUTHORIZATION\"**： 认证中待法人授权的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEPENDING\"**： 认证中授权书审核中的企业</li>\n  <li>**\"VERIFYINGAUTHORIZATIONFILEREJECT\"**： 认证中授权书已驳回的企业</li>\n  <li>**\"VERIFYING\"**： 认证进行中的企业</li>\n  <li>**\"VERIFIED\"**： 已认证完成的企业</li></ul>",
           "example": "无",
           "member": "string",
           "name": "AuthorizationStatusList",
@@ -6499,7 +6517,7 @@
         {
           "disabled": false,
           "document": "指定分页返回第几页的数据，如果不传默认返回第一页。 页码从 0 开始，即首页为 0，最大20000。",
-          "example": "无",
+          "example": "20",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -6513,7 +6531,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "企业企业信息列表。",
+          "document": "满足查询条件的企业信息列表。",
           "example": "无",
           "member": "ChannelOrganizationInfo",
           "name": "ChannelOrganizationInfos",
@@ -6543,7 +6561,7 @@
         },
         {
           "disabled": false,
-          "document": "符合条件的企业数量。",
+          "document": "满足查询条件的企业总数量。",
           "example": "无",
           "member": "int64",
           "name": "Total",
@@ -8216,7 +8234,7 @@
       "usage": "out"
     },
     "FormField": {
-      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue填入附件图片的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n| cells.N.style         | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"FFFFFF\",\"bold\":true,\"align\":\"CENTER\"}      |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"FFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
+      "document": "电子文档的控件填充信息。按照控件类型进行相应的填充。\n\n当控件的 ComponentType='TEXT'时，FormField.ComponentValue填入文本内容\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"文本内容\"\n}\n```\n当控件的 ComponentType='MULTI_LINE_TEXT'时，FormField.ComponentValue填入文本内容，支持自动换行。\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"多行文本内容\"\n}\n```\n当控件的 ComponentType='CHECK_BOX'时，FormField.ComponentValue填入true或false文本\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"true\"\n}\n```\n当控件的 ComponentType='FILL_IMAGE'时，FormField.ComponentValue填入图片的资源ID\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxxx\"\n}\n```\n当控件的 ComponentType='ATTACHMENT'时，FormField.ComponentValue填入附件图片的资源ID列表，以逗号分隔，单个附件控件最多支持6个资源ID；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx1,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx2,yDwhsxxxxxxxxxxxxxxxxxxxxxxxxxx3\"\n}\n```\n当控件的 ComponentType='SELECTOR'时，FormField.ComponentValue填入选择的选项内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"选择的内容\"\n}\n```\n当控件的 ComponentType='DATE'时，FormField.ComponentValue填入日期内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"2023年01月01日\"\n}\n```\n当控件的 ComponentType='DISTRICT'时，FormField.ComponentValue填入省市区内容；\n```\nFormField输入示例：\n{\n    \"ComponentId\": \"componentId1\",\n    \"ComponentValue\": \"广东省深圳市福田区\"\n}\n```\n【数据表格传参说明】\n当控件的 ComponentType='DYNAMIC_TABLE'时，FormField.ComponentValue需要传递json格式的字符串参数，用于确定表头&填充数据表格（支持内容的单元格合并）\n输入示例1：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n输入示例2（表格表头宽度比例配置）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head2\",\n            \"widthPercent\": 30\n        },\n        {\n            \"content\":\"head3\",\n            \"widthPercent\": 40\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\"\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\"\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\"\n            }\n        ]\n    }\n}\n\n```\n\n\n输入示例3（表格设置字体加粗颜色）：\n\n```\n{\n    \"headers\":[\n        {\n            \"content\":\"head1\"\n        },\n        {\n            \"content\":\"head2\"\n        },\n        {\n            \"content\":\"head3\"\n        }\n    ],\n    \"rowCount\":3,\n    \"body\":{\n        \"cells\":[\n            {\n                \"rowStart\":1,\n                \"rowEnd\":1,\n                \"columnStart\":1,\n                \"columnEnd\":1,\n                \"content\":\"123\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"CENTER\"}\n            },\n            {\n                \"rowStart\":2,\n                \"rowEnd\":3,\n                \"columnStart\":1,\n                \"columnEnd\":2,\n                \"content\":\"456\",\n                \"style\": {\"color\": \"#b50000\", \"fontSize\": 12,\"bold\": true,\"align\": \"LEFT\"}\n            },\n            {\n                \"rowStart\":3,\n                \"rowEnd\":3,\n                \"columnStart\":3,\n                \"columnEnd\":3,\n                \"content\":\"789\",\n                \"style\": {\"color\": \"#b500bf\", \"fontSize\": 12,\"bold\": false,\"align\": \"RIGHT\"}\n            }\n        ]\n    }\n}\n\n```\n\n表格参数说明\n\n| 名称                | 类型    | 描述                                              |\n| ------------------- | ------- | ------------------------------------------------- |\n| headers             | Array   | 表头：不超过10列，不支持单元格合并，字数不超过100 |\n| rowCount            | Integer | 表格内容最大行数                                  |\n| cells.N.rowStart    | Integer | 单元格坐标：行起始index                           |\n| cells.N.rowEnd      | Integer | 单元格坐标：行结束index                           |\n| cells.N.columnStart | Integer | 单元格坐标：列起始index                           |\n| cells.N.columnEnd   | Integer | 单元格坐标：列结束index                           |\n| cells.N.content     | String  | 单元格内容，字数不超过100                         |\n| cells.N.style         | String  | 单元格字体风格配置 ，风格配置的json字符串  如： {\"font\":\"黑体\",\"fontSize\":12,\"color\":\"#FFFFFF\",\"bold\":true,\"align\":\"CENTER\"}      |\n\n表格参数headers说明\nwidthPercent Integer 表头单元格列占总表头的比例，例如1：30表示 此列占表头的30%，不填写时列宽度平均拆分；例如2：总2列，某一列填写40，剩余列可以为空，按照60计算。；例如3：总3列，某一列填写30，剩余2列可以为空，分别为(100-30)/2=35\n\ncontent String 表头单元格内容，字数不超过100\n\nstyle String 为字体风格设置 风格支持： font : 目前支持 黑体、宋体; fontSize： 6-72; color：000000-FFFFFF  字符串形如：  \"#FFFFFF\" 或者 \"0xFFFFFF\"; bold ： 是否加粗， true ： 加粗 false： 不加粗; align: 对其方式， 支持 LEFT / RIGHT / CENTER",
       "members": [
         {
           "disabled": false,

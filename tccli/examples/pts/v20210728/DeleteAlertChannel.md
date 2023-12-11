@@ -6,15 +6,15 @@ Input:
 
 ```
 tccli pts DeleteAlertChannel --cli-unfold-argument  \
-    --ProjectId xx \
-    --NoticeId xx
+    --ProjectId project-btksohr0 \
+    --NoticeId notice-ms38of42
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "70805f6a-d7e1-4247-9d5a-fde3afe2b377"
     }
 }
 ```

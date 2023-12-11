@@ -104,6 +104,14 @@
         "title": "示例1"
       }
     ],
+    "DescribeNICAssets": [
+      {
+        "document": "空示例",
+        "input": "{\n  \"MemberId\": [\n    \"xx\"\n  ],\n  \"Filter\": {\n    \"Limit\": 0,\n    \"Offset\": 0,\n    \"Order\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n      {\n        \"Name\": \"xx\",\n        \"Values\": [\n          \"xx\"\n        ],\n        \"OperatorType\": 0\n      }\n    ],\n    \"StartTime\": \"2021-01-01 00:00:00\",\n    \"EndTime\": \"2021-01-01 00:00:00\"\n  }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"AppId\": \"xx\",\n                \"Uin\": \"xx\",\n                \"AssetId\": \"xx\",\n                \"AssetName\": \"xx\",\n                \"AssetType\": \"xx\",\n                \"PrivateIp\": \"xx\",\n                \"PublicIp\": \"xx\",\n                \"Region\": \"xx\",\n                \"VpcId\": \"xx\",\n                \"VpcName\": \"xx\",\n                \"Tag\": [\n                    {\n                        \"Name\": \"xx\",\n                        \"Value\": \"xx\"\n                    }\n                ],\n                \"OutboundPeakBandwidth\": \"xx\",\n                \"InboundPeakBandwidth\": \"xx\",\n                \"OutboundCumulativeFlow\": \"xx\",\n                \"InboundCumulativeFlow\": \"xx\",\n                \"NetworkAttack\": 0,\n                \"ExposedPort\": 0,\n                \"ExposedVUL\": 0,\n                \"ConfigureRisk\": 0,\n                \"CreateTime\": \"xx\",\n                \"ScanTask\": 0,\n                \"LastScanTime\": \"xx\",\n                \"Nick\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RegionList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"AssetTypeList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"AppIdList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"VpcList\": [\n            {\n                \"Value\": \"xx\",\n                \"Text\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "空示例"
+      }
+    ],
     "DescribePublicIpAssets": [
       {
         "document": "",

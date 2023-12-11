@@ -224,3 +224,71 @@ Output:
 }
 ```
 
+**Example 7: 为个人用户，创建合同组批量签署链接**
+
+1. 为个人用户生成合同组H5批量签署链接
+2. 使用默认的签名类型
+3. 使用默认的签署方式
+4. 默认跳转到合同列表页
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Operator.ClientIp 1.2.3.4 \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowApproverInfo.ApproverType 1 \
+    --FlowApproverInfo.ApproverMobile 13200000000 \
+    --FlowApproverInfo.ApproverName 典子谦 \
+    --FlowApproverInfo.ApproverIdCardNumber 620000198802020000 \
+    --FlowApproverInfo.ApproverIdCardType ID_CARD \
+    --FlowGroupId yDSLcUUck****ysv1OQYIe9H
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfo": {
+            "ApproverMobile": "13200000000",
+            "ApproverName": "典子谦",
+            "ApproverType": 1,
+            "LongUrl": "https://quick.qian.tencent.cn/guide?Code=yDwi0U**xoK&CodeType=QUICK&shortKey=yDw**S2ATh95&token=Y9b**O",
+            "SignUrl": "https://essurl.cn/Y9b**O"
+        },
+        "RequestId": "s169**68"
+    }
+}
+```
+
+**Example 8: 错误示例，为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息**
+
+1. 没有指定合同流程ID信息
+2. 没有指定合同组ID信息
+
+Input: 
+
+```
+tccli ess CreateBatchQuickSignUrl --cli-unfold-argument  \
+    --Operator.ClientIp 1.2.3.4 \
+    --Operator.UserId yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy \
+    --FlowApproverInfo.ApproverType 1 \
+    --FlowApproverInfo.ApproverMobile 13200000000 \
+    --FlowApproverInfo.ApproverName 典子谦 \
+    --FlowApproverInfo.ApproverIdCardNumber 620000198802020000 \
+    --FlowApproverInfo.ApproverIdCardType ID_CARD
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "流程ID和合同组ID不能同时为空，请检查参数后再试"
+        },
+        "RequestId": "s17007***76147"
+    }
+}
+```
+

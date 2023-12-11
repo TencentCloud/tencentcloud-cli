@@ -16664,7 +16664,7 @@
         },
         {
           "disabled": false,
-          "document": "高级模式",
+          "document": "高级模式（是否使用Session检测），0表示不启用，1表示启用",
           "example": "0",
           "member": "string",
           "name": "Advance",
@@ -16700,7 +16700,7 @@
         },
         {
           "disabled": false,
-          "document": "匹配方法",
+          "document": "匹配方法，0表示等于，1表示前缀匹配，2表示包含",
           "example": "0",
           "member": "int64",
           "name": "MatchFunc",
@@ -16709,7 +16709,7 @@
         },
         {
           "disabled": false,
-          "document": "动作",
+          "document": "动作，20表示观察，21表示人机识别，22表示拦截，23表示精准拦截",
           "example": "22",
           "member": "string",
           "name": "ActionType",
@@ -16745,7 +16745,7 @@
         },
         {
           "disabled": false,
-          "document": "waf版本",
+          "document": "waf版本，sparta-waf或者clb-waf",
           "example": "\"sparta-waf\"",
           "member": "string",
           "name": "Edition",

@@ -11,16 +11,16 @@
     "AbortJob": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AbortJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"ScenarioId\": \"xx\",\n    \"JobId\": \"xx\",\n    \"AbortReason\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AbortJob\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-btksohr0\",\n    \"ScenarioId\": \"scenario-j1u85ixm\",\n    \"JobId\": \"job-61ovraba\",\n    \"AbortReason\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "停止任务"
       }
     ],
     "AdjustJobSpeed": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustJobSpeed\n<公共请求参数>\n\n{\n    \"JobId\": \"xx\",\n    \"TargetRequestsPerSecond\": 10\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AdjustJobSpeed\n<公共请求参数>\n\n{\n    \"JobId\": \"job-61ovraba\",\n    \"TargetRequestsPerSecond\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "调整任务目标RPS"
       }
     ],
@@ -35,8 +35,8 @@
     "CreateAlertChannel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertChannel\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"NoticeId\": \"xx\",\n    \"AMPConsumerId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateAlertChannel\n<公共请求参数>\n\n{\n    \"NoticeId\": \"notice-f0yvdmql\",\n    \"ProjectId\": \"project-btksohr0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "创建告警通知接收组"
       }
     ],
@@ -51,9 +51,9 @@
     "CreateFile": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFile\n<公共请求参数>\n\n{\n    \"FileId\": \"file-xx\",\n    \"ProjectId\": \"project-xx\",\n    \"Kind\": 0,\n    \"Name\": \"uin.csv\",\n    \"Size\": 3896,\n    \"Type\": \"csv\",\n    \"LineCount\": 1001,\n    \"HeadLines\": [\n        \"uin\",\n        \"1\",\n        \"2\"\n    ],\n    \"TailLines\": [\n        \"998\",\n        \"999\",\n        \"1000\"\n    ],\n    \"HeaderInFile\": true,\n    \"HeaderColumns\": [\n        \"uin\"\n    ],\n    \"FileInfos\": [\n        {\n            \"Name\": \"\",\n            \"Size\": 0,\n            \"Type\": \"\",\n            \"UpdatedAt\": \"\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "创建文件"
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFile\n<公共请求参数>\n\n{\n    \"FileId\": \"file-235c3000\",\n    \"ProjectId\": \"project-btksohr0\",\n    \"Kind\": 1,\n    \"Name\": \"abc.csv\",\n    \"Size\": 100,\n    \"Type\": \"csv\",\n    \"LineCount\": 10,\n    \"HeadLines\": [\n        \"abc\"\n    ],\n    \"TailLines\": [\n        \"abc\"\n    ],\n    \"HeaderInFile\": true,\n    \"HeaderColumns\": [\n        \"abc\"\n    ],\n    \"FileInfos\": [\n        {\n            \"Name\": \"abc\",\n            \"Size\": 0,\n            \"Type\": \"abc\",\n            \"UpdatedAt\": \"2020-09-22T00:00:00+00:00\",\n            \"FileId\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
+        "title": "创建场景与文件的关联关系"
       }
     ],
     "CreateProject": [
@@ -75,8 +75,8 @@
     "DeleteAlertChannel": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlertChannel\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"NoticeId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAlertChannel\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-btksohr0\",\n    \"NoticeId\": \"notice-ms38of42\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "删除告警通知接收组"
       }
     ],
@@ -91,17 +91,17 @@
     "DeleteFiles": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFiles\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"FileIds\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除文件"
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteFiles\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-btksohr0\",\n    \"FileIds\": [\n        \"file-j1u85ixm\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
+        "title": "删除一个文件"
       }
     ],
     "DeleteJobs": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-xx\"\n    ],\n    \"ProjectId\": \"project-xx\",\n    \"ScenarioIds\": [\n        \"scenario-xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除任务"
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteJobs\n<公共请求参数>\n\n{\n    \"JobIds\": [\n        \"job-61ovraba\"\n    ],\n    \"ProjectId\": \"project-btksohr0\",\n    \"ScenarioIds\": [\n        \"scenario-j1u85ixm\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
+        "title": "删除一个任务"
       }
     ],
     "DeleteProjects": [
@@ -187,8 +187,8 @@
     "DescribeLabelValues": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLabelValues\n<公共请求参数>\n\n{\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"ProjectId\": \"project-xx\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"LabelName\": \"service\"\n}",
-        "output": "{\n    \"Response\": {\n        \"LabelValueSet\": [\n            \"http://pets.com/0\",\n            \"http://pets.com/1\",\n            \"http://pets.com/10\",\n            \"http://pets.com/11\",\n            \"http://pets.com/12\",\n            \"http://pets.com/13\",\n            \"http://pets.com/14\",\n            \"http://pets.com/15\",\n            \"http://pets.com/16\",\n            \"http://pets.com/17\",\n            \"http://pets.com/18\",\n            \"http://pets.com/19\",\n            \"http://pets.com/2\",\n            \"http://pets.com/3\",\n            \"http://pets.com/4\",\n            \"http://pets.com/5\",\n            \"http://pets.com/6\",\n            \"http://pets.com/7\",\n            \"http://pets.com/8\",\n            \"http://pets.com/9\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLabelValues\n<公共请求参数>\n\n{\n    \"JobId\": \"job-61ovraba\",\n    \"ScenarioId\": \"scenario-j1u85ixm\",\n    \"ProjectId\": \"project-btksohr0\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"LabelName\": \"service\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LabelValueSet\": [\n            \"http://pets.com/0\",\n            \"http://pets.com/1\",\n            \"http://pets.com/10\",\n            \"http://pets.com/11\",\n            \"http://pets.com/12\",\n            \"http://pets.com/13\",\n            \"http://pets.com/14\",\n            \"http://pets.com/15\",\n            \"http://pets.com/16\",\n            \"http://pets.com/17\",\n            \"http://pets.com/18\",\n            \"http://pets.com/19\",\n            \"http://pets.com/2\",\n            \"http://pets.com/3\",\n            \"http://pets.com/4\",\n            \"http://pets.com/5\",\n            \"http://pets.com/6\",\n            \"http://pets.com/7\",\n            \"http://pets.com/8\",\n            \"http://pets.com/9\"\n        ],\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "查询标签值"
       }
     ],
@@ -235,8 +235,8 @@
     "DescribeSampleBatchQuery": [
       {
         "document": "查询请求速率&请求总数",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleBatchQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Queries\": [\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Rate\"\n        },\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSampleSet\": [\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Rate\",\n                \"Unit\": \"reqs/s\",\n                \"Labels\": null,\n                \"Value\": \"30.34732915216155\",\n                \"Timestamp\": 1631694009709\n            },\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Count\",\n                \"Unit\": \"reqs\",\n                \"Labels\": null,\n                \"Value\": \"1193277\",\n                \"Timestamp\": 1631694009709\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleBatchQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-btksohr0\",\n    \"JobId\": \"job-61ovraba\",\n    \"ScenarioId\": \"scenario-j1u85ixm\",\n    \"Queries\": [\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Rate\"\n        },\n        {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSampleSet\": [\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Rate\",\n                \"Unit\": \"reqs/s\",\n                \"Labels\": null,\n                \"Value\": \"30.34732915216155\",\n                \"Timestamp\": 1631694009709\n            },\n            {\n                \"Metric\": \"pts_engine_req_total\",\n                \"Aggregation\": \"Count\",\n                \"Unit\": \"reqs\",\n                \"Labels\": null,\n                \"Value\": \"1193277\",\n                \"Timestamp\": 1631694009709\n            }\n        ],\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "批量查询指标"
       }
     ],
@@ -259,8 +259,8 @@
     "DescribeSampleMatrixQuery": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleMatrixQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Metric\": \"pts_engine_req_duration_seconds\",\n    \"Aggregation\": \"P50\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSampleMatrix\": {\n            \"Metric\": \"pts_engine_req_duration_seconds\",\n            \"Aggregation\": \"P50\",\n            \"Unit\": \"s\",\n            \"Streams\": [\n                {\n                    \"Name\": \"响应时间P50\",\n                    \"Labels\": null,\n                    \"Values\": [\n                        {\n                            \"Timestamp\": 1650517296000,\n                            \"Value\": 0.032142349260523326\n                        },\n                        {\n                            \"Timestamp\": 1650517299000,\n                            \"Value\": 0.03377059214626565\n                        },\n                        {\n                            \"Timestamp\": 1650517302000,\n                            \"Value\": 0.03206904981580744\n                        },\n                        {\n                            \"Timestamp\": 1650518490000,\n                            \"Value\": 0.05\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleMatrixQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-btksohr0\",\n    \"JobId\": \"job-61ovraba\",\n    \"ScenarioId\": \"scenario-j1u85ixm\",\n    \"Metric\": \"pts_engine_req_duration_seconds\",\n    \"Aggregation\": \"P50\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSampleMatrix\": {\n            \"Metric\": \"pts_engine_req_duration_seconds\",\n            \"Aggregation\": \"P50\",\n            \"Unit\": \"s\",\n            \"Streams\": [\n                {\n                    \"Name\": \"响应时间P50\",\n                    \"Labels\": null,\n                    \"Values\": [\n                        {\n                            \"Timestamp\": 1650517296000,\n                            \"Value\": 0.032142349260523326\n                        },\n                        {\n                            \"Timestamp\": 1650517299000,\n                            \"Value\": 0.03377059214626565\n                        },\n                        {\n                            \"Timestamp\": 1650517302000,\n                            \"Value\": 0.03206904981580744\n                        },\n                        {\n                            \"Timestamp\": 1650518490000,\n                            \"Value\": 0.05\n                        }\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "查询指标矩阵"
       }
     ],
@@ -268,7 +268,7 @@
       {
         "document": "查询某个任务总的请求数",
         "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSampleQuery\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-xx\",\n    \"JobId\": \"123\",\n    \"ScenarioId\": \"123\",\n    \"Metric\": \"pts_engine_req_total\",\n    \"Aggregation\": \"Count\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MetricSample\": {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\",\n            \"Unit\": \"reqs\",\n            \"Labels\": null,\n            \"Value\": \"1159362\",\n            \"Timestamp\": 1631693039208\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"MetricSample\": {\n            \"Metric\": \"pts_engine_req_total\",\n            \"Aggregation\": \"Count\",\n            \"Unit\": \"reqs\",\n            \"Labels\": [\n                {\n                    \"LabelName\": \"method\",\n                    \"LabelValue\": \"GET\"\n                }\n            ],\n            \"Value\": \"1159362\",\n            \"Timestamp\": 1631693039208\n        },\n        \"RequestId\": \"70805f6a-d7e1-4247-9d5a-fde3afe2b377\"\n    }\n}",
         "title": "查询总请求数"
       }
     ],
@@ -323,9 +323,9 @@
     "UpdateFileScenarioRelation": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFileScenarioRelation\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"ScenarioIds\": [\n        \"scenario-xx\"\n    ],\n    \"FileId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "更新关联文件场景"
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateFileScenarioRelation\n<公共请求参数>\n\n{\n    \"ProjectId\": \"project-ksqyndry\",\n    \"ScenarioIds\": [\n        \"scenario-jp98fx4g\"\n    ],\n    \"FileId\": \"file-03874f00\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"9139da45-84a5-4212-aff6-a05fd1a2e7f7\"\n    }\n}",
+        "title": "重新关联文件与场景"
       }
     ],
     "UpdateJob": [

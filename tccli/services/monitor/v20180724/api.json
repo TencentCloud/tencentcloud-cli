@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateExporterIntegration": {
-      "document": "创建 exporter 集成",
+      "document": "创建集成中心 exporter 集成，因集成较多，建议控制台创建集成。(前提：已授权创建托管 EKS 集群，验证方式：1. 控制台界面确认，未提示授权则表示已授权创建；2. 通过 DescribePrometheusInstanceInitStatus 接口查询集群状态，如果托管集群不存在，可通过 RunPrometheusInstance 接口创建)",
       "input": "CreateExporterIntegrationRequest",
       "name": "创建 exporter 集成",
       "output": "CreateExporterIntegrationResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreatePrometheusScrapeJob": {
-      "document": "创建 Prometheus 抓取任务",
+      "document": "创建 Prometheus Agent 抓取任务",
       "input": "CreatePrometheusScrapeJobRequest",
       "name": "创建 Prometheus 抓取任务",
       "output": "CreatePrometheusScrapeJobResponse",
@@ -197,7 +197,7 @@
       "status": "online"
     },
     "DeleteExporterIntegration": {
-      "document": "删除 exporter 集成",
+      "document": "删除集成中心 exporter 集成",
       "input": "DeleteExporterIntegrationRequest",
       "name": "删除 exporter 集成",
       "output": "DeleteExporterIntegrationResponse",
@@ -260,7 +260,7 @@
       "status": "online"
     },
     "DeletePrometheusScrapeJobs": {
-      "document": "删除 Prometheus 抓取任务",
+      "document": "删除 Prometheus Agent 抓取任务",
       "input": "DeletePrometheusScrapeJobsRequest",
       "name": "删除 Prometheus 抓取任务",
       "output": "DeletePrometheusScrapeJobsResponse",
@@ -701,7 +701,7 @@
       "status": "online"
     },
     "DestroyPrometheusInstance": {
-      "document": "彻底删除 Prometheus 实例相关数据，给定的实例必须先被 Terminate",
+      "document": "彻底删除 Prometheus 实例相关数据，给定的实例必须先被 Terminate(该接口是异步接口，实例是否释放需要通过 DescribePrometheusInstances 接口返回的状态来判断)。",
       "input": "DestroyPrometheusInstanceRequest",
       "name": "强制释放 Prometheus 实例",
       "output": "DestroyPrometheusInstanceResponse",
@@ -3500,7 +3500,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "类型(可通过 DescribePrometheusIntegrations 接口获取，取每一项中的 ExporterType 字段)",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -3510,7 +3510,7 @@
         {
           "disabled": false,
           "document": "集成配置",
-          "example": "{\"name\":\"test\",\"kind\":\"mysql-exporter\", \"instanceSpec\":{}}",
+          "example": "{\"name\":\"test\",\"kind\":\"blackbox-exporter\",\"spec\":{\"instanceSpec\":{\"module\":\"http_get\",\"urls\":[\"http://abc\"]}}}",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -3518,7 +3518,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "document": "Kubernetes 集群类型，可不填，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "3",
           "member": "int64",
           "name": "KubeType",
@@ -3527,7 +3527,7 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID",
+          "document": "集群 ID，可不填",
           "example": "cls-xx",
           "member": "string",
           "name": "ClusterId",
@@ -3546,7 +3546,7 @@
           "example": "无",
           "member": "string",
           "name": "Names",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4304,7 +4304,7 @@
         },
         {
           "disabled": false,
-          "document": "VPC ID",
+          "document": "VPC ID(可通过 vpc:DescribeVpcs 接口获取，与实例同地域)",
           "example": "vpc-345xdef",
           "member": "string",
           "name": "VpcId",
@@ -4313,7 +4313,7 @@
         },
         {
           "disabled": false,
-          "document": "子网 ID",
+          "document": "子网 ID(可通过 vpc:DescribeSubnets 接口获取)",
           "example": "subnet-axxersx",
           "member": "string",
           "name": "SubnetId",
@@ -4331,7 +4331,7 @@
         },
         {
           "disabled": false,
-          "document": "可用区",
+          "document": "可用区(与子网同可用区)",
           "example": "ap-guangzhou-1",
           "member": "string",
           "name": "Zone",
@@ -4368,7 +4368,7 @@
           "example": "prom-3xz2asxa",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4431,8 +4431,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "Prometheus 实例 ID，例如：prom-abcd1234",
-          "example": "xx",
+          "document": "Prometheus 实例 ID",
+          "example": "prom-id",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4440,8 +4440,8 @@
         },
         {
           "disabled": false,
-          "document": "Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取",
-          "example": "xx",
+          "document": "Agent ID(可通过DescribePrometheusAgents 接口获取)",
+          "example": "agent-id",
           "member": "string",
           "name": "AgentId",
           "required": true,
@@ -4449,8 +4449,8 @@
         },
         {
           "disabled": false,
-          "document": "抓取任务配置，格式：job_name:xx",
-          "example": "job_name:xx",
+          "document": "抓取任务配置",
+          "example": "job_name: demo-config\\nhonor_timestamps: true\\nmetrics_path: /metrics\\nscheme: http\\nstatic_configs:\\n- targets:\\n  - localhost:8080",
           "member": "string",
           "name": "Config",
           "required": false,
@@ -4468,7 +4468,7 @@
           "example": "无",
           "member": "string",
           "name": "JobId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4531,7 +4531,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合规则组内容，格式为 yaml",
+          "document": "聚合规则组内容，格式为 yaml，通过 base64 进行编码。",
           "example": "LS0tDQpuYW1lOiBleGFtcGxlDQpydWxlczoNCiAgLSByZWNvcmQ6IGpvYjpodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHM6c3VtDQogICAgZXhwcjogc3VtIGJ5IChqb2IpIChodHRwX2lucHJvZ3Jlc3NfcmVxdWVzdHMp",
           "member": "string",
           "name": "Group",
@@ -4876,7 +4876,7 @@
         {
           "disabled": false,
           "document": "实例 ID",
-          "example": "prom-xx",
+          "example": "prom-id",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -4884,7 +4884,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "类型(可通过 DescribeExporterIntegrations获取)",
           "example": "mysql-exporter",
           "member": "string",
           "name": "Kind",
@@ -4902,7 +4902,7 @@
         },
         {
           "disabled": false,
-          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群<EKS> </li>\n<li> 3= Prometheus管理的弹性集群<MEKS> </li>",
+          "document": "Kubernetes 集群类型，取值如下：\n<li> 1= 容器集群(TKE) </li>\n<li> 2=弹性集群(EKS) </li>\n<li> 3= Prometheus管理的弹性集群(MEKS) </li>",
           "example": "3",
           "member": "int64",
           "name": "KubeType",
@@ -4911,8 +4911,8 @@
         },
         {
           "disabled": false,
-          "document": "集群 ID",
-          "example": "cls-xx",
+          "document": "集群 ID，可不填",
+          "example": "cls-id",
           "member": "string",
           "name": "ClusterId",
           "required": false,
@@ -5271,7 +5271,7 @@
         },
         {
           "disabled": false,
-          "document": "Agent ID",
+          "document": "Agent ID(可通过 DescribePrometheusAgents 接口获取)",
           "example": "agent-hod16m43",
           "member": "string",
           "name": "AgentId",
@@ -5280,7 +5280,7 @@
         },
         {
           "disabled": false,
-          "document": "任务 ID 列表",
+          "document": "任务 ID 列表(可通过 DescribePrometheusScrapeJobs 接口获取)",
           "example": "[\"job-afeiigf\"]",
           "member": "string",
           "name": "JobIds",
@@ -19869,7 +19869,7 @@
         },
         {
           "disabled": false,
-          "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>",
+          "document": "Prometheus 集成项 Code，升级对应的 Dashboard，取值如下：\n<li>qcloud</li>\n<li>cvm_process_exporter</li>\n<li>cvm_node_exporter</li>\n<li>cvm</li>\n<li>kubernetes</li>\n<li>cdwch</li>\n<li>rocketmq</li>\n<li>spring_mvc</li>\n<li>mysql</li>\n<li>go</li>\n<li>redis</li>\n<li>jvm</li>\n<li>pgsql</li>\n<li>mongo</li>\n<li>kafka</li>\n<li>es</li>\n<li>flink</li>\n<li>blackbox</li>\n<li>consule</li>\n<li>memcached</li>\n<li>zk</li>\n<li>tps</li>\n<li>istio</li>\n<li>etcd</li>\n<li>pts</li>\n<li>kong</li>",
           "example": "[\"spring-mvc\"]",
           "member": "string",
           "name": "IntegrationCodes",

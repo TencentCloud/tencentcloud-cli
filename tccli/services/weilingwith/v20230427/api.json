@@ -4813,7 +4813,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "sFEmY6U",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,
@@ -9166,7 +9166,7 @@
         {
           "disabled": false,
           "document": "类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "4",
           "member": "int64",
           "name": "Type",
           "output_required": false,
@@ -9176,7 +9176,7 @@
         {
           "disabled": false,
           "document": "数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "testurl",
           "member": "string",
           "name": "Data",
           "output_required": false,
@@ -9808,7 +9808,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -9818,7 +9818,7 @@
         {
           "disabled": false,
           "document": "部门列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"DepartmentId\":\"21\",\"Name\":\"财务部\",\"ParentDepartmentId\":\"9\"},{\"DepartmentId\":\"22\",\"Name\":\"商务部\",\"ParentDepartmentId\":\"10\"}]",
           "member": "SsoDepartment",
           "name": "Departments",
           "output_required": false,
@@ -9950,7 +9950,7 @@
         {
           "disabled": false,
           "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Total",
           "output_required": false,
@@ -9960,7 +9960,7 @@
         {
           "disabled": false,
           "document": "部门用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"UserId\":\"0d0a98561b3c4f72963eba5c5fcf56e1\",\"RealName\":\"张三\",\"UserType\":\"3\",\"TenantId\":\"10001\",\"Email\":\"test@163.com\",\"Phone\":\"186xxxx234\",\"Status\":0,\"CreateAt\":\"1680836659\",\"DepartmentId\":\"12\",\"DepartmentName\":\"财务部\",\"LinkFilter\":1}]",
           "member": "SsoTeamUser",
           "name": "Users",
           "output_required": false,
@@ -10373,7 +10373,7 @@
         {
           "disabled": false,
           "document": "应用token",
-          "example": "无",
+          "example": "vfy4zPtG74k6OYKr9rNa9",
           "member": "string",
           "name": "ApplicationToken",
           "required": true,

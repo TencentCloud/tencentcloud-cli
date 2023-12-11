@@ -357,7 +357,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID",
+          "document": "待停止的压测任务的 ID（所有的压测任务 ID 可以从 DescribeJobs 接口获取）",
           "example": "job-xx",
           "member": "string",
           "name": "JobId",
@@ -420,7 +420,7 @@
         },
         {
           "disabled": false,
-          "document": "目标RPS",
+          "document": "目标 RPS。其取值应大于起始 RPS，并且小于最大 RPS",
           "example": "60",
           "member": "int64",
           "name": "TargetRequestsPerSecond",
@@ -991,7 +991,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Notice ID",
+          "document": "monitor 服务的告警通知模板的 NoticeId，可从 monitor 服务的云 API 的 DescribeAlarmNotices 接口响应里的 Id 字段获取。（CreateAlertChannel 接口的入参里用于标识一个告警通知模板的 AMPConsumerId 与 NoticeId 二选一即可）",
           "example": "notice-xx",
           "member": "string",
           "name": "NoticeId",
@@ -1009,7 +1009,7 @@
         },
         {
           "disabled": false,
-          "document": "AMP Consumer ID",
+          "document": "monitor 服务的告警通知模板的 AMPConsumerId，可从 monitor 服务的云 API 的 DescribeAlarmNotices 接口响应里的 AMPConsumerId 字段获取。（CreateAlertChannel 接口的入参里用于标识一个告警通知模板的 AMPConsumerId 与 NoticeId 二选一即可）",
           "example": "consumer-xx",
           "member": "string",
           "name": "AMPConsumerId",
@@ -1154,8 +1154,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件 ID",
-          "example": "file-xx",
+          "document": "文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录",
+          "example": "file-235c3000",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -1164,7 +1164,7 @@
         {
           "disabled": false,
           "document": "项目 ID",
-          "example": "project-xx",
+          "example": "project-btksohr0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1894,7 +1894,7 @@
         },
         {
           "disabled": false,
-          "document": "Notice ID",
+          "document": "待删除的通知渠道的 Notice ID（所有通知渠道的 Notice ID 可以从 DescribeAlertChannels 接口获取）",
           "example": "notice-xx",
           "member": "string",
           "name": "NoticeId",
@@ -1958,7 +1958,7 @@
         {
           "disabled": false,
           "document": "项目 ID",
-          "example": "project-xx",
+          "example": "project-hxmdlc3c",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -1966,8 +1966,8 @@
         },
         {
           "disabled": false,
-          "document": "文件 ID 数组",
-          "example": "[\"file-xx\"]",
+          "document": "待删除的文件的 ID（所有文件 ID 可从接口 DescribeFiles 获取）",
+          "example": "[\"file-4og13yd4\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -1993,7 +1993,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID数组",
+          "document": "待删除的任务的 ID（所有任务的 ID 可以从 DescribeJobs 获取）",
           "example": "[\"job-xx\"]",
           "member": "string",
           "name": "JobIds",
@@ -2832,7 +2832,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名称",
+          "document": "指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名",
           "example": "pts_engine_req_total",
           "member": "string",
           "name": "Metric",
@@ -2841,7 +2841,7 @@
         },
         {
           "disabled": false,
-          "document": "查询标签名称",
+          "document": "标签名。取值范围参见 DescribeMetricLabelWithValues 接口返回的指标及其支持的标签名",
           "example": "service",
           "member": "string",
           "name": "LabelName",
@@ -2869,7 +2869,7 @@
           "example": "无",
           "member": "string",
           "name": "LabelValueSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3260,8 +3260,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "job id",
-          "example": "\"123\"",
+          "document": "压测任务的 ID",
+          "example": "job-i39wgjys",
           "member": "string",
           "name": "JobId",
           "required": true,
@@ -3269,8 +3269,8 @@
         },
         {
           "disabled": false,
-          "document": "场景id",
-          "example": "\"123\"",
+          "document": "场景的 ID",
+          "example": "scenario-4og13yd4",
           "member": "string",
           "name": "ScenarioId",
           "required": true,
@@ -3287,8 +3287,8 @@
         },
         {
           "disabled": false,
-          "document": "项目ID",
-          "example": "project-xx",
+          "document": "项目的 ID",
+          "example": "project-hxmdlc3c",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -3306,7 +3306,7 @@
           "example": "无",
           "member": "CustomSample",
           "name": "MetricSampleSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3604,7 +3604,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名字",
+          "document": "指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名",
           "example": "pts_engine_req_total",
           "member": "string",
           "name": "Metric",
@@ -3613,7 +3613,7 @@
         },
         {
           "disabled": false,
-          "document": "聚合函数",
+          "document": "聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge",
           "example": "Rate",
           "member": "string",
           "name": "Aggregation",
@@ -3622,8 +3622,8 @@
         },
         {
           "disabled": false,
-          "document": "指标过滤",
-          "example": "无",
+          "document": "用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）",
+          "example": "{   \"LabelName\": \"method\",   \"LabelValue\": \"GET\",   \"Operator\": 0 }",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3650,7 +3650,7 @@
           "example": "无",
           "member": "CustomSampleMatrix",
           "name": "MetricSampleMatrix",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -3686,7 +3686,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名",
+          "document": "指标名。取值范围参见 DescribeMetricLabelWithValues 接口返回的所有指标名",
           "example": "pts_engine_req_total",
           "member": "string",
           "name": "Metric",
@@ -3695,8 +3695,8 @@
         },
         {
           "disabled": false,
-          "document": "聚合条件",
-          "example": "Rate,Count,Avg,P90,P95,P99,Gauge",
+          "document": "聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge",
+          "example": "Rate",
           "member": "string",
           "name": "Aggregation",
           "required": true,
@@ -3713,7 +3713,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件",
+          "document": "标签过滤条件。各指标支持的标签参见 DescribeMetricLabelWithValues 接口返回的所有指标及其支持的标签",
           "example": "[{\"LabelName\":\"Method\", \"LabelValue\":\"GET\"}]",
           "member": "Label",
           "name": "Labels",
@@ -3732,7 +3732,7 @@
           "example": "无",
           "member": "CustomSample",
           "name": "MetricSample",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -4545,18 +4545,16 @@
           "member": "string",
           "name": "Metric",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
-          "document": "聚合函数",
-          "example": "Rate,Count,Avg,P99,P95",
+          "document": "聚合函数。取值范围：Rate,Count,Avg,P90,P95,P99,Gauge",
+          "example": "Rate",
           "member": "string",
           "name": "Aggregation",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4565,18 +4563,16 @@
           "member": "Label",
           "name": "Labels",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "指标过滤",
+          "document": "用标签过滤规则来过滤指标，规则中包含标签名 LabelName、标签值 LabelValue、操作符 Operator（0代表相等，1代表不等）",
           "example": "[{\"LabelName\":\"Method\",\"Operator\":0, \"LabelValue\":\"GET\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
@@ -4585,8 +4581,7 @@
           "member": "string",
           "name": "GroupBy",
           "required": false,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -5075,26 +5070,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "label名字",
+          "document": "标签名",
           "example": "service",
           "member": "string",
           "name": "LabelName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "label值",
-          "example": "http://www.baidu.com",
+          "document": "标签值",
+          "example": "http://mockhttpbin.pts.svc.cluster.local/get",
           "member": "string",
           "name": "LabelValue",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "LabelWithValues": {
       "document": "标签及对应的值",
@@ -6991,8 +6988,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件 ID",
-          "example": "file-xx",
+          "document": "文件 ID。其值应为前序步骤上传该文件到 cos 桶后，文件在 cos 桶中的相应目录",
+          "example": "file-03874f00",
           "member": "string",
           "name": "FileId",
           "required": true,
@@ -7001,7 +6998,7 @@
         {
           "disabled": false,
           "document": "项目 ID",
-          "example": "project-xx",
+          "example": "project-btksohr0",
           "member": "string",
           "name": "ProjectId",
           "required": true,
@@ -7010,7 +7007,7 @@
         {
           "disabled": false,
           "document": "场景 ID 数组",
-          "example": "[\"scenario-xx\"]",
+          "example": "[\"scenario-j1u85ixm\"]",
           "member": "string",
           "name": "ScenarioIds",
           "required": false,
@@ -7180,7 +7177,7 @@
         },
         {
           "disabled": false,
-          "document": "压测引擎类型",
+          "document": "压测场景的模式类型。取值范围：pts-http 代表简单模式，pts-js 代表脚本模式，pts-jmeter 代表 JMeter 模式。",
           "example": "k6",
           "member": "string",
           "name": "Type",

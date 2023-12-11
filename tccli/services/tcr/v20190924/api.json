@@ -350,13 +350,6 @@
       "output": "DescribeChartDownloadInfoResponse",
       "status": "online"
     },
-    "DescribeCustomAccounts": {
-      "document": "接口未使用\n\n查询自定义账号",
-      "input": "DescribeCustomAccountsRequest",
-      "name": "查询自定义账号",
-      "output": "DescribeCustomAccountsResponse",
-      "status": "deprecated"
-    },
     "DescribeExternalEndpointStatus": {
       "document": "查询实例公网访问入口状态",
       "input": "DescribeExternalEndpointStatusRequest",
@@ -2457,82 +2450,6 @@
       ],
       "type": "object"
     },
-    "CustomAccount": {
-      "document": "自定义账户",
-      "members": [
-        {
-          "disabled": false,
-          "document": "自定义账户名\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "tcr$robot",
-          "member": "string",
-          "name": "Name",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "描述\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "string",
-          "name": "Description",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "是否禁用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "false",
-          "member": "bool",
-          "name": "Disable",
-          "required": false,
-          "type": "bool",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "1676897989",
-          "member": "int64",
-          "name": "ExpiresAt",
-          "required": false,
-          "type": "int",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-02-14T07:14:43+08:00",
-          "member": "datetime_iso",
-          "name": "CreateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "2023-02-14T07:14:43+08:00",
-          "member": "datetime_iso",
-          "name": "UpdateTime",
-          "required": false,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "策略\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "[     {       \"Resource\": \"library\",       \"Actions\": [         \"tcr:PushRepository\",          \"tcr:PullRepository\"       ]     }   ]",
-          "member": "Permission",
-          "name": "Permissions",
-          "required": false,
-          "type": "list",
-          "value_allowed_null": true
-        }
-      ],
-      "usage": "both"
-    },
     "CustomizedDomainInfo": {
       "document": "自定义域名信息",
       "members": [
@@ -3710,96 +3627,6 @@
           "name": "PreSignedDownloadURL",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCustomAccountsRequest": {
-      "document": "DescribeCustomAccounts请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "实例Id",
-          "example": "tcr-xxx",
-          "member": "string",
-          "name": "RegistryId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "列出所有自定义账户",
-          "example": "无",
-          "member": "bool",
-          "name": "All",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "填充策略",
-          "example": "false",
-          "member": "bool",
-          "name": "EmbedPermission",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
-          "document": "过滤条件",
-          "example": "无",
-          "member": "Filter",
-          "name": "Filters",
-          "required": false,
-          "type": "list"
-        },
-        {
-          "disabled": false,
-          "document": "偏移量,默认0",
-          "example": "0",
-          "member": "int64",
-          "name": "Offset",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
-          "document": "最大输出条数，默认20，最大为100",
-          "example": "20",
-          "member": "int64",
-          "name": "Limit",
-          "required": false,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeCustomAccountsResponse": {
-      "document": "DescribeCustomAccounts返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "自定义账户列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
-          "member": "CustomAccount",
-          "name": "CustomAccounts",
-          "type": "list",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "自定义账户数量",
-          "example": "20",
-          "member": "int64",
-          "name": "TotalCount",
-          "type": "int",
           "value_allowed_null": false
         },
         {

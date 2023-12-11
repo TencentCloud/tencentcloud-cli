@@ -6,14 +6,14 @@ Input:
 
 ```
 tccli monitor DestroyPrometheusInstance --cli-unfold-argument  \
-    --InstanceId prom-w3rkj7835b
+    --InstanceId prom-abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc"
+        "RequestId": "eac6b301-a322-493a-8e36-83b295459397"
     }
 }
 ```

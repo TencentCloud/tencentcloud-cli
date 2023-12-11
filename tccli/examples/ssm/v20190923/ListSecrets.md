@@ -17,47 +17,30 @@ Output:
         "TotalCount": 1,
         "SecretMetadatas": [
             {
-                "Status": "xx",
-                "Description": "xx",
-                "AssociatedInstanceIDs": [
-                    "xx"
-                ],
+                "SecretName": "abc",
+                "Description": "abc",
+                "KmsKeyId": "abc",
                 "CreateUin": 1,
-                "ProjectID": 0,
-                "ProductName": "xx",
-                "RotationStatus": 0,
-                "SecretType": 0,
-                "KmsKeyId": "xx",
-                "KmsKeyType": "xx",
-                "SecretName": "xx",
-                "ResourceName": "xx",
+                "Status": "abc",
                 "DeleteTime": 1,
                 "CreateTime": 1,
-                "NextRotationTime": 1,
-                "TargetUin": 0
-            },
-            {
-                "Status": "xx",
-                "Description": "xx",
-                "AssociatedInstanceIDs": [
-                    "xx"
-                ],
-                "CreateUin": 1,
-                "SecretName": "xx",
-                "KmsKeyType": "xx",
-                "ProductName": "xx",
-                "SecretType": 0,
-                "KmsKeyId": "xx",
+                "KmsKeyType": "abc",
                 "RotationStatus": 0,
-                "ProjectID": 0,
-                "ResourceName": "xx",
-                "DeleteTime": 1,
-                "CreateTime": 1,
                 "NextRotationTime": 1,
-                "TargetUin": 0
+                "SecretType": 0,
+                "ProductName": "abc",
+                "ResourceName": "abc",
+                "ProjectID": 0,
+                "AssociatedInstanceIDs": [
+                    "abc"
+                ],
+                "TargetUin": 1,
+                "RotationFrequency": 0,
+                "ResourceID": "abc",
+                "RotationBeginTime": "abc"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -336,7 +336,7 @@
         {
           "disabled": false,
           "document": "证件号码。",
-          "example": "无",
+          "example": "430****1111",
           "member": "string",
           "name": "CertificateCode",
           "output_required": true,
@@ -347,7 +347,7 @@
         {
           "disabled": false,
           "document": "证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 中国港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 中国港澳居住证。\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。",
-          "example": "无",
+          "example": "SFZ",
           "member": "string",
           "name": "CertificateType",
           "output_required": true,
@@ -358,7 +358,7 @@
         {
           "disabled": false,
           "document": "证件照片地址。",
-          "example": "无",
+          "example": "http://img.ds.com/dsa.jpg",
           "member": "string",
           "name": "ImgUrl",
           "output_required": true,
@@ -369,7 +369,7 @@
         {
           "disabled": false,
           "document": "原始照片地址\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://img.ds.com/dsa.jpg",
           "member": "string",
           "name": "OriginImgUrl",
           "output_required": true,
@@ -380,7 +380,7 @@
         {
           "disabled": false,
           "document": "联系人证件号码。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "430****1111",
           "member": "string",
           "name": "RegistrantCertificateCode",
           "output_required": true,
@@ -391,7 +391,7 @@
         {
           "disabled": false,
           "document": "联系人证件类型。\nSFZ: 身份证。\nHZ: 护照。\nTXZ: 中国港澳居民来往内地通行证。\nTWSFZ: 中国台湾居民来往大陆通行证。\nGWSFZ: 外国人永久居留身份证。\nORG: 组织机构代码证\nYYZZ: 工商营业执照。\nTYDMZ: 统一社会信用代码证书。\nBDDH: 部队代号\nJDXKZ: 军队单位对外有偿服务许可证。\nSYZS: 事业单位法定代表人证书。\nGWCZDJZ: 外国企业常驻代表机构登记证。\nSTDJZ: 社会团体法定代表人登记证书。\nZJDJZ: 宗教活动场所登记证。\nMBDJZ: 民办非企业单位登记证书。\nJJDJZ: 基金会法定代表人登记证书。\nLSXKZ: 律师事务所执业许可证。\nGWZHDJZ: 外国在华文化中心登记证。\nGWLYDJZ: 外国政府旅游部门常驻代表机构批准登记证。\nSFXKZ: 司法鉴定许可证\nGWJGZJ: 外国机构证件。\nSHFWJGZ: 社会服务机构登记证书。\nMBXXXKZ: 民办学校办学许可证。\nYLJGXKZ: 医疗机构执业许可证。\nGAJZZ: 中国港澳居住证。\nTWJZZ: 中国台湾居住证。\nQTTYDM: 其他-统一社会信用代码证书。\nGZJGZY: 公证机构执业证。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "SFZ",
           "member": "string",
           "name": "RegistrantCertificateType",
           "output_required": true,
@@ -402,7 +402,7 @@
         {
           "disabled": false,
           "document": "联系人证件照片地址。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "http://img.ds.com/dsa.jpg",
           "member": "string",
           "name": "RegistrantImgUrl",
           "output_required": true,
@@ -609,9 +609,10 @@
         {
           "disabled": false,
           "document": "注册人（中文）",
-          "example": "",
+          "example": "张某某",
           "member": "string",
           "name": "OrganizationNameCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -619,9 +620,10 @@
         {
           "disabled": false,
           "document": "注册人（英文）",
-          "example": "",
+          "example": "zhangmoumou",
           "member": "string",
           "name": "OrganizationName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -629,9 +631,10 @@
         {
           "disabled": false,
           "document": "联系人（中文）",
-          "example": "",
+          "example": "张某某",
           "member": "string",
           "name": "RegistrantNameCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -639,9 +642,10 @@
         {
           "disabled": false,
           "document": "联系人（英文）",
-          "example": "",
+          "example": "zhangmoumou",
           "member": "string",
           "name": "RegistrantName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -649,9 +653,10 @@
         {
           "disabled": false,
           "document": "省份（中文）",
-          "example": "",
+          "example": "广东省",
           "member": "string",
           "name": "ProvinceCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -659,9 +664,10 @@
         {
           "disabled": false,
           "document": "城市（中文）",
-          "example": "",
+          "example": "深圳市",
           "member": "string",
           "name": "CityCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -669,9 +675,10 @@
         {
           "disabled": false,
           "document": "街道（中文）",
-          "example": "",
+          "example": "南山一号",
           "member": "string",
           "name": "StreetCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -679,9 +686,10 @@
         {
           "disabled": false,
           "document": "街道（英文）",
-          "example": "",
+          "example": "nanshanyihao",
           "member": "string",
           "name": "Street",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -689,9 +697,10 @@
         {
           "disabled": false,
           "document": "国家（中文）",
-          "example": "",
+          "example": "中国",
           "member": "string",
           "name": "CountryCN",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -699,9 +708,10 @@
         {
           "disabled": false,
           "document": "联系人手机号",
-          "example": "",
+          "example": "138****8888",
           "member": "string",
           "name": "Telephone",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -709,9 +719,10 @@
         {
           "disabled": false,
           "document": "联系人邮箱",
-          "example": "",
+          "example": "123***@qq.com",
           "member": "string",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -719,9 +730,10 @@
         {
           "disabled": false,
           "document": "邮编",
-          "example": "",
+          "example": "400000",
           "member": "string",
           "name": "ZipCode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -729,9 +741,10 @@
         {
           "disabled": false,
           "document": "用户类型 E:组织， I:个人",
-          "example": "",
+          "example": "I",
           "member": "string",
           "name": "RegistrantType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -739,9 +752,10 @@
         {
           "disabled": false,
           "document": "省份（英文）。作为入参时可以不填",
-          "example": "",
+          "example": "guangdongsheng",
           "member": "string",
           "name": "Province",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -749,9 +763,10 @@
         {
           "disabled": false,
           "document": "城市（英文）。作为入参时可以不填",
-          "example": "",
+          "example": "shenzhenshi",
           "member": "string",
           "name": "City",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -759,9 +774,10 @@
         {
           "disabled": false,
           "document": "国家（英文）。作为入参时可以不填",
-          "example": "",
+          "example": "zhongguo",
           "member": "string",
           "name": "Country",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -2869,110 +2885,110 @@
         {
           "disabled": false,
           "document": "模板ID",
-          "example": "无",
+          "example": "template-01234",
           "member": "string",
           "name": "TemplateId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "认证状态：未实名认证:NotUpload, 实名审核中:InAudit，已实名认证:Approved，实名审核失败:Reject",
-          "example": "无",
+          "example": "InAudit",
           "member": "string",
           "name": "AuditStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "无",
+          "example": "2020-10-01 00:00:00",
           "member": "string",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "无",
+          "example": "2020-10-01 00:00:00",
           "member": "string",
           "name": "UpdatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "用户UIN",
-          "example": "无",
+          "example": "111111",
           "member": "string",
           "name": "UserUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "是否是默认模板: 是:yes，否:no",
-          "example": "无",
+          "example": "no",
           "member": "string",
           "name": "IsDefault",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "认证失败原因",
-          "example": "无",
+          "example": "审核失败",
           "member": "string",
           "name": "AuditReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "认证信息",
-          "example": "无",
+          "example": "[]",
           "member": "CertificateInfo",
           "name": "CertificateInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "联系人信息",
-          "example": "无",
+          "example": "[]",
           "member": "ContactInfo",
           "name": "ContactInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板是否符合规范， 1是 0 否",
-          "example": "无",
+          "example": " 1",
           "member": "int64",
           "name": "IsValidTemplate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "不符合规范原因",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "InvalidReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2982,7 +2998,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsBlack",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }

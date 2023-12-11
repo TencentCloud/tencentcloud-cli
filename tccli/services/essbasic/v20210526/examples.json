@@ -94,6 +94,24 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"SignatureTypes\": [\n        0,\n        1\n    ],\n    \"ApproverSignTypes\": [\n        1,\n        3\n    ],\n    \"FlowIds\": [\n        \"yDwFkUUckpstzjhfUugNAWf1KibXqS26\"\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"不支持非当前企业发起的合同，生成批量签署链接。不满足合同:[\\\"yDwFkUUckpstzjhfUugNAWf1KibXqS26\\\"]\"\n        },\n        \"RequestId\": \"s1698**02\"\n    }\n}",
         "title": "错误示例-创建签署链接的企业不是待批量签署合同的发起方"
+      },
+      {
+        "document": "1. 为个人用户生成合同组H5批量签署链接\n2. 使用默认的签名类型\n3. 使用默认的签署方式\n4. 默认跳转到合同列表页",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"FlowGroupId\": \"yDSL9UUckpo*****jwSsug2y3cW\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfo\": {\n            \"ApproverType\": \"PERSON\",\n            \"LongUrl\": \"https://quick.qian.tencent.cn/guide?Code=yDwi0**BWW4MYlpI&CodeType=QUICK&shortKey=yDwi**KF45&token=C**E\",\n            \"Mobile\": \"13200000000\",\n            \"Name\": \"典子谦\",\n            \"SignUrl\": \"https://test.essurl.cn/C**E\"\n        },\n        \"RequestId\": \"s16986**08\"\n    }\n}",
+        "title": "为个人用户生成合同组H5批量签署链接"
+      },
+      {
+        "document": "1. 指定了合同流程ID信息\n2. 指定了合同组ID信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    },\n    \"FlowGroupId\": \"yDSL9UUckpo*****jwSsug2y3cW\",\n    \"FlowIds\": [\n        \"yDRSRUUgygj6******7wUuaaadqccc\",\n        \"yDRSRUUgygj6rq***Cpxxxsdfa\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"请勿同时传入流程ID和合同组ID，请检查参数后再试\"\n        },\n        \"RequestId\": \"s17007305****493\"\n    }\n}",
+        "title": "错误示例-为个人用户生成H5批量签署链接，既传入了合同流程ID信息，又传入了合同组ID信息"
+      },
+      {
+        "document": "1. 没有指定合同流程ID信息\n2. 没有指定合同组ID信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreateBatchQuickSignUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6rq7wUuO4zjECxndqQApl\"\n    },\n    \"FlowApproverInfo\": {\n        \"ApproverType\": \"PERSON\",\n        \"Mobile\": \"13200000000\",\n        \"Name\": \"典子谦\",\n        \"IdCardNumber\": \"620000198802020000\",\n        \"IdCardType\": \"ID_CARD\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"流程ID和合同组ID不能同时为空，请检查参数后再试\"\n        },\n        \"RequestId\": \"s1700727885657576147\"\n    }\n}",
+        "title": "错误示例-为个人用户生成H5批量签署链接，没有指定合同流程ID信息，也没有指定合同组ID信息"
       }
     ],
     "ChannelCreateBatchSignUrl": [
@@ -704,10 +722,16 @@
     ],
     "DescribeChannelOrganizations": [
       {
-        "document": "查询渠道子客企业信息",
+        "document": "批量查询应用下的所有企业信息",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelOrganizations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
-        "output": "{\n    \"Response\": {\n        \"ChannelOrganizationInfos\": [\n            {\n                \"AdminMobile\": \"186****0000\",\n                \"AdminName\": \"张三\",\n                \"AdminOpenId\": \"zhangsan\",\n                \"AuthorizationStatus\": \"VERIFYING\",\n                \"AuthorizationType\": \"AuthorizationLegalPerson\",\n                \"LegalName\": \"李四\",\n                \"LegalOpenId\": \"lisi\",\n                \"OrganizationId\": \"yDwFqUUckpxxxxxxxxxxxxRvShTIZ3e\",\n                \"OrganizationName\": \"渠道测试企业\",\n                \"OrganizationOpenId\": \"dianziqian_orgopenid\",\n                \"UnifiedSocialCreditCode\": \"913xxxxxxxxxxxxxx5W\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1701931761617688110\",\n        \"Total\": 1\n    }\n}",
-        "title": "查询渠道子客企业信息"
+        "output": "{\n    \"Response\": {\n        \"ChannelOrganizationInfos\": [\n            {\n                \"AdminMobile\": \"186****0000\",\n                \"AdminName\": \"典子谦\",\n                \"AdminOpenId\": \"n9527\",\n                \"AuthorizationStatus\": \"VERIFYING\",\n                \"AuthorizationType\": \"AuthorizationLegalPerson\",\n                \"LegalName\": \"典子谦\",\n                \"LegalOpenId\": \"n9527\",\n                \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\",\n                \"OrganizationName\": \"典子谦示例企业\",\n                \"OrganizationOpenId\": \"org_dianziqian\",\n                \"UnifiedSocialCreditCode\": \"X1440101304662708B\"\n            },\n            {\n                \"AdminMobile\": \"151****0000\",\n                \"AdminName\": \"李四\",\n                \"AdminOpenId\": \"org_lisi\",\n                \"AuthorizationStatus\": \"VERIFYING\",\n                \"AuthorizationType\": \"AuthorizationLegalPerson\",\n                \"LegalName\": \"张三\",\n                \"LegalOpenId\": \"n02468\",\n                \"OrganizationId\": \"yDwFqUUckpxxxxxxxxxxxxRvShTIZ3e\",\n                \"OrganizationName\": \"张三示例企业\",\n                \"OrganizationOpenId\": \"org_zhansan\",\n                \"UnifiedSocialCreditCode\": \"X1440106MA59B1269X\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1701931761617688110\",\n        \"Total\": 2\n    }\n}",
+        "title": "批量查询应用下的所有企业信息"
+      },
+      {
+        "document": "查询单个企业的企业信息",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelOrganizations\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"OrganizationOpenId\": \"org_dianziqian\",\n    \"Offset\": 0,\n    \"Limit\": 20\n}",
+        "output": "{\n    \"Response\": {\n        \"ChannelOrganizationInfos\": [\n            {\n                \"AdminMobile\": \"186****0000\",\n                \"AdminName\": \"典子谦\",\n                \"AdminOpenId\": \"n9527\",\n                \"AuthorizationStatus\": \"VERIFYING\",\n                \"AuthorizationType\": \"AuthorizationLegalPerson\",\n                \"LegalName\": \"典子谦\",\n                \"LegalOpenId\": \"n9527\",\n                \"OrganizationId\": \"yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF\",\n                \"OrganizationName\": \"典子谦示例企业\",\n                \"OrganizationOpenId\": \"org_dianziqian\",\n                \"UnifiedSocialCreditCode\": \"X1440101304662708B\"\n            }\n        ],\n        \"Limit\": 20,\n        \"Offset\": 0,\n        \"RequestId\": \"s1701931761617688110\",\n        \"Total\": 1\n    }\n}",
+        "title": "查询单个企业的企业信息"
       }
     ],
     "DescribeChannelSealPolicyWorkflowUrl": [

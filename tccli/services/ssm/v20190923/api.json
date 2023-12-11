@@ -905,6 +905,7 @@
           "example": "test",
           "member": "string",
           "name": "SecretName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -914,6 +915,7 @@
           "example": "description",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -923,6 +925,7 @@
           "example": "13437ab9-e002-11e9-9936-5254006d0810",
           "member": "string",
           "name": "KmsKeyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -932,6 +935,7 @@
           "example": "3350000000",
           "member": "uint64",
           "name": "CreateUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -941,6 +945,7 @@
           "example": "Disabled",
           "member": "string",
           "name": "Status",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -950,6 +955,7 @@
           "example": "1",
           "member": "uint64",
           "name": "DeleteTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -959,15 +965,17 @@
           "example": "1574160561",
           "member": "uint64",
           "name": "CreateTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "0 --  用户自定义凭据类型；1 -- 数据库凭据类型；2 -- SSH密钥对凭据类型；3 -- 云API密钥（AKSK）凭据类型（使用此功能需要联系云助手单独开启白名单）；4 -- Redis类型凭据。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "SecretType",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -977,6 +985,7 @@
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -986,6 +995,7 @@
           "example": "cdb-xxxxxxx",
           "member": "string",
           "name": "ResourceID",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -995,6 +1005,7 @@
           "example": "True",
           "member": "bool",
           "name": "RotationStatus",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1004,6 +1015,7 @@
           "example": "1",
           "member": "int64",
           "name": "RotationFrequency",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1013,6 +1025,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1022,6 +1035,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProjectID",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1031,6 +1045,7 @@
           "example": "无",
           "member": "string",
           "name": "AssociatedInstanceIDs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1040,6 +1055,7 @@
           "example": "12345",
           "member": "uint64",
           "name": "TargetUin",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1049,6 +1065,7 @@
           "example": "无",
           "member": "string",
           "name": "AdditionalConfig",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1071,11 +1088,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "支持的产品列表。",
-          "example": "[\"Mysql\"]",
+          "document": "支持的所有云产品列表。\n每种云产品与凭据类型的对应关系如下：\n当SecretType为1时，支持的云产品列表包括：Mysql、Tdsql-mysql、Tdsql_C_Mysql；\n当SecretType为2时，支持的产品列表为：Cvm；\n当SecretType为3时，支持的产品列表为：Cam（此功能的使用需要联系云助手单独开始白名单）；\n当SecretType为4时，支持的产品列表为：Redis。",
+          "example": "[\"Mysql\", \"Tdsql-mysql\", \"Tdsql_C_Mysql\", \"Cvm\", \"Cam\", \"Redis\"]",
           "member": "string",
           "name": "Products",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1085,7 +1102,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1533,7 +1550,7 @@
         },
         {
           "disabled": false,
-          "document": "此参数仅在SecretType参数值为1时生效，\n当SecretType值为1时：\n如果ProductName值为空，则表示查询所有类型的云产品凭据\n如果ProductName值为Mysql，则表示查询Mysql数据库凭据\n如果ProductName值为Tdsql-mysql，则表示查询Tdsql（Mysql版本）的凭据",
+          "document": "此参数仅在SecretType参数值为1时生效，\n当SecretType值为1时：\n如果ProductName值为空，则表示查询所有类型的云产品凭据；\n如果ProductName值为某个指定的云产品值如Mysql时，则表示查询Mysql数据库凭据；\n如果ProductName值为多个云产品值，如：Mysql,Tdsql-mysql,Tdsql_C_Mysql（多个值以英文逗号,分隔开）则表示查询三种云产品类型的凭据；\n支持的云产品列表请通过接口：DescribeSupportedProducts进行查询。",
           "example": "Mysql",
           "member": "string",
           "name": "ProductName",
@@ -1552,7 +1569,7 @@
           "example": "8",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1562,7 +1579,7 @@
           "example": "无",
           "member": "SecretMetadata",
           "name": "SecretMetadatas",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
