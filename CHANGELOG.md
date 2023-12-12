@@ -1,3 +1,202 @@
+# Release 3.0.902.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 52 次发布
+
+发布时间：2023-12-13 01:07:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeIpBlockList](http://document.tencentcloudapi.woa.com/document/product/1021/82818)
+
+新增数据结构：
+
+* [IpBlockData](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IpBlockData)
+
+
+
+## ICP备案(ba) 版本：2020-07-20
+
+### 第 2 次发布
+
+发布时间：2023-12-13 01:11:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeTldListInternal](http://document.tencentcloudapi.woa.com/document/product/243/82819)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 82 次发布
+
+发布时间：2023-12-13 01:19:16
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)
+
+	* 新增入参：BackupType
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 65 次发布
+
+发布时间：2023-12-13 01:31:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/15723)
+
+	* 新增入参：YuntiParameters
+
+
+
+
+## cxm(cxm) 版本：2017-03-12
+
+### 第 2 次发布
+
+发布时间：2023-12-13 01:37:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeReservedPacks](http://document.tencentcloudapi.woa.com/document/product/1752/82821)
+* [DescribeTask](http://document.tencentcloudapi.woa.com/document/product/1752/82830)
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
+* [RestoreInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82827)
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+* [StartInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82825)
+* [StashInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82824)
+* [StopInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82823)
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82822)
+
+新增数据结构：
+
+* [CpuTopology](http://document.tencentcloudapi.woa.com/document/product/1752/82730#CpuTopology)
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#DataDisk)
+* [ExtraAttribute](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ExtraAttribute)
+* [InstanceTypeQuota](http://document.tencentcloudapi.woa.com/document/product/1752/82730#InstanceTypeQuota)
+* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings)
+* [ReservedPack](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ReservedPack)
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#SystemDisk)
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 5 次发布
+
+发布时间：2023-12-13 01:56:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [StartInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82832)
+* [StopInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82831)
+
+
+
+## 轻量应用服务器(lighthouse) 版本：2020-03-24
+
+### 第 42 次发布
+
+发布时间：2023-12-13 02:06:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ResetInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47571)
+
+	* 新增入参：Containers
+
+
+修改数据结构：
+
+* [InstancePrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePrice)
+
+	* <font color="#dd0000">**修改成员**：</font>OriginalBundlePrice, OriginalPrice, Discount, DiscountPrice, Currency
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 6 次发布
+
+发布时间：2023-12-13 02:15:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetRunMetadataFile](http://document.tencentcloudapi.woa.com/document/product/1725/82466)
+
+	* 新增入参：Keys
+
+	* <font color="#dd0000">**修改入参**：</font>Key
+
+	* 新增出参：CosSignedUrls
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 85 次发布
+
+发布时间：2023-12-13 02:33:42
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
+
+	* 新增成员：OperationType
+
+
+
+
 # Release 3.0.901.1
 
 ## 云安全一体化平台(csip) 版本：2022-11-21

@@ -7,6 +7,78 @@
         "output": "{\n    \"Response\": {\n        \"InstanceSet\": [\n            {\n                \"CPU\": 400,\n                \"CreatedTime\": \"2023-07-06T07:55:10Z\",\n                \"HostIp\": \"50.4.4.54\",\n                \"ImageId\": \"img-eb30mz89\",\n                \"InstanceId\": \"eks-pgde84qh\",\n                \"InstanceName\": \"未命名\",\n                \"InstanceState\": \"RUNNING\",\n                \"InstanceType\": \"S5.LARGE8\",\n                \"Memory\": 8192,\n                \"OsName\": \"tlinux3.1x86_64\",\n                \"Placement\": {\n                    \"Zone\": \"ap-guangzhou-2\"\n                },\n                \"PrivateIpAddresses\": [\n                    \"172.16.0.47\"\n                ],\n                \"SecurityGroupIds\": [],\n                \"Uuid\": \"49a4b663-b17a-458d-8d5f-5701171cb4aa\",\n                \"VirtualPrivateCloud\": {\n                    \"InnerSubnetId\": 2285684,\n                    \"InnerVpcId\": 11121810,\n                    \"SubnetId\": \"subnet-nax03onu\",\n                    \"VpcId\": \"vpc-eckyx8r1\"\n                }\n            }\n        ],\n        \"RequestId\": \"6bbb875d-0c93-4161-9a98-262683e5c894\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询eks"
       }
+    ],
+    "DescribeReservedPacks": [
+      {
+        "document": "根据reserved-pack-id查询预扣包。",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeReservedPacks\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"reserved-pack-id\",\n            \"Values\": [\n                \"9e60dee8-fdf8-4afa-b538-d83bdf9c194f\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ReservedPackSet\": [\n            {\n                \"ReservedPackId\": \"9e60dee8-fdf8-4afa-b538-d83bdf9c194f\",\n                \"Zone\": \"ap-shanghai-4\",\n                \"InstanceType\": \"SA2.MEDIUM4\",\n                \"InstanceId\": \"\",\n                \"Pool\": \"qcloud\",\n                \"DisasterRecoverGroupIds\": [],\n                \"ReservedPackMatchId\": \"cls-cifbh7vh_eklet-subnet-lo6b5zu9\",\n                \"Status\": \"active\",\n                \"ReservedPackName\": \"eksri-hgy2noon\",\n                \"CreatedTime\": \"2023-04-23T02:55:10Z\"\n            }\n        ],\n        \"RequestId\": \"19775875-64d2-436a-b1d9-63b73da67d99\"\n    }\n}",
+        "title": "查询预扣包"
+      }
+    ],
+    "DescribeTask": [
+      {
+        "document": "根据任务id查询任务状态",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTask\n<公共请求参数>\n\n{\n    \"FlowId\": 991304405\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": \"RUNNING\",\n        \"RequestId\": \"ea165702-5042-4d64-8e76-aba1f163e337\"\n    }\n}",
+        "title": "查询任务状态"
+      }
+    ],
+    "DescribeZoneInstanceTypeInventory": [
+      {
+        "document": "查询内部领用实例机型库存",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeZoneInstanceTypeInventory\n<公共请求参数>\n\n{\n    \"Filters\": [\n        {\n            \"Name\": \"zone\",\n            \"Values\": [\n                \"ap-tianjin-2\"\n            ]\n        },\n        {\n            \"Name\": \"pool\",\n            \"Values\": [\n                \"qcloud_ziyan_eks\"\n            ]\n        },\n        {\n            \"Name\": \"instance-family\",\n            \"Values\": [\n                \"S5\"\n            ]\n        }\n    ],\n    \"UseLargeScaleCpuRes\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceTypeQuotaSet\": [\n            {\n                \"Zone\": \"ap-tianjin-2\",\n                \"InstanceType\": \"S5.16XLARGE192\",\n                \"Cpu\": 64,\n                \"Memory\": 192,\n                \"InstanceFamily\": \"S5\",\n                \"Gpu\": 0,\n                \"GpuCount\": 0,\n                \"Fpga\": 0,\n                \"Inventory\": 0,\n                \"ReservedInventory\": 0\n            },\n            {\n                \"Zone\": \"ap-tianjin-2\",\n                \"InstanceType\": \"S5.16XLARGE256\",\n                \"Cpu\": 64,\n                \"Memory\": 256,\n                \"InstanceFamily\": \"S5\",\n                \"Gpu\": 0,\n                \"GpuCount\": 0,\n                \"Fpga\": 0,\n                \"Inventory\": 0,\n                \"ReservedInventory\": 0\n            },\n            {\n                \"Zone\": \"ap-tianjin-2\",\n                \"InstanceType\": \"S5.19XLARGE256\",\n                \"Cpu\": 76,\n                \"Memory\": 256,\n                \"InstanceFamily\": \"S5\",\n                \"Gpu\": 0,\n                \"GpuCount\": 0,\n                \"Fpga\": 0,\n                \"Inventory\": 0,\n                \"ReservedInventory\": 0\n            }\n        ],\n        \"RequestId\": \"96ac7e0d-778b-4ed3-95a4-e9b355065292\"\n    }\n}",
+        "title": "查询内部领用实例机型库存"
+      }
+    ],
+    "RestoreInstances": [
+      {
+        "document": "对贮藏实例进行恢复。",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestoreInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jknflanf\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"lkjfjdlne-nfklelfnlkn-nlfnkdnflnk-nienflnalnnf\"\n    }\n}",
+        "title": "对贮藏实例进行恢复。"
+      }
+    ],
+    "RunInstances": [
+      {
+        "document": "创建eks",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RunInstances\n<公共请求参数>\n\n{\n    \"DryRun\": false,\n    \"InstanceCount\": 1,\n    \"InstanceIds\": [\n        \"eks-a3fvbrt7\"\n    ],\n    \"ImageId\": \"img-eb30mz89\",\n    \"HostName\": \"diluczhang\",\n    \"InstanceType\": \"S5.MEDIUM2\",\n    \"PurchaseSource\": \"eks\",\n    \"SecurityGroupIds\": [\n        \"sg-rjgrzrf6\"\n    ],\n    \"UserData\": \"IyEvYmluL2Jhc2gKRE...\",\n    \"ProductCategory\": \"eks\",\n    \"CamRoleName\": \"TKE_QCSLinkedRoleInEKSLog\",\n    \"SoldPool\": \"plain\",\n    \"ReservedPackMatchId\": \"cls-ouh23thx_eklet-subnet-3x3weezp-743923\",\n    \"SystemDisk\": {\n        \"DiskId\": \"disk-0qxpl3ni\"\n    },\n    \"VirtualPrivateCloud\": {\n        \"VpcId\": \"vpc-7j6i9bb9\",\n        \"SubnetId\": \"subnet-5gnb3uz4\",\n        \"AsVpcGateway\": false,\n        \"SpecifyIpAddresses\": [\n            \"30.0.0.26\"\n        ]\n    },\n    \"Placement\": {\n        \"Zone\": \"ap-jinan-ec-1\",\n        \"ProjectId\": 0\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceIds\": [\n            \"eks-a3fvbrt7\"\n        ],\n        \"TaskId\": 103241254,\n        \"RequestId\": \"ebcc1954-c25d-4338-a592-9811988593e8\"\n    }\n}",
+        "title": "创建eks"
+      }
+    ],
+    "StartInstances": [
+      {
+        "document": "本示例用于启动一个eks实例。",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"eks-2v5gimnx\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1171317946,\n        \"RequestId\": \"2001a19a-2284-43eb-aca6-883785692653\"\n    }\n}",
+        "title": "启动eks实例"
+      }
+    ],
+    "StashInstances": [
+      {
+        "document": "贮藏实例",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StashInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"hai-jknknfnd\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"lkjfkldna-jlknfn-fnklenflk-nlainenasinfg\"\n    }\n}",
+        "title": "贮藏实例"
+      }
+    ],
+    "StopInstances": [
+      {
+        "document": "本示例用于关闭一个eks实例。",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"eks-2v5gimnx\"\n    ],\n    \"StopType\": \"SOFT_FIRST\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 1171317945,\n        \"RequestId\": \"79bf28a4-2695-4d0e-92a9-8c5ec802b476\"\n    }\n}",
+        "title": "关闭eks实例"
+      }
+    ],
+    "TerminateInstances": [
+      {
+        "document": "销毁eks",
+        "input": "POST / HTTP/1.1\nHost: cxm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: TerminateInstances\n<公共请求参数>\n\n{\n    \"StopType\": \"HARD\",\n    \"ForceDestroy\": false,\n    \"InstanceIds\": [\n        \"eks-m9u4q4qh\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 987986917,\n        \"RequestId\": \"2295bcd1-2144-4ddd-8052-b6a1bb6d71d0\"\n    }\n}",
+        "title": "销毁eks"
+      }
     ]
   },
   "version": "1.0"

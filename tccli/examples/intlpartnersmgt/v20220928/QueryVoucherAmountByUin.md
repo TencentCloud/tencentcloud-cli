@@ -15,12 +15,12 @@ Output:
     "Response": {
         "Data": [
             {
-                "TotalAmount": 0.0,
                 "ClientUin": 0,
-                "RemainAmount": 0.0
+                "TotalAmount": 0,
+                "RemainAmount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

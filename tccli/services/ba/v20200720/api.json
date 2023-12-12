@@ -14,6 +14,13 @@
       "output": "DescribeGetAuthInfoResponse",
       "status": "online"
     },
+    "DescribeTldListInternal": {
+      "document": "内部-查询TLD列表",
+      "input": "DescribeTldListInternalRequest",
+      "name": "内部-查询TLD列表",
+      "output": "DescribeTldListInternalResponse",
+      "status": "online"
+    },
     "SyncIcpOrderWebInfo": {
       "document": "将备案ICP订单下的一个网站信息 同步给订单下其他网站，需要被同步的网站被检查通过(isCheck:true)；\n只有指定的网站信息字段能被同步",
       "input": "SyncIcpOrderWebInfoRequest",
@@ -101,6 +108,43 @@
           "name": "Type",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTldListInternalRequest": {
+      "document": "DescribeTldListInternal请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeTldListInternalResponse": {
+      "document": "DescribeTldListInternal返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备案支持的支持的TLD",
+          "example": "[\"com\",\"co.cn\"]",
+          "member": "string",
+          "name": "IcpTldList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有的TLD-旧",
+          "example": "[\"com\",\"co.cn\"]",
+          "member": "string",
+          "name": "TldList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
