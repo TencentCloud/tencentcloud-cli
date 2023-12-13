@@ -50,9 +50,9 @@
       "status": "online"
     },
     "CreateCcGeoIPBlockConfig": {
-      "document": "新建cc防护的地域封禁配置",
+      "document": "新建CC防护的地域封禁配置",
       "input": "CreateCcGeoIPBlockConfigRequest",
-      "name": "新建cc防护的地域封禁配置",
+      "name": "新建CC防护的地域封禁配置",
       "output": "CreateCcGeoIPBlockConfigResponse",
       "status": "online"
     },
@@ -383,6 +383,13 @@
       "input": "DescribeDefaultAlarmThresholdRequest",
       "name": "获取单IP默认告警阈值配置",
       "output": "DescribeDefaultAlarmThresholdResponse",
+      "status": "online"
+    },
+    "DescribeIpBlockList": {
+      "document": "获取IP封堵列表",
+      "input": "DescribeIpBlockListRequest",
+      "name": "获取IP封堵列表",
+      "output": "DescribeIpBlockListResponse",
       "status": "online"
     },
     "DescribeL7RulesBySSLCertId": {
@@ -6148,6 +6155,33 @@
       ],
       "type": "object"
     },
+    "DescribeIpBlockListRequest": {
+      "document": "DescribeIpBlockList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeIpBlockListResponse": {
+      "document": "DescribeIpBlockList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP封堵列表",
+          "example": "无",
+          "member": "IpBlockData",
+          "name": "List",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeL7RulesBySSLCertIdRequest": {
       "document": "DescribeL7RulesBySSLCertId请求参数结构体",
       "members": [
@@ -8783,6 +8817,72 @@
         }
       ],
       "usage": "both"
+    },
+    "IpBlockData": {
+      "document": "IP封堵记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "状态（Blocked：被封堵；UnBlocking：解封中；UnBlockFailed：解封失败）",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源IP",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "封堵时间",
+          "example": "无",
+          "member": "datetime",
+          "name": "BlockTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解封时间（预计解封时间）",
+          "example": "无",
+          "member": "datetime",
+          "name": "UnBlockTime",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "解封类型（user：自助解封；auto：自动解封； update：升级解封；bind：绑定高防包解封）",
+          "example": "无",
+          "member": "string",
+          "name": "ActionType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高防标记，0：非高防，1：高防",
+          "example": "10000",
+          "member": "uint64",
+          "name": "ProtectFlag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "IpSegment": {
       "document": "ip段数据结构",

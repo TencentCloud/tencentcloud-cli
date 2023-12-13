@@ -446,6 +446,14 @@
         "title": "获取单IP默认告警阈值配置"
       }
     ],
+    "DescribeIpBlockList": [
+      {
+        "document": "",
+        "input": "https://antiddos.tencentcloudapi.com/?Action=DescribeIpBlockList\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Status\": \"xx\",\n                \"Ip\": \"xx\",\n                \"UnBlockTime\": \"2020-09-22 00:00:00\",\n                \"ActionType\": \"xx\",\n                \"BlockTime\": \"2020-09-22 00:00:00\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "获取IP封堵列表"
+      }
+    ],
     "DescribeL7RulesBySSLCertId": [
       {
         "document": "",

@@ -7820,6 +7820,15 @@
           "name": "BackupId",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "备份类型 data: 数据备份 binlog:日志备份，默认为data",
+          "example": "binlog",
+          "member": "string",
+          "name": "BackupType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

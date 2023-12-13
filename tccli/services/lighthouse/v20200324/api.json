@@ -1141,7 +1141,7 @@
         {
           "disabled": false,
           "document": "镜像图片 URL。",
-          "example": "无",
+          "example": "https://cloudcache.tencent-cloud.com/open_proj/proj_qcloud_v2/tc-console/tea-static-lighthouse/src/styles/slice/windows-server.svg",
           "member": "string",
           "name": "ImageUrl",
           "output_required": true,
@@ -2416,7 +2416,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则ID列表。",
-          "example": "无",
+          "example": "[\"lhftr-baaj68clja\"]",
           "member": "string",
           "name": "TemplateRuleIds",
           "required": true,
@@ -2497,30 +2497,30 @@
         {
           "disabled": false,
           "document": "限制操作名。",
-          "example": "",
+          "example": "StartInstances",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "限制操作消息码。",
-          "example": "",
+          "example": "UnsupportedOperation.InvalidInstanceState",
           "member": "string",
           "name": "Code",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "限制操作消息。",
-          "example": "",
+          "example": "The request does not support the instance `lhins-ruy9d2tw` which is in the state of `RUNNING`.",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2800,7 +2800,7 @@
         {
           "disabled": false,
           "document": "可用区列表。默认为全部可用区。",
-          "example": "无",
+          "example": "[\"ap-guangzhou-1\",\"ap-guangzhou-2\"]",
           "member": "string",
           "name": "Zones",
           "required": false,
@@ -3156,7 +3156,7 @@
         {
           "disabled": false,
           "document": "云硬盘列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据云硬盘的创建时间排序。 \"EXPIRED_TIME\"：依据云硬盘的到期时间排序。\"DISK_SIZE\"：依据云硬盘的大小排序。默认按云硬盘创建时间排序。",
-          "example": "CREATED_FIELD",
+          "example": "CREATED_TIME",
           "member": "string",
           "name": "OrderField",
           "required": false,
@@ -3183,6 +3183,7 @@
           "example": "无",
           "member": "Disk",
           "name": "DiskSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3192,6 +3193,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3284,7 +3286,7 @@
         {
           "disabled": false,
           "document": "Docker活动ID列表。",
-          "example": "无",
+          "example": "[\"lhda-nn82v77w\"]",
           "member": "string",
           "name": "ActivityIds",
           "required": false,
@@ -3338,7 +3340,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3348,7 +3350,7 @@
           "example": "无",
           "member": "DockerActivity",
           "name": "DockerActivitySet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3436,9 +3438,10 @@
         {
           "disabled": false,
           "document": "Docker容器详情，json字符串base64编码。",
-          "example": "无",
+          "example": "WwogICAgewogICAgICAgICJJZCI6ICI4MDllOWQ0MDE0ZjA4ODExNzc5YzA3NjM5ZWMxM2E1M2VlNzBiYTE2NjIwMTYxMTI5ODYxMWM4ODNlNTUzNDE1IiwKICAgICAgICAiQ3JlYXRlZCI6ICIyMDIxLTA2LTAzVDA4OjEzOjI2LjE4MzkyMjA1M1oiLAogICAgICAgICJQYXRoIjogIi9kb2NrZXItZW50cn",
           "member": "string",
           "name": "ContainerDetail",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3856,7 +3859,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID列表。",
-          "example": "无",
+          "example": "[\"lhft-6brh0ciy\"]",
           "member": "string",
           "name": "TemplateIds",
           "required": false,
@@ -5564,7 +5567,7 @@
           "example": "lhdisk-eobj8huv",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5574,7 +5577,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsReturnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -5584,17 +5587,17 @@
           "example": "0",
           "member": "int64",
           "name": "ReturnFailCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "云硬盘退还失败错误信息。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ReturnFailMessage",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -5610,7 +5613,7 @@
           "example": "lhda-9qq8eu90",
           "member": "string",
           "name": "ActivityId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5620,7 +5623,7 @@
           "example": "RunDockerContainer",
           "member": "string",
           "name": "ActivityName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5630,7 +5633,7 @@
           "example": "INIT",
           "member": "string",
           "name": "ActivityState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5640,17 +5643,17 @@
           "example": "aGVsbG8=",
           "member": "string",
           "name": "ActivityCommandOutput",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "容器ID列表。",
-          "example": "无",
+          "example": "[\"838b0781925f8ea98ff1831c60f1e6178c21923192ec773cb0cb8427fe196fa3\"]",
           "member": "string",
           "name": "ContainerIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5660,7 +5663,7 @@
           "example": "2020-04-28T03:46:09Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5670,7 +5673,7 @@
           "example": "2020-04-28T03:46:09Z",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -6244,7 +6247,7 @@
         {
           "disabled": false,
           "document": "防火墙模板应用错误信息。",
-          "example": "无",
+          "example": "\"\"",
           "member": "string",
           "name": "ErrorMessage",
           "output_required": true,
@@ -6979,7 +6982,7 @@
         {
           "disabled": false,
           "document": "购买实例的时长，单位：月。取值范围：1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 24, 36, 48, 60。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Period",
           "required": true,
@@ -6987,8 +6990,8 @@
         },
         {
           "disabled": false,
-          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费<br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费<br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知<br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
-          "example": "无",
+          "document": "自动续费标识。取值范围：<br><li>NOTIFY_AND_AUTO_RENEW：通知过期且自动续费</li><br><li>NOTIFY_AND_MANUAL_RENEW：通知过期不自动续费，用户需要手动续费</li><br><li>DISABLE_NOTIFY_AND_MANUAL_RENEW：不自动续费，且不通知</li><br><br>默认取值：NOTIFY_AND_MANUAL_RENEW。若该参数指定为NOTIFY_AND_AUTO_RENEW，在账户余额充足的情况下，实例到期后将按月自动续费。",
+          "example": "NOTIFY_AND_AUTO_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "required": false,
@@ -7003,20 +7006,20 @@
         {
           "disabled": false,
           "document": "实例 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lhins-abcd1234",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "操作限制列表。",
-          "example": "",
+          "example": "无",
           "member": "DeniedAction",
           "name": "DeniedActions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -7029,9 +7032,10 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "lhins-xxxxxxxx",
+          "example": "lhins-abcd1234",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7042,6 +7046,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -7055,40 +7060,40 @@
         {
           "disabled": false,
           "document": "套餐单价原价。",
-          "example": "无",
+          "example": "1.1",
           "member": "float",
           "name": "OriginalBundlePrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "原价。",
-          "example": "无",
+          "example": "2.2",
           "member": "float",
           "name": "OriginalPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "折扣。",
-          "example": "无",
+          "example": "0.8",
           "member": "float",
           "name": "Discount",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "折后价。",
-          "example": "无",
+          "example": "1.8",
           "member": "float",
           "name": "DiscountPrice",
-          "required": false,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
@@ -7098,7 +7103,7 @@
           "example": "CNY",
           "member": "string",
           "name": "Currency",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -7255,7 +7260,7 @@
         {
           "disabled": false,
           "document": "云硬盘ID列表。一个或多个待操作的云硬盘ID。可通过[DescribeDisks](https://cloud.tencent.com/document/product/1207/66093)接口返回值中的DiskId获取。每次请求退还数据盘数量总计上限为20。",
-          "example": "无",
+          "example": "[\"lhdisk-eobj8huv\"]\t",
           "member": "string",
           "name": "DiskIds",
           "required": true,
@@ -7318,60 +7323,60 @@
         {
           "disabled": false,
           "document": "密钥对 ID ，是密钥对的唯一标识。",
-          "example": "",
+          "example": "lhkp-omd12oc1",
           "member": "string",
           "name": "KeyId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥对名称。",
-          "example": "",
+          "example": "test",
           "member": "string",
           "name": "KeyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥对的纯文本公钥。",
-          "example": "",
+          "example": "\"\"",
           "member": "string",
           "name": "PublicKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "密钥对关联的实例 ID 列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "string",
           "name": "AssociatedInstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。格式为：YYYY-MM-DDThh:mm:ssZ\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "2020-04-28T23:01:47Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "密钥对私钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "null",
           "member": "string",
           "name": "PrivateKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -8648,6 +8653,24 @@
           "name": "BlueprintId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要创建的容器配置列表。",
+          "example": "无",
+          "member": "DockerContainerConfiguration",
+          "name": "Containers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例登录信息配置。默认缺失情况下代表用户选择实例创建后设置登录密码或绑定密钥。",
+          "example": "\"KeyIds\": [\"lhkp-7f7lh1fv\", \"lhkp-gfr54z9r\"]",
+          "member": "LoginConfiguration",
+          "name": "LoginConfiguration",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -9031,20 +9054,20 @@
         {
           "disabled": false,
           "document": "快照 ID。",
-          "example": "",
+          "example": "lhsnap-nv6aqcv6",
           "member": "string",
           "name": "SnapshotId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作限制列表。",
-          "example": "",
+          "example": "无",
           "member": "DeniedAction",
           "name": "DeniedActions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }

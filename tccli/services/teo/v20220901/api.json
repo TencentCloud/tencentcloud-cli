@@ -6698,7 +6698,7 @@
         },
         {
           "disabled": false,
-          "document": "查询前多少个数据，最大值为1000，不填默认默认为: 10， 表示查询前top10的数据。",
+          "document": "查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top10的数据。",
           "example": "3",
           "member": "int64",
           "name": "Limit",
@@ -6808,7 +6808,7 @@
         },
         {
           "disabled": false,
-          "document": "查询前多少个数据，最大值为1000，不填默认默认为10， 表示查询前top 10的数据。",
+          "document": "查询前多少个数据，最大值为1000，不填默认为10， 表示查询前top 10的数据。",
           "example": "10",
           "member": "int64",
           "name": "Limit",
@@ -13409,7 +13409,7 @@
         },
         {
           "disabled": false,
-          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>",
+          "document": "站点接入方式，取值有：\n<li> full：NS 接入；</li>\n<li> partial：CNAME 接入；</li>\n<li> noDomainAccess：无域名接入；</li>\n<li> vodeo：开启 VODEO 后默认接入。</li>",
           "example": "full",
           "member": "string",
           "name": "Type",

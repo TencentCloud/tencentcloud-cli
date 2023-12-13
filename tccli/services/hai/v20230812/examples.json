@@ -64,6 +64,22 @@
         "title": "创建实例"
       }
     ],
+    "StartInstance": [
+      {
+        "document": "hai实例关机不收费场景下，重新开机。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-dunyfdff\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"83697e89-90d2-4fff-bbb1-1bc3d53c4dfadfdad\"\n    }\n}",
+        "title": "hai实例开机"
+      }
+    ],
+    "StopInstance": [
+      {
+        "document": "hai实例关机不收费场景。",
+        "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StopInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"hai-dunyfddn\",\n    \"StopMode\": \"STOP_CHARGE\",\n    \"DryRun\": false\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": 123456,\n        \"RequestId\": \"057b40b9-c27f-4241-918b-debd34cfdafdasfdaf\"\n    }\n}",
+        "title": "hai实例关机"
+      }
+    ],
     "TerminateInstances": [
       {
         "document": "销毁hai实例",

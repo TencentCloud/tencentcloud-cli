@@ -2450,8 +2450,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。<br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。",
-          "example": "[\"skey-mv9yzyjj\\r\\n\"]",
+          "document": "一个或多个待操作的密钥对ID。每次请求批量密钥对的上限为100。<br>可以通过以下方式获取可用的密钥ID：<br><li>通过登录[控制台](https://console.cloud.tencent.com/cvm/sshkey)查询密钥ID。</li><br><li>通过调用接口 [DescribeKeyPairs](https://cloud.tencent.com/document/api/213/15699) ，取返回信息中的 `KeyId` 获取密钥对ID。</li>",
+          "example": "[\"skey-mv9yzyjj\"]",
           "member": "string",
           "name": "KeyIds",
           "required": true,
@@ -2757,7 +2757,7 @@
         {
           "disabled": false,
           "document": "分散置放群组ID列表。每次请求允许操作的分散置放群组数量上限是100。",
-          "example": "\"xxx\"",
+          "example": "ps-21q9ibvr",
           "member": "string",
           "name": "DisasterRecoverGroupIds",
           "required": false,
@@ -2766,7 +2766,7 @@
         {
           "disabled": false,
           "document": "分散置放群组名称，支持模糊匹配。",
-          "example": "\"xxx\"",
+          "example": "myGroup",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -2802,7 +2802,7 @@
           "example": "无",
           "member": "DisasterRecoverGroup",
           "name": "DisasterRecoverGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2812,7 +2812,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3354,7 +3354,7 @@
         {
           "disabled": false,
           "document": "按照一个或者多个实例ID查询，可通过[DescribeInstances](https://cloud.tencent.com/document/api/213/15728)API返回值中的InstanceId获取。实例ID形如：ins-xxxxxxxx。（此参数的具体格式可参考API[简介](https://cloud.tencent.com/document/api/213/15688)的ids.N一节）。每次请求的实例的上限为100。",
-          "example": "",
+          "example": "[\"ins-l26mwvil\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3363,7 +3363,7 @@
         {
           "disabled": false,
           "document": "实例操作。\n<li> INSTANCE_DEGRADE：实例降配操作</li>",
-          "example": "",
+          "example": "INSTANCE_DEGRADE",
           "member": "string",
           "name": "Operation",
           "required": true,
@@ -3378,9 +3378,10 @@
         {
           "disabled": false,
           "document": "该参数表示调整配置操作（降配）限制次数查询。",
-          "example": "",
+          "example": "无",
           "member": "OperationCountLimit",
           "name": "InstanceOperationLimitSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4344,20 +4345,20 @@
         {
           "disabled": false,
           "document": "分散置放群组id。",
-          "example": "\"xxx\"",
+          "example": "ps-n4becvb9",
           "member": "string",
           "name": "DisasterRecoverGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分散置放群组名称，长度1-60个字符。",
-          "example": "\"xxx\"",
+          "example": "myGroup",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4367,7 +4368,7 @@
           "example": "\"HOST\"",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -4377,7 +4378,7 @@
           "example": "50",
           "member": "int64",
           "name": "CvmQuotaTotal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4387,17 +4388,17 @@
           "example": "2",
           "member": "int64",
           "name": "CurrentNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "分散置放群组内，云服务器id列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "\"xxx\"",
+          "example": "[\"ins-19029pru\"]",
           "member": "string",
           "name": "InstanceIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4407,7 +4408,7 @@
           "example": "\"2021-04-27T08:49:34Z\"",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -11348,7 +11349,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "一个或多个待操作的实例ID。可通过[`DescribeInstances`](https://cloud.tencent.com/document/api/213/15728)接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
+          "document": "一个或多个待操作的实例ID。可通过 [DescribeInstances](https://cloud.tencent.com/document/api/213/15728) 接口返回值中的`InstanceId`获取。每次请求批量实例的上限为100。",
           "example": "['ins-2pajzo4q']",
           "member": "string",
           "name": "InstanceIds",
@@ -11357,8 +11358,8 @@
         },
         {
           "disabled": false,
-          "document": "释放实例挂载的包年包月数据盘。",
-          "example": "True",
+          "document": "释放实例挂载的包年包月数据盘。true表示销毁实例同时释放包年包月数据盘，false表示只销毁实例。",
+          "example": "true",
           "member": "bool",
           "name": "ReleasePrepaidDataDisks",
           "required": false,

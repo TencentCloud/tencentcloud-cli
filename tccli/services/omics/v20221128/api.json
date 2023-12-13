@@ -57,9 +57,9 @@
       "status": "online"
     },
     "GetRunMetadataFile": {
-      "document": "查询任务详情文件。",
+      "document": "获取任务详情文件。",
       "input": "GetRunMetadataFileRequest",
-      "name": "查询任务详情文件",
+      "name": "获取任务详情文件",
       "output": "GetRunMetadataFileResponse",
       "status": "online"
     },
@@ -1110,21 +1110,30 @@
         },
         {
           "disabled": false,
-          "document": "需要获取的文件名。\n\n默认支持以下文件：\n- nextflow.log\n\n提交时NFOption中report指定为true时，额外支持以下文件：\n- execution_report.html\n- execution_timeline.html\n- execution_trace.txt\n- pipeline_dag.html",
-          "example": "无",
-          "member": "string",
-          "name": "Key",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "项目ID。\n（不填使用指定地域下的默认项目）",
           "example": "无",
           "member": "string",
           "name": "ProjectId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要获取的文件名。\n\n默认支持以下文件：\n- nextflow.log\n\n提交时NFOption中report指定为true时，额外支持以下文件：\n- execution_report.html\n- execution_timeline.html\n- execution_trace.txt\n- pipeline_dag.html",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要批量获取的文件名。\n\n默认支持以下文件：\n- nextflow.log\n\n提交时NFOption中report指定为true时，额外支持以下文件：\n- execution_report.html\n- execution_timeline.html\n- execution_trace.txt\n- pipeline_dag.html",
+          "example": "无",
+          "member": "string",
+          "name": "Keys",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -1141,6 +1150,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量文件预签名链接，一分钟内有效。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CosSignedUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
