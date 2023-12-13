@@ -1,3 +1,47 @@
+# Release 3.0.903.1
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 58 次发布
+
+发布时间：2023-12-14 01:51:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSeal](http://document.tencentcloudapi.woa.com/document/product/1668/79306)
+
+	* 新增入参：TaxIdentifyCode
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 115 次发布
+
+发布时间：2023-12-14 01:52:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+
+	* 新增入参：TaxIdentifyCode
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
 # Release 3.0.902.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

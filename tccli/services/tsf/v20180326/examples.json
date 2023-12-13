@@ -750,7 +750,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeDeliveryConfigByGroupId\r\n&GroupId=dddd\r\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e64dc152-b874-4b91-9301-e9b290f1ffbb\",\n        \"Result\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"ConfigId\": \"abc\",\n            \"ConfigName\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "用部署组id获取绑定信息"
       }
     ],
@@ -966,7 +966,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=DescribeInvocationMetricScatterPlot\n&StartTime=2020-06-03 17:11:49\n&EndTime=2020-06-03 17:21:49\n&MetricDimensions.0.Name=NamespaceId\n&MetricDimensions.0.Value=test\n&Metrics.0.Name=request_count\n&Metrics.0.Function=sum\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"EndTime\": 0,\n            \"Period\": 0,\n            \"StartTime\": 0,\n            \"DataPoints\": [\n                {\n                    \"PointKeys\": [\n                        \"xx\"\n                    ],\n                    \"Points\": [\n                        {\n                            \"Values\": [\n                                0.0\n                            ]\n                        }\n                    ],\n                    \"MetricName\": \"xx\"\n                }\n            ]\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": {\n            \"EndTime\": 0,\n            \"StartTime\": 0,\n            \"Period\": 0,\n            \"DataPoints\": [\n                {\n                    \"Points\": [\n                        {\n                            \"Values\": [\n                                0\n                            ]\n                        }\n                    ],\n                    \"MetricName\": \"abc\",\n                    \"PointKeys\": [\n                        \"abc\"\n                    ]\n                }\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "DescribeInvocationMetricDataCurve"
       }
     ],

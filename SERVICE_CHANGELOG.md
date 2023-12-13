@@ -1,46 +1,10 @@
 # 本版本更新包含以下内容：
 
-## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+## 腾讯电子签企业版(ess) 版本：2020-11-11
 
-### 第 52 次发布
+### 第 58 次发布
 
-发布时间：2023-12-13 01:07:10
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeIpBlockList](http://document.tencentcloudapi.woa.com/document/product/1021/82818)
-
-新增数据结构：
-
-* [IpBlockData](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IpBlockData)
-
-
-
-## ICP备案(ba) 版本：2020-07-20
-
-### 第 2 次发布
-
-发布时间：2023-12-13 01:11:01
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeTldListInternal](http://document.tencentcloudapi.woa.com/document/product/243/82819)
-
-
-
-## 云数据库 MySQL(cdb) 版本：2017-03-20
-
-### 第 82 次发布
-
-发布时间：2023-12-13 01:19:16
+发布时间：2023-12-14 01:51:45
 
 本次发布包含了以下内容：
 
@@ -48,22 +12,18 @@
 
 修改接口：
 
-* [DescribeBackupDecryptionKey](http://document.tencentcloudapi.woa.com/document/product/236/77781)
+* [CreateSeal](http://document.tencentcloudapi.woa.com/document/product/1668/79306)
 
-	* 新增入参：BackupType
-
-
-
-
-## 云服务器(cvm) 版本：2019-12-12
+	* 新增入参：TaxIdentifyCode
 
 
 
-## 云服务器(cvm) 版本：2017-03-12
 
-### 第 65 次发布
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-发布时间：2023-12-13 01:31:38
+### 第 115 次发布
+
+发布时间：2023-12-14 01:52:53
 
 本次发布包含了以下内容：
 
@@ -71,129 +31,14 @@
 
 修改接口：
 
-* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/213/15723)
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
 
-	* 新增入参：YuntiParameters
-
-
-
-
-## cxm(cxm) 版本：2017-03-12
-
-### 第 2 次发布
-
-发布时间：2023-12-13 01:37:46
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeReservedPacks](http://document.tencentcloudapi.woa.com/document/product/1752/82821)
-* [DescribeTask](http://document.tencentcloudapi.woa.com/document/product/1752/82830)
-* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
-* [RestoreInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82827)
-* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
-* [StartInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82825)
-* [StashInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82824)
-* [StopInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82823)
-* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82822)
-
-新增数据结构：
-
-* [CpuTopology](http://document.tencentcloudapi.woa.com/document/product/1752/82730#CpuTopology)
-* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#DataDisk)
-* [ExtraAttribute](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ExtraAttribute)
-* [InstanceTypeQuota](http://document.tencentcloudapi.woa.com/document/product/1752/82730#InstanceTypeQuota)
-* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings)
-* [ReservedPack](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ReservedPack)
-* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#SystemDisk)
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 5 次发布
-
-发布时间：2023-12-13 01:56:19
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [StartInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82832)
-* [StopInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82831)
-
-
-
-## 轻量应用服务器(lighthouse) 版本：2020-03-24
-
-### 第 42 次发布
-
-发布时间：2023-12-13 02:06:05
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [ResetInstance](http://document.tencentcloudapi.woa.com/document/product/1207/47571)
-
-	* 新增入参：Containers
-
-
-修改数据结构：
-
-* [InstancePrice](http://document.tencentcloudapi.woa.com/document/product/1207/47576#InstancePrice)
-
-	* <font color="#dd0000">**修改成员**：</font>OriginalBundlePrice, OriginalPrice, Discount, DiscountPrice, Currency
+	* 新增入参：TaxIdentifyCode
 
 
 
 
-## 腾讯健康组学平台(omics) 版本：2022-11-28
-
-### 第 6 次发布
-
-发布时间：2023-12-13 02:15:53
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [GetRunMetadataFile](http://document.tencentcloudapi.woa.com/document/product/1725/82466)
-
-	* 新增入参：Keys
-
-	* <font color="#dd0000">**修改入参**：</font>Key
-
-	* 新增出参：CosSignedUrls
-
-
-
-
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 85 次发布
-
-发布时间：2023-12-13 02:33:42
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [PulsarNetworkAccessPointInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#PulsarNetworkAccessPointInfo)
-
-	* 新增成员：OperationType
-
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
 
 
@@ -1694,11 +1539,11 @@
 
 新增接口：
 
-* [[DescribeIpBlockList](http://document.tencentcloudapi.woa.com/document/product/1021/82818)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeIpBlockList](http://document.tencentcloudapi.woa.com/document/product/1021/82818)
 
 新增数据结构：
 
-* [[IpBlockData](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IpBlockData)](http://document.tencentcloudapi.woa.com/document/product/1021/57582#[IpBlockData](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IpBlockData))
+* [IpBlockData](http://document.tencentcloudapi.woa.com/document/product/1021/57582#IpBlockData)
 
 ### 第 51 次发布
 
@@ -5088,7 +4933,7 @@
 
 新增接口：
 
-* [[DescribeTldListInternal](http://document.tencentcloudapi.woa.com/document/product/243/82819)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeTldListInternal](http://document.tencentcloudapi.woa.com/document/product/243/82819)
 
 ### 第 1 次发布
 
@@ -28065,25 +27910,25 @@
 
 新增接口：
 
-* [[DescribeReservedPacks](http://document.tencentcloudapi.woa.com/document/product/1752/82821)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeTask](http://document.tencentcloudapi.woa.com/document/product/1752/82830)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RestoreInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82827)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StartInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82825)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StashInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82824)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StopInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82823)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82822)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeReservedPacks](http://document.tencentcloudapi.woa.com/document/product/1752/82821)
+* [DescribeTask](http://document.tencentcloudapi.woa.com/document/product/1752/82830)
+* [DescribeZoneInstanceTypeInventory](http://document.tencentcloudapi.woa.com/document/product/1752/82828)
+* [RestoreInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82827)
+* [RunInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82826)
+* [StartInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82825)
+* [StashInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82824)
+* [StopInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82823)
+* [TerminateInstances](http://document.tencentcloudapi.woa.com/document/product/1752/82822)
 
 新增数据结构：
 
-* [[CpuTopology](http://document.tencentcloudapi.woa.com/document/product/1752/82730#CpuTopology)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[CpuTopology](http://document.tencentcloudapi.woa.com/document/product/1752/82730#CpuTopology))
-* [[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#DataDisk)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[DataDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#DataDisk))
-* [[ExtraAttribute](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ExtraAttribute)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[ExtraAttribute](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ExtraAttribute))
-* [[InstanceTypeQuota](http://document.tencentcloudapi.woa.com/document/product/1752/82730#InstanceTypeQuota)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[InstanceTypeQuota](http://document.tencentcloudapi.woa.com/document/product/1752/82730#InstanceTypeQuota))
-* [[LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings))
-* [[ReservedPack](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ReservedPack)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[ReservedPack](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ReservedPack))
-* [[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#SystemDisk)](http://document.tencentcloudapi.woa.com/document/product/1752/82730#[SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#SystemDisk))
+* [CpuTopology](http://document.tencentcloudapi.woa.com/document/product/1752/82730#CpuTopology)
+* [DataDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#DataDisk)
+* [ExtraAttribute](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ExtraAttribute)
+* [InstanceTypeQuota](http://document.tencentcloudapi.woa.com/document/product/1752/82730#InstanceTypeQuota)
+* [LoginSettings](http://document.tencentcloudapi.woa.com/document/product/1752/82730#LoginSettings)
+* [ReservedPack](http://document.tencentcloudapi.woa.com/document/product/1752/82730#ReservedPack)
+* [SystemDisk](http://document.tencentcloudapi.woa.com/document/product/1752/82730#SystemDisk)
 
 ### 第 1 次发布
 
@@ -38782,6 +38627,21 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 58 次发布
+
+发布时间：2023-12-14 01:51:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSeal](http://document.tencentcloudapi.woa.com/document/product/1668/79306)
+
+	* 新增入参：TaxIdentifyCode
+
+
 ### 第 57 次发布
 
 发布时间：2023-12-12 01:52:11
@@ -40174,6 +40034,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 115 次发布
+
+发布时间：2023-12-14 01:52:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+
+	* 新增入参：TaxIdentifyCode
+
 
 ### 第 114 次发布
 
@@ -45025,8 +44900,8 @@
 
 新增接口：
 
-* [[StartInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82832)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[StopInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82831)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [StartInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82832)
+* [StopInstance](http://document.tencentcloudapi.woa.com/document/product/1750/82831)
 
 ### 第 4 次发布
 

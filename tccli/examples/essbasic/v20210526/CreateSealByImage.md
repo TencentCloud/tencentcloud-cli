@@ -56,3 +56,36 @@ Output:
 }
 ```
 
+**Example 3: 创建一个发票专用章**
+
+1.设置GenerateSource为SealGenerateSourceSystem
+2.设置SealType为发票专用章INVOICE
+3.设置SealStyle为椭圆形ellipse
+4.设置SealSize为40_30
+
+Input: 
+
+```
+tccli essbasic CreateSealByImage --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId n9527 \
+    --Agent.ProxyAppId  \
+    --SealName 发票专用章 \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType INVOICE \
+    --SealStyle ellipse \
+    --SealSize 40_30
+```
+
+Output: 
+```
+{
+    "Response": {
+        "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi",
+        "ImageUrl": "https://file.test.ess.tencent.cn/bresource/resource/resource/0/0.PNG?hkey=xxxxxxxxxxxxxx",
+        "RequestId": "477f4d46-062c-4d72-a2e0-94e5b52b0cc5"
+    }
+}
+```
+

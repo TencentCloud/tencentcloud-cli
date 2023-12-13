@@ -82,3 +82,33 @@ Output:
 }
 ```
 
+**Example 4: 创建一个发票专用章**
+
+1.设置GenerateSource为SealGenerateSourceSystem
+2.设置SealType为发票专用章INVOICE
+3.设置SealStyle为椭圆形ellipse
+4.设置SealSize为40_30
+
+Input: 
+
+```
+tccli ess CreateSeal --cli-unfold-argument  \
+    --Operator.UserId user-id-xxxx \
+    --GenerateSource SealGenerateSourceSystem \
+    --SealType INVOICE \
+    --SealName 这是一个发票专用章 \
+    --SealHorizontalText  \
+    --SealStyle ellipse \
+    --SealSize SealSize
+```
+
+Output: 
+```
+{
+    "Response": {
+        "RequestId": "s170xxxxxxxx1760718",
+        "SealId": "yDwfwUUgygorm2w0UuS2eARCYT5rtPIi"
+    }
+}
+```
+

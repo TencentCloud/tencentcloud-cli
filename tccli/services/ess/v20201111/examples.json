@@ -796,6 +796,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"11234567890123456789012345678901\"\n    },\n    \"SealName\": \"公司印章\",\n    \"Image\": \"imagecontentbase64\",\n    \"Width\": 10,\n    \"Height\": 20,\n    \"Color\": \"Red\",\n    \"SealType\": \"OFFICIAL\",\n    \"SealHorizontalText\": \"印章横向文字\",\n    \"SealChordText\": \"下弦文字\",\n    \"SealCentralType\": \"Star\",\n    \"FileName\": \"印章图片.png\"\n}",
         "output": "{\n    \"Response\": {\n        \"SealId\": \"429b82b4xxxx0a90d45c715bad7\",\n        \"RequestId\": \"62DDFFC6xxxxxA6-59152E3D129A\"\n    }\n}",
         "title": "通过图片创建电子印章"
+      },
+      {
+        "document": "1.设置GenerateSource为SealGenerateSourceSystem\n2.设置SealType为发票专用章INVOICE\n3.设置SealStyle为椭圆形ellipse\n4.设置SealSize为40_30",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSeal\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"user-id-xxxx\"\n    },\n    \"GenerateSource\": \"SealGenerateSourceSystem\",\n    \"SealType\": \"INVOICE\",\n    \"SealName\": \"这是一个发票专用章\",\n    \"SealHorizontalText\": \"\",\n    \"SealStyle\": \"ellipse\",\n    \"SealSize\": \"SealSize\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s170xxxxxxxx1760718\",\n        \"SealId\": \"yDwfwUUgygorm2w0UuS2eARCYT5rtPIi\"\n    }\n}",
+        "title": "创建一个发票专用章"
       }
     ],
     "CreateSealPolicy": [
