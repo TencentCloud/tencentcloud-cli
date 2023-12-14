@@ -1,0 +1,341 @@
+{
+  "actions": {
+    "DescribeDevices": {
+      "document": "查询满足条件的终端数据详情，私有化调用path为：/capi/Assets/Device/DescribeDevices",
+      "input": "DescribeDevicesRequest",
+      "name": "查询设备列表详情",
+      "output": "DescribeDevicesResponse",
+      "status": "online"
+    }
+  },
+  "metadata": {
+    "apiVersion": "2022-06-01",
+    "api_brief": "iOA 云API接口",
+    "serviceNameCN": "iOA 零信任安全管理系统",
+    "serviceShortName": "ioa"
+  },
+  "objects": {
+    "Condition": {
+      "document": "- [ ] 过滤条件<br>\n\n<li>Name - String - 是否必填：否 - 操作符: ilike  - 排序支持：否- 根据分组名称进行查询。</li>\n分页参数<br>\n<li>PageNum 从1开始，小于等于0时使用默认参数。</li>\n<li>PageSize 最大值5000，最好不超过100。</li>",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Filters 条件过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Filter",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "FilterGroups 条件过滤组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "FilterGroup",
+          "name": "FilterGroups",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Sort 排序字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Sort",
+          "name": "Sort",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "PageSize 每页获取数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "PageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "PageNum 获取第几页(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "int64",
+          "name": "PageNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDevicesPageRsp": {
+      "document": "分页的data数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据分页信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Paging",
+          "name": "Paging",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "DescribeDevicesRequest": {
+      "document": "DescribeDevices请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件<br>\n<li>Ip - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照Ip进行过滤。</li>\n<li>MacAddr - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照mac地址进行过滤。</li>\n<li>IoaUserName - String - 是否必填：否 - 操作符: eq  - 排序支持：否- 按照ioa用户名进行过滤。</li>\n分页参数<br>\n<li>PageNum 从1开始，小于等于0时使用默认参数。</li>\n<li>PageSize 最大值5000，最好不超过100。</li>",
+          "example": "无",
+          "member": "Condition",
+          "name": "Condition",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "私有化默认分组id-名称-操作系统\n1\t全网终端\tWin\n2\t未分组终端\tWin\n30000000\t服务器\tWin\n40000101\t全网终端\tLinux\n40000102\t未分组终端\tLinux\n40000103\t服务器\tLinux\n40000201\t全网终端\tmacOS\n40000202\t未分组终端\tmacOS\n40000203\t服务器\tmacOS\n40000401\t全网终端\tAndroid\n40000402\t未分组终端\tAndroid\n40000501\t全网终端\tiOS\n40000502\t未分组终端\tiOS",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "系统类型（0: win，1：linux，2: mac，3: win_srv，4：android，5：ios   默认值0）",
+          "example": "无",
+          "member": "int64",
+          "name": "OsType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "在线状态 2 在线 0，1 离线",
+          "example": "无",
+          "member": "int64",
+          "name": "OnlineStatus",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件--兼容旧接口,参数同Condition",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段--兼容旧接口,参数同Condition",
+          "example": "无",
+          "member": "Sort",
+          "name": "Sort",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "获取第几页--兼容旧接口,参数同Condition(只支持32位)",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNum",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页获取数--兼容旧接口,参数同Condition(只支持32位)",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "授权状态 4未授权 5已授权",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDevicesResponse": {
+      "document": "DescribeDevices返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页的data数据\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DescribeDevicesPageRsp",
+          "name": "Data",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "Filter": {
+      "document": "Filters 条件过滤",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤方式 eq:等于,net:不等于,like,nlike,gt:大于,lt:小于,egt:大于等于,elt:小于等于\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Operator",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "过滤条件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Values",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "FilterGroup": {
+      "document": "FilterGroups 条件过滤组",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Filters 条件过滤\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "Filter",
+          "name": "Filters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Paging": {
+      "document": "数据分页信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "每页条数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "PageSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页码(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "PageNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总页数(只支持32位)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "PageCount",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "记录总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "Sort": {
+      "document": "Sort 排序字段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "排序方式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "Order",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    }
+  },
+  "version": "1.0"
+}

@@ -20,25 +20,25 @@ Output:
     "Response": {
         "Result": {
             "EndTime": 0,
-            "Period": 0,
             "StartTime": 0,
+            "Period": 0,
             "DataPoints": [
                 {
-                    "PointKeys": [
-                        "xx"
-                    ],
                     "Points": [
                         {
                             "Values": [
-                                0.0
+                                0
                             ]
                         }
                     ],
-                    "MetricName": "xx"
+                    "MetricName": "abc",
+                    "PointKeys": [
+                        "abc"
+                    ]
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

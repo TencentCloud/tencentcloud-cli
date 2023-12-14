@@ -1657,6 +1657,15 @@
           "name": "EnableAutoStart",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
+          "example": "无",
+          "member": "string",
+          "name": "RecordBackground",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3203,6 +3212,16 @@
           "name": "EnableAutoStart",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
+          "example": "无",
+          "member": "string",
+          "name": "RecordBackground",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

@@ -13,8 +13,11 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "e64dc152-b874-4b91-9301-e9b290f1ffbb",
-        "Result": true
+        "Result": {
+            "ConfigId": "abc",
+            "ConfigName": "abc"
+        },
+        "RequestId": "abc"
     }
 }
 ```

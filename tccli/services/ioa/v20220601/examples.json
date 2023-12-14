@@ -1,0 +1,13 @@
+{
+  "actions": {
+    "DescribeDevices": [
+      {
+        "document": "获取租户满足条件：最近登录账号包含\\'cc\\'（不区分大小写）的设备列表详情",
+        "input": "POST / HTTP/1.1\nHost: ioa.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDevices\n<公共请求参数>\n\n{\n    \"Condition\": {\n        \"FilterGroups\": [\n            {\n                \"Filters\": [\n                    {\n                        \"Field\": \"IOAUserName\",\n                        \"Operator\": \"ilike\",\n                        \"Values\": [\n                            \"cc\"\n                        ]\n                    }\n                ]\n            }\n        ],\n        \"PageSize\": 10,\n        \"PageNum\": 1\n    },\n    \"GroupId\": 93,\n    \"OsType\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": {\n            \"Paging\": {\n                \"PageCount\": 1,\n                \"PageNum\": 1,\n                \"PageSize\": 10,\n                \"Total\": 2\n            }\n        },\n        \"RequestId\": \"807938c5-9308-4c87-918d-e84a05f226a1\"\n    }\n}",
+        "title": "获取设备列表详情"
+      }
+    ]
+  },
+  "version": "1.0"
+}

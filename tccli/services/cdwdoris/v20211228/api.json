@@ -15,9 +15,9 @@
       "status": "online"
     },
     "DescribeInstances": {
-      "document": "获取实例列表",
+      "document": "获取集群列表",
       "input": "DescribeInstancesRequest",
-      "name": "获取实例列表",
+      "name": "获取集群列表",
       "output": "DescribeInstancesResponse",
       "status": "online"
     }
@@ -255,7 +255,7 @@
           "example": "18",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -265,7 +265,7 @@
           "example": "-",
           "member": "InstanceInfo",
           "name": "InstancesList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

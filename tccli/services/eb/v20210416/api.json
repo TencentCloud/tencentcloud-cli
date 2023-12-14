@@ -661,7 +661,7 @@
         },
         {
           "disabled": false,
-          "document": "类型",
+          "document": "连接器类型，目前支持以下类型:apigw/ckafka/dts/tdmq",
           "example": "apigw",
           "member": "string",
           "name": "Type",
@@ -680,7 +680,7 @@
           "example": "connection-xxxxxxxx",
           "member": "string",
           "name": "ConnectionId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1733,7 +1733,7 @@
         {
           "disabled": false,
           "document": "平台产品事件类型",
-          "example": "eb_platform_test:TEST:AL",
+          "example": "eb_platform_test:TEST:ALL，此值根据ListPlatformEventNames接口获取",
           "member": "string",
           "name": "EventType",
           "required": true,
@@ -2143,7 +2143,7 @@
         {
           "disabled": false,
           "document": "平台产品类型",
-          "example": "eb_platform_test",
+          "example": "eb_platform_test,该值根据ListPlatformProducts接口获取",
           "member": "string",
           "name": "ProductType",
           "required": true,

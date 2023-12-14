@@ -756,7 +756,7 @@
         {
           "disabled": false,
           "document": "行政区划编码\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "110000",
           "member": "string",
           "name": "AdministrationCode",
           "output_required": false,
@@ -766,7 +766,7 @@
         {
           "disabled": false,
           "document": "行政区划名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "北京市",
           "member": "string",
           "name": "AdministrationName",
           "output_required": false,
@@ -1070,7 +1070,7 @@
         {
           "disabled": false,
           "document": "告警状态ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "unprocessed",
           "member": "string",
           "name": "StatusID",
           "output_required": false,
@@ -1080,7 +1080,7 @@
         {
           "disabled": false,
           "document": "告警状态名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "待处理",
           "member": "string",
           "name": "StatusName",
           "output_required": false,
@@ -1090,7 +1090,7 @@
         {
           "disabled": false,
           "document": "告警状态类型\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "0",
           "member": "string",
           "name": "StatusType",
           "output_required": false,

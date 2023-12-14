@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateConfigTemplateWithDetailResp": {
-      "document": "创建参数模板,并返回模板详细信息",
+      "document": "创建参数模版，并返回模版详细信息",
       "input": "CreateConfigTemplateWithDetailRespRequest",
       "name": "创建参数模板返回详细信息",
       "output": "CreateConfigTemplateWithDetailRespResponse",
@@ -12321,7 +12321,7 @@
         {
           "disabled": false,
           "document": "部署组id",
-          "example": "",
+          "example": "group-xxxxxxx",
           "member": "string",
           "name": "GroupId",
           "required": true,
@@ -12335,10 +12335,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递kafak配置项",
-          "example": "",
+          "document": "投递kafka配置项",
+          "example": "无",
           "member": "SimpleKafkaDeliveryConfig",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -14249,7 +14250,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标维度",
+          "document": "查询指标维度, 不能为空。可选 NamespaceId, GroupId, InstanceId, OperationName, ServiceName, PeerServiceName, PeerOperationName",
           "example": "无",
           "member": "MetricDimension",
           "name": "MetricDimensions",
@@ -14258,7 +14259,7 @@
         },
         {
           "disabled": false,
-          "document": "查询指标名",
+          "document": "查询指标名， 不能为空。仅支持 range_count_duratioin 为 key 下的 sum 方法",
           "example": "无",
           "member": "Metric",
           "name": "Metrics",
@@ -14282,11 +14283,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "多值时间抽统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多值时间统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InvocationMetricScatterPlot",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
