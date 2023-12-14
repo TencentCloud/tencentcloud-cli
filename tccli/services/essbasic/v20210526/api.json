@@ -301,6 +301,13 @@
       "output": "ChannelVerifyPdfResponse",
       "status": "online"
     },
+    "CreateBatchOrganizationRegistrationTasks": {
+      "document": "本接口（CreateBatchOrganizationRegistrationTasks）用于批量创建企业认证链接\n该接口为异步提交任务接口,需要跟查询企业批量认证链接(DescribeBatchOrganizationRegistrationUrls) 配合使用.\n\n批量创建链接有以下限制：\n1. 单次最多创建10个子客。\n2. 一天同一家企业最多创建8000个子客。\n3. 同一批创建的子客不能重复 其中包括 企业名称，企业统一信用代码，子客经办人openId。\n4. 跳转到小程序的实现，参考微信官方文档（分为全屏、半屏两种方式），如何配置也可以请参考: 跳转电子签小程序配置\n\n注： 1. 如果生成的链接是APP链接，跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n**腾讯电子签小程序的AppID 和 原始Id如下:**\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "input": "CreateBatchOrganizationRegistrationTasksRequest",
+      "name": "创建企业批量认证链接",
+      "output": "CreateBatchOrganizationRegistrationTasksResponse",
+      "status": "online"
+    },
     "CreateChannelFlowEvidenceReport": {
       "document": "提交申请出证报告任务并返回报告ID。\n\n注意：\n- 使用此功能**需搭配出证套餐**  ，使用前请联系对接的客户经理沟通。\n- 操作人必须是**发起方或者签署方企业的(非走授权书认证)法人或者超管**。\n- 合同流程必须**所有参与方已经签署完成**。\n- 出证过程需一定时间，建议在**提交出证任务后的24小时之后**，通过<a href=\"https://qian.tencent.com/developers/partnerApis/certificate/DescribeChannelFlowEvidenceReport\" target=\"_blank\">获取出证报告任务执行结果</a>接口进行查询执行结果和出证报告的下载URL。\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/1b4307ed143a992940c41d61192d3a0f/channel_CreateChannelFlowEvidenceReport.png)",
       "input": "CreateChannelFlowEvidenceReportRequest",
@@ -341,6 +348,13 @@
       "input": "CreateSignUrlsRequest",
       "name": "获取跳转至腾讯电子签小程序的签署链接",
       "output": "CreateSignUrlsResponse",
+      "status": "online"
+    },
+    "DescribeBatchOrganizationRegistrationUrls": {
+      "document": "此接口用于获取企业批量认证异步任务的状态及结果。\n\n前提条件：已调用 CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任务接口，并得到了任务Id。\n\n异步任务的处理完成时间视当前已提交的任务量、任务的复杂程度等因素决定，正常情况下 3~5 秒即可完成，但也可能需要更长的时间",
+      "input": "DescribeBatchOrganizationRegistrationUrlsRequest",
+      "name": "查询企业批量认证链接",
+      "output": "DescribeBatchOrganizationRegistrationUrlsResponse",
       "status": "online"
     },
     "DescribeBillUsageDetail": {
@@ -5503,6 +5517,71 @@
       ],
       "usage": "in"
     },
+    "CreateBatchOrganizationRegistrationTasksRequest": {
+      "document": "CreateBatchOrganizationRegistrationTasks请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "当前应用下子客的组织机构注册信息。\n一次最多支持10条认证流",
+          "example": "无",
+          "member": "RegistrationOrganizationInfo",
+          "name": "RegistrationOrganizations",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)web控制台链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：H5跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>\n示例值：PC\n",
+          "example": "PC",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateBatchOrganizationRegistrationTasksResponse": {
+      "document": "CreateBatchOrganizationRegistrationTasks返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "生成注册链接的任务Id，\n根据这个id， 调用DescribeBatchOrganizationRegistrationUrls 获取生成的链接，进入认证流程\n若存在其中任意一条链接错误，则返回具体的错误描述, 不会返回TaskId",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量生成企业认证链接的详细错误信息，\n顺序与输入参数保持一致。\n若企业认证均成功生成，则不返回错误信息；\n若存在任何错误，则返回具体的错误描述。",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessages",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateChannelFlowEvidenceReportRequest": {
       "document": "CreateChannelFlowEvidenceReport请求参数结构体",
       "members": [
@@ -6326,6 +6405,52 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeBatchOrganizationRegistrationUrlsRequest": {
+      "document": "DescribeBatchOrganizationRegistrationUrls请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "通过接口CreateBatchOrganizationRegistrationTasks创建企业批量认证链接任得到的任务Id",
+          "example": "无",
+          "member": "string",
+          "name": "TaskId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeBatchOrganizationRegistrationUrlsResponse": {
+      "document": "DescribeBatchOrganizationRegistrationUrls返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "企业批量注册链接信息",
+          "example": "无",
+          "member": "OrganizationAuthUrl",
+          "name": "OrganizationAuthUrls",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeBillUsageDetailRequest": {
       "document": "DescribeBillUsageDetail请求参数结构体",
@@ -8668,6 +8793,32 @@
       ],
       "type": "object"
     },
+    "OrganizationAuthUrl": {
+      "document": "企业批量注册链接信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/SHORT_URL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>CHANNEL/SHORT_URL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/SHORT_URL/APP</td> <td>一年</td>  </tr> </tbody> </table>\n注： \n`1.链接仅单次有效，每次登录需要需要重新创建新的链接`\n`2.创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义`\n",
+          "example": "无",
+          "member": "string",
+          "name": "AuthUrl",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "企业批量注册的错误信息，例如：企业三要素不通过",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMessage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "OrganizationInfo": {
       "document": "机构信息",
       "members": [
@@ -9343,6 +9494,93 @@
         }
       ],
       "usage": "out"
+    },
+    "RegistrationOrganizationInfo": {
+      "document": "企业认证信息参数， 需要保证这些参数跟营业执照中的信息一致。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "组织机构名称。\n请确认该名称与企业营业执照中注册的名称一致。\n如果名称中包含英文括号()，请使用中文括号（）代替。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "机构在贵司业务系统中的唯一标识，用于与腾讯电子签企业账号进行映射，确保在同一应用内不会出现重复。\n该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "员工在贵司业务系统中的唯一身份标识，用于与腾讯电子签账号进行映射，确保在同一应用内不会出现重复。\n该标识最大长度为64位字符串，仅支持包含26个英文字母和数字0-9的字符。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业统一社会信用代码。\n请确认该企业统一社会信用代码与企业营业执照中注册的统一社会信用代码一致。",
+          "example": "无",
+          "member": "string",
+          "name": "UniformSocialCreditCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构法人的姓名。\n请确认该企业统一社会信用代码与企业营业执照中注册的法人姓名一致。",
+          "example": "无",
+          "member": "string",
+          "name": "LegalName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构企业注册地址。\n请确认该企业注册地址与企业营业执照中注册的地址一致。",
+          "example": "深圳市南山区高新区科技中一路腾讯大厦35层",
+          "member": "string",
+          "name": "Address",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n在注册流程中，必须是超管本人进行操作。\n如果法人做为超管管理组织机构,超管姓名就是法人姓名",
+          "example": "无",
+          "member": "string",
+          "name": "AdminName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "组织机构超管姓名。\n在注册流程中，这个手机号必须跟操作人在电子签注册的个人手机号一致。",
+          "example": "无",
+          "member": "string",
+          "name": "AdminMobile",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可选的此企业允许的授权方式, 可以设置的方式有:\n1：上传授权书+对公打款\n2：法人授权/认证  会根据当前操作人的身份判定,如果当前操作人是法人,则是法人认证, 如果当前操作人不是法人,则走法人授权\n\n注:\n`1. 当前仅支持一种认证方式`\n`2. 如果当前的企业类型是政府/事业单位, 则只支持上传授权书+对公打款`",
+          "example": "无",
+          "member": "uint64",
+          "name": "AuthorizationTypes",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "usage": "in"
     },
     "ReleasedApprover": {
       "document": "解除协议的签署人，如不指定，默认使用待解除流程(原流程)中的签署人。</br>\n`注意`:\n - 不支持更换C端(个人身份类型)签署人，如果原流程中含有C端签署人，默认使用原流程中的该签署人。\n - 目前不支持替换C端(个人身份类型)签署人，但是可以指定C端签署人的签署方自定义控件别名，具体见参数ApproverSignRole描述。 \n - 当指定C端签署人的签署方自定义控件别名不空时，除参数ApproverNumber外，可以只传参数ApproverSignRole。\n\n如果需要指定B端(企业身份类型)签署人，其中ReleasedApprover需要传递的参数如下：\n`ApproverNumber`, `OrganizationName`, `ApproverType`必传。</br>\n对于其他身份标识：\n- **子客企业指定经办人**：OpenId必传，OrganizationOpenId必传；\n- **非子客企业经办人**：Name、Mobile必传。",

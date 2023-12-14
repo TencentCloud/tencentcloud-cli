@@ -14,18 +14,20 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 204,
+        "TotalCount": 0,
         "DomainBatchLogSet": [
             {
-                "LogId": 318,
-                "CreatedOn": "2020-06-10 20:08:43",
-                "Number": 12,
-                "Status": "doing"
+                "LogId": 0,
+                "Number": 0,
+                "Status": "abc",
+                "CreatedOn": "abc",
+                "Success": 0,
+                "Doing": 0,
+                "Failed": 0
             }
         ],
-        "RequestId": "1af07f55-2b13-4076-a301-74c2480f7af7"
-    },
-    "ResultStatus": true
+        "RequestId": "abc"
+    }
 }
 ```
 

@@ -31,41 +31,46 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "sdwqe-dwfq-fwqd-sdqwdf",
         "Template": {
-            "AuditReason": "",
-            "IsValidTemplate": 0,
-            "UpdatedOn": "2020-10-16 00:00:00",
-            "AuditStatus": "Approve",
-            "CreatedOn": "2020-10-16 00:00:00",
-            "InvalidReason": "",
+            "TemplateId": "abc",
+            "AuditStatus": "abc",
+            "CreatedOn": "abc",
+            "UpdatedOn": "abc",
+            "UserUin": "abc",
+            "IsDefault": "abc",
+            "AuditReason": "abc",
             "CertificateInfo": {
-                "CertificateType": "SFZ",
-                "CertificateCode": "430234123",
-                "ImgUrl": "--"
+                "CertificateCode": "abc",
+                "CertificateType": "abc",
+                "ImgUrl": "abc",
+                "OriginImgUrl": "abc",
+                "RegistrantCertificateCode": "abc",
+                "RegistrantCertificateType": "abc",
+                "RegistrantImgUrl": "abc"
             },
-            "TemplateId": "tmpl-sdqw12",
-            "UserUin": "10001",
             "ContactInfo": {
-                "Province": "sheng",
-                "OrganizationNameCN": "xx企业",
-                "OrganizationName": "xx企业",
-                "City": "abc",
+                "OrganizationNameCN": "abc",
+                "OrganizationName": "abc",
+                "RegistrantNameCN": "abc",
+                "RegistrantName": "abc",
+                "ProvinceCN": "abc",
+                "Province": "abc",
                 "CityCN": "abc",
-                "RegistrantName": "张三",
-                "Telephone": "13788888888",
-                "ZipCode": "qweqwe",
-                "RegistrantNameCN": "qweqwe",
-                "StreetCN": "asdqw",
-                "Street": "sdqw",
-                "ProvinceCN": "sdw",
-                "Country": "CN",
-                "RegistrantType": "E",
+                "City": "abc",
+                "StreetCN": "abc",
+                "Street": "abc",
                 "CountryCN": "abc",
-                "Email": "23124@qq.com"
+                "Country": "abc",
+                "Telephone": "abc",
+                "Email": "abc",
+                "ZipCode": "abc",
+                "RegistrantType": "abc"
             },
-            "IsDefault": "yes"
-        }
+            "IsValidTemplate": 0,
+            "InvalidReason": "abc",
+            "IsBlack": true
+        },
+        "RequestId": "abc"
     }
 }
 ```

@@ -99,14 +99,14 @@
       "status": "online"
     },
     "DescribeDomainBaseInfo": {
-      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。\n",
+      "document": "本接口 (  DescribeDomainBaseInfo) 获取域名基本信息。",
       "input": "DescribeDomainBaseInfoRequest",
       "name": "域名基本信息",
       "output": "DescribeDomainBaseInfoResponse",
       "status": "online"
     },
     "DescribeDomainNameList": {
-      "document": "本接口 (  DescribeDomainNameList ) 我的域名列表。\n",
+      "document": "本接口 (  DescribeDomainNameList ) 我的域名列表。",
       "input": "DescribeDomainNameListRequest",
       "name": "我的域名列表",
       "output": "DescribeDomainNameListResponse",
@@ -434,10 +434,10 @@
         {
           "disabled": false,
           "document": "批量任务状态集",
-          "example": "无",
+          "example": "[]",
           "member": "BatchStatus",
           "name": "StatusSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -882,7 +882,7 @@
         {
           "disabled": false,
           "document": "自动续费开关。有两个可选值：\n0 表示关闭，不自动续费（默认值）\n1 表示开启，将自动续费",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "AutoRenewFlag",
           "required": false,
@@ -954,7 +954,7 @@
           "example": "318",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1069,9 +1069,10 @@
         {
           "disabled": false,
           "document": "模板信息",
-          "example": "无",
+          "example": "[]",
           "member": "TemplateInfo",
           "name": "Template",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1261,17 +1262,17 @@
           "example": "12",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志详情列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "DomainBatchDetailSet",
           "name": "DomainBatchDetailSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1317,17 +1318,17 @@
           "example": "204",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "DomainBatchLogSet",
           "name": "DomainBatchLogSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1379,10 +1380,10 @@
         {
           "disabled": false,
           "document": "自定义DNS Host 列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "CustomDnsHost",
           "name": "DnsHostSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1392,7 +1393,7 @@
           "example": "15",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1426,10 +1427,10 @@
         {
           "disabled": false,
           "document": "域名信息",
-          "example": "无",
+          "example": "[]",
           "member": "DomainBaseInfo",
           "name": "DomainInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -1439,7 +1440,7 @@
           "example": "1111",
           "member": "string",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1482,10 +1483,10 @@
         {
           "disabled": false,
           "document": "域名信息集合\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[]",
           "member": "DomainList",
           "name": "DomainSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1495,7 +1496,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1547,9 +1548,10 @@
         {
           "disabled": false,
           "document": "域名价格列表",
-          "example": "无",
+          "example": "[]",
           "member": "PriceInfo",
           "name": "PriceList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1583,7 +1585,7 @@
         {
           "disabled": false,
           "document": "域名信息",
-          "example": "无",
+          "example": "[]",
           "member": "DomainSimpleInfo",
           "name": "DomainInfo",
           "output_required": true,
@@ -1657,9 +1659,10 @@
         {
           "disabled": false,
           "document": "手机或者邮箱列表",
-          "example": "无",
+          "example": "[]",
           "member": "PhoneEmailData",
           "name": "PhoneEmailList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1669,6 +1672,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1741,15 +1745,17 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "模板详细信息列表。",
-          "example": "无",
+          "example": "[]",
           "member": "TemplateInfo",
           "name": "TemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1950,7 +1956,7 @@
         {
           "disabled": false,
           "document": "详情ID",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Id",
           "required": true,
@@ -1959,8 +1965,18 @@
         },
         {
           "disabled": false,
+          "document": "类型  new: 注册域名 batch_transfer_prohibition_on:开启禁止转移  batch_transfer_prohibition_off:关闭禁止转移 batch_update_prohibition_on:开启禁止更新   batch_update_prohibition_off:关闭禁止更新",
+          "example": "无",
+          "member": "string",
+          "name": "Action",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "域名",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -1970,7 +1986,7 @@
         {
           "disabled": false,
           "document": "执行状态：\ndoing 执行中。\nfailed 操作失败。\nsuccess  操作成功。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -1980,7 +1996,7 @@
         {
           "disabled": false,
           "document": "失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Reason",
           "required": true,
@@ -1990,7 +2006,7 @@
         {
           "disabled": false,
           "document": "创建时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedOn",
           "required": true,
@@ -2000,12 +2016,22 @@
         {
           "disabled": false,
           "document": "更新时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "UpdatedOn",
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BigDealId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -2016,7 +2042,7 @@
         {
           "disabled": false,
           "document": "日志ID",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "LogId",
           "required": true,
@@ -2026,7 +2052,7 @@
         {
           "disabled": false,
           "document": "数量",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "Number",
           "required": true,
@@ -2036,7 +2062,7 @@
         {
           "disabled": false,
           "document": "执行状态：\ndoing 执行中。\ndone 执行完成。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Status",
           "required": true,
@@ -2046,11 +2072,41 @@
         {
           "disabled": false,
           "document": "提交时间",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "CreatedOn",
           "required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量操作成功个数",
+          "example": "无",
+          "member": "int64",
+          "name": "Success",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量操作处理中个数",
+          "example": "无",
+          "member": "int64",
+          "name": "Doing",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "批量操作失败个数",
+          "example": "无",
+          "member": "int64",
+          "name": "Failed",
+          "required": false,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -2519,7 +2575,7 @@
         {
           "disabled": false,
           "document": "域名ID",
-          "example": "xx",
+          "example": "abc",
           "member": "string",
           "name": "DomainId",
           "required": true,
@@ -2528,7 +2584,7 @@
         {
           "disabled": false,
           "document": "DNS Host",
-          "example": "xx",
+          "example": "abc",
           "member": "string",
           "name": "DnsName",
           "required": true,
@@ -2555,7 +2611,7 @@
           "example": "1",
           "member": "int64",
           "name": "LogId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

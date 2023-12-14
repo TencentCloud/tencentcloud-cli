@@ -15,20 +15,21 @@ Output:
 ```
 {
     "Response": {
-        "TotalCount": 12,
-        "RequestId": "13f43fa6-7282-4652-a99c-66819145ba5f",
+        "TotalCount": 0,
         "DomainBatchDetailSet": [
             {
-                "Status": "doing",
-                "Domain": "qq.com",
-                "UpdatedOn": "2020-06-10 20:08:50",
-                "CreatedOn": "2020-06-10 20:08:44",
-                "Reason": "",
-                "Id": 1
+                "Id": 0,
+                "Action": "abc",
+                "Domain": "abc",
+                "Status": "abc",
+                "Reason": "abc",
+                "CreatedOn": "abc",
+                "UpdatedOn": "abc",
+                "BigDealId": "abc"
             }
-        ]
-    },
-    "ResultStatus": true
+        ],
+        "RequestId": "abc"
+    }
 }
 ```
 

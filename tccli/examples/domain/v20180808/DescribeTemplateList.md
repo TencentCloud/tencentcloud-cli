@@ -18,43 +18,48 @@ Output:
 {
     "Response": {
         "TotalCount": 1,
-        "RequestId": "099e5c01-42b5-468a-97f8-b76af37fa8d4",
         "TemplateSet": [
             {
-                "AuditReason": "注册人审核资料上传失败",
-                "IsValidTemplate": 1,
-                "UpdatedOn": "2020-07-20 16:05:10",
-                "AuditStatus": "Reject",
-                "CreatedOn": "2020-07-20 12:44:49",
-                "InvalidReason": "",
+                "TemplateId": "abc",
+                "AuditStatus": "abc",
+                "CreatedOn": "abc",
+                "UpdatedOn": "abc",
+                "UserUin": "abc",
+                "IsDefault": "abc",
+                "AuditReason": "abc",
                 "CertificateInfo": {
-                    "CertificateType": "YYZZ",
-                    "CertificateCode": "888888888888888888",
-                    "ImgUrl": "https://xxx.xxx.com/xxxx.jpg"
+                    "CertificateCode": "abc",
+                    "CertificateType": "abc",
+                    "ImgUrl": "abc",
+                    "OriginImgUrl": "abc",
+                    "RegistrantCertificateCode": "abc",
+                    "RegistrantCertificateType": "abc",
+                    "RegistrantImgUrl": "abc"
                 },
-                "TemplateId": "tmpl-xxxxxxxx",
-                "UserUin": "88888888",
                 "ContactInfo": {
-                    "Province": "guang dong sheng",
-                    "RegistrantType": "E",
-                    "OrganizationName": "tenxungongsi",
-                    "OrganizationNameCN": "tencent公司",
-                    "Country": "CN",
-                    "RegistrantName": "tencent Gong Si",
-                    "ZipCode": "100011",
-                    "Email": "tencent@qq.com",
-                    "City": "shen zhen shi",
-                    "RegistrantNameCN": "腾讯公司",
-                    "StreetCN": "深南大道",
-                    "Street": "shen nan da dao ",
-                    "ProvinceCN": "广东省",
-                    "CountryCN": "中国",
-                    "CityCN": "深圳市",
-                    "Telephone": "4009100100"
+                    "OrganizationNameCN": "abc",
+                    "OrganizationName": "abc",
+                    "RegistrantNameCN": "abc",
+                    "RegistrantName": "abc",
+                    "ProvinceCN": "abc",
+                    "Province": "abc",
+                    "CityCN": "abc",
+                    "City": "abc",
+                    "StreetCN": "abc",
+                    "Street": "abc",
+                    "CountryCN": "abc",
+                    "Country": "abc",
+                    "Telephone": "abc",
+                    "Email": "abc",
+                    "ZipCode": "abc",
+                    "RegistrantType": "abc"
                 },
-                "IsDefault": "yes"
+                "IsValidTemplate": 0,
+                "InvalidReason": "abc",
+                "IsBlack": true
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

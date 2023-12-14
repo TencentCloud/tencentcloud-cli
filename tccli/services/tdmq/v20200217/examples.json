@@ -596,6 +596,14 @@
         "title": "获取消费进度"
       }
     ],
+    "DescribeRocketMQConsumerConnectionDetail": [
+      {
+        "document": "",
+        "input": "https://tdmq.tencentcloudapi.com/?\nAction=DescribeRocketMQConsumerConnectionDetail\n&ClusterId=rocketmq-2p9vx3ax9jxg\n&NamespaceId=example\n&GroupId=group-example\n&ClientId=xxxx\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"2cb0df97-581a-4d70-a9e8-4a0b79998e29\",\n        \"TotalCount\": 0,\n        \"Details\": []\n    }\n}",
+        "title": "获取在线消费端详情"
+      }
+    ],
     "DescribeRocketMQConsumerConnections": [
       {
         "document": "",
