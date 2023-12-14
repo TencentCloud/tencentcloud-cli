@@ -1,3 +1,32 @@
+# Release 3.0.904.1
+
+## 域名注册(domain) 版本：2018-08-08
+
+### 第 21 次发布
+
+发布时间：2023-12-15 01:13:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
+
+	* 新增成员：Action, BigDealId
+
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
+
+	* 新增成员：Success, Doing, Failed
+
+* [IntlTemplate](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlTemplate)
+
+	* 新增成员：TemplateType, Uin
+
+
+
+
 # Release 3.0.903.1
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11

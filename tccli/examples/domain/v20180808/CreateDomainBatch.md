@@ -6,10 +6,17 @@ Input:
 
 ```
 tccli domain CreateDomainBatch --cli-unfold-argument  \
-    --Domains xx \
+    --TemplateId abc \
+    --Period 0 \
+    --Domains abc \
     --PayMode 0 \
-    --Period 1 \
-    --TemplateId xx
+    --AutoRenewFlag 0 \
+    --PackageResourceId abc \
+    --UpdateProhibition 0 \
+    --TransferProhibition 0 \
+    --ChannelFrom abc \
+    --OrderFrom abc \
+    --ActivityId abc
 ```
 
 Output: 

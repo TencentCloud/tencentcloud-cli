@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain TransferProhibitionIntlBatch --cli-unfold-argument  \
-    --Domains xx \
+    --Domains abc \
     --Status True
 ```
 
@@ -14,8 +14,8 @@ Output:
 ```
 {
     "Response": {
-        "LogId": 11111111,
-        "RequestId": "xx"
+        "LogId": 0,
+        "RequestId": "abc"
     }
 }
 ```

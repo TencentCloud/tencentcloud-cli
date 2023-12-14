@@ -17,47 +17,47 @@ Output:
         "TotalCount": 1,
         "DomainSet": [
             {
-                "Status": "xx",
+                "Status": "ok",
                 "IsPremium": true,
-                "DomainId": "xx",
+                "DomainId": "domain-dsjiokdq",
                 "CanRenewYears": 0,
-                "DomainName": "xx",
-                "RegistrarType": "xx",
-                "ModifyStatus": "xx",
-                "DnsModifyStatus": "xx",
-                "TemplateId": "xx",
+                "DomainName": "abc.com",
+                "RegistrarType": "epp",
+                "ModifyStatus": "NotModify",
+                "DnsModifyStatus": "NotModify",
+                "TemplateId": "temp-123456",
                 "WhoisPrivacy": 0,
                 "DomainStatus": [
-                    "xx"
+                    "ok"
                 ],
-                "Uin": "xx",
+                "Uin": "111111",
                 "AutoRenew": 0,
-                "ExpirationDate": "xx",
+                "ExpirationDate": "2025-04-23 17:40:27",
                 "Dns": [
-                    "xx"
+                    "f1g1ns1.dnspod.net"
                 ],
                 "ExpireMessage": 0,
                 "DnsStatus": 0,
                 "ContactInfo": {
-                    "Province": "xx",
-                    "City": "xx",
-                    "OrganizationName": "xx",
-                    "FirstName": "xx",
-                    "RegistrantType": "xx",
-                    "Country": "xx",
-                    "CompanyName": "xx",
-                    "RegistrantName": "xx",
-                    "Telephone": "xx",
-                    "ZipCode": "xx",
-                    "Street": "xx",
-                    "LastName": "xx",
-                    "Email": "xx"
+                    "Province": "广东省",
+                    "City": "深圳市",
+                    "OrganizationName": "张某某",
+                    "FirstName": "zhang",
+                    "RegistrantType": "I",
+                    "Country": "中国",
+                    "CompanyName": "张某某",
+                    "RegistrantName": "张某某",
+                    "Telephone": "138***8888",
+                    "ZipCode": "400000",
+                    "Street": " 南山一号",
+                    "LastName": "moumou",
+                    "Email": "12**@qq.com"
                 },
                 "SupportDnssec": true,
-                "CreationDate": "xx"
+                "CreationDate": "2021-04-23 17:40:27"
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "3c59eccc-efca-4109-1111-37e2e2bce25f"
     }
 }
 ```

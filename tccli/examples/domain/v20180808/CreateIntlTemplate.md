@@ -6,66 +6,67 @@ Input:
 
 ```
 tccli domain CreateIntlTemplate --cli-unfold-argument  \
-    --RegistrantContact.Province xx \
-    --RegistrantContact.City xx \
-    --RegistrantContact.Fax xx \
-    --RegistrantContact.AddressLine xx \
-    --RegistrantContact.FirstName xx \
-    --RegistrantContact.CompanyName xx \
-    --RegistrantContact.JobTitle xx \
-    --RegistrantContact.ZipCode xx \
-    --RegistrantContact.AddressLineTwo xx \
-    --RegistrantContact.Country xx \
-    --RegistrantContact.LastName xx \
-    --RegistrantContact.Phone xx \
-    --RegistrantContact.Email xx \
-    --BillingContact.Province xx \
-    --BillingContact.City xx \
-    --BillingContact.Fax xx \
-    --BillingContact.AddressLine xx \
-    --BillingContact.FirstName xx \
-    --BillingContact.CompanyName xx \
-    --BillingContact.JobTitle xx \
-    --BillingContact.ZipCode xx \
-    --BillingContact.AddressLineTwo xx \
-    --BillingContact.Country xx \
-    --BillingContact.LastName xx \
-    --BillingContact.Phone xx \
-    --BillingContact.Email xx \
-    --TechnicalContact.Province xx \
-    --TechnicalContact.City xx \
-    --TechnicalContact.Fax xx \
-    --TechnicalContact.AddressLine xx \
-    --TechnicalContact.FirstName xx \
-    --TechnicalContact.CompanyName xx \
-    --TechnicalContact.JobTitle xx \
-    --TechnicalContact.ZipCode xx \
-    --TechnicalContact.AddressLineTwo xx \
-    --TechnicalContact.Country xx \
-    --TechnicalContact.LastName xx \
-    --TechnicalContact.Phone xx \
-    --TechnicalContact.Email xx \
-    --AdminContact.Province xx \
-    --AdminContact.City xx \
-    --AdminContact.Fax xx \
-    --AdminContact.AddressLine xx \
-    --AdminContact.FirstName xx \
-    --AdminContact.CompanyName xx \
-    --AdminContact.JobTitle xx \
-    --AdminContact.ZipCode xx \
-    --AdminContact.AddressLineTwo xx \
-    --AdminContact.Country xx \
-    --AdminContact.LastName xx \
-    --AdminContact.Phone xx \
-    --AdminContact.Email xx
+    --RegistrantContact.FirstName abc \
+    --RegistrantContact.LastName abc \
+    --RegistrantContact.CompanyName abc \
+    --RegistrantContact.JobTitle abc \
+    --RegistrantContact.Country abc \
+    --RegistrantContact.Province abc \
+    --RegistrantContact.City abc \
+    --RegistrantContact.AddressLine abc \
+    --RegistrantContact.AddressLineTwo abc \
+    --RegistrantContact.ZipCode abc \
+    --RegistrantContact.Email abc \
+    --RegistrantContact.Phone abc \
+    --RegistrantContact.Fax abc \
+    --AdminContact.FirstName abc \
+    --AdminContact.LastName abc \
+    --AdminContact.CompanyName abc \
+    --AdminContact.JobTitle abc \
+    --AdminContact.Country abc \
+    --AdminContact.Province abc \
+    --AdminContact.City abc \
+    --AdminContact.AddressLine abc \
+    --AdminContact.AddressLineTwo abc \
+    --AdminContact.ZipCode abc \
+    --AdminContact.Email abc \
+    --AdminContact.Phone abc \
+    --AdminContact.Fax abc \
+    --TechnicalContact.FirstName abc \
+    --TechnicalContact.LastName abc \
+    --TechnicalContact.CompanyName abc \
+    --TechnicalContact.JobTitle abc \
+    --TechnicalContact.Country abc \
+    --TechnicalContact.Province abc \
+    --TechnicalContact.City abc \
+    --TechnicalContact.AddressLine abc \
+    --TechnicalContact.AddressLineTwo abc \
+    --TechnicalContact.ZipCode abc \
+    --TechnicalContact.Email abc \
+    --TechnicalContact.Phone abc \
+    --TechnicalContact.Fax abc \
+    --BillingContact.FirstName abc \
+    --BillingContact.LastName abc \
+    --BillingContact.CompanyName abc \
+    --BillingContact.JobTitle abc \
+    --BillingContact.Country abc \
+    --BillingContact.Province abc \
+    --BillingContact.City abc \
+    --BillingContact.AddressLine abc \
+    --BillingContact.AddressLineTwo abc \
+    --BillingContact.ZipCode abc \
+    --BillingContact.Email abc \
+    --BillingContact.Phone abc \
+    --BillingContact.Fax abc \
+    --TemplateType abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TemplateId": "xx"
+        "TemplateId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

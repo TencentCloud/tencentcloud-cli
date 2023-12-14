@@ -1,44 +1,29 @@
 # 本版本更新包含以下内容：
 
-## 腾讯电子签企业版(ess) 版本：2020-11-11
+## 域名注册(domain) 版本：2018-08-08
 
-### 第 58 次发布
+### 第 21 次发布
 
-发布时间：2023-12-14 01:51:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [CreateSeal](http://document.tencentcloudapi.woa.com/document/product/1668/79306)
-
-	* 新增入参：TaxIdentifyCode
-
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
-
-### 第 115 次发布
-
-发布时间：2023-12-14 01:52:53
+发布时间：2023-12-15 01:13:28
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-修改接口：
+修改数据结构：
 
-* [CreateSealByImage](http://document.tencentcloudapi.woa.com/document/product/1595/75256)
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
 
-	* 新增入参：TaxIdentifyCode
+	* 新增成员：Action, BigDealId
 
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
 
+	* 新增成员：Success, Doing, Failed
 
+* [IntlTemplate](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlTemplate)
 
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+	* 新增成员：TemplateType, Uin
+
 
 
 
@@ -34193,6 +34178,29 @@
 
 
 ## 域名注册(domain) 版本：2018-08-08
+
+### 第 21 次发布
+
+发布时间：2023-12-15 01:13:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainBatchDetailSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchDetailSet)
+
+	* 新增成员：Action, BigDealId
+
+* [DomainBatchLogSet](http://document.tencentcloudapi.woa.com/document/product/242/38895#DomainBatchLogSet)
+
+	* 新增成员：Success, Doing, Failed
+
+* [IntlTemplate](http://document.tencentcloudapi.woa.com/document/product/242/38895#IntlTemplate)
+
+	* 新增成员：TemplateType, Uin
+
 
 ### 第 20 次发布
 

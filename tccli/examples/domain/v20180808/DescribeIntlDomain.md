@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli domain DescribeIntlDomain --cli-unfold-argument  \
-    --DomainId 0
+    --DomainId abc
 ```
 
 Output: 
@@ -14,46 +14,46 @@ Output:
 {
     "Response": {
         "DomainInfo": {
-            "Status": "xx",
-            "IsPremium": false,
-            "DomainId": "xx",
-            "CanRenewYears": 0,
-            "DomainName": "xx",
-            "RegistrarType": "xx",
-            "ModifyStatus": "xx",
-            "DnsModifyStatus": "xx",
-            "TemplateId": "xx",
-            "WhoisPrivacy": 0,
+            "AutoRenew": 0,
+            "CreationDate": "abc",
+            "DomainId": "abc",
+            "DnsStatus": 0,
+            "DomainName": "abc",
             "DomainStatus": [
-                ""
+                "abc"
             ],
-            "Uin": "xx",
-            "AutoRenew": 3,
-            "ExpirationDate": "xx",
+            "Status": "abc",
+            "ExpirationDate": "abc",
+            "ExpireMessage": 0,
+            "IsPremium": true,
             "Dns": [
-                "f1g1ns1.dnspod.net"
+                "abc"
             ],
-            "ExpireMessage": 3,
-            "DnsStatus": 3,
             "ContactInfo": {
-                "Province": "xx",
-                "City": "xx",
-                "OrganizationName": "xx",
-                "FirstName": "xx",
-                "RegistrantType": "xx",
-                "Country": "xx",
-                "CompanyName": "xx",
-                "RegistrantName": "xx",
-                "Telephone": "xx",
-                "ZipCode": "xx",
-                "Street": "xx",
-                "LastName": "xx",
-                "Email": "xx"
+                "City": "abc",
+                "Country": "abc",
+                "Email": "abc",
+                "OrganizationName": "abc",
+                "Province": "abc",
+                "RegistrantName": "abc",
+                "RegistrantType": "abc",
+                "Street": "abc",
+                "Telephone": "abc",
+                "ZipCode": "abc",
+                "FirstName": "abc",
+                "LastName": "abc",
+                "CompanyName": "abc"
             },
+            "CanRenewYears": 0,
+            "RegistrarType": "abc",
+            "Uin": "abc",
+            "TemplateId": "abc",
             "SupportDnssec": true,
-            "CreationDate": "xx"
+            "WhoisPrivacy": 0,
+            "ModifyStatus": "abc",
+            "DnsModifyStatus": "abc"
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,10 +6,14 @@ Input:
 
 ```
 tccli domain TransferInIntlDomainBatch --cli-unfold-argument  \
-    --Domains xx \
+    --TemplateId abc \
+    --PassWords abc \
+    --Domains abc \
     --PayMode 0 \
-    --PassWords xx \
-    --TemplateId xx
+    --AutoRenewFlag True \
+    --TransferProhibition True \
+    --UpdateProhibition True \
+    --LockTransfer True
 ```
 
 Output: 
