@@ -27,6 +27,25 @@
 
 
 
+## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 46 次发布
+
+发布时间：2023-12-15 19:12:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
+
+	* 新增入参：Tags, IsPendingIssue
+
+
+
+
 # 历次版本更新如下：
 
 ## 活动防刷(aa) 版本：2020-02-24
@@ -19136,7 +19155,7 @@
 
 
 
-## 云审计(cloudaudit) 版本：2019-03-19
+## 操作审计(cloudaudit) 版本：2019-03-19
 
 ### 第 6 次发布
 
@@ -67086,6 +67105,21 @@
 
 
 ## SSL 证书(ssl) 版本：2019-12-05
+
+### 第 46 次发布
+
+发布时间：2023-12-15 19:12:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCertificates](http://document.tencentcloudapi.woa.com/document/product/400/41671)
+
+	* 新增入参：Tags, IsPendingIssue
+
 
 ### 第 45 次发布
 
