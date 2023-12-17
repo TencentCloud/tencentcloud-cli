@@ -98,6 +98,13 @@
       "output": "DescribeNICAssetsResponse",
       "status": "online"
     },
+    "DescribeOrganizationUserInfo": {
+      "document": "查询集团账号用户列表",
+      "input": "DescribeOrganizationUserInfoRequest",
+      "name": "查询集团账号用户列表",
+      "output": "DescribeOrganizationUserInfoResponse",
+      "status": "online"
+    },
     "DescribePublicIpAssets": {
       "document": "ip公网列表",
       "input": "DescribePublicIpAssetsRequest",
@@ -4175,6 +4182,62 @@
       ],
       "type": "object"
     },
+    "DescribeOrganizationUserInfoRequest": {
+      "document": "DescribeOrganizationUserInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤内容",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filter",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "不支持多云",
+          "example": "true",
+          "member": "bool",
+          "name": "NotSupportCloud",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOrganizationUserInfoResponse": {
+      "document": "DescribeOrganizationUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集团用户列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "OrganizationUserInfo",
+          "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePublicIpAssetsRequest": {
       "document": "DescribePublicIpAssets请求参数结构体",
       "members": [
@@ -7052,6 +7115,232 @@
           "example": "无",
           "member": "uint64",
           "name": "IsNewAsset",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "OrganizationUserInfo": {
+      "document": "集团账号成员详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "成员账号Uin\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1000012345",
+          "member": "string",
+          "name": "Uin",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员账号名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "名称",
+          "member": "string",
+          "name": "NickName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部门节点名称，账号所属部门\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "部门名",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资产数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AssetCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "风险数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "RiskCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "攻击数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "AttackCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Member/Admin/;成员或者管理员\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Member",
+          "member": "string",
+          "name": "Role",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员账号id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "mem-123563",
+          "member": "string",
+          "name": "MemberId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "成员账号Appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "125000000",
+          "member": "string",
+          "name": "AppId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号加入方式,create/invite\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "create",
+          "member": "string",
+          "name": "JoinType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "CFWProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "WAFProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "空则未开启，否则不同字符串对应不同版本，common为通用，不区分版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "common",
+          "member": "string",
+          "name": "CWPProtect",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1启用，0未启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "Enable",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "\"Free\"       //免费版  \"Advanced\"   //高级版 \"Enterprise\" //企业版 \"Ultimate\"   //旗舰版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Advanced",
+          "member": "string",
+          "name": "CSIPProtect",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1为配额消耗者\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "QuotaConsumer",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账户类型，0为腾讯云账户，1为AWS账户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "CloudType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0为缺省值，1为10分钟，2为1小时，3为24小时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "SyncFrequency",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多云账户是否过期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "false",
+          "member": "bool",
+          "name": "IsExpired",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "多云账户 权限列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"ReadHost\",\"ReadNetwork\"]\"]",
+          "member": "string",
+          "name": "PermissionList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "账户权限类型",
+          "member": "int64",
+          "name": "AuthType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0 腾讯云集团账户\n1 腾讯云接入账户\n2 非腾讯云\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "TcMemberType",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true

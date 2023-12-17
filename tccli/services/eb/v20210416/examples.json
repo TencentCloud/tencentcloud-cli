@@ -46,6 +46,12 @@
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxxx\",\n    \"Type\": \"scf\",\n    \"TargetDescription\": {\n        \"ResourceDescription\": \"qcs::scf:ap-guangzhou:uin/xxxxxxxx:namespace/xxxxxx/function/xxxxx/x\"\n    },\n    \"RuleId\": \"rule-xxxxxxx\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b7662cf2-ce20-4b3e-aff2-2cb875cf0b6b\",\n        \"TargetId\": \"target-xxxxxx\"\n    }\n}",
         "title": "创建目标"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateTarget\n<公共请求参数>\n\n{\n    \"EventBusId\": \"eb-xxxxxx\",\n    \"Type\": \"scf\",\n    \"TargetDescription\": {\n        \"ResourceDescription\": \"qcs::custom_scf:ap-guangzhou:appid/xxxxx/uin/xxxxxxxx:namespace/xxxxxx/function/xxxxx/x\"\n    },\n    \"RuleId\": \"rule-xxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TargetId\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建自定义投递目标"
       }
     ],
     "CreateTransformation": [
@@ -99,8 +105,8 @@
     "DescribeLogTagValue": [
       {
         "document": "查询日志索引字段值",
-        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"GroupField\": \"Source\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"eb-l65vlc2u\"\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogTagValue\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"GroupField\": \"Source\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"eb-l65vlc2u\"\n        ],\n        \"RequestId\": \"cfa5ba79-4169-44d5-a1c4-a95b8a8b4481\"\n    }\n}",
         "title": "查询日志索引字段值"
       }
     ],
@@ -154,7 +160,7 @@
       {
         "document": "获取事件集列表",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListEventBuses\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"ModTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"xx\",\n                \"AddTime\": \"2020-09-22T00:00:00+00:00\",\n                \"EventBusName\": \"xx\",\n                \"EventBusId\": \"xx\",\n                \"Type\": \"xx\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"EventBuses\": [\n            {\n                \"ModTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Description\": \"abc\",\n                \"AddTime\": \"2020-09-22T00:00:00+00:00\",\n                \"EventBusName\": \"abc\",\n                \"EventBusId\": \"abc\",\n                \"Type\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"ConnectionBriefs\": [\n                    {\n                        \"Type\": \"abc\",\n                        \"Status\": \"abc\"\n                    }\n                ],\n                \"TargetBriefs\": [\n                    {\n                        \"TargetId\": \"abc\",\n                        \"Type\": \"abc\"\n                    }\n                ]\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取事件集列表"
       }
     ],
@@ -217,7 +223,7 @@
     "SearchLog": [
       {
         "document": "日志检索",
-        "input": "{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
+        "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"xxx\",\n                \"Message\": \"xxx-1\",\n                \"Source\": \"xxx\",\n                \"Type\": \"xzz\",\n                \"RuleIds\": \"xxx\",\n                \"Subject\": \"xxx\",\n                \"Region\": \"xxx\",\n                \"Status\": \"xxx\"\n            }\n        ],\n        \"Total\": 1000,\n        \"Limit\": 500,\n        \"Page\": 1\n    }\n}",
         "title": "日志检索"
       }

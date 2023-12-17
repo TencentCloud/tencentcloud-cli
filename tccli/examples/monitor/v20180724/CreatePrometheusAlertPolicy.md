@@ -6,45 +6,46 @@ Input:
 
 ```
 tccli monitor CreatePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xx \
-    --AlertRule.Name xx \
-    --AlertRule.Rules.0.Describe xx \
-    --AlertRule.Rules.0.Name xx \
-    --AlertRule.Rules.0.For xx \
-    --AlertRule.Rules.0.Labels.0.Name xx \
-    --AlertRule.Rules.0.Labels.0.Value xx \
-    --AlertRule.Rules.0.Rule xx \
-    --AlertRule.Rules.0.Template xx \
-    --AlertRule.Rules.0.Annotations.0.Name xx \
-    --AlertRule.Rules.0.Annotations.0.Value xx \
-    --AlertRule.Notification.AlertManager.Url xx \
-    --AlertRule.Notification.AlertManager.ClusterId xx \
-    --AlertRule.Notification.AlertManager.ClusterType xx \
-    --AlertRule.Notification.RepeatInterval xx \
-    --AlertRule.Notification.WebHook xx \
+    --InstanceId abc \
+    --AlertRule.Id abc \
+    --AlertRule.Name abc \
+    --AlertRule.TemplateId abc \
     --AlertRule.Notification.Enabled True \
+    --AlertRule.Notification.Type abc \
+    --AlertRule.Notification.WebHook abc \
+    --AlertRule.Notification.AlertManager.ClusterType abc \
+    --AlertRule.Notification.AlertManager.ClusterId abc \
+    --AlertRule.Notification.AlertManager.Url abc \
+    --AlertRule.Notification.RepeatInterval abc \
+    --AlertRule.Notification.TimeRangeStart abc \
+    --AlertRule.Notification.TimeRangeEnd abc \
+    --AlertRule.Notification.NotifyWay abc \
+    --AlertRule.Notification.ReceiverGroups abc \
     --AlertRule.Notification.PhoneNotifyOrder 1 \
+    --AlertRule.Notification.PhoneCircleTimes 0 \
     --AlertRule.Notification.PhoneInnerInterval 0 \
     --AlertRule.Notification.PhoneCircleInterval 0 \
-    --AlertRule.Notification.NotifyWay xx \
-    --AlertRule.Notification.ReceiverGroups 1 \
     --AlertRule.Notification.PhoneArriveNotice True \
-    --AlertRule.Notification.PhoneCircleTimes 0 \
-    --AlertRule.Notification.TimeRangeStart xx \
-    --AlertRule.Notification.Type xx \
-    --AlertRule.Notification.TimeRangeEnd xx \
-    --AlertRule.TemplateId xx \
-    --AlertRule.ClusterId xx \
-    --AlertRule.UpdatedAt xx \
-    --AlertRule.Id xx
+    --AlertRule.Rules.0.Name abc \
+    --AlertRule.Rules.0.Rule abc \
+    --AlertRule.Rules.0.Labels.0.Name abc \
+    --AlertRule.Rules.0.Labels.0.Value abc \
+    --AlertRule.Rules.0.Template abc \
+    --AlertRule.Rules.0.For abc \
+    --AlertRule.Rules.0.Describe abc \
+    --AlertRule.Rules.0.Annotations.0.Name abc \
+    --AlertRule.Rules.0.Annotations.0.Value abc \
+    --AlertRule.Rules.0.RuleState 0 \
+    --AlertRule.UpdatedAt abc \
+    --AlertRule.ClusterId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Id": "xx",
-        "RequestId": "xx"
+        "Id": "ac",
+        "RequestId": "ac"
     }
 }
 ```
@@ -57,38 +58,38 @@ Input:
 
 ```
 tccli monitor CreatePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xx \
-    --AlertRule.Name xx \
-    --AlertRule.Rules.0.Describe xx \
-    --AlertRule.Rules.0.Name xx \
-    --AlertRule.Rules.0.For xx \
-    --AlertRule.Rules.0.Labels.0.Name xx \
-    --AlertRule.Rules.0.Labels.0.Value xx \
-    --AlertRule.Rules.0.Rule xx \
-    --AlertRule.Rules.0.Template xx \
-    --AlertRule.Rules.0.RuleState 0 \
-    --AlertRule.Rules.0.Annotations.0.Name xx \
-    --AlertRule.Rules.0.Annotations.0.Value xx \
-    --AlertRule.Notification.AlertManager.Url xx \
-    --AlertRule.Notification.AlertManager.ClusterId xx \
-    --AlertRule.Notification.AlertManager.ClusterType xx \
-    --AlertRule.Notification.RepeatInterval xx \
-    --AlertRule.Notification.WebHook xx \
+    --InstanceId abc \
+    --AlertRule.Id abc \
+    --AlertRule.Name abc \
+    --AlertRule.TemplateId abc \
     --AlertRule.Notification.Enabled True \
+    --AlertRule.Notification.Type abc \
+    --AlertRule.Notification.WebHook abc \
+    --AlertRule.Notification.AlertManager.ClusterType abc \
+    --AlertRule.Notification.AlertManager.ClusterId abc \
+    --AlertRule.Notification.AlertManager.Url abc \
+    --AlertRule.Notification.RepeatInterval abc \
+    --AlertRule.Notification.TimeRangeStart abc \
+    --AlertRule.Notification.TimeRangeEnd abc \
+    --AlertRule.Notification.NotifyWay abc \
+    --AlertRule.Notification.ReceiverGroups abc \
     --AlertRule.Notification.PhoneNotifyOrder 1 \
+    --AlertRule.Notification.PhoneCircleTimes 0 \
     --AlertRule.Notification.PhoneInnerInterval 0 \
     --AlertRule.Notification.PhoneCircleInterval 0 \
-    --AlertRule.Notification.NotifyWay xx \
-    --AlertRule.Notification.ReceiverGroups xx \
     --AlertRule.Notification.PhoneArriveNotice True \
-    --AlertRule.Notification.PhoneCircleTimes 0 \
-    --AlertRule.Notification.TimeRangeStart xx \
-    --AlertRule.Notification.Type xx \
-    --AlertRule.Notification.TimeRangeEnd xx \
-    --AlertRule.TemplateId xx \
-    --AlertRule.ClusterId xx \
-    --AlertRule.UpdatedAt xx \
-    --AlertRule.Id xx
+    --AlertRule.Rules.0.Name abc \
+    --AlertRule.Rules.0.Rule abc \
+    --AlertRule.Rules.0.Labels.0.Name abc \
+    --AlertRule.Rules.0.Labels.0.Value abc \
+    --AlertRule.Rules.0.Template abc \
+    --AlertRule.Rules.0.For abc \
+    --AlertRule.Rules.0.Describe abc \
+    --AlertRule.Rules.0.Annotations.0.Name abc \
+    --AlertRule.Rules.0.Annotations.0.Value abc \
+    --AlertRule.Rules.0.RuleState 0 \
+    --AlertRule.UpdatedAt abc \
+    --AlertRule.ClusterId abc
 ```
 
 Output: 

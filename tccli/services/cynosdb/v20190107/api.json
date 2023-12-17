@@ -3305,7 +3305,7 @@
         },
         {
           "disabled": false,
-          "document": "当DbMode为SEVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "document": "当DbMode为SERVERLESS时必填\ncpu最小值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "1.0",
           "member": "float",
           "name": "MinCpu",
@@ -3314,7 +3314,7 @@
         },
         {
           "disabled": false,
-          "document": "当DbMode为SEVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
+          "document": "当DbMode为SERVERLESS时必填：\ncpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回",
           "example": "2.0",
           "member": "float",
           "name": "MaxCpu",
@@ -3323,7 +3323,7 @@
         },
         {
           "disabled": false,
-          "document": "当DbMode为SEVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
+          "document": "当DbMode为SERVERLESS时，指定集群是否自动暂停，可选范围\n<li>yes</li>\n<li>no</li>\n默认值:yes",
           "example": "yes",
           "member": "string",
           "name": "AutoPause",
@@ -3332,7 +3332,7 @@
         },
         {
           "disabled": false,
-          "document": "当DbMode为SEVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
+          "document": "当DbMode为SERVERLESS时，指定集群自动暂停的延迟，单位秒，可选范围[600,691200]\n默认值:600",
           "example": "600",
           "member": "int64",
           "name": "AutoPauseDelay",

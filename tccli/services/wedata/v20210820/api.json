@@ -7308,7 +7308,7 @@
           "example": "age",
           "member": "string",
           "name": "NameEn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7318,7 +7318,7 @@
           "example": "年龄",
           "member": "string",
           "name": "NameCn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7328,7 +7328,7 @@
           "example": "String",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7338,7 +7338,7 @@
           "example": "年龄",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7348,7 +7348,7 @@
           "example": "1",
           "member": "int64",
           "name": "Position",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7358,7 +7358,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsPartition",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -7368,7 +7368,7 @@
           "example": "age",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -7378,8 +7378,28 @@
           "example": "无",
           "member": "Pair",
           "name": "ColumnFamiliesFieldSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应码表字典ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "string",
+          "name": "DictionaryId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "对应码表字典名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dict1",
+          "member": "string",
+          "name": "DictionaryName",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -10067,6 +10087,15 @@
           "member": "string",
           "name": "ProjectId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "required": false,
           "type": "string"
         },
         {
@@ -37164,6 +37193,7 @@
           "example": "name",
           "member": "string",
           "name": "Key",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -37174,12 +37204,13 @@
           "example": "Tom",
           "member": "string",
           "name": "Value",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "PairDto": {
       "document": "键值对",
@@ -52372,6 +52403,15 @@
           "name": "ScriptRequestInfo",
           "required": true,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "请求来源，WEB 前端；CLIENT 客户端",
+          "example": "无",
+          "member": "string",
+          "name": "RequestFromSource",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -52385,6 +52425,7 @@
           "example": "无",
           "member": "ScriptInfoResponse",
           "name": "ScriptInfo",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

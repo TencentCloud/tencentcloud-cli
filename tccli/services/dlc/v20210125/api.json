@@ -1740,6 +1740,15 @@
           "name": "BatchId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义主键，若不为空，则使用该值进行查询",
+          "example": "dje8ed4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "CustomKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3921,6 +3930,15 @@
           "name": "IsInherit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义主键，需唯一",
+          "example": "dje8ed4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "CustomKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -8957,6 +8975,15 @@
           "name": "BatchId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义主键, 若不为空，则按照该值查询",
+          "example": "d39ijsd4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "CustomKey",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9013,6 +9040,15 @@
           "member": "string",
           "name": "BatchId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义主键，若不为空，则按照该值进行查询",
+          "example": "dje8ed4-9a7e-4f64-a3f4-f38507c69742",
+          "member": "string",
+          "name": "CustomKey",
+          "required": false,
           "type": "string"
         }
       ],
@@ -16377,7 +16413,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎配置项",
+          "document": "用户自定义引擎配置项集合。该参数需要传用户需要添加的全部配置项，例如，已有配置项k1:v1，添加k2:v2，需要传[k1:v1,k2:v2]。",
           "example": "无",
           "member": "DataEngineConfigPair",
           "name": "DataEngineConfigPairs",

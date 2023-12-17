@@ -16,9 +16,16 @@ Output:
 {
     "Response": {
         "Jobs": [
-            {}
+            {
+                "Targets": [
+                    {}
+                ],
+                "JobName": "abc",
+                "Total": 1,
+                "Up": 1
+            }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

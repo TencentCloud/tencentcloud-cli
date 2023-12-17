@@ -336,6 +336,13 @@
       "output": "CreateFlowsByTemplatesResponse",
       "status": "online"
     },
+    "CreatePartnerAutoSignAuthUrl": {
+      "document": "创建他方自动签授权链接，通过该链接可进入小程序进行合作方企业的自动签授权，若当前企业未开通企业自动签，通过该链接会先引导开通本企业自动签。\n该接口效果同控制台： 企业设置-> 扩展服务 -> 企业自动签署 -> 合作企业方授权\n\n\n\n注: \n1. <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)\n2. 已经在授权中或者授权成功的企业，无法重复授权",
+      "input": "CreatePartnerAutoSignAuthUrlRequest",
+      "name": "创建他方企业自动签授权链接",
+      "output": "CreatePartnerAutoSignAuthUrlResponse",
+      "status": "online"
+    },
     "CreateSealByImage": {
       "document": "1. 可以**通过图片**为子客企业代创建印章，图片最大5MB\n\n2. 可以**系统创建**子客企业代创建印章, 系统创建的印章样子下图(样式可以调整)\n\n![image](https://dyn.ess.tencent.cn/guide/capi/CreateSealByImage.png)",
       "input": "CreateSealByImageRequest",
@@ -383,6 +390,13 @@
       "input": "DescribeChannelSealPolicyWorkflowUrlRequest",
       "name": "生成渠道子客用印申请审批链接",
       "output": "DescribeChannelSealPolicyWorkflowUrlResponse",
+      "status": "online"
+    },
+    "DescribeExtendedServiceAuthDetail": {
+      "document": "查询企业扩展服务的授权详情（列表），当前支持查询以下内容：\n\n1. **企业自动签**\n2. **批量签署**\n\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)",
+      "input": "DescribeExtendedServiceAuthDetailRequest",
+      "name": "查询企业扩展服务授权详情",
+      "output": "DescribeExtendedServiceAuthDetailResponse",
       "status": "online"
     },
     "DescribeExtendedServiceAuthInfo": {
@@ -711,6 +725,78 @@
       ],
       "usage": "out"
     },
+    "AuthInfoDetail": {
+      "document": "企业扩展服务授权列表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩展服务类型，和入参一致\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展服务名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权员工列表\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HasAuthUser",
+          "name": "HasAuthUserList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业列表（企业自动签时，该字段有值）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HasAuthOrganization",
+          "name": "HasAuthOrganizationList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权员工列表总数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthUserTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业列表总数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthOrganizationTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "AuthorizedUser": {
       "document": "授权用户",
       "members": [
@@ -882,7 +968,7 @@
         },
         {
           "disabled": false,
-          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n\n注:`此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "合同流程的抄送人列表，最多可支持50个抄送人，抄送人可查看合同内容及签署进度，但无需参与合同签署。\n",
           "example": "无",
           "member": "CcInfo",
           "name": "CcInfos",
@@ -1563,6 +1649,15 @@
           "name": "ApproverSignTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "example": "0",
+          "member": "uint64",
+          "name": "SignTypeSelector",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -6061,6 +6156,81 @@
       ],
       "type": "object"
     },
+    "CreatePartnerAutoSignAuthUrlRequest": {
+      "document": "CreatePartnerAutoSignAuthUrl请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "被授企业id，和AuthorizedOrganizationName二选一，不能同时为空\n注：`被授权企业必须和当前企业在同一应用号下`",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "被授权企业名，和AuthorizedOrganizationId二选一，不能同时为空\n注：`被授权企业必须和当前企业在同一应用号下`",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePartnerAutoSignAuthUrlResponse": {
+      "document": "CreatePartnerAutoSignAuthUrl返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n",
+          "example": "无",
+          "member": "string",
+          "name": "MiniAppPath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接过期时间以 Unix 时间戳格式表示，从生成链接时间起，往后7天有效期。过期后短链将失效，无法打开。",
+          "example": "无",
+          "member": "int64",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateSealByImageRequest": {
       "document": "CreateSealByImage请求参数结构体",
       "members": [
@@ -6138,7 +6308,7 @@
         },
         {
           "disabled": false,
-          "document": "印章尺寸取值描述, 可以选择的尺寸如下: \n<ul><li> **42_42**: 圆形企业公章直径42mm, 当SealStyle是圆形的时候才有效</li>\n<li> **40_40**: 圆形企业印章直径40mm, 当SealStyle是圆形的时候才有效</li>\n<li> **45_30**: 椭圆形印章45mm x 30mm, 当SealStyle是椭圆的时候才有效</li></ul>",
+          "document": "印章尺寸取值描述, 可以选择的尺寸如下: \n<ul><li> **42_42**: 圆形企业公章直径42mm, 当SealStyle是圆形的时候才有效</li>\n<li> **40_40**: 圆形企业印章直径40mm, 当SealStyle是圆形的时候才有效</li>\n<li> **45_30**: 椭圆形印章45mm x 30mm, 当SealStyle是椭圆的时候才有效</li>\n<li> **40_30**: 椭圆形印章40mm x 30mm, 当SealStyle是椭圆的时候才有效</li></ul>",
           "example": "42_42",
           "member": "string",
           "name": "SealSize",
@@ -6757,6 +6927,70 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendedServiceAuthDetailRequest": {
+      "document": "DescribeExtendedServiceAuthDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "关于渠道应用的相关信息，包括渠道应用标识、第三方平台子客企业标识及第三方平台子客企业中的员工标识等内容，您可以参阅开发者中心所提供的 Agent 结构体以获取详细定义。\n\n此接口下面信息必填。\n<ul>\n<li>渠道应用标识:  Agent.AppId</li>\n<li>第三方平台子客企业标识: Agent.ProxyOrganizationOpenId</li>\n<li>第三方平台子客企业中的员工标识: Agent. ProxyOperator.OpenId</li>\n</ul>\n第三方平台子客企业和员工必须已经经过实名认证",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的扩展服务类型。\n如下所示：\n<ul><li> AUTO_SIGN：企业静默签署</li>\n<li>BATCH_SIGN：批量签署</li>\n</ul>\n",
+          "example": "无",
+          "member": "string",
+          "name": "ExtendServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。 注：`1.默认值为20，单页做大值为200。`\t",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。 注：`1.offset从0开始，即第一页为0。` `2.默认从第一页返回。`\t",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendedServiceAuthDetailResponse": {
+      "document": "DescribeExtendedServiceAuthDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务授权的信息列表，根据查询类型返回特定扩展服务的开通和授权状况。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "AuthInfoDetail",
+          "name": "AuthInfoDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7869,6 +8103,15 @@
           "name": "ApproverRoleName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "example": "0",
+          "member": "uint64",
+          "name": "SignTypeSelector",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -8471,6 +8714,84 @@
         }
       ],
       "type": "object"
+    },
+    "HasAuthOrganization": {
+      "document": "授权企业列表（目前仅用于“企业自动签 -> 合作企业授权”）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权企业openid，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被授权企业openid，\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationOpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被授权企业名称\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权时间，格式为时间戳，单位s\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthorizeTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "HasAuthUser": {
+      "document": "被授权的用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "第三方应用平台自定义，对应第三方平台子客企业员工的唯一标识。\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ModifyExtendedServiceRequest": {
       "document": "ModifyExtendedService请求参数结构体",

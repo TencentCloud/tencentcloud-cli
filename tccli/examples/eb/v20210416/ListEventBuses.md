@@ -14,15 +14,28 @@ Output:
         "EventBuses": [
             {
                 "ModTime": "2020-09-22T00:00:00+00:00",
-                "Description": "xx",
+                "Description": "abc",
                 "AddTime": "2020-09-22T00:00:00+00:00",
-                "EventBusName": "xx",
-                "EventBusId": "xx",
-                "Type": "xx"
+                "EventBusName": "abc",
+                "EventBusId": "abc",
+                "Type": "abc",
+                "PayMode": "abc",
+                "ConnectionBriefs": [
+                    {
+                        "Type": "abc",
+                        "Status": "abc"
+                    }
+                ],
+                "TargetBriefs": [
+                    {
+                        "TargetId": "abc",
+                        "Type": "abc"
+                    }
+                ]
             }
         ],
         "TotalCount": 0,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -210,50 +210,50 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "ins-tatxxxyyy",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "Agent 版本号。",
-          "example": "无",
+          "example": "1.0.19",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "上次心跳时间",
-          "example": "无",
+          "example": "2023-12-11T07:45:27Z",
           "member": "datetime_iso",
           "name": "LastHeartbeatTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Agent状态，取值范围：\n<li> Online：在线\n<li> Offline：离线",
-          "example": "无",
+          "document": "Agent状态，取值范围：\nOnline：在线，Offline：离线\n",
+          "example": "Online",
           "member": "string",
           "name": "AgentStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "Agent运行环境，取值范围：\n<li> Linux：Linux实例\n<li> Windows：Windows实例",
-          "example": "无",
+          "document": "Agent运行环境，取值范围：Linux：Linux实例Windows：Windows实例",
+          "example": "Linux",
           "member": "string",
           "name": "Environment",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -263,7 +263,7 @@
           "example": "[\"NEW_FEATURE\"]",
           "member": "string",
           "name": "SupportFeatures",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -276,7 +276,7 @@
         {
           "disabled": false,
           "document": "执行活动ID",
-          "example": "无 ",
+          "example": "inv-xxxxxxxx",
           "member": "string",
           "name": "InvocationId",
           "required": true,
@@ -284,8 +284,8 @@
         },
         {
           "disabled": false,
-          "document": "实例ID列表，上限100。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
-          "example": "无",
+          "document": "实例ID列表，上限100。支持实例类型：\n<li> CVM </li>\n<li> LIGHTHOUSE </li>",
+          "example": "[\"ins-xxxxxxxx\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -372,7 +372,7 @@
         {
           "disabled": false,
           "document": "命令超时时间。",
-          "example": "123",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "output_required": true,
@@ -382,7 +382,7 @@
         {
           "disabled": false,
           "document": "命令创建时间。",
-          "example": "无",
+          "example": "2021-05-12T02:49:04Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -392,7 +392,7 @@
         {
           "disabled": false,
           "document": "命令更新时间。",
-          "example": "无",
+          "example": "2021-05-12T02:49:04Z",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": true,
@@ -498,10 +498,10 @@
         {
           "disabled": false,
           "document": "Base64 编码后的执行命令。",
-          "example": "无",
+          "example": "cHdk",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -511,7 +511,7 @@
           "example": "SHELL",
           "member": "string",
           "name": "CommandType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -521,7 +521,7 @@
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -531,7 +531,7 @@
           "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -541,7 +541,7 @@
           "example": "root",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -551,7 +551,7 @@
           "example": "https://<名称>-<AppId>.cos.ap-beijing.myqcloud.com",
           "member": "string",
           "name": "OutputCOSBucketUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -561,7 +561,7 @@
           "example": "agent",
           "member": "string",
           "name": "OutputCOSKeyPrefix",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -574,7 +574,7 @@
         {
           "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
-          "example": "无",
+          "example": "tat-command",
           "member": "string",
           "name": "CommandName",
           "required": true,
@@ -583,7 +583,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
-          "example": "无",
+          "example": "cHdk",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -592,7 +592,7 @@
         {
           "disabled": false,
           "document": "命令描述。不超过120字符。",
-          "example": "无",
+          "example": "this is a command",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -601,7 +601,7 @@
         {
           "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。",
-          "example": "无",
+          "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": false,
@@ -610,7 +610,7 @@
         {
           "disabled": false,
           "document": "命令执行路径，对于 SHELL 命令默认为 /root，对于 POWERSHELL 命令默认为 C:\\Program Files\\qcloud\\tat_agent\\workdir。",
-          "example": "无",
+          "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
           "required": false,
@@ -619,7 +619,7 @@
         {
           "disabled": false,
           "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
-          "example": "无",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "required": false,
@@ -655,7 +655,7 @@
         {
           "disabled": false,
           "document": "为命令关联的标签，列表长度不超过10。",
-          "example": "无",
+          "example": "[     {       \"Key\": \"test\",       \"Value\": \"test\"     }   ]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -697,7 +697,7 @@
         {
           "disabled": false,
           "document": "命令ID。",
-          "example": "无",
+          "example": "cmd-543xxk0d",
           "member": "string",
           "name": "CommandId",
           "output_required": true,
@@ -810,7 +810,7 @@
         {
           "disabled": false,
           "document": "注册码描述。",
-          "example": "无",
+          "example": "此注册码用于注册托管实例。",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -819,7 +819,7 @@
         {
           "disabled": false,
           "document": "注册实例名称前缀。",
-          "example": "无",
+          "example": "register-test",
           "member": "string",
           "name": "InstanceNamePrefix",
           "required": false,
@@ -861,7 +861,7 @@
         {
           "disabled": false,
           "document": "注册码ID。",
-          "example": "无",
+          "example": "d0b7xxxx-a6xx-40x9-898x-44c9f508axxx",
           "member": "string",
           "name": "RegisterCodeId",
           "output_required": true,
@@ -871,7 +871,7 @@
         {
           "disabled": false,
           "document": "注册码值。",
-          "example": "无",
+          "example": "5xx127965b0b498195xxxxx80ad926c53e1xxxx3d85e41e0ad93555941111111",
           "member": "string",
           "name": "RegisterCodeValue",
           "output_required": true,
@@ -893,7 +893,7 @@
         {
           "disabled": false,
           "document": "参数名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test",
           "member": "string",
           "name": "ParameterName",
           "output_required": true,
@@ -904,7 +904,7 @@
         {
           "disabled": false,
           "document": "参数默认值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "test001",
           "member": "string",
           "name": "ParameterValue",
           "output_required": true,
@@ -915,7 +915,7 @@
         {
           "disabled": false,
           "document": "参数描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "自定义参数test的值为test001。",
           "member": "string",
           "name": "ParameterDescription",
           "output_required": true,
@@ -1013,7 +1013,7 @@
         {
           "disabled": false,
           "document": "注册码ID列表。限制输入的注册码ID数量大于0小于100。",
-          "example": "无",
+          "example": "[\"d0b7xxxx-a6xx-40x9-898x-44c9f508axxx\"]",
           "member": "string",
           "name": "RegisterCodeIds",
           "required": true,
@@ -1040,7 +1040,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "[\"rins-8d5cxxxx\"]",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -1141,7 +1141,7 @@
         {
           "disabled": false,
           "document": "命令ID列表，每次请求的上限为100。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
-          "example": "无",
+          "example": "[     \"cmd-2x8vxx0d\"   ]",
           "member": "string",
           "name": "CommandIds",
           "required": false,
@@ -1149,7 +1149,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。\n<li> command-name - String - 是否必填：否 -（过滤条件）按照命令名称过滤。\n<li> command-type - String - 是否必填：否 -（过滤条件）按照命令类型过滤，取值为 SHELL 或 POWERSHELL。\n<li> created-by - String - 是否必填：否 -（过滤条件）按照命令创建者过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例4</li>\n\n每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
+          "document": "过滤条件。\n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li>\n<li> command-name - String - 是否必填：否 -（过滤条件）按照命令名称过滤。</li>\n<li> command-type - String - 是否必填：否 -（过滤条件）按照命令类型过滤，取值为 SHELL 或 POWERSHELL。</li>\n<li> created-by - String - 是否必填：否 -（过滤条件）按照命令创建者过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。</li>\n<li> tag-key - String - 是否必填：否 -（过滤条件）按照标签键进行过滤。</li>\n<li> tag-value - String - 是否必填：否 -（过滤条件）按照标签值进行过滤。</li>\n<li> tag:tag-key - String - 是否必填：否 -（过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。使用请参考示例4</li>\n\n每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `CommandIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1186,7 +1186,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1196,7 +1196,7 @@
           "example": "无",
           "member": "Command",
           "name": "CommandSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1215,7 +1215,7 @@
         {
           "disabled": false,
           "document": "执行任务ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationTaskIds` 和 `Filters`。",
-          "example": "无",
+          "example": "[\"invt-xxxxxxxx\"]",
           "member": "string",
           "name": "InvocationTaskIds",
           "required": false,
@@ -1223,7 +1223,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。<br> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。 <br> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。 <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。",
+          "document": "过滤条件。<br>\n\n<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li> <li> invocation-task-id - String - 是否必填：否 -（过滤条件）按照执行任务ID过滤。</li> <li> instance-id - String - 是否必填：否 -（过滤条件）按照实例ID过滤。</li> <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationTaskIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1250,7 +1250,7 @@
         },
         {
           "disabled": false,
-          "document": "是否隐藏输出，取值范围：<br><li>true：隐藏输出 <br><li>false：不隐藏 <br>默认为 true。",
+          "document": "是否隐藏输出，取值范围：\n\n<ul> <li>true：隐藏输出</li> <li>false：不隐藏</li> </ul> 默认为 true。",
           "example": "true",
           "member": "bool",
           "name": "HideOutput",
@@ -1298,7 +1298,7 @@
         {
           "disabled": false,
           "document": "执行活动ID列表，每次请求的上限为100。参数不支持同时指定 `InvocationIds` 和 `Filters`。",
-          "example": "无",
+          "example": "[\"inv-xxxxxxxx\"]",
           "member": "string",
           "name": "InvocationIds",
           "required": false,
@@ -1306,7 +1306,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。<br> <li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。<br> \n<li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。 \n<li> command-created-by - String - 是否必填：否 -（过滤条件）按照执行的命令类型过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。\n<li> instance-kind - String - 是否必填：否 -（过滤条件）按照运行实例类型过滤，取值为 CVM 或 LIGHTHOUSE，CVM 代表实例为云服务器， LIGHTHOUSE 代表实例为轻量应用服务器。\n<br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationIds` 和 `Filters` 。",
+          "document": "过滤条件。<br>\n\n<li> invocation-id - String - 是否必填：否 -（过滤条件）按照执行活动ID过滤。</li>\n <li> command-id - String - 是否必填：否 -（过滤条件）按照命令ID过滤。</li> \n<li> command-created-by - String - 是否必填：否 -（过滤条件）按照执行的命令类型过滤，取值为 TAT 或 USER，TAT 代表公共命令，USER 代表由用户创建的命令。</li>\n <li> instance-kind - String - 是否必填：否 -（过滤条件）按照运行实例类型过滤，取值为 CVM 或 LIGHTHOUSE，CVM 代表实例为云服务器， LIGHTHOUSE 代表实例为轻量应用服务器。</li>\n <br>每次请求的 `Filters` 的上限为10， `Filter.Values` 的上限为5。参数不支持同时指定 `InvocationIds` 和 `Filters` 。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1343,7 +1343,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1353,7 +1353,7 @@
           "example": "无",
           "member": "Invocation",
           "name": "InvocationSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1511,7 +1511,7 @@
         {
           "disabled": false,
           "document": "资源名称，目前有\"COMMAND\",\"REGISTER_CODE\" 这两个指标",
-          "example": "无",
+          "example": "[\"COMMAND\"]",
           "member": "string",
           "name": "ResourceNames",
           "required": true,
@@ -1583,7 +1583,7 @@
         {
           "disabled": false,
           "document": "注册码ID。",
-          "example": "无",
+          "example": "[\"d0b7xxxx-a6xx-40x9-898x-44c9f508axxx\"]",
           "member": "string",
           "name": "RegisterCodeIds",
           "required": false,
@@ -1592,7 +1592,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为 0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1601,7 +1601,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1616,7 +1616,7 @@
         {
           "disabled": false,
           "document": "查询到的注册码总数。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1648,7 +1648,7 @@
         {
           "disabled": false,
           "document": "实例id。",
-          "example": "无",
+          "example": "[\"rins-8d88xxxx\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,
@@ -1656,7 +1656,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器列表。\n\n- instance-name\n\n按照【实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【注册码ID】进行过滤。\n类型：String\n必选：否",
+          "document": "过滤器列表。\n\n- instance-name\n\n按照【实例名称】进行过滤。\n类型：String\n必选：否\n\n- instance-id\n\n按照【实例ID】进行过滤。\n类型：String\n必选：否\n\n- register-code-id\n\n按照【注册码ID】进行过滤。\n类型：String\n必选：否\n\n- sys-name\n\n按照【操作系统类型】进行过滤，取值：Linux | Windows。\n类型：String\n必选：否",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -1666,7 +1666,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为 0。",
-          "example": "无",
+          "example": "0",
           "member": "int64",
           "name": "Offset",
           "required": false,
@@ -1675,7 +1675,7 @@
         {
           "disabled": false,
           "document": "返回数量，默认为 20，最大值为 100。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": false,
@@ -1690,7 +1690,7 @@
         {
           "disabled": false,
           "document": "该实例注册过的注册码总数。",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,
@@ -1749,7 +1749,7 @@
         {
           "disabled": false,
           "document": "注册码ID。",
-          "example": "无",
+          "example": "[\"d0b7xxxx-a6xx-40x9-898x-44c9f508axxx\"]",
           "member": "string",
           "name": "RegisterCodeIds",
           "required": true,
@@ -1824,12 +1824,12 @@
       "usage": "in"
     },
     "GeneralResourceQuotaSet": {
-      "document": "GeneralResourceQuotaSet数据结构",
+      "document": "用户配额信息。",
       "members": [
         {
           "disabled": false,
           "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "COMMAND",
           "member": "string",
           "name": "ResourceName",
           "output_required": false,
@@ -1840,7 +1840,7 @@
         {
           "disabled": false,
           "document": "已使用额度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "200",
           "member": "int64",
           "name": "ResourceQuotaUsed",
           "output_required": false,
@@ -1851,7 +1851,7 @@
         {
           "disabled": false,
           "document": "总额度\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "500",
           "member": "int64",
           "name": "ResourceQuotaTotal",
           "output_required": false,
@@ -1868,30 +1868,30 @@
         {
           "disabled": false,
           "document": "执行活动ID。",
-          "example": "无",
+          "example": "inv-xxxxxxxx",
           "member": "string",
           "name": "InvocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命令ID。",
-          "example": "无",
+          "example": "cmd-xxxxxxxx",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令失败\n<li> TIMEOUT：命令超时\n<li> PARTIAL_FAILED：命令部分失败",
-          "example": "无",
+          "document": "执行任务状态。取值范围：\n\n<ul> <li>PENDING：等待下发</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令失败</li> <li>TIMEOUT：命令超时</li> <li>PARTIAL_FAILED：命令部分失败</li> </ul>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "InvocationStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1901,57 +1901,57 @@
           "example": "无",
           "member": "InvocationTaskBasicInfo",
           "name": "InvocationTaskBasicInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行活动描述。",
-          "example": "无",
+          "example": "Test Invocation",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行活动开始时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行活动结束时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行活动创建时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行活动更新时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1961,7 +1961,7 @@
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
           "name": "Parameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1971,7 +1971,7 @@
           "example": "{\\\"varA\\\": \\\"222\\\"}",
           "member": "string",
           "name": "DefaultParameters",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1981,7 +1981,7 @@
           "example": "CVM",
           "member": "string",
           "name": "InstanceKind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1991,7 +1991,7 @@
           "example": "root",
           "member": "string",
           "name": "Username",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2001,7 +2001,7 @@
           "example": "USER",
           "member": "string",
           "name": "InvocationSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2011,7 +2011,7 @@
           "example": "cHdk",
           "member": "string",
           "name": "CommandContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2021,7 +2021,7 @@
           "example": "SHELL",
           "member": "string",
           "name": "CommandType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2031,7 +2031,7 @@
           "example": "60",
           "member": "uint64",
           "name": "Timeout",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2041,7 +2041,7 @@
           "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2051,7 +2051,7 @@
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
           "name": "OutputCOSBucketUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2061,7 +2061,7 @@
           "example": "aa/bb/cc",
           "member": "string",
           "name": "OutputCOSKeyPrefix",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2074,50 +2074,50 @@
         {
           "disabled": false,
           "document": "执行活动ID。",
-          "example": "无",
+          "example": "inv-xxxxxxxx",
           "member": "string",
           "name": "InvocationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "执行任务ID。",
-          "example": "无",
+          "example": "invt-xxxxxxxx",
           "member": "string",
           "name": "InvocationTaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "命令ID。",
-          "example": "无",
+          "example": "cmd-xxxxxxxx",
           "member": "string",
           "name": "CommandId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "执行任务状态。取值范围：\n<li> PENDING：等待下发 \n<li> DELIVERING：下发中\n<li> DELIVER_DELAYED：延时下发 \n<li> DELIVER_FAILED：下发失败\n<li> START_FAILED：命令启动失败\n<li> RUNNING：命令运行中\n<li> SUCCESS：命令成功\n<li> FAILED：命令执行失败，执行完退出码不为 0\n<li> TIMEOUT：命令超时\n<li> TASK_TIMEOUT：执行任务超时\n<li> CANCELLING：取消中\n<li> CANCELLED：已取消（命令启动前就被取消）\n<li> TERMINATED：已中止（命令执行期间被取消）",
-          "example": "无",
+          "document": "执行任务状态。取值范围：\n\n<ul> <li>PENDING：等待下发</li> <li>DELIVERING：下发中</li> <li>DELIVER_DELAYED：延时下发</li> <li>DELIVER_FAILED：下发失败</li> <li>START_FAILED：命令启动失败</li> <li>RUNNING：命令运行中</li> <li>SUCCESS：命令成功</li> <li>FAILED：命令执行失败，执行完退出码不为 0</li> <li>TIMEOUT：命令超时</li> <li>TASK_TIMEOUT：执行任务超时</li> <li>CANCELLING：取消中</li> <li>CANCELLED：已取消（命令启动前就被取消）</li> <li>TERMINATED：已中止（命令执行期间被取消）</li> </ul>",
+          "example": "SUCCESS",
           "member": "string",
           "name": "TaskStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "ins-xxxxxxxx",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2127,7 +2127,7 @@
           "example": "无",
           "member": "TaskResult",
           "name": "TaskResult",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2137,7 +2137,7 @@
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2147,27 +2147,27 @@
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "创建时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "更新时间。",
-          "example": "无",
+          "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2177,7 +2177,7 @@
           "example": "无",
           "member": "CommandDocument",
           "name": "CommandDocument",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -2187,7 +2187,7 @@
           "example": "working_directory not exists",
           "member": "string",
           "name": "ErrorInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2197,7 +2197,7 @@
           "example": "USER",
           "member": "string",
           "name": "InvocationSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -2527,7 +2527,7 @@
         {
           "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
-          "example": "无",
+          "example": "tat-command",
           "member": "string",
           "name": "CommandName",
           "required": false,
@@ -2536,7 +2536,7 @@
         {
           "disabled": false,
           "document": "命令描述。不超过120字符。",
-          "example": "无",
+          "example": "this is a command",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -2545,7 +2545,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
-          "example": "无",
+          "example": "cHdk",
           "member": "string",
           "name": "Content",
           "required": false,
@@ -2554,7 +2554,7 @@
         {
           "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。",
-          "example": "无",
+          "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": false,
@@ -2563,7 +2563,7 @@
         {
           "disabled": false,
           "document": "命令执行路径。",
-          "example": "无",
+          "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
           "required": false,
@@ -2572,7 +2572,7 @@
         {
           "disabled": false,
           "document": "命令超时时间。取值范围[1, 86400]。",
-          "example": "无",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "required": false,
@@ -2734,7 +2734,7 @@
         {
           "disabled": false,
           "document": "实例ID。",
-          "example": "无",
+          "example": "rins-8dz6cwxx",
           "member": "string",
           "name": "InstanceId",
           "required": true,
@@ -2743,7 +2743,7 @@
         {
           "disabled": false,
           "document": "实例名。",
-          "example": "无",
+          "example": "register-test",
           "member": "string",
           "name": "InstanceName",
           "required": true,
@@ -2803,10 +2803,10 @@
         {
           "disabled": false,
           "document": "自定义参数替换后的，经Base64编码的命令内容。",
-          "example": "无",
+          "example": "bHMge3thfX0KZWNobyB7e2J9fQ==",
           "member": "string",
           "name": "ReplacedContent",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2861,30 +2861,30 @@
         {
           "disabled": false,
           "document": "注册码ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "d0b7xxxx-a6xx-40x9-898x-44c9f508axxx",
           "member": "string",
           "name": "RegisterCodeId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "注册码描述。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "此注册码用于注册托管实例。",
           "member": "string",
           "name": "Description",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "注册实例名称前缀。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "register-test",
           "member": "string",
           "name": "InstanceNamePrefix",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2894,17 +2894,17 @@
           "example": "100",
           "member": "int64",
           "name": "RegisterLimit",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该注册码的过期时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-09-07T13:13:29Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2914,17 +2914,17 @@
           "example": "133.12.234.0/24",
           "member": "string",
           "name": "IpAddressRange",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "该注册码是否可用。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Enabled",
-          "required": false,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2934,27 +2934,27 @@
           "example": "10",
           "member": "int64",
           "name": "RegisteredCount",
-          "required": false,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "注册码创建时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01 00:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "注册码最近一次更新时间，按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01 00:00:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -2967,7 +2967,7 @@
         {
           "disabled": false,
           "document": "注册码ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "d0b7xxxx-a6xx-40x9-898x-44c9f508axxx",
           "member": "string",
           "name": "RegisterCodeId",
           "output_required": false,
@@ -2977,7 +2977,7 @@
         {
           "disabled": false,
           "document": "实例ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "rins-8d5cxxxx",
           "member": "string",
           "name": "InstanceId",
           "output_required": false,
@@ -2987,7 +2987,7 @@
         {
           "disabled": false,
           "document": "实例名。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "register-test",
           "member": "string",
           "name": "InstanceName",
           "output_required": false,
@@ -2997,7 +2997,7 @@
         {
           "disabled": false,
           "document": "机器ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "00xxxxx-0fxx-xxxx-xxxx-33951xxxxxxx",
           "member": "string",
           "name": "MachineId",
           "output_required": false,
@@ -3016,8 +3016,8 @@
         },
         {
           "disabled": false,
-          "document": "主机IP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "主机名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "VM-0-01-ubuntu",
           "member": "string",
           "name": "HostName",
           "output_required": false,
@@ -3027,7 +3027,7 @@
         {
           "disabled": false,
           "document": "内网IP。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "10.0.0.1",
           "member": "string",
           "name": "LocalIp",
           "output_required": false,
@@ -3037,7 +3037,7 @@
         {
           "disabled": false,
           "document": "公钥。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "-----BEGIN RSA PUBLIC KEY-----\\nXXXXX...",
           "member": "string",
           "name": "PublicKey",
           "output_required": false,
@@ -3047,7 +3047,7 @@
         {
           "disabled": false,
           "document": "托管状态。\n返回Online表示实例正在托管，返回Offline表示实例未托管。",
-          "example": "无",
+          "example": "Online",
           "member": "string",
           "name": "Status",
           "output_required": false,
@@ -3057,7 +3057,7 @@
         {
           "disabled": false,
           "document": "创建时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01 00:00:00",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": false,
@@ -3067,7 +3067,7 @@
         {
           "disabled": false,
           "document": "上次更新时间。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01 00:00:00",
           "member": "datetime_iso",
           "name": "UpdatedTime",
           "output_required": false,
@@ -3083,7 +3083,7 @@
         {
           "disabled": false,
           "document": "Base64编码后的命令内容，长度不可超过64KB。",
-          "example": "无",
+          "example": "cHdk",
           "member": "string",
           "name": "Content",
           "required": true,
@@ -3091,8 +3091,8 @@
         },
         {
           "disabled": false,
-          "document": "待执行命令的实例ID列表，上限200。支持实例类型：\n<li> CVM\n<li> LIGHTHOUSE",
-          "example": "无",
+          "document": "待执行命令的实例ID列表，上限200。支持实例类型：\n<li> CVM </li>\n<li> LIGHTHOUSE </li>",
+          "example": "[\"ins-zcxx4ga1\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": true,
@@ -3101,7 +3101,7 @@
         {
           "disabled": false,
           "document": "命令名称。名称仅支持中文、英文、数字、下划线、分隔符\"-\"、小数点，最大长度不能超60个字节。",
-          "example": "无",
+          "example": "tat-command",
           "member": "string",
           "name": "CommandName",
           "required": false,
@@ -3110,7 +3110,7 @@
         {
           "disabled": false,
           "document": "命令描述。不超过120字符。",
-          "example": "无",
+          "example": "this is a command",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -3119,7 +3119,7 @@
         {
           "disabled": false,
           "document": "命令类型，目前支持取值：SHELL、POWERSHELL。默认：SHELL。",
-          "example": "无",
+          "example": "SHELL",
           "member": "string",
           "name": "CommandType",
           "required": false,
@@ -3128,7 +3128,7 @@
         {
           "disabled": false,
           "document": "命令执行路径，对于 SHELL 命令默认为 /root，对于 POWERSHELL 命令默认为 C:\\Program Files\\qcloud\\tat_agent\\workdir。",
-          "example": "无",
+          "example": "/root",
           "member": "string",
           "name": "WorkingDirectory",
           "required": false,
@@ -3137,7 +3137,7 @@
         {
           "disabled": false,
           "document": "命令超时时间，默认60秒。取值范围[1, 86400]。",
-          "example": "无",
+          "example": "60",
           "member": "uint64",
           "name": "Timeout",
           "required": false,
@@ -3145,7 +3145,7 @@
         },
         {
           "disabled": false,
-          "document": "是否保存命令，取值范围：\n<li> true：保存\n<li> false：不保存\n默认为 false。",
+          "document": "是否保存命令，取值范围：\n<li> true：保存</li>\n<li> false：不保存</li>\n默认为 false。",
           "example": "false",
           "member": "bool",
           "name": "SaveCommand",
@@ -3154,7 +3154,7 @@
         },
         {
           "disabled": false,
-          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n取值范围：\n<li> true：启用\n<li> false：不启用\n默认值：false。",
+          "document": "是否启用自定义参数功能。\n一旦创建，此值不提供修改。\n取值范围：\n<li> true：启用 </li>\n<li> false：不启用 </li>\n默认值：false。 ",
           "example": "false",
           "member": "bool",
           "name": "EnableParameter",
@@ -3191,7 +3191,7 @@
         {
           "disabled": false,
           "document": "如果保存命令，可为命令设置标签。列表长度不超过10。",
-          "example": "无",
+          "example": "[     {       \"Key\": \"test\",       \"Value\": \"test\"     }   ]",
           "member": "Tag",
           "name": "Tags",
           "required": false,
@@ -3233,7 +3233,7 @@
         {
           "disabled": false,
           "document": "命令ID。",
-          "example": "无",
+          "example": "cmd-5oa8jajm",
           "member": "string",
           "name": "CommandId",
           "output_required": true,
@@ -3243,7 +3243,7 @@
         {
           "disabled": false,
           "document": "执行活动ID。",
-          "example": "无",
+          "example": "inv-mp6m9vmu",
           "member": "string",
           "name": "InvocationId",
           "output_required": true,
@@ -3330,7 +3330,7 @@
           "example": "0",
           "member": "int64",
           "name": "ExitCode",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3340,7 +3340,7 @@
           "example": "aGVsbG8sd29ybGQ=",
           "member": "string",
           "name": "Output",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3350,7 +3350,7 @@
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecStartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3360,7 +3360,7 @@
           "example": "2014-08-03 12:00:00",
           "member": "datetime_iso",
           "name": "ExecEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -3370,7 +3370,7 @@
           "example": "100",
           "member": "uint64",
           "name": "Dropped",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3380,17 +3380,17 @@
           "example": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
           "member": "string",
           "name": "OutputUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "日志上传cos的错误信息。",
-          "example": "无",
+          "example": "Failed to upload output to cos",
           "member": "string",
           "name": "OutputUploadCOSErrorInfo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

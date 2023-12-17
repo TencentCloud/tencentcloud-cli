@@ -2339,7 +2339,7 @@
         {
           "disabled": false,
           "document": "作业ID列表，与Filters参数不能同时指定。",
-          "example": "[\"job-7e7evk2x\\n\",\"job-3n2weaqt\\n\"]",
+          "example": "[\"job-7e7evk2x\",\"job-3n2weaqt\"]",
           "member": "string",
           "name": "JobIds",
           "required": false,
@@ -2384,7 +2384,7 @@
           "example": "无",
           "member": "JobView",
           "name": "JobSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2394,7 +2394,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

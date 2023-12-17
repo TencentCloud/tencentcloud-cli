@@ -5099,7 +5099,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，不填默认选择全部站点。",
+          "document": "站点集合，此参数必填。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -5145,7 +5145,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5155,7 +5155,7 @@
           "example": "无",
           "member": "SecEntry",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5173,7 +5173,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "开始时间。",
+          "document": "开始时间，时间范围为 30 天。",
           "example": "2020-04-29T00:00:00Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -5182,7 +5182,7 @@
         },
         {
           "disabled": false,
-          "document": "结束时间。",
+          "document": "结束时间，时间范围为 30 天。",
           "example": "2020-04-30T00:00:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -5200,7 +5200,7 @@
         },
         {
           "disabled": false,
-          "document": "站点集合，此参数必填，不填默认查询为空。",
+          "document": "站点集合，此参数必填。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -5227,7 +5227,7 @@
         },
         {
           "disabled": false,
-          "document": "是否展示详细信息。",
+          "document": "展示攻击详情的参数，若填false，默认只返回攻击次数，不返回攻击详情；若填true，返回攻击详情。",
           "example": "true",
           "member": "bool",
           "name": "ShowDetail",
@@ -5273,6 +5273,7 @@
           "example": "无",
           "member": "DDoSAttackEvent",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5282,6 +5283,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5326,7 +5328,7 @@
         },
         {
           "disabled": false,
-          "document": "站点ID集合，不填默认选择全部站点。",
+          "document": "站点ID集合，此参数必填。",
           "example": "[\"zoneId1\",\"zoneId2\"]",
           "member": "string",
           "name": "ZoneIds",
@@ -5399,7 +5401,7 @@
           "example": "无",
           "member": "TopEntry",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5409,7 +5411,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

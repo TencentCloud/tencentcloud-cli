@@ -3273,7 +3273,7 @@
         },
         {
           "disabled": false,
-          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy”; 默认空",
+          "document": "supported: \"\", \"gzip\", \"lzop\", \"snappy\"; 默认空",
           "example": "gzip",
           "member": "string",
           "name": "Compress",
@@ -3301,6 +3301,7 @@
           "example": "xxx-xxx-xxx-xxx",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

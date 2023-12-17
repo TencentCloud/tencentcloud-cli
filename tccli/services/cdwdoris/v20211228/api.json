@@ -1,16 +1,16 @@
 {
   "actions": {
     "DescribeInstance": {
-      "document": "根据实例ID查询某个实例的具体信息",
+      "document": "根据集群ID查询某个集群的具体信息",
       "input": "DescribeInstanceRequest",
-      "name": "描述实例信息",
+      "name": "获取集群描述信息",
       "output": "DescribeInstanceResponse",
       "status": "online"
     },
     "DescribeInstanceNodes": {
-      "document": "获取实例节点信息列表",
+      "document": "获取集群节点信息列表",
       "input": "DescribeInstanceNodesRequest",
-      "name": "获取实例节点信息列表",
+      "name": "获取集群节点信息列表",
       "output": "DescribeInstanceNodesResponse",
       "status": "online"
     },
@@ -135,7 +135,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -145,7 +145,7 @@
           "example": "无",
           "member": "InstanceNode",
           "name": "InstanceNodesList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -182,7 +182,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "InstanceInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

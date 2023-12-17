@@ -37,7 +37,12 @@ Output:
                 "JobId": "job-3n2weaqt",
                 "Priority": 1,
                 "Placement": {
-                    "Zone": "ap-guangzhou-4"
+                    "Zone": "ap-guangzhou-4",
+                    "ProjectId": 0,
+                    "HostIds": [
+                        "abc"
+                    ],
+                    "HostId": "abc"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-22T07:14:54Z"
@@ -68,7 +73,12 @@ Output:
                 "JobId": "job-7e7evk2x",
                 "Priority": 1,
                 "Placement": {
-                    "Zone": "ap-guangzhou-4"
+                    "Zone": "ap-guangzhou-4",
+                    "ProjectId": 1,
+                    "HostIds": [
+                        "abc"
+                    ],
+                    "HostId": "abc"
                 },
                 "JobName": "hello-test-job",
                 "CreateTime": "2020-09-21T08:57:01Z"

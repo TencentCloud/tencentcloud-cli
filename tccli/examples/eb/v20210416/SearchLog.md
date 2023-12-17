@@ -5,7 +5,13 @@
 Input: 
 
 ```
-tccli eb SearchLog --cli-unfold-argument ```
+tccli eb SearchLog --cli-unfold-argument  \
+    --StartTime 1673233483024 \
+    --EndTime 1673838283024 \
+    --EventBusId eb-xxxxx \
+    --Page 1 \
+    --Limit 1000
+```
 
 Output: 
 ```

@@ -19,62 +19,63 @@ Output:
     "Response": {
         "AlertRules": [
             {
-                "Name": "xxx",
-                "Rules": [
-                    {
-                        "Describe": "xxx",
-                        "Name": "xxx",
-                        "For": "xxx",
-                        "Labels": [
-                            {
-                                "Name": "xxx",
-                                "Value": "xxx"
-                            }
-                        ],
-                        "Rule": "xxx",
-                        "Template": "xxx",
-                        "Annotations": [
-                            {
-                                "Name": "xxx",
-                                "Value": "xxx"
-                            }
-                        ]
-                    }
-                ],
+                "Id": "abc",
+                "Name": "abc",
+                "TemplateId": "abc",
                 "Notification": {
-                    "AlertManager": {
-                        "Url": "xxx",
-                        "ClusterId": "xxx",
-                        "ClusterType": "xxx"
-                    },
-                    "RepeatInterval": "xxx",
-                    "WebHook": "xxx",
                     "Enabled": true,
+                    "Type": "abc",
+                    "WebHook": "abc",
+                    "AlertManager": {
+                        "ClusterType": "abc",
+                        "ClusterId": "abc",
+                        "Url": "abc"
+                    },
+                    "RepeatInterval": "abc",
+                    "TimeRangeStart": "abc",
+                    "TimeRangeEnd": "abc",
+                    "NotifyWay": [
+                        "abc"
+                    ],
+                    "ReceiverGroups": [
+                        "abc"
+                    ],
                     "PhoneNotifyOrder": [
                         1
                     ],
+                    "PhoneCircleTimes": 0,
                     "PhoneInnerInterval": 0,
                     "PhoneCircleInterval": 0,
-                    "NotifyWay": [
-                        "xxx"
-                    ],
-                    "ReceiverGroups": [
-                        "1"
-                    ],
-                    "PhoneArriveNotice": true,
-                    "PhoneCircleTimes": 0,
-                    "TimeRangeStart": "xxx",
-                    "Type": "xxx",
-                    "TimeRangeEnd": "xxx"
+                    "PhoneArriveNotice": true
                 },
-                "TemplateId": "xxx",
-                "ClusterId": "xxx",
-                "UpdatedAt": "xxx",
-                "Id": "xxx"
+                "Rules": [
+                    {
+                        "Name": "abc",
+                        "Rule": "abc",
+                        "Labels": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "Template": "abc",
+                        "For": "abc",
+                        "Describe": "abc",
+                        "Annotations": [
+                            {
+                                "Name": "abc",
+                                "Value": "abc"
+                            }
+                        ],
+                        "RuleState": 0
+                    }
+                ],
+                "UpdatedAt": "abc",
+                "ClusterId": "abc"
             }
         ],
         "Total": 1,
-        "RequestId": "xxx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -4295,6 +4295,24 @@
           "name": "Hostable",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选指定标签的证书",
+          "example": "无",
+          "member": "Tags",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "//是否筛选等待签发的证书，传1是筛选，0和null不筛选",
+          "example": "无",
+          "member": "int64",
+          "name": "IsPendingIssue",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

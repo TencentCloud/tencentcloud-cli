@@ -6,27 +6,27 @@ Input:
 
 ```
 tccli monitor DescribePrometheusInstanceDetail --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "InstanceId": "abc",
+        "InstanceName": "abc",
+        "VpcId": "abc",
+        "SubnetId": "abc",
         "InstanceStatus": 0,
-        "VpcId": "xx",
-        "AutoRenewFlag": 0,
-        "InstanceId": "xx",
-        "ExpireTime": "xx",
-        "SpecName": "xx",
-        "InstanceChargeType": 0,
-        "RequestId": "xx",
+        "ChargeStatus": 0,
         "EnableGrafana": 0,
+        "GrafanaURL": "abc",
+        "InstanceChargeType": 0,
+        "SpecName": "abc",
         "DataRetentionTime": 0,
-        "GrafanaURL": "xx",
-        "SubnetId": "xx",
-        "InstanceName": "xx",
-        "ChargeStatus": 0
+        "ExpireTime": "abc",
+        "AutoRenewFlag": 0,
+        "RequestId": "abc"
     }
 }
 ```

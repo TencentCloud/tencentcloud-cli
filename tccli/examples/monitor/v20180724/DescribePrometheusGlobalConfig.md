@@ -18,28 +18,52 @@ Output:
             {
                 "Name": "abc",
                 "Config": "abc",
-                "TemplateId": "abc"
+                "TemplateId": "abc",
+                "Targets": {
+                    "Total": 1,
+                    "Up": 1,
+                    "Down": 1,
+                    "Unknown": 1
+                }
             }
         ],
         "PodMonitors": [
             {
                 "Name": "abc",
                 "Config": "abc",
-                "TemplateId": "abc"
-            }
-        ],
-        "RawJobs": [
-            {
-                "Name": "abc",
-                "Config": "abc",
-                "TemplateId": "abc"
+                "TemplateId": "abc",
+                "Targets": {
+                    "Total": 1,
+                    "Up": 1,
+                    "Down": 1,
+                    "Unknown": 1
+                }
             }
         ],
         "Probes": [
             {
                 "Name": "abc",
                 "Config": "abc",
-                "TemplateId": "abc"
+                "TemplateId": "abc",
+                "Targets": {
+                    "Total": 1,
+                    "Up": 1,
+                    "Down": 1,
+                    "Unknown": 1
+                }
+            }
+        ],
+        "RawJobs": [
+            {
+                "Name": "abc",
+                "Config": "abc",
+                "TemplateId": "abc",
+                "Targets": {
+                    "Total": 1,
+                    "Up": 1,
+                    "Down": 1,
+                    "Unknown": 1
+                }
             }
         ],
         "RequestId": "abc"

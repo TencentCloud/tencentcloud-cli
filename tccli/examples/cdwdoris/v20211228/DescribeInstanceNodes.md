@@ -1,6 +1,6 @@
-**Example 1: 获取实例节点信息列表**
+**Example 1: 获取集群节点信息列表**
 
-获取实例节点信息列表
+获取集群节点信息列表
 
 Input: 
 
@@ -13,26 +13,23 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "f510b0e8-4bc7-44c7-a191-79e467b556c4",
-        "TotalCount": 2,
+        "TotalCount": 0,
         "InstanceNodesList": [
             {
-                "Ip": "172.31.1.5",
-                "Spec": "CVM.SA2",
-                "Core": 16,
-                "Memory": 32,
-                "DiskType": "CLOUD_PREMIUM",
-                "DiskSize": 1000
-            },
-            {
-                "Ip": "172.31.1.4",
-                "Spec": "CVM.SA2",
-                "Core": 16,
-                "Memory": 32,
-                "DiskType": "CLOUD_PREMIUM",
-                "DiskSize": 1000
+                "Ip": "abc",
+                "Spec": "abc",
+                "Core": 0,
+                "Memory": 0,
+                "DiskType": "abc",
+                "DiskSize": 0,
+                "Role": "abc",
+                "Status": "abc",
+                "Rip": "abc",
+                "FeRole": "abc",
+                "UUID": "abc"
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

@@ -57,7 +57,7 @@
       "status": "online"
     },
     "CreateDocument": {
-      "document": "创建签署流程电子文档<br />\n适用场景：见创建签署流程接口。<br />\n点击查看<a href=\"https://qian.tencent.com/developers/startFlows/CreateFlow\" target=\"_blank\">通过模板创建签署流程</a>\n<a href=\"https://qian.tencent.com/developers/startFlows/CreateFlowByFiles\" target=\"_blank\">用PDF文件创建签署流程</a>。<br />\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n<svg id=\"SvgjsSvg1077\" width=\"304\" height=\"505\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1078\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1096\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1097\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1108\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1109\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1120\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1121\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1140\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1141\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"304\" height=\"505\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1080\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1081\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1082\" transform=\"translate(58,121)\"><path id=\"SvgjsPath1083\" d=\"M 0 0L 221 0L 221 262L 0 262Z\" stroke-dasharray=\"3,4\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1084\"><text id=\"SvgjsText1085\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"201px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"120.375\" transform=\"rotate(0)\"></text></g></g><g id=\"SvgjsG1086\" transform=\"translate(88,140.00000000000006)\"><path id=\"SvgjsPath1087\" d=\"M 0 0L 161 0L 161 48L 0 48Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1088\"><text id=\"SvgjsText1089\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"141px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"4.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1090\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1091\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlow</tspan></tspan><tspan id=\"SvgjsTspan1092\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1093\" style=\"text-decoration:;\">创建签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1094\"><path id=\"SvgjsPath1095\" d=\"M168.5 188.50000000000006L168.5 200.83333333333337L168.5 200.83333333333337L168.5 211.86666666666667\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1096)\"></path></g><g id=\"SvgjsG1098\" transform=\"translate(104.25,213.66666666666669)\"><path id=\"SvgjsPath1099\" d=\"M 0 0L 128.5 0L 128.5 55L 0 55Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1100\"><text id=\"SvgjsText1101\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"109px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1102\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1103\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateDocument</tspan></tspan><tspan id=\"SvgjsTspan1104\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1105\" style=\"text-decoration:;\">创建电子文档</tspan></tspan></text></g></g><g id=\"SvgjsG1106\"><path id=\"SvgjsPath1107\" d=\"M168.5 269.16666666666674L168.5 281.5L168.5 281.5L168.5 292.5333333333334\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1108)\"></path></g><g id=\"SvgjsG1110\" transform=\"translate(96.75,294.33333333333337)\"><path id=\"SvgjsPath1111\" d=\"M 0 0L 143.5 0L 143.5 65L 0 65Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1112\"><text id=\"SvgjsText1113\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"124px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"13.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1114\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1115\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">StartFlow</tspan></tspan><tspan id=\"SvgjsTspan1116\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1117\" style=\"text-decoration:;\">发起签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1118\"><path id=\"SvgjsPath1119\" d=\"M168.5 359.83333333333337L168.5 392.16666666666674L168.5 392.16666666666674L168.5 423.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1120)\"></path></g><g id=\"SvgjsG1122\" transform=\"translate(106.25,425)\"><path id=\"SvgjsPath1123\" d=\"M 0 0L 124.5 0L 124.5 55L 0 55Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1124\"><text id=\"SvgjsText1125\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"105px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1126\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1127\" style=\"text-decoration:;\">开始签署</tspan></tspan><tspan id=\"SvgjsTspan1128\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1129\" style=\"text-decoration:;\">(小程序/H5等)</tspan></tspan></text></g></g><g id=\"SvgjsG1130\" transform=\"translate(120.5,25)\"><path id=\"SvgjsPath1131\" d=\"M 0 0L 96 0L 96 54L 0 54Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1132\"><text id=\"SvgjsText1133\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"76px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"7.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1134\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1135\" style=\"text-decoration:;\">控制台创建</tspan></tspan><tspan id=\"SvgjsTspan1136\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1137\" style=\"text-decoration:;\">模板</tspan></tspan></text></g></g><g id=\"SvgjsG1138\"><path id=\"SvgjsPath1139\" d=\"M168.5 79.5L168.5 109.5L168.5 109.5L168.5 138.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1140)\"></path></g><g id=\"SvgjsG1142\" transform=\"translate(25,114)\"><path id=\"SvgjsPath1143\" d=\"M 0 0L 100 0L 100 40L 0 40Z\" stroke=\"none\" fill=\"none\"></path><g id=\"SvgjsG1144\"><text id=\"SvgjsText1145\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"100px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"9.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1146\" dy=\"16\" x=\"50\"><tspan id=\"SvgjsTspan1147\" style=\"text-decoration:;\">API</tspan></tspan></text></g></g></svg>",
+      "document": "创建签署流程电子文档<br />\n\n注：该接口需要给对应的流程指定一个模板id，并且填充该模板中需要补充的信息。需要配置<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow\" target=\"_blank\">创建签署流程</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。具体逻辑可以参考下图:\n\n<svg id=\"SvgjsSvg1077\" width=\"304\" height=\"505\" xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" xmlns:svgjs=\"http://svgjs.com/svgjs\"><defs id=\"SvgjsDefs1078\"><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_0\" width=\"300\" height=\"300\"><text x=\"150\" y=\"100\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><pattern patternUnits=\"userSpaceOnUse\" id=\"pattern_mark_1\" width=\"300\" height=\"300\"><text x=\"150\" y=\"200\" fill=\"rgba(229,229,229,0.8)\" font-size=\"18\" transform=\"rotate(-45, 150, 150)\" style=\"dominant-baseline: middle; text-anchor: middle;\"></text></pattern><marker id=\"SvgjsMarker1096\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1097\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1108\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1109\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1120\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1121\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker><marker id=\"SvgjsMarker1140\" markerWidth=\"12\" markerHeight=\"8\" refX=\"9\" refY=\"4\" viewBox=\"0 0 12 8\" orient=\"auto\" markerUnits=\"userSpaceOnUse\" stroke-dasharray=\"0,0\"><path id=\"SvgjsPath1141\" d=\"M0,0 L12,4 L0,8 L0,0\" fill=\"#323232\" stroke=\"#323232\" stroke-width=\"1\"></path></marker></defs><rect id=\"svgbackgroundid\" width=\"304\" height=\"505\" fill=\"transparent\"></rect><rect id=\"SvgjsRect1080\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_0)\"></rect><rect id=\"SvgjsRect1081\" width=\"304\" height=\"505\" fill=\"url(#pattern_mark_1)\"></rect><g id=\"SvgjsG1082\" transform=\"translate(58,121)\"><path id=\"SvgjsPath1083\" d=\"M 0 0L 221 0L 221 262L 0 262Z\" stroke-dasharray=\"3,4\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1084\"><text id=\"SvgjsText1085\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"201px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"120.375\" transform=\"rotate(0)\"></text></g></g><g id=\"SvgjsG1086\" transform=\"translate(88,140.00000000000006)\"><path id=\"SvgjsPath1087\" d=\"M 0 0L 161 0L 161 48L 0 48Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1088\"><text id=\"SvgjsText1089\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"141px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"4.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1090\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1091\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateFlow</tspan></tspan><tspan id=\"SvgjsTspan1092\" dy=\"16\" x=\"80.5\"><tspan id=\"SvgjsTspan1093\" style=\"text-decoration:;\">创建签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1094\"><path id=\"SvgjsPath1095\" d=\"M168.5 188.50000000000006L168.5 200.83333333333337L168.5 200.83333333333337L168.5 211.86666666666667\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1096)\"></path></g><g id=\"SvgjsG1098\" transform=\"translate(104.25,213.66666666666669)\"><path id=\"SvgjsPath1099\" d=\"M 0 0L 128.5 0L 128.5 55L 0 55Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1100\"><text id=\"SvgjsText1101\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"109px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1102\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1103\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">CreateDocument</tspan></tspan><tspan id=\"SvgjsTspan1104\" dy=\"16\" x=\"64.5\"><tspan id=\"SvgjsTspan1105\" style=\"text-decoration:;\">创建电子文档</tspan></tspan></text></g></g><g id=\"SvgjsG1106\"><path id=\"SvgjsPath1107\" d=\"M168.5 269.16666666666674L168.5 281.5L168.5 281.5L168.5 292.5333333333334\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1108)\"></path></g><g id=\"SvgjsG1110\" transform=\"translate(96.75,294.33333333333337)\"><path id=\"SvgjsPath1111\" d=\"M 0 0L 143.5 0L 143.5 65L 0 65Z\" stroke=\"rgba(86,146,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#e7ebed\"></path><g id=\"SvgjsG1112\"><text id=\"SvgjsText1113\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"124px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"13.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1114\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1115\" style=\"text-decoration:;fill: rgb(28, 30, 33);\">StartFlow</tspan></tspan><tspan id=\"SvgjsTspan1116\" dy=\"16\" x=\"72\"><tspan id=\"SvgjsTspan1117\" style=\"text-decoration:;\">发起签署流程</tspan></tspan></text></g></g><g id=\"SvgjsG1118\"><path id=\"SvgjsPath1119\" d=\"M168.5 359.83333333333337L168.5 392.16666666666674L168.5 392.16666666666674L168.5 423.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1120)\"></path></g><g id=\"SvgjsG1122\" transform=\"translate(106.25,425)\"><path id=\"SvgjsPath1123\" d=\"M 0 0L 124.5 0L 124.5 55L 0 55Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1124\"><text id=\"SvgjsText1125\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"105px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"8.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1126\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1127\" style=\"text-decoration:;\">开始签署</tspan></tspan><tspan id=\"SvgjsTspan1128\" dy=\"16\" x=\"62.5\"><tspan id=\"SvgjsTspan1129\" style=\"text-decoration:;\">(小程序/H5等)</tspan></tspan></text></g></g><g id=\"SvgjsG1130\" transform=\"translate(120.5,25)\"><path id=\"SvgjsPath1131\" d=\"M 0 0L 96 0L 96 54L 0 54Z\" stroke=\"rgba(33,41,48,1)\" stroke-width=\"1\" fill-opacity=\"1\" fill=\"#ffffff\"></path><g id=\"SvgjsG1132\"><text id=\"SvgjsText1133\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"76px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"7.875\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1134\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1135\" style=\"text-decoration:;\">控制台创建</tspan></tspan><tspan id=\"SvgjsTspan1136\" dy=\"16\" x=\"48\"><tspan id=\"SvgjsTspan1137\" style=\"text-decoration:;\">模板</tspan></tspan></text></g></g><g id=\"SvgjsG1138\"><path id=\"SvgjsPath1139\" d=\"M168.5 79.5L168.5 109.5L168.5 109.5L168.5 138.20000000000005\" stroke=\"#323232\" stroke-width=\"1\" fill=\"none\" marker-end=\"url(#SvgjsMarker1140)\"></path></g><g id=\"SvgjsG1142\" transform=\"translate(25,114)\"><path id=\"SvgjsPath1143\" d=\"M 0 0L 100 0L 100 40L 0 40Z\" stroke=\"none\" fill=\"none\"></path><g id=\"SvgjsG1144\"><text id=\"SvgjsText1145\" font-family=\"微软雅黑\" text-anchor=\"middle\" font-size=\"13px\" width=\"100px\" fill=\"#323232\" font-weight=\"400\" align=\"middle\" lineHeight=\"125%\" anchor=\"middle\" family=\"微软雅黑\" size=\"13px\" weight=\"400\" font-style=\"\" opacity=\"1\" y=\"9.375\" transform=\"rotate(0)\"><tspan id=\"SvgjsTspan1146\" dy=\"16\" x=\"50\"><tspan id=\"SvgjsTspan1147\" style=\"text-decoration:;\">API</tspan></tspan></text></g></g></svg>",
       "input": "CreateDocumentRequest",
       "name": "模板发起合同-创建电子文档",
       "output": "CreateDocumentResponse",
@@ -299,6 +299,13 @@
       "input": "DescribeBillUsageDetailRequest",
       "name": "查询企业计费使用情况",
       "output": "DescribeBillUsageDetailResponse",
+      "status": "online"
+    },
+    "DescribeExtendedServiceAuthDetail": {
+      "document": "查询企业扩展服务的授权详情（列表），当前支持查询以下内容：\n1. 企业自动签（本企业授权、集团企业授权、合作企业授权）\n2. 批量签署能力\n\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Agent.ProxyOperator.OpenId 需要传递超管或者法人的OpenId)",
+      "input": "DescribeExtendedServiceAuthDetailRequest",
+      "name": "查询企业扩展服务授权详情",
+      "output": "DescribeExtendedServiceAuthDetailResponse",
       "status": "online"
     },
     "DescribeExtendedServiceAuthInfos": {
@@ -894,6 +901,78 @@
         }
       ],
       "usage": "in"
+    },
+    "AuthInfoDetail": {
+      "document": "企业扩展服务授权列表详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "扩展服务类型，和入参一致\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩展服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权员工列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HasAuthUser",
+          "name": "HasAuthUserList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业列表（企业自动签时，该字段有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HasAuthOrganization",
+          "name": "HasAuthOrganizationList",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权员工列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthUserTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业列表总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthOrganizationTotal",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "AuthorizedUser": {
       "document": "授权用户",
@@ -1917,6 +1996,15 @@
           "name": "ApproverSignTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "example": "0",
+          "member": "uint64",
+          "name": "SignTypeSelector",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5878,6 +5966,79 @@
       ],
       "type": "object"
     },
+    "DescribeExtendedServiceAuthDetailRequest": {
+      "document": "DescribeExtendedServiceAuthDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yD************oimj",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要查询的扩展服务类型。\n如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>\n<li>BATCH_SIGN：批量签署</li>\n</ul>\n",
+          "example": "\"\"",
+          "member": "string",
+          "name": "ExtendServiceType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "指定每页返回的数据条数，和Offset参数配合使用。 注：`1.默认值为20，单页做大值为200。`\t",
+          "example": "无",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询结果分页返回，指定从第几页返回数据，和Limit参数配合使用。 注：`1.offset从0开始，即第一页为0。` `2.默认从第一页返回。`\t",
+          "example": "无",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeExtendedServiceAuthDetailResponse": {
+      "document": "DescribeExtendedServiceAuthDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "服务授权的信息列表，根据查询类型返回特定扩展服务的授权状况。",
+          "example": "无",
+          "member": "AuthInfoDetail",
+          "name": "AuthInfoDetail",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeExtendedServiceAuthInfosRequest": {
       "document": "DescribeExtendedServiceAuthInfos请求参数结构体",
       "members": [
@@ -8312,6 +8473,15 @@
           "name": "ApproverSignTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "生成H5签署链接时，你可以指定签署方签署合同的认证校验方式的选择模式，可传递一下值：\n<ul><li>**0**：签署方自行选择，签署方可以从预先指定的认证方式中自由选择；</li>\n<li>**1**：自动按顺序首位推荐，签署方无需选择，系统会优先推荐使用第一种认证方式。</li></ul>\n注：\n`不指定该值时，默认为签署方自行选择。`",
+          "example": "0",
+          "member": "uint64",
+          "name": "SignTypeSelector",
+          "required": false,
+          "type": "int"
         }
       ],
       "usage": "in"
@@ -8836,6 +9006,89 @@
         }
       ],
       "usage": "out"
+    },
+    "HasAuthOrganization": {
+      "document": "授权企业列表（目前仅用于“企业自动签 -> 合作企业授权”）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被授权企业id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被授权企业名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AuthorizedOrganizationName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权模板id（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权模板名称（仅当授权方式为模板授权时有值）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "授权时间，格式为时间戳，单位s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "AuthorizeTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "HasAuthUser": {
       "document": "被授权的用户信息",
@@ -11044,7 +11297,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "文件对应业务类型,可以选择的类型如下\n<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用于合同图片控件的填充，文件类型支持.jpg/.png</li>\n<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>",
+          "document": "文件对应业务类型,可以选择的类型如下\n<ul><li> **TEMPLATE** : 此上传的文件用户生成合同模板，文件类型支持.pdf/.doc/.docx/.html格式，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **DOCUMENT** : 此文件用来发起合同流程，文件类型支持.pdf/.doc/.docx/.jpg/.png/.xls.xlsx/.html，如果非pdf文件需要通过<a href=\"https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi\" target=\"_blank\">创建文件转换任务</a>转换后才能使用</li>\n<li> **SEAL** : 此文件用于印章的生成，文件类型支持.jpg/.jpeg/.png</li></ul>",
           "example": "DOCUMENT",
           "member": "string",
           "name": "BusinessType",

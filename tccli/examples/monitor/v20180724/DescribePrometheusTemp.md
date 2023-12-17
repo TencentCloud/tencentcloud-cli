@@ -18,102 +18,127 @@ Output:
     "Response": {
         "Templates": [
             {
-                "UpdateTime": "xxx",
+                "Name": "abc",
+                "Describe": "abc",
+                "Level": "abc",
                 "RecordRules": [
                     {
-                        "Config": "xxx",
-                        "Name": "xxx",
-                        "TemplateId": "xxx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc",
+                        "Targets": {
+                            "Total": 1,
+                            "Up": 1,
+                            "Down": 1,
+                            "Unknown": 1
+                        }
                     }
                 ],
-                "Version": "xxx",
-                "Name": "xxx",
-                "Level": "xxx",
-                "Describe": "xxx",
-                "TargetsTotal": 0,
                 "RawJobs": [
                     {
-                        "Config": "xxx",
-                        "Name": "xxx",
-                        "TemplateId": "xxx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc",
+                        "Targets": {
+                            "Total": 1,
+                            "Up": 1,
+                            "Down": 1,
+                            "Unknown": 1
+                        }
+                    }
+                ],
+                "ServiceMonitors": [
+                    {
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc",
+                        "Targets": {
+                            "Total": 1,
+                            "Up": 1,
+                            "Down": 1,
+                            "Unknown": 1
+                        }
                     }
                 ],
                 "PodMonitors": [
                     {
-                        "Config": "xxx",
-                        "Name": "xxx",
-                        "TemplateId": "xxx"
+                        "Name": "abc",
+                        "Config": "abc",
+                        "TemplateId": "abc",
+                        "Targets": {
+                            "Total": 1,
+                            "Up": 1,
+                            "Down": 1,
+                            "Unknown": 1
+                        }
                     }
                 ],
-                "TemplateId": "xxx",
+                "TemplateId": "abc",
+                "UpdateTime": "abc",
+                "Version": "abc",
+                "IsDefault": true,
                 "AlertDetailRules": [
                     {
-                        "Name": "xxx",
-                        "Rules": [
-                            {
-                                "Describe": "xxx",
-                                "Name": "xxx",
-                                "For": "xxx",
-                                "Labels": [
-                                    {
-                                        "Name": "xxx",
-                                        "Value": "xxx"
-                                    }
-                                ],
-                                "Rule": "xxx",
-                                "Template": "xxx",
-                                "Annotations": [
-                                    {
-                                        "Name": "xxx",
-                                        "Value": "xxx"
-                                    }
-                                ]
-                            }
-                        ],
+                        "Id": "abc",
+                        "Name": "abc",
+                        "TemplateId": "abc",
                         "Notification": {
-                            "AlertManager": {
-                                "Url": "xxx",
-                                "ClusterId": "xxx",
-                                "ClusterType": "xxx"
-                            },
-                            "RepeatInterval": "xxx",
-                            "WebHook": "xxx",
                             "Enabled": true,
+                            "Type": "abc",
+                            "WebHook": "abc",
+                            "AlertManager": {
+                                "ClusterType": "abc",
+                                "ClusterId": "abc",
+                                "Url": "abc"
+                            },
+                            "RepeatInterval": "abc",
+                            "TimeRangeStart": "abc",
+                            "TimeRangeEnd": "abc",
+                            "NotifyWay": [
+                                "abc"
+                            ],
+                            "ReceiverGroups": [
+                                "abc"
+                            ],
                             "PhoneNotifyOrder": [
                                 1
                             ],
+                            "PhoneCircleTimes": 0,
                             "PhoneInnerInterval": 0,
                             "PhoneCircleInterval": 0,
-                            "NotifyWay": [
-                                "xxx"
-                            ],
-                            "ReceiverGroups": [
-                                "xxx"
-                            ],
-                            "PhoneArriveNotice": true,
-                            "PhoneCircleTimes": 0,
-                            "TimeRangeStart": "xxx",
-                            "Type": "xxx",
-                            "TimeRangeEnd": "xxx"
+                            "PhoneArriveNotice": true
                         },
-                        "TemplateId": "xxx",
-                        "ClusterId": "xxx",
-                        "UpdatedAt": "xxx",
-                        "Id": "xxx"
+                        "Rules": [
+                            {
+                                "Name": "abc",
+                                "Rule": "abc",
+                                "Labels": [
+                                    {
+                                        "Name": "abc",
+                                        "Value": "abc"
+                                    }
+                                ],
+                                "Template": "abc",
+                                "For": "abc",
+                                "Describe": "abc",
+                                "Annotations": [
+                                    {
+                                        "Name": "abc",
+                                        "Value": "abc"
+                                    }
+                                ],
+                                "RuleState": 0
+                            }
+                        ],
+                        "UpdatedAt": "abc",
+                        "ClusterId": "abc"
                     }
                 ],
-                "IsDefault": true,
-                "ServiceMonitors": [
-                    {
-                        "Config": "xxx",
-                        "Name": "xxx",
-                        "TemplateId": "xxx"
-                    }
-                ]
+                "TargetsTotal": 0
             }
         ],
         "Total": 1,
-        "RequestId": "xxx"
+        "RequestId": "abc"
     }
 }
 ```

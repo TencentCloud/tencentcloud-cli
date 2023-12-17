@@ -1064,7 +1064,7 @@
         {
           "disabled": false,
           "document": "过滤条件",
-          "example": "无",
+          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
           "member": "Filter",
           "name": "Filters",
           "required": true,
@@ -1073,7 +1073,7 @@
         {
           "disabled": false,
           "document": "指标列表",
-          "example": "无",
+          "example": "[{\"Compare\":\"1\",\"Compares\":[\"CompareByYesterday\",\"CompareByLastWeek\"],\"MetricName\":\"qps\"}]",
           "member": "QueryMetricItem",
           "name": "Metrics",
           "required": true,
@@ -1082,7 +1082,7 @@
         {
           "disabled": false,
           "document": "聚合维度",
-          "example": "无",
+          "example": "[\"service.instance\"]",
           "member": "string",
           "name": "GroupBy",
           "required": true,
@@ -1091,7 +1091,7 @@
         {
           "disabled": false,
           "document": "排序",
-          "example": "无",
+          "example": "{\"Key\":\"service_duration_avg\",\"Value\":\"DESC\"}",
           "member": "OrderBy",
           "name": "OrderBy",
           "required": false,
@@ -1172,7 +1172,7 @@
         {
           "disabled": false,
           "document": "Or过滤条件",
-          "example": "无",
+          "example": "[{\"Type\":\"=\",\"Key\":\"span.kind\",\"Value\":\"server\"}]",
           "member": "Filter",
           "name": "OrFilters",
           "required": false,
@@ -1187,7 +1187,7 @@
         {
           "disabled": false,
           "document": "指标结果集\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Fields\":[{\"LastPeriodValue\":[{\"Key\":\"abc\",\"Value\":0}],\"CompareVal\":\"abc\",\"Unit\":\"s\",\"Value\":691.42,\"Key\":\"ab\",\"CompareVals\":[{\"Value\":\"v1\",\"Key\":\"k1\"},{\"Key\":\"k2\",\"Value\":\"v2\"}]}],\"Tags\":[{\"Value\":\"v1\",\"Key\":\"k1\"}]}]",
           "member": "ApmMetricRecord",
           "name": "Records",
           "output_required": true,
@@ -1197,7 +1197,7 @@
         {
           "disabled": false,
           "document": "查询指标结果集条数\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "TotalCount",
           "output_required": true,

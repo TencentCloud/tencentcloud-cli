@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli monitor DescribePrometheusGlobalNotification --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId abc
 ```
 
 Output: 
@@ -14,32 +14,32 @@ Output:
 {
     "Response": {
         "Notification": {
-            "AlertManager": {
-                "Url": "xx",
-                "ClusterId": "xx",
-                "ClusterType": "xx"
-            },
-            "RepeatInterval": "xx",
-            "WebHook": "xx",
             "Enabled": true,
+            "Type": "abc",
+            "WebHook": "abc",
+            "AlertManager": {
+                "ClusterType": "abc",
+                "ClusterId": "abc",
+                "Url": "abc"
+            },
+            "RepeatInterval": "abc",
+            "TimeRangeStart": "abc",
+            "TimeRangeEnd": "abc",
+            "NotifyWay": [
+                "abc"
+            ],
+            "ReceiverGroups": [
+                "abc"
+            ],
             "PhoneNotifyOrder": [
                 1
             ],
+            "PhoneCircleTimes": 0,
             "PhoneInnerInterval": 0,
             "PhoneCircleInterval": 0,
-            "NotifyWay": [
-                "xx"
-            ],
-            "ReceiverGroups": [
-                "xx"
-            ],
-            "PhoneArriveNotice": true,
-            "PhoneCircleTimes": 0,
-            "TimeRangeStart": "xx",
-            "Type": "xx",
-            "TimeRangeEnd": "xx"
+            "PhoneArriveNotice": true
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```
