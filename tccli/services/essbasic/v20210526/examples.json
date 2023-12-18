@@ -578,6 +578,26 @@
         "title": "验证通过"
       }
     ],
+    "CreateBatchOrganizationRegistrationTasks": [
+      {
+        "document": "第一家企业和第三家企业名字重复, 无法注册",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchOrganizationRegistrationTasks\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ceshi\"\n        },\n        \"ProxyOrganizationOpenId\": \"ceshi_org\",\n        \"AppId\": \"60e16350b0361c888ecb30477d2c16e9\"\n    },\n    \"RegistrationOrganizations\": [\n        {\n            \"OrganizationName\": \"测试认证企业一\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX1\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"1\",\n            \"OpenId\": \"1\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业二\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX2\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"2\",\n            \"OpenId\": \"2\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业一\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX3\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"3\",\n            \"OpenId\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameterValue\",\n            \"Message\": \"企业名称[测试认证企业一]重复\"\n        },\n        \"RequestId\": \"4f7b42be805f\"\n    }\n}",
+        "title": "批量注册三家企业,企业名称重复,无法创建,返回错误提示"
+      },
+      {
+        "document": "测试认证企业三的地址没有按照省市区的格式传递",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchOrganizationRegistrationTasks\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ceshi\"\n        },\n        \"ProxyOrganizationOpenId\": \"ceshi_org\",\n        \"AppId\": \"60e16350b0361c888ecb30477d2c16e9\"\n    },\n    \"RegistrationOrganizations\": [\n        {\n            \"OrganizationName\": \"测试认证企业一\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX1\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"1\",\n            \"OpenId\": \"1\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业二\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX2\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"2\",\n            \"OpenId\": \"2\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业三\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX3\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"3\",\n            \"OpenId\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [\n            \"\",\n            \"\",\n            \"第【3】条注册信息参数错误，地址参数不正确,请确认后再试\"\n        ],\n        \"RequestId\": \"5cea4b4778bf\",\n        \"TaskId\": \"\"\n    }\n}",
+        "title": "批量注册三家企业,地址不符合格式,返回错误"
+      },
+      {
+        "document": "用户同时创建3个企业， 创建链接成功",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateBatchOrganizationRegistrationTasks\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ceshi\"\n        },\n        \"ProxyOrganizationOpenId\": \"ceshi_org\",\n        \"AppId\": \"60e16350b0361c888ecb30477d2c16e9\"\n    },\n    \"RegistrationOrganizations\": [\n        {\n            \"OrganizationName\": \"测试认证企业一\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX1\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"1\",\n            \"OpenId\": \"1\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业二\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX2\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                1\n            ],\n            \"OrganizationOpenId\": \"2\",\n            \"OpenId\": \"2\"\n        },\n        {\n            \"OrganizationName\": \"测试认证企业三\",\n            \"UniformSocialCreditCode\": \"9XXXXXXXXXXXXXXXX3\",\n            \"LegalName\": \"鹅鹅子\",\n            \"Address\": \"深圳市南山区1000号腾讯大厦\",\n            \"AdminName\": \"鹅鹅子\",\n            \"AdminMobile\": \"187XXXXXXX0\",\n            \"AuthorizationTypes\": [\n                2\n            ],\n            \"OrganizationOpenId\": \"3\",\n            \"OpenId\": \"3\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ErrorMessages\": [],\n        \"RequestId\": \"f38013e59d00\",\n        \"TaskId\": \"yDRBJUUgygqwl721UuO4zjECcJHV2RAi\"\n    }\n}",
+        "title": "批量生成企业注册链接成功"
+      }
+    ],
     "CreateChannelFlowEvidenceReport": [
       {
         "document": "通过已完成签署的流程FlowId，发起出证请求，获取出证报告的ID。",
@@ -646,6 +666,14 @@
         "title": "创建含有动态签署人流程，签署方不指定具体的签署人"
       }
     ],
+    "CreatePartnerAutoSignAuthUrl": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePartnerAutoSignAuthUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDSxxxxxxxxxOnHtH51\",\n        \"ProxyOrganizationOpenId\": \"org_open_id\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"user_open_id\"\n        }\n    },\n    \"AuthorizedOrganizationId\": \"org_open_id_another\",\n    \"AuthorizedOrganizationName\": \"典子谦子客企业\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpireTime\": 1702982931,\n        \"MiniAppPath\": \"/pages/guide/index?shortKey=yDSxxxxxxxxxOnHtH51\",\n        \"RequestId\": \"s1702378131281988373\",\n        \"Url\": \"https://test.essurl.cn/WxxxxxwH\"\n    }\n}",
+        "title": "创建他方自动签授权链接"
+      }
+    ],
     "CreateSealByImage": [
       {
         "document": "GenerateSource为SealGenerateSourceSystem表示系统生成印章",
@@ -704,6 +732,14 @@
         "title": "指定证件信息，为个人/自然人生成签署链接"
       }
     ],
+    "DescribeBatchOrganizationRegistrationUrls": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeBatchOrganizationRegistrationUrls\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"ceshi\"\n        },\n        \"ProxyOrganizationOpenId\": \"ceshi_org\",\n        \"AppId\": \"60e16350b0361c888ecb30477d2c16e9\"\n    },\n    \"TaskId\": \"yDSxSUUxxxxxxxx21JXBlJZsaj\"\n}",
+        "output": "{\n    \"Response\": {\n        \"OrganizationAuthUrls\": [\n            {\n                \"AuthUrl\": \"https://test.qian.tencent.cn/console/batch-register?token=yDxxxxxxxxxgENliu9LD&orgName=典子谦批量认证企业\",\n                \"ErrorMessage\": \"\"\n            }\n        ],\n        \"RequestId\": \"s1702447767875624775\"\n    }\n}",
+        "title": "查询批量企业认证"
+      }
+    ],
     "DescribeBillUsageDetail": [
       {
         "document": "",
@@ -746,6 +782,20 @@
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeChannelSealPolicyWorkflowUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"WorkflowInstanceId\": \"yDwiBUUckpo27hh3UuLiduR83BEL3kSb\"\n}",
         "output": "{\n    \"Response\": {\n        \"WorkflowUrl\": \"https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=SEAL_APPROVE&userId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&policyId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&instanceId=yDwhxUUckp3gl8j5UuFX33LSNozpRsbi&channelType=AAA\",\n        \"RequestId\": \"s1696921563375938822\"\n    }\n}",
         "title": "获取用印审批链接"
+      }
+    ],
+    "DescribeExtendedServiceAuthDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDxjsxxxxxxxxxxxxxxMOX9y\",\n        \"ProxyOrganizationOpenId\": \"open_id_test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"user_open_id\"\n        }\n    },\n    \"ExtendServiceType\": \"OPEN_SERVER_SIGN\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 1,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [\n                {\n                    \"AuthorizeTime\": 1682521720,\n                    \"AuthorizedOrganizationName\": \"xxxx有限公司\",\n                    \"AuthorizedOrganizationOpenId\": \"org_open_id\",\n                    \"OrganizationName\": \"xxxxxx有限公司\",\n                    \"OrganizationOpenId\": \"org_open_id\"\n                }\n            ],\n            \"HasAuthUserList\": [\n                {\n                    \"OpenId\": \"us-user_open_id\"\n                }\n            ],\n            \"Name\": \"企业静默签（自动签署）\",\n            \"Type\": \"OPEN_SERVER_SIGN\"\n        },\n        \"RequestId\": \"s1699xxxxxxx898950\"\n    }\n}",
+        "title": "查询企业扩展服务授权详情- 企业自动签"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeExtendedServiceAuthDetail\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDxjsxxxxxxxxxxxxxxMOX9y\",\n        \"ProxyOrganizationOpenId\": \"open_id_test\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"user_open_id\"\n        }\n    },\n    \"ExtendServiceType\": \"BATCH_SIGN\",\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthInfoDetail\": {\n            \"AuthOrganizationTotal\": 0,\n            \"AuthUserTotal\": 1,\n            \"HasAuthOrganizationList\": [],\n            \"HasAuthUserList\": [\n                {\n                    \"OpenId\": \"us-user_open_id\"\n                }\n            ],\n            \"Name\": \"批量签署\",\n            \"Type\": \"BATCH_SIGN\"\n        },\n        \"RequestId\": \"s1699xxxxxxx898950\"\n    }\n}",
+        "title": "查询企业扩展服务授权详情-批量签署"
       }
     ],
     "DescribeExtendedServiceAuthInfo": [

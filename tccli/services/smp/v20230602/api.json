@@ -27,6 +27,13 @@
       "name": "查询用户是否具备查询uin账单权限接口",
       "output": "DescribeUserBillingAuthResponse",
       "status": "online"
+    },
+    "SendRobotMsgCloudApi": {
+      "document": "调用机器人发送消息到企微群",
+      "input": "SendRobotMsgCloudApiRequest",
+      "name": "调用机器人发送消息到企微群",
+      "output": "SendRobotMsgCloudApiResponse",
+      "status": "online"
     }
   },
   "metadata": {
@@ -643,6 +650,65 @@
       ],
       "usage": "in"
     },
+    "ImageData": {
+      "document": "ImageData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "base64图片\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Data",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ImageReq": {
+      "document": "ImageReq",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人ID",
+          "example": "无",
+          "member": "string",
+          "name": "Sender",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "企微群ID",
+          "example": "无",
+          "member": "string",
+          "name": "GroupReceivers",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "图片base64",
+          "example": "无",
+          "member": "ImageData",
+          "name": "Image",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "认证token",
+          "example": "无",
+          "member": "string",
+          "name": "AppToken",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "InputJsonData": {
       "document": "InputJsonData",
       "members": [
@@ -764,6 +830,73 @@
         }
       ],
       "usage": "out"
+    },
+    "MarkdownContent": {
+      "document": "MarkdownContent",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发送md内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "MdReq": {
+      "document": "MdReq",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sender",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企微组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupReceivers",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MarkdownContent",
+          "name": "Markdown",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppToken",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "OrderData": {
       "document": "资源订单数据详情",
@@ -969,6 +1102,40 @@
       ],
       "usage": "in"
     },
+    "RobotResponseData": {
+      "document": "RobotResponseData",
+      "members": [
+        {
+          "disabled": false,
+          "document": "1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MsgId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "RobotTextContent": {
+      "document": "RobotTextContent",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发送内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "SLAPaymentData": {
       "document": "SLAPaymentData",
       "members": [
@@ -1004,6 +1171,70 @@
         }
       ],
       "usage": "out"
+    },
+    "SendRobotMsgCloudApiRequest": {
+      "document": "SendRobotMsgCloudApi请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型",
+          "example": "类型",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "文字发送内容",
+          "example": "无",
+          "member": "TextReq",
+          "name": "TextReq",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "markdon发送内容",
+          "example": "无",
+          "member": "MdReq",
+          "name": "MdReq",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "图片发送内容",
+          "example": "无",
+          "member": "ImageReq",
+          "name": "ImageReq",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SendRobotMsgCloudApiResponse": {
+      "document": "SendRobotMsgCloudApi返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "默认返回值",
+          "example": "无",
+          "member": "RobotResponseData",
+          "name": "Data",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SlaInputType": {
       "document": "云产品交互类型数据\n## InpuJson示例：\n### 通用\n\n```\n[{\n\t\"InputType\": \"Input\",\n\t\"DataType\": \"String\",\n\t\"Name\": \"资源ID\",\n\t\"FieldKey\": \"ResourceId\",\n\t\"Required\": true,\n\t\"Default\": \"\",\n\t\"Unit\": \"\"\n}, {\n\t\"InputType\": \"MonthDate\",\n\t\"DataType\": \"String\",\n\t\"FieldKey\": \"DownMonth\",\n\t\"Name\": \"故障发生月份\",\n\t\"Required\": true,\n\t\"Default\": \"\",\n\t\"Unit\": \"\"\n}, {\n\t\"InputType\": \"Input\",\n\t\"DataType\": \"Integer\",\n\t\"FieldKey\": \"DownTime\",\n\t\"Name\": \"不可用服务时间\",\n\t\"Required\": true,\n\t\"Default\": 0,\n\t\"Unit\": \"分钟\"\n}]\n\n```\n\n### 无SLA\n\n```\n[{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t}, {\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"MonthSlaRatio\",\n\t\t\"Name\": \"月度赔付比例\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"%\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"SlaDescription\",\n\t\t\"Name\": \"计算方式说明\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t}\n]\n```\n\n### 对象存储 COS\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"StorageType\",\n\t\t\"Name\": \"存储类型\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"标准存储\"\n\n\t\t}, {\n\t\t\t\"EnumKey\": \"InfrequentAccess\",\n\t\t\t\"EnumValue\": \"低频存储\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t}, {\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"ErrorSum\",\n\t\t\"Name\": \"单位时间错误率之和\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"ServiceUnitTime\",\n\t\t\"Name\": \"单位服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 5,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n\n```\n\n### 负载均衡CLB\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"Domain\",\n\t\t\"Name\": \"域名化\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"是\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"OtherClb\",\n\t\t\t\"EnumValue\": \"否\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```\n\n### 云数据库Redis\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"DeployArchitecture\",\n\t\t\"Name\": \"部署架构\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"同地域单可用区\"\n\n\t\t}, {\n\t\t\t\"EnumKey\": \"SingleRegionMultiZone\",\n\t\t\t\"EnumValue\": \"同地域多可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"MultiRegionMultiZone\",\n\t\t\t\"EnumValue\": \"多地域多可用区\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n\n```\n\n### 云数据库Mysql \n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"DeployMethod\",\n\t\t\"Name\": \"部署方式\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"ThreeNodeMultiZone\",\n\t\t\t\"EnumValue\": \"三节点多可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"双节点多可用区/三节点单可用区\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"DualNodeSingleZone\",\n\t\t\t\"EnumValue\": \"双节点单可用区\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```\n\n### 云联网CCN\n\n```\n[{\n\t\t\"InputType\": \"Select\",\n\t\t\"DataType\": \"Enum\",\n\t\t\"FieldKey\": \"ServiceLevel\",\n\t\t\"Name\": \"服务等级\",\n\t\t\"Enum\": [{\n\t\t\t\"EnumKey\": \"Default\",\n\t\t\t\"EnumValue\": \"金\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Platinum\",\n\t\t\t\"EnumValue\": \"白金\"\n\t\t}, {\n\t\t\t\"EnumKey\": \"Silver\",\n\t\t\t\"EnumValue\": \"银\"\n\t\t}],\n\t\t\"Required\": true,\n\t\t\"Default\": \"Default\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"ResourceId\",\n\t\t\"Name\": \"资源ID\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"MonthDate\",\n\t\t\"DataType\": \"String\",\n\t\t\"FieldKey\": \"DownMonth\",\n\t\t\"Name\": \"故障发生月份\",\n\t\t\"Required\": true,\n\t\t\"Default\": \"\",\n\t\t\"Unit\": \"\"\n\t},\n\t{\n\t\t\"InputType\": \"Input\",\n\t\t\"DataType\": \"Integer\",\n\t\t\"FieldKey\": \"DownTime\",\n\t\t\"Name\": \"不可用服务时间\",\n\t\t\"Required\": true,\n\t\t\"Default\": 0,\n\t\t\"Unit\": \"分钟\"\n\t}\n]\n```",
@@ -1050,6 +1281,56 @@
         }
       ],
       "usage": "out"
+    },
+    "TextReq": {
+      "document": "TextReq",
+      "members": [
+        {
+          "disabled": false,
+          "document": "机器人ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Sender",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "企微组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "GroupReceivers",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RobotTextContent",
+          "name": "Text",
+          "output_required": false,
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "认证token\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AppToken",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "UserBillingAuth": {
       "document": "UserBillingAuth",

@@ -2353,6 +2353,7 @@
           "example": "NoLimit",
           "member": "string",
           "name": "LimitType",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2362,6 +2363,7 @@
           "example": "In",
           "member": "string",
           "name": "VpcComparisonSymbol",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2371,6 +2373,7 @@
           "example": "In",
           "member": "string",
           "name": "IpComparisonSymbol",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2380,15 +2383,17 @@
           "example": "无",
           "member": "BackupLimitVpcItem",
           "name": "LimitVpc",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "自定义的可下载备份文件的 VPC ID。当参数**LimitType**为**Customize **时，显示该参数。",
+          "document": "自定义的可下载备份文件的 VPC IP 地址。当参数**LimitType**为**Customize **时，显示该参数。",
           "example": "[\"10.1.1.12\", \"10.1.1.13\"]",
           "member": "string",
           "name": "LimitIp",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

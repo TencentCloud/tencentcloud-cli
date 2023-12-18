@@ -6,44 +6,50 @@ Input:
 
 ```
 tccli cfw DescribeSourceAsset --cli-unfold-argument  \
-    --InsType xx \
-    --ChooseType xx \
-    --FuzzySearch xx \
-    --Zone xx
+    --FuzzySearch abc \
+    --InsType abc \
+    --ChooseType abc \
+    --Zone abc \
+    --Limit 0 \
+    --Offset 0
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Total": 2,
-        "Data": [
-            {
-                "LeakNum": "xx",
-                "InsSource": "xx",
-                "VpcId": "xx",
-                "PortNum": "xx",
-                "InstanceId": "xx",
-                "Region": "xx",
-                "ResourcePath": [
-                    "xx"
-                ],
-                "PrivateIp": "xx",
-                "PublicIp": "xx",
-                "SubnetId": "xx",
-                "VPCName": "xx",
-                "AppId": "xx",
-                "InsType": 0,
-                "InstanceName": "xx"
-            }
-        ],
-        "RequestId": "xx",
         "ZoneList": [
             {
-                "ZoneEng": "xx",
-                "Zone": "xx"
+                "Zone": "abc",
+                "ZoneEng": "abc"
             }
-        ]
+        ],
+        "Data": [
+            {
+                "AppId": "abc",
+                "Region": "abc",
+                "VpcId": "abc",
+                "VPCName": "abc",
+                "SubnetId": "abc",
+                "InstanceId": "abc",
+                "InstanceName": "abc",
+                "InsType": 0,
+                "PublicIp": "abc",
+                "PrivateIp": "abc",
+                "PortNum": "abc",
+                "LeakNum": "abc",
+                "InsSource": "abc",
+                "ResourcePath": [
+                    "abc"
+                ],
+                "Server": [
+                    "abc"
+                ],
+                "RegionKey": "abc"
+            }
+        ],
+        "Total": 0,
+        "RequestId": "abc"
     }
 }
 ```

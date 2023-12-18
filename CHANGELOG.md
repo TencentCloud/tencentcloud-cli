@@ -1,3 +1,251 @@
+# Release 3.0.906.1
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 6 次发布
+
+发布时间：2023-12-19 01:19:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：IfExistCatalog
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 40 次发布
+
+发布时间：2023-12-19 01:19:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CreateNatRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateNatRuleItem)
+
+	* 新增成员：ParamTemplateId
+
+* [CreateRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#CreateRuleItem)
+
+	* 新增成员：ParamTemplateId
+
+* [DescAcItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#DescAcItem)
+
+	* 新增成员：ParamTemplateName, ParamTemplateId
+
+* [VpcRuleItem](http://document.tencentcloudapi.woa.com/document/product/1132/49071#VpcRuleItem)
+
+	* 新增成员：ParamTemplateId, ParamTemplateName
+
+
+
+
+## 云安全一体化平台(csip) 版本：2022-11-21
+
+### 第 24 次发布
+
+发布时间：2023-12-19 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDomainAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80801)
+
+	* 新增入参：MemberId
+
+* [DescribeGatewayAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82790)
+
+	* 新增入参：MemberId
+
+* [DescribeListenerList](http://document.tencentcloudapi.woa.com/document/product/1726/81586)
+
+	* 新增入参：MemberId
+
+* [DescribeNICAssets](http://document.tencentcloudapi.woa.com/document/product/1726/82813)
+
+	* 新增入参：MemberId
+
+* [DescribePublicIpAssets](http://document.tencentcloudapi.woa.com/document/product/1726/80800)
+
+	* 新增入参：MemberId
+
+
+
+
+## 事件总线(eb) 版本：2021-04-16
+
+### 第 13 次发布
+
+发布时间：2023-12-19 01:38:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [AdditionalMsg](http://document.tencentcloudapi.woa.com/document/product/1359/67704#AdditionalMsg)
+
+修改数据结构：
+
+* [SubjectSummary](http://document.tencentcloudapi.woa.com/document/product/1359/67704#SubjectSummary)
+
+	* 新增成员：AdditionalMsg
+
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 34 次发布
+
+发布时间：2023-12-19 01:40:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [PreExecuteFileSettings](http://document.tencentcloudapi.woa.com/document/product/589/33981#PreExecuteFileSettings)
+
+	* 新增成员：Remark
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 44 次发布
+
+发布时间：2023-12-19 01:43:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [CardVerifyResult](http://document.tencentcloudapi.woa.com/document/product/1007/41958#CardVerifyResult)
+
+	* 新增成员：CardInfo
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 64 次发布
+
+发布时间：2023-12-19 01:56:39
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AlarmHierarchicalNotice](http://document.tencentcloudapi.woa.com/document/product/248/30354#AlarmHierarchicalNotice)
+
+	* 新增成员：PolicyId
+
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 87 次发布
+
+发布时间：2023-12-19 02:14:31
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRocketMQTopics](http://document.tencentcloudapi.woa.com/document/product/1179/63418)
+
+	* 新增入参：FilterGroup
+
+
+修改数据结构：
+
+* [RabbitMQClusterAccessInfo](http://document.tencentcloudapi.woa.com/document/product/1179/46089#RabbitMQClusterAccessInfo)
+
+	* 新增成员：WebConsoleDomainEndpoint
+
+	* <font color="#dd0000">**修改成员**：</font>PublicWebConsoleSwitchStatus, VpcWebConsoleSwitchStatus, PublicDataStreamStatus, PrometheusEndpointInfo
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 45 次发布
+
+发布时间：2023-12-19 02:17:59
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ModelInfo](http://document.tencentcloudapi.woa.com/document/product/851/74915#ModelInfo)
+
+	* 新增成员：IsPrivateModel
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 119 次发布
+
+发布时间：2023-12-19 02:24:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6CidrBlock](http://document.tencentcloudapi.woa.com/document/product/215/34466)
+
+	* 新增入参：Ipv6CidrBlock, AddressType
+
+	* 新增出参：AddressType, ISPType
+
+
+修改数据结构：
+
+* [ISPIPv6CidrBlock](http://document.tencentcloudapi.woa.com/document/product/215/15824#ISPIPv6CidrBlock)
+
+	* 新增成员：AddressType
+
+	* <font color="#dd0000">**修改成员**：</font>IPv6CidrBlock, ISPType
+
+
+
+
 # Release 3.0.905.1
 
 ## 域名注册(domain) 版本：2018-08-08

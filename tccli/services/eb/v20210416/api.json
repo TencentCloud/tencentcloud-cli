@@ -356,6 +356,34 @@
       ],
       "usage": "both"
     },
+    "AdditionalMsg": {
+      "document": "AdditionalMsg",
+      "members": [
+        {
+          "disabled": false,
+          "document": "name\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "张三\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "BreakdownEvent": {
       "document": "腾讯内部故障事件结构",
       "members": [
@@ -1269,7 +1297,7 @@
         },
         {
           "disabled": false,
-          "document": "目标类型",
+          "document": "目标类型;取值范围:scf(云函数)/cls(日志服务)/amp(消息推送)/ckafka(消息推送)/es(大数据elastic-search)",
           "example": "scf",
           "member": "string",
           "name": "Type",
@@ -1278,8 +1306,8 @@
         },
         {
           "disabled": false,
-          "document": "目标描述",
-          "example": "qcs::scf:ap-guangzhou:uin/3473058547:namespace/test/function/",
+          "document": "目标描述;scf类型示例:\n{\"ResourceDescription\":\"qcs::scf:ap-guangzhou:uin/2252646423:namespace/default/function/john-test-0326/$LATEST\"};\ncls类型示例:\n{\"ResourceDescription\":\"qcs::cls:ap-guangzhou:uin/12323442323:topic/7103f705-6c38-4b64-ac9d-428af0f2e732\"}\nckafka类型示例:\n{\"ResourceDescription\":\"qcs::ckafka:ap-guangzhou:uin/1500000688:ckafkaId/uin/1500000688/ckafka-018q1nwj\",\"CkafkaTargetParams\":{\"TopicName\":\"alert\",\"RetryPolicy\":{\"RetryInterval\":60,\"MaxRetryAttempts\":360}}}\namp类型-邮件/短信示例:\n{\"ResourceDescription\":\"qcs::eb-amp:ap-guangzhou:uin/100012505002:\",\"AMPParams\":{\"NotificationTemplateId\":10181,\"Lang\":\"cn\",\"NoticeReceivers\":[{\"UserType\":\"User\",\"UserIds\":[\"9424525\"],\"TimeWindow\":{\"From\":\"09:30:00\",\"To\":\"23:30:00\"},\"Channels\":[\"Email\",\"SMS\"]}]}}\nes类型示例:\n{\"ResourceDescription\":\"qcs::es:ap-guangzhou:uin/1500000688:instance/es-7cplmhsd\",\"ESTargetParams\":{\"EsVersion\":\"7.14.2\",\"UserName\":\"elastic\",\"Password\":\"xxxxx\",\"NetMode\":\"privateLink\",\"IndexPrefix\":\"auto-test\",\"IndexSuffixMode\":\"default\",\"RotationInterval\":\"none\",\"IndexTemplateType\":\"\",\"OutputMode\":\"default\"}}",
+          "example": "{\"ResourceDescription\":\"qcs::scf:ap-guangzhou:uin/2252646423:namespace/default/function/john-test-0326/$LATEST\"}",
           "member": "TargetDescription",
           "name": "TargetDescription",
           "required": true,
@@ -1306,7 +1334,7 @@
           "example": "target-e9r3a1l0",
           "member": "string",
           "name": "TargetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1342,8 +1370,8 @@
         },
         {
           "disabled": false,
-          "document": "一个转换规则列表，当前仅限定一个",
-          "example": "无",
+          "document": "一个转换规则列表，当前仅限定一个;示例如下：[{\"Extraction\":{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"},\"EtlFilter\":{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"},\"Transform\":{\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"table\",\"Value\":\"$.source.table\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"id\",\"Value\":\"$.after.id\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"app_id\",\"Value\":\"$.after.app_id\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"spu_id\",\"Value\":\"$.after.spu_id\",\"ValueType\":\"JSONPATH\"}]}}]",
+          "example": "[{\"Extraction\":{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"},\"EtlFilter\":{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"},\"Transform\":{\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"table\",\"Value\":\"$.source.table\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"id\",\"Value\":\"$.after.id\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"app_id\",\"Value\":\"$.after.app_id\",\"ValueType\":\"JSONPATH\"},{\"Key\":\"spu_id\",\"Value\":\"$.after.spu_id\",\"ValueType\":\"JSONPATH\"}]}}]",
           "member": "Transformation",
           "name": "Transformations",
           "required": true,
@@ -1361,7 +1389,7 @@
           "example": "tsfm-xxxxxxxxxxx",
           "member": "string",
           "name": "TransformationId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1742,8 +1770,8 @@
         },
         {
           "disabled": false,
-          "document": "聚合字段",
-          "example": "无",
+          "document": "聚合字段,取值范围如下：Source(事件源),RuleIds(命中规则),Subject(实例ID),Region(地域)",
+          "example": "RuleIds",
           "member": "string",
           "name": "GroupField",
           "required": true,
@@ -1752,7 +1780,7 @@
         {
           "disabled": false,
           "document": "页数",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "required": true,
@@ -1761,7 +1789,7 @@
         {
           "disabled": false,
           "document": "每页数据大小",
-          "example": "无",
+          "example": "100",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -1770,7 +1798,7 @@
         {
           "disabled": false,
           "document": "筛选条件",
-          "example": "无",
+          "example": "[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
@@ -1788,6 +1816,7 @@
           "example": "无",
           "member": "string",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1810,8 +1839,7 @@
           "member": "string",
           "name": "NetMode",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1820,8 +1848,7 @@
           "member": "string",
           "name": "IndexPrefix",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1830,8 +1857,7 @@
           "member": "string",
           "name": "RotationInterval",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1840,8 +1866,7 @@
           "member": "string",
           "name": "OutputMode",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1850,8 +1875,7 @@
           "member": "string",
           "name": "IndexSuffixMode",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1860,8 +1884,7 @@
           "member": "string",
           "name": "IndexTemplateType",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2355,22 +2378,20 @@
         {
           "disabled": false,
           "document": "一个或者多个过滤值。",
-          "example": "无",
+          "example": "Cloud",
           "member": "string",
           "name": "Values",
           "required": true,
-          "type": "list",
-          "value_allowed_null": false
+          "type": "list"
         },
         {
           "disabled": false,
-          "document": "过滤键的名称。",
-          "example": "无",
+          "document": "过滤键的名称。EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)",
+          "example": "Type",
           "member": "string",
           "name": "Name",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3154,8 +3175,8 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件，详见下表：实例过滤条件表。每次请求的Filters的上限为10，Filter.Values的上限为5。",
-          "example": "无",
+          "document": "过滤字段范围: EventBusName(事件集名称)/EventBusId(事件集Id)/Type(事件集类型:Cloud(云服务);Platform(平台型);Custom(自定义))/TagKey(标签键)。每次请求的Filters的上限为10，Filter.Values的上限为5。[{\"Name\":\"Type\",\"Values\":[\"Cloud\",\"Platform\"]}]",
+          "example": "[{\"Name\":\"Type\",\"Values\":[\"Cloud\",\"Platform\"]}]",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -3182,6 +3203,7 @@
           "example": "无",
           "member": "EventBus",
           "name": "EventBuses",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3191,6 +3213,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -3540,13 +3563,12 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤字段名称",
+          "document": "过滤字段名称，取值范围如下:region(地域)，type(事件类型)，source(事件源)，status(事件状态)",
           "example": "status",
           "member": "string",
           "name": "Key",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3555,8 +3577,7 @@
           "member": "string",
           "name": "Operator",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -3565,8 +3586,7 @@
           "member": "string",
           "name": "Value",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -4024,8 +4044,7 @@
           "member": "int64",
           "name": "BatchTimeout",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4034,8 +4053,7 @@
           "member": "int64",
           "name": "BatchEventCount",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4044,8 +4062,7 @@
           "member": "bool",
           "name": "EnableBatchDelivery",
           "required": false,
-          "type": "bool",
-          "value_allowed_null": false
+          "type": "bool"
         }
       ],
       "usage": "in"
@@ -4056,7 +4073,7 @@
         {
           "disabled": false,
           "document": "起始时间unix 毫秒时间戳",
-          "example": "无",
+          "example": "1702538123708",
           "member": "int64",
           "name": "StartTime",
           "required": true,
@@ -4065,7 +4082,7 @@
         {
           "disabled": false,
           "document": "结束时间unix 毫秒时间戳",
-          "example": "无",
+          "example": "1702539023708",
           "member": "int64",
           "name": "EndTime",
           "required": true,
@@ -4083,7 +4100,7 @@
         {
           "disabled": false,
           "document": "页码",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "Page",
           "required": true,
@@ -4092,7 +4109,7 @@
         {
           "disabled": false,
           "document": "每页数据大小",
-          "example": "无",
+          "example": "10",
           "member": "int64",
           "name": "Limit",
           "required": true,
@@ -4100,8 +4117,8 @@
         },
         {
           "disabled": false,
-          "document": "筛选条件",
-          "example": "无",
+          "document": "事件查询筛选条件；示例如下：[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
+          "example": "[{\"key\":\"host\",\"operator\":\"eq\",\"value\":\"106.53.106.243\"},{\"type\":\"AND\",\"filters\":[{\"key\":\"region\",\"operator\":\"like\",\"value\":\"*guangzhou*\"},{\"key\":\"type\",\"operator\":\"eq\",\"value\":\"cvm:ErrorEvent:GuestReboot\"}]},{\"type\":\"OR\",\"filters\":[{\"key\":\"field1\",\"operator\":\"like\",\"value\":\"*access*\"},{\"key\":\"field2\",\"operator\":\"eq\",\"value\":\"custorm\"}]}]",
           "member": "LogFilter",
           "name": "Filter",
           "required": false,
@@ -4109,8 +4126,8 @@
         },
         {
           "disabled": false,
-          "document": "排序数组",
-          "example": "无",
+          "document": "事件查询结果排序，[\"timestamp\",\"subject\"]",
+          "example": "[\"timestamp\",\"subject\"]",
           "member": "string",
           "name": "OrderFields",
           "required": false,
@@ -4119,7 +4136,7 @@
         {
           "disabled": false,
           "document": "排序方式，asc 从旧到新，desc 从新到旧",
-          "example": "无",
+          "example": "desc",
           "member": "string",
           "name": "OrderBy",
           "required": false,
@@ -4137,6 +4154,7 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4146,6 +4164,7 @@
           "example": "无",
           "member": "int64",
           "name": "Limit",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4155,6 +4174,7 @@
           "example": "无",
           "member": "int64",
           "name": "Page",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4164,6 +4184,7 @@
           "example": "无",
           "member": "SearchLogResult",
           "name": "Results",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -4324,8 +4345,7 @@
           "member": "string",
           "name": "InstanceId",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4334,8 +4354,7 @@
           "member": "int64",
           "name": "AppId",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4344,8 +4363,7 @@
           "member": "string",
           "name": "Uin",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -4354,8 +4372,16 @@
           "member": "string",
           "name": "Status",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "附加信息",
+          "example": "[{\"key\":\"name\",\"value\":\"zhangsan\"},{\"key\":\"hobby\",\"value\":\"basketball\"}]",
+          "member": "AdditionalMsg",
+          "name": "AdditionalMsg",
+          "required": false,
+          "type": "list"
         }
       ],
       "usage": "in"
@@ -4505,10 +4531,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)",
-          "example": "qcs::scf:gz:uin/1111:resource",
+          "document": "QCS资源六段式，更多参考 [资源六段式](https://cloud.tencent.com/document/product/598/10606)；scf资源六段式示例[qcs::scf:ap-guangzhou:uin/123:namespace/test(函数命名空间)/function/test(函数名)/$LATEST(函数版本)] amp资源六段式示例[qcs::eb-amp:ap-guangzhou:uin/123:] ckafka资源六段式示例[qcs::ckafka:ap-guangzhou:uin/123:ckafkaId/uin/123/ckafka-123(ckafka实例Id)] cls资源六段式示例[qcs::cls:ap-guangzhou:uin/123:topic/122332442(topicId)] es资源六段式示例[qcs::es:ap-guangzhou:appid/123/uin/456:instance/es-7cplmhsd(es实例Id)]",
+          "example": "qcs::es:ap-guangzhou:uin/1500000688:instance/es-7cplmhsd",
           "member": "string",
           "name": "ResourceDescription",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -4519,6 +4546,7 @@
           "example": "无",
           "member": "SCFParams",
           "name": "SCFParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4529,6 +4557,7 @@
           "example": "无",
           "member": "CkafkaTargetParams",
           "name": "CkafkaTargetParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4539,6 +4568,7 @@
           "example": "无",
           "member": "ESTargetParams",
           "name": "ESTargetParams",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": false
@@ -4593,30 +4623,33 @@
       "members": [
         {
           "disabled": false,
-          "document": "描述如何提取数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "描述如何提取数据，{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"ExtractionInputPath\":\"$.data.payload\",\"Format\":\"JSON\"}",
           "member": "Extraction",
           "name": "Extraction",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "描述如何过滤数据\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "描述如何过滤数据;{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"}\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"Filter\":\"{\\\"source\\\":\\\"ckafka.cloud.tencent\\\"}\"}",
           "member": "EtlFilter",
           "name": "EtlFilter",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "描述如何数据转换\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "描述如何数据转换;\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"}]\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"OutputStructs\":[{\"Key\":\"op\",\"Value\":\"$.op\",\"ValueType\":\"JSONPATH\"}]",
           "member": "Transform",
           "name": "Transform",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true

@@ -38,7 +38,9 @@ Output:
                     }
                 ],
                 "CreatedTime": "2020-11-02T02:48:11+00:00",
-                "UpdatedTime": "2020-11-02T02:48:11+00:00"
+                "UpdatedTime": "2020-11-02T02:48:11+00:00",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
             }
         ]
     }
@@ -86,7 +88,9 @@ Output:
                     }
                 ],
                 "CreatedTime": "2020-10-30T07:19:52+00:00",
-                "UpdatedTime": "2020-10-30T07:19:52+00:00"
+                "UpdatedTime": "2020-10-30T07:19:52+00:00",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
             },
             {
                 "CommandId": "cmd-63usjhmq",
@@ -108,7 +112,9 @@ Output:
                     }
                 ],
                 "CreatedTime": "2020-10-26T11:26:07+00:00",
-                "UpdatedTime": "2020-11-09T08:12:45+00:00"
+                "UpdatedTime": "2020-11-09T08:12:45+00:00",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
             }
         ]
     }
@@ -151,7 +157,9 @@ Output:
                 "Username": "root",
                 "Tags": [],
                 "CreatedTime": "2020-10-30T07:19:52+00:00",
-                "UpdatedTime": "2020-10-30T07:19:52+00:00"
+                "UpdatedTime": "2020-10-30T07:19:52+00:00",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
             }
         ]
     }
@@ -197,7 +205,9 @@ Output:
                     }
                 ],
                 "CreatedTime": "2021-05-12T02:49:04Z",
-                "UpdatedTime": "2021-05-12T02:49:04Z"
+                "UpdatedTime": "2021-05-12T02:49:04Z",
+                "OutputCOSBucketUrl": "https://BucketName-123454321.cos.ap-beijing.myqcloud.com",
+                "OutputCOSKeyPrefix": "aa/bb/cc"
             }
         ]
     }

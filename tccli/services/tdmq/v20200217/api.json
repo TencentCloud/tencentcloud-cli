@@ -518,6 +518,13 @@
       "output": "DescribeRocketMQConsumeStatsResponse",
       "status": "online"
     },
+    "DescribeRocketMQConsumerConnectionDetail": {
+      "document": "获取在线消费端详情",
+      "input": "DescribeRocketMQConsumerConnectionDetailRequest",
+      "name": "获取在线消费端详情",
+      "output": "DescribeRocketMQConsumerConnectionDetailResponse",
+      "status": "online"
+    },
     "DescribeRocketMQConsumerConnections": {
       "document": "获取指定消费组下当前客户端的连接情况",
       "input": "DescribeRocketMQConsumerConnectionsRequest",
@@ -8101,6 +8108,107 @@
       ],
       "type": "object"
     },
+    "DescribeRocketMQConsumerConnectionDetailRequest": {
+      "document": "DescribeRocketMQConsumerConnectionDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "rocketmq-xxxxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "命名空间名称",
+          "example": "prod",
+          "member": "string",
+          "name": "NamespaceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称",
+          "example": "test",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费端实例ID",
+          "example": "xxxxxx",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "限制数目",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "按主题类型过滤查询结果，可选择Normal, GlobalOrder, PartitionedOrder, Retry, Transaction, DeadLetter",
+          "example": "无",
+          "member": "string",
+          "name": "FilterType",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeRocketMQConsumerConnectionDetailResponse": {
+      "document": "DescribeRocketMQConsumerConnectionDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总条数",
+          "example": "100",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费端主题信息列表",
+          "example": "无",
+          "member": "RocketMQConsumerTopic",
+          "name": "Details",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeRocketMQConsumerConnectionsRequest": {
       "document": "DescribeRocketMQConsumerConnections请求参数结构体",
       "members": [
@@ -9503,6 +9611,15 @@
           "name": "FilterName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按订阅消费组名称过滤",
+          "example": "无",
+          "member": "string",
+          "name": "FilterGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9516,7 +9633,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9526,7 +9643,7 @@
           "example": "无",
           "member": "RocketMQTopic",
           "name": "Topics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13019,7 +13136,7 @@
           "example": "101.10.10.101:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13029,7 +13146,7 @@
           "example": "https://amqp-xx.com",
           "member": "string",
           "name": "WebConsoleEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13039,7 +13156,7 @@
           "example": "username",
           "member": "string",
           "name": "WebConsoleUsername",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13049,7 +13166,7 @@
           "example": "56A1S61651fd56a1",
           "member": "string",
           "name": "WebConsolePassword",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13059,7 +13176,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "PublicAccessEndpointStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13069,7 +13186,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "PublicControlConsoleSwitchStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13079,7 +13196,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "VpcControlConsoleSwitchStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13089,7 +13206,7 @@
           "example": "http://1.1.1.1:15672",
           "member": "string",
           "name": "VpcWebConsoleEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13099,7 +13216,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicWebConsoleSwitchStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13109,7 +13226,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcWebConsoleSwitchStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13119,7 +13236,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicDataStreamStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13129,8 +13246,18 @@
           "example": "Prometheus信息",
           "member": "PrometheusEndpointInfo",
           "name": "PrometheusEndpointInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/\n公网域名接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
+          "member": "string",
+          "name": "WebConsoleDomainEndpoint",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -14916,6 +15043,72 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "RocketMQConsumerTopic": {
+      "document": "消费者详情中的主题信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "主题名称",
+          "example": "test",
+          "member": "string",
+          "name": "Topic",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主题类型，Default表示普通，GlobalOrder表示全局顺序，PartitionedOrder表示局部顺序，Transaction表示事务，Retry表示重试，DeadLetter表示死信",
+          "example": "Default",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分区数",
+          "example": "1",
+          "member": "uint64",
+          "name": "PartitionNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息堆积数",
+          "example": "100",
+          "member": "int64",
+          "name": "Accumulative",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最后消费时间，以毫秒为单位",
+          "example": "100000",
+          "member": "uint64",
+          "name": "LastConsumptionTime",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅规则\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "SubRule",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

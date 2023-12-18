@@ -13,60 +13,18 @@ Output:
 ```
 {
     "Response": {
-        "Status": "xx",
-        "EksClusterId": "xx",
+        "Status": "abc",
         "Steps": [
             {
-                "StartAt": "xx",
-                "Step": "xx",
-                "LifeState": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
+                "Step": "abc",
+                "LifeState": "abc",
+                "StartAt": "abc",
+                "EndAt": "abc",
+                "FailedMsg": "abc"
             }
         ],
-        "RequestId": "xx"
+        "EksClusterId": "abc",
+        "RequestId": "abc"
     }
 }
 ```
@@ -79,67 +37,25 @@ Input:
 
 ```
 tccli monitor DescribePrometheusInstanceInitStatus --cli-unfold-argument  \
-    --InstanceId xx
+    --InstanceId abc
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "Status": "xx",
-        "EksClusterId": "xx",
+        "Status": "abc",
         "Steps": [
             {
-                "StartAt": "xx",
-                "Step": "xx",
-                "LifeState": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
-            },
-            {
-                "LifeState": "xx",
-                "Step": "xx",
-                "StartAt": "xx",
-                "EndAt": "xx",
-                "FailedMsg": "xx"
+                "Step": "abc",
+                "LifeState": "abc",
+                "StartAt": "abc",
+                "EndAt": "abc",
+                "FailedMsg": "abc"
             }
         ],
-        "RequestId": "xx"
+        "EksClusterId": "abc",
+        "RequestId": "abc"
     }
 }
 ```

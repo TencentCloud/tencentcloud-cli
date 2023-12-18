@@ -29,6 +29,7 @@ Output:
                         "Avg": 100.0,
                         "Detail": [
                             {
+                                "Timestamp": 1660010100,
                                 "Value": 100
                             }
                         ],

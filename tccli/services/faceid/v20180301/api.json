@@ -1059,7 +1059,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsPass",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -1069,7 +1069,7 @@
           "example": "无",
           "member": "FileInfo",
           "name": "CardVideo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1079,7 +1079,7 @@
           "example": "无",
           "member": "FileInfo",
           "name": "CardImage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1089,7 +1089,7 @@
           "example": "无",
           "member": "FileInfo",
           "name": "CardInfoOcrJson",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1099,9 +1099,19 @@
           "example": "c6df4b3d-d1aa-4d49-a676-d44baf379613",
           "member": "string",
           "name": "RequestId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "证件照的文字识别结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CardInfo",
+          "name": "CardInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -7641,7 +7651,7 @@
         },
         {
           "disabled": false,
-          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "ID",
@@ -7651,7 +7661,7 @@
         },
         {
           "disabled": false,
-          "document": "出生国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "性别\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Sex",
@@ -7661,7 +7671,7 @@
         },
         {
           "disabled": false,
-          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "出生国家\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "CountryOfBirth",
@@ -7671,7 +7681,7 @@
         },
         {
           "disabled": false,
-          "document": "地址（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "生日\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Birthday",
@@ -7681,7 +7691,7 @@
         },
         {
           "disabled": false,
-          "document": "身份证号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "地址（背面字段）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Address",

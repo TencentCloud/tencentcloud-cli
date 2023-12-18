@@ -1,6 +1,6 @@
 **Example 1: 查询DDoS攻击事件**
 
-查询DDoS攻击事件列表
+查询DDoS攻击事件
 
 Input: 
 

@@ -1577,7 +1577,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "子客uin列表",
+          "document": "子客uin列表，数组成员数量取值：[1, 20]",
           "example": "[200000000000, 200000000001]",
           "member": "int64",
           "name": "CustomerUin",
@@ -1937,7 +1937,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "用户列表",
+          "document": "用户列表，数组成员数量取值：[1, 50]",
           "example": "{10000,10001}",
           "member": "uint64",
           "name": "UinList",
@@ -1956,7 +1956,7 @@
           "example": "{...}",
           "member": "QueryDirectCustomersCreditData",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

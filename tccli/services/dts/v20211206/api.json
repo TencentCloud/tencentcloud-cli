@@ -4639,10 +4639,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "投递到kafka的数据类型，如Avro,Json",
+          "document": "投递到kafka的数据类型，如Avro,Json,canal-pb,canal-json",
           "example": "Avro,Json",
           "member": "string",
           "name": "DataType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4653,6 +4654,7 @@
           "example": "Single（集中投递到单topic）,Multi (自定义topic名称)",
           "member": "string",
           "name": "TopicType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4663,6 +4665,7 @@
           "example": "test",
           "member": "string",
           "name": "DDLTopicName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -4673,6 +4676,7 @@
           "example": "无",
           "member": "TopicRule",
           "name": "TopicRules",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": false
@@ -5459,7 +5463,7 @@
           "example": "Partial",
           "member": "string",
           "name": "Mode",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5470,7 +5474,7 @@
           "example": "无",
           "member": "Database",
           "name": "Databases",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5481,7 +5485,7 @@
           "example": "无",
           "member": "string",
           "name": "AdvancedObjects",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5492,7 +5496,7 @@
           "example": "无",
           "member": "OnlineDDL",
           "name": "OnlineDDL",
-          "output_required": true,
+          "output_required": false,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5610,7 +5614,7 @@
         },
         {
           "disabled": false,
-          "document": "任务限速信息、该字段仅用作出参、入参该字段无效\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "任务限速信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RateLimitOption",
           "name": "RateLimitOption",
@@ -5820,7 +5824,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "当前生效的全量导出线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的全量导出线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
           "member": "int64",
           "name": "CurrentDumpThread",
@@ -5831,7 +5835,7 @@
         },
         {
           "disabled": false,
-          "document": "默认的全量导出线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的全量导出线程数，该字段仅在出参有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
           "member": "int64",
           "name": "DefaultDumpThread",
@@ -5842,7 +5846,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效的全量导出Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的全量导出Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400000",
           "member": "int64",
           "name": "CurrentDumpRps",
@@ -5853,7 +5857,7 @@
         },
         {
           "disabled": false,
-          "document": "默认的全量导出Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的全量导出Rps，该字段仅在出参有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400000",
           "member": "int64",
           "name": "DefaultDumpRps",
@@ -5864,7 +5868,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效的全量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的全量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为16\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
           "member": "int64",
           "name": "CurrentLoadThread",
@@ -5875,7 +5879,7 @@
         },
         {
           "disabled": false,
-          "document": "默认的全量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的全量导入线程数，该字段仅在出参有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "8",
           "member": "int64",
           "name": "DefaultLoadThread",
@@ -5886,7 +5890,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效的全量导入Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的全量导入Rps，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为50000000\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400000",
           "member": "int64",
           "name": "CurrentLoadRps",
@@ -5897,7 +5901,7 @@
         },
         {
           "disabled": false,
-          "document": "默认的全量导入Rps\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的全量导入Rps，该字段仅在出参有意义\t\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "400000",
           "member": "int64",
           "name": "DefaultLoadRps",
@@ -5908,7 +5912,7 @@
         },
         {
           "disabled": false,
-          "document": "当前生效的增量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "当前生效的增量导入线程数，配置任务时可调整该字段值，注意：如果不设置或设置为0则表示保持当前值，最大值为128\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "int64",
           "name": "CurrentSinkerThread",
@@ -5919,7 +5923,7 @@
         },
         {
           "disabled": false,
-          "document": "默认的增量导入线程数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "默认的增量导入线程数，该字段仅在出参有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "32",
           "member": "int64",
           "name": "DefaultSinkerThread",
@@ -5930,7 +5934,7 @@
         },
         {
           "disabled": false,
-          "document": "enum:\"no\"/\"yes\"、no表示用户未设置过限速、yes表示设置过限速\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "enum:\"no\"/\"yes\"、no表示用户未设置过限速、yes表示设置过限速，该字段仅在出参有意义\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "no",
           "member": "string",
           "name": "HasUserSetRateLimit",

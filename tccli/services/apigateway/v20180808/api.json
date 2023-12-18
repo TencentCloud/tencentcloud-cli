@@ -434,6 +434,13 @@
       "output": "DescribeServiceUsagePlanResponse",
       "status": "online"
     },
+    "DescribeServicesByCert": {
+      "document": "通过证书获取服务列表",
+      "input": "DescribeServicesByCertRequest",
+      "name": "通过证书获取服务列表",
+      "output": "DescribeServicesByCertResponse",
+      "status": "online"
+    },
     "DescribeServicesStatus": {
       "document": "本接口（DescribeServicesStatus）用于搜索查询某一个服务或多个服务的列表，并返回服务相关的域名、时间等信息。",
       "input": "DescribeServicesStatusRequest",
@@ -684,6 +691,13 @@
       "input": "UpdateServiceRequest",
       "name": "更新服务版本",
       "output": "UpdateServiceResponse",
+      "status": "online"
+    },
+    "UpdateServiceDomainCert": {
+      "document": "更新服务自定义域名证书",
+      "input": "UpdateServiceDomainCertRequest",
+      "name": "更新服务自定义域名证书",
+      "output": "UpdateServiceDomainCertResponse",
       "status": "online"
     }
   },
@@ -8047,6 +8061,23 @@
       ],
       "type": "object"
     },
+    "DescribeServicesByCertRequest": {
+      "document": "DescribeServicesByCert请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeServicesByCertResponse": {
+      "document": "DescribeServicesByCert返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeServicesStatusRequest": {
       "document": "DescribeServicesStatus请求参数结构体",
       "members": [
@@ -13403,6 +13434,23 @@
           "type": "object",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdateServiceDomainCertRequest": {
+      "document": "UpdateServiceDomainCert请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "UpdateServiceDomainCertResponse": {
+      "document": "UpdateServiceDomainCert返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

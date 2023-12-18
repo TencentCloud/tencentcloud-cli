@@ -4912,6 +4912,24 @@
           "name": "ISPType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "只有申请`AddressType`为 OTHER的`IPv6` 网段时，才可以指定 Ipv6Cidr。形如：`3402:4e00:20:1000::/56`。",
+          "example": "2001:db8:1a:8000::/56",
+          "member": "string",
+          "name": "Ipv6CidrBlock",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "申请IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`",
+          "example": "\"GUA\"",
+          "member": "string",
+          "name": "AddressType",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -4925,6 +4943,27 @@
           "example": "3402:4e00:20:1000::/56",
           "member": "string",
           "name": "Ipv6CidrBlock",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "申请IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`",
+          "example": "\"GUA\"",
+          "member": "string",
+          "name": "AddressType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "如果IPv6 Cidr 是 `GUA`类型，可以细分为：网络运营商类型 'BGP'-默认, 'CMCC'-中国移动, 'CTCC'-中国电信, 'CUCC'-中国联调",
+          "example": "\"BGP\"",
+          "member": "string",
+          "name": "ISPType",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30614,7 +30653,7 @@
           "example": "\"2402:4e00:1717:8200::/56\",",
           "member": "string",
           "name": "IPv6CidrBlock",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -30624,9 +30663,19 @@
           "example": "BGP",
           "member": "string",
           "name": "ISPType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "IPv6 Cidr 的类型，`GUA`, `OTHER`, `ULA`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"GUA\"",
+          "member": "string",
+          "name": "AddressType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

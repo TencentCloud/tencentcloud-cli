@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli monitor DeletePrometheusAlertPolicy --cli-unfold-argument  \
-    --InstanceId xx \
-    --AlertIds xx \
-    --Names xx
+    --InstanceId abc \
+    --AlertIds abc \
+    --Names abc
 ```
 
 Output: 

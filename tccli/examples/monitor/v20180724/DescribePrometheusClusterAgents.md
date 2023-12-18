@@ -15,10 +15,10 @@ Output:
 ```
 {
     "Response": {
-        "Total": 1,
-        "IsFirstBind": true,
         "Agents": [
             {
+                "ClusterType": "abc",
+                "ClusterId": "abc",
                 "Status": "abc",
                 "ClusterName": "abc",
                 "ExternalLabels": [
@@ -27,13 +27,15 @@ Output:
                         "Value": "abc"
                     }
                 ],
-                "ClusterId": "abc",
-                "ClusterType": "abc",
                 "Region": "abc",
                 "VpcId": "abc",
-                "FailedReason": "abc"
+                "FailedReason": "abc",
+                "Name": "abc"
             }
         ],
+        "Total": 1,
+        "IsFirstBind": true,
+        "ImageNeedUpdate": true,
         "RequestId": "abc"
     }
 }

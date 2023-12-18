@@ -9527,7 +9527,7 @@
         },
         {
           "disabled": false,
-          "document": "实例类型\n2-资源包",
+          "document": "实例类型，仅资源包资源需传此字段，其他场景不传：\n2 - 资源包",
           "example": "2",
           "member": "int64",
           "name": "InstanceType",
@@ -10495,7 +10495,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "操作动作。取值：return-退资源，destroy-销毁资源，recover-恢复资源",
+          "document": "操作动作。取值：\nreturn-退资源\ndestroy-销毁资源\nrecover-恢复资源\nblock-冻结资源(仅支持通知)\nunblock-解冻资源(仅支持通知)",
           "example": "return",
           "member": "string",
           "name": "ActionType",
@@ -10531,7 +10531,7 @@
         },
         {
           "disabled": false,
-          "document": "操作者UIN",
+          "document": "操作者UIN。有明确用户发起的，传操作者uin；无明确用户发起的(如业务后台管理端等)，传资源ownerUin",
           "example": "909619400",
           "member": "string",
           "name": "OperateUin",
@@ -10558,7 +10558,7 @@
         },
         {
           "disabled": false,
-          "document": "退还原因。3-退货并退款\n暂时仅支持退货并退款, 业务可不传此参数",
+          "document": "退还原因。3-退货并退款\nActionType为return场景下生效, 不传此字段默认退货并退款, 暂时仅支持退货并退款",
           "example": "1",
           "member": "int64",
           "name": "ReturnReason",
