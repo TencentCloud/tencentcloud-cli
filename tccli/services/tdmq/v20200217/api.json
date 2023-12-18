@@ -9435,6 +9435,15 @@
           "name": "FilterName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "按订阅消费组名称过滤",
+          "example": "无",
+          "member": "string",
+          "name": "FilterGroup",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -9448,7 +9457,7 @@
           "example": "100",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9458,7 +9467,7 @@
           "example": "无",
           "member": "RocketMQTopic",
           "name": "Topics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12951,7 +12960,7 @@
           "example": "101.10.10.101:5672",
           "member": "string",
           "name": "PublicAccessEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12961,7 +12970,7 @@
           "example": "https://amqp-xx.com",
           "member": "string",
           "name": "WebConsoleEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12971,7 +12980,7 @@
           "example": "username",
           "member": "string",
           "name": "WebConsoleUsername",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12981,7 +12990,7 @@
           "example": "56A1S61651fd56a1",
           "member": "string",
           "name": "WebConsolePassword",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12991,7 +13000,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "PublicAccessEndpointStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13001,7 +13010,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "PublicControlConsoleSwitchStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13011,7 +13020,7 @@
           "example": "true/false",
           "member": "bool",
           "name": "VpcControlConsoleSwitchStatus",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -13021,7 +13030,7 @@
           "example": "http://1.1.1.1:15672",
           "member": "string",
           "name": "VpcWebConsoleEndpoint",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13031,7 +13040,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicWebConsoleSwitchStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13041,7 +13050,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "VpcWebConsoleSwitchStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13051,7 +13060,7 @@
           "example": "OFF/ON/CREATING/DELETING",
           "member": "string",
           "name": "PublicDataStreamStatus",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -13061,8 +13070,18 @@
           "example": "Prometheus信息",
           "member": "PrometheusEndpointInfo",
           "name": "PrometheusEndpointInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/\n公网域名接入点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://amqp-k3eb47gm.dashboard.rabbitmq.cq.public.tencenttdmq.com:15672/",
+          "member": "string",
+          "name": "WebConsoleDomainEndpoint",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

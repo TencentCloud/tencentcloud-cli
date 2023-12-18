@@ -407,7 +407,7 @@
       "status": "online"
     },
     "DescribeSourceAsset": {
-      "document": "DescribeSourceAsset-查询资产组全部资产信息\n",
+      "document": "DescribeSourceAsset-查询资产组全部资产信息",
       "input": "DescribeSourceAssetRequest",
       "name": "查询资产组全部资产信息",
       "output": "DescribeSourceAssetResponse",
@@ -1396,6 +1396,7 @@
           "example": "1001",
           "member": "int64",
           "name": "TaskId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -1406,6 +1407,7 @@
           "example": "任务xxx",
           "member": "string",
           "name": "TaskName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1416,12 +1418,13 @@
           "example": "2023-03-02 10:00:00",
           "member": "string",
           "name": "LastTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "BlockIgnoreRule": {
       "document": "入侵防御放通封禁规则",
@@ -2649,8 +2652,7 @@
           "member": "string",
           "name": "SourceContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2659,8 +2661,7 @@
           "member": "string",
           "name": "SourceType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2669,8 +2670,7 @@
           "member": "string",
           "name": "TargetContent",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2679,8 +2679,7 @@
           "member": "string",
           "name": "TargetType",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2689,8 +2688,7 @@
           "member": "string",
           "name": "Protocol",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2699,8 +2697,7 @@
           "member": "string",
           "name": "RuleAction",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2709,8 +2706,7 @@
           "member": "string",
           "name": "Port",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2719,8 +2715,7 @@
           "member": "uint64",
           "name": "Direction",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2729,8 +2724,7 @@
           "member": "int64",
           "name": "OrderIndex",
           "required": true,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2739,8 +2733,7 @@
           "member": "string",
           "name": "Enable",
           "required": true,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2749,8 +2742,7 @@
           "member": "int64",
           "name": "Uuid",
           "required": false,
-          "type": "int",
-          "value_allowed_null": true
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2759,8 +2751,16 @@
           "member": "string",
           "name": "Description",
           "required": false,
-          "type": "string",
-          "value_allowed_null": true
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口协议组ID",
+          "example": "pp-1q2w3e4r",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -2900,6 +2900,15 @@
           "example": "无",
           "member": "string",
           "name": "LogId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端都协议组ID",
+          "example": "pp-1q2w3e4r",
+          "member": "string",
+          "name": "ParamTemplateId",
           "required": false,
           "type": "string"
         }
@@ -3936,6 +3945,26 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议端口组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ParamTemplateName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "协议端口组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pp-1q2w3e4r",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -4856,7 +4885,7 @@
           "example": "[{\"Eip\":\"xxx\",\"NatGatewayId\":\"nat-xxx\",\"NatGatewayName\":\"xxx\"}]",
           "member": "NatFwEipsInfo",
           "name": "NatFwEipList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6576,7 +6605,7 @@
           "example": "无",
           "member": "AssetZone",
           "name": "ZoneList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6586,7 +6615,7 @@
           "example": "无",
           "member": "InstanceInfo",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -6596,7 +6625,7 @@
           "example": "无",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13459,6 +13488,7 @@
           "example": "192.168.0.2",
           "member": "string",
           "name": "SourceContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13469,6 +13499,7 @@
           "example": "net",
           "member": "string",
           "name": "SourceType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13479,6 +13510,7 @@
           "example": "*.qq.com",
           "member": "string",
           "name": "DestContent",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13489,6 +13521,7 @@
           "example": "net",
           "member": "string",
           "name": "DestType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13499,6 +13532,7 @@
           "example": "ANY",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13509,6 +13543,7 @@
           "example": "accept",
           "member": "string",
           "name": "RuleAction",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13519,6 +13554,7 @@
           "example": "-1/-1",
           "member": "string",
           "name": "Port",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -13529,6 +13565,7 @@
           "example": "test",
           "member": "string",
           "name": "Description",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13539,6 +13576,7 @@
           "example": "-1",
           "member": "int64",
           "name": "OrderIndex",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13549,6 +13587,7 @@
           "example": "8888",
           "member": "int64",
           "name": "Uuid",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -13559,6 +13598,7 @@
           "example": "true",
           "member": "string",
           "name": "Enable",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13569,6 +13609,7 @@
           "example": "cfws-xxx或者ALL",
           "member": "string",
           "name": "EdgeId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -13579,6 +13620,7 @@
           "example": "0",
           "member": "int64",
           "name": "DetectedTimes",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13589,6 +13631,7 @@
           "example": "描述信息",
           "member": "string",
           "name": "EdgeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -13599,6 +13642,7 @@
           "example": "123456789",
           "member": "int64",
           "name": "InternalUuid",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13609,6 +13653,7 @@
           "example": "0",
           "member": "int64",
           "name": "Deleted",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13619,6 +13664,7 @@
           "example": "cfwew-d92f04f8",
           "member": "string",
           "name": "FwGroupId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13629,6 +13675,7 @@
           "example": "防火墙名称",
           "member": "string",
           "name": "FwGroupName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -13639,8 +13686,31 @@
           "example": "无",
           "member": "BetaInfoByACL",
           "name": "BetaList",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口协议组ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "pp-1q2w3e4r",
+          "member": "string",
+          "name": "ParamTemplateId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "端口协议组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ParamTemplateName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

@@ -45,7 +45,7 @@
     "CreateAlarmPolicy": {
       "document": "创建告警策略",
       "input": "CreateAlarmPolicyRequest",
-      "name": "创建云监控告警策略",
+      "name": "创建腾讯云可观测平台告警策略",
       "output": "CreateAlarmPolicyResponse",
       "status": "online"
     },
@@ -1165,6 +1165,7 @@
           "example": "无",
           "member": "string",
           "name": "NoticeId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -1175,8 +1176,20 @@
           "example": "[\"Remind\",\"Serious\"]",
           "member": "string",
           "name": "Classification",
+          "output_required": true,
           "required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模板对应的策略id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "policy-iiiss",
+          "member": "string",
+          "name": "PolicyId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -3318,7 +3331,7 @@
         {
           "disabled": false,
           "document": "告警分级通知规则配置",
-          "example": "无",
+          "example": "[NoticeId:\"notice-xxxx,Classification:\"[\"Warn\"],PolicyId:\"policy-xxx\"]",
           "member": "AlarmHierarchicalNotice",
           "name": "HierarchicalNotices",
           "required": false,
@@ -3336,7 +3349,7 @@
         {
           "disabled": false,
           "document": "事件配置的告警",
-          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应云监控所选 云产品   \"type\": [ ",
+          "example": "{   \"source\": \"apigw.cloud.tencent\", // 对应所选 云产品   \"type\": [ ",
           "member": "string",
           "name": "EbSubject",
           "required": false,

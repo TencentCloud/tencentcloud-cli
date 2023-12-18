@@ -3882,6 +3882,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "-",
           "example": "无",
           "member": "Filter",
@@ -3978,6 +3987,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "过滤参数",
           "example": "无",
           "member": "Filter",
@@ -4059,6 +4077,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "-",
           "example": "无",
           "member": "Filter",
@@ -4104,6 +4131,15 @@
     "DescribeNICAssetsRequest": {
       "document": "DescribeNICAssets请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "过滤参数",
@@ -4241,6 +4277,15 @@
     "DescribePublicIpAssetsRequest": {
       "document": "DescribePublicIpAssets请求参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "集团账号的成员id",
+          "example": "[]{\"mem-6wfo0fzks3\",\"mem-85fo0fzks4\"}",
+          "member": "string",
+          "name": "MemberId",
+          "required": false,
+          "type": "list"
+        },
         {
           "disabled": false,
           "document": "filte过滤条件",

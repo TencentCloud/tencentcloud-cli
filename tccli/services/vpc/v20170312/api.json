@@ -3395,6 +3395,7 @@
           "example": "3402:4e00:20:1000::/56",
           "member": "string",
           "name": "Ipv6CidrBlock",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

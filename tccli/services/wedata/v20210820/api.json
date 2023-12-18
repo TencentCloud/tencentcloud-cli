@@ -1463,6 +1463,13 @@
       "output": "DescribeTableLineageResponse",
       "status": "online"
     },
+    "DescribeTableMeta": {
+      "document": "查询表元数据详情",
+      "input": "DescribeTableMetaRequest",
+      "name": "查询表元数据详情",
+      "output": "DescribeTableMetaResponse",
+      "status": "online"
+    },
     "DescribeTableMetas": {
       "document": "获取表元数据list",
       "input": "DescribeTableMetasRequest",
@@ -3078,6 +3085,7 @@
           "example": "76",
           "member": "string",
           "name": "AlarmId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3088,6 +3096,7 @@
           "example": "765645",
           "member": "string",
           "name": "AlarmReceiver",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -3098,6 +3107,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Email",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3108,6 +3118,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Sms",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3118,6 +3129,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Wechat",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3128,6 +3140,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Voice",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3138,6 +3151,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Wecom",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3148,6 +3162,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Http",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -3158,6 +3173,18 @@
           "example": "1",
           "member": "uint64",
           "name": "WecomGroup",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "飞书群，0：未设置，1：成功，2：失败\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LarkGroup",
+          "output_required": false,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -6140,6 +6167,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)\t",
+          "example": "SUSPEND_WITHOUT_SP",
+          "member": "string",
+          "name": "Event",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6153,7 +6189,7 @@
           "example": "1",
           "member": "int64",
           "name": "SuccessCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6163,7 +6199,7 @@
           "example": "1",
           "member": "int64",
           "name": "FailedCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6173,7 +6209,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7543,6 +7579,15 @@
           "name": "InstanceVersion",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "前端操作类型描述",
+          "example": "无",
+          "member": "string",
+          "name": "EventDesc",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -23293,6 +23338,43 @@
       ],
       "type": "object"
     },
+    "DescribeTableMetaRequest": {
+      "document": "DescribeTableMeta请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表唯一id",
+          "example": "12345",
+          "member": "string",
+          "name": "TableId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeTableMetaResponse": {
+      "document": "DescribeTableMeta返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表的元数据信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableMeta",
+          "name": "TableMeta",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeTableMetasRequest": {
       "document": "DescribeTableMetas请求参数结构体",
       "members": [
@@ -38826,6 +38908,15 @@
           "name": "ExtConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "前端操作类型描述",
+          "example": "无",
+          "member": "string",
+          "name": "EventDesc",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -38839,6 +38930,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -43853,6 +43945,15 @@
           "name": "ExtConfig",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型描述",
+          "example": "无",
+          "member": "string",
+          "name": "EventDesc",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -43866,6 +43967,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -44659,6 +44761,15 @@
           "name": "ProjectId",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型(START, STOP, SUSPEND, SUSPEND_WITHOUT_SP,RESUME, COMMIT, TIMESTAMP)\t",
+          "example": "SUSPEND_WITHOUT_SP",
+          "member": "string",
+          "name": "Event",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -44672,7 +44783,7 @@
           "example": "true",
           "member": "bool",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -45874,6 +45985,7 @@
           "example": "890708",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -45884,6 +45996,7 @@
           "example": "hukhhb",
           "member": "string",
           "name": "RegularName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -45894,6 +46007,7 @@
           "example": "0",
           "member": "uint64",
           "name": "RegularStatus",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -45904,6 +46018,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AlarmLevel",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -45914,6 +46029,7 @@
           "example": "1,2",
           "member": "string",
           "name": "AlarmWay",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -45924,6 +46040,7 @@
           "example": "201",
           "member": "uint64",
           "name": "TaskType",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -45934,6 +46051,7 @@
           "example": "87",
           "member": "string",
           "name": "Id",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -45944,6 +46062,7 @@
           "example": "8908_890",
           "member": "string",
           "name": "RegularId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -45954,6 +46073,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AlarmIndicator",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -45964,6 +46084,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TriggerType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -45974,6 +46095,7 @@
           "example": "20",
           "member": "uint64",
           "name": "EstimatedTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -45984,6 +46106,7 @@
           "example": "4529080",
           "member": "string",
           "name": "AlarmRecipientId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -45994,6 +46117,7 @@
           "example": "709896987",
           "member": "string",
           "name": "ProjectId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46004,6 +46128,7 @@
           "example": "7897809",
           "member": "string",
           "name": "Creater",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46014,6 +46139,7 @@
           "example": "afdhauhu,fdaga",
           "member": "string",
           "name": "AlarmRecipientName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46024,6 +46150,7 @@
           "example": "fhdfg",
           "member": "string",
           "name": "AlarmIndicatorDesc",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46034,6 +46161,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Operator",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -46044,6 +46172,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46054,6 +46183,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46064,6 +46194,7 @@
           "example": "无",
           "member": "AlarmIndicatorInfo",
           "name": "AlarmIndicatorInfos",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46074,6 +46205,7 @@
           "example": "无",
           "member": "uint64",
           "name": "AlarmRecipientType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -46084,6 +46216,7 @@
           "example": "无",
           "member": "string",
           "name": "WeComHook",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46094,6 +46227,7 @@
           "example": "无",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46104,6 +46238,7 @@
           "example": "无",
           "member": "string",
           "name": "OperatorUin",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46114,6 +46249,7 @@
           "example": "0",
           "member": "int64",
           "name": "TaskCount",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -46124,6 +46260,7 @@
           "example": "2",
           "member": "int64",
           "name": "MonitorType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -46134,6 +46271,7 @@
           "example": "无",
           "member": "string",
           "name": "MonitorObjectIds",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -46144,6 +46282,7 @@
           "example": "无",
           "member": "string",
           "name": "LatestAlarmInstanceId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46154,6 +46293,7 @@
           "example": "无",
           "member": "string",
           "name": "LatestAlarmTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -46164,6 +46304,18 @@
           "example": "无",
           "member": "string",
           "name": "Description",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "飞书群Hook地址，多个hook地址使用,隔开\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "LarkWebHooks",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true

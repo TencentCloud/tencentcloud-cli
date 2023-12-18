@@ -1228,7 +1228,7 @@
         },
         {
           "disabled": false,
-          "document": "水印名称。\n最长16字节。",
+          "document": "水印名称。\n最长30字节。",
           "example": "logo",
           "member": "string",
           "name": "WatermarkName",
@@ -1301,6 +1301,7 @@
           "example": "123",
           "member": "uint64",
           "name": "WatermarkId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16841,7 +16842,7 @@
           "example": "test",
           "member": "string",
           "name": "StreamName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16851,7 +16852,7 @@
           "example": "2019-03-01 01:00",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16861,7 +16862,7 @@
           "example": "2019-03-01 01:00",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16871,17 +16872,17 @@
           "example": "8",
           "member": "uint64",
           "name": "Duration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "编码方式，带模块，\n示例：\nliveprocessor_H264：直播转码-H264，\nliveprocessor_H265： 直播转码-H265，\ntopspeed_H264：极速高清-H264，\ntopspeed_H265：极速高清-H265。",
+          "document": "编码方式，带模块，\n示例：\nliveprocessor_ACC:  音频转码，\nliveprocessor_H264：直播转码-H264，\nliveprocessor_H265： 直播转码-H265，\ntopspeed_H264：极速高清-H264，\ntopspeed_H265：极速高清-H265。",
           "example": "liveprocessor_H265",
           "member": "string",
           "name": "ModuleCodec",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16891,7 +16892,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Bitrate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16901,7 +16902,7 @@
           "example": "Transcode",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16911,7 +16912,7 @@
           "example": "5000.livepush.com",
           "member": "string",
           "name": "PushDomain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16921,7 +16922,7 @@
           "example": "720p",
           "member": "string",
           "name": "Resolution",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -16931,7 +16932,7 @@
           "example": "Mainland",
           "member": "string",
           "name": "MainlandOrOversea",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -17097,7 +17098,7 @@
         },
         {
           "disabled": false,
-          "document": "水印名称。\n最长16字节。",
+          "document": "水印名称。\n最长30字节。",
           "example": "logo",
           "member": "string",
           "name": "WatermarkName",

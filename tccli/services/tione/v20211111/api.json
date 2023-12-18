@@ -8778,6 +8778,17 @@
           "required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否为私有化大模型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "IsPrivateModel",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -11263,7 +11274,7 @@
         },
         {
           "disabled": false,
-          "document": "会话模型版本。\n多行业客服大模型：填写demo_big_model_version_id。\n默认为demo_big_model_version_id，即多行业客服大模型。",
+          "document": "会话模型版本。\n金融大模型：填写sn-finllm-13b-chat-v1。\n默认为sn-finllm-13b-chat-v1，即金融大模型。",
           "example": "demo_big_model_version_id",
           "member": "string",
           "name": "ModelVersion",
@@ -11272,7 +11283,7 @@
         },
         {
           "disabled": false,
-          "document": "使用模式(仅多场景客服大模型支持)。\n通用问答：填写General。\n搜索增强问答：填写WithSearchPlugin。\n默认为General，即通用问答。",
+          "document": "使用模式。\n通用问答：填写General。\n搜索增强问答：填写WithSearchPlugin。\n默认为General，即通用问答。\n当前可体验模型仅支持General。",
           "example": "General",
           "member": "string",
           "name": "Mode",

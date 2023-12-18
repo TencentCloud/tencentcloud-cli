@@ -191,8 +191,8 @@
     "BatchSuspendIntegrationTasks": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSuspendIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201\n}",
-        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: BatchSuspendIntegrationTasks\n<公共请求参数>\n\n{\n    \"ProjectId\": \"123\",\n    \"TaskIds\": [\n        \"123\",\n        \"124\"\n    ],\n    \"TaskType\": 201,\n    \"Event\": \"SUSPEND_WITHOUT_SP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SuccessCount\": 1,\n        \"FailedCount\": 1,\n        \"TotalCount\": 2,\n        \"RequestId\": \"123\"\n    }\n}",
         "title": "BatchSuspendIntegrationTasks"
       }
     ],
@@ -266,6 +266,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"CommitType\": 0,\n    \"TaskType\": 1,\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1x\",\n        \"Data\": true\n    }\n}",
         "title": "提交集成任务"
+      },
+      {
+        "document": "2",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CommitIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"kb947c997-4f91-4a1f-913d-06f66a5fb927\",\n    \"ProjectId\": \"1486804694126882816\",\n    \"CommitType\": 1,\n    \"TaskType\": 201,\n    \"VersionDesc\": \"\",\n    \"InstanceVersion\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnsupportedOperation\",\n            \"Message\": \"CloudApiException: The current task is locked by 100028625403 and cannot be committed\"\n        },\n        \"RequestId\": \"6a160ebb-720b-47a7-8f88-4e30f033955d\"\n    }\n}",
+        "title": "1"
       }
     ],
     "CommitRuleGroupExecResult": [
@@ -1816,6 +1822,14 @@
         "title": "表血缘信息"
       }
     ],
+    "DescribeTableMeta": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableMeta\n<公共请求参数>\n\n{\n    \"TableId\": \"12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TableMeta\": {\n            \"ClusterId\": \"xx\",\n            \"TableHeat\": {\n                \"Heat\": 0.0,\n                \"TableId\": \"xx\",\n                \"DayTime\": \"2020-09-22T00:00:00+00:00\"\n            },\n            \"DatabaseId\": \"xx\",\n            \"HasFavorite\": true,\n            \"ProjectDisplayName\": \"xx\",\n            \"StorageSizeWithUnit\": \"xx\",\n            \"TableId\": \"xx\",\n            \"BizCatalogNames\": [\n                \"xx\"\n            ],\n            \"TablePath\": \"xx\",\n            \"LikeCount\": 0,\n            \"TableNameCn\": \"xx\",\n            \"DdlModifyTime\": \"2020-09-22T00:00:00+00:00\",\n            \"Description\": \"xx\",\n            \"InstanceId\": \"xx\",\n            \"TableName\": \"xx\",\n            \"LastAccessTime\": \"2020-09-22T00:00:00+00:00\",\n            \"LifeCycleTime\": 0,\n            \"MetastoreId\": 0,\n            \"DataModifyTime\": \"2020-09-22T00:00:00+00:00\",\n            \"TablePropertyScore\": {\n                \"Timeliness\": 0.0,\n                \"Average\": 0.0,\n                \"DayTime\": \"2020-09-22T00:00:00+00:00\",\n                \"Normative\": 0.0,\n                \"Stability\": 0.0,\n                \"TableId\": \"xx\",\n                \"Safety\": 0.0,\n                \"Integrity\": 0.0\n            },\n            \"Partitions\": \"xx\",\n            \"ReplicationFactor\": \"xx\",\n            \"DatasourceName\": \"xx\",\n            \"StorageFormat\": \"xx\",\n            \"TechnologyType\": \"xx\",\n            \"ProjectId\": \"xx\",\n            \"BizCatalogIds\": [\n                \"xx\"\n            ],\n            \"ColumnSeparator\": \"xx\",\n            \"DatasourceId\": 0,\n            \"HasAdminAuthority\": true,\n            \"TableOwnerName\": \"xx\",\n            \"ModifyTime\": \"2020-09-22T00:00:00+00:00\",\n            \"TableNameEn\": \"xx\",\n            \"FavoriteCount\": 0,\n            \"TableType\": \"xx\",\n            \"DatasourceDisplayName\": \"xx\",\n            \"ClusterName\": \"xx\",\n            \"ProjectName\": \"xx\",\n            \"HasLike\": true,\n            \"MetastoreType\": \"xx\",\n            \"DatabaseName\": \"xx\",\n            \"StorageSize\": 0,\n            \"CreateTime\": \"2020-09-22T00:00:00+00:00\"\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "查询表元数据详情"
+      }
+    ],
     "DescribeTableMetas": [
       {
         "document": "",
@@ -2510,6 +2524,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"Event\": \"abc\",\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "继续集成任务"
+      },
+      {
+        "document": "mock",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abcde\",\n    \"ProjectId\": \"12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作\"\n        },\n        \"RequestId\": \"5891312f-e0d9-40ef-925c-fdde1cd525af\"\n    }\n}",
+        "title": "mock"
       }
     ],
     "RobAndLockIntegrationTask": [
@@ -2574,6 +2594,12 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abc\",\n    \"ProjectId\": \"abc\",\n    \"Event\": \"abc\",\n    \"ExtConfig\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Data\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "启动集成任务"
+      },
+      {
+        "document": "mock",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartIntegrationTask\n<公共请求参数>\n\n{\n    \"TaskId\": \"abcde\",\n    \"ProjectId\": \"12345\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"UnauthorizedOperation\",\n            \"Message\": \"未授权操作\"\n        },\n        \"RequestId\": \"f09a4fcb-63b3-44a1-89e4-841f3491faff\"\n    }\n}",
+        "title": "mock"
       }
     ],
     "StopBaseline": [
@@ -2643,8 +2669,8 @@
     "SuspendIntegrationTask": [
       {
         "document": "暂停集成任务",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"xx\",\n    \"TaskId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Data\": true\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SuspendIntegrationTask\n<公共请求参数>\n\n{\n    \"ProjectId\": \"1123567888\",\n    \"TaskId\": \"v234b22e9-69d0-43e1-800f-420d6a468abc\",\n    \"Event\": \"SUSPEND_WITHOUT_SP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcdefj56789\",\n        \"Data\": true\n    }\n}",
         "title": "暂停集成任务"
       }
     ],
