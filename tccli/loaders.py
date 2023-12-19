@@ -350,7 +350,7 @@ class Loader(object):
         is_conf_exist, conf_path = Utils.file_existed(os.path.join(os.path.expanduser("~"), ".tccli"),
                                                       profile + ".configure")
         if is_conf_exist:
-            array_count = Utils.load_json_msg(conf_path).get("arrayCount", 10)
+            array_count = Utils.load_json_msg(conf_path).get("_sys_param", {}).get("arrayCount", 10)
         else:
             array_count = 10
         all_param_list = param_list
