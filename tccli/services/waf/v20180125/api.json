@@ -10535,7 +10535,7 @@
         {
           "disabled": false,
           "document": "查询的域名，所有域名使用all",
-          "example": "",
+          "example": "test.com",
           "member": "string",
           "name": "Domain",
           "required": true,
@@ -10544,7 +10544,7 @@
         {
           "disabled": false,
           "document": "查询起始时间",
-          "example": "",
+          "example": "2020-08-28 00:00:00",
           "member": "datetime",
           "name": "StartTime",
           "required": true,
@@ -10553,7 +10553,7 @@
         {
           "disabled": false,
           "document": "查询结束时间",
-          "example": "",
+          "example": "2020-08-28 00:00:00",
           "member": "datetime",
           "name": "EndTime",
           "required": true,
@@ -10562,7 +10562,7 @@
         {
           "disabled": false,
           "document": "Lucene语法",
-          "example": "",
+          "example": "attack_ip:127.0.0.1",
           "member": "string",
           "name": "QueryString",
           "required": true,
@@ -10577,27 +10577,30 @@
         {
           "disabled": false,
           "document": "统计详情",
-          "example": "",
+          "example": "\"Count\":3,\"TimeStamp\":1702948440}",
           "member": "LogHistogramInfo",
           "name": "Data",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时间段大小",
-          "example": "",
+          "example": "60",
           "member": "uint64",
           "name": "Period",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "统计的条目数",
-          "example": "",
+          "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

@@ -1869,7 +1869,7 @@
         {
           "disabled": false,
           "document": "防火墙当前版本。用户每次更新防火墙规则时版本会自动加1，防止规则已过期，不填不考虑冲突。",
-          "example": "无",
+          "example": "5",
           "member": "uint64",
           "name": "FirewallVersion",
           "required": false,
@@ -2096,7 +2096,7 @@
         {
           "disabled": false,
           "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
-          "example": "无",
+          "example": "test-create-instance-client-token",
           "member": "string",
           "name": "ClientToken",
           "required": false,
@@ -2132,7 +2132,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。若不指定该参数，则使用默认防火墙策略。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-abcd1234",
           "member": "string",
           "name": "FirewallTemplateId",
           "required": false,
@@ -3655,7 +3655,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3664,7 +3664,7 @@
         {
           "disabled": false,
           "document": "应用任务ID列表。",
-          "example": "无",
+          "example": "lgtk-abcd1234",
           "member": "string",
           "name": "TaskIds",
           "required": false,
@@ -3785,7 +3785,7 @@
         {
           "disabled": false,
           "document": "防火墙模板ID。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -3794,7 +3794,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则ID列表。",
-          "example": "无",
+          "example": "[\"lhftr-gexf7cmvpq\"]",
           "member": "string",
           "name": "TemplateRuleIds",
           "required": false,
@@ -3837,7 +3837,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则信息列表。",
-          "example": "无",
+          "example": "[{\"FirewallRuleInfo\": {\"Action\": \"ACCEPT\",\"AppType\": \"user-defined\",\"CidrBlock\": \"0.0.0.0/0\",\"FirewallRuleDescription\": \"tcp 80\",\"Port\": \"81\",\"Protocol\": \"TCP\"},\"TemplateRuleId\": \"lhftr-gexf7cmvpq\"}]",
           "member": "FirewallTemplateRuleInfo",
           "name": "TemplateRuleSet",
           "output_required": true,
@@ -5966,6 +5966,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5976,16 +5977,18 @@
           "example": "80",
           "member": "string",
           "name": "Port",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
+          "document": "IPv4网段或 IPv4地址(互斥)。\n示例值：0.0.0.0/0。\n\n和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。",
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrBlock",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5996,6 +5999,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6006,6 +6010,7 @@
           "example": "''",
           "member": "string",
           "name": "FirewallRuleDescription",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6022,7 +6027,7 @@
           "example": "HTTP(80)",
           "member": "string",
           "name": "AppType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6032,7 +6037,7 @@
           "example": "TCP",
           "member": "string",
           "name": "Protocol",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6042,17 +6047,17 @@
           "example": "80",
           "member": "string",
           "name": "Port",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "网段或 IP (互斥)。默认为 0.0.0.0/0，表示所有来源。",
+          "document": "IPv4网段或 IPv4地址(互斥)。\n示例值：0.0.0.0/0。\n\n和Ipv6CidrBlock互斥，两者都不指定时，如果Protocol不是ICMPv6，则取默认值0.0.0.0/0。",
           "example": "0.0.0.0/0",
           "member": "string",
           "name": "CidrBlock",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6062,7 +6067,7 @@
           "example": "ACCEPT",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6072,7 +6077,7 @@
           "example": "''",
           "member": "string",
           "name": "FirewallRuleDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -6151,7 +6156,7 @@
         {
           "disabled": false,
           "document": "应用模板的时间。",
-          "example": "无",
+          "example": "2023-06-21T02:47:42Z",
           "member": "datetime_iso",
           "name": "ApplyTime",
           "output_required": true,
@@ -6289,7 +6294,7 @@
         {
           "disabled": false,
           "document": "防火墙模板规则ID。",
-          "example": "lhftr-xxxxxxxxxx",
+          "example": "lhftr-abcde12345",
           "member": "string",
           "name": "TemplateRuleId",
           "output_required": true,
@@ -6706,7 +6711,7 @@
         {
           "disabled": false,
           "document": "实例 ID。",
-          "example": "无",
+          "example": "lhins-muuz7kis",
           "member": "string",
           "name": "InstanceId",
           "output_required": true,
@@ -6716,7 +6721,7 @@
         {
           "disabled": false,
           "document": "套餐 ID。",
-          "example": "无",
+          "example": "bundle_bw_small1_1",
           "member": "string",
           "name": "BundleId",
           "output_required": true,
@@ -6726,7 +6731,7 @@
         {
           "disabled": false,
           "document": "镜像 ID。",
-          "example": "无",
+          "example": "lhbp-abcd1234",
           "member": "string",
           "name": "BlueprintId",
           "output_required": true,
@@ -6736,7 +6741,7 @@
         {
           "disabled": false,
           "document": "实例的 CPU 核数，单位：核。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "CPU",
           "output_required": true,
@@ -6746,7 +6751,7 @@
         {
           "disabled": false,
           "document": "实例内存容量，单位：GB 。",
-          "example": "无",
+          "example": "2",
           "member": "int64",
           "name": "Memory",
           "output_required": true,
@@ -6756,7 +6761,7 @@
         {
           "disabled": false,
           "document": "实例名称。",
-          "example": "无",
+          "example": "green-lh-test",
           "member": "string",
           "name": "InstanceName",
           "output_required": true,
@@ -6766,7 +6771,7 @@
         {
           "disabled": false,
           "document": "实例计费模式。取值范围： \nPREPAID：表示预付费，即包年包月。",
-          "example": "无",
+          "example": "PREPAID",
           "member": "string",
           "name": "InstanceChargeType",
           "output_required": true,
@@ -6786,7 +6791,7 @@
         {
           "disabled": false,
           "document": "实例主网卡的内网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"10.0.2.13\"]",
           "member": "string",
           "name": "PrivateAddresses",
           "output_required": true,
@@ -6796,7 +6801,7 @@
         {
           "disabled": false,
           "document": "实例主网卡的公网 IP。 \n注意：此字段可能返回 空，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"43.128.117.26\"]",
           "member": "string",
           "name": "PublicAddresses",
           "output_required": true,
@@ -6816,7 +6821,7 @@
         {
           "disabled": false,
           "document": "自动续费标识。取值范围： \nNOTIFY_AND_MANUAL_RENEW：表示通知即将过期，但不自动续费  \nNOTIFY_AND_AUTO_RENEW：表示通知即将过期，而且自动续费 。",
-          "example": "无",
+          "example": "NOTIFY_AND_MANUAL_RENEW",
           "member": "string",
           "name": "RenewFlag",
           "output_required": true,
@@ -6836,7 +6841,7 @@
         {
           "disabled": false,
           "document": "实例状态。取值范围： \n<li>PENDING：表示创建中</li><li>LAUNCH_FAILED：表示创建失败</li><li>RUNNING：表示运行中</li><li>STOPPED：表示关机</li><li>STARTING：表示开机中</li><li>STOPPING：表示关机中</li><li>REBOOTING：表示重启中</li><li>SHUTDOWN：表示停止待销毁</li><li>TERMINATING：表示销毁中</li><li>DELETING：表示删除中</li><li>FREEZING：表示冻结中</li><li>ENTER_RESCUE_MODE：表示进入救援模式中</li><li>RESCUE_MODE：表示救援模式</li><li>EXIT_RESCUE_MODE：表示退出救援模式中</li>",
-          "example": "无",
+          "example": "RUNNING",
           "member": "string",
           "name": "InstanceState",
           "output_required": true,
@@ -6846,7 +6851,7 @@
         {
           "disabled": false,
           "document": "实例全局唯一 ID。",
-          "example": "无",
+          "example": "1db916fc-ac02-498c-9fe0-ce60003ebcbf",
           "member": "string",
           "name": "Uuid",
           "output_required": true,
@@ -6856,7 +6861,7 @@
         {
           "disabled": false,
           "document": "实例的最新操作。例：StopInstances、ResetInstance。注意：此字段可能返回 空值，表示取不到有效值。",
-          "example": "无",
+          "example": "StartInstances",
           "member": "string",
           "name": "LatestOperation",
           "output_required": true,
@@ -6866,7 +6871,7 @@
         {
           "disabled": false,
           "document": "实例的最新操作状态。取值范围： \nSUCCESS：表示操作成功 \nOPERATING：表示操作执行中 \nFAILED：表示操作失败 \n注意：此字段可能返回 空值，表示取不到有效值。",
-          "example": "无",
+          "example": "SUCCESS",
           "member": "string",
           "name": "LatestOperationState",
           "output_required": true,
@@ -6876,7 +6881,7 @@
         {
           "disabled": false,
           "document": "实例最新操作的唯一请求 ID。 \n注意：此字段可能返回 空值，表示取不到有效值。",
-          "example": "无",
+          "example": "f498d99d-2647-4c1c-a234-36f0e082e7ba",
           "member": "string",
           "name": "LatestOperationRequestId",
           "output_required": true,
@@ -6896,7 +6901,7 @@
         {
           "disabled": false,
           "document": "创建时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2023-12-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "CreatedTime",
           "output_required": true,
@@ -6906,7 +6911,7 @@
         {
           "disabled": false,
           "document": "到期时间。按照 ISO8601 标准表示，并且使用 UTC 时间。 \n格式为： YYYY-MM-DDThh:mm:ssZ 。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "2024-01-01T06:34:59Z",
           "member": "datetime_iso",
           "name": "ExpiredTime",
           "output_required": true,
@@ -6916,7 +6921,7 @@
         {
           "disabled": false,
           "document": "操作系统平台类型，如 LINUX_UNIX、WINDOWS。",
-          "example": "无",
+          "example": "LINUX_UNIX",
           "member": "string",
           "name": "PlatformType",
           "output_required": true,
@@ -6926,7 +6931,7 @@
         {
           "disabled": false,
           "document": "操作系统平台。",
-          "example": "无",
+          "example": "CENTOS",
           "member": "string",
           "name": "Platform",
           "output_required": true,
@@ -6936,7 +6941,7 @@
         {
           "disabled": false,
           "document": "操作系统名称。",
-          "example": "无",
+          "example": "CentOS 7.6 64bit",
           "member": "string",
           "name": "OsName",
           "output_required": true,
@@ -6946,7 +6951,7 @@
         {
           "disabled": false,
           "document": "可用区。",
-          "example": "无",
+          "example": "ap-singapore-3",
           "member": "string",
           "name": "Zone",
           "output_required": true,
@@ -7422,10 +7427,10 @@
         {
           "disabled": false,
           "document": "密钥 ID 列表。关联密钥后，就可以通过对应的私钥来访问实例。注意：此字段可能返回 []，表示取不到有效值。",
-          "example": "",
+          "example": "[]",
           "member": "string",
           "name": "KeyIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -8557,7 +8562,7 @@
         {
           "disabled": false,
           "document": "模板ID。",
-          "example": "lhft-xxxxxxxx",
+          "example": "lhft-abcd1234",
           "member": "string",
           "name": "TemplateId",
           "required": true,
@@ -9318,30 +9323,30 @@
         {
           "disabled": false,
           "document": "系统盘类型。\n取值范围： \n<li> LOCAL_BASIC：本地硬盘</li><li> LOCAL_SSD：本地 SSD 硬盘</li><li> CLOUD_BASIC：普通云硬盘</li><li> CLOUD_SSD：SSD 云硬盘</li><li> CLOUD_PREMIUM：高性能云硬盘</li>",
-          "example": "",
+          "example": "CLOUD_PREMIUM",
           "member": "string",
           "name": "DiskType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "系统盘大小，单位：GB。",
-          "example": "",
+          "example": "20",
           "member": "int64",
           "name": "DiskSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "系统盘ID。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "lhdisk-jxj6qnpo",
           "member": "string",
           "name": "DiskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }
@@ -9354,7 +9359,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "xxx",
+          "example": "Owner",
           "member": "string",
           "name": "Key",
           "output_required": true,
@@ -9365,7 +9370,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "xxx",
+          "example": "Green",
           "member": "string",
           "name": "Value",
           "output_required": true,

@@ -2890,7 +2890,7 @@
         },
         {
           "disabled": false,
-          "document": "该注册码允许注册的实列数目。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该注册码允许注册的实例数目。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "100",
           "member": "int64",
           "name": "RegisterLimit",

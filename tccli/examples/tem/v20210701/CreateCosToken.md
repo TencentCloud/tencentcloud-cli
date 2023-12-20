@@ -1,14 +1,14 @@
-**Example 1: 生成Cos临时秘钥**
+**Example 1: 生成Cos临时密钥**
 
-为上传jar包和war包，生成Cos临时秘钥
+为上传jar包和war包，生成Cos临时密钥
 
 Input: 
 
 ```
 tccli tem CreateCosToken --cli-unfold-argument  \
-    --PkgName xx \
-    --TimeVersion xx \
-    --ApplicationId xx \
+    --PkgName test.jar \
+    --TimeVersion 1.0 \
+    --ApplicationId app-testid \
     --SourceChannel 0 \
     --OptType 0
 ```

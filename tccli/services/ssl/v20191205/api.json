@@ -3705,7 +3705,7 @@
         {
           "disabled": false,
           "document": "偏移量，默认为0。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Offset",
           "required": false,
@@ -3714,7 +3714,7 @@
         {
           "disabled": false,
           "document": "请求日志数量，默认为20。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "Limit",
           "required": false,
@@ -3723,7 +3723,7 @@
         {
           "disabled": false,
           "document": "开始时间，默认15天前。",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "StartTime",
           "required": false,
@@ -3732,7 +3732,7 @@
         {
           "disabled": false,
           "document": "结束时间，默认现在时间。",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "EndTime",
           "required": false,
@@ -3747,27 +3747,30 @@
         {
           "disabled": false,
           "document": "当前查询条件日志总数。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "AllTotal",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "本次请求返回的日志数量。",
-          "example": "",
+          "example": "无",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "证书操作日志列表。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "OperationLog",
           "name": "OperateLogs",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -7083,22 +7086,62 @@
         {
           "disabled": false,
           "document": "操作证书动作。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Action",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "操作时间。",
-          "example": "",
+          "example": "无",
           "member": "datetime",
           "name": "CreatedOn",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子账号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SubAccountUin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证书ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CertId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "操作\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

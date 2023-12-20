@@ -68,7 +68,7 @@
       {
         "document": "创建引擎实例",
         "input": "https://tse.tencentcloudapi.com/?Action=CreateEngine\n&EngineType=zookeeper\n&EngineVersion=3.4.14\n&EngineProductVersion=STANDARD\n&EngineRegion=ap-beijing\n&EngineResourceSpec=spec-xxxxxx\n&EngineNodeNum=3\n&VpcId=vpc-xxxxxx\n&SubnetId=subnet-xxxxxx\n&EngineName=qzone-photo-prod\n&TradeType=0\n&ReportPolarisLogToCLS=false\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"ins-123\",\n        \"RequestId\": \"11111-1111-1111-11111\"\n    }\n}",
         "title": "创建引擎实例"
       }
     ],

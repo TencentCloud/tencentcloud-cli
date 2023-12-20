@@ -126,6 +126,13 @@
       "output": "DescribeJobConfigsResponse",
       "status": "online"
     },
+    "DescribeJobEvents": {
+      "document": "获取指定作业的事件，包括作业启动停止、运行失败、快照失败、作业异常等各种事件类型",
+      "input": "DescribeJobEventsRequest",
+      "name": "获取指定作业的事件",
+      "output": "DescribeJobEventsResponse",
+      "status": "online"
+    },
     "DescribeJobSavepoint": {
       "document": "查找Savepoint列表",
       "input": "DescribeJobSavepointRequest",
@@ -2715,6 +2722,108 @@
       ],
       "type": "object"
     },
+    "DescribeJobEventsRequest": {
+      "document": "DescribeJobEvents请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "作业的 ID",
+          "example": "cql-6w8eab6f",
+          "member": "string",
+          "name": "JobId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件：起始 Unix 时间戳（秒）",
+          "example": "1630932161",
+          "member": "uint64",
+          "name": "StartTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "筛选条件：结束 Unix 时间戳（秒）",
+          "example": "1631232466",
+          "member": "uint64",
+          "name": "EndTimestamp",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "事件类型。如果不传则返回所有类型的数据",
+          "example": "[1,2]",
+          "member": "string",
+          "name": "Types",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "运行实例 ID 数组",
+          "example": "[1,2,3]",
+          "member": "uint64",
+          "name": "RunningOrderIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "工作空间 SerialId",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeJobEventsResponse": {
+      "document": "DescribeJobEvents返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该作业指定范围内的事件列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[]",
+          "member": "JobEvent",
+          "name": "Events",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "该作业指定范围内运行实例 ID 数组，仅当入参没有传入 RunningOrderIds 参数时才会返回。倒序输出\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[3,2,1]",
+          "member": "uint64",
+          "name": "RunningOrderIds",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件的总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeJobSavepointRequest": {
       "document": "DescribeJobSavepoint请求参数结构体",
       "members": [
@@ -4349,6 +4458,72 @@
           "member": "string",
           "name": "EsServerlessSpace",
           "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "JobEvent": {
+      "document": "描述作业发生的一个事件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内部定义的事件类型",
+          "example": "11",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件类型的说明文字",
+          "example": "作业停止",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件发生的 Unix 时间戳（秒）",
+          "example": "1630932161",
+          "member": "uint64",
+          "name": "Timestamp",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "事件发生时的运行 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "RunningOrderId",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "事件的一些可选说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "作业异常停止，原因是 TaskManager 重启次数达到阈值",
+          "member": "string",
+          "name": "Message",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "异常事件的排查手册链接\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://www.example.org/link?id=12357",
+          "member": "string",
+          "name": "SolutionLink",
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         }

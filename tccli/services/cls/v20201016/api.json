@@ -756,7 +756,7 @@
         },
         {
           "disabled": false,
-          "document": "触发条件。",
+          "document": "单触发条件。与MultiConditions参数互斥。",
           "example": "无",
           "member": "string",
           "name": "Condition",
@@ -906,7 +906,7 @@
         },
         {
           "disabled": false,
-          "document": "多触发条件。\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多触发条件。与\nCondition互斥。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "MultiCondition",
           "name": "MultiConditions",
@@ -1373,6 +1373,7 @@
           "example": "status 502 pv",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1383,6 +1384,7 @@
           "example": "query",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -1393,16 +1395,18 @@
           "example": "*|select count(1) as pv where status = 502",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "多维分析配置。\n\n当Analysis的Type字段为query（自定义）时，支持\n{\n\"Key\": \"SyntaxRule\",  // 语法规则\n\"Value\": \"1\"  //0：Lucene语法 ，1： CQL语法\n}\n\n\n\n当Analysis的Type字段为field（top5）时,  支持\n {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法（Lucene）\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}       \n\n当Analysis的Type字段为original（原始日志）时,  支持\n{\n    \"Key\": \"Fields\",\n    \"Value\": \"__SOURCE__,__HOSTNAME__,__TIMESTAMP__,__PKG_LOGID__,__TAG__.pod_ip\"\n}, {\n    \"Key\": \"QueryIndex\",\n    \"Value\": \"-1\" //  -1：自定义， 1：执行语句1， 2：执行语句2\n},{\n    \"Key\": \"CustomQuery\", //  //检索语句。 QueryIndex为-1时有效且必填\n    \"Value\": \"* | select count(*) as count\"\n},{\n    \"Key\": \"Format\", //显示形式。1：每条日志一行，2：每条日志每个字段一行\n    \"Value\": \"2\"\n},\n{\n    \"Key\": \"Limit\", //最大日志条数\n    \"Value\": \"5\"\n},{\n    \"Key\": \"SyntaxRule\", // 查不到这个字段也是老语法\n    \"Value\": \"0\"//0:Lucene, 1:CQL\n}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AlarmAnalysisConfig",
           "name": "ConfigInfo",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -1551,8 +1555,8 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
-          "example": "无",
+          "document": "腾讯云CKafka实例ID。\nKafkaType为0时，KafkaInstance必填",
+          "example": "ckafka-5kysm8",
           "member": "string",
           "name": "KafkaInstance",
           "required": false,
@@ -1560,7 +1564,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址",
+          "document": "服务地址。\nKafkaType为1时，ServerAddr必填",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -1578,7 +1582,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "document": "加密访问协议。IsEncryptionAddr参数为true时必填",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -1597,6 +1601,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -3237,8 +3242,8 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶",
-          "example": "bucket1",
+          "document": "COS存储桶。\n存储桶命名规范：https://cloud.tencent.com/document/product/436/13312",
+          "example": "examplebucket-1-1250000000",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -3246,7 +3251,7 @@
         },
         {
           "disabled": false,
-          "document": "COS存储桶所在地域",
+          "document": "COS存储桶所在地域。地域和访问域名：https://cloud.tencent.com/document/product/436/6224",
           "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
@@ -3655,7 +3660,7 @@
         {
           "disabled": false,
           "document": "导入CLS目标topic ID",
-          "example": "无",
+          "example": "b53fe5be-7ee3-4031-8043-5a73bad4f572",
           "member": "string",
           "name": "TopicId",
           "required": true,
@@ -3691,7 +3696,7 @@
         {
           "disabled": false,
           "document": "导入数据位置，-2:最早（默认），-1：最晚",
-          "example": "0",
+          "example": "-1",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -3726,7 +3731,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -3744,7 +3749,7 @@
         },
         {
           "disabled": false,
-          "document": "日志导入规则",
+          "document": "日志导入规则。\n必填字段。",
           "example": "无",
           "member": "LogRechargeRuleInfo",
           "name": "LogRechargeRule",
@@ -6665,7 +6670,7 @@
         },
         {
           "disabled": false,
-          "document": "任务名称",
+          "document": "任务名称。",
           "example": "task",
           "member": "string",
           "name": "Name",
@@ -6674,7 +6679,7 @@
         },
         {
           "disabled": false,
-          "document": "任务id",
+          "document": "任务id。",
           "example": "6ef60bec-0242-43af-bb20-270359fb54xx",
           "member": "string",
           "name": "TaskId",
@@ -6683,7 +6688,7 @@
         },
         {
           "disabled": false,
-          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配，类型：String必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String必选：否</li>\n<li>bizType按照【主题类型】进行过滤,0日志主题1指标主题,。类型：String必选：否</li>\n<li>status按照【任务状态】进行过滤。类型：String必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配，。类型：String必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配，。类型：String必选：否</li>\n",
+          "document": "<li>srcTopicName按照【源日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>dstTopicName按照【目标日志主题名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>srcTopicId按照【源日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>dstTopicId按照【目标日志主题ID】进行过滤。类型：String。必选：否</li>\n<li>bizType按照【主题类型】进行过滤,0日志主题 1指标主题。类型：String。必选：否</li>\n<li>status按照【任务状态】进行过滤，1:运行 2:停止。类型：String。必选：否</li>\n<li>taskName按照【任务名称】进行过滤，模糊匹配。类型：String。必选：否</li>\n<li>taskId按照【任务ID】进行过滤，模糊匹配。类型：String。必选：否</li>\n",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -7510,7 +7515,7 @@
         {
           "disabled": false,
           "document": "要查询的执行详情的起始时间，Unix时间戳，单位ms",
-          "example": "1676615187496",
+          "example": "1702569600000",
           "member": "int64",
           "name": "From",
           "required": true,
@@ -7519,7 +7524,7 @@
         {
           "disabled": false,
           "document": "要查询的执行详情的结束时间，Unix时间戳，单位ms",
-          "example": "1676617787496",
+          "example": "1702655999999",
           "member": "int64",
           "name": "To",
           "required": true,
@@ -7527,7 +7532,7 @@
         },
         {
           "disabled": false,
-          "document": "查询过滤条件，例如：\n- 按告警策略ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\"`\n- 按监控对象ID查询：`monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\") `\n- 按告警策略ID及监控对象ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\" AND monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\")`",
+          "document": "查询过滤条件，例如：\n- 按告警策略ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\"`\n- 按监控对象ID查询：`monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\" `\n- 按告警策略ID及监控对象ID查询：`alert_id:\"alarm-0745ec00-e605-xxxx-b50b-54afe61fc971\" AND monitored_object:\"823d8bfa-76a7-xxxx-8399-8cda74d4009b\"`\n- 按告警策略ID及监控对象ID查询支持SQL语句：`(alert_id:\"alarm-5ce45495-09e8-4d58-xxxx-768134bf330c\") AND (monitored_object:\"3c514e84-6f1f-46ec-xxxx-05de6163f7fe\") AND NOT condition_evaluate_result: \"Skip\" AND condition_evaluate_result:[* TO *] | SELECT count(*) as top50StatisticsTotalCount, count_if(condition_evaluate_result='ProcessError') as top50StatisticsFailureCount, count_if(notification_send_result!='NotSend') as top50NoticeTotalCount, count_if(notification_send_result='SendPartFail' or notification_send_result='SendFail') as top50NoticeFailureCount, alert_id, alert_name, monitored_object, topic_type, happen_threshold, alert_threshold, notify_template group by alert_id, alert_name, monitored_object,topic_type, happen_threshold, alert_threshold, notify_template order by top50StatisticsTotalCount desc limit 1`",
           "example": "alert_id:notice-c0960eb3-6454-4eef-xxxx-8feb766a9fbd",
           "member": "string",
           "name": "Query",
@@ -7608,7 +7613,7 @@
         },
         {
           "disabled": false,
-          "document": "如果Analysis为True，则返回分析结果的列名，否则为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "分析结果的列名，如果Query语句有SQL查询，则返回查询字段的列名；\n否则为空。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "[\"time\",\"pv\",\"uv\"]",
           "member": "string",
           "name": "ColNames",
@@ -7618,7 +7623,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情查询结果；当Analysis为True时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情查询结果。\n\n当Query字段无SQL语句时，返回查询结果。\n当Query字段有SQL语句时，可能返回null。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogInfo",
           "name": "Results",
@@ -7628,7 +7633,7 @@
         },
         {
           "disabled": false,
-          "document": "执行详情统计分析结果；当Analysis为False时，可能返回为null\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "执行详情统计分析结果。当Query字段有SQL语句时，返回sql统计结果，否则可能返回null。\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "LogItems",
           "name": "AnalysisResults",
@@ -7858,40 +7863,44 @@
       "members": [
         {
           "disabled": false,
-          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "协议类型，支持的协议类型包括 plaintext、sasl_plaintext 或 sasl_ssl。建议使用 sasl_ssl，此协议会进行连接加密同时需要用户认证。\n入参必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "sasl_plaintext",
           "member": "string",
           "name": "Protocol",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "加密类型，支持 PLAIN、SCRAM-SHA-256 或 SCRAM-SHA-512。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Mechanism",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户名。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "UserName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "用户密码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "用户密码。\n当Protocol为sasl_plaintext或sasl_ssl时必填\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10786,7 +10795,7 @@
         },
         {
           "disabled": false,
-          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开",
+          "document": "用户需要导入的Kafka相关topic列表，多个topic之间使用半角逗号隔开。最多支持100个。",
           "example": "topic1,topic2",
           "member": "string",
           "name": "UserKafkaTopics",
@@ -10796,7 +10805,7 @@
         {
           "disabled": false,
           "document": "导入数据位置，-2:最早（默认），-1：最晚",
-          "example": "0",
+          "example": "-1",
           "member": "int64",
           "name": "Offset",
           "required": true,
@@ -10804,7 +10813,7 @@
         },
         {
           "disabled": false,
-          "document": "腾讯云CKafka实例ID，KafkaType为0时必填",
+          "document": "腾讯云CKafka实例ID。\nKafkaType为0时KafkaInstance必填",
           "example": "无",
           "member": "string",
           "name": "KafkaInstance",
@@ -10813,7 +10822,7 @@
         },
         {
           "disabled": false,
-          "document": "服务地址",
+          "document": "服务地址。\nKafkaType为1时ServerAddr必填",
           "example": "192.168.0.1:9095或test.cls.tencentyun.com:9095",
           "member": "string",
           "name": "ServerAddr",
@@ -10822,7 +10831,7 @@
         },
         {
           "disabled": false,
-          "document": "ServerAddr是否为加密连接",
+          "document": "ServerAddr是否为加密连接。。\nKafkaType为1时有效。",
           "example": "true",
           "member": "bool",
           "name": "IsEncryptionAddr",
@@ -10831,7 +10840,7 @@
         },
         {
           "disabled": false,
-          "document": "加密访问协议，IsEncryptionAddr参数为true时必填",
+          "document": "加密访问协议。\nKafkaType为1并且IsEncryptionAddr为true时Protocol必填",
           "example": "无",
           "member": "KafkaProtocolInfo",
           "name": "Protocol",
@@ -11281,7 +11290,7 @@
         },
         {
           "disabled": false,
-          "document": "指标名称",
+          "document": "指标名称。当BizType为1时，MetricName需要填写",
           "example": "cpu_usage",
           "member": "string",
           "name": "MetricName",
@@ -11555,8 +11564,8 @@
         },
         {
           "disabled": false,
-          "document": "存储桶",
-          "example": "bucket1",
+          "document": "存储桶。\n存储桶命名规范：https://cloud.tencent.com/document/product/436/13312",
+          "example": "examplebucket-1-1250000000",
           "member": "string",
           "name": "Bucket",
           "required": true,
@@ -11564,8 +11573,8 @@
         },
         {
           "disabled": false,
-          "document": "存储桶所在地域",
-          "example": "ap-guangzhou-open",
+          "document": "存储桶所在地域。\n地域和访问域名：https://cloud.tencent.com/document/product/436/6224",
+          "example": "ap-guangzhou",
           "member": "string",
           "name": "BucketRegion",
           "required": true,
@@ -11601,7 +11610,7 @@
           "example": "[\"xxxxx\",\"xxxxx\"]",
           "member": "string",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11611,7 +11620,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Sum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11621,7 +11630,7 @@
           "example": "https://bucket1.ap-guangzhou.myqcloud.com/csv/g_xxx.gz",
           "member": "string",
           "name": "Path",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11631,7 +11640,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Msg",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11641,7 +11650,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

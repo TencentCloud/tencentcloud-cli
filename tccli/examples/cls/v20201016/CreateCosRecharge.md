@@ -9,7 +9,7 @@ tccli cls CreateCosRecharge --cli-unfold-argument  \
     --TopicId xxx-xxx-xxx-xxx \
     --LogsetId xxx-xxx-xxx-xxx \
     --Name test_name \
-    --Bucket test_bucket \
+    --Bucket examplebucket-1-1250000000 \
     --BucketRegion ap-guangzhou \
     --Prefix text_prefix \
     --LogType minimalist_log \

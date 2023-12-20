@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli cls SearchCosRechargeInfo --cli-unfold-argument  \
-    --TopicId xxx-xxx-xxx-xxx \
-    --LogsetId xxx-xxx-xxx-xxx \
+    --TopicId e6a94ed2-8191-49ac-ab67-90e33d2f1111 \
+    --LogsetId 11114ed2-8191-49ac-ab67-90e33d2f3974 \
     --Name test_name \
-    --Bucket test_bucket \
-    --BucketRegion gz_open \
+    --Bucket examplebucket-1-1250000000 \
+    --BucketRegion ap-guangzhou \
     --Prefix text_prefix \
     --Compress gzip
 ```

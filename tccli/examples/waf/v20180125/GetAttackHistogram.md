@@ -6,16 +6,17 @@ Input:
 
 ```
 tccli waf GetAttackHistogram --cli-unfold-argument  \
-    --StartTime 2020-08-2800:00:00 \
-    --ToTime 2020-08-2814:12:36 \
-    --Domain all \
-    --QueryString method:GET
+    --Domain abc \
+    --StartTime 2020-09-22 00:00:00 \
+    --EndTime 2020-09-22 00:00:00 \
+    --QueryString abc
 ```
 
 Output: 
 ```
 {
     "Response": {
+        "RequestId": "abc",
         "Data": [
             {
                 "Count": 0,

@@ -2590,7 +2590,7 @@
         {
           "disabled": false,
           "document": "Apollo 环境配置参数列表。参数说明：\n如果创建Apollo类型，此参数为必填的环境信息列表，最多可选4个环境。环境信息参数说明：\n- Name：环境名。参考值：prod, dev, fat, uat\n- EngineResourceSpec：环境内引擎的节点规格ID。参见EngineProductVersion参数说明\n- EngineNodeNum：环境内引擎的节点数量。参见EngineProductVersion参数说明，其中prod环境支持的节点数为2，3，4，5\n- StorageCapacity：配置存储空间大小，以GB为单位，步长为5.参考值：35\n- VpcId：VPC ID。参考值：vpc-conz6aix\n- SubnetId：子网 ID。参考值：subnet-ahde9me9",
-          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"Status\":\"running\",\"Admin",
+          "example": "[{\"EnvName\":\"pro\",\"StorageCapacity\":50,\"EngineResourceSpec\":\"spec-xxx\",\"EngineNodeNum\":1}]",
           "member": "ApolloEnvParam",
           "name": "ApolloEnvParams",
           "required": false,
@@ -2607,7 +2607,7 @@
         },
         {
           "disabled": false,
-          "document": "引擎的初始帐号信息。可设置参数：\n- Name：控制台初始用户名\n- Password：控制台初始密码\n- Token：引擎接口的管理员 Token",
+          "document": "引擎的初始账号信息。可设置参数：\n- Name：控制台初始用户名\n- Password：控制台初始密码\n- Token：引擎接口的管理员 Token",
           "example": "{\"Name\":\"nacos\",\"Password\":\"xxxxxx\",\"Token\":\"xxxxxx\"}",
           "member": "EngineAdmin",
           "name": "EngineAdmin",
@@ -2653,6 +2653,7 @@
           "example": "ins-12345678",
           "member": "string",
           "name": "InstanceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5218,7 +5219,7 @@
       "type": "object"
     },
     "EngineAdmin": {
-      "document": "引擎的初始管理帐号",
+      "document": "引擎的初始管理账号",
       "members": [
         {
           "disabled": false,
@@ -5226,6 +5227,7 @@
           "example": "nacos",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5236,6 +5238,7 @@
           "example": "xxxxxx",
           "member": "string",
           "name": "Password",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5246,6 +5249,7 @@
           "example": "xxxxxx",
           "member": "string",
           "name": "Token",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

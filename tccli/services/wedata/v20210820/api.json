@@ -29944,7 +29944,7 @@
           "example": "123",
           "member": "string",
           "name": "TaskId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29954,7 +29954,7 @@
           "example": "2022-12-12 00:00:00",
           "member": "string",
           "name": "CurRunDate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29964,7 +29964,7 @@
           "example": "1",
           "member": "string",
           "name": "Tries",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29974,7 +29974,7 @@
           "example": "2022-12-12 10:00:00",
           "member": "string",
           "name": "LastUpdate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29984,7 +29984,7 @@
           "example": "127.0.0.1",
           "member": "string",
           "name": "BrokerIp",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -29994,7 +29994,7 @@
           "example": "123",
           "member": "string",
           "name": "FileSize",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30004,7 +30004,7 @@
           "example": "123_2022-12-12 00:00:00",
           "member": "string",
           "name": "OriginFileName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30014,7 +30014,7 @@
           "example": "2022-12-12 00:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30024,7 +30024,7 @@
           "example": "run",
           "member": "string",
           "name": "InstanceLogType",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30034,7 +30034,7 @@
           "example": "测试",
           "member": "string",
           "name": "TaskName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30044,7 +30044,7 @@
           "example": "123",
           "member": "string",
           "name": "CostTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -30054,7 +30054,17 @@
           "example": "COMPLETED",
           "member": "string",
           "name": "InstanceStatus",
-          "required": false,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "实例代码文件，为空表示对应代码文件不存在，可能是因为执行机未升级/对应类型任务无代码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CodeFileName",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }

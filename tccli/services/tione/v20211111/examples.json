@@ -312,6 +312,14 @@
         "title": "查询模型加速任务列表"
       }
     ],
+    "DescribeModelAccelerateVersions": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tione.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeModelAccelerateVersions\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Filters\": [\n        {\n            \"Fuzzy\": false,\n            \"Values\": [\n                \"mv-v1-522962784402949761\"\n            ],\n            \"Name\": \"TrainingModelVersionId\",\n            \"Negative\": false\n        }\n    ],\n    \"Offset\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ModelAccelerateVersions\": [\n            {\n                \"ModelId\": \"abc\",\n                \"ModelVersionId\": \"abc\",\n                \"ModelJobId\": \"abc\",\n                \"ModelJobName\": \"abc\",\n                \"ModelVersion\": \"abc\",\n                \"SpeedUp\": \"abc\",\n                \"ModelSource\": {\n                    \"Source\": \"abc\",\n                    \"JobName\": \"abc\",\n                    \"JobVersion\": \"abc\",\n                    \"JobId\": \"abc\",\n                    \"ModelName\": \"abc\",\n                    \"AlgorithmFramework\": \"abc\",\n                    \"TrainingPreference\": \"abc\",\n                    \"ReasoningEnvironmentSource\": \"abc\",\n                    \"ReasoningEnvironment\": \"abc\",\n                    \"ReasoningEnvironmentId\": \"abc\",\n                    \"ReasoningImageInfo\": {\n                        \"ImageType\": \"abc\",\n                        \"ImageUrl\": \"abc\",\n                        \"RegistryRegion\": \"abc\",\n                        \"RegistryId\": \"abc\",\n                        \"AllowSaveAllContent\": true,\n                        \"ImageName\": \"abc\"\n                    }\n                },\n                \"CosPathInfo\": {\n                    \"Bucket\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Paths\": [\n                        \"abc\"\n                    ]\n                },\n                \"CreateTime\": \"abc\",\n                \"ModelFormat\": \"abc\",\n                \"Status\": \"abc\",\n                \"Progress\": 1,\n                \"ErrorMsg\": \"abc\",\n                \"GPUType\": \"abc\",\n                \"ModelCosPath\": {\n                    \"Bucket\": \"abc\",\n                    \"Region\": \"abc\",\n                    \"Paths\": [\n                        \"abc\"\n                    ]\n                }\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "优化模型列表"
+      }
+    ],
     "DescribeModelService": [
       {
         "document": "",
