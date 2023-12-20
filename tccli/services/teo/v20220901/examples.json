@@ -660,7 +660,7 @@
     ],
     "ModifyAccelerationDomainStatuses": [
       {
-        "document": "停用指定DomainId的加速域名。",
+        "document": "停用指定名称的加速域名。",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAccelerationDomainStatuses\n<公共请求参数>\n\n{\n    \"DomainNames\": [\n        \"example.com\"\n    ],\n    \"ZoneId\": \"zone-225qgrnvbi9w\",\n    \"Status\": \"offline\",\n    \"Force\": \"false\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"5e0a2b4e-df6d-4d2a-ac39-1706cbf8a707\"\n    }\n}",
         "title": "批量修改加速域名状态"

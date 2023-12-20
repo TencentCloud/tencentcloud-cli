@@ -29,9 +29,9 @@
       "status": "online"
     },
     "CreateCosToken": {
-      "document": "生成Cos临时秘钥",
+      "document": "生成Cos临时密钥",
       "input": "CreateCosTokenRequest",
-      "name": "生成Cos临时秘钥",
+      "name": "生成Cos临时密钥",
       "output": "CreateCosTokenResponse",
       "status": "online"
     },
@@ -1022,7 +1022,7 @@
           "example": "1",
           "member": "CosToken",
           "name": "Result",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },

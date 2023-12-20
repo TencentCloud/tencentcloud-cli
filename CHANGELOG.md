@@ -1,3 +1,123 @@
+# Release 3.0.907.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 39 次发布
+
+发布时间：2023-12-21 01:12:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeBudgetHistoryList](http://document.tencentcloudapi.woa.com/document/product/555/82850)
+* [DescribeBudgetInfoList](http://document.tencentcloudapi.woa.com/document/product/555/82849)
+* [DescribeBudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/82848)
+
+修改接口：
+
+* [DescribeMeasureResources](http://document.tencentcloudapi.woa.com/document/product/555/81765)
+
+	* 新增入参：FeeType, DealName, PackageCodes
+
+* [SetRenewFlagInner](http://document.tencentcloudapi.woa.com/document/product/555/81631)
+
+	* 新增入参：AutoRenewTimeSpan, AutoRenewTimeUnit
+
+
+新增数据结构：
+
+* [BudgetConditionsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetConditionsForm)
+* [BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords)
+* [BudgetInfoRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetInfoRecordList)
+* [BudgetPlan](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetPlan)
+* [BudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecordList)
+* [BudgetRemindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecords)
+* [BudgetSendInfoForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetSendInfoForm)
+* [DataForBudgetHistory](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetHistory)
+* [DataForBudgetInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetInfo)
+* [OrderDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#OrderDto)
+* [TagsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#TagsForm)
+* [WarnJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WarnJson)
+* [WaveThresholdJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WaveThresholdJson)
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 117 次发布
+
+发布时间：2023-12-21 01:44:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+
+	* <font color="#dd0000">**修改入参**：</font>ResourceId
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 88 次发布
+
+发布时间：2023-12-21 02:16:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeNamespaceBundlesOpt](http://document.tencentcloudapi.woa.com/document/product/1179/59039)
+
+	* <font color="#dd0000">**删除出参**：</font>BundleSet
+
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* BundleSetOpt
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 47 次发布
+
+发布时间：2023-12-21 02:19:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBillingResourceGroups](http://document.tencentcloudapi.woa.com/document/product/851/74826)
+
+	* <font color="#dd0000">**修改入参**：</font>Type
+
+* [DescribeBillingSpecs](http://document.tencentcloudapi.woa.com/document/product/851/75918)
+
+	* <font color="#dd0000">**修改入参**：</font>TaskType
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
 # Release 3.0.906.1
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28

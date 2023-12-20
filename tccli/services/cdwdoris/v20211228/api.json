@@ -642,13 +642,23 @@
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "判断审计日志表是否有catalog字段\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "int64",
           "name": "IfExistCatalog",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "页面特性，用于前端屏蔽一些页面入口\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"catalog\",\"xx\"]",
+          "member": "string",
+          "name": "Characteristic",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": true
         }
       ],

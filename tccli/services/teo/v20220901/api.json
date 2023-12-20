@@ -3499,6 +3499,7 @@
           "example": "jkqj4hahfkaf",
           "member": "string",
           "name": "JobId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3508,6 +3509,7 @@
           "example": "[]",
           "member": "FailReason",
           "name": "FailedList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5062,7 +5064,7 @@
           "example": "无",
           "member": "Quota",
           "name": "PurgeQuota",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5072,7 +5074,7 @@
           "example": "无",
           "member": "Quota",
           "name": "PrefetchQuota",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

@@ -7660,7 +7660,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7670,7 +7670,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7680,7 +7680,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7690,7 +7690,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7700,7 +7700,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageOsName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7710,7 +7710,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageDescription",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7720,7 +7720,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageCreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7730,7 +7730,7 @@
           "example": "无",
           "member": "string",
           "name": "Architecture",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7740,7 +7740,7 @@
           "example": "无",
           "member": "string",
           "name": "OsType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7750,7 +7750,7 @@
           "example": "无",
           "member": "string",
           "name": "OsVersion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7760,7 +7760,7 @@
           "example": "无",
           "member": "string",
           "name": "Platform",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7770,7 +7770,7 @@
           "example": "无",
           "member": "int64",
           "name": "ImageOwner",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7780,7 +7780,7 @@
           "example": "无",
           "member": "int64",
           "name": "ImageSize",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7790,7 +7790,7 @@
           "example": "无",
           "member": "SrcImage",
           "name": "SrcImage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -7800,7 +7800,7 @@
           "example": "无",
           "member": "string",
           "name": "ImageSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7810,7 +7810,7 @@
           "example": "无",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7820,7 +7820,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsSupportCloudInit",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         }

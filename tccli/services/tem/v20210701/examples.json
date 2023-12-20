@@ -34,10 +34,10 @@
     ],
     "CreateCosToken": [
       {
-        "document": "为上传jar包和war包，生成Cos临时秘钥",
-        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosToken\n<公共请求参数>\n\n{\n    \"PkgName\": \"xx\",\n    \"TimeVersion\": \"xx\",\n    \"ApplicationId\": \"xx\",\n    \"SourceChannel\": 0,\n    \"OptType\": 0\n}",
+        "document": "为上传jar包和war包，生成Cos临时密钥",
+        "input": "POST / HTTP/1.1\nHost: tem.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCosToken\n<公共请求参数>\n\n{\n    \"PkgName\": \"test.jar\",\n    \"TimeVersion\": \"1.0\",\n    \"ApplicationId\": \"app-testid\",\n    \"SourceChannel\": 0,\n    \"OptType\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"81f74023-563c-437d-abf7-8139449ef178\",\n        \"Result\": {}\n    }\n}",
-        "title": "生成Cos临时秘钥"
+        "title": "生成Cos临时密钥"
       }
     ],
     "CreateEnvironment": [

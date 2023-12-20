@@ -18,7 +18,7 @@ tccli cls CreateScheduledSql --cli-unfold-argument  \
     --ScheduledSqlContent * | select count(*) as pv \
     --SrcTopicId 6ef60bec-0242-43af-bb20-270359fbxxxxx \
     --ProcessDelay 0 \
-    --ProcessType 0 \
+    --ProcessType 1 \
     --SrcTopicRegion ap-guangzhou \
     --ProcessEndTime 1690515440000
 ```

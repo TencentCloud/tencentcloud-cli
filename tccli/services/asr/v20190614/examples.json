@@ -19,7 +19,7 @@
     "CreateAsyncRecognitionTask": [
       {
         "document": "创建一个异步识别任务，通过接口返回拿到任务ID",
-        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"EngineType\": \"16k_zh\",\n    \"Url\": \"http://tes.cos.ap-guangzhou.myqcloud.com/test.wav\",\n    \"CallbackUrl\": \"http://test.com/callback\",\n    \"SignToken\": \"\"\n}",
+        "input": "POST / HTTP/1.1\nHost: asr.tencentcloudapi.com\nContent-Type: application/json; charset=utf-8\nX-TC-Version: 2019-06-14\nX-TC-Region: ap-shanghai\nX-TC-Action: CreateAsyncRecognitionTask\nX-TC-Timestamp: 1599140162\nAuthorization: TC3-HMAC-SHA256 Credential=AKIDYu6A16GdCxUlnbTSVItxvhxxx2gpbx2/2020-09-03/asr/tc3_request, SignedHeaders=content-type;host, Signature=0615f73a69c6b054affd69e4b1cbb68fbe84ae8024a9347df4aa5054933adac8\n<公共请求参数>\n\n{\n    \"EngineType\": \"16k_zh\",\n    \"Url\": \"rtmp://test.com/test_stream\",\n    \"CallbackUrl\": \"http://test.com/callback\",\n    \"SignToken\": \"\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"fabc2d63-a1b7-40a0-b4c3-640f78974919\",\n        \"Data\": {\n            \"TaskId\": 1000000007\n        }\n    }\n}",
         "title": "语音流异步识别任务创建"
       }

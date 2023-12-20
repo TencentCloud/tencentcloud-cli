@@ -20,6 +20,7 @@ Output:
                     "Action": "ACCEPT",
                     "AppType": "user-defined",
                     "CidrBlock": "0.0.0.0/0",
+                    "Ipv6CidrBlock": "::/0",
                     "FirewallRuleDescription": "tcp 80",
                     "Port": "81",
                     "Protocol": "TCP"
@@ -31,6 +32,7 @@ Output:
                     "Action": "DROP",
                     "AppType": "user-defined",
                     "CidrBlock": "0.0.0.0/0",
+                    "Ipv6CidrBlock": "::/0",
                     "FirewallRuleDescription": "udp 80",
                     "Port": "81",
                     "Protocol": "UDP"

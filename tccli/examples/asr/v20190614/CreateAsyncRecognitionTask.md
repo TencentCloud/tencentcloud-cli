@@ -7,7 +7,7 @@ Input:
 ```
 tccli asr CreateAsyncRecognitionTask --cli-unfold-argument  \
     --EngineType 16k_zh \
-    --Url http://tes.cos.ap-guangzhou.myqcloud.com/test.wav \
+    --Url rtmp://test.com/test_stream \
     --CallbackUrl http://test.com/callback \
     --SignToken 
 ```
