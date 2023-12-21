@@ -386,7 +386,7 @@
           "example": "任务1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -396,17 +396,17 @@
           "example": "5",
           "member": "uint64",
           "name": "CalleeCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "主叫号码列表",
-          "example": "[\"008601012345678\"]]",
+          "example": "[\"008601012345678\"]",
           "member": "string",
           "name": "Callers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -416,7 +416,7 @@
           "example": "123",
           "member": "int64",
           "name": "NotBefore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -426,7 +426,7 @@
           "example": "null",
           "member": "int64",
           "name": "NotAfter",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -436,7 +436,7 @@
           "example": "5",
           "member": "uint64",
           "name": "IvrId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -446,7 +446,7 @@
           "example": "1",
           "member": "uint64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -456,7 +456,7 @@
           "example": "341431",
           "member": "uint64",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         }
@@ -532,7 +532,7 @@
         {
           "disabled": true,
           "document": "绑定技能组列表",
-          "example": "无",
+          "example": "[1,2,3,4,5,6]",
           "member": "int64",
           "name": "SkillGroupList",
           "required": false,
@@ -541,7 +541,7 @@
         {
           "disabled": false,
           "document": "绑定技能组列表(必填)",
-          "example": "无",
+          "example": "[{\"SkillGroupId\":100,\"Priority\":1},{\"SkillGroupId\":200,\"Priority\":2}]",
           "member": "StaffSkillGroupList",
           "name": "StaffSkillGroupList",
           "required": false,
@@ -687,27 +687,27 @@
           "example": "02188888888",
           "member": "string",
           "name": "Number",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "线路相关指标",
-          "example": "无",
+          "example": "{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0}",
           "member": "CallInMetrics",
           "name": "Metrics",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "所属技能组相关指标",
-          "example": "无",
+          "example": "[{\"SkillGroupId\":0,\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"Name\":\"abc\"}]",
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -765,7 +765,7 @@
         {
           "disabled": false,
           "document": "随路数据",
-          "example": "xxx",
+          "example": "foobar",
           "member": "string",
           "name": "UUI",
           "required": false,
@@ -774,7 +774,7 @@
         {
           "disabled": false,
           "document": "参数",
-          "example": "无",
+          "example": "{\"foo\":\"bar\"}",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -1002,7 +1002,7 @@
         {
           "disabled": false,
           "document": "自定义变量（仅高级版支持）",
-          "example": "无",
+          "example": "{\"a\":1}",
           "member": "Variable",
           "name": "Variables",
           "required": false,
@@ -1011,7 +1011,7 @@
         {
           "disabled": false,
           "document": "UUI",
-          "example": "无",
+          "example": "foobar",
           "member": "string",
           "name": "UUI",
           "required": false,
@@ -1020,7 +1020,7 @@
         {
           "disabled": false,
           "document": "被叫属性",
-          "example": "无",
+          "example": "[{\"Callee\":\"foobar\",\"UUI\":\"11\",\"Variables\":{\"foo\":\"bar\"}}]",
           "member": "CalleeAttribute",
           "name": "CalleeAttributes",
           "required": false,
@@ -1038,6 +1038,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TaskId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1247,7 +1248,7 @@
         {
           "disabled": false,
           "document": "描述",
-          "example": "无",
+          "example": "foobar",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -1265,6 +1266,7 @@
           "example": "1543",
           "member": "uint64",
           "name": "ApplicantId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1310,7 +1312,7 @@
         {
           "disabled": false,
           "document": "绑定的技能组列表",
-          "example": "无",
+          "example": "[1,2,3,4,5]",
           "member": "uint64",
           "name": "SkillGroupIds",
           "required": false,
@@ -1430,7 +1432,7 @@
         {
           "disabled": false,
           "document": "客服信息，个数不超过 10",
-          "example": "无",
+          "example": "[{\"Name\":\"John Doe\",\"Mail\":\"john.doe@example.com\",\"Phone\":\"00861234567890\",\"StaffNumber\":\"123456\",\"Role\":1},{\"Name\":\"Jane Smith\",\"Mail\":\"jane.smith@example.com\",\"Phone\":\"00861234567890\",\"StaffNumber\":\"789012\",\"Role\":1}]",
           "member": "SeatUserInfo",
           "name": "Staffs",
           "required": true,
@@ -1454,9 +1456,10 @@
         {
           "disabled": false,
           "document": "错误坐席列表及错误信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{ \t\"StaffEmail\": \"foobar@example.com\" }]",
           "member": "ErrStaffItem",
           "name": "ErrorStaffList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1584,7 +1587,7 @@
         {
           "disabled": false,
           "document": "待删除客服邮箱列表",
-          "example": "无",
+          "example": "[\"a\",\"b\",\"c\"]",
           "member": "string",
           "name": "StaffList",
           "required": true,
@@ -1599,10 +1602,10 @@
         {
           "disabled": false,
           "document": "无法删除的状态为在线的客服列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[\"foo\",\"bar\",\"hhh\"]",
           "member": "string",
           "name": "OnlineStaffList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1729,7 +1732,7 @@
           "example": "任务1",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1739,7 +1742,7 @@
           "example": "任务描述",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1749,7 +1752,7 @@
           "example": "1",
           "member": "int64",
           "name": "NotBefore",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1759,27 +1762,27 @@
           "example": "2",
           "member": "int64",
           "name": "NotAfter",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "主叫列表",
-          "example": "无",
+          "example": "[\"008610086\"]",
           "member": "string",
           "name": "Callers",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "被叫信息列表",
-          "example": "无",
+          "example": "[{\"State\":1,\"Callee\":\"foobar\",\"Sessions\":[\"foobar\"]}]",
           "member": "AutoCalloutTaskCalleeInfo",
           "name": "Callees",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1789,7 +1792,7 @@
           "example": "2",
           "member": "uint64",
           "name": "IvrId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1799,7 +1802,7 @@
           "example": "1",
           "member": "uint64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1854,17 +1857,17 @@
           "example": "5",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "任务列表",
-          "example": "[]",
+          "example": "[{\"TaskId\":3241,\"IvrId\":1,\"CalleeCount\":1,\"Name\":\"foobar\",\"NotBefore\":0,\"NotAfter\":0,\"State\":1,\"Callers\":[\"foobar\"]}]",
           "member": "AutoCalloutTaskInfo",
           "name": "Tasks",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1967,7 +1970,7 @@
         {
           "disabled": false,
           "document": "筛选技能组列表",
-          "example": "无",
+          "example": "[1,2,3,4,5]",
           "member": "int64",
           "name": "GroupIdList",
           "required": false,
@@ -1985,33 +1988,37 @@
           "example": "1",
           "member": "int64",
           "name": "Timestamp",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "总体指标",
-          "example": "无",
+          "example": "{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0}",
           "member": "CallInMetrics",
           "name": "TotalMetrics",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "线路维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Number\":\"abc\",\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"SkillGroupMetrics\":[{\"SkillGroupId\":0,\"Metrics\":{\"IvrCount\":0,\"QueueCount\":0,\"RingCount\":0,\"AcceptCount\":0,\"TransferOuterCount\":0,\"MaxQueueDuration\":0,\"AvgQueueDuration\":0,\"MaxRingDuration\":0,\"AvgRingDuration\":0,\"MaxAcceptDuration\":0,\"AvgAcceptDuration\":0},\"Name\":\"abc\"}]}]",
           "member": "CallInNumberMetrics",
           "name": "NumberMetrics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "技能组维度指标\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"SkillGroupId\":0,\"Name\":\"abc\"}]",
           "member": "CallInSkillGroupMetrics",
           "name": "SkillGroupMetrics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2075,15 +2082,17 @@
           "example": "13",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "申请单列表",
-          "example": "无",
+          "example": "[{\"SdkAppId\":1400000000,\"ApplicantId\":3,\"Callers\":[\"008601012345678\"],\"Callees\":[\"008618612345678\"],\"State\":1,\"CreateTime\":1623145120,\"UpdateTime\":1623145120}]",
           "member": "CarrierPrivilegeNumberApplicant",
           "name": "Applicants",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2181,7 +2190,7 @@
         {
           "disabled": false,
           "document": "消息列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Timestamp\":1600007226,\"From\":\"John\",\"Messages\":[{\"Type\":\"Text\",\"Content\":\"Hello, how are you?\"},{\"Type\":\"Image\",\"Content\":\"https://example.com/image.jpg\"}]},{\"Timestamp\":1400753150,\"From\":\"Alice\",\"Messages\":[{\"Type\":\"Text\",\"Content\":\"Hi there!\"}]}]",
           "member": "MessageBody",
           "name": "Messages",
           "output_required": true,
@@ -2307,7 +2316,7 @@
         {
           "disabled": false,
           "document": "筛选分机号列表",
-          "example": "无",
+          "example": "[\"1001\",\"1002\"]",
           "member": "string",
           "name": "ExtensionIds",
           "required": false,
@@ -2352,17 +2361,17 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "话机信息列表",
-          "example": "无",
+          "example": "[{\"SdkAppId\":1400000014,\"FullExtensionId\":\"1001@140000014.tccc.qcloud.com\",\"ExtensionId\":\"1001\",\"SkillGroupId\":\"1532\",\"ExtensionName\":\"lulu\",\"CreateTime\":0,\"ModifyTime\":0,\"Status\":0,\"Register\":false,\"Relation\":\"123456\",\"RelationName\":\"foobar\"}]",
           "member": "ExtensionInfo",
           "name": "ExtensionList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2451,7 +2460,7 @@
         {
           "disabled": false,
           "document": "服务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"}}]",
           "member": "IMCdrInfo",
           "name": "IMCdrList",
           "output_required": true,
@@ -2552,7 +2561,7 @@
         {
           "disabled": true,
           "document": "服务记录列表",
-          "example": "无",
+          "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"}}]",
           "member": "IMCdrInfo",
           "name": "IMCdrs",
           "output_required": true,
@@ -2562,7 +2571,7 @@
         {
           "disabled": false,
           "document": "服务记录列表\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "[{\"Id\":\"12933\",\"Duration\":100,\"EndStatus\":1,\"Nickname\":\"bar\",\"Type\":2,\"StaffId\":\"foo@tencent.com\",\"Timestamp\":1632814604,\"SessionId\":\"87fa1d7a-4194-4f2a-83dc-d7c293411720\",\"SkillGroupId\":\"1001\",\"SkillGroupName\":\"bar\",\"Satisfaction\":{\"Id\":1,\"Label\":\"满意\"}}]",
           "member": "IMCdrInfo",
           "name": "IMCdrList",
           "output_required": true,
@@ -2627,7 +2636,7 @@
         {
           "disabled": false,
           "document": "号码列表",
-          "example": "无",
+          "example": "[{\"Number\":\"0086075512345678\",\"State\":1,\"CallOutSkillGroupIds\":[1]}]",
           "member": "NumberInfo",
           "name": "Numbers",
           "output_required": true,
@@ -2685,17 +2694,17 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "列表内容",
-          "example": "无",
+          "example": "[{\"sessionId\":\"123456789\",\"roomId\":\"9876\",\"caller\":\"John\",\"callee\":\"Alice\",\"protectedCaller\":\"+1234567890\",\"protectedCallee\":\"+9876543210\",\"startTimestamp\":\"1600007226\",\"ringTimestamp\":\"1600007240\",\"acceptTimestamp\":\"1600007250\",\"staffUserId\":\"staff123\",\"staffNo\":\"S123\",\"sessionStatus\":\"Active\",\"callType\":\"callin\"},{\"sessionId\":\"987654321\",\"roomId\":\"1234\",\"caller\":\"Alice\",\"callee\":\"John\",\"startTimestamp\":\"1400753150\",\"ringTimestamp\":\"1400753160\",\"acceptTimestamp\":\"1400753170\",\"staffUserId\":\"staff456\",\"staffNo\":\"S456\",\"sessionStatus\":\"Completed\",\"callType\":\"callout\"}]",
           "member": "PSTNSessionInfo",
           "name": "Sessions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2775,7 +2784,7 @@
         {
           "disabled": true,
           "document": "话单记录",
-          "example": "无",
+          "example": "{\"nonce\":\"123\",\"requestId\":\"456\",\"errorCode\":\"0\",\"msg\":\"OK\",\"numberList\":[{\"id\":1,\"number\":\"0086075512345678\",\"callOutSkillGroup\":[1,2],\"groupIDs\":[1,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"固话\",\"CityCode\":755,\"NationID\":86}},{\"id\":2,\"number\":\"008601085157015\",\"callOutSkillGroup\":[2,3],\"groupIDs\":[1,2],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"\",\"City\":\"北京\",\"Operator\":\"固话\",\"CityCode\":10,\"NationID\":86}},{\"id\":3,\"number\":\"008602412345678\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[2,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"辽宁\",\"City\":\"沈阳\",\"Operator\":\"固话\",\"CityCode\":24,\"NationID\":86}},{\"id\":4,\"number\":\"008618926418136\",\"callOutSkillGroup\":[],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"电信\",\"CityCode\":755,\"NationID\":86}},{\"id\":5,\"number\":\"00819098841234\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"日本\",\"Province\":\"\",\"City\":\"\",\"Operator\":\"Softbank\",\"CityCode\":0,\"NationID\":81}}]}[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrs",
           "output_required": true,
@@ -2785,7 +2794,7 @@
         {
           "disabled": false,
           "document": "话单记录",
-          "example": "无",
+          "example": "{\"nonce\":\"123\",\"requestId\":\"456\",\"errorCode\":\"0\",\"msg\":\"OK\",\"numberList\":[{\"id\":1,\"number\":\"0086075512345678\",\"callOutSkillGroup\":[1,2],\"groupIDs\":[1,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"固话\",\"CityCode\":755,\"NationID\":86}},{\"id\":2,\"number\":\"008601085157015\",\"callOutSkillGroup\":[2,3],\"groupIDs\":[1,2],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"\",\"City\":\"北京\",\"Operator\":\"固话\",\"CityCode\":10,\"NationID\":86}},{\"id\":3,\"number\":\"008602412345678\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[2,3],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"辽宁\",\"City\":\"沈阳\",\"Operator\":\"固话\",\"CityCode\":24,\"NationID\":86}},{\"id\":4,\"number\":\"008618926418136\",\"callOutSkillGroup\":[],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"中国\",\"Province\":\"广东\",\"City\":\"深圳\",\"Operator\":\"电信\",\"CityCode\":755,\"NationID\":86}},{\"id\":5,\"number\":\"00819098841234\",\"callOutSkillGroup\":[1,3],\"groupIDs\":[],\"calloutAuth\":0,\"maxCallCount\":0,\"maxCallPSec\":0,\"location\":{\"Country\":\"日本\",\"Province\":\"\",\"City\":\"\",\"Operator\":\"Softbank\",\"CityCode\":0,\"NationID\":81}}]}[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"QueuedSkillGroupName\":\"abc\",\"Remark\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrList",
           "output_required": true,
@@ -2870,15 +2879,17 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "技能组信息列表",
-          "example": "无",
+          "example": "[{\"SkillGroupId\":1115,\"SkillGroupName\":\"luluttt\",\"Type\":\"TEL\",\"RoutePolicy\":\"firstCreate\",\"UsingLastSeat\":0,\"MaxConcurrency\":1,\"LastModifyTimestamp\":1613976392}]",
           "member": "SkillGroupInfoItem",
           "name": "SkillGroupList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2960,15 +2971,17 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "坐席用户信息列表",
-          "example": "无",
+          "example": "[{\"Name\":\"xiao\",\"Mail\":\"1000273@qq.com\",\"Phone\":\"008617636049517\",\"Nick\":\"测试3\",\"StaffNumber\":\"125\",\"SkillGroupList\":[{\"SkillGroupId\":53,\"SkillGroupName\":\"ALL-dingoding-测试\",\"Priority\":3,\"Type\":\"ALL\"},{\"SkillGroupId\":82,\"SkillGroupName\":\"uu\",\"Priority\":1,\"Type\":\"IM\"}],\"LastModifyTimestamp\":1613988825}]",
           "member": "StaffInfo",
           "name": "StaffList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2996,7 +3009,7 @@
         {
           "disabled": false,
           "document": "筛选坐席列表，默认不传返回全部坐席信息",
-          "example": "无",
+          "example": "[a@tencent.com,b@tencent.com,c@tencent.com]",
           "member": "string",
           "name": "StaffList",
           "required": false,
@@ -3005,7 +3018,7 @@
         {
           "disabled": false,
           "document": "筛选技能组ID列表",
-          "example": "无",
+          "example": "[1,2,3,4,5,6]",
           "member": "int64",
           "name": "GroupIdList",
           "required": false,
@@ -3014,7 +3027,7 @@
         {
           "disabled": false,
           "document": "筛选坐席状态列表",
-          "example": "无",
+          "example": "[0,100,200,300,400,500,600,700,800]",
           "member": "string",
           "name": "StatusList",
           "required": false,
@@ -3029,9 +3042,10 @@
         {
           "disabled": false,
           "document": "坐席状态实时信息",
-          "example": "无",
+          "example": "[{\"Email\":\"aaa@abc.com\",\"Status\":\"free\",\"StatusExtra\":{\"Type\":\"tel\",\"Direct\":\"callin\"},\"OnlineDuration\":0,\"FreeDuration\":0,\"BusyDuration\":0,\"NotReadyDuration\":0,\"RestDuration\":0,\"AfterCallWorkDuration\":0,\"Reason\":\"abc\",\"ReserveRest\":true,\"ReserveNotReady\":true,\"UseMobileAccept\":0,\"UseMobileCallOut\":true,\"LastOnlineTimestamp\":0,\"LastStatusTimestamp\":0}]",
           "member": "StaffStatusMetrics",
           "name": "Metrics",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3271,7 +3285,7 @@
         {
           "disabled": true,
           "document": "话单记录",
-          "example": "无",
+          "example": "[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrs",
           "output_required": true,
@@ -3281,7 +3295,7 @@
         {
           "disabled": false,
           "document": "话单记录",
-          "example": "无",
+          "example": "[{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547606,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"EndStatusString\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547606,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Phone\":\"abc\",\"UserId\":\"abc\",\"Nick\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":60,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]},{\"ProtectedCaller\":\"abc\",\"EndStatus\":1,\"SessionId\":\"abc\",\"CustomRecordURL\":\"abc\",\"SkillGroupId\":100,\"Direction\":0,\"StartTimestamp\":1590547630,\"AsrUrl\":\"abc\",\"HungUpSide\":\"abc\",\"ServeParticipants\":[{\"TransferTo\":\"abc\",\"TransferFromType\":\"abc\",\"RecordURL\":\"abc\",\"TransferToType\":\"abc\",\"AcceptTimestamp\":0,\"RecordId\":\"abc\",\"TransferFrom\":\"abc\",\"EndedTimestamp\":0,\"Sequence\":0,\"Phone\":\"abc\",\"EndStatusString\":\"abc\",\"SkillGroupName\":\"abc\",\"Mail\":\"abc\",\"RingTimestamp\":0,\"Type\":\"abc\",\"StartTimestamp\":0,\"CustomRecordURL\":\"abc\",\"SkillGroupId\":0}],\"PostIVRKeyPressed\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"EndStatusString\":\"abc\",\"UUI\":\"abc\",\"QueuedSkillGroupId\":100,\"RingTimestamp\":1590547606,\"AcceptTimestamp\":1590547606,\"EndedTimestamp\":1590547606,\"Caller\":\"abc\",\"CallerLocation\":\"abc\",\"Time\":1590547630,\"Callee\":\"abc\",\"SeatUser\":{\"Name\":\"abc\",\"Nick\":\"abc\",\"UserId\":\"abc\",\"Phone\":\"abc\",\"StaffNumber\":\"abc\",\"Mail\":\"abc\",\"SkillGroupNameList\":[\"abc\"]},\"RecordURL\":\"abc\",\"QueuedTimestamp\":1610627284,\"ProtectedCallee\":\"abc\",\"IVRDuration\":5,\"SkillGroup\":\"abc\",\"Duration\":62,\"IVRKeyPressed\":[\"5\"],\"IVRKeyPressedEx\":[{\"Key\":\"abc\",\"Label\":\"abc\"}],\"Remark\":\"abc\",\"QueuedSkillGroupName\":\"abc\",\"VoicemailRecordURL\":[\"abc\"]}]",
           "member": "TelCdrInfo",
           "name": "TelCdrList",
           "output_required": true,
@@ -3327,10 +3341,10 @@
         {
           "disabled": false,
           "document": "会话信息",
-          "example": "无",
+          "example": "{\"SessionID\":\"0cf5be1b-de75-4445-a0c4-8dff3fa4b68b\",\"RoomID\":\"32929373\",\"Caller\":\"00864009282737\",\"Callee\":\"00864001783747\",\"StartTimestamp\":1607702199,\"RingTimestamp\":1607702299,\"AcceptTimestamp\":1607702329,\"StaffEmail\":\"foo@tencent.com\",\"StaffNumber\":\"1007\",\"SessionStatus\":\"inProgress\",\"Direction\":1,\"OutBoundCaller\":\"\",\"OutBoundCallee\":\"\",\"ProtectedCallee\":\"\",\"ProtectedCaller\":\"\"}",
           "member": "PSTNSession",
           "name": "Session",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -3865,7 +3879,7 @@
         {
           "disabled": false,
           "document": "所属技能组列表",
-          "example": "无",
+          "example": "[1,2,3,4,5,6]",
           "member": "int64",
           "name": "SkillGroupIds",
           "required": false,
@@ -5428,7 +5442,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n",
           "example": "1",
           "member": "int64",
           "name": "EndStatus",
@@ -5538,7 +5552,7 @@
         },
         {
           "disabled": false,
-          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "EndStatus与EndStatusString一一对应，具体枚举如下：\n\n**场景\t         EndStatus\tEndStatusString\t状态说明**\n\n电话呼入&呼出\t1\t        ok\t                        正常结束\n\n电话呼入&呼出\t0\t        error\t                系统错误\n\n电话呼入\t             102\t        ivrGiveUp\t        IVR 期间用户放弃\n\n电话呼入\t             103\t        waitingGiveUp\t       会话排队期间用户放弃\n\n电话呼入\t             104\t        ringingGiveUp\t       会话振铃期间用户放弃\n\n电话呼入\t             105\t        noSeatOnline\t       无坐席在线\n\n电话呼入              106\t       notWorkTime\t       非工作时间   \n\n电话呼入\t            107\t       ivrEnd\t               IVR 后直接结束\n\n电话呼入\t            100\t      blackList 呼入黑名单 \n\n电话呼出               2\t              unconnected\t未接通\n                         \n电话呼出             201            unknown\t未知状态\n\n电话呼出             202            notAnswer\t未接听\n\n电话呼出            203\t    userReject\t拒接挂断\n\n电话呼出\t          204\t    powerOff\t关机\n\n电话呼出           205            numberNotExist\t空号\n\n电话呼出\t         206\t           busy\t通话中\n\n电话呼出   \t 207\t           outOfCredit\t欠费\n\n电话呼出\t         208\t           operatorError\t运营商线路异常\n\n电话呼出         \t209\t           callerCancel\t主叫取消\n\n电话呼出\t        210\t           notInService\t不在服务区\n\n电话呼入&呼出\t211    clientError    客户端错误\n\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "ok",
           "member": "string",
           "name": "EndStatusString",
@@ -5778,7 +5792,7 @@
         {
           "disabled": false,
           "document": "解绑技能组列表",
-          "example": "无",
+          "example": "[1,2,3,4,5,6]",
           "member": "int64",
           "name": "SkillGroupList",
           "required": true,

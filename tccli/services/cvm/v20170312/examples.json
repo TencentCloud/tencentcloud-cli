@@ -540,7 +540,7 @@
       {
         "document": "本示例用于销毁一个实例的询价。",
         "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: InquiryPriceTerminateInstances\n<公共请求参数>\n\n{\n    \"InstanceIds\": [\n        \"ins-rfmme2si\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"InstanceRefundsSet\": [\n            {\n                \"InstanceId\": \"ins-rfmme2si\",\n                \"Refunds\": 0\n            }\n        ],\n        \"RequestId\": \"75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceRefundsSet\": [\n            {\n                \"InstanceId\": \"ins-rfmme2si\",\n                \"Refunds\": 2644.44,\n                \"PriceDetail\": \"退款：2644.44元，现金券： 0元,代金券/折扣券不退（全额退款;'}\"\n            }\n        ],\n        \"RequestId\": \"75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5\"\n    }\n}",
         "title": "销毁指定ID的实例"
       }
     ],
@@ -595,7 +595,7 @@
     "ModifyInstanceDiskType": [
       {
         "document": "修改实例系统盘介质，从本地盘转化成普通云硬盘。",
-        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceDiskType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-r8hr2upy\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_BASIC\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cvm.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstanceDiskType\n<公共请求参数>\n\n{\n    \"InstanceId\": \"ins-r8hr2upy\",\n    \"SystemDisk\": {\n        \"DiskType\": \"CLOUD_PREMIUM\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ef60bec-0242-43af-bb20-270359fb54a7\"\n    }\n}",
         "title": "修改按量实例系统盘介质"
       }

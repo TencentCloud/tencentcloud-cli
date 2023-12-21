@@ -6696,6 +6696,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6706,6 +6707,7 @@
           "example": "cdb",
           "member": "string",
           "name": "AccessType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -6716,16 +6718,18 @@
           "example": "tdsqlmysql",
           "member": "string",
           "name": "DatabaseType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "数据库信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "数据库信息。注意：如果数据类型为tdsqlmysql，此处Endpoint数组的顺序应该与set顺序对应，第一个分片（shardkey范围起始为0的分片）必须要输入在第一个位置\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "Endpoint",
           "name": "Info",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true

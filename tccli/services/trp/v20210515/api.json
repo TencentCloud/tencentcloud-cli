@@ -210,6 +210,13 @@
       "output": "DescribeMerchantsResponse",
       "status": "online"
     },
+    "DescribePlanQRCodeScanRecords": {
+      "document": "查询安心计划二维码扫码记录",
+      "input": "DescribePlanQRCodeScanRecordsRequest",
+      "name": "查询安心计划二维码扫码记录",
+      "output": "DescribePlanQRCodeScanRecordsResponse",
+      "status": "online"
+    },
     "DescribePlanQRCodes": {
       "document": "查询安心计划二维码列表",
       "input": "DescribePlanQRCodesRequest",
@@ -539,7 +546,7 @@
           "example": "20121212000001",
           "member": "string",
           "name": "BatchId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -549,7 +556,7 @@
           "example": "1000",
           "member": "int64",
           "name": "CorpId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -559,7 +566,7 @@
           "example": "20121212000001",
           "member": "string",
           "name": "BatchCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -569,7 +576,7 @@
           "example": "10",
           "member": "int64",
           "name": "CodeCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -579,7 +586,7 @@
           "example": "eqdmnz7020bmtvi9",
           "member": "string",
           "name": "MerchantId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -589,7 +596,7 @@
           "example": "85tfp1sn78r9m1568i",
           "member": "string",
           "name": "ProductId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -599,7 +606,7 @@
           "example": "0",
           "member": "int64",
           "name": "BatchType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -609,7 +616,7 @@
           "example": "备注",
           "member": "string",
           "name": "Remark",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -619,7 +626,7 @@
           "example": "微信模板",
           "member": "string",
           "name": "MpTpl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -629,7 +636,7 @@
           "example": "0",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -639,7 +646,7 @@
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -649,7 +656,7 @@
           "example": "2021-12-01T06:48:45.000Z",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -659,7 +666,7 @@
           "example": "所属商户名称",
           "member": "string",
           "name": "MerchantName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -669,17 +676,17 @@
           "example": "产品名称",
           "member": "string",
           "name": "ProductName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
+          "disabled": true,
           "document": "未使用\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "扩展字段",
           "member": "Ext",
           "name": "Ext",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -689,7 +696,7 @@
           "example": "模板名称",
           "member": "string",
           "name": "TplName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -699,7 +706,7 @@
           "example": "无",
           "member": "Job",
           "name": "Job",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -709,7 +716,7 @@
           "example": "2022-05-12",
           "member": "string",
           "name": "ProductionDate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -719,7 +726,7 @@
           "example": "2022",
           "member": "string",
           "name": "ValidDate",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -729,7 +736,7 @@
           "example": "无",
           "member": "AttrItem",
           "name": "Attrs",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         }
@@ -3404,6 +3411,90 @@
       ],
       "type": "object"
     },
+    "DescribePlanQRCodeScanRecordsRequest": {
+      "document": "DescribePlanQRCodeScanRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "页码",
+          "example": "无",
+          "member": "int64",
+          "name": "PageNo",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "页大小",
+          "example": "无",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePlanQRCodeScanRecordsResponse": {
+      "document": "DescribePlanQRCodeScanRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回码",
+          "example": "无",
+          "member": "int64",
+          "name": "Ret",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "int64",
+          "name": "Total",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据",
+          "example": "无",
+          "member": "PlanQRCodeRecord",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePlanQRCodesRequest": {
       "document": "DescribePlanQRCodes请求参数结构体",
       "members": [
@@ -4246,7 +4337,18 @@
     },
     "Ext": {
       "document": "预留字段",
-      "members": [],
+      "members": [
+        {
+          "disabled": true,
+          "document": "字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "out"
     },
     "InputEncryptData": {
@@ -5391,6 +5493,89 @@
           "output_required": false,
           "required": true,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PlanQRCodeRecord": {
+      "document": "安心计划二维码扫码记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "二维码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "OpenID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "OpenId",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扫码时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ScanTime",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "IP 地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国家\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Country",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "省份\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Province",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "城市\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "City",
+          "output_required": false,
+          "required": true,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

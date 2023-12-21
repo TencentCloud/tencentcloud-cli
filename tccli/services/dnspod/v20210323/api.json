@@ -5504,6 +5504,16 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启辅助 DNS",
+          "example": "yes",
+          "member": "string",
+          "name": "SlaveDNS",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

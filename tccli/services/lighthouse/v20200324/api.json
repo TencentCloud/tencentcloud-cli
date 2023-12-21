@@ -4128,7 +4128,7 @@
         {
           "disabled": false,
           "document": "实例 ID 列表。每次请求批量实例的上限为 100。",
-          "example": "无",
+          "example": "[\"lhins-4r4pvtbg\"]",
           "member": "string",
           "name": "InstanceIds",
           "required": false,

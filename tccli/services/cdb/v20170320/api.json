@@ -141,14 +141,14 @@
       "status": "online"
     },
     "CreateDBInstance": {
-      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
+      "document": "本接口(CreateDBInstance)用于创建包年包月的云数据库实例（包括主实例、灾备实例和只读实例），可通过传入实例规格、MySQL 版本号、购买时长和数量等信息创建云数据库实例。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为1，且 TaskStatus 为0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5 、 MySQL 5.6 、 MySQL 5.7 、 MySQL 8.0 版本；\n4. 支持创建主实例、只读实例、灾备实例；\n5. 当入参指定 Port，ParamTemplateType 或 Password 时，该实例会进行初始化操作（不支持基础版实例）；\n6. 当入参指定 ParamTemplateId 或 AlarmPolicyList 时，需将SDK提升至最新版本方可支持；",
       "input": "CreateDBInstanceRequest",
       "name": "创建云数据库实例（包年包月）",
       "output": "CreateDBInstanceResponse",
       "status": "online"
     },
     "CreateDBInstanceHour": {
-      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamList 或 Password 时，该实例会进行初始化操作；",
+      "document": "本接口(CreateDBInstanceHour)用于创建按量计费的实例，可通过传入实例规格、MySQL 版本号和数量等信息创建云数据库实例，支持主实例、灾备实例和只读实例的创建。\n\n该接口为异步接口，您还可以使用 [查询实例列表](https://cloud.tencent.com/document/api/236/15872) 接口查询该实例的详细信息。当该实例的 Status 为 1，且 TaskStatus 为 0，表示实例已经发货成功。\n\n1. 首先请使用 [获取云数据库可售卖规格](https://cloud.tencent.com/document/api/236/17229) 接口查询可创建的实例规格信息，然后请使用 [查询数据库价格](https://cloud.tencent.com/document/api/236/18566) 接口查询可创建实例的售卖价格；\n2. 单次创建实例最大支持 100 个，实例时长最大支持 36 个月；\n3. 支持创建 MySQL 5.5、MySQL 5.6 、MySQL 5.7 和 MySQL 8.0 版本；\n4. 支持创建主实例、灾备实例和只读实例；\n5. 当入参指定 Port，ParamTemplateType 或 Password 时，该实例会进行初始化操作；",
       "input": "CreateDBInstanceHourRequest",
       "name": "创建云数据库实例（按量计费）",
       "output": "CreateDBInstanceHourResponse",
@@ -2698,7 +2698,7 @@
           "example": "XXX",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2708,7 +2708,7 @@
           "example": "1024",
           "member": "int64",
           "name": "Size",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2718,7 +2718,7 @@
           "example": "2016-03-17 02:10:37",
           "member": "string",
           "name": "Date",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2728,7 +2728,7 @@
           "example": "https://XXX",
           "member": "string",
           "name": "IntranetUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2738,7 +2738,7 @@
           "example": "https://XXX",
           "member": "string",
           "name": "InternetUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2748,7 +2748,7 @@
           "example": "physical",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2758,7 +2758,7 @@
           "example": "1000",
           "member": "int64",
           "name": "BackupId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2768,7 +2768,7 @@
           "example": "SUCCESS",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2778,7 +2778,7 @@
           "example": "2016-03-17 02:11:37",
           "member": "string",
           "name": "FinishTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2788,7 +2788,7 @@
           "example": "SYSTEM",
           "member": "string",
           "name": "Creator",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2798,7 +2798,7 @@
           "example": "2016-03-17 02:00:37",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2808,7 +2808,7 @@
           "example": "full",
           "member": "string",
           "name": "Method",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2818,7 +2818,7 @@
           "example": "automatic",
           "member": "string",
           "name": "Way",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2828,7 +2828,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "ManualBackupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2838,7 +2838,7 @@
           "example": "save_mode_regular",
           "member": "string",
           "name": "SaveMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2848,7 +2848,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2858,7 +2858,7 @@
           "example": "无",
           "member": "RemoteBackupInfo",
           "name": "RemoteInfo",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -2868,7 +2868,7 @@
           "example": "无",
           "member": "int64",
           "name": "CosStorageType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -2878,7 +2878,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2888,7 +2888,17 @@
           "example": "on",
           "member": "string",
           "name": "EncryptionFlag",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备份GTID点位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExecutedGTIDSet",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         }
@@ -5874,7 +5884,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称。",
+          "document": "数据库名称，长度不超过64。",
           "example": "db_test",
           "member": "string",
           "name": "DBName",
@@ -6506,7 +6516,7 @@
         },
         {
           "disabled": false,
-          "document": "数据库名称。",
+          "document": "数据库名称，长度不超过64。",
           "example": "db_test",
           "member": "string",
           "name": "DBName",
@@ -8356,6 +8366,15 @@
           "name": "MaxStartTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回binlog列表是否包含MinStartTime起始节点，默认为否",
+          "example": "无",
+          "member": "bool",
+          "name": "ContainsMinStartTime",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -8369,6 +8388,7 @@
           "example": "2",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8378,6 +8398,7 @@
           "example": "无",
           "member": "BinlogInfo",
           "name": "Items",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

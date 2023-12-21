@@ -535,6 +535,15 @@
           "name": "Priority",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示待检测对象对应的用户相关信息，若填入则可甄别相应违规风险用户",
+          "example": "无",
+          "member": "User",
+          "name": "User",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"
@@ -1841,6 +1850,138 @@
         }
       ],
       "usage": "out"
+    },
+    "User": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务用户ID 如填写，会根据账号历史恶意情况，判定消息有害结果，特别是有利于可疑恶意情况下的辅助判断。账号可以填写微信uin、QQ号、微信openid、QQopenid、字符串等。该字段和账号类别确定唯一账号。",
+          "example": "无",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示业务用户ID对应的账号类型，取值：1-微信uin，2-QQ号，3-微信群uin，4-qq群号，5-微信openid，6-QQopenid，7-其它string。\n该字段与账号ID参数（UserId）配合使用可确定唯一账号。",
+          "example": "无",
+          "member": "string",
+          "name": "AccountType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户昵称",
+          "example": "无",
+          "member": "string",
+          "name": "Nickname",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "性别 默认0 未知 1 男性 2 女性",
+          "example": "无",
+          "member": "uint64",
+          "name": "Gender",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "年龄 默认0 未知",
+          "example": "无",
+          "member": "uint64",
+          "name": "Age",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户等级，默认0 未知 1 低 2 中 3 高",
+          "example": "无",
+          "member": "uint64",
+          "name": "Level",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "手机号",
+          "example": "无",
+          "member": "string",
+          "name": "Phone",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户简介，长度不超过5000字",
+          "example": "无",
+          "member": "string",
+          "name": "Desc",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户头像图片链接",
+          "example": "无",
+          "member": "string",
+          "name": "HeadUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "群聊场景房间ID",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "群聊场景群ID",
+          "example": "无",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "群聊场景群用户数",
+          "example": "无",
+          "member": "int64",
+          "name": "GroupSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "消息接收者ID",
+          "example": "无",
+          "member": "string",
+          "name": "ReceiverId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息生成时间，毫秒",
+          "example": "无",
+          "member": "string",
+          "name": "SendTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     }
   },
   "version": "1.0"

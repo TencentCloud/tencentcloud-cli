@@ -5,7 +5,11 @@
 Input: 
 
 ```
-tccli ccc CreateCarrierPrivilegeNumberApplicant --cli-unfold-argument ```
+tccli ccc CreateCarrierPrivilegeNumberApplicant --cli-unfold-argument  \
+    --SdkAppId 14000000 \
+    --Callers 008601012345678 \
+    --Callees 008618612345678
+```
 
 Output: 
 ```

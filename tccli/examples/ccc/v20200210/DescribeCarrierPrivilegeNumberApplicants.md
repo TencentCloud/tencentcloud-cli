@@ -5,7 +5,9 @@
 Input: 
 
 ```
-tccli ccc DescribeCarrierPrivilegeNumberApplicants --cli-unfold-argument ```
+tccli ccc DescribeCarrierPrivilegeNumberApplicants --cli-unfold-argument  \
+    --SdkAppId 14000000
+```
 
 Output: 
 ```
@@ -24,6 +26,7 @@ Output:
                     "008618612345678"
                 ],
                 "State": 1,
+                "Description": "foobar",
                 "CreateTime": 1623145120,
                 "UpdateTime": 1623145120
             }

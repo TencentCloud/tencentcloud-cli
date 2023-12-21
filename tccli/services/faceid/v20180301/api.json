@@ -1104,6 +1104,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -2008,6 +2018,22 @@
         }
       ],
       "usage": "both"
+    },
+    "ExtraInfo": {
+      "document": "额外的详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中模板的详细信息，仅返回命中的相似度最高的模板信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RetrievalLivenessExtraInfo",
+          "name": "RetrievalLivenessExtraInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "GetActionSequenceRequest": {
       "document": "GetActionSequence请求参数结构体",
@@ -4742,6 +4768,42 @@
         }
       ],
       "type": "object"
+    },
+    "RetrievalLivenessExtraInfo": {
+      "document": "模版检索详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Common",
+          "member": "string",
+          "name": "HitGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的相似度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.98",
+          "member": "float",
+          "name": "SimilarityScore",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45",
+          "member": "string",
+          "name": "HitTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "RuleIdConfig": {
       "document": "RuleId相关配置",
