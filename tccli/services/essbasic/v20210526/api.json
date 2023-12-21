@@ -2952,15 +2952,6 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
-          "example": "无",
-          "member": "string",
-          "name": "ResourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
           "example": "无",
           "member": "int64",
@@ -2985,6 +2976,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "ResourceId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -5122,7 +5122,7 @@
         },
         {
           "disabled": false,
-          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n\n **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）\n **1** :个人/自然人\n**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）\n\n注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。\n",
+          "document": "在指定签署方时，可选择企业B端或个人C端等不同的参与者类型，可选类型如下:\n\n **0** :企业/企业员工（企业签署方或模板发起时的企业静默签）\n **1** :个人/自然人\n**3** :企业/企业员工自动签（他方企业自动签署或文件发起时的本方企业自动签）\n\n注：类型为3（企业/企业员工自动签）时，此接口会默认完成该签署方的签署。静默签署仅进行盖章操作，不能自动签名。\n使用自动签时，请确保企业已经开通自动签功能，开通方式：控制台 -> 企业设置 -> 扩展服务 -> 企业自动签。\n使用文件发起自动签时使用前请联系对接的客户经理沟通。\n",
           "example": "1",
           "member": "int64",
           "name": "ApproverType",

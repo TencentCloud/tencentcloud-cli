@@ -1633,7 +1633,7 @@
         },
         {
           "disabled": false,
-          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "document": "直播类型：0 常规（默认）1 伪直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -3186,7 +3186,7 @@
         },
         {
           "disabled": false,
-          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "document": "直播类型：0 常规（默认）1 伪直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -5749,7 +5749,7 @@
         },
         {
           "disabled": false,
-          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）",
+          "document": "直播类型：0 常规（默认）1 伪直播",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",
@@ -5773,6 +5773,15 @@
           "name": "EnableAutoStart",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "录制文件背景图片，支持png、jpg、jpeg、bmp格式，暂不支持透明通道",
+          "example": "无",
+          "member": "string",
+          "name": "RecordBackground",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -5962,7 +5971,7 @@
         },
         {
           "disabled": false,
-          "document": "直播方式：0 常规模式（默认）1 回放直播模式（伪直播）\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "直播类型：0 常规（默认）1 伪直播\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "LiveType",

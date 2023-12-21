@@ -464,7 +464,7 @@
       {
         "document": "测试",
         "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeNamespaceBundlesOpt\n<公共请求参数>\n\n{\n    \"ClusterName\": \"tdmq_txy_gz_01\",\n    \"Limit\": 20,\n    \"NamespaceName\": \"ns_1\",\n    \"NeedMetrics\": true,\n    \"Offset\": 0,\n    \"TenantId\": \"pulsar-pbkdk57xz9wv\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2d3e253-3b1d-4471-a350-25e6ae20916c\",\n        \"TotalCount\": 30,\n        \"BundleSet\": [\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {},\n            {}\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"d2d3e253-3b1d-4471-a350-25e6ae20916c\",\n        \"TotalCount\": 30\n    }\n}",
         "title": "test"
       }
     ],

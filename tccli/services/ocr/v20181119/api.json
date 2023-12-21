@@ -3142,6 +3142,268 @@
       ],
       "type": "object"
     },
+    "ElectronicAirTransport": {
+      "document": "全电发票（航空运输电子客票行程单）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "发票代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开票日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Amount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CheckCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价税合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣标志\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DeductionMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发票状态代码，0正常 1 未更新  2作废 3已红冲\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StateCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购方识别号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerTaxCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购方名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "合计税额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "国内国际标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DomesticInternationalMark",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "旅客姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PassengerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "有效身份证件号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PassengerNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "全电发票（航空运输电子客票行程单）详细信息\n\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ElectronicAirTransportDetail",
+          "name": "ElectronicAirTransportDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ElectronicAirTransportDetail": {
+      "document": "全电发票（航空运输电子客票行程单）详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "航段序号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlightSegment",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "始发站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOff",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "承运人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Carrier",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "航班号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlightNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "座位等级\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SeatLevel",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "承运日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FlightDate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "起飞时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DepartureTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "客票级别/客票类别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FareBasis",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "ElectronicFlightTicketFull": {
       "document": "电子发票（机票行程单）",
       "members": [
@@ -3374,6 +3636,252 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "ElectronicTrainTicket": {
+      "document": "全电发票（铁路电子客票）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "购方名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购方识别号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BuyerTaxCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发票号码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Number",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开票日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价税合计（中文大写）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TotalCN",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "税额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tax",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "业务类型，0：退票，1:售票\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ServiceType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出发时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeGetOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "车次\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrainNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发票代码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Code",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "席别\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SeatType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "乘车日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DateGetOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "车厢\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TrainCabin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "出发站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOn",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "电子客票号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicNumber",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "姓名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PassengerName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "证件号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PassengerNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "金额\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Amount",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "到达站\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StationGetOff",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "税率\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TaxRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "席位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Seat",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "价税合计\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "校验码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CheckCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "发票状态代码，0正常 1 未更新  2作废 3已红冲\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StateCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -16488,7 +16996,7 @@
       "usage": "out"
     },
     "VatInvoice": {
-      "document": "增值税发票信息",
+      "document": "增值税发票、购车发票、全电发票的基础要素字段信息。",
       "members": [
         {
           "disabled": false,
@@ -16522,7 +17030,7 @@
         },
         {
           "disabled": false,
-          "document": "购方抬头",
+          "document": "购方抬头\n通用机打发票类型时不返回",
           "example": "城区",
           "member": "string",
           "name": "BuyerName",
@@ -16532,7 +17040,7 @@
         },
         {
           "disabled": false,
-          "document": "购方税号",
+          "document": "购方税号\n通用机打发票类型时不返回",
           "example": "92XXXXMAXXXXXX",
           "member": "string",
           "name": "BuyerTaxCode",
@@ -16542,7 +17050,7 @@
         },
         {
           "disabled": false,
-          "document": "购方地址电话",
+          "document": "购方地址电话\n通用机打发票类型做不返回",
           "example": "栾城区北留营村15012345678",
           "member": "string",
           "name": "BuyerAddressPhone",
@@ -16552,7 +17060,7 @@
         },
         {
           "disabled": false,
-          "document": "购方银行账号",
+          "document": "购方银行账号\n通用机打发票类型时不返回",
           "example": "中国农业银行股份有限公司",
           "member": "string",
           "name": "BuyerBankAccount",
@@ -16622,10 +17130,20 @@
         },
         {
           "disabled": false,
-          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票",
+          "document": "票种类型\n01：增值税专用发票，\n02：货运运输业增值税专用发票，\n03：机动车销售统一发票，\n04：增值税普通发票，\n08：增值税电子专用发票（含全电，全电仅新版接口支持），\n10：增值税电子普通发票（含全电，全电仅新版接口支持），\n11：增值税普通发票（卷式），\n14：增值税电子（通行费）发票，\n15：二手车销售统一发票，\n32：深圳区块链发票，\n102：通用机打电子发票\n61：电子发票（航空运输电子客票行程单）\n83：电子发票（铁路电子发票）",
           "example": "01",
           "member": "string",
           "name": "Type",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "具体的全电发票类型：01: 全电专用发票；02：全电普通发票；03：全电火车票；04：全电机票行程单",
+          "example": "无",
+          "member": "string",
+          "name": "ElectronicType",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false
@@ -18105,7 +18623,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "增值税发票信息，详情请点击左侧链接。",
+          "document": "增值税发票、购车发票、全电发票的基础要素字段信息。",
           "example": "无",
           "member": "VatInvoice",
           "name": "Invoice",
@@ -18115,7 +18633,7 @@
         },
         {
           "disabled": false,
-          "document": "机动车销售统一发票信息",
+          "document": "机动车销售统一发票详细字段信息。",
           "example": "无",
           "member": "VehicleInvoiceInfo",
           "name": "VehicleInvoiceInfo",
@@ -18125,7 +18643,7 @@
         },
         {
           "disabled": false,
-          "document": "二手车销售统一发票信息",
+          "document": "二手车销售统一发票详细字段信息。",
           "example": "无",
           "member": "UsedVehicleInvoiceInfo",
           "name": "UsedVehicleInvoiceInfo",
@@ -18135,12 +18653,32 @@
         },
         {
           "disabled": false,
-          "document": "通行费发票信息",
+          "document": "通行费发票详细字段信息。",
           "example": "无",
           "member": "PassInvoiceInfo",
           "name": "PassInvoiceInfoList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全电发票（铁路电子客票）详细字段信息。\n",
+          "example": "无",
+          "member": "ElectronicTrainTicket",
+          "name": "ElectronicTrainTicket",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "全电发票（航空运输电子客票行程单）详细字段信息。",
+          "example": "无",
+          "member": "ElectronicAirTransport",
+          "name": "ElectronicAirTransport",
+          "output_required": true,
+          "type": "object",
           "value_allowed_null": false
         },
         {

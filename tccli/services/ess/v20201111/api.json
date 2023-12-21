@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateFlow": {
-      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能",
       "input": "CreateFlowRequest",
       "name": "模板发起合同-创建签署流程",
       "output": "CreateFlowResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateFlowByFiles": {
-      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n- 不同类型的签署方传参不同, 可以参考开发者中心的ApproverInfo结构体说明\n-  合同**发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n- 不同类型的签署方传参不同, 可以参考开发者中心的ApproverInfo结构体说明\n-  合同**发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse",
@@ -120,7 +120,7 @@
       "status": "online"
     },
     "CreateFlowReminds": {
-      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，签署人的NotifyType需设置为sms\n2. 合同中当前状态为“待签署”的签署人是催办的对象\n3. 每个合同只能催办一次\n\n注意：该接口无法直接调用，请联系客户经理申请使用。",
+      "document": "指定需要批量催办的签署流程ID，批量催办合同，最多100个。需要符合以下条件的合同才可被催办：\n\n1. 发起合同时，**签署人的NotifyType需设置为sms**\n2. 合同中当前状态为 **待签署** 的签署人是催办的对象\n3. **每个合同只能催办一次**\n\n**催办的效果**: 对方会收到如下的短信通知\n![image](https://qcloudimg.tencent-cloud.cn/raw/3caf94b7f540fa5736270d38528d3a7b.png)\n\n注：`合同催办是白名单功能，请联系客户经理申请开白后使用`",
       "input": "CreateFlowRemindsRequest",
       "name": "合同催办",
       "output": "CreateFlowRemindsResponse",
@@ -2622,7 +2622,7 @@
         {
           "disabled": false,
           "document": "合同流程的名称（可自定义此名称），长度不能超过200，只能由中文、字母、数字和下划线组成。\n\n该名称还将用于合同签署完成后的下载文件名。",
-          "example": "无",
+          "example": "2013年采购西红柿合同",
           "member": "string",
           "name": "FlowName",
           "required": true,
@@ -2640,7 +2640,7 @@
         {
           "disabled": false,
           "document": "本合同流程需包含的PDF文件资源编号列表，通过[UploadFiles](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口获取PDF文件资源编号。\n\n注:  `目前，此接口仅支持单个文件发起。`",
-          "example": "无",
+          "example": "[\"yDRS4UUgygqdcj2tUuO4zjEEFuP35Swc\"]",
           "member": "string",
           "name": "FileIds",
           "required": true,
@@ -2649,7 +2649,7 @@
         {
           "disabled": false,
           "document": "合同流程描述信息(可自定义此描述)，最大长度1000个字符。",
-          "example": "无",
+          "example": "2013年采购西红柿合同10吨",
           "member": "string",
           "name": "FlowDescription",
           "required": false,
@@ -2658,7 +2658,7 @@
         {
           "disabled": false,
           "document": "合同流程的类别分类（可自定义名称，如销售合同/入职合同等），最大长度为200个字符，仅限中文、字母、数字和下划线组成。",
-          "example": "无",
+          "example": "销售合同",
           "member": "string",
           "name": "FlowType",
           "required": false,
@@ -2685,7 +2685,7 @@
         {
           "disabled": false,
           "document": "可以设置以下时间节点来给抄送人发送短信通知来查看合同内容：\n<ul><li> **0**：合同发起时通知（默认值）</li>\n<li> **1**：签署完成后通知</li></ul>",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "CcNotifyType",
           "required": false,
@@ -2694,7 +2694,7 @@
         {
           "disabled": false,
           "document": "是否为预览模式，取值如下：\n<ul><li> **false**：非预览模式（默认），会产生合同流程并返回合同流程编号FlowId。</li>\n<li> **true**：预览模式，不产生合同流程，不返回合同流程编号FlowId，而是返回预览链接PreviewUrl，有效期为300秒，用于查看真实发起后合同的样子。</li></ul>",
-          "example": "无",
+          "example": "false",
           "member": "bool",
           "name": "NeedPreview",
           "required": false,
@@ -2712,7 +2712,7 @@
         {
           "disabled": false,
           "document": "合同流程的签署截止时间，格式为Unix标准时间戳（秒），如果未设置签署截止时间，则默认为合同流程创建后的365天时截止。\n如果在签署截止时间前未完成签署，则合同状态会变为已过期，导致合同作废。",
-          "example": "无",
+          "example": "1703061565",
           "member": "int64",
           "name": "Deadline",
           "required": false,
@@ -2720,17 +2720,8 @@
         },
         {
           "disabled": false,
-          "document": "合同到期提醒时间，为Unix标准时间戳（秒）格式，支持的范围是从发起时间开始到后10年内。\n\n到达提醒时间后，腾讯电子签会短信通知发起方企业合同提醒，可用于处理合同到期事务，如合同续签等事宜。",
-          "example": "无",
-          "member": "int64",
-          "name": "RemindedOn",
-          "required": false,
-          "type": "int"
-        },
-        {
-          "disabled": false,
           "document": "合同流程的签署顺序类型：\n<ul><li> **false**：(默认)有序签署, 本合同多个参与人需要依次签署 </li>\n<li> **true**：无序签署, 本合同多个参与人没有先后签署限制</li></ul>",
-          "example": "无",
+          "example": "true",
           "member": "bool",
           "name": "Unordered",
           "required": false,
@@ -2738,26 +2729,8 @@
         },
         {
           "disabled": false,
-          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
-          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
-          "member": "string",
-          "name": "CustomShowMap",
-          "required": false,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
-          "example": "无",
-          "member": "bool",
-          "name": "NeedSignReview",
-          "required": false,
-          "type": "bool"
-        },
-        {
-          "disabled": false,
           "document": "调用方自定义的个性化字段(可自定义此名称)，并以base64方式编码，支持的最大数据大小为 20480长度。\n\n在合同状态变更的回调信息等场景中，该字段的信息将原封不动地透传给贵方。回调的相关说明可参考开发者中心的[回调通知](https://qian.tencent.com/developers/company/callback_types_v2)模块。",
-          "example": "无",
+          "example": "QmFzZTY0IEJhc2U2NCA=",
           "member": "string",
           "name": "UserData",
           "required": false,
@@ -2765,8 +2738,17 @@
         },
         {
           "disabled": false,
+          "document": "合同到期提醒时间，为Unix标准时间戳（秒）格式，支持的范围是从发起时间开始到后10年内。\n\n到达提醒时间后，腾讯电子签会短信通知发起方企业合同提醒，可用于处理合同到期事务，如合同续签等事宜。",
+          "example": "1703061565",
+          "member": "int64",
+          "name": "RemindedOn",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "指定个人签署方查看合同的校验方式\n<ul><li>   **VerifyCheck**  :（默认）人脸识别,人脸识别后才能合同内容 </li>\n<li>   **MobileCheck**  :  手机号验证, 用户手机号和参与方手机号（ApproverMobile）相同即可查看合同内容（当手写签名方式为OCR_ESIGN时，该校验方式无效，因为这种签名方式依赖实名认证）</li></ul>",
-          "example": "无",
+          "example": "MobileCheck",
           "member": "string",
           "name": "ApproverVerifyType",
           "required": false,
@@ -2780,6 +2762,15 @@
           "name": "SignBeanTag",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
+          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "member": "string",
+          "name": "CustomShowMap",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2798,6 +2789,15 @@
           "name": "AutoSignScene",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "发起方企业的签署人进行签署操作前，是否需要企业内部走审批流程，取值如下：\n<ul><li> **false**：（默认）不需要审批，直接签署。</li>\n<li> **true**：需要走审批流程。当到对应参与人签署时，会阻塞其签署操作，等待企业内部审批完成。</li></ul>\n企业可以通过CreateFlowSignReview审批接口通知腾讯电子签平台企业内部审批结果\n<ul><li> 如果企业通知腾讯电子签平台审核通过，签署方可继续签署动作。</li>\n<li> 如果企业通知腾讯电子签平台审核未通过，平台将继续阻塞签署方的签署动作，直到企业通知平台审核通过。</li></ul>\n注：`此功能可用于与企业内部的审批流程进行关联，支持手动、静默签署合同`",
+          "example": "true",
+          "member": "bool",
+          "name": "NeedSignReview",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

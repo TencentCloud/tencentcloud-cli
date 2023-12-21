@@ -1186,11 +1186,6 @@
       ],
       "usage": "out"
     },
-    "BundleSetOpt": {
-      "document": "运营端命名空间bundle实体",
-      "members": [],
-      "usage": "out"
-    },
     "ClearCmqQueueRequest": {
       "document": "ClearCmqQueue请求参数结构体",
       "members": [
@@ -6410,7 +6405,7 @@
         },
         {
           "disabled": false,
-          "document": "bundle 所属的 broker ip 地址，支持模糊查询",
+          "document": "bundle 所属的 broker IP 地址，支持模糊查询",
           "example": "127.0.0.1",
           "member": "string",
           "name": "OwnerBroker",
@@ -6429,16 +6424,8 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "bundle列表",
-          "example": "无",
-          "member": "BundleSetOpt",
-          "name": "BundleSet",
-          "type": "list",
           "value_allowed_null": false
         },
         {

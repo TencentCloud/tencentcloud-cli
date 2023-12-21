@@ -6,47 +6,97 @@ Input:
 
 ```
 tccli tione DescribeBillingResourceGroups --cli-unfold-argument  \
-    --Filters.0.Fuzzy True \
-    --Filters.0.Values ems-dn6bqflh \
-    --Filters.0.Name xx \
+    --Type abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
     --Filters.0.Negative True \
-    --TagFilters.0.TagValues xx \
-    --TagFilters.0.TagKey xx \
-    --Limit 0 \
-    --SearchWord xx \
+    --Filters.0.Fuzzy True \
+    --TagFilters.0.TagKey abc \
+    --TagFilters.0.TagValues abc \
     --Offset 0 \
-    --Type xx
+    --Limit 0 \
+    --SearchWord abc \
+    --DontShowInstanceSet True
 ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "02be3c0f-d1f1-4a8e-97bd-38128985baa7",
         "TotalCount": 1,
         "ResourceGroupSet": [
             {
-                "ResourceGroupId": "ersg-69q4tmjm",
-                "ResourceGroupName": "hayescao_test",
+                "ResourceGroupId": "abc",
+                "ResourceGroupName": "abc",
+                "FreeInstance": 1,
                 "TotalInstance": 1,
-                "UsedResource": {},
-                "TotalResource": {},
+                "UsedResource": {
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "Gpu": 1,
+                    "GpuDetailSet": [
+                        {
+                            "Name": "abc",
+                            "Value": 1
+                        }
+                    ]
+                },
+                "TotalResource": {
+                    "Cpu": 1,
+                    "Memory": 1,
+                    "Gpu": 1,
+                    "GpuDetailSet": [
+                        {
+                            "Name": "abc",
+                            "Value": 1
+                        }
+                    ]
+                },
                 "InstanceSet": [
                     {
-                        "InstanceId": "eins-343vo66vf91c",
-                        "UsedResource": {},
-                        "TotalResource": {
-                            "Cpu": 2000,
-                            "Memory": 4096
+                        "InstanceId": "abc",
+                        "UsedResource": {
+                            "Cpu": 1,
+                            "Memory": 1,
+                            "Gpu": 1,
+                            "GpuType": "abc",
+                            "RealGpu": 1,
+                            "RealGpuDetailSet": [
+                                {
+                                    "Name": "abc",
+                                    "Value": 1
+                                }
+                            ]
                         },
-                        "InstanceStatus": "RUNNING",
-                        "AutoRenewFlag": "NOTIFY_AND_MANUAL_RENEW",
-                        "SpecId": "sv_tio_platform_cloud_pre_cpu_2c4g",
-                        "SpecAlias": "2核4G"
+                        "TotalResource": {
+                            "Cpu": 1,
+                            "Memory": 1,
+                            "Gpu": 1,
+                            "GpuType": "abc",
+                            "RealGpu": 1
+                        },
+                        "InstanceStatus": "abc",
+                        "SubUin": "abc",
+                        "CreateTime": "abc",
+                        "ExpireTime": "abc",
+                        "AutoRenewFlag": "abc",
+                        "SpecId": "abc",
+                        "SpecAlias": "abc",
+                        "SpecFeatures": [
+                            "abc"
+                        ],
+                        "CvmInstanceId": "abc"
+                    }
+                ],
+                "TagSet": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
                     }
                 ]
             }
-        ]
+        ],
+        "RequestId": "abc"
     }
 }
 ```

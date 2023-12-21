@@ -756,6 +756,13 @@
       "output": "EnhanceMediaByTemplateResponse",
       "status": "online"
     },
+    "EnhanceMediaQuality": {
+      "document": "对点播中的音视频媒体发起音画质重生任务。",
+      "input": "EnhanceMediaQualityRequest",
+      "name": "音画质重生",
+      "output": "EnhanceMediaQualityResponse",
+      "status": "online"
+    },
     "ExecuteFunction": {
       "document": "本接口仅用于定制开发的特殊场景，除非云点播客服人员主动告知您需要使用本接口，其它情况请勿调用。",
       "input": "ExecuteFunctionRequest",
@@ -17094,6 +17101,130 @@
           "disabled": false,
           "document": "音画质重生的任务 ID，可以通过该 ID 查询音画质重生任务的状态。",
           "example": "125xxx-RebuildMedia-75e45d323ffad76987112fafe2eb87dxxx",
+          "member": "string",
+          "name": "TaskId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhanceMediaQualityOutputConfig": {
+      "document": "音画质重生结果文件输出。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输出文件名，最长 64 个字符。缺省由系统指定生成文件名。",
+          "example": "name",
+          "member": "string",
+          "name": "MediaName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分类ID，用于对媒体进行分类管理，可通过 [创建分类](/document/product/266/7812) 接口，创建分类，获得分类 ID。\n<li>默认值：0，表示其他分类。</li>",
+          "example": "0",
+          "member": "int64",
+          "name": "ClassId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "输出文件的过期时间，超过该时间文件将被删除，默认为永久不过期，格式按照 ISO 8601标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
+          "example": "2023-09-08T02:23:29Z",
+          "member": "string",
+          "name": "ExpireTime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
+    "EnhanceMediaQualityRequest": {
+      "document": "EnhanceMediaQuality请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "媒体文件 ID，即该文件在云点播上的全局唯一标识符，在上传成功后由云点播后台分配。可以在 [视频上传完成事件通知](/document/product/266/7830) 或 [云点播控制台](https://console.cloud.tencent.com/vod/media) 获取该字段。",
+          "example": "52123456",
+          "member": "string",
+          "name": "FileId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生模板 ID，请联系腾讯云获取。",
+          "example": "10",
+          "member": "uint64",
+          "name": "Definition",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "音画质重生后的媒体文件配置。",
+          "example": "无",
+          "member": "EnhanceMediaQualityOutputConfig",
+          "name": "OutputConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SessionId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "来源上下文，用于透传用户请求信息，音画质重生完成回调将返回该字段值，最长 1000 个字符。",
+          "example": "\"\"",
+          "member": "string",
+          "name": "SessionContext",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "任务的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。",
+          "example": "2",
+          "member": "int64",
+          "name": "TasksPriority",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "EnhanceMediaQualityResponse": {
+      "document": "EnhanceMediaQuality返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "音画质重生任务 ID。",
+          "example": "125xxx65-EnhanceMediaQuality-bffb15f07530b57bc1aabb01fac74bcc",
           "member": "string",
           "name": "TaskId",
           "output_required": true,

@@ -4827,7 +4827,7 @@
           "example": "INFERENCE",
           "member": "string",
           "name": "Type",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -4896,7 +4896,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4906,7 +4906,7 @@
           "example": "无",
           "member": "ResourceGroup",
           "name": "ResourceGroupSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -5007,20 +5007,20 @@
       "members": [
         {
           "disabled": false,
-          "document": "枚举值：TRAIN、NOTEBOOK、INFERENCE",
-          "example": "TRAIN",
-          "member": "string",
-          "name": "TaskType",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "付费模式：POSTPAID_BY_HOUR按量计费、PREPAID包年包月",
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "枚举值：TRAIN、NOTEBOOK、INFERENCE",
+          "example": "TRAIN",
+          "member": "string",
+          "name": "TaskType",
+          "required": false,
           "type": "string"
         },
         {
@@ -11045,7 +11045,7 @@
           "example": "ersg-9hw7jfk6",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11055,7 +11055,7 @@
           "example": "test2",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -11065,7 +11065,7 @@
           "example": "1",
           "member": "uint64",
           "name": "FreeInstance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11075,7 +11075,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalInstance",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11085,7 +11085,7 @@
           "example": "无",
           "member": "GroupResource",
           "name": "UsedResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11095,7 +11095,7 @@
           "example": "无",
           "member": "GroupResource",
           "name": "TotalResource",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -11105,7 +11105,7 @@
           "example": "无",
           "member": "Instance",
           "name": "InstanceSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -11115,7 +11115,7 @@
           "example": "无",
           "member": "Tag",
           "name": "TagSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }

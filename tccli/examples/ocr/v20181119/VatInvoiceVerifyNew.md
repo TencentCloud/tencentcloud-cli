@@ -30,6 +30,7 @@ Output:
             "CheckCode": "",
             "Code": "144002288010",
             "Date": "",
+            "ElectronicType": "",
             "HasSellerList": "",
             "IsAbandoned": "N",
             "Items": [],
@@ -99,6 +100,61 @@ Output:
             "TaxtationOrgName": "",
             "Tonnage": "",
             "VinNo": ""
+        },
+        "ElectronicTrainTicket": {
+            "BuyerName": "abc",
+            "BuyerTaxCode": "abc",
+            "Number": "abc",
+            "Date": "abc",
+            "TotalCN": "abc",
+            "Tax": "abc",
+            "ServiceType": "abc",
+            "TimeGetOn": "abc",
+            "TrainNumber": "abc",
+            "Code": "abc",
+            "SeatType": "abc",
+            "DateGetOn": "abc",
+            "TrainCabin": "abc",
+            "StationGetOn": "abc",
+            "ElectronicNumber": "abc",
+            "PassengerName": "abc",
+            "PassengerNo": "abc",
+            "Amount": "abc",
+            "StationGetOff": "abc",
+            "TaxRate": "abc",
+            "Seat": "abc",
+            "Total": "abc",
+            "CheckCode": "abc",
+            "StateCode": "0"
+        },
+        "ElectronicAirTransport": {
+            "Code": "abc",
+            "Number": "abc",
+            "Date": "abc",
+            "Amount": "abc",
+            "CheckCode": "abc",
+            "Total": "abc",
+            "DeductionMark": "abc",
+            "StateCode": "abc",
+            "BuyerTaxCode": "abc",
+            "BuyerName": "abc",
+            "DomesticInternationalMark": "abc",
+            "PassengerName": "abc",
+            "PassengerNo": "abc",
+            "ElectronicNumber": "abc",
+            "ElectronicAirTransportDetails": [
+                {
+                    "FlightSegment": "abc",
+                    "StationGetOn": "abc",
+                    "StationGetOff": "abc",
+                    "Carrier": "abc",
+                    "FlightNumber": "abc",
+                    "SeatLevel": "abc",
+                    "FlightDate": "abc",
+                    "DepartureTime": "abc",
+                    "FareBasis": "abc"
+                }
+            ]
         }
     }
 }
