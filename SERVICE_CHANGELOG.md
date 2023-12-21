@@ -1,55 +1,56 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
+## 音频内容安全(ams) 版本：2020-12-29
 
-### 第 39 次发布
+### 第 8 次发布
 
-发布时间：2023-12-21 01:12:55
+发布时间：2023-12-22 01:06:54
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
-新增接口：
-
-* [DescribeBudgetHistoryList](http://document.tencentcloudapi.woa.com/document/product/555/82850)
-* [DescribeBudgetInfoList](http://document.tencentcloudapi.woa.com/document/product/555/82849)
-* [DescribeBudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/82848)
-
 修改接口：
 
-* [DescribeMeasureResources](http://document.tencentcloudapi.woa.com/document/product/555/81765)
+* [CreateAudioModerationTask](http://document.tencentcloudapi.woa.com/document/product/1219/53257)
 
-	* 新增入参：FeeType, DealName, PackageCodes
-
-* [SetRenewFlagInner](http://document.tencentcloudapi.woa.com/document/product/555/81631)
-
-	* 新增入参：AutoRenewTimeSpan, AutoRenewTimeUnit
+	* 新增入参：User
 
 
 新增数据结构：
 
-* [BudgetConditionsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetConditionsForm)
-* [BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords)
-* [BudgetInfoRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetInfoRecordList)
-* [BudgetPlan](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetPlan)
-* [BudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecordList)
-* [BudgetRemindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecords)
-* [BudgetSendInfoForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetSendInfoForm)
-* [DataForBudgetHistory](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetHistory)
-* [DataForBudgetInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetInfo)
-* [OrderDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#OrderDto)
-* [TagsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#TagsForm)
-* [WarnJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WarnJson)
-* [WaveThresholdJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WaveThresholdJson)
+* [User](http://document.tencentcloudapi.woa.com/document/product/1219/53259#User)
 
 
 
-## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+## 音频内容安全(ams) 版本：2020-06-08
 
-### 第 117 次发布
 
-发布时间：2023-12-21 01:44:04
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：ClusterId
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 22 次发布
+
+发布时间：2023-12-22 01:14:10
 
 本次发布包含了以下内容：
 
@@ -57,45 +58,24 @@
 
 修改接口：
 
-* [ChannelCreatePrepareFlow](http://document.tencentcloudapi.woa.com/document/product/1595/77207)
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
 
-	* <font color="#dd0000">**修改入参**：</font>ResourceId
+	* 新增入参：SortOptions
 
-
-
-
-## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+	* 新增出参：Filters
 
 
+新增数据结构：
 
-## 消息队列 TDMQ(tdmq) 版本：2020-02-17
-
-### 第 88 次发布
-
-发布时间：2023-12-21 02:16:24
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeNamespaceBundlesOpt](http://document.tencentcloudapi.woa.com/document/product/1179/59039)
-
-	* <font color="#dd0000">**删除出参**：</font>BundleSet
-
-
-<font color="#dd0000">**删除数据结构**：</font>
-
-* BundleSetOpt
+* [SortOption](http://document.tencentcloudapi.woa.com/document/product/1609/78009#SortOption)
 
 
 
-## TI-ONE 训练平台(tione) 版本：2021-11-11
+## 云数据库 MySQL(cdb) 版本：2017-03-20
 
-### 第 47 次发布
+### 第 83 次发布
 
-发布时间：2023-12-21 02:19:47
+发布时间：2023-12-22 01:16:17
 
 本次发布包含了以下内容：
 
@@ -103,18 +83,159 @@
 
 修改接口：
 
-* [DescribeBillingResourceGroups](http://document.tencentcloudapi.woa.com/document/product/851/74826)
+* [DescribeBinlogs](http://document.tencentcloudapi.woa.com/document/product/236/15843)
 
-	* <font color="#dd0000">**修改入参**：</font>Type
-
-* [DescribeBillingSpecs](http://document.tencentcloudapi.woa.com/document/product/851/75918)
-
-	* <font color="#dd0000">**修改入参**：</font>TaskType
+	* 新增入参：ContainsMinStartTime
 
 
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：ExecutedGTIDSet
 
 
-## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:19:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：RestartTimeout
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 66 次发布
+
+发布时间：2023-12-22 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceRefund](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceRefund)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, Refunds, PriceDetail
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 34 次发布
+
+发布时间：2023-12-22 01:37:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainInfo)
+
+	* 新增成员：SlaveDNS
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 45 次发布
+
+发布时间：2023-12-22 01:44:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectAIFakeFaces](http://document.tencentcloudapi.woa.com/document/product/1007/81952)
+
+	* 新增出参：ExtraInfo
+
+
+新增数据结构：
+
+* [ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#ExtraInfo)
+* [RetrievalLivenessExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RetrievalLivenessExtraInfo)
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：DisableCheckOcrWarnings
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 35 次发布
+
+发布时间：2023-12-22 02:05:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProductConf](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProductConf)
+
+	* 新增成员：EnableReplicaReadOnly
+
+
+
+
+## 视频内容安全(vm) 版本：2021-09-22
+
+### 第 6 次发布
+
+发布时间：2023-12-22 02:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVideoModerationTask](http://document.tencentcloudapi.woa.com/document/product/1265/74819)
+
+	* 新增入参：User
+
+
+新增数据结构：
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1265/74821#User)
+
+
+
+## 视频内容安全(vm) 版本：2020-12-29
+
+
+
+## 视频内容安全(vm) 版本：2020-07-09
 
 
 
@@ -1418,6 +1539,25 @@
 
 
 ## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:06:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAudioModerationTask](http://document.tencentcloudapi.woa.com/document/product/1219/53257)
+
+	* 新增入参：User
+
+
+新增数据结构：
+
+* [[User](http://document.tencentcloudapi.woa.com/document/product/1219/53259#User)](http://document.tencentcloudapi.woa.com/document/product/1219/53259#[User](http://document.tencentcloudapi.woa.com/document/product/1219/53259#User))
 
 ### 第 7 次发布
 
@@ -5515,6 +5655,21 @@
 
 ## 商业智能分析 BI(bi) 版本：2022-01-05
 
+### 第 8 次发布
+
+发布时间：2023-12-22 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：ClusterId
+
+
 ### 第 7 次发布
 
 发布时间：2023-12-06 01:11:44
@@ -5689,9 +5844,9 @@
 
 新增接口：
 
-* [[DescribeBudgetHistoryList](http://document.tencentcloudapi.woa.com/document/product/555/82850)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBudgetInfoList](http://document.tencentcloudapi.woa.com/document/product/555/82849)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeBudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/82848)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeBudgetHistoryList](http://document.tencentcloudapi.woa.com/document/product/555/82850)
+* [DescribeBudgetInfoList](http://document.tencentcloudapi.woa.com/document/product/555/82849)
+* [DescribeBudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/82848)
 
 修改接口：
 
@@ -5706,19 +5861,19 @@
 
 新增数据结构：
 
-* [[BudgetConditionsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetConditionsForm)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetConditionsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetConditionsForm))
-* [[BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords))
-* [[BudgetInfoRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetInfoRecordList)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetInfoRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetInfoRecordList))
-* [[BudgetPlan](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetPlan)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetPlan](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetPlan))
-* [[BudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecordList)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecordList))
-* [[BudgetRemindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecords)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetRemindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecords))
-* [[BudgetSendInfoForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetSendInfoForm)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[BudgetSendInfoForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetSendInfoForm))
-* [[DataForBudgetHistory](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetHistory)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[DataForBudgetHistory](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetHistory))
-* [[DataForBudgetInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetInfo)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[DataForBudgetInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetInfo))
-* [[OrderDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#OrderDto)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[OrderDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#OrderDto))
-* [[TagsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#TagsForm)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[TagsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#TagsForm))
-* [[WarnJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WarnJson)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[WarnJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WarnJson))
-* [[WaveThresholdJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WaveThresholdJson)](http://document.tencentcloudapi.woa.com/document/product/555/19183#[WaveThresholdJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WaveThresholdJson))
+* [BudgetConditionsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetConditionsForm)
+* [BudgetHistoryRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetHistoryRecords)
+* [BudgetInfoRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetInfoRecordList)
+* [BudgetPlan](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetPlan)
+* [BudgetRemindRecordList](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecordList)
+* [BudgetRemindRecords](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetRemindRecords)
+* [BudgetSendInfoForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#BudgetSendInfoForm)
+* [DataForBudgetHistory](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetHistory)
+* [DataForBudgetInfo](http://document.tencentcloudapi.woa.com/document/product/555/19183#DataForBudgetInfo)
+* [OrderDto](http://document.tencentcloudapi.woa.com/document/product/555/19183#OrderDto)
+* [TagsForm](http://document.tencentcloudapi.woa.com/document/product/555/19183#TagsForm)
+* [WarnJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WarnJson)
+* [WaveThresholdJson](http://document.tencentcloudapi.woa.com/document/product/555/19183#WaveThresholdJson)
 
 ### 第 38 次发布
 
@@ -7893,6 +8048,27 @@
 
 
 ## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 22 次发布
+
+发布时间：2023-12-22 01:14:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增入参：SortOptions
+
+	* 新增出参：Filters
+
+
+新增数据结构：
+
+* [[SortOption](http://document.tencentcloudapi.woa.com/document/product/1609/78009#SortOption)](http://document.tencentcloudapi.woa.com/document/product/1609/78009#[SortOption](http://document.tencentcloudapi.woa.com/document/product/1609/78009#SortOption))
 
 ### 第 21 次发布
 
@@ -10733,6 +10909,28 @@
 
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 83 次发布
+
+发布时间：2023-12-22 01:16:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBinlogs](http://document.tencentcloudapi.woa.com/document/product/236/15843)
+
+	* 新增入参：ContainsMinStartTime
+
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：ExecutedGTIDSet
+
 
 ### 第 82 次发布
 
@@ -14165,6 +14363,21 @@
 
 
 ## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:19:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：RestartTimeout
+
 
 ### 第 7 次发布
 
@@ -24292,6 +24505,21 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 66 次发布
+
+发布时间：2023-12-22 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceRefund](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceRefund)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, Refunds, PriceDetail
+
+
 ### 第 65 次发布
 
 发布时间：2023-12-13 01:31:38
@@ -33833,6 +34061,21 @@
 
 ## DNSPod(dnspod) 版本：2021-03-23
 
+### 第 34 次发布
+
+发布时间：2023-12-22 01:37:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainInfo)
+
+	* 新增成员：SlaveDNS
+
+
 ### 第 33 次发布
 
 发布时间：2023-11-09 01:18:06
@@ -42816,6 +43059,33 @@
 
 
 ## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 45 次发布
+
+发布时间：2023-12-22 01:44:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectAIFakeFaces](http://document.tencentcloudapi.woa.com/document/product/1007/81952)
+
+	* 新增出参：ExtraInfo
+
+
+新增数据结构：
+
+* [[ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#ExtraInfo)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#ExtraInfo))
+* [[RetrievalLivenessExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RetrievalLivenessExtraInfo)](http://document.tencentcloudapi.woa.com/document/product/1007/41958#[RetrievalLivenessExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RetrievalLivenessExtraInfo))
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：DisableCheckOcrWarnings
+
 
 ### 第 44 次发布
 
@@ -63299,6 +63569,21 @@
 
 
 ## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 35 次发布
+
+发布时间：2023-12-22 02:05:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProductConf](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProductConf)
+
+	* 新增成员：EnableReplicaReadOnly
+
 
 ### 第 34 次发布
 
@@ -85804,6 +86089,25 @@
 
 
 ## 视频内容安全(vm) 版本：2021-09-22
+
+### 第 6 次发布
+
+发布时间：2023-12-22 02:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVideoModerationTask](http://document.tencentcloudapi.woa.com/document/product/1265/74819)
+
+	* 新增入参：User
+
+
+新增数据结构：
+
+* [[User](http://document.tencentcloudapi.woa.com/document/product/1265/74821#User)](http://document.tencentcloudapi.woa.com/document/product/1265/74821#[User](http://document.tencentcloudapi.woa.com/document/product/1265/74821#User))
 
 ### 第 5 次发布
 

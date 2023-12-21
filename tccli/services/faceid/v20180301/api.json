@@ -523,8 +523,8 @@
         },
         {
           "disabled": false,
-          "document": "比对照片的base64编码字符串，base64编码后的字符串不超过8MB。",
-          "example": "CompareImageBase64String",
+          "document": "比对照片的base64编码字符串，base64编码后的字符串需要从编码字符串中删除Data URI scheme头部，并且大小不超过8MB。",
+          "example": "xhBQAAACBjSFJNAAB6************AAAASUVORK5CYII=",
           "member": "string",
           "name": "CompareImageBase64",
           "required": false,
@@ -2035,6 +2035,16 @@
           "value_allowed_null": false
         },
         {
+          "disabled": false,
+          "document": "额外信息",
+          "example": "无",
+          "member": "ExtraInfo",
+          "name": "ExtraInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
           "name": "RequestId",
@@ -3043,6 +3053,22 @@
         }
       ],
       "usage": "both"
+    },
+    "ExtraInfo": {
+      "document": "额外的详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中模板的详细信息，仅返回命中的相似度最高的模板信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "RetrievalLivenessExtraInfo",
+          "name": "RetrievalLivenessExtraInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "FaceMotionDetectionRequest": {
       "document": "FaceMotionDetection请求参数结构体",
@@ -7602,6 +7628,42 @@
       ],
       "type": "object"
     },
+    "RetrievalLivenessExtraInfo": {
+      "document": "模版检索详细信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "命中的模版类型，其中Common-公共库；Auto-自动聚类库；Owner-自建模版库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Common",
+          "member": "string",
+          "name": "HitGroup",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的相似度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.98",
+          "member": "float",
+          "name": "SimilarityScore",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的模板id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "45",
+          "member": "string",
+          "name": "HitTemplate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "RuleIdConfig": {
       "document": "RuleId相关配置",
       "members": [
@@ -8105,12 +8167,21 @@
         },
         {
           "disabled": false,
-          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照",
+          "document": "认证使用的卡证类型，当前支持:\n1.HKIDCard：中国香港身份证\n2.MLIDCard：马来西亚身份证\n3.IndonesiaIDCard：印度尼西亚身份证\n4.PhilippinesVoteID：菲律宾选民卡\n5.PhilippinesDrivingLicense：菲律宾驾驶证\n6.PhilippinesTinID：菲律宾TinID\n7.PhilippinesSSSID：菲律宾SSSID\n8.PhilippinesUMID：菲律宾UMID\n9.InternationalIDPassport：港澳台地区以及境外护照\n10.IndonesiaDrivingLicense：印度尼西亚驾驶证\n11.ThailandIDCard：泰国身份证\n12.ThailandDrivingLicense：泰国驾驶证\n13.MLDrivingLicense：马来西亚驾驶证\n14.SingaporeIDCard：新加坡身份证\n15.SingaporeDrivingLicense：新加坡驾驶证\n16.JapanIDCard：日本身份证\n17.JapanDrivingLicense：日本驾驶证\n18.PhilippinesIDCard：菲律宾身份证通用",
           "example": "HKIDCard",
           "member": "string",
           "name": "IDCardType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否关闭证件告警，默认为false（开启告警检测功能）。当开启时，身份认证流程将会根据证件的告警情况进行拦截。若您需要使用证件鉴伪功能，请[联系我们](https://www.tencentcloud.com/zh/contact-us)。",
+          "example": "false",
+          "member": "bool",
+          "name": "DisableCheckOcrWarnings",
+          "required": false,
+          "type": "bool"
         }
       ],
       "usage": "in"

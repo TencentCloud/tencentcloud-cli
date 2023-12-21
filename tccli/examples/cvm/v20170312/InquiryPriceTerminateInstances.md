@@ -16,7 +16,8 @@ Output:
         "InstanceRefundsSet": [
             {
                 "InstanceId": "ins-rfmme2si",
-                "Refunds": 0
+                "Refunds": 2644.44,
+                "PriceDetail": "退款：2644.44元，现金券： 0元,代金券/折扣券不退（全额退款;'}"
             }
         ],
         "RequestId": "75731c35-e2ad-4721-b4bc-8cdb6c2ad2a5"

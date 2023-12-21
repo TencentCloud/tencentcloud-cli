@@ -813,7 +813,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -822,7 +822,7 @@
         {
           "disabled": false,
           "document": "[ 资源六段式描述 ](https://cloud.tencent.com/document/product/598/10606)",
-          "example": "",
+          "example": "qcs::cvm:ap-beijing:uin/12345:instance/12345",
           "member": "string",
           "name": "Resource",
           "required": true,
@@ -2531,7 +2531,7 @@
         {
           "disabled": false,
           "document": "资源所属业务名称（资源六段式中的第三段）",
-          "example": "",
+          "example": "cvm",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -2540,7 +2540,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
-          "example": "",
+          "example": "12345",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -2549,7 +2549,7 @@
         {
           "disabled": false,
           "document": "需要解绑的标签键",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -2558,7 +2558,7 @@
         {
           "disabled": false,
           "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
-          "example": "",
+          "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -2567,7 +2567,7 @@
         {
           "disabled": false,
           "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -3226,7 +3226,7 @@
         {
           "disabled": false,
           "document": "资源所属业务名称（资源六段式中的第三段）",
-          "example": "",
+          "example": "cmv",
           "member": "string",
           "name": "ServiceType",
           "required": true,
@@ -3235,7 +3235,7 @@
         {
           "disabled": false,
           "document": "资源ID数组，资源个数最多为50",
-          "example": "",
+          "example": "12345",
           "member": "string",
           "name": "ResourceIds",
           "required": true,
@@ -3244,7 +3244,7 @@
         {
           "disabled": false,
           "document": "标签键",
-          "example": "",
+          "example": "key",
           "member": "string",
           "name": "TagKey",
           "required": true,
@@ -3253,7 +3253,7 @@
         {
           "disabled": false,
           "document": "标签值",
-          "example": "",
+          "example": "value",
           "member": "string",
           "name": "TagValue",
           "required": true,
@@ -3262,7 +3262,7 @@
         {
           "disabled": false,
           "document": "资源所在地域，不区分地域的资源不需要传入该字段，区分地域的资源必填",
-          "example": "",
+          "example": "ap-beijing",
           "member": "string",
           "name": "ResourceRegion",
           "required": false,
@@ -3271,7 +3271,7 @@
         {
           "disabled": false,
           "document": "资源前缀（资源六段式中最后一段\"/\"前面的部分），cos存储桶不需要传入该字段，其他云资源必填",
-          "example": "",
+          "example": "instance",
           "member": "string",
           "name": "ResourcePrefix",
           "required": false,
@@ -3946,7 +3946,7 @@
           "example": "无",
           "member": "FailedResource",
           "name": "FailedResources",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

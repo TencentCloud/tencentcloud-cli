@@ -15,8 +15,33 @@ Output:
 {
     "Response": {
         "RequestId": "48edd236-7ef1-45af-9e12-fc376ba355bf",
-        "TotalCount": 0,
-        "Messages": []
+        "TotalCount": 2,
+        "Messages": [
+            {
+                "Timestamp": 1600007226,
+                "From": "John",
+                "Messages": [
+                    {
+                        "Type": "Text",
+                        "Content": "Hello, how are you?"
+                    },
+                    {
+                        "Type": "Image",
+                        "Content": "https://example.com/image.jpg"
+                    }
+                ]
+            },
+            {
+                "Timestamp": 1400753150,
+                "From": "Alice",
+                "Messages": [
+                    {
+                        "Type": "Text",
+                        "Content": "Hi there!"
+                    }
+                ]
+            }
+        ]
     }
 }
 ```

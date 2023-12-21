@@ -4908,7 +4908,7 @@
         },
         {
           "disabled": false,
-          "document": "节点所属角色。<ul><li>master：主节点。</li><li>slave：从节点。</li></ul>",
+          "document": "节点所属角色。\n- master：主节点。\n- slave：从节点。",
           "example": "master",
           "member": "string",
           "name": "Role",
@@ -4927,6 +4927,7 @@
           "example": "30",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4936,6 +4937,7 @@
           "example": "无",
           "member": "InstanceSlowlogDetail",
           "name": "InstanceSlowlogDetail",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8844,7 +8846,7 @@
           "example": "无",
           "member": "int64",
           "name": "Type",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8854,7 +8856,7 @@
           "example": "无",
           "member": "string",
           "name": "TypeName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8864,7 +8866,7 @@
           "example": "无",
           "member": "int64",
           "name": "MinBuyNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8874,7 +8876,7 @@
           "example": "无",
           "member": "int64",
           "name": "MaxBuyNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -8884,7 +8886,7 @@
           "example": "无",
           "member": "bool",
           "name": "Saleout",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -8894,7 +8896,7 @@
           "example": "无",
           "member": "string",
           "name": "Engine",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8904,7 +8906,7 @@
           "example": "无",
           "member": "string",
           "name": "Version",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -8914,7 +8916,7 @@
           "example": "无",
           "member": "string",
           "name": "TotalSize",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8924,7 +8926,7 @@
           "example": "无",
           "member": "string",
           "name": "ShardSize",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8934,7 +8936,7 @@
           "example": "无",
           "member": "string",
           "name": "ReplicaNum",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8944,7 +8946,7 @@
           "example": "无",
           "member": "string",
           "name": "ShardNum",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -8954,19 +8956,29 @@
           "example": "无",
           "member": "string",
           "name": "PayMode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "是否支持副本只读。\n- true：支持副本只读。\n- false：不支持。",
+          "document": "该参数名因存在拼写不规范的问题，建议使用**EnableReplicaReadOnly**参数取代。其含义为是否支持副本只读。\n- true：支持副本只读。\n- false：不支持。",
           "example": "无",
           "member": "bool",
           "name": "EnableRepicaReadOnly",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否支持副本只读。\n- true：支持副本只读。\n- false：不支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableReplicaReadOnly",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

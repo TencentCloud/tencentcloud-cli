@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli faceid ApplyWebVerificationBizTokenIntl --cli-unfold-argument  \
-    --CompareImageBase64 CompareImageBase64String \
+    --CompareImageBase64 xhBQAAACBjSFJNAAB6****AAAASUVORK5CYII= \
     --RedirectURL https://www.tencentcloud.com/products/faceid \
     --Extra ExtraString
 ```

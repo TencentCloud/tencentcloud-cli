@@ -23,6 +23,7 @@ Output:
             {
                 "SkillGroupId": 1115,
                 "SkillGroupName": "luluttt",
+                "SkillGroupType": 1,
                 "Type": "TEL",
                 "RoutePolicy": "firstCreate",
                 "UsingLastSeat": 0,

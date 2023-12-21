@@ -29,8 +29,8 @@ Output:
                 "ModifyTime": 0,
                 "Status": 0,
                 "Register": false,
-                "Relation": "xx",
-                "RelationName": "xxx"
+                "Relation": "123456",
+                "RelationName": "foobar"
             }
         ]
     }

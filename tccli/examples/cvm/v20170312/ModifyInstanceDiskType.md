@@ -7,7 +7,7 @@ Input:
 ```
 tccli cvm ModifyInstanceDiskType --cli-unfold-argument  \
     --InstanceId ins-r8hr2upy \
-    --SystemDisk.DiskType CLOUD_BASIC
+    --SystemDisk.DiskType CLOUD_PREMIUM
 ```
 
 Output: 

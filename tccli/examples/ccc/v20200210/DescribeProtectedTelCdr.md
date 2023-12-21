@@ -79,6 +79,7 @@ Output:
                     ]
                 },
                 "RecordURL": "abc",
+                "RecordId": "abc",
                 "QueuedTimestamp": 1610627284,
                 "ProtectedCallee": "abc",
                 "IVRDuration": 5,
@@ -159,6 +160,7 @@ Output:
                     ]
                 },
                 "RecordURL": "abc",
+                "RecordId": "abc",
                 "QueuedTimestamp": 1610627284,
                 "ProtectedCallee": "abc",
                 "IVRDuration": 5,

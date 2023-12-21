@@ -20,10 +20,10 @@ Output:
         "Sessions": [
             {
                 "Direction": 1,
-                "AcceptTimestamp": 1607702329,
+                "AcceptTimestamp": "1607702329",
                 "ProtectedCaller": "",
                 "RoomID": "32929373",
-                "StartTimestamp": 1607702199,
+                "StartTimestamp": "1607702199",
                 "Caller": "00864009282737",
                 "ProtectedCallee": "",
                 "StaffNumber": "1007",

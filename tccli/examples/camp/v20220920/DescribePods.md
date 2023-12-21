@@ -1,14 +1,24 @@
-**Example 1: 查看Pod列表**
+**Example 1: DescribePods**
 
-查看Pod列表
+获取Pod列表
 
 Input: 
 
 ```
 tccli camp DescribePods --cli-unfold-argument  \
-    --ProjectID prj-27np9q4t \
-    --ApplicationID app-wchnr4pv \
-    --InstanceID ins-xxxx
+    --Platform abc \
+    --ProjectID abc \
+    --EnvironmentName abc \
+    --ApplicationID abc \
+    --InstanceID abc \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --Filters.0.Op abc \
+    --Filters.0.Query abc \
+    --Limit 1 \
+    --Offset 1 \
+    --SortOptions.0.Name abc \
+    --SortOptions.0.Order abc
 ```
 
 Output: 
@@ -17,6 +27,8 @@ Output:
     "Response": {
         "Pods": [
             {
+                "Raw": "abc",
+                "UID": "abc",
                 "Name": "abc",
                 "ComponentName": "abc",
                 "Containers": [
@@ -35,21 +47,36 @@ Output:
                 "Region": "abc",
                 "ClusterID": "abc",
                 "ClusterType": "abc",
+                "VPC": "abc",
+                "Namespace": "abc",
                 "Zone": "abc",
                 "IP": "abc",
+                "EIP": "abc",
+                "NodeName": "abc",
                 "Phase": "abc",
                 "State": "abc",
-                "CreatedAt": "2020-09-22T00:00:00+00:00",
-                "UID": "abc",
                 "PVCs": [
                     {
                         "Name": "abc",
                         "CBS": "abc"
                     }
-                ]
+                ],
+                "UpdateState": "abc",
+                "CurrentRevision": "abc",
+                "UpdateRevision": "abc",
+                "WebShell": "abc",
+                "CreatedAt": "2020-09-22T00:00:00+00:00"
             }
         ],
         "TotalCount": 0,
+        "Filters": [
+            {
+                "Name": "abc",
+                "Values": [
+                    "abc"
+                ]
+            }
+        ],
         "RequestId": "abc"
     }
 }

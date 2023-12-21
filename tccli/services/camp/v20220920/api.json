@@ -3946,6 +3946,15 @@
           "name": "Offset",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数，当前支持排序字段：\nRegion 地域\nZone 可用区\nState 状态\nUpdateState 更新状态",
+          "example": "无",
+          "member": "SortOption",
+          "name": "SortOptions",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -3971,6 +3980,16 @@
           "name": "TotalCount",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "过滤值列表",
+          "example": "无",
+          "member": "FilterValues",
+          "name": "Filters",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -7608,6 +7627,30 @@
         }
       ],
       "usage": "both"
+    },
+    "SortOption": {
+      "document": "排序参数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要排序的字段",
+          "example": "ResourceID",
+          "member": "string",
+          "name": "Name",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式：\nASC递增\nDESC递减",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "Tag": {
       "document": "云标签",

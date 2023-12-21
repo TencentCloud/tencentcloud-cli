@@ -1,3 +1,244 @@
+# Release 3.0.908.1
+
+## 音频内容安全(ams) 版本：2020-12-29
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:06:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateAudioModerationTask](http://document.tencentcloudapi.woa.com/document/product/1219/53257)
+
+	* 新增入参：User
+
+
+新增数据结构：
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1219/53259#User)
+
+
+
+## 音频内容安全(ams) 版本：2020-06-08
+
+
+
+## 商业智能分析 BI(bi) 版本：2022-01-05
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:10:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DatasourceInfo](http://document.tencentcloudapi.woa.com/document/product/1707/80324#DatasourceInfo)
+
+	* 新增成员：ClusterId
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 22 次发布
+
+发布时间：2023-12-22 01:14:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePods](http://document.tencentcloudapi.woa.com/document/product/1609/77969)
+
+	* 新增入参：SortOptions
+
+	* 新增出参：Filters
+
+
+新增数据结构：
+
+* [SortOption](http://document.tencentcloudapi.woa.com/document/product/1609/78009#SortOption)
+
+
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 83 次发布
+
+发布时间：2023-12-22 01:16:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeBinlogs](http://document.tencentcloudapi.woa.com/document/product/236/15843)
+
+	* 新增入参：ContainsMinStartTime
+
+
+修改数据结构：
+
+* [BackupInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#BackupInfo)
+
+	* 新增成员：ExecutedGTIDSet
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 8 次发布
+
+发布时间：2023-12-22 01:19:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#InstanceInfo)
+
+	* 新增成员：RestartTimeout
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 66 次发布
+
+发布时间：2023-12-22 01:25:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceRefund](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceRefund)
+
+	* <font color="#dd0000">**修改成员**：</font>InstanceId, Refunds, PriceDetail
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 34 次发布
+
+发布时间：2023-12-22 01:37:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [DomainInfo](http://document.tencentcloudapi.woa.com/document/product/1427/56185#DomainInfo)
+
+	* 新增成员：SlaveDNS
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 45 次发布
+
+发布时间：2023-12-22 01:44:28
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DetectAIFakeFaces](http://document.tencentcloudapi.woa.com/document/product/1007/81952)
+
+	* 新增出参：ExtraInfo
+
+
+新增数据结构：
+
+* [ExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#ExtraInfo)
+* [RetrievalLivenessExtraInfo](http://document.tencentcloudapi.woa.com/document/product/1007/41958#RetrievalLivenessExtraInfo)
+
+修改数据结构：
+
+* [WebVerificationConfigIntl](http://document.tencentcloudapi.woa.com/document/product/1007/41958#WebVerificationConfigIntl)
+
+	* 新增成员：DisableCheckOcrWarnings
+
+
+
+
+## 云数据库Redis(redis) 版本：2018-04-12
+
+### 第 35 次发布
+
+发布时间：2023-12-22 02:05:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ProductConf](http://document.tencentcloudapi.woa.com/document/product/239/20022#ProductConf)
+
+	* 新增成员：EnableReplicaReadOnly
+
+
+
+
+## 视频内容安全(vm) 版本：2021-09-22
+
+### 第 6 次发布
+
+发布时间：2023-12-22 02:26:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateVideoModerationTask](http://document.tencentcloudapi.woa.com/document/product/1265/74819)
+
+	* 新增入参：User
+
+
+新增数据结构：
+
+* [User](http://document.tencentcloudapi.woa.com/document/product/1265/74821#User)
+
+
+
+## 视频内容安全(vm) 版本：2020-12-29
+
+
+
+## 视频内容安全(vm) 版本：2020-07-09
+
+
+
 # Release 3.0.907.1
 
 ## 费用中心(billing) 版本：2018-07-09

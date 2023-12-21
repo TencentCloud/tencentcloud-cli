@@ -50,7 +50,7 @@
       "status": "online"
     },
     "ChannelCreateBoundFlows": {
-      "document": "此接口（ChannelCreateBoundFlows）用于子客企业领取未归属给员工的合同，将合同领取给当前员工，合同不能重复领取。\n\n\n**未归属合同发起方式**\n 指定对应企业的OrganizationOpenId和OrganizationName而不指定具体的参与人(OpenId/名字/手机号等),  则合同进入待领取状态, 示例代码如下\n```\n\t\tFlowApprovers: []*essbasic.FlowApproverInfo{\n\t\t\t{\n\t\t\t\tApproverType:       common.StringPtr(\"ORGANIZATION\"),\n\t\t\t\tOrganizationOpenId: common.StringPtr(\"org_dianziqian\"),\n\t\t\t\tOrganizationName:   common.StringPtr(\"典子谦示例企业\"),\n\t\t\t}\n\t\t},\n```\n\n可以<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录控制台查看带领取的合同\n![image](https://qcloudimg.tencent-cloud.cn/raw/a34d0cc56ec871613e94dfc6252bc072.png)\n\n注: `支持批量领取,  如果有一个合同流程无法领取会导致接口报错,  使得所有合同都领取失败`",
+      "document": "此接口（ChannelCreateBoundFlows）用于子客企业领取未归属给员工的合同，将合同领取给当前员工，合同不能重复领取。\n\n\n**未归属合同发起方式**\n 指定对应企业的OrganizationOpenId和OrganizationName而不指定具体的参与人(OpenId/名字/手机号等),  则合同进入待领取状态, 示例代码如下\n```\n\t\tFlowApprovers: []*essbasic.FlowApproverInfo{\n\t\t\t{\n\t\t\t\tApproverType:       common.StringPtr(\"ORGANIZATION\"),\n\t\t\t\tOrganizationOpenId: common.StringPtr(\"org_dianziqian\"),\n\t\t\t\tOrganizationName:   common.StringPtr(\"典子谦示例企业\"),\n\t\t\t}\n\t\t},\n```\n\n可以<a href=\"https://qian.tencent.com/developers/partnerApis/accounts/CreateConsoleLoginUrl\" target=\"_blank\">生成子客登录链接</a>登录控制台查看带领取的合同\n![image](https://qcloudimg.tencent-cloud.cn/raw/a34d0cc56ec871613e94dfc6252bc072.png)\n\n注: \n1. 支持批量领取,  如果有一个合同流程无法领取会导致接口报错,  使得所有合同都领取失败\n2. 只有企业的<font color=\"red\">超管或者法人</font>才能进行合同的领取",
       "input": "ChannelCreateBoundFlowsRequest",
       "name": "领取未归属的合同",
       "output": "ChannelCreateBoundFlowsResponse",
@@ -1634,8 +1634,8 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li></ul>",
-          "example": "[0, 1]",
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li></ul>",
+          "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
           "required": false,
