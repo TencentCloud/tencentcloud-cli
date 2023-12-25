@@ -7,7 +7,8 @@ Input:
 ```
 tccli intlpartnersmgt QueryCreditQuota --cli-unfold-argument  \
     --ClientUin 123 \
-    --ComponentName qcost
+    --ComponentName qcost \
+    --QueryMode 0
 ```
 
 Output: 

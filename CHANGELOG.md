@@ -1,3 +1,222 @@
+# Release 3.0.909.1
+
+## 云顾问(advisor) 版本：2020-07-21
+
+### 第 8 次发布
+
+发布时间：2023-12-26 01:06:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeArchAsync](http://document.tencentcloudapi.woa.com/document/product/1660/82852)
+
+
+
+## 云拨测(cat) 版本：2018-04-09
+
+### 第 18 次发布
+
+发布时间：2023-12-26 01:14:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDetailedSingleProbeData](http://document.tencentcloudapi.woa.com/document/product/280/66205)
+
+	* 新增入参：QueryFlag
+
+
+
+
+## 腾讯云数据仓库 TCHouse-D(cdwdoris) 版本：2021-12-28
+
+### 第 10 次发布
+
+发布时间：2023-12-26 01:18:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateInstanceNew](http://document.tencentcloudapi.woa.com/document/product/1706/82859)
+* [DescribeClusterConfigs](http://document.tencentcloudapi.woa.com/document/product/1706/82867)
+* [DescribeDatabaseAuditDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82866)
+* [DescribeDatabaseAuditRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82865)
+* [DescribeInstanceNodesInfo](http://document.tencentcloudapi.woa.com/document/product/1706/82864)
+* [DescribeInstanceState](http://document.tencentcloudapi.woa.com/document/product/1706/82863)
+* [DescribeSlowQueryRecords](http://document.tencentcloudapi.woa.com/document/product/1706/82862)
+* [DescribeSlowQueryRecordsDownload](http://document.tencentcloudapi.woa.com/document/product/1706/82861)
+* [DestroyInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82858)
+* [ModifyInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82860)
+* [ResizeDisk](http://document.tencentcloudapi.woa.com/document/product/1706/82857)
+* [RestartClusterForNode](http://document.tencentcloudapi.woa.com/document/product/1706/82856)
+* [ScaleOutInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82855)
+* [ScaleUpInstance](http://document.tencentcloudapi.woa.com/document/product/1706/82854)
+
+新增数据结构：
+
+* [ChargeProperties](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ChargeProperties)
+* [ClusterConfigsInfoFromEMR](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ClusterConfigsInfoFromEMR)
+* [ConfigKeyValue](http://document.tencentcloudapi.woa.com/document/product/1706/80309#ConfigKeyValue)
+* [CreateInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/1706/80309#CreateInstanceSpec)
+* [DataBaseAuditRecord](http://document.tencentcloudapi.woa.com/document/product/1706/80309#DataBaseAuditRecord)
+* [NodeInfo](http://document.tencentcloudapi.woa.com/document/product/1706/80309#NodeInfo)
+* [SlowQueryRecord](http://document.tencentcloudapi.woa.com/document/product/1706/80309#SlowQueryRecord)
+
+
+
+## 专属可用区(cdz) 版本：2022-11-23
+
+### 第 4 次发布
+
+发布时间：2023-12-26 01:18:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCloudDedicatedZoneResourceSummary](http://document.tencentcloudapi.woa.com/document/product/1727/82868)
+
+新增数据结构：
+
+* [CloudDedicatedZoneResourceStatisticsInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#CloudDedicatedZoneResourceStatisticsInfo)
+* [CloudDedicatedZoneResourceSummaryInfo](http://document.tencentcloudapi.woa.com/document/product/1727/80828#CloudDedicatedZoneResourceSummaryInfo)
+
+
+
+## 国际合作伙伴管理(intlpartnersmgt) 版本：2022-09-28
+
+### 第 9 次发布
+
+发布时间：2023-12-26 01:45:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [QueryCreditQuota](http://document.tencentcloudapi.woa.com/document/product/1724/80750)
+
+	* 新增入参：QueryMode
+
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2019-07-25
+
+### 第 20 次发布
+
+发布时间：2023-12-26 01:54:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyDBInstanceSpec](http://document.tencentcloudapi.woa.com/document/product/240/38565)
+
+	* 新增入参：AddNodeList, RemoveNodeList
+
+
+新增数据结构：
+
+* [AddNodeList](http://document.tencentcloudapi.woa.com/document/product/240/38576#AddNodeList)
+* [RemoveNodeList](http://document.tencentcloudapi.woa.com/document/product/240/38576#RemoveNodeList)
+
+
+
+## 云数据库 MongoDB(mongodb) 版本：2018-04-08
+
+
+
+## 容器服务(tke) 版本：2022-05-01
+
+
+
+## 容器服务(tke) 版本：2018-05-25
+
+### 第 87 次发布
+
+发布时间：2023-12-26 02:15:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/49436)
+
+	* 新增入参：Annotations
+
+* [ModifyClusterNodePool](http://document.tencentcloudapi.woa.com/document/product/457/49431)
+
+	* 新增入参：Annotations
+
+
+新增数据结构：
+
+* [AnnotationValue](http://document.tencentcloudapi.woa.com/document/product/457/31866#AnnotationValue)
+
+修改数据结构：
+
+* [NodePool](http://document.tencentcloudapi.woa.com/document/product/457/31866#NodePool)
+
+	* 新增成员：Annotations
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 120 次发布
+
+发布时间：2023-12-26 02:21:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AssignIpv6SubnetCidrBlock](http://document.tencentcloudapi.woa.com/document/product/215/34471)
+
+	* 新增入参：ClientToken
+
+
+
+
+## 音速达直播音乐版权引擎(yinsuda) 版本：2022-05-27
+
+### 第 3 次发布
+
+发布时间：2023-12-26 02:38:21
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeKTVMusicAccompanySegmentUrlVip](http://document.tencentcloudapi.woa.com/document/product/1717/82871)
+* [DescribeVipUserInfo](http://document.tencentcloudapi.woa.com/document/product/1717/82870)
+* [RechargeVip](http://document.tencentcloudapi.woa.com/document/product/1717/82869)
+
+
+
 # Release 3.0.908.1
 
 ## 音频内容安全(ams) 版本：2020-12-29

@@ -1,5 +1,37 @@
 {
   "actions": {
+    "CreateInstanceNew": [
+      {
+        "document": "创建集群",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateInstanceNew\n<公共请求参数>\n\n{\n    \"InstanceName\": \"test-按量-hazk2节点\",\n    \"Zone\": \"ap-beijing-2\",\n    \"FeSpec\": {\n        \"SpecName\": \"S_4_16_H\",\n        \"Count\": 3,\n        \"DiskSize\": 200\n    },\n    \"BeSpec\": {\n        \"SpecName\": \"S_4_16_H\",\n        \"Count\": 3,\n        \"DiskSize\": 1000\n    },\n    \"HaFlag\": true,\n    \"UserVPCId\": \"vpc-8visjoh9\",\n    \"UserSubnetId\": \"subnet-03ij1dki\",\n    \"ProductVersion\": \"1.2\",\n    \"DorisUserPwd\": \"ujA7xa2*1\",\n    \"ChargeProperties\": {\n        \"ChargeType\": \"POSTPAID_BY_HOUR\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceId\": \"cdwdoris-aijqera\",\n        \"FlowId\": \"1231\",\n        \"RequestId\": \"lweinasd-28kamasd-xasdas\",\n        \"ErrorMsg\": \"\"\n    }\n}",
+        "title": "集群创建示例"
+      }
+    ],
+    "DescribeClusterConfigs": [
+      {
+        "document": "在xml方式下修改配置文件内容时，获取集群配置文件内容",
+        "input": "https://cdwdoris.tencentcloudapi.com/\n?Action=DescribeClusterConfigs\n&InstanceId=cdwch-xxxx\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"ClusterConfList\": [\n            {\n                \"NeedRestart\": 1,\n                \"OriParam\": \"ss=sc\",\n                \"KeyConf\": \"ss=sc\",\n                \"FileConf\": \"ss=sc\",\n                \"FileName\": \"test\"\n            }\n        ],\n        \"RequestId\": \"xx-aa\"\n    }\n}",
+        "title": "获取集群配置文件内容"
+      }
+    ],
+    "DescribeDatabaseAuditDownload": [
+      {
+        "document": "下载数据库审计日志",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditDownload\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"OrderType\": \"abc\",\n    \"User\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SqlType\": \"abc\",\n    \"Sql\": \"abc\",\n    \"Users\": [\n        \"abc\"\n    ],\n    \"DbNames\": [\n        \"abc\"\n    ],\n    \"SqlTypes\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeDatabaseAuditDownload"
+      }
+    ],
+    "DescribeDatabaseAuditRecords": [
+      {
+        "document": "获取数据库审计记录",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDatabaseAuditRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"OrderType\": \"abc\",\n    \"User\": \"abc\",\n    \"DbName\": \"abc\",\n    \"SqlType\": \"abc\",\n    \"Sql\": \"abc\",\n    \"Users\": [\n        \"abc\"\n    ],\n    \"DbNames\": [\n        \"abc\"\n    ],\n    \"SqlTypes\": [\n        \"abc\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": {\n            \"OsUser\": \"abc\",\n            \"InitialQueryId\": \"abc\",\n            \"Sql\": \"abc\",\n            \"QueryStartTime\": \"abc\",\n            \"DurationMs\": 0,\n            \"ReadRows\": 0,\n            \"ResultRows\": 0,\n            \"ResultBytes\": 1,\n            \"MemoryUsage\": 0,\n            \"InitialAddress\": \"abc\",\n            \"DbName\": \"abc\",\n            \"SqlType\": \"abc\"\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeDatabaseAuditRecords"
+      }
+    ],
     "DescribeInstance": [
       {
         "document": "根据集群ID查询某个集群的具体信息",
@@ -16,12 +48,98 @@
         "title": "获取集群节点信息列表"
       }
     ],
+    "DescribeInstanceNodesInfo": [
+      {
+        "document": "查询节点角色",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesInfo\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BeNodes\": [\n            \"abc\"\n        ],\n        \"FeNodes\": [\n            \"abc\"\n        ],\n        \"FeMaster\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询节点角色"
+      },
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceNodesInfo\n<公共请求参数>\n\n{\n    \"InstanceID\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"BeNodes\": [\n            \"abc\"\n        ],\n        \"FeNodes\": [\n            \"abc\"\n        ],\n        \"FeMaster\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询节点信息"
+      }
+    ],
+    "DescribeInstanceState": [
+      {
+        "document": "需要展现集群状态以及操作进度",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstanceState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-exs8Mnql\"\n}",
+        "output": "{\n    \"Response\": {\n        \"InstanceState\": \"Serving\",\n        \"InstanceStateDesc\": \"运行中\",\n        \"FlowCreateTime\": \"\",\n        \"FlowName\": \"\",\n        \"FlowProgress\": 0,\n        \"FlowMsg\": \"创建流程失败\",\n        \"RequestId\": \"xxxx-xxxx-xxxx-xxxx\"\n    }\n}",
+        "title": "获取集群状态"
+      }
+    ],
     "DescribeInstances": [
       {
         "document": "获取某个用户下所有的集群列表信息",
         "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeInstances\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"SearchInstanceName\": \"\",\n    \"SearchInstanceId\": \"\",\n    \"Offset\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"InstancesList\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"InstanceName\": \"abc\",\n                \"Status\": \"abc\",\n                \"Version\": \"abc\",\n                \"Region\": \"abc\",\n                \"Zone\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"PayMode\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"ExpireTime\": \"abc\",\n                \"MasterSummary\": {\n                    \"Spec\": \"abc\",\n                    \"NodeSize\": 0,\n                    \"Core\": 0,\n                    \"Memory\": 0,\n                    \"Disk\": 0,\n                    \"DiskType\": \"abc\",\n                    \"DiskDesc\": \"abc\",\n                    \"AttachCBSSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0,\n                        \"DiskDesc\": \"abc\"\n                    },\n                    \"SubProductType\": \"abc\",\n                    \"SpecCore\": 0,\n                    \"SpecMemory\": 0,\n                    \"DiskCount\": 0,\n                    \"Encrypt\": 0,\n                    \"MaxDiskSize\": 0\n                },\n                \"CoreSummary\": {\n                    \"Spec\": \"abc\",\n                    \"NodeSize\": 0,\n                    \"Core\": 0,\n                    \"Memory\": 0,\n                    \"Disk\": 0,\n                    \"DiskType\": \"abc\",\n                    \"DiskDesc\": \"abc\",\n                    \"AttachCBSSpec\": {\n                        \"DiskType\": \"abc\",\n                        \"DiskSize\": 0,\n                        \"DiskCount\": 0,\n                        \"DiskDesc\": \"abc\"\n                    },\n                    \"SubProductType\": \"abc\",\n                    \"SpecCore\": 0,\n                    \"SpecMemory\": 0,\n                    \"DiskCount\": 0,\n                    \"Encrypt\": 0,\n                    \"MaxDiskSize\": 0\n                },\n                \"HA\": \"abc\",\n                \"HaType\": 0,\n                \"AccessInfo\": \"abc\",\n                \"Id\": 0,\n                \"RegionId\": 0,\n                \"ZoneDesc\": \"abc\",\n                \"FlowMsg\": \"abc\",\n                \"StatusDesc\": \"abc\",\n                \"RenewFlag\": true,\n                \"Tags\": [\n                    {\n                        \"TagKey\": \"abc\",\n                        \"TagValue\": \"abc\"\n                    }\n                ],\n                \"Monitor\": \"abc\",\n                \"HasClsTopic\": true,\n                \"ClsTopicId\": \"abc\",\n                \"ClsLogSetId\": \"abc\",\n                \"EnableXMLConfig\": 0,\n                \"RegionDesc\": \"abc\",\n                \"Eip\": \"abc\",\n                \"CosMoveFactor\": 0,\n                \"Kind\": \"abc\",\n                \"CosBucketName\": \"abc\",\n                \"CanAttachCbs\": true,\n                \"BuildVersion\": \"abc\",\n                \"Components\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取实例列表"
+      }
+    ],
+    "DescribeSlowQueryRecords": [
+      {
+        "document": "慢查询",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryRecords\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"QueryDurationMs\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"PageSize\": 0,\n    \"PageNum\": 0,\n    \"DurationMs\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"SlowQueryRecords\": [\n            {\n                \"OsUser\": \"abc\",\n                \"InitialQueryId\": \"abc\",\n                \"Sql\": \"abc\",\n                \"QueryStartTime\": \"abc\",\n                \"DurationMs\": 0,\n                \"ReadRows\": 0,\n                \"ResultRows\": 0,\n                \"ResultBytes\": 1,\n                \"MemoryUsage\": 0,\n                \"InitialAddress\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeSlowQueryRecords"
+      }
+    ],
+    "DescribeSlowQueryRecordsDownload": [
+      {
+        "document": "下载慢查询文件",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSlowQueryRecordsDownload\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"QueryDurationMs\": 0,\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"DurationMs\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CosUrl\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeSlowQueryRecordsDownload"
+      }
+    ],
+    "DestroyInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-auqej7a\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwdoris-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
+        "title": "集群销毁示例"
+      }
+    ],
+    "ModifyInstance": [
+      {
+        "document": "用户修改实例名称",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwch-12345678\",\n    \"InstanceName\": \"cdwch-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxxx-xxxx\"\n    }\n}",
+        "title": "修改实例信息"
+      }
+    ],
+    "ResizeDisk": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResizeDisk\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-asdfxw\",\n    \"Type\": \"CORE\",\n    \"DiskSize\": 3000\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwch-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
+        "title": "云盘扩容示例"
+      }
+    ],
+    "RestartClusterForNode": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RestartClusterForNode\n<公共请求参数>\n\n{\n    \"InstanceId\": \"abc\",\n    \"ConfigName\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": 0,\n        \"ErrorMsg\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "test"
+      }
+    ],
+    "ScaleOutInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleOutInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xqewrqx\",\n    \"Type\": \"MASTER\",\n    \"NodeCount\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwdoris-xqewrqx\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
+        "title": "水平扩容示例"
+      }
+    ],
+    "ScaleUpInstance": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdwdoris.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ScaleUpInstance\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cdwdoris-xad3fa9\",\n    \"SpecName\": \"S_8_32_H\",\n    \"Type\": \"CORE\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowId\": \"1231\",\n        \"InstanceId\": \"cdwch-auqej7a\",\n        \"ErrorMsg\": \"\",\n        \"RequestId\": \"xasdfkqe2-a12q29-axdfas\"\n    }\n}",
+        "title": "节点垂直变配示例"
       }
     ]
   },

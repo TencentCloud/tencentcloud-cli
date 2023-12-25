@@ -7,6 +7,13 @@
       "output": "DescribeCloudDedicatedZoneFeaturesResponse",
       "status": "online"
     },
+    "DescribeCloudDedicatedZoneResourceSummary": {
+      "document": "查询专属可用区各个垂直产品的资源使用情况",
+      "input": "DescribeCloudDedicatedZoneResourceSummaryRequest",
+      "name": "查询专属可用区资源水位概览",
+      "output": "DescribeCloudDedicatedZoneResourceSummaryResponse",
+      "status": "online"
+    },
     "DescribeCloudDedicatedZoneWhiteList": {
       "document": "分页返回专属可用区信息及其白名单",
       "input": "DescribeCloudDedicatedZoneWhiteListRequest",
@@ -80,6 +87,148 @@
           "name": "FeatureDescription",
           "output_required": false,
           "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudDedicatedZoneResourceStatisticsInfo": {
+      "document": "专属可用区资源统计项数据详情，对应一个具体的垂直产品的资源统计项。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源统计项名称",
+          "example": "CPU",
+          "member": "string",
+          "name": "Item",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源统计项单位",
+          "example": "核",
+          "member": "string",
+          "name": "Unit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源总量",
+          "example": "300",
+          "member": "string",
+          "name": "Total",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已用资源",
+          "example": "16",
+          "member": "string",
+          "name": "Usage",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "已用资源占比",
+          "example": "5.33%",
+          "member": "string",
+          "name": "UsageRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余资源",
+          "example": "284",
+          "member": "string",
+          "name": "Remain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "剩余资源占比",
+          "example": "94.67%",
+          "member": "string",
+          "name": "RemainRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本周一零点资源使用率",
+          "example": "17.29%",
+          "member": "string",
+          "name": "ThisMondayUsageRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "本周资源增长比例",
+          "example": "0.50%",
+          "member": "string",
+          "name": "ThisMondayUsageGrowthRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上周资源增长比例",
+          "example": "-0.12%",
+          "member": "string",
+          "name": "LastMondayUsageGrowthRate",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CloudDedicatedZoneResourceSummaryInfo": {
+      "document": "专属可用区资源水位数据详情，对应一个具体的垂直产品。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "产品名称",
+          "example": "云服务器",
+          "member": "string",
+          "name": "ProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "SubProductName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "资源统计详情",
+          "example": "无",
+          "member": "CloudDedicatedZoneResourceStatisticsInfo",
+          "name": "Statistics",
+          "output_required": false,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -226,6 +375,43 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneResourceSummaryRequest": {
+      "document": "DescribeCloudDedicatedZoneResourceSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "专属可用区唯一标识",
+          "example": "cdz-8wbc41r9",
+          "member": "string",
+          "name": "CdzId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCloudDedicatedZoneResourceSummaryResponse": {
+      "document": "DescribeCloudDedicatedZoneResourceSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "资源水位详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CloudDedicatedZoneResourceSummaryInfo",
+          "name": "ResourceSummarySet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

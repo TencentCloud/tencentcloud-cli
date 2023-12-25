@@ -52,6 +52,14 @@
         "title": "获取歌曲伴奏链接(脱敏)"
       }
     ],
+    "DescribeKTVMusicAccompanySegmentUrlVip": [
+      {
+        "document": "获取歌曲伴奏片段链接（会员）",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKTVMusicAccompanySegmentUrlVip\n<公共请求参数>\n\n{\n    \"AppName\": \"Mtest\",\n    \"UserId\": \"James\",\n    \"MusicId\": \"mid-GHJAIQP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Status\": 0,\n        \"Url\": \"abc\",\n        \"ExtName\": \"abc\",\n        \"SegmentBegin\": 0,\n        \"SegmentEnd\": 0,\n        \"FileSize\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "获取歌曲伴奏片段链接（会员）"
+      }
+    ],
     "DescribeKTVMusicsByTag": [
       {
         "document": "获取标签歌曲信息",
@@ -116,6 +124,14 @@
         "title": "获取用户信息"
       }
     ],
+    "DescribeVipUserInfo": [
+      {
+        "document": "获取会员信息",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeVipUserInfo\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"James\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AnchorId\": \"James\",\n        \"EndTime\": \"2023-12-28 11:53:47\",\n        \"IsVip\": 1,\n        \"RequestId\": \"75d1a921-a3c1-4cdf-9834-b9eef2130bc0\",\n        \"RoomId\": \"123\",\n        \"Status\": 1\n    }\n}",
+        "title": "获取会员信息"
+      }
+    ],
     "DestroyKTVRobot": [
       {
         "document": "",
@@ -130,6 +146,14 @@
         "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RechargeLiveVip\n<公共请求参数>\n\n{\n    \"AppName\": \"test\",\n    \"UserId\": \"test\",\n    \"TradeSerialNo\": \"TradeSerialNo1\",\n    \"RoomId\": \"123\",\n    \"VipDays\": 31,\n    \"GiveType\": \"room_card\"\n}",
         "output": "{\n    \"Response\": {\n        \"LiveVipUserInfo\": {\n            \"LiveVipEndTime\": \"2023-07-10T18:17:37+08:00\",\n            \"LiveVipStatus\": \"LiveVip\"\n        },\n        \"RequestId\": \"RequestId\"\n    }\n}",
         "title": "充值直播会员"
+      }
+    ],
+    "RechargeVip": [
+      {
+        "document": "会员充值",
+        "input": "POST / HTTP/1.1\nHost: yinsuda.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RechargeVip\n<公共请求参数>\n\n{\n    \"AppName\": \"mtest_James\",\n    \"UserId\": \"123\",\n    \"RoomId\": \"908\",\n    \"VipDays\": 31,\n    \"AnchorId\": \"123\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateTime\": \"2023-11-27 20:21:33\",\n        \"OrderNo\": \"11258768abf2dc9b05021467e\",\n        \"PartnerNo\": \"fs\",\n        \"RequestId\": \"f09060bf-d902-4bfc-a2e2-531c3214b371\"\n    }\n}",
+        "title": "会员充值"
       }
     ],
     "SearchKTVMusics": [

@@ -35,6 +35,13 @@
       "output": "DescribeKTVMusicAccompanySegmentUrlResponse",
       "status": "online"
     },
+    "DescribeKTVMusicAccompanySegmentUrlVip": {
+      "document": "获取歌曲伴奏高潮的开始、结束时间，可用于抢唱",
+      "input": "DescribeKTVMusicAccompanySegmentUrlVipRequest",
+      "name": "获取歌曲伴奏片段链接（会员）",
+      "output": "DescribeKTVMusicAccompanySegmentUrlVipResponse",
+      "status": "online"
+    },
     "DescribeKTVMusicsByTag": {
       "document": "通过标签过滤歌曲列表。",
       "input": "DescribeKTVMusicsByTagRequest",
@@ -91,6 +98,13 @@
       "output": "DescribeUserInfoResponse",
       "status": "online"
     },
+    "DescribeVipUserInfo": {
+      "document": "获取会员信息：获取用户是否开通会员",
+      "input": "DescribeVipUserInfoRequest",
+      "name": "获取会员信息",
+      "output": "DescribeVipUserInfoResponse",
+      "status": "online"
+    },
     "DestroyKTVRobot": {
       "document": "销毁机器人，机器人退出 RTC 房间。",
       "input": "DestroyKTVRobotRequest",
@@ -103,6 +117,13 @@
       "input": "RechargeLiveVipRequest",
       "name": "充值直播会员",
       "output": "RechargeLiveVipResponse",
+      "status": "online"
+    },
+    "RechargeVip": {
+      "document": "充值会员",
+      "input": "RechargeVipRequest",
+      "name": "充值会员",
+      "output": "RechargeVipResponse",
       "status": "online"
     },
     "SearchKTVMusics": {
@@ -615,6 +636,111 @@
           "name": "OtherSegments",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlVipRequest": {
+      "document": "DescribeKTVMusicAccompanySegmentUrlVip请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "歌曲 Id ",
+          "example": "mid-test",
+          "member": "string",
+          "name": "MusicId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeKTVMusicAccompanySegmentUrlVipResponse": {
+      "document": "DescribeKTVMusicAccompanySegmentUrlVip返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "0:成功获取 1:歌曲下架 2:无权限 3: 非包月会员 4:没有对应的链接",
+          "example": "1",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伴奏链接\n",
+          "example": "http://xxxx",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "伴奏类型，如mkv，mp3等\n",
+          "example": "mkv",
+          "member": "string",
+          "name": "ExtName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高潮开始时间\n",
+          "example": "12452323",
+          "member": "int64",
+          "name": "SegmentBegin",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "高潮结束时间\n",
+          "example": "1234566",
+          "member": "int64",
+          "name": "SegmentEnd",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "链接文件大小 (单位:字节)\n",
+          "example": "无",
+          "member": "int64",
+          "name": "FileSize",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -1250,6 +1376,92 @@
           "member": "UserInfo",
           "name": "UserInfo",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVipUserInfoRequest": {
+      "document": "DescribeVipUserInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVipUserInfoResponse": {
+      "document": "DescribeVipUserInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否是会员。（0:不是会员 1:是会员）",
+          "example": "无",
+          "member": "int64",
+          "name": "IsVip",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "主播id",
+          "example": "无",
+          "member": "string",
+          "name": "AnchorId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "房间id",
+          "example": "无",
+          "member": "string",
+          "name": "RoomId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会员过期时间",
+          "example": "无",
+          "member": "string",
+          "name": "EndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "会员状态。（-1:未开通过；1:已开通，未过期；2:已开通，已过期）",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": false
         },
         {
@@ -2103,6 +2315,99 @@
           "member": "LiveVipUserInfo",
           "name": "LiveVipUserInfo",
           "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RechargeVipRequest": {
+      "document": "RechargeVip请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用名称。",
+          "example": "app-test",
+          "member": "string",
+          "name": "AppName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户标识。",
+          "example": "test",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间Id。",
+          "example": "23431",
+          "member": "string",
+          "name": "RoomId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "充值会员天数。(取值有：31、93、186、372)",
+          "example": "31",
+          "member": "int64",
+          "name": "VipDays",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "主播id。",
+          "example": "78976",
+          "member": "string",
+          "name": "AnchorId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RechargeVipResponse": {
+      "document": "RechargeVip返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "厂商订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "PartnerNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "TME订单号。",
+          "example": "无",
+          "member": "string",
+          "name": "OrderNo",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订单创建时间。",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {

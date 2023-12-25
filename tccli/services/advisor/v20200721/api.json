@@ -1,5 +1,12 @@
 {
   "actions": {
+    "DescribeArchAsync": {
+      "document": "异步拉取架构最新版本的详情",
+      "input": "DescribeArchAsyncRequest",
+      "name": "异步拉取架构详情",
+      "output": "DescribeArchAsyncResponse",
+      "status": "online"
+    },
     "DescribeDownloadTask": {
       "document": "获取扫描报告下载链接",
       "input": "DescribeDownloadTaskRequest",
@@ -88,6 +95,43 @@
         }
       ],
       "usage": "out"
+    },
+    "DescribeArchAsyncRequest": {
+      "document": "DescribeArchAsync请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "架构ID",
+          "example": "无",
+          "member": "string",
+          "name": "ArchId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeArchAsyncResponse": {
+      "document": "DescribeArchAsync返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "任务UUID",
+          "example": "任务UUID",
+          "member": "string",
+          "name": "DescribeArchTaskId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeDownloadTaskRequest": {
       "document": "DescribeDownloadTask请求参数结构体",

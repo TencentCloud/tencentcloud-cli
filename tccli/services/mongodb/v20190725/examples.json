@@ -234,8 +234,8 @@
     ],
     "ModifyDBInstanceSpec": [
       {
-        "document": "",
-        "input": "https://mongodb.tencentcloudapi.com/?Action=ModifyDBInstanceSpec\n&InstanceId=cmgo-p8vnipr5\n&Memory=4\n&Volume=250\n&<公共请求参数>",
+        "document": "调整云数据库实例配置",
+        "input": "POST / HTTP/1.1\nHost: mongodb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyDBInstanceSpec\n<公共请求参数>\n\n{\n    \"InstanceId\": \"cmgo-p8vn****\",\n    \"Volume\": \"250\",\n    \"Memory\": \"4\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"d88095e5-50e8-4245-a0cf-993a536f9b20\",\n        \"DealId\": \"7142863\"\n    }\n}",
         "title": "调整云数据库实例配置"
       }
