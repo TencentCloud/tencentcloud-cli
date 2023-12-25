@@ -1963,7 +1963,7 @@
         },
         {
           "disabled": false,
-          "document": "要生成WEB嵌入界面的类型, 可以选择的值如下: \n\n<ul>\n<li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成修改模板的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同文档的嵌入页面</li>\n<li>PREVIEW_FLOW_DETAIL：生成预览合同详情的嵌入页面</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成扩展服务的嵌入页面</li>\n</ul>",
+          "document": "要生成WEB嵌入界面的类型, 可以选择的值如下: \n\n<ul>\n<li>CREATE_SEAL: 生成创建印章的嵌入页面</li>\n<li>CREATE_TEMPLATE：生成创建模板的嵌入页面</li>\n<li>MODIFY_TEMPLATE：生成修改模板的嵌入页面</li>\n<li>PREVIEW_TEMPLATE：生成预览模板的嵌入页面</li>\n<li>PREVIEW_FLOW：生成预览合同文档的嵌入页面（支持移动端）</li>\n<li>PREVIEW_FLOW_DETAIL：生成预览合同详情的嵌入页面（仅支持PC端）</li>\n<li>PREVIEW_SEAL_LIST：生成预览印章列表的嵌入页面</li>\n<li>PREVIEW_SEAL_DETAIL：生成预览印章详情的嵌入页面</li>\n<li>EXTEND_SERVICE：生成扩展服务的嵌入页面</li>\n</ul>",
           "example": "MODIFY_TEMPLATE",
           "member": "string",
           "name": "EmbedType",
@@ -8493,7 +8493,7 @@
         },
         {
           "disabled": false,
-          "document": "表单K-V对列表",
+          "document": "发起方角色的填写控件的填充内容。\n\n注：只有在控制台编辑模板时，<font color=\"red\">归属给发起方</font>的填写控件（如下图）才能在创建文档的时候进行内容填充。(<font color=\"red\">白名单功能需要联系对接经理开通，否则模板编辑时无法将填写控件分配给发起方</font>)。\n![image](https://qcloudimg.tencent-cloud.cn/raw/b1d3978140ee2b44e2c9fdc96e467a5d.png)",
           "example": "表单K-V对列表",
           "member": "FormField",
           "name": "FormFields",

@@ -7,7 +7,7 @@ Input:
 ```
 tccli vod EnhanceMediaQuality --cli-unfold-argument  \
     --FileId 5285485487985271487 \
-    --Definition 10
+    --Definition 100
 ```
 
 Output: 

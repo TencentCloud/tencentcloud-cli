@@ -85,7 +85,7 @@
       "status": "online"
     },
     "CreateEnhanceMediaTemplate": {
-      "document": "创建音画质重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n创建音画质重生模板。",
       "input": "CreateEnhanceMediaTemplateRequest",
       "name": "创建音画质重生模板",
       "output": "CreateEnhanceMediaTemplateResponse",
@@ -141,7 +141,7 @@
       "status": "online"
     },
     "CreateRebuildMediaTemplate": {
-      "document": "创建视频重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n创建视频重生模板。",
       "input": "CreateRebuildMediaTemplateRequest",
       "name": "创建视频重生模板",
       "output": "CreateRebuildMediaTemplateResponse",
@@ -267,7 +267,7 @@
       "status": "online"
     },
     "DeleteEnhanceMediaTemplate": {
-      "document": "删除音画质重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n删除音画质重生模板。",
       "input": "DeleteEnhanceMediaTemplateRequest",
       "name": "删除音画质重生模板",
       "output": "DeleteEnhanceMediaTemplateResponse",
@@ -330,7 +330,7 @@
       "status": "online"
     },
     "DeleteRebuildMediaTemplate": {
-      "document": "删除视频重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n删除视频重生模板。",
       "input": "DeleteRebuildMediaTemplateRequest",
       "name": "删除视频重生模板",
       "output": "DeleteRebuildMediaTemplateResponse",
@@ -505,7 +505,7 @@
       "status": "online"
     },
     "DescribeEnhanceMediaTemplates": {
-      "document": "获取音画质重生模板列表。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n获取音画质重生模板列表。",
       "input": "DescribeEnhanceMediaTemplatesRequest",
       "name": "获取音画质重生模板列表",
       "output": "DescribeEnhanceMediaTemplatesResponse",
@@ -624,7 +624,7 @@
       "status": "online"
     },
     "DescribeRebuildMediaTemplates": {
-      "document": "获取视频重生模板列表。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n获取视频重生模板列表。",
       "input": "DescribeRebuildMediaTemplatesRequest",
       "name": "获取视频重生模板列表",
       "output": "DescribeRebuildMediaTemplatesResponse",
@@ -750,7 +750,7 @@
       "status": "online"
     },
     "EnhanceMediaByTemplate": {
-      "document": "使用模板发起音画质重生。",
+      "document": "该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。\n使用模板发起音画质重生。",
       "input": "EnhanceMediaByTemplateRequest",
       "name": "使用模板发起音画质重生",
       "output": "EnhanceMediaByTemplateResponse",
@@ -862,7 +862,7 @@
       "status": "online"
     },
     "ModifyEnhanceMediaTemplate": {
-      "document": "修改音画质重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n修改音画质重生模板。",
       "input": "ModifyEnhanceMediaTemplateRequest",
       "name": "修改音画质重生模板",
       "output": "ModifyEnhanceMediaTemplateResponse",
@@ -925,7 +925,7 @@
       "status": "online"
     },
     "ModifyRebuildMediaTemplate": {
-      "document": "修改视频重生模板。",
+      "document": "该 API 已经<font color=red>不再维护</font>，新版 [音画质重生](https://cloud.tencent.com/document/product/266/102571) 接口使用预置模板，详情请参见 [音画质重生模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。\n修改视频重生模板。",
       "input": "ModifyRebuildMediaTemplateRequest",
       "name": "修改视频重生模板",
       "output": "ModifyRebuildMediaTemplateResponse",
@@ -1072,14 +1072,14 @@
       "status": "online"
     },
     "RebuildMedia": {
-      "document": "发起音画质重生",
+      "document": "该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。\n发起音画质重生",
       "input": "RebuildMediaRequest",
       "name": "发起音画质重生",
       "output": "RebuildMediaResponse",
       "status": "online"
     },
     "RebuildMediaByTemplate": {
-      "document": "使用模板发起视频重生。",
+      "document": "该 API 已经<font color=red>不再维护</font>，请使用新版接口 [音画质重生](https://cloud.tencent.com/document/api/266/102571)。\n使用模板发起视频重生。",
       "input": "RebuildMediaByTemplateRequest",
       "name": "使用模板发起视频重生",
       "output": "RebuildMediaByTemplateResponse",
@@ -17163,8 +17163,8 @@
         },
         {
           "disabled": false,
-          "document": "音画质重生模板 ID，请联系腾讯云获取。",
-          "example": "10",
+          "document": "音画质重生模板 ID。\n针对典型的使用场景，云点播提供了多个[预置模板](https://cloud.tencent.com/document/product/266/102586#50604b3f-0286-4a10-a3f7-18218116aff7)。",
+          "example": "100",
           "member": "uint64",
           "name": "Definition",
           "required": true,
@@ -17172,7 +17172,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -29454,7 +29454,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",

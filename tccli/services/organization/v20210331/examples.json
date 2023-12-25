@@ -52,7 +52,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateOrganizationMember\n<公共请求参数>\n\n{\n    \"Remark\": \"test\",\n    \"Name\": \"test\",\n    \"NodeId\": \"27\",\n    \"AccountName\": \"test\",\n    \"PermissionIds\": [\n        1,\n        2\n    ],\n    \"PolicyType\": \"Finical\",\n    \"PayUin\": \"\",\n    \"IdentityRoleID\": [\n        1\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"Uin\": 100001919,\n        \"RequestId\": \"1a556fac-cd38-4732-86ef-6283d6abddd7\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Uin\": 111111111111,\n        \"RequestId\": \"1a556fac-cd38-4732-86ef-6283d6abddd7\"\n    }\n}",
         "title": "创建组织成员"
       }
     ],

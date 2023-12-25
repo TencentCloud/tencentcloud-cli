@@ -668,7 +668,7 @@
         {
           "disabled": false,
           "document": "关系策略。取值：Financial",
-          "example": "Finical",
+          "example": "Financial",
           "member": "string",
           "name": "PolicyType",
           "required": true,
@@ -758,7 +758,7 @@
           "example": "100019119",
           "member": "int64",
           "name": "Uin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1901,7 +1901,7 @@
           "example": "1234",
           "member": "int64",
           "name": "OrgId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1911,7 +1911,7 @@
           "example": "10001",
           "member": "int64",
           "name": "HostUin",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1921,7 +1921,7 @@
           "example": "test",
           "member": "string",
           "name": "NickName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1931,7 +1931,7 @@
           "example": "1",
           "member": "int64",
           "name": "OrgType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1941,7 +1941,7 @@
           "example": "true",
           "member": "bool",
           "name": "IsManager",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -1951,7 +1951,7 @@
           "example": "Finical",
           "member": "string",
           "name": "OrgPolicyType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1961,7 +1961,7 @@
           "example": "财务策略",
           "member": "string",
           "name": "OrgPolicyName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1971,7 +1971,7 @@
           "example": "无",
           "member": "OrgPermission",
           "name": "OrgPermission",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1981,7 +1981,7 @@
           "example": "100",
           "member": "int64",
           "name": "RootNodeId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1991,7 +1991,7 @@
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2001,7 +2001,7 @@
           "example": "2021-03-12 12:00:00",
           "member": "string",
           "name": "JoinTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2011,7 +2011,7 @@
           "example": "Allow",
           "member": "string",
           "name": "IsAllowQuit",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2021,7 +2021,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PayUin",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2031,7 +2031,7 @@
           "example": "\"\"",
           "member": "string",
           "name": "PayName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -2041,7 +2041,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsAssignManager",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
@@ -2051,7 +2051,7 @@
           "example": "false",
           "member": "bool",
           "name": "IsAuthManager",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         },
