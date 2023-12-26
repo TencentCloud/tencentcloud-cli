@@ -16,17 +16,25 @@ Output:
         "TotalCount": 1,
         "TranscodeTemplateSet": [
             {
-                "Definition": 1008,
+                "Definition": "1008",
                 "Container": "mp4",
                 "Name": "模板1",
-                "Comment": null,
-                "Type": 0,
+                "Comment": "test",
+                "Type": "Custom",
                 "RemoveVideo": 0,
                 "RemoveAudio": 0,
+                "SegmentType": "",
+                "ContainerType": "Video",
+                "TEHDConfig": null,
                 "VideoTemplate": {
                     "Codec": "libx264",
                     "Fps": 24,
+                    "FillType": "black",
                     "Bitrate": 256,
+                    "CodecTag": "hvc1",
+                    "Gop": 0,
+                    "Vcrf": 23,
+                    "PreserveHDRSwitch": "OFF",
                     "ResolutionAdaptive": "open",
                     "Width": 0,
                     "Height": 0

@@ -4151,7 +4151,7 @@
         },
         {
           "disabled": false,
-          "document": "0: 非大小写敏感\n1: 大小写敏感\n默认 0",
+          "document": "0: 大小写敏感\n1: 非大小写敏感\n默认为0",
           "example": "“1”",
           "member": "string",
           "name": "LowerCaseTableName",

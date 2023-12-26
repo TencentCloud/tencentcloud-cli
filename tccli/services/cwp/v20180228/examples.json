@@ -737,8 +737,8 @@
     "DescribeAssetMachineDetail": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetMachineDetail\n<公共请求参数>\n\n{\n    \"Quuid\": \"xx\",\n    \"Uuid\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"MachineDetail\": {\n            \"Uuid\": \"xx\",\n            \"PartitionCount\": 1,\n            \"SerialNumber\": \"xx\",\n            \"DiskLoad\": \"xx\",\n            \"EndTime\": \"xx\",\n            \"MachineIp\": \"xx\",\n            \"InstallTime\": \"xx\",\n            \"Status\": 1,\n            \"UpdateTime\": \"xx\",\n            \"MachineWanIp\": \"xx\",\n            \"InstanceId\": \"xx\",\n            \"MachineName\": \"xx\",\n            \"LastLiveTime\": \"xx\",\n            \"Cpu\": \"xx\",\n            \"BootTime\": \"xx\",\n            \"BuyTime\": \"xx\",\n            \"AgentVersion\": \"xx\",\n            \"OfflineTime\": \"xx\",\n            \"OsType\": \"xx\",\n            \"DeviceVersion\": \"xx\",\n            \"OsInfo\": \"xx\",\n            \"MemLoad\": \"xx\",\n            \"ProjectId\": 1,\n            \"Disks\": [\n                {\n                    \"Used\": 1,\n                    \"Name\": \"xx\",\n                    \"Percent\": 0.0,\n                    \"Path\": \"xx\",\n                    \"Type\": \"xx\",\n                    \"Size\": 1\n                }\n            ],\n            \"CoreVersion\": \"xx\",\n            \"CpuLoad\": \"xx\",\n            \"DiskSize\": 1,\n            \"MemSize\": 1,\n            \"RiskStatus\": \"xx\",\n            \"Producer\": \"xx\",\n            \"CpuSize\": 1,\n            \"ProtectDays\": 1,\n            \"Quuid\": \"xx\",\n            \"NetCards\": [\n                {\n                    \"DnsServer\": \"xx\",\n                    \"Ip\": \"xx\",\n                    \"Mac\": \"xx\",\n                    \"Ipv6\": \"xx\",\n                    \"GateWay\": \"xx\",\n                    \"Name\": \"xx\"\n                }\n            ],\n            \"ProtectLevel\": 1\n        },\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetMachineDetail\n<公共请求参数>\n\n{\n    \"Quuid\": \"7dc822ab-1eaa-d469-67e2-0eed63e8be9c\",\n    \"Uuid\": \"7dc822ab-1eaa-d469-67e2-0eed63e8be9c\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MachineDetail\": {\n            \"Quuid\": \"7dc822ab-1eaa-d469-67e2-0eed63e8be9c\",\n            \"Uuid\": \"7dc822ab-1eaa-d469-67e2-0eed63e8be9c\",\n            \"MachineIp\": \"172.16.255.135\",\n            \"MachineName\": \"aaa_worker\",\n            \"ProjectId\": 0,\n            \"OsInfo\": \"TencentOS Server 3.1 (TK4)\",\n            \"Cpu\": \"\",\n            \"MemSize\": 0,\n            \"MemLoad\": \"\",\n            \"DiskSize\": 0,\n            \"DiskLoad\": \"\",\n            \"PartitionCount\": 0,\n            \"MachineWanIp\": \"172.16.255.135\",\n            \"CpuSize\": 0,\n            \"CpuLoad\": \"\",\n            \"ProtectLevel\": 2,\n            \"RiskStatus\": \"未知\",\n            \"ProtectDays\": 0,\n            \"BuyTime\": \"2023-12-26 10:30:02\",\n            \"EndTime\": \"2024-01-10 10:51:11\",\n            \"CoreVersion\": \"\",\n            \"OsType\": \"\",\n            \"AgentVersion\": \"5.1.0.150\",\n            \"InstallTime\": \"2023-12-26 10:22:03\",\n            \"BootTime\": \"\",\n            \"LastLiveTime\": \"2023-12-26 10:28:44\",\n            \"Producer\": \"\",\n            \"SerialNumber\": \"\",\n            \"DeviceVersion\": \"\",\n            \"Status\": 0,\n            \"CpuLoadVul\": \"50\",\n            \"FirstTime\": \"2023-12-26 10:28:44\",\n            \"NetCards\": [],\n            \"Disks\": [],\n            \"OfflineTime\": \"\",\n            \"InstanceId\": \"ins-aaaa\",\n            \"UpdateTime\": \"--\",\n            \"MachineExtraInfo\": {\n                \"WanIP\": \"172.16.255.135\",\n                \"PrivateIP\": \"172.16.255.135\",\n                \"NetworkType\": 1,\n                \"NetworkName\": \"vpc-aaaa\",\n                \"InstanceID\": \"ins-aaaa\",\n                \"HostName\": \"aaa_worker\"\n            }\n        },\n        \"RequestId\": \"c063defb-30b0-4667-b042-e06ecaa19f09\"\n    }\n}",
         "title": "获取资产管理主机资源详细信息"
       }
     ],
@@ -816,9 +816,9 @@
     ],
     "DescribeAssetTotalCount": [
       {
-        "document": "",
+        "document": "获取所有资源数量",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetTotalCount\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"Types\": [\n            {\n                \"Value\": 0,\n                \"Key\": \"xx\",\n                \"Desc\": \"xx\"\n            }\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"058e4d84-10de-4943-8b30-2a50f204f7c7\",\n        \"Types\": [\n            {\n                \"Desc\": \"\",\n                \"Key\": \"system\",\n                \"NewCount\": 0,\n                \"Value\": 531\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"account\",\n                \"NewCount\": 0,\n                \"Value\": 6526360\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"port\",\n                \"NewCount\": 0,\n                \"Value\": 2355\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"app\",\n                \"NewCount\": 8,\n                \"Value\": 3193\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"process\",\n                \"NewCount\": 21,\n                \"Value\": 21749346\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"database\",\n                \"NewCount\": 1,\n                \"Value\": 18\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"webapp\",\n                \"NewCount\": 0,\n                \"Value\": 4\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"webservice\",\n                \"NewCount\": 0,\n                \"Value\": 17\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"webframe\",\n                \"NewCount\": 0,\n                \"Value\": 5\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"weblocation\",\n                \"NewCount\": 0,\n                \"Value\": 11\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"jar\",\n                \"NewCount\": 0,\n                \"Value\": 1086\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"initservice\",\n                \"NewCount\": 0,\n                \"Value\": 1922\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"plantask\",\n                \"NewCount\": 0,\n                \"Value\": 2950\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"env\",\n                \"NewCount\": 0,\n                \"Value\": 5914763\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"coremodule\",\n                \"NewCount\": 0,\n                \"Value\": 22143622\n            },\n            {\n                \"Desc\": \"\",\n                \"Key\": \"package\",\n                \"NewCount\": 0,\n                \"Value\": 310039\n            }\n        ]\n    }\n}",
         "title": "获取所有资源数量"
       }
     ],
@@ -1576,7 +1576,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFileTamperRules\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Status\": 1,\n                \"Name\": \"xx\",\n                \"HostCount\": 1,\n                \"ModifyTime\": \"xx\",\n                \"CreateTime\": \"xx\",\n                \"RuleCategory\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"Status\": 1,\n                \"Name\": \"核心文件名称1\",\n                \"HostCount\": 1,\n                \"ModifyTime\": \"2023-01-01 00:00:00\",\n                \"CreateTime\": \"2023-01-01 00:00:00\",\n                \"RuleCategory\": 1,\n                \"Id\": 1,\n                \"IsGlobal\": 1,\n                \"Level\": 1,\n                \"WriteRuleCount\": 1,\n                \"ReadRuleCount\": 1,\n                \"ReadWriteRuleCount\": 1,\n                \"FileAction\": \"\",\n                \"AddWhiteType\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"354f4ac3-8546-4516-8c8a-69e3ab73aa8a\"\n    }\n}",
         "title": "核心文件监控事件列表"
       }
     ],
@@ -1958,10 +1958,10 @@
     ],
     "DescribeMalWareList": [
       {
-        "document": "入侵检测获取木马文件列表",
-        "input": "https://cwp.tencentcloudapi.com/?Action=DescribeMalWareList\n&Limit=10\n&Offset=0\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"MalWareList\": [\n            {\n                \"HostIp\": \"172.17.48.3\",\n                \"Uuid\": \"e7974a80-256d-11ea-a506-48d539a94c19\",\n                \"Id\": \"268598\",\n                \"FilePath\": \"/home/test/b.php\",\n                \"VirusName\": \"Script.Php.Small.bc\",\n                \"CreateTime\": \"2019-12-23 18:35:04\",\n                \"Status\": 4,\n                \"Alias\": \"ipv6_prod_linux1\",\n                \"FileCreateTime\": \"2019-12-23 18:35:04\",\n                \"FileModifierTime\": \"2019-12-23 18:35:04\",\n                \"LatestScanTime\": \"2019-12-23 18:35:04\",\n                \"Tags\": [\n                    \"xx\"\n                ]\n            }\n        ],\n        \"RequestId\": \"4234234\",\n        \"TotalCount\": 6952\n    }\n}",
-        "title": "获取木马文件列表"
+        "document": "获取木马列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMalWareList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"MalWareList\": [\n            {\n                \"Alias\": \"v_aaa\",\n                \"CheckPlatform\": \"1,2\",\n                \"CreateTime\": \"2023-12-22 16:25:44\",\n                \"FileCreateTime\": \"\",\n                \"FileExists\": 1,\n                \"FileModifierTime\": \"\",\n                \"FilePath\": \"/root/aaa/061d0056bc2a3af43051b88a7ca30555\",\n                \"HostIp\": \"172.16.16.10\",\n                \"Id\": 160250,\n                \"LatestScanTime\": \"2023-12-25 16:34:50\",\n                \"Level\": 4,\n                \"MD5\": \"061d0056bc2a3af43051b88a7ca30555\",\n                \"MachineExtraInfo\": {\n                    \"HostName\": \"\",\n                    \"InstanceID\": \"ins-aaaa\",\n                    \"NetworkName\": \"\",\n                    \"NetworkType\": 0,\n                    \"PrivateIP\": \"172.16.16.10\",\n                    \"WanIP\": \"172.16.16.10\"\n                },\n                \"ProcessExists\": 0,\n                \"Quuid\": \"aaaaa-8c8d-4077-9acc-80ce542a6937\",\n                \"Status\": 4,\n                \"Tags\": [],\n                \"Uuid\": \"aaaaa-8c8d-4077-9acc-80ce542a6937\",\n                \"VirusName\": \"Win32.Trojan.Kryptik.Jmnw\"\n            }\n        ],\n        \"RequestId\": \"8a201811-8d1c-4545-b6b9-63be9b6ccafc\",\n        \"TotalCount\": 21780\n    }\n}",
+        "title": "获取木马列表"
       }
     ],
     "DescribeMaliciousRequestWhiteList": [
@@ -2974,9 +2974,9 @@
     ],
     "ExportAssetCoreModuleList": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetCoreModuleList\n<公共请求参数>\n\n{\n    \"Uuid\": \"xx\",\n    \"Quuid\": \"xx\",\n    \"By\": \"xx\",\n    \"Filters\": [\n        {\n            \"Values\": [\n                \"xx\"\n            ],\n            \"Name\": \"xx\",\n            \"ExactMatch\": true\n        }\n    ],\n    \"Order\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "document": "导出资产管理内核模块列表",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetCoreModuleList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"dc7fe338-c585-4a01-945d-80f7e966235e\",\n        \"TaskId\": \"1703557589\"\n    }\n}",
         "title": "导出资产管理内核模块列表"
       }
     ],
@@ -3088,7 +3088,7 @@
       {
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportAssetWebFrameList\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\",\n        \"TaskId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskId\": \"123\",\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "导出资产管理Web框架列表"
       }
     ],

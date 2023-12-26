@@ -260,6 +260,30 @@
     "serviceShortName": "mongodb"
   },
   "objects": {
+    "AddNodeList": {
+      "document": "修改实例节点详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的节点角色。\n- SECONDARY：Mongod 节点。\n- READONLY：只读节点。\n- MONGOS：Mongos 节点。",
+          "example": "SECONDARY",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点所对应的可用区。\n- 单可用区，所有节点在同一可用区。\n- 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置新增节点对应的可用区，且新增后必须满足任意2个可用区节点数大于第3个可用区原则。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
+    },
     "AssignProjectRequest": {
       "document": "AssignProject请求参数结构体",
       "members": [
@@ -4125,6 +4149,24 @@
           "name": "InMaintenance",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "新增节点属性列表。",
+          "example": "无",
+          "member": "AddNodeList",
+          "name": "AddNodeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "删除节点属性列表。",
+          "example": "无",
+          "member": "RemoveNodeList",
+          "name": "RemoveNodeList",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4388,6 +4430,39 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "RemoveNodeList": {
+      "document": "修改实例节点详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "需要删除的节点角色。\n- SECONDARY：Mongod 节点。\n- READONLY：只读节点。\n- MONGOS：Mongos 节点。",
+          "example": "SECONDARY",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要删除的节点 ID。分片集群须指定一组分片要删除的节点名称即可，其余分片对改组对齐。\n\n- 获取方式：登录 [MongoDB控制台](https://console.cloud.tencent.com/)，在**节点管理**页签，可获取**节点 ID**。\n- 特别说明：分片集群同一节点上的分片，仅需指定0分片节点 ID 即可。例如：cmgo-6hfk****_0-node-primary。",
+          "example": "cmgo-3iecwbfx_0-node-readonly0",
+          "member": "string",
+          "name": "NodeName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点所对应的可用区。\n- 单可用区，所有节点在同一可用区。\n- 多可用区：当前标准规格是三可用区分布，主从节点不在同一可用区，需注意配置所删除节点对应的可用区，且删除后必须满足任意2个可用区节点数大于第3个可用区原则。",
+          "example": "ap-guangzhou-2",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
         }
       ],
       "usage": "in"

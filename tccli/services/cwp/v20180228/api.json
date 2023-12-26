@@ -15785,7 +15785,7 @@
         {
           "disabled": false,
           "document": "主机安全客户端Uuid。",
-          "example": "uuid",
+          "example": "97d7cec6-0f2a-b636-e340-43f212dbb33c",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -18271,7 +18271,7 @@
           "example": "无",
           "member": "AssetMachineDetail",
           "name": "MachineDetail",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -18289,7 +18289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>MachineName  主机名称\n\n\n\nInstanceID  实例ID  \n\n \n\nIP   内网IP或公网IP</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "document": "过滤条件。\n<li>MachineName  主机名称</li>\n<li>InstanceID  实例ID  </li>\n<li>IP   内网IP或公网IP</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -18326,7 +18326,7 @@
         {
           "disabled": false,
           "document": "可选排序[FirstTime|PartitionCount]",
-          "example": "1",
+          "example": "FirstTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -18938,11 +18938,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "各项资源数量\nsystem : 资源监控\naccount: 账号\nport: 端口\nprocess: 进程\napp: 应用软件\ndatabase:数据库\nwebapp: Web应用\nwebframe: Web框架\nwebservice: Web服务\nweblocation: Web站点\njar: Jar包\ninitservice: 启动服务\nplanTask:计划任务\nenv:环境变量\ncoremoudle:内核模块",
+          "document": "各项资源数量\nsystem : 资源监控\naccount: 账号\nport: 端口\nprocess: 进程\napp: 应用软件\ndatabase:数据库\nwebapp: Web应用\nwebframe: Web框架\nwebservice: Web服务\nweblocation: Web站点\njar: Jar包\ninitservice: 启动服务\nplanTask:计划任务\nenv:环境变量\ncoremodule:内核模块",
           "example": "无",
           "member": "AssetKeyVal",
           "name": "Types",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19278,7 +19278,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>IP - String - 是否必填：否 - 主机ip</li>\n<li>MachineName - String - 是否必填：否 - 主机名称</li>\n<li>InstanceID - string - 是否必填：否 - 实例ID</li>\n<li>Name - String - 是否必填：否 - 账户名（模糊匹配）</li>\n<li>NameStrict - String - 是否必填：否 - 账户名（严格匹配）</li>\n<li>Uid - uint64 - 是否必填：否 - Uid</li>\n<li>Guid - uint64 - 是否必填：否 - Guid</li>\n<li>LoginTimeStart - String - 是否必填：否 - 开始时间，如：2021-01-11</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 结束时间，如：2021-01-11</li>\n<li>LoginType - uint64 - 是否必填：否 - 0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码 仅linux</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>Status - uint64 - 是否必填：否 - 账号状态：0-禁用；1-启用</li>\n<li>UserType - uint64 - 是否必填：否 - 账号类型：0访客用户，1标准用户，2管理员用户 仅windows</li>\n<li>IsDomain - uint64 - 是否必填：否 - 是否域账号：0 不是，1是 仅windows\n<li>IsRoot - uint64 - 是否必填：否 - 是否Root权限：0 不是，1是 仅linux\n<li>IsSudo - uint64 - 是否必填：否 - 是否Sudo权限：0 不是，1是 仅linux</li>\n<li>IsSshLogin - uint64 - 是否必填：否 - 是否ssh登录：0 不是，1是 仅linux</li>\n<li>ShellLoginStatus - uint64 - 是否必填：否 - 是否shell登录性，0不是；1是 仅linux</li>\n<li>PasswordStatus - uint64 - 是否必填：否 - 密码状态：1正常 2即将过期 3已过期 4已锁定 仅linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "document": "过滤条件。\n<li>IP - String - 是否必填：否 - 主机ip</li>\n<li>MachineName - String - 是否必填：否 - 主机名称</li>\n<li>InstanceID - string - 是否必填：否 - 实例ID</li>\n<li>Name - String - 是否必填：否 - 账户名（模糊匹配）</li>\n<li>NameStrict - String - 是否必填：否 - 账户名（严格匹配）</li>\n<li>Uid - uint64 - 是否必填：否 - Uid</li>\n<li>Guid - uint64 - 是否必填：否 - Guid</li>\n<li>LoginTimeStart - String - 是否必填：否 - 开始时间，如：2021-01-11</li>\n<li>LoginTimeEnd - String - 是否必填：否 - 结束时间，如：2021-01-11</li>\n<li>LoginType - uint64 - 是否必填：否 - 0-不可登录；1-只允许key登录；2只允许密码登录；3-允许key和密码 仅linux</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>Status - uint64 - 是否必填：否 - 账号状态：0-禁用；1-启用</li>\n<li>UserType - uint64 - 是否必填：否 - 账号类型：0访客用户，1标准用户，2管理员用户 仅windows</li>\n<li>IsDomain - uint64 - 是否必填：否 - 是否域账号：0 不是，1是 仅windows</li>\n<li>IsRoot - uint64 - 是否必填：否 - 是否Root权限：0 不是，1是 仅linux</li>\n<li>IsSudo - uint64 - 是否必填：否 - 是否Sudo权限：0 不是，1是 仅linux</li>\n<li>IsSshLogin - uint64 - 是否必填：否 - 是否ssh登录：0 不是，1是 仅linux</li>\n<li>ShellLoginStatus - uint64 - 是否必填：否 - 是否shell登录性，0不是；1是 仅linux</li>\n<li>PasswordStatus - uint64 - 是否必填：否 - 密码状态：1正常 2即将过期 3已过期 4已锁定 仅linux</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
           "example": "1",
           "member": "Filter",
           "name": "Filters",
@@ -19315,7 +19315,7 @@
         {
           "disabled": false,
           "document": "可选排序：[FirstTime|LoginTime|PasswordChangeTime|PasswordDuaTime]\nPasswordLockDays",
-          "example": "1",
+          "example": "LoginTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -24973,7 +24973,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>\n<li>Name- String - 规则名称/li>",
+          "document": "过滤条件。\n<li>RuleCategory- string- 规则类别  0=系统规则，1=用户规则</li>\n<li>Name- String - 规则名称</li>",
           "example": "[]",
           "member": "Filters",
           "name": "Filters",
@@ -25028,7 +25028,7 @@
           "example": "无",
           "member": "FileTamperRuleInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -25038,7 +25038,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -28623,7 +28623,7 @@
         {
           "disabled": false,
           "document": "检测排序 CreateTime",
-          "example": "xxx",
+          "example": "CreateTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -28632,7 +28632,7 @@
         {
           "disabled": false,
           "document": "排序方式 ASC,DESC",
-          "example": "xxx",
+          "example": "ASC",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -28650,7 +28650,7 @@
           "example": "[]",
           "member": "MalWareList",
           "name": "MalWareList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -28660,7 +28660,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -37701,7 +37701,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户</li>",
+          "document": "过滤条件。\n<li>Name- string - 是否必填：否 - 包名</li>\n<li>User- string - 是否必填：否 - 用户名</li>",
           "example": "1",
           "member": "AssetFilters",
           "name": "Filters",
@@ -37738,7 +37738,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38405,7 +38405,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rmp\n2:dpkg\n3:java\n4:system</li>",
+          "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 包 名</li>\n<li>StartTime - String - 是否必填：否 - 安装开始时间</li>\n<li>EndTime - String - 是否必填：否 - 安装开始时间</li>\n<li>Type - int - 是否必填：否 - 安装包类型：\n1:rpm\n2:dpkg\n3:java\n4:system</li>",
           "example": "1",
           "member": "Filter",
           "name": "Filters",
@@ -38442,6 +38442,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -38588,7 +38589,7 @@
         {
           "disabled": false,
           "document": "查询指定Quuid主机的信息",
-          "example": "1",
+          "example": "b495b6bb-ada7-2f99-868a-5d29af2bc8df",
           "member": "string",
           "name": "Quuid",
           "required": false,
@@ -38597,7 +38598,7 @@
         {
           "disabled": false,
           "document": "过滤条件。\n<li>Name - String - 是否必填：否 - 框架名</li>\n<li>Lang - String - 是否必填：否 - 框架语言:java/python</li>\n<li>Type - String - 是否必填：否 - 服务类型：\n0：全部\n1:Tomcat\n2:Apache\n3:Nginx\n4:WebLogic\n5:Websphere\n6:JBoss\n7:WildFly\n8:Jetty\n9:IHS\n10:Tengine</li>\n<li>OsType - String - 是否必填：否 - windows/linux</li>",
-          "example": "1",
+          "example": "无",
           "member": "Filter",
           "name": "Filters",
           "required": false,
@@ -38606,7 +38607,7 @@
         {
           "disabled": false,
           "document": "排序方式，asc升序 或 desc降序",
-          "example": "1",
+          "example": "asc",
           "member": "string",
           "name": "Order",
           "required": false,
@@ -38615,7 +38616,7 @@
         {
           "disabled": false,
           "document": "可选排序：[FirstTime|JarCount]",
-          "example": "1",
+          "example": "FirstTime",
           "member": "string",
           "name": "By",
           "required": false,
@@ -38633,7 +38634,7 @@
           "example": "1",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },

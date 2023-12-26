@@ -6,8 +6,8 @@ Input:
 
 ```
 tccli tcb CreateWxCloudBaseRunServerDBCluster --cli-unfold-argument  \
-    --EnvId xx \
-    --AccountPassword xx \
+    --EnvId env-test \
+    --AccountPassword pwd-test \
     --DbVersion 5.7
 ```
 
@@ -15,7 +15,7 @@ Output:
 ```
 {
     "Response": {
-        "RequestId": "xx"
+        "RequestId": "asdasda-asfdafs"
     }
 }
 ```

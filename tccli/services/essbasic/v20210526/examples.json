@@ -646,6 +646,20 @@
         "title": "生成到模板详情的控制台链接"
       }
     ],
+    "CreateFlowGroupSignReview": [
+      {
+        "document": "1.签署审核通过企业签署人（ApproverType 设置为ORGANIZATION）\n2.使用企业名称 + 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.通过该签署人的签署审核（该签署人可以进行签署操作）（ReviewType 设置为PASS）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowGroupSignReview\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"FlowGroupId\": \"yDSxIUUckpt1ea9hUx5oXYkSgVNJaxOE\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"可以签署\",\n    \"ApproverInfo\": {\n        \"ApproverType\": \"ORGANIZATION\",\n        \"ApproverName\": \"典子签\",\n        \"OrganizationName\": \"典子签示例企业\",\n        \"ApproverMobile\": \"18200000000\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1703576009516564064\"\n    }\n}",
+        "title": "示例1 通过企业名称+姓名+手机号通过某个企业签署人的签署阻断"
+      },
+      {
+        "document": "1.签署审核通过企业签署人（ApproverType 设置为PERSON）\n2.使用 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.拒绝（阻断）该签署人的签署操作 （ReviewType 设置为REJECT）",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowGroupSignReview\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyAppId\": \"\"\n    },\n    \"FlowGroupId\": \"yDSxIUUckpt1ea9hUx5oXYkSgVNJaxOE\",\n    \"ReviewType\": \"REJECT\",\n    \"ReviewMessage\": \"不能签署\",\n    \"ApproverInfo\": {\n        \"ApproverName\": \"典子谦\",\n        \"ApproverIdCardNumber\": \"620000198802020000\",\n        \"ApproverIdCardType\": \"ID_CARD\",\n        \"ApproverType\": \"PERSON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1703576009516564065\"\n    }\n}",
+        "title": "通过姓名+证件类型+证件号通过某个个人签署人的签署阻断"
+      }
+    ],
     "CreateFlowsByTemplates": [
       {
         "document": "双方企业均已认证 发起示例",

@@ -1,26 +1,18 @@
 **Example 1: 导出资产管理内核模块列表**
 
-
+导出资产管理内核模块列表
 
 Input: 
 
 ```
-tccli cwp ExportAssetCoreModuleList --cli-unfold-argument  \
-    --Uuid xx \
-    --Quuid xx \
-    --By xx \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --Filters.0.ExactMatch True \
-    --Order xx
-```
+tccli cwp ExportAssetCoreModuleList --cli-unfold-argument ```
 
 Output: 
 ```
 {
     "Response": {
-        "RequestId": "xx",
-        "TaskId": "xx"
+        "RequestId": "dc7fe338-c585-4a01-945d-80f7e966235e",
+        "TaskId": "1703557589"
     }
 }
 ```

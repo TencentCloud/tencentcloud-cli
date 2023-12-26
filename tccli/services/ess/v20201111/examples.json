@@ -436,6 +436,20 @@
         "title": "集团主企业代子企业创建一个有两份子合同的合同组签署流程（B2B、B2C）"
       }
     ],
+    "CreateFlowGroupSignReview": [
+      {
+        "document": "1.签署审核通过企业签署人（ApproverType 设置为ORGANIZATION）\n2.使用企业名称 + 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.通过该签署人的签署审核（该签署人可以进行签署操作）（ReviewType 设置为PASS）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowGroupSignReview\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowGroupId\": \"yDSxIUUckpt1ea9hUx5oXYkSgVNJaxOE\",\n    \"ReviewType\": \"PASS\",\n    \"ReviewMessage\": \"可以签署\",\n    \"ApproverInfo\": {\n        \"ApproverType\": \"ORGANIZATION\",\n        \"ApproverName\": \"典子签\",\n        \"OrganizationName\": \"典子签示例企业\",\n        \"ApproverMobile\": \"18200000000\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1703576009516564064\"\n    }\n}",
+        "title": "通过企业名称+姓名+手机号通过某个企业签署人的签署阻断"
+      },
+      {
+        "document": "1.签署审核通过企业签署人（ApproverType 设置为PERSON）\n2.使用 姓名 + 手机号 定位合同组内所有子合同的该签署人\n3.拒绝（阻断）该签署人的签署操作 （ReviewType 设置为REJECT）",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowGroupSignReview\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowGroupId\": \"yDAsIUUckpt1ea9hUx5oXYkSgVNJaxOE\",\n    \"ReviewType\": \"REJECT\",\n    \"ReviewMessage\": \"不能签署\",\n    \"ApproverInfo\": {\n        \"ApproverName\": \"典子谦\",\n        \"ApproverIdCardNumber\": \"620000198802020000\",\n        \"ApproverIdCardType\": \"ID_CARD\",\n        \"ApproverType\": \"PERSON\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"s1703576009516564065\"\n    }\n}",
+        "title": "通过姓名+证件类型+证件号通过某个个人签署人的签署阻断"
+      }
+    ],
     "CreateFlowReminds": [
       {
         "document": "针对合同流程中尚未完成签署的用户发送催办消息。\n部分合同流程可以催办，而部分则无法催办。\n通过查看返回的详细信息清单，可了解各合同流程的催办结果。",

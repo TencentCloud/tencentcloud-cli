@@ -13624,7 +13624,7 @@
           "example": "test",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13634,7 +13634,7 @@
           "example": "blackbox-exporter",
           "member": "string",
           "name": "Kind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13644,7 +13644,7 @@
           "example": "{\\\"name\\\":\\\"test\\\",\\\"kind\\\":\\\"blackbox-exporter\\\",\\\"spec\\\":{\\\"in",
           "member": "string",
           "name": "Content",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13654,7 +13654,7 @@
           "example": "1",
           "member": "int64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13664,7 +13664,7 @@
           "example": "MySQL",
           "member": "string",
           "name": "Category",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13674,7 +13674,7 @@
           "example": "root:**@localhost:3306",
           "member": "string",
           "name": "InstanceDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13684,7 +13684,7 @@
           "example": "http://xx",
           "member": "string",
           "name": "GrafanaDashboardURL",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }

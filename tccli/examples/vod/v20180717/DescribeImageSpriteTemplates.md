@@ -19,6 +19,7 @@ Output:
                 "Definition": 10001,
                 "Type": "Custom",
                 "Name": "雪碧图模板1",
+                "Format": "jpg",
                 "Comment": "test",
                 "CreateTime": "2018-10-01T10:00:00Z",
                 "UpdateTime": "2018-10-01T10:00:00Z",

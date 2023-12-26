@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateHeadTailTemplate": {
-      "document": "创建片头片尾模板。",
+      "document": "创建片头片尾模板。\n- 最大支持模版数量为 100 个。",
       "input": "CreateHeadTailTemplateRequest",
       "name": "创建片头片尾模板",
       "output": "CreateHeadTailTemplateResponse",
@@ -526,7 +526,7 @@
       "status": "online"
     },
     "DescribeFileAttributes": {
-      "document": "用于异步获取文件属性。\n- 当前仅支持获取源文件的 Md5。\n- 对输入文件为 HLS 或 DASH 的情况，仅获取索引文件的属性。",
+      "document": "用于异步获取文件属性。\n- 当前仅支持获取源文件的 Md5、Sha1。\n- 对输入文件为 HLS 或 DASH 的情况，仅获取索引文件的属性。",
       "input": "DescribeFileAttributesRequest",
       "name": "获取文件属性",
       "output": "DescribeFileAttributesResponse",
@@ -7052,7 +7052,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -7631,7 +7631,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -7650,7 +7650,7 @@
           "example": "24820810452266399",
           "member": "string",
           "name": "FileId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7660,7 +7660,7 @@
           "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/f0.mp4",
           "member": "string",
           "name": "MediaUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7670,7 +7670,7 @@
           "example": "http://251000333.vod2.myqcloud.com/6c0f1c00vodgzp251000333/dee2125c24820810452266399/24820810452266400.jpg",
           "member": "string",
           "name": "CoverUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -7802,7 +7802,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -8174,7 +8174,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -8692,8 +8692,8 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "无",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -8792,7 +8792,7 @@
         {
           "disabled": false,
           "document": "截帧间隔，单位为秒。当不填时，默认截帧间隔为 1 秒，最小值为 0.5 秒。",
-          "example": "无",
+          "example": "1",
           "member": "float",
           "name": "ScreenshotInterval",
           "required": false,
@@ -8810,6 +8810,7 @@
           "example": "30",
           "member": "int64",
           "name": "Definition",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9072,7 +9073,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -9091,7 +9092,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ClassId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9273,7 +9274,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -9391,7 +9392,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "125000",
           "member": "uint64",
           "name": "SubAppId",
@@ -9446,6 +9447,7 @@
           "example": "10000",
           "member": "int64",
           "name": "Definition",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9472,7 +9474,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -9509,6 +9511,7 @@
           "example": "1008",
           "member": "uint64",
           "name": "Definition",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -9766,7 +9769,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "int64",
           "name": "SubAppId",
@@ -10648,7 +10651,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -10974,21 +10977,21 @@
         },
         {
           "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1490012345",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "需要开启 CDN 加速的区域：\n<li>Chinese Mainland：中国境内（不包含港澳台）。</li>\n<li>Outside Chinese Mainland: 中国境外。</li>\n<li>Global: 全球范围。</li>\n如果没有设置 AccelerateArea， 点播会根据用户在腾讯云设置的地域信息自动开通中国境内或者中国境外的 CDN 加速。开启中国境内加速的域名，需要先[备案域名](/document/product/243/18905)。",
           "example": "Chinese Mainland",
           "member": "string",
           "name": "AccelerateArea",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "1490012345",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -11274,7 +11277,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11310,7 +11313,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11382,7 +11385,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11418,7 +11421,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -11454,7 +11457,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11526,7 +11529,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "25100",
           "member": "uint64",
           "name": "SubAppId",
@@ -11562,8 +11565,8 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "0",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -11598,7 +11601,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11634,7 +11637,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "int64",
           "name": "SubAppId",
@@ -11787,7 +11790,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -11931,7 +11934,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -11967,7 +11970,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12039,7 +12042,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12111,7 +12114,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12174,7 +12177,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12220,7 +12223,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12230,7 +12233,7 @@
           "example": "无",
           "member": "AIAnalysisTemplateItem",
           "name": "AIAnalysisTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12248,7 +12251,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12294,6 +12297,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12303,6 +12307,7 @@
           "example": "无",
           "member": "AIRecognitionTemplateItem",
           "name": "AIRecognitionTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12403,7 +12408,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -12422,7 +12427,7 @@
           "example": "无",
           "member": "MediaClassInfo",
           "name": "ClassInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -12440,7 +12445,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -12495,7 +12500,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -12505,7 +12510,7 @@
           "example": "无",
           "member": "AnimatedGraphicsTemplate",
           "name": "AnimatedGraphicsTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -12550,7 +12555,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -12669,7 +12674,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。\n当该字段为1时，表示以管理员身份查询所有子应用（含主应用）的用量合计，此时时间粒度只支持天粒度。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -12761,7 +12766,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "0",
           "member": "uint64",
           "name": "SubAppId",
@@ -13166,8 +13171,8 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "123",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -13185,7 +13190,7 @@
           "example": "无",
           "member": "SimpleAesEdkPair",
           "name": "KeyList",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13436,7 +13441,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "15400000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -13491,7 +13496,7 @@
           "example": "15400000001-GetMediaAttributes-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -13641,7 +13646,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "125000",
           "member": "uint64",
           "name": "SubAppId",
@@ -13687,6 +13692,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13696,6 +13702,7 @@
           "example": "无",
           "member": "HeadTailTemplate",
           "name": "HeadTailTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13713,7 +13720,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -13768,6 +13775,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13777,6 +13785,7 @@
           "example": "无",
           "member": "ImageProcessingTemplate",
           "name": "ImageProcessingTemplateSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13849,7 +13858,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -13904,7 +13913,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -13914,7 +13923,7 @@
           "example": "无",
           "member": "ImageSpriteTemplate",
           "name": "ImageSpriteTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -13941,7 +13950,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "int64",
           "name": "SubAppId",
@@ -14088,7 +14097,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -14171,7 +14180,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1450001234",
           "member": "uint64",
           "name": "SubAppId",
@@ -14199,7 +14208,7 @@
           "example": "无",
           "member": "PlayStatInfo",
           "name": "PlayStatInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14676,7 +14685,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -14695,7 +14704,7 @@
           "example": "10",
           "member": "int64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14705,7 +14714,7 @@
           "example": "11901",
           "member": "int64",
           "name": "TotalDuration",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14715,7 +14724,7 @@
           "example": "无",
           "member": "StatDataItem",
           "name": "Data",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14890,7 +14899,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -14945,7 +14954,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -14955,7 +14964,7 @@
           "example": "无",
           "member": "SampleSnapshotTemplate",
           "name": "SampleSnapshotTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -14973,7 +14982,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -15028,7 +15037,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15038,7 +15047,7 @@
           "example": "无",
           "member": "SnapshotByTimeOffsetTemplate",
           "name": "SnapshotByTimeOffsetTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15235,7 +15244,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -15254,7 +15263,7 @@
           "example": "无",
           "member": "StorageRegionInfo",
           "name": "StorageRegionInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15725,7 +15734,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "145xxx",
           "member": "uint64",
           "name": "SubAppId",
@@ -15807,6 +15816,7 @@
           "example": "无",
           "member": "TaskSimpleInfo",
           "name": "TaskSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -15816,6 +15826,7 @@
           "example": "taskId6",
           "member": "string",
           "name": "ScrollToken",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -15833,7 +15844,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -15906,7 +15917,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -15916,7 +15927,7 @@
           "example": "无",
           "member": "TranscodeTemplate",
           "name": "TranscodeTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16008,7 +16019,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -16063,7 +16074,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -16073,7 +16084,7 @@
           "example": "无",
           "member": "WatermarkTemplate",
           "name": "WatermarkTemplateSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -16519,7 +16530,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -17821,7 +17832,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -17876,7 +17887,7 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -18368,7 +18379,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -18387,7 +18398,7 @@
           "example": "[]",
           "member": "string",
           "name": "NotExistFileIdSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -19386,7 +19397,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -19626,7 +19637,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -19897,7 +19908,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "251000333",
           "member": "uint64",
           "name": "SubAppId",
@@ -23063,7 +23074,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -23162,7 +23173,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -23297,7 +23308,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -23396,7 +23407,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -23513,7 +23524,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -23549,7 +23560,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -23666,7 +23677,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -23702,7 +23713,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -23846,8 +23857,8 @@
         },
         {
           "disabled": false,
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "0",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -23882,7 +23893,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "125000",
           "member": "uint64",
           "name": "SubAppId",
@@ -23963,7 +23974,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24098,7 +24109,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "无",
           "member": "int64",
           "name": "SubAppId",
@@ -24161,7 +24172,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -24352,7 +24363,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24397,7 +24408,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24498,7 +24509,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24651,7 +24662,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "string",
           "name": "SubAppId",
@@ -24768,7 +24779,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24831,7 +24842,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -24921,7 +24932,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25038,7 +25049,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25128,7 +25139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1400000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -25173,7 +25184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1400000001",
           "member": "uint64",
           "name": "SubAppId",
@@ -25218,7 +25229,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25344,8 +25355,8 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "0",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -25479,7 +25490,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25515,7 +25526,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25578,7 +25589,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -25669,7 +25680,7 @@
           "example": "http://xxx/xxx/abc.jpg",
           "member": "string",
           "name": "ImageUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -25696,7 +25707,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -27412,7 +27423,7 @@
         },
         {
           "disabled": false,
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -27467,7 +27478,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -27559,6 +27570,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
+          "member": "uint64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
           "document": "API 已经<font color='red'>不再维护</font>。推荐使用的替代 API 请参考接口描述。",
           "example": "无",
           "member": "MediaInputInfo",
@@ -27637,15 +27657,6 @@
           "name": "SessionId",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
-          "example": "123",
-          "member": "uint64",
-          "name": "SubAppId",
-          "required": false,
-          "type": "int"
         }
       ],
       "type": "object"
@@ -28252,8 +28263,8 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
-          "example": "无",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
+          "example": "123",
           "member": "uint64",
           "name": "SubAppId",
           "required": false,
@@ -28262,7 +28273,7 @@
         {
           "disabled": false,
           "document": "媒体名称。",
-          "example": "无",
+          "example": "media.mp4",
           "member": "string",
           "name": "MediaName",
           "required": false,
@@ -28271,7 +28282,7 @@
         {
           "disabled": false,
           "document": "要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。",
-          "example": "无",
+          "example": "xxx/cover.jpg",
           "member": "string",
           "name": "CoverUrl",
           "required": false,
@@ -28280,7 +28291,7 @@
         {
           "disabled": false,
           "document": "媒体后续任务操作，详见[上传指定任务流](https://cloud.tencent.com/document/product/266/9759)。",
-          "example": "无",
+          "example": "MyProcedure",
           "member": "string",
           "name": "Procedure",
           "required": false,
@@ -28289,7 +28300,7 @@
         {
           "disabled": false,
           "document": "媒体文件过期时间，格式按照 ISO 8601 标准表示，详见 [ISO 日期格式说明](https://cloud.tencent.com/document/product/266/11732#I)。",
-          "example": "无",
+          "example": "2020-09-07T00:00:00+08:00",
           "member": "datetime_iso",
           "name": "ExpireTime",
           "required": false,
@@ -28298,7 +28309,7 @@
         {
           "disabled": false,
           "document": "指定上传园区，仅适用于对上传地域有特殊需求的用户：\n<li>不填默认上传至您的[默认地域](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)。</li>\n<li>若指定上传园区，请先确认[上传存储设置](https://cloud.tencent.com/document/product/266/14059?from=11329#.E5.AD.98.E5.82.A8.E5.9C.B0.E5.9F.9F.E6.AD.A5.E9.AA.A4)已经开启相应的存储地域。</li>",
-          "example": "无",
+          "example": "ap-beijing",
           "member": "string",
           "name": "StorageRegion",
           "required": false,
@@ -28307,7 +28318,7 @@
         {
           "disabled": false,
           "document": "分类ID，用于对媒体进行分类管理，可通过[创建分类](https://cloud.tencent.com/document/product/266/7812)接口，创建分类，获得分类 ID。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ClassId",
           "required": false,
@@ -28316,7 +28327,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，当指定 Procedure 任务后，任务流状态变更回调将返回该字段值，最长 1000 个字符。",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "SessionContext",
           "required": false,
@@ -28325,7 +28336,7 @@
         {
           "disabled": false,
           "document": "用于去重的识别码，如果三天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "SessionId",
           "required": false,
@@ -28334,7 +28345,7 @@
         {
           "disabled": false,
           "document": "保留字段，特殊用途时使用。",
-          "example": "无",
+          "example": "ExtInfo1",
           "member": "string",
           "name": "ExtInfo",
           "required": false,
@@ -28343,7 +28354,7 @@
         {
           "disabled": false,
           "document": "来源上下文，用于透传用户请求信息，[上传完成回调](/document/product/266/7830) 将返回该字段值，最长 250 个字符。",
-          "example": "无",
+          "example": "123",
           "member": "string",
           "name": "SourceContext",
           "required": false,
@@ -28361,6 +28372,7 @@
           "example": "125xxxxxx07-pull-893dc41e6fdc22dcf24aa6e9c61cp94",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -29312,7 +29324,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "string",
           "name": "SubAppId",
@@ -30853,7 +30865,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "0",
           "member": "uint64",
           "name": "SubAppId",
@@ -30961,7 +30973,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -31016,7 +31028,7 @@
           "example": "125xxx65-procedurev2-bffb15f07530b57bc1aabb01fac74bca",
           "member": "string",
           "name": "TaskId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -31870,7 +31882,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -32566,7 +32578,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -32915,7 +32927,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -33057,7 +33069,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1",
           "member": "uint64",
           "name": "SubAppId",
@@ -33562,7 +33574,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",

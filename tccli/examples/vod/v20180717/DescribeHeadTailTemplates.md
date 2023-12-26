@@ -26,7 +26,9 @@ Output:
                 "Comment": "模板描述",
                 "TailCandidateSet": [
                     "1230xxx99"
-                ]
+                ],
+                "CreateTime": "2023-01-01T10:00:00Z",
+                "UpdateTime": "2023-01-01T10:00:00Z"
             }
         ]
     }

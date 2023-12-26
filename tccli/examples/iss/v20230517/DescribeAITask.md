@@ -42,6 +42,7 @@ Output:
             "ChannelList": [
                 "**********************"
             ],
+            "CreatedTime": "2023-06-15 15:50:47",
             "Desc": "测试",
             "Name": "ai-task",
             "Status": "off",
@@ -60,7 +61,8 @@ Output:
                     },
                     "Tag": "AI"
                 }
-            ]
+            ],
+            "UpdatedTime": "2023-06-15 15:50:47"
         },
         "RequestId": "971360c6-adf5-4845-9202-fd43f13ae0ba"
     }

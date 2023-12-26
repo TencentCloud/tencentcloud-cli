@@ -17,13 +17,15 @@ Output:
                 "Level": 0,
                 "ClassName": "其他",
                 "ParentId": -1,
-                "SubClassIdSet": null
+                "Name": "abc",
+                "SubClassIdSet": []
             },
             {
                 "ClassId": 1,
                 "Level": 0,
                 "ClassName": "自定义一级分类",
                 "ParentId": -1,
+                "Name": "1",
                 "SubClassIdSet": [
                     2,
                     3
@@ -34,6 +36,7 @@ Output:
                 "Level": 2,
                 "ClassName": "自定义二级分类",
                 "ParentId": 1,
+                "Name": "2",
                 "SubClassIdSet": [
                     4,
                     5
@@ -44,21 +47,8 @@ Output:
                 "Level": 2,
                 "ClassName": "自定义二级分类",
                 "ParentId": 1,
-                "SubClassIdSet": null
-            },
-            {
-                "ClassId": 4,
-                "Level": 3,
-                "ClassName": "自定义三级分类",
-                "ParentId": 2,
-                "SubClassIdSet": null
-            },
-            {
-                "ClassId": 5,
-                "Level": 3,
-                "ClassName": "自定义三级分类",
-                "ParentId": 2,
-                "SubClassIdSet": null
+                "Name": "3",
+                "SubClassIdSet": []
             }
         ],
         "RequestId": "requestId"

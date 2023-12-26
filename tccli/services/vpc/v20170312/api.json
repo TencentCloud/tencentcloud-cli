@@ -20595,6 +20595,24 @@
           "name": "CcnDescription",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启等价路由功能。`False` 不开启，`True` 开启。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteECMPFlag",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启路由重叠功能。`False` 不开启，`True` 开启。",
+          "example": "True",
+          "member": "bool",
+          "name": "RouteOverlapFlag",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

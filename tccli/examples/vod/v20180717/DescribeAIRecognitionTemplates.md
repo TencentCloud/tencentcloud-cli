@@ -27,7 +27,10 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All"
+                    "FaceLibrary": "All",
+                    "Score": 0,
+                    "UserDefineLibraryLabelSet": [],
+                    "DefaultLibraryLabelSet": []
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -37,7 +40,10 @@ Output:
                     "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "ON",
+                    "SrcLanguage": "",
+                    "SubtitleFormat": "",
+                    "SubtitleFormats": []
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
@@ -87,7 +93,10 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "ON",
-                    "FaceLibrary": "All"
+                    "FaceLibrary": "All",
+                    "Score": 0,
+                    "UserDefineLibraryLabelSet": [],
+                    "DefaultLibraryLabelSet": []
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "ON"
@@ -97,7 +106,10 @@ Output:
                     "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "ON"
+                    "Switch": "ON",
+                    "SrcLanguage": "",
+                    "SubtitleFormat": "",
+                    "SubtitleFormats": []
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
@@ -123,7 +135,10 @@ Output:
                 },
                 "FaceConfigure": {
                     "Switch": "OFF",
-                    "FaceLibrary": "All"
+                    "FaceLibrary": "All",
+                    "Score": 0,
+                    "UserDefineLibraryLabelSet": [],
+                    "DefaultLibraryLabelSet": []
                 },
                 "OcrFullTextConfigure": {
                     "Switch": "OFF"
@@ -133,7 +148,10 @@ Output:
                     "LabelSet": []
                 },
                 "AsrFullTextConfigure": {
-                    "Switch": "OFF"
+                    "Switch": "OFF",
+                    "SrcLanguage": "",
+                    "SubtitleFormat": "",
+                    "SubtitleFormats": []
                 },
                 "AsrWordsConfigure": {
                     "Switch": "OFF",
