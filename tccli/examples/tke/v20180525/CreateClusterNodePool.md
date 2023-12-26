@@ -39,6 +39,8 @@ tccli tke CreateClusterNodePool --cli-unfold-argument  \
     --Taints.0.Effect NoExecute \
     --Labels.0.Name node-pool \
     --Labels.0.Value xxxx \
+    --Annotations.0.Name tke.cloud.tencent.com/test \
+    --Annotations.0.Value true \
     --LaunchConfigurePara {"LaunchConfigurationName":"","InstanceType":"S6.8XLARGE64","SystemDisk":{"DiskType":"CLOUD_BSSD","DiskSize":50},"DataDisks":[{"DiskType":"CLOUD_BSSD","DiskSize":500}],"InternetAccessible":{"InternetChargeType":"TRAFFIC_POSTPAID_BY_HOUR","InternetMaxBandwidthOut":0,"PublicIpAssigned":false},"LoginSettings":{"KeyIds":["skey-xxxxx"]},"SecurityGroupIds":["sg-xxxxxx"],"EnhancedService":{"SecurityService":{"Enabled":true},"MonitorService":{"Enabled":true}},"HostNameSettings":{"HostName":"foundation-node","HostNameStyle":"UNIQUE"},"InstanceNameSettings":{"InstanceName":"node","InstanceNameStyle":"UNIQUE"},"InstanceChargeType":"PREPAID","InstanceChargePrepaid":{"Period":1,"RenewFlag":"NOTIFY_AND_AUTO_RENEW"}} \
     --Name node-pool \
     --NodePoolOs centos7.6.0_x64 \

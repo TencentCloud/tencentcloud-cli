@@ -1,14 +1,14 @@
 **Example 1: 调整云数据库实例配置**
 
-
+调整云数据库实例配置
 
 Input: 
 
 ```
 tccli mongodb ModifyDBInstanceSpec --cli-unfold-argument  \
-    --InstanceId cmgo-p8vnipr5 \
-    --Memory 4 \
-    --Volume 250
+    --InstanceId cmgo-p8vn**** \
+    --Volume 250 \
+    --Memory 4
 ```
 
 Output: 

@@ -30,6 +30,7 @@ Output:
                 },
                 "DeployStatus": "Deploying",
                 "HTTPSConfig": {
+                    "CloudCertId": "abc",
                     "CertExpireTime": "2030-01-23T07:25:52Z"
                 },
                 "UrlSignatureAuthPolicy": {

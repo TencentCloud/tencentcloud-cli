@@ -1914,6 +1914,34 @@
       ],
       "usage": "out"
     },
+    "AnnotationValue": {
+      "document": "注释",
+      "members": [
+        {
+          "disabled": false,
+          "document": "注释键",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注释值",
+          "example": "\"\"",
+          "member": "string",
+          "name": "Value",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "AppChart": {
       "document": "app所支持的chart",
       "members": [
@@ -4681,7 +4709,7 @@
         {
           "disabled": false,
           "document": "AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440",
-          "example": "{\\\"AutoScalingGroupName\\\":\\\"\\\",\\\"MaxSize\\\":1,\\\"MinSize\\\":0,\\\"Des",
+          "example": "{\\\"AutoScalingGroupName\\\":\\\"\\\",\\\"MaxSize\\\":20,\\\"MinSize\\\":0,\\\"DesiredCapacity\\\":2,\\\"VpcId\\\":\\\"vpc-2ln96dly\\\",\\\"SubnetIds\\\":[\\\"subnet-40bgrdix\\\"],\\\"MultiZoneSubnetPolicy\\\":\\\"PRIORITY\\\",\\\"RetryPolicy\\\":\\\"IMMEDIATE_RETRY\\\",\\\"ServiceSettings\\\":{\\\"ScalingMode\\\":\\\"CLASSIC_SCALING\\\"}}",
           "member": "string",
           "name": "AutoScalingGroupPara",
           "required": true,
@@ -4690,7 +4718,7 @@
         {
           "disabled": false,
           "document": "LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447",
-          "example": "{\\\"LaunchConfigurationName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"S3.SMALL1\\\"",
+          "example": "{\\\"LaunchConfigurationName\\\":\\\"\\\",\\\"InstanceType\\\":\\\"S6.8XLARGE64\\\",\\\"SystemDisk\\\":{\\\"DiskType\\\":\\\"CLOUD_BSSD\\\",\\\"DiskSize\\\":50},\\\"DataDisks\\\":[{\\\"DiskType\\\":\\\"CLOUD_BSSD\\\",\\\"DiskSize\\\":500}],\\\"InternetAccessible\\\":{\\\"InternetChargeType\\\":\\\"TRAFFIC_POSTPAID_BY_HOUR\\\",\\\"InternetMaxBandwidthOut\\\":0,\\\"PublicIpAssigned\\\":false},\\\"LoginSettings\\\":{\\\"KeyIds\\\":[\\\"skey-xxxxx\\\"]},\\\"SecurityGroupIds\\\":[\\\"sg-xxxxxx\\\"],\\\"EnhancedService\\\":{\\\"SecurityService\\\":{\\\"Enabled\\\":true},\\\"MonitorService\\\":{\\\"Enabled\\\":true}},\\\"HostNameSettings\\\":{\\\"HostName\\\":\\\"foundation-node\\\",\\\"HostNameStyle\\\":\\\"UNIQUE\\\"},\\\"InstanceNameSettings\\\":{\\\"InstanceName\\\":\\\"node\\\",\\\"InstanceNameStyle\\\":\\\"UNIQUE\\\"},\\\"InstanceChargeType\\\":\\\"PREPAID\\\",\\\"InstanceChargePrepaid\\\":{\\\"Period\\\":1,\\\"RenewFlag\\\":\\\"NOTIFY_AND_AUTO_RENEW\\\"}}",
           "member": "string",
           "name": "LaunchConfigurePara",
           "required": true,
@@ -4698,7 +4726,7 @@
         },
         {
           "disabled": false,
-          "document": "InstanceAdvancedSettings 示例参数",
+          "document": "InstanceAdvancedSettings",
           "example": "无",
           "member": "InstanceAdvancedSettings",
           "name": "InstanceAdvancedSettings",
@@ -4738,6 +4766,15 @@
           "example": "无",
           "member": "Taint",
           "name": "Taints",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "节点Annotation 列表",
+          "example": "[]",
+          "member": "AnnotationValue",
+          "name": "Annotations",
           "required": false,
           "type": "list"
         },
@@ -18211,6 +18248,15 @@
         },
         {
           "disabled": false,
+          "document": "节点 Annotation 列表",
+          "example": "[]",
+          "member": "AnnotationValue",
+          "name": "Annotations",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "是否开启伸缩",
           "example": "false",
           "member": "bool",
@@ -19033,6 +19079,16 @@
           "member": "Taint",
           "name": "Taints",
           "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点 Annotation 列表",
+          "example": "[]",
+          "member": "AnnotationValue",
+          "name": "Annotations",
+          "output_required": false,
           "type": "list",
           "value_allowed_null": false
         },

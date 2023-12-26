@@ -36,7 +36,7 @@
       "status": "online"
     },
     "ChannelCreateBatchQuickSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署。\n**注意**：\n1. 该接口目前仅支持签署人类型是**个人签署方的批量签署场景**(ApproverType=PERSON)。\n2. 该接口可生成批量签署链接的C端签署人**必须仅有手写签名和时间类型的签署控件**，**不支持填写控件** 。\n3. 请确保C端签署人在批量签署合同中**为待签署状态**，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。\n4. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6.  因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成个人用户的批量签署链接, 暂时不支持企业端签署。\n**注意**：\n1. 该接口目前仅支持签署人类型是**个人签署方的批量签署场景**(ApproverType=PERSON)。\n2. 该接口可生成批量签署链接的C端签署人**必须仅有手写签名(控件类型为SIGN_SIGNATURE)和时间类型的签署控件**，**不支持填写控件** 。\n3. 请确保C端签署人在批量签署合同中**为待签署状态**，如需顺序签署请待前一位参与人签署完成后，再创建该C端用户的签署链接。\n4. 该签署链接**有效期为30分钟**，过期后将失效，如需签署可重新创建批量签署链接 。\n5. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档(分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式)，如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n6.  因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateBatchQuickSignUrlRequest",
       "name": "获取H5批量签署链接",
       "output": "ChannelCreateBatchQuickSignUrlResponse",
@@ -386,7 +386,7 @@
       "status": "online"
     },
     "DescribeChannelSealPolicyWorkflowUrl": {
-      "document": "生成渠道子客用印申请审批小程序链接，链接类型（通过H5唤起小程序或通过APP跳转的方式查看）",
+      "document": "制定渠道分支客户的印刷申请审批微型应用程序链接，链接模式（通过H5触发微型应用程序或通过APP跳转进行查看）。\n此刻，代理参数中的OpenId 必须为审批者的openId，生成的链接必须由该用户启动，其他用户则无审批权限。",
       "input": "DescribeChannelSealPolicyWorkflowUrlRequest",
       "name": "生成渠道子客用印申请审批链接",
       "output": "DescribeChannelSealPolicyWorkflowUrlResponse",
@@ -1634,7 +1634,7 @@
         },
         {
           "disabled": false,
-          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li></ul>",
+          "document": "指定批量签署合同的签名类型，可传递以下值：\n<ul><li>**0**：手写签名(默认)</li>\n<li>**1**：OCR楷体</li>\n<li>**2**：姓名印章</li>\n<li>**3**：图片印章</li>\n<li>**4**：系统签名</li></ul>\n注：\n<ul><li>默认情况下，签名类型为手写签名</li>\n<li>您可以传递多种值，表示可用多种签名类型。</li>\n<li>该参数会覆盖您合同中的签名类型，若您在发起合同时限定了签名类型(赋值签名类型给ComponentTypeLimit)，请将这些签名类型赋予此参数</li></ul>",
           "example": "[0, 1, 2, 3, 4]",
           "member": "int64",
           "name": "SignatureTypes",
@@ -6463,7 +6463,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业员工的标识OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人, 仅展示已经实名的经办人信息",
+          "document": "第三方平台子客企业员工的标识OpenId，GenerateType为\"CHANNEL\"时可用，指定到具体参与人, 仅展示已经实名的经办人信息\n\n注： \n如果传进来的<font color=\"red\">OpenId已经实名并且加入企业， 则忽略Name，IdCardType，IdCardNumber，Mobile这四个入参</font>（会用此OpenId实名的身份证和登录的手机号覆盖）",
           "example": "n9527",
           "member": "string",
           "name": "OpenId",
@@ -7293,7 +7293,7 @@
         },
         {
           "disabled": false,
-          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,  有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n\n注: `此功能为白名单功能，使用前请联系对接的客户经理沟通。`",
+          "document": "是否获取模板预览链接。\n\n<ul><li>**false**：不获取（默认）</li>\n<li>**true**：获取</li></ul>\n\n设置为true之后， 返回参数PreviewUrl，为模板的H5预览链接,  有效期5分钟。可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n",
           "example": "无",
           "member": "bool",
           "name": "WithPreviewUrl",
@@ -7944,7 +7944,7 @@
         },
         {
           "disabled": false,
-          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成\n\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程",
+          "document": "第三方平台子客企业员工的唯一标识，长度不能超过64，只能由字母和数字组成\n\n当签署方为同一第三方平台下的员工时，该字段若不指定，则发起【待领取】的流程\n\n注： \n如果传进来的<font color=\"red\">OpenId已经实名并且加入企业， 则忽略Name，IdCardType，IdCardNumber，Mobile这四个入参</font>（会用此OpenId实名的身份证和登录的手机号覆盖）",
           "example": "userdianziqian",
           "member": "string",
           "name": "OpenId",
@@ -10727,7 +10727,7 @@
         {
           "disabled": false,
           "document": "模板ID，模板的唯一标识",
-          "example": "无",
+          "example": "yDSLKUUckpoqt3vzUP7DfuSBwaJfz7M1",
           "member": "string",
           "name": "TemplateId",
           "output_required": true,
@@ -10737,7 +10737,7 @@
         {
           "disabled": false,
           "document": "模板名",
-          "example": "无",
+          "example": "西红柿采购模板",
           "member": "string",
           "name": "TemplateName",
           "output_required": true,
@@ -10747,7 +10747,7 @@
         {
           "disabled": false,
           "document": "模板描述信息",
-          "example": "无",
+          "example": "2023年西红柿采购模板",
           "member": "string",
           "name": "Description",
           "output_required": true,
@@ -10766,7 +10766,7 @@
         },
         {
           "disabled": false,
-          "document": "模板中的签署参与方列表",
+          "document": "此模块需要签署的各个参与方的角色列表。RecipientId标识每个参与方角色对应的唯一标识符，用于确定此角色的信息。",
           "example": "无",
           "member": "Recipient",
           "name": "Recipients",
@@ -10776,7 +10776,7 @@
         },
         {
           "disabled": false,
-          "document": "模板中的签署控件列表",
+          "document": "此模版中的签署控件列表",
           "example": "无",
           "member": "Component",
           "name": "SignComponents",
@@ -10807,7 +10807,7 @@
         {
           "disabled": false,
           "document": "模板的创建者信息，电子签系统用户ID",
-          "example": "无",
+          "example": "锈铁",
           "member": "string",
           "name": "Creator",
           "output_required": true,
@@ -10817,7 +10817,7 @@
         {
           "disabled": false,
           "document": "模板创建的时间戳，格式为Unix标准时间戳（秒）",
-          "example": "无",
+          "example": "1699259970",
           "member": "int64",
           "name": "CreatedOn",
           "output_required": true,
@@ -10826,8 +10826,8 @@
         },
         {
           "disabled": false,
-          "document": "模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n（此功能开放需要联系客户经理）\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "模板的H5预览链接,有效期5分钟。\n可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "https://embed.beta.qian.tencent.cn/document-url-preview?channel=PROXYCHANNEL&scene=SINGLEPAGE&code=yDSxNUUckptbbq64UEly7FaCkhsBlSLj&codeType=QUICK&businessType=TEMPLATE&businessId=yDSLVUUckpo3pub6UE5dPdv8pkDsrbEn&channel=PROXYCHANNEL",
           "member": "string",
           "name": "PreviewUrl",
           "output_required": true,
@@ -10847,7 +10847,7 @@
         {
           "disabled": false,
           "document": "本模板关联的第三方应用平台企业模板ID",
-          "example": "无",
+          "example": "yDSLKUUckpoqcjljUyzyvt7xDAq3564r",
           "member": "string",
           "name": "ChannelTemplateId",
           "output_required": true,
@@ -10857,7 +10857,7 @@
         {
           "disabled": false,
           "document": "本模板关联的三方应用平台平台企业模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "西红柿采购模板",
           "member": "string",
           "name": "ChannelTemplateName",
           "output_required": true,
@@ -10867,7 +10867,7 @@
         {
           "disabled": false,
           "document": "0-需要子客企业手动领取平台企业的模板(默认); \n1-平台自动设置子客模板\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "example": "1",
           "member": "int64",
           "name": "ChannelAutoSave",
           "output_required": true,
@@ -10876,8 +10876,8 @@
         },
         {
           "disabled": false,
-          "document": "模板版本，全数字字符。\n默认为空，初始版本为yyyyMMdd001。\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "模板版本，由全数字字符组成。\n默认为空，模板版本号由日期和序号组成，初始版本为yyyyMMdd001，yyyyMMdd002表示第二个版本，以此类推。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20231106004",
           "member": "string",
           "name": "TemplateVersion",
           "output_required": true,
@@ -10886,8 +10886,8 @@
         },
         {
           "disabled": false,
-          "document": "模板可用状态：\n1启用（默认）\n2停用\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "模板可用状态的取值通常为以下两种：\n\n<ul><li>1：启用（默认），表示模板处于启用状态，可以被用户正常使用。</li>\n<li>2：停用，表示模板处于停用状态，禁止用户使用该模板。</li></ul>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
           "member": "int64",
           "name": "Available",
           "output_required": true,

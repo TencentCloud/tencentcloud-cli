@@ -3428,6 +3428,15 @@
           "name": "Ipv6SubnetCidrBlocks",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "用于保证请求幂等性的字符串。该字符串由客户生成，需保证不同请求之间唯一，最大值不超过64个ASCII字符。若不指定该参数，则无法保证请求的幂等性。",
+          "example": "无",
+          "member": "string",
+          "name": "ClientToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -3441,6 +3450,7 @@
           "example": "[{ \"SubnetId\": \"subnet-oy2v3j92\", \"Ipv6CidrBlock\": \"2402:4e00:1717:8700::/64\", \"ISPType\": \"BGP\"} ]",
           "member": "Ipv6SubnetCidrBlock",
           "name": "Ipv6SubnetCidrBlockSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

@@ -335,7 +335,7 @@
         },
         {
           "disabled": false,
-          "document": "选中字段",
+          "document": "选中字段，如ProbeTime、TransferTime、TransferSize等。",
           "example": "[ProbeTime]",
           "member": "string",
           "name": "SelectedFields",
@@ -411,6 +411,15 @@
           "example": "DXF1ZXJ5QW5kRmV0Y2gBAAAAAQEPczgWVU1RMC12VHhSUWlYa1I0dnU4aXlvUQ==",
           "member": "string",
           "name": "ScrollID",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "详情数据下载",
+          "example": "“download\"",
+          "member": "string",
+          "name": "QueryFlag",
           "required": false,
           "type": "string"
         }

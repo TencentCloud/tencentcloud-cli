@@ -1,5 +1,33 @@
 {
   "actions": {
+    "CreateInstanceNew": {
+      "document": "通过API创建集群",
+      "input": "CreateInstanceNewRequest",
+      "name": "集群创建",
+      "output": "CreateInstanceNewResponse",
+      "status": "online"
+    },
+    "DescribeClusterConfigs": {
+      "document": "获取集群的最新的几个配置文件（config.xml、metrika.xml、user.xml）的内容，显示给用户",
+      "input": "DescribeClusterConfigsRequest",
+      "name": "获取集群配置文件内容",
+      "output": "DescribeClusterConfigsResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseAuditDownload": {
+      "document": "下载数据库审计日志",
+      "input": "DescribeDatabaseAuditDownloadRequest",
+      "name": "下载数据库审计日志",
+      "output": "DescribeDatabaseAuditDownloadResponse",
+      "status": "online"
+    },
+    "DescribeDatabaseAuditRecords": {
+      "document": "获取数据库审计记录",
+      "input": "DescribeDatabaseAuditRecordsRequest",
+      "name": "获取数据库审计记录",
+      "output": "DescribeDatabaseAuditRecordsResponse",
+      "status": "online"
+    },
     "DescribeInstance": {
       "document": "根据集群ID查询某个集群的具体信息",
       "input": "DescribeInstanceRequest",
@@ -14,11 +42,81 @@
       "output": "DescribeInstanceNodesResponse",
       "status": "online"
     },
+    "DescribeInstanceNodesInfo": {
+      "document": "获取BE/FE节点角色",
+      "input": "DescribeInstanceNodesInfoRequest",
+      "name": "获取BE、FE节点角色",
+      "output": "DescribeInstanceNodesInfoResponse",
+      "status": "online"
+    },
+    "DescribeInstanceState": {
+      "document": "集群详情页中显示集群状态、流程进度等",
+      "input": "DescribeInstanceStateRequest",
+      "name": "获取集群状态",
+      "output": "DescribeInstanceStateResponse",
+      "status": "online"
+    },
     "DescribeInstances": {
       "document": "获取集群列表",
       "input": "DescribeInstancesRequest",
       "name": "获取集群列表",
       "output": "DescribeInstancesResponse",
+      "status": "online"
+    },
+    "DescribeSlowQueryRecords": {
+      "document": "获取慢查询列表",
+      "input": "DescribeSlowQueryRecordsRequest",
+      "name": "获取慢查询列表",
+      "output": "DescribeSlowQueryRecordsResponse",
+      "status": "online"
+    },
+    "DescribeSlowQueryRecordsDownload": {
+      "document": "下载慢查询文件",
+      "input": "DescribeSlowQueryRecordsDownloadRequest",
+      "name": "下载慢查询文件",
+      "output": "DescribeSlowQueryRecordsDownloadResponse",
+      "status": "online"
+    },
+    "DestroyInstance": {
+      "document": "销毁集群",
+      "input": "DestroyInstanceRequest",
+      "name": "集群销毁",
+      "output": "DestroyInstanceResponse",
+      "status": "online"
+    },
+    "ModifyInstance": {
+      "document": "修改集群名称",
+      "input": "ModifyInstanceRequest",
+      "name": "修改集群名称",
+      "output": "ModifyInstanceResponse",
+      "status": "online"
+    },
+    "ResizeDisk": {
+      "document": "扩容云盘",
+      "input": "ResizeDiskRequest",
+      "name": "云盘扩容",
+      "output": "ResizeDiskResponse",
+      "status": "online"
+    },
+    "RestartClusterForNode": {
+      "document": "集群滚动重启",
+      "input": "RestartClusterForNodeRequest",
+      "name": "集群滚动重启",
+      "output": "RestartClusterForNodeResponse",
+      "status": "online"
+    },
+    "ScaleOutInstance": {
+      "document": "水平扩容节点",
+      "input": "ScaleOutInstanceRequest",
+      "name": "水平扩容",
+      "output": "ScaleOutInstanceResponse",
+      "status": "online"
+    },
+    "ScaleUpInstance": {
+      "document": "计算资源垂直变配",
+      "input": "ScaleUpInstanceRequest",
+      "name": "计算资源垂直变配",
+      "output": "ScaleUpInstanceResponse",
       "status": "online"
     }
   },
@@ -74,6 +172,1006 @@
         }
       ],
       "usage": "both"
+    },
+    "ChargeProperties": {
+      "document": "集群计费相关信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "计费类型，“PREPAID” 预付费，“POSTPAID_BY_HOUR” 后付费\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ChargeType",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费，1表示自动续费开启\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "RenewFlag",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费时间长度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TimeSpan",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费时间单位，“m”表示月等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TimeUnit",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "ClusterConfigsInfoFromEMR": {
+      "document": "用于返回XML格式的配置文件和内容以及其他配置文件有关的信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "配置文件名称",
+          "example": "config.xml",
+          "member": "string",
+          "name": "FileName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件对应的相关属性信息",
+          "example": "{\"editable\":true,\"display\":true,\"type\":\"Customize\",\"fileOwner\":\"",
+          "member": "string",
+          "name": "FileConf",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件对应的其他属性信息",
+          "example": "{\"customKey\":{\"name\":\"customKey\",\"type\":\"string\",\"description\":\"",
+          "member": "string",
+          "name": "KeyConf",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件的内容，base64编码",
+          "example": "PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHlhbmRleD4K",
+          "member": "string",
+          "name": "OriParam",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用于表示当前配置文件是不是有过修改后没有重启，提醒用户需要重启",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedRestart",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "配置文件路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": ":\"/usr/local/service/doris/conf\"",
+          "member": "string",
+          "name": "FilePath",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": true,
+          "document": "配置文件kv值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"KeyName\":\"broker_ipc_port\",\"Value\":\"8000\",\"Message\":\"内部通信端口\",\"Display\":1,\"SupportHotUpdate\":0},{\"KeyName\":\"client_expire_seconds\",\"Value\":\"300\",\"Message\":\"客户端过期时间\",\"Display\":1,\"SupportHotUpdate\":0},{\"KeyName\":\"XMX\",\"Value\":\"3g\",\"Message\":\"最大Heap的大小\",\"Display\":2,\"SupportHotUpdate\":0}]}]",
+          "member": "string",
+          "name": "FileKeyValues",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "配置文件kv值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ConfigKeyValue",
+          "name": "FileKeyValuesNew",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ConfigKeyValue": {
+      "document": "返回配置的文件内容（key-value）",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "KeyName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1-只读，2-可修改但不可删除，3-可删除\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Display",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "0不支持 1支持热更新\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "SupportHotUpdate",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "CreateInstanceNewRequest": {
+      "document": "CreateInstanceNew请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "无",
+          "member": "string",
+          "name": "Zone",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "FE规格",
+          "example": "无",
+          "member": "CreateInstanceSpec",
+          "name": "FeSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "BE规格",
+          "example": "无",
+          "member": "CreateInstanceSpec",
+          "name": "BeSpec",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否高可用",
+          "example": "无",
+          "member": "bool",
+          "name": "HaFlag",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "用户VPCID",
+          "example": "无",
+          "member": "string",
+          "name": "UserVPCId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户子网ID",
+          "example": "无",
+          "member": "string",
+          "name": "UserSubnetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品版本号",
+          "example": "无",
+          "member": "string",
+          "name": "ProductVersion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费类型",
+          "example": "无",
+          "member": "ChargeProperties",
+          "name": "ChargeProperties",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "实例名字",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库密码",
+          "example": "无",
+          "member": "string",
+          "name": "DorisUserPwd",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "标签列表",
+          "example": "无",
+          "member": "Tag",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "高可用类型：0：非高可用，1：读高可用，2：读写高可用。",
+          "example": "0",
+          "member": "int64",
+          "name": "HaType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "表名大小写是否敏感，0：敏感；1：不敏感，以小写进行比较；2：不敏感，表名改为以小写存储",
+          "example": "0",
+          "member": "int64",
+          "name": "CaseSensitive",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceNewResponse": {
+      "document": "CreateInstanceNew返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateInstanceSpec": {
+      "document": "集群规格",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规格名字",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "Count",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云盘大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "usage": "in"
+    },
+    "DataBaseAuditRecord": {
+      "document": "数据库审计",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询用户\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "OsUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "查询ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialQueryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SQL语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "Sql",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "QueryStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "执行耗时\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读取行数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "int64",
+          "name": "ReadRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "读取字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "int64",
+          "name": "ResultRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "结果字节数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ResultBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "初始查询IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "DbName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sql类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "SqlType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "DescribeClusterConfigsRequest": {
+      "document": "DescribeClusterConfigs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwch-f625kxu6",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": " 0 公有云查询；1青鹅查询，青鹅查询显示所有需要展示的",
+          "example": "1",
+          "member": "int64",
+          "name": "ConfigType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "模糊搜索关键字文件",
+          "example": "Keytab",
+          "member": "string",
+          "name": "FileName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "0集群维度 1节点维度",
+          "example": "0",
+          "member": "int64",
+          "name": "ClusterConfigType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "eth0的ip地址",
+          "example": "127.0.0.1",
+          "member": "string",
+          "name": "IPAddress",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterConfigsResponse": {
+      "document": "DescribeClusterConfigs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回实例的配置文件相关的信息",
+          "example": "无",
+          "member": "ClusterConfigsInfoFromEMR",
+          "name": "ClusterConfList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "返回当前内核版本 如果不存在则返回空字符串",
+          "example": "无",
+          "member": "string",
+          "name": "BuildVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAuditDownloadRequest": {
+      "document": "DescribeDatabaseAuditDownload请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "xx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "10",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "DESC/ASC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql类型",
+          "example": "无",
+          "member": "string",
+          "name": "SqlType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql语句",
+          "example": "sql",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 多选",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库 多选",
+          "example": "无",
+          "member": "string",
+          "name": "DbNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "sql类型 多选",
+          "example": "无",
+          "member": "string",
+          "name": "SqlTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称 （多选）",
+          "example": "无",
+          "member": "string",
+          "name": "Catalogs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAuditDownloadResponse": {
+      "document": "DescribeDatabaseAuditDownload返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志的cos地址",
+          "example": "xx",
+          "member": "string",
+          "name": "CosUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAuditRecordsRequest": {
+      "document": "DescribeDatabaseAuditRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "xx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "xx",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "xx",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "DESC/ASC",
+          "member": "string",
+          "name": "OrderType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户",
+          "example": "无",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库",
+          "example": "无",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql类型",
+          "example": "无",
+          "member": "string",
+          "name": "SqlType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "sql语句",
+          "example": "sql",
+          "member": "string",
+          "name": "Sql",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户 （多选）",
+          "example": "无",
+          "member": "string",
+          "name": "Users",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据库 （多选）",
+          "example": "无",
+          "member": "string",
+          "name": "DbNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "sql类型 （多选）",
+          "example": "无",
+          "member": "string",
+          "name": "SqlTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称（多选）",
+          "example": "无",
+          "member": "string",
+          "name": "Catalogs",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDatabaseAuditRecordsResponse": {
+      "document": "DescribeDatabaseAuditRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录列表",
+          "example": "xx",
+          "member": "DataBaseAuditRecord",
+          "name": "SlowQueryRecords",
+          "output_required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodesInfoRequest": {
+      "document": "DescribeInstanceNodesInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "cdwdoris-xxx",
+          "member": "string",
+          "name": "InstanceID",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodesInfoResponse": {
+      "document": "DescribeInstanceNodesInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Be节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "已废弃",
+          "member": "string",
+          "name": "BeNodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Fe节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "已废弃",
+          "member": "string",
+          "name": "FeNodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Fe master节点",
+          "example": "无",
+          "member": "string",
+          "name": "FeMaster",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Be节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "BeNodeInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Fe节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "NodeInfo",
+          "name": "FeNodeInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "DescribeInstanceNodesRequest": {
       "document": "DescribeInstanceNodes请求参数结构体",
@@ -195,6 +1293,93 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceStateRequest": {
+      "document": "DescribeInstanceState请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例名称",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceStateResponse": {
+      "document": "DescribeInstanceState返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群状态，例如：Serving",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群操作创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowCreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群操作名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群操作进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "float",
+          "name": "FlowProgress",
+          "output_required": true,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群状态描述，例如：运行中\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "InstanceStateDesc",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群流程错误信息，例如：“创建失败，资源不足”\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "-",
+          "member": "string",
+          "name": "FlowMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstancesRequest": {
       "document": "DescribeInstances请求参数结构体",
       "members": [
@@ -267,6 +1452,284 @@
           "name": "InstancesList",
           "output_required": true,
           "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsDownloadRequest": {
+      "document": "DescribeSlowQueryRecordsDownload请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢查询时间",
+          "example": "xx",
+          "member": "int64",
+          "name": "QueryDurationMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "xx",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "xx",
+          "member": "string",
+          "name": "DurationMs",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsDownloadResponse": {
+      "document": "DescribeSlowQueryRecordsDownload返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "cos地址",
+          "example": "xx",
+          "member": "string",
+          "name": "CosUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsRequest": {
+      "document": "DescribeSlowQueryRecords请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "cdwdoris-64h6w432",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "慢查询时间",
+          "example": "100",
+          "member": "int64",
+          "name": "QueryDurationMs",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "abc",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "结束时间",
+          "example": "abc",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNum",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序参数",
+          "example": "abc",
+          "member": "string",
+          "name": "DurationMs",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名称",
+          "example": "[\"xx\",\"xxx\"]",
+          "member": "string",
+          "name": "DbName",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否是查询，0：否， 1：是",
+          "example": "1",
+          "member": "int64",
+          "name": "IsQuery",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "catalog名称",
+          "example": "[\"xx\",\"xxx\"]",
+          "member": "string",
+          "name": "CatalogName",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSlowQueryRecordsResponse": {
+      "document": "DescribeSlowQueryRecords返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "123",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "记录列表",
+          "example": "[\"xx\",\"abc\"",
+          "member": "SlowQueryRecord",
+          "name": "SlowQueryRecords",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所有数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DBNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "所有catalog名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CatalogNameList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceRequest": {
+      "document": "DestroyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyInstanceResponse": {
+      "document": "DestroyInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -810,6 +2273,68 @@
       ],
       "usage": "out"
     },
+    "ModifyInstanceRequest": {
+      "document": "ModifyInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例Id",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新修改的实例名称",
+          "example": "cdwch-test",
+          "member": "string",
+          "name": "InstanceName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyInstanceResponse": {
+      "document": "ModifyInstance返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "NodeInfo": {
+      "document": "NodeInfo",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Ip",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "NodesSummary": {
       "document": "节点角色描述信息",
       "members": [
@@ -956,6 +2481,323 @@
       ],
       "usage": "out"
     },
+    "ResizeDiskRequest": {
+      "document": "ResizeDisk请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色（MATER/CORE），MASTER 对应 FE，CORE对应BE",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "云盘大小",
+          "example": "无",
+          "member": "uint64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ResizeDiskResponse": {
+      "document": "ResizeDisk返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartClusterForNodeRequest": {
+      "document": "RestartClusterForNode请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID，例如cdwch-xxxx",
+          "example": "cdwch-xxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "配置文件名称",
+          "example": "fe/be/broken",
+          "member": "string",
+          "name": "ConfigName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "每次重启的批次",
+          "example": "1",
+          "member": "int64",
+          "name": "BatchSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "重启节点",
+          "example": "[ip1,ip2]",
+          "member": "string",
+          "name": "NodeList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "false表示非滚动重启，true表示滚动重启",
+          "example": "无",
+          "member": "bool",
+          "name": "RollingRestart",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "RestartClusterForNodeResponse": {
+      "document": "RestartClusterForNode返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程相关信息",
+          "example": "-",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "-",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceRequest": {
+      "document": "ScaleOutInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色（MATER/CORE），MASTER 对应 FE，CORE对应BE",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "NodeCount",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "扩容后集群高可用类型：0：非高可用，1：读高可用，2：读写高可用。",
+          "example": "0",
+          "member": "int64",
+          "name": "HaType",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleOutInstanceResponse": {
+      "document": "ScaleOutInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceRequest": {
+      "document": "ScaleUpInstance请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "节点规格",
+          "example": "无",
+          "member": "string",
+          "name": "SpecName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "角色（MATER/CORE），MASTER 对应 FE，CORE对应BE",
+          "example": "无",
+          "member": "string",
+          "name": "Type",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ScaleUpInstanceResponse": {
+      "document": "ScaleUpInstance返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "流程ID",
+          "example": "无",
+          "member": "string",
+          "name": "FlowId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例ID",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "错误信息",
+          "example": "无",
+          "member": "string",
+          "name": "ErrorMsg",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "SearchTags": {
       "document": "列表页搜索的标记列表",
       "members": [
@@ -991,6 +2833,132 @@
         }
       ],
       "usage": "in"
+    },
+    "SlowQueryRecord": {
+      "document": "慢查询记录",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询用户",
+          "example": "xx",
+          "member": "string",
+          "name": "OsUser",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询ID",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialQueryId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "SQL语句",
+          "example": "xx",
+          "member": "string",
+          "name": "Sql",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "开始时间",
+          "example": "xx",
+          "member": "string",
+          "name": "QueryStartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "执行耗时",
+          "example": "xx",
+          "member": "int64",
+          "name": "DurationMs",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读取行数",
+          "example": "xx",
+          "member": "int64",
+          "name": "ReadRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "读取字节数",
+          "example": "xx",
+          "member": "int64",
+          "name": "ResultRows",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "结果字节数",
+          "example": "xx",
+          "member": "uint64",
+          "name": "ResultBytes",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存",
+          "example": "xx",
+          "member": "int64",
+          "name": "MemoryUsage",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "初始查询IP",
+          "example": "xx",
+          "member": "string",
+          "name": "InitialAddress",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xx",
+          "member": "string",
+          "name": "DbName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否是查询，0：否，1：查询语句\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "IsQuery",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Tag": {
       "document": "标签描述",

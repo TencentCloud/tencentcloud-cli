@@ -178,12 +178,7 @@ Output:
                     "TranscodeTaskSet": [
                         {
                             "Definition": 20,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": ""
-                                }
-                            ],
+                            "WatermarkSet": [],
                             "MosaicSet": [],
                             "TraceWatermark": {
                                 "Switch": "OFF",
@@ -198,12 +193,7 @@ Output:
                         },
                         {
                             "Definition": 30,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": ""
-                                }
-                            ],
+                            "WatermarkSet": [],
                             "MosaicSet": [],
                             "TraceWatermark": {
                                 "Switch": "OFF",
@@ -218,12 +208,7 @@ Output:
                         },
                         {
                             "Definition": 40,
-                            "WatermarkSet": [
-                                {
-                                    "Definition": 15780,
-                                    "TextContent": ""
-                                }
-                            ],
+                            "WatermarkSet": [],
                             "MosaicSet": [],
                             "TraceWatermark": {
                                 "Switch": "OFF",

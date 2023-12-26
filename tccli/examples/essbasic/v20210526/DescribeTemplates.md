@@ -33,7 +33,14 @@ Output:
                         "RequireSign": false,
                         "SignType": 0,
                         "RoutingOrder": -1,
-                        "IsPromoter": false
+                        "IsPromoter": false,
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ]
                     },
                     {
                         "RecipientId": "yDSLVUUckpo3noc8UEnf33kxKp7Waeq1",
@@ -44,7 +51,14 @@ Output:
                         "RequireSign": false,
                         "SignType": 0,
                         "RoutingOrder": -1,
-                        "IsPromoter": false
+                        "IsPromoter": false,
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ]
                     }
                 ],
                 "SignComponents": [
@@ -270,7 +284,14 @@ Output:
                         "RequireSign": false,
                         "SignType": 0,
                         "RoutingOrder": -1,
-                        "IsPromoter": false
+                        "IsPromoter": false,
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ]
                     },
                     {
                         "RecipientId": "yDSLVUUckpo3nwi1UEnf33kBMNXjdB2c",
@@ -281,7 +302,14 @@ Output:
                         "RequireSign": false,
                         "SignType": 0,
                         "RoutingOrder": -1,
-                        "IsPromoter": false
+                        "IsPromoter": false,
+                        "ApproverVerifyTypes": [
+                            1
+                        ],
+                        "ApproverSignTypes": [
+                            1,
+                            2
+                        ]
                     }
                 ],
                 "SignComponents": [
