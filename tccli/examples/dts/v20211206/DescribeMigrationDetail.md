@@ -312,9 +312,13 @@ Output:
                         "Views": []
                     }
                 ],
+                "AdvancedObjects": [
+                    "function"
+                ],
                 "ObjectMode": "partial"
             },
             "ExtraAttr": [],
+            "IsMigrateAccount": false,
             "IsDstReadOnly": false,
             "IsOverrideRoot": false,
             "MigrateType": "fullAndIncrement"

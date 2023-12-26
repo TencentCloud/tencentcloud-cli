@@ -17,11 +17,19 @@ Output:
         "List": [
             {
                 "Status": 1,
-                "Name": "xx",
+                "Name": "核心文件名称1",
                 "HostCount": 1,
-                "ModifyTime": "xx",
-                "CreateTime": "xx",
-                "RuleCategory": 1
+                "ModifyTime": "2023-01-01 00:00:00",
+                "CreateTime": "2023-01-01 00:00:00",
+                "RuleCategory": 1,
+                "Id": 1,
+                "IsGlobal": 1,
+                "Level": 1,
+                "WriteRuleCount": 1,
+                "ReadRuleCount": 1,
+                "ReadWriteRuleCount": 1,
+                "FileAction": "",
+                "AddWhiteType": ""
             }
         ],
         "TotalCount": 1,

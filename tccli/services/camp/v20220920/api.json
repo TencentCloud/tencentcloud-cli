@@ -683,6 +683,826 @@
       ],
       "usage": "both"
     },
+    "CLBCreateLoadBalancerConfig": {
+      "document": "自动创建CLB配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "负载均衡实例的网络类型。\nOPEN：公网属性， INTERNAL：内网属性。\n枚举值：OPEN、INTERNAL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "OPEN",
+          "member": "string",
+          "name": "LoadBalancerType",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅适用于公网负载均衡。IP版本。默认值 IPV4。\n枚举值：IPV4、IPv6FullChain。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "IPV4",
+          "member": "string",
+          "name": "AddressIPVersion",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "在私有网络内购买内网负载均衡实例的情况下，必须指定子网 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxx",
+          "member": "string",
+          "name": "SubnetID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置跨可用区容灾时的主可用区 ID，必须与slaveZoneId 一起使用。但不能与 zoneID 一起使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "MasterZoneID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "设置跨可用区容灾时的备可用区ID，必须与slaveZoneId一起使用。但不能与 zoneID 一起使用。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "SlaveZoneID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "仅适用于公网负载均衡。\n说明：创建指定可用区的 CLB 实例时需添加该参数。随机可用区不需添加该参数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "ZoneID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "开启 CLB VIP 直通特性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "VIPDirectConnection",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "性能容量型规格。\n若需要创建性能容量型实例，则此参数必填，取值范围：\nSLA：超强型1规格。当您开通了超大型规格的性能容量型时，SLA对应超强型4规格\nclb.c2.medium：标准型规格\nclb.c3.small：高阶型1规格\nclb.c3.medium：高阶型2规格\nclb.c4.small：超强型1规格\nclb.c4.medium：超强型2规格\nclb.c4.large：超强型3规格\nclb.c4.xlarge：超强型4规格\n如需超大型规格（超强型2及以上），请提交工单申请。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SLA",
+          "member": "string",
+          "name": "SLAType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "tgw 独占集群的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ziyan_normal_bgp",
+          "member": "string",
+          "name": "TGWGroupName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡IP地址所属的ISP运营商。网络计费模式只能使用按带宽包计费(BANDWIDTH_PACKAGE)\n枚举值：中国移动（CMCC）、中国联通（CUCC）、中国电信（CTCC）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "CMCC",
+          "member": "string",
+          "name": "VIPISP",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定 clb 集群的标签。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterTag",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "EIP 的唯一 ID，仅适用于内网负载均衡绑定EIP。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eip-xxxxx",
+          "member": "string",
+          "name": "EIPAddressID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "网络计费模式，最大出带宽。\n说明：仅公网 CLB 支持配置该特性。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBInternetAccessibleConfig",
+          "name": "InternetAccessible",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "独占型 clb 实例集群信息。若创建独占型的内网负载均衡实例，则此参数必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBExclusiveCluster",
+          "name": "ExclusiveCluster",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "购买负载均衡的同时，给负载均衡打上标签，最大支持20个标签键值对。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBTag",
+          "name": "Tags",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBCrossRegionConfig": {
+      "document": "CLB跨域配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "跨域 CLB 地域 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-shanghai",
+          "member": "string",
+          "name": "CrossRegionID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域 CLB 方案。\nManagerOnly：多集群方案不使用跨域时，需填入 ManagerOnly\nCrossTarget：跨域 1.0 方案，自研账号使用该值。\nPVGW：非云联网场景增强，依赖 LNBAT，CLB 侧不推荐使用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ManagerOnly",
+          "member": "string",
+          "name": "CrossType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "跨域 CLB 所属 VPC 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CrossVPCID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBCustomWeight": {
+      "document": "CLB自定义权重配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Pod 所在业务集群 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "针对该集群的监听器权重配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBListenerWeight",
+          "name": "ListenerWeights",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBExclusiveCluster": {
+      "document": "CLB独占型实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "4层独占集群列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ExclusiveClusterItem",
+          "name": "L4Clusters",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBHealthCheckConfig": {
+      "document": "CLB健康检查配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否开启健康检查\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义探测相关参数。\n健康检查使用的协议：TCP 、 HTTP、PING（TCP 、 HTTP 仅适用于 TCP 监听器，PING 仅适用于 UDP监听器；如果使用自定义健康检查功能，则必传）。\n枚举值：TCP 、 HTTP、PING。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "CheckType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查探测间隔时间。\n选填，默认值：5，可选值：5~300，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5",
+          "member": "uint64",
+          "name": "IntervalTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康阈值，表示当连续探测几次健康则表示该转发正常。\n选填，默认值：3，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HealthNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不健康阈值，表示当连续探测几次健康则表示该转发异常。\n选填，默认值：3，可选值：2~10，单位：次。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "UnHealthNum",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查的响应超时时间，响应超时时间要小于检查间隔时间。\n选填，默认值：2，可选值：2~60，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "Timeout",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义探测相关参数。健康检查端口，默认为后端服务的端口，除非您希望指定特定端口，否则建议留空。\n说明：仅适用于TCP/UDP监听器。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "CheckPort",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查状态码（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。可选值：1~31，默认 31。\n1 表示探测后返回值 1xx 代表健康，2 表示返回 2xx 代表健康，4 表示返回 3xx 代表健康，8 表示返回 4xx 代表健康，16 表示返回 5xx 代表健康。若希望多种返回码都可代表健康，则将相应的值相加。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "31",
+          "member": "uint64",
+          "name": "HTTPCode",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查路径（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式）。示例值：/xxx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/api/check",
+          "member": "string",
+          "name": "HTTPCheckPath",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查域名（仅适用于HTTP/HTTPS监听器和TCP监听器的HTTP健康检查方式。针对TCP监听器，当使用HTTP健康检查方式时，该参数为必填项）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HTTPCheckDomain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查方法（仅适用于HTTP/HTTPS转发规则、TCP监听器的HTTP健康检查方式），默认值：HEAD。\n枚举值：HEAD或GET。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GET",
+          "member": "string",
+          "name": "HTTPCheckMethod",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "HTTP版本。健康检查协议CheckType的值取HTTP时，必传此字段，代表后端服务的HTTP版本：HTTP/1.0、HTTP/1.1；（仅适用于TCP监听器）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HTTP/1.0",
+          "member": "string",
+          "name": "HTTPVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBInternetAccessibleConfig": {
+      "document": "网络计费模式，最大出带宽配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRAFFIC_POSTPAID_BY_HOUR：按流量按小时后计费 ;\nBANDWIDTH_POSTPAID_BY_HOUR：按带宽按小时后计费;\nBANDWIDTH_PACKAGE 按带宽包计费\n说明：当使用 VipIsp （CMCC、CUCC、CTCC）时，只能使用按带宽包计费 (BANDWIDTH_PACKAGE)策略\n说明：BGP 和 CAP 建议使用按流量按小时后计费（ TRAFFIC_POSTPAID_BY_HOUR ）策略\n枚举值：TRAFFIC_POSTPAID_BY_HOUR、BANDWIDTH_POSTPAID_BY_HOUR（暂不使用）、TRAFFIC_POSTPAID_BY_HOUR\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TRAFFIC_POSTPAID_BY_HOUR",
+          "member": "string",
+          "name": "InternetChargeType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大出带宽，单位 Mbps，仅对公网属性 CLB 实例生效。\n说明：范围为1-10240，单位Mbps。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBListener": {
+      "document": "CLB 监听器配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "端口名称， 格式需要固定为 [protocol]-[port]。\nprotocol 支持填写quic、tcpssl、tcp、udp\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tcp-80",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb 监听器协议类型。\n枚举值：TCP、UDP。TCP_SSL、QUIC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb 监听器暴露的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容器监听的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "TargetPort",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLS证书名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "secret",
+          "member": "string",
+          "name": "ConfigName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "TLS证书版本\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0.0.1",
+          "member": "string",
+          "name": "ConfigVersion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBListenerWeight": {
+      "document": "CLB监听器权重配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "clb 监听器协议类型 枚举值： TCP、UDP、TCP_SSL、QUIC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "service 暴露的端口号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "80",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "需要修改的 Pod index 列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1,2]",
+          "member": "int64",
+          "name": "PodIndexes",
+          "output_required": true,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Pod 目标权重\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "90",
+          "member": "uint64",
+          "name": "Weight",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBSessionConfig": {
+      "document": "CLB会话保持相关配置，仅TCP/UDP协议支持",
+      "members": [
+        {
+          "disabled": false,
+          "document": "会话保持基于IP地址，将同一IP地址的请求转发到同一台后端云服务器处理。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "Enable",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话保持时间。\n设置为0表示关闭会话保持，开启会话保持可取值：30~3600，单位：秒。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "SessionExpireTime",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话保持类型。\n不传或传NORMAL表示默认会话保持类型。QUIC_CID 表示根据 Quic Connection ID 做会话保持。QUIC_CID 只支持 UDP 协议。\n枚举值：NORMAL、QUIC_CID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "NORMAL",
+          "member": "string",
+          "name": "SessionType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBTag": {
+      "document": "CLB标签信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签键\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "key",
+          "member": "string",
+          "name": "TagKey",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "value",
+          "member": "string",
+          "name": "TagValue",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBTrait": {
+      "document": "CLB特征配置信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "clb配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBTraitConfig",
+          "name": "Objects",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CLBTraitConfig": {
+      "document": "CLB特征配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CLB 服务名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb-svc",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分配给此服务的 IP 协议（ IPv4、IPv6）的列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"IPv4\"]",
+          "member": "string",
+          "name": "IPFamilies",
+          "output_required": false,
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb 开启直连 Pod 特性，仅 vpc-cni 网络支持。默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DirectAccess",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Service 优雅退出功能，Pod 被删除，此时 Pod 里有 DeletionTimestamp，且状态置为 Terminating。此时调整 CLB 到该 Pod 的权重为 0。\n说明：仅 directAccess:true 直连开启情况下支持配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableGraceShutdown",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Endpoint 对象中 endpoints 是否 not-ready，将 not-ready 的 CLB 后端权重置为 0。\n说明：仅 directAccess:true 直连开启情况下支持配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "EnableGraceShutdownTKEx",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非直连的 clb Service 和 Nodeport 类型的 Service 需关注，支持 Local 和 Cluster。\n说明：directAccess:true 直连开启情况下须配置为 Cluster\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Local",
+          "member": "string",
+          "name": "ExternalTrafficPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "非直连的 LoadBalancer Service 和 Nodeport 类型的 Service 需关注，支持 ClientIP 和 None。\n说明：directAccess:true 直连开启情况下须配置为 None\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "None",
+          "member": "string",
+          "name": "SessionAffinity",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否会自动为 LoadBalancer 类型的 Service 分配 NodePort。默认为 true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "AllocateLoadBalancerNodePorts",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启 IPv4、IPv6 双栈特性。 如果没有提供值，则此字段将被设置为 SingleStack。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "SingleStack",
+          "member": "string",
+          "name": "IPFamilyPolicy",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "使用已有 CLB。\n说明：如不开启跨域，CLB 必须和应用实例同 VPC。\n说明：使用已有 existedLoadBalancerID 和自动创建 createLoadBalancer 参数二选一\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "clb-xxxxx",
+          "member": "string",
+          "name": "ExistedLoadBalancerID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "直通类型的 clbservice 需要设置为 true，开启后不生成对应的 ipvs 规则。\n说明：搭配 EKS 集群直通特性使用，仅 vipDirectConnection:true 直连开启情况下支持开启。如果 vipDirectConnection 设置为 true，则 discardLoadbalancerIP 需设置为 true。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "DiscardLoadBalancerIP",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb 实例默认权重。\n说明：不填默认为 10，范围 0-100。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20",
+          "member": "uint64",
+          "name": "DefaultWeight",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb跨域绑定配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBCrossRegionConfig",
+          "name": "CrossRegion",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "平台自动创建clb的配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBCreateLoadBalancerConfig",
+          "name": "CreateLoadBalancer",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定实例义权重。\n说明：只有有状态服务（StatefulSet、StatefulSetPlus、TApp）支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBCustomWeight",
+          "name": "CustomWeights",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定义监听器配置及后端容器的端口信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBListener",
+          "name": "Ports",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "clb 监听器高级配置，如均衡方式、健康检查、会话保持等\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TKEServiceConfig",
+          "name": "TKEServiceConfig",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "CLS": {
       "document": "CLS",
       "members": [
@@ -4952,6 +5772,45 @@
       ],
       "usage": "both"
     },
+    "ExclusiveClusterItem": {
+      "document": "独占集群信息配置项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群唯一 ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-xxxxx",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "集群所在可用区，如 ap-guangzhou-1\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-1",
+          "member": "string",
+          "name": "Zone",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ExecutePodCommandRequest": {
       "document": "ExecutePodCommand请求参数结构体",
       "members": [
@@ -5643,6 +6502,78 @@
           "output_required": false,
           "required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "L4Listener": {
+      "document": "四层监听器配置",
+      "members": [
+        {
+          "disabled": false,
+          "document": "协议端口锚定 Service 的四层规则。\n枚举值：TCP、UDP、QUIC、TCP_SSL。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TCP",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "1~65535，需和实际转发规则的端口保持一致。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8080",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "双向 RST 开关\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "bool",
+          "member": "bool",
+          "name": "DeregisterTargetRST",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "请求转发方式配置。\nWRR、LEAST_CONN 分别表示按权重轮询、最小连接数。\n枚举值：WRR、LEAST_CONN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "LEAST_CONN",
+          "member": "string",
+          "name": "Scheduler",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "会话保持相关配置，仅 TCP、UDP 协议支持。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBSessionConfig",
+          "name": "Session",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "健康检查相关配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBHealthCheckConfig",
+          "name": "HealthCheck",
+          "output_required": false,
+          "required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -7652,6 +8583,23 @@
       ],
       "usage": "in"
     },
+    "TKEServiceConfig": {
+      "document": "TkeServiceConfig 是腾讯云容器服务提供的自定义资源 CRD， 通过 TkeServiceConfig 能够帮助您更灵活的配置 LoadBalancer 类型的 Service ，及管理其中负载均衡的各种配置，包括均衡方式、健康检查、会话保持等",
+      "members": [
+        {
+          "disabled": false,
+          "document": "四层规则配置，适用于 Service 的监听器配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "L4Listener",
+          "name": "L4Listeners",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "Tag": {
       "document": "云标签",
       "members": [
@@ -8117,6 +9065,17 @@
           "example": "无",
           "member": "DestroyPodsTrait",
           "name": "DestroyPods",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CLB配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CLBTrait",
+          "name": "CLB",
           "output_required": false,
           "required": false,
           "type": "object",

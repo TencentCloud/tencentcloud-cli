@@ -64,16 +64,16 @@
       "status": "online"
     },
     "CreateBasicDBInstances": {
-      "document": "本接口（CreateBasicDBInstances）用于创建SQL server基础版实例。",
+      "document": "本接口（CreateBasicDBInstances）用于创建基础版实例 (云盘)。",
       "input": "CreateBasicDBInstancesRequest",
-      "name": "创建基础版实例",
+      "name": "创建基础版实例 (云盘)",
       "output": "CreateBasicDBInstancesResponse",
       "status": "online"
     },
     "CreateBusinessDBInstances": {
-      "document": "本接口（CreateBusinessDBInstances）用于创建商业智能服务实例。",
+      "document": "本接口（CreateBusinessDBInstances）用于创建商业智能服务实例 (云盘)。",
       "input": "CreateBusinessDBInstancesRequest",
-      "name": "创建商业智能服务实例",
+      "name": "创建商业智能服务实例 (云盘)",
       "output": "CreateBusinessDBInstancesResponse",
       "status": "online"
     },
@@ -85,16 +85,16 @@
       "status": "online"
     },
     "CreateCloudDBInstances": {
-      "document": "本接口（CreateCloudDBInstances）用于创建高可用实例(虚拟机版本)。",
+      "document": "本接口（CreateCloudDBInstances）用于创建高可用实例 (云盘)。",
       "input": "CreateCloudDBInstancesRequest",
-      "name": "创建高可用实例(虚拟机版本)",
+      "name": "创建高可用实例 (云盘)",
       "output": "CreateCloudDBInstancesResponse",
       "status": "online"
     },
     "CreateCloudReadOnlyDBInstances": {
-      "document": "本接口（CreateCloudReadOnlyDBInstances）用于添加只读副本实例(虚拟机版本)。",
+      "document": "本接口（CreateCloudReadOnlyDBInstances）用于创建只读实例 (云盘)。",
       "input": "CreateCloudReadOnlyDBInstancesRequest",
-      "name": "创建只读实例(虚拟机版本)",
+      "name": "创建只读实例 (云盘)",
       "output": "CreateCloudReadOnlyDBInstancesResponse",
       "status": "online"
     },
@@ -106,9 +106,9 @@
       "status": "online"
     },
     "CreateDBInstances": {
-      "document": "本接口（CreateDBInstances）用于创建实例。",
+      "document": "本接口（CreateDBInstances）用于创建高可用实例 (本地盘)",
       "input": "CreateDBInstancesRequest",
-      "name": "创建实例",
+      "name": "创建高可用实例 (本地盘)",
       "output": "CreateDBInstancesResponse",
       "status": "online"
     },
@@ -134,9 +134,9 @@
       "status": "online"
     },
     "CreateReadOnlyDBInstances": {
-      "document": "本接口（CreateReadOnlyDBInstances）用于添加只读副本实例。",
+      "document": "本接口（CreateReadOnlyDBInstances）用于创建只读实例 (本地盘)。",
       "input": "CreateReadOnlyDBInstancesRequest",
-      "name": "创建只读实例",
+      "name": "创建只读实例 (本地盘)",
       "output": "CreateReadOnlyDBInstancesResponse",
       "status": "online"
     },
@@ -2649,6 +2649,7 @@
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -2658,6 +2659,7 @@
           "example": "100546",
           "member": "int64",
           "name": "FlowId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -2667,6 +2669,7 @@
           "example": "mssqlbi-bej23trh",
           "member": "string",
           "name": "InstanceIdSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -2965,6 +2968,7 @@
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3434,7 +3438,7 @@
           "example": "20200318114212",
           "member": "string",
           "name": "DealName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3444,7 +3448,7 @@
           "example": "[\"20200318114212\"]",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

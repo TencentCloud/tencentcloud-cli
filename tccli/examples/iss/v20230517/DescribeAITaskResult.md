@@ -42,6 +42,7 @@ Output:
 {
     "Response": {
         "Data": {
+            "AIResultCount": 1,
             "AIResults": {
                 "Body": null,
                 "Car": null,
