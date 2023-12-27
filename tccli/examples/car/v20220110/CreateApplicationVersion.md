@@ -21,7 +21,7 @@ Output:
             "ApplicationVersionName": "xxx",
             "ApplicationVersionRegions": [
                 "ap-chinese-mainland",
-                "na-north-america-1"
+                "na-north-america-fusion"
             ],
             "CreateTime": "2020-09-22T00:00:00+00:00"
         },

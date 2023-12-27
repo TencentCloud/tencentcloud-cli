@@ -1,3 +1,44 @@
+# Release 3.0.911.1
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 7 次发布
+
+发布时间：2023-12-28 01:19:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RetryRuns](http://document.tencentcloudapi.woa.com/document/product/1725/80768)
+
+	* 新增入参：RunGroupId, WDLOption, NFOption
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, RunUuids
+
+	* 新增出参：RunGroupId
+
+
+
+
+## 腾讯觅影开放实验平台(taop) 版本：2020-11-09
+
+### 第 3 次发布
+
+发布时间：2023-12-28 01:21:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListProjectsForMan](http://document.tencentcloudapi.woa.com/document/product/1673/82876)
+
+
+
 # Release 3.0.910.1
 
 ## 费用中心(billing) 版本：2018-07-09

@@ -113,7 +113,7 @@
       "status": "online"
     },
     "CreateConfigTemplateWithDetailResp": {
-      "document": "创建参数模版，并返回模版详细信息",
+      "document": "创建参数模板，并返回模板详细信息",
       "input": "CreateConfigTemplateWithDetailRespRequest",
       "name": "创建参数模板返回详细信息",
       "output": "CreateConfigTemplateWithDetailRespResponse",
@@ -5992,7 +5992,7 @@
         {
           "disabled": false,
           "document": "批次ID。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "BatchId",
           "required": true,
@@ -6006,10 +6006,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "成功或失败",
-          "example": "",
+          "document": "true：操作成功、false：操作失败",
+          "example": "无",
           "member": "bool",
           "name": "Result",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },

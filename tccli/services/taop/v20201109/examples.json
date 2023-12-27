@@ -20,6 +20,14 @@
         "title": "项目列表搜索"
       }
     ],
+    "ListProjectsForMan": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListProjectsForMan\n<公共请求参数>\n\n{\n    \"PageNumber\": \"1\",\n    \"PageSize\": \"10\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Count\": 1,\n        \"ProjectList\": [\n            {\n                \"AIEngine\": \"\",\n                \"Auth\": [\n                    \"UPDATE_PROJECT\",\n                    \"GET_PROJECT\",\n                    \"INVITE_USER\",\n                    \"AI_TRAIN\",\n                    \"UPLOAD_DATA\",\n                    \"MARK\",\n                    \"AUDIT\",\n                    \"DOWNLOAD\",\n                    \"CREATE_PROJECT\",\n                    \"DEL_PROJECT\",\n                    \"DEL_USER\",\n                    \"CONF_AUTH\",\n                    \"SHARE\"\n                ],\n                \"Bucket\": \"\",\n                \"CamPolicyId\": 0,\n                \"Cover\": \"\",\n                \"CreateTime\": \"2021-06-23 21:10:18\",\n                \"CreateUserId\": \"0\",\n                \"CreateUserInfo\": {\n                    \"CreateTime\": \"\",\n                    \"Department\": \"传染科\",\n                    \"Id\": 123445,\n                    \"Mobile\": \"1xxxxxxx\",\n                    \"Name\": \"sanzhang\",\n                    \"PlatName\": \"张三\",\n                    \"Position\": \"医生\",\n                    \"Role\": 4,\n                    \"SubAccountUin\": \"200000122000\"\n                },\n                \"Description\": \"\",\n                \"HasModifyAuth\": false,\n                \"ProjectId\": \"100700\",\n                \"ProjectName\": \"主账户创建的项目\",\n                \"ProjectPath\": \"这里是描述\",\n                \"ProjectType\": 0,\n                \"SimpleImageUrl\": \"\",\n                \"StudyCount\": 0,\n                \"UseAi\": 0,\n                \"UserCount\": 0\n            }\n        ],\n        \"RequestId\": \"9be731a4-a7ec-4ac3-934e-21d7a3a68025\"\n    }\n}",
+        "title": "示例"
+      }
+    ],
     "ReceiveAIMarkNotice": [
       {
         "document": "",

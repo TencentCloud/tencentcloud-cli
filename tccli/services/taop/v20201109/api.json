@@ -7,6 +7,13 @@
       "output": "ListProjectsResponse",
       "status": "online"
     },
+    "ListProjectsForMan": {
+      "document": "获取项目列表接口，项目管理",
+      "input": "ListProjectsForManRequest",
+      "name": "项目列表（项目管理专用）",
+      "output": "ListProjectsForManResponse",
+      "status": "online"
+    },
     "ReceiveAIMarkNotice": {
       "document": "接收AI标注通知",
       "input": "ReceiveAIMarkNoticeRequest",
@@ -36,6 +43,80 @@
     "serviceShortName": "taop"
   },
   "objects": {
+    "ListProjectsForManRequest": {
+      "document": "ListProjectsForMan请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "页码，从1开始，默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "PageNumber",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每页数目，默认10",
+          "example": "2",
+          "member": "int64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "项目名称，支持模糊查询",
+          "example": "项目",
+          "member": "string",
+          "name": "ProjectName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "项目负责人，支持模糊查询",
+          "example": "无",
+          "member": "string",
+          "name": "ProjectLeader",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListProjectsForManResponse": {
+      "document": "ListProjectsForMan返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "项目列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ProjectInfo",
+          "name": "ProjectList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "项目总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "int64",
+          "name": "Count",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListProjectsRequest": {
       "document": "ListProjects请求参数结构体",
       "members": [

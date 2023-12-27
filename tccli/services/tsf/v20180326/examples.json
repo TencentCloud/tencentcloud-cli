@@ -60,7 +60,7 @@
       {
         "document": "",
         "input": "https://tsf.tencentcloudapi.com/?Action=ContinueRunFailedTaskBatch\n&BatchId=batch-12345678\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Result\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "续跑执行失败的任务批次"
       }
     ],
