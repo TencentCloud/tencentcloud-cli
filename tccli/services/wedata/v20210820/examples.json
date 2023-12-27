@@ -1048,6 +1048,26 @@
         "title": "test"
       }
     ],
+    "DescribeFieldBasicInfo": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFieldBasicInfo\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"OrderFields\": [\n        {\n            \"Name\": \"abc\",\n            \"Direction\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"ColumnBasicInfoList\": [\n            {\n                \"TableId\": \"abc\",\n                \"DatasourceId\": \"abc\",\n                \"DatasourceName\": \"abc\",\n                \"DatabaseId\": \"abc\",\n                \"DatabaseName\": \"abc\",\n                \"TableName\": \"abc\",\n                \"ColumnName\": \"abc\",\n                \"DataType\": \"abc\",\n                \"ColumnType\": \"abc\",\n                \"ColumnDefault\": \"abc\",\n                \"ColumnKey\": \"abc\",\n                \"ColumnPosition\": 0,\n                \"ColumnComment\": \"abc\",\n                \"StoreType\": \"abc\",\n                \"ProjectId\": \"abc\",\n                \"ProjectName\": \"abc\",\n                \"ProjectDisplayName\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "错误1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFieldBasicInfo\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"1\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"76e7bf2b-c516-4a4c-97ba-f0b788097c1f\"\n    }\n}",
+        "title": "错误1"
+      },
+      {
+        "document": "错误2",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeFieldBasicInfo\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"1\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"235a9ac1-1037-4f8a-befe-9765a29480cd\"\n    }\n}",
+        "title": "错误2"
+      }
+    ],
     "DescribeFolderList": [
       {
         "document": "",
@@ -1800,6 +1820,20 @@
         "title": "获取下游任务信息"
       }
     ],
+    "DescribeTableBasicInfo": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableBasicInfo\n<公共请求参数>\n\n{\n    \"PageNumber\": 0,\n    \"PageSize\": 0,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ]\n        }\n    ],\n    \"OrderFields\": [\n        {\n            \"Name\": \"abc\",\n            \"Direction\": \"abc\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TableBasicInfoList\": [\n            {\n                \"TableId\": \"abc\",\n                \"DatasourceId\": \"abc\",\n                \"DatasourceName\": \"abc\",\n                \"DatabaseId\": \"abc\",\n                \"DatabaseName\": \"abc\",\n                \"TableName\": \"abc\",\n                \"EngineType\": \"abc\",\n                \"TableType\": \"abc\",\n                \"ProjectId\": \"abc\",\n                \"ProjectName\": \"abc\",\n                \"ProjectDisplayName\": \"abc\",\n                \"TableOwnerId\": \"abc\",\n                \"TableOwnerName\": \"abc\",\n                \"StorageLocation\": 0,\n                \"Description\": \"abc\",\n                \"IsPartitionTable\": 0,\n                \"PartitionColumns\": [\n                    \"abc\"\n                ],\n                \"StorageFormat\": \"abc\",\n                \"StorageSize\": 1,\n                \"StorageSizeWithUnit\": \"abc\",\n                \"TotalSizeMb\": 1,\n                \"ReplicaCount\": 0,\n                \"FileCount\": [\n                    0\n                ],\n                \"PartitionCount\": [\n                    0\n                ],\n                \"PartitionFieldCount\": 0,\n                \"PartitionExpireDays\": 0,\n                \"CreateTime\": \"abc\",\n                \"UpdateTime\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 0,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "错误1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableBasicInfo\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"1\",\n            \"Values\": [\n                \"1\"\n            ]\n        }\n    ],\n    \"OrderFields\": [\n        {\n            \"Name\": \"1\",\n            \"Direction\": \"1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"8ded1268-1ffe-4d7c-af37-6d5eeb9868a4\"\n    }\n}",
+        "title": "错误1"
+      }
+    ],
     "DescribeTableInfoList": [
       {
         "document": "",
@@ -1820,6 +1854,26 @@
         "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableLineage\n<公共请求参数>\n\n{\n    \"Direction\": \"INPUT\",\n    \"InputDepth\": 1,\n    \"OutputDepth\": 1,\n    \"Data\": {\n        \"TableId\": \"nCG0n7zjR7-N-EbAAi8Ruw\",\n        \"MetastoreType\": \"HIVE\",\n        \"PrefixPath\": \"\"\n    },\n    \"IgnoreTemp\": true\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"cea6a2ea-a841-43ae-883a-805a58dc53d3\",\n        \"TableLineage\": {\n            \"ChildSet\": \"[]\",\n            \"CreateTime\": \"\",\n            \"DatasourceId\": \"\",\n            \"Description\": \"\",\n            \"DownStreamCount\": 0,\n            \"ExtParams\": [],\n            \"Id\": null,\n            \"MetastoreType\": null,\n            \"MetastoreTypeName\": null,\n            \"ModifyTime\": \"\",\n            \"Params\": [],\n            \"ParentSet\": \"[]\",\n            \"PrefixPath\": \"\",\n            \"ProjectId\": null,\n            \"QualifiedName\": null,\n            \"TableId\": \"nCG0n7zjR7-N-EbAAi8Ruw\",\n            \"TableName\": \"student\",\n            \"Tasks\": [],\n            \"UpStreamCount\": 0\n        }\n    }\n}",
         "title": "表血缘信息"
+      }
+    ],
+    "DescribeTableLineageInfo": [
+      {
+        "document": "1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableLineageInfo\n<公共请求参数>\n\n{\n    \"Direction\": \"abc\",\n    \"InputDepth\": 0,\n    \"OutputDepth\": 0,\n    \"ExtParams\": [\n        {\n            \"Name\": \"abc\",\n            \"Value\": \"abc\"\n        }\n    ],\n    \"Data\": {\n        \"ProjectId\": \"abc\",\n        \"DatasourceId\": \"abc\",\n        \"TableId\": \"abc\",\n        \"Params\": [\n            {\n                \"Name\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"ParentSet\": \"abc\",\n        \"ChildSet\": \"abc\",\n        \"ExtParams\": [\n            {\n                \"Name\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"Id\": \"abc\",\n        \"MetastoreType\": \"abc\",\n        \"MetastoreTypeName\": \"abc\",\n        \"TableName\": \"abc\",\n        \"QualifiedName\": \"abc\",\n        \"DownStreamCount\": 0,\n        \"UpStreamCount\": 0,\n        \"Description\": \"abc\",\n        \"PrefixPath\": \"abc\",\n        \"CreateTime\": \"abc\",\n        \"ModifyTime\": \"abc\",\n        \"Tasks\": [\n            \"abc\"\n        ]\n    },\n    \"IgnoreTemp\": true,\n    \"RecursiveSecond\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"TableLineageBasicInfo\": {\n            \"ProjectId\": \"abc\",\n            \"DatasourceId\": \"abc\",\n            \"TableId\": \"abc\",\n            \"Params\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"ParentSet\": \"abc\",\n            \"ChildSet\": \"abc\",\n            \"ExtParams\": [\n                {\n                    \"Name\": \"abc\",\n                    \"Value\": \"abc\"\n                }\n            ],\n            \"Id\": \"abc\",\n            \"MetastoreType\": \"abc\",\n            \"MetastoreTypeName\": \"abc\",\n            \"TableName\": \"abc\",\n            \"QualifiedName\": \"abc\",\n            \"DownStreamCount\": 0,\n            \"UpStreamCount\": 0,\n            \"Description\": \"abc\",\n            \"PrefixPath\": \"abc\",\n            \"CreateTime\": \"abc\",\n            \"ModifyTime\": \"abc\",\n            \"Tasks\": [\n                \"abc\"\n            ]\n        },\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "1"
+      },
+      {
+        "document": "错误1",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableLineageInfo\n<公共请求参数>\n\n{\n    \"Direction\": \"1\",\n    \"InputDepth\": 1,\n    \"OutputDepth\": 1,\n    \"Data\": {\n        \"ProjectId\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"ca8fa3de-0024-4054-a5db-4919705ee8ee\"\n    }\n}",
+        "title": "错误1"
+      },
+      {
+        "document": "错误2",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeTableLineageInfo\n<公共请求参数>\n\n{\n    \"Direction\": \"1\",\n    \"InputDepth\": 1,\n    \"OutputDepth\": 1,\n    \"ExtParams\": [\n        {\n            \"Name\": \"1\"\n        }\n    ],\n    \"Data\": {\n        \"ProjectId\": \"1\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InternalError\",\n            \"Message\": \"内部服务错误，请稍后重试。\"\n        },\n        \"RequestId\": \"079c4b23-fd76-4e91-b366-dc0c0a76c032\"\n    }\n}",
+        "title": "错误2"
       }
     ],
     "DescribeTableMeta": [

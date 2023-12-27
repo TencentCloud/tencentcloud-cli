@@ -1554,7 +1554,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时",
+          "document": "批量撤销合同的URL链接, 需要在手机端打开, 有效期24小时\n\n注：<font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "https://res.ess.tencent.cn/cdn/h5-activity-beta/jump-mp.html?to=BATCH_REVOKE_FLOW&tokenId=y*Y&userId=y*G&expireOn=1699011136&login=1&verify=1",
           "member": "string",
           "name": "BatchCancelFlowUrl",
@@ -1792,7 +1792,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n\n注: `非小程序和APP集成使用`",
+          "document": "批量签署链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n\n注: \n1. 非小程序和APP集成使用\n2. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "无",
           "member": "string",
           "name": "SignUrl",
@@ -1812,7 +1812,7 @@
         },
         {
           "disabled": false,
-          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n\n注: `小程序和APP集成使用`",
+          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n\n注: \n1. 小程序和APP集成使用\n2. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "无",
           "member": "string",
           "name": "MiniAppPath",
@@ -5925,7 +5925,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr> </tbody> </table>\n注： \n`1.链接仅单次有效，每次登录需要需要重新创建新的链接`\n`2.创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义`\n",
+          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -8217,7 +8217,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署短链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。",
+          "document": "签署短链接。\n\n注意:\n1. 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n2. 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "https://essurl.cn/M**XE",
           "member": "string",
           "name": "SignUrl",
@@ -8257,7 +8257,7 @@
         },
         {
           "disabled": false,
-          "document": "签署长链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署长链接。\n\n注意:\n1. 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n2. 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://quick.qian.tencent.cn/home?ApproverIdCardNumber=MioqK**Kio2&ApproverMobile=MTkx**%3D&ApproverName=%25E**2A&ApproverType=1&Code=yDS**w3u2Mg8q&CodeType=QUICK&FlowId=yDSLVUU**MszDy&ShowHeader=1&shortKey=yDwq5U**GlG1c&token=M**XE\"",
           "member": "string",
           "name": "LongUrl",
@@ -10343,7 +10343,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署链接，过期时间为90天\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署链接，过期时间为90天\n\n注：<font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "https://essurl.cn/hJi85U8ewE",
           "member": "string",
           "name": "SignUrl",

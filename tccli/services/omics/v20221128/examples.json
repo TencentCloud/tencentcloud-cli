@@ -96,10 +96,22 @@
     ],
     "RetryRuns": [
       {
-        "document": "重试任务。",
-        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRuns\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"RunUuids\": [\n        \"0118f2ed-43b0-433c-b21c-472fe2bc1766\",\n        \"a273a6f0-ca66-474d-ba04-80f6c73463e9\",\n        \"fc9680c8-35e7-4e82-a5aa-9c506bef6829\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46520c37-4d28-49e1-a738-01f64ae1b06b\"\n    }\n}",
-        "title": "重试任务"
+        "document": "重试任务批次。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRuns\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"RunGroupId\": \"run-ashamed-bleak-doggy-247963\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"46520c37-4d28-49e1-a738-01f64ae1b06b\",\n        \"RunGroupId\": \"run-greedy-ecru-bonobo-459181\"\n    }\n}",
+        "title": "重试任务批次"
+      },
+      {
+        "document": "重试任务批次内指定任务。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRuns\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"RunGroupId\": \"run-ashamed-bleak-doggy-247963\",\n    \"RunUuids\": [\n        \"7b501b32-4e42-456a-9d54-aa3c9791beb0\",\n        \"38b860fa-65d3-4adc-8000-4c0c31d2ff51\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e5dc747d-7ad2-44de-afe5-569c9a342db8\",\n        \"RunGroupId\": \"run-pretty-yellow-mastiff-141933\"\n    }\n}",
+        "title": "重试任务批次内指定任务"
+      },
+      {
+        "document": "重试单个任务。",
+        "input": "POST / HTTP/1.1\nHost: omics.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RetryRuns\n<公共请求参数>\n\n{\n    \"ProjectId\": \"prj-aggressive-lime-porcupine-752427\",\n    \"RunUuids\": [\n        \"7b501b32-4e42-456a-9d54-aa3c9791beb0\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"e2fe59bb-21e3-45de-9289-9d22a5b1bdff\",\n        \"RunGroupId\": \"run-lonely-orange-dodo-410909\"\n    }\n}",
+        "title": "重试单个任务"
       }
     ],
     "RunApplication": [

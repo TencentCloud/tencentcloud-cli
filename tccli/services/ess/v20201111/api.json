@@ -225,7 +225,7 @@
       "status": "online"
     },
     "CreateSchemeUrl": {
-      "document": "获取跳转至腾讯电子签小程序的签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n注：\n`1. 如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署`\n\n`2. 签署链接的有效期为90天，超过有效期链接不可用`\n\n`3. 如果需跳转详情页（即PathType值为1）进行填写或签署合同，需指定签署方信息：姓名、手机号码、企业名称等，才能生成正确的跳转链接`\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "document": "获取跳转至腾讯电子签小程序的签署链接\n\n适用场景：如果需要签署人在自己的APP、小程序、H5应用中签署，可以通过此接口获取跳转腾讯电子签小程序的签署跳转链接。\n\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n\n注：\n<ul><li>1. 如果签署人是在PC端扫码签署，可以通过生成跳转链接自主转换成二维码，让签署人在PC端扫码签署</li>\n<li>2. 签署链接的有效期为<font color=\"red\">90天</font>，超过有效期链接不可用</li>\n<li>3. 如果需跳转详情页（即PathType值为1）进行填写或签署合同，需指定签署方信息:姓名、手机号码、企业名称等，才能生成正确的跳转链接</li>\n<li>4. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）</li></ul>\n\n其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
       "input": "CreateSchemeUrlRequest",
       "name": "获取跳转至腾讯电子签小程序的签署链接",
       "output": "CreateSchemeUrlResponse",
@@ -2139,7 +2139,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "批量签署链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n\n注: `非小程序和APP集成使用`",
+          "document": "批量签署链接，以短链形式返回，短链的有效期参考回参中的 ExpiredTime。\n\n注: \n1. 非小程序和APP集成使用\n2. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "无",
           "member": "string",
           "name": "SignUrl",
@@ -2159,7 +2159,7 @@
         },
         {
           "disabled": false,
-          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n\n注: `小程序和APP集成使用`",
+          "document": "从客户小程序或者客户APP跳转至腾讯电子签小程序进行批量签署的跳转路径\n\n注: \n1. 小程序和APP集成使用\n2. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "无",
           "member": "string",
           "name": "MiniAppPath",
@@ -4976,7 +4976,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "腾讯电子签小程序的签署链接。\n\n<ul><li>如果EndPoint是**APP**，得到的链接类似于`pages/guide?from=default&where=mini&id=yDwJSUUirqauh***7jNSxwdirTSGuH&to=CONTRACT_DETAIL&name=&phone=&shortKey=yDw***k1xFc5`, 用法可以参加接口描述中的\"跳转到小程序的实现\"</li>\n<li>如果EndPoint是**HTTP**，得到的链接类似于 `https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?where=mini&from=SFY&id=yDwfEUUw**4rV6Avz&to=MVP_CONTRACT_COVER&name=%E9%83%**5%86%9B`，点击后会跳转到腾讯电子签小程序进行签署</li>\n<li>如果EndPoint是**HTTP_SHORT_URL**，得到的链接类似于 `https://essurl.cn/2n**42Nd`，点击后会跳转到腾讯电子签小程序进行签署</li></ul>",
+          "document": "腾讯电子签小程序的签署链接。\n\n<ul><li>如果EndPoint是**APP**，得到的链接类似于`pages/guide?from=default&where=mini&id=yDwJSUUirqauh***7jNSxwdirTSGuH&to=CONTRACT_DETAIL&name=&phone=&shortKey=yDw***k1xFc5`, 用法可以参加接口描述中的\"跳转到小程序的实现\"</li>\n<li>如果EndPoint是**HTTP**，得到的链接类似于 `https://res.ess.tencent.cn/cdn/h5-activity/jump-mp.html?where=mini&from=SFY&id=yDwfEUUw**4rV6Avz&to=MVP_CONTRACT_COVER&name=%E9%83%**5%86%9B`，点击后会跳转到腾讯电子签小程序进行签署</li>\n<li>如果EndPoint是**HTTP_SHORT_URL**，得到的链接类似于 `https://essurl.cn/2n**42Nd`，点击后会跳转到腾讯电子签小程序进行签署</li></ul>\n\n\n注： <font color=\"red\">生成的链路后面不能再增加参数</font>",
           "example": "https://essurl.cn/2n**42Nd",
           "member": "string",
           "name": "SchemeUrl",
@@ -8187,53 +8187,53 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署短链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署短链接。\n注意:\n1. 该链接有效期为<b>30分钟</b>，同时需要注意保密，不要外泄给无关用户。\n2. 该链接不支持小程序嵌入，仅支持<b>移动端浏览器</b>打开。\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "https://essurl.cn/M**XE",
           "member": "string",
           "name": "SignUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署人类型。\n- **1**: 个人\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人类型。\n- **1**: 个人",
           "example": "1",
           "member": "int64",
           "name": "ApproverType",
           "output_required": true,
           "type": "int",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署人姓名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人姓名。",
           "example": "典子谦",
           "member": "string",
           "name": "ApproverName",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署人手机号。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署人手机号。",
           "example": "13200000000",
           "member": "string",
           "name": "ApproverMobile",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "签署长链接。</br>\n注意:\n- 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n- 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "签署长链接。\n注意:\n1. 该链接有效期为**30分钟**，同时需要注意保密，不要外泄给无关用户。\n2. 该链接不支持小程序嵌入，仅支持**移动端浏览器**打开。\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）",
           "example": "https://quick.qian.tencent.cn/home?ApproverIdCardNumber=MioqK**Kio2&ApproverMobile=MTkx**%3D&ApproverName=%25E**2A&ApproverType=1&Code=yDS**w3u2Mg8q&CodeType=QUICK&FlowId=yDSLVUU**MszDy&ShowHeader=1&shortKey=yDwq5U**GlG1c&token=M**XE",
           "member": "string",
           "name": "LongUrl",
           "output_required": true,
           "type": "string",
-          "value_allowed_null": true
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

@@ -514,7 +514,7 @@
         },
         {
           "disabled": false,
-          "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持4096字节。",
+          "document": "二进制凭据信息base64编码后的明文。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。",
           "example": "无",
           "member": "string",
           "name": "SecretBinary",
@@ -523,7 +523,7 @@
         },
         {
           "disabled": false,
-          "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，，最大支持4096字节。",
+          "document": "文本类型凭据信息明文（不需要进行base64编码）。SecretBinary 和 SecretString 必须且只能设置一个，最大支持32KB字节。",
           "example": "test",
           "member": "string",
           "name": "SecretString",
@@ -560,6 +560,7 @@
           "example": "test_secret",
           "member": "string",
           "name": "SecretName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -569,6 +570,7 @@
           "example": "v1.0",
           "member": "string",
           "name": "VersionId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -578,6 +580,7 @@
           "example": "无",
           "member": "uint64",
           "name": "TagCode",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -587,6 +590,7 @@
           "example": "无",
           "member": "string",
           "name": "TagMsg",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
