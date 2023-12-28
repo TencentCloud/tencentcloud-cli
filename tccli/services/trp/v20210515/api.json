@@ -134,7 +134,7 @@
       "status": "online"
     },
     "DescribeCodeBatchs": {
-      "document": "查询批次列表\n\n旧版接口已经弃用，新业务请使用用新版的接口 DescribeCodeBatches",
+      "document": "查询批次列表\n\n旧版接口已经弃用，新业务请使用新版的接口 DescribeCodeBatches",
       "input": "DescribeCodeBatchsRequest",
       "name": "【废弃】查询批次列表",
       "output": "DescribeCodeBatchsResponse",
@@ -1171,7 +1171,7 @@
         },
         {
           "disabled": false,
-          "document": "模版ID，或者活动ID",
+          "document": "模板ID，或者活动ID",
           "example": "1",
           "member": "string",
           "name": "MpTpl",
@@ -1226,6 +1226,7 @@
           "example": "abc",
           "member": "string",
           "name": "BatchId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3681,6 +3682,15 @@
           "name": "CorpId",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "认证状态",
+          "example": "1",
+          "member": "int64",
+          "name": "CertState",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3694,7 +3704,7 @@
           "example": "无",
           "member": "Product",
           "name": "Products",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3704,7 +3714,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -4345,11 +4355,12 @@
           "member": "string",
           "name": "Value",
           "output_required": false,
+          "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "InputEncryptData": {
       "document": "业务加密入参",
@@ -5590,6 +5601,7 @@
           "example": "\"85tfp1sn78r9m1568i\"",
           "member": "string",
           "name": "MerchantId",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5600,6 +5612,7 @@
           "example": "\"demo5\"",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5610,6 +5623,7 @@
           "example": "\"eqdmnz7020bmtvi9\"",
           "member": "string",
           "name": "ProductId",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5620,6 +5634,7 @@
           "example": "0",
           "member": "int64",
           "name": "CorpId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -5630,6 +5645,7 @@
           "example": "\"85tfp1sn78r9m1568i\"",
           "member": "string",
           "name": "ProductCode",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5640,6 +5656,7 @@
           "example": "”100ml“",
           "member": "string",
           "name": "Specification",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5650,6 +5667,7 @@
           "example": "”“",
           "member": "string",
           "name": "Remark",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -5660,6 +5678,7 @@
           "example": "无",
           "member": "string",
           "name": "Logo",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5670,6 +5689,7 @@
           "example": "\"2021-11-30T09:00:33.000Z\"",
           "member": "string",
           "name": "CreateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5680,6 +5700,7 @@
           "example": "\"2021-12-07T02:14:37.000Z\"",
           "member": "string",
           "name": "UpdateTime",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -5690,6 +5711,7 @@
           "example": "无",
           "member": "Ext",
           "name": "Ext",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -5700,9 +5722,21 @@
           "example": "\"demo\"",
           "member": "string",
           "name": "MerchantName",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "int64",
+          "name": "CertState",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"
@@ -5716,6 +5750,7 @@
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
           "name": "StartTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5726,6 +5761,7 @@
           "example": "021-05-11T16:00:00.000Z",
           "member": "string",
           "name": "EndTime",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -5736,6 +5772,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "QuotaId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5746,6 +5783,7 @@
           "example": "1000",
           "member": "uint64",
           "name": "CorpId",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5756,6 +5794,7 @@
           "example": "[\"track\"]",
           "member": "string",
           "name": "Services",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -5766,6 +5805,7 @@
           "example": "1000",
           "member": "int64",
           "name": "FactoryQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5776,6 +5816,7 @@
           "example": "1000",
           "member": "int64",
           "name": "ItemQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5786,6 +5827,7 @@
           "example": "10000",
           "member": "int64",
           "name": "TrackQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5796,6 +5838,7 @@
           "example": "1000",
           "member": "int64",
           "name": "SaleQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5806,6 +5849,7 @@
           "example": "1000",
           "member": "int64",
           "name": "ChainQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5816,6 +5860,7 @@
           "example": "1000",
           "member": "int64",
           "name": "RiskQuota",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5826,6 +5871,7 @@
           "example": "0",
           "member": "int64",
           "name": "TrackType",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -5836,8 +5882,20 @@
           "example": "basic",
           "member": "string",
           "name": "Version",
+          "output_required": true,
           "required": false,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启企业认证\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ProductCertify",
+          "output_required": true,
+          "required": false,
+          "type": "int",
           "value_allowed_null": true
         }
       ],

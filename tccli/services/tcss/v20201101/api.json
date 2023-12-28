@@ -6024,7 +6024,7 @@
         },
         {
           "disabled": false,
-          "document": "接入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AccessedStatus",
@@ -6068,6 +6068,16 @@
           "example": "无",
           "member": "uint64",
           "name": "UnInstallAgentNodeCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
@@ -15352,7 +15362,7 @@
           "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -19823,7 +19833,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>ExportStatus- string -是否必填: 否 - 导出状态 RUNNING: 导出中 SUCCESS:导出完成 FAILURE:失败\n<li>ExportSource- string -是否必填: 否 - 导出来源 LocalImage: 本地镜像\n</li>",
+          "document": "过滤条件。\n<li>ExportStatus- string -是否必填: 否 - 导出状态 RUNNING: 导出中 SUCCESS:导出完成 FAILURE:失败\n</li>\n<li>ExportSource- string -是否必填: 否 - 导出来源 LocalImage: 本地镜像 RegistryImage: 仓库镜像\n</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -19878,7 +19888,7 @@
           "example": "xxx",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -19888,7 +19898,7 @@
           "example": "无",
           "member": "ExportJobInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30279,6 +30289,26 @@
           "example": "无",
           "member": "string",
           "name": "ClusterAccessedStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended",
+          "example": "无",
+          "member": "string",
+          "name": "DefendStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

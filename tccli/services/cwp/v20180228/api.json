@@ -22180,7 +22180,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li>ItemId - int64 - 是否必填：否 - 项Id</i>\n<li>PolicyId - int64 - 是否必填：否 - 项Id</i>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>ItemName - string - 是否必填：否 - 检测项名字</li>\n<li>RuleId - int - 是否必填：否 - 规则Id</li>",
+          "document": "<li>ItemId - int64 - 是否必填：否 - 项Id</li>\n<li>Level - int - 是否必填：否 - 风险等级</li>\n<li>ItemName - string - 是否必填：否 - 检测项名字</li>\n<li>RuleId - int - 是否必填：否 - 规则Id</li>",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -22235,7 +22235,7 @@
           "example": "无",
           "member": "BaselineItemInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -22245,7 +22245,7 @@
           "example": "1",
           "member": "int64",
           "name": "Total",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56694,7 +56694,17 @@
     },
     "SyncBaselineDetectSummaryRequest": {
       "document": "SyncBaselineDetectSummary请求参数结构体",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "用于计算检测中和进度的任务ID集合，一般不用传入",
+          "example": "无",
+          "member": "uint64",
+          "name": "TaskIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
       "type": "object"
     },
     "SyncBaselineDetectSummaryResponse": {
@@ -56706,7 +56716,7 @@
           "example": "无",
           "member": "int64",
           "name": "ProgressRate",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56716,7 +56726,7 @@
           "example": "无",
           "member": "int64",
           "name": "NotPassPolicyCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56726,7 +56736,7 @@
           "example": "无",
           "member": "int64",
           "name": "HostCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56736,7 +56746,7 @@
           "example": "无",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -56746,7 +56756,7 @@
           "example": "无",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -56756,7 +56766,7 @@
           "example": "0",
           "member": "int64",
           "name": "WillFirstScan",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -56766,7 +56776,7 @@
           "example": "无",
           "member": "int64",
           "name": "DetectingTaskIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -56776,7 +56786,7 @@
           "example": "1",
           "member": "int64",
           "name": "LeftMins",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

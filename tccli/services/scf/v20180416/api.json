@@ -2697,11 +2697,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要获取详情的函数名称",
+          "document": "需要获取详情的函数名称，ResourceId和FunctionName只能传一个",
           "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -6888,6 +6888,15 @@
           "name": "IntranetConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "忽略系统日志上报",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreSysLog",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

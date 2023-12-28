@@ -40,7 +40,9 @@ Output:
                 ],
                 "ClusterID": "abc",
                 "ClusterName": "abc",
-                "ClusterAccessedStatus": "abc"
+                "ClusterAccessedStatus": "abc",
+                "ChargeCoresCnt": 1,
+                "DefendStatus": "abc"
             }
         ],
         "TotalCount": 1,

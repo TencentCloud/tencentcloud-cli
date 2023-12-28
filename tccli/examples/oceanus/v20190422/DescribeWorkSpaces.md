@@ -30,7 +30,7 @@ Output:
                 "CreateTime": "2021-12-10 02:39:54",
                 "UpdateTime": "2021-12-10 02:39:54",
                 "Status": 2,
-                "Description": "子账号在默认空间默具有开发者权限，可以在成员管理模块进行限制",
+                "Description": "子账号在默认空间具有开发者权限，可以在成员管理模块进行限制",
                 "ClusterGroupSetItem": [
                     {
                         "ClusterId": "cluster-jphs0vtz",
@@ -49,7 +49,9 @@ Output:
                         "Remark": "k1",
                         "NetEnvironmentType": 1,
                         "FreeCuNum": 24,
-                        "FreeCu": 23.5
+                        "FreeCu": 23.5,
+                        "RunningCu": 0,
+                        "PayMode": 0
                     }
                 ],
                 "RoleAuth": [
@@ -64,7 +66,8 @@ Output:
                         "Permission": 0,
                         "CreateTime": "2021-12-10 02:40:46",
                         "UpdateTime": "2021-12-10 02:40:46",
-                        "Status": 2
+                        "Status": 2,
+                        "RoleName": "name"
                     }
                 ],
                 "RoleAuthCount": 2,

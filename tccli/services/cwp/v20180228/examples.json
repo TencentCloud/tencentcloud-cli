@@ -4148,6 +4148,12 @@
         "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBaselineDetectSummary\n<公共请求参数>\n\n{}",
         "output": "{\n    \"Response\": {\n        \"DetectingTaskIds\": [\n            2379\n        ],\n        \"EndTime\": \"\",\n        \"HostCount\": 1,\n        \"LeftMins\": 3,\n        \"NotPassPolicyCount\": 19,\n        \"ProgressRate\": 20,\n        \"RequestId\": \"69fce851-ee60-44ac-8ab1-62c2c7856051\",\n        \"StartTime\": \"2022-08-23 15:07:02\",\n        \"WillFirstScan\": 0\n    }\n}",
         "title": "同步检测概要"
+      },
+      {
+        "document": "指定任务ID概要请求",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SyncBaselineDetectSummary\n<公共请求参数>\n\n{\n    \"TaskIds\": [\n        299,\n        298\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"DetectingTaskIds\": [],\n        \"EndTime\": \"2023-12-25 12:05:27\",\n        \"HostCount\": 31,\n        \"LeftMins\": 0,\n        \"NotPassPolicyCount\": 1,\n        \"ProgressRate\": 100,\n        \"RequestId\": \"5f862bd8-6931-45ee-a5d9-0fe2c4ea30d7\",\n        \"StartTime\": \"2023-12-25 09:36:00\",\n        \"WillFirstScan\": 0\n    }\n}",
+        "title": "指定任务ID概要请求"
       }
     ],
     "SyncMachines": [

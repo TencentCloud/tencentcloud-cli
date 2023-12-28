@@ -316,7 +316,7 @@
       "status": "online"
     },
     "DescribeExtendedServiceAuthInfos": {
-      "document": "查询企业扩展服务的开通和授权情况，当前支持查询以下内容：\n1. 企业自动签\n2. 企业与港澳台居民签署合同\n3. 使用手机号验证签署方身份\n4. 骑缝章\n5. 批量签署能力\n6. 拓宽签署方年龄限制",
+      "document": "查询企业扩展服务的开通和授权情况，当前支持查询以下内容：\n\n1. **企业自动签署**\n2. **批量签署授权**\n3. **企业与港澳台居民签署合同**\n4. **拓宽签署方年龄限制**\n5. **个人签署方仅校验手机号**\n6. **隐藏合同经办人姓名**\n7. **正楷临摹签名失败后更换其他签名类型**\n8. **短信通知签署方**\n9. **个人签署方手动签字**\n10. **骑缝章**\n11. **签署密码开通引导**\n\n\n对应能力开通页面在Web控制台-更多-企业设置-拓展服务，如下图所示:\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/7d79746ecca1c5fe878a2ec36ed69c23.jpg)\n\n注: <font color='red'>所在企业的超管、法人才有权限调用此接口</font>(Operator.UserId需要传递超管或者法人的UserId)",
       "input": "DescribeExtendedServiceAuthInfosRequest",
       "name": "查询企业扩展服务授权信息",
       "output": "DescribeExtendedServiceAuthInfosResponse",
@@ -439,6 +439,13 @@
       "input": "ModifyApplicationCallbackInfoRequest",
       "name": "修改企业回调配置",
       "output": "ModifyApplicationCallbackInfoResponse",
+      "status": "online"
+    },
+    "ModifyExtendedService": {
+      "document": "管理企业扩展服务 ，企业经办人需要是企业超管或者法人。\n\n跳转小程序的几种方式：主要是设置不同的EndPoint\n1. 通过链接Url直接跳转到小程序，不需要返回\n设置EndPoint为WEIXINAPP，得到链接打开即可。\n\n2. 客户App直接跳转到小程序-->腾讯电子签小程序操作完成-->返回App\n跳转到小程序的实现，参考官方文档<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/launchApp.html\">打开 App</a>\n设置EndPoint为APP，得到path。\n\n3. 客户小程序直接跳到电子签小程序-->腾讯电子签小程序操作完成--->回到客户小程序\n跳转到小程序的实现，参考官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>\n设置EndPoint为APP，得到path。\n\n4.其中小程序的原始Id如下，或者查看小程序信息自助获取。\n\n| 小程序 | AppID | 原始ID |\n| ------------ | ------------ | ------------ |\n| 腾讯电子签（正式版） | wxa023b292fd19d41d | gh_da88f6188665 |\n| 腾讯电子签Demo | wx371151823f6f3edf | gh_39a5d3de69fa |",
+      "input": "ModifyExtendedServiceRequest",
+      "name": "管理企业扩展服务",
+      "output": "ModifyExtendedServiceResponse",
       "status": "online"
     },
     "ModifyIntegrationDepartment": {
@@ -6141,8 +6148,8 @@
         },
         {
           "disabled": false,
-          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>BATCH_SIGN：批量签署</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li></ul>\n",
-          "example": "\"\"",
+          "document": "要查询的扩展服务类型。\n默认为空，即查询当前支持的所有扩展服务信息。\n若需查询单个扩展服务的开通情况，请传递相应的值，如下所示：\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>BATCH_SIGN：批量签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
+          "example": "OPEN_SERVER_SIGN",
           "member": "string",
           "name": "ExtendServiceType",
           "required": false,
@@ -7541,7 +7548,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "扩展服务的类型，可能是以下值：\n<ul><li>OPEN_SERVER_SIGN：企业静默签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>MOBILE_CHECK_APPROVER：使用手机号验证签署方身份</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>BATCH_SIGN：批量签署</li></ul>",
+          "document": "扩展服务的类型，可能是以下值：\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>BATCH_SIGN：批量签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
           "example": "BATCH_SIGN",
           "member": "string",
           "name": "Type",
@@ -7563,7 +7570,7 @@
         },
         {
           "disabled": false,
-          "document": "扩展服务的开通状态：\nENABLE：开通\nDISABLE：未开通",
+          "document": "扩展服务的开通状态：\n<ul>\n<li>ENABLE : 已开通</li>\n<li>DISABLE : 未开通</li>\n</ul>",
           "example": "ENABLE",
           "member": "string",
           "name": "Status",
@@ -9384,6 +9391,79 @@
     "ModifyApplicationCallbackInfoResponse": {
       "document": "ModifyApplicationCallbackInfo返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExtendedServiceRequest": {
+      "document": "ModifyExtendedService请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
+          "example": "yDAVwUyKQWho8CUuO4zjEyQOAgwvr4Zy",
+          "member": "UserInfo",
+          "name": "Operator",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要管理的拓展服务类型。\n<ul><li>OPEN_SERVER_SIGN：企业自动签署</li>\n<li>OVERSEA_SIGN：企业与港澳台居民签署合同</li>\n<li>AGE_LIMIT_EXPANSION：拓宽签署方年龄限制</li>\n<li>MOBILE_CHECK_APPROVER：个人签署方仅校验手机号</li>\n<li>HIDE_OPERATOR_DISPLAY：隐藏合同经办人姓名</li>\n<li>ORGANIZATION_OCR_FALLBACK：正楷临摹签名失败后更换其他签名类型</li>\n<li>ORGANIZATION_FLOW_NOTIFY_TYPE：短信通知签署方</li>\n<li>HIDE_ONE_KEY_SIGN：个人签署方手动签字</li>\n<li>PAGING_SEAL：骑缝章</li>\n<li>ORGANIZATION_FLOW_PASSWD_NOTIFY：签署密码开通引导</li></ul>",
+          "example": "MOBILE_CHECK_APPROVER",
+          "member": "string",
+          "name": "ServiceType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "操作类型\n<ul>\n<li>OPEN : 开通</li>\n<li>CLOSE : 关闭</li>\n</ul>",
+          "example": "OPEN",
+          "member": "string",
+          "name": "Operate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "代理企业和员工的信息。\n在集团企业代理子企业操作的场景中，需设置此参数。在此情境下，ProxyOrganizationId（子企业的组织ID）为必填项。",
+          "example": "无",
+          "member": "Agent",
+          "name": "Agent",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "链接跳转类型，支持以下类型\n<ul>\n<li>WEIXINAPP : 短链直接跳转到电子签小程序  (默认值)</li>\n<li>APP : 第三方APP或小程序跳转电子签小程序</li>\n</ul>",
+          "example": "APP",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyExtendedServiceResponse": {
+      "document": "ModifyExtendedService返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "操作跳转链接，有效期24小时\n若操作时没有返回跳转链接，表示无需跳转操作，此时会直接开通/关闭服务。\n\n当操作类型是 OPEN 且 扩展服务类型是  OPEN_SERVER_SIGN 或者 OVERSEA_SIGN 时返回操作链接，\n返回的链接当前操作人（超管或法人）点击链接完成服务开通操作。",
+          "example": "https://res.ess.tencent.cn/cdn/h5-activity-dev/jump-mp.html?to=OPEN_SERVER_SIGN&request_token=xxxxx&organizationId=xxxxx&channelType=xxxxx&expired_time=1673428532&login=1&verify=1",
+          "member": "string",
+          "name": "OperateUrl",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

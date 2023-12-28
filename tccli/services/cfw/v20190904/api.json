@@ -11099,7 +11099,7 @@
         },
         {
           "disabled": false,
-          "document": "访问源类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "document": "访问源类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板",
           "example": "1",
           "member": "uint64",
           "name": "SourceType",
@@ -11126,7 +11126,7 @@
         },
         {
           "disabled": false,
-          "document": "访问目的类型，1是IP，3是域名，4是IP地址模版，5是域名地址模版",
+          "document": "访问目的类型，1是IP，3是域名，4是IP地址模板，5是域名地址模板",
           "example": "1",
           "member": "uint64",
           "name": "TargetType",
@@ -12575,11 +12575,11 @@
       "usage": "out"
     },
     "TemplateListInfo": {
-      "document": "地址模版列表数据",
+      "document": "地址模板列表数据",
       "members": [
         {
           "disabled": false,
-          "document": "模版ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "mb_1300448058_1636944838448",
           "member": "string",
           "name": "Uuid",
@@ -12589,7 +12589,7 @@
         },
         {
           "disabled": false,
-          "document": "模版名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "abc",
           "member": "string",
           "name": "Name",
@@ -12609,7 +12609,7 @@
         },
         {
           "disabled": false,
-          "document": "IP模版\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "IP模板\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1.1.1.1",
           "member": "string",
           "name": "IpString",
@@ -12639,7 +12639,7 @@
         },
         {
           "disabled": false,
-          "document": "模版类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "模板类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "Type",

@@ -9,7 +9,8 @@ tccli trp DescribeProducts --cli-unfold-argument  \
     --Name  \
     --MerchantId  \
     --PageSize 10 \
-    --PageNumber 1
+    --PageNumber 1 \
+    --CertState -1
 ```
 
 Output: 
@@ -31,7 +32,8 @@ Output:
                 "CreateTime": "2021-11-30T09:00:33.000Z",
                 "UpdateTime": "2021-11-30T09:16:23.000Z",
                 "Ext": {},
-                "MerchantName": "demo"
+                "MerchantName": "demo",
+                "CertState": -1
             },
             {
                 "ProductId": "4girpwhw677zdo9c6t",
@@ -45,7 +47,8 @@ Output:
                 "CreateTime": "2021-11-30T08:50:48.000Z",
                 "UpdateTime": "2021-11-30T08:51:11.000Z",
                 "Ext": {},
-                "MerchantName": ""
+                "MerchantName": "",
+                "CertState": -1
             }
         ],
         "TotalCount": 2,

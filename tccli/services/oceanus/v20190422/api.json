@@ -210,6 +210,13 @@
       "output": "FetchSqlGatewayStatementResultResponse",
       "status": "online"
     },
+    "GetMetaTable": {
+      "document": "查询元数据表",
+      "input": "GetMetaTableRequest",
+      "name": "查询元数据表",
+      "output": "GetMetaTableResponse",
+      "status": "online"
+    },
     "ModifyFolder": {
       "document": "自定义树状结构页面拖拽文件夹",
       "input": "ModifyFolderRequest",
@@ -1495,7 +1502,7 @@
           "example": "folder-xxxxxxxx",
           "member": "string",
           "name": "FolderId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3911,6 +3918,7 @@
           "example": "无",
           "member": "WorkSpaceSetItem",
           "name": "WorkSpaceSetItem",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -3920,6 +3928,7 @@
           "example": "无",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -4157,6 +4166,120 @@
         }
       ],
       "usage": "both"
+    },
+    "GetMetaTableRequest": {
+      "document": "GetMetaTable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Catalog名",
+          "example": "_dc",
+          "member": "string",
+          "name": "Catalog",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Database名",
+          "example": "_db",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Table名",
+          "example": "my_table1",
+          "member": "string",
+          "name": "Table",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "空间唯一标识",
+          "example": "space-xxx",
+          "member": "string",
+          "name": "WorkSpaceId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetMetaTableResponse": {
+      "document": "GetMetaTable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "元数据表唯一标识",
+          "example": "meta-xxx",
+          "member": "string",
+          "name": "SerialId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Catalog名",
+          "example": "_dc",
+          "member": "string",
+          "name": "Catalog",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Database名",
+          "example": "_db",
+          "member": "string",
+          "name": "Database",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Table名",
+          "example": "my_table1",
+          "member": "string",
+          "name": "Table",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "建表语句,使用 Base64 编码。\n例如\nQ1JFQVRFIFRBQkxFIGRhdGFnZW5fc291cmNlX3RhYmxlICggCiAgICBpZCBJTlQsIAogICAgbmFtZSBTVFJJTkcgCikgV0lUSCAoCidjb25uZWN0b3InPSdkYXRhZ2VuJywKJ3Jvd3MtcGVyLXNlY29uZCcgPSAnMScKKTs=",
+          "example": "无",
+          "member": "string",
+          "name": "DDL",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "场景时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "JobConfig": {
       "document": "作业配置详情",

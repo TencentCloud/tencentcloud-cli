@@ -28,6 +28,13 @@
       "output": "CreateCloudNativeAPIGatewayCertificateResponse",
       "status": "online"
     },
+    "CreateCloudNativeAPIGatewayPublicNetwork": {
+      "document": "创建公网网络配置",
+      "input": "CreateCloudNativeAPIGatewayPublicNetworkRequest",
+      "name": "创建公网网络配置",
+      "output": "CreateCloudNativeAPIGatewayPublicNetworkResponse",
+      "status": "online"
+    },
     "CreateCloudNativeAPIGatewayRoute": {
       "document": "创建云原生网关路由",
       "input": "CreateCloudNativeAPIGatewayRouteRequest",
@@ -96,6 +103,13 @@
       "input": "DeleteCloudNativeAPIGatewayCertificateRequest",
       "name": "删除云原生网关证书",
       "output": "DeleteCloudNativeAPIGatewayCertificateResponse",
+      "status": "online"
+    },
+    "DeleteCloudNativeAPIGatewayPublicNetwork": {
+      "document": "删除公网网络配置",
+      "input": "DeleteCloudNativeAPIGatewayPublicNetworkRequest",
+      "name": "删除公网网络配置",
+      "output": "DeleteCloudNativeAPIGatewayPublicNetworkResponse",
       "status": "online"
     },
     "DeleteCloudNativeAPIGatewayRoute": {
@@ -364,11 +378,32 @@
       "output": "ModifyCloudNativeAPIGatewayServiceRateLimitResponse",
       "status": "online"
     },
+    "ModifyConsoleNetwork": {
+      "document": "修改网关实例Konga网络配置",
+      "input": "ModifyConsoleNetworkRequest",
+      "name": "修改云原生API网关实例Konga网络配置",
+      "output": "ModifyConsoleNetworkResponse",
+      "status": "online"
+    },
     "ModifyNativeGatewayServerGroup": {
       "document": "修改云原生API网关实例分组基础信息",
       "input": "ModifyNativeGatewayServerGroupRequest",
       "name": "修改云原生API网关实例分组基础信息",
       "output": "ModifyNativeGatewayServerGroupResponse",
+      "status": "online"
+    },
+    "ModifyNetworkAccessStrategy": {
+      "document": "修改云原生API网关实例Kong访问策略，支持白名单或者黑名单。",
+      "input": "ModifyNetworkAccessStrategyRequest",
+      "name": "修改云原生API网关实例Kong访问策略",
+      "output": "ModifyNetworkAccessStrategyResponse",
+      "status": "online"
+    },
+    "ModifyNetworkBasicInfo": {
+      "document": "修改云原生API网关实例网络基本信息，比如带宽以及描述，只支持修改客户端公网/内网的信息。",
+      "input": "ModifyNetworkBasicInfoRequest",
+      "name": "修改云原生API网关实例网络基本信息",
+      "output": "ModifyNetworkBasicInfoResponse",
       "status": "online"
     },
     "ModifyUpstreamNodeStatus": {
@@ -1933,6 +1968,51 @@
       ],
       "type": "object"
     },
+    "CreateCloudNativeAPIGatewayPublicNetworkRequest": {
+      "document": "CreateCloudNativeAPIGatewayPublicNetwork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxx1234",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id。",
+          "example": "group-xxxx1234",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网负载均衡配置。",
+          "example": "无",
+          "member": "InternetConfig",
+          "name": "InternetConfig",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCloudNativeAPIGatewayPublicNetworkResponse": {
+      "document": "CreateCloudNativeAPIGatewayPublicNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateCloudNativeAPIGatewayRequest": {
       "document": "CreateCloudNativeAPIGateway请求参数结构体",
       "members": [
@@ -2879,6 +2959,60 @@
     },
     "DeleteCloudNativeAPIGatewayCertificateResponse": {
       "document": "DeleteCloudNativeAPIGatewayCertificate返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayPublicNetworkRequest": {
+      "document": "DeleteCloudNativeAPIGatewayPublicNetwork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxx1234",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id，kong类型时必填",
+          "example": "group-xxxx1234",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网类型\n- IPV4 （默认值）\n- IPV6",
+          "example": "IPV6",
+          "member": "string",
+          "name": "InternetAddressVersion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网ip，存在多个公网时必填",
+          "example": "129.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCloudNativeAPIGatewayPublicNetworkResponse": {
+      "document": "DeleteCloudNativeAPIGatewayPublicNetwork返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7463,6 +7597,60 @@
       ],
       "type": "object"
     },
+    "ModifyConsoleNetworkRequest": {
+      "document": "ModifyConsoleNetwork请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型：\n- Open 公网\n- Internal 内网（暂不支持）",
+          "example": "Open",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "开启Konga网络，不填时默认为Open\n- Open，开启\n- Close，关闭",
+          "example": "Open",
+          "member": "string",
+          "name": "Operate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略",
+          "example": "无",
+          "member": "NetworkAccessControl",
+          "name": "AccessControl",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsoleNetworkResponse": {
+      "document": "ModifyConsoleNetwork返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifyNativeGatewayServerGroupRequest": {
       "document": "ModifyNativeGatewayServerGroup请求参数结构体",
       "members": [
@@ -7507,6 +7695,141 @@
     },
     "ModifyNativeGatewayServerGroupResponse": {
       "document": "ModifyNativeGatewayServerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkAccessStrategyRequest": {
+      "document": "ModifyNetworkAccessStrategy请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "group-xxx2345s",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型： \n- Open 公网\n- Internal 内网\t（暂不支持）",
+          "example": "Open",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip地址",
+          "example": "132.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "访问控制策略",
+          "example": "无",
+          "member": "NetworkAccessControl",
+          "name": "AccessControl",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkAccessStrategyResponse": {
+      "document": "ModifyNetworkAccessStrategy返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkBasicInfoRequest": {
+      "document": "ModifyNetworkBasicInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "云原生API网关实例ID。",
+          "example": "gateway-xxxxxx",
+          "member": "string",
+          "name": "GatewayId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分组id",
+          "example": "group-xxx2345s",
+          "member": "string",
+          "name": "GroupId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "网络类型：\n- Open 公网ipv4\n- Open-IPv6 公网ipv6\n- Internal 内网",
+          "example": "无",
+          "member": "string",
+          "name": "NetworkType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "ip地址",
+          "example": "132.0.0.1",
+          "member": "string",
+          "name": "Vip",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "公网出流量带宽[1,2048]Mbps",
+          "example": "10",
+          "member": "uint64",
+          "name": "InternetMaxBandwidthOut",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyNetworkBasicInfoResponse": {
+      "document": "ModifyNetworkBasicInfo返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

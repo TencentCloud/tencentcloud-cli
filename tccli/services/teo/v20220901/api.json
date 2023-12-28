@@ -3453,7 +3453,7 @@
         },
         {
           "disabled": false,
-          "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
+          "document": "要预热的资源列表，每个元素格式类似如下:\nhttp://www.example.com/example.txt。参数值当前必填。\n注意：提交任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
@@ -6050,7 +6050,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间。",
+          "document": "查询起始时间，时间与 job-id 必填一个。",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -6059,7 +6059,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间。",
+          "document": "查询结束时间，时间与 job-id 必填一个。",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
           "name": "EndTime",
@@ -6142,7 +6142,7 @@
         },
         {
           "disabled": false,
-          "document": "查询起始时间。",
+          "document": "查询起始时间，时间与job-id必填一个。",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
           "name": "StartTime",
@@ -6151,7 +6151,7 @@
         },
         {
           "disabled": false,
-          "document": "查询结束时间。",
+          "document": "查询结束时间，时间与job-id必填一个。",
           "example": "2022-02-09T02:35:00Z",
           "member": "datetime_iso",
           "name": "EndTime",

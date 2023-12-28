@@ -1427,15 +1427,17 @@
           "example": "-",
           "member": "UserProfile",
           "name": "ProfileList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "邮件模版总数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "邮件模板总数。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

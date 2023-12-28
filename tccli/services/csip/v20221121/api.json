@@ -1230,7 +1230,7 @@
         {
           "disabled": false,
           "document": "风险ID",
-          "example": "b6d767d2f8ed5d21a44b0e5886680cb9",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -1240,7 +1240,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "63d404a057f8774b5223f7f6be62fd06",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -1396,7 +1396,7 @@
         {
           "disabled": false,
           "document": "风险ID",
-          "example": "dffe78de8b51a46a131fd0d49687ed0a",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -1406,7 +1406,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "765a166408267b561284cba992eb5225",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Index",
           "output_required": true,
@@ -1566,7 +1566,7 @@
         {
           "disabled": false,
           "document": "pocid",
-          "example": "c808d8eb0e9c322279c2efa3b82a491c",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "POCId",
           "output_required": true,
@@ -1616,7 +1616,7 @@
         {
           "disabled": false,
           "document": "实例uuid",
-          "example": "69b75e3e-5601-46e5-9fb9-7f386a757a5d",
+          "example": "xxxx-xxxx-xxxx-xxx-xxx",
           "member": "string",
           "name": "InstanceUUID",
           "output_required": true,
@@ -9383,7 +9383,7 @@
         {
           "disabled": false,
           "document": "风险ID",
-          "example": "0b01fb18c8fb6e5644ef6f1e69a7fa30",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Id",
           "output_required": true,
@@ -9403,7 +9403,7 @@
         {
           "disabled": false,
           "document": "前端索引",
-          "example": "fb0ee4db25383610147c43c858212291",
+          "example": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
           "member": "string",
           "name": "Index",
           "output_required": true,

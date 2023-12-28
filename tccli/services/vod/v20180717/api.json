@@ -8846,7 +8846,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -14244,7 +14244,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播 [子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -14742,7 +14742,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "int64",
           "name": "SubAppId",
@@ -15447,7 +15447,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "1490012345",
           "member": "uint64",
           "name": "SubAppId",
@@ -27697,7 +27697,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -31177,7 +31177,7 @@
         },
         {
           "disabled": false,
-          "document": "<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",
@@ -34321,6 +34321,7 @@
           "example": "TEHD-100",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -34331,6 +34332,7 @@
           "example": "0",
           "member": "uint64",
           "name": "MaxVideoBitrate",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36084,6 +36086,7 @@
           "example": "libx264",
           "member": "string",
           "name": "Codec",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -36094,6 +36097,7 @@
           "example": "25",
           "member": "uint64",
           "name": "Fps",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -36104,6 +36108,7 @@
           "example": "500",
           "member": "uint64",
           "name": "Bitrate",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -36114,6 +36119,7 @@
           "example": "open",
           "member": "string",
           "name": "ResolutionAdaptive",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36124,6 +36130,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Width",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36134,6 +36141,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Height",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36144,6 +36152,7 @@
           "example": "stretch",
           "member": "string",
           "name": "FillType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36154,6 +36163,7 @@
           "example": "23",
           "member": "uint64",
           "name": "Vcrf",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36164,6 +36174,7 @@
           "example": "25",
           "member": "uint64",
           "name": "Gop",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -36174,6 +36185,7 @@
           "example": "ON",
           "member": "string",
           "name": "PreserveHDRSwitch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -36184,6 +36196,7 @@
           "example": "hev1",
           "member": "string",
           "name": "CodecTag",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false

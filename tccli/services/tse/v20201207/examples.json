@@ -32,6 +32,14 @@
         "title": "创建云原生网关证书"
       }
     ],
+    "CreateCloudNativeAPIGatewayPublicNetwork": [
+      {
+        "document": "创建公网网络配置",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCloudNativeAPIGatewayPublicNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"GroupId\": \"abc\",\n    \"InternetConfig\": {\n        \"InternetAddressVersion\": \"abc\",\n        \"InternetPayMode\": \"abc\",\n        \"InternetMaxBandwidthOut\": 1,\n        \"Description\": \"abc\",\n        \"SlaType\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "创建公网网络配置"
+      }
+    ],
     "CreateCloudNativeAPIGatewayRoute": [
       {
         "document": "创建云原生网关路由",
@@ -110,6 +118,14 @@
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayCertificate\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-9abf3b70\",\n    \"Id\": \"6190e57f-f5b2-4295-a8c0-34d4a6d0e6e5\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"741e4e82-371d-48de-a843-867c69ff114d\"\n    }\n}",
         "title": "删除云原生网关证书"
+      }
+    ],
+    "DeleteCloudNativeAPIGatewayPublicNetwork": [
+      {
+        "document": "删除网关实例客户端公网网络",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCloudNativeAPIGatewayPublicNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"abc\",\n    \"GroupId\": \"abc\",\n    \"InternetAddressVersion\": \"abc\",\n    \"Vip\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "删除网关实例公网网络"
       }
     ],
     "DeleteCloudNativeAPIGatewayRoute": [
@@ -416,12 +432,36 @@
         "title": "修改云原生网关限流插件(服务)"
       }
     ],
+    "ModifyConsoleNetwork": [
+      {
+        "document": "修改云原生API网关实例Konga网络配置",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsoleNetwork\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxxxxx\",\n    \"NetworkType\": \"Open\",\n    \"Operate\": \"Open\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改云原生API网关实例Konga网络配置"
+      }
+    ],
     "ModifyNativeGatewayServerGroup": [
       {
         "document": "修改云原生API网关实例分组基础信息",
         "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNativeGatewayServerGroup\n<公共请求参数>\n\n{\n    \"GatewayId\": \"<GatewayId>\",\n    \"Name\": \"<Name>\",\n    \"Description\": \"<Description>\",\n    \"GroupId\": \"<GroupId>\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"9922cab4-4ad3-4146-9535-cbc788082899\"\n    }\n}",
         "title": "修改云原生API网关实例分组基础信息"
+      }
+    ],
+    "ModifyNetworkAccessStrategy": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkAccessStrategy\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gateway-xxxxx\",\n    \"GroupId\": \"group-xxxxxx\",\n    \"NetworkType\": \"abc\",\n    \"Vip\": \"abc\",\n    \"AccessControl\": {\n        \"Mode\": \"abc\",\n        \"CidrWhiteList\": [\n            \"abc\"\n        ],\n        \"CidrBlackList\": [\n            \"abc\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改云原生API网关实例Kong访问策略"
+      }
+    ],
+    "ModifyNetworkBasicInfo": [
+      {
+        "document": "修改Kong客户端内网网络信息",
+        "input": "POST / HTTP/1.1\nHost: tse.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyNetworkBasicInfo\n<公共请求参数>\n\n{\n    \"GatewayId\": \"gatway-xxxxxx\",\n    \"GroupId\": \"group-xxxxxx\",\n    \"NetworkType\": \"Open\",\n    \"Vip\": \"172.10.10.1\",\n    \"InternetMaxBandwidthOut\": 1,\n    \"Description\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "修改网关实例网络基本信息"
       }
     ],
     "ModifyUpstreamNodeStatus": [
