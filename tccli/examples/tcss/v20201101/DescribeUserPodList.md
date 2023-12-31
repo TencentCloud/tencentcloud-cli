@@ -44,7 +44,8 @@ Output:
                 "HostId": "abc",
                 "ClusterType": "abc",
                 "NodeName": "abc",
-                "NodeType": "abc"
+                "NodeType": "abc",
+                "ChargeCoresCnt": 1
             }
         ],
         "TotalCount": 1,

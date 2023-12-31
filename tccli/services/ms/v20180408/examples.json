@@ -228,6 +228,14 @@
         "title": "请求任务接口"
       }
     ],
+    "UpdateAppBindNameInstances": [
+      {
+        "document": "更改绑定app的名称",
+        "input": "POST / HTTP/1.1\nHost: ms.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateAppBindNameInstances\n<公共请求参数>\n\n{\n    \"AppBindName\": \"斯蒂芬斯蒂芬\",\n    \"ResourceId\": \"svmsref_20230904_831e8c96-687c-45d6-a3e2-310d284a59cc_53\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4679a5fb-df54-4dc4-a8ee-cd262a507c5b\",\n        \"ResourceId\": \"svmsref_20230904_831e8c96-687c-45d6-a3e2-310d284a59cc_53\"\n    }\n}",
+        "title": "更改绑定app的名称"
+      }
+    ],
     "UpdateClientState": [
       {
         "document": "client上报",

@@ -14,6 +14,13 @@
       "output": "ListProjectsForManResponse",
       "status": "online"
     },
+    "QueryUser": {
+      "document": "查询平台用户信息",
+      "input": "QueryUserRequest",
+      "name": "查询平台用户信息",
+      "output": "QueryUserResponse",
+      "status": "online"
+    },
     "ReceiveAIMarkNotice": {
       "document": "接收AI标注通知",
       "input": "ReceiveAIMarkNoticeRequest",
@@ -43,6 +50,78 @@
     "serviceShortName": "taop"
   },
   "objects": {
+    "ComReq": {
+      "document": "获取Ai模型信息入参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分页信息",
+          "example": "无",
+          "member": "Page",
+          "name": "Page",
+          "required": true,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询字段",
+          "example": "[\"Id\",\"ModelName\"]",
+          "member": "string",
+          "name": "Fields",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询条件",
+          "example": "无",
+          "member": "Condition",
+          "name": "Conditions",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "Condition": {
+      "document": "查询条件",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称",
+          "example": "Id",
+          "member": "string",
+          "name": "Field",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作符 枚举  = :0， >:1,  >= :2,  <:3, <=:4 ,  in : 5",
+          "example": "0",
+          "member": "uint64",
+          "name": "Opt",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "查询条件限制值",
+          "example": "4",
+          "member": "string",
+          "name": "Value",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
     "ListProjectsForManRequest": {
       "document": "ListProjectsForMan请求参数结构体",
       "members": [
@@ -226,6 +305,42 @@
         }
       ],
       "type": "object"
+    },
+    "Page": {
+      "document": "分页类型， 用于分页信息的传参",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前页",
+          "example": "0",
+          "member": "uint64",
+          "name": "CurPage",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每页记录个数",
+          "example": "10",
+          "member": "uint64",
+          "name": "PageSize",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
     },
     "ProjectInfo": {
       "document": "项目信息",
@@ -522,6 +637,43 @@
         }
       ],
       "usage": "out"
+    },
+    "QueryUserRequest": {
+      "document": "QueryUser请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "请求传参",
+          "example": "无",
+          "member": "ComReq",
+          "name": "Req",
+          "required": true,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryUserResponse": {
+      "document": "QueryUser返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "无",
+          "member": "User",
+          "name": "Data",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "ReceiveAIMarkNoticeRequest": {
       "document": "ReceiveAIMarkNotice请求参数结构体",

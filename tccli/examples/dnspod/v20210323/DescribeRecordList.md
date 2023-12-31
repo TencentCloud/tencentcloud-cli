@@ -44,7 +44,8 @@ Output:
                 "MonitorStatus": "",
                 "Remark": "",
                 "TTL": 86400,
-                "MX": 0
+                "MX": 0,
+                "DefaultNS": true
             },
             {
                 "RecordId": 556507779,
@@ -59,7 +60,8 @@ Output:
                 "MonitorStatus": "",
                 "Remark": "",
                 "TTL": 86400,
-                "MX": 0
+                "MX": 0,
+                "DefaultNS": true
             }
         ]
     }

@@ -2921,11 +2921,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要获取详情的函数名称",
+          "document": "需要获取详情的函数名称，ResourceId和FunctionName只能传一个",
           "example": "<FunctionName>",
           "member": "string",
           "name": "FunctionName",
-          "required": true,
+          "required": false,
           "type": "string"
         },
         {
@@ -2952,6 +2952,15 @@
           "example": "TRUE",
           "member": "string",
           "name": "ShowCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "函数资源ID，ResourceId和FunctionName只能传一个",
+          "example": "scf-gz-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
           "required": false,
           "type": "string"
         }
@@ -3520,6 +3529,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "忽略系统日志上报",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreSysLog",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7476,6 +7495,15 @@
           "name": "IntranetConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "忽略系统日志上报",
+          "example": "无",
+          "member": "bool",
+          "name": "IgnoreSysLog",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

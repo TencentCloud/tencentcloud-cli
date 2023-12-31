@@ -1,3 +1,104 @@
+# Release 3.0.912.1
+
+## 批量计算(batch) 版本：2017-03-12
+
+### 第 15 次发布
+
+发布时间：2024-01-01 01:02:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/599/15912#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 67 次发布
+
+发布时间：2024-01-01 01:06:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 45 次发布
+
+发布时间：2024-01-01 01:14:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/849/52008)
+
+	* 新增入参：ExtraResult
+
+
+新增数据结构：
+
+* [JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：EventInfo
+
+
+
+
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 8 次发布
+
+发布时间：2024-01-01 01:19:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)
+
+新增数据结构：
+
+* [LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)
+* [LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)
+* [ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)
+* [ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
+
+
+
 # Release 3.0.911.1
 
 ## 腾讯健康组学平台(omics) 版本：2022-11-28

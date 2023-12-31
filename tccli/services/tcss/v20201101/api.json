@@ -6066,7 +6066,7 @@
         },
         {
           "disabled": false,
-          "document": "接入状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "接入状态:\n未接入: AccessedNone\n已防护: AccessedDefended\n未防护: AccessedInstalled\n部分防护: AccessedPartialDefence\n接入异常: AccessedException\n卸载异常: AccessedUninstallException\n接入中: AccessedInstalling\n卸载中: AccessedUninstalling\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "AccessedStatus",
@@ -6113,6 +6113,16 @@
           "output_required": false,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -6126,7 +6136,7 @@
           "example": "wktest-6486d6544d-v9gkn",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6136,7 +6146,7 @@
           "example": "Running",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6146,7 +6156,7 @@
           "example": "10.0.0.9",
           "member": "string",
           "name": "PodIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6156,7 +6166,7 @@
           "example": "10.0.0.11",
           "member": "string",
           "name": "NodeLanIP",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6166,7 +6176,7 @@
           "example": "wktest-6486d6544d",
           "member": "string",
           "name": "WorkloadName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6176,7 +6186,7 @@
           "example": "Deployment",
           "member": "string",
           "name": "WorkloadKind",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6186,7 +6196,7 @@
           "example": "wk-cluster",
           "member": "string",
           "name": "ClusterName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6196,7 +6206,7 @@
           "example": "cls-as2mkd13",
           "member": "string",
           "name": "ClusterId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6206,7 +6216,7 @@
           "example": "Default",
           "member": "string",
           "name": "Namespace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6216,7 +6226,7 @@
           "example": "ap-guangzhou",
           "member": "string",
           "name": "Region",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6226,7 +6236,7 @@
           "example": "78d",
           "member": "string",
           "name": "Age",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6236,7 +6246,7 @@
           "example": "Wed, 24 Nov 2021 11:31:16",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6246,7 +6256,7 @@
           "example": "12",
           "member": "uint64",
           "name": "Restarts",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6256,7 +6266,7 @@
           "example": "wk-service",
           "member": "string",
           "name": "ServiceName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6266,7 +6276,7 @@
           "example": "2",
           "member": "uint64",
           "name": "ServiceCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6276,7 +6286,7 @@
           "example": "k8s_cluster-security-agent_cluster-security-defender-f8fhj_kube-",
           "member": "string",
           "name": "ContainerName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6286,7 +6296,7 @@
           "example": "3",
           "member": "uint64",
           "name": "ContainerCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6296,7 +6306,7 @@
           "example": "0",
           "member": "uint64",
           "name": "CPU",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6306,7 +6316,7 @@
           "example": "16",
           "member": "uint64",
           "name": "Memory",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6316,7 +6326,7 @@
           "example": "无",
           "member": "string",
           "name": "Labels",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6326,7 +6336,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6336,7 +6346,7 @@
           "example": "无",
           "member": "string",
           "name": "WorkloadLabels",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6346,7 +6356,7 @@
           "example": "无",
           "member": "string",
           "name": "ContainerId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6356,7 +6366,7 @@
           "example": "无",
           "member": "string",
           "name": "HostName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6366,7 +6376,7 @@
           "example": "无",
           "member": "string",
           "name": "HostId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6376,7 +6386,7 @@
           "example": "无",
           "member": "string",
           "name": "ClusterType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6386,7 +6396,7 @@
           "example": "无",
           "member": "string",
           "name": "NodeName",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -6396,8 +6406,18 @@
           "example": "无",
           "member": "string",
           "name": "NodeType",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": false
         }
       ],
@@ -15680,7 +15700,7 @@
           "example": "无",
           "member": "string",
           "name": "DownloadUrl",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -20285,7 +20305,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>ExportStatus- string -是否必填: 否 - 导出状态 RUNNING: 导出中 SUCCESS:导出完成 FAILURE:失败\n<li>ExportSource- string -是否必填: 否 - 导出来源 LocalImage: 本地镜像\n</li>",
+          "document": "过滤条件。\n<li>ExportStatus- string -是否必填: 否 - 导出状态 RUNNING: 导出中 SUCCESS:导出完成 FAILURE:失败\n</li>\n<li>ExportSource- string -是否必填: 否 - 导出来源 LocalImage: 本地镜像 RegistryImage: 仓库镜像\n</li>",
           "example": "无",
           "member": "RunTimeFilters",
           "name": "Filters",
@@ -20340,7 +20360,7 @@
           "example": "xxx",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -20350,7 +20370,7 @@
           "example": "无",
           "member": "ExportJobInfo",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -30898,6 +30918,26 @@
           "example": "无",
           "member": "string",
           "name": "ClusterAccessedStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended",
+          "example": "无",
+          "member": "string",
+          "name": "DefendStatus",
           "output_required": true,
           "type": "string",
           "value_allowed_null": false

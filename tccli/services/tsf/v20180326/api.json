@@ -5879,7 +5879,7 @@
           "example": "无",
           "member": "int64",
           "name": "InstanceNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -5889,8 +5889,18 @@
           "example": "无",
           "member": "int64",
           "name": "CurrentNum",
-          "required": true,
+          "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "负载均衡DNS地址",
+          "example": "无",
+          "member": "string",
+          "name": "LbDns",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -5899,7 +5909,7 @@
           "example": "无",
           "member": "string",
           "name": "LbIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5909,27 +5919,27 @@
           "example": "无",
           "member": "string",
           "name": "ClusterIp",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务状态，请参考后面的的状态定义",
+          "document": "服务状态，请参考后面的状态定义",
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "服务状态，请参考后面的的状态定义",
+          "document": "服务状态，请参考后面的状态定义",
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -5939,7 +5949,7 @@
           "example": "无",
           "member": "Env",
           "name": "Envs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -5949,7 +5959,7 @@
           "example": "无",
           "member": "uint64",
           "name": "NodePort",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -5959,7 +5969,7 @@
           "example": "无",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -5969,7 +5979,7 @@
           "example": "无",
           "member": "HealthCheckSettings",
           "name": "HealthCheckSettings",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -5979,7 +5989,7 @@
           "example": "无",
           "member": "bool",
           "name": "IsNotEqualServiceConfig",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": true
         }
@@ -6024,65 +6034,65 @@
       "type": "object"
     },
     "CosCredentials": {
-      "document": "cos临时帐号信息",
+      "document": "cos临时账号信息",
       "members": [
         {
           "disabled": false,
           "document": "会话Token\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "SessionToken",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "临时应用ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TmpAppId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "临时调用者身份ID\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TmpSecretId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "临时密钥\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "TmpSecretKey",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "过期时间\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "int64",
           "name": "ExpiredTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
           "document": "所在域\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "",
+          "example": "无",
           "member": "string",
           "name": "Domain",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

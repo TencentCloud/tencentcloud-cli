@@ -28,6 +28,14 @@
         "title": "示例"
       }
     ],
+    "QueryUser": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: taop.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryUser\n<公共请求参数>\n\n{\n    \"Req\": {\n        \"Page\": {\n            \"CurPage\": \"1\",\n            \"PageSize\": \"100\"\n        }\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"Id\": \"391825450327883776\",\n                \"Name\": \"100000558876\",\n                \"PlatName\": \"\",\n                \"SubAccountUin\": \"100000558876\",\n                \"Position\": \"医生\",\n                \"Department\": \"外科\",\n                \"Mobile\": \"13838373776\",\n                \"Role\": 2,\n                \"CreateTime\": \"2021-06-24T14:48:30Z\"\n            }\n        ],\n        \"RequestId\": \"2a253a69-c941-483f-be7e-6e476d324e3b\"\n    }\n}",
+        "title": "QueryUser"
+      }
+    ],
     "ReceiveAIMarkNotice": [
       {
         "document": "",

@@ -1,10 +1,52 @@
 # 本版本更新包含以下内容：
 
-## 腾讯健康组学平台(omics) 版本：2022-11-28
+## 批量计算(batch) 版本：2017-03-12
 
-### 第 7 次发布
+### 第 15 次发布
 
-发布时间：2023-12-28 01:19:45
+发布时间：2024-01-01 01:02:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/599/15912#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
+
+
+
+## 云服务器(cvm) 版本：2019-12-12
+
+
+
+## 云服务器(cvm) 版本：2017-03-12
+
+### 第 67 次发布
+
+发布时间：2024-01-01 01:06:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
+
+
+
+## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 45 次发布
+
+发布时间：2024-01-01 01:14:25
 
 本次发布包含了以下内容：
 
@@ -12,22 +54,29 @@
 
 修改接口：
 
-* [RetryRuns](http://document.tencentcloudapi.woa.com/document/product/1725/80768)
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/849/52008)
 
-	* 新增入参：RunGroupId, WDLOption, NFOption
-
-	* <font color="#dd0000">**修改入参**：</font>ProjectId, RunUuids
-
-	* 新增出参：RunGroupId
+	* 新增入参：ExtraResult
 
 
+新增数据结构：
+
+* [JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：EventInfo
 
 
-## 腾讯觅影开放实验平台(taop) 版本：2020-11-09
 
-### 第 3 次发布
 
-发布时间：2023-12-28 01:21:55
+## 文本内容安全(tms) 版本：2020-12-29
+
+### 第 8 次发布
+
+发布时间：2024-01-01 01:19:33
 
 本次发布包含了以下内容：
 
@@ -35,7 +84,18 @@
 
 新增接口：
 
-* [ListProjectsForMan](http://document.tencentcloudapi.woa.com/document/product/1673/82876)
+* [ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)
+
+新增数据结构：
+
+* [LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)
+* [LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)
+* [ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)
+* [ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)
+
+
+
+## 文本内容安全(tms) 版本：2020-07-13
 
 
 
@@ -4994,6 +5054,21 @@
 
 
 ## 批量计算(batch) 版本：2017-03-12
+
+### 第 15 次发布
+
+发布时间：2024-01-01 01:02:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/599/15912#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
 
 ### 第 14 次发布
 
@@ -24474,6 +24549,21 @@
 
 ## 云服务器(cvm) 版本：2017-03-12
 
+### 第 67 次发布
+
+发布时间：2024-01-01 01:06:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeQuotaItem)
+
+	* 新增成员：InstanceQuota
+
+
 ### 第 66 次发布
 
 发布时间：2023-12-22 01:25:33
@@ -25768,6 +25858,21 @@
 
 
 ## 主机安全(cwp) 版本：2018-02-28
+
+### 第 80 次发布
+
+发布时间：2023-12-29 01:12:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [SyncBaselineDetectSummary](http://document.tencentcloudapi.woa.com/document/product/296/76393)
+
+	* 新增入参：TaskIds
+
 
 ### 第 79 次发布
 
@@ -39215,6 +39320,18 @@
 
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 62 次发布
+
+发布时间：2023-12-29 01:15:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyExtendedService](http://document.tencentcloudapi.woa.com/document/product/1668/82877)
 
 ### 第 61 次发布
 
@@ -58071,6 +58188,18 @@
 
 ## 移动应用安全(ms) 版本：2018-04-08
 
+### 第 8 次发布
+
+发布时间：2023-12-29 01:20:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [UpdateAppBindNameInstances](http://document.tencentcloudapi.woa.com/document/product/1617/82878)
+
 ### 第 7 次发布
 
 发布时间：2023-12-05 02:11:22
@@ -58644,6 +58773,44 @@
 
 
 ## 流计算 Oceanus(oceanus) 版本：2019-04-22
+
+### 第 45 次发布
+
+发布时间：2024-01-01 01:14:25
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/849/52008)
+
+	* 新增入参：ExtraResult
+
+
+新增数据结构：
+
+* [[JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo))
+
+修改数据结构：
+
+* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
+
+	* 新增成员：EventInfo
+
+
+### 第 44 次发布
+
+发布时间：2023-12-29 01:20:35
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [GetMetaTable](http://document.tencentcloudapi.woa.com/document/product/849/82880)
 
 ### 第 43 次发布
 
@@ -65146,6 +65313,29 @@
 
 ## 云函数(scf) 版本：2018-04-16
 
+### 第 43 次发布
+
+发布时间：2023-12-29 01:21:46
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增入参：ResourceId
+
+	* <font color="#dd0000">**修改入参**：</font>FunctionName
+
+	* 新增出参：IgnoreSysLog
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：IgnoreSysLog
+
+
 ### 第 42 次发布
 
 发布时间：2023-12-05 02:17:56
@@ -69933,6 +70123,24 @@
 
 ## 腾讯觅影开放实验平台(taop) 版本：2020-11-09
 
+### 第 4 次发布
+
+发布时间：2023-12-29 01:22:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [QueryUser](http://document.tencentcloudapi.woa.com/document/product/1673/82881)
+
+新增数据结构：
+
+* [ComReq](http://document.tencentcloudapi.woa.com/document/product/1673/82875#ComReq)
+* [Condition](http://document.tencentcloudapi.woa.com/document/product/1673/82875#Condition)
+* [Page](http://document.tencentcloudapi.woa.com/document/product/1673/82875#Page)
+
 ### 第 3 次发布
 
 发布时间：2023-12-28 01:21:55
@@ -69943,7 +70151,7 @@
 
 新增接口：
 
-* [[ListProjectsForMan](http://document.tencentcloudapi.woa.com/document/product/1673/82876)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ListProjectsForMan](http://document.tencentcloudapi.woa.com/document/product/1673/82876)
 
 ### 第 2 次发布
 
@@ -72900,6 +73108,31 @@
 
 
 ## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 13 次发布
+
+发布时间：2023-12-29 01:23:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ClusterInfoItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterInfoItem)
+
+	* 新增成员：ChargeCoresCnt
+
+* [ClusterPodInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterPodInfo)
+
+	* 新增成员：ChargeCoresCnt
+
+	* <font color="#dd0000">**修改成员**：</font>NodeName, NodeType
+
+* [HostInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#HostInfo)
+
+	* 新增成员：ChargeCoresCnt, DefendStatus
+
 
 ### 第 12 次发布
 
@@ -79759,6 +79992,25 @@
 
 ## 互动白板(tiw) 版本：2019-09-19
 
+### 第 19 次发布
+
+发布时间：2023-12-29 01:25:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreatePPTCheckTask](http://document.tencentcloudapi.woa.com/document/product/1137/77448)
+
+	* 新增入参：AutoHandleUnsupportedElementTypes
+
+* [CreateTranscode](http://document.tencentcloudapi.woa.com/document/product/1137/40060)
+
+	* 新增入参：AutoHandleUnsupportedElementTypes
+
+
 ### 第 18 次发布
 
 发布时间：2023-12-01 01:25:42
@@ -82202,6 +82454,25 @@
 
 ## 文本内容安全(tms) 版本：2020-12-29
 
+### 第 8 次发布
+
+发布时间：2024-01-01 01:19:33
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade))
+* [[LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult))
+* [[ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult))
+* [[ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail))
+
 ### 第 7 次发布
 
 发布时间：2023-11-28 01:25:41
@@ -83687,6 +83958,22 @@
 
 ## 微服务引擎 TSE(tse) 版本：2020-12-07
 
+### 第 49 次发布
+
+发布时间：2023-12-29 01:26:01
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreateCloudNativeAPIGatewayPublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/82886)
+* [DeleteCloudNativeAPIGatewayPublicNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/82885)
+* [ModifyConsoleNetwork](http://document.tencentcloudapi.woa.com/document/product/1364/82884)
+* [ModifyNetworkAccessStrategy](http://document.tencentcloudapi.woa.com/document/product/1364/82883)
+* [ModifyNetworkBasicInfo](http://document.tencentcloudapi.woa.com/document/product/1364/82882)
+
 ### 第 48 次发布
 
 发布时间：2023-11-23 01:28:07
@@ -84674,6 +84961,21 @@
 
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 40 次发布
+
+发布时间：2023-12-29 01:26:15
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [ContainerGroupOther](http://document.tencentcloudapi.woa.com/document/product/649/36099#ContainerGroupOther)
+
+	* 新增成员：LbDns
+
 
 ### 第 39 次发布
 
