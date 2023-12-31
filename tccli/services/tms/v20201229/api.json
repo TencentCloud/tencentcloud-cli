@@ -1,5 +1,12 @@
 {
   "actions": {
+    "ModerateText": {
+      "document": "天御文本内容安全审核接口，改接口会按照客户定制标签输出审核结果",
+      "input": "ModerateTextRequest",
+      "name": "客户定制标签文本审核",
+      "output": "ModerateTextResponse",
+      "status": "online"
+    },
     "TextModeration": {
       "document": "本接口（Text Moderation）用于提交文本内容进行智能审核任务。使用前请您使用腾讯云主账号登录控制台 [开通文本内容安全服务](https://console.cloud.tencent.com/cms) 并调整好对应的业务配置。\n\n### 接口使用说明\n- 前往“[内容安全控制台-文本内容安全](https://console.cloud.tencent.com/cms)”开启使用文本内容安全服务，首次开通服务的用户可免费领用试用套餐包，包含**3000条**文本识别额度，有效期为15天。\n- 该接口为收费接口，计费方式敬请参见 [腾讯云文本内容安全定价](https://cloud.tencent.com/product/tms/pricing)。\n\n### 接口功能说明：\n- 支持对文本文件进行检测，通过深度学习技术，识别可能令人反感、不安全或不适宜的违规文本内容；\n- 支持识别多种违规场景，包括：低俗、谩骂、色情、广告等场景；\n- 支持根据不同的业务场景配置自定义的审核策略，可在控制台文本内容安全-策略管理中配置；\n- 支持用户自定义配置词库黑白名单，打击自定义识别类型的违规文本（目前仅支持黑名单配置）；\n- 支持在审核文本内容时同时关联账号或设备信息，可识别违规风险账号或设备。\n\n### 接口调用说明：\n- 文本内容大小支持：文本原文长度不能超过unicode编码长度10000个字符；\n- 文本审核语言支持：目前支持中文、英文、阿拉伯数字的检测；\n- 默认接口请求频率限制：**1000次/秒**，超过该频率限制则接口会报错。",
       "input": "TextModerationRequest",
@@ -20,11 +27,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "该字段用于返回检测结果所对应的全部恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告，**Custom**：自定义违规；以及其他令人反感、不安全或不适宜的内容类型。",
+          "document": "该字段用于返回检测结果所对应的全部恶意标签。<br>返回值：**Normal**：正常，**Porn**：色情，**Abuse**：谩骂，**Ad**：广告；以及其他令人反感、不安全或不适宜的内容类型。",
           "example": "无",
           "member": "string",
           "name": "Label",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -34,7 +41,7 @@
           "example": "无",
           "member": "string",
           "name": "Suggestion",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -44,7 +51,7 @@
           "example": "无",
           "member": "string",
           "name": "Keywords",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -54,37 +61,37 @@
           "example": "无",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段**仅当Label为Custom自定义关键词时有效**，用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回自定义关键词对应的词库类型，取值为**1**（黑白库）和**2**（自定义关键词库），若未配置自定义关键词库,则默认值为1（黑白库匹配）。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "LibType",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的ID，以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回自定义库的ID，以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LibId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "该字段**仅当Label为Custom：自定义关键词时该参数有效**,用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "该字段用于返回自定义库的名称,以方便自定义库管理和配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "LibName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -94,7 +101,7 @@
           "example": "无",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -104,7 +111,7 @@
           "example": "{\"Keyword\":\"约炮\",\"Score\":100,\"SubLabel\":\"Sexy\"}",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -114,7 +121,7 @@
           "example": "习近平",
           "member": "HitInfo",
           "name": "HitInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -238,6 +245,353 @@
           "name": "Positions",
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LabelGrade": {
+      "document": "内容审核多级标签结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内容审核结果客户定制标签码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20001",
+          "member": "string",
+          "name": "Code",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容审核结果客户定制一级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "违法",
+          "member": "string",
+          "name": "Grade1",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容审核结果客户定制二级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "违法直播",
+          "member": "string",
+          "name": "Grade2",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "内容审核结果客户定制三级标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "开车直播",
+          "member": "string",
+          "name": "Grade3",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "LibCheckResult": {
+      "document": "库检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dg2a89a9hjfdkx0lc",
+          "member": "string",
+          "name": "LibId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "辱骂词汇库",
+          "member": "string",
+          "name": "LibName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "LibType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的关键词\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "卧槽",
+          "member": "string",
+          "name": "Keyword",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中的关键词在送审文本的位置，可能存在多个位置，每个位置显示开始位置和结束位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Positions",
+          "name": "Positions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModelResult": {
+      "document": "模型检测结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "模型检测出的违规内容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型检测出的违规内容的位置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Positions",
+          "name": "Positions",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ModerateTextRequest": {
+      "document": "ModerateText请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该字段表示待检测对象的文本内容，文本需要按utf-8格式编码，长度不能超过10000个字符（按unicode编码计算），并进行 Base64加密",
+          "example": "无",
+          "member": "string",
+          "name": "Content",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示策略的具体编号，用于接口调度，在内容安全控制台中可配置。若不传入Biztype参数（留空），则代表采用默认的识别策略；传入则会在审核时根据业务场景采取不同的审核策略。\n备注：Biztype仅为数字、字母与下划线的组合，长度为3-32个字符；不同Biztype关联不同的业务场景与识别能力策略，调用前请确认正确的Biztype",
+          "example": "无",
+          "member": "string",
+          "name": "BizType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示您为待检测对象分配的数据ID，传入后可方便您对文件进行标识和管理。\n取值：由英文字母（大小写均可）、数字及四个特殊符号（_，-，@，#）组成，长度不超过64个字符",
+          "example": "无",
+          "member": "string",
+          "name": "DataId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示待检测对象对应的用户相关信息，传入后可便于甄别相应违规风险用户",
+          "example": "无",
+          "member": "User",
+          "name": "User",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "该字段表示待检测对象对应的设备相关信息，传入后可便于甄别相应违规风险设备",
+          "example": "无",
+          "member": "Device",
+          "name": "Device",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "ModerateTextResponse": {
+      "document": "ModerateText返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "该字段用于返回检测对象对应请求参数中的DataId，与输入的DataId字段中的内容对应",
+          "example": "无",
+          "member": "string",
+          "name": "DataId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回请求参数中的BizType参数",
+          "example": "无",
+          "member": "string",
+          "name": "BizType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回后续操作建议。当您获取到判定结果后，返回值表示系统推荐的后续操作；建议您按照业务所需，对不同违规类型与建议值进行处理。\n返回值：Block：建议屏蔽，Review ：建议人工复审，Pass：建议通过",
+          "example": "无",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中标签，可参阅对应数据结构（LabelGrade）的详细描述",
+          "example": "无",
+          "member": "LabelGrade",
+          "name": "Label",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命中标签对应腾讯侧定义的标签",
+          "example": "无",
+          "member": "string",
+          "name": "TcLabelCodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回当前标签（Label）下被检测文本命中的关键词信息，用于标注文本违规的具体原因（如：加我微信）。该参数可能会有多个返回值，代表命中的多个关键词；如返回值为空且Score不为空，则代表识别结果所对应的恶意标签（Label）是来自于语义模型判断的返回值",
+          "example": "无",
+          "member": "string",
+          "name": "Keywords",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回文本审核的详细结果，返回值信息可参阅对应数据结构（ModerationDetail）的详细描述",
+          "example": "无",
+          "member": "ModerationDetail",
+          "name": "ModerationDetails",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该字段用于返回审核结果置信度，使用百分制。分数越高表示结果可信度越高。",
+          "example": "90",
+          "member": "uint64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModerationDetail": {
+      "document": "文本审核明细结果",
+      "members": [
+        {
+          "disabled": false,
+          "document": "审核建议，Block表示建议拦截，Review表示建议人工复审，Pass表示建议放行\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Block",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "命中标签，含标签码和一二三级标签名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LabelGrade",
+          "name": "Label",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签得分\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "98",
+          "member": "uint64",
+          "name": "Score",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "label对应腾讯侧命中标签码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[20001002,20001003]",
+          "member": "string",
+          "name": "TcLabelCodes",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库检测命中详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "LibCheckResult",
+          "name": "LibResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "模型检测详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "ModelResult",
+          "name": "ModelResults",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "情绪正负向检测结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SentimentDetail",
+          "name": "SentimentResult",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -386,7 +740,7 @@
           "example": "习近平",
           "member": "string",
           "name": "Keyword",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -396,7 +750,7 @@
           "example": "ChinesePresident",
           "member": "string",
           "name": "SubLabel",
-          "required": true,
+          "output_required": false,
           "type": "string",
           "value_allowed_null": true
         },
@@ -406,7 +760,7 @@
           "example": "100",
           "member": "int64",
           "name": "Score",
-          "required": true,
+          "output_required": false,
           "type": "int",
           "value_allowed_null": true
         }

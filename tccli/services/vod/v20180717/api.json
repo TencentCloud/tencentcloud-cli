@@ -960,16 +960,16 @@
       "status": "online"
     },
     "ModifySubAppIdInfo": {
-      "document": "该接口用于修改子应用信息，但不允许修改主应用信息。",
+      "document": "该接口用于修改应用信息，但不允许修改默认应用信息。",
       "input": "ModifySubAppIdInfoRequest",
-      "name": "修改子应用信息",
+      "name": "修改应用信息",
       "output": "ModifySubAppIdInfoResponse",
       "status": "online"
     },
     "ModifySubAppIdStatus": {
-      "document": "该接口用于启用、停用子应用。被停用的子应用将封停对应域名，并限制控制台访问。",
+      "document": "该接口用于启用、停用应用。被停用的应用将封停对应域名，并限制控制台访问。",
       "input": "ModifySubAppIdStatusRequest",
-      "name": "修改子应用状态",
+      "name": "修改应用状态",
       "output": "ModifySubAppIdStatusResponse",
       "status": "online"
     },
@@ -25148,8 +25148,8 @@
         },
         {
           "disabled": false,
-          "document": "子应用名称，长度限制：40个字符。",
-          "example": "更新子应用名",
+          "document": "应用名称，长度限制：40个字符。",
+          "example": "更新应用名",
           "member": "string",
           "name": "Name",
           "required": false,
@@ -25157,8 +25157,8 @@
         },
         {
           "disabled": false,
-          "document": "子应用简介，长度限制： 300个字符。",
-          "example": "更新子应用简介",
+          "document": "应用简介，长度限制： 300个字符。",
+          "example": "更新应用简介",
           "member": "string",
           "name": "Description",
           "required": false,
@@ -25193,7 +25193,7 @@
         },
         {
           "disabled": false,
-          "document": "子应用状态，取值范围：\n<li>On：启用。</li>\n<li>Off：停用。</li>\n<li>Destroyed：销毁。</li>\n当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。",
+          "document": "应用状态，取值范围：\n<li>On：启用。</li>\n<li>Off：停用。</li>\n<li>Destroyed：销毁。</li>\n当前状态如果是 Destoying ，不能进行启用操作，需要等待销毁完成后才能重新启用。",
           "example": "Off",
           "member": "string",
           "name": "Status",
@@ -28208,7 +28208,7 @@
         },
         {
           "disabled": false,
-          "document": "点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "document": "<b>点播[应用](/document/product/266/14574) ID。从2023年12月25日起开通点播的客户，如访问点播应用中的资源（无论是默认应用还是新创建的应用），必须将该字段填写为应用 ID。</b>\n",
           "example": "123",
           "member": "uint64",
           "name": "SubAppId",

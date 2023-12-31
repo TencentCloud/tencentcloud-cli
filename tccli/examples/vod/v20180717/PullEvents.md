@@ -155,7 +155,8 @@ Output:
                 "ExtractTraceWatermarkCompleteEvent": null,
                 "ReviewAudioVideoCompleteEvent": null,
                 "DescribeFileAttributesCompleteEvent": null,
-                "ReduceMediaBitrateCompleteEvent": null
+                "ReduceMediaBitrateCompleteEvent": null,
+                "QualityEnhanceCompleteEvent": null
             }
         ],
         "RequestId": "5ca61a3a-6b8e-4b4e-9256-fdc001190064ef0"
