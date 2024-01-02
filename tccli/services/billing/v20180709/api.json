@@ -11518,6 +11518,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2023-12-29 11:35:23\"",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -11953,6 +11963,16 @@
           "name": "Capacity",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包失效时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"2023-12-29 11:35:23\"",
+          "member": "string",
+          "name": "ExpiredTime",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],

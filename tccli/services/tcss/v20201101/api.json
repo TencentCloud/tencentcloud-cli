@@ -938,6 +938,13 @@
       "output": "DescribeAssetSummaryResponse",
       "status": "online"
     },
+    "DescribeAssetSuperNodeList": {
+      "document": "查询超级节点列表",
+      "input": "DescribeAssetSuperNodeListRequest",
+      "name": "查询超级节点列表",
+      "output": "DescribeAssetSuperNodeListResponse",
+      "status": "online"
+    },
     "DescribeAssetSyncLastTime": {
       "document": "查询资产同步最近时间",
       "input": "DescribeAssetSyncLastTimeRequest",
@@ -978,6 +985,13 @@
       "input": "DescribeClusterDetailRequest",
       "name": "查询单个集群的详细信息",
       "output": "DescribeClusterDetailResponse",
+      "status": "online"
+    },
+    "DescribeClusterNodes": {
+      "document": "查询集群节点信息",
+      "input": "DescribeClusterNodesRequest",
+      "name": "查询集群节点信息",
+      "output": "DescribeClusterNodesResponse",
       "status": "online"
     },
     "DescribeClusterSummary": {
@@ -1650,6 +1664,13 @@
       "input": "DescribeSecLogVasInfoRequest",
       "name": "查询安全日志商品信息",
       "output": "DescribeSecLogVasInfoResponse",
+      "status": "online"
+    },
+    "DescribeSuperNodePodList": {
+      "document": "查询超级节点pod列表",
+      "input": "DescribeSuperNodePodListRequest",
+      "name": "查询超级节点pod列表",
+      "output": "DescribeSuperNodePodListResponse",
       "status": "online"
     },
     "DescribeSupportDefenceVul": {
@@ -6122,6 +6143,142 @@
           "name": "ChargeCoresCnt",
           "output_required": false,
           "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "ClusterNodeInfo": {
+      "document": "集群的节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例id",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内网ip地址",
+          "example": "\"10.1.1.22\"",
+          "member": "string",
+          "name": "PrivateIpAddresses",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点的角色，Master、Work等",
+          "example": "Master",
+          "member": "string",
+          "name": "InstanceRole",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例的状态（running 运行中，initializing 初始化中，failed 异常）",
+          "example": "无",
+          "member": "string",
+          "name": "InstanceState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent安装状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "公网ip\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "PublicIP",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HostID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "主机类型(普通节点情况)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MachineType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "节点类型(\nNORMAL: 普通节点\nSUPER:超级节点\n)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "NodeType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "uuid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "UUID",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费核数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DefendStatus",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -17868,6 +18025,89 @@
       ],
       "type": "object"
     },
+    "DescribeAssetSuperNodeListRequest": {
+      "document": "DescribeAssetSuperNodeList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>NodeID- String - 是否必填：否 - ID </li>\n<li>NodeName- String - 是否必填：否 - 超级节点名称 </li>\n<li>SubnetName- String - 是否必填：否 - VPC子网 </li>\n<li>AgentStatus- String - 是否必填：否 - 安装状态UNINSTALL:未安装;INSTALLED:已安装;INSTALLING:安装中; </li>",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "1",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式 asc,desc",
+          "example": "CreateTime",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAssetSuperNodeListResponse": {
+      "document": "DescribeAssetSuperNodeList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超级节点列表",
+          "example": "无",
+          "member": "SuperNodeListItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeAssetSyncLastTimeRequest": {
       "document": "DescribeAssetSyncLastTime请求参数结构体",
       "members": [],
@@ -18444,6 +18684,98 @@
           "member": "string",
           "name": "MasterIps",
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodesRequest": {
+      "document": "DescribeClusterNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群Id,不输入表示查询所有",
+          "example": "cls-as2mkd13",
+          "member": "string",
+          "name": "ClusterId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "3",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "每次查询的最大记录数量",
+          "example": "10",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Name 可取值：\nDefendStatus（防护状态）:\n\tDefended 已防护\n\tUnDefended 未防护\nAgentStatus (容器agent状态):\n \tOFFLINE 离线\n \tONLINE 在线\n \tUNINSTALL 未安装\nInstanceState (节点状态):\n  \tRunning 运行中\n  \tReady 准备\n  \tNotready 未准备好\n  \tInitializing 初始化\n  \tFailed 失败\n  \tError 错误\nInstanceRole (节点角色)\n    WORKER 工作节点\n    MASTER_ETCD 主节点\n    SUPER 超级节点",
+          "example": "无",
+          "member": "ComplianceFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式 asc,desc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeClusterNodesResponse": {
+      "document": "DescribeClusterNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "20",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点列表",
+          "example": "无",
+          "member": "ClusterNodeInfo",
+          "name": "ClusterNodeList",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         },
         {
@@ -25507,6 +25839,89 @@
           "member": "uint64",
           "name": "TrialCapacity",
           "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSuperNodePodListRequest": {
+      "document": "DescribeSuperNodePodList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。\n<li>NodeUniqueID- String - 是否必填：否 - 节点唯一id </li>\n<li>PodName- String - 是否必填：否 - Pod示例名称 </li>\n<li>PodIP- String - 是否必填：否 - POD IP </li>\n<li>Namespace- String - 是否必填：否 - 命名空间 </li>\n<li>Deployment- String - 是否必填：否 - 所属工作负载 </li>\n<li>Status- String - 是否必填：否 - 状态 </li>\n",
+          "example": "无",
+          "member": "RunTimeFilters",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "需要返回的数量，默认为10，最大值为100",
+          "example": "无",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为0。",
+          "example": "无",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序字段",
+          "example": "无",
+          "member": "string",
+          "name": "By",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序方式 asc,desc",
+          "example": "无",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSuperNodePodListResponse": {
+      "document": "DescribeSuperNodePodList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "列表",
+          "example": "无",
+          "member": "SuperNodePodListItem",
+          "name": "List",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "无",
+          "member": "uint64",
+          "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -39853,6 +40268,378 @@
         }
       ],
       "type": "object"
+    },
+    "SuperNodeListItem": {
+      "document": "超级节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "超级节点ID",
+          "example": "无",
+          "member": "string",
+          "name": "NodeID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "超级节点名称",
+          "example": "无",
+          "member": "string",
+          "name": "NodeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群名",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属集群ID",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点状态:Running,Ready,Notready,Initializing,Failed,Error",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网ID",
+          "example": "无",
+          "member": "string",
+          "name": "SubNetID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网名称",
+          "example": "无",
+          "member": "string",
+          "name": "SubNetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子网网段",
+          "example": "无",
+          "member": "string",
+          "name": "SubNetCidr",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区ID",
+          "example": "ap-guangzhou-6 广州六区",
+          "member": "string",
+          "name": "ZoneID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "可用区",
+          "example": "100006",
+          "member": "string",
+          "name": "Zone",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联pod数",
+          "example": "无",
+          "member": "uint64",
+          "name": "RelatePodCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联容器数",
+          "example": "无",
+          "member": "uint64",
+          "name": "RelateContainerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "agent安装状态UNINSTALL:未安装;INSTALLED:已安装;INSTALLING:安装中;",
+          "example": "无",
+          "member": "string",
+          "name": "AgentStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "集群接入状态",
+          "example": "无",
+          "member": "string",
+          "name": "ClusterAccessedStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护状态:\n已防护: Defended\n未防护: UnDefended",
+          "example": "无",
+          "member": "string",
+          "name": "DefendStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SuperNodePodListItem": {
+      "document": "超级节点Pod列表Item信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "pod名称",
+          "example": "无",
+          "member": "string",
+          "name": "PodName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "podIP",
+          "example": "无",
+          "member": "string",
+          "name": "PodIP",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点唯一id",
+          "example": "无",
+          "member": "string",
+          "name": "NodeUniqueID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行状态",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu需求核数",
+          "example": "无",
+          "member": "int64",
+          "name": "CpuRequest",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu限制核数",
+          "example": "无",
+          "member": "int64",
+          "name": "CpuLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存需求大小",
+          "example": "无",
+          "member": "int64",
+          "name": "MemRequest",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存限制大小",
+          "example": "无",
+          "member": "int64",
+          "name": "MemLimit",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "命名空间",
+          "example": "无",
+          "member": "string",
+          "name": "Namespace",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载名称",
+          "example": "无",
+          "member": "string",
+          "name": "DeploymentName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "工作负载id",
+          "example": "无",
+          "member": "string",
+          "name": "DeploymentID",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "启动时间",
+          "example": "无",
+          "member": "string",
+          "name": "StartTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间",
+          "example": "无",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "关联容器个数",
+          "example": "无",
+          "member": "uint64",
+          "name": "RelateContainerCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "运行时间",
+          "example": "无",
+          "member": "string",
+          "name": "RunningTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "PodUid",
+          "example": "无",
+          "member": "string",
+          "name": "PodUid",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "计费核数",
+          "example": "无",
+          "member": "uint64",
+          "name": "ChargeCoresCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "防护状态",
+          "example": "无",
+          "member": "string",
+          "name": "DefendStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "SupportDefenceVul": {
       "document": "支持防御的漏洞",

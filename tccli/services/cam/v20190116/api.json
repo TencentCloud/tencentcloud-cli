@@ -490,6 +490,13 @@
       "output": "ListSAMLProvidersResponse",
       "status": "online"
     },
+    "ListSubUsers": {
+      "document": "子账号信息列表",
+      "input": "ListSubUsersRequest",
+      "name": "子账号信息列表",
+      "output": "ListSubUsersResponse",
+      "status": "online"
+    },
     "ListUsers": {
       "document": "拉取子用户",
       "input": "ListUsersRequest",
@@ -5951,6 +5958,62 @@
       ],
       "type": "object"
     },
+    "ListSubUsersRequest": {
+      "document": "ListSubUsers请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最大查询结果，取值范围：1~200。默认值：20。",
+          "example": "20",
+          "member": "int64",
+          "name": "MaxItems",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "从上一页的响应中获取的下一页的令牌值。如果是第一次请求，设置为空。",
+          "example": "81PKCzsY3n6V189RIlcsaVZuSjnIqvSX224gfVTG7h1NBiBj-OSWQf31XTylp",
+          "member": "string",
+          "name": "PageToken",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ListSubUsersResponse": {
+      "document": "ListSubUsers返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子账号信息列表",
+          "example": "[{\"Uin\":100003330033,\"Name\":\"test\"}]",
+          "member": "SubUsersInfo",
+          "name": "ListSubUserInfo",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "下一页请求的令牌值。如果令牌值为空，则表示列表没有后续分页",
+          "example": "81PKCzsY3n6V189RIlcsaVZuSjnIqvSX224gfVTG7h1NBiBj",
+          "member": "string",
+          "name": "PageToken",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ListUsersForGroupRequest": {
       "document": "ListUsersForGroup请求参数结构体",
       "members": [
@@ -7226,6 +7289,32 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubUsersInfo": {
+      "document": "子账号信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "子账号的uin",
+          "example": "10000003443",
+          "member": "int64",
+          "name": "Uin",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "子账号的名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"

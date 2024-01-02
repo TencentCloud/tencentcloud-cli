@@ -1,3 +1,140 @@
+# Release 3.0.913.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 41 次发布
+
+发布时间：2024-01-03 01:07:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：ExpiredTime
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：ExpiredTime
+
+
+
+
+## 访问管理(cam) 版本：2019-01-16
+
+### 第 25 次发布
+
+发布时间：2024-01-03 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)
+
+新增数据结构：
+
+* [SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)
+
+
+
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 3 次发布
+
+发布时间：2024-01-03 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDedicatedClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1676/79491)
+
+	* 新增出参：HostDetailInfo, HostStandbyCount, HostNormalCount
+
+
+新增数据结构：
+
+* [HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)
+
+
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 8 次发布
+
+发布时间：2024-01-03 01:09:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1667/79271)
+
+	* 新增入参：CaseType
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 6 次发布
+
+发布时间：2024-01-03 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
+
+	* 新增入参：OrderField, Order
+
+
+修改数据结构：
+
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
+
+	* 新增成员：ApplicationType, ApplicationState, CreateTime, ApplicationSize
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 14 次发布
+
+发布时间：2024-01-03 01:24:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)
+* [DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)
+* [DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)
+
+新增数据结构：
+
+* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)
+* [SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)
+* [SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)
+
+
+
 # Release 3.0.912.1
 
 ## 批量计算(batch) 版本：2017-03-12

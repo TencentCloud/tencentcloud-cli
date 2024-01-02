@@ -572,6 +572,14 @@
         "title": "查询身份提供商列表"
       }
     ],
+    "ListSubUsers": [
+      {
+        "document": "子账号信息列表",
+        "input": "POST / HTTP/1.1\nHost: cam.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ListSubUserInfo\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"ListSubUserInfo\": [\n            {\n                \"Uin\": 10000440033,\n                \"Name\": \"test\"\n            }\n        ],\n        \"PageToken\": \"81PKCzsY3n6V189RIlcsaVZuSjnIqvSX224gfVTG7h1NBiBj-OSWQf31XTylpBM-\",\n        \"RequestId\": \"b77ba136-9677-41a5-89a9-1162e23e5555\"\n    }\n}",
+        "title": "子账号信息列表"
+      }
+    ],
     "ListUsers": [
       {
         "document": "",

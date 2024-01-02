@@ -6,9 +6,9 @@ Input:
 
 ```
 tccli cwp DescribeMachineFileTamperRules --cli-unfold-argument  \
+    --Offset 1 \
     --Limit 1 \
-    --Uuid xx \
-    --Offset 1
+    --Uuid 10ee1dad-ed42-4f98-8c9e-bfaa48fcb787
 ```
 
 Output: 
@@ -18,19 +18,20 @@ Output:
         "TotalCount": 1,
         "List": [
             {
+                "Name": "abc",
+                "RuleCategory": 1,
                 "Rule": [
                     {
-                        "Action": "xx",
-                        "ProcessPath": "xx",
-                        "Target": "xx"
+                        "ProcessPath": "abc",
+                        "Target": "abc",
+                        "Action": "abc",
+                        "FileAction": "abc"
                     }
                 ],
-                "Name": "xx",
-                "RuleCategory": 1,
                 "Id": 1
             }
         ],
-        "RequestId": "c741a4fd-776f-499b-85a2-7bc70fd5b92s"
+        "RequestId": "abc"
     }
 }
 ```

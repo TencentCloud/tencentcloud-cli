@@ -20,8 +20,12 @@ Output:
                 "ApplicationId": "app-jxnaqazx",
                 "ApplicationName": "应用名称",
                 "Description": "应用描述",
-                "ConfigEnvironment": "Ubuntu20.04, Python 3.8, ChatGLM2-6b, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab",
-                "MinSystemDiskSize": 80
+                "ConfigEnvironment": "",
+                "MinSystemDiskSize": 80,
+                "ApplicationState": "ONLINE",
+                "ApplicationSize": 50,
+                "ApplicationType": "PRIVATE_APPLICATION",
+                "CreateTime": "2023-09-18 16:48:47"
             }
         ],
         "RequestId": "2b1fae52-8004-4a13-a20a-26ea1149f9df",

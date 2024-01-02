@@ -4,7 +4,7 @@
       {
         "document": "查询应用",
         "input": "POST / HTTP/1.1\nHost: hai.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeApplications\n<公共请求参数>\n\n{\n    \"ApplicationIds\": [\n        \"app-jxnaqazx\"\n    ],\n    \"Offset\": 0,\n    \"Limit\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-jxnaqazx\",\n                \"ApplicationName\": \"应用名称\",\n                \"Description\": \"应用描述\",\n                \"ConfigEnvironment\": \"Ubuntu20.04, Python 3.8, ChatGLM2-6b, CUDA 11.7, cuDNN 8, pytorch 2, JupyteLab\",\n                \"MinSystemDiskSize\": 80\n            }\n        ],\n        \"RequestId\": \"2b1fae52-8004-4a13-a20a-26ea1149f9df\",\n        \"TotalCount\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ApplicationSet\": [\n            {\n                \"ApplicationId\": \"app-jxnaqazx\",\n                \"ApplicationName\": \"应用名称\",\n                \"Description\": \"应用描述\",\n                \"ConfigEnvironment\": \"\",\n                \"MinSystemDiskSize\": 80,\n                \"ApplicationState\": \"ONLINE\",\n                \"ApplicationSize\": 50,\n                \"ApplicationType\": \"PRIVATE_APPLICATION\",\n                \"CreateTime\": \"2023-09-18 16:48:47\"\n            }\n        ],\n        \"RequestId\": \"2b1fae52-8004-4a13-a20a-26ea1149f9df\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询应用"
       }
     ],

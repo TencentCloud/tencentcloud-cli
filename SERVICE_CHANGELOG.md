@@ -1,33 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 批量计算(batch) 版本：2017-03-12
+## 费用中心(billing) 版本：2018-07-09
 
-### 第 15 次发布
+### 第 41 次发布
 
-发布时间：2024-01-01 01:02:03
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/599/15912#InstanceTypeQuotaItem)
-
-	* 新增成员：InstanceQuota
-
-
-
-
-## 云服务器(cvm) 版本：2019-12-12
-
-
-
-## 云服务器(cvm) 版本：2017-03-12
-
-### 第 67 次发布
-
-发布时间：2024-01-01 01:06:14
+发布时间：2024-01-03 01:07:11
 
 本次发布包含了以下内容：
 
@@ -35,48 +12,22 @@
 
 修改数据结构：
 
-* [InstanceTypeQuotaItem](http://document.tencentcloudapi.woa.com/document/product/213/15753#InstanceTypeQuotaItem)
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
 
-	* 新增成员：InstanceQuota
+	* 新增成员：ExpiredTime
 
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
 
-
-
-## 流计算 Oceanus(oceanus) 版本：2019-04-22
-
-### 第 45 次发布
-
-发布时间：2024-01-01 01:14:25
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeJobs](http://document.tencentcloudapi.woa.com/document/product/849/52008)
-
-	* 新增入参：ExtraResult
-
-
-新增数据结构：
-
-* [JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)
-
-修改数据结构：
-
-* [JobV1](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobV1)
-
-	* 新增成员：EventInfo
+	* 新增成员：ExpiredTime
 
 
 
 
-## 文本内容安全(tms) 版本：2020-12-29
+## 访问管理(cam) 版本：2019-01-16
 
-### 第 8 次发布
+### 第 25 次发布
 
-发布时间：2024-01-01 01:19:33
+发布时间：2024-01-03 01:08:04
 
 本次发布包含了以下内容：
 
@@ -84,18 +35,103 @@
 
 新增接口：
 
-* [ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)
+* [ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)
 
 新增数据结构：
 
-* [LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)
-* [LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)
-* [ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)
-* [ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)
+* [SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)
 
 
 
-## 文本内容安全(tms) 版本：2020-07-13
+## 本地专用集群(cdc) 版本：2020-12-14
+
+### 第 3 次发布
+
+发布时间：2024-01-03 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDedicatedClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1676/79491)
+
+	* 新增出参：HostDetailInfo, HostStandbyCount, HostNormalCount
+
+
+新增数据结构：
+
+* [HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)
+
+
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 8 次发布
+
+发布时间：2024-01-03 01:09:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1667/79271)
+
+	* 新增入参：CaseType
+
+
+
+
+## 高性能应用服务(hai) 版本：2023-08-12
+
+### 第 6 次发布
+
+发布时间：2024-01-03 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
+
+	* 新增入参：OrderField, Order
+
+
+修改数据结构：
+
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
+
+	* 新增成员：ApplicationType, ApplicationState, CreateTime, ApplicationSize
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 14 次发布
+
+发布时间：2024-01-03 01:24:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)
+* [DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)
+* [DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)
+
+新增数据结构：
+
+* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)
+* [SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)
+* [SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)
 
 
 
@@ -5721,6 +5757,25 @@
 
 ## 费用中心(billing) 版本：2018-07-09
 
+### 第 41 次发布
+
+发布时间：2024-01-03 01:07:11
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
+
+	* 新增成员：ExpiredTime
+
+* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
+
+	* 新增成员：ExpiredTime
+
+
 ### 第 40 次发布
 
 发布时间：2023-12-27 01:07:22
@@ -7497,6 +7552,22 @@
 
 
 ## 访问管理(cam) 版本：2019-01-16
+
+### 第 25 次发布
+
+发布时间：2024-01-03 01:08:04
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo))
 
 ### 第 24 次发布
 
@@ -12709,6 +12780,25 @@
 
 ## 本地专用集群(cdc) 版本：2020-12-14
 
+### 第 3 次发布
+
+发布时间：2024-01-03 01:09:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeDedicatedClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1676/79491)
+
+	* 新增出参：HostDetailInfo, HostStandbyCount, HostNormalCount
+
+
+新增数据结构：
+
+* [[HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/1676/79502#[HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo))
+
 ### 第 2 次发布
 
 发布时间：2023-09-12 01:20:33
@@ -14151,6 +14241,21 @@
 
 
 ## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 8 次发布
+
+发布时间：2024-01-03 01:09:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1667/79271)
+
+	* 新增入参：CaseType
+
 
 ### 第 7 次发布
 
@@ -45783,6 +45888,28 @@
 
 ## 高性能应用服务(hai) 版本：2023-08-12
 
+### 第 6 次发布
+
+发布时间：2024-01-03 01:17:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
+
+	* 新增入参：OrderField, Order
+
+
+修改数据结构：
+
+* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
+
+	* 新增成员：ApplicationType, ApplicationState, CreateTime, ApplicationSize
+
+
 ### 第 5 次发布
 
 发布时间：2023-12-13 01:56:19
@@ -58791,7 +58918,7 @@
 
 新增数据结构：
 
-* [[JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)](http://document.tencentcloudapi.woa.com/document/product/849/52010#[JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo))
+* [JobEventInfo](http://document.tencentcloudapi.woa.com/document/product/849/52010#JobEventInfo)
 
 修改数据结构：
 
@@ -73109,6 +73236,26 @@
 
 ## 容器安全服务(tcss) 版本：2020-11-01
 
+### 第 14 次发布
+
+发布时间：2024-01-03 01:24:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [[DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo))
+* [[SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem))
+* [[SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem))
+
 ### 第 13 次发布
 
 发布时间：2023-12-29 01:23:29
@@ -82464,14 +82611,14 @@
 
 新增接口：
 
-* [[ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModerateText](http://document.tencentcloudapi.woa.com/document/product/1124/82887)
 
 新增数据结构：
 
-* [[LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade))
-* [[LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult))
-* [[ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult))
-* [[ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)](http://document.tencentcloudapi.woa.com/document/product/1124/51861#[ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail))
+* [LabelGrade](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LabelGrade)
+* [LibCheckResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#LibCheckResult)
+* [ModelResult](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModelResult)
+* [ModerationDetail](http://document.tencentcloudapi.woa.com/document/product/1124/51861#ModerationDetail)
 
 ### 第 7 次发布
 

@@ -1849,6 +1849,15 @@
           "name": "IsElastic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否是购买页面需要的spec",
+          "example": "1",
+          "member": "int64",
+          "name": "CaseType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1862,7 +1871,7 @@
           "example": "-",
           "member": "ResourceSpec",
           "name": "CommonSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1872,7 +1881,7 @@
           "example": "-",
           "member": "ResourceSpec",
           "name": "DataSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1882,7 +1891,7 @@
           "example": "xx",
           "member": "DiskSpec",
           "name": "AttachCBSSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
