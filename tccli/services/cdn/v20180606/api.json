@@ -16427,6 +16427,7 @@
           "example": "total",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16437,6 +16438,7 @@
           "example": "60",
           "member": "uint64",
           "name": "UnBlockTime",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16447,16 +16449,18 @@
           "example": "1000000000",
           "member": "uint64",
           "name": "BpsThreshold",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "关闭方式 返回404:RETURN_404, dns回源：RESOLVE_DNS_TO_ORIGIN\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "关闭方式 返回404:RETURN_404\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "RESOLVE_DNS_TO_ORIGIN",
           "member": "string",
           "name": "CounterMeasure",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16467,6 +16471,7 @@
           "example": "80",
           "member": "uint64",
           "name": "AlertPercentage",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16477,6 +16482,7 @@
           "example": "on",
           "member": "string",
           "name": "AlertSwitch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16487,6 +16493,7 @@
           "example": "flux",
           "member": "string",
           "name": "Metric",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -16497,6 +16504,7 @@
           "example": "60",
           "member": "uint64",
           "name": "Cycle",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -16507,6 +16515,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

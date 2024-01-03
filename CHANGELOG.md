@@ -1,3 +1,45 @@
+# Release 3.0.914.1
+
+## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 9 次发布
+
+发布时间：2024-01-04 01:09:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)
+
+新增数据结构：
+
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 56 次发布
+
+发布时间：2024-01-04 01:10:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
+
+	* 新增入参：BusinessBelong
+
+
+
+
 # Release 3.0.913.1
 
 ## 费用中心(billing) 版本：2018-07-09

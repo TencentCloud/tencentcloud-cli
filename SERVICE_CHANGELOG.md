@@ -1,121 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 费用中心(billing) 版本：2018-07-09
-
-### 第 41 次发布
-
-发布时间：2024-01-03 01:07:11
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [MeasureAccountDosages](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureAccountDosages)
-
-	* 新增成员：ExpiredTime
-
-* [MeasureResourceDetails](http://document.tencentcloudapi.woa.com/document/product/555/19183#MeasureResourceDetails)
-
-	* 新增成员：ExpiredTime
-
-
-
-
-## 访问管理(cam) 版本：2019-01-16
-
-### 第 25 次发布
-
-发布时间：2024-01-03 01:08:04
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)
-
-新增数据结构：
-
-* [SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)
-
-
-
-## 本地专用集群(cdc) 版本：2020-12-14
-
-### 第 3 次发布
-
-发布时间：2024-01-03 01:09:14
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeDedicatedClusterOverview](http://document.tencentcloudapi.woa.com/document/product/1676/79491)
-
-	* 新增出参：HostDetailInfo, HostStandbyCount, HostNormalCount
-
-
-新增数据结构：
-
-* [HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)
-
-
-
 ## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
 
-### 第 8 次发布
+### 第 9 次发布
 
-发布时间：2024-01-03 01:09:34
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeSpec](http://document.tencentcloudapi.woa.com/document/product/1667/79271)
-
-	* 新增入参：CaseType
-
-
-
-
-## 高性能应用服务(hai) 版本：2023-08-12
-
-### 第 6 次发布
-
-发布时间：2024-01-03 01:17:20
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改接口：
-
-* [DescribeApplications](http://document.tencentcloudapi.woa.com/document/product/1750/82598)
-
-	* 新增入参：OrderField, Order
-
-
-修改数据结构：
-
-* [ApplicationInfo](http://document.tencentcloudapi.woa.com/document/product/1750/82570#ApplicationInfo)
-
-	* 新增成员：ApplicationType, ApplicationState, CreateTime, ApplicationSize
-
-
-
-
-## 容器安全服务(tcss) 版本：2020-11-01
-
-### 第 14 次发布
-
-发布时间：2024-01-03 01:24:44
+发布时间：2024-01-04 01:09:23
 
 本次发布包含了以下内容：
 
@@ -123,15 +12,31 @@
 
 新增接口：
 
-* [DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)
-* [DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)
-* [DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)
+* [DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)
 
 新增数据结构：
 
-* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)
-* [SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)
-* [SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 56 次发布
+
+发布时间：2024-01-04 01:10:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
+
+	* 新增入参：BusinessBelong
+
 
 
 
@@ -7563,11 +7468,11 @@
 
 新增接口：
 
-* [[ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ListSubUsers](http://document.tencentcloudapi.woa.com/document/product/598/82888)
 
 新增数据结构：
 
-* [[SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)](http://document.tencentcloudapi.woa.com/document/product/598/33167#[SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo))
+* [SubUsersInfo](http://document.tencentcloudapi.woa.com/document/product/598/33167#SubUsersInfo)
 
 ### 第 24 次发布
 
@@ -12797,7 +12702,7 @@
 
 新增数据结构：
 
-* [[HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)](http://document.tencentcloudapi.woa.com/document/product/1676/79502#[HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo))
+* [HostDetailInfo](http://document.tencentcloudapi.woa.com/document/product/1676/79502#HostDetailInfo)
 
 ### 第 2 次发布
 
@@ -14241,6 +14146,23 @@
 
 
 ## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+
+### 第 9 次发布
+
+发布时间：2024-01-04 01:09:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1667/79282#[GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo))
+* [[InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)](http://document.tencentcloudapi.woa.com/document/product/1667/79282#[InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode))
 
 ### 第 8 次发布
 
@@ -18533,6 +18455,21 @@
 
 
 ## 负载均衡(clb) 版本：2018-03-17
+
+### 第 56 次发布
+
+发布时间：2024-01-04 01:10:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
+
+	* 新增入参：BusinessBelong
+
 
 ### 第 55 次发布
 
@@ -73246,15 +73183,15 @@
 
 新增接口：
 
-* [[DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeAssetSuperNodeList](http://document.tencentcloudapi.woa.com/document/product/1662/82891)
+* [DescribeClusterNodes](http://document.tencentcloudapi.woa.com/document/product/1662/82889)
+* [DescribeSuperNodePodList](http://document.tencentcloudapi.woa.com/document/product/1662/82890)
 
 新增数据结构：
 
-* [[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo))
-* [[SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem))
-* [[SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)](http://document.tencentcloudapi.woa.com/document/product/1662/79121#[SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem))
+* [ClusterNodeInfo](http://document.tencentcloudapi.woa.com/document/product/1662/79121#ClusterNodeInfo)
+* [SuperNodeListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodeListItem)
+* [SuperNodePodListItem](http://document.tencentcloudapi.woa.com/document/product/1662/79121#SuperNodePodListItem)
 
 ### 第 13 次发布
 

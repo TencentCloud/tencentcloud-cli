@@ -3489,6 +3489,15 @@
         },
         {
           "disabled": false,
+          "document": "创建CLB的业务方，比如TCB。",
+          "example": "xxx",
+          "member": "string",
+          "name": "BusinessBelong",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "创建域名化负载均衡。",
           "example": "True",
           "member": "bool",
