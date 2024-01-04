@@ -23158,7 +23158,7 @@
           "example": "0",
           "member": "int64",
           "name": "State",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -23168,7 +23168,7 @@
           "example": "1",
           "member": "uint64",
           "name": "CoresCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23178,7 +23178,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AuthorizedCoresCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23188,7 +23188,7 @@
           "example": "1",
           "member": "uint64",
           "name": "ImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23198,7 +23198,7 @@
           "example": "1",
           "member": "uint64",
           "name": "AuthorizedImageCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23208,7 +23208,7 @@
           "example": "1",
           "member": "uint64",
           "name": "PurchasedAuthorizedCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23218,7 +23218,7 @@
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "ExpirationTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23228,7 +23228,7 @@
           "example": "0",
           "member": "int64",
           "name": "AutomaticRenewal",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23238,7 +23238,7 @@
           "example": "500",
           "member": "uint64",
           "name": "GivenAuthorizedCnt",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -23248,7 +23248,7 @@
           "example": "2021-05-28 00:00:00",
           "member": "string",
           "name": "BeginTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -23258,7 +23258,17 @@
           "example": "\"\"",
           "member": "string",
           "name": "SubState",
-          "required": true,
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "InquireKey",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

@@ -815,6 +815,7 @@
           "example": "on",
           "member": "string",
           "name": "Switch",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -825,6 +826,7 @@
           "example": "无",
           "member": "AclUserRule",
           "name": "AclUserRules",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false
@@ -835,6 +837,7 @@
           "example": "无",
           "member": "AclUserRule",
           "name": "Customizes",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8298,6 +8301,7 @@
           "example": "11",
           "member": "int64",
           "name": "GroupId",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": false
@@ -8308,16 +8312,18 @@
           "example": "group1",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "IP 组内容，可以填入 IP 及 IP 掩码。",
+          "document": "IP 组内容，仅支持 IP 及 IP 掩码。",
           "example": "[\"1.1.1.1\", \"2.2.2.2\"]",
           "member": "string",
           "name": "Content",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": false

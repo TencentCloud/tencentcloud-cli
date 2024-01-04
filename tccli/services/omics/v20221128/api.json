@@ -1796,15 +1796,6 @@
         },
         {
           "disabled": false,
-          "document": "项目ID。",
-          "example": "无",
-          "member": "string",
-          "name": "ProjectId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
           "document": "任务批次名称。",
           "example": "无",
           "member": "string",
@@ -1841,12 +1832,12 @@
         },
         {
           "disabled": false,
-          "document": "运行选项。",
+          "document": "项目ID。（不填使用指定地域下的默认项目）",
           "example": "无",
-          "member": "RunOption",
-          "name": "Option",
-          "required": true,
-          "type": "object"
+          "member": "string",
+          "name": "ProjectId",
+          "required": false,
+          "type": "string"
         },
         {
           "disabled": false,
@@ -1883,6 +1874,24 @@
           "name": "ApplicationVersionId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "WDL运行选项。",
+          "example": "无",
+          "member": "RunOption",
+          "name": "Option",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "Nextflow运行选项。",
+          "example": "无",
+          "member": "NFOption",
+          "name": "NFOption",
+          "required": false,
+          "type": "object"
         }
       ],
       "type": "object"

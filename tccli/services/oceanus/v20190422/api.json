@@ -4181,7 +4181,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "Catalog名",
+          "document": "目录名",
           "example": "_dc",
           "member": "string",
           "name": "Catalog",
@@ -4190,7 +4190,7 @@
         },
         {
           "disabled": false,
-          "document": "Database名",
+          "document": "库名",
           "example": "_db",
           "member": "string",
           "name": "Database",
@@ -4199,7 +4199,7 @@
         },
         {
           "disabled": false,
-          "document": "Table名",
+          "document": "表名",
           "example": "my_table1",
           "member": "string",
           "name": "Table",

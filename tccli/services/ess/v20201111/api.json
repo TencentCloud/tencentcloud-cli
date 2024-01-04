@@ -15,9 +15,9 @@
       "status": "online"
     },
     "CancelMultiFlowSignQRCode": {
-      "document": "此接口（CancelMultiFlowSignQRCode）用于废除一码多扫流程签署二维码。\n该接口所需的二维码ID，源自[创建一码多扫流程签署二维码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode)生成的。\n如果该二维码尚处于有效期内，可通过本接口将其设置为失效状态。",
+      "document": "此接口（CancelMultiFlowSignQRCode）用于废除一码多签签署码。\n该接口所需的二维码ID，源自[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode)生成的。\n如果该签署码尚处于有效期内，可通过本接口将其设置为失效状态。",
       "input": "CancelMultiFlowSignQRCodeRequest",
-      "name": "取消一码多扫流程签署二维码",
+      "name": "取消一码多签签署码",
       "output": "CancelMultiFlowSignQRCodeResponse",
       "status": "online"
     },
@@ -176,9 +176,9 @@
       "status": "online"
     },
     "CreateMultiFlowSignQRCode": {
-      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多扫二维码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过签署二维码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n二维码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
+      "document": "此接口（CreateMultiFlowSignQRCode）用于创建一码多签签署码。\n\n**适用场景**:\n签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。\n\n**注意**:\n1. 本接口适用于**发起方没有填写控件的 B2C或者单C模板**,  若是B2C模板,还要满足以下任意一个条件\n    - 模板中配置的签署顺序是无序\n    - B端企业的签署方式是静默签署\n    - B端企业是非首位签署\n2. 通过一码多签签署码发起的合同，合同涉及到的回调消息可参考文档[合同发起及签署相关回调\n]( https://qian.tencent.com/developers/company/callback_types_contracts_sign)\n3. 用户通过一码多签签署码发起合同时，因企业额度不足导致失败 会触发签署二维码相关回调,具体参考文档[签署二维码相关回调](https://qian.tencent.com/developers/company/callback_types_commons#%E7%AD%BE%E7%BD%B2%E4%BA%8C%E7%BB%B4%E7%A0%81%E7%9B%B8%E5%85%B3%E5%9B%9E%E8%B0%83)\n\n签署码的样式如下图:\n![image](https://qcloudimg.tencent-cloud.cn/raw/27317cf5aacb094fb1dc6f94179a5148.png )",
       "input": "CreateMultiFlowSignQRCodeRequest",
-      "name": "创建一码多扫流程签署二维码",
+      "name": "创建一码多签签署码",
       "output": "CreateMultiFlowSignQRCodeResponse",
       "status": "online"
     },
@@ -1409,7 +1409,7 @@
         },
         {
           "disabled": false,
-          "document": "二维码ID，为32位字符串。",
+          "document": "需要取消的签署码ID，为32位字符串。由[创建一码多签签署码](https://qian.tencent.com/developers/companyApis/startFlows/CreateMultiFlowSignQRCode/)返回",
           "example": "yDR***********Apl",
           "member": "string",
           "name": "QrCodeId",
@@ -4077,7 +4077,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "签署二维码的基本信息，用于创建二维码，用户可扫描该二维码进行签署操作。",
+          "document": "一码多签签署码的基本信息，用户可扫描该二维码进行签署操作。",
           "example": "无",
           "member": "SignQrCode",
           "name": "QrCode",
@@ -4087,7 +4087,7 @@
         },
         {
           "disabled": false,
-          "document": "流程签署二维码的签署信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。",
+          "document": "一码多签签署码的链接信息，适用于客户系统整合二维码功能。通过链接，用户可直接访问电子签名小程序并签署合同。",
           "example": "无",
           "member": "SignUrl",
           "name": "SignUrls",

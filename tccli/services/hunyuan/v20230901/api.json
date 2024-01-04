@@ -14,6 +14,13 @@
       "output": "ChatStdResponse",
       "status": "online"
     },
+    "GetEmbedding": {
+      "document": "腾讯混元-Embedding接口，可以将文本转化为高质量的向量数据。",
+      "input": "GetEmbeddingRequest",
+      "name": "腾讯混元-Embedding",
+      "output": "GetEmbeddingResponse",
+      "status": "online"
+    },
     "GetTokenCount": {
       "document": "该接口用于计算文本对应Token数、字符数。",
       "input": "GetTokenCountRequest",
@@ -291,6 +298,68 @@
       ],
       "usage": "out"
     },
+    "EmbeddingData": {
+      "document": "embedding 信息，当前不支持批量，所以数组元素数目为1。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "embedding 信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Embedding",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下标。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "Index",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "embedding\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Object",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "EmbeddingUsage": {
+      "document": "token 使用计数。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入Token数。",
+          "example": "无",
+          "member": "int64",
+          "name": "PromptTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "总Token数。",
+          "example": "无",
+          "member": "int64",
+          "name": "TotalTokens",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "ErrorMsg": {
       "document": "运行时异常信息。",
       "members": [
@@ -316,6 +385,53 @@
         }
       ],
       "usage": "out"
+    },
+    "GetEmbeddingRequest": {
+      "document": "GetEmbedding请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "输入文本。总长度不超过1024 个token, 超过则会截断最后面的内容。",
+          "example": "无",
+          "member": "string",
+          "name": "Input",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetEmbeddingResponse": {
+      "document": "GetEmbedding返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "返回的 embedding 信息。",
+          "example": "无",
+          "member": "EmbeddingData",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "token 使用计数，按照总token数量收费。",
+          "example": "无",
+          "member": "EmbeddingUsage",
+          "name": "Usage",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "GetTokenCountRequest": {
       "document": "GetTokenCount请求参数结构体",

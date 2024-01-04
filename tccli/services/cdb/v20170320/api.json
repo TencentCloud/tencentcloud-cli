@@ -211,9 +211,9 @@
       "status": "online"
     },
     "DeleteAuditRuleTemplates": {
-      "document": "删除审计规则模版",
+      "document": "删除审计规则模板",
       "input": "DeleteAuditRuleTemplatesRequest",
-      "name": "删除审计规则模版",
+      "name": "删除审计规则模板",
       "output": "DeleteAuditRuleTemplatesResponse",
       "status": "online"
     },
@@ -6444,7 +6444,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "审计规则模版ID。",
+          "document": "审计规则模板ID。",
           "example": "cdb-art-l1mlbo59",
           "member": "string",
           "name": "RuleTemplateIds",
@@ -14238,7 +14238,7 @@
         },
         {
           "disabled": false,
-          "document": "规则模版ID。",
+          "document": "规则模板ID。",
           "example": "无",
           "member": "string",
           "name": "RuleTemplateIds",

@@ -13563,12 +13563,21 @@
         },
         {
           "disabled": false,
-          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版",
+          "document": "配置id支持：\nGeneral -- 通用场景\nOnlineTaxiItinerary -- 网约车行程单\nRideHailingDriverLicense -- 网约车驾驶证\nRideHailingTransportLicense -- 网约车运输证\nWayBill -- 快递运单\nAccountOpeningPermit -- 银行开户许可证\nInvoiceEng -- 海外发票模版\nCoin --钱币识别模板\nOnboardingDocuments -- 入职材料识别",
           "example": "无",
           "member": "string",
           "name": "ConfigId",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否打开印章识别",
+          "example": "无",
+          "member": "bool",
+          "name": "EnableSealRecognize",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

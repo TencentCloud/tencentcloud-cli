@@ -623,13 +623,6 @@
       "output": "ModifyNatSequenceRulesResponse",
       "status": "online"
     },
-    "ModifyPublicIPSwitchStatus": {
-      "document": "已上新接口，支持串行\n\n单个修改互联网边界防火墙开关",
-      "input": "ModifyPublicIPSwitchStatusRequest",
-      "name": "单个修改互联网边界防火墙开关",
-      "output": "ModifyPublicIPSwitchStatusResponse",
-      "status": "deprecated"
-    },
     "ModifyResourceGroup": {
       "document": "ModifyResourceGroup-资产中心资产组信息修改\n\n",
       "input": "ModifyResourceGroupRequest",
@@ -9540,62 +9533,6 @@
     "ModifyNatSequenceRulesResponse": {
       "document": "ModifyNatSequenceRules返回参数结构体",
       "members": [
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyPublicIPSwitchStatusRequest": {
-      "document": "ModifyPublicIPSwitchStatus请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "公网IP",
-          "example": "1.2.3.4",
-          "member": "string",
-          "name": "FireWallPublicIP",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "状态值，0: 关闭 ,1:开启",
-          "example": "1",
-          "member": "int64",
-          "name": "Status",
-          "required": true,
-          "type": "int"
-        }
-      ],
-      "type": "object"
-    },
-    "ModifyPublicIPSwitchStatusResponse": {
-      "document": "ModifyPublicIPSwitchStatus返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口返回信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "scuess",
-          "member": "string",
-          "name": "ReturnMsg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": true
-        },
-        {
-          "disabled": false,
-          "document": "接口返回错误码，0请求成功  非0失败",
-          "example": "0",
-          "member": "int64",
-          "name": "ReturnCode",
-          "required": true,
-          "type": "int",
-          "value_allowed_null": false
-        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

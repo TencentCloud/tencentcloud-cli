@@ -28,6 +28,14 @@
         "title": "请求成功示例"
       }
     ],
+    "GetEmbedding": [
+      {
+        "document": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>",
+        "input": "POST / HTTP/1.1\nHost: hunyuan.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetEmbedding\n<公共请求参数>\n\n{\n    \"Input\": \"你好\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"658a95a1f824ac766d8261b0\",\n        \"Data\": [\n            {\n                \"Embedding\": [\n                    0.018218994140625,\n                    0.024810791015625\n                ],\n                \"Index\": 0,\n                \"Object\": \"embedding\"\n            }\n        ],\n        \"Usage\": {\n            \"PromptTokens\": 3,\n            \"TotalTokens\": 3\n        }\n    }\n}",
+        "title": "请求成功示例"
+      }
+    ],
     "GetTokenCount": [
       {
         "document": "",
