@@ -1,3 +1,162 @@
+# Release 3.0.915.1
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 41 次发布
+
+发布时间：2024-01-05 01:10:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyPublicIPSwitchStatus
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 57 次发布
+
+发布时间：2024-01-05 01:10:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)
+
+
+
+## 主机安全(cwp) 版本：2018-02-28
+
+### 第 81 次发布
+
+发布时间：2024-01-05 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
+
+	* 新增成员：DataFrom
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 21 次发布
+
+发布时间：2024-01-05 01:13:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：Size
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：Size
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 8 次发布
+
+发布时间：2024-01-05 01:22:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
+
+	* 新增入参：NFOption
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, Option
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 15 次发布
+
+发布时间：2024-01-05 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：InquireKey
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 41 次发布
+
+发布时间：2024-01-05 01:28:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)
+
+修改数据结构：
+
+* [BusinessLogConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfig)
+
+	* 新增成员：ConfigAssociatedGroupList
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 122 次发布
+
+发布时间：2024-01-05 01:29:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)
+
+新增数据结构：
+
+* [VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)
+
+
+
 # Release 3.0.914.1
 
 ## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15

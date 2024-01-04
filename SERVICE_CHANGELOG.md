@@ -1,10 +1,26 @@
 # 本版本更新包含以下内容：
 
-## 云数据仓库 ClickHouse(cdwch) 版本：2020-09-15
+## 云防火墙(cfw) 版本：2019-09-04
 
-### 第 9 次发布
+### 第 41 次发布
 
-发布时间：2024-01-04 01:09:23
+发布时间：2024-01-05 01:10:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyPublicIPSwitchStatus
+
+
+
+## 负载均衡(clb) 版本：2018-03-17
+
+### 第 57 次发布
+
+发布时间：2024-01-05 01:10:54
 
 本次发布包含了以下内容：
 
@@ -12,20 +28,57 @@
 
 新增接口：
 
-* [DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)
-
-新增数据结构：
-
-* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)
-* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)
+* [ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)
 
 
 
-## 负载均衡(clb) 版本：2018-03-17
+## 主机安全(cwp) 版本：2018-02-28
 
-### 第 56 次发布
+### 第 81 次发布
 
-发布时间：2024-01-04 01:10:19
+发布时间：2024-01-05 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
+
+	* 新增成员：DataFrom
+
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 21 次发布
+
+发布时间：2024-01-05 01:13:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：Size
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：Size
+
+
+
+
+## 腾讯健康组学平台(omics) 版本：2022-11-28
+
+### 第 8 次发布
+
+发布时间：2024-01-05 01:22:24
 
 本次发布包含了以下内容：
 
@@ -33,10 +86,74 @@
 
 修改接口：
 
-* [CreateLoadBalancer](http://document.tencentcloudapi.woa.com/document/product/214/30692)
+* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
 
-	* 新增入参：BusinessBelong
+	* 新增入参：NFOption
 
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, Option
+
+
+
+
+## 容器安全服务(tcss) 版本：2020-11-01
+
+### 第 15 次发布
+
+发布时间：2024-01-05 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：InquireKey
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 41 次发布
+
+发布时间：2024-01-05 01:28:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)
+
+修改数据结构：
+
+* [BusinessLogConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfig)
+
+	* 新增成员：ConfigAssociatedGroupList
+
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 122 次发布
+
+发布时间：2024-01-05 01:29:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)
+
+新增数据结构：
+
+* [VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)
 
 
 
@@ -14157,12 +14274,12 @@
 
 新增接口：
 
-* [[DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeInstanceNodes](http://document.tencentcloudapi.woa.com/document/product/1667/82892)
 
 新增数据结构：
 
-* [[GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)](http://document.tencentcloudapi.woa.com/document/product/1667/79282#[GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo))
-* [[InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)](http://document.tencentcloudapi.woa.com/document/product/1667/79282#[InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode))
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/1667/79282#GroupInfo)
+* [InstanceNode](http://document.tencentcloudapi.woa.com/document/product/1667/79282#InstanceNode)
 
 ### 第 8 次发布
 
@@ -15246,6 +15363,18 @@
 
 
 ## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 41 次发布
+
+发布时间：2024-01-05 01:10:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* ModifyPublicIPSwitchStatus
 
 ### 第 40 次发布
 
@@ -18455,6 +18584,18 @@
 
 
 ## 负载均衡(clb) 版本：2018-03-17
+
+### 第 57 次发布
+
+发布时间：2024-01-05 01:10:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)](http://document.tencentcloudapi.woa.com/document/product/#/#)
 
 ### 第 56 次发布
 
@@ -25901,6 +26042,21 @@
 
 ## 主机安全(cwp) 版本：2018-02-28
 
+### 第 81 次发布
+
+发布时间：2024-01-05 01:12:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
+
+	* 新增成员：DataFrom
+
+
 ### 第 80 次发布
 
 发布时间：2023-12-29 01:12:26
@@ -29970,6 +30126,25 @@
 
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 21 次发布
+
+发布时间：2024-01-05 01:13:55
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
+
+	* 新增成员：Size
+
+* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
+
+	* 新增成员：Size
+
 
 ### 第 20 次发布
 
@@ -61133,6 +61308,23 @@
 
 ## 腾讯健康组学平台(omics) 版本：2022-11-28
 
+### 第 8 次发布
+
+发布时间：2024-01-05 01:22:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
+
+	* 新增入参：NFOption
+
+	* <font color="#dd0000">**修改入参**：</font>ProjectId, Option
+
+
 ### 第 7 次发布
 
 发布时间：2023-12-28 01:19:45
@@ -73173,6 +73365,21 @@
 
 ## 容器安全服务(tcss) 版本：2020-11-01
 
+### 第 15 次发布
+
+发布时间：2024-01-05 01:25:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+
+	* 新增出参：InquireKey
+
+
 ### 第 14 次发布
 
 发布时间：2024-01-03 01:24:44
@@ -85046,6 +85253,25 @@
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26
 
+### 第 41 次发布
+
+发布时间：2024-01-05 01:28:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [[BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup))
+
+修改数据结构：
+
+* [BusinessLogConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfig)
+
+	* 新增成员：ConfigAssociatedGroupList
+
+
 ### 第 40 次发布
 
 发布时间：2023-12-29 01:26:15
@@ -89191,6 +89417,22 @@
 
 
 ## 私有网络(vpc) 版本：2017-03-12
+
+### 第 122 次发布
+
+发布时间：2024-01-05 01:29:40
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [[DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+
+新增数据结构：
+
+* [[VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource))
 
 ### 第 121 次发布
 

@@ -2037,6 +2037,13 @@
       "output": "DescribeVpcPeeringConnectionsResponse",
       "status": "online"
     },
+    "DescribeVpcPrivateIPResources": {
+      "document": "本接口（DescribeVpcPrivateIPResources）用于查询VPC IP资源详情。默认按照所有地域查询。",
+      "input": "DescribeVpcPrivateIPResourcesRequest",
+      "name": "查看VPC IP资源详情",
+      "output": "DescribeVpcPrivateIPResourcesResponse",
+      "status": "online"
+    },
     "DescribeVpcPrivateIpAddresses": {
       "document": "本接口（DescribeVpcPrivateIpAddresses）用于查询VPC内网IP信息。<br />\n只能查询已使用的IP信息，当查询未使用的IP时，本接口不会报错，但不会出现在返回结果里。",
       "input": "DescribeVpcPrivateIpAddressesRequest",
@@ -24668,6 +24675,62 @@
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPrivateIPResourcesRequest": {
+      "document": "DescribeVpcPrivateIPResources请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "过滤条件。 支持的过滤条件如下： <li>private-ip-address：VPC内网IP地址。</li> <li>region ：指定地域列表，例如：ap-guangzhou。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "内部参数， 从Filter中的region转化而来。",
+          "example": "无",
+          "member": "string",
+          "name": "Regions",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeVpcPrivateIPResourcesResponse": {
+      "document": "DescribeVpcPrivateIPResources返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网IP资源列表。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[             {                 \"PrivateIPAddress\": \"10.0.5.251\",                 \"ResourceId\": \"\",                 \"Region\": \"ap-qingyuan\",                 \"ResourceType\": \"Unknown\"             }         ]",
+          "member": "VpcPrivateIPResource",
+          "name": "VpcPrivateIPResourceSet",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -56254,6 +56317,56 @@
           "required": false,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "VpcPrivateIPResource": {
+      "document": "内网IP资源",
+      "members": [
+        {
+          "disabled": false,
+          "document": "内网IP地址。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.0.0.80",
+          "member": "string",
+          "name": "PrivateIPAddress",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源类型。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ENI",
+          "member": "string",
+          "name": "ResourceType",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "资源唯一ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "eni-m5o8k2n9",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "地域。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

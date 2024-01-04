@@ -11,18 +11,19 @@ Output:
 ```
 {
     "Response": {
-        "AuthorizedImageCnt": 1,
-        "PurchasedAuthorizedCnt": 1,
-        "GivenAuthorizedCnt": 500,
+        "State": 0,
+        "CoresCnt": 1,
         "AuthorizedCoresCnt": 1,
         "ImageCnt": 1,
-        "State": 4,
-        "RequestId": "xx",
-        "ExpirationTime": "xx",
-        "CoresCnt": 1,
+        "AuthorizedImageCnt": 1,
+        "PurchasedAuthorizedCnt": 1,
+        "ExpirationTime": "abc",
         "AutomaticRenewal": 0,
-        "BeginTime": "xx",
-        "SubState": "ISOLATE"
+        "GivenAuthorizedCnt": 1,
+        "BeginTime": "abc",
+        "SubState": "abc",
+        "InquireKey": "abc",
+        "RequestId": "abc"
     }
 }
 ```

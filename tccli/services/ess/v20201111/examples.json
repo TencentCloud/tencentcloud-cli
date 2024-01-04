@@ -30,16 +30,16 @@
     ],
     "CancelMultiFlowSignQRCode": [
       {
-        "document": "取消一码多扫流程签署二维码",
+        "document": "取消一码多签签署码",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxxxxxxx\"\n    },\n    \"QrCodeId\": \"yDRvQxxxxxKC\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"1c75e86d-xxxxxxxxxx6f330a05e\"\n    }\n}",
-        "title": "取消一码多扫流程签署二维码"
+        "title": "取消一码多签签署码"
       },
       {
-        "document": "废除一码多扫流程签署二维码，若二维码已经失效，则返回操作失败。",
+        "document": "废除取消一码多签签署码，若签署码已经失效，则返回操作失败。",
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CancelMultiFlowSignQRCode\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxxxxxxx\"\n    },\n    \"QrCodeId\": \"yDRvQxxxxxKC\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.QrInvalid\",\n            \"Message\": \"签署二维码不可用，请检查后重试。\"\n        },\n        \"RequestId\": \"s169*****0872\"\n    }\n}",
-        "title": "取消一码多扫流程签署二维码-已失效"
+        "title": "取消一码多签签署码-已失效"
       }
     ],
     "CancelUserAutoSignEnableUrl": [
