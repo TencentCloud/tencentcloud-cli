@@ -8,6 +8,22 @@
         "title": "医疗报告图片脱敏接口示例"
       }
     ],
+    "ImageMaskAsync": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMaskAsync\n<公共请求参数>\n\n{\n    \"Image\": {\n        \"Base64\": \"abc\"\n    },\n    \"MaskFlag\": {\n        \"HospitalFlag\": true,\n        \"DoctorFlag\": true,\n        \"PatientFlag\": true,\n        \"BarFlag\": true\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TaskID\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "医疗报告图片脱敏异步接口示例"
+      }
+    ],
+    "ImageMaskAsyncGetResult": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: mrs.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ImageMaskAsyncGetResult\n<公共请求参数>\n\n{\n    \"TaskID\": \"taskid\"\n}",
+        "output": "{\n    \"Response\": {\n        \"MaskedImage\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "图片脱敏异步获取结果接口示例"
+      }
+    ],
     "ImageToClass": [
       {
         "document": "输入一张图片，得到报告分类信息",

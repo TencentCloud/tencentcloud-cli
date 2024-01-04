@@ -137,6 +137,46 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用类型，目前该项取值可以为PRIVATE_APPLICATION或者PUBLIC_APPLICATION\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "PRIVATE_APPLICATION",
+          "member": "string",
+          "name": "ApplicationType",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用状态：CREATING-创建中；ONLINE -正常在线；DELETING -删除中；ARREARS - 欠费隔离\n示例值：ONLINE\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ONLINE",
+          "member": "string",
+          "name": "ApplicationState",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-11-01 00:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用大小\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "ApplicationSize",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -155,7 +195,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：\napplication-id，精确匹配\nscene-id，精确匹配\napplication-name，模糊匹配",
+          "document": "过滤器，跟ApplicationIds不能共用，支持的filter主要有：\napplication-id: 精确匹配;\nscene-id: 精确匹配;\napplication-name: 模糊匹配;\napplication-type: 精确匹配;",
           "example": "[{\"Name\":\"application-id\", \"Values\":[\"app-12345678\"]}]",
           "member": "Filter",
           "name": "Filters",
@@ -179,6 +219,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用列表排序的依据字段。取值范围：\"CREATED_TIME\"：依据应用的创建时间排序。 \"APPLICATION_SIZE\"：依据应用的大小排序。默认按应用的创建时间排序。",
+          "example": "CREATE_TIME",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "输出应用列表的排列顺序。取值范围：\"ASC\"：升序排列。 \"DESC\"：降序排列。默认按降序排列。",
+          "example": "ASC",
+          "member": "string",
+          "name": "Order",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

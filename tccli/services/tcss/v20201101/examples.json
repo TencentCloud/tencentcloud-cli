@@ -1150,6 +1150,14 @@
         "title": "查询账户容器、镜像等统计信息"
       }
     ],
+    "DescribeAssetSuperNodeList": [
+      {
+        "document": "查询超级节点列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAssetSuperNodeList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"NodeID\": \"abc\",\n                \"NodeName\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ClusterID\": \"abc\",\n                \"Status\": \"abc\",\n                \"SubNetID\": \"abc\",\n                \"SubNetName\": \"abc\",\n                \"SubNetCidr\": \"abc\",\n                \"ZoneID\": \"abc\",\n                \"Zone\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"RelatePodCount\": 1,\n                \"RelateContainerCount\": 1,\n                \"AgentStatus\": \"abc\",\n                \"NodeUniqueID\": \"abc\",\n                \"ClusterAccessedStatus\": \"abc\",\n                \"ChargeCoresCnt\": 1,\n                \"DefendStatus\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeAssetSuperNodeList"
+      }
+    ],
     "DescribeAssetSyncLastTime": [
       {
         "document": "",
@@ -1188,6 +1196,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"b6ebf065d08563396da66bf0950cba8c\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6c4a3216-1849-48d1-b02c-bb83801044b6\",\n        \"ClusterId\": \"b6ebf065d08563396da66bf0950cba8c\",\n        \"ClusterName\": \"wk-usercluster-test\",\n        \"ScanTaskProgress\": 0,\n        \"ClusterVersion\": \"v1.20.6-tke.12\",\n        \"ContainerRuntime\": \"docker://19.3.9\",\n        \"ClusterNodeNum\": 4,\n        \"ClusterStatus\": \"Running\",\n        \"DefenderStatus\": \"Defender_Normal\",\n        \"ClusterType\": \"Kubernetes\",\n        \"Region\": \"ap-guangzhou\",\n        \"SeriousRiskCount\": 0,\n        \"HighRiskCount\": 0,\n        \"MiddleRiskCount\": 0,\n        \"HintRiskCount\": 0,\n        \"CheckStatus\": \"Task_Running\",\n        \"TaskCreateTime\": \"2022-05-06 11:03:19\",\n        \"NetworkType\": \"PublicNetwork\",\n        \"ApiServerAddress\": \"https://xxxx:60002\",\n        \"NodeCount\": 4,\n        \"NamespaceCount\": 0,\n        \"WorkloadCount\": 0,\n        \"PodCount\": 0,\n        \"ServiceCount\": 0,\n        \"IngressCount\": 0,\n        \"MasterIps\": \"127.0.0.1;127.0.0.2;\"\n    }\n}",
         "title": "查询集群详情"
+      }
+    ],
+    "DescribeClusterNodes": [
+      {
+        "document": "查询集群节点信息",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeClusterNodes\n<公共请求参数>\n\n{\n    \"ClusterId\": \"abc\",\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Filters\": [\n        {\n            \"Name\": \"abc\",\n            \"Values\": [\n                \"abc\"\n            ],\n            \"ExactMatch\": true\n        }\n    ],\n    \"By\": \"abc\",\n    \"Order\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterNodeList\": [\n            {\n                \"InstanceId\": \"abc\",\n                \"PrivateIpAddresses\": \"abc\",\n                \"InstanceRole\": \"abc\",\n                \"InstanceState\": \"abc\",\n                \"NodeName\": \"abc\",\n                \"AgentStatus\": \"abc\",\n                \"PublicIP\": \"abc\",\n                \"HostID\": \"abc\",\n                \"MachineType\": \"abc\",\n                \"NodeType\": \"abc\"\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群节点信息"
       }
     ],
     "DescribeClusterSummary": [
@@ -1954,6 +1970,14 @@
         "title": "查询安全日志商品信息"
       }
     ],
+    "DescribeSuperNodePodList": [
+      {
+        "document": "查询超级节点pod列表",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSuperNodePodList\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"List\": [\n            {\n                \"PodName\": \"abc\",\n                \"PodIP\": \"abc\",\n                \"NodeUniqueID\": \"abc\",\n                \"Status\": \"abc\",\n                \"CpuRequest\": 0,\n                \"CpuLimit\": 0,\n                \"MemRequest\": 0,\n                \"MemLimit\": 0,\n                \"Namespace\": \"abc\",\n                \"DeploymentName\": \"abc\",\n                \"DeploymentID\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"CreateTime\": \"abc\",\n                \"RelateContainerCount\": 1,\n                \"RunningTime\": \"abc\",\n                \"PodUid\": \"abc\",\n                \"ChargeCoresCnt\": 1,\n                \"DefendStatus\": \"abc\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "DescribeSuperNodePodList"
+      }
+    ],
     "DescribeSupportDefenceVul": [
       {
         "document": "",
@@ -2008,6 +2032,14 @@
         "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserCluster\n<公共请求参数>\n\n{\n    \"Limit\": \"2\",\n    \"Offset\": \"0\"\n}",
         "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"ClusterInfoList\": [\n            {\n                \"ClusterId\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ClusterVersion\": \"abc\",\n                \"ClusterOs\": \"abc\",\n                \"ClusterType\": \"abc\",\n                \"ClusterNodeNum\": 1,\n                \"Region\": \"abc\",\n                \"DefenderStatus\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"ClusterCheckMode\": \"abc\",\n                \"ClusterAutoCheck\": true,\n                \"DefenderErrorReason\": \"abc\",\n                \"UnreadyNodeNum\": 1,\n                \"SeriousRiskCount\": 0,\n                \"HighRiskCount\": 0,\n                \"MiddleRiskCount\": 0,\n                \"HintRiskCount\": 0,\n                \"CheckFailReason\": \"abc\",\n                \"CheckStatus\": \"abc\",\n                \"TaskCreateTime\": \"abc\",\n                \"AccessedStatus\": \"abc\",\n                \"AccessedSubStatus\": \"abc\",\n                \"NodeCount\": 1,\n                \"OffLineNodeCount\": 1,\n                \"UnInstallAgentNodeCount\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "查询用户集群列表"
+      }
+    ],
+    "DescribeUserPodList": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tcss.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeUserPodList\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cls-ane0zamq\",\n    \"Limit\": \"1\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PodList\": [\n            {\n                \"PodName\": \"abc\",\n                \"Status\": \"abc\",\n                \"PodIP\": \"abc\",\n                \"NodeLanIP\": \"abc\",\n                \"WorkloadName\": \"abc\",\n                \"WorkloadKind\": \"abc\",\n                \"ClusterName\": \"abc\",\n                \"ClusterId\": \"abc\",\n                \"Namespace\": \"abc\",\n                \"Region\": \"abc\",\n                \"Age\": \"abc\",\n                \"StartTime\": \"abc\",\n                \"Restarts\": 1,\n                \"ServiceName\": \"abc\",\n                \"ServiceCount\": 1,\n                \"ContainerName\": \"abc\",\n                \"ContainerCount\": 1,\n                \"CPU\": 1,\n                \"Memory\": 1,\n                \"Labels\": \"abc\",\n                \"ClusterStatus\": \"abc\",\n                \"WorkloadLabels\": \"abc\",\n                \"ContainerId\": \"abc\",\n                \"HostName\": \"abc\",\n                \"HostId\": \"abc\",\n                \"ClusterType\": \"abc\",\n                \"NodeName\": \"abc\",\n                \"NodeType\": \"abc\",\n                \"ChargeCoresCnt\": 1\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "查询集群的Pod列表"
       }
     ],
     "DescribeValueAddedSrvInfo": [

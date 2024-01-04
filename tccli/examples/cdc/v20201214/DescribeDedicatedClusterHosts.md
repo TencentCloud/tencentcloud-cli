@@ -15,6 +15,7 @@ Output:
     "Response": {
         "HostInfoSet": [
             {
+                "HostId": "host-xxxxxxxx",
                 "HostIp": "50.4.2.2",
                 "ServiceType": "云服务器宿主机",
                 "HostStatus": "PENDING",
@@ -27,6 +28,7 @@ Output:
                 "MemTotal": 96
             },
             {
+                "HostId": "host-xxxxxxxx",
                 "HostIp": "50.4.2.3",
                 "ServiceType": "云服务器宿主机",
                 "HostStatus": "PENDING",

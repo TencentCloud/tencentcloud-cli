@@ -6,7 +6,14 @@ Input:
 
 ```
 tccli cdwch DescribeSpec --cli-unfold-argument  \
-    --Zone ap-guangzhou-1
+    --Zone 'ap-guangzhou-1
+ 
+
+{
+  "Zone": "abc",
+"PayMode":"xxxx",
+
+}'
 ```
 
 Output: 
@@ -18,35 +25,35 @@ Output:
                 "Available": true,
                 "InstanceQuota": 1000,
                 "SystemDisk": {
-                    "DiskDesc": "xx",
+                    "DiskDesc": "abc",
                     "MaxDiskSize": 50,
                     "MinDiskSize": 50,
                     "DiskCount": 1,
-                    "DiskType": "xx"
+                    "DiskType": "abc"
                 },
-                "DisplayName": "xx",
-                "Name": "xx",
-                "ComputeSpecDesc": "xx",
+                "DisplayName": "abc",
+                "Name": "abc",
+                "ComputeSpecDesc": "abc",
                 "Mem": 16,
                 "MaxNodeSize": 50,
-                "Type": "xx",
+                "Type": "abc",
                 "Cpu": 4,
                 "DataDisk": {
-                    "DiskDesc": "xx",
+                    "DiskDesc": "abc",
                     "MaxDiskSize": 32000,
                     "MinDiskSize": 100,
                     "DiskCount": 1,
-                    "DiskType": "xx"
+                    "DiskType": "abc"
                 }
             }
         ],
         "AttachCBSSpec": [
             {
-                "DiskDesc": "xx",
+                "DiskDesc": "abc",
                 "MaxDiskSize": 32000,
                 "MinDiskSize": 100,
                 "DiskCount": 1,
-                "DiskType": "xx"
+                "DiskType": "abc"
             }
         ],
         "CommonSpec": [
@@ -54,29 +61,29 @@ Output:
                 "Available": true,
                 "InstanceQuota": 1000,
                 "SystemDisk": {
-                    "DiskDesc": "xx",
+                    "DiskDesc": "abc",
                     "MaxDiskSize": 50,
                     "MinDiskSize": 50,
                     "DiskCount": 1,
-                    "DiskType": "xx"
+                    "DiskType": "abc"
                 },
-                "DisplayName": "xx",
-                "Name": "xx",
-                "ComputeSpecDesc": "xx",
+                "DisplayName": "abc",
+                "Name": "abc",
+                "ComputeSpecDesc": "abc",
                 "Mem": 4,
                 "MaxNodeSize": 50,
-                "Type": "xx",
+                "Type": "abc",
                 "Cpu": 2,
                 "DataDisk": {
-                    "DiskDesc": "xx",
+                    "DiskDesc": "abc",
                     "MaxDiskSize": 32000,
                     "MinDiskSize": 100,
                     "DiskCount": 1,
-                    "DiskType": "xx"
+                    "DiskType": "abc"
                 }
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,18 +6,19 @@ Input:
 
 ```
 tccli cwp ModifyLoginWhiteRecord --cli-unfold-argument  \
-    --UserName xx \
-    --Remark xx \
-    --Places.0.CityId 1 \
-    --Places.0.CountryId 1 \
-    --Places.0.ProvinceId 1 \
+    --UserName abc \
+    --SrcIp abc \
+    --StartTime abc \
+    --EndTime abc \
+    --Remark abc \
     --IsGlobal 1 \
-    --Hosts.0.Quuid xx \
-    --Hosts.0.Uuid xx \
-    --StartTime xx \
-    --SrcIp xx \
-    --EndTime xx \
-    --Id 1
+    --Id 1 \
+    --Hosts.0.Quuid abc \
+    --Hosts.0.Uuid abc \
+    --Places.0.CityId 1 \
+    --Places.0.ProvinceId 1 \
+    --Places.0.CountryId 1 \
+    --Places.0.Location abc
 ```
 
 Output: 

@@ -1751,6 +1751,7 @@
           "example": "sync-btso140",
           "member": "string",
           "name": "JobIds",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },

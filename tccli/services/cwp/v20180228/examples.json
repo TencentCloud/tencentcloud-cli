@@ -161,8 +161,8 @@
     "CreateMalwareWhiteList": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMalwareWhiteList\n<公共请求参数>\n\n{\n    \"QuuidList\": [\n        \"xx\"\n    ],\n    \"Mode\": 0,\n    \"Md5List\": [\n        \"xx\"\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateMalwareWhiteList\n<公共请求参数>\n\n{\n    \"QuuidList\": [\n        \"abc\"\n    ],\n    \"IsGlobal\": 1,\n    \"Mode\": 1,\n    \"MatchType\": 1,\n    \"FileName\": [\n        \"abc\"\n    ],\n    \"FileDirectory\": [\n        \"abc\"\n    ],\n    \"FileExtension\": [\n        \"abc\"\n    ],\n    \"Md5List\": [\n        \"e10adc3949ba59abbe56e057f20f883e\"\n    ],\n    \"EventId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "创建木马白名单"
       }
     ],
@@ -1863,8 +1863,8 @@
     "DescribeMachineFileTamperRules": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachineFileTamperRules\n<公共请求参数>\n\n{\n    \"Limit\": 1,\n    \"Uuid\": \"xx\",\n    \"Offset\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Rule\": [\n                    {\n                        \"Action\": \"xx\",\n                        \"ProcessPath\": \"xx\",\n                        \"Target\": \"xx\"\n                    }\n                ],\n                \"Name\": \"xx\",\n                \"RuleCategory\": 1,\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"c741a4fd-776f-499b-85a2-7bc70fd5b92s\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMachineFileTamperRules\n<公共请求参数>\n\n{\n    \"Offset\": 1,\n    \"Limit\": 1,\n    \"Uuid\": \"10ee1dad-ed42-4f98-8c9e-bfaa48fcb787\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"List\": [\n            {\n                \"Name\": \"abc\",\n                \"RuleCategory\": 1,\n                \"Rule\": [\n                    {\n                        \"ProcessPath\": \"abc\",\n                        \"Target\": \"abc\",\n                        \"Action\": \"abc\",\n                        \"FileAction\": \"abc\"\n                    }\n                ],\n                \"Id\": 1\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "核心文件监控事件列表"
       }
     ],
@@ -3745,7 +3745,7 @@
     "ModifyLoginWhiteRecord": [
       {
         "document": "编辑登录审计白名单",
-        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginWhiteRecord\n<公共请求参数>\n\n{\n    \"UserName\": \"xx\",\n    \"Remark\": \"xx\",\n    \"Places\": [\n        {\n            \"CityId\": 1,\n            \"CountryId\": 1,\n            \"ProvinceId\": 1\n        }\n    ],\n    \"IsGlobal\": 1,\n    \"Hosts\": [\n        {\n            \"Quuid\": \"xx\",\n            \"Uuid\": \"xx\"\n        }\n    ],\n    \"StartTime\": \"xx\",\n    \"SrcIp\": \"xx\",\n    \"EndTime\": \"xx\",\n    \"Id\": 1\n}",
+        "input": "POST / HTTP/1.1\nHost: cwp.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyLoginWhiteRecord\n<公共请求参数>\n\n{\n    \"UserName\": \"abc\",\n    \"SrcIp\": \"abc\",\n    \"StartTime\": \"abc\",\n    \"EndTime\": \"abc\",\n    \"Remark\": \"abc\",\n    \"IsGlobal\": 1,\n    \"Id\": 1,\n    \"Hosts\": [\n        {\n            \"Quuid\": \"abc\",\n            \"Uuid\": \"abc\"\n        }\n    ],\n    \"Places\": [\n        {\n            \"CityId\": 1,\n            \"ProvinceId\": 1,\n            \"CountryId\": 1,\n            \"Location\": \"abc\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"4234234\"\n    }\n}",
         "title": "编辑登录审计白名单"
       }

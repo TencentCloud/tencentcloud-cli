@@ -91,6 +91,13 @@
       "output": "DescribeInstanceKeyValConfigsResponse",
       "status": "online"
     },
+    "DescribeInstanceNodes": {
+      "document": "获取实例节点信息列表",
+      "input": "DescribeInstanceNodesRequest",
+      "name": "获取实例节点信息列表",
+      "output": "DescribeInstanceNodesResponse",
+      "status": "online"
+    },
     "DescribeInstanceShards": {
       "document": "获取实例shard信息列表",
       "input": "DescribeInstanceShardsRequest",
@@ -1475,6 +1482,98 @@
       ],
       "type": "object"
     },
+    "DescribeInstanceNodesRequest": {
+      "document": "DescribeInstanceNodes请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群实例ID",
+          "example": "cdwch-12345678",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "集群角色类型，默认为 \"data\"数据节点",
+          "example": "DATA",
+          "member": "string",
+          "name": "NodeRole",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，第一页为0，第二页为10",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页参数，分页步长，默认为10",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "展现策略，All时显示所有",
+          "example": "All",
+          "member": "string",
+          "name": "DisplayPolicy",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当true的时候返回所有节点，即Limit无限大",
+          "example": "false",
+          "member": "bool",
+          "name": "ForceAll",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInstanceNodesResponse": {
+      "document": "DescribeInstanceNodes返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数",
+          "example": "2",
+          "member": "int64",
+          "name": "TotalCount",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "实例节点总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceNode",
+          "name": "InstanceNodesList",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceRequest": {
       "document": "DescribeInstance请求参数结构体",
       "members": [
@@ -1759,6 +1858,15 @@
           "name": "IsElastic",
           "required": false,
           "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否是购买页面需要的spec",
+          "example": "1",
+          "member": "int64",
+          "name": "CaseType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -1772,7 +1880,7 @@
           "example": "-",
           "member": "ResourceSpec",
           "name": "CommonSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1782,7 +1890,7 @@
           "example": "-",
           "member": "ResourceSpec",
           "name": "DataSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1792,7 +1900,7 @@
           "example": "xx",
           "member": "DiskSpec",
           "name": "AttachCBSSpec",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1913,6 +2021,42 @@
           "name": "DiskCount",
           "required": true,
           "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "GroupInfo": {
+      "document": "集群分组信息描述",
+      "members": [
+        {
+          "disabled": false,
+          "document": "分组名称",
+          "example": "default_cluster",
+          "member": "string",
+          "name": "GroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "分片变量名称",
+          "example": "shard",
+          "member": "string",
+          "name": "ShardName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "副本变量名称",
+          "example": "replica",
+          "member": "string",
+          "name": "ReplicaName",
+          "required": true,
+          "type": "string",
           "value_allowed_null": false
         }
       ],
@@ -2520,6 +2664,112 @@
           "member": "bool",
           "name": "HasEsIndex",
           "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "InstanceNode": {
+      "document": "实例节点描述信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "IP地址",
+          "example": "10.0.0.1",
+          "member": "string",
+          "name": "Ip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机型，如 S1",
+          "example": "SCH1",
+          "member": "string",
+          "name": "Spec",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "cpu核数",
+          "example": "2",
+          "member": "int64",
+          "name": "Core",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "内存大小",
+          "example": "4",
+          "member": "int64",
+          "name": "Memory",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘类型",
+          "example": "CLOUD_HSSD",
+          "member": "string",
+          "name": "DiskType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "磁盘大小",
+          "example": "100",
+          "member": "int64",
+          "name": "DiskSize",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "所属clickhouse cluster名称",
+          "example": "default_cluster",
+          "member": "string",
+          "name": "Cluster",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "节点所属的分组信息",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "NodeGroups",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "VPC IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "192.168.1.1",
+          "member": "string",
+          "name": "Rip",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "ture的时候表示该节点上部署了chproxy进程\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "true",
+          "member": "bool",
+          "name": "IsCHProxy",
+          "required": true,
           "type": "bool",
           "value_allowed_null": true
         }

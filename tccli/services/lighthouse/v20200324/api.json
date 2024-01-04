@@ -1966,7 +1966,7 @@
         {
           "disabled": false,
           "document": "规则ID列表。",
-          "example": "无",
+          "example": "[\"lhftr-abcde12345\"]",
           "member": "string",
           "name": "TemplateRuleIdSet",
           "output_required": true,

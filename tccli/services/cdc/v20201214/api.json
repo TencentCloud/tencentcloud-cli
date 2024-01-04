@@ -50,9 +50,9 @@
       "status": "online"
     },
     "DescribeDedicatedClusterHosts": {
-      "document": "专用集群宿主机信息",
+      "document": "查询专用集群宿主机信息",
       "input": "DescribeDedicatedClusterHostsRequest",
-      "name": "专用集群宿主机信息",
+      "name": "查询专用集群宿主机信息",
       "output": "DescribeDedicatedClusterHostsResponse",
       "status": "online"
     },
@@ -71,9 +71,9 @@
       "status": "online"
     },
     "DescribeDedicatedClusterOverview": {
-      "document": "专用集群概览信息",
+      "document": "查询专用集群概览信息",
       "input": "DescribeDedicatedClusterOverviewRequest",
-      "name": "专用集群概览信息",
+      "name": "查询专用集群概览信息",
       "output": "DescribeDedicatedClusterOverviewResponse",
       "status": "online"
     },
@@ -1257,7 +1257,7 @@
           "example": "dctype-00000000",
           "member": "string",
           "name": "DedicatedClusterTypeId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1267,7 +1267,7 @@
           "example": "适用于xxx场景",
           "member": "string",
           "name": "Description",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1277,7 +1277,7 @@
           "example": "通用小型机规格",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1287,7 +1287,7 @@
           "example": "无",
           "member": "datetime_iso",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -1297,7 +1297,7 @@
           "example": "COS",
           "member": "string",
           "name": "SupportedStorageType",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1307,7 +1307,7 @@
           "example": "10",
           "member": "int64",
           "name": "SupportedUplinkGiB",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1317,7 +1317,7 @@
           "example": "M5",
           "member": "string",
           "name": "SupportedInstanceFamily",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -1327,7 +1327,7 @@
           "example": "1000",
           "member": "int64",
           "name": "Weight",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1337,17 +1337,17 @@
           "example": "100",
           "member": "float",
           "name": "PowerDrawKva",
-          "required": true,
+          "output_required": true,
           "type": "float",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "显示计算资源规格详情，存储等资源不显示；对应规格",
-          "example": "M5.21XLARGE700 4、S5.21XLARGE320 2",
+          "document": "显示计算资源规格详情，存储等资源不显示",
+          "example": "M5.21XLARGE700、S5.21XLARGE320",
           "member": "string",
           "name": "ComputeFormatDesc",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         }
@@ -1585,7 +1585,7 @@
           "example": "无",
           "member": "HostInfo",
           "name": "HostInfoSet",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1595,7 +1595,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1758,7 +1758,7 @@
           "example": "10",
           "member": "uint64",
           "name": "CvmCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1768,7 +1768,7 @@
           "example": "10",
           "member": "uint64",
           "name": "HostCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1778,7 +1778,7 @@
           "example": "AVAILABLE",
           "member": "string",
           "name": "VpnConnectionState",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -1788,7 +1788,7 @@
           "example": "无",
           "member": "VpngwBandwidthData",
           "name": "VpngwBandwidthData",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1798,7 +1798,7 @@
           "example": "无",
           "member": "LocalNetInfo",
           "name": "LocalNetInfo",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -1808,8 +1808,38 @@
           "example": "无",
           "member": "VpngwBandwidthData",
           "name": "VpnConnectionBandwidthData",
-          "required": true,
+          "output_required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "宿主机资源概览信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HostDetailInfo",
+          "name": "HostDetailInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "热备宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostStandbyCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "普通宿主机数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "HostNormalCount",
+          "output_required": false,
+          "type": "int",
           "value_allowed_null": true
         },
         {
@@ -2203,6 +2233,62 @@
           "name": "Values",
           "output_required": false,
           "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "HostDetailInfo": {
+      "document": "宿主机资源的概览详细信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "类型族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "标准型S5",
+          "member": "string",
+          "name": "HostTypeFamily",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "float",
+          "name": "CpuTotal",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用CPU\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "64",
+          "member": "float",
+          "name": "CpuAvailable",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "总内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "320",
+          "member": "float",
+          "name": "MemTotal",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "可用内存\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "320",
+          "member": "float",
+          "name": "MemAvailable",
+          "output_required": false,
+          "type": "float",
           "value_allowed_null": true
         }
       ],

@@ -1597,7 +1597,7 @@
       "status": "online"
     },
     "DescribeMachineFileTamperRules": {
-      "document": "查询主机相关核心文件监控规则列 表   ",
+      "document": "查询主机相关核心文件监控规则列表",
       "input": "DescribeMachineFileTamperRulesRequest",
       "name": "查询主机相关核心文件监控规则",
       "output": "DescribeMachineFileTamperRulesResponse",
@@ -14465,7 +14465,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "白名单模式； 0MD5白名单，1自定义",
+          "document": "白名单模式； 0 MD5白名单，1自定义",
           "example": "1",
           "member": "uint64",
           "name": "Mode",
@@ -14475,7 +14475,7 @@
         {
           "disabled": false,
           "document": "quuid 列表",
-          "example": "[\"xxx\"]",
+          "example": "[\"9942e3f5-756f-459f-89f9-07428d38d2f9\"]",
           "member": "string",
           "name": "QuuidList",
           "required": false,
@@ -14529,7 +14529,7 @@
         {
           "disabled": false,
           "document": "MD5列表",
-          "example": "[\"xxx\"]",
+          "example": "[\"e10adc3949ba59abbe56e057f20f883e\"]",
           "member": "string",
           "name": "Md5List",
           "required": false,
@@ -18289,7 +18289,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件。\n<li>MachineName  主机名称</li>\n<li>InstanceID  实例ID  </li>\n<li>IP   内网IP或公网IP</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n0: 未知  1: 低负载\n2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n0: 0%或未知  1: 0%～20%\n2: 20%～50%  3: 50%～80%\n4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
+          "document": "过滤条件。\n<li>MachineName  主机名称</li>\n<li>InstanceID  实例ID  </li>\n<li>IP   内网IP或公网IP</li>\n<li>OsType - String - 是否必填：否 - windows或linux</li>\n<li>CpuLoad - Int - 是否必填：否 - \n\t0: 未知  1: 低负载\n\t2: 中负载  3: 高负载</li>\n<li>DiskLoad - Int - 是否必填：否 - \n\t0: 0%或未知  1: 0%～20%\n\t2: 20%～50%  3: 50%～80%\n\t4: 80%～100%</li>\n<li>MemLoad - Int - 是否必填：否 - \n\t0: 0%或未知  1: 0%～20%\n\t2: 20%～50%  3: 50%～80%\n\t4: 80%～100%</li>\n<li>Quuid：主机Quuid</li>\n<li>Os -String 是否必填: 否 - 操作系统( DescribeMachineOsList 接口 值 )</li>",
           "example": "[]",
           "member": "Filter",
           "name": "Filters",
@@ -19314,7 +19314,7 @@
         },
         {
           "disabled": false,
-          "document": "可选排序：[FirstTime|LoginTime|PasswordChangeTime|PasswordDuaTime]\nPasswordLockDays",
+          "document": "可选排序：[FirstTime|LoginTime|PasswordChangeTime|PasswordDuaTime|PasswordLockDays]\n",
           "example": "LoginTime",
           "member": "string",
           "name": "By",
@@ -27462,7 +27462,7 @@
         {
           "disabled": false,
           "document": "主机uuid",
-          "example": "xxxxx",
+          "example": "10ee1dad-ed42-4f98-8c9e-bfaa48fcb787",
           "member": "string",
           "name": "Uuid",
           "required": true,
@@ -27498,7 +27498,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -27508,7 +27508,7 @@
           "example": "无",
           "member": "MachineFileTamperRule",
           "name": "List",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -39789,7 +39789,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤条件：Keywords: ip或者主机名模糊查询, Type，Status精确匹配，CreateBeginTime，CreateEndTime时间段",
+          "document": "过滤条件：InstanceID、IP、\n\nMachineName主机名模糊查询, Type，Status精确匹配，CreateBeginTime，CreateEndTime时间段",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -39813,10 +39813,11 @@
       "members": [
         {
           "disabled": false,
-          "document": "任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址",
+          "document": "任务ID,需要到接口 <a href=\"https://cloud.tencent.com/document/product/296/52508\" target=\"_blank\" >异步导出任务</a>获取DownloadUrl下载地址",
           "example": "123",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -47648,7 +47649,7 @@
         {
           "disabled": false,
           "document": "白名单用户（多个用户逗号隔开）",
-          "example": "xxx",
+          "example": "root",
           "member": "string",
           "name": "UserName",
           "required": true,
@@ -47657,7 +47658,7 @@
         {
           "disabled": false,
           "document": "更新后记录的白名单维度信息",
-          "example": "xxx",
+          "example": "127.0.0.1",
           "member": "string",
           "name": "SrcIp",
           "required": true,
@@ -47666,7 +47667,7 @@
         {
           "disabled": false,
           "document": "开始时间",
-          "example": "xxx",
+          "example": "2020-01-01 00:00:00",
           "member": "string",
           "name": "StartTime",
           "required": true,
@@ -47675,7 +47676,7 @@
         {
           "disabled": false,
           "document": "结束时间",
-          "example": "xxx",
+          "example": "2024-01-01 00:00:00",
           "member": "string",
           "name": "EndTime",
           "required": true,
@@ -47684,7 +47685,7 @@
         {
           "disabled": false,
           "document": "备注",
-          "example": "xxx",
+          "example": "备注",
           "member": "string",
           "name": "Remark",
           "required": true,
