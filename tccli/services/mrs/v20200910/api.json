@@ -9745,7 +9745,7 @@
           "example": "张三",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9755,7 +9755,7 @@
           "example": "男",
           "member": "string",
           "name": "Sex",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9765,7 +9765,7 @@
           "example": "23",
           "member": "string",
           "name": "Age",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9775,7 +9775,7 @@
           "example": "1357023xxxx",
           "member": "string",
           "name": "Phone",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9785,7 +9785,7 @@
           "example": "广东省深圳市",
           "member": "string",
           "name": "Address",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9795,7 +9795,7 @@
           "example": "4415221992xxxxxxxx",
           "member": "string",
           "name": "IdCard",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9805,7 +9805,7 @@
           "example": "UI7821056C",
           "member": "string",
           "name": "HealthCardNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9815,7 +9815,7 @@
           "example": "489170108",
           "member": "string",
           "name": "SocialSecurityCardNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9825,7 +9825,7 @@
           "example": "1997-01-01",
           "member": "string",
           "name": "Birthday",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9835,7 +9835,7 @@
           "example": "汉",
           "member": "string",
           "name": "Ethnicity",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9845,7 +9845,7 @@
           "example": "未婚",
           "member": "string",
           "name": "Married",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9855,7 +9855,7 @@
           "example": "学生",
           "member": "string",
           "name": "Profession",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9865,7 +9865,7 @@
           "example": "硕士",
           "member": "string",
           "name": "EducationBackground",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9875,7 +9875,7 @@
           "example": "中国",
           "member": "string",
           "name": "Nationality",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9885,7 +9885,7 @@
           "example": "广东深圳",
           "member": "string",
           "name": "BirthPlace",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9895,7 +9895,7 @@
           "example": "居民医保",
           "member": "string",
           "name": "MedicalInsuranceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9905,17 +9905,17 @@
           "example": "3600个小时",
           "member": "string",
           "name": "AgeNorm",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
-          "disabled": false,
-          "document": "民族\n注意：此字段可能返回 null，表示取不到有效值。",
+          "disabled": true,
+          "document": "民族。该字段已不再使用，请从Ethnicity取值\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "汉",
           "member": "string",
           "name": "Nation",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9925,7 +9925,7 @@
           "example": "20",
           "member": "string",
           "name": "MarriedCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9935,7 +9935,7 @@
           "example": "24",
           "member": "string",
           "name": "ProfessionCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9945,7 +9945,7 @@
           "example": "06",
           "member": "string",
           "name": "MedicalInsuranceTypeCode",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9955,7 +9955,7 @@
           "example": "001",
           "member": "string",
           "name": "BedNo",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         }

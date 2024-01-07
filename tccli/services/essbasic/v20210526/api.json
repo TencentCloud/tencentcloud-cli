@@ -141,7 +141,7 @@
       "status": "online"
     },
     "ChannelCreatePrepareFlow": {
-      "document": "通过此接口指定合同、签署人、填写控件等信息，生成嵌入式链接，此链接可以嵌入到其他网页或者直接打开，打开后进入发起页面。在此页面上，合同信息和签署人信息均不可更改。\n\n注意：\n1. 只支持PC浏览器操作使用\n\n嵌入的页面样式如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2ae013fb4d747891dd3815bbe897208.png)",
+      "document": "通过此接口指定合同、签署人、填写控件等信息，生成嵌入式链接，此链接可以嵌入到其他网页或者直接打开，打开后进入发起页面。在此页面上，合同信息和签署人信息均不可更改。\n\n注意：\n1. 只支持PC浏览器操作使用\n\n**嵌入式签署人-各种场景传参说明**:\n\n<table>\n<thead>\n<tr>\n<th>场景编号</th>\n<th>可作为签署方的类型</th>\n<th>签署方传参说明</th>\n</tr>\n</thead>\n\n<tbody>\n<tr>\n<td>场景一</td>\n<td>第三方子企业A员工</td>\n<td>OpenId、OrganizationName、OrganizationOpenId必传 ,ApproverType设置为ORGANIZATION</td>\n</tr>\n<tr>\n<td>场景二</td>\n<td>第三方子企业B员工</td>\n<td>OpenId、OrganizationOpenId、OrganizationName必传, ApproverType设置为ORGANIZATION</td>\n</tr>\n<tr>\n<td>场景三</td>\n<td>SaaS平台企业员工</td>\n<td>Name、Mobile、OrganizationName必传，NotChannelOrganization=True。 ApproverType设置为ORGANIZATION</td>\n</tr>\n<tr>\n<td>场景四</td>\n<td>个人/自然人</td>\n<td>Name、Mobile必传, ApproverType设置为PERSON</td>\n</tr>\n</tbody>\n</table>\n\n嵌入的页面样式如下：\n![image](https://qcloudimg.tencent-cloud.cn/raw/b2ae013fb4d747891dd3815bbe897208.png)",
       "input": "ChannelCreatePrepareFlowRequest",
       "name": "获取发起合同嵌入链接",
       "output": "ChannelCreatePrepareFlowResponse",
@@ -316,14 +316,14 @@
       "status": "online"
     },
     "CreateChannelOrganizationInfoChangeUrl": {
-      "document": "此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接（需要在移动端打开，会跳转到微信小程序），支持创建企业超管变更链接或企业基础信息变更链接，通过入参 ChangeType 指定。\n\n\n<h3 id=\"1-企业超管变更\">1. 企业超管变更</h3>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h3 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h3>\n\n<h4 id=\"可以变动\">可以变动</h4>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h4 id=\"不可变动\">不可变动</h4>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章，合同专用章，财务专用章和人事专用章,  然后用新企业名称生成新的机构公章，合同专用章，财务专用章和人事专用章,  而法人章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>\n\n\n注意： \n1. 生成的电子签小程序链接<font color='red'>只能由企业的法人或者超管</font>点击后进行操作， 其他员工打开后会提示“无权查看该内容”\n2. 法人可以无需生成链接，直接在电子签小程序中更换本企业的超管",
+      "document": "此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接。\n\n<h3 id=\"1\">支持变更链接类型，通过入参 Endpoint 指定，默认为WEIXINAPP。</h3>\n\n<h4 id=\"WEIXINAPP\">WEIXINAPP</h4>\n<p>创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。</p>\n\n<h4 id=\"APP\">APP</h4>\n<p>创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</p>\n\n\n<h3 id=\"2\">支持创建企业超管变更链接或企业基础信息变更链接，通过入参 ChangeType 指定。</h3>\n\n<h4 id=\"1-企业超管变更\">1. 企业超管变更</h4>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h4 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h4>\n\n<h5 id=\"可以变动\">可以变动</h5>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h5 id=\"不可变动\">不可变动</h5>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章，合同专用章，财务专用章和人事专用章,  然后用新企业名称生成新的机构公章，合同专用章，财务专用章和人事专用章,  而法人章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>\n\n\n注意： \n1. 生成的电子签小程序链接<font color='red'>只能由企业的法人或者超管</font>点击后进行操作， 其他员工打开后会提示“无权查看该内容”\n2. 法人可以无需生成链接，直接在电子签小程序中更换本企业的超管",
       "input": "CreateChannelOrganizationInfoChangeUrlRequest",
       "name": "获取变更企业信息电子签小程序链接",
       "output": "CreateChannelOrganizationInfoChangeUrlResponse",
       "status": "online"
     },
     "CreateConsoleLoginUrl": {
-      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客web企业控制台的唯一入口。\n\nWeb链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表示**)和员工(**Agent中OpenId表示**)的状态，进入不同的流程，主要情况分类如下：\n<table>\n<thead>\n<tr>\n<th>子客企业状态</th>\n<th>子客企业员工状态</th>\n<th>点击链接进入的流程</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>企业未激活</td>\n<td>员工未认证</td>\n<td>进入企业激活流程，首次完成企业激活流程的员工会成为超管</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工未认证</td>\n<td>进入员认证并加入企业流程</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工已认证</td>\n<td>进入子客企业Web控制台</td>\n</tr>\n</tbody>\n</table>\n如果是企业激活流程，需要注意如下情况：\n\n1. 若在激活过程中，**更换用户OpenID重新生成链接，之前的认证会被清理**。因此不要在企业认证过程生成多个链接给多人同时操作，会导致认证过程互相影响。\n2. 若您认证中发现信息有误需要重新认证，**可通过更换用户OpenID重新生成链接的方式，来清理掉已有的流程**。\n\n系统的渠道企业, 应用, 子客企业, 子客员工的组织形式\n![image](https://qcloudimg.tencent-cloud.cn/raw/bee4b7375fe7a097f3573b18a1c1e30b.png)",
+      "document": "此接口（CreateConsoleLoginUrl）用于创建第三方平台子客企业控制台Web/移动登录链接。支持web控制台、电子签小程序和H5链接。登录链接是进入子客web企业控制台的唯一入口。\n\nWeb链接访问后，会根据子客企业(**Agent中ProxyOrganizationOpenId表示**)和员工(**Agent中OpenId表示**)的状态，进入不同的流程，主要情况分类如下：\n<table>\n<thead>\n<tr>\n<th>子客企业状态</th>\n<th>子客企业员工状态</th>\n<th>点击链接进入的流程</th>\n<th>视频样例</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>企业未激活</td>\n<td>员工未认证</td>\n<td>进入企业激活流程，首次完成企业激活流程的员工会成为超管</td>\n<td><a href=\"https://dyn.ess.tencent.cn/guide/apivideo/CreateConsoleLoginUrl_noverify.mp4\" target=\"_blank\">打开</a></td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工未认证</td>\n<td>进入员认证并加入企业流程</td>\n<td>-</td>\n</tr>\n<tr>\n<td>企业已激活</td>\n<td>员工已认证</td>\n<td>进入子客企业Web控制台</td>\n<td>-</td>\n</tr>\n</tbody>\n</table>\n如果是企业激活流程，需要注意如下情况：\n\n1. 若在激活过程中，**更换用户OpenID重新生成链接，之前的认证会被清理**。因此不要在企业认证过程生成多个链接给多人同时操作，会导致认证过程互相影响。\n2. 若您认证中发现信息有误需要重新认证，**可通过更换用户OpenID重新生成链接的方式，来清理掉已有的流程**。\n\n系统的渠道企业, 应用, 子客企业, 子客员工的组织形式\n![image](https://qcloudimg.tencent-cloud.cn/raw/bee4b7375fe7a097f3573b18a1c1e30b.png)",
       "input": "CreateConsoleLoginUrlRequest",
       "name": "生成子客登录链接",
       "output": "CreateConsoleLoginUrlResponse",
@@ -5779,6 +5779,15 @@
           "name": "ChangeType",
           "required": true,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "变更链接类型：\n<ul>\n<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>\n<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>\n</ul>",
+          "example": "无",
+          "member": "string",
+          "name": "Endpoint",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

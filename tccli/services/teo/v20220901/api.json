@@ -3419,7 +3419,7 @@
           "example": "无",
           "member": "string",
           "name": "ResourceNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3429,7 +3429,7 @@
           "example": "无",
           "member": "string",
           "name": "DealNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -3539,7 +3539,7 @@
         },
         {
           "disabled": false,
-          "document": "节点缓存清除方法，针对目录刷新、Hostname刷新以及刷新全部缓存 类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>注意：使用目录刷新时，默认值： invalidate。",
+          "document": "节点缓存清除方法，针对目录刷新、Hostname刷新以及刷新全部缓存类型有效，取值有：<li> invalidate：仅刷新目录下产生了更新的资源；</li><li> delete：无论目录下资源是否更新都刷新节点资源。</li>默认值： invalidate。",
           "example": "invalidate",
           "member": "string",
           "name": "Method",
@@ -3548,7 +3548,7 @@
         },
         {
           "disabled": false,
-          "document": "要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>EO 默认针对内容含有非 ASCII 字符集的字符进行转义，编码规则遵循 RFC3986；</li><li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>",
+          "document": "要清除缓存的资源列表。每个元素格式依据清除缓存类型而定，可参考接口示例。<li>单次提交的任务数受计费套餐配额限制，请查看 [EO计费套餐](https://cloud.tencent.com/document/product/1552/77380)。</li>",
           "example": "[\"http://www.qq.com/1.txt\"]",
           "member": "string",
           "name": "Targets",
@@ -11143,6 +11143,7 @@
           "example": "loose",
           "member": "string",
           "name": "Mode",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -11153,7 +11154,8 @@
           "example": "xxx",
           "member": "int64",
           "name": "ID",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11163,7 +11165,8 @@
           "example": "alg",
           "member": "string",
           "name": "Action",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -11173,7 +11176,8 @@
           "example": "10",
           "member": "int64",
           "name": "PunishTime",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -11183,7 +11187,8 @@
           "example": "100",
           "member": "int64",
           "name": "Threshold",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11193,12 +11198,13 @@
           "example": "10",
           "member": "int64",
           "name": "Period",
-          "required": false,
+          "output_required": true,
+          "required": true,
           "type": "int",
           "value_allowed_null": false
         }
       ],
-      "usage": "out"
+      "usage": "both"
     },
     "RateLimitUserRule": {
       "document": "RateLimit规则",
@@ -12184,80 +12190,88 @@
       "members": [
         {
           "disabled": false,
-          "document": "托管规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "托管规则。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "WafConfig",
           "name": "WafConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "速率限制。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "速率限制。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "RateLimitConfig",
           "name": "RateLimitConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自定义规则。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义规则。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "AclConfig",
           "name": "AclConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Bot配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "Bot配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "BotConfig",
           "name": "BotConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "七层防护总开关。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "七层防护总开关。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SwitchConfig",
           "name": "SwitchConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "基础访问管控。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "基础访问管控。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "IpTableConfig",
           "name": "IpTableConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "例外规则配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "例外规则配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "ExceptConfig",
           "name": "ExceptConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "自定义拦截页面配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "自定义拦截页面配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "DropPageConfig",
           "name": "DropPageConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12268,16 +12282,18 @@
           "example": "无",
           "member": "TemplateConfig",
           "name": "TemplateConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "慢速攻击配置。如果为null，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "慢速攻击配置。如果入参为空或不填，默认使用历史配置。\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SlowPostConfig",
           "name": "SlowPostConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
