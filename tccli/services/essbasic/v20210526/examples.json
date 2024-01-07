@@ -277,7 +277,7 @@
     "ChannelCreatePrepareFlow": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePrepareFlow\n<公共请求参数>\n\n\n\n\n{\n  \"Agent\": {\n    \"ProxyOperator\": {\n      \"OpenId\": \"5d18c1c4c8926cd11\"\n    },\n    \"ProxyOrganizationOpenId\": \"572c69xxxxxx245e4\",\n    \"AppId\": \"yDRsbUUgxxxx7ZfBvipOMJ\"\n  },\n  \"ResourceId\": \"yDwqFUUckp3em41rUwWPgIBjsYgG5bba\",\n  \"ResourceType\": 2,\n  \"FlowInfo\": {\n    \"FlowName\": \"第三方预发起合同-跳过文件上传\",\n    \"FlowType\": \"第三方嵌入式文件发起合同\",\n    \"FlowDescription\": \"\",\n    \"Deadline\": 0, \n    \"Unordered\": false,\n    \"IntelligentStatus\": \"CLOSE\",\n    \"FormFields\": [],\n    \"NeedCreateReview\": false,\n    \"NeedSignReview\": false,\n    \"UserData\": \"\",\n    \"CcInfos\": []\n  },\n  \"FlowOption\": {\n    \"CanEditFlow\": true,\n    \"CanEditFormField\": true,\n    \"HideShowFlowName\": false,\n    \"HideShowFlowType\": false,\n    \"HideShowDeadline\": false,\n    \"ForbidEditFillComponent\": false,\n    \"CustomCreateFlowDescription\": \"\"\n  },\n  \"FlowApproverList\": [\n    {\n      \"ApproverType\": 0,\n      \"NotChannelOrganization\": false,\n      \"OrganizationOpenId\": \"org_dianziqian\",\n      \"OrganizationName\": \"典子谦示例企业\",\n      \"OpenId\": \"n131517\",\n      \"ApproverOption\": { \"CanEditApprover\": true },\n      \"IsFullText\": true,\n      \"PreReadTime\": 0\n\n    },\n    {\n      \"ApproverType\": 1,\n      \"ApproverIdCardType\": \"\",\n      \"ApproverName\": \"里斯\",\n      \"NotChannelOrganization\":false,\n      \"ApproverMobile\": \"13312312312\",\n      \"IsFullText\": true,\n      \"PreReadTime\": 0\n    }\n  ]\n}",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePrepareFlow\n<公共请求参数>\n\n{\n    \"Agent\":{\n        \"ProxyOperator\":{\n            \"OpenId\":\"5d18c1c4c8926cd11\"\n        },\n        \"ProxyOrganizationOpenId\":\"572c69xxxxxx245e4\",\n        \"AppId\":\"yDRsbUUgxxxx7ZfBvipOMJ\"\n    },\n    \"ResourceId\":\"yDwqFUUckp3em41rUwWPgIBjsYgG5bba\",\n    \"ResourceType\":2,\n    \"FlowInfo\":{\n        \"FlowName\":\"第三方预发起合同-跳过文件上传\",\n        \"FlowType\":\"第三方嵌入式文件发起合同\",\n        \"FlowDescription\":\"\",\n        \"Deadline\":0,\n        \"Unordered\":false,\n        \"IntelligentStatus\":\"CLOSE\",\n        \"FormFields\":[\n\n        ],\n        \"NeedCreateReview\":false,\n        \"NeedSignReview\":false,\n        \"UserData\":\"\",\n        \"CcInfos\":[\n\n        ]\n    },\n    \"FlowOption\":{\n        \"CanEditFlow\":true,\n        \"CanEditFormField\":true,\n        \"HideShowFlowName\":false,\n        \"HideShowFlowType\":false,\n        \"HideShowDeadline\":false,\n        \"ForbidEditFillComponent\":false,\n        \"CustomCreateFlowDescription\":\"\"\n    },\n    \"FlowApproverList\":[\n        {\n            \"ApproverType\":0,\n            \"NotChannelOrganization\":false,\n            \"OrganizationOpenId\":\"org_dianziqian\",\n            \"OrganizationName\":\"典子谦示例企业\",\n            \"OpenId\":\"n131517\",\n            \"ApproverOption\":{\n                \"CanEditApprover\":true\n            },\n            \"IsFullText\":true,\n            \"PreReadTime\":0\n        },\n        {\n            \"ApproverType\":1,\n            \"ApproverIdCardType\":\"\",\n            \"ApproverName\":\"里斯\",\n            \"NotChannelOrganization\":false,\n            \"ApproverMobile\":\"13312312312\",\n            \"IsFullText\":true,\n            \"PreReadTime\":0\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"PrepareFlowUrl\": \"https://embed.beta.qian.tencent.cn/contract-create?embed=1&expiredOn=1700819911&code=yDSL6UUQEjIKK&businessId=yDSL6U3iY7&channel=PROXYCHANNEL&operateSource=byTemplate&themeId=channel_web_theme_yDwi3UAR2Yb\",\n        \"PreviewFlowUrl\": \"\",\n        \"RequestId\": \"c52aaa17-3f81-4640-be03-fca0a553d2e3\"\n    }\n}",
         "title": "文件发起-跳过文件上传"
       },
@@ -614,36 +614,42 @@
     ],
     "CreateChannelOrganizationInfoChangeUrl": [
       {
-        "document": "设置changeType为2，创建企业信息变更链接。",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 2\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798606,\n        \"RequestId\": \"38be082e-08c4-4f37-a0b7-cd47cf9982b5\",\n        \"Url\": \"https://test.essurl.cn/CvEXWU6RkKW\"\n    }\n}",
-        "title": "创建企业信息变更链接"
-      },
-      {
-        "document": "设置changeType为1，创建企业超管变更链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 1\n}",
-        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798287,\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\",\n        \"Url\": \"https://test.essurl.cn/zG0sxU6zl\"\n    }\n}",
-        "title": "创建超管变更链接"
-      },
-      {
         "document": "设置changeType为3，接口将返回错误信息。",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 3\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"InvalidParameter.ParamError\",\n            \"Message\": \"不支持的变更类型:3,请确认后重新\"\n        },\n        \"RequestId\": \"30cc3f4a-8f8c-4ec7-a6fb-66a82590c546\"\n    }\n}",
         "title": "错误示例-变更类型不合法"
+      },
+      {
+        "document": "设置changeType为2，创建企业信息变更链接。",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 2,\n    \"Endpoint\": \"WEIXINAPP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798606,\n        \"RequestId\": \"38be082e-08c4-4f37-a0b7-cd47cf9982b5\",\n        \"Url\": \"https://test.essurl.cn/CvEXWU6RkKW\"\n    }\n}",
+        "title": "创建企业信息变更链接（短链）"
+      },
+      {
+        "document": "设置changeType为1，创建企业超管变更小程序链接链接",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateChannelOrganizationInfoChangeUrl\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwFoUUckpsomwx1UyhWGhIR2RkhOj2\",\n        \"ProxyOrganizationOpenId\": \"ess_open_organization_1\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"openid1\"\n        }\n    },\n    \"ChangeType\": 1,\n    \"Endpoint\": \"APP\"\n}",
+        "output": "{\n    \"Response\": {\n        \"ExpiredTime\": 1695798287,\n        \"RequestId\": \"3bff7e92-76f8-4e09-85df-e7cb982cb454\",\n        \"Url\": \"/pages/guide/index?to=CHANGE_SUPER_ADMIN&organizationId=yDxbWUyKQDxgXVUuO4zjEB8mxCcDjAyF&channelType=test&adminName=张*&legalName=李*&expireTime=1695798287\"\n    }\n}",
+        "title": "创建超管变更链接（小程序链接）"
       }
     ],
     "CreateConsoleLoginUrl": [
-      {
-        "document": "生成默认的控制台链接",
-        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
-        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
-        "title": "生成默认的控制台链接"
-      },
       {
         "document": "生成到模板详情的控制台链接",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    },\n    \"Module\": \"TEMPLATE\",\n    \"ModuleId\": \"yDwFdUUckpsvet4jUEn0aFRxtu5TdalM\",\n    \"MenuStatus\": \"ENABLE\"\n}",
         "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://es*.ap*.tencent.com/template-preview?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&templateId=yDxlzxxxoTxQfVnyxs&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
         "title": "生成到模板详情的控制台链接"
+      },
+      {
+        "document": "如果<b>典子谦示例企业的员工张三已经完成了认证和加入企业</b>，  此时给典子谦示例企业的员工张三生成登录的PC控制台的链接\n\n典子谦示例企业的定义标识为：org_dianziqian\n员工张三定义员工标识为：n9527\n",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"ProxyOperatorName\": \"张三\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
+        "title": "生成默认的控制台登录链接"
+      },
+      {
+        "document": "如果<b>典子谦示例企业的员工张三还没有认证</b>，  此时给典子谦示例企业的员工张三生成企业认证和个人认证的PC链接\n\n典子谦示例企业的定义标识为：org_dianziqian\n员工张三定义员工标识为：n9527\n",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsoleLoginUrl\n<公共请求参数>\n\n{\n    \"ProxyOrganizationName\": \"典子谦示例企业\",\n    \"ProxyOperatorName\": \"张三\",\n    \"Agent\": {\n        \"ProxyOperator\": {\n            \"OpenId\": \"n9527\"\n        },\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"AppId\": \"yDRSRUUgygj6qnwfUuO4zjEwc193c2hH\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ConsoleUrl\": \"https://xxx.xxxx.tencent.com/?channel=PROXYCHANNEL&expiredTime=1631712951&code=123456asdfghjk&menuStatus=ENABLE\",\n        \"IsActivated\": false,\n        \"ProxyOperatorIsVerified\": false,\n        \"RequestId\": \"s16221***14775648\"\n    }\n}",
+        "title": "生成默认的控制台认证链接"
       }
     ],
     "CreateFlowGroupSignReview": [

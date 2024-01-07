@@ -274,7 +274,7 @@
       "status": "online"
     },
     "StartStreamIngest": {
-      "document": "将一个在线媒体流推到TRTC房间。",
+      "document": "将一个在线媒体流推到TRTC房间。\n使用此接口的前提条件：需要购买 [尊享版或旗舰版套餐包](https://cloud.tencent.com/document/product/647/85386\n)",
       "input": "StartStreamIngestRequest",
       "name": "开始拉流转推",
       "output": "StartStreamIngestResponse",
@@ -5482,7 +5482,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和录制的房间所对应的SdkAppId相同。",
+          "document": "TRTC的[SdkAppId](https://cloud.tencent.com/document/product/647/46351#sdkappid)，和TRTC的房间所对应的SdkAppId相同。",
           "example": "1234",
           "member": "uint64",
           "name": "SdkAppId",
@@ -5527,11 +5527,11 @@
         },
         {
           "disabled": false,
-          "document": "源流URL。示例值：https://a.b/test.mp4",
+          "document": "【本字段已废弃，请使用 StreamUrl 字段】源流URL，支持一个地址。",
           "example": "https://a.b/test.mp4",
           "member": "string",
           "name": "SourceUrl",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -5567,6 +5567,15 @@
           "example": "https://a.b/callback",
           "member": "string",
           "name": "CallbackUrl",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源流URL。历史原因本字段【必填】。",
+          "example": "https://a.b/test.mp4",
+          "member": "string",
+          "name": "StreamUrl",
           "required": false,
           "type": "string"
         }

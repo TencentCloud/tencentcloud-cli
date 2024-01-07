@@ -1,84 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云防火墙(cfw) 版本：2019-09-04
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
 
-### 第 41 次发布
+### 第 119 次发布
 
-发布时间：2024-01-05 01:10:09
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-<font color="#dd0000">**删除接口**：</font>
-
-* ModifyPublicIPSwitchStatus
-
-
-
-## 负载均衡(clb) 版本：2018-03-17
-
-### 第 57 次发布
-
-发布时间：2024-01-05 01:10:54
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)
-
-
-
-## 主机安全(cwp) 版本：2018-02-28
-
-### 第 81 次发布
-
-发布时间：2024-01-05 01:12:23
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [BruteAttackInfo](http://document.tencentcloudapi.woa.com/document/product/296/19867#BruteAttackInfo)
-
-	* 新增成员：DataFrom
-
-
-
-
-## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
-
-### 第 21 次发布
-
-发布时间：2024-01-05 01:13:55
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-修改数据结构：
-
-* [Command](http://document.tencentcloudapi.woa.com/document/product/1492/74806#Command)
-
-	* 新增成员：Size
-
-* [SearchCommandResult](http://document.tencentcloudapi.woa.com/document/product/1492/74806#SearchCommandResult)
-
-	* 新增成员：Size
-
-
-
-
-## 腾讯健康组学平台(omics) 版本：2022-11-28
-
-### 第 8 次发布
-
-发布时间：2024-01-05 01:22:24
+发布时间：2024-01-08 01:10:48
 
 本次发布包含了以下内容：
 
@@ -86,20 +12,45 @@
 
 修改接口：
 
-* [RunApplication](http://document.tencentcloudapi.woa.com/document/product/1725/80767)
+* [CreateChannelOrganizationInfoChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82055)
 
-	* 新增入参：NFOption
-
-	* <font color="#dd0000">**修改入参**：</font>ProjectId, Option
+	* 新增入参：Endpoint
 
 
 
 
-## 容器安全服务(tcss) 版本：2020-11-01
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
 
-### 第 15 次发布
 
-发布时间：2024-01-05 01:25:47
+
+## 边缘安全加速平台(teo) 版本：2022-09-01
+
+### 第 25 次发布
+
+发布时间：2024-01-08 01:19:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RateLimitTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitTemplateDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>ID, Action, PunishTime, Threshold, Period
+
+
+
+
+## 边缘安全加速平台(teo) 版本：2022-01-06
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 37 次发布
+
+发布时间：2024-01-08 01:21:00
 
 本次发布包含了以下内容：
 
@@ -107,53 +58,12 @@
 
 修改接口：
 
-* [DescribePurchaseStateInfo](http://document.tencentcloudapi.woa.com/document/product/1662/78844)
+* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
 
-	* 新增出参：InquireKey
+	* 新增入参：StreamUrl
 
+	* <font color="#dd0000">**修改入参**：</font>SourceUrl
 
-
-
-## 微服务平台 TSF(tsf) 版本：2018-03-26
-
-### 第 41 次发布
-
-发布时间：2024-01-05 01:28:58
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增数据结构：
-
-* [BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)
-
-修改数据结构：
-
-* [BusinessLogConfig](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfig)
-
-	* 新增成员：ConfigAssociatedGroupList
-
-
-
-
-## 私有网络(vpc) 版本：2017-03-12
-
-### 第 122 次发布
-
-发布时间：2024-01-05 01:29:40
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)
-
-新增数据结构：
-
-* [VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)
 
 
 
@@ -18595,7 +18505,7 @@
 
 新增接口：
 
-* [[ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [ModifyLBOperateProtect](http://document.tencentcloudapi.woa.com/document/product/214/82893)
 
 ### 第 56 次发布
 
@@ -41019,6 +40929,21 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 119 次发布
+
+发布时间：2024-01-08 01:10:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateChannelOrganizationInfoChangeUrl](http://document.tencentcloudapi.woa.com/document/product/1595/82055)
+
+	* 新增入参：Endpoint
+
 
 ### 第 118 次发布
 
@@ -77524,6 +77449,21 @@
 
 ## 边缘安全加速平台(teo) 版本：2022-09-01
 
+### 第 25 次发布
+
+发布时间：2024-01-08 01:19:29
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [RateLimitTemplateDetail](http://document.tencentcloudapi.woa.com/document/product/1738/81211#RateLimitTemplateDetail)
+
+	* <font color="#dd0000">**修改成员**：</font>ID, Action, PunishTime, Threshold, Period
+
+
 ### 第 24 次发布
 
 发布时间：2023-12-07 02:35:52
@@ -83445,6 +83385,23 @@
 
 ## 实时音视频(trtc) 版本：2019-07-22
 
+### 第 37 次发布
+
+发布时间：2024-01-08 01:21:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [StartStreamIngest](http://document.tencentcloudapi.woa.com/document/product/647/82725)
+
+	* 新增入参：StreamUrl
+
+	* <font color="#dd0000">**修改入参**：</font>SourceUrl
+
+
 ### 第 36 次发布
 
 发布时间：2023-12-01 01:26:33
@@ -85263,7 +85220,7 @@
 
 新增数据结构：
 
-* [[BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)](http://document.tencentcloudapi.woa.com/document/product/649/36099#[BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup))
+* [BusinessLogConfigAssociatedGroup](http://document.tencentcloudapi.woa.com/document/product/649/36099#BusinessLogConfigAssociatedGroup)
 
 修改数据结构：
 
@@ -89428,11 +89385,11 @@
 
 新增接口：
 
-* [[DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeVpcPrivateIPResources](http://document.tencentcloudapi.woa.com/document/product/215/82894)
 
 新增数据结构：
 
-* [[VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)](http://document.tencentcloudapi.woa.com/document/product/215/15824#[VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource))
+* [VpcPrivateIPResource](http://document.tencentcloudapi.woa.com/document/product/215/15824#VpcPrivateIPResource)
 
 ### 第 121 次发布
 

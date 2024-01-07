@@ -100,7 +100,7 @@
     ],
     "CreatePlanForZone": [
       {
-        "document": "",
+        "document": "为站点创建套餐",
         "input": "POST / HTTP/1.1\nHost: teo.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePlanForZone\n<公共请求参数>\n\n{\n    \"ZoneId\": \"zone-25z65bfb4414\",\n    \"PlanType\": \"sta\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"a06f52e7-2aab-4510-b2c2-1065bfb4414c\",\n        \"ResourceNames\": [\n            \"plan_sta\"\n        ],\n        \"DealNames\": [\n            \"2022080135400110011001\"\n        ]\n    }\n}",
         "title": "CreatePlanForZone"
