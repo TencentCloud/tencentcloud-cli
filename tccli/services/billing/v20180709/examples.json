@@ -254,6 +254,14 @@
         "title": "CLB、EIP，视频直播业务按日期获取用量明细"
       }
     ],
+    "DescribeDosageDetailList": [
+      {
+        "document": "获取用量明细数据",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeDosageDetailList\n<公共请求参数>\n\n{\n    \"Offset\": 43150,\n    \"Limit\": 3,\n    \"StartTime\": \"2023-09-01\",\n    \"EndTime\": \"2023-09-30\",\n    \"ProductCode\": \"p_dsa\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Record\": [\n            {\n                \"AttrStr\": [\n                    {\n                        \"Key\": \"zoneId\",\n                        \"Value\": \"470004\"\n                    },\n                    {\n                        \"Key\": \"dayPeek\",\n                        \"Value\": \"4872430721\"\n                    },\n                    {\n                        \"Key\": \"regionId\",\n                        \"Value\": \"47\"\n                    }\n                ],\n                \"BillingItemCode\": \"v_dsa_gipa_bandwidth_game\",\n                \"BillingItemCodeName\": \"全球IP应用加速-游戏加速带宽\",\n                \"Date\": \"2023-09-01\",\n                \"DeductValue\": 0,\n                \"DosageBeginTime\": \"2023-09-01 00:02:00\",\n                \"DosageEndTime\": \"2023-09-01 00:02:59\",\n                \"DosageType\": \"minute\",\n                \"DosageUnit\": \"Mbps\",\n                \"DosageValue\": 2206972795,\n                \"ProductCode\": \"p_dsa\",\n                \"ProductCodeName\": \"全站加速网络ECDN\",\n                \"RemainValue\": 2206972795,\n                \"SdkAppId\": \"\",\n                \"SheetName\": [\n                    \"全球IP应用加速_1分钟\"\n                ],\n                \"SubBillingItemCode\": \"sv_dsa_gipa_bandwidth_game_yd_month\",\n                \"SubBillingItemCodeName\": \"GIPA-游戏加速带宽-移动网络-按月结算\",\n                \"SubProductCode\": \"sp_dsa_gipa\",\n                \"SubProductCodeName\": \"全球IP应用加速\",\n                \"Uin\": \"909619400\"\n            }\n        ],\n        \"RequestId\": \"184cd45e-d2e1-4043-a47b-183617836e25\"\n    }\n}",
+        "title": "获取用量明细数据"
+      }
+    ],
     "DescribeSavingPlanCoverage": [
       {
         "document": "查询节省计划覆盖率数据",

@@ -175,6 +175,13 @@
       "output": "DescribeDosageDetailByDateResponse",
       "status": "online"
     },
+    "DescribeDosageDetailList": {
+      "document": "获取已接入标准用量明细模板产品的用量明细数据，目前已接入并支持查询的产品包括：云联络中心、实时音视频、实时音视频、智能媒资托管、CODING DevOps、全球IP应用加速",
+      "input": "DescribeDosageDetailListRequest",
+      "name": "获取计量标准接入类产品用量明细",
+      "output": "DescribeDosageDetailListResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanCoverage": {
       "document": "查询当前用户节省计划覆盖率明细数据，如无特别说明，金额单位均为元（国内站）或者美元（国际站）。",
       "input": "DescribeSavingPlanCoverageRequest",
@@ -6169,6 +6176,212 @@
       ],
       "type": "object"
     },
+    "DescribeDosageDetail": {
+      "document": "计量标准接入类产品支持API接口获取用量明细返回数据结构",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-09-01",
+          "member": "string",
+          "name": "Date",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "账号 ID 是用户在腾讯云的唯一账号标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Uin",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量统计类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "minute",
+          "member": "string",
+          "name": "DosageType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "p_dsa",
+          "member": "string",
+          "name": "ProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_rav_audio_video",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型编码\n\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "v_rav_time",
+          "member": "string",
+          "name": "BillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件编码\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_rav_time_subscribe",
+          "member": "string",
+          "name": "SubBillingItemCode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "实时音视频",
+          "member": "string",
+          "name": "ProductCodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子产品名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "实时音视频-音视频通话",
+          "member": "string",
+          "name": "SubProductCodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "时长",
+          "member": "string",
+          "name": "BillingItemCodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "组件\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "订阅时长",
+          "member": "string",
+          "name": "SubBillingItemCodeName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量单位\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "分钟",
+          "member": "string",
+          "name": "DosageUnit",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量起始时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-01 00:00:00",
+          "member": "string",
+          "name": "DosageBeginTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量截止时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-02-01 00:05:00",
+          "member": "string",
+          "name": "DosageEndTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标准用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "float",
+          "name": "DosageValue",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣用量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "float",
+          "name": "DeductValue",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "抵扣余量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "6",
+          "member": "float",
+          "name": "RemainValue",
+          "output_required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "sdkAppId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1400706048",
+          "member": "string",
+          "name": "SdkAppId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "其他信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{\"Key\":\"tgr\",\"Value\":\"超高清\"}]",
+          "member": "JsonObject",
+          "name": "AttrStr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用量模板名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"实时音视频_时长_5分钟\",                     \"实时音视频_时长_5分钟\"]",
+          "member": "string",
+          "name": "SheetName",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "DescribeDosageDetailByDateRequest": {
       "document": "DescribeDosageDetailByDate请求参数结构体",
       "members": [
@@ -6271,6 +6484,88 @@
           "output_required": true,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageDetailListRequest": {
+      "document": "DescribeDosageDetailList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量起始时间，如：2023-02-01",
+          "example": "2023-02-01",
+          "member": "string",
+          "name": "StartTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用量截止时间，如：2023-02-28",
+          "example": "2023-02-28",
+          "member": "string",
+          "name": "EndTime",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "产品编码，已支持查询的产品如下：\np_ccc（云联络中心）\np_rav（实时音视频）\np_pstn（号码保护）\np_smh（智能媒资托管）\np_coding_devops（CODING DevOps）\np_dsa（全球IP应用加速）",
+          "example": "p_ccc",
+          "member": "string",
+          "name": "ProductCode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据偏移量（从0开始）",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次数据量（最大3000）",
+          "example": "100",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用量统计类型：用量明细的数据统计汇总周期类型，包括minute-按5分钟汇总、hour-按小时汇总、day-按天汇总、month-按月汇总、comm-其他，默认查询所有类型明细，目前各产品已支持的统计类型如下：\np_ccc（云联络中心）：comm、day\np_rav（实时音视频）：minute、day\np_pstn（号码保护）：comm\np_smh（智能媒资托管）：day\np_coding_devops（CODING DevOps）：comm、day\np_dsa（全球IP应用加速）：minute",
+          "example": "minute",
+          "member": "string",
+          "name": "DosageType",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeDosageDetailListResponse": {
+      "document": "DescribeDosageDetailList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用量明细集合",
+          "example": "无",
+          "member": "DescribeDosageDetail",
+          "name": "Record",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -7279,6 +7574,34 @@
         }
       ],
       "usage": "out"
+    },
+    "JsonObject": {
+      "document": "Json对象",
+      "members": [
+        {
+          "disabled": false,
+          "document": "key值",
+          "example": "无",
+          "member": "string",
+          "name": "Key",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "value值",
+          "example": "无",
+          "member": "string",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
     },
     "PayDealsRequest": {
       "document": "PayDeals请求参数结构体",

@@ -39,7 +39,7 @@
       },
       {
         "document": "将5285485487985271487的视频作为画中画的主画面；将5285485487985271488的视频作为画中画的子画面；子画面的中心偏移主画面25%（即在主画面右下角），宽度占画面的30%。",
-        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ComposeMedia\n<公共请求参数>\n\n{\n    \"Output\": {\n        \"Container\": \"mp4\",\n        \"FileName\": \"test\"\n    },\n    \"Tracks\": [\n        {\n            \"TrackItems\": [\n                {\n                    \"Type\": \"Video\",\n                    \"VideoItem\": {\n                        \"CoordinateOrigin\": \"Center\",\n                        \"Width\": \"30%\",\n                        \"SourceMedia\": \"5285485487985271488\",\n                        \"XPos\": \"25%\",\n                        \"YPos\": \"25%\"\n                    }\n                }\n            ],\n            \"Type\": \"Video\"\n        },\n        {\n            \"TrackItems\": [\n                {\n                    \"Type\": \"Video\",\n                    \"VideoItem\": {\n                        \"SourceMedia\": \"5285485487985271487\"\n                    }\n                }\n            ],\n            \"Type\": \"Video\"\n        }\n    ]\n}",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ComposeMedia\n<公共请求参数>\n\n{\n    \"Output\": {\n        \"Container\": \"mp4\",\n        \"FileName\": \"test\"\n    },\n    \"Tracks\": [\n        {\n            \"TrackItems\": [\n                {\n                    \"Type\": \"Video\",\n                    \"VideoItem\": {\n                        \"SourceMedia\": \"5285485487985271487\"\n                    }\n                }\n            ],\n            \"Type\": \"Video\"\n        },\n        {\n            \"TrackItems\": [\n                {\n                    \"Type\": \"Video\",\n                    \"VideoItem\": {\n                        \"CoordinateOrigin\": \"Center\",\n                        \"Width\": \"30%\",\n                        \"SourceMedia\": \"5285485487985271488\",\n                        \"XPos\": \"25%\",\n                        \"YPos\": \"25%\"\n                    }\n                }\n            ],\n            \"Type\": \"Video\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TaskId\": \"125xxx65-ComposeMedia-bffb15f07530b57bc1aabb01fac74bca\"\n    }\n}",
         "title": "将一个视频作为另一个视频的画中画"
       }
@@ -106,6 +106,22 @@
         "input": "https://vod.tencentcloudapi.com/?Action=CreateAnimatedGraphicsTemplate\n&Name=动图图模板1\n&Width=540\n&Height=960\n&Format=gif\n&Fps=30\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Definition\": 1008,\n        \"RequestId\": \"12ae8d8e-dce3-4151-9d4b-5594145287e1\"\n    }\n}",
         "title": "创建转动图模板"
+      }
+    ],
+    "CreateCLSLogset": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSLogset\n<公共请求参数>\n\n{\n    \"CLSRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"LogsetId\": \"54079098-61ea-48f9-8270-3b041a5d0150\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "创建一个新的日志集"
+      }
+    ],
+    "CreateCLSTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateCLSTopic\n<公共请求参数>\n\n{\n    \"CLSRegion\": \"ap-guangzhou\",\n    \"TopicName\": \"mytopic\",\n    \"LogsetId\": \"54079098-61ea-48f9-8270-3b041a5d0150\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TopicId\": \"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\",\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "创建一个新的日志主题"
       }
     ],
     "CreateClass": [
@@ -384,6 +400,14 @@
         "title": "删除转动图模板"
       }
     ],
+    "DeleteCLSTopic": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCLSTopic\n<公共请求参数>\n\n{\n    \"TopicId\": \"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "删除CLS日志主题"
+      }
+    ],
     "DeleteClass": [
       {
         "document": "",
@@ -642,6 +666,30 @@
         "input": "https://vod.tencentcloudapi.com/?Action=DescribeCDNUsageData\n&StartTime=2018-12-01T00:00:00+08:00\n&EndTime=2018-12-03T00:00:00+08:00\n&DataType=Bandwidth\n&SubAppId=1\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"DataInterval\": 1440,\n        \"Data\": [\n            {\n                \"Time\": \"2018-12-01T00:00:00+08:00\",\n                \"Value\": 700000\n            },\n            {\n                \"Time\": \"2018-12-01T05:00:00+08:00\",\n                \"Value\": 800000\n            },\n            {\n                \"Time\": \"2018-12-01T10:00:00+08:00\",\n                \"Value\": 920000\n            }\n        ],\n        \"RequestId\": \"requestId\"\n    }\n}",
         "title": "管理员查询所有域名从2018-12-01到2018-12-07的带宽数据"
+      }
+    ],
+    "DescribeCLSLogsets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSLogsets\n<公共请求参数>\n\n{\n    \"CLSRegion\": \"ap-guangzhou\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Logsets\": [\n            {\n                \"LogsetId\": \"54079098-61ea-48f9-8270-3b041a5d0150\",\n                \"LogsetName\": \"vod_cdn_logset_cn\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询点播创建的广州地区日志集"
+      }
+    ],
+    "DescribeCLSPushTargets": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSPushTargets\n<公共请求参数>\n\n{\n    \"Domains\": [\n        \"xxx.vod-qcloud.com\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"DomainCLSTargets\": [\n            {\n                \"Domain\": \"xxx.vod-qcloud.com\",\n                \"ChineseMainlandCLSTargetInfo\": {\n                    \"Switch\": \"OFF\",\n                    \"CLSRegion\": \"ap-guangzhou\",\n                    \"TopicId\": \"\",\n                    \"LogsetId\": \"\"\n                },\n                \"OutsideChineseMainlandCLSTargetInfo\": {\n                    \"Switch\": \"OFF\",\n                    \"CLSRegion\": \"ap-singapore\",\n                    \"TopicId\": \"\",\n                    \"LogsetId\": \"\"\n                }\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询日志投递目标"
+      }
+    ],
+    "DescribeCLSTopics": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCLSTopics\n<公共请求参数>\n\n{\n    \"CLSRegion\": \"ap-guangzhou\",\n    \"LogsetId\": \"54079098-61ea-48f9-8270-3b041a5d0150\",\n    \"Offset\": 0,\n    \"Limit\": 0\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Topics\": [\n            {\n                \"TopicId\": \"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\",\n                \"TopicName\": \"mytopic\",\n                \"LogsetId\": \"54079098-61ea-48f9-8270-3b041a5d0150\"\n            }\n        ],\n        \"RequestId\": \"xxx\"\n    }\n}",
+        "title": "查询指定日志主题"
       }
     ],
     "DescribeCdnLogs": [
@@ -1696,6 +1744,14 @@
         "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchMedia\n<公共请求参数>\n\n{\n    \"Sort\": {\n        \"Field\": \"CreateTime\",\n        \"Order\": \"Desc\"\n    },\n    \"Filters\": [\n        \"basicInfo\"\n    ],\n    \"Categories\": [\n        \"Image\"\n    ],\n    \"ClassIds\": [\n        123\n    ],\n    \"CreateTime\": {\n        \"After\": \"2020-12-10T07:25:52Z\",\n        \"Before\": \"2020-12-13T07:25:52Z\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"6ca31e3a-6b8e-4b4e-9256-fdc700064ef3\",\n        \"TotalCount\": 2,\n        \"MediaInfoSet\": [\n            {\n                \"FileId\": \"5285890811175706012\",\n                \"BasicInfo\": {\n                    \"Name\": \"雾\",\n                    \"Description\": \"\",\n                    \"CreateTime\": \"2020-12-11T07:02:36Z\",\n                    \"UpdateTime\": \"2020-12-11T07:02:37Z\",\n                    \"ExpireTime\": \"9999-12-31T23:59:59Z\",\n                    \"ClassId\": 123,\n                    \"ClassName\": \"图标\",\n                    \"ClassPath\": \"图标\",\n                    \"CoverUrl\": \"\",\n                    \"Type\": \"png\",\n                    \"MediaUrl\": \"http://xxx.com/Tmf3xphxGoUA.png\",\n                    \"TagSet\": [],\n                    \"StorageRegion\": \"ap-shanghai\",\n                    \"SourceInfo\": {\n                        \"SourceType\": \"Upload\",\n                        \"SourceContext\": \"\",\n                        \"TrtcRecordInfo\": {\n                            \"SdkAppId\": 1,\n                            \"RoomId\": \"RoomId\",\n                            \"TaskId\": \"TaskId\",\n                            \"UserIds\": [\n                                \"UserId\"\n                            ]\n                        },\n                        \"WebPageRecordInfo\": null,\n                        \"LiveRecordInfo\": null\n                    },\n                    \"Vid\": \"5285890811175706012\",\n                    \"Category\": \"Image\",\n                    \"Status\": \"Normal\",\n                    \"StorageClass\": \"STANDARD\"\n                },\n                \"SubtitleInfo\": {\n                    \"SubtitleSet\": [\n                        {\n                            \"Url\": \"url\",\n                            \"Format\": \"vtt\",\n                            \"Name\": \"name\",\n                            \"Language\": \"cn\",\n                            \"Id\": \"id\"\n                        }\n                    ]\n                },\n                \"ReviewInfo\": null,\n                \"MetaData\": null,\n                \"TranscodeInfo\": null,\n                \"AnimatedGraphicsInfo\": null,\n                \"SampleSnapshotInfo\": null,\n                \"ImageSpriteInfo\": null,\n                \"SnapshotByTimeOffsetInfo\": null,\n                \"KeyFrameDescInfo\": null,\n                \"AdaptiveDynamicStreamingInfo\": null,\n                \"MiniProgramReviewInfo\": null\n            },\n            {\n                \"FileId\": \"5285890811175698692\",\n                \"BasicInfo\": {\n                    \"Name\": \"多云\",\n                    \"Description\": \"\",\n                    \"CreateTime\": \"2020-12-11T07:02:35Z\",\n                    \"UpdateTime\": \"2020-12-11T07:02:36Z\",\n                    \"ExpireTime\": \"9999-12-31T23:59:59Z\",\n                    \"ClassId\": 737598,\n                    \"ClassName\": \"图标\",\n                    \"ClassPath\": \"图标\",\n                    \"CoverUrl\": \"\",\n                    \"Type\": \"png\",\n                    \"MediaUrl\": \"http://xxx/uAgVpElena0A.png\",\n                    \"TagSet\": [],\n                    \"StorageRegion\": \"ap-shanghai\",\n                    \"SourceInfo\": {\n                        \"SourceType\": \"Upload\",\n                        \"SourceContext\": \"\",\n                        \"TrtcRecordInfo\": {\n                            \"SdkAppId\": 1,\n                            \"RoomId\": \"RoomId\",\n                            \"TaskId\": \"TaskId\",\n                            \"UserIds\": [\n                                \"UserId\"\n                            ]\n                        },\n                        \"WebPageRecordInfo\": null,\n                        \"LiveRecordInfo\": null\n                    },\n                    \"Vid\": \"5285890811175698692\",\n                    \"Category\": \"Image\",\n                    \"Status\": \"Normal\",\n                    \"StorageClass\": \"STANDARD\"\n                },\n                \"SubtitleInfo\": {\n                    \"SubtitleSet\": [\n                        {\n                            \"Url\": \"url\",\n                            \"Format\": \"vtt\",\n                            \"Name\": \"name\",\n                            \"Language\": \"cn\",\n                            \"Id\": \"id\"\n                        }\n                    ]\n                },\n                \"ReviewInfo\": null,\n                \"MetaData\": null,\n                \"TranscodeInfo\": null,\n                \"AnimatedGraphicsInfo\": null,\n                \"SampleSnapshotInfo\": null,\n                \"ImageSpriteInfo\": null,\n                \"SnapshotByTimeOffsetInfo\": null,\n                \"KeyFrameDescInfo\": null,\n                \"AdaptiveDynamicStreamingInfo\": null,\n                \"MiniProgramReviewInfo\": null\n            }\n        ]\n    }\n}",
         "title": "根据分类搜索一定时间范围内的图片文件，并只返回文件基础信息，并且按创建时间降序排序"
+      }
+    ],
+    "SetCLSPushTarget": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: vod.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetCLSPushTarget\n<公共请求参数>\n\n{\n    \"SubAppId\": 0,\n    \"Domain\": \"abc.com\",\n    \"ChineseMainlandCLSTargetInfo\": {\n        \"Switch\": \"ON\",\n        \"CLSRegion\": \"ap-guangzhou\",\n        \"TopicId\": \"abc\",\n        \"LogsetId\": \"abc\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "设置中国大陆地区的日志投递目标"
       }
     ],
     "SetDrmKeyProviderInfo": [

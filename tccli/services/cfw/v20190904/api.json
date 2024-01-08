@@ -5566,6 +5566,16 @@
         },
         {
           "disabled": false,
+          "document": "规则详情",
+          "example": "无",
+          "member": "IdsWhiteInfo",
+          "name": "Data",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
           "document": "返回状态码 0 成功 非0不成功",
           "example": "0",
           "member": "int64",
@@ -7996,6 +8006,72 @@
           "required": true,
           "type": "int",
           "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "IdsWhiteInfo": {
+      "document": "入侵防御规则白名单详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "白名单唯一ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "50",
+          "member": "int64",
+          "name": "Id",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.23.22.1",
+          "member": "string",
+          "name": "SrcIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目的IP\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10.23.22.2",
+          "member": "string",
+          "name": "DstIp",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "srddst",
+          "member": "string",
+          "name": "WhiteRuleType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "白名单生效防火墙范围： 1 边界防火墙 2 nat防火墙 4 vpc防火墙 7 = 1+2+4 所有防火墙\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "7",
+          "member": "int64",
+          "name": "FwType",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "入侵防御规则ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "20016",
+          "member": "string",
+          "name": "RuleId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

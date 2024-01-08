@@ -90,14 +90,14 @@ tccli vod ComposeMedia --cli-unfold-argument  \
     --Output.Container mp4 \
     --Output.FileName test \
     --Tracks.0.TrackItems.0.Type Video \
-    --Tracks.0.TrackItems.0.VideoItem.CoordinateOrigin Center \
-    --Tracks.0.TrackItems.0.VideoItem.Width 30% \
-    --Tracks.0.TrackItems.0.VideoItem.SourceMedia 5285485487985271488 \
-    --Tracks.0.TrackItems.0.VideoItem.XPos 25% \
-    --Tracks.0.TrackItems.0.VideoItem.YPos 25% \
+    --Tracks.0.TrackItems.0.VideoItem.SourceMedia 5285485487985271487 \
     --Tracks.0.Type Video \
     --Tracks.1.TrackItems.0.Type Video \
-    --Tracks.1.TrackItems.0.VideoItem.SourceMedia 5285485487985271487 \
+    --Tracks.1.TrackItems.0.VideoItem.CoordinateOrigin Center \
+    --Tracks.1.TrackItems.0.VideoItem.Width 30% \
+    --Tracks.1.TrackItems.0.VideoItem.SourceMedia 5285485487985271488 \
+    --Tracks.1.TrackItems.0.VideoItem.XPos 25% \
+    --Tracks.1.TrackItems.0.VideoItem.YPos 25% \
     --Tracks.1.Type Video
 ```
 

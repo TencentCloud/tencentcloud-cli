@@ -855,8 +855,8 @@
     "ModifyEnvironmentRole": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentRole\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"abc\",\n    \"RoleName\": \"abc\",\n    \"Permissions\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"abc\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"gggxxxx\"\n    }\n}",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyEnvironmentRole\n<公共请求参数>\n\n{\n    \"EnvironmentId\": \"default\",\n    \"RoleName\": \"test_role\",\n    \"Permissions\": [\n        \"abc\"\n    ],\n    \"ClusterId\": \"pulsar-xxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20846f8d-6438-4cd9-a2a4-09d5f4e8f0db\"\n    }\n}",
         "title": "修改环境角色授权"
       }
     ],

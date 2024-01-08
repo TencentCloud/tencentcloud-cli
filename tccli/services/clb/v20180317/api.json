@@ -472,7 +472,7 @@
     "ModifyLoadBalancerMixIpTarget": {
       "document": "修改IPv6FullChain负载均衡7层监听器支持混绑IPv4/IPv6目标特性。",
       "input": "ModifyLoadBalancerMixIpTargetRequest",
-      "name": "修改IPv6FullChain负载均衡7层监听器支持混绑目标特性。",
+      "name": "修改IPv6FullChain负载均衡7层监听器支持混绑目标特性",
       "output": "ModifyLoadBalancerMixIpTargetResponse",
       "status": "online"
     },

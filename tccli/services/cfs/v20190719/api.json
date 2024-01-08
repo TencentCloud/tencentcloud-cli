@@ -2097,6 +2097,15 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "用户自定义名称",
+          "example": "test_fs",
+          "member": "string",
+          "name": "CreationToken",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

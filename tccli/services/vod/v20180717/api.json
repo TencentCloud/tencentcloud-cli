@@ -63,6 +63,20 @@
       "output": "CreateAnimatedGraphicsTemplateResponse",
       "status": "online"
     },
+    "CreateCLSLogset": {
+      "document": "由 VOD 创建新的日志集。",
+      "input": "CreateCLSLogsetRequest",
+      "name": "创建日志集",
+      "output": "CreateCLSLogsetResponse",
+      "status": "online"
+    },
+    "CreateCLSTopic": {
+      "document": "创建 VOD 下新的 CLS 日志主题",
+      "input": "CreateCLSTopicRequest",
+      "name": "创建日志主题",
+      "output": "CreateCLSTopicResponse",
+      "status": "online"
+    },
     "CreateClass": {
       "document": "* 用于对媒体进行分类管理；\n* 该接口不影响既有媒体的分类，如需修改媒体分类，请调用[修改媒体文件属性](/document/product/266/31762)接口。\n* 分类层次不可超过 4 层。\n* 每个分类的子类数量不可超过 500 个。",
       "input": "CreateClassRequest",
@@ -250,6 +264,13 @@
       "input": "DeleteAnimatedGraphicsTemplateRequest",
       "name": "删除转动图模板",
       "output": "DeleteAnimatedGraphicsTemplateResponse",
+      "status": "online"
+    },
+    "DeleteCLSTopic": {
+      "document": "删除点播开通的日志主题。",
+      "input": "DeleteCLSTopicRequest",
+      "name": "删除日志主题",
+      "output": "DeleteCLSTopicResponse",
       "status": "online"
     },
     "DeleteClass": {
@@ -446,6 +467,27 @@
       "input": "DescribeCDNUsageDataRequest",
       "name": "查询点播 CDN 用量数据",
       "output": "DescribeCDNUsageDataResponse",
+      "status": "online"
+    },
+    "DescribeCLSLogsets": {
+      "document": "查询 VOD 创建的 CLS 日志集。",
+      "input": "DescribeCLSLogsetsRequest",
+      "name": "查询日志集列表",
+      "output": "DescribeCLSLogsetsResponse",
+      "status": "online"
+    },
+    "DescribeCLSPushTargets": {
+      "document": "查询点播域名下日志投递的目标主题。",
+      "input": "DescribeCLSPushTargetsRequest",
+      "name": "查询日志投递目标",
+      "output": "DescribeCLSPushTargetsResponse",
+      "status": "online"
+    },
+    "DescribeCLSTopics": {
+      "document": "查询 VOD 创建的 CLS 日志主题列表。",
+      "input": "DescribeCLSTopicsRequest",
+      "name": "查询日志主题列表",
+      "output": "DescribeCLSTopicsResponse",
       "status": "online"
     },
     "DescribeCdnLogs": {
@@ -1132,6 +1174,13 @@
       "input": "SearchMediaRequest",
       "name": "搜索媒体信息",
       "output": "SearchMediaResponse",
+      "status": "online"
+    },
+    "SetCLSPushTarget": {
+      "document": "为点播域名设置投递 CLS 的目标。",
+      "input": "SetCLSPushTargetRequest",
+      "name": "设置日志投递目标",
+      "output": "SetCLSPushTargetResponse",
       "status": "online"
     },
     "SetDrmKeyProviderInfo": {
@@ -6841,6 +6890,56 @@
       ],
       "type": "object"
     },
+    "AreaCLSTargetInfo": {
+      "document": "日志推送目标。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集所属地区：\nap-guangzhou：广州； \nap-singapore：新加坡。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CLSRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递的目标主题 ID。",
+          "example": "\"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\"",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "投递的目标集 ID。",
+          "example": "\"54079098-61ea-48f9-8270-3b041a5d0150\"",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志投递状态。\n ON：启用；\n OFF：停用。",
+          "example": "\"ON\"",
+          "member": "string",
+          "name": "Switch",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "ArtifactRepairInfo": {
       "document": "去伪影（毛刺）控制信息",
       "members": [
@@ -7371,6 +7470,68 @@
         }
       ],
       "usage": "in"
+    },
+    "CLSLogsetInfo": {
+      "document": "CLS 日志集信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集 ID。",
+          "example": "“54079098-61ea-48f9-8270-3b041a5d0150”",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志集名。",
+          "example": "“mylogset”",
+          "member": "string",
+          "name": "LogsetName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "CLSTopicInfo": {
+      "document": "CLS日志主题信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "TopicName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "日志集 ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "\"abc\"",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "Canvas": {
       "document": "画布信息。制作视频时，如果源素材（视频或者图片）不能填满输出的视频窗口，将用设置的画布进行背景绘制。",
@@ -9039,6 +9200,98 @@
           "name": "Definition",
           "output_required": true,
           "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSLogsetRequest": {
+      "document": "CreateCLSLogset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSLogsetResponse": {
+      "document": "CreateCLSLogset返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集 ID。",
+          "example": "\"54079098-61ea-48f9-8270-3b041a5d0150\"",
+          "member": "string",
+          "name": "LogsetId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSTopicRequest": {
+      "document": "CreateCLSTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题名。",
+          "example": "\"mytopic\"",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志集 ID。",
+          "example": "\"54079098-61ea-48f9-8270-3b041a5d0150\"",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateCLSTopicResponse": {
+      "document": "CreateCLSTopic返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题 ID。",
+          "example": "“780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\"",
+          "member": "string",
+          "name": "TopicId",
+          "output_required": true,
+          "type": "string",
           "value_allowed_null": false
         },
         {
@@ -11407,6 +11660,42 @@
       ],
       "type": "object"
     },
+    "DeleteCLSTopicRequest": {
+      "document": "DeleteCLSTopic请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题 ID。",
+          "example": "\"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\"",
+          "member": "string",
+          "name": "TopicId",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteCLSTopicResponse": {
+      "document": "DeleteCLSTopic返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DeleteClassRequest": {
       "document": "DeleteClass请求参数结构体",
       "members": [
@@ -12721,6 +13010,182 @@
           "example": "无",
           "member": "StatDataItem",
           "name": "Data",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSLogsetsRequest": {
+      "document": "DescribeCLSLogsets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "CLS 日志集所属的地域，取值有：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "example": "“ap-guangzhou”",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSLogsetsResponse": {
+      "document": "DescribeCLSLogsets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "查询到的日志集列表。",
+          "example": "无",
+          "member": "CLSLogsetInfo",
+          "name": "Logsets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSPushTargetsRequest": {
+      "document": "DescribeCLSPushTargets请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "点播域名。",
+          "example": "[\"xxx.vod-qcloud.com\"]",
+          "member": "string",
+          "name": "Domains",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "点播应用 ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSPushTargetsResponse": {
+      "document": "DescribeCLSPushTargets返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名推送总数量。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "域名推送 CLS 目标列表。",
+          "example": "无",
+          "member": "DomainCLSTargetInfo",
+          "name": "DomainCLSTargets",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSTopicsRequest": {
+      "document": "DescribeCLSTopics请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志集所属地区：\nap-guangzhou：广州；\nap-singapore：新加坡。",
+          "example": "\"ap-guangzhou\"",
+          "member": "string",
+          "name": "CLSRegion",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题所属日志集 ID。",
+          "example": "\"54079098-61ea-48f9-8270-3b041a5d0150\"",
+          "member": "string",
+          "name": "LogsetId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "日志主题 ID 列表。如果不填，表示查询所有的日志主题。",
+          "example": "[\"780ba384-5bc1-4cb1-a0e9-0cf8fafd3ee0\"]",
+          "member": "string",
+          "name": "TopicIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "分页偏移量，默认值：0。",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录条数，默认值：20，最大值：100。",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCLSTopicsResponse": {
+      "document": "DescribeCLSTopics返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "日志主题总数量。",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "日志主题列表。",
+          "example": "[]",
+          "member": "CLSTopicInfo",
+          "name": "Topics",
           "output_required": true,
           "type": "list",
           "value_allowed_null": false
@@ -16188,6 +16653,42 @@
         }
       ],
       "type": "object"
+    },
+    "DomainCLSTargetInfo": {
+      "document": "域名推送 CLS 目标。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "xxx.vod-qcloud.com",
+          "member": "string",
+          "name": "Domain",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中国大陆地区的日志推送目标。",
+          "example": "无",
+          "member": "AreaCLSTargetInfo",
+          "name": "ChineseMainlandCLSTargetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "中国大陆以外地区的日志推送目标。",
+          "example": "无",
+          "member": "AreaCLSTargetInfo",
+          "name": "OutsideChineseMainlandCLSTargetInfo",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "DomainDetailInfo": {
       "document": "域名信息",
@@ -32912,6 +33413,60 @@
         }
       ],
       "usage": "in"
+    },
+    "SetCLSPushTargetRequest": {
+      "document": "SetCLSPushTarget请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "域名。",
+          "example": "abc.com",
+          "member": "string",
+          "name": "Domain",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "点播应用 ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。",
+          "example": "0",
+          "member": "int64",
+          "name": "SubAppId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "要设置的中国大陆地区的日志推送目标。",
+          "example": "无",
+          "member": "AreaCLSTargetInfo",
+          "name": "ChineseMainlandCLSTargetInfo",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "要设置的中国大陆以外地区的日志推送目标。",
+          "example": "无",
+          "member": "AreaCLSTargetInfo",
+          "name": "OutsideChineseMainlandCLSTargetInfo",
+          "required": false,
+          "type": "object"
+        }
+      ],
+      "type": "object"
+    },
+    "SetCLSPushTargetResponse": {
+      "document": "SetCLSPushTarget返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "SetDrmKeyProviderInfoRequest": {
       "document": "SetDrmKeyProviderInfo请求参数结构体",

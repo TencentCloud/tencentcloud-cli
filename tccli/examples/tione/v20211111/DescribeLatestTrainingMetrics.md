@@ -19,8 +19,14 @@ Output:
             {
                 "MetricName": "loss",
                 "Values": [
-                    {},
-                    {}
+                    {
+                        "Timestamp": 1641002400,
+                        "Value": 182.06
+                    },
+                    {
+                        "Timestamp": 1641002410,
+                        "Value": 176.06
+                    }
                 ]
             }
         ]
