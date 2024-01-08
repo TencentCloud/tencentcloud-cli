@@ -382,7 +382,7 @@
       {
         "document": "入侵防御规则白名单查询示例",
         "input": "POST / HTTP/1.1\nHost: cfw.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeIdsWhiteRule\n<公共请求参数>\n\n{\n    \"Limit\": 10,\n    \"Offset\": 0\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"88db276f-42d5-4b60-afc1-2c5799250a99\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 1\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"Data\": [\n            {\n                \"DstIp\": \"10.23.33.2\",\n                \"FwType\": 4,\n                \"Id\": 63,\n                \"RuleId\": \"20006\",\n                \"SrcIp\": \"10.23.33.1\",\n                \"WhiteRuleType\": \"srcdst\"\n            }\n        ],\n        \"RequestId\": \"88db276f-42d5-4b60-afc1-2c5799250a99\",\n        \"ReturnCode\": 0,\n        \"ReturnMsg\": \"success\",\n        \"Total\": 1\n    }\n}",
         "title": "入侵防御规则白名单查询示例"
       }
     ],

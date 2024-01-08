@@ -61,12 +61,25 @@ Output:
                 "VolumeSourceType": "abc",
                 "VolumeSourceCFS": {
                     "Id": "abc",
-                    "Path": "abc"
+                    "Path": "abc",
+                    "MountType": "abc",
+                    "Protocol": "abc"
                 },
                 "Message": "abc",
                 "UserTypes": [
                     "abc"
-                ]
+                ],
+                "SSHConfig": {
+                    "Enable": true,
+                    "PublicKey": "abc",
+                    "Port": 0,
+                    "LoginCommand": "abc"
+                },
+                "VolumeSourceGooseFS": {
+                    "Id": "abc",
+                    "Type": "abc",
+                    "Path": "abc"
+                }
             }
         ],
         "TotalCount": 1,

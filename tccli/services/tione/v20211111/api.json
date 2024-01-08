@@ -2579,7 +2579,7 @@
         },
         {
           "disabled": false,
-          "document": "存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
+          "document": "存储的类型。取值包含： \nFREE：预付费的免费存储\nCLOUD_PREMIUM：高性能云硬盘\nCLOUD_SSD：SSD云硬盘\nCFS：CFS存储\nCFS_TURBO：CFS Turbo存储\nGooseFSx：GooseFSx存储",
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
@@ -2588,7 +2588,7 @@
         },
         {
           "disabled": false,
-          "document": "存储卷大小，单位GB",
+          "document": "云硬盘存储卷大小，单位GB",
           "example": "1",
           "member": "uint64",
           "name": "VolumeSizeInGB",
@@ -2660,7 +2660,7 @@
         },
         {
           "disabled": false,
-          "document": "数据配置",
+          "document": "数据配置，只支持WEDATA_HDFS存储类型",
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -2678,7 +2678,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像类型",
+          "document": "镜像类型，包括SYSTEM、TCR、CCR",
           "example": "无",
           "member": "string",
           "name": "ImageType",
@@ -2691,6 +2691,15 @@
           "example": "无",
           "member": "SSHConfig",
           "name": "SSHConfig",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS存储配置",
+          "example": "无",
+          "member": "GooseFS",
+          "name": "VolumeSourceGooseFS",
           "required": false,
           "type": "object"
         }
@@ -3160,7 +3169,7 @@
         },
         {
           "disabled": false,
-          "document": "数据配置，依赖DataSource字段",
+          "document": "数据配置，依赖DataSource字段，数量不超过10个",
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -3205,7 +3214,7 @@
         },
         {
           "disabled": false,
-          "document": "调优参数",
+          "document": "调优参数，不超过2048个字符",
           "example": "无",
           "member": "string",
           "name": "TuningParameters",
@@ -3223,7 +3232,7 @@
         },
         {
           "disabled": false,
-          "document": "备注，最多500个字",
+          "document": "备注，不超过1024个字符",
           "example": "无",
           "member": "string",
           "name": "Remark",
@@ -3232,7 +3241,7 @@
         },
         {
           "disabled": false,
-          "document": "数据来源，eg：DATASET、COS、CFS、HDFS",
+          "document": "数据来源，eg：DATASET、COS、CFS、CFSTurbo、HDFS、GooseFSx",
           "example": "DATASET",
           "member": "string",
           "name": "DataSource",
@@ -3506,7 +3515,7 @@
         },
         {
           "disabled": false,
-          "document": "DATASET、COS、CFS、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "DATASET、COS、CFS、CFSTurbo、GooseFSx、HDFS、WEDATA_HDFS\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "DATASET",
           "member": "string",
           "name": "DataSourceType",
@@ -6671,7 +6680,7 @@
         },
         {
           "disabled": false,
-          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"nb-123456789\"] }]\n\n取值范围\nName（名称）：notebook1\nId（notebook ID）：nb-123456789\nStatus（状态）：Starting / Running / Stopped / Stopping / Failed / SubmitFailed\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nChargeStatus（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ BILLING_STORAGE（存储计费中）/ARREARS_STOP（欠费停止）\nDefaultCodeRepoId（默认代码仓库ID）：cr-123456789\nAdditionalCodeRepoId（关联代码仓库ID）：cr-123456789\nLifecycleScriptId（生命周期ID）：ls-12312312311312",
+          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"nb-123456789\"] }]\n\n取值范围\nName（名称）：notebook1\nId（notebook ID）：nb-123456789\nStatus（状态）：Starting / Running / Stopped / Stopping / Failed / SubmitFailed\nCreator（创建者 uin）：100014761913\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nChargeStatus（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ BILLING_STORAGE（存储计费中）/ARREARS_STOP（欠费停止）\nDefaultCodeRepoId（默认代码仓库ID）：cr-123456789\nAdditionalCodeRepoId（关联代码仓库ID）：cr-123456789\nLifecycleScriptId（生命周期ID）：ls-12312312311312",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -6699,6 +6708,7 @@
           "example": "无",
           "member": "NotebookSetItem",
           "name": "NotebookSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -6708,6 +6718,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -7076,7 +7087,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
+          "document": "过滤器，eg：[{ \"Name\": \"Id\", \"Values\": [\"train-23091792777383936\"] }]\n\n取值范围：\nName（名称）：task1\nId（task ID）：train-23091792777383936\nStatus（状态）：SUBMITTING/PENDING/STARTING / RUNNING / STOPPING / STOPPED / FAILED / SUCCEED / SUBMIT_FAILED\nResourceGroupId（资源组 Id）：trsg-kvvfrwl7\nCreator（创建者 uin）：100014761913\nChargeType（计费类型）：PREPAID（预付费）/ POSTPAID_BY_HOUR（后付费）\nCHARGE_STATUS（计费状态）：NOT_BILLING（未开始计费）/ BILLING（计费中）/ ARREARS_STOP（欠费停止）",
           "example": "[{ \"Name\": \"TaskStatus\", \"Values\": [\"Running\"] }]",
           "member": "Filter",
           "name": "Filters",
@@ -7121,7 +7132,7 @@
         },
         {
           "disabled": false,
-          "document": "排序的依据字段， 取值范围 \"CreateTime\" \"UpdateTime\"",
+          "document": "排序的依据字段， 取值范围 \"CreateTime\" 、\"UpdateTime\"、\"StartTime\"，默认为UpdateTime",
           "example": "CreateTime",
           "member": "string",
           "name": "OrderField",
@@ -7140,6 +7151,7 @@
           "example": "无",
           "member": "TrainingTaskSetItem",
           "name": "TrainingTaskSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -7149,6 +7161,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -7648,6 +7661,29 @@
           "example": "goosefs-instance-id",
           "member": "string",
           "name": "Id",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS类型，包括GooseFS和GooseFSx\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "GooseFSx",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFSx实例需要挂载的路径\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "/",
+          "member": "string",
+          "name": "Path",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -7764,6 +7800,7 @@
           "example": "1",
           "member": "int64",
           "name": "MinReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
@@ -7774,16 +7811,18 @@
           "example": "2",
           "member": "int64",
           "name": "MaxReplicas",
+          "output_required": true,
           "required": true,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "扩缩容指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "支持：\n\"gpu-util\": GPU利用率。范围{10, 100}      \"cpu-util\": CPU利用率。范围{10, 100}\t      \"memory-util\": 内存利用率。范围{10, 100}      \"service-qps\": 单个实例QPS值。范围{1, 5000}\n\"concurrency-util\":单个实例请求数量值。范围{1,100000}\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "\"gpu-util\": {0, 100}",
           "member": "Option",
           "name": "HpaMetrics",
+          "output_required": true,
           "required": true,
           "type": "list",
           "value_allowed_null": true
@@ -9543,7 +9582,7 @@
         },
         {
           "disabled": false,
-          "document": "名称",
+          "document": "名称。不超过60个字符，仅支持中英文、数字、下划线\"_\"、短横\"-\"，只能以中英文、数字开头",
           "example": "a1",
           "member": "string",
           "name": "Name",
@@ -9552,7 +9591,7 @@
         },
         {
           "disabled": false,
-          "document": "计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
+          "document": "（不允许修改）计算资源付费模式 ，可选值为：\nPREPAID：预付费，即包年包月\nPOSTPAID_BY_HOUR：按小时后付费",
           "example": "a1",
           "member": "string",
           "name": "ChargeType",
@@ -9615,7 +9654,7 @@
         },
         {
           "disabled": false,
-          "document": "Vpc-Id",
+          "document": "（不允许修改）Vpc-Id",
           "example": "a1",
           "member": "string",
           "name": "VpcId",
@@ -9624,7 +9663,7 @@
         },
         {
           "disabled": false,
-          "document": "子网Id",
+          "document": "（不允许修改）子网Id",
           "example": "a1",
           "member": "string",
           "name": "SubnetId",
@@ -9642,7 +9681,7 @@
         },
         {
           "disabled": false,
-          "document": "存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
+          "document": "（不允许修改）存储的类型。取值包含： \n    FREE:    预付费的免费存储\n    CLOUD_PREMIUM： 高性能云硬盘\n    CLOUD_SSD： SSD云硬盘\n    CFS:     CFS存储，包含NFS和turbo",
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
@@ -9651,7 +9690,7 @@
         },
         {
           "disabled": false,
-          "document": "CFS存储的配置",
+          "document": "（不允许修改）CFS存储的配置",
           "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
@@ -9714,7 +9753,7 @@
         },
         {
           "disabled": false,
-          "document": "数据配置",
+          "document": "数据配置，只支持WEDATA_HDFS",
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
@@ -9732,7 +9771,7 @@
         },
         {
           "disabled": false,
-          "document": "镜像类型",
+          "document": "镜像类型，包括SYSTEM、TCR、CCR",
           "example": "无",
           "member": "string",
           "name": "ImageType",
@@ -9854,7 +9893,7 @@
           "example": "a1",
           "member": "string",
           "name": "Id",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9864,7 +9903,7 @@
           "example": "a2",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9874,7 +9913,7 @@
           "example": "a3",
           "member": "string",
           "name": "LifecycleScriptId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9884,7 +9923,7 @@
           "example": "a4",
           "member": "string",
           "name": "PodName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9894,7 +9933,7 @@
           "example": "a5",
           "member": "string",
           "name": "UpdateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9904,7 +9943,7 @@
           "example": "true",
           "member": "bool",
           "name": "DirectInternetAccess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9914,7 +9953,7 @@
           "example": "a9",
           "member": "string",
           "name": "ResourceGroupId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9924,7 +9963,7 @@
           "example": "无",
           "member": "Tag",
           "name": "Tags",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9934,7 +9973,7 @@
           "example": "无",
           "member": "bool",
           "name": "AutoStopping",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -9944,7 +9983,7 @@
           "example": "无",
           "member": "string",
           "name": "AdditionalCodeRepoIds",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -9954,7 +9993,7 @@
           "example": "14",
           "member": "int64",
           "name": "AutomaticStopTime",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -9964,7 +10003,7 @@
           "example": "无",
           "member": "ResourceConf",
           "name": "ResourceConf",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -9974,7 +10013,7 @@
           "example": "a17",
           "member": "string",
           "name": "DefaultCodeRepoId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -9984,7 +10023,7 @@
           "example": "q18",
           "member": "string",
           "name": "EndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -9994,7 +10033,7 @@
           "example": "true",
           "member": "bool",
           "name": "LogEnable",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10004,7 +10043,7 @@
           "example": "无",
           "member": "LogConfig",
           "name": "LogConfig",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10014,7 +10053,7 @@
           "example": "a21",
           "member": "string",
           "name": "VpcId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10024,7 +10063,7 @@
           "example": "a22",
           "member": "string",
           "name": "SubnetId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10034,7 +10073,7 @@
           "example": "a23",
           "member": "string",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10044,7 +10083,7 @@
           "example": "24",
           "member": "uint64",
           "name": "RuntimeInSeconds",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10054,7 +10093,7 @@
           "example": "a25",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10064,7 +10103,7 @@
           "example": "a26",
           "member": "string",
           "name": "StartTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10074,7 +10113,7 @@
           "example": "a27",
           "member": "string",
           "name": "ChargeStatus",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10084,7 +10123,7 @@
           "example": "true",
           "member": "bool",
           "name": "RootAccess",
-          "required": true,
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -10094,7 +10133,7 @@
           "example": "无",
           "member": "string",
           "name": "BillingInfos",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10104,7 +10143,7 @@
           "example": "30",
           "member": "uint64",
           "name": "VolumeSizeInGB",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -10114,7 +10153,7 @@
           "example": "a31",
           "member": "string",
           "name": "FailureReason",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10124,7 +10163,7 @@
           "example": "PREPAID",
           "member": "string",
           "name": "ChargeType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -10134,7 +10173,7 @@
           "example": "2核4G",
           "member": "string",
           "name": "InstanceTypeAlias",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10144,7 +10183,7 @@
           "example": "资源组1",
           "member": "string",
           "name": "ResourceGroupName",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10154,7 +10193,7 @@
           "example": "CFS",
           "member": "string",
           "name": "VolumeSourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10164,7 +10203,7 @@
           "example": "无",
           "member": "CFSConfig",
           "name": "VolumeSourceCFS",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": true
         },
@@ -10174,7 +10213,7 @@
           "example": "[]",
           "member": "DataConfig",
           "name": "DataConfigs",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -10184,7 +10223,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10194,7 +10233,7 @@
           "example": "无",
           "member": "string",
           "name": "DataSource",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10204,7 +10243,7 @@
           "example": "无",
           "member": "ImageInfo",
           "name": "ImageInfo",
-          "required": false,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -10214,8 +10253,28 @@
           "example": "无",
           "member": "string",
           "name": "ImageType",
-          "required": false,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "SSH配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SSHConfig",
+          "name": "SSHConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GooseFS",
+          "name": "VolumeSourceGooseFS",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": true
         }
       ],
@@ -10230,7 +10289,7 @@
           "example": "无",
           "member": "string",
           "name": "RecordId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10240,17 +10299,17 @@
           "example": "无",
           "member": "string",
           "name": "ImageUrl",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "状态。eg：creating导出中/success已完成/stopped已停止/fail异常\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Status",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10260,7 +10319,7 @@
           "example": "无",
           "member": "string",
           "name": "CreateTime",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10270,7 +10329,7 @@
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10280,7 +10339,7 @@
           "example": "无",
           "member": "string",
           "name": "InstanceId",
-          "required": false,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -10290,7 +10349,7 @@
           "example": "[\"pytorch_py3\"]",
           "member": "string",
           "name": "Kernels",
-          "required": false,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         }
@@ -10559,6 +10618,16 @@
           "output_required": false,
           "type": "object",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "GooseFS存储配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "GooseFS",
+          "name": "VolumeSourceGooseFS",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10795,7 +10864,7 @@
         },
         {
           "disabled": false,
-          "document": "pod状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "pod状态。eg：SUBMITTING提交中、PENDING排队中、RUNNING运行中、SUCCEEDED已完成、FAILED异常、TERMINATING停止中、TERMINATED已停止\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Status",
@@ -10942,6 +11011,7 @@
           "example": "0",
           "member": "uint64",
           "name": "Cpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
@@ -10952,26 +11022,29 @@
           "example": "0",
           "member": "uint64",
           "name": "Memory",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "gpu Gpu卡资源，单位为1单位的GpuType，例如GpuType=T4时，1 Gpu = 1/100 T4卡，GpuType=vcuda时，1 Gpu = 1/100 vcuda-core (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "gpu Gpu卡资源，单位为1/100卡，例如GpuType=T4时，1 Gpu = 1/100 T4卡 (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "0",
           "member": "uint64",
           "name": "Gpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "GpuType 卡类型 vcuda, T4,P4,V100等 (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "GpuType 卡类型，参考资源组上对应的卡类型。eg: H800,A800,A100,T4,P4,V100等 (for预付费)\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "P40",
           "member": "string",
           "name": "GpuType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10982,6 +11055,7 @@
           "example": "TI.S.LARGE.POST",
           "member": "string",
           "name": "InstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -10998,46 +11072,51 @@
           "example": "PS",
           "member": "string",
           "name": "Role",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "cpu核数，1000=1核",
+          "document": "cpu核数，使用资源组时需配置。单位：1/1000，即1000=1核",
           "example": "1000",
           "member": "uint64",
           "name": "Cpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "内存，单位为MB",
+          "document": "内存，使用资源组时需配置。单位为MB",
           "example": "1",
           "member": "uint64",
           "name": "Memory",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "gpu卡类型",
+          "document": "gpu卡类型，使用资源组时需配置",
           "example": "V100",
           "member": "string",
           "name": "GpuType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "gpu数",
+          "document": "gpu卡数，使用资源组时需配置。单位：1/100，即100=1卡",
           "example": "1",
           "member": "uint64",
           "name": "Gpu",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11048,6 +11127,7 @@
           "example": "TI.GN10.2XLARGE40",
           "member": "string",
           "name": "InstanceType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11058,6 +11138,7 @@
           "example": "4",
           "member": "uint64",
           "name": "InstanceNum",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -11068,6 +11149,7 @@
           "example": "2核4G",
           "member": "string",
           "name": "InstanceTypeAlias",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -11078,6 +11160,7 @@
           "example": "{\"Enable\": false}",
           "member": "RDMAConfig",
           "name": "RDMAConfig",
+          "output_required": true,
           "required": false,
           "type": "object",
           "value_allowed_null": true
@@ -12771,6 +12854,7 @@
           "example": "True",
           "member": "bool",
           "name": "EnableInstanceRpsLimit",
+          "output_required": true,
           "required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -12781,6 +12865,29 @@
           "example": "300",
           "member": "int64",
           "name": "InstanceRpsLimit",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否开启单实例最大并发数限制，true or false。true 则 InstanceReqLimit 必填， false 则 InstanceReqLimit 不生效",
+          "example": "True",
+          "member": "bool",
+          "name": "EnableInstanceReqLimit",
+          "output_required": true,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个服务实例的最大并发",
+          "example": "4",
+          "member": "int64",
+          "name": "InstanceReqLimit",
+          "output_required": true,
           "required": false,
           "type": "int",
           "value_allowed_null": false
@@ -13609,7 +13716,30 @@
     },
     "TrainingDataPoint": {
       "document": "训练数据",
-      "members": [],
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "107028221",
+          "member": "uint64",
+          "name": "Timestamp",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "训练上报的值。可以为训练指标（双精度浮点数，也可以为Epoch/Step（两者皆保证是整数）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "22.12",
+          "member": "float",
+          "name": "Value",
+          "output_required": true,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        }
+      ],
       "usage": "both"
     },
     "TrainingMetric": {
@@ -14541,7 +14671,7 @@
         },
         {
           "disabled": false,
-          "document": "任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
+          "document": "任务状态，eg：SUBMITTING提交中、PENDING排队中、\nSTARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成",
           "example": "无",
           "member": "string",
           "name": "Status",

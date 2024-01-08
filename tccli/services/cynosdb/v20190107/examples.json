@@ -976,6 +976,14 @@
         "title": "查询迁移任务"
       }
     ],
+    "RecycleClusterJnsGW": [
+      {
+        "document": "回收集群JnsGW",
+        "input": "POST / HTTP/1.1\nHost: cynosdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecycleClusterJnsGW\n<公共请求参数>\n\n{\n    \"ClusterId\": \"cynosdbmysql-xxxxxxxx\",\n    \"User\": \"abc\",\n    \"Password\": \"abc\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "回收集群JnsGW"
+      }
+    ],
     "RefundResourcePackage": [
       {
         "document": "退款资源包\n",

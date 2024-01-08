@@ -525,6 +525,15 @@
           "name": "PrivateKeyPassword",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "端口",
+          "example": "22",
+          "member": "uint64",
+          "name": "Port",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

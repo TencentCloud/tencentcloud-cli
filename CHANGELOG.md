@@ -1,3 +1,243 @@
+# Release 3.0.917.1
+
+## 汽车精准获客服务(apcas) 版本：2020-11-27
+
+### 第 2 次发布
+
+发布时间：2024-01-09 01:06:32
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**预下线接口**：</font>
+
+* GetTaskDetail
+* GetTaskList
+* PredictRating
+* QueryCallDetails
+* QueryCallStat
+* QueryGeneralStat
+* UploadId
+
+
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 42 次发布
+
+发布时间：2024-01-09 01:07:26
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeDosageDetailList](http://document.tencentcloudapi.woa.com/document/product/555/82895)
+
+新增数据结构：
+
+* [DescribeDosageDetail](http://document.tencentcloudapi.woa.com/document/product/555/19183#DescribeDosageDetail)
+* [JsonObject](http://document.tencentcloudapi.woa.com/document/product/555/19183#JsonObject)
+
+
+
+## 文件存储(cfs) 版本：2019-07-19
+
+### 第 20 次发布
+
+发布时间：2024-01-09 01:09:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeCfsFileSystems](http://document.tencentcloudapi.woa.com/document/product/582/38170)
+
+	* 新增入参：CreationToken
+
+
+
+
+## 云防火墙(cfw) 版本：2019-09-04
+
+### 第 42 次发布
+
+发布时间：2024-01-09 01:10:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeIdsWhiteRule](http://document.tencentcloudapi.woa.com/document/product/1132/82760)
+
+	* 新增出参：Data
+
+
+新增数据结构：
+
+* [IdsWhiteInfo](http://document.tencentcloudapi.woa.com/document/product/1132/49071#IdsWhiteInfo)
+
+
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 68 次发布
+
+发布时间：2024-01-09 01:13:24
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecycleClusterJnsGW](http://document.tencentcloudapi.woa.com/document/product/1003/82896)
+
+
+
+## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18
+
+### 第 22 次发布
+
+发布时间：2024-01-09 01:13:47
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AccessDevice](http://document.tencentcloudapi.woa.com/document/product/1492/82773)
+
+	* 新增入参：Port
+
+
+
+
+## 媒体处理(mps) 版本：2019-06-12
+
+### 第 45 次发布
+
+发布时间：2024-01-09 01:21:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [AiRecognitionTaskAsrFullTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskAsrFullTextResult)
+
+	* 新增成员：Progress
+
+* [AiRecognitionTaskTransTextResult](http://document.tencentcloudapi.woa.com/document/product/862/37615#AiRecognitionTaskTransTextResult)
+
+	* 新增成员：Progress
+
+* [ComposeAudioStream](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeAudioStream)
+
+	* 新增成员：Bitrate
+
+* [ComposeVideoStream](http://document.tencentcloudapi.woa.com/document/product/862/37615#ComposeVideoStream)
+
+	* 新增成员：Bitrate
+
+
+
+
+## 云压测(pts) 版本：2021-07-28
+
+### 第 20 次发布
+
+发布时间：2024-01-09 01:22:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeCheckLogs](http://document.tencentcloudapi.woa.com/document/product/1597/82897)
+
+
+
+## TI-ONE 训练平台(tione) 版本：2021-11-11
+
+### 第 48 次发布
+
+发布时间：2024-01-09 01:26:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateNotebook](http://document.tencentcloudapi.woa.com/document/product/851/81417)
+
+	* 新增入参：VolumeSourceGooseFS
+
+
+修改数据结构：
+
+* [GooseFS](http://document.tencentcloudapi.woa.com/document/product/851/74915#GooseFS)
+
+	* 新增成员：Type, Path
+
+* [NotebookDetail](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookDetail)
+
+	* 新增成员：SSHConfig, VolumeSourceGooseFS
+
+	* <font color="#dd0000">**修改成员**：</font>ImageInfo, ImageType
+
+* [NotebookImageRecord](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookImageRecord)
+
+	* <font color="#dd0000">**修改成员**：</font>RecordId, ImageUrl, Status, CreateTime, Message, InstanceId, Kernels
+
+* [NotebookSetItem](http://document.tencentcloudapi.woa.com/document/product/851/74915#NotebookSetItem)
+
+	* 新增成员：VolumeSourceGooseFS
+
+* [ServiceLimit](http://document.tencentcloudapi.woa.com/document/product/851/74915#ServiceLimit)
+
+	* 新增成员：EnableInstanceReqLimit, InstanceReqLimit
+
+* [TrainingDataPoint](http://document.tencentcloudapi.woa.com/document/product/851/74915#TrainingDataPoint)
+
+	* 新增成员：Timestamp, Value
+
+
+
+
+## TI-ONE 训练平台(tione) 版本：2019-10-22
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 38 次发布
+
+发布时间：2024-01-09 01:28:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [McuLayout](http://document.tencentcloudapi.woa.com/document/product/647/44055#McuLayout)
+
+	* 新增成员：TransparentUrl
+
+
+
+
 # Release 3.0.916.1
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26

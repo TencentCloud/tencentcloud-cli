@@ -833,6 +833,13 @@
       "output": "QueryMigrateDBTaskResponse",
       "status": "online"
     },
+    "RecycleClusterJnsGW": {
+      "document": "回收集群JnsGW",
+      "input": "RecycleClusterJnsGWRequest",
+      "name": "回收集群JnsGW",
+      "output": "RecycleClusterJnsGWResponse",
+      "status": "online"
+    },
     "RefundResourcePackage": {
       "document": "退款资源包",
       "input": "RefundResourcePackageRequest",
@@ -15624,6 +15631,51 @@
         }
       ],
       "usage": "in"
+    },
+    "RecycleClusterJnsGWRequest": {
+      "document": "RecycleClusterJnsGW请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "cynosdbmysql-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用该接口的用户，用于接口鉴权，由服务方提供，请注意保密性",
+          "example": "user",
+          "member": "string",
+          "name": "User",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "调用该接口的密码，用于接口鉴权，由服务方提供，请注意保密性",
+          "example": "password",
+          "member": "string",
+          "name": "Password",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "RecycleClusterJnsGWResponse": {
+      "document": "RecycleClusterJnsGW返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "RefundResourcePackageRequest": {
       "document": "RefundResourcePackage请求参数结构体",

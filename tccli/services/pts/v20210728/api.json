@@ -147,6 +147,13 @@
       "output": "DescribeAvailableMetricsResponse",
       "status": "online"
     },
+    "DescribeCheckLogs": {
+      "document": "查询检查点日志",
+      "input": "DescribeCheckLogsRequest",
+      "name": "查询检查点日志",
+      "output": "DescribeCheckLogsResponse",
+      "status": "online"
+    },
     "DescribeCheckSummary": {
       "document": "查询检查点汇总信息",
       "input": "DescribeCheckSummaryRequest",
@@ -2518,6 +2525,23 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeCheckLogsRequest": {
+      "document": "DescribeCheckLogs请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "DescribeCheckLogsResponse": {
+      "document": "DescribeCheckLogs返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

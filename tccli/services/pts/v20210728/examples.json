@@ -168,6 +168,14 @@
         "title": "查询系统支持的指标"
       }
     ],
+    "DescribeCheckLogs": [
+      {
+        "document": "查询检查点日志",
+        "input": "POST / HTTP/1.1\nHost: pts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCheckLogs\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b9652f8c-3d7d-48e0-b5b9-5f779b226730\"\n    }\n}",
+        "title": "查询检查点日志"
+      }
+    ],
     "DescribeCheckSummary": [
       {
         "document": "",
