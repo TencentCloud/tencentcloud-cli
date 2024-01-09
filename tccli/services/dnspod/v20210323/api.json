@@ -6915,6 +6915,15 @@
           "name": "Status",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "记录的备注信息。传空删除备注。",
+          "example": "这是备注",
+          "member": "string",
+          "name": "Remark",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -6928,6 +6937,7 @@
           "example": "162",
           "member": "uint64",
           "name": "RecordId",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

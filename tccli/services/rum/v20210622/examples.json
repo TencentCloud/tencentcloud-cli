@@ -8,14 +8,6 @@
         "title": "创建日志下载任务"
       }
     ],
-    "CreateOfflineLogConfig": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=CreateOfflineLogConfig\n&ProjectKey='a46hv4vGFds576'\n&UniqueID='958033435'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "创建 rum 离线日志监听"
-      }
-    ],
     "CreateProject": [
       {
         "document": "创建 RUM 应用",
@@ -374,22 +366,6 @@
         "input": "https://rum.tencentcloudapi.com/?Action=DescribeOfflineLogConfigs\n&ProjectKey='a46hv4vGFds576'\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"UniqueIDSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取 rum 离线日志监听配置"
-      }
-    ],
-    "DescribeOfflineLogRecords": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeOfflineLogRecords\n&ProjectKey='a46hv4vGFds576'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RecordSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取 rum 离线日志所有记录"
-      }
-    ],
-    "DescribeOfflineLogs": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeOfflineLogs\n&ProjectKey='a46hv4vGFds576'\n&FileIDs.0='958033435'\n&FileIDs.1='958033436'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"LogSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取 rum 离线日志"
       }
     ],
     "DescribeProjectLimits": [

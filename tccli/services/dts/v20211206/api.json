@@ -7,6 +7,13 @@
       "output": "CompleteMigrateJobResponse",
       "status": "online"
     },
+    "ConfigureSubscribeJob": {
+      "document": "本接口(ConfigureSubscribeJob)用于配置数据订阅实例。",
+      "input": "ConfigureSubscribeJobRequest",
+      "name": "配置订阅任务",
+      "output": "ConfigureSubscribeJobResponse",
+      "status": "online"
+    },
     "ConfigureSyncJob": {
       "document": "配置一个同步任务",
       "input": "ConfigureSyncJobRequest",
@@ -42,6 +49,13 @@
       "output": "CreateCompareTaskResponse",
       "status": "online"
     },
+    "CreateConsumerGroup": {
+      "document": "为订阅实例创建消费者组",
+      "input": "CreateConsumerGroupRequest",
+      "name": "创建消费组",
+      "output": "CreateConsumerGroupResponse",
+      "status": "online"
+    },
     "CreateMigrateCheckJob": {
       "document": "校验迁移任务，\n在开始迁移前, 必须调用本接口创建校验迁移任务, 且校验成功后才能开始迁移. 校验的结果可以通过DescribeMigrationCheckJob查看，\n校验成功后,迁移任务若有修改, 则必须重新校验并通过后, 才能开始迁移\n",
       "input": "CreateMigrateCheckJobRequest",
@@ -63,6 +77,20 @@
       "output": "CreateModifyCheckSyncJobResponse",
       "status": "online"
     },
+    "CreateSubscribe": {
+      "document": "本接口(CreateSubscribe)用于创建一个数据订阅任务。",
+      "input": "CreateSubscribeRequest",
+      "name": "创建订阅任务",
+      "output": "CreateSubscribeResponse",
+      "status": "online"
+    },
+    "CreateSubscribeCheckJob": {
+      "document": "本接口(CreateSubscribeCheckJob)用于创建一个订阅校验任务。任务必须已经成功调用ConfigureSubscribeJob接口配置了所有的必要信息才能启动校验。",
+      "input": "CreateSubscribeCheckJobRequest",
+      "name": "校验订阅任务",
+      "output": "CreateSubscribeCheckJobResponse",
+      "status": "online"
+    },
     "CreateSyncJob": {
       "document": "创建一个同步任务",
       "input": "CreateSyncJobRequest",
@@ -75,6 +103,13 @@
       "input": "DeleteCompareTaskRequest",
       "name": "删除一致性校验任务",
       "output": "DeleteCompareTaskResponse",
+      "status": "online"
+    },
+    "DeleteConsumerGroup": {
+      "document": "本接口(DeleteConsumerGroup)用于删除一个订阅任务的消费组。",
+      "input": "DeleteConsumerGroupRequest",
+      "name": "删除消费组",
+      "output": "DeleteConsumerGroupResponse",
       "status": "online"
     },
     "DescribeCheckSyncJobResult": {
@@ -96,6 +131,13 @@
       "input": "DescribeCompareTasksRequest",
       "name": "查询一致性校验任务列表",
       "output": "DescribeCompareTasksResponse",
+      "status": "online"
+    },
+    "DescribeConsumerGroups": {
+      "document": "本接口(DescribeConsumerGroups)用于获取订阅实例配置的消费者组详情。",
+      "input": "DescribeConsumerGroupsRequest",
+      "name": "获取数据订阅的消费组详情",
+      "output": "DescribeConsumerGroupsResponse",
       "status": "online"
     },
     "DescribeMigrateDBInstances": {
@@ -133,11 +175,53 @@
       "output": "DescribeModifyCheckSyncJobResultResponse",
       "status": "online"
     },
+    "DescribeOffsetByTime": {
+      "document": "本接口(DescribeOffsetByTime)查询KafkaTopic中指定时间前最近的offset。\n接口输出的offset是离这个时间最近的offset。\n如果输入时间比当前时间晚的多，相当于输出的就是最新的offset；\n如果输入时间比当前时间早的多，相当于输出的就是最老的offset；\n如果输入空，默认0时间，也就是查询最老的offset。",
+      "input": "DescribeOffsetByTimeRequest",
+      "name": "查询kafka offset",
+      "output": "DescribeOffsetByTimeResponse",
+      "status": "online"
+    },
+    "DescribeSubscribeCheckJob": {
+      "document": "本接口(DescribeSubscribeCheckJob)用于查询订阅校验任务结果。",
+      "input": "DescribeSubscribeCheckJobRequest",
+      "name": "查看校验结果",
+      "output": "DescribeSubscribeCheckJobResponse",
+      "status": "online"
+    },
+    "DescribeSubscribeDetail": {
+      "document": "本接口(DescribeSubscribeDetail)获取数据订阅实例的配置信息。",
+      "input": "DescribeSubscribeDetailRequest",
+      "name": "查询订阅任务详情",
+      "output": "DescribeSubscribeDetailResponse",
+      "status": "online"
+    },
+    "DescribeSubscribeJobs": {
+      "document": "本接口(DescribeSubscribes)获取数据订阅实例信息列表，默认分页，每次返回20条",
+      "input": "DescribeSubscribeJobsRequest",
+      "name": "获取数据订阅实例列表",
+      "output": "DescribeSubscribeJobsResponse",
+      "status": "online"
+    },
+    "DescribeSubscribeReturnable": {
+      "document": "本接口(DescribeSubscribeReturnable)用于查询订阅任务是否可以销毁和退货。",
+      "input": "DescribeSubscribeReturnableRequest",
+      "name": "查询订阅实例是否可以退换",
+      "output": "DescribeSubscribeReturnableResponse",
+      "status": "online"
+    },
     "DescribeSyncJobs": {
       "document": "查询同步任务信息",
       "input": "DescribeSyncJobsRequest",
       "name": "查询同步任务信息",
       "output": "DescribeSyncJobsResponse",
+      "status": "online"
+    },
+    "DestroyIsolatedSubscribe": {
+      "document": "本接口（DestroyIsolatedSubscribe）用于下线已隔离的数据订阅实例",
+      "input": "DestroyIsolatedSubscribeRequest",
+      "name": "下线已隔离的数据订阅任务",
+      "output": "DestroyIsolatedSubscribeResponse",
       "status": "online"
     },
     "DestroyMigrateJob": {
@@ -161,6 +245,13 @@
       "output": "IsolateMigrateJobResponse",
       "status": "online"
     },
+    "IsolateSubscribe": {
+      "document": "本接口（IsolateSubscribe）用于隔离订阅任务。调用后，订阅任务将不能使用。按量计费的任务会停止计费，包年包月的任务会自动退费",
+      "input": "IsolateSubscribeRequest",
+      "name": "销毁订阅任务",
+      "output": "IsolateSubscribeResponse",
+      "status": "online"
+    },
     "IsolateSyncJob": {
       "document": "隔离同步任务，隔离后可通过查询同步任务信息接口DescribeSyncJobs获取隔离后状态。在任务隔离后可进行解除隔离(RecoverSyncJob)操作或直接进行下线操作。对于不计费任务，调用此接口后会直接删除任务，无法进行恢复操作。",
       "input": "IsolateSyncJobRequest",
@@ -180,6 +271,20 @@
       "input": "ModifyCompareTaskNameRequest",
       "name": "修改一致性校验任务名称",
       "output": "ModifyCompareTaskNameResponse",
+      "status": "online"
+    },
+    "ModifyConsumerGroupDescription": {
+      "document": "本接口(ModifyConsumerGroupDescription)用于修改指定订阅消费组备注。",
+      "input": "ModifyConsumerGroupDescriptionRequest",
+      "name": "修改消费组备注",
+      "output": "ModifyConsumerGroupDescriptionResponse",
+      "status": "online"
+    },
+    "ModifyConsumerGroupPassword": {
+      "document": "本接口(ModifyConsumerGroupPassword)用于修改指定订阅消费组密码。",
+      "input": "ModifyConsumerGroupPasswordRequest",
+      "name": "修改消费组密码",
+      "output": "ModifyConsumerGroupPasswordResponse",
       "status": "online"
     },
     "ModifyMigrateJobSpec": {
@@ -215,6 +320,27 @@
       "input": "ModifyMigrationJobRequest",
       "name": "配置迁移服务",
       "output": "ModifyMigrationJobResponse",
+      "status": "online"
+    },
+    "ModifySubscribeAutoRenewFlag": {
+      "document": "修改订阅实例自动续费标识。只有包年包月的任务修改才有意义，按量计费任务修改后无影响。",
+      "input": "ModifySubscribeAutoRenewFlagRequest",
+      "name": "修改订阅实例自动续费标识",
+      "output": "ModifySubscribeAutoRenewFlagResponse",
+      "status": "online"
+    },
+    "ModifySubscribeName": {
+      "document": "本接口(ModifySubscribeName)用于修改数据订阅实例的名称",
+      "input": "ModifySubscribeNameRequest",
+      "name": "修改数据订阅实例的名称",
+      "output": "ModifySubscribeNameResponse",
+      "status": "online"
+    },
+    "ModifySubscribeObjects": {
+      "document": "本接口(ModifySubscribeObjects)用于修改数据订阅对象和kafka分区规则，如果是mongo订阅，还可以修改输出聚合规则。",
+      "input": "ModifySubscribeObjectsRequest",
+      "name": "修改订阅对象",
+      "output": "ModifySubscribeObjectsResponse",
       "status": "online"
     },
     "ModifySyncJobConfig": {
@@ -259,6 +385,20 @@
       "output": "RecoverSyncJobResponse",
       "status": "online"
     },
+    "ResetConsumerGroupOffset": {
+      "document": "本接口(ResetConsumerGroupOffset)用于重置订阅消费组的offset。掉用DescribeConsumerGroups接口查询消费组状态，只有消费组状态为 Dead 或 Empty 才可以执行重置该操作。否则重置不会生效，接口也不会报错。",
+      "input": "ResetConsumerGroupOffsetRequest",
+      "name": "重置kafka offset",
+      "output": "ResetConsumerGroupOffsetResponse",
+      "status": "online"
+    },
+    "ResetSubscribe": {
+      "document": "本接口(ResetSubscribe)用于重置订阅实例，重置后，可以重新配置订阅任务。\n可以调用 DescribeSubscribeDetail 查询订阅信息判断是否置成功。当SubsStatus变为notStarted时，表示重置成功。",
+      "input": "ResetSubscribeRequest",
+      "name": "重置订阅任务",
+      "output": "ResetSubscribeResponse",
+      "status": "online"
+    },
     "ResizeSyncJob": {
       "document": "调整同步任务规格，此接口只支持按量计费任务的调整，调用此接口后不会立即生效，后台调整时间大概为3~5分钟。调用此接口后可通过查询同步任务信息接口DescribeSyncJobs，获取变配后的状态。",
       "input": "ResizeSyncJobRequest",
@@ -271,6 +411,13 @@
       "input": "ResumeMigrateJobRequest",
       "name": "重试迁移任务",
       "output": "ResumeMigrateJobResponse",
+      "status": "online"
+    },
+    "ResumeSubscribe": {
+      "document": "本接口(ResumeSubscribe) 用于恢复报错的订阅任务。当订阅任务的状态为error时，可通过本接口尝试对任务进行恢复。",
+      "input": "ResumeSubscribeRequest",
+      "name": "恢复订阅任务",
+      "output": "ResumeSubscribeResponse",
       "status": "online"
     },
     "ResumeSyncJob": {
@@ -313,6 +460,13 @@
       "input": "StartModifySyncJobRequest",
       "name": "开始修改配置流程",
       "output": "StartModifySyncJobResponse",
+      "status": "online"
+    },
+    "StartSubscribe": {
+      "document": "本接口(StartSubscribe)用于启动一个kafka版本的数据订阅实例。只有当订阅任务的状态为checkPass时，才能调用本接口。",
+      "input": "StartSubscribeRequest",
+      "name": "启动订阅任务",
+      "output": "StartSubscribeResponse",
       "status": "online"
     },
     "StartSyncJob": {
@@ -1104,6 +1258,105 @@
       ],
       "type": "object"
     },
+    "ConfigureSubscribeJobRequest": {
+      "document": "ConfigureSubscribeJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅的类型，当 DatabaseType 不为 mongodb 时，枚举值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 DatabaseType 为 mongodb 时，枚举值为 all-全实例更新；database-订阅单库；collection-订阅单集合",
+          "example": "dmlAndDdl",
+          "member": "string",
+          "name": "SubscribeMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云主机自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力",
+          "example": "cdb",
+          "member": "string",
+          "name": "AccessType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点信息",
+          "example": "无",
+          "member": "EndpointItem",
+          "name": "Endpoints",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "Kafka配置",
+          "example": "无",
+          "member": "SubscribeKafkaConfig",
+          "name": "KafkaConfig",
+          "required": true,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库表信息，当 SubscribeMode 不为 all和ddl 时，SubscribeObjects 为必选参数",
+          "example": "无",
+          "member": "SubscribeObject",
+          "name": "SubscribeObjects",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "订阅数据格式，如：protobuf、json、avro。注意具体可选值依赖当前链路支持能力，数据格式详情参考官网的消费demo文档",
+          "example": "protobuf",
+          "member": "string",
+          "name": "Protocol",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mongo选填参数：输出聚合设置。",
+          "example": "无",
+          "member": "PipelineInfo",
+          "name": "PipelineInfo",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "为业务添加的额外信息。参数名作key，参数值作value。\nmysql选填参数：ProcessXA-是否处理XA事务，填true处理，不填或填其他值不处理。\nmongo选填参数：SubscribeType-订阅类型，目前只支持changeStream，不填也是默认changeStream。\n其他业务暂没有可选参数。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "ExtraAttr",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ConfigureSubscribeJobResponse": {
+      "document": "ConfigureSubscribeJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ConfigureSyncJobRequest": {
       "document": "ConfigureSyncJob请求参数结构体",
       "members": [
@@ -1475,6 +1728,69 @@
       ],
       "type": "object"
     },
+    "CreateConsumerGroupRequest": {
+      "document": "CreateConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例id",
+          "example": "subs-jvxbbos7c0",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称，以数字、字母(大小写)或者_ - .开头，以数字、字母(大小写)结尾。实际生成的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "example": "test",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称。以数字、字母(大小写)或者_ - .开头，以数字、字母(大小写)结尾。实际生成的账户全称形如：account-#{SubscribeId}-#{AccountName}",
+          "example": "test",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组密码，长度必须大于3",
+          "example": "123",
+          "member": "string",
+          "name": "Password",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组备注",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateConsumerGroupResponse": {
+      "document": "CreateConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreateMigrateCheckJobRequest": {
       "document": "CreateMigrateCheckJob请求参数结构体",
       "members": [
@@ -1619,6 +1935,124 @@
     "CreateModifyCheckSyncJobResponse": {
       "document": "CreateModifyCheckSyncJob返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeCheckJobRequest": {
+      "document": "CreateSubscribeCheckJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeCheckJobResponse": {
+      "document": "CreateSubscribeCheckJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeRequest": {
+      "document": "CreateSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "付费方式，枚举值：0-包年包月，1-按量计费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买时长。当 payType 为包年包月时，该项需要填，单位为月，最小值为 1，最大值为 120。不填默认1",
+          "example": "1",
+          "member": "int64",
+          "name": "Duration",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动续费。当 payType 为包年包月时，该项需要填。枚举值：0-不自动续费，1-自动续费。默认不自动续费。按量计费设置该标识无效。",
+          "example": "0",
+          "member": "int64",
+          "name": "AutoRenew",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买数量,默认为1，最大为10",
+          "example": "1",
+          "member": "int64",
+          "name": "Count",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "实例资源标签",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "任务名，自定义",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreateSubscribeResponse": {
+      "document": "CreateSubscribe返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"subs-b6x64o31tm\"]",
+          "member": "string",
+          "name": "SubscribeIds",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2606,6 +3040,51 @@
       ],
       "type": "object"
     },
+    "DeleteConsumerGroupRequest": {
+      "document": "DeleteConsumerGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "example": "consumer-grp-subs-9jyki7hniw-test",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "example": "account-subs-9jyki7hniw-test",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeleteConsumerGroupResponse": {
+      "document": "DeleteConsumerGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeCheckSyncJobResultRequest": {
       "document": "DescribeCheckSyncJobResult请求参数结构体",
       "members": [
@@ -2882,6 +3361,71 @@
           "name": "Items",
           "type": "list",
           "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupsRequest": {
+      "document": "DescribeConsumerGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例id",
+          "example": "subs-47damshnra",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录的起始偏移量。默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次返回的记录数量。默认10",
+          "example": "1",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeConsumerGroupsResponse": {
+      "document": "DescribeConsumerGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "指定实例下的消费者组总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组列表",
+          "example": "无",
+          "member": "GroupInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -3588,6 +4132,630 @@
       ],
       "type": "object"
     },
+    "DescribeOffsetByTimeRequest": {
+      "document": "DescribeOffsetByTime请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "时间点，格式为：Y-m-d h:m:s。如果输入时间比当前时间晚的多，相当于查询最新offset；如果输入时间比当前时间早的多，相当于查询最老offset；如果输入空，默认0时间，等价于查询最老offset。",
+          "example": "2023-05-15 16:31:33",
+          "member": "string",
+          "name": "Time",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeOffsetByTimeResponse": {
+      "document": "DescribeOffsetByTime返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "时间与Offset的对应",
+          "example": "无",
+          "member": "OffsetTimeMap",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeCheckJobRequest": {
+      "document": "DescribeSubscribeCheckJob请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-l4d3a7izai",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeCheckJobResponse": {
+      "document": "DescribeSubscribeCheckJob返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例ID",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "失败或者报错提示，成功则提示success。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "success",
+          "member": "string",
+          "name": "Message",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务运行状态，可能值为 running,failed,success",
+          "example": "success",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前总体进度，范围 0~100",
+          "example": "100",
+          "member": "uint64",
+          "name": "Progress",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "校验总步骤数",
+          "example": "5",
+          "member": "uint64",
+          "name": "StepAll",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前执行步骤",
+          "example": "5",
+          "member": "uint64",
+          "name": "StepNow",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各个步骤运行状态\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeCheckStepInfo",
+          "name": "Steps",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeDetailRequest": {
+      "document": "DescribeSubscribeDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例ID",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeDetailResponse": {
+      "document": "DescribeSubscribeDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅的ID，形如subs-b6x64o31tm",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅实例的名称",
+          "example": "test",
+          "member": "string",
+          "name": "SubscribeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库类型，目前支持 cynosdbmysql(tdsql-c mysql版),mariadb,mongodb,mysql,percona,tdpg(tdsql postgresql版),tdsqlpercona(tdsql mysql版)",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅的云数据库实例ID，只有订阅云数据库该值才有意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅的云数据库实例状态，只有订阅云数据库该值才有意义。可能值为：running, isolated, offline\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务计费状态，可能值为：正常normal, 隔离中isolating, 已隔离isolated, 下线中offlining, 按量转包年包月中 post2PrePayIng",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务状态，可能值为：未启动notStarted, 校验中checking, 校验不通过checkNotPass, 校验通过checkPass, 启动中starting, 运行中running, 异常出错error",
+          "example": "running",
+          "member": "string",
+          "name": "SubsStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "修改时间，时间格式如：Y-m-d h:m:s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-30 12:00:00",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式如：Y-m-d h:m:s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-06-30 12:00:00",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-30 12:00:00",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0000-00-00 00:00:00",
+          "member": "string",
+          "name": "OfflineTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "付费方式，可能值为：0-包年包月，1-按量计费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "任务所在地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "Kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-subs-9n0q6o7tok-cdb-ixunfa27",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Kafka服务Broker地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "guangzhoutest-kafka-5.cdb-dts.tencentcs.com.cn:32339",
+          "member": "string",
+          "name": "Broker",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅的类型，当 Product 不为 mongodb 时，可能值为：all-全实例更新；dml-数据更新；ddl-结构更新；dmlAndDdl-数据更新+结构更新。当 Product 为 mongodb 时，可能值为 all-全实例更新；database-订阅单库；collection-订阅单集合\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dmlAndDdl",
+          "member": "string",
+          "name": "SubscribeMode",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅数据格式。如果为空则用的默认格式: mysql\\cynosdbmysql\\mariadb\\percona\\tdsqlpercona\\tdpg是protobuf，mongo是json。当 DatabaseType 为 mysql和cynosdbmysql 时有三种可选协议：protobuf\\avro\\json。数据格式详情参考官网的消费demo文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "protobuf",
+          "member": "string",
+          "name": "Protocol",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库表信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeObject",
+          "name": "SubscribeObjects",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kafka配置信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeKafkaConfig",
+          "name": "KafkaConfig",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "源数据库接入类型，如：extranet(公网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、cdb(云数据库)、cvm(云主机自建)、intranet(自研上云)、vpc(私有网络vpc)。注意具体可选值依赖当前链路支持能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "接入类型信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EndpointItem",
+          "name": "Endpoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "mongo输出聚合设置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PipelineInfo",
+          "name": "PipelineInfo",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅任务报错信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubsErr",
+          "name": "Errors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "为业务添加的额外信息。参数名作key，参数值作value。\nmysql选填参数：ProcessXA-是否处理XA事务，为true处理，其他不处理。\nmongo选填参数：SubscribeType-订阅类型，目前只支持changeStream。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "ExtraAttr",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeJobsRequest": {
+      "document": "DescribeSubscribeJobs请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅 ID 筛选，精确匹配",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅名称，前缀模糊匹配",
+          "example": "test",
+          "member": "string",
+          "name": "SubscribeName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅的云上数据库实例的 ID，精确匹配",
+          "example": "cdb-kdxona7h",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "计费模式筛选，可能的值：0-包年包月，1-按量计费",
+          "example": "1",
+          "member": "int64",
+          "name": "PayType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库产品，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining，按量转包年包月中 post2PrePayIng",
+          "example": "无",
+          "member": "string",
+          "name": "Status",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
+          "example": "无",
+          "member": "string",
+          "name": "SubsStatus",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "返回记录的起始偏移量。默认0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "单次返回的记录数量。默认20，最大100",
+          "example": "20",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "排序方向，可选的值为\"DESC\"和\"ASC\"，默认为\"DESC\"，按创建时间逆序排序",
+          "example": "ASC",
+          "member": "string",
+          "name": "OrderDirection",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "tag 过滤条件，多个 TagFilter 之间关系为且",
+          "example": "无",
+          "member": "TagFilter",
+          "name": "TagFilters",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeJobsResponse": {
+      "document": "DescribeSubscribeJobs返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "符合查询条件的实例总数",
+          "example": "1",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅实例的信息列表",
+          "example": "无",
+          "member": "SubscribeInfo",
+          "name": "Items",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeReturnableRequest": {
+      "document": "DescribeSubscribeReturnable请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSubscribeReturnableResponse": {
+      "document": "DescribeSubscribeReturnable返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例是否支持退还/退货",
+          "example": "true",
+          "member": "bool",
+          "name": "IsReturnable",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "不支持退还的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ReturnFailMessage",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeSyncJobsRequest": {
       "document": "DescribeSyncJobs请求参数结构体",
       "members": [
@@ -3716,6 +4884,33 @@
           "type": "list",
           "value_allowed_null": true
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyIsolatedSubscribeRequest": {
+      "document": "DestroyIsolatedSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DestroyIsolatedSubscribeResponse": {
+      "document": "DestroyIsolatedSubscribe返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -3996,6 +5191,56 @@
         }
       ],
       "usage": "out"
+    },
+    "DistributeRule": {
+      "document": "订阅任务的kafka分区规则。符合库名和表名正则表达式的数据将按照RuleType计算该条数据将被投递的kafka分区。如果配置了多个规则，将按照配置的顺序，第一条命中的规则生效。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "规则类型。非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区，cols-按列名分区。mongo的枚举值为：collection-按集合名分区、collectionAndObjectId-按集合+主键分区。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table",
+          "member": "string",
+          "name": "RuleType",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "库名匹配规则，请填写正则表达式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test*",
+          "member": "string",
+          "name": "DbPattern",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名匹配规则，如果 DatabaseType 为 mongodb，则匹配集合名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "*",
+          "member": "string",
+          "name": "TablePattern",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "列名。如果 RuleType 为 cols，此项必填。订阅任务会用该列的值计算分区。mongo没有按列分区，因此也不用传这个字段。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "id",
+          "member": "string",
+          "name": "Columns",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "DynamicOptions": {
       "document": "数据同步中的选项",
@@ -4350,6 +5595,188 @@
       ],
       "usage": "both"
     },
+    "EndpointItem": {
+      "document": "数据订阅的实例节点信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "源库所在地域。如果 AccessType 为 ccn，请填vpc所在地域，因为此时不知道源库在哪个地域。其他接入方式，请填订阅任务所在地域，因为确保订阅任务与源库在同一地域是最优的网络方案。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "DatabaseRegion",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dts_user",
+          "member": "string",
+          "name": "User",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "密码。作为入参时必填，作为出参时为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "123",
+          "member": "string",
+          "name": "Password",
+          "output_required": false,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "目标实例ID。如果 AccessType 为 cdb，此项必填。配置InstanceId时会查询并校验实例信息。mysql的查询接口经过了鉴权，请确保子用户有 cdb:DescribeDBInstances 的接口权限。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-xxxxxx",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云主机ID。如果 AccessType 为 cvm，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ins-xxxxxx",
+          "member": "string",
+          "name": "CvmInstanceId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "专线网关ID。如果 AccessType 为 dcg，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "dcg-xxxxxx",
+          "member": "string",
+          "name": "UniqDcgId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云联网ID。如果 AccessType 为 ccn，此项必填。 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ccn-xxxxxx",
+          "member": "string",
+          "name": "CcnId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "vpn网关ID。如果 AccessType 为 vpncloud，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpngw-xxxxxx",
+          "member": "string",
+          "name": "UniqVpnGwId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VpcID。如果 AccessType 为 dcg\\ccn\\vpncloud\\vpc，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "vpc-xxxxxx",
+          "member": "string",
+          "name": "VpcId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "子网ID。如果 AccessType 为 dcg\\ccn\\vpncloud\\vpc，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "subnet-xxxxxx",
+          "member": "string",
+          "name": "SubnetId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库地址，支持域名与IP。如果 AccessType 为 dcg\\ccn\\vpncloud\\vpc\\extranet\\intranet，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "9.223.70.88",
+          "member": "string",
+          "name": "HostName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库端口。如果 AccessType 为 dcg\\ccn\\vpncloud\\vpc\\extranet\\intranet\\cvm，此项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3306",
+          "member": "uint64",
+          "name": "Port",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否走加密传输，枚举值：UnEncrypted-不加密，Encrypted-加密。只有mysql支持，不填默认不加密，其他产品不填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Encrypted",
+          "member": "string",
+          "name": "EncryptConn",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库网络环境。如果 AccessType 为 ccn 此项必填。枚举值：UserIDC-自建idc，TencentVPC-腾讯云，Aws-aws，AliYun-阿里云，Others-其他。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "TencentVPC",
+          "member": "string",
+          "name": "DatabaseNetEnv",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云联网网关所属的主账号uin、跨账号云联网需要。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "CcnOwnerUin",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "为业务添加的额外信息。参数名作key，参数值作value。 tdpg必填参数：PgDatabase-订阅的库名。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "KeyValuePairOption",
+          "name": "ExtraAttr",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ErrInfo": {
       "document": "错误信息及其解决方案",
       "members": [
@@ -4432,6 +5859,122 @@
       ],
       "usage": "out"
     },
+    "GroupInfo": {
+      "document": "kafka消费者组详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费者组账号",
+          "example": "account-subs-47damshnra-3",
+          "member": "string",
+          "name": "Account",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组名称",
+          "example": "consumer-grp-subs-47damshnra-3",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组备注\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消费组偏移量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区的偏移量。各分区的偏移量详见StateOfPartition字段",
+          "example": "-1",
+          "member": "int64",
+          "name": "ConsumerGroupOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费组未消费的数据量。该字段是为了兼容以前单Partition的情况，取值为最后一个分区未消费的数据量。各分区未消费数据量详见StateOfPartition字段",
+          "example": "0",
+          "member": "int64",
+          "name": "ConsumerGroupLag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费延迟(单位为秒)",
+          "example": "9",
+          "member": "int64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "各分区的消费状态",
+          "example": "无",
+          "member": "MonitorInfo",
+          "name": "StateOfPartition",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组创建时间，格式为YYYY-MM-DD hh:mm:ss",
+          "example": "2022-03-25 17:31:31",
+          "member": "string",
+          "name": "CreatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组修改时间，格式为YYYY-MM-DD hh:mm:ss",
+          "example": "2022-03-25 17:31:31",
+          "member": "string",
+          "name": "UpdatedAt",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消费者组状态，包括Dead、Empty、Stable等，只有Dead和Empty两种状态可以执行reset操作",
+          "example": "Stable",
+          "member": "string",
+          "name": "ConsumerGroupState",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "每个消费者正在消费的分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PartitionAssignment",
+          "name": "PartitionAssignment",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "IsolateMigrateJobRequest": {
       "document": "IsolateMigrateJob请求参数结构体",
       "members": [
@@ -4449,6 +5992,33 @@
     },
     "IsolateMigrateJobResponse": {
       "document": "IsolateMigrateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateSubscribeRequest": {
+      "document": "IsolateSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "IsolateSubscribeResponse": {
+      "document": "IsolateSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -4989,6 +6559,45 @@
       ],
       "usage": "both"
     },
+    "ModifiedSubscribeObject": {
+      "document": "数据数据订阅的对象，用于修改订阅对象接口。与SubscribeObject结构类似，只是类型和参数名不同。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅对象的类型，枚举值为：0-库，1-表(该值对于mongo任务来说，是集合) 。\n注意：mongo只支持全实例、单库或者单集合订阅，因此该字段不要与SubscribeObjectType冲突。如：SubscribeObjectType=4，表示mongo单库订阅，那么该字段应该传0。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ObjectsType",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅数据库的名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "DatabaseName",
+          "output_required": true,
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅数据库中表(或集合)的名称。如果 ObjectsType 为 1，那么此字段为必填，且不为空；\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "TableNames",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "ModifyCompareTaskNameRequest": {
       "document": "ModifyCompareTaskName请求参数结构体",
       "members": [
@@ -5096,6 +6705,123 @@
     },
     "ModifyCompareTaskResponse": {
       "document": "ModifyCompareTask返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerGroupDescriptionRequest": {
+      "document": "ModifyConsumerGroupDescription请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}。\n请务必保证消费组名称正确。",
+          "example": "consumer-grp-subs-9jyki7hniw-1",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账户名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}。\n请务必保证账户名称正确。",
+          "example": "account-subs-9jyki7hniw-1",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改之后的消费组描述",
+          "example": "无",
+          "member": "string",
+          "name": "Description",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerGroupDescriptionResponse": {
+      "document": "ModifyConsumerGroupDescription返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerGroupPasswordRequest": {
+      "document": "ModifyConsumerGroupPassword请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "账号名称。实际的账户全称形如：account-#{SubscribeId}-#{AccountName}",
+          "example": "account-subs-9jyki7hniw-1",
+          "member": "string",
+          "name": "AccountName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "example": "consumer-grp-subs-9jyki7hniw-1",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "旧密码",
+          "example": "123",
+          "member": "string",
+          "name": "OldPassword",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "新密码。字符长度不小于3，不大于32",
+          "example": "dliasyud",
+          "member": "string",
+          "name": "NewPassword",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifyConsumerGroupPasswordResponse": {
+      "document": "ModifyConsumerGroupPassword返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5385,6 +7111,150 @@
       ],
       "type": "object"
     },
+    "ModifySubscribeAutoRenewFlagRequest": {
+      "document": "ModifySubscribeAutoRenewFlag请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。1-自动续费，0-不自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscribeAutoRenewFlagResponse": {
+      "document": "ModifySubscribeAutoRenewFlag返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscribeNameRequest": {
+      "document": "ModifySubscribeName请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的数据订阅实例的名称，长度限制为[1,60]",
+          "example": "subscribe-test",
+          "member": "string",
+          "name": "SubscribeName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscribeNameResponse": {
+      "document": "ModifySubscribeName返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscribeObjectsRequest": {
+      "document": "ModifySubscribeObjects请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅的类型，非mongo任务的枚举值：0-全实例更新；1-数据更新；2-结构更新；3-数据更新+结构更新。mongo任务的枚举值：0-全实例更新；4-订阅单库；5-订阅单集合",
+          "example": "0",
+          "member": "int64",
+          "name": "SubscribeObjectType",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "修改后的订阅数据库表信息。会覆盖原来的订阅对象，所以除非 SubscribeObjectType = 0或2，否则改字段必填。",
+          "example": "无",
+          "member": "ModifiedSubscribeObject",
+          "name": "Objects",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "kafka分区策略。如果不填，默认不修改。如果填了，会覆盖原来的策略。",
+          "example": "无",
+          "member": "DistributeRule",
+          "name": "DistributeRules",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "默认分区策略。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。\n非mongo产品支持的默认策略: table-按表名分区，pk-按表名+主键分区。mongo的默认策略仅支持：collection-按集合名分区。\n该字段与DistributeRules搭配使用。如果配置了DistributeRules，该字段也必填。如果配置了该字段，视为配置了一条DistributeRules，原来的分区策略也会被覆盖。",
+          "example": "table",
+          "member": "string",
+          "name": "DefaultRuleType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "mongo输出聚合设置，mongo任务可选。如果不填，默认不修改。",
+          "example": "无",
+          "member": "PipelineInfo",
+          "name": "PipelineInfo",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "ModifySubscribeObjectsResponse": {
+      "document": "ModifySubscribeObjects返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ModifySyncJobConfigRequest": {
       "document": "ModifySyncJobConfig请求参数结构体",
       "members": [
@@ -5502,6 +7372,52 @@
       ],
       "type": "object"
     },
+    "MonitorInfo": {
+      "document": "kafka消费者组的分区详情",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当前分区的编号，从0开始",
+          "example": "1",
+          "member": "int64",
+          "name": "PartitionNo",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前分区的偏移量",
+          "example": "1111",
+          "member": "int64",
+          "name": "ConsumerGroupOffset",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前分区未消费的数据量",
+          "example": "0",
+          "member": "int64",
+          "name": "ConsumerGroupLag",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "当前分区的消费延迟(单位为秒)",
+          "example": "1",
+          "member": "int64",
+          "name": "Latency",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "Objects": {
       "document": "同步的数据库对对象描述",
       "members": [
@@ -5551,6 +7467,32 @@
         }
       ],
       "usage": "both"
+    },
+    "OffsetTimeMap": {
+      "document": "数据订阅kafka分区中checkpoint信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kafka分区编号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PartitionNo",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "kafka offset\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1234565",
+          "member": "uint64",
+          "name": "Offset",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "OnlineDDL": {
       "document": "OnlineDDL类型",
@@ -5685,6 +7627,32 @@
       ],
       "usage": "both"
     },
+    "PartitionAssignment": {
+      "document": "数据订阅中kafka消费者组的分区分配情况。该数据是实时查询的，如果需要最新数据，需重新掉接口查询。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消费者的clientId",
+          "example": "ding",
+          "member": "string",
+          "name": "ClientId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "该消费者正在消费的分区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[0,1]",
+          "member": "uint64",
+          "name": "PartitionNo",
+          "required": true,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PauseMigrateJobRequest": {
       "document": "PauseMigrateJob请求参数结构体",
       "members": [
@@ -5738,6 +7706,34 @@
         }
       ],
       "type": "object"
+    },
+    "PipelineInfo": {
+      "document": "mongo输出聚合设置。输出默认 Change Event",
+      "members": [
+        {
+          "disabled": false,
+          "document": "聚合运算符：$addFields、$match、$project、$replaceRoot、$redact、$replaceWith、$set、$unset。其中 $replaceWith、$set、$unset 只有当订阅实例是4.2及以上版本可选。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "$addFields",
+          "member": "string",
+          "name": "AggOp",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "聚合表达式。必须是json格式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"a\":\"\"}",
+          "member": "string",
+          "name": "AggCmd",
+          "output_required": true,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "ProcessProgress": {
       "document": "任务步骤信息",
@@ -6022,6 +8018,105 @@
       ],
       "type": "object"
     },
+    "ResetConsumerGroupOffsetRequest": {
+      "document": "ResetConsumerGroupOffset请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅实例id",
+          "example": "subs-7l2ly86kao",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "订阅的kafka topic",
+          "example": "topic-subs-7l2ly86kao-cdb-5jr9ms95",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消费组名称。实际的消费组全称形如：consumer-grp-#{SubscribeId}-#{ConsumerGroupName}",
+          "example": "consumer-grp-subs-7l2ly86kao-1",
+          "member": "string",
+          "name": "ConsumerGroupName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要修改offset的分区编号",
+          "example": "无",
+          "member": "int64",
+          "name": "PartitionNos",
+          "required": true,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "重置方式。枚举值为 earliest-从最开始位置开始消费；latest-从最新位置开始消费；datetime-从指定时间前最近的checkpoint开始消费",
+          "example": "earliest",
+          "member": "string",
+          "name": "ResetMode",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "当 ResetMode 为 datetime 时，该项需要填，格式为：Y-m-d h:m:s。如果不填，默认用0时间，效果与earliest相同。",
+          "example": "2022-04-01 11:00:00",
+          "member": "string",
+          "name": "ResetDatetime",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetConsumerGroupOffsetResponse": {
+      "document": "ResetConsumerGroupOffset返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetSubscribeRequest": {
+      "document": "ResetSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResetSubscribeResponse": {
+      "document": "ResetSubscribe返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "ResizeSyncJobRequest": {
       "document": "ResizeSyncJob请求参数结构体",
       "members": [
@@ -6084,6 +8179,33 @@
     },
     "ResumeMigrateJobResponse": {
       "document": "ResumeMigrateJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeSubscribeRequest": {
+      "document": "ResumeSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResumeSubscribeResponse": {
+      "document": "ResumeSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6381,6 +8503,33 @@
     },
     "StartModifySyncJobResponse": {
       "document": "StartModifySyncJob返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSubscribeRequest": {
+      "document": "StartSubscribe请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅实例的 ID",
+          "example": "subs-xxxxxx",
+          "member": "string",
+          "name": "SubscribeId",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "StartSubscribeResponse": {
+      "document": "StartSubscribe返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -6758,6 +8907,415 @@
         }
       ],
       "type": "object"
+    },
+    "SubsErr": {
+      "document": "订阅报错信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "报错信息",
+          "example": "invalid connection",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscribeCheckStepInfo": {
+      "document": "订阅校验任务的各步骤信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "步骤名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "连接DB检查",
+          "member": "string",
+          "name": "StepName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步骤Id\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ConnectDBCheck",
+          "member": "string",
+          "name": "StepId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "步骤编号，从 1 开始\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "StepNo",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤状态，可能值为 notStarted,running,finished,failed\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前步骤进度\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "100",
+          "member": "uint64",
+          "name": "Percent",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "错误提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeCheckStepTip",
+          "name": "Errors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警提示\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubscribeCheckStepTip",
+          "name": "Warnings",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscribeCheckStepTip": {
+      "document": "订阅校验任务的提示信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "错误或告警的详细信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Message",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "帮助文档\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "HelpDoc",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscribeInfo": {
+      "document": "订阅实例信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数据订阅的实例ID",
+          "example": "subs-9jyki7hniw",
+          "member": "string",
+          "name": "SubscribeId",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅实例的名称",
+          "example": "test",
+          "member": "string",
+          "name": "SubscribeName",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例发送数据的kafka topic\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "topic-subs-l4d3a7izai-cmgo-24ifcx43",
+          "member": "string",
+          "name": "Topic",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅实例的类型，目前支持 cynosdbmysql,mariadb,mongodb,mysql,percona,tdpg,tdsqlpercona(tdsqlmysql)",
+          "example": "mysql",
+          "member": "string",
+          "name": "Product",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库实例ID（如果订阅的是云数据库）如果实例不是腾讯云上的，此值为空。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb-kdxona7h",
+          "member": "string",
+          "name": "InstanceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云数据库状态：running 运行中，isolated 已隔离，offline 已下线。如果不是云上，此值为空\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "running",
+          "member": "string",
+          "name": "InstanceStatus",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅生命周期状态，可能的值为：正常 normal, 隔离中 isolating, 已隔离 isolated, 下线中 offlining, 按量转包年包月中 post2PrePayIng",
+          "example": "normal",
+          "member": "string",
+          "name": "Status",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅状态，可能的值为：未启动 notStarted, 校验中 checking, 校验不通过 checkNotPass, 校验通过 checkPass, 启动中 starting, 运行中 running, 异常出错 error",
+          "example": "running",
+          "member": "string",
+          "name": "SubsStatus",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "上次修改时间，时间格式如：Y-m-d h:m:s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-15 21:29:05",
+          "member": "string",
+          "name": "ModifyTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "创建时间，时间格式如：Y-m-d h:m:s\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-15 21:29:05",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "隔离时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-15 21:29:05",
+          "member": "string",
+          "name": "IsolateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "包年包月任务的到期时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-15 21:29:05",
+          "member": "string",
+          "name": "ExpireTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "下线时间，时间格式如：Y-m-d h:m:s。默认：0000-00-00 00:00:00\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-05-15 21:29:05",
+          "member": "string",
+          "name": "OfflineTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "计费方式，0 - 包年包月，1 - 按量计费",
+          "example": "0",
+          "member": "int64",
+          "name": "PayType",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "自动续费标识。只有当 PayType=0，该值才有意义。枚举值：0-不自动续费，1-自动续费",
+          "example": "1",
+          "member": "int64",
+          "name": "AutoRenewFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅实例所属地域",
+          "example": "ap-guangzhou",
+          "member": "string",
+          "name": "Region",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接入方式。枚举值：extranet(公网) vpncloud(vpn接入) dcg(专线接入) ccn(云联网) cdb(云数据库) cvm(云主机自建) intranet(自研上云) vpc(私有网络vpc)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "AccessType",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据库节点信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "EndpointItem",
+          "name": "Endpoints",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "数据订阅版本, 当前只支持 kafka 版本。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "kafka",
+          "member": "string",
+          "name": "SubscribeVersion",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagItem",
+          "name": "Tags",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "任务报错信息，如果有的话。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SubsErr",
+          "name": "Errors",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SubscribeKafkaConfig": {
+      "document": "订阅的kafka分区数和分区规则。mariadb，percona，tdsqlmysql，tdpg不支持自定义分区，所以DistributeRules和DefaultRuleType可以不填，但是NumberOfPartitions是必填。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "kafka分区数量，枚举值为1，4，8\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "8",
+          "member": "uint64",
+          "name": "NumberOfPartitions",
+          "output_required": true,
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分区规则。当NumberOfPartitions > 1时，该项必填。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "DistributeRule",
+          "name": "DistributeRules",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "默认分区策略。当NumberOfPartitions > 1时，该项必填。不满足DistributeRules中正则表达式的数据，将按照默认分区策略计算分区。\n非mongo产品的枚举值为: table-按表名分区，pk-按表名+主键分区。mongo的枚举值为：collection-按集合名分区。\n该字段与DistributeRules搭配使用，如果配置了该字段，视为配置了一条DistributeRules。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table",
+          "member": "string",
+          "name": "DefaultRuleType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "SubscribeObject": {
+      "document": "订阅的的数据库表信息，用于配置和查询订阅任务接口。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "订阅数据的类型，枚举值：database-数据库，table-数据库的表(如果 DatabaseType 为 mongodb，则表示集合)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "table",
+          "member": "string",
+          "name": "ObjectType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅的数据库名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "databaseName",
+          "member": "string",
+          "name": "Database",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "订阅数据库中表的名称。如果 DatabaseType 为 mongodb，填集合名。mongodb只支持订阅单库或者单集合。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "Tables",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "SyncDBEndpointInfos": {
       "document": "数据同步配置多节点数据库的节点信息。多节点数据库，如tdsqlmysql使用该结构；单节点数据库，如mysql使用Endpoint。",

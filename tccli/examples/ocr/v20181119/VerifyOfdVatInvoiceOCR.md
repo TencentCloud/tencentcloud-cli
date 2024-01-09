@@ -76,6 +76,7 @@ Output:
             "PassengerName": "abc",
             "ValidIdNumber": "abc",
             "Endorsement": "abc",
+            "NumberOfGPOrder": "abc",
             "ElectronicInvoiceAirTransportReceiptNumber": "abc",
             "DetailInformationOfAirTicketTuple": [
                 {
@@ -84,6 +85,7 @@ Output:
                     "FlightSegment": "abc",
                     "Carrier": "abc",
                     "Flight": "abc",
+                    "SeatClass": "abc",
                     "CarrierDate": "abc",
                     "DepartureTime": "abc",
                     "FareBasis": "abc",
@@ -99,6 +101,7 @@ Output:
             "CivilAviationDevelopmentFund": "abc",
             "OtherTaxes": "abc",
             "TotalAmount": "abc",
+            "ElectronicTicketNum": "abc",
             "VerificationCode": "abc",
             "PromptInformation": "abc",
             "Insurance": "abc",
@@ -113,6 +116,7 @@ Output:
         },
         "RailwayTicketInfo": {
             "TypeOfVoucher": "abc",
+            "ElectronicTicketNum": "abc",
             "DateOfIssue": "abc",
             "TypeOfBusiness": "abc",
             "DepartureStation": "abc",
@@ -134,7 +138,8 @@ Output:
             "TaxRate": "abc",
             "TaxAmount": "abc",
             "NameOfPurchaser": "abc",
-            "UnifiedSocialCreditCodeOfPurchaser": "abc"
+            "UnifiedSocialCreditCodeOfPurchaser": "abc",
+            "NumberOfOriginalInvoice": "abc"
         }
     }
 }

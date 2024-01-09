@@ -241,7 +241,7 @@
     "DescribeCustomizedConfigAssociateList": {
       "document": "拉取配置绑定的 server 或 location，如果 domain 存在，结果将根据 domain 过滤。或拉取配置绑定的 loadbalancer。",
       "input": "DescribeCustomizedConfigAssociateListRequest",
-      "name": "拉取配置绑定的server或location。",
+      "name": "拉取配置绑定的server或location",
       "output": "DescribeCustomizedConfigAssociateListResponse",
       "status": "online"
     },
@@ -4371,6 +4371,7 @@
           "example": "无",
           "member": "BindDetailItem",
           "name": "BindList",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4380,6 +4381,7 @@
           "example": "1",
           "member": "int64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },

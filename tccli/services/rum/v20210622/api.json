@@ -7,13 +7,6 @@
       "output": "CreateLogExportResponse",
       "status": "online"
     },
-    "CreateOfflineLogConfig": {
-      "document": "创建离线日志监听，对应用户的离线日志将上报",
-      "input": "CreateOfflineLogConfigRequest",
-      "name": "创建离线日志监听",
-      "output": "CreateOfflineLogConfigResponse",
-      "status": "online"
-    },
     "CreateProject": {
       "document": "创建 RUM 应用（归属于某个团队）",
       "input": "CreateProjectRequest",
@@ -287,20 +280,6 @@
       "output": "DescribeOfflineLogConfigsResponse",
       "status": "online"
     },
-    "DescribeOfflineLogRecords": {
-      "document": "获取所有离线日志记录(最多100条)",
-      "input": "DescribeOfflineLogRecordsRequest",
-      "name": "获取所有离线日志记录(最多100条)",
-      "output": "DescribeOfflineLogRecordsResponse",
-      "status": "online"
-    },
-    "DescribeOfflineLogs": {
-      "document": "获取对应离线日志",
-      "input": "DescribeOfflineLogsRequest",
-      "name": "获取对应离线日志",
-      "output": "DescribeOfflineLogsResponse",
-      "status": "online"
-    },
     "DescribeProjectLimits": {
       "document": "获取应用上报抽样信息",
       "input": "DescribeProjectLimitsRequest",
@@ -541,52 +520,6 @@
           "example": "export-f5e4c354-2441-4ea5-848e-8fc25e0f2c24",
           "member": "string",
           "name": "ExportID",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOfflineLogConfigRequest": {
-      "document": "CreateOfflineLogConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "DjkljW234R",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "需要监听的用户唯一标示(aid 或 uin)",
-          "example": "9580003424",
-          "member": "string",
-          "name": "UniqueID",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "CreateOfflineLogConfigResponse": {
-      "document": "CreateOfflineLogConfig返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口返回信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -5718,109 +5651,6 @@
           "example": "['123123']",
           "member": "string",
           "name": "UniqueIDSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogRecordsRequest": {
-      "document": "DescribeOfflineLogRecords请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "DjkljW234R",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogRecordsResponse": {
-      "document": "DescribeOfflineLogRecords返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口调用信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "记录 ID 数组",
-          "example": "[\"12\"]",
-          "member": "string",
-          "name": "RecordSet",
-          "required": true,
-          "type": "list",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogsRequest": {
-      "document": "DescribeOfflineLogs请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "DjkljW234R",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "离线日志文件 id 列表",
-          "example": "[\"123\"]",
-          "member": "string",
-          "name": "FileIDs",
-          "required": true,
-          "type": "list"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogsResponse": {
-      "document": "DescribeOfflineLogs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口调用返回信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "日志列表",
-          "example": "[\"123\"]",
-          "member": "string",
-          "name": "LogSet",
           "required": true,
           "type": "list",
           "value_allowed_null": false

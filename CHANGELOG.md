@@ -1,3 +1,158 @@
+# Release 3.0.1041.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 76 次发布
+
+发布时间：2024-01-10 01:11:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [IsolateCluster](https://cloud.tencent.com/document/api/1003/48082)
+
+	* 新增入参：IsolateReasonTypes, IsolateReason
+
+* [IsolateInstance](https://cloud.tencent.com/document/api/1003/48081)
+
+	* 新增入参：IsolateReasonTypes, IsolateReason
+
+
+新增数据结构：
+
+* [InstanceAbility](https://cloud.tencent.com/document/api/1003/48097#InstanceAbility)
+* [SlaveZoneStockInfo](https://cloud.tencent.com/document/api/1003/48097#SlaveZoneStockInfo)
+
+修改数据结构：
+
+* [CynosdbInstance](https://cloud.tencent.com/document/api/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceAbility
+
+* [ZoneStockInfo](https://cloud.tencent.com/document/api/1003/48097#ZoneStockInfo)
+
+	* 新增成员：SlaveZoneStockInfos
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 29 次发布
+
+发布时间：2024-01-10 01:13:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyRecord](https://cloud.tencent.com/document/api/1427/56157)
+
+	* 新增入参：Remark
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 21 次发布
+
+发布时间：2024-01-10 01:13:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ConfigureSubscribeJob](https://cloud.tencent.com/document/api/571/102952)
+* [CreateConsumerGroup](https://cloud.tencent.com/document/api/571/102951)
+* [CreateSubscribe](https://cloud.tencent.com/document/api/571/102950)
+* [CreateSubscribeCheckJob](https://cloud.tencent.com/document/api/571/102949)
+* [DeleteConsumerGroup](https://cloud.tencent.com/document/api/571/102948)
+* [DescribeConsumerGroups](https://cloud.tencent.com/document/api/571/102947)
+* [DescribeOffsetByTime](https://cloud.tencent.com/document/api/571/102946)
+* [DescribeSubscribeCheckJob](https://cloud.tencent.com/document/api/571/102945)
+* [DescribeSubscribeDetail](https://cloud.tencent.com/document/api/571/102944)
+* [DescribeSubscribeJobs](https://cloud.tencent.com/document/api/571/102943)
+* [DescribeSubscribeReturnable](https://cloud.tencent.com/document/api/571/102942)
+* [DestroyIsolatedSubscribe](https://cloud.tencent.com/document/api/571/102941)
+* [IsolateSubscribe](https://cloud.tencent.com/document/api/571/102940)
+* [ModifyConsumerGroupDescription](https://cloud.tencent.com/document/api/571/102939)
+* [ModifyConsumerGroupPassword](https://cloud.tencent.com/document/api/571/102938)
+* [ModifySubscribeAutoRenewFlag](https://cloud.tencent.com/document/api/571/102937)
+* [ModifySubscribeName](https://cloud.tencent.com/document/api/571/102936)
+* [ModifySubscribeObjects](https://cloud.tencent.com/document/api/571/102935)
+* [ResetConsumerGroupOffset](https://cloud.tencent.com/document/api/571/102934)
+* [ResetSubscribe](https://cloud.tencent.com/document/api/571/102933)
+* [ResumeSubscribe](https://cloud.tencent.com/document/api/571/102932)
+* [StartSubscribe](https://cloud.tencent.com/document/api/571/102931)
+
+新增数据结构：
+
+* [DistributeRule](https://cloud.tencent.com/document/api/571/82108#DistributeRule)
+* [EndpointItem](https://cloud.tencent.com/document/api/571/82108#EndpointItem)
+* [GroupInfo](https://cloud.tencent.com/document/api/571/82108#GroupInfo)
+* [ModifiedSubscribeObject](https://cloud.tencent.com/document/api/571/82108#ModifiedSubscribeObject)
+* [MonitorInfo](https://cloud.tencent.com/document/api/571/82108#MonitorInfo)
+* [OffsetTimeMap](https://cloud.tencent.com/document/api/571/82108#OffsetTimeMap)
+* [PartitionAssignment](https://cloud.tencent.com/document/api/571/82108#PartitionAssignment)
+* [PipelineInfo](https://cloud.tencent.com/document/api/571/82108#PipelineInfo)
+* [SubsErr](https://cloud.tencent.com/document/api/571/82108#SubsErr)
+* [SubscribeCheckStepInfo](https://cloud.tencent.com/document/api/571/82108#SubscribeCheckStepInfo)
+* [SubscribeCheckStepTip](https://cloud.tencent.com/document/api/571/82108#SubscribeCheckStepTip)
+* [SubscribeInfo](https://cloud.tencent.com/document/api/571/82108#SubscribeInfo)
+* [SubscribeKafkaConfig](https://cloud.tencent.com/document/api/571/82108#SubscribeKafkaConfig)
+* [SubscribeObject](https://cloud.tencent.com/document/api/571/82108#SubscribeObject)
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 101 次发布
+
+发布时间：2024-01-10 01:19:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateGrafanaInstance](https://cloud.tencent.com/document/api/248/79219)
+
+	* 新增入参：AutoVoucher
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 30 次发布
+
+发布时间：2024-01-10 01:21:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateOfflineLogConfig
+* DescribeOfflineLogRecords
+* DescribeOfflineLogs
+
+
+
 # Release 3.0.1040.1
 
 ## 费用中心(billing) 版本：2018-07-09

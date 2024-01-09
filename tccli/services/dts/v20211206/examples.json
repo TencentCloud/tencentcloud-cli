@@ -8,6 +8,14 @@
         "title": "完成数据迁移任务"
       }
     ],
+    "ConfigureSubscribeJob": [
+      {
+        "document": "配置订阅一个cdb整实例的任务，其中db1.table1的数据根据id列值投递到不同的kafka分区，其他的数据根据表名投递",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ConfigureSubscribeJob\n<公共请求参数>\n\n{\n    \"SubscribeMode\": \"all\",\n    \"SubscribeId\": \"subs-5ft0e2nrc0\",\n    \"KafkaConfig\": {\n        \"DistributeRules\": [\n            {\n                \"DbPattern\": \"db1\",\n                \"RuleType\": \"cols\",\n                \"TablePattern\": \"table1\",\n                \"Columns\": [\n                    \"id\"\n                ]\n            }\n        ],\n        \"NumberOfPartitions\": 8,\n        \"DefaultRuleType\": \"table\"\n    },\n    \"AccessType\": \"cdb\",\n    \"Protocol\": \"json\",\n    \"Endpoints\": [\n        {\n            \"InstanceId\": \"cdb-kdxona7h\",\n            \"DatabaseRegion\": \"ap-guangzhou\",\n            \"EncryptConn\": \"Encrypted\",\n            \"User\": \"root\",\n            \"Password\": \"******\"\n        }\n    ],\n    \"ExtraAttr\": [\n        {\n            \"Value\": \"true\",\n            \"Key\": \"ProcessXA\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "配置订阅"
+      }
+    ],
     "ConfigureSyncJob": [
       {
         "document": "配置一个同步整库的同步任务",
@@ -54,6 +62,14 @@
         "title": "创建一致性校验任务"
       }
     ],
+    "CreateConsumerGroup": [
+      {
+        "document": "创建消费组",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateConsumerGroup\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"ConsumerGroupName\": \"test\",\n    \"AccountName\": \"test\",\n    \"Password\": \"123\",\n    \"Description\": \"this is a test account\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20461920-b18e-11ec-ae1a-cfe224f4f21f\"\n    }\n}",
+        "title": "创建消费组"
+      }
+    ],
     "CreateMigrateCheckJob": [
       {
         "document": "",
@@ -78,6 +94,22 @@
         "title": "创建修改对象的校验任务"
       }
     ],
+    "CreateSubscribe": [
+      {
+        "document": "购买1个按量计费的mysql订阅任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubscribe\n<公共请求参数>\n\n{\n    \"Product\": \"mysql\",\n    \"PayType\": 1,\n    \"Count\": 1,\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"Name\": \"test-subscribe\"\n}",
+        "output": "{\n    \"Response\": {\n        \"SubscribeIds\": [\n            \"subs-b6x64o31tm\"\n        ],\n        \"RequestId\": \"xxxxxxxxxxxxxxx\"\n    }\n}",
+        "title": "购买订阅任务"
+      }
+    ],
+    "CreateSubscribeCheckJob": [
+      {
+        "document": "启动一个订阅任务的校验。任务必须已经成功掉用ConfigureSubscribe接口配置了所有的必要信息才能启动校验。",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateSubscribeCheckJob\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-l4d3a7izai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"77501ba0-f097-11ed-ac7d-b1056735c0c8\"\n    }\n}",
+        "title": "启动一个订阅任务的校验"
+      }
+    ],
     "CreateSyncJob": [
       {
         "document": "创建一个同步任务",
@@ -92,6 +124,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCompareTask\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-amm1jw5q\",\n    \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
         "title": "删除一致性校验任务"
+      }
+    ],
+    "DeleteConsumerGroup": [
+      {
+        "document": "删除消费组",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteConsumerGroup\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"ConsumerGroupName\": \"account-subs-9jyki7hniw-test\",\n    \"AccountName\": \"consumer-grp-subs-9jyki7hniw-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bef6a6f0-f3b1-11ed-b987-7301347aa36f\"\n    }\n}",
+        "title": "删除消费组"
       }
     ],
     "DescribeCheckSyncJobResult": [
@@ -116,6 +156,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeCompareTasks\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-e7ukka6g\"\n}",
         "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CheckProcess\": {\n                    \"Message\": \"\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Percent\": 0,\n                    \"Steps\": []\n                },\n                \"CompareProcess\": {\n                    \"Message\": \"done\",\n                    \"Status\": \"\",\n                    \"StepAll\": 0,\n                    \"StepNow\": 0,\n                    \"Steps\": []\n                },\n                \"CompareTaskId\": \"dts-amm1jw5q-cmp-bmuum7jk\",\n                \"Conclusion\": \"same\",\n                \"Config\": {\n                    \"ObjectItems\": [\n                        {\n                            \"DbMode\": \"partial\",\n                            \"DbName\": \"big100\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"partial\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"none\",\n                            \"Views\": null\n                        },\n                        {\n                            \"DbMode\": \"all\",\n                            \"DbName\": \"db1\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"all\",\n                            \"Tables\": null,\n                            \"ViewMode\": \"all\",\n                            \"Views\": null\n                        }\n                    ],\n                    \"ObjectMode\": \"partial\"\n                },\n                \"CreatedAt\": \"2022-07-11 17:21:02\",\n                \"FinishedAt\": \"2022-07-11 17:24:54\",\n                \"Method\": \"dataCheck\",\n                \"Options\": {\n                    \"Method\": \"dataCheck\",\n                    \"SampleRate\": 100,\n                    \"ThreadCount\": 1\n                },\n                \"JobId\": \"dts-amm1jw5q\",\n                \"Message\": \"done\",\n                \"StartedAt\": \"2022-07-11 17:24:09\",\n                \"Status\": \"success\",\n                \"TaskName\": \"defaultCmpTask\"\n            }\n        ],\n        \"RequestId\": \"11d35c90-01bb-11ed-bad9-7b3bbe11abda\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询一致性校验任务列表"
+      }
+    ],
+    "DescribeConsumerGroups": [
+      {
+        "document": "获取数据订阅的消费组",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeConsumerGroups\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Account\": \"account-subs-47damshnra-3\",\n                \"ConsumerGroupLag\": 464948,\n                \"ConsumerGroupName\": \"consumer-grp-subs-47damshnra-3\",\n                \"ConsumerGroupOffset\": -1,\n                \"ConsumerGroupState\": \"Dead\",\n                \"CreatedAt\": \"2022-03-25 17:31:31\",\n                \"Description\": \"sdfjo\",\n                \"Latency\": 528268,\n                \"PartitionAssignment\": [],\n                \"StateOfPartition\": [\n                    {\n                        \"ConsumerGroupLag\": 464948,\n                        \"ConsumerGroupOffset\": -1,\n                        \"Latency\": 528268,\n                        \"PartitionNo\": 0\n                    }\n                ],\n                \"UpdatedAt\": \"2022-03-25 17:31:31\"\n            },\n            {\n                \"Account\": \"account-subs-47damshnra-2\",\n                \"ConsumerGroupLag\": 464948,\n                \"ConsumerGroupName\": \"consumer-grp-subs-47damshnra-2\",\n                \"ConsumerGroupOffset\": -1,\n                \"ConsumerGroupState\": \"Dead\",\n                \"CreatedAt\": \"2022-03-22 17:34:31\",\n                \"Description\": \"sdfjo\",\n                \"Latency\": 528268,\n                \"PartitionAssignment\": [],\n                \"StateOfPartition\": [\n                    {\n                        \"ConsumerGroupLag\": 464948,\n                        \"ConsumerGroupOffset\": -1,\n                        \"Latency\": 528268,\n                        \"PartitionNo\": 0\n                    }\n                ],\n                \"UpdatedAt\": \"2022-03-22 17:34:31\"\n            },\n            {\n                \"Account\": \"account-subs-47damshnra-1\",\n                \"ConsumerGroupLag\": 464948,\n                \"ConsumerGroupName\": \"consumer-grp-subs-47damshnra-1\",\n                \"ConsumerGroupOffset\": -1,\n                \"ConsumerGroupState\": \"Dead\",\n                \"CreatedAt\": \"2022-03-04 15:14:18\",\n                \"Description\": \"sdfjo\",\n                \"Latency\": 528268,\n                \"PartitionAssignment\": [],\n                \"StateOfPartition\": [\n                    {\n                        \"ConsumerGroupLag\": 464948,\n                        \"ConsumerGroupOffset\": -1,\n                        \"Latency\": 528268,\n                        \"PartitionNo\": 0\n                    }\n                ],\n                \"UpdatedAt\": \"2022-03-04 15:14:18\"\n            }\n        ],\n        \"RequestId\": \"68c04ba0-b0d8-11ec-98f5-11f9ac4a2e37\",\n        \"TotalCount\": 3\n    }\n}",
+        "title": "获取数据订阅的消费组"
       }
     ],
     "DescribeMigrateDBInstances": [
@@ -158,12 +206,60 @@
         "title": "查询修改对象校验任务的结果"
       }
     ],
+    "DescribeOffsetByTime": [
+      {
+        "document": "查询KafkaTopic中指定时间前最近的checkpoint及其offset",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeOffsetByTime\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"Time\": \"2023-05-15 16:31:30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Offset\": 62856,\n                \"PartitionNo\": 0\n            },\n            {\n                \"Offset\": 62842,\n                \"PartitionNo\": 1\n            },\n            {\n                \"Offset\": 62842,\n                \"PartitionNo\": 2\n            },\n            {\n                \"Offset\": 62842,\n                \"PartitionNo\": 3\n            }\n        ],\n        \"RequestId\": \"087e2780-f3bc-11ed-8dff-ff5f3734b02b\"\n    }\n}",
+        "title": "根据时间查询kafka中的checkpoint消息"
+      }
+    ],
+    "DescribeSubscribeCheckJob": [
+      {
+        "document": "查询订阅校验任务结果",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeCheckJob\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-l4d3a7izai\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Message\": \"success\",\n        \"Progress\": 100,\n        \"RequestId\": \"b048a800-f2fe-11ed-a211-5df19a912eab\",\n        \"Status\": \"success\",\n        \"StepAll\": 5,\n        \"StepNow\": 5,\n        \"Steps\": [\n            {\n                \"Errors\": [],\n                \"Percent\": 100,\n                \"Status\": \"finished\",\n                \"StepId\": \"ConnectDBCheck\",\n                \"StepName\": \"连接DB检查\",\n                \"StepNo\": 1,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Percent\": 100,\n                \"Status\": \"finished\",\n                \"StepId\": \"OptimizeCheck\",\n                \"StepName\": \"周边检查\",\n                \"StepNo\": 2,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Percent\": 100,\n                \"Status\": \"finished\",\n                \"StepId\": \"VersionCheck\",\n                \"StepName\": \"版本检查\",\n                \"StepNo\": 3,\n                \"Warnings\": []\n            },\n            {\n                \"Errors\": [],\n                \"Percent\": 100,\n                \"Status\": \"finished\",\n                \"StepId\": \"SrcPrivilegeCheck\",\n                \"StepName\": \"源实例权限检查\",\n                \"StepNo\": 4,\n                \"Warnings\": [\n                    {\n                        \"HelpDoc\": \"\",\n                        \"Message\": \"我们不需要能修改您源端数据的权限，请取消他们。例如，您的授权情况：GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, RELOAD, PROCESS, REFERENCES, INDEX, ALTER, SHOW DATABASES, CREATE TEMPORARY TABLES, LOCK TABLES, EXECUTE, REPLICATION SLAVE, REPLICATION CLIENT, CREATE VIEW, SHOW VIEW, CREATE ROUTINE, ALTER ROUTINE, CREATE USER, EVENT, TRIGGER, CREATE TABLESPACE, CREATE ROLE, DROP ROLE ON *.* TO `root`@`%` WITH GRANT OPTION,GRANT APPLICATION_PASSWORD_ADMIN,ROLE_ADMIN,SHOW_ROUTINE,XA_RECOVER_ADMIN ON *.* TO `root`@`%` WITH GRANT OPTION 请参考 https://cloud.tencent.com/document/product/571/52412\"\n                    }\n                ]\n            },\n            {\n                \"Errors\": [],\n                \"Percent\": 100,\n                \"Status\": \"finished\",\n                \"StepId\": \"BinlogParamCheck\",\n                \"StepName\": \"binlog参数检查\",\n                \"StepNo\": 5,\n                \"Warnings\": []\n            }\n        ],\n        \"SubscribeId\": \"subs-9jyki7hniw\"\n    }\n}",
+        "title": "查询订阅校验任务结果"
+      }
+    ],
+    "DescribeSubscribeDetail": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeDetail\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-0b2up6hk4u\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Region\": \"ap-guangzhou\",\n        \"AccessType\": \"cdb\",\n        \"AutoRenewFlag\": 0,\n        \"Broker\": \"guangzhoutest-kafka-3.cdb-dts.tencentcs.com.cn:32339\",\n        \"CreateTime\": \"2023-12-06 14:31:27\",\n        \"Endpoints\": [\n            {\n                \"DatabaseRegion\": \"ap-guangzhou\",\n                \"EncryptConn\": \"UnEncrypted\",\n                \"InstanceId\": \"cdb-kdxona7h\",\n                \"User\": \"root\"\n            }\n        ],\n        \"ExpireTime\": \"0000-00-00 00:00:00\",\n        \"InstanceId\": \"cdb-kdxona7h\",\n        \"InstanceStatus\": \"running\",\n        \"IsolateTime\": \"0000-00-00 00:00:00\",\n        \"KafkaConfig\": {\n            \"DistributeRules\": [\n                {\n                    \"DbPattern\": \"db1\",\n                    \"RuleType\": \"cols\",\n                    \"TablePattern\": \"table1\",\n                    \"Columns\": [\n                        \"id\"\n                    ]\n                },\n                {\n                    \"DbPattern\": \".*\",\n                    \"RuleType\": \"table\",\n                    \"TablePattern\": \".*\",\n                    \"Columns\": null\n                }\n            ],\n            \"NumberOfPartitions\": 8\n        },\n        \"ModifyTime\": \"2023-12-06 14:33:47\",\n        \"OfflineTime\": \"0000-00-00 00:00:00\",\n        \"PayType\": 0,\n        \"Product\": \"mysql\",\n        \"Protocol\": \"json\",\n        \"Status\": \"normal\",\n        \"SubsStatus\": \"running\",\n        \"SubscribeId\": \"subs-0b2up6hk4u\",\n        \"SubscribeName\": \"test\",\n        \"SubscribeMode\": \"all\",\n        \"Topic\": \"topic-subs-0b2up6hk4u-cdb-kdxona7h\",\n        \"RequestId\": \"7bd11a40-9406-11ee-9689-216abbbe2107\"\n    }\n}",
+        "title": "查询订阅任务详情"
+      }
+    ],
+    "DescribeSubscribeJobs": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeJobs\n<公共请求参数>\n\n{\n    \"Offset\": 0,\n    \"Limit\": 10\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 1,\n        \"Items\": [\n            {\n                \"SubscribeId\": \"subs-5ft0e2nrc0\",\n                \"SubscribeName\": \"name-5ft0e2nrc0\",\n                \"Topic\": \"topic-subs-5ft0e2nrc0-cdb-kdxona7h\",\n                \"Product\": \"mysql\",\n                \"InstanceId\": \"cdb-kdxona7h\",\n                \"InstanceStatus\": \"running\",\n                \"Status\": \"normal\",\n                \"SubsStatus\": \"running\",\n                \"ModifyTime\": \"2023-10-01 12:00:00\",\n                \"CreateTime\": \"2023-09-01 12:00:00\",\n                \"IsolateTime\": \"0000-00-00 00:00:00\",\n                \"ExpireTime\": \"2023-11-01 12:00:00\",\n                \"OfflineTime\": \"0000-00-00 00:00:00\",\n                \"PayType\": 0,\n                \"AutoRenewFlag\": 0,\n                \"Region\": \"ap-guangzhou\",\n                \"AccessType\": \"cdb\",\n                \"Endpoints\": [\n                    {\n                        \"DatabaseRegion\": \"ap-guangzhou\",\n                        \"InstanceId\": \"cdb-kdxona7h\",\n                        \"EncryptConn\": \"Encrypted\",\n                        \"User\": \"root\"\n                    }\n                ],\n                \"SubscribeVersion\": \"kafka\"\n            }\n        ],\n        \"RequestId\": \"cd6eebd0-9405-11ee-9689-216abbbe2107\"\n    }\n}",
+        "title": "查询订阅任务列表"
+      }
+    ],
+    "DescribeSubscribeReturnable": [
+      {
+        "document": "查询订阅实例是否可以退换",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSubscribeReturnable\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"IsReturnable\": true,\n        \"ReturnFailMessage\": \"\",\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "查询订阅实例是否可以退换"
+      }
+    ],
     "DescribeSyncJobs": [
       {
         "document": "查询同步任务列表",
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSyncJobs\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-bkm3mppi\"\n}",
         "output": "{\n    \"Response\": {\n        \"JobList\": [\n            {\n                \"Actions\": [\n                    \"pause\",\n                    \"stop\",\n                    \"limitRate\",\n                    \"view\",\n                    \"resize\",\n                    \"isolate\",\n                    \"postPay2prePay\",\n                    \"configureOptObj\"\n                ],\n                \"AllActions\": [\n                    \"view\",\n                    \"configure\",\n                    \"check\",\n                    \"start\",\n                    \"stop\",\n                    \"resume\",\n                    \"pause\",\n                    \"continue\",\n                    \"limitRate\",\n                    \"resize\",\n                    \"isolate\",\n                    \"offline\",\n                    \"recover\",\n                    \"postPay2prePay\",\n                    \"configureOptObj\",\n                    \"checkOptObj\",\n                    \"startOptObj\",\n                    \"createCmpTask\"\n                ],\n                \"AutoRenew\": 0,\n                \"AutoRetryTimeRangeMinutes\": 0,\n                \"CreateTime\": \"2023-12-18 20:55:27\",\n                \"Detail\": {\n                    \"CauseOfCompareDisable\": \"当前任务开启了DML过滤()。\",\n                    \"CurrentStepProgress\": 0,\n                    \"ErrInfo\": {\n                        \"Message\": \"\",\n                        \"Reason\": \"\",\n                        \"Solution\": \"\"\n                    },\n                    \"MasterSlaveDistance\": 0,\n                    \"Message\": \"\",\n                    \"Progress\": -1,\n                    \"SecondsBehindMaster\": 0,\n                    \"StepAll\": 4,\n                    \"StepInfos\": [\n                        {\n                            \"Errors\": null,\n                            \"Progress\": -1,\n                            \"StartTime\": \"2023-12-20 17:03:39\",\n                            \"Status\": \"finished\",\n                            \"StepId\": \"schema-init\",\n                            \"StepName\": \"增量库表初始化\",\n                            \"StepNo\": 1,\n                            \"Warnings\": []\n                        },\n                        {\n                            \"Errors\": null,\n                            \"Progress\": -1,\n                            \"StartTime\": \"2023-12-20 17:03:49\",\n                            \"Status\": \"finished\",\n                            \"StepId\": \"dumper\",\n                            \"StepName\": \"全量导出\",\n                            \"StepNo\": 2,\n                            \"Warnings\": []\n                        },\n                        {\n                            \"Errors\": null,\n                            \"Progress\": -1,\n                            \"StartTime\": \"2023-12-20 17:07:50\",\n                            \"Status\": \"finished\",\n                            \"StepId\": \"loader\",\n                            \"StepName\": \"全量导入\",\n                            \"StepNo\": 3,\n                            \"Warnings\": []\n                        },\n                        {\n                            \"Errors\": null,\n                            \"Progress\": -1,\n                            \"StartTime\": \"2023-12-20 17:16:49\",\n                            \"Status\": \"running\",\n                            \"StepId\": \"sinker\",\n                            \"StepName\": \"同步增量\",\n                            \"StepNo\": 4,\n                            \"Warnings\": []\n                        }\n                    ],\n                    \"StepNow\": 4\n                },\n                \"DstAccessType\": \"noProxy\",\n                \"DstDatabaseType\": \"mysql\",\n                \"DstInfo\": {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnId\": \"\",\n                    \"CcnOwnerUin\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DatabaseNetEnv\": \"\",\n                    \"DbKernel\": \"\",\n                    \"DbName\": \"\",\n                    \"EncryptConn\": \"\",\n                    \"EngineVersion\": \"\",\n                    \"InstanceId\": \"\",\n                    \"Ip\": \"11.141.232.156\",\n                    \"Password\": \"\",\n                    \"Port\": 3306,\n                    \"Region\": \"ap-guangzhou\",\n                    \"Role\": \"\",\n                    \"RoleExternalId\": \"\",\n                    \"SubnetId\": \"\",\n                    \"Supplier\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"root\",\n                    \"VpcId\": \"\"\n                },\n                \"DstInfos\": {\n                    \"AccessType\": \"\",\n                    \"DatabaseType\": \"\",\n                    \"Info\": null,\n                    \"Region\": \"\"\n                },\n                \"DstNodeType\": \"single\",\n                \"DstRegion\": \"ap-qingyuan\",\n                \"DumperResumeCtrl\": \"yes\",\n                \"EndTime\": \"0000-00-00 00:00:00\",\n                \"ExpectRunTime\": \"0000-00-00 00:00:00\",\n                \"ExpireTime\": \"0000-00-00 00:00:00\",\n                \"InstanceClass\": \"medium\",\n                \"JobId\": \"sync-09vy1os1\",\n                \"JobName\": \"roger_test\",\n                \"Objects\": {\n                    \"Databases\": [\n                        {\n                            \"DbMode\": \"All\",\n                            \"DbName\": \"db_big\",\n                            \"EventMode\": \"\",\n                            \"FunctionMode\": \"\",\n                            \"NewDbName\": \"\",\n                            \"NewSchemaName\": \"\",\n                            \"ProcedureMode\": \"\",\n                            \"SchemaName\": \"\",\n                            \"TableMode\": \"All\",\n                            \"TriggerMode\": \"\",\n                            \"ViewMode\": \"All\"\n                        }\n                    ],\n                    \"Mode\": \"Partial\",\n                    \"OnlineDDL\": {\n                        \"Status\": \"\"\n                    }\n                },\n                \"OfflineTime\": \"0000-00-00 00:00:00\",\n                \"Options\": {\n                    \"AddAdditionalColumn\": false,\n                    \"AutoRetryTimeRangeMinutes\": 0,\n                    \"ConflictHandleOption\": {\n                        \"ConditionColumn\": \"\",\n                        \"ConditionOperator\": \"\",\n                        \"ConditionOrderInSrcAndDst\": \"\"\n                    },\n                    \"ConflictHandleType\": \"Cover\",\n                    \"DdlOptions\": null,\n                    \"DealOfExistSameTable\": \"ExecuteAfterIgnore\",\n                    \"InitType\": \"Full\",\n                    \"KafkaOption\": {\n                        \"DDLTopicName\": \"\",\n                        \"DataType\": \"\",\n                        \"TopicRules\": [],\n                        \"TopicType\": \"\"\n                    },\n                    \"OpTypes\": null,\n                    \"RateLimitOption\": {\n                        \"CurrentDumpRps\": 0,\n                        \"CurrentDumpThread\": 8,\n                        \"CurrentLoadRps\": 0,\n                        \"CurrentLoadThread\": 8,\n                        \"CurrentSinkerThread\": 32,\n                        \"DefaultDumpRps\": 0,\n                        \"DefaultDumpThread\": 8,\n                        \"DefaultLoadRps\": 0,\n                        \"DefaultLoadThread\": 8,\n                        \"DefaultSinkerThread\": 32,\n                        \"HasUserSetRateLimit\": \"no\"\n                    }\n                },\n                \"PayMode\": \"PostPay\",\n                \"RunMode\": \"Immediate\",\n                \"Specification\": \"\",\n                \"SrcAccessType\": \"noProxy\",\n                \"SrcDatabaseType\": \"mysql\",\n                \"SrcInfo\": {\n                    \"Account\": \"\",\n                    \"AccountMode\": \"\",\n                    \"AccountRole\": \"\",\n                    \"CcnId\": \"\",\n                    \"CcnOwnerUin\": \"\",\n                    \"CvmInstanceId\": \"\",\n                    \"DatabaseNetEnv\": \"\",\n                    \"DbKernel\": \"\",\n                    \"DbName\": \"\",\n                    \"EncryptConn\": \"\",\n                    \"EngineVersion\": \"\",\n                    \"InstanceId\": \"\",\n                    \"Ip\": \"11.141.232.195\",\n                    \"Password\": \"\",\n                    \"Port\": 3306,\n                    \"Region\": \"ap-guangzhou\",\n                    \"Role\": \"\",\n                    \"RoleExternalId\": \"\",\n                    \"SubnetId\": \"\",\n                    \"Supplier\": \"\",\n                    \"TmpSecretId\": \"\",\n                    \"TmpSecretKey\": \"\",\n                    \"TmpToken\": \"\",\n                    \"UniqDcgId\": \"\",\n                    \"UniqVpnGwId\": \"\",\n                    \"User\": \"root\",\n                    \"VpcId\": \"\"\n                },\n                \"SrcInfos\": {\n                    \"AccessType\": \"\",\n                    \"DatabaseType\": \"\",\n                    \"Info\": null,\n                    \"Region\": \"\"\n                },\n                \"SrcNodeType\": \"single\",\n                \"SrcRegion\": \"ap-qingyuan\",\n                \"StartTime\": \"2023-12-19 15:54:18\",\n                \"Status\": \"Running\",\n                \"Tags\": [],\n                \"TradeStatus\": \"Normal\"\n            }\n        ],\n        \"RequestId\": \"268b0711-a3b2-4692-8c91-88d743bc8b9f\",\n        \"TotalCount\": 1\n    }\n}",
         "title": "查询同步任务列表"
+      }
+    ],
+    "DestroyIsolatedSubscribe": [
+      {
+        "document": "订阅任务已经隔离，立即发起下线任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DestroyIsolatedSubscribe\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "下线已隔离的数据订阅实例"
       }
     ],
     "DestroyMigrateJob": [
@@ -190,6 +286,14 @@
         "title": "隔离(销毁)数据迁移任务"
       }
     ],
+    "IsolateSubscribe": [
+      {
+        "document": "隔离订阅任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IsolateSubscribe\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "隔离订阅任务"
+      }
+    ],
     "IsolateSyncJob": [
       {
         "document": "隔离一个正在计费的同步任务",
@@ -212,6 +316,22 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyCompareTaskName\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-p1sposne\",\n    \"TaskName\": \"test_cmp\",\n    \"CompareTaskId\": \"dts-p1sposne-cmp-37skmii9\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"ac300ff0-00f2-11ed-b005-4930e69d89c2\"\n    }\n}",
         "title": "修改一致性校验任务名称"
+      }
+    ],
+    "ModifyConsumerGroupDescription": [
+      {
+        "document": "修改消费组备注",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroupDescription\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"AccountName\": \"account-subs-9jyki7hniw-1\",\n    \"ConsumerGroupName\": \"consumer-grp-subs-9jyki7hniw-1\",\n    \"Description\": \"this is a test group\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bef6a6f0-f3b1-11ed-b987-7301347aa36f\"\n    }\n}",
+        "title": "修改消费组备注"
+      }
+    ],
+    "ModifyConsumerGroupPassword": [
+      {
+        "document": "修改消费组密码",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyConsumerGroupPassword\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"AccountName\": \"account-subs-9jyki7hniw-1\",\n    \"ConsumerGroupName\": \"consumer-grp-subs-9jyki7hniw-1\",\n    \"OldPassword\": \"123\",\n    \"NewPassword\": \"asdiouy09\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"bef6a6f0-f3b1-11ed-b987-7301347aa36f\"\n    }\n}",
+        "title": "修改消费组密码"
       }
     ],
     "ModifyMigrateJobSpec": [
@@ -252,6 +372,30 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyMigrationJob\n<公共请求参数>\n\n{\n    \"JobId\": \"abc\",\n    \"JobName\": \"abc\",\n    \"RunMode\": \"abc\",\n    \"ExpectRunTime\": \"abc\",\n    \"MigrateOption\": {\n        \"MigrateType\": \"abc\",\n        \"Consistency\": {\n            \"Mode\": \"abc\"\n        },\n        \"DatabaseTable\": {\n            \"ObjectMode\": \"abc\",\n            \"Databases\": [\n                {\n                    \"DbName\": \"abc\",\n                    \"NewDbName\": \"abc\",\n                    \"SchemaName\": \"abc\",\n                    \"NewSchemaName\": \"abc\",\n                    \"DBMode\": \"abc\",\n                    \"SchemaMode\": \"abc\",\n                    \"TableMode\": \"abc\",\n                    \"Tables\": [\n                        {\n                            \"TableName\": \"abc\",\n                            \"NewTableName\": \"abc\",\n                            \"TmpTables\": [\n                                \"abc\"\n                            ],\n                            \"TableEditMode\": \"abc\"\n                        }\n                    ],\n                    \"ViewMode\": \"abc\",\n                    \"Views\": [\n                        {\n                            \"ViewName\": \"abc\",\n                            \"NewViewName\": \"abc\"\n                        }\n                    ],\n                    \"RoleMode\": \"abc\",\n                    \"Roles\": [\n                        {\n                            \"RoleName\": \"abc\",\n                            \"NewRoleName\": \"abc\"\n                        }\n                    ],\n                    \"FunctionMode\": \"abc\",\n                    \"TriggerMode\": \"abc\",\n                    \"EventMode\": \"abc\",\n                    \"ProcedureMode\": \"abc\",\n                    \"Functions\": [\n                        \"abc\"\n                    ],\n                    \"Procedures\": [\n                        \"abc\"\n                    ],\n                    \"Events\": [\n                        \"abc\"\n                    ],\n                    \"Triggers\": [\n                        \"abc\"\n                    ]\n                }\n            ],\n            \"AdvancedObjects\": [\n                \"abc\"\n            ]\n        },\n        \"IsMigrateAccount\": true,\n        \"IsOverrideRoot\": true,\n        \"IsDstReadOnly\": true,\n        \"ExtraAttr\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ]\n    },\n    \"SrcInfo\": {\n        \"Supplier\": \"abc\",\n        \"Region\": \"abc\",\n        \"AccessType\": \"abc\",\n        \"DatabaseType\": \"abc\",\n        \"NodeType\": \"abc\",\n        \"Info\": [\n            {\n                \"Role\": \"abc\",\n                \"DbKernel\": \"abc\",\n                \"Host\": \"abc\",\n                \"Port\": 1,\n                \"User\": \"abc\",\n                \"Password\": \"abc\",\n                \"CvmInstanceId\": \"abc\",\n                \"UniqVpnGwId\": \"abc\",\n                \"UniqDcgId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CcnGwId\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"EngineVersion\": \"abc\",\n                \"Account\": \"abc\",\n                \"AccountRole\": \"abc\",\n                \"AccountMode\": \"abc\",\n                \"TmpSecretId\": \"abc\",\n                \"TmpSecretKey\": \"abc\",\n                \"TmpToken\": \"abc\"\n            }\n        ],\n        \"ExtraAttr\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"DatabaseNetEnv\": \"abc\"\n    },\n    \"DstInfo\": {\n        \"Supplier\": \"abc\",\n        \"Region\": \"abc\",\n        \"AccessType\": \"abc\",\n        \"DatabaseType\": \"abc\",\n        \"NodeType\": \"abc\",\n        \"Info\": [\n            {\n                \"Role\": \"abc\",\n                \"DbKernel\": \"abc\",\n                \"Host\": \"abc\",\n                \"Port\": 1,\n                \"User\": \"abc\",\n                \"Password\": \"abc\",\n                \"CvmInstanceId\": \"abc\",\n                \"UniqVpnGwId\": \"abc\",\n                \"UniqDcgId\": \"abc\",\n                \"InstanceId\": \"abc\",\n                \"CcnGwId\": \"abc\",\n                \"VpcId\": \"abc\",\n                \"SubnetId\": \"abc\",\n                \"EngineVersion\": \"abc\",\n                \"Account\": \"abc\",\n                \"AccountRole\": \"abc\",\n                \"AccountMode\": \"abc\",\n                \"TmpSecretId\": \"abc\",\n                \"TmpSecretKey\": \"abc\",\n                \"TmpToken\": \"abc\"\n            }\n        ],\n        \"ExtraAttr\": [\n            {\n                \"Key\": \"abc\",\n                \"Value\": \"abc\"\n            }\n        ],\n        \"DatabaseNetEnv\": \"abc\"\n    },\n    \"Tags\": [\n        {\n            \"TagKey\": \"abc\",\n            \"TagValue\": \"abc\"\n        }\n    ],\n    \"AutoRetryTimeRangeMinutes\": 0\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "配置迁移任务"
+      }
+    ],
+    "ModifySubscribeAutoRenewFlag": [
+      {
+        "document": "将一个包年包月的订阅任务从不自动续费改为自动续费",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubscribeAutoRenewFlag\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"AutoRenewFlag\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "修改数据订阅自动续费标识"
+      }
+    ],
+    "ModifySubscribeName": [
+      {
+        "document": "修改数据订阅实例的名称",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifySubscribeName\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\",\n    \"SubscribeName\": \"subscribe-test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "修改数据订阅实例的名称"
+      }
+    ],
+    "ModifySubscribeObjects": [
+      {
+        "document": "修改数据订阅的订阅规则，如添加或者移除某些库表",
+        "input": "https://dts.tencentcloudapi.com/?Action=ModifySubscribeObjects\r\n&SubscribeId=subs-ieuwi83j2e\r\n&SubscribeObjectType=0\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "修改数据订阅通道的订阅规则"
       }
     ],
     "ModifySyncJobConfig": [
@@ -302,6 +446,22 @@
         "title": "解除隔离同步任务"
       }
     ],
+    "ResetConsumerGroupOffset": [
+      {
+        "document": "将一个订阅任务的kafka offset重置到2023-05-16 00:00:00附近的checkpoint",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResetConsumerGroupOffset\n<公共请求参数>\n\n{\n    \"ConsumerGroupName\": \"consumer-grp-subs-635ns8r71g-1\",\n    \"PartitionNos\": [\n        \"0\",\n        \"1\",\n        \"2\",\n        \"3\"\n    ],\n    \"ResetMode\": \"datetime\",\n    \"ResetDatetime\": \"2023-05-16 00:00:00\",\n    \"SubscribeId\": \"subs-635ns8r71g\",\n    \"TopicName\": \"account-subs-635ns8r71g-1\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"20461920-b18e-11ec-ae1a-cfe224f4f21f\"\n    }\n}",
+        "title": "重置消费组offset"
+      }
+    ],
+    "ResetSubscribe": [
+      {
+        "document": "重置数据订阅任务",
+        "input": "https://dts.tencentcloudapi.com/?Action=ResetSubscribe\r\n&SubscribeId=subs-ieuwi83j2e\r\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"14a719b5-ffb34ab6-816c43c1-8c6a23eb\"\n    }\n}",
+        "title": "重置数据订阅任务"
+      }
+    ],
     "ResizeSyncJob": [
       {
         "document": "",
@@ -316,6 +476,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeMigrateJob\n<公共请求参数>\n\n{\n    \"JobId\": \"dts-j7bt5sid\",\n    \"ResumeOption\": \"normal\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"22f6b9ca-e94d-4a4d-b48f-a5133e791374\"\n    }\n}",
         "title": "重试失败的数据迁移任务"
+      }
+    ],
+    "ResumeSubscribe": [
+      {
+        "document": "通过重启尝试恢复一个报错的任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ResumeSubscribe\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-9jyki7hniw\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"b048a800-f2fe-11ed-a211-5df19a912eab\"\n    }\n}",
+        "title": "恢复订阅任务"
       }
     ],
     "ResumeSyncJob": [
@@ -364,6 +532,14 @@
         "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartModifySyncJob\n<公共请求参数>\n\n{\n    \"JobId\": \"sync-sxxssss\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"abcsasxasxasxasxa\"\n    }\n}",
         "title": "开始修改对象"
+      }
+    ],
+    "StartSubscribe": [
+      {
+        "document": "开启数据订阅任务",
+        "input": "POST / HTTP/1.1\nHost: dts.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: StartSubscribe\n<公共请求参数>\n\n{\n    \"SubscribeId\": \"subs-635ns8r71g\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"da826d80-f2fa-11ed-9136-c7bfacc9cf90\"\n    }\n}",
+        "title": "开启数据订阅任务"
       }
     ],
     "StartSyncJob": [

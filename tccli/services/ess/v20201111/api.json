@@ -4397,7 +4397,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -4412,6 +4412,15 @@
           "name": "FlowName",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
+          "example": "1",
+          "member": "int64",
+          "name": "ResourceType",
+          "required": false,
+          "type": "int"
         },
         {
           "disabled": false,
@@ -4466,15 +4475,6 @@
           "name": "IntelligentStatus",
           "required": false,
           "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "资源类型，取值有：\n<ul><li> **1**：模板</li>\n<li> **2**：文件（默认值）</li></ul>",
-          "example": "1",
-          "member": "int64",
-          "name": "ResourceType",
-          "required": false,
-          "type": "int"
         },
         {
           "disabled": false,
@@ -6939,7 +6939,7 @@
         },
         {
           "disabled": false,
-          "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。\n分页参数, 需要limit, offset 配合使用\n例如:\n您希望得到第三页的数据, 且每页限制最多10条\n你可以使用 LIMIT 10 OFFSET 20\n",
+          "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0,最大2000。\n分页参数, 需要limit, offset 配合使用\n例如:\n您希望得到第三页的数据, 且每页限制最多10条\n您可以使用 LIMIT 10 OFFSET 20\n",
           "example": "无",
           "member": "uint64",
           "name": "Offset",
@@ -6954,7 +6954,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0, 最大为2000\n分页参数, 需要limit, offset 配合使用\n例如:\n您希望得到第三页的数据, 且每页限制最多10条\n你可以使用 LIMIT 10 OFFSET 20",
+          "document": "OFFSET 用于指定查询结果的偏移量，如果不传默认偏移为0, 最大为2000\n分页参数, 需要limit, offset 配合使用\n例如:\n您希望得到第三页的数据, 且每页限制最多10条\n您可以使用 LIMIT 10 OFFSET 20",
           "example": "1",
           "member": "uint64",
           "name": "Offset",

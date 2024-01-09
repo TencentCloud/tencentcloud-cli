@@ -5534,6 +5534,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "当前实例支持的能力\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InstanceAbility",
+          "name": "InstanceAbility",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -10496,6 +10506,32 @@
       ],
       "type": "object"
     },
+    "InstanceAbility": {
+      "document": "实例允许的操作列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例是否支持强制重启，可选值：yes：支持，no：不支持\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "yes",
+          "member": "string",
+          "name": "IsSupportForceRestart",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "不支持强制重启的原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "不支持强制重启",
+          "member": "string",
+          "name": "NonsupportForceRestartReason",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "InstanceAuditLogFilter": {
       "document": "审计日志搜索条件",
       "members": [
@@ -10931,6 +10967,24 @@
           "name": "DbType",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例退还原因类型",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "IsolateReasonTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例退还原因补充",
+          "example": "隔离原因",
+          "member": "string",
+          "name": "IsolateReason",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10994,6 +11048,24 @@
           "example": "MYSQL",
           "member": "string",
           "name": "DbType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "实例退还原因类型",
+          "example": "[1,2,3]",
+          "member": "int64",
+          "name": "IsolateReasonTypes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "实例退还原因补充",
+          "example": "退还原因",
+          "member": "string",
+          "name": "IsolateReason",
           "required": false,
           "type": "string"
         }
@@ -16027,6 +16099,42 @@
       ],
       "type": "object"
     },
+    "SlaveZoneStockInfo": {
+      "document": "备可用区库存信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "备可用区\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "ap-guangzhou-4",
+          "member": "string",
+          "name": "SlaveZone",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区的库存数量\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "StockCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "备可用区是否有库存\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "HasStock",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "SlowQueriesItem": {
       "document": "实例慢查询信息",
       "members": [
@@ -17052,6 +17160,16 @@
           "output_required": true,
           "type": "int",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "备可用区库存信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "SlaveZoneStockInfo",
+          "name": "SlaveZoneStockInfos",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"

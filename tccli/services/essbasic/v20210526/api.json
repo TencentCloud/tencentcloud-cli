@@ -316,7 +316,7 @@
       "status": "online"
     },
     "CreateChannelOrganizationInfoChangeUrl": {
-      "document": "此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接。\n\n<h3 id=\"1\">支持变更链接类型，通过入参 Endpoint 指定，默认为WEIXINAPP。</h3>\n\n<h4 id=\"WEIXINAPP\">WEIXINAPP</h4>\n<p>创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。</p>\n\n<h4 id=\"APP\">APP</h4>\n<p>创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</p>\n\n\n<h3 id=\"2\">支持创建企业超管变更链接或企业基础信息变更链接，通过入参 ChangeType 指定。</h3>\n\n<h4 id=\"1-企业超管变更\">1. 企业超管变更</h4>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h4 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h4>\n\n<h5 id=\"可以变动\">可以变动</h5>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h5 id=\"不可变动\">不可变动</h5>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章，合同专用章，财务专用章和人事专用章,  然后用新企业名称生成新的机构公章，合同专用章，财务专用章和人事专用章,  而法人章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>\n\n\n注意： \n1. 生成的电子签小程序链接<font color='red'>只能由企业的法人或者超管</font>点击后进行操作， 其他员工打开后会提示“无权查看该内容”\n2. 法人可以无需生成链接，直接在电子签小程序中更换本企业的超管",
+      "document": "此接口（CreateChannelOrganizationInfoChangeUrl）用于创建子客企业信息变更链接。\n\n<h3 id=\"1\">支持变更链接类型，通过入参 Endpoint 指定，默认为WEIXINAPP。</h3>\n\n<h4 id=\"WEIXINAPP\">WEIXINAPP</h4>\n<p>创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。</p>\n\n<h4 id=\"APP\">APP</h4>\n<p>创建变更小程序链接，可从第三方App跳转到微信腾讯电子签小程序进行更换。</p>\n\n\n<h3 id=\"2\">支持创建企业超管变更链接或企业基础信息变更链接，通过入参 ChangeType 指定。</h3>\n\n<h4 id=\"1-企业超管变更\">1. 企业超管变更</h4>\n\n<p>换成企业的其他员工来当超管</p>\n\n<h4 id=\"2-企业基础信息变更\">2. 企业基础信息变更</h4>\n\n<h5 id=\"可以变动\">可以变动</h5>\n\n<ul>\n<li>企业名称<br>\n</li>\n<li>法定代表人姓名(新法人有邀请链接)<br>\n</li>\n<li>企业地址和所在地</li>\n</ul>\n\n<h5 id=\"不可变动\">不可变动</h5>\n\n<ul>\n<li>统一社会信用代码<br>\n</li>\n<li>企业主体类型</li>\n</ul>\n\n<p>如果企业名称变动会引起下面的变动</p>\n\n<ul>\n<li>合同:   老合同不做任何处理,   新发起的合同需要用新的企业名字作为签署方, 否则无法签署</li>\n<li>印章:   会删除所有的印章所有的机构公章，合同专用章，财务专用章和人事专用章,  然后用新企业名称生成新的机构公章，合同专用章，财务专用章和人事专用章,  而法人章不会处理</li>\n<li>证书:   企业证书会重新请求CA机构用新企业名称生成新的证书</li>\n</ul>\n\n\n注意： \n1. 生成的电子签小程序链接<font color='red'>只能由企业的法人或者超管</font>点击后进行操作， 其他员工打开后会提示“无权查看该内容”\n2. 法人可以无需生成链接，直接在电子签小程序中更换本企业的超管",
       "input": "CreateChannelOrganizationInfoChangeUrlRequest",
       "name": "获取变更企业信息电子签小程序链接",
       "output": "CreateChannelOrganizationInfoChangeUrlResponse",
@@ -2986,7 +2986,7 @@
         },
         {
           "disabled": false,
-          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id</li>\n</ul>",
+          "document": "资源id，与ResourceType相对应，取值范围：\n<ul>\n<li>文件Id（通过UploadFiles获取文件资源Id）</li>\n<li>模板Id（通过控制台创建模板后获取模板Id）</li>\n</ul>\n注意：需要同时设置 ResourceType 参数指定资源类型",
           "example": "无",
           "member": "string",
           "name": "ResourceId",
@@ -5782,7 +5782,7 @@
         },
         {
           "disabled": false,
-          "document": "变更链接类型：\n<ul>\n<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>\n<li>**APP** : 创建变更小程序链接，可从第三方APP跳转到微信腾讯电子签小程序进行更换。</li>\n</ul>",
+          "document": "变更链接类型：\n<ul>\n<li>**WEIXINAPP** : 创建变更短链。需要在移动端打开，会跳转到微信腾讯电子签小程序进行更换。（默认）</li>\n<li>**APP** : 创建变更小程序链接，可从第三方App跳转到微信腾讯电子签小程序进行更换。</li>\n</ul>",
           "example": "无",
           "member": "string",
           "name": "Endpoint",
