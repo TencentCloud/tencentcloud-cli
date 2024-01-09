@@ -2485,8 +2485,7 @@
           "member": "string",
           "name": "Region",
           "required": true,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2495,8 +2494,7 @@
           "member": "int64",
           "name": "RegionId",
           "required": false,
-          "type": "int",
-          "value_allowed_null": false
+          "type": "int"
         },
         {
           "disabled": false,
@@ -2505,8 +2503,7 @@
           "member": "string",
           "name": "Dimensions",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         },
         {
           "disabled": false,
@@ -2515,8 +2512,7 @@
           "member": "string",
           "name": "EventDimensions",
           "required": false,
-          "type": "string",
-          "value_allowed_null": false
+          "type": "string"
         }
       ],
       "usage": "in"
@@ -3642,6 +3638,15 @@
           "name": "TagSpecification",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否自动选择代金券，默认为 false",
+          "example": "true",
+          "member": "bool",
+          "name": "AutoVoucher",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

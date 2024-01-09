@@ -4111,6 +4111,15 @@
       "members": [
         {
           "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "EIP数量。默认值：1。",
           "example": "1",
           "member": "int64",
@@ -5177,6 +5186,15 @@
           "member": "string",
           "name": "AddressId",
           "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
           "type": "string"
         },
         {
@@ -28726,6 +28744,15 @@
         },
         {
           "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "表示解绑 EIP 之后是否分配普通公网 IP。取值范围：<br><li>TRUE：表示解绑 EIP 之后分配普通公网 IP。<br><li>FALSE：表示解绑 EIP 之后不分配普通公网 IP。<br>默认取值：FALSE。<br><br>只有满足以下条件时才能指定该参数：<br><li> 只有在解绑主网卡的主内网 IP 上的 EIP 时才能指定该参数。<br><li>解绑 EIP 后重新分配普通公网 IP 操作一个账号每天最多操作 10 次；详情可通过 [DescribeAddressQuota](https://cloud.tencent.com/document/api/213/1378) 接口获取。",
           "example": "True",
           "member": "bool",
@@ -32129,6 +32156,15 @@
         },
         {
           "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
           "document": "包月带宽起始时间(已废弃，输入无效)",
           "example": "2021-07-20 00:00:00",
           "member": "datetime",
@@ -32157,6 +32193,7 @@
           "example": "11531422",
           "member": "string",
           "name": "TaskId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -36725,6 +36762,15 @@
           "name": "AddressIds",
           "required": true,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "内部请求来源标识",
+          "example": "CVM",
+          "member": "string",
+          "name": "RequestSourceInternal",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

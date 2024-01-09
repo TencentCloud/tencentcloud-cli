@@ -1,3 +1,193 @@
+# Release 3.0.918.1
+
+## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07
+
+### 第 69 次发布
+
+发布时间：2024-01-10 01:12:36
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [IsolateCluster](http://document.tencentcloudapi.woa.com/document/product/1003/48082)
+
+	* 新增入参：IsolateReasonTypes, IsolateReason
+
+* [IsolateInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48081)
+
+	* 新增入参：IsolateReasonTypes, IsolateReason
+
+
+新增数据结构：
+
+* [InstanceAbility](http://document.tencentcloudapi.woa.com/document/product/1003/48097#InstanceAbility)
+* [SlaveZoneStockInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#SlaveZoneStockInfo)
+
+修改数据结构：
+
+* [CynosdbInstance](http://document.tencentcloudapi.woa.com/document/product/1003/48097#CynosdbInstance)
+
+	* 新增成员：InstanceAbility
+
+* [ZoneStockInfo](http://document.tencentcloudapi.woa.com/document/product/1003/48097#ZoneStockInfo)
+
+	* 新增成员：SlaveZoneStockInfos
+
+
+
+
+## DNSPod(dnspod) 版本：2021-03-23
+
+### 第 35 次发布
+
+发布时间：2024-01-10 01:14:02
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ModifyRecord](http://document.tencentcloudapi.woa.com/document/product/1427/56157)
+
+	* 新增入参：Remark
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 9 次发布
+
+发布时间：2024-01-10 01:14:27
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ConfigureSubscribeJob](http://document.tencentcloudapi.woa.com/document/product/571/82920)
+* [CreateConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/571/82919)
+* [CreateSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82918)
+* [CreateSubscribeCheckJob](http://document.tencentcloudapi.woa.com/document/product/571/82917)
+* [DeleteConsumerGroup](http://document.tencentcloudapi.woa.com/document/product/571/82916)
+* [DescribeConsumerGroups](http://document.tencentcloudapi.woa.com/document/product/571/82915)
+* [DescribeOffsetByTime](http://document.tencentcloudapi.woa.com/document/product/571/82914)
+* [DescribeSubscribeCheckJob](http://document.tencentcloudapi.woa.com/document/product/571/82913)
+* [DescribeSubscribeDetail](http://document.tencentcloudapi.woa.com/document/product/571/82912)
+* [DescribeSubscribeJobs](http://document.tencentcloudapi.woa.com/document/product/571/82911)
+* [DescribeSubscribeReturnable](http://document.tencentcloudapi.woa.com/document/product/571/82910)
+* [DestroyIsolatedSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82909)
+* [IsolateSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82908)
+* [ModifyConsumerGroupDescription](http://document.tencentcloudapi.woa.com/document/product/571/82907)
+* [ModifyConsumerGroupPassword](http://document.tencentcloudapi.woa.com/document/product/571/82906)
+* [ModifySubscribeAutoRenewFlag](http://document.tencentcloudapi.woa.com/document/product/571/82905)
+* [ModifySubscribeName](http://document.tencentcloudapi.woa.com/document/product/571/82904)
+* [ModifySubscribeObjects](http://document.tencentcloudapi.woa.com/document/product/571/82903)
+* [ResetConsumerGroupOffset](http://document.tencentcloudapi.woa.com/document/product/571/82902)
+* [ResetSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82901)
+* [ResumeSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82900)
+* [StartSubscribe](http://document.tencentcloudapi.woa.com/document/product/571/82899)
+
+新增数据结构：
+
+* [DistributeRule](http://document.tencentcloudapi.woa.com/document/product/571/78340#DistributeRule)
+* [EndpointItem](http://document.tencentcloudapi.woa.com/document/product/571/78340#EndpointItem)
+* [GroupInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#GroupInfo)
+* [ModifiedSubscribeObject](http://document.tencentcloudapi.woa.com/document/product/571/78340#ModifiedSubscribeObject)
+* [MonitorInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#MonitorInfo)
+* [OffsetTimeMap](http://document.tencentcloudapi.woa.com/document/product/571/78340#OffsetTimeMap)
+* [PartitionAssignment](http://document.tencentcloudapi.woa.com/document/product/571/78340#PartitionAssignment)
+* [PipelineInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#PipelineInfo)
+* [SubsErr](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubsErr)
+* [SubscribeCheckStepInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeCheckStepInfo)
+* [SubscribeCheckStepTip](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeCheckStepTip)
+* [SubscribeInfo](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeInfo)
+* [SubscribeKafkaConfig](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeKafkaConfig)
+* [SubscribeObject](http://document.tencentcloudapi.woa.com/document/product/571/78340#SubscribeObject)
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 65 次发布
+
+发布时间：2024-01-10 01:19:44
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateGrafanaInstance](http://document.tencentcloudapi.woa.com/document/product/248/75697)
+
+	* 新增入参：AutoVoucher
+
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 28 次发布
+
+发布时间：2024-01-10 01:21:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CreateOfflineLogConfig
+* DescribeOfflineLogRecords
+* DescribeOfflineLogs
+
+
+
+## 私有网络(vpc) 版本：2017-03-12
+
+### 第 123 次发布
+
+发布时间：2024-01-10 01:27:10
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [AllocateAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16699)
+
+	* 新增入参：RequestSourceInternal
+
+* [AssociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16700)
+
+	* 新增入参：RequestSourceInternal
+
+* [DisassociateAddress](http://document.tencentcloudapi.woa.com/document/product/215/16703)
+
+	* 新增入参：RequestSourceInternal
+
+* [ModifyAddressesBandwidth](http://document.tencentcloudapi.woa.com/document/product/215/19214)
+
+	* 新增入参：RequestSourceInternal
+
+* [ReleaseAddresses](http://document.tencentcloudapi.woa.com/document/product/215/16705)
+
+	* 新增入参：RequestSourceInternal
+
+
+
+
 # Release 3.0.917.1
 
 ## 汽车精准获客服务(apcas) 版本：2020-11-27
