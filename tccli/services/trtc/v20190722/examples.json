@@ -32,6 +32,14 @@
         "title": "删除图片"
       }
     ],
+    "DescribeAppStatList": [
+      {
+        "document": "获取用户名下的应用列表",
+        "input": "https://trtc.tencentcloudapi.com/?Action=DescribeAppStatList\n&OrderField=create_time\n&OrderType=0\n&Offset=0\n&Limit=3\n&GmeFlag=0\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"SdkAppInfos\": [\n            {\n                \"Status\": 1,\n                \"LastDayCC\": 1,\n                \"Description\": \"string\",\n                \"HasAccount\": 1,\n                \"InWhiteList\": false,\n                \"CurMonthCC\": 1,\n                \"BizScheme\": 1,\n                \"PrewhiteFlag\": 1,\n                \"AccountMode\": 1,\n                \"Name\": \"string\",\n                \"RegisterFrom\": 1,\n                \"LastDay\": 1,\n                \"BizSubScheme\": 1,\n                \"UiMode\": 0,\n                \"CreateTime\": \"string\",\n                \"License\": \"string\",\n                \"SubProductCode\": \"string\",\n                \"ID\": 1,\n                \"TagList\": [\n                    {\n                        \"TagKey\": \"string\",\n                        \"TagValue\": \"string\"\n                    }\n                ],\n                \"UsageMode\": [\n                    0,\n                    1,\n                    2\n                ]\n            }\n        ],\n        \"RequestId\": \"string\",\n        \"TotalNum\": 1\n    }\n}",
+        "title": "获取用户名下的应用列表"
+      }
+    ],
     "DescribeCallDetailInfo": [
       {
         "document": "",
@@ -238,6 +246,30 @@
         "input": "https://trtc.tencentcloudapi.com/?Action=DismissRoomByStrRoomId\n&SdkAppId=1400000001\n&RoomId=abcd\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "解散房间"
+      }
+    ],
+    "GetRoomList": [
+      {
+        "document": "获取TRTC房间列表",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetRoomList\n<公共请求参数>\n\n{\n    \"CallStatus\": \"0\",\n    \"PageIndex\": \"0\",\n    \"PageSize\": \"10\",\n    \"UserId\": \"123\",\n    \"StartTs\": \"1570868198\",\n    \"EndTs\": \"1570889798\",\n    \"SdkAppId\": \"1400188366\",\n    \"RoomNum\": \"666\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Total\": 33,\n        \"RoomList\": [\n            {\n                \"CommId\": \"1400188366_666_1570882159\",\n                \"RoomNum\": 666,\n                \"RoomStr\": \"666\",\n                \"CreateTs\": 1570882159,\n                \"DestroyTs\": 1570883061,\n                \"Duration\": 902,\n                \"CenterIp\": \"xx\",\n                \"UserNum\": 2,\n                \"Finished\": true,\n                \"SourceType\": 0\n            },\n            {\n                \"CommId\": \"1400188366_668_1570882148\",\n                \"RoomNum\": 668,\n                \"RoomStr\": \"668\",\n                \"CreateTs\": 1570882148,\n                \"DestroyTs\": 1570883062,\n                \"Duration\": 914,\n                \"CenterIp\": \"xx\",\n                \"UserNum\": 2,\n                \"Finished\": true,\n                \"SourceType\": 0\n            },\n            {\n                \"CommId\": \"1400188366_999_1570880470\",\n                \"RoomNum\": 999,\n                \"RoomStr\": \"999\",\n                \"CenterIp\": \"xx\",\n                \"CreateTs\": 1570880470,\n                \"DestroyTs\": 1570881122,\n                \"Duration\": 652,\n                \"UserNum\": 2,\n                \"Finished\": true,\n                \"SourceType\": 0\n            }\n        ],\n        \"RequestId\": \"0a4421a4-d118-489d-8c7a-6ab53bbb03bf\"\n    }\n}",
+        "title": "获取房间列表"
+      }
+    ],
+    "GetRoomUserList": [
+      {
+        "document": "用于TRTC控制台获取本次通话的用户列表",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserTotalCount\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"4fae8a9b-d338-4d73-b452-7e3f1c31487e\"\n    }\n}",
+        "title": "获取本次通话的用户列表"
+      }
+    ],
+    "GetUserList": [
+      {
+        "document": "用于TRTC控制台获取房间用户列表",
+        "input": "POST / HTTP/1.1\nHost: trtc.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetUserList\n<公共请求参数>\n\n{\n    \"CommId\": \"1400188366_666_1570864946\",\n    \"StartTs\": \"1570864946\",\n    \"EndTs\": \"1570866037\"\n}",
+        "output": "{\n    \"Response\": {\n        \"UserList\": [\n            {\n                \"UserId\": \"666\",\n                \"JoinTs\": 1570864946,\n                \"LeaveTs\": 1570866037,\n                \"Duration\": 1091,\n                \"Finished\": true,\n                \"TinyId\": \"xx\",\n                \"UserRole\": \"xx\",\n                \"Role\": \"both\",\n                \"Location\": \"中国广东深圳\",\n                \"SdkVersion\": \"6.6.0.7415\",\n                \"Os\": \"Android\",\n                \"OsVersion\": \"\",\n                \"DeviceType\": \"\",\n                \"Network\": \"WIFI\",\n                \"UserType\": \"xx\",\n                \"ClientIp\": \"59.37.125.38\",\n                \"AccessIp\": \"10.1.2.8\",\n                \"ConnRoomNum\": 0,\n                \"ConnCommId\": \"\"\n            }\n        ],\n        \"TotalSender\": 1,\n        \"Total\": 1,\n        \"RequestId\": \"4fae8a9b-d338-4d73-b452-7e3f1c31487e\"\n    }\n}",
+        "title": "获取用户列表"
       }
     ],
     "ModifyCloudRecording": [

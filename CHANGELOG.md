@@ -1,3 +1,50 @@
+# Release 3.0.919.1
+
+## 操作审计(cloudaudit) 版本：2019-03-19
+
+### 第 7 次发布
+
+发布时间：2024-01-11 01:10:23
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Storage](http://document.tencentcloudapi.woa.com/document/product/629/35353#Storage)
+
+	* 新增成员：StorageAccountId, StorageAppId
+
+
+
+
+## 实时音视频(trtc) 版本：2019-07-22
+
+### 第 39 次发布
+
+发布时间：2024-01-11 01:25:54
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeAppStatList](http://document.tencentcloudapi.woa.com/document/product/647/82924)
+* [GetRoomList](http://document.tencentcloudapi.woa.com/document/product/647/82923)
+* [GetRoomUserList](http://document.tencentcloudapi.woa.com/document/product/647/82922)
+* [GetUserList](http://document.tencentcloudapi.woa.com/document/product/647/82921)
+
+新增数据结构：
+
+* [RoomInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#RoomInfo)
+* [SdkAppInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#SdkAppInfo)
+* [TagList](http://document.tencentcloudapi.woa.com/document/product/647/44055#TagList)
+* [UserInfo](http://document.tencentcloudapi.woa.com/document/product/647/44055#UserInfo)
+
+
+
 # Release 3.0.918.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

@@ -28,6 +28,13 @@
       "output": "DeletePictureResponse",
       "status": "online"
     },
+    "DescribeAppStatList": {
+      "document": "获取用户名下的应用列表。",
+      "input": "DescribeAppStatListRequest",
+      "name": "获取用户名下的应用列表。",
+      "output": "DescribeAppStatListResponse",
+      "status": "online"
+    },
     "DescribeCallDetailInfo": {
       "document": "查询指定时间内的用户列表及用户通话质量数据，可查询14天内数据。DataType 不为null，查询起止时间不超过1个小时，查询用户不超过6个，支持跨天查询。DataType为null时，查询起止时间不超过4个小时， 默认查询6个用户，同时支持每页查询100以内用户个数（PageSize不超过100）。接口用于查询质量问题，不推荐作为计费使用。（同老接口DescribeCallDetail）\n**注意**：\n1.该接口只用于历史数据统计或核对数据使用，实时类关键业务逻辑不能使用。\n2.该接口目前免费提供中，监控仪表盘商业化计费后该接口需要订阅付费版后方可调用，仪表盘商业化说明请见：https://cloud.tencent.com/document/product/647/77735",
       "input": "DescribeCallDetailInfoRequest",
@@ -208,6 +215,27 @@
       "input": "DismissRoomByStrRoomIdRequest",
       "name": "解散房间（字符串房间号）",
       "output": "DismissRoomByStrRoomIdResponse",
+      "status": "online"
+    },
+    "GetRoomList": {
+      "document": "监控仪表盘中，首先获取限定时间内的房间列表",
+      "input": "GetRoomListRequest",
+      "name": "获取房间列表",
+      "output": "GetRoomListResponse",
+      "status": "online"
+    },
+    "GetRoomUserList": {
+      "document": "仪表盘中，获取某次通话的用户列表",
+      "input": "GetRoomUserListRequest",
+      "name": "获取本次通话的用户列表",
+      "output": "GetRoomUserListResponse",
+      "status": "online"
+    },
+    "GetUserList": {
+      "document": "仪表盘中，获取某次通话的用户列表",
+      "input": "GetUserListRequest",
+      "name": "获取用户列表",
+      "output": "GetUserListResponse",
       "status": "online"
     },
     "ModifyCloudRecording": {
@@ -931,6 +959,161 @@
     "DeletePictureResponse": {
       "document": "DeletePicture返回参数结构体",
       "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppStatListRequest": {
+      "document": "DescribeAppStatList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "排序字段名。",
+          "example": "create_time",
+          "member": "string",
+          "name": "OrderField",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "排序类型。",
+          "example": "0",
+          "member": "uint64",
+          "name": "OrderType",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询起始位置。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "查询记录条数。",
+          "example": "3",
+          "member": "uint64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "Gme标志。",
+          "example": "0",
+          "member": "uint64",
+          "name": "GmeFlag",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "标签过滤",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用Id列表",
+          "example": "1400000000",
+          "member": "uint64",
+          "name": "SdkAppIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用名称列表",
+          "example": "无",
+          "member": "string",
+          "name": "AppNames",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "应用状态,1:TRTC服务可用. 0:TRTC已经停服",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "应用类型。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UsageMode",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回Tag信息，0:不返回 1:返回 (不返回可减少接口耗时)\t。",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedTags",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回License信息，0:不返回 1:返回 (不返回可减少接口耗时)\t",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedLicense",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要返回LicenseList信息，0:不返回 1:返回 (不返回可减少接口耗时)",
+          "example": "1",
+          "member": "int64",
+          "name": "NeedLicenseList",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeAppStatListResponse": {
+      "document": "DescribeAppStatList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总记录条数。",
+          "example": "2",
+          "member": "uint64",
+          "name": "TotalNum",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用列表。",
+          "example": "无",
+          "member": "SdkAppInfo",
+          "name": "SdkAppInfos",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -2871,6 +3054,221 @@
       ],
       "usage": "out"
     },
+    "GetRoomListRequest": {
+      "document": "GetRoomList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的SDKAppId",
+          "example": "1400XXXX",
+          "member": "string",
+          "name": "SdkAppId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "134567777",
+          "member": "string",
+          "name": "StartTs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "122333333",
+          "member": "string",
+          "name": "EndTs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页开始查找的位置",
+          "example": "0",
+          "member": "string",
+          "name": "PageIndex",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页查找的大小",
+          "example": "10",
+          "member": "string",
+          "name": "PageSize",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "房间号",
+          "example": "111",
+          "member": "string",
+          "name": "RoomNum",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "用户id",
+          "example": "21344",
+          "member": "string",
+          "name": "UserId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "通话状态",
+          "example": "0",
+          "member": "string",
+          "name": "CallStatus",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomListResponse": {
+      "document": "GetRoomList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "房间列表",
+          "example": "RoomList",
+          "member": "RoomInfo",
+          "name": "RoomList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "数据总条数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetRoomUserListRequest": {
+      "document": "GetRoomUserList请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetRoomUserListResponse": {
+      "document": "GetRoomUserList返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserListRequest": {
+      "document": "GetUserList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "通话ID",
+          "example": "1400188366_666_1570864946",
+          "member": "string",
+          "name": "CommId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询开始时间",
+          "example": "1570864946",
+          "member": "string",
+          "name": "StartTs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "查询结束时间",
+          "example": "1570866037",
+          "member": "string",
+          "name": "EndTs",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页index",
+          "example": "1",
+          "member": "string",
+          "name": "PageIndex",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "分页大小",
+          "example": "1",
+          "member": "string",
+          "name": "PageSize",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetUserListResponse": {
+      "document": "GetUserList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户信息列表",
+          "example": "无",
+          "member": "UserInfo",
+          "name": "UserList",
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "Total",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "发送者总数",
+          "example": "1",
+          "member": "uint64",
+          "name": "TotalSender",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "LayoutParams": {
       "document": "MCU混流布局参数",
       "members": [
@@ -3403,7 +3801,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。",
+          "document": "CDN转推URL，只支持rtmp链接。\n注：若更新转推时，URL有任何变化，都会断流重推。",
           "example": "xxxx",
           "member": "string",
           "name": "PublishCdnUrl",
@@ -4752,6 +5150,112 @@
       ],
       "type": "object"
     },
+    "RoomInfo": {
+      "document": "房间中通话信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "TRTC的sdkappid",
+          "example": "无",
+          "member": "string",
+          "name": "CommId",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "房间号",
+          "example": "无",
+          "member": "uint64",
+          "name": "RoomNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "string类型的房间ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "RoomStr",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "通话创建时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "CreateTs",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话销毁时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "DestroyTs",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话持续时间",
+          "example": "无",
+          "member": "uint64",
+          "name": "Duration",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "通话是否已经结束",
+          "example": "无",
+          "member": "bool",
+          "name": "Finished",
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "整个通话内的用户数量",
+          "example": "无",
+          "member": "uint64",
+          "name": "UserNum",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "流控IP",
+          "example": "无",
+          "member": "string",
+          "name": "CenterIp",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "房间来源",
+          "example": "无",
+          "member": "uint64",
+          "name": "SourceType",
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
     "RoomState": {
       "document": "房间信息列表",
       "members": [
@@ -4968,6 +5472,212 @@
           "name": "Flux",
           "required": true,
           "type": "float",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
+    },
+    "SdkAppInfo": {
+      "document": "应用信息。",
+      "members": [
+        {
+          "disabled": false,
+          "document": "应用的SdkAppId。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ID",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用的名字。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用的类别。",
+          "example": "4",
+          "member": "uint64",
+          "name": "BizScheme",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "与BizScheme结合使用。",
+          "example": "0",
+          "member": "uint64",
+          "name": "BizSubScheme",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "描述。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LastDay",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "LastDayCC",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "CurMonthCC",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "创建时间。",
+          "example": "2022-03-30 18:36:04",
+          "member": "string",
+          "name": "CreateTime",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "HasAccount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "AccountMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "0",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "注册渠道。",
+          "example": "0",
+          "member": "uint64",
+          "name": "RegisterFrom",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "。",
+          "example": "True",
+          "member": "bool",
+          "name": "InWhiteList",
+          "output_required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "预付费标志，服务开关。",
+          "example": "0",
+          "member": "uint64",
+          "name": "PrewhiteFlag",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "应用的标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TagList",
+          "name": "TagList",
+          "output_required": true,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "应用集成方式 0:无UI组件模式 1:含UI组件模式\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "UiMode",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐包名称。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sv_rav_license1_free",
+          "member": "string",
+          "name": "License",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "套餐包子码。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "sp_rav_license",
+          "member": "string",
+          "name": "SubProductCode",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "类型。",
+          "example": "无",
+          "member": "uint64",
+          "name": "UsageMode",
+          "output_required": true,
+          "type": "list",
           "value_allowed_null": false
         }
       ],
@@ -5957,6 +6667,32 @@
       ],
       "usage": "out"
     },
+    "TagList": {
+      "document": "标签列表",
+      "members": [
+        {
+          "disabled": false,
+          "document": "标签key",
+          "example": "",
+          "member": "string",
+          "name": "TagKey",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "标签value\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "TagValue",
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
     "TencentVod": {
       "document": "腾讯云点播相关参数。",
       "members": [
@@ -6212,6 +6948,202 @@
         }
       ],
       "type": "object"
+    },
+    "UserInfo": {
+      "document": "用户信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户Id",
+          "example": "",
+          "member": "string",
+          "name": "UserId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色，\"sender\",\"receiver\",\"both\"",
+          "example": "",
+          "member": "string",
+          "name": "Role",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "区域",
+          "example": "",
+          "member": "string",
+          "name": "Location",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "加入通话时间",
+          "example": "",
+          "member": "uint64",
+          "name": "JoinTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "离开通话时间",
+          "example": "",
+          "member": "uint64",
+          "name": "LeaveTs",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "在通话中的持续时间",
+          "example": "",
+          "member": "uint64",
+          "name": "Duration",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否已经离开通话",
+          "example": "",
+          "member": "bool",
+          "name": "Finished",
+          "required": true,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "sdk版本",
+          "example": "",
+          "member": "string",
+          "name": "SdkVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统版本",
+          "example": "",
+          "member": "string",
+          "name": "OsVersion",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "操作系统",
+          "example": "",
+          "member": "string",
+          "name": "Os",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "设备类型",
+          "example": "",
+          "member": "string",
+          "name": "DeviceType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "网络环境",
+          "example": "",
+          "member": "string",
+          "name": "Network",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "客户端IP",
+          "example": "",
+          "member": "string",
+          "name": "ClientIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "接口机分配IP",
+          "example": "",
+          "member": "string",
+          "name": "AccessIp",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "连线用户房间号\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "uint64",
+          "name": "ConnRoomNum",
+          "required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "连线用户通话ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "",
+          "member": "string",
+          "name": "ConnCommId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户内部ID",
+          "example": "",
+          "member": "string",
+          "name": "TinyId",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户角色，主播2，观众1，其他4",
+          "example": "",
+          "member": "string",
+          "name": "UserRole",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "用户类型，webrtc，小程序，native sdk",
+          "example": "",
+          "member": "string",
+          "name": "UserType",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "out"
     },
     "UserInformation": {
       "document": "用户信息，包括用户进房时间，退房时间等",
