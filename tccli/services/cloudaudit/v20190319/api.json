@@ -8,9 +8,9 @@
       "status": "online"
     },
     "CreateAuditTrack": {
-      "document": "创建跟踪集",
+      "document": "创建操作审计跟踪集",
       "input": "CreateAuditTrackRequest",
-      "name": "创建云审计跟踪集",
+      "name": "创建操作审计跟踪集",
       "output": "CreateAuditTrackResponse",
       "status": "online"
     },
@@ -22,9 +22,9 @@
       "status": "online"
     },
     "DeleteAuditTrack": {
-      "document": "删除云审计跟踪集",
+      "document": "删除操作审计跟踪集",
       "input": "DeleteAuditTrackRequest",
-      "name": "删除云审计跟踪集",
+      "name": "删除操作审计跟踪集",
       "output": "DeleteAuditTrackResponse",
       "status": "online"
     },
@@ -36,23 +36,23 @@
       "status": "online"
     },
     "DescribeAuditTrack": {
-      "document": "查询云审计跟踪集详情",
+      "document": "查询操作审计跟踪集详情",
       "input": "DescribeAuditTrackRequest",
-      "name": "查询云审计跟踪集详情",
+      "name": "查询操作审计跟踪集详情",
       "output": "DescribeAuditTrackResponse",
       "status": "online"
     },
     "DescribeAuditTracks": {
-      "document": "查询云审计跟踪集列表",
+      "document": "查询操作审计跟踪集列表",
       "input": "DescribeAuditTracksRequest",
-      "name": "查询云审计跟踪集列表",
+      "name": "查询操作审计跟踪集列表",
       "output": "DescribeAuditTracksResponse",
       "status": "online"
     },
     "DescribeEvents": {
-      "document": "查询云审计日志",
+      "document": "查询操作审计日志",
       "input": "DescribeEventsRequest",
-      "name": "查询云审计日志",
+      "name": "查询操作审计日志",
       "output": "DescribeEventsResponse",
       "status": "online"
     },
@@ -106,9 +106,9 @@
       "status": "online"
     },
     "ModifyAuditTrack": {
-      "document": "修改云审计跟踪",
+      "document": "修改操作审计跟踪集",
       "input": "ModifyAuditTrackRequest",
-      "name": "修改云审计跟踪",
+      "name": "修改操作审计跟踪集",
       "output": "ModifyAuditTrackResponse",
       "status": "online"
     },
@@ -518,7 +518,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TrackId",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -773,10 +773,10 @@
         {
           "disabled": false,
           "document": "跟踪集名称",
-          "example": "云审计",
+          "example": "操作审计",
           "member": "string",
           "name": "Name",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -786,7 +786,7 @@
           "example": "Read",
           "member": "string",
           "name": "ActionType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -796,7 +796,7 @@
           "example": "*",
           "member": "string",
           "name": "ResourceType",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -806,7 +806,7 @@
           "example": "1",
           "member": "uint64",
           "name": "Status",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -816,7 +816,7 @@
           "example": "1",
           "member": "string",
           "name": "EventNames",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -826,7 +826,7 @@
           "example": "cos",
           "member": "Storage",
           "name": "Storage",
-          "required": true,
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -836,7 +836,7 @@
           "example": "2021-02-01 18:03",
           "member": "string",
           "name": "CreateTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -846,7 +846,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TrackForAllMembers",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -892,6 +892,7 @@
           "example": "*",
           "member": "Tracks",
           "name": "Tracks",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -901,6 +902,7 @@
           "example": "10",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -954,7 +956,7 @@
         },
         {
           "disabled": false,
-          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]）备注:检索的各个条件间是与的关系,EventName传多个值内部是或的关系）",
+          "document": "检索条件（目前支持 RequestId：请求 ID、EventName：事件名称、ActionType：操作类型（Write：写；Read：读）、PrincipalId：子账号、ResourceType：资源类型、ResourceId：资源Id、ResourceName：资源名称、AccessKeyId：密钥 ID、SensitiveAction：是否敏感操作、ApiErrorCode：API 错误码、CamErrorCode：CAM 错误码、Tags：标签（AttributeValue格式：[{\"key\":\"*\",\"value\":\"*\"}]）备注:检索的各个条件间是与的关系,EventName传多个值内部是或的关系）",
           "example": "[{\"AttributeKey:XX,\"AttributeValue\":xx}]",
           "member": "LookupAttribute",
           "name": "LookupAttributes",
@@ -982,6 +984,7 @@
           "example": "false",
           "member": "bool",
           "name": "ListOver",
+          "output_required": true,
           "type": "bool",
           "value_allowed_null": false
         },
@@ -991,6 +994,7 @@
           "example": "123123213",
           "member": "uint64",
           "name": "NextToken",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -1000,6 +1004,7 @@
           "example": "*",
           "member": "Event",
           "name": "Events",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -1009,6 +1014,7 @@
           "example": "1",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },
@@ -1676,26 +1682,28 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源类型",
+          "document": "资源类型\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "ResourceType",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "资源名称",
+          "document": "资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "xx",
           "member": "string",
           "name": "ResourceName",
+          "output_required": false,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "StartLoggingRequest": {
       "document": "StartLogging请求参数结构体",
@@ -1780,6 +1788,7 @@
           "example": "cos",
           "member": "string",
           "name": "StorageType",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1790,6 +1799,7 @@
           "example": "ap-shanghai",
           "member": "string",
           "name": "StorageRegion",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1800,6 +1810,7 @@
           "example": "audit",
           "member": "string",
           "name": "StorageName",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
@@ -1810,9 +1821,32 @@
           "example": "audit",
           "member": "string",
           "name": "StoragePrefix",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "被指定存储用户ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageAccountId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "被指定存储用户appid\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "StorageAppId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

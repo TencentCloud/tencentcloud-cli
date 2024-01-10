@@ -29,7 +29,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
-        "title": "删除云审计跟踪集"
+        "title": "删除操作审计跟踪集"
       }
     ],
     "DescribeAudit": [
@@ -45,7 +45,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"Name\": \"audit\",\n        \"ActionType\": \"Read\",\n        \"ResourceType\": \"audit\",\n        \"EventNames\": [\n            \"LookUpEvents\"\n        ],\n        \"Storage\": {\n            \"StorageName\": \"audit-cos\",\n            \"StoragePrefix\": \"test\",\n            \"StorageRegion\": \"ap-guangzhou\",\n            \"StorageType\": \"cos\"\n        },\n        \"TrackForAllMembers\": 1,\n        \"Status\": 1,\n        \"CreateTime\": \"2021-01-14 14:43:38\",\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
-        "title": "查询云审计跟踪集详情"
+        "title": "查询操作审计跟踪集详情"
       }
     ],
     "DescribeAuditTracks": [
@@ -53,15 +53,15 @@
         "document": "在控制台或者使用接口，查看已经创建的跟踪集列表",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeAuditTracks\n<公共请求参数>\n\n{\n    \"PageNumber\": 1,\n    \"PageSize\": 10\n}",
         "output": "{\n    \"Response\": {\n        \"Tracks\": [\n            {\n                \"TrackId\": 1,\n                \"Name\": \"audit\",\n                \"ActionType\": \"Read\",\n                \"ResourceType\": \"audit\",\n                \"EventNames\": [\n                    \"LookUpEvents\"\n                ],\n                \"Storage\": {\n                    \"StorageName\": \"audit-cos\",\n                    \"StoragePrefix\": \"test\",\n                    \"StorageRegion\": \"ap-guangzhou\",\n                    \"StorageType\": \"cos\"\n                },\n                \"Status\": 1,\n                \"CreateTime\": \"2021-01-14 14:43:38\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
-        "title": "查询云审计跟踪集列表"
+        "title": "查询操作审计跟踪集列表"
       }
     ],
     "DescribeEvents": [
       {
-        "document": "查询云审计日志",
+        "document": "查询操作审计日志",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeEvents\n<公共请求参数>\n\n{\n    \"StartTime\": 1610613170,\n    \"EndTime\": 1610699570,\n    \"MaxResults\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"ListOver\": true,\n        \"Events\": [\n            {\n                \"CloudAuditEvent\": \"{\\\"userIdentity\\\":{\\\"principalId\\\":\\\"1000000000\\\",\\\"accountId\\\":\\\"1000000000\\\",\\\"secretId\\\":\\\"xxx\\\",\\\"sessionContext\\\":\\\"{\\\\\\\"token\\\\\\\": \\\\\\\"xxx--Jqr7dXvw3EBEXWNcJljzbZeJeoIrQx9gafWtHV1Lg9zu7hSpY91LAF414n21D41bpodncbz8u12C-xxx\\\\\\\", \\\\\\\"ua\\\\\\\": \\\\\\\"xxx\\\\\\\", \\\\\\\"userIp\\\\\\\": \\\\\\\"111.111.11.111\\\\\\\", \\\\\\\"uin\\\\\\\": 1000000000, \\\\\\\"ownerUin\\\\\\\": 1000000000, \\\\\\\"appId\\\\\\\": 1256196555, \\\\\\\"expireTime\\\\\\\": \\\\\\\"2023-04-03 19:23:29\\\\\\\", \\\\\\\"mfa\\\\\\\": 1, \\\\\\\"mfaExpireTime\\\\\\\": \\\\\\\"0000-00-00 00:00:00\\\\\\\", \\\\\\\"interfaceName\\\\\\\": \\\\\\\"\\\\\\\", \\\\\\\"hasPolicyFilter\\\\\\\": 0, \\\\\\\"policyFilter\\\\\\\": \\\\\\\"\\\\\\\", \\\\\\\"extraInfo\\\\\\\": \\\\\\\"{\\\\\\\\\\\\\\\"dictId\\\\\\\\\\\\\\\":2208,\\\\\\\\\\\\\\\"mfaExpireTime\\\\\\\\\\\\\\\":\\\\\\\\\\\\\\\"3000-12-12 00:00:00\\\\\\\\\\\\\\\",\\\\\\\\\\\\\\\"sessionUin\\\\\\\\\\\\\\\":5000}\\\\\\\"}\\\",\\\"type\\\":\\\"Root\\\",\\\"userName\\\":\\\"root\\\"},\\\"eventRegion\\\":\\\"ap-guangzhou\\\",\\\"eventVersion\\\":2,\\\"errorCode\\\":\\\"0\\\",\\\"errorMessage\\\":\\\"\\\",\\\"requestID\\\":\\\"008ef803-4549-41fe-a7e6-433122273683\\\",\\\"eventID\\\":\\\"008ef803-4549-41fe-a7e6-433122273683\\\",\\\"apiVersion\\\":\\\"3.0\\\",\\\"eventType\\\":\\\"ConsoleCall\\\",\\\"actionType\\\":\\\"Write\\\",\\\"httpMethod\\\":\\\"POST\\\",\\\"apiErrorCode\\\":0,\\\"apiErrorMessage\\\":\\\"\\\",\\\"userAgent\\\":\\\"SDK_NODEJS_0.2.1\\\",\\\"eventTime\\\":1680513809,\\\"sourceIPAddress\\\":\\\"111.111.111.111\\\",\\\"eventSource\\\":\\\"cloudaudit.ap-guangzhou.api.tencentyun.com\\\",\\\"resources\\\":\\\"[\\\\\\\"*\\\\\\\"]\\\",\\\"resourceName\\\":\\\"\\\",\\\"resourceSet\\\":[],\\\"requestParameters\\\":\\\"{\\\\\\\"ActionType\\\\\\\":\\\\\\\"Write\\\\\\\",\\\\\\\"EventNames\\\\\\\":[\\\\\\\"*\\\\\\\"],\\\\\\\"Name\\\\\\\":\\\\\\\"qweqwe\\\\\\\",\\\\\\\"ResourceType\\\\\\\":\\\\\\\"*\\\\\\\",\\\\\\\"Status\\\\\\\":1,\\\\\\\"Storage\\\\\\\":{\\\\\\\"StorageName\\\\\\\":\\\\\\\"d0f00ec9-5643-4a11-9022-187621d38714\\\\\\\",\\\\\\\"StoragePrefix\\\\\\\":\\\\\\\"cloudaudit\\\\\\\",\\\\\\\"StorageRegion\\\\\\\":\\\\\\\"ap-guangzhou\\\\\\\",\\\\\\\"StorageType\\\\\\\":\\\\\\\"cls\\\\\\\"},\\\\\\\"Version\\\\\\\":\\\\\\\"2019-03-19\\\\\\\"}\\\",\\\"responseElements\\\":\\\"{\\\\\\\"TrackId\\\\\\\":21915,\\\\\\\"RequestId\\\\\\\":\\\\\\\"008ef803-4549-41fe-a7e6-433122273683\\\\\\\"}\\\",\\\"resourceType\\\":\\\"cloudaudit\\\",\\\"eventName\\\":\\\"CreateAuditTrack\\\",\\\"sensitiveAction\\\":\\\"1\\\",\\\"tags\\\":[\\\"\\\"]}\",\n                \"EventName\": \"CreateAuditTrack\",\n                \"EventTime\": \"1680513809\",\n                \"SecretId\": \"xxxxxxx\",\n                \"ErrorCode\": 0,\n                \"RequestID\": \"008ef803-4549-41fe-a7e6-433122273683\",\n                \"SourceIPAddress\": \"111.111.111.111\",\n                \"EventSource\": \"cloudaudit.ap-guangzhou.api.tencentyun.com\",\n                \"EventRegion\": \"ap-guangzhou\",\n                \"Resources\": {\n                    \"ResourceName\": \"\",\n                    \"ResourceType\": \"cloudaudit\"\n                },\n                \"Username\": \"root\",\n                \"AccountID\": 100004293724,\n                \"Location\": \"中国 广东省 深圳市 中国电信\",\n                \"ResourceTypeCn\": \"云审计\",\n                \"EventNameCn\": \"创建云审计跟踪集\",\n                \"ResourceRegion\": \"\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"NextToken\": 16805138109322956,\n        \"RequestId\": \"42a0e189-2869-488f-aa34-8bffd0814322\"\n    }\n}",
-        "title": "查询云审计日志"
+        "title": "查询操作审计日志"
       }
     ],
     "GetAttributeKey": [
@@ -125,7 +125,7 @@
         "document": "",
         "input": "POST / HTTP/1.1\nHost: cloudaudit.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ModifyAuditTrack\n<公共请求参数>\n\n{\n    \"TrackId\": 1,\n    \"Name\": \"audit\",\n    \"ActionType\": \"Read\",\n    \"ResourceType\": \"audit\",\n    \"Status\": 0,\n    \"TrackForAllMembers\": 1,\n    \"EventNames\": [\n        \"LookUpEvents\",\n        \"DeleteAudit\"\n    ],\n    \"Storage\": {\n        \"StorageType\": \"cos\",\n        \"StorageRegion\": \"ap-guangzhou\",\n        \"StorageName\": \"audit-cos\",\n        \"StoragePrefix\": \"test\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"2d4a7fba-bba8-452e-a99e-ccf11fdaa583\"\n    }\n}",
-        "title": "修改云审计跟踪"
+        "title": "修改操作审计跟踪"
       }
     ],
     "StartLogging": [

@@ -1,3 +1,24 @@
+# Release 3.0.1042.1
+
+## 操作审计(cloudaudit) 版本：2019-03-19
+
+### 第 13 次发布
+
+发布时间：2024-01-11 01:09:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [Storage](https://cloud.tencent.com/document/api/629/35353#Storage)
+
+	* 新增成员：StorageAccountId, StorageAppId
+
+
+
+
 # Release 3.0.1041.1
 
 ## TDSQL-C MySQL 版(cynosdb) 版本：2019-01-07

@@ -3380,7 +3380,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "CDN转推URL。注：若更新转推时，URL有任何变化，都会断流重推。",
+          "document": "CDN转推URL，只支持rtmp链接。\n注：若更新转推时，URL有任何变化，都会断流重推。",
           "example": "xxxx",
           "member": "string",
           "name": "PublishCdnUrl",
