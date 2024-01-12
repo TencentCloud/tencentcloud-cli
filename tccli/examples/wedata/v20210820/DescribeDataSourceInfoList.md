@@ -8,7 +8,8 @@ Input:
 tccli wedata DescribeDataSourceInfoList --cli-unfold-argument  \
     --PageNumber 0 \
     --PageSize 10 \
-    --ProjectId 1
+    --ProjectId 1 \
+    --Type MYSQL
 ```
 
 Output: 

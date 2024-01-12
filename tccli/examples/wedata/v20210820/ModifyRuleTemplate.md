@@ -7,14 +7,14 @@ Input:
 ```
 tccli wedata ModifyRuleTemplate --cli-unfold-argument  \
     --SourceEngineTypes 1 \
-    --Name xx \
-    --SqlExpression xx \
+    --Name abc \
+    --SqlExpression abc \
     --QualityDim 1 \
     --MultiSourceFlag True \
     --TemplateId 1 \
     --Type 1 \
     --SourceObjectType 1 \
-    --Description xx
+    --Description abc
 ```
 
 Output: 
@@ -22,7 +22,7 @@ Output:
 {
     "Response": {
         "Data": true,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

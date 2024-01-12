@@ -23,3 +23,28 @@ Output:
 }
 ```
 
+**Example 2: mock**
+
+mock
+
+Input: 
+
+```
+tccli wedata ResumeIntegrationTask --cli-unfold-argument  \
+    --TaskId abcde \
+    --ProjectId 12345
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "UnauthorizedOperation",
+            "Message": "未授权操作"
+        },
+        "RequestId": "5891312f-e0d9-40ef-925c-fdde1cd525af"
+    }
+}
+```
+

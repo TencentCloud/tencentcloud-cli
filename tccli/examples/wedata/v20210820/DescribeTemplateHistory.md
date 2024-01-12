@@ -6,11 +6,11 @@ Input:
 
 ```
 tccli wedata DescribeTemplateHistory --cli-unfold-argument  \
-    --ProjectId 1 \
     --PageNumber 1 \
-    --Filters.0.Values xx \
-    --Filters.0.Name xx \
-    --PageSize 1
+    --PageSize 1 \
+    --Filters.0.Name abc \
+    --Filters.0.Values abc \
+    --ProjectId abc
 ```
 
 Output: 
@@ -21,8 +21,8 @@ Output:
             "TotalCount": 1,
             "Items": [
                 {
-                    "UserName": "xx",
-                    "AlterContent": "xx",
+                    "UserName": "abc",
+                    "AlterContent": "abc",
                     "AlterType": 1,
                     "UserId": 1,
                     "Version": 1,
@@ -30,7 +30,7 @@ Output:
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

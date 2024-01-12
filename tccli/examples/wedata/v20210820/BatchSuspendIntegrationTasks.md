@@ -6,9 +6,10 @@ Input:
 
 ```
 tccli wedata BatchSuspendIntegrationTasks --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId 123 \
     --TaskIds 123 124 \
-    --TaskType 201
+    --TaskType 201 \
+    --Event SUSPEND_WITHOUT_SP
 ```
 
 Output: 
@@ -18,7 +19,7 @@ Output:
         "SuccessCount": 1,
         "FailedCount": 1,
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "123"
     }
 }
 ```

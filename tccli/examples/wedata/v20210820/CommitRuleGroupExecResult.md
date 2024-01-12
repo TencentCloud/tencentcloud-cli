@@ -20,7 +20,7 @@ Output:
 {
     "Response": {
         "Data": null,
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

@@ -6,7 +6,7 @@ Input:
 
 ```
 tccli wedata BatchResumeIntegrationTasks --cli-unfold-argument  \
-    --ProjectId xx \
+    --ProjectId 17865298918277529 \
     --TaskIds 123 124 \
     --TaskType 201
 ```
@@ -18,7 +18,7 @@ Output:
         "SuccessCount": 1,
         "FailedCount": 1,
         "TotalCount": 2,
-        "RequestId": "xx"
+        "RequestId": "aasd-2343-2342-acef-35af"
     }
 }
 ```

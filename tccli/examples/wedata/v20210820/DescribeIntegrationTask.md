@@ -64,7 +64,8 @@ Output:
                                     "Value": "abc"
                                 }
                             ],
-                            "Alias": "abc"
+                            "Alias": "abc",
+                            "Comment": "abc"
                         }
                     ],
                     "NodeMapping": {
@@ -76,7 +77,14 @@ Output:
                                 "Name": "abc",
                                 "Value": "abc",
                                 "Type": "abc",
-                                "Alias": "abc"
+                                "Alias": "abc",
+                                "Comment": "abc",
+                                "Properties": [
+                                    {
+                                        "Name": "abc",
+                                        "Value": "abc"
+                                    }
+                                ]
                             }
                         ],
                         "SchemaMappings": [
@@ -106,7 +114,14 @@ Output:
                             "Name": "abc",
                             "Value": "abc",
                             "Type": "abc",
-                            "Alias": "abc"
+                            "Alias": "abc",
+                            "Comment": "abc",
+                            "Properties": [
+                                {
+                                    "Name": "abc",
+                                    "Value": "abc"
+                                }
+                            ]
                         }
                     ],
                     "SchemaMappings": [
@@ -136,7 +151,9 @@ Output:
                 "SelfDepend": 1,
                 "TaskAction": "abc",
                 "ExecutionEndTime": "abc",
-                "ExecutionStartTime": "abc"
+                "ExecutionStartTime": "abc",
+                "TaskAutoSubmit": true,
+                "InstanceInitStrategy": "abc"
             },
             "ExecutorGroupName": "abc",
             "InLongManagerUrl": "abc",
@@ -165,7 +182,25 @@ Output:
             ],
             "SwitchResource": 0,
             "ReadPhase": 0,
-            "InstanceVersion": 0
+            "InstanceVersion": 0,
+            "Config": [
+                {
+                    "Name": "abc",
+                    "Value": "abc"
+                }
+            ],
+            "ExtConfig": [
+                {
+                    "Name": "abc",
+                    "Value": "abc"
+                }
+            ],
+            "ExecuteContext": [
+                {
+                    "Name": "abc",
+                    "Value": "abc"
+                }
+            ]
         },
         "AgentStatus": {
             "Running": 0,
@@ -177,7 +212,7 @@ Output:
             "VersionDesc": "abc",
             "ChangeType": 0,
             "SubmitterUin": "abc",
-            "InstanceDate": "2020-09-22",
+            "InstanceDate": "abc",
             "InstanceStatus": 0
         },
         "RequestId": "abc"
