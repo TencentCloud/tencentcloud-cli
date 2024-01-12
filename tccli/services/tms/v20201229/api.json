@@ -118,7 +118,7 @@
         {
           "disabled": false,
           "document": "该字段用于返回违规文本命中信息\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "习近平",
+          "example": "无",
           "member": "HitInfo",
           "name": "HitInfos",
           "output_required": true,

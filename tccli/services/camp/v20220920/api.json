@@ -3518,6 +3518,140 @@
       ],
       "type": "object"
     },
+    "CronHPAJob": {
+      "document": "CronHPA 的job",
+      "members": [
+        {
+          "disabled": false,
+          "document": "job名字",
+          "example": "无",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "job的运行时间",
+          "example": "无",
+          "member": "string",
+          "name": "Schedule",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "是否只运行一次",
+          "example": "无",
+          "member": "bool",
+          "name": "RunOnce",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "调整的副本数",
+          "example": "无",
+          "member": "CronHPAJobSize",
+          "name": "JobSize",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CronHPAJobHPASize": {
+      "document": "CronHPA 的job调整的hpa副本数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小副本数",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetMinSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "最大副本数",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetMaxSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
+    "CronHPAJobSize": {
+      "document": "CronHPA 的job调整的副本数",
+      "members": [
+        {
+          "disabled": false,
+          "document": "workload目标副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "TargetSize",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hpa的目标副本数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronHPAJobHPASize",
+          "name": "TargetHPASize",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "CronHPASource": {
+      "document": "CronHPA 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "不运行的日期\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "ExcludeDates",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "定时任务的job",
+          "example": "无",
+          "member": "CronHPAJob",
+          "name": "Jobs",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "both"
+    },
     "Custom": {
       "document": "自定义权重",
       "members": [
@@ -5732,6 +5866,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "销毁Pod的时候是否跳过优雅终止\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "SkipGraceTermination",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "要销毁的Pod列表",
           "example": "无",
           "member": "DestroyPodDetail",
@@ -6322,6 +6467,100 @@
           "example": "无",
           "member": "HPAScalingPolicy",
           "name": "Policies",
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "HPASource": {
+      "document": "HPA 类型 Trait",
+      "members": [
+        {
+          "disabled": false,
+          "document": "最小副本数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MinReplicas",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "最大副本数\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "MaxReplicas",
+          "output_required": true,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "容忍度\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "Tolerance",
+          "output_required": false,
+          "required": false,
+          "type": "float",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hpa计算周期\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "int64",
+          "name": "ReSyncPeriod",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "扩缩容详细策略\t\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Behavior",
+          "name": "Behavior",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "metrics 定义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "MetricSpec",
+          "name": "Metrics",
+          "output_required": true,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "二次扩容\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "bool",
+          "name": "OverloadScale",
+          "output_required": false,
+          "required": false,
+          "type": "bool",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义指标配置数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPACustomizeMetric",
+          "name": "CustomizeMetrics",
+          "output_required": false,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -8321,13 +8560,36 @@
       "members": [
         {
           "disabled": false,
-          "document": "需要部署的副本数",
+          "document": "需要部署的副本数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Replicas",
+          "output_required": false,
           "required": false,
           "type": "int",
-          "value_allowed_null": false
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "hpa策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "HPASource",
+          "name": "HpaSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "cronhpa策略\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "CronHPASource",
+          "name": "CronHpaSource",
+          "output_required": false,
+          "required": false,
+          "type": "object",
+          "value_allowed_null": true
         }
       ],
       "usage": "both"

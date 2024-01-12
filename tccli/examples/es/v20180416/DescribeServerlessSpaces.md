@@ -1,6 +1,6 @@
 **Example 1: 获取Serverless索引空间列表**
 
-
+获取Serverless索引空间列表
 
 Input: 
 
@@ -14,13 +14,14 @@ Output:
         "TotalCount": 0,
         "ServerlessSpaces": [
             {
+                "SpaceId": "abc",
+                "SpaceName": "abc",
                 "Status": 0,
-                "SpaceName": "xx",
-                "SpaceId": "xx",
-                "CreateTime": "xx"
+                "CreateTime": "abc",
+                "IndexCount": 0
             }
         ],
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

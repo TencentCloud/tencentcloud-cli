@@ -218,9 +218,9 @@
     ],
     "DescribeServerlessSpaces": [
       {
-        "document": "",
+        "document": "获取Serverless索引空间列表",
         "input": "POST / HTTP/1.1\nHost: es.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeServerlessSpaces\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ServerlessSpaces\": [\n            {\n                \"Status\": 0,\n                \"SpaceName\": \"xx\",\n                \"SpaceId\": \"xx\",\n                \"CreateTime\": \"xx\"\n            }\n        ],\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"TotalCount\": 0,\n        \"ServerlessSpaces\": [\n            {\n                \"SpaceId\": \"abc\",\n                \"SpaceName\": \"abc\",\n                \"Status\": 0,\n                \"CreateTime\": \"abc\",\n                \"IndexCount\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "获取Serverless索引空间列表"
       }
     ],

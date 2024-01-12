@@ -1,3 +1,203 @@
+# Release 3.0.920.1
+
+## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09
+
+### 第 53 次发布
+
+发布时间：2024-01-12 10:31:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeListBGPInstances](http://document.tencentcloudapi.woa.com/document/product/1021/57521)
+
+	* 新增入参：FilterPlanCntFlag
+
+
+修改数据结构：
+
+* [BGPInstance](http://document.tencentcloudapi.woa.com/document/product/1021/57582#BGPInstance)
+
+	* 新增成员：PlanCntFlag
+
+
+
+
+## 应用管理平台(camp) 版本：2022-09-20
+
+### 第 24 次发布
+
+发布时间：2024-01-12 10:33:07
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增数据结构：
+
+* [CronHPAJob](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CronHPAJob)
+* [CronHPAJobHPASize](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CronHPAJobHPASize)
+* [CronHPAJobSize](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CronHPAJobSize)
+* [CronHPASource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#CronHPASource)
+* [HPASource](http://document.tencentcloudapi.woa.com/document/product/1609/78009#HPASource)
+
+修改数据结构：
+
+* [DestroyPodsTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#DestroyPodsTrait)
+
+	* 新增成员：SkipGraceTermination
+
+* [ReplicasTrait](http://document.tencentcloudapi.woa.com/document/product/1609/78009#ReplicasTrait)
+
+	* 新增成员：HpaSource, CronHpaSource
+
+
+
+
+## 数据传输服务(dts) 版本：2021-12-06
+
+### 第 10 次发布
+
+发布时间：2024-01-12 10:33:49
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [MigrateOption](http://document.tencentcloudapi.woa.com/document/product/571/78340#MigrateOption)
+
+	* 新增成员：MigrateWay
+
+
+
+
+## 数据传输服务(dts) 版本：2018-03-30
+
+
+
+## Elasticsearch Service(es) 版本：2018-04-16
+
+### 第 49 次发布
+
+发布时间：2024-01-12 10:34:00
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeServerlessSpaces](http://document.tencentcloudapi.woa.com/document/product/845/77391)
+
+	* 新增入参：VpcIds, Offset, Limit
+
+
+新增数据结构：
+
+* [VpcInfo](http://document.tencentcloudapi.woa.com/document/product/845/30634#VpcInfo)
+
+修改数据结构：
+
+* [ServerlessIndexMetaField](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessIndexMetaField)
+
+	* 新增成员：IsUpgrade, SpaceVersion
+
+* [ServerlessInstanceUser](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessInstanceUser)
+
+	* <font color="#dd0000">**修改成员**：</font>Username, Password, CreateTime
+
+* [ServerlessSpace](http://document.tencentcloudapi.woa.com/document/product/845/30634#ServerlessSpace)
+
+	* 新增成员：KibanaUrl, KibanaPrivateUrl, IndexAccessUrl, KibanaPublicAcl, KibanaEmbedUrl, DiDataList, VpcInfo, Region, Zone, EnableKibanaPublicAccess, EnableKibanaPrivateAccess
+
+
+
+
+## 人脸核身(faceid) 版本：2018-03-01
+
+### 第 47 次发布
+
+发布时间：2024-01-12 10:34:12
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [GetEidResult](http://document.tencentcloudapi.woa.com/document/product/1007/54090)
+
+	* 新增入参：IsCutIdCardImage, IsNeedIdCardAvatar
+
+
+
+
+## 腾讯云可观测平台(monitor) 版本：2018-07-24
+
+### 第 66 次发布
+
+发布时间：2024-01-12 10:34:22
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CreatePrometheusAlertGroup](http://document.tencentcloudapi.woa.com/document/product/248/82929)
+* [DeletePrometheusAlertGroups](http://document.tencentcloudapi.woa.com/document/product/248/82928)
+* [DescribePrometheusAlertGroups](http://document.tencentcloudapi.woa.com/document/product/248/82927)
+* [UpdatePrometheusAlertGroup](http://document.tencentcloudapi.woa.com/document/product/248/82926)
+* [UpdatePrometheusAlertGroupState](http://document.tencentcloudapi.woa.com/document/product/248/82925)
+
+新增数据结构：
+
+* [PrometheusAlertAllowTimeRange](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertAllowTimeRange)
+* [PrometheusAlertCustomReceiver](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertCustomReceiver)
+* [PrometheusAlertGroupRuleSet](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertGroupRuleSet)
+* [PrometheusAlertGroupSet](http://document.tencentcloudapi.woa.com/document/product/248/30354#PrometheusAlertGroupSet)
+
+
+
+## 前端性能监控(rum) 版本：2021-06-22
+
+### 第 29 次发布
+
+发布时间：2024-01-12 10:34:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DeleteOfflineLogConfig
+* DeleteOfflineLogRecord
+* DescribeOfflineLogConfigs
+
+
+
+## 消息队列 TDMQ(tdmq) 版本：2020-02-17
+
+### 第 89 次发布
+
+发布时间：2024-01-12 10:35:17
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [ExportRocketMQMessageDetail](http://document.tencentcloudapi.woa.com/document/product/1179/82930)
+
+
+
 # Release 3.0.919.1
 
 ## 操作审计(cloudaudit) 版本：2019-03-19

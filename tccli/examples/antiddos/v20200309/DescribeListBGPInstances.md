@@ -16,58 +16,73 @@ Output:
 ```
 {
     "Response": {
+        "Total": 1,
         "InstanceList": [
             {
-                "BoundStatus": "idle",
-                "CCEnable": 0,
-                "CreatedTime": "2022-12-08 18:55:54",
-                "DDoSLevel": "high",
-                "EipProductInfos": [],
-                "ElasticServiceBandwidth": 0,
-                "ExpiredTime": "2023-12-08 18:55:54",
                 "InstanceDetail": {
-                    "EipList": [],
-                    "InstanceId": "bgp-00000001"
-                },
-                "IpCountNewFlag": 0,
-                "Line": 1,
-                "Name": "zbhh",
-                "PackInfo": {
-                    "PackId": "zbhh-00000001",
-                    "PackType": "zbhh"
-                },
-                "Region": {
-                    "Region": "ap-hongkong"
+                    "EipList": [
+                        "abc"
+                    ],
+                    "InstanceId": "abc"
                 },
                 "SpecificationLimit": {
-                    "AutoRenewFlag": 0,
-                    "BattleEditionFlag": 0,
-                    "ChannelEditionFlag": 0,
-                    "ElasticLimit": 0,
+                    "ProtectBandwidth": 1,
+                    "ProtectCountLimit": 1,
+                    "ProtectIPNumberLimit": 1,
+                    "AutoRenewFlag": 1,
+                    "UnionPackFlag": 1,
+                    "ServiceBandWidth": 1,
+                    "BattleEditionFlag": 1,
+                    "ChannelEditionFlag": 1,
                     "EnterpriseFlag": 1,
-                    "ProtectBandwidth": 560000,
-                    "ProtectCountLimit": 999999999,
-                    "ProtectIPNumberLimit": 10,
-                    "ServiceBandWidth": 150,
-                    "UnionPackFlag": 0
+                    "ElasticLimit": 1,
+                    "DownGradeProtect": 1
                 },
-                "Status": "idle",
-                "TagInfoList": [
+                "Usage": {
+                    "ProtectCountUsage": 1,
+                    "ProtectIPNumberUsage": 1,
+                    "Last7DayAttackCount": 1
+                },
+                "Region": {
+                    "Region": "abc"
+                },
+                "Status": "abc",
+                "CreatedTime": "2020-09-22 00:00:00",
+                "ExpiredTime": "2020-09-22 00:00:00",
+                "Name": "abc",
+                "PackInfo": {
+                    "PackType": "abc",
+                    "PackId": "abc"
+                },
+                "EipProductInfos": [
                     {
-                        "TagKey": "xxx",
-                        "TagValue": "test"
+                        "Ip": "abc",
+                        "BizType": "abc",
+                        "DeviceType": "abc",
+                        "InstanceId": "abc",
+                        "Domain": "abc"
                     }
                 ],
-                "Usage": {
-                    "Last7DayAttackCount": 0,
-                    "ProtectCountUsage": 999999999,
-                    "ProtectIPNumberUsage": 0
-                },
-                "VitalityVersion": 0
+                "BoundStatus": "abc",
+                "DDoSLevel": "abc",
+                "CCEnable": 0,
+                "TagInfoList": [
+                    {
+                        "TagKey": "abc",
+                        "TagValue": "abc"
+                    }
+                ],
+                "IpCountNewFlag": 1,
+                "VitalityVersion": 1,
+                "Line": 1,
+                "FreeServiceBandwidth": 1,
+                "ElasticServiceBandwidth": 1,
+                "GiftServiceBandWidth": 0,
+                "ModifyTime": "abc",
+                "BasicPlusFlag": 1
             }
         ],
-        "RequestId": "0381c271-292d-4e2a-adcc-cd7bcd6977a7",
-        "Total": 53
+        "RequestId": "abc"
     }
 }
 ```
