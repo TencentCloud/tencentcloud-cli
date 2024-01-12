@@ -70,22 +70,6 @@
         "title": "删除日志下载任务"
       }
     ],
-    "DeleteOfflineLogConfig": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DeleteOfflineLogConfig\n&ProjectKey='a46hv4vGFds576'\n&UniqueID='958033435'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "删除 rum 离线日志监听"
-      }
-    ],
-    "DeleteOfflineLogRecord": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DeleteOfflineLogRecord\n&ProjectKey='a46hv4vGFds576'\n&FileID='958033435'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "删除 rum 离线日志记录"
-      }
-    ],
     "DeleteProject": [
       {
         "document": "删除 RUM 应用",
@@ -358,14 +342,6 @@
         "input": "POST / HTTP/1.1\nHost: rum.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogList\n<公共请求参数>\n\n{\n    \"Sort\": \"\\\"desc\\\"\",\n    \"StartTime\": \"\\\"1\\\"\",\n    \"ActionType\": \"\\\"searchlog\\\"\",\n    \"Limit\": \"10\",\n    \"Context\": \"\\\"xxx\\\"\",\n    \"Query\": \"\\\"xxx\\\"\",\n    \"EndTime\": \"\\\"20\\\"\",\n    \"ID\": \"10\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": \"xxxx\",\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
         "title": "获取日志列表"
-      }
-    ],
-    "DescribeOfflineLogConfigs": [
-      {
-        "document": "",
-        "input": "https://rum.tencentcloudapi.com/?Action=DescribeOfflineLogConfigs\n&ProjectKey='a46hv4vGFds576'\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"Msg\": \"success\",\n        \"UniqueIDSet\": [],\n        \"RequestId\": \"65a8fec7-2b39-4b11-893f-3715279d235f\"\n    }\n}",
-        "title": "获取 rum 离线日志监听配置"
       }
     ],
     "DescribeProjectLimits": [

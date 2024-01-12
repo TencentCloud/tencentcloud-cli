@@ -782,6 +782,14 @@
         "title": "获取环境下主题列表"
       }
     ],
+    "ExportRocketMQMessageDetail": [
+      {
+        "document": "导出消息详情",
+        "input": "POST / HTTP/1.1\nHost: tdmq.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ExportRocketMQMessageDetail\n<公共请求参数>\n\n{\n    \"ClusterId\": \"xx\",\n    \"EnvironmentId\": \"xx\",\n    \"TopicName\": \"xx\",\n    \"MsgId\": \"xx\",\n    \"DeadLetterMsg\": true,\n    \"IncludeMsgBody\": true\n}",
+        "output": "{\n    \"Response\": {\n        \"MsgId\": \"xx\",\n        \"BornTimestamp\": 0,\n        \"StoreTimestamp\": 0,\n        \"BornHost\": \"xx\",\n        \"MsgTag\": \"xx\",\n        \"MsgKey\": \"xx\",\n        \"Properties\": \"xx\",\n        \"ReConsumeTimes\": 1,\n        \"MsgBody\": \"xx\",\n        \"MsgBodyCRC\": 0,\n        \"MsgBodySize\": 1,\n        \"RequestId\": \"xx\"\n    }\n}",
+        "title": "demo"
+      }
+    ],
     "ImportRocketMQConsumerGroups": [
       {
         "document": "导入消费组列表",

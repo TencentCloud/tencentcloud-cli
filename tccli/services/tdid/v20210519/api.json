@@ -1,10 +1,17 @@
 {
   "actions": {
-    "CheckNewPurchase": {
-      "document": "检查用户套餐购买状态",
-      "input": "CheckNewPurchaseRequest",
-      "name": "检查用户套餐购买状态",
-      "output": "CheckNewPurchaseResponse",
+    "CreateDisclosedCredential": {
+      "document": "根据披露策略创建选择性披露凭证",
+      "input": "CreateDisclosedCredentialRequest",
+      "name": "创建选择性披露可验证凭证",
+      "output": "CreateDisclosedCredentialResponse",
+      "status": "online"
+    },
+    "CreatePresentation": {
+      "document": "创建凭证持有人的可验证表达",
+      "input": "CreatePresentationRequest",
+      "name": "创建可验证表达",
+      "output": "CreatePresentationResponse",
       "status": "online"
     },
     "CreateTDidByHost": {
@@ -28,11 +35,32 @@
       "output": "DeactivateTDidResponse",
       "status": "online"
     },
+    "GetAppSummary": {
+      "document": "获取某个应用关键指标统计数据",
+      "input": "GetAppSummaryRequest",
+      "name": "获取某个应用关键指标",
+      "output": "GetAppSummaryResponse",
+      "status": "online"
+    },
     "GetCredentialState": {
       "document": "获取凭证链上状态信息",
       "input": "GetCredentialStateRequest",
       "name": "获取凭证链上的状态",
       "output": "GetCredentialStateResponse",
+      "status": "online"
+    },
+    "GetOverSummary": {
+      "document": "获取某个应用关键指标统计数据",
+      "input": "GetOverSummaryRequest",
+      "name": "获取某个应用的关键指标",
+      "output": "GetOverSummaryResponse",
+      "status": "online"
+    },
+    "GetTDidByObjectId": {
+      "document": "通过业务层绑定的对象ID获取DID标识",
+      "input": "GetTDidByObjectIdRequest",
+      "name": "通过绑定的对象ID查询DID标识",
+      "output": "GetTDidByObjectIdResponse",
       "status": "online"
     },
     "GetTDidDocument": {
@@ -42,11 +70,39 @@
       "output": "GetTDidDocumentResponse",
       "status": "online"
     },
+    "GetTDidPubKey": {
+      "document": "查询DID标识的认证公钥",
+      "input": "GetTDidPubKeyRequest",
+      "name": "查询DID标识的认证公钥",
+      "output": "GetTDidPubKeyResponse",
+      "status": "online"
+    },
     "IssueCredential": {
       "document": "颁发可验证凭证",
       "input": "IssueCredentialRequest",
       "name": "颁发可验证凭证",
       "output": "IssueCredentialResponse",
+      "status": "online"
+    },
+    "QueryAuthorityInfo": {
+      "document": "查询权威机构信息",
+      "input": "QueryAuthorityInfoRequest",
+      "name": "查询权威机构信息",
+      "output": "QueryAuthorityInfoResponse",
+      "status": "online"
+    },
+    "QueryCPT": {
+      "document": "查询凭证模版内容",
+      "input": "QueryCPTRequest",
+      "name": "查询凭证模版内容",
+      "output": "QueryCPTResponse",
+      "status": "online"
+    },
+    "SetTDidAttribute": {
+      "document": "设置DID文档的自定义属性",
+      "input": "SetTDidAttributeRequest",
+      "name": "设置DID文档的属性值",
+      "output": "SetTDidAttributeResponse",
       "status": "online"
     },
     "UpdateCredentialState": {
@@ -61,6 +117,13 @@
       "input": "VerifyCredentialsRequest",
       "name": "验证可验证凭证",
       "output": "VerifyCredentialsResponse",
+      "status": "online"
+    },
+    "VerifyPresentation": {
+      "document": "验证可验证表达的内容",
+      "input": "VerifyPresentationRequest",
+      "name": "验证可验证表达",
+      "output": "VerifyPresentationResponse",
       "status": "online"
     }
   },
@@ -153,14 +216,152 @@
       ],
       "usage": "out"
     },
-    "CheckNewPurchaseRequest": {
-      "document": "CheckNewPurchase请求参数结构体",
-      "members": [],
+    "CreateDisclosedCredentialRequest": {
+      "document": "CreateDisclosedCredential请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "披露策略id，PolicyJson和PolicyId任选其一",
+          "example": "2000000",
+          "member": "uint64",
+          "name": "PolicyId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "凭证文本内容，FunctionArg和CredentialText任选其一",
+          "example": "credential",
+          "member": "string",
+          "name": "CredentialData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "披露策略文本",
+          "example": "{\"age\":1}",
+          "member": "string",
+          "name": "PolicyJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用ID",
+          "example": "无",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        }
+      ],
       "type": "object"
     },
-    "CheckNewPurchaseResponse": {
-      "document": "CheckNewPurchase返回参数结构体",
+    "CreateDisclosedCredentialResponse": {
+      "document": "CreateDisclosedCredential返回参数结构体",
       "members": [
+        {
+          "disabled": false,
+          "document": "凭证字符串",
+          "example": "{}",
+          "member": "string",
+          "name": "CredentialData",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePresentationRequest": {
+      "document": "CreatePresentation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "凭证列表",
+          "example": "无",
+          "member": "string",
+          "name": "Credentials",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "VP持有人的DID标识",
+          "example": "did:tdid:c52:0xfd28ad212a2de77fee518b4914b8579a40c601fa",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "VP随机验证码",
+          "example": "test",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "选择性披露策略",
+          "example": "{}",
+          "member": "string",
+          "name": "PolicyJson",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否签名，ture时signatureValue为待签名内容由调用端自行签名，false时signatureValue为平台自动已签名的内容。默认false",
+          "example": "无",
+          "member": "bool",
+          "name": "Unsigned",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "可验证凭证证明列表",
+          "example": "无",
+          "member": "CredentialProof",
+          "name": "CredentialList",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePresentationResponse": {
+      "document": "CreatePresentation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可验证表达内容",
+          "example": "\"\"",
+          "member": "string",
+          "name": "PresentationData",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
@@ -299,6 +500,21 @@
         }
       ],
       "type": "object"
+    },
+    "CredentialProof": {
+      "document": "可验证凭证证明信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "可验证凭证内容",
+          "example": "无",
+          "member": "string",
+          "name": "Credential",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "usage": "in"
     },
     "CredentialState": {
       "document": "凭证链上状态信息",
@@ -480,6 +696,79 @@
       ],
       "type": "object"
     },
+    "DidAttribute": {
+      "document": "did自定义属性",
+      "members": [
+        {
+          "disabled": false,
+          "document": "键名",
+          "example": "a",
+          "member": "string",
+          "name": "Key",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "键值",
+          "example": "1",
+          "member": "string",
+          "name": "Val",
+          "required": true,
+          "type": "string",
+          "value_allowed_null": false
+        }
+      ],
+      "usage": "in"
+    },
+    "GetAppSummaryRequest": {
+      "document": "GetAppSummary请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID应用Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetAppSummaryResponse": {
+      "document": "GetAppSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户参与应用的统计指标 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DidCnt\":676,\"VCCnt\":942,\"CPTCnt\":2,\"VerifyCnt\":1288,\"AuthCnt\":2}",
+          "member": "ResourceCounterData",
+          "name": "AppCounter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户创建资源的统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DidCnt\":341,\"VCCnt\":484,\"CPTCnt\":2,\"VerifyCnt\":648,\"AuthCnt\":2}",
+          "member": "ResourceCounterData",
+          "name": "UserCounter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "GetCredentialStateRequest": {
       "document": "GetCredentialState请求参数结构体",
       "members": [
@@ -515,6 +804,119 @@
           "name": "CredentialState",
           "output_required": false,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetOverSummaryRequest": {
+      "document": "GetOverSummary请求参数结构体",
+      "members": [],
+      "type": "object"
+    },
+    "GetOverSummaryResponse": {
+      "document": "GetOverSummary返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "用户参与应用的统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DidCnt\":1,\"VCCnt\":1,\"CPTCnt\":1,\"VerifyCnt\":1}",
+          "member": "ResourceCounterData",
+          "name": "AppCounter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户部署应用的统计指标\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"DidCnt\":1,\"VCCnt\":1,\"CPTCnt\":1,\"VerifyCnt\":1}",
+          "member": "ResourceCounterData",
+          "name": "UserCounter",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户参与的应用总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "AppCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "用户部署的应用总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "DeployCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "部署网络子链总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "ChainCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTDidByObjectIdRequest": {
+      "document": "GetTDidByObjectId请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "业务层为DID设置的唯一标识",
+          "example": "user-test",
+          "member": "string",
+          "name": "ObjectId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTDidByObjectIdResponse": {
+      "document": "GetTDidByObjectId返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID标识\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "did:tdid:w1:0xadjadjiwdiqe2131",
+          "member": "string",
+          "name": "Did",
+          "output_required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -572,6 +974,52 @@
       ],
       "type": "object"
     },
+    "GetTDidPubKeyRequest": {
+      "document": "GetTDidPubKey请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID标识",
+          "example": "did:tdid:w1:0xecfbcad58adefc645de2144afa450ad4eb28c758",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用Id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "GetTDidPubKeyResponse": {
+      "document": "GetTDidPubKey返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID公钥数组",
+          "example": "[]",
+          "member": "string",
+          "name": "AuthPublicKeyList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "IssueCredentialRequest": {
       "document": "IssueCredential请求参数结构体",
       "members": [
@@ -616,6 +1064,267 @@
           "name": "CredentialData",
           "output_required": true,
           "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAuthorityInfoRequest": {
+      "document": "QueryAuthorityInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID标识",
+          "example": "did:tdid:w1:0xa75368ab6ab9cb6d01e81d22155279ee4eca3f4d",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "权威机构名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryAuthorityInfoResponse": {
+      "document": "QueryAuthorityInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "名称",
+          "example": "test",
+          "member": "string",
+          "name": "Name",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "权威机构did",
+          "example": "did:tdid:w1:0xced43c7bc23ca37e9266468598d678cacf7c7444",
+          "member": "string",
+          "name": "Did",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "状态：1为已认证，2为未认证",
+          "example": "1",
+          "member": "uint64",
+          "name": "Status",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "机构备注信息",
+          "example": "test",
+          "member": "string",
+          "name": "Description",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "认证时间",
+          "example": "2022-02-28 17:58:32",
+          "member": "string",
+          "name": "RecognizeTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCPTRequest": {
+      "document": "QueryCPT请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "凭证模板id",
+          "example": "1000",
+          "member": "int64",
+          "name": "CPTId",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "QueryCPTResponse": {
+      "document": "QueryCPT返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "凭证模板内容",
+          "example": "{}",
+          "member": "string",
+          "name": "CPTJson",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "ResourceCounterData": {
+      "document": "资源计数统计数据",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "uint64",
+          "name": "DidCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "VC总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
+          "member": "uint64",
+          "name": "VCCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "CPT总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "CPTCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": " VC验证总数 \n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "uint64",
+          "name": "VerifyCnt",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "权威机构数量\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1",
+          "member": "uint64",
+          "name": "AuthCnt",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "SetTDidAttributeRequest": {
+      "document": "SetTDidAttribute请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "DID标识符",
+          "example": "did:tdid:w1:0x0d342759f20005df531c50f671d414661e381c01",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "属性名值对数组",
+          "example": "[{\"Key\":\"test\",\"Val\":\"test\"}]",
+          "member": "DidAttribute",
+          "name": "Attributes",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用Id",
+          "example": "5",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "操作鉴权凭证",
+          "example": "无",
+          "member": "string",
+          "name": "OperateCredential",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "SetTDidAttributeResponse": {
+      "document": "SetTDidAttribute返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "上链交易信息",
+          "example": "{\"Response\":{\"Transaction\":{\"TransactionHash\":\"17a6bfc02e84d8afca728a0285e5cfc20812a7ca5e0244188a1fdb12cf402789\"},\"RequestId\":\"018647ac-f5ef-478e-bc7c-1e72ae4afac1\"}}",
+          "member": "ChainTransaction",
+          "name": "Transaction",
+          "output_required": false,
+          "type": "object",
           "value_allowed_null": false
         },
         {
@@ -736,6 +1445,90 @@
           "member": "string",
           "name": "VerifyMessage",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyPresentationRequest": {
+      "document": "VerifyPresentation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "VP持有人的did标识",
+          "example": "did:tdid:c780:0x5ce9f61416c174809f4dfd34d930b5c68fdaac30",
+          "member": "string",
+          "name": "Did",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "可验证表达内容",
+          "example": "{}",
+          "member": "string",
+          "name": "PresentationData",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "DID应用id",
+          "example": "1",
+          "member": "uint64",
+          "name": "DAPId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "随机验证码",
+          "example": "007",
+          "member": "string",
+          "name": "VerifyCode",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "VerifyPresentationResponse": {
+      "document": "VerifyPresentation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "是否验证成功",
+          "example": "True",
+          "member": "bool",
+          "name": "Result",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验证返回码",
+          "example": "0",
+          "member": "uint64",
+          "name": "VerifyCode",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "验证消息",
+          "example": "success",
+          "member": "string",
+          "name": "VerifyMessage",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         },

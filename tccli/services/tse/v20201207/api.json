@@ -5353,7 +5353,7 @@
       "type": "object"
     },
     "EngineAdmin": {
-      "document": "引擎的初始管理账号",
+      "document": "引擎的初始管理账号，当前仅支持Apollo引擎",
       "members": [
         {
           "disabled": false,

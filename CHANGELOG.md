@@ -1,3 +1,59 @@
+# Release 3.0.1044.1
+
+## 分布式身份(tdid) 版本：2021-05-19
+
+### 第 11 次发布
+
+发布时间：2024-01-11 10:56:14
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [CheckNewPurchase](https://cloud.tencent.com/document/api/1439/102971)
+* [CreateTDidByHost](https://cloud.tencent.com/document/api/1439/102970)
+* [CreateTDidByPubKey](https://cloud.tencent.com/document/api/1439/102969)
+* [DeactivateTDid](https://cloud.tencent.com/document/api/1439/102968)
+* [GetCredentialState](https://cloud.tencent.com/document/api/1439/102966)
+* [GetTDidDocument](https://cloud.tencent.com/document/api/1439/102967)
+* [IssueCredential](https://cloud.tencent.com/document/api/1439/102965)
+* [UpdateCredentialState](https://cloud.tencent.com/document/api/1439/102964)
+* [VerifyCredentials](https://cloud.tencent.com/document/api/1439/102963)
+
+<font color="#dd0000">**删除接口**：</font>
+
+* CheckChain
+* CreateCredential
+* CreateSelectiveCredential
+* CreateTDid
+* CreateTDidByPrivateKey
+* CreateTDidByPublicKey
+* GetAuthorityIssuer
+* GetCptInfo
+* GetCredentialStatus
+* GetDidDocument
+* RegisterCpt
+* SetCredentialStatus
+* VerifyCredential
+
+新增数据结构：
+
+* [CRDLArg](https://cloud.tencent.com/document/api/1439/60283#CRDLArg)
+* [ChainTransaction](https://cloud.tencent.com/document/api/1439/60283#ChainTransaction)
+* [CredentialState](https://cloud.tencent.com/document/api/1439/60283#CredentialState)
+
+<font color="#dd0000">**删除数据结构**：</font>
+
+* CredentialStatus
+* FunctionArg
+* Proof
+* TransactionArg
+* VerifyFunctionArg
+
+
+
 # Release 3.0.1043.1
 
 ## 分布式身份(tdid) 版本：2021-05-19

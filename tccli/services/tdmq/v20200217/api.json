@@ -658,6 +658,13 @@
       "output": "DescribeTopicsResponse",
       "status": "online"
     },
+    "ExportRocketMQMessageDetail": {
+      "document": "导出RocketMQ消息详情",
+      "input": "ExportRocketMQMessageDetailRequest",
+      "name": "导出RocketMQ消息详情",
+      "output": "ExportRocketMQMessageDetailResponse",
+      "status": "online"
+    },
     "ImportRocketMQConsumerGroups": {
       "document": "输入迁移任务id和要导入的Group，导入后台",
       "input": "ImportRocketMQConsumerGroupsRequest",
@@ -10202,6 +10209,177 @@
         }
       ],
       "usage": "out"
+    },
+    "ExportRocketMQMessageDetailRequest": {
+      "document": "ExportRocketMQMessageDetail请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群id",
+          "example": "rocketmq-xxx",
+          "member": "string",
+          "name": "ClusterId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "应用命名空间",
+          "example": "xxx",
+          "member": "string",
+          "name": "EnvironmentId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "Topic名称\n如果是死信消息 isDlqMsg=true",
+          "example": "xxx",
+          "member": "string",
+          "name": "TopicName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否包含消息体",
+          "example": "false",
+          "member": "bool",
+          "name": "IncludeMsgBody",
+          "required": true,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否死信消息",
+          "example": "false",
+          "member": "bool",
+          "name": "DeadLetterMsg",
+          "required": false,
+          "type": "bool"
+        }
+      ],
+      "type": "object"
+    },
+    "ExportRocketMQMessageDetailResponse": {
+      "document": "ExportRocketMQMessageDetail返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "消息id",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgId",
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "消息生成时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-23 21:21:26",
+          "member": "int64",
+          "name": "BornTimestamp",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息存储时间戳\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2021-11-23 21:21:26",
+          "member": "int64",
+          "name": "StoreTimestamp",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息生产客户端地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "BornHost",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息Tag\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MsgTag",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息Key\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "MsgKey",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息属性\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{\"xxx\":\"aaa\"}",
+          "member": "string",
+          "name": "Properties",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息重试次数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "uint64",
+          "name": "ReConsumeTimes",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Base64编码格式字符串\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "xxx",
+          "member": "string",
+          "name": "MsgBody",
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息内容的CRC32 Code\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "int64",
+          "name": "MsgBodyCRC",
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "消息体大小（单位K）\n当大于2048时不返回消息",
+          "example": "1024",
+          "member": "uint64",
+          "name": "MsgBodySize",
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
     },
     "Filter": {
       "document": "过滤参数",

@@ -124,6 +124,14 @@
         "title": "创建 Prometheus Agent"
       }
     ],
+    "CreatePrometheusAlertGroup": [
+      {
+        "document": "使用通知模板创建告警规则",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePrometheusAlertGroup\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71mk0\",\n    \"GroupName\": \"创建告警分组测试\",\n    \"AMPReceivers\": [\n        \"notice-xxxxxx\"\n    ],\n    \"Rules\": [\n        {\n            \"RuleName\": \"规则-1\",\n            \"Labels\": [\n                {\n                    \"Key\": \"k1\",\n                    \"Value\": \"v1\"\n                }\n            ],\n            \"Annotations\": [\n                {\n                    \"Key\": \"summary\",\n                    \"Value\": \"{{$value}}\"\n                },\n                {\n                    \"Key\": \"describe\",\n                    \"Value\": \"规则1告警\"\n                }\n            ],\n            \"Expr\": \"expr1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"alert-2zvqof1a\",\n        \"RequestId\": \"02c92b99-abc9-431b-8b08-42b9977d51cf\"\n    }\n}",
+        "title": "使用通知模板创建告警规则"
+      }
+    ],
     "CreatePrometheusAlertPolicy": [
       {
         "document": "新增告警",
@@ -286,6 +294,14 @@
         "input": "https://monitor.tencentcloudapi.com/?Action=DeletePolicyGroup\n&Module=monitor\n&GroupId.0=11111\n&<公共请求参数>",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"0dbb66c2-b4d6-4c2c-90a9-617d80347ab5\"\n    }\n}",
         "title": "删除告警策略组"
+      }
+    ],
+    "DeletePrometheusAlertGroups": [
+      {
+        "document": "删除告警分组",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeletePrometheusAlertGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71mk0\",\n    \"GroupIds\": [\n        \"alert-ol72w8vy\"\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"09cffdc9-047e-45c5-b0eb-6d7cbfee5048\"\n    }\n}",
+        "title": "删除告警分组"
       }
     ],
     "DeletePrometheusAlertPolicy": [
@@ -664,6 +680,14 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAgents\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-m4fb9h34\"\n}",
         "output": "{\n    \"Response\": {\n        \"AgentSet\": [\n            {\n                \"AgentId\": \"agent-hod16m34\",\n                \"Name\": \"node-agent\",\n                \"InstanceId\": \"prom-m4fb9h34\",\n                \"HeartbeatTime\": \"2021-12-03T16:16:24+08:00\",\n                \"Ipv4\": \"199.21.24.90\",\n                \"LastError\": \"\",\n                \"AgentVersion\": \"2.31.1-rig.1\"\n            }\n        ],\n        \"RequestId\": \"e6a09531-0b40-41ab-a932-33061e9e1832\",\n        \"TotalCount\": 12\n    }\n}",
         "title": "列出 Prometheus Agent"
+      }
+    ],
+    "DescribePrometheusAlertGroups": [
+      {
+        "document": "列出实例下所有告警规则，包含启用与禁用",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribePrometheusAlertGroups\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-xxxxxxxx\"\n}",
+        "output": "{\n    \"Response\": {\n        \"AlertGroupSet\": [\n            {\n                \"AMPReceivers\": [],\n                \"CreatedAt\": \"2023-08-01T20:29:56+08:00\",\n                \"CustomReceiver\": {\n                    \"Type\": \"\",\n                    \"Url\": \"\"\n                },\n                \"GroupId\": \"alert-xxxxxxxx\",\n                \"GroupName\": \"查询告警分组测试-1\",\n                \"Rules\": [\n                    {\n                        \"Annotations\": [\n                            {\n                                \"Key\": \"summary\",\n                                \"Value\": \"{{$value}}\"\n                            }\n                        ],\n                        \"Duration\": \"\",\n                        \"Expr\": \"expr1\",\n                        \"Labels\": [\n                            {\n                                \"Key\": \"_interval_\",\n                                \"Value\": \"10m\"\n                            }\n                        ],\n                        \"RuleName\": \"规则-1\",\n                        \"State\": 2\n                    }\n                ],\n                \"TemplateId\": \"\",\n                \"UpdatedAt\": \"2023-08-01T20:29:56+08:00\"\n            }\n        ],\n        \"RequestId\": \"bc70036f-db50-4b46-abbc-bd41eeb06f7a\",\n        \"TotalCount\": 1\n    }\n}",
+        "title": "列出实例下所有告警规则"
       }
     ],
     "DescribePrometheusAlertPolicy": [
@@ -1228,6 +1252,22 @@
         "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAgentStatus\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-abcd1234\",\n    \"AgentIds\": [\n        \"agent-abcd1234\"\n    ],\n    \"Status\": 1\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"3e0dff9d-9ed5-47c3-beb2-a42c1d69e1cc\"\n    }\n}",
         "title": "更新 Prometheus Agent 状态"
+      }
+    ],
+    "UpdatePrometheusAlertGroup": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAlertGroup\n<公共请求参数>\n\n{\n    \"GroupId\": \"alert-34xae12s\",\n    \"InstanceId\": \"prom-7vp71mk0\",\n    \"GroupName\": \"更新告警分组测试\",\n    \"AMPReceivers\": [\n        \"notice-xxxxxx\"\n    ],\n    \"Rules\": [\n        {\n            \"RuleName\": \"规则-1\",\n            \"Labels\": [\n                {\n                    \"Key\": \"k1\",\n                    \"Value\": \"v1\"\n                }\n            ],\n            \"Annotations\": [\n                {\n                    \"Key\": \"summary\",\n                    \"Value\": \"{{$value}}\"\n                },\n                {\n                    \"Key\": \"describe\",\n                    \"Value\": \"规则1告警\"\n                }\n            ],\n            \"Expr\": \"expr1\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"GroupId\": \"alert-34xae12s\",\n        \"RequestId\": \"02c92b99-abc9-431b-8b08-42b9977d51cf\"\n    }\n}",
+        "title": "更新告警分组"
+      }
+    ],
+    "UpdatePrometheusAlertGroupState": [
+      {
+        "document": "设置告警分组禁用",
+        "input": "POST / HTTP/1.1\nHost: monitor.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdatePrometheusAlertGroupState\n<公共请求参数>\n\n{\n    \"InstanceId\": \"prom-7vp71mk0\",\n    \"GroupIds\": [\n        \"alert-ol72w8vy\"\n    ],\n    \"GroupState\": 3\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"a4797141-a4f9-43d4-b4ca-09d72bb48f8d\"\n    }\n}",
+        "title": "设置告警分组禁用"
       }
     ],
     "UpdatePrometheusScrapeJob": [

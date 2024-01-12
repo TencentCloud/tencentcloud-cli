@@ -56,20 +56,6 @@
       "output": "DeleteLogExportResponse",
       "status": "online"
     },
-    "DeleteOfflineLogConfig": {
-      "document": "删除 rum 离线日志监听 - 对应用户的离线日志将不会上报",
-      "input": "DeleteOfflineLogConfigRequest",
-      "name": "删除 rum 离线日志监听",
-      "output": "DeleteOfflineLogConfigResponse",
-      "status": "online"
-    },
-    "DeleteOfflineLogRecord": {
-      "document": "删除对应的离线日志记录",
-      "input": "DeleteOfflineLogRecordRequest",
-      "name": "删除离线日志记录",
-      "output": "DeleteOfflineLogRecordResponse",
-      "status": "online"
-    },
     "DeleteProject": {
       "document": "删除给定的 rum 的项目",
       "input": "DeleteProjectRequest",
@@ -271,13 +257,6 @@
       "input": "DescribeLogListRequest",
       "name": "获取日志列表(已下线，请用DescribeRumLogList)",
       "output": "DescribeLogListResponse",
-      "status": "online"
-    },
-    "DescribeOfflineLogConfigs": {
-      "document": "获取设置的离线日志监听配置 - 返回设置的用户唯一标识",
-      "input": "DescribeOfflineLogConfigsRequest",
-      "name": "获取设置的离线日志监听配置",
-      "output": "DescribeOfflineLogConfigsResponse",
       "status": "online"
     },
     "DescribeProjectLimits": {
@@ -1013,98 +992,6 @@
           "required": true,
           "type": "string",
           "value_allowed_null": true
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOfflineLogConfigRequest": {
-      "document": "DeleteOfflineLogConfig请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "fd34af34fghf6",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "用户唯一标示(uin or aid)",
-          "example": "9535989045",
-          "member": "string",
-          "name": "UniqueID",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOfflineLogConfigResponse": {
-      "document": "DeleteOfflineLogConfig返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口调用信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOfflineLogRecordRequest": {
-      "document": "DeleteOfflineLogRecord请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "DjkljW234R",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "离线日志文件 id",
-          "example": "123",
-          "member": "string",
-          "name": "FileID",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DeleteOfflineLogRecordResponse": {
-      "document": "DeleteOfflineLogRecord返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口调用信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
         },
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -5606,53 +5493,6 @@
           "name": "Result",
           "required": true,
           "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogConfigsRequest": {
-      "document": "DescribeOfflineLogConfigs请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "项目唯一上报 key",
-          "example": "DjkljW234R",
-          "member": "string",
-          "name": "ProjectKey",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeOfflineLogConfigsResponse": {
-      "document": "DescribeOfflineLogConfigs返回参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "接口调用信息",
-          "example": "success",
-          "member": "string",
-          "name": "Msg",
-          "required": true,
-          "type": "string",
-          "value_allowed_null": false
-        },
-        {
-          "disabled": false,
-          "document": "用户唯一标示数组",
-          "example": "['123123']",
-          "member": "string",
-          "name": "UniqueIDSet",
-          "required": true,
-          "type": "list",
           "value_allowed_null": false
         },
         {

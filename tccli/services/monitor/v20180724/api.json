@@ -98,6 +98,13 @@
       "output": "CreatePrometheusAgentResponse",
       "status": "online"
     },
+    "CreatePrometheusAlertGroup": {
+      "document": "创建Prometheus告警规则分组\n\n告警分组中可包含多条告警规则，分组内告警消息通过告警分组的通知模板发送。\n支持单个告警分组下分别创建启用/禁用的告警规则。",
+      "input": "CreatePrometheusAlertGroupRequest",
+      "name": "创建Prometheus告警规则分组",
+      "output": "CreatePrometheusAlertGroupResponse",
+      "status": "online"
+    },
     "CreatePrometheusAlertPolicy": {
       "document": "创建 Prometheus 告警策略(将逐步废弃，建议使用 CreatePrometheusAlertGroup 创建告警策略)",
       "input": "CreatePrometheusAlertPolicyRequest",
@@ -229,6 +236,13 @@
       "input": "DeletePolicyGroupRequest",
       "name": "删除告警策略组",
       "output": "DeletePolicyGroupResponse",
+      "status": "online"
+    },
+    "DeletePrometheusAlertGroups": {
+      "document": "删除Prometheus告警规则分组",
+      "input": "DeletePrometheusAlertGroupsRequest",
+      "name": "删除Prometheus告警规则分组",
+      "output": "DeletePrometheusAlertGroupsResponse",
       "status": "online"
     },
     "DeletePrometheusAlertPolicy": {
@@ -544,6 +558,13 @@
       "input": "DescribePrometheusAgentsRequest",
       "name": "列出 Prometheus CVM Agent",
       "output": "DescribePrometheusAgentsResponse",
+      "status": "online"
+    },
+    "DescribePrometheusAlertGroups": {
+      "document": "查询给定prometheus下的告警分组",
+      "input": "DescribePrometheusAlertGroupsRequest",
+      "name": "列出Prometheus告警分组",
+      "output": "DescribePrometheusAlertGroupsResponse",
       "status": "online"
     },
     "DescribePrometheusAlertPolicy": {
@@ -1006,6 +1027,20 @@
       "input": "UpdatePrometheusAgentStatusRequest",
       "name": "更新 Prometheus CVM Agent 状态",
       "output": "UpdatePrometheusAgentStatusResponse",
+      "status": "online"
+    },
+    "UpdatePrometheusAlertGroup": {
+      "document": "更新Prometheus告警规则分组",
+      "input": "UpdatePrometheusAlertGroupRequest",
+      "name": "更新Prometheus告警规则分组",
+      "output": "UpdatePrometheusAlertGroupResponse",
+      "status": "online"
+    },
+    "UpdatePrometheusAlertGroupState": {
+      "document": "批量更新告警分组状态，将分组中全部告警规则更新为目标状态",
+      "input": "UpdatePrometheusAlertGroupStateRequest",
+      "name": "更新Prometheus告警分组状态",
+      "output": "UpdatePrometheusAlertGroupStateResponse",
       "status": "online"
     },
     "UpdatePrometheusScrapeJob": {
@@ -4110,6 +4145,97 @@
       ],
       "type": "object"
     },
+    "CreatePrometheusAlertGroupRequest": {
+      "document": "CreatePrometheusAlertGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "prometheus实例ID",
+          "example": "prom-23sadu23",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组名称，不能与其他告警分组重名",
+          "example": "告警规则创建测试",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组状态：\n2 -- 启用\n3 -- 禁用\n不为空时会覆盖 `Rules`字段下所有告警规则状态\n",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "example": "[\"Consumer-5sfs3242\", \"notice-as6512as\"]",
+          "member": "string",
+          "name": "AMPReceivers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义告警通知模板",
+          "example": "无",
+          "member": "PrometheusAlertCustomReceiver",
+          "name": "CustomReceiver",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "告警通知周期（收敛时间），为空默认1h",
+          "example": "5m",
+          "member": "string",
+          "name": "RepeatInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要创建的告警规则列表",
+          "example": "无",
+          "member": "PrometheusAlertGroupRuleSet",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "CreatePrometheusAlertGroupResponse": {
+      "document": "CreatePrometheusAlertGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "创建的告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`",
+          "example": "alert-sx123a23",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "CreatePrometheusAlertPolicyRequest": {
       "document": "CreatePrometheusAlertPolicy请求参数结构体",
       "members": [
@@ -5079,6 +5205,42 @@
     },
     "DeletePolicyGroupResponse": {
       "document": "DeletePolicyGroup返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertGroupsRequest": {
+      "document": "DeletePrometheusAlertGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "prometheus实例id",
+          "example": "prom-asd654xz",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要删除的告警分组ID，形如alert-xxxxx",
+          "example": "[\"alert-123khjg2\", \"alert-1234asxf\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "DeletePrometheusAlertGroupsResponse": {
+      "document": "DeletePrometheusAlertGroups返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
@@ -10748,6 +10910,89 @@
       ],
       "type": "object"
     },
+    "DescribePrometheusAlertGroupsRequest": {
+      "document": "DescribePrometheusAlertGroups请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus 实例 ID",
+          "example": "prom-zs761zs2",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回数量，默认为 20，最大值为 100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量，默认为 0",
+          "example": "0",
+          "member": "int64",
+          "name": "Offset",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组ID，形如alert-xxxx。\n查询给定ID的告警分组",
+          "example": "alert-f2vx278",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组名称。\n查询名称中包含给定字符串的告警分组",
+          "example": "告警分组-11",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribePrometheusAlertGroupsResponse": {
+      "document": "DescribePrometheusAlertGroups返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警分组信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertGroupSet",
+          "name": "AlertGroupSet",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警分组总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "10",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribePrometheusAlertPolicyRequest": {
       "document": "DescribePrometheusAlertPolicy请求参数结构体",
       "members": [
@@ -16067,6 +16312,263 @@
       ],
       "usage": "out"
     },
+    "PrometheusAlertAllowTimeRange": {
+      "document": "Prometheus自定义告警通知时间段",
+      "members": [
+        {
+          "disabled": false,
+          "document": "从0点开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "0",
+          "member": "string",
+          "name": "Start",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "从0点开始的秒数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3600",
+          "member": "string",
+          "name": "End",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertCustomReceiver": {
+      "document": "Prometheus告警自定义通知模板",
+      "members": [
+        {
+          "disabled": false,
+          "document": "自定义通知类型\nalertmanager -- vpc内自建alertmanager\nwebhook -- vpc内webhook地址\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "alertmanager",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "alertmanager/webhook地址。（prometheus实例同vpc内ip）\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "http://192.168.10.2:9090",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "允许发送告警的时间范围\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{{\"Start\": \"28800\", \"End\": \"72000\"}}",
+          "member": "PrometheusAlertAllowTimeRange",
+          "name": "AllowedTimeRanges",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "alertmanager所在的内网集群ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cls-asd212as",
+          "member": "string",
+          "name": "ClusterId",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "alertmanager所在的内网集群类型(tke/eks/tdcc)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "tke",
+          "member": "string",
+          "name": "ClusterType",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertGroupRuleSet": {
+      "document": "告警分组内告警规则信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警规则名称，同一告警分组下不允许重名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "规则-1",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "标签列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{Key: \"ip\" Value: \"1.1.1.1\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Labels",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "注释列表\n\n告警对象和告警消息是 Prometheus Rule Annotations 的特殊字段，需要通过 annotations 来传递，对应的 Key 分别为summary/description。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[{Key: \"summary\" Value: \"规则名称\"}]",
+          "member": "PrometheusRuleKV",
+          "name": "Annotations",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则报警持续时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5m",
+          "member": "string",
+          "name": "Duration",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "规则表达式，可参考<a href=\"https://cloud.tencent.com/document/product/1416/56008\">告警规则说明</a>\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "job:request_latency_seconds:mean5m{job=\"myjob\"} > 0.5",
+          "member": "string",
+          "name": "Expr",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警规则状态:\n2-启用\n3-禁用\n为空默认启用\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2",
+          "member": "int64",
+          "name": "State",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
+    },
+    "PrometheusAlertGroupSet": {
+      "document": "Prometheus告警规则分组信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "alert-f2vx278",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警分组名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "告警分组-11",
+          "member": "string",
+          "name": "GroupName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "云监控告警模板ID ，返回告警模板转换后的notice ID。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "[\"notice-as454a12\"]",
+          "member": "string",
+          "name": "AMPReceivers",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "自定义告警模板\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertCustomReceiver",
+          "name": "CustomReceiver",
+          "output_required": false,
+          "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "告警通知间隔\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "5m",
+          "member": "string",
+          "name": "RepeatInterval",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "若告警分组通过模板创建，则返回模板ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "temp-sa123dsx",
+          "member": "string",
+          "name": "TemplateId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组内告警规则详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "PrometheusAlertGroupRuleSet",
+          "name": "Rules",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组创建时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-24T17:08:16+08:00",
+          "member": "string",
+          "name": "CreatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "分组更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-07-24T17:08:16+08:00",
+          "member": "string",
+          "name": "UpdatedAt",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
     "PrometheusAlertManagerConfig": {
       "document": "告警渠道使用自建alertmanager的配置",
       "members": [
@@ -19715,6 +20217,151 @@
     },
     "UpdatePrometheusAgentStatusResponse": {
       "document": "UpdatePrometheusAgentStatus返回参数结构体",
+      "members": [
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAlertGroupRequest": {
+      "document": "UpdatePrometheusAlertGroup请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "prometheus实例ID",
+          "example": "prom-23sadu23",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组ID，形如alert-xxxx",
+          "example": "alert-a654zxc1",
+          "member": "string",
+          "name": "GroupId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组名称，不能与其他告警分组重名",
+          "example": "告警规则创建测试",
+          "member": "string",
+          "name": "GroupName",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组状态：\n2 -- 启用\n3 -- 禁用\n不为空时会覆盖 `Rules`字段下所有告警规则状态",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupState",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "云监控告警通知模板ID列表，形如Consumer-xxxx或notice-xxxx",
+          "example": "[\"Consumer-5sfs3242\"]",
+          "member": "string",
+          "name": "AMPReceivers",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "自定义告警通知模板",
+          "example": "无",
+          "member": "PrometheusAlertCustomReceiver",
+          "name": "CustomReceiver",
+          "required": false,
+          "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "告警通知周期（收敛时间），为空默认1h",
+          "example": "5m",
+          "member": "string",
+          "name": "RepeatInterval",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "要创建的告警规则列表",
+          "example": "无",
+          "member": "PrometheusAlertGroupRuleSet",
+          "name": "Rules",
+          "required": false,
+          "type": "list"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAlertGroupResponse": {
+      "document": "UpdatePrometheusAlertGroup返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "更新的告警分组ID，满足正则表达式`alert-[a-z0-9]{8}`",
+          "example": "alert-sx123a23",
+          "member": "string",
+          "name": "GroupId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAlertGroupStateRequest": {
+      "document": "UpdatePrometheusAlertGroupState请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "Prometheus 实例 ID",
+          "example": "prom-x23as2sa",
+          "member": "string",
+          "name": "InstanceId",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组ID列表，形如alert-xxxx",
+          "example": "[\"alert-x12sa4da\", \"alert-bu2gzx62\"]",
+          "member": "string",
+          "name": "GroupIds",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "告警分组状态\n2 -- 启用\n3 -- 禁用",
+          "example": "2",
+          "member": "int64",
+          "name": "GroupState",
+          "required": false,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "UpdatePrometheusAlertGroupStateResponse": {
+      "document": "UpdatePrometheusAlertGroupState返回参数结构体",
       "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",

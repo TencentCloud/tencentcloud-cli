@@ -1,11 +1,19 @@
 {
   "actions": {
-    "CheckNewPurchase": [
+    "CreateDisclosedCredential": [
+      {
+        "document": "根据批量策略把可验证凭证转换成选择性披露凭证",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateDisclosedCredential\n<公共请求参数>\n\n{\n    \"DAPId\": 41,\n    \"CredentialData\": \"{\\\"claim\\\":{\\\"action\\\":\\\"SetCredentialStatus\\\",\\\"credentialStatus\\\":{\\\"credentialId\\\":\\\"0d8062f09bff4eb5b9697d1de28eebda\\\",\\\"issuer\\\":\\\"did:tdid:w1:0x9b38e2d3bb358e1ceb8d7dd902585a53a5158844\\\",\\\"status\\\":0},\\\"orignCredential\\\":\\\"test\\\"},\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"CPTId\\\":1,\\\"expirationDate\\\":1656487500,\\\"id\\\":\\\"7c9c02bedace4a23be8885df6c4ead92\\\",\\\"issuanceDate\\\":1652410271,\\\"issuer\\\":\\\"did:tdid:w1:0x9b38e2d3bb358e1ceb8d7dd902585a53a5158844\\\",\\\"proof\\\":{\\\"created\\\":1652410271,\\\"creator\\\":\\\"did:tdid:w1:0x9b38e2d3bb358e1ceb8d7dd902585a53a5158844#keys-0\\\",\\\"salt\\\":{\\\"action\\\":\\\"dton2\\\",\\\"credentialStatus\\\":{\\\"credentialId\\\":\\\"LSJS0\\\",\\\"issuer\\\":\\\"HLeve\\\",\\\"status\\\":\\\"84HbY\\\"},\\\"orignCredential\\\":\\\"si5ML\\\"},\\\"signatureValue\\\":\\\"MEUCIFRUY/kghz/EhMmyEwbepfgyDS2o2dEjzvxO3hkU6Qi+AiEAkOnO5QV3Nl4NpyKUprioYvBJKAPvf7dFQO5QACoUq1I=\\\",\\\"type\\\":\\\"Sm2p256v1\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\",\\\"OperateCredential\\\"]}\",\n    \"PolicyJson\": \"{\\\"orignCredential\\\": 0, \\\"action\\\": 1, \\\"credentialStatus\\\": {\\\"credentialId\\\":1}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CredentialData\": \"{\\\"claim\\\":{\\\"action\\\":\\\"SetCredentialStatus\\\",\\\"credentialStatus\\\":{\\\"credentialId\\\":\\\"0d8062f09bff4eb5b9697d1de28eebda\\\",\\\"issuer\\\":\\\"0xc3d893f67c506250ca69c355e4ee839b6c3199713249458a1248efbb948203dd\\\",\\\"status\\\":\\\"0x1b048d72a2479a229907d35c34ba69f8c65550daee1cb41cc1217d7e4a6850b9\\\"},\\\"orignCredential\\\":\\\"0xec55ac16ba42d6e2e9d4e6e7e78b3ca5a639cab555ed175c03b955b9dd109b53\\\"},\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"CPTId\\\":1,\\\"credentialType\\\":\\\"ORIGINAL\\\",\\\"expirationDate\\\":1656487500,\\\"hash\\\":\\\"0xfa21d5cc9b1c01d36801092177b341a4381ca2f07dae94e570e35f962c14b220\\\",\\\"id\\\":\\\"7c9c02bedace4a23be8885df6c4ead92\\\",\\\"issuanceDate\\\":1652410271,\\\"issuer\\\":\\\"did:tdid:w1:0x9b38e2d3bb358e1ceb8d7dd902585a53a5158844\\\",\\\"proof\\\":{\\\"created\\\":1652410271,\\\"creator\\\":\\\"did:tdid:w1:0x9b38e2d3bb358e1ceb8d7dd902585a53a5158844#keys-0\\\",\\\"salt\\\":{\\\"action\\\":\\\"dton2\\\",\\\"credentialStatus\\\":{\\\"credentialId\\\":\\\"LSJS0\\\",\\\"issuer\\\":\\\"0\\\",\\\"status\\\":\\\"0\\\"},\\\"orignCredential\\\":\\\"0\\\"},\\\"signatureValue\\\":\\\"MEUCIFRUY/kghz/EhMmyEwbepfgyDS2o2dEjzvxO3hkU6Qi+AiEAkOnO5QV3Nl4NpyKUprioYvBJKAPvf7dFQO5QACoUq1I=\\\",\\\"type\\\":\\\"Sm2p256v1\\\"},\\\"proofType\\\":\\\"Sm2p256v1\\\",\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\",\\\"OperateCredential\\\"]}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "创建选择性披露凭证"
+      }
+    ],
+    "CreatePresentation": [
       {
         "document": "",
-        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CheckNewPurchase\n<公共请求参数>\n\n{}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
-        "title": "检查用户套餐购买状态"
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreatePresentation\n<公共请求参数>\n\n{\n    \"DAPId\": 1,\n    \"CredentialList\": [\n        {\n            \"Credential\": \"{\\\"cptId\\\":1,\\\"issuer\\\":\\\"did:tdid:w1:0x379106c7232aed1a50e8600511655b479c76b149\\\",\\\"expirationDate\\\":\\\"2124-06-29T15:25:00+08:00\\\",\\\"issuanceDate\\\":\\\"2023-11-30T05:19:40+08:00\\\",\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"id\\\":\\\"0767cc1f93ad541e195bd9f5f00d665f\\\",\\\"type\\\":[\\\"VerifiableCredential\\\"],\\\"credentialSubject\\\":{\\\"action\\\":\\\"deactiveDid\\\",\\\"age\\\":17},\\\"proof\\\":{\\\"created\\\":\\\"2023-11-30T05:19:40+08:00\\\",\\\"creator\\\":\\\"did:tdid:w1:0x379106c7232aed1a50e8600511655b479c76b149#keys-0\\\",\\\"signatureValue\\\":\\\"MEQCIEWnreXh0siSPnCaAqCldL1E+gTdrT6oSZjbTjAhwn6+AiBXn/ZIirpr69JknKsX3+MWRE7WeIXGdaOIXY10c36hoA==\\\",\\\"type\\\":\\\"Secp256r1\\\",\\\"metaDigest\\\":\\\"7d6435235cd5afdb7abd06a979eb2237d103401bdb54fa38ff6b8299c7529b76\\\",\\\"vcDigest\\\":\\\"d014b006648f48e13c1aff9c16a39979e3d17e6f32c816065158d6a92632a132\\\",\\\"privacy\\\":\\\"Public\\\",\\\"salt\\\":{\\\"action\\\":\\\"YuzFn\\\",\\\"age\\\":\\\"0zche\\\"}}}\"\n        }\n    ],\n    \"Did\": \"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8\",\n    \"VerifyCode\": \"test\",\n    \"PolicyJson\": \"{\\\"1\\\":{\\\"age\\\":0}}\"\n}",
+        "output": "{\n    \"Response\": {\n        \"PresentationData\": \"{\\\"context\\\":[\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\"],\\\"holder\\\":\\\"did:tdid:c2:0x379106c7232aed1a50e8600511655b479c76b149\\\",\\\"proof\\\":{\\\"created\\\":\\\"2024-01-08T15:17:00+08:00\\\",\\\"nonce\\\":\\\"test\\\",\\\"signatureValue\\\":\\\"eyJjb250ZXh0IjpbImh0dHBzOi8vZ2l0aHViLmNvbS9UZW5jZW50Q2xvdWQtQmxvY2tjaGFpbi9URElEL2Jsb2IvbWFpbi9jb250ZXh0L3YxIl0sImhvbGRlciI6ImRpZDp0ZGlkOmMyOjB4Mzc5MTA2YzcyMzJhZWQxYTUwZTg2MDA1MTE2NTViNDc5Yzc2YjE0OSIsInR5cGUiOlsiVmVyaWZpYWJsZVByZXNlbnRhdGlvbiJdLCJ2ZXJpZmlhYmxlQ3JlZGVudGlhbCI6W3siY29udGV4dCI6Imh0dHBzOi8vZ2l0aHViLmNvbS9UZW5jZW50Q2xvdWQtQmxvY2tjaGFpbi9URElEL2Jsb2IvbWFpbi9jb250ZXh0L3YxIiwiY3B0SWQiOjEsImNyZWRlbnRpYWxTdWJqZWN0Ijp7ImFjdGlvbiI6ImRlYWN0aXZlRGlkIiwiYWdlIjoiMHg5NzUwNWE0ODY0NzM0NzBlNTBkMTM3MzIzMTM3ZGE4NTE3M2Y5OGU4MzQ0MGEzYjhjMWE3M2Q2ZDI0YWRiNmZlIn0sImV4cGlyYXRpb25EYXRlIjoiMjEyNC0wNi0yOVQxNToyNTowMCswODowMCIsImlkIjoiOGNmZTc1ZjFlMjlkOTk4ZWRhZGI5NjFlMTQxMDEyOWUiLCJpc3N1YW5jZURhdGUiOiIyMDI0LTAxLTA4VDEwOjM3OjU0KzA4OjAwIiwiaXNzdWVyIjoiZGlkOnRkaWQ6YzI6MHgzNzkxMDZjNzIzMmFlZDFhNTBlODYwMDUxMTY1NWI0NzljNzZiMTQ5IiwicHJvb2YiOnsiY3JlYXRlZCI6IjIwMjQtMDEtMDhUMTA6Mzc6NTQrMDg6MDAiLCJjcmVhdG9yIjoiZGlkOnRkaWQ6YzI6MHgzNzkxMDZjNzIzMmFlZDFhNTBlODYwMDUxMTY1NWI0NzljNzZiMTQ5I2tleXMtMCIsIm1ldGFEaWdlc3QiOiJiNGE2ODVjMzQ0ZGViMjg1Y2IwMTFiYzhiNmI3Mjg3NzhmYmU0NmNhOWZhYTE4OGNlYTZkYmM5YzM2ZDNiZDFiIiwicHJpdmFjeSI6IlB1YmxpYyIsInNhbHQiOnsiYWN0aW9uIjoieDZQMG4iLCJhZ2UiOiIwIn0sInNpZ25hdHVyZVZhbHVlIjoiTUVVQ0lFWEJkd2tHRi85UXpkdDRPRzlHS2cyRUJEb1hFOTAySGNFdlVndXMvbTZ3QWlFQW1NU3lRS0F1SUZvYmI4cTNDWkJTRmdBczhZL09WdEMwNTN0VVJTRk5SREk9IiwidHlwZSI6IlNlY3AyNTZyMSIsInZjRGlnZXN0IjoiMmRkNWExZGMzMjQ2ODZjOTNhNWIxNTgyMDZkNWZlOGI5MzdhMWZlNjQ3NjA5ODNkNWY1OWIyMzcxY2RlYjA5NSJ9LCJ0eXBlIjpbIlZlcmlmaWFibGVDcmVkZW50aWFsIl19XX0=\\\",\\\"type\\\":\\\"Secp256r1\\\",\\\"verificationMethod\\\":\\\"did:tdid:c2:0x379106c7232aed1a50e8600511655b479c76b149#keys-0\\\",\\\"vpDigest\\\":\\\"6728c750e86b1b793878c2a281bbebbe8d08b06a9266c1588ef841c6b3768475\\\"},\\\"type\\\":[\\\"VerifiablePresentation\\\"],\\\"verifiableCredential\\\":[{\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"cptId\\\":1,\\\"credentialSubject\\\":{\\\"action\\\":\\\"deactiveDid\\\",\\\"age\\\":\\\"0x97505a486473470e50d137323137da85173f98e83440a3b8c1a73d6d24adb6fe\\\"},\\\"expirationDate\\\":\\\"2124-06-29T15:25:00+08:00\\\",\\\"id\\\":\\\"8cfe75f1e29d998edadb961e1410129e\\\",\\\"issuanceDate\\\":\\\"2024-01-08T10:37:54+08:00\\\",\\\"issuer\\\":\\\"did:tdid:c2:0x379106c7232aed1a50e8600511655b479c76b149\\\",\\\"proof\\\":{\\\"created\\\":\\\"2024-01-08T10:37:54+08:00\\\",\\\"creator\\\":\\\"did:tdid:c2:0x379106c7232aed1a50e8600511655b479c76b149#keys-0\\\",\\\"metaDigest\\\":\\\"b4a685c344deb285cb011bc8b6b728778fbe46ca9faa188cea6dbc9c36d3bd1b\\\",\\\"privacy\\\":\\\"Public\\\",\\\"salt\\\":{\\\"action\\\":\\\"x6P0n\\\",\\\"age\\\":\\\"0\\\"},\\\"signatureValue\\\":\\\"MEUCIEXBdwkGF/9Qzdt4OG9GKg2EBDoXE902HcEvUgus/m6wAiEAmMSyQKAuIFobb8q3CZBSFgAs8Y/OVtC053tURSFNRDI=\\\",\\\"type\\\":\\\"Secp256r1\\\",\\\"vcDigest\\\":\\\"2dd5a1dc324686c93a5b158206d5fe8b937a1fe64760983d5f59b2371cdeb095\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\"]}]}\",\n        \"RequestId\": \"52163044-3cd1-4ca9-8963-a36ac5554364\"\n    }\n}",
+        "title": "创建可验证表达"
       }
     ],
     "CreateTDidByHost": [
@@ -32,12 +40,36 @@
         "title": "更新DID标识的禁用状态"
       }
     ],
+    "GetAppSummary": [
+      {
+        "document": "获取某个应用关键指标统计数据",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetAppSummary\n<公共请求参数>\n\n{\n    \"DAPId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"f3a54a2d-679b-4fd0-9b27-70ae7353b0e9\",\n        \"AppCounter\": {\n            \"DidCnt\": 676,\n            \"VCCnt\": 942,\n            \"CPTCnt\": 2,\n            \"VerifyCnt\": 1288,\n            \"AuthCnt\": 2\n        },\n        \"UserCounter\": {\n            \"DidCnt\": 341,\n            \"VCCnt\": 484,\n            \"CPTCnt\": 2,\n            \"VerifyCnt\": 648,\n            \"AuthCnt\": 2\n        }\n    }\n}",
+        "title": "获取某个应用关键指标统计数据"
+      }
+    ],
     "GetCredentialState": [
       {
         "document": "获取凭证链上状态信息",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetCredentialState\n<公共请求参数>\n\n{\n    \"CredentialId\": \"8818fdd61eb84e4a745a3b04c96e5237\",\n    \"DAPId\": 5\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"10f21d53-43f7-4736-a028-384b446132d0\",\n        \"CredentialState\": {\n            \"Id\": \"8818fdd61eb84e4a745a3b04c96e5237\",\n            \"Status\": 1,\n            \"CPTId\": 1,\n            \"Issuer\": \"did:tdid:c5:0xe0fd109747937fbaf68ef1f615c2cd8e87d22ffb\",\n            \"TXDigest\": \"\",\n            \"VCDigest\": \"c7e13c5bcfa879c922f9141d085facc0ce1973e8d27d48238130739c1a332dcf\",\n            \"MetaDigest\": \"6a216f84cb9c5b6170cb017cccd6c5d0b81aad200d5691914d6045471d0dd1ad\",\n            \"IssueTime\": 1695125060,\n            \"ExpireTime\": 1701396000,\n            \"Signature\": \"MEUCIQDUneIwlLbh5AFjQt9HJhIZAQshT45/Em8hVOUjHcdu0QIgL3rg3A99qGGNszstF+GTV5IU4vT9OnI1lqM3f0c5JmI=\"\n        }\n    }\n}",
         "title": "获取凭证链上状态信息"
+      }
+    ],
+    "GetOverSummary": [
+      {
+        "document": "获取某个应用关键指标统计数据",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetOverSummary\n<公共请求参数>\n\n{}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"30e5b3c3-19fa-4601-8b29-cdb09cea4467\",\n        \"AppCnt\": 2,\n        \"DeployCnt\": 2,\n        \"ChainCnt\": 1,\n        \"AppCounter\": {\n            \"DidCnt\": 677,\n            \"VCCnt\": 942,\n            \"CPTCnt\": 4,\n            \"VerifyCnt\": 1288\n        },\n        \"UserCounter\": {\n            \"DidCnt\": 342,\n            \"VCCnt\": 484,\n            \"CPTCnt\": 4,\n            \"VerifyCnt\": 648\n        }\n    }\n}",
+        "title": "获取某个应用关键指标统计数据"
+      }
+    ],
+    "GetTDidByObjectId": [
+      {
+        "document": "通过业务层对象ID获取DID标识",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTDidByObjectId\n<公共请求参数>\n\n{\n    \"ObjectId\": \"user-test\",\n    \"DAPId\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"ebfe20e0-c4bd-4bd3-994b-cf82922af82c\",\n        \"Did\": \"did:tdid:w1:0x89217ab1a8943dcbcb6e6ec8f7a762e787a944f9\"\n    }\n}",
+        "title": "通过业务层对象ID获取DID标识"
       }
     ],
     "GetTDidDocument": [
@@ -48,12 +80,44 @@
         "title": "获取DID标识的文档"
       }
     ],
+    "GetTDidPubKey": [
+      {
+        "document": "查询DID标识的认证公钥列表",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: GetTDidPubKey\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:w1:0xcb04e621e21236f7bb39f4dd03b2a485b1009ba9\",\n    \"DAPId\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"AuthPublicKeyList\": [\n            \"-----BEGIN PUBLIC KEY-----\\r\\nMFkwEwYHKoZIzj0CAQYIKoEcz1UBgi0DQgAEbV9OaLigX26ulDAfpeMxVYBb3VK27RdqZlEIniHf62DqCdXwL0V9Jj3C+8EkDH3ZWDoIwWPj6x6javrkEDi0PQ==\\r\\n-----END PUBLIC KEY-----\"\n        ],\n        \"RequestId\": \"75c5d57a-731e-44a1-aa19-9bd031b02021\"\n    }\n}",
+        "title": "查询DID标识的认证公钥"
+      }
+    ],
     "IssueCredential": [
       {
         "document": "凭证颁发方签发可验证凭证",
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: IssueCredential\n<公共请求参数>\n\n{\n    \"DAPId\": 37,\n    \"CRDLArg\": {\n        \"CPTId\": 1,\n        \"Issuer\": \"did:tdid:w1:0x2e3455523646b1f4ebb40fe0c244bc329eb6fcbc\",\n        \"ExpirationDate\": \"2023-06-29 15:25:00\",\n        \"ClaimJson\": \"{\\\"action\\\": \\\"deactiveDid\\\",\\\"id\\\": \\\"did:tdid:w1:0x2e3455523646b1f4ebb40fe0c244bc329eb6fcbc\\\",\\\"deactivated\\\": \\\"true\\\", \\\"__trans__\\\": {\\\"x\\\": \\\"a\\\", \\\"y\\\": 1} }\"\n    }\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\",\n        \"CredentialData\": \"{\\\"CPTId\\\":1,\\\"issuer\\\":\\\"did:tdid:w1:0x2e3455523646b1f4ebb40fe0c244bc329eb6fcbc\\\",\\\"expirationDate\\\":\\\"2023-06-29T23:25:00+08:00\\\",\\\"issuanceDate\\\":\\\"2023-03-10T00:35:40+08:00\\\",\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"id\\\":\\\"88825f41be9648ddb292744ca6468db7\\\",\\\"type\\\":[\\\"VerifiableCredential\\\"],\\\"credentialSubject\\\":{\\\"action\\\":\\\"deactiveDid\\\",\\\"id\\\":\\\"did:tdid:w1:0x2e3455523646b1f4ebb40fe0c244bc329eb6fcbc\\\"},\\\"proof\\\":{\\\"created\\\":\\\"2023-03-10T00:35:40+08:00\\\",\\\"creator\\\":\\\"did:tdid:w1:0x2e3455523646b1f4ebb40fe0c244bc329eb6fcbc#keys-0\\\",\\\"signatureValue\\\":\\\"MEUCIQDcngP25ZCDNgZJI4zwyaRcKw2Mk99uvd32RDSjN0gZDAIgLSTslRrTet3Wi/lCgFtF4rmkjq5T8bBD4Cehmu5th1c=\\\",\\\"type\\\":\\\"Sm2p256v1\\\",\\\"txDegist\\\":\\\"8db419f0d1412340cfceb2ab28eff3d79615dc4d97ba67e58201a36eebc6e177\\\",\\\"vcDegist\\\":\\\"337bd77829fabf372eb8584b27bdbb3bb06610d70b2e64a96aff6f8a62116648\\\",\\\"method\\\":\\\"\\\",\\\"salt\\\":{\\\"action\\\":\\\"oY4YW\\\",\\\"id\\\":\\\"jxKzd\\\"}}}\"\n    }\n}",
         "title": "颁发可验证凭证"
+      }
+    ],
+    "QueryAuthorityInfo": [
+      {
+        "document": "查询权威机构信息",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryAuthorityInfo\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:w1:0xbbf1dee9e082e1a54dd3973beedc59ff7e452862\",\n    \"DAPId\": 5,\n    \"Name\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"3d5e7818-5027-44ca-bb03-68a9d5389bca\",\n        \"Did\": \"did:tdid:w1:0xbbf1dee9e082e1a54dd3973beedc59ff7e452862\",\n        \"Name\": \"test\",\n        \"Status\": 1,\n        \"Description\": \"test\",\n        \"RecognizeTime\": \"2023-09-19 11:54:25\"\n    }\n}",
+        "title": "查询权威机构信息"
+      }
+    ],
+    "QueryCPT": [
+      {
+        "document": "根据凭证模板ID查询凭证模板内容",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: QueryCPT\n<公共请求参数>\n\n{\n    \"DAPId\": 1,\n    \"CPTId\": 1001\n}",
+        "output": "{\n    \"Response\": {\n        \"CPTJson\": \"{\\n  \\\"CPTType\\\" : \\\"original\\\",\\n  \\\"$schema\\\" : \\\"http://json-schema.org/draft-04/schema#\\\",\\n  \\\"description\\\" : \\\"RevertBill\\\",\\n  \\\"title\\\" : \\\"RevertBill\\\",\\n  \\\"type\\\" : \\\"object\\\",\\n  \\\"properties\\\" : {\\n    \\\"transferOutEntDid\\\" : {\\n      \\\"description\\\" : \\\"transferOutEntDid\\\",\\n      \\\"type\\\" : \\\"string\\\"\\n    }\\n  },\\n  \\\"required\\\" : [ \\\"transferOutEntDid\\\" ]\\n}\",\n        \"RequestId\": \"41a9acae-cef4-4949-b144-48c65ad5e425\"\n    }\n}",
+        "title": "查询凭证模板内容"
+      }
+    ],
+    "SetTDidAttribute": [
+      {
+        "document": "设置DID的自定义属性",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SetTDidAttribute\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:w1:0x0d342759f20005df531c50f671d414661e381c01\",\n    \"Attributes\": [\n        {\n            \"Key\": \"test\",\n            \"Val\": \"test\"\n        }\n    ],\n    \"DAPId\": 5\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"0f7de9d2-2a60-46b1-97c3-62331ddf12ec\",\n        \"Transaction\": {\n            \"TransactionHash\": \"17864b02e92bea49ca4707214f59ac99910fecf8bfa8434380bb62471a09e61a\"\n        }\n    }\n}",
+        "title": "设置DID的自定义属性"
       }
     ],
     "UpdateCredentialState": [
@@ -70,6 +134,14 @@
         "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyCredentials\n<公共请求参数>\n\n{\n    \"DAPId\": 1,\n    \"CredentialData\": \"{\\\"claim\\\":{\\\"age\\\":18,\\\"id\\\":\\\"did:tdid:w1:0x3b67623cbdaa9ccbfc8b7c346588c6bcbc6f5d63\\\",\\\"name\\\":\\\"zhang san\\\"},\\\"context\\\":\\\"https://github.com/WeBankFinTech/WeIdentity/blob/master/context/v1\\\",\\\"CPTId\\\":12000000,\\\"expirationDate\\\":1871212353,\\\"id\\\":\\\"42e180f9-e4fd-4cd0-93a6-1770f1f69c44\\\",\\\"issuanceDate\\\":1628063788,\\\"issuer\\\":\\\"did:tdid:w1:0x4c59267a10ed54857842674d0c76ab708c6275f5\\\",\\\"proof\\\":{\\\"created\\\":1628063788,\\\"creator\\\":\\\"did:tdid:w1:0x4c59267a10ed54857842674d0c76ab708c6275f5#keys-0\\\",\\\"salt\\\":{\\\"age\\\":\\\"KeMT6\\\",\\\"id\\\":\\\"qGZIB\\\",\\\"name\\\":\\\"8jMxZ\\\"},\\\"signatureValue\\\":\\\"mf9UEjhh2gIpxr2evRh+zbC2/1k4YyxKl4otn2v96wQfNrz3MKQ+nsc0P0H/hFNlh3F+8Z1gN9qSemWXyN8KAwA=\\\",\\\"type\\\":\\\"Secp256k1\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\",\\\"original\\\"]}\"\n}",
         "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"VerifyCode\": 0,\n        \"VerifyMessage\": \"success\",\n        \"RequestId\": \"eac6b301-a322-493a-8e36-83b295459397\"\n    }\n}",
         "title": "验证已签名的可验证凭证"
+      }
+    ],
+    "VerifyPresentation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: tdid.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: VerifyPresentation\n<公共请求参数>\n\n{\n    \"Did\": \"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8\",\n    \"PresentationData\": \"{\\\"context\\\":[\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\"],\\\"holder\\\":\\\"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8\\\",\\\"proof\\\":{\\\"created\\\":\\\"2023-09-12T16:14:56+08:00\\\",\\\"nonce\\\":\\\"test\\\",\\\"signatureValue\\\":\\\"MEYCIQC4Wmf0NTlNF9BOjyynLasqWQJF4M34oIiemCa2Jl6+1wIhANqKc4/sWbuQmcpp7ilNrpfZQU4Cj0+VqcQcN+/jZH5u\\\",\\\"type\\\":\\\"Secp256r1\\\",\\\"verificationMethod\\\":\\\"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8#keys-0\\\"},\\\"type\\\":[\\\"VerifiablePresentation\\\"],\\\"verifiableCredential\\\":[{\\\"context\\\":\\\"https://github.com/TencentCloud-Blockchain/TDID/blob/main/context/v1\\\",\\\"cptId\\\":1,\\\"credentialSubject\\\":{\\\"action\\\":\\\"deactiveDid\\\",\\\"age\\\":\\\"0x7cc931132828080cac176a6bf266077bc963d3a8d4afacb147eb7a5fa9d38176\\\",\\\"ageCommitment\\\":\\\"/nQps1EGGKMJEEIZhlNu9oFZWTSe6bR5e2w71+/JSgE=\\\"},\\\"expirationDate\\\":\\\"2024-06-29T15:25:00+08:00\\\",\\\"id\\\":\\\"0971a8c6a1ff17d9b85abaab5e02c50d\\\",\\\"issuanceDate\\\":\\\"2023-09-12T15:50:52+08:00\\\",\\\"issuer\\\":\\\"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8\\\",\\\"proof\\\":{\\\"created\\\":\\\"2023-09-12T15:50:52+08:00\\\",\\\"creator\\\":\\\"did:tdid:w1:0xc1f030ceeb858887f0cc400030d59534cf8098c8#keys-0\\\",\\\"metaDigest\\\":\\\"da11a3571b4920ebdac1b73b03c696606a3b1c380e6502bcb30484d8240ae28d\\\",\\\"privacy\\\":\\\"Public\\\",\\\"salt\\\":{\\\"action\\\":\\\"0UU2V\\\",\\\"age\\\":\\\"0\\\",\\\"ageCommitment\\\":\\\"XiqAq\\\"},\\\"signatureValue\\\":\\\"MEQCIHGw37fwROCoqUEz9Rtw2CG3pQP6QYxe2byS45LIlPBmAiBrS93DNqRtVYKUq8dZ4ZUTSgt9Ajr9rzqLB3KZz9ADIg==\\\",\\\"type\\\":\\\"Secp256r1\\\",\\\"vcDigest\\\":\\\"230653978a8dc2c16f6acfa7bfb779a34d282fb7fd2eae5646c9e3ba95589344\\\"},\\\"type\\\":[\\\"VerifiableCredential\\\"]}]}\",\n    \"DAPId\": 1,\n    \"VerifyCode\": \"test\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Result\": true,\n        \"VerifyCode\": 0,\n        \"VerifyMessage\": \"success\",\n        \"RequestId\": \"1b5c5ee5-a049-4137-8ca1-f4337a614d91\"\n    }\n}",
+        "title": "验证可验证凭证表达"
       }
     ]
   },

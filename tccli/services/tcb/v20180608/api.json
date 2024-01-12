@@ -1817,56 +1817,61 @@
       "members": [
         {
           "disabled": false,
-          "document": "NFS挂载Server",
+          "document": "NFS挂载Server\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Server",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Server路径",
+          "document": "Server路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Path",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否只读",
+          "document": "是否只读\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "ReadOnly",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "secret名称",
+          "document": "secret名称\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "SecretName",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "临时目录",
+          "document": "临时目录\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "false",
           "member": "bool",
           "name": "EnableEmptyDirVolume",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CloudBaseRunServerVersionItem": {
       "document": "版本的列表",
@@ -2272,46 +2277,50 @@
       "members": [
         {
           "disabled": false,
-          "document": "资源名",
+          "document": "资源名\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "Name",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "挂载路径",
+          "document": "挂载路径\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "test",
           "member": "string",
           "name": "MountPath",
+          "output_required": false,
           "required": false,
           "type": "string",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "是否只读",
+          "document": "是否只读\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
           "name": "ReadOnly",
+          "output_required": false,
           "required": false,
           "type": "bool",
-          "value_allowed_null": false
+          "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "Nfs挂载信息",
+          "document": "Nfs挂载信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "CloudBaseRunNfsVolumeSource",
           "name": "NfsVolumes",
+          "output_required": false,
           "required": false,
           "type": "list",
-          "value_allowed_null": false
+          "value_allowed_null": true
         }
       ],
-      "usage": "in"
+      "usage": "both"
     },
     "CloudBaseRunVpcInfo": {
       "document": "vpc信息",
@@ -12188,6 +12197,7 @@
           "example": "无",
           "member": "string",
           "name": "Result",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -12197,6 +12207,7 @@
           "example": "无",
           "member": "string",
           "name": "VersionName",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },
@@ -12206,6 +12217,7 @@
           "example": "aa123",
           "member": "string",
           "name": "RunId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

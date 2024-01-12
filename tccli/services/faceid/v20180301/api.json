@@ -2344,6 +2344,24 @@
           "name": "BestFramesCount",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "是否对身份证照片进行裁边。默认为false。（InfoType需要包含2）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsCutIdCardImage",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否需要从身份证中抠出头像。默认为false。（InfoType需要包含2）",
+          "example": "false",
+          "member": "bool",
+          "name": "IsNeedIdCardAvatar",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

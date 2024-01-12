@@ -25540,7 +25540,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "请求模版路径:type为接口时返回，服务时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "请求模板路径:type为接口时返回，服务时不返回\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Path",
