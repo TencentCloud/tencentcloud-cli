@@ -1,3 +1,75 @@
+# Release 3.0.922.1
+
+## 云数据库 MySQL(cdb) 版本：2017-03-20
+
+### 第 84 次发布
+
+发布时间：2024-01-15 01:08:45
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeMysqlTableInformation](http://document.tencentcloudapi.woa.com/document/product/236/82957)
+* [DescribeMysqlTableRows](http://document.tencentcloudapi.woa.com/document/product/236/82956)
+
+新增数据结构：
+
+* [TableFieldInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableFieldInfo)
+* [TableInformation](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableInformation)
+
+
+
+## 云函数(scf) 版本：2018-04-16
+
+### 第 44 次发布
+
+发布时间：2024-01-15 01:21:20
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+
+	* 新增入参：PrivilegeEnable
+
+* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
+
+	* 新增出参：ResourceId, PrivilegeEnable
+
+* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
+
+	* 新增入参：PrivilegeEnable
+
+
+
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 42 次发布
+
+发布时间：2024-01-15 01:26:05
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LaneInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#LaneInfo)
+
+	* 新增成员：LaneGroupId
+
+	* <font color="#dd0000">**修改成员**：</font>LaneId, LaneName, Remark, CreateTime, UpdateTime, LaneGroupList, Entrance, NamespaceIdList
+
+
+
+
 # Release 3.0.921.1
 
 ## T-Sec-DDoS防护(Anti-DDoS)(antiddos) 版本：2020-03-09

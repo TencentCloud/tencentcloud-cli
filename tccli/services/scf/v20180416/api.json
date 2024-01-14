@@ -1414,6 +1414,15 @@
           "name": "IntranetConfig",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启特权容器属性",
+          "example": "false",
+          "member": "bool",
+          "name": "PrivilegeEnable",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"
@@ -3536,6 +3545,26 @@
           "example": "无",
           "member": "bool",
           "name": "IgnoreSysLog",
+          "output_required": false,
+          "type": "bool",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "函数资源ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "scf-gz-xxxxxxxx",
+          "member": "string",
+          "name": "ResourceId",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "是否开启特权容器属性\t",
+          "example": "无",
+          "member": "bool",
+          "name": "PrivilegeEnable",
           "output_required": false,
           "type": "bool",
           "value_allowed_null": false
@@ -7502,6 +7531,15 @@
           "example": "无",
           "member": "bool",
           "name": "IgnoreSysLog",
+          "required": false,
+          "type": "bool"
+        },
+        {
+          "disabled": false,
+          "document": "是否开启特权容器属性\t",
+          "example": "无",
+          "member": "bool",
+          "name": "PrivilegeEnable",
           "required": false,
           "type": "bool"
         }

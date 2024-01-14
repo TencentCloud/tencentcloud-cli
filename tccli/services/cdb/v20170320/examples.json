@@ -706,6 +706,22 @@
         "title": "查询本地binlog保留策略"
       }
     ],
+    "DescribeMysqlTableInformation": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMysqlTableInformation\n<公共请求参数>\n\n{\n    \"AppIdUser\": \"251051041\",\n    \"Operator\": \"op_user\",\n    \"InstanceId\": \"cdb-0mu6taqx\",\n    \"Limit\": \"10\",\n    \"Offset\": \"0\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"DBName\": \"wy_test_1\",\n                \"TableFields\": [\n                    {\n                        \"Field\": \"id\",\n                        \"Type\": \"int(11)\"\n                    },\n                    {\n                        \"Field\": \"k\",\n                        \"Type\": \"varchar(1000)\"\n                    },\n                    {\n                        \"Field\": \"v\",\n                        \"Type\": \"varchar(10240)\"\n                    }\n                ],\n                \"TableName\": \"whitelist_kv\",\n                \"UpdateTime\": \"2024-01-04 12:10:13\"\n            }\n        ],\n        \"TotalCount\": 1,\n        \"RequestId\": \"cafebabe-bf9cc173-222e031e-dddd\"\n    }\n}",
+        "title": "查询数据库表信息"
+      }
+    ],
+    "DescribeMysqlTableRows": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: cdb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeMysqlTableRows\n<公共请求参数>\n\n{\n    \"Operator\": \"op_user\",\n    \"AppIdUser\": 251051041,\n    \"InstanceId\": \"cdb-0mu6taqx\",\n    \"DBName\": \"test_1\",\n    \"TableName\": \"whitelist\"\n}",
+        "output": "{\n    \"Response\": {\n        \"TableRows\": 10,\n        \"RequestId\": \"cafebabe-bf9cc173-222e031e-dddd\"\n    }\n}",
+        "title": "查询表行数"
+      }
+    ],
     "DescribeParamTemplateInfo": [
       {
         "document": "该接口用于查询参数模板详细详情。",

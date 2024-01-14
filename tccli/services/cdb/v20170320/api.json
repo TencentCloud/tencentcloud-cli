@@ -581,6 +581,20 @@
       "output": "DescribeLocalBinlogConfigResponse",
       "status": "online"
     },
+    "DescribeMysqlTableInformation": {
+      "document": "仅用于云鼎查询mysql实例的库表信息。",
+      "input": "DescribeMysqlTableInformationRequest",
+      "name": "查询mysql实例的库表信息",
+      "output": "DescribeMysqlTableInformationResponse",
+      "status": "online"
+    },
+    "DescribeMysqlTableRows": {
+      "document": "仅提供给云鼎侧进行查询表的行数",
+      "input": "DescribeMysqlTableRowsRequest",
+      "name": "查询表的数据行数",
+      "output": "DescribeMysqlTableRowsResponse",
+      "status": "online"
+    },
     "DescribeParamTemplateInfo": {
       "document": "该接口（DescribeParamTemplateInfo）用于查询参数模板详情，全地域公共参数Region均为ap-guangzhou。",
       "input": "DescribeParamTemplateInfoRequest",
@@ -10567,6 +10581,162 @@
       ],
       "type": "object"
     },
+    "DescribeMysqlTableInformationRequest": {
+      "document": "DescribeMysqlTableInformation请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户AppId。",
+          "example": "251051041",
+          "member": "string",
+          "name": "AppIdUser",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "接口操作人。",
+          "example": "op_user",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户实例ID。",
+          "example": "cdb-0mu6taqx",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "一次性拉取数量。最大100，默认20。",
+          "example": "10",
+          "member": "string",
+          "name": "Limit",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量。",
+          "example": "0",
+          "member": "string",
+          "name": "Offset",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMysqlTableInformationResponse": {
+      "document": "DescribeMysqlTableInformation返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "实例中总表数。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "198",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表信息。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableInformation",
+          "name": "Items",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMysqlTableRowsRequest": {
+      "document": "DescribeMysqlTableRows请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "客户实例ID。",
+          "example": "1308612106",
+          "member": "int64",
+          "name": "AppIdUser",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "接口操作人。",
+          "example": "test_user",
+          "member": "string",
+          "name": "Operator",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "客户实例ID。",
+          "example": "cdb-n32usgq1",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "数据库名。",
+          "example": "cdb",
+          "member": "string",
+          "name": "DBName",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "表名。",
+          "example": "test_user_info",
+          "member": "string",
+          "name": "TableName",
+          "required": true,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeMysqlTableRowsResponse": {
+      "document": "DescribeMysqlTableRows返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "表数据行数。",
+          "example": "10",
+          "member": "int64",
+          "name": "TableRows",
+          "output_required": false,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeParamTemplateInfoRequest": {
       "document": "DescribeParamTemplateInfo请求参数结构体",
       "members": [
@@ -19311,6 +19481,78 @@
         }
       ],
       "type": "object"
+    },
+    "TableFieldInfo": {
+      "document": "数据库表字段信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "字段名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "instance_id",
+          "member": "string",
+          "name": "Field",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "字段类型\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "varchar(50)",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
+    },
+    "TableInformation": {
+      "document": "数据库表信息",
+      "members": [
+        {
+          "disabled": false,
+          "document": "库名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "cdb",
+          "member": "string",
+          "name": "DBName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表名\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "test_user_info",
+          "member": "string",
+          "name": "TableName",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表更新时间\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "2023-12-31 00:00:00",
+          "member": "string",
+          "name": "UpdateTime",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "表字段信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "TableFieldInfo",
+          "name": "TableFields",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "out"
     },
     "TablePrivilege": {
       "document": "数据库表权限",
