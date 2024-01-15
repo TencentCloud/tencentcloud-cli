@@ -141,9 +141,9 @@
       "status": "online"
     },
     "CreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的签署链接, 暂时不支持企业端签署 <br/>\n\n**注意**\n1. 该接口目前**仅支持签署人类型是个人签署方**的场景(PERSON)。\n2. 该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，**不支持填写控件** 。\n3. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n5. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该接口可生成签署链接的签署人必须仅有手写签名、时间类型和印章类型的签署控件，**不支持填写控件** 。\n2. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "CreateFlowSignUrlRequest",
-      "name": "获取个人用户H5签署链接",
+      "name": "获取用户H5签署链接",
       "output": "CreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -155,7 +155,7 @@
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。调用成功后会给员工发送提醒员工实名的短信。若通过手机号发现员工已经创建，则不会重新创建，但会发送短信提醒员工实名。另外，此接口还支持通过企微组织架构的openid 创建员工（将WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内），该场景下，员工会接收到提醒实名的企微消息。",
+      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。\n支持以下场景\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 25%;\">生成端</td>\n<td style=\"width: 25%;\">入参</td>\n<td style=\"width: 25%;\">提醒方式</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">普通saas员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType</td>\n<td style=\"width: 25%;\">短信</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">企微员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td style=\"width: 25%;\">企微内部实名消息</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">H5端 saas员工</td>\n<td style=\"width: 25%;\">传递 InvitationNotifyType = H5，不支持企微</td>\n<td style=\"width: 25%;\">生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- <b>若通过手机号发现员工已经创建，则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -477,7 +477,7 @@
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "更新员工信息(姓名，手机号，邮件、部门)，用户实名后无法更改姓名与手机号。\n可进行批量操作，Employees中的userID与openID二选一必填",
+      "document": "此接口（UpdateIntegrationEmployees）用于修改未实名企业员工信息(姓名，手机号，邮件、部门)。\n修改手机号的时候,支持以下场景进行提醒通知\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 25%;\">生成端</td>\n<td style=\"width: 25%;\">入参</td>\n<td style=\"width: 25%;\">提醒方式</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">普通saas员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType</td>\n<td style=\"width: 25%;\">短信</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">企微员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td style=\"width: 25%;\">企微内部实名消息</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">H5端 saas员工</td>\n<td style=\"width: 25%;\">传递 InvitationNotifyType = H5，不支持企微</td>\n<td style=\"width: 25%;\">生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
       "input": "UpdateIntegrationEmployeesRequest",
       "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
@@ -1550,7 +1550,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，则可选的字段为**\n\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n注：` 表单域的控件不能作为印章和签名控件`",
+          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，\n需要根据签署人的类型可选的字段为**\n* 企业方\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n\n* 个人方\n<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li></ul>\n \n注：` 表单域的控件不能作为印章和签名控件`",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -3589,15 +3589,6 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，其他可不传，\n\n注:\n`1. ApproverType目前只支持个人类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`",
-          "example": "无",
-          "member": "FlowCreateApprover",
-          "name": "FlowApproverInfos",
-          "required": true,
-          "type": "list"
-        },
-        {
-          "disabled": false,
           "document": "执行本接口操作的员工信息。\n注: `在调用此接口时，请确保指定的员工已获得所需的接口调用权限，并具备接口传入的相应资源的数据权限。`",
           "example": "无",
           "member": "UserInfo",
@@ -3613,6 +3604,15 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "流程签署人列表，其中结构体的ApproverName，ApproverMobile和ApproverType必传，企业签署人则需传OrganizationName，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型和印章类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
+          "example": "无",
+          "member": "FlowCreateApprover",
+          "name": "FlowApproverInfos",
+          "required": false,
+          "type": "list"
         },
         {
           "disabled": true,
@@ -3631,6 +3631,15 @@
           "name": "JumpUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接类型，支持指定以下类型\n<ul><li>0 : 签署链接 (默认值)</li>\n<li>1 : 预览链接</li></ul>\n注:\n`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`\n`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`",
+          "example": "0",
+          "member": "int64",
+          "name": "UrlType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -3777,6 +3786,24 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "员工邀请方式\n如果是来自H5的，参数需要传递H5\n短信或者企微 请传递SMS，或者不传递",
+          "example": "无",
+          "member": "string",
+          "name": "InvitationNotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回跳地址，\n在认证成功之后，进行回跳，请保证回跳地址的可用性。\n使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置\n",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -10981,7 +11008,7 @@
       "type": "object"
     },
     "SuccessCreateStaffData": {
-      "document": "创建员工的成功数据",
+      "document": "创建员工成功返回的信息\n支持saas/企微/H5端进行加入。",
       "members": [
         {
           "disabled": false,
@@ -11032,6 +11059,16 @@
           "output_required": false,
           "type": "string",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "H5端员工加入\\实名链接\n\n只有入参 InvitationNotifyType = H5的时候才会进行返回。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
+          "type": "string",
+          "value_allowed_null": false
         }
       ],
       "usage": "out"
@@ -11073,7 +11110,7 @@
       "usage": "out"
     },
     "SuccessUpdateStaffData": {
-      "document": "更新员工信息成功返回的数据信息",
+      "document": "更新员工信息成功返回的数据信息， 仅支持未实名的用户进行更新\n会通过短信、企微消息或者H5Url 链接\n如果是通过H5邀请加入的方式，会返回H5 链接",
       "members": [
         {
           "disabled": false,
@@ -11102,6 +11139,16 @@
           "member": "string",
           "name": "UserId",
           "output_required": true,
+          "type": "string",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "H5端员工实名链接\n\n只有入参 InvitationNotifyType = H5的时候才会进行返回。",
+          "example": "无",
+          "member": "string",
+          "name": "Url",
+          "output_required": false,
           "type": "string",
           "value_allowed_null": false
         }
@@ -11460,6 +11507,24 @@
           "name": "Agent",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "员工邀请方式\n如果是来自H5的，参数需要传递H5\n短信或者企微 请传递SMS，或者不传递",
+          "example": "无",
+          "member": "string",
+          "name": "InvitationNotifyType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "回跳地址，\n在认证成功之后，进行回跳，请保证回跳地址的可用性。\n使用前请联系对接的客户经理沟通，提供回跳地址的域名，进行域名配置。",
+          "example": "无",
+          "member": "string",
+          "name": "JumpUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

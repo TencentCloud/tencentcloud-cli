@@ -1064,13 +1064,6 @@
       "output": "DescribeIntegrationVersionNodesInfoResponse",
       "status": "online"
     },
-    "DescribeKafkaTopicInfo": {
-      "document": "没用到\n\n获取kafka的topic信息",
-      "input": "DescribeKafkaTopicInfoRequest",
-      "name": "获取kafka的topic信息",
-      "output": "DescribeKafkaTopicInfoResponse",
-      "status": "deprecated"
-    },
     "DescribeMonitorsByPage": {
       "document": "分页查询质量监控组",
       "input": "DescribeMonitorsByPageRequest",
@@ -19122,42 +19115,6 @@
           "type": "string",
           "value_allowed_null": false
         },
-        {
-          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
-          "member": "string",
-          "name": "RequestId",
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeKafkaTopicInfoRequest": {
-      "document": "DescribeKafkaTopicInfo请求参数结构体",
-      "members": [
-        {
-          "disabled": false,
-          "document": "数据源id",
-          "example": "123",
-          "member": "string",
-          "name": "DatasourceId",
-          "required": true,
-          "type": "string"
-        },
-        {
-          "disabled": false,
-          "document": "数据源类型",
-          "example": "123",
-          "member": "string",
-          "name": "Type",
-          "required": true,
-          "type": "string"
-        }
-      ],
-      "type": "object"
-    },
-    "DescribeKafkaTopicInfoResponse": {
-      "document": "DescribeKafkaTopicInfo返回参数结构体",
-      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",

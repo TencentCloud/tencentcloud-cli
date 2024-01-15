@@ -422,6 +422,14 @@
         "title": "集装箱识别示例代码"
       }
     ],
+    "RecognizeForeignPermanentResidentIdCard": [
+      {
+        "document": "外国人永久居留身份证识别",
+        "input": "POST / HTTP/1.1\nHost: ocr.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: RecognizeForeignPermanentResidentIdCard\n<公共请求参数>\n\n{\n    \"ImageUrl\": \"abc\",\n    \"ImageBase64\": \"abc\",\n    \"EnablePdf\": true,\n    \"PdfPageNumber\": 1\n}",
+        "output": "{\n    \"Response\": {\n        \"CnName\": \"abc\",\n        \"EnName\": \"abc\",\n        \"Sex\": \"abc\",\n        \"DateOfBirth\": \"abc\",\n        \"Nationality\": \"abc\",\n        \"PeriodOfValidity\": \"abc\",\n        \"No\": \"abc\",\n        \"RequestId\": \"abc\"\n    }\n}",
+        "title": "外国人永久居留身份证识别"
+      }
+    ],
     "RecognizeGeneralInvoice": [
       {
         "document": "通用票据识别（高级版）识别多张票据",

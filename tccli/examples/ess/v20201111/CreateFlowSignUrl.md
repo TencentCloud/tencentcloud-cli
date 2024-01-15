@@ -124,3 +124,103 @@ Output:
 }
 ```
 
+**Example 5: 创建企业用户H5签署链接**
+
+发起流程后，给其中的B端签署人创建签署链接
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowApproverInfos.0.ApproverType 0 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --FlowApproverInfos.0.OrganizationName ***有限公司 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverMobile": "13200000000",
+                "ApproverName": "典子谦",
+                "ApproverType": 0,
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
+            }
+        ],
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+
+**Example 6: 创建企业用户H5预览链接**
+
+发起流程后，给其中的B端签署人创建预览链接
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --FlowApproverInfos.0.ApproverType 0 \
+    --FlowApproverInfos.0.ApproverMobile 13200000000 \
+    --FlowApproverInfos.0.ApproverName 典子谦 \
+    --FlowApproverInfos.0.OrganizationName ***有限公司 \
+    --UrlType 1 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverMobile": "13200000000",
+                "ApproverName": "典子谦",
+                "ApproverType": 0,
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
+            }
+        ],
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+
+**Example 7: 创建合同发起方预览链接**
+
+发起流程后，给其中的合同发起方创建预览链接
+
+Input: 
+
+```
+tccli ess CreateFlowSignUrl --cli-unfold-argument  \
+    --Operator.UserId yDRCLUUgygq2xun5UuO4zjEwg0vjoimj \
+    --UrlType 1 \
+    --FlowId yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm
+```
+
+Output: 
+```
+{
+    "Response": {
+        "FlowApproverUrlInfos": [
+            {
+                "ApproverMobile": "",
+                "ApproverName": "",
+                "ApproverType": 0,
+                "LongUrl": "https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&PreviewType=2&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA",
+                "SignUrl": "https://essurl.cn/bR8**HA"
+            }
+        ],
+        "RequestId": "s1693832180480950012"
+    }
+}
+```
+

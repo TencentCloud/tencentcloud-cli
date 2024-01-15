@@ -113,9 +113,9 @@
       "status": "online"
     },
     "ChannelCreateFlowSignUrl": {
-      "document": "该接口用于发起合同后，生成个人用户的签署链接, 暂时不支持企业端签署 <br/>\n\n**注意**\n1. 该接口目前**仅支持签署人类型是个人签署方**的场景（PERSON）。\n2. 该接口可生成签署链接的C端签署人必须仅有手写签名和时间类型的签署控件，**不支持填写控件** 。\n3. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n4. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n5. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
+      "document": "该接口用于发起合同后，生成用户的签署链接 <br/>\n\n**注意**\n1. 该接口可生成签署链接的签署人必须仅有手写签名、时间类型和印章类型的签署控件，**不支持填写控件** 。\n2. 该签署**链接有效期为30分钟**，过期后将失效，如需签署可重新创建签署链接 。\n3. 该接口返回的签署链接适用于APP集成的场景，支持APP打开或浏览器直接打开，**不支持微信小程序嵌入**。\n跳转到小程序的实现，参考微信官方文档（分为<a href=\"https://developers.weixin.qq.com/miniprogram/dev/api/navigate/wx.navigateToMiniProgram.html\">全屏</a>、<a href=\"https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/openEmbeddedMiniProgram.html\">半屏</a>两种方式），如何配置也可以请参考: <a href=\"https://qian.tencent.com/developers/company/openwxminiprogram\">跳转电子签小程序配置</a>。\n4. 因h5涉及人脸身份认证能力基于慧眼人脸核身，对Android和iOS系统均有一定要求， 因此<font color='red'>App嵌入H5签署合同需要按照慧眼提供的<a href=\"https://cloud.tencent.com/document/product/1007/61076\">慧眼人脸核身兼容性文档</a>做兼容性适配</font>。",
       "input": "ChannelCreateFlowSignUrlRequest",
-      "name": "获取个人用户H5签署链接",
+      "name": "获取用户H5签署链接",
       "output": "ChannelCreateFlowSignUrlResponse",
       "status": "online"
     },
@@ -2628,11 +2628,11 @@
         },
         {
           "disabled": false,
-          "document": "流程签署人列表，其中结构体的Name，Mobile和ApproverType必传，其他可不传。\n注:\n`1. ApproverType目前只支持个人(PERSON)类型的签署人。`\n`2. 签署人只能有手写签名和时间类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`",
+          "document": "流程签署人列表，其中结构体的Name，Mobile和ApproverType必传，企业签署人则还需传OrganizationName、OpenId、OrganizationOpenId，其他可不传。\n\n注:\n`1. 签署人只能有手写签名、时间类型和印章类型的签署控件，其他类型的填写控件和签署控件暂时都未支持。`\n`2. 生成发起方预览链接时，该字段（FlowApproverInfos）传空或者不传`",
           "example": "无",
           "member": "FlowApproverInfo",
           "name": "FlowApproverInfos",
-          "required": true,
+          "required": false,
           "type": "list"
         },
         {
@@ -2661,6 +2661,15 @@
           "name": "JumpUrl",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "链接类型，支持指定以下类型\n<ul><li>0 : 签署链接 (默认值)</li>\n<li>1 : 预览链接</li></ul>\n注:\n`1. 当指定链接类型为1时，链接为预览链接，打开链接无法签署仅支持预览以及查看当前合同状态。`\n`2. 如需生成发起方预览链接，则签署方信息传空，即FlowApproverInfos传空或者不传。`",
+          "example": "无",
+          "member": "int64",
+          "name": "UrlType",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"
@@ -5308,7 +5317,7 @@
         },
         {
           "disabled": false,
-          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，则可选的字段为**\n\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n注：` 表单域的控件不能作为印章和签名控件`",
+          "document": "**如果是Component填写控件类型，则可选的字段为**：\n\n<ul><li> <b>TEXT</b> : 普通文本控件，输入文本字符串；</li>\n<li> <b>MULTI_LINE_TEXT</b> : 多行文本控件，输入文本字符串；</li>\n<li> <b>CHECK_BOX</b> : 勾选框控件，若选中填写ComponentValue 填写 true或者 false 字符串；</li>\n<li> <b>FILL_IMAGE</b> : 图片控件，ComponentValue 填写图片的资源 ID；</li>\n<li> <b>DYNAMIC_TABLE</b> : 动态表格控件；</li>\n<li> <b>ATTACHMENT</b> : 附件控件,ComponentValue 填写附件图片的资源 ID列表，以逗号分隔；</li>\n<li> <b>SELECTOR</b> : 选择器控件，ComponentValue填写选择的字符串内容；</li>\n<li> <b>DATE</b> : 日期控件；默认是格式化为xxxx年xx月xx日字符串；</li>\n<li> <b>DISTRICT</b> : 省市区行政区控件，ComponentValue填写省市区行政区字符串内容；</li></ul>\n\n**如果是SignComponent签署控件类型，\n需要根据签署人的类型可选的字段为**\n* 企业方\n<ul><li> <b>SIGN_SEAL</b> : 签署印章控件；</li>\n<li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li>\n<li> <b>SIGN_PAGING_SEAL</b> : 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight</li>\n<li> <b>SIGN_OPINION</b> : 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认；</li>\n<li> <b>SIGN_LEGAL_PERSON_SEAL</b> : 企业法定代表人控件。</li></ul>\n\n* 个人方\n<ul><li> <b>SIGN_DATE</b> : 签署日期控件；</li>\n<li> <b>SIGN_SIGNATURE</b> : 用户签名控件；</li>\n<li> <b>SIGN_PERSONAL_SEAL</b> : 个人签署印章控件（使用文件发起暂不支持此类型）；</li></ul>\n \n注：` 表单域的控件不能作为印章和签名控件`",
           "example": "SIGN_SEAL",
           "member": "string",
           "name": "ComponentType",
@@ -5642,7 +5651,7 @@
         },
         {
           "disabled": false,
-          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)web控制台链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：H5跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>\n示例值：PC\n",
+          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)web控制台链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：H5跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：第三方APP或小程序跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>\n<li>**H5**：第三方H5跳转到电子签H5长链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>\n<li>**SHORT_H5**：第三方H5跳转到电子签H5短链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li></ul>\n示例值：PC\n",
           "example": "PC",
           "member": "string",
           "name": "Endpoint",
@@ -5892,7 +5901,7 @@
         },
         {
           "disabled": false,
-          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li></ul>",
+          "document": "生成链接的类型：\n<ul><li>**PC**：(默认)<font color=\"red\">web控制台</font>链接, 需要在PC浏览器中打开</li>\n<li>**CHANNEL**：H5跳转到电子签小程序链接, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**SHORT_URL**：<font color=\"red\">H5</font>跳转到电子签小程序链接的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签小程序</li>\n<li>**APP**：<font color=\"red\">APP或小程序</font>跳转电子签小程序链接, 一般用于贵方小程序或者APP跳转过来,  打开后进入腾讯电子签小程序</li>\n<li>**H5**：<font color=\"red\">H5长链接</font>跳转H5链接, 一般用于贵方H5跳转过来,  打开后进入腾讯电子签H5页面</li>\n<li>**SHORT_H5**：<font color=\"red\">H5短链</font>跳转H5的短链形式, 一般用于发送短信中带的链接, 打开后进入腾讯电子签H5页面</li></ul>",
           "example": "PC",
           "member": "string",
           "name": "Endpoint",
@@ -5925,6 +5934,24 @@
           "name": "Operator",
           "required": false,
           "type": "object"
+        },
+        {
+          "disabled": false,
+          "document": "子客经办人身份证\n注意：`如果已同步，这里非空会更新同步的经办人身份证号，暂时只支持居民身份证类型`。",
+          "example": "无",
+          "member": "string",
+          "name": "ProxyOperatorIdCardNumber",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "认证完成跳转链接\n注意：`只在H5生效，域名需要联系我们开白`。",
+          "example": "无",
+          "member": "string",
+          "name": "AutoJumpUrl",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"
@@ -5934,7 +5961,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> <th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/CHANNEL/APP</td> <td>一年</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP</td> <td>一年</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
+          "document": "跳转链接, 链接的有效期根据企业,员工状态和终端等有区别, 可以参考下表\n<table> <thead> <tr> <th>子客企业状态</th> <th>子客企业员工状态</th> \n<th>Endpoint</th> <th>链接有效期限</th> </tr> </thead>  <tbody> <tr> <td>企业未激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr>  <tr> <td>企业未激活</td> <td>员工未认证</td> <td>CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/PC_SHORT_URL</td> <td>5分钟</td>  </tr> <tr> <td>企业已激活</td> <td>员工未认证</td> <td>PC/CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>PC</td> <td>5分钟</td>  </tr>  <tr> <td>企业已激活</td> <td>员工已认证</td> <td>CHANNEL/APP/H5/SHORT_H5</td> <td>30天</td>  </tr> </tbody> </table>\n\n注： \n1. <font color=\"red\">链接仅单次有效</font>，每次登录需要需要重新创建新的链接\n2. 创建的链接应避免被转义，如：&被转义为\\u0026；如使用Postman请求后，请选择响应类型为 JSON，否则链接将被转义\n3. <font color=\"red\">生成的链路后面不能再增加参数</font>（会出现覆盖链接中已有参数导致错误）\n",
           "example": "无",
           "member": "string",
           "name": "ConsoleUrl",
@@ -10038,6 +10065,24 @@
           "name": "AuthorizationTypes",
           "required": false,
           "type": "list"
+        },
+        {
+          "disabled": false,
+          "document": "经办人的证件类型，支持以下类型\n<ul><li>ID_CARD : 居民身份证  (默认值)</li>\n<li>HONGKONG_AND_MACAO : 港澳居民来往内地通行证</li>\n<li>HONGKONG_MACAO_AND_TAIWAN : 港澳台居民居住证(格式同居民身份证)</li></ul>\n",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardType",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "经办人的证件号",
+          "example": "无",
+          "member": "string",
+          "name": "AdminIdCardNumber",
+          "required": false,
+          "type": "string"
         }
       ],
       "usage": "in"

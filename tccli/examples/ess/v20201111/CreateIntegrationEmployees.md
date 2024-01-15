@@ -99,3 +99,41 @@ Output:
 }
 ```
 
+**Example 4: H5端添加企业员工**
+
+企业员工未认证， 在H5端， 用户通过生成链接嵌入到小程序，进行加入，实名
+
+Input: 
+
+```
+tccli ess CreateIntegrationEmployees --cli-unfold-argument  \
+    --Operator.UserId yDwf3UUckps8dvypUEfH3DjwIpMfa0uw \
+    --Employees.0.DisplayName 典子谦 \
+    --Employees.0.Mobile 13200000000 \
+    --Employees.0.OpenId n9527 \
+    --InvitationNotifyType H5 \
+    --JumpUrl https://www.qq.com
+```
+
+Output: 
+```
+{
+    "Response": {
+        "CreateEmployeeResult": {
+            "FailedEmployeeData": [],
+            "SuccessEmployeeData": [
+                {
+                    "DisplayName": "典子谦",
+                    "Mobile": "13200000000",
+                    "Note": "",
+                    "UserId": "yDCNCUUckpv0ox66UC7yFOvFzax82lgp",
+                    "Url": "https://test.essurl.cn/TxHxUBCx0G",
+                    "WeworkOpenId": ""
+                }
+            ]
+        },
+        "RequestId": "e01a9584-4b91-45dd-9a7b-46d32c4099fd"
+    }
+}
+```
+

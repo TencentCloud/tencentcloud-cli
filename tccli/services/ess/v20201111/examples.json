@@ -502,6 +502,24 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 1,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"该用户有暂不支持H5端的控件，请删除后重新发起流程\"\n        },\n        \"RequestId\": \"s1693901602090298421\"\n    }\n}",
         "title": "错误示例-创建个人用户签署链接，该用户还有些控件需要填写"
+      },
+      {
+        "document": "发起流程后，给其中的B端签署人创建签署链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 0,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"OrganizationName\": \"***有限公司\"\n        }\n    ],\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建企业用户H5签署链接"
+      },
+      {
+        "document": "发起流程后，给其中的B端签署人创建预览链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"FlowApproverInfos\": [\n        {\n            \"ApproverType\": 0,\n            \"ApproverMobile\": \"13200000000\",\n            \"ApproverName\": \"典子谦\",\n            \"OrganizationName\": \"***有限公司\"\n        }\n    ],\n    \"UrlType\": 1,\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"13200000000\",\n                \"ApproverName\": \"典子谦\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&ApproverType=0&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建企业用户H5预览链接"
+      },
+      {
+        "document": "发起流程后，给其中的合同发起方创建预览链接",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateFlowSignUrl\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDRCLUUgygq2xun5UuO4zjEwg0vjoimj\"\n    },\n    \"UrlType\": 1,\n    \"FlowId\": \"yDwFmUUckpstqfvzUE1h3jo1f3cqjkGm\"\n}",
+        "output": "{\n    \"Response\": {\n        \"FlowApproverUrlInfos\": [\n            {\n                \"ApproverMobile\": \"\",\n                \"ApproverName\": \"\",\n                \"ApproverType\": 0,\n                \"LongUrl\": \"https://quick.test.qian.tencent.cn/home?ApproverIdCardNumber=Mi**Kio2&ApproverMobile=MTk***NjA%3D&ApproverName=%25**A&PreviewType=2&Code=yDwJCUUck****V2R5K&CodeType=QUICK&FlowId=yDwF**1f3cqjkGm&ShowHeader=1&shortKey=yDwq5**M5GlG1c&token=bR8**HA\",\n                \"SignUrl\": \"https://essurl.cn/bR8**HA\"\n            }\n        ],\n        \"RequestId\": \"s1693832180480950012\"\n    }\n}",
+        "title": "创建合同发起方预览链接"
       }
     ],
     "CreateIntegrationDepartment": [
@@ -548,6 +566,12 @@
         "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"y**********************************N\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"张三（广东）\",\n            \"Mobile\": \"1***********7\",\n            \"OpenId\": \"open123\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [\n                {\n                    \"DisplayName\": \"张三（广东）\",\n                    \"Mobile\": \"1***********7\",\n                    \"Reason\": \"参数错误,姓名不符合规范,请修改后重试\",\n                    \"WeworkOpenId\": \"\"\n                }\n            ],\n            \"SuccessEmployeeData\": []\n        },\n        \"RequestId\": \"s166*************073\"\n    }\n}",
         "title": "错误示例-入参不合法"
+      },
+      {
+        "document": "企业员工未认证， 在H5端， 用户通过生成链接嵌入到小程序，进行加入，实名",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: CreateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDwf3UUckps8dvypUEfH3DjwIpMfa0uw\"\n    },\n    \"Employees\": [\n        {\n            \"DisplayName\": \"典子谦\",\n            \"Mobile\": \"13200000000\",\n            \"OpenId\": \"n9527\"\n        }\n    ],\n    \"InvitationNotifyType\": \"H5\",\n    \"JumpUrl\": \"https://www.qq.com\"\n}",
+        "output": "{\n    \"Response\": {\n        \"CreateEmployeeResult\": {\n            \"FailedEmployeeData\": [],\n            \"SuccessEmployeeData\": [\n                {\n                    \"DisplayName\": \"典子谦\",\n                    \"Mobile\": \"13200000000\",\n                    \"Note\": \"\",\n                    \"UserId\": \"yDCNCUUckpv0ox66UC7yFOvFzax82lgp\",\n                    \"Url\": \"https://test.essurl.cn/TxHxUBCx0G\",\n                    \"WeworkOpenId\": \"\"\n                }\n            ]\n        },\n        \"RequestId\": \"e01a9584-4b91-45dd-9a7b-46d32c4099fd\"\n    }\n}",
+        "title": "H5端添加企业员工"
       }
     ],
     "CreateIntegrationRole": [
@@ -1369,9 +1393,15 @@
       },
       {
         "document": "如果 Operator 里面的 UserId 没有对应的组织架构权限，则会报错没有 API 权限",
-        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n\n\n{\n\t\"Operator\": {\n\t\t\"UserId\": \"yDxVwUyKQWho8CUuO4zjEyQOAgwvr4Zy\"\n\t},\n\t\"Employees\": [{\n\t\t\t\"UserId\": \"yDxbWUyKQDx7OZUuO4zjESvEkRMHc55R\",\n\t\t\t\"DisplayName\": \"李四\",\n\t\t\t\"Mobile\": \"15100000000\",\n\t\t\t\"Email\": \"lisi@qq.com\"\n\t\t}\n\n\t]\n\n}",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"Employees\": [\n        {\n            \"UserId\": \"yDCNCUUckpv0ox66UC7yFOvFzax82lgp\",\n            \"DisplayName\": \"李四\",\n            \"Mobile\": \"15100000000\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"OperationDenied.NoApiAuth\",\n            \"Message\": \"没有API权限\"\n        },\n        \"RequestId\": \"s2df9ddsk*****kfjdsklfjs\"\n    }\n}",
         "title": "错误示例：没有接口调用权限"
+      },
+      {
+        "document": "H5端,用户修改员工用户信息, 会生成一个链接,用户可通过这个链接,员工可通过此链接进入, 进行实名认证,加入企业",
+        "input": "POST / HTTP/1.1\nHost: ess.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateIntegrationEmployees\n<公共请求参数>\n\n{\n    \"Operator\": {\n        \"UserId\": \"yDxbTUyKQWPt6NUuO4zjEuyFAyOX2v9C\",\n        \"ClientIp\": \"8.8.8.8\"\n    },\n    \"InvitationNotifyType\": \"H5\",\n    \"JumpUrl\": \"https://www.qq.com\",\n    \"Employees\": [\n        {\n            \"UserId\": \"yDCNCUUckpv0ox66UC7yFOvFzax82lgp\",\n            \"DisplayName\": \"dianziqian1\",\n            \"Mobile\": \"13200000000\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"FailedEmployeeData\": [],\n        \"RequestId\": \"s1705308707525950784\",\n        \"SuccessEmployeeData\": [\n            {\n                \"DisplayName\": \"李四\",\n                \"Mobile\": \"17612778521\",\n                \"Url\": \"https://test.essurl.cn/TxHxUBCx0G\",\n                \"UserId\": \"yDCNCUUckpv0ox66UC7yFOvFzax82lgp\"\n            }\n        ]\n    }\n}",
+        "title": "H5端修改未实名员工信息"
       }
     ],
     "UploadFiles": [

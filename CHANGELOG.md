@@ -1,3 +1,143 @@
+# Release 3.0.1046.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 27 次发布
+
+发布时间：2024-01-16 01:12:56
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRedisTopBigKeys](https://cloud.tencent.com/document/api/1130/72832)
+
+	* 新增入参：AsyncRequestId, ShardIds
+
+
+修改数据结构：
+
+* [InstanceConfs](https://cloud.tencent.com/document/api/1130/57812#InstanceConfs)
+
+	* 新增成员：ShardNum
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 146 次发布
+
+发布时间：2024-01-16 01:14:53
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowSignUrl](https://cloud.tencent.com/document/api/1323/85818)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateIntegrationEmployees](https://cloud.tencent.com/document/api/1323/81117)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+* [UpdateIntegrationEmployees](https://cloud.tencent.com/document/api/1323/89457)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+
+修改数据结构：
+
+* [SuccessCreateStaffData](https://cloud.tencent.com/document/api/1323/70369#SuccessCreateStaffData)
+
+	* 新增成员：Url
+
+* [SuccessUpdateStaffData](https://cloud.tencent.com/document/api/1323/70369#SuccessUpdateStaffData)
+
+	* 新增成员：Url
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 148 次发布
+
+发布时间：2024-01-16 01:15:09
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignUrl](https://cloud.tencent.com/document/api/1420/85819)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateConsoleLoginUrl](https://cloud.tencent.com/document/api/1420/61524)
+
+	* 新增入参：ProxyOperatorIdCardNumber, AutoJumpUrl
+
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](https://cloud.tencent.com/document/api/1420/61525#RegistrationOrganizationInfo)
+
+	* 新增成员：AdminIdCardType, AdminIdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 文字识别(ocr) 版本：2018-11-19
+
+### 第 128 次发布
+
+发布时间：2024-01-16 01:19:57
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [RecognizeForeignPermanentResidentIdCard](https://cloud.tencent.com/document/api/866/103033)
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 67 次发布
+
+发布时间：2024-01-16 01:27:38
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaTopicInfo
+
+
+
 # Release 3.0.1045.1
 
 ## 微服务平台 TSF(tsf) 版本：2018-03-26

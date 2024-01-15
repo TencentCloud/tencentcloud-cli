@@ -300,7 +300,7 @@
       {
         "document": "",
         "input": "https://dbbrain.tencentcloudapi.com/?Action=DescribeRedisTopBigKeys\n&InstanceId=cdb-test\n&Date=2022-04-12\n&Product=redis\n&<公共请求参数>",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"TopKeys\": [\n            {\n                \"Key\": \"test\",\n                \"Type\": \"string\",\n                \"Encoding\": \"string\",\n                \"ExpireTime\": 0,\n                \"Length\": 72,\n                \"ItemCount\": 1,\n                \"MaxElementSize\": 10\n            }\n        ],\n        \"Timestamp\": 162072183\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"8108c1c0-bbcc-11ec-adb9-eb9c1358e03a\",\n        \"TopKeys\": [\n            {\n                \"ShardId\": \"1\",\n                \"Type\": \"set\",\n                \"AveElementSize\": 15894,\n                \"Length\": 93542932,\n                \"ItemCount\": 4999,\n                \"Encoding\": \"skiplist\",\n                \"ExpireTime\": 0,\n                \"MaxElementSize\": 34431,\n                \"Key\": \"test-key\"\n            }\n        ],\n        \"Timestamp\": 162072183\n    }\n}",
         "title": "查询redis实例大key列表"
       }
     ],
