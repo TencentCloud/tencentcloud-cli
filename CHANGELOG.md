@@ -1,3 +1,120 @@
+# Release 3.0.923.1
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
+
+### 第 26 次发布
+
+发布时间：2024-01-16 01:13:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRedisTopBigKeys](http://document.tencentcloudapi.woa.com/document/product/1130/72832)
+
+	* 新增入参：AsyncRequestId, ShardIds
+
+
+
+
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
+
+
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 63 次发布
+
+发布时间：2024-01-16 01:15:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79348)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79333)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+* [UpdateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79328)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+
+修改数据结构：
+
+* [SuccessCreateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessCreateStaffData)
+
+	* 新增成员：Url
+
+* [SuccessUpdateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessUpdateStaffData)
+
+	* 新增成员：Url
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 120 次发布
+
+发布时间：2024-01-16 01:15:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：ProxyOperatorIdCardNumber, AutoJumpUrl
+
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RegistrationOrganizationInfo)
+
+	* 新增成员：AdminIdCardType, AdminIdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 24 次发布
+
+发布时间：2024-01-16 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaTopicInfo
+
+
+
 # Release 3.0.922.1
 
 ## 云数据库 MySQL(cdb) 版本：2017-03-20

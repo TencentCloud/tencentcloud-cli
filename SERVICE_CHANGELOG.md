@@ -1,32 +1,10 @@
 # 本版本更新包含以下内容：
 
-## 云数据库 MySQL(cdb) 版本：2017-03-20
+## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
-### 第 84 次发布
+### 第 26 次发布
 
-发布时间：2024-01-15 01:08:45
-
-本次发布包含了以下内容：
-
-改善已有的文档。
-
-新增接口：
-
-* [DescribeMysqlTableInformation](http://document.tencentcloudapi.woa.com/document/product/236/82957)
-* [DescribeMysqlTableRows](http://document.tencentcloudapi.woa.com/document/product/236/82956)
-
-新增数据结构：
-
-* [TableFieldInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableFieldInfo)
-* [TableInformation](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableInformation)
-
-
-
-## 云函数(scf) 版本：2018-04-16
-
-### 第 44 次发布
-
-发布时间：2024-01-15 01:21:20
+发布时间：2024-01-16 01:13:37
 
 本次发布包含了以下内容：
 
@@ -34,39 +12,106 @@
 
 修改接口：
 
-* [CreateFunction](http://document.tencentcloudapi.woa.com/document/product/583/18586)
+* [DescribeRedisTopBigKeys](http://document.tencentcloudapi.woa.com/document/product/1130/72832)
 
-	* 新增入参：PrivilegeEnable
-
-* [GetFunction](http://document.tencentcloudapi.woa.com/document/product/583/18584)
-
-	* 新增出参：ResourceId, PrivilegeEnable
-
-* [UpdateFunctionConfiguration](http://document.tencentcloudapi.woa.com/document/product/583/18580)
-
-	* 新增入参：PrivilegeEnable
+	* 新增入参：AsyncRequestId, ShardIds
 
 
 
 
-## 微服务平台 TSF(tsf) 版本：2018-03-26
+## 数据库智能管家 DBbrain(dbbrain) 版本：2019-10-16
 
-### 第 42 次发布
 
-发布时间：2024-01-15 01:26:05
+
+## 腾讯电子签企业版(ess) 版本：2020-11-11
+
+### 第 63 次发布
+
+发布时间：2024-01-16 01:15:34
 
 本次发布包含了以下内容：
 
 改善已有的文档。
 
+修改接口：
+
+* [CreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79348)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79333)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+* [UpdateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79328)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+
 修改数据结构：
 
-* [LaneInfo](http://document.tencentcloudapi.woa.com/document/product/649/36099#LaneInfo)
+* [SuccessCreateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessCreateStaffData)
 
-	* 新增成员：LaneGroupId
+	* 新增成员：Url
 
-	* <font color="#dd0000">**修改成员**：</font>LaneId, LaneName, Remark, CreateTime, UpdateTime, LaneGroupList, Entrance, NamespaceIdList
+* [SuccessUpdateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessUpdateStaffData)
 
+	* 新增成员：Url
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 120 次发布
+
+发布时间：2024-01-16 01:15:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：ProxyOperatorIdCardNumber, AutoJumpUrl
+
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RegistrationOrganizationInfo)
+
+	* 新增成员：AdminIdCardType, AdminIdCardNumber
+
+
+
+
+## 腾讯电子签（基础版）(essbasic) 版本：2020-12-22
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 24 次发布
+
+发布时间：2024-01-16 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaTopicInfo
 
 
 
@@ -10987,13 +11032,13 @@
 
 新增接口：
 
-* [[DescribeMysqlTableInformation](http://document.tencentcloudapi.woa.com/document/product/236/82957)](http://document.tencentcloudapi.woa.com/document/product/#/#)
-* [[DescribeMysqlTableRows](http://document.tencentcloudapi.woa.com/document/product/236/82956)](http://document.tencentcloudapi.woa.com/document/product/#/#)
+* [DescribeMysqlTableInformation](http://document.tencentcloudapi.woa.com/document/product/236/82957)
+* [DescribeMysqlTableRows](http://document.tencentcloudapi.woa.com/document/product/236/82956)
 
 新增数据结构：
 
-* [[TableFieldInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableFieldInfo)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[TableFieldInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableFieldInfo))
-* [[TableInformation](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableInformation)](http://document.tencentcloudapi.woa.com/document/product/236/15878#[TableInformation](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableInformation))
+* [TableFieldInfo](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableFieldInfo)
+* [TableInformation](http://document.tencentcloudapi.woa.com/document/product/236/15878#TableInformation)
 
 ### 第 83 次发布
 
@@ -31084,6 +31129,21 @@
 
 ## 数据库智能管家 DBbrain(dbbrain) 版本：2021-05-27
 
+### 第 26 次发布
+
+发布时间：2024-01-16 01:13:37
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DescribeRedisTopBigKeys](http://document.tencentcloudapi.woa.com/document/product/1130/72832)
+
+	* 新增入参：AsyncRequestId, ShardIds
+
+
 ### 第 25 次发布
 
 发布时间：2023-09-28 01:40:36
@@ -39778,6 +39838,42 @@
 
 ## 腾讯电子签企业版(ess) 版本：2020-11-11
 
+### 第 63 次发布
+
+发布时间：2024-01-16 01:15:34
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [CreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1668/79348)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79333)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+* [UpdateIntegrationEmployees](http://document.tencentcloudapi.woa.com/document/product/1668/79328)
+
+	* 新增入参：InvitationNotifyType, JumpUrl
+
+
+修改数据结构：
+
+* [SuccessCreateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessCreateStaffData)
+
+	* 新增成员：Url
+
+* [SuccessUpdateStaffData](http://document.tencentcloudapi.woa.com/document/product/1668/79360#SuccessUpdateStaffData)
+
+	* 新增成员：Url
+
+
 ### 第 62 次发布
 
 发布时间：2023-12-29 01:15:55
@@ -41259,6 +41355,34 @@
 
 
 ## 腾讯电子签（基础版）(essbasic) 版本：2021-05-26
+
+### 第 120 次发布
+
+发布时间：2024-01-16 01:15:48
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [ChannelCreateFlowSignUrl](http://document.tencentcloudapi.woa.com/document/product/1595/76965)
+
+	* 新增入参：UrlType
+
+	* <font color="#dd0000">**修改入参**：</font>FlowApproverInfos
+
+* [CreateConsoleLoginUrl](http://document.tencentcloudapi.woa.com/document/product/1595/75251)
+
+	* 新增入参：ProxyOperatorIdCardNumber, AutoJumpUrl
+
+
+修改数据结构：
+
+* [RegistrationOrganizationInfo](http://document.tencentcloudapi.woa.com/document/product/1595/75258#RegistrationOrganizationInfo)
+
+	* 新增成员：AdminIdCardType, AdminIdCardNumber
+
 
 ### 第 119 次发布
 
@@ -94740,6 +94864,18 @@
 
 
 ## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 24 次发布
+
+发布时间：2024-01-16 01:27:52
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+<font color="#dd0000">**删除接口**：</font>
+
+* DescribeKafkaTopicInfo
 
 ### 第 23 次发布
 

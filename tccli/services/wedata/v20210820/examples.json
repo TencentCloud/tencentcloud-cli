@@ -1306,14 +1306,6 @@
         "title": "查询集成任务版本节点信息"
       }
     ],
-    "DescribeKafkaTopicInfo": [
-      {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeKafkaTopicInfo\n<公共请求参数>\n\n{\n    \"DatasourceId\": \"12\",\n    \"Type\": \"12\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "获取kafka的topic信息"
-      }
-    ],
     "DescribeMonitorsByPage": [
       {
         "document": "分页查询质量监控组",

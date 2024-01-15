@@ -4193,7 +4193,7 @@
         {
           "disabled": false,
           "document": "服务产品类型，支持值包括 \"redis\" - 云数据库 Redis。",
-          "example": "mysql",
+          "example": "redis",
           "member": "string",
           "name": "Product",
           "required": true,
@@ -4225,6 +4225,24 @@
           "name": "Limit",
           "required": false,
           "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "异步任务ID。当为空时，选择最近任务的ID。",
+          "example": "7308832",
+          "member": "int64",
+          "name": "AsyncRequestId",
+          "required": false,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分片节点序号列表。当列表为空时，选择所有分片节点。",
+          "example": "[1,2]",
+          "member": "int64",
+          "name": "ShardIds",
+          "required": false,
+          "type": "list"
         }
       ],
       "type": "object"
@@ -4238,7 +4256,7 @@
           "example": "无",
           "member": "RedisKeySpaceData",
           "name": "TopKeys",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
@@ -4248,7 +4266,7 @@
           "example": "1618890295",
           "member": "int64",
           "name": "Timestamp",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -6228,6 +6246,7 @@
           "example": "Yes",
           "member": "string",
           "name": "DailyInspection",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6238,6 +6257,7 @@
           "example": "Yes",
           "member": "string",
           "name": "OverviewDisplay",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": false
@@ -6248,6 +6268,7 @@
           "example": "无",
           "member": "string",
           "name": "AZType",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6258,6 +6279,7 @@
           "example": "无",
           "member": "string",
           "name": "KeyDelimiters",
+          "output_required": true,
           "required": false,
           "type": "list",
           "value_allowed_null": true
@@ -6268,16 +6290,18 @@
           "example": "无",
           "member": "string",
           "name": "ShardSize",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "ShardNum\n注意：此字段可能返回 null，表示取不到有效值。",
-          "example": "无",
+          "document": "分片节点数量。\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "3",
           "member": "string",
           "name": "ShardNum",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6288,6 +6312,7 @@
           "example": "无",
           "member": "string",
           "name": "AnalysisTopKey",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
@@ -6298,6 +6323,7 @@
           "example": "无",
           "member": "string",
           "name": "ReplicasNum",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true
