@@ -1629,7 +1629,7 @@
         },
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
+          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>loadbalancer：负载均衡；</li>\n<li>origins：源站组。</li>",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -1640,7 +1640,7 @@
         },
         {
           "disabled": false,
-          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`[\"lb-xdffsfasdfs\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
           "example": "[\"1.1.1.1\",\"2.2.2.2\"]",
           "member": "string",
           "name": "OriginValue",
@@ -3055,8 +3055,8 @@
         },
         {
           "disabled": false,
-          "document": "四层代理模式，取值有：\n<li>hostname：表示子域名模式；</li>\n<li>instance：表示实例模式。</li>不填写使用默认值instance。",
-          "example": "hostname",
+          "document": "四层代理模式，取值有： <li>instance：表示实例模式。</li>不填写使用默认值instance。",
+          "example": "instance",
           "member": "string",
           "name": "ProxyType",
           "required": false,
@@ -3110,6 +3110,7 @@
           "example": "proxy-xxx",
           "member": "string",
           "name": "ProxyId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
@@ -3163,7 +3164,7 @@
         },
         {
           "disabled": false,
-          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>origins：源站组。</li>",
+          "document": "源站类型，取值有：\n<li>custom：手动添加；</li>\n<li>loadbalancer：负载均衡；</li>\n<li>origins：源站组。</li>",
           "example": "custom",
           "member": "string",
           "name": "OriginType",
@@ -3172,7 +3173,7 @@
         },
         {
           "disabled": false,
-          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
+          "document": "源站信息：\n<li>当 OriginType 为 custom 时，表示一个或多个源站，如`[\"8.8.8.8\",\"9.9.9.9\"]` 或 `OriginValue=[\"test.com\"]`；</li>\n<li>当 OriginType 为 loadbalancer 时，表示一个负载均衡，如`[\"lb-xdffsfasdfs\"]`；</li>\n<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`[\"origin-537f5b41-162a-11ed-abaa-525400c5da15\"]`。</li>",
           "example": "[\"1.1.1.1:80\",\"2.2.2.2:80\"]",
           "member": "string",
           "name": "OriginValue",

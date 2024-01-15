@@ -6498,7 +6498,7 @@
         },
         {
           "disabled": false,
-          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控",
+          "document": "根据监控类型过滤 不选默认查所有类型 \"MT_QCE\"=云产品监控,当Dimension不为空时，该项为必填项",
           "example": "[\"MT_QCE\"]",
           "member": "string",
           "name": "MonitorTypes",
@@ -6507,7 +6507,7 @@
         },
         {
           "disabled": false,
-          "document": "根据命名空间过滤，不同策略类型的值详见\n[策略类型列表](https://cloud.tencent.com/document/product/248/50397)",
+          "document": "根据命名空间过滤，不同策略类型的值详见\n[策略类型列表](https://cloud.tencent.com/document/product/248/50397)当Dimension不为空时，该项为必填项",
           "example": "[\"cvm_device\"]",
           "member": "string",
           "name": "Namespaces",

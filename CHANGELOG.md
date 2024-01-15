@@ -1,3 +1,26 @@
+# Release 3.0.1045.1
+
+## 微服务平台 TSF(tsf) 版本：2018-03-26
+
+### 第 104 次发布
+
+发布时间：2024-01-15 01:25:03
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改数据结构：
+
+* [LaneInfo](https://cloud.tencent.com/document/api/649/36099#LaneInfo)
+
+	* 新增成员：LaneGroupId
+
+	* <font color="#dd0000">**修改成员**：</font>LaneId, LaneName, Remark, CreateTime, UpdateTime, LaneGroupList, Entrance, NamespaceIdList
+
+
+
+
 # Release 3.0.1044.1
 
 ## 分布式身份(tdid) 版本：2021-05-19
