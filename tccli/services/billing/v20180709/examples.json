@@ -478,7 +478,7 @@
       {
         "document": "执行资源退还",
         "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: OperateResourcesInner\n<公共请求参数>\n\n{\n    \"ActionType\": \"return\",\n    \"ReferenceId\": \"60ad167d-9856-4681-b858-7a8dadca8859\",\n    \"OwnerUin\": \"909619400\",\n    \"OperateUin\": \"909619400\",\n    \"ResultNotified\": 1,\n    \"ResourceSet\": [\n        {\n            \"ResourceId\": \"ins-abcdefg\",\n            \"ProductCode\": \"p_cvm\",\n            \"RegionApCode\": \"ap-guanzhou\"\n        }\n    ]\n}",
-        "output": "{\n    \"Response\": {\n        \"OperateResult\": 0,\n        \"ReferenceId\": \"60ad167d-9856-4681-b858-7a8dadca8859\",\n        \"RequestId\": \"gwergwerg3432\",\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"ins-abcdefg\",\n                \"OperateResult\": 0,\n                \"Message\": \"fdasf\",\n                \"OperateEndTime\": \"2022-10-10 10:10:00\"\n            }\n        ],\n        \"DealNames\": [\n            \"sdfasdfa\"\n        ]\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"ReferenceId\": \"abc\",\n        \"OperateResult\": 0,\n        \"DealNames\": [\n            \"abc\"\n        ],\n        \"ResourceSet\": [\n            {\n                \"ResourceId\": \"abc\",\n                \"OperateResult\": 0,\n                \"OperateEndTime\": \"abc\",\n                \"Message\": \"abc\",\n                \"FailureReason\": \"abc\",\n                \"FlowId\": 0\n            }\n        ],\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "退资源"
       }
     ],

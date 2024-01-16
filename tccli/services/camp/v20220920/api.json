@@ -1337,6 +1337,17 @@
         },
         {
           "disabled": false,
+          "document": "指定clb service名字\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "clb 开启直连 Pod 特性，仅 vpc-cni 网络支持。默认为false\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "true",
           "member": "bool",
@@ -2162,6 +2173,17 @@
           "output_required": true,
           "required": true,
           "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定cls资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         }
       ],
@@ -8259,6 +8281,17 @@
       "members": [
         {
           "disabled": false,
+          "document": "北极星service自定义名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
           "document": "北极星 trait 名称",
           "example": "无",
           "member": "string",
@@ -8362,6 +8395,17 @@
           "example": "无",
           "member": "Label",
           "name": "Selector",
+          "output_required": false,
+          "required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "annotations\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "Label",
+          "name": "Annotations",
           "output_required": false,
           "required": false,
           "type": "list",
@@ -10026,6 +10070,7 @@
           "example": "nginx",
           "member": "string",
           "name": "Name",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10036,6 +10081,7 @@
           "example": "xxx",
           "member": "string",
           "name": "Topic",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10046,6 +10092,7 @@
           "example": "console",
           "member": "string",
           "name": "Type",
+          "output_required": true,
           "required": true,
           "type": "string",
           "value_allowed_null": true
@@ -10056,8 +10103,20 @@
           "example": "无",
           "member": "ZhiyanLogConfig",
           "name": "Config",
+          "output_required": true,
           "required": true,
           "type": "object",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "指定zhiyanlog资源名称\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "SpecifyName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
           "value_allowed_null": true
         },
         {
@@ -10066,6 +10125,7 @@
           "example": "_all",
           "member": "string",
           "name": "Container",
+          "output_required": true,
           "required": false,
           "type": "string",
           "value_allowed_null": true

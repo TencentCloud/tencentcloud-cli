@@ -61,3 +61,27 @@ Output:
 }
 ```
 
+**Example 3: 后台错误**
+
+后台错误
+
+Input: 
+
+```
+tccli wedata DescribeTaskByStatusReport --cli-unfold-argument  \
+    --ProjectId 1460947878944567296
+```
+
+Output: 
+```
+{
+    "Response": {
+        "Error": {
+            "Code": "FailedOperation",
+            "Message": "任务状态趋势异常:[400] during [GET] to [http://scheduler-gateway-service/api/taskScheduler/taskStatusReport/taskStatusTrend?projectId=1460947878944567296] [ScheduleOpsApi#taskStatusTrend(String,String,Integer,String,String,String,String,String)]: [{\"timestamp\":\"2023-12-15T02:51:24.240+00:00\",\"status\":400,\"error\":\"Bad Request\",\"path\":\"/api/taskScheduler/taskStatusReport/taskStatusTrend\"}]"
+        },
+        "RequestId": "63e6dac5-742d-422d-aa90-dbb0e9ce666d"
+    }
+}
+```
+

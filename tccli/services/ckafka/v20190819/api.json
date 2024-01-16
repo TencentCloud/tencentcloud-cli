@@ -409,7 +409,7 @@
     "DescribeInstancesDetail": {
       "document": "用户账户下获取实例列表详情",
       "input": "DescribeInstancesDetailRequest",
-      "name": "获取实例列表详情",
+      "name": "获取实例集群列表详情",
       "output": "DescribeInstancesDetailResponse",
       "status": "online"
     },
@@ -8230,6 +8230,7 @@
           "example": "无",
           "member": "InstanceDetailResponse",
           "name": "Result",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },

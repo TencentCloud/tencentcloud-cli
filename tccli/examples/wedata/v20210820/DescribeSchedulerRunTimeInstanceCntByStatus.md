@@ -22,6 +22,7 @@ Output:
                 "CycleUnit": "I",
                 "State": "RUNNING",
                 "RunTime": 27220,
+                "WaitScheduleTime": 1234,
                 "CurRunTime": "2023-01-01 12:12:12"
             }
         ],

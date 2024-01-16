@@ -11280,7 +11280,7 @@
       "usage": "both"
     },
     "InnerFactoryFailedResources": {
-      "document": "内部操作失败时的资源列表",
+      "document": "Inner资源操作结果",
       "members": [
         {
           "disabled": false,
@@ -11288,17 +11288,17 @@
           "example": "ins-abcdef",
           "member": "string",
           "name": "ResourceId",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源操作结果。取值：0-成功，非0-失败\n106000-无操作权限",
+          "document": "0-成功1-未知异常失败（调用方可以决定是否需要重试）2-逻辑异常（明确不需要重试）3-异步处理\t",
           "example": "0",
           "member": "int64",
           "name": "OperateResult",
-          "required": true,
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -11308,18 +11308,38 @@
           "example": "2022-08-26 16:44:00",
           "member": "string",
           "name": "OperateEndTime",
-          "required": true,
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "资源操作失败原因\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "透传业务侧的message信息\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Message",
-          "required": true,
+          "output_required": true,
           "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "失败原因(资源中心的失败原因)\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "string",
+          "name": "FailureReason",
+          "output_required": true,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "透传业务返回的flowId\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1111",
+          "member": "int64",
+          "name": "FlowId",
+          "output_required": true,
+          "type": "int",
           "value_allowed_null": true
         }
       ],
@@ -12433,33 +12453,37 @@
           "example": "5af26b46-6c46-417b-9112-aeb696a35779",
           "member": "string",
           "name": "ReferenceId",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "操作结果。取值：0-全部成功，2-异步处理中，3-全部失败，4-部分失败",
-          "example": "1",
+          "document": "字段下线中，默认值：-1",
+          "example": "-1",
           "member": "int64",
           "name": "OperateResult",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
         {
           "disabled": false,
-          "document": "退款订单号，仅当操作会退费时返回该字段\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "交易订单号列表，仅当操作会产生交易行为时，才会存在订单号\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "DealNames",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
         {
           "disabled": false,
-          "document": "操作失败时的资源列表\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "资源操作结果列表\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "InnerFactoryFailedResources",
           "name": "ResourceSet",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },

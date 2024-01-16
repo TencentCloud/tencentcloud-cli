@@ -1,6 +1,6 @@
 **Example 1: 获取实例列表详情**
 
-1
+
 
 Input: 
 
@@ -21,56 +21,56 @@ Output:
             "TotalCount": 0,
             "InstanceList": [
                 {
-                    "InstanceId": "xx",
-                    "InstanceName": "xx",
-                    "Vip": "xx",
-                    "Vport": "xx",
+                    "InstanceId": "abc",
+                    "InstanceName": "abc",
+                    "Vip": "abc",
+                    "Vport": "abc",
                     "VipList": [
                         {
-                            "Vip": "xx",
-                            "Vport": "xx"
+                            "Vip": "abc",
+                            "Vport": "abc"
                         }
                     ],
                     "Status": 0,
                     "Bandwidth": 0,
                     "DiskSize": 0,
                     "ZoneId": 0,
-                    "VpcId": "xx",
-                    "SubnetId": "xx",
+                    "VpcId": "abc",
+                    "SubnetId": "abc",
                     "RenewFlag": 0,
                     "Healthy": 0,
-                    "HealthyMessage": "xx",
+                    "HealthyMessage": "abc",
                     "CreateTime": 0,
                     "ExpireTime": 0,
                     "IsInternal": 0,
                     "TopicNum": 0,
                     "Tags": [
                         {
-                            "TagKey": "xx",
-                            "TagValue": "xx"
+                            "TagKey": "abc",
+                            "TagValue": "abc"
                         }
                     ],
-                    "Version": "xx",
+                    "Version": "abc",
                     "ZoneIds": [
                         0
                     ],
                     "Cvm": 0,
-                    "InstanceType": "xx",
-                    "DiskType": "xx",
+                    "InstanceType": "abc",
+                    "DiskType": "abc",
                     "MaxTopicNumber": 0,
                     "MaxPartitionNumber": 0,
-                    "RebalanceTime": "xx",
+                    "RebalanceTime": "abc",
                     "PartitionNumber": 1,
-                    "PublicNetworkChargeType": "xx",
+                    "PublicNetworkChargeType": "abc",
                     "PublicNetwork": 0,
-                    "ClusterType": "xx",
+                    "ClusterType": "abc",
                     "Features": [
-                        "xx"
+                        "abc"
                     ]
                 }
             ]
         },
-        "RequestId": "xx"
+        "RequestId": "abc"
     }
 }
 ```

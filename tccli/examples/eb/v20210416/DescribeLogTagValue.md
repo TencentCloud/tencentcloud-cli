@@ -1,6 +1,6 @@
-**Example 1: 查询日志索引字段值**
+**Example 1: 事件查询维度值结果**
 
-查询日志索引字段值
+事件查询维度值结果
 
 Input: 
 
@@ -19,7 +19,7 @@ Output:
 {
     "Response": {
         "Results": [
-            "eb-l65vlc2u"
+            "cvm.cloud.tencent"
         ],
         "RequestId": "cfa5ba79-4169-44d5-a1c4-a95b8a8b4481"
     }

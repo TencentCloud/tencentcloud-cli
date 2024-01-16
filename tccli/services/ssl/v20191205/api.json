@@ -28,6 +28,13 @@
       "output": "CancelCertificateOrderResponse",
       "status": "online"
     },
+    "CheckCertificate": {
+      "document": "证书检查。",
+      "input": "CheckCertificateRequest",
+      "name": "证书检查",
+      "output": "CheckCertificateResponse",
+      "status": "online"
+    },
     "CheckCertificateChain": {
       "document": "本接口（CheckCertificateChain）用于检查证书链是否完整。",
       "input": "CheckCertificateChainRequest",
@@ -1845,6 +1852,51 @@
           "type": "list",
           "value_allowed_null": false
         },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCertificateRequest": {
+      "document": "CheckCertificate请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "证书内容。\t",
+          "example": "无",
+          "member": "string",
+          "name": "Certificate",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "证书类型。CA = CA证书，SVR = 服务器证书。\t",
+          "example": "无",
+          "member": "string",
+          "name": "CertificateType",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "私钥内容。",
+          "example": "无",
+          "member": "string",
+          "name": "PrivateKey",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "CheckCertificateResponse": {
+      "document": "CheckCertificate返回参数结构体",
+      "members": [
         {
           "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
           "member": "string",
