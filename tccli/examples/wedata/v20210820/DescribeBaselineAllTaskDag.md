@@ -77,6 +77,7 @@ Output:
                     "TaskId": "abc",
                     "TaskName": "abc",
                     "EstimatedCostTime": 0,
+                    "DownstreamTaskIds": null,
                     "UpstreamTaskIds": {
                         "PreviewRecord": [
                             "abc"

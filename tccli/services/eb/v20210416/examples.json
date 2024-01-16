@@ -104,10 +104,10 @@
     ],
     "DescribeLogTagValue": [
       {
-        "document": "查询日志索引字段值",
+        "document": "事件查询维度值结果",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeLogTagValue\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"GroupField\": \"Source\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
-        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"eb-l65vlc2u\"\n        ],\n        \"RequestId\": \"cfa5ba79-4169-44d5-a1c4-a95b8a8b4481\"\n    }\n}",
-        "title": "查询日志索引字段值"
+        "output": "{\n    \"Response\": {\n        \"Results\": [\n            \"cvm.cloud.tencent\"\n        ],\n        \"RequestId\": \"cfa5ba79-4169-44d5-a1c4-a95b8a8b4481\"\n    }\n}",
+        "title": "事件查询维度值结果"
       }
     ],
     "GetEventBus": [
@@ -222,10 +222,10 @@
     ],
     "SearchLog": [
       {
-        "document": "日志检索",
+        "document": "事件查询",
         "input": "POST / HTTP/1.1\nHost: eb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: SearchLog\n<公共请求参数>\n\n{\n    \"StartTime\": 1673233483024,\n    \"EndTime\": 1673838283024,\n    \"EventBusId\": \"eb-xxxxx\",\n    \"Page\": 1,\n    \"Limit\": 1000\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"584caa6b-26d8-4ba5-858d-df1182730075\",\n        \"Results\": [\n            {\n                \"Timestamp\": \"xxx\",\n                \"Message\": \"xxx-1\",\n                \"Source\": \"xxx\",\n                \"Type\": \"xzz\",\n                \"RuleIds\": \"xxx\",\n                \"Subject\": \"xxx\",\n                \"Region\": \"xxx\",\n                \"Status\": \"xxx\"\n            }\n        ],\n        \"Total\": 1000,\n        \"Limit\": 500,\n        \"Page\": 1\n    }\n}",
-        "title": "日志检索"
+        "title": "事件查询"
       }
     ],
     "UpdateConnection": [

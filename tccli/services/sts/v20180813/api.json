@@ -118,7 +118,7 @@
         },
         {
           "disabled": false,
-          "document": "策略描述\n注意：\n1、policy 需要做 urlencode（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n3、策略中不能包含 principal 元素。",
+          "document": "策略描述\n注意：\n1、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。（如果通过 GET 方法请求云 API，发送请求前，所有参数都需要按照[云 API 规范](https://cloud.tencent.com/document/api/598/33159#1.-.E6.8B.BC.E6.8E.A5.E8.A7.84.E8.8C.83.E8.AF.B7.E6.B1.82.E4.B8.B2)再 urlencode 一次）。\n2、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n3、策略中不能包含 principal 元素。",
           "example": "无",
           "member": "string",
           "name": "Policy",
@@ -489,8 +489,8 @@
         },
         {
           "disabled": false,
-          "document": "授予该临时访问凭证权限的CAM策略\n注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode。",
-          "example": "{\"version\":\"2.0\",\"statement\":[{\"effect\":\"allow\",\"action\":\"sts:AssumeRole\",\"resource\":\"*\"}]}",
+          "document": "注意：\n1、策略语法参照[ CAM 策略语法](https://cloud.tencent.com/document/product/598/10603)。\n2、策略中不能包含 principal 元素。\n3、该参数需要做urlencode，服务端会对该字段做urldecode， 并按处理后Policy授予临时访问凭证权限，请按规范传入参数。",
+          "example": "%7B%22version%22%3A%222.0%22%2C%22statement%22%3A%5B%7B%22effect%22%3A%22allow%22%2C%22action%22%3A%22sts%3AAssumeRole%22%2C%22resource%22%3A%22%2A%22%7D%5D%7D",
           "member": "string",
           "name": "Policy",
           "required": true,
@@ -517,6 +517,7 @@
           "example": "无",
           "member": "Credentials",
           "name": "Credentials",
+          "output_required": true,
           "type": "object",
           "value_allowed_null": false
         },
@@ -526,6 +527,7 @@
           "example": "1686664553",
           "member": "uint64",
           "name": "ExpiredTime",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": false
         },
@@ -535,6 +537,7 @@
           "example": "2023-06-13T13:55:53Z",
           "member": "string",
           "name": "Expiration",
+          "output_required": true,
           "type": "string",
           "value_allowed_null": true
         },

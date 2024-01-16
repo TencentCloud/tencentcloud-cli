@@ -2412,6 +2412,15 @@
           "name": "ApplicationToken",
           "required": true,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "是否同步返回设备下控ack结果",
+          "example": "false",
+          "member": "bool",
+          "name": "IsSynchronized",
+          "required": false,
+          "type": "bool"
         }
       ],
       "type": "object"

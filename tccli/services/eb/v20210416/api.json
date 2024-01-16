@@ -85,9 +85,9 @@
       "status": "online"
     },
     "DescribeLogTagValue": {
-      "document": "查询日志索引维度值",
+      "document": "前置条件：需开启事件存储；事件查询维度值",
       "input": "DescribeLogTagValueRequest",
-      "name": "查询日志索引维度值",
+      "name": "事件查询维度值",
       "output": "DescribeLogTagValueResponse",
       "status": "online"
     },
@@ -183,9 +183,9 @@
       "status": "online"
     },
     "SearchLog": {
-      "document": "日志检索",
+      "document": "前置条件：开启事件存储；查询历史推送事件",
       "input": "SearchLogRequest",
-      "name": "日志检索",
+      "name": "事件查询",
       "output": "SearchLogResponse",
       "status": "online"
     },
@@ -1276,7 +1276,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "索引检索维度值\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件查询维度值结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "string",
           "name": "Results",
@@ -2894,7 +2894,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "日志总数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件总数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Total",
@@ -2904,7 +2904,7 @@
         },
         {
           "disabled": false,
-          "document": "每页日志条数\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "每页事件条数\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "int64",
           "name": "Limit",
@@ -2924,7 +2924,7 @@
         },
         {
           "disabled": false,
-          "document": "日志检索结果\n注意：此字段可能返回 null，表示取不到有效值。",
+          "document": "事件查询结果\n注意：此字段可能返回 null，表示取不到有效值。",
           "example": "无",
           "member": "SearchLogResult",
           "name": "Results",

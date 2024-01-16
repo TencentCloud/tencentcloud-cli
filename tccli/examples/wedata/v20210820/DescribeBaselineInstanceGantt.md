@@ -30,9 +30,11 @@ Output:
             "AlarmLevel": "abc",
             "ProjectId": "abc",
             "IsReady": "abc",
+            "BaselineTaskInstances": null,
             "ShardKey": "abc",
             "ExceptionalTaskInstances": [
                 {
+                    "CriticalDependency": null,
                     "Id": 0,
                     "BaselineInstanceId": 0,
                     "BaselineType": "abc",
@@ -64,6 +66,7 @@ Output:
             ],
             "TaskInstances": [
                 {
+                    "CriticalDependency": null,
                     "Id": 0,
                     "BaselineInstanceId": 0,
                     "BaselineType": "abc",
@@ -96,6 +99,7 @@ Output:
             "CriticalStartTime": "2020-09-22T00:00:00+00:00",
             "CriticalTaskInstances": [
                 {
+                    "CriticalDependency": null,
                     "Id": 0,
                     "BaselineInstanceId": 0,
                     "BaselineType": "abc",

@@ -180,7 +180,7 @@
       {
         "document": "开通服务，初始化资源，只针对新购资源",
         "input": "POST / HTTP/1.1\nHost: dasb.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeployResource\n<公共请求参数>\n\n{\n    \"VpcId\": \"vpc-xxxxxx\",\n    \"Zone\": \"ap-guangzhou-1\",\n    \"ResourceId\": \"bh-saas-xxxxxx\",\n    \"ApCode\": \"ap-guangzhou\",\n    \"SubnetId\": \"subnet-xxxxxx\",\n    \"CidrBlock\": \"10.10.10.0/32\",\n    \"VpcName\": \"vpc1\",\n    \"VpcCidrBlock\": \"10.10.0.0/16\",\n    \"SubnetName\": \"subnet1\"\n}",
-        "output": "{\n    \"Response\": {\n        \"RequestId\": \"xx\"\n    }\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"abc\"\n    }\n}",
         "title": "开通服务"
       }
     ],

@@ -33,8 +33,10 @@ Output:
             "ProjectId": "abc",
             "IsReady": "abc",
             "ShardKey": "abc",
+            "BaselineTaskInstances": null,
             "ExceptionalTaskInstances": [
                 {
+                    "CriticalDependency": null,
                     "Id": 0,
                     "BaselineInstanceId": 0,
                     "BaselineType": "abc",
@@ -86,6 +88,7 @@ Output:
                     "LatestEndTime": "2020-09-22T00:00:00+00:00",
                     "ActualEndTime": "2020-09-22T00:00:00+00:00",
                     "TaskInstanceStatus": "abc",
+                    "CriticalDependency": null,
                     "ProjectId": "abc",
                     "ShardKey": "abc",
                     "CreateTime": "abc",
@@ -98,6 +101,7 @@ Output:
             "CriticalStartTime": "2020-09-22T00:00:00+00:00",
             "CriticalTaskInstances": [
                 {
+                    "CriticalDependency": null,
                     "Id": 0,
                     "BaselineInstanceId": 0,
                     "BaselineType": "abc",

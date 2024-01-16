@@ -4870,32 +4870,62 @@
         {
           "disabled": false,
           "document": "实例对象维度组合",
-          "example": "",
+          "example": "无",
           "member": "Dimension",
           "name": "Dimensions",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "时间戳数组，表示那些时间点有数据，缺失的时间戳，没有数据点，可以理解为掉点了",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Timestamps",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
         },
         {
           "disabled": false,
           "document": "监控值数组，该数组和Timestamps一一对应",
-          "example": "",
+          "example": "无",
           "member": "float",
           "name": "Values",
-          "required": true,
+          "output_required": true,
           "type": "list",
           "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MaxValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "MinValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "监控值数组，该数组和Timestamps一一对应\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "float",
+          "name": "AvgValues",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
         }
       ],
       "usage": "out"
@@ -13064,7 +13094,7 @@
         {
           "disabled": false,
           "document": "实例对象的维度组合，格式为key-value键值对形式的集合。不同类型的实例字段完全不同，如CVM为[{\"Name\":\"InstanceId\",\"Value\":\"ins-j0hk02zo\"}]，Ckafka为[{\"Name\":\"instanceId\",\"Value\":\"ckafka-l49k54dd\"}]，COS为[{\"Name\":\"appid\",\"Value\":\"1258344699\"},{\"Name\":\"bucket\",\"Value\":\"rig-1258344699\"}]。各个云产品的维度请参阅各个产品[监控指标](https://cloud.tencent.com/document/product/248/6140)文档，对应的维度列即为维度组合的key，value为key对应的值。单请求最多支持批量拉取10个实例的监控数据。",
-          "example": "无",
+          "example": "[{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"9f25c238-4e82-46e4-a0fe-76443480c8db\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"d651829d-32c6-48fc-8902-e691e9c2046a\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"4d48043f-5d5f-4a1e-b4e6-195491231c36\"}]},{\"Dimensions\":[{\"Name\":\"uuid\",\"Value\":\"120df06f-7890-4a1a-84e5-3a7515083efc\"}]}]",
           "member": "Instance",
           "name": "Instances",
           "required": true,
@@ -13096,6 +13126,15 @@
           "name": "EndTime",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "返回多种统计方式数据。avg, max, min (1,2,4)可以自由组合",
+          "example": "1",
+          "member": "int64",
+          "name": "SpecifyStatistics",
+          "required": false,
+          "type": "int"
         }
       ],
       "type": "object"

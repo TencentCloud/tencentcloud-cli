@@ -16,6 +16,30 @@
         "title": "添加企业组织节点"
       }
     ],
+    "AddShareUnit": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=AddShareUnit\n&Name=myShareUnit\n&Area=ap-guangzhou\n&Description=share unit\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\",\n        \"UnitId\": \"shareUnit-xhre**ra2p\"\n    }\n}",
+        "title": "新建共享单元"
+      }
+    ],
+    "AddShareUnitMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=AddShareUnitMembers\n&UnitId=shareUnit-xhre**ra2p\n&Area=ap-guangzhou\n&Members.0.ShareMemberUin=333333333333\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\"\n    }\n}",
+        "title": "添加共享单元成员"
+      }
+    ],
+    "AddShareUnitResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: AddShareUnitResources\n<公共请求参数>\n\n{\n    \"Area\": \"ap-guangzhou\",\n    \"Type\": \"secret\",\n    \"Resources\": [\n        {\n            \"ProductResourceId\": \"sec***002\"\n        }\n    ],\n    \"UnitId\": \"shareUnit-xhre**ra2p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\"\n    }\n}",
+        "title": "添加共享单元资源"
+      }
+    ],
     "BindOrganizationMemberAuthAccount": [
       {
         "document": "",
@@ -136,6 +160,30 @@
         "title": "批量删除企业组织节点"
       }
     ],
+    "DeleteShareUnit": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteShareUnit\n&UnitId=shareUnit-xhreo**2p\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42a5622f-d1bc-4d7f-b08a-01adc8d9cec9\"\n    }\n}",
+        "title": "删除共享单元"
+      }
+    ],
+    "DeleteShareUnitMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteShareUnitMembers\n&UnitId=shareUnit-xhre**ra2p\n&Area=ap-guangzhou\n&Members.0.ShareMemberUin=333333333333\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\"\n    }\n}",
+        "title": "删除共享单元成员"
+      }
+    ],
+    "DeleteShareUnitResources": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DeleteShareUnitResources\n&UnitId=shareUnit-xhre**ra2p\n&Area=ap-guangzhou\n&Type=vpc\n&Resources.0.ResourceId=shareResource-12**erte\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"5ef007aa-2dc5-4729-a880-b7ac69d94714\"\n    }\n}",
+        "title": "删除共享单元资源"
+      }
+    ],
     "DescribeOrganization": [
       {
         "document": "",
@@ -224,6 +272,38 @@
         "title": "获取节点列表"
       }
     ],
+    "DescribeShareAreas": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DescribeShareAreas\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Name\": \"广州\",\n                \"Area\": \"ap-guangzhou\",\n                \"AreaId\": 1\n            }\n        ],\n        \"RequestId\": \"094f71aa-bc7d-44e8-99e7-6b2135b017e3\"\n    }\n}",
+        "title": "获取共享地域列表"
+      }
+    ],
+    "DescribeShareUnitMembers": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DescribeShareUnitMembers\n&UnitId=shareUnit-xhre**ra2p\n&Area=ap-guangzhou\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:08:38\",\n                \"ShareMemberUin\": 333333333333\n            }\n        ],\n        \"RequestId\": \"dd22e981-ad22-4676-865b-2d2184bf879b\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取共享单元成员列表"
+      }
+    ],
+    "DescribeShareUnitResources": [
+      {
+        "document": "",
+        "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeShareUnitResources\n<公共请求参数>\n\n{\n    \"Offset\": \"0\",\n    \"Area\": \"ap-guangzhou\",\n    \"Limit\": \"10\",\n    \"UnitId\": \"shareUnit-xhre**ra2p\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"CreateTime\": \"2021-03-06 17:11:30\",\n                \"ResourceId\": \"shareUnit-12**erte\",\n                \"ProductResourceId\": \"sec***002\",\n                \"Type\": \"secret\",\n                \"SharedMemberNum\": 2,\n                \"SharedMemberUseNum\": 0,\n                \"ShareManagerUin\": 111111111111\n            }\n        ],\n        \"RequestId\": \"538e6bb8-704d-4594-b297-95bd2535ecc0\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取共享单元资源列表"
+      }
+    ],
+    "DescribeShareUnits": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=DescribeShareUnits\n&Area=ap-guangzhou\n&Offset=0\n&Limit=10\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"Items\": [\n            {\n                \"Area\": \"ap-guangzhou\",\n                \"CreateTime\": \"2021-03-05 15:29:14\",\n                \"Description\": \"share unit\",\n                \"Name\": \"myShareUnit\",\n                \"OwnerUin\": 1111111111,\n                \"ShareMemberNum\": 0,\n                \"ShareResourceNum\": 0,\n                \"Uin\": 2222222222,\n                \"UnitId\": \"shareUnit-xhre**ra2p\"\n            }\n        ],\n        \"RequestId\": \"7e6a64bc-6522-4c33-b3c3-303570691d7b\",\n        \"Total\": 1\n    }\n}",
+        "title": "获取共享单元列表"
+      }
+    ],
     "ListOrganizationIdentity": [
       {
         "document": "获取组织成员访问身份列表",
@@ -278,6 +358,14 @@
         "input": "POST / HTTP/1.1\nHost: organization.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: UpdateOrganizationNode\n<公共请求参数>\n\n{\n    \"NodeId\": 123,\n    \"Name\": \"test\"\n}",
         "output": "{\n    \"Response\": {\n        \"RequestId\": \"b46d2afe-6893-4529-bc96-2c82d9214957\"\n    }\n}",
         "title": "更新企业组织节点"
+      }
+    ],
+    "UpdateShareUnit": [
+      {
+        "document": "",
+        "input": "https://organization.tencentcloudapi.com/?Action=UpdateShareUnit\n&UnitId=shareUnit-xhreo**2p\n&Description=share unit\n&<公共请求参数>",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"42a5622f-d1bc-4d7f-b08a-01adc8d9cec9\"\n    }\n}",
+        "title": "更新共享单元"
       }
     ]
   },

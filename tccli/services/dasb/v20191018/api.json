@@ -2421,6 +2421,15 @@
           "name": "SubnetName",
           "required": false,
           "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "需要开通实例所属的CDC集群ID",
+          "example": "cdc-xxxxxxxx",
+          "member": "string",
+          "name": "CdcClusterId",
+          "required": false,
+          "type": "string"
         }
       ],
       "type": "object"

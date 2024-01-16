@@ -15257,6 +15257,15 @@
         },
         {
           "disabled": false,
+          "document": "过滤条件，不支持同时指定IpAddresses和Filters参数。 支持的过滤条件如下： <li>ip-addresses：IP地址。</li> <li>resource-id：资源ID。</li>",
+          "example": "无",
+          "member": "Filter",
+          "name": "Filters",
+          "required": false,
+          "type": "list"
+        },
+        {
+          "disabled": false,
           "document": "偏移量，默认为0。",
           "example": "0",
           "member": "uint64",
@@ -15285,6 +15294,7 @@
           "example": "无",
           "member": "IpAddressStates",
           "name": "IpAddressStates",
+          "output_required": true,
           "type": "list",
           "value_allowed_null": true
         },
@@ -15294,6 +15304,7 @@
           "example": "2",
           "member": "uint64",
           "name": "TotalCount",
+          "output_required": true,
           "type": "int",
           "value_allowed_null": true
         },

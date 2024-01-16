@@ -155,7 +155,7 @@
       "status": "online"
     },
     "CreateIntegrationEmployees": {
-      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。\n支持以下场景\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 25%;\">生成端</td>\n<td style=\"width: 25%;\">入参</td>\n<td style=\"width: 25%;\">提醒方式</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">普通saas员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType</td>\n<td style=\"width: 25%;\">短信</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">企微员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td style=\"width: 25%;\">企微内部实名消息</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">H5端 saas员工</td>\n<td style=\"width: 25%;\">传递 InvitationNotifyType = H5，不支持企微</td>\n<td style=\"width: 25%;\">生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- <b>若通过手机号发现员工已经创建，则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
+      "document": "此接口（CreateIntegrationEmployees）用于创建企业员工。\n支持以下场景\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td >入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>不需要传递 InvitationNotifyType</td>\n<td>短信</td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，不支持企微</td>\n<td>生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- <b>若通过手机号发现员工已经创建，则不会重复创建，但会发送短信或者生成链接提醒员工实名。</b>\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
       "input": "CreateIntegrationEmployeesRequest",
       "name": "创建企业员工",
       "output": "CreateIntegrationEmployeesResponse",
@@ -477,7 +477,7 @@
       "status": "online"
     },
     "UpdateIntegrationEmployees": {
-      "document": "此接口（UpdateIntegrationEmployees）用于修改未实名企业员工信息(姓名，手机号，邮件、部门)。\n修改手机号的时候,支持以下场景进行提醒通知\n<table style=\"border-collapse: collapse; width: 100%;\" border=\"1\">\n<tbody>\n<tr>\n<td style=\"width: 25%;\">生成端</td>\n<td style=\"width: 25%;\">入参</td>\n<td style=\"width: 25%;\">提醒方式</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">普通saas员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType</td>\n<td style=\"width: 25%;\">短信</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">企微员工</td>\n<td style=\"width: 25%;\">不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td style=\"width: 25%;\">企微内部实名消息</td>\n</tr>\n<tr>\n<td style=\"width: 25%;\">H5端 saas员工</td>\n<td style=\"width: 25%;\">传递 InvitationNotifyType = H5，不支持企微</td>\n<td style=\"width: 25%;\">生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
+      "document": "此接口（UpdateIntegrationEmployees）用于修改未实名企业员工信息(姓名，手机号，邮件、部门)。\n修改手机号的时候,支持以下场景进行提醒通知\n<table>\n<tbody>\n<tr>\n<td>生成端</td>\n<td>入参</td>\n<td>提醒方式</td>\n</tr>\n<tr>\n<td>普通saas员工</td>\n<td>不需要传递 InvitationNotifyType</td>\n<td>短信</td>\n</tr>\n<tr>\n<td>企微员工</td>\n<td>不需要传递 InvitationNotifyType，将Employees 中的WeworkOpenId字段设置为企微员工明文的openid，但需确保该企微员工在应用的可见范围内</td>\n<td>企微内部实名消息</td>\n</tr>\n<tr>\n<td>H5端 saas员工</td>\n<td>传递 InvitationNotifyType = H5，不支持企微</td>\n<td>生成H5链接</td>\n</tr>\n</tbody>\n</table>\n注意：\n\n- jumpUrl 仅支持H5的邀请方式，回跳的url，使用前请联系对接的客户经理沟通，进行域名的配置。",
       "input": "UpdateIntegrationEmployeesRequest",
       "name": "更新企业员工信息",
       "output": "UpdateIntegrationEmployeesResponse",
