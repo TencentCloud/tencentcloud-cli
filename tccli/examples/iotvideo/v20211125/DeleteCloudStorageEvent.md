@@ -11,7 +11,8 @@ tccli iotvideo DeleteCloudStorageEvent --cli-unfold-argument  \
     --EventId abc \
     --StartTime 1 \
     --EndTime 1 \
-    --UserId abc
+    --UserId abc \
+    --ChannelId 1
 ```
 
 Output: 

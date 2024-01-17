@@ -54,9 +54,51 @@ Output:
 }
 ```
 
-**Example 2: 创建发起合同签署链接-模板发起**
+**Example 2: 创建发起合同签署链接-模板发起（固定一个参与方）**
 
-创建发起合同签署链接， 提前定义两个签署人， 分别是 B端渠道子客企业的员工和C端为张三这个自然人
+1.这是一个B2C的合同模板， 创建发起合同签署链接，只指定一个子企业的参与方
+2.FlowApproverList参数指定的参与方不能更改， 未指定的参与方可以修改
+<img border="0" src="https://qcloudimg.tencent-cloud.cn/raw/f51c3d969db0093300094a22c6c01555.png" >
+
+
+Input: 
+
+```
+tccli essbasic ChannelCreatePrepareFlow --cli-unfold-argument  \
+    --Agent.AppId yDwhxUUckp3gl8j5UuFX33LSNozpRsbi \
+    --Agent.ProxyOrganizationOpenId org_dianziqian \
+    --Agent.ProxyOperator.OpenId zhansan \
+    --ResourceId yDSL6UUckpo6ynynUx47m3cSKQavf88Q \
+    --ResourceType 1 \
+    --FlowInfo.FlowName 2024典子谦入职合同 \
+    --FlowInfo.FlowType 入职合同 \
+    --FlowInfo.FlowDescription 2024典子谦入职合同 \
+    --FlowInfo.Deadline 1706335491 \
+    --FlowApproverList.0.NotChannelOrganization False \
+    --FlowApproverList.0.ApproverType 0 \
+    --FlowApproverList.0.OrganizationOpenId org_dianziqian \
+    --FlowApproverList.0.OrganizationName 典子谦示例企业 \
+    --FlowApproverList.0.OpenId n9527 \
+    --FlowApproverList.0.RecipientId yDSL6UUckpo6am9jUuRHYOWRfZbRAhm6
+```
+
+Output: 
+```
+{
+    "Response": {
+        "PrepareFlowUrl": "https://embed.beta.qian.tencent.cn/contract-create?code=yDCNBUUckpvlzt0sUypjGZRCTkEHyRh6",
+        "PreviewFlowUrl": "",
+        "RequestId": "296e3cfb-504e-494d-a86c-75101a87c09e"
+    }
+}
+```
+
+**Example 3: 创建发起合同签署链接-模板发起（固定所有的参与方）**
+
+1.创建发起合同签署链接， 提前定义两个签署人， 分别是 B端渠道子客企业的员工和C端为张三这个自然人
+2.FlowApproverList参数指定的参与方不能更改
+<img border="0" src="https://qcloudimg.tencent-cloud.cn/raw/935a3cebf2881b25c1d87e234a303a13.png" >
+
 
 Input: 
 

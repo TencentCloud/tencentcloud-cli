@@ -78,7 +78,7 @@
       "status": "online"
     },
     "CreateFlow": {
-      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "通过模板创建签署流程<br/>\n适用场景：在标准制式的合同场景中，可通过提前预制好模板文件，每次调用模板文件的id，补充合同内容信息及签署信息生成电子合同。\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n注：配合<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument\" target=\"_blank\">创建电子文档</a>和<a href=\"https://qian.tencent.com/developers/companyApis/startFlows/StartFlow\" target=\"_blank\">发起签署流程</a>接口使用。整体的逻辑如下图\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：**静默（自动）签署不支持合同签署方存在填写**功能\n<br>\n**相关视频指引**\n<a href=\"https://dyn.ess.tencent.cn/guide/apivideo/createflow_seversign.mp4\" target=\"_blank\">创建静默（自动）签署模板和开通自动签署</a>",
       "input": "CreateFlowRequest",
       "name": "模板发起合同-创建签署流程",
       "output": "CreateFlowResponse",
@@ -92,7 +92,7 @@
       "status": "online"
     },
     "CreateFlowByFiles": {
-      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n- 不同类型的签署方传参不同, 可以参考开发者中心的ApproverInfo结构体说明\n-  合同**发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "此接口（CreateFlowByFiles）用来通过上传后的pdf资源编号来创建待签署的合同流程。<br/>\n适用场景：适用非制式的合同文件签署。一般开发者自己有完整的签署文件，可以通过该接口传入完整的PDF文件及流程信息生成待签署的合同流程。<br/>\n\n<table>\n\t<thead>\n\t\t<tr>\n\t\t\t<th>签署人类别</th>\n\t\t\t<th>需要提前准备的信息</th>\n\t\t</tr>\n\t</thead>\n\t<tbody>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（未认证加入或已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>自己企业的员工签署（已认证加入）</td>\n\t\t\t<td>签署企业的名字、员工在电子签平台的ID（UserId）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>其他企业的员工签署</td>\n\t\t\t<td>签署企业的名字、员工的真实名字、员工的触达手机号、员工的证件号（证件号非必传）</td>\n\t\t</tr>\n\t\t<tr>\n\t\t\t<td>个人（自然人）签署</td>\n\t\t\t<td>个人的真实名字、个人的触达手机号、个人的身份证（证件号非必传）</td>\n\t\t</tr>\n\t</tbody>\n</table>\n\n\n\n该接口需要依赖[上传文件](https://qian.tencent.com/developers/companyApis/templatesAndFiles/UploadFiles)接口生成pdf资源编号（FileIds）进行使用。（如果非pdf文件需要调用[创建文件转换任务](https://qian.tencent.com/developers/companyApis/templatesAndFiles/CreateConvertTaskApi)接口转换成pdf资源）<br/>\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/f097a74b289e3e1acd740936bdfe9843.png)\n\n注：\n-  合同**发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（**过期，拒签，签署完成，解除完成等状态不会返还额度**）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
       "input": "CreateFlowByFilesRequest",
       "name": "用PDF文件创建签署流程",
       "output": "CreateFlowByFilesResponse",
@@ -183,7 +183,7 @@
       "status": "online"
     },
     "CreateOrganizationBatchSignUrl": {
-      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。\n- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。",
+      "document": "使用此接口，您可以创建企业批量签署链接，员工只需点击链接即可跳转至控制台进行批量签署。<br/>\n附注：\n- 员工必须在企业下完成实名认证，且需作为批量签署合同的签署方。\n- 如有UserId，应以UserId为主要标识；如果没有UserId，则必须填写Name和Mobile信息。\n- 仅支持待签署状态的合同生成签署链接。",
       "input": "CreateOrganizationBatchSignUrlRequest",
       "name": "获取企业签署合同web页面",
       "output": "CreateOrganizationBatchSignUrlResponse",
@@ -463,7 +463,7 @@
       "status": "online"
     },
     "StartFlow": {
-      "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于开始整个合同流程,  推进流程进入到签署环节。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：\n- **合同发起后就会扣减合同的额度**, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）\n- **静默（自动）签署不支持合同签署方存在填写**功能",
+      "document": "此接口用于启动流程。它是模板发起合同的最后一步。\n在[创建签署流程](https://qian.tencent.com/developers/companyApis/startFlows/CreateFlow)和[创建电子文档](https://qian.tencent.com/developers/companyApis/startFlows/CreateDocument)之后，用于开始整个合同流程,  推进流程进入到签署环节。\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/06f2bc0f1772d8deac2f92b5df61a5ac.png)\n\n注：\n1.<font color=\"red\">合同发起后就会扣减合同的额度</font>, 如果未签署完成时撤销合同会返还此额度（过期，拒签，签署完成，解除完成等状态不会返还额度）\n\n2.<font color=\"red\">静默（自动）签署不支持合同签署方存在填写</font>功能\n\n3.<font color=\"red\">在发起签署流程之前，建议等待 [PDF合成完成的回调](https://qian.tencent.com/developers/company/callback_types_file_resources)</font>，尤其是当模板中存在动态表格等复杂填写控件时，因为合成过程可能会耗费秒级别的时间。",
       "input": "StartFlowRequest",
       "name": "模板发起合同-发起签署流程",
       "output": "StartFlowResponse",
@@ -1638,7 +1638,7 @@
         },
         {
           "disabled": false,
-          "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"^甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前面不能有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署^</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">后面不能有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n",
+          "document": "控件唯一ID。\n\n**在绝对定位方式方式下**，ComponentId为控件的ID，长度不能超过30，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在关键字定位方式下**，ComponentId不仅为控件的ID，也是关键字整词。此方式下可以通过\"^\"来决定是否使用关键字整词匹配能力。\n\n例：\n\n- 如传入的关键字<font color=\"red\">\"^甲方签署^\"</font >，则会在PDF文件中有且仅有\"甲方签署\"关键字的地方（<font color=\"red\">前后不能有其他字符</font >）进行对应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前后可以有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"^甲方签署</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">前面不能有其他字符</font >）都会执行相应操作。\n- 如传入的关键字为<font color=\"red\">\"甲方签署^</font >\"，则PDF文件中每个出现关键字的位置（<font color=\"red\">后面不能有其他字符</font >）都会执行相应操作。\n\n\n注：`控件ID可以在一个PDF中不可重复`\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentId在模板编辑页面的位置</a>\n",
           "example": "无",
           "member": "string",
           "name": "ComponentId",
@@ -1649,7 +1649,7 @@
         },
         {
           "disabled": false,
-          "document": "**在绝对定位方式方式下**，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在表单域定位方式下**，ComponentName不仅为控件名，也是表单域名称。\n\n注：`控件名可以在一个PDF中可以重复`\n",
+          "document": "**在绝对定位方式方式下**，ComponentName为控件名，长度不能超过20，只能由中文、字母、数字和下划线组成，可以在后续的操作中使用该名称来引用控件。\n\n**在表单域定位方式下**，ComponentName不仅为控件名，也是表单域名称。\n\n注：`控件名可以在一个PDF中可以重复`\n\n<a href=\"https://qcloudimg.tencent-cloud.cn/raw/93178569d07b4d7dbbe0967ae679e35c.png\" target=\"_blank\">点击查看ComponentName在模板页面的位置</a>",
           "example": "price",
           "member": "string",
           "name": "ComponentName",
@@ -2779,8 +2779,8 @@
         },
         {
           "disabled": false,
-          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
-          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/628f0928cac15d2e3bfa6088f53f5998.png)\n\n",
+          "example": "合同名称:{合同名称};发起方: {发起方企业}的{发起方姓名}大佬！;净重: 100吨;品类: 铁矿石",
           "member": "string",
           "name": "CustomShowMap",
           "required": false,
@@ -3408,8 +3408,8 @@
         },
         {
           "disabled": false,
-          "document": "您可以自定义腾讯电子签小程序合同列表页展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n",
-          "example": "合同名称:{合同名称} {发起方企业} {发起方姓名};国家:中国;发起方:{发起方企业};签署方1:  {签署方1企业};签署",
+          "document": "您可以自定义**腾讯电子签小程序合同列表页**展示的合同内容模板，模板中支持以下变量：\n<ul><li>{合同名称}   </li>\n<li>{发起方企业} </li>\n<li>{发起方姓名} </li>\n<li>{签署方N企业}</li>\n<li>{签署方N姓名}</li></ul>\n其中，N表示签署方的编号，从1开始，不能超过签署人的数量。\n\n例如，如果是腾讯公司张三发给李四名称为“租房合同”的合同，您可以将此字段设置为：`合同名称:{合同名称};发起方: {发起方企业}({发起方姓名});签署方:{签署方1姓名}`，则小程序中列表页展示此合同为以下样子\n\n合同名称：租房合同 \n发起方：腾讯公司(张三) \n签署方：李四\n\n![image](https://qcloudimg.tencent-cloud.cn/raw/628f0928cac15d2e3bfa6088f53f5998.png)\n\n",
+          "example": "合同名称:{合同名称};发起方: {发起方企业}的{发起方姓名}大佬！;净重: 100吨;品类: 铁矿石",
           "member": "string",
           "name": "CustomShowMap",
           "required": false,

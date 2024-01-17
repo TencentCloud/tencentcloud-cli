@@ -300,10 +300,16 @@
         "title": "文件发起-跳过文件上传"
       },
       {
-        "document": "创建发起合同签署链接， 提前定义两个签署人， 分别是 B端渠道子客企业的员工和C端为张三这个自然人",
+        "document": "1.这是一个B2C的合同模板， 创建发起合同签署链接，只指定一个子企业的参与方\n2.FlowApproverList参数指定的参与方不能更改， 未指定的参与方可以修改\n<img border=\"0\" src=\"https://qcloudimg.tencent-cloud.cn/raw/f51c3d969db0093300094a22c6c01555.png\" >\n",
+        "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePrepareFlow\n<公共请求参数>\n\n{\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"zhansan\"\n        }\n    },\n    \"ResourceId\": \"yDSL6UUckpo6ynynUx47m3cSKQavf88Q\",\n    \"ResourceType\": 1,\n    \"FlowInfo\": {\n        \"FlowName\": \"2024典子谦入职合同\",\n        \"FlowType\": \"入职合同\",\n        \"FlowDescription\": \"2024典子谦入职合同\",\n        \"Deadline\": 1706335491\n    },\n    \"FlowApproverList\": [\n        {\n            \"NotChannelOrganization\": false,\n            \"ApproverType\": 0,\n            \"OrganizationOpenId\": \"org_dianziqian\",\n            \"OrganizationName\": \"典子谦示例企业\",\n            \"OpenId\": \"n9527\",\n            \"RecipientId\": \"yDSL6UUckpo6am9jUuRHYOWRfZbRAhm6\"\n        }\n    ]\n}",
+        "output": "{\n    \"Response\": {\n        \"PrepareFlowUrl\": \"https://embed.beta.qian.tencent.cn/contract-create?code=yDCNBUUckpvlzt0sUypjGZRCTkEHyRh6\",\n        \"PreviewFlowUrl\": \"\",\n        \"RequestId\": \"296e3cfb-504e-494d-a86c-75101a87c09e\"\n    }\n}",
+        "title": "创建发起合同签署链接-模板发起（固定一个参与方）"
+      },
+      {
+        "document": "1.创建发起合同签署链接， 提前定义两个签署人， 分别是 B端渠道子客企业的员工和C端为张三这个自然人\n2.FlowApproverList参数指定的参与方不能更改\n<img border=\"0\" src=\"https://qcloudimg.tencent-cloud.cn/raw/935a3cebf2881b25c1d87e234a303a13.png\" >\n",
         "input": "POST / HTTP/1.1\nHost: essbasic.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: ChannelCreatePrepareFlow\n<公共请求参数>\n\n{\n    \"ResourceId\": \"yDSL6UUckpo6ynynUx47m3cSKQavf88Q\",\n    \"ResourceType\": 1,\n    \"FlowInfo\": {\n        \"FlowName\": \"典子谦入职合同(17:53:30)\",\n        \"FlowType\": \"入职合同\",\n        \"FlowDescription\": \"2024典子谦入职合同\",\n        \"Deadline\": 1701679610\n    },\n    \"Agent\": {\n        \"AppId\": \"yDwhxUUckp3gl8j5UuFX33LSNozpRsbi\",\n        \"ProxyOrganizationOpenId\": \"org_dianziqian\",\n        \"ProxyOperator\": {\n            \"OpenId\": \"110101200610116558\"\n        }\n    },\n    \"FlowApproverList\": [\n        {\n            \"NotChannelOrganization\": false,\n            \"OrganizationOpenId\": \"org_dianziqian\",\n            \"OrganizationName\": \"典子谦示例企业\",\n            \"OpenId\": \"n131517\",\n            \"RecipientId\": \"yDSL6UUckpo6am9jUuRHYOWRfZbRAhm6\"\n        },\n        {\n            \"ApproverType\": 1,\n            \"NotChannelOrganization\": false,\n            \"ApproverName\": \"张三\",\n            \"ApproverMobile\": \"1850000000\",\n            \"RecipientId\": \"yDSL6UUckpo6am9qUuRHYOWwmX5rZGCX\"\n        }\n    ]\n}",
         "output": "{\n    \"Response\": {\n        \"PrepareFlowUrl\": \"https://embed.beta.qian.tencent.cn/contract-create?embed=1&expiredOn=1700819911&code=yDSL6UUQEjIKK&businessId=yDSL6U3iY7&channel=PROXYCHANNEL&operateSource=byTemplate&themeId=channel_web_theme_yDwi3UAR2Yb\",\n        \"PreviewFlowUrl\": \"\",\n        \"RequestId\": \"c52aaa17-3f81-4640-be03-fca0a553d2e3\"\n    }\n}",
-        "title": "创建发起合同签署链接-模板发起"
+        "title": "创建发起合同签署链接-模板发起（固定所有的参与方）"
       }
     ],
     "ChannelCreatePreparedPersonalEsign": [

@@ -1,3 +1,139 @@
+# Release 3.0.1048.1
+
+## 费用中心(billing) 版本：2018-07-09
+
+### 第 55 次发布
+
+发布时间：2024-01-18 01:09:19
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeSavingPlanResourceInfo](https://cloud.tencent.com/document/api/555/103077)
+
+
+
+## 弹性 MapReduce(emr) 版本：2019-01-03
+
+### 第 56 次发布
+
+发布时间：2024-01-18 01:15:51
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+新增接口：
+
+* [DescribeInsightList](https://cloud.tencent.com/document/api/589/103078)
+
+新增数据结构：
+
+* [InsightResult](https://cloud.tencent.com/document/api/589/33981#InsightResult)
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2021-11-25
+
+### 第 24 次发布
+
+发布时间：2024-01-18 01:17:58
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteCloudStorageEvent](https://cloud.tencent.com/document/api/1131/95523)
+
+	* 新增入参：ChannelId
+
+* [DescribeCloudStorageOrder](https://cloud.tencent.com/document/api/1131/96706)
+
+	* 新增出参：ChannelId
+
+* [ResetCloudStorageEvent](https://cloud.tencent.com/document/api/1131/96104)
+
+	* 新增入参：ChannelId
+
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2020-12-15
+
+
+
+## 物联网智能视频服务(iotvideo) 版本：2019-11-26
+
+
+
+## 数据开发治理平台 WeData(wedata) 版本：2021-08-20
+
+### 第 69 次发布
+
+发布时间：2024-01-18 01:27:50
+
+本次发布包含了以下内容：
+
+改善已有的文档。
+
+修改接口：
+
+* [DeleteCustomFunction](https://cloud.tencent.com/document/api/1267/81485)
+
+	* 新增入参：FunctionName, FunctionType, DatabaseName, SchemaName, CommandFormat
+
+	* <font color="#dd0000">**修改入参**：</font>ClusterIdentifier, FunctionId
+
+
+新增数据结构：
+
+* [SqlExpression](https://cloud.tencent.com/document/api/1267/76336#SqlExpression)
+* [SqlExpressionTable](https://cloud.tencent.com/document/api/1267/76336#SqlExpressionTable)
+
+修改数据结构：
+
+* [BooleanResponse](https://cloud.tencent.com/document/api/1267/76336#BooleanResponse)
+
+	* 新增成员：Code
+
+* [InstanceReportReadNode](https://cloud.tencent.com/document/api/1267/76336#InstanceReportReadNode)
+
+	* 新增成员：WaitWriterTime
+
+* [InstanceReportWriteNode](https://cloud.tencent.com/document/api/1267/76336#InstanceReportWriteNode)
+
+	* 新增成员：WaitReaderTime
+
+* [IntegrationTaskInfo](https://cloud.tencent.com/document/api/1267/76336#IntegrationTaskInfo)
+
+	* 新增成员：ArrangeSpaceTaskId, OfflineTaskStatus
+
+* [Rule](https://cloud.tencent.com/document/api/1267/76336#Rule)
+
+	* 新增成员：TableName, TableOwnerName, ExecStrategy, Subscription, CreateTime, DatasourceId, DatabaseId, MonitorStatus
+
+* [RuleGroupExecStrategy](https://cloud.tencent.com/document/api/1267/76336#RuleGroupExecStrategy)
+
+	* 新增成员：RuleId, RuleName
+
+	* <font color="#dd0000">**修改成员**：</font>RuleGroupId, MonitorType, ExecQueue, ExecutorGroupId, ExecutorGroupName, Tasks, StartTime, EndTime, CycleType, DelayTime, CycleStep, TaskAction
+
+* [RuleGroupSubscribe](https://cloud.tencent.com/document/api/1267/76336#RuleGroupSubscribe)
+
+	* 新增成员：RuleId, RuleName
+
+* [RuleTemplate](https://cloud.tencent.com/document/api/1267/76336#RuleTemplate)
+
+	* 新增成员：ResolvedSqlExpression, DatasourceTypes
+
+
+
+
 # Release 3.0.1047.1
 
 ## T-Sec-堡垒机（BH）(dasb) 版本：2019-10-18

@@ -932,7 +932,7 @@
         },
         {
           "disabled": false,
-          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发\n<br><li> Recovery - 告警恢复\n<br><li> All - 告警触发和告警恢复",
+          "document": "告警模板的类型。可选值：\n<br><li> Trigger - 告警触发</li>\n<br><li> Recovery - 告警恢复</li>\n<br><li> All - 告警触发和告警恢复</li>",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -2599,7 +2599,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
+          "document": "通知类型。可选值：\n<li> Trigger - 告警触发 </li>\n<li> Recovery - 告警恢复</li>\n<li> All - 告警触发和告警恢复</li>",
           "example": "All",
           "member": "string",
           "name": "Type",
@@ -5184,7 +5184,7 @@
       "members": [
         {
           "disabled": false,
-          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
+          "document": "<li> name\n按照【通知渠道组名称】进行过滤。\n类型：String\n必选：否</li>\n<li> alarmNoticeId\n按照【通知渠道组ID】进行过滤。\n类型：String\n必选：否</li>\n<li> uid\n按照【接收用户ID】进行过滤。\n类型：String\n必选：否</li>\n<li> groupId\n按照【接收用户组ID】进行过滤。\n类型：String\n必选：否</li>\n\n<li> deliverFlag\n按照【投递状态】进行过滤。\n类型：String\n必选：否\n可选值： \"1\":未启用,  \"2\": 已启用, \"3\":投递异常</li>\n\n每次请求的Filters的上限为10，Filter.Values的上限为5。",
           "example": "无",
           "member": "Filter",
           "name": "Filters",
@@ -8955,7 +8955,7 @@
         },
         {
           "disabled": false,
-          "document": "通知类型。可选值：\n<li> Trigger - 告警触发\n<li> Recovery - 告警恢复\n<li> All - 告警触发和告警恢复",
+          "document": "通知类型。可选值：\n<li> Trigger - 告警触发</li>\n<li> Recovery - 告警恢复</li>\n<li> All - 告警触发和告警恢复</li>",
           "example": "All",
           "member": "string",
           "name": "Type",

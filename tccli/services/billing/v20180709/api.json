@@ -196,6 +196,13 @@
       "output": "DescribeSavingPlanOverviewResponse",
       "status": "online"
     },
+    "DescribeSavingPlanResourceInfo": {
+      "document": "查询节省计划详情",
+      "input": "DescribeSavingPlanResourceInfoRequest",
+      "name": "查询节省计划可共享列表详情",
+      "output": "DescribeSavingPlanResourceInfoResponse",
+      "status": "online"
+    },
     "DescribeSavingPlanUsage": {
       "document": "查用当前用户明细节省计划查询时段内的使用情况",
       "input": "DescribeSavingPlanUsageRequest",
@@ -6728,6 +6735,70 @@
           "disabled": false,
           "document": "查询命中的节省计划总览明细数据总条数",
           "example": "1000",
+          "member": "uint64",
+          "name": "Total",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSavingPlanResourceInfoRequest": {
+      "document": "DescribeSavingPlanResourceInfo请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "数量，最大值为100",
+          "example": "10",
+          "member": "int64",
+          "name": "Limit",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "偏移量",
+          "example": "1",
+          "member": "uint64",
+          "name": "Offset",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "购买开始时间，格式yyyy-MM-dd",
+          "example": "2023-06-01",
+          "member": "string",
+          "name": "CreateStartDate",
+          "required": false,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "购买结束时间，格式yyyy-MM-dd",
+          "example": "2023-06-30",
+          "member": "string",
+          "name": "CreateEndDate",
+          "required": false,
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeSavingPlanResourceInfoResponse": {
+      "document": "DescribeSavingPlanResourceInfo返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "记录数",
+          "example": "0",
           "member": "uint64",
           "name": "Total",
           "output_required": true,

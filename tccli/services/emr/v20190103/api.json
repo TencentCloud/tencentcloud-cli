@@ -70,6 +70,13 @@
       "output": "DescribeImpalaQueriesResponse",
       "status": "online"
     },
+    "DescribeInsightList": {
+      "document": "获取洞察结果信息",
+      "input": "DescribeInsightListRequest",
+      "name": "获取洞察结果",
+      "output": "DescribeInsightListResponse",
+      "status": "online"
+    },
     "DescribeInstanceRenewNodes": {
       "document": "查询待续费节点信息",
       "input": "DescribeInstanceRenewNodesRequest",
@@ -2904,6 +2911,89 @@
       ],
       "type": "object"
     },
+    "DescribeInsightListRequest": {
+      "document": "DescribeInsightList请求参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "集群ID",
+          "example": "emr-xfaf11ab",
+          "member": "string",
+          "name": "InstanceId",
+          "required": true,
+          "type": "string"
+        },
+        {
+          "disabled": false,
+          "document": "获取的洞察结果开始时间，此时间针对对App或者Hive查询的开始时间的过滤",
+          "example": "161222341",
+          "member": "int64",
+          "name": "StartTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "获取的洞察结果结束时间，此时间针对对App或者Hive查询的开始时间的过滤",
+          "example": "171213123",
+          "member": "int64",
+          "name": "EndTime",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的分页大小，最小1，最大100",
+          "example": "100",
+          "member": "int64",
+          "name": "PageSize",
+          "required": true,
+          "type": "int"
+        },
+        {
+          "disabled": false,
+          "document": "分页查询时的页号，从1开始",
+          "example": "1",
+          "member": "int64",
+          "name": "Page",
+          "required": true,
+          "type": "int"
+        }
+      ],
+      "type": "object"
+    },
+    "DescribeInsightListResponse": {
+      "document": "DescribeInsightList返回参数结构体",
+      "members": [
+        {
+          "disabled": false,
+          "document": "总数，分页查询时使用",
+          "example": "1231",
+          "member": "int64",
+          "name": "TotalCount",
+          "output_required": true,
+          "type": "int",
+          "value_allowed_null": false
+        },
+        {
+          "disabled": false,
+          "document": "洞察结果数组\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "无",
+          "member": "InsightResult",
+          "name": "ResultList",
+          "output_required": false,
+          "type": "list",
+          "value_allowed_null": true
+        },
+        {
+          "document": "唯一请求 ID，每次请求都会返回。定位问题时需要提供该次请求的 RequestId。",
+          "member": "string",
+          "name": "RequestId",
+          "type": "string"
+        }
+      ],
+      "type": "object"
+    },
     "DescribeInstanceRenewNodesRequest": {
       "document": "DescribeInstanceRenewNodes请求参数结构体",
       "members": [
@@ -5510,6 +5600,144 @@
         }
       ],
       "type": "object"
+    },
+    "InsightResult": {
+      "document": "洞察结果项",
+      "members": [
+        {
+          "disabled": false,
+          "document": "当Type为HIVE时，是Hive查询ID，当Type为MAPREDUCE，SPARK，TEZ时则是YarnAppID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "application_162444222_00001",
+          "member": "string",
+          "name": "ID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "洞察应用的类型，HIVE,SPARK,MAPREDUCE,TEZ\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "HIVE,SPARK,MAPREDUCE,TEZ",
+          "member": "string",
+          "name": "Type",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "洞察规则ID\nHIVE-ScanManyMeta:元数据扫描过多\nHIVE-ScanManyPartition:大表扫描\nHIVE-SlowCompile:编译耗时过长\nHIVE-UnSuitableConfig:不合理参数\nMAPREDUCE-MapperDataSkew:Map数据倾斜\nMAPREDUCE-MapperMemWaste:MapMemory资源浪费\nMAPREDUCE-MapperSlowTask:Map慢Task\nMAPREDUCE-MapperTaskGC:MapperTaskGC\nMAPREDUCE-MemExceeded:峰值内存超限\nMAPREDUCE-ReducerDataSkew:Reduce数据倾斜\nMAPREDUCE-ReducerMemWaste:ReduceMemory资源浪费\nMAPREDUCE-ReducerSlowTask:Reduce慢Task\nMAPREDUCE-ReducerTaskGC:ReducerTaskGC\nMAPREDUCE-SchedulingDelay:调度延迟\nSPARK-CpuWaste:CPU资源浪费\nSPARK-DataSkew:数据倾斜\nSPARK-ExecutorGC:ExecutorGC\nSPARK-MemExceeded:峰值内存超限\nSPARK-MemWaste:Memory资源浪费\nSPARK-ScheduleOverhead:ScheduleOverhead\nSPARK-ScheduleSkew:调度倾斜\nSPARK-SlowTask:慢Task\nTEZ-DataSkew:数据倾斜\nTEZ-MapperDataSkew:Map数据倾斜\nTEZ-ReducerDataSkew:Reduce数据倾斜\nTEZ-TezMemWaste:Memory资源浪费\nTEZ-TezSlowTask:慢Task\nTEZ-TezTaskGC:TasksGC\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MAPREDUCE-MemExceeded",
+          "member": "string",
+          "name": "RuleID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "洞察规则名字，可参考RuleID的说明\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "峰值内存超限",
+          "member": "string",
+          "name": "RuleName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "洞察规则解释\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "Map/Reduce实际峰值内存超过了申请的内存",
+          "member": "string",
+          "name": "RuleExplain",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "详情\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "MAP task_1701325375205_0001_m_000000 峰值内存 724.69MB",
+          "member": "string",
+          "name": "Detail",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "建议信息\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "调大申请的内存或者排查是否有数据倾斜",
+          "member": "string",
+          "name": "Suggestion",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "洞察异常衡量值，同类型的洞察项越大越严重，不同类型的洞察项无对比意义\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "1231241",
+          "member": "int64",
+          "name": "Value",
+          "output_required": false,
+          "required": false,
+          "type": "int",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度任务执行ID\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "flow1_task1_exec_123",
+          "member": "string",
+          "name": "ScheduleTaskExecID",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度流，DAG\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "flow1",
+          "member": "string",
+          "name": "ScheduleFlowName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "调度flow中的某个task节点\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "task1",
+          "member": "string",
+          "name": "ScheduleTaskName",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        },
+        {
+          "disabled": false,
+          "document": "Yarn任务的部分核心配置\n注意：此字段可能返回 null，表示取不到有效值。",
+          "example": "{   \"mapreduce.job.queuename\":, \"default\",   \"mapreduce.job.user.name\": \"hadoop\",   \"mapreduce.job.name\": \"test_name\",   \"mapreduce.map.memory.mb\": 4096,   \"mapreduce.reduce.memory.mb\": 4096,   \"mapreduce.map.java.opts\": \"-Xmx3500g\",   \"mapreduce.reduce.java.opts\": \"-Xmx3500g\",   \"airflow.ctx.task.task_id\": \"123\",   \"oozie.action.id\": \"abc\",   \"azkaban.job.id\": \"123\" }",
+          "member": "string",
+          "name": "JobConf",
+          "output_required": false,
+          "required": false,
+          "type": "string",
+          "value_allowed_null": true
+        }
+      ],
+      "usage": "both"
     },
     "InstanceChargePrepaid": {
       "document": "实例预付费参数，只有在付费类型为PREPAID时生效。\n",

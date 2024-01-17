@@ -482,10 +482,10 @@
     ],
     "DeleteCustomFunction": [
       {
-        "document": "",
-        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"xx\",\n    \"FunctionId\": \"xx\",\n    \"ProjectId\": \"xx\"\n}",
-        "output": "{\n    \"Response\": {\n        \"ErrorMessage\": \"xx\",\n        \"FunctionId\": \"xx\",\n        \"RequestId\": \"xx\"\n    }\n}",
-        "title": "删除用户自定义函数"
+        "document": "w",
+        "input": "POST / HTTP/1.1\nHost: wedata.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DeleteCustomFunction\n<公共请求参数>\n\n{\n    \"ClusterIdentifier\": \"sdf\",\n    \"FunctionId\": \"sdfsdf\",\n    \"ProjectId\": \"sdfsdf\",\n    \"FunctionName\": \"sdfsdf\"\n}",
+        "output": "{\n    \"Response\": {\n        \"Error\": {\n            \"Code\": \"FailedOperation\",\n            \"Message\": \"系统内部异常：NumberFormatException: For input string: \\\"sdfsdf\\\"\"\n        },\n        \"RequestId\": \"fde6b682-e482-44d9-b774-9d97b30446f5\"\n    }\n}",
+        "title": "f"
       }
     ],
     "DeleteDataSources": [

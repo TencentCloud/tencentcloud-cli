@@ -278,6 +278,14 @@
         "title": "查询节省计划明细示例"
       }
     ],
+    "DescribeSavingPlanResourceInfo": [
+      {
+        "document": "查询名下可共享的sp资源详细",
+        "input": "POST / HTTP/1.1\nHost: billing.tencentcloudapi.com\nContent-Type: application/json\nX-TC-Action: DescribeSavingPlanResourceInfo\n<公共请求参数>\n\n{\n    \"Limit\": 0,\n    \"Offset\": 1,\n    \"CreateStartDate\": \"2023-06-01\",\n    \"CreateEndDate\": \"2023-09-30\"\n}",
+        "output": "{\n    \"Response\": {\n        \"RequestId\": \"37963bb4-f4ac-4c20-8c83-97d751f1aa91\",\n        \"Total\": 3\n    }\n}",
+        "title": "输出示例"
+      }
+    ],
     "DescribeSavingPlanUsage": [
       {
         "document": "",
